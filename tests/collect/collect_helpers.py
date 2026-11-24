@@ -21,10 +21,17 @@ ADDRESSES = {
     "https://api.ashbyhq.com/posting-api/job-board/span": "ashby_span.json",
     "https://api.ashbyhq.com/posting-api/job-board/base-power": "ashby_base-power.json",
     "https://api.rippling.com/platform/api/ats/v1/board/aptera/jobs": "rippling_aptera.json",
+    "https://apply.workable.com/api/v1/widget/accounts/anthro": "workable_anthro.json",
+    "https://lunaroutpost.bamboohr.com/careers/list": "bamboohr_lunaroutpost_list.json",
 }
 # Rippling needs one request per posting; these answers are keyed by posting uuid.
 RIPPLING_DETAILS = {
     "https://api.rippling.com/platform/api/ats/v1/board/aptera/jobs": "rippling_aptera_details.json",
+}
+# BambooHR asks .../careers/{id}/detail; these answers are keyed by posting id.
+# Only one detail was recorded, so the other posting exercises the fallback.
+BAMBOOHR_DETAILS = {
+    "https://lunaroutpost.bamboohr.com/careers": "bamboohr_lunaroutpost_details.json",
 }
 
 
@@ -46,6 +53,12 @@ class FakeFetcher:
             return self.extra[url]
         if url in ADDRESSES:
             return load_json(FIXTURES / ADDRESSES[url])
+        if url.endswith("/detail"):
+            base, _, posting = url[: -len("/detail")].rpartition("/")
+            if base in BAMBOOHR_DETAILS:
+                details = load_json(FIXTURES / BAMBOOHR_DETAILS[base])
+                if posting in details:
+                    return details[posting]
         base, _, uuid = url.rpartition("/")
         if base in RIPPLING_DETAILS:
             details = load_json(FIXTURES / RIPPLING_DETAILS[base])

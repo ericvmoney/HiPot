@@ -173,3 +173,11 @@ def test_clip_and_join():
     assert len(clip("x" * 30000)) == 20000
     assert clip("short") == "short"
     assert join_text("A  b", None, "", "c\n\n\nd") == "A b\nc\nd"
+
+
+def test_record_names_keep_a_query_written_into_the_address():
+    from pipeline.collect.fetch import record_name
+    assert record_name("https://api.lever.co/v0/postings/lightship") == "api.lever.co_v0_postings_lightship.json"
+    first = record_name("https://api.example.com/v1/companies/X/postings?offset=0")
+    second = record_name("https://api.example.com/v1/companies/X/postings?offset=100")
+    assert first != second and first.endswith("offset_0.json")

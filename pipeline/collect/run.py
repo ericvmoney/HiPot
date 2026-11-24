@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
 
-from pipeline.collect import ashby, greenhouse, lever, rippling
+from pipeline.collect import ashby, bamboohr, greenhouse, lever, rippling, workable
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
@@ -30,9 +30,18 @@ READERS: dict[str, Callable] = {
     "lever": lever.read,
     "ashby": ashby.read,
     "rippling": rippling.read,
+    "workable": workable.read,
 }
 HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com",
-         "rippling": "api.rippling.com"}
+         "rippling": "api.rippling.com", "workable": "apply.workable.com",
+         # Each BambooHR company has its own host; a 429 from one stops them all.
+         "bamboohr": "bamboohr.com"}
+# Readers that are built and tested but not run unless asked for by name
+# (`--enable-reader <type>`), because the vendor's terms restrict automated
+# reading. The owner decides; the report quotes the clause.
+SWITCHED_OFF: dict[str, Callable] = {
+    "bamboohr": bamboohr.read,    # Terms of Service section 4.2
+}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 
@@ -48,8 +57,14 @@ def skip_reason(company: dict, readers: dict = READERS) -> str | None:
         return f"not collected: climate tier is '{tier}'"
     if status not in COLLECT_STARTUP:
         return f"not collected: startup status is '{status}'"
+    if company.get("read") == "none":
+        return "not collected: the registry says read: none"
+    # 'read: manual' does not stop a company being collected: the field says
+    # how its board was read before there was a reader for its system.
     ats = company["ats"]["type"]
     if ats not in readers:
+        if ats in SWITCHED_OFF:
+            return f"{ats}: reader switched off pending a terms decision (--enable-reader {ats})"
         return f"no reader for {ats}"
     if not company["ats"]["board"]:
         return f"no board token for {ats}"
@@ -189,6 +204,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE, help="first-seen state file")
     parser.add_argument("--greenhouse-pay", action="store_true",
                         help="one extra request per Greenhouse posting to read its structured pay range")
+    parser.add_argument("--enable-reader", action="append", default=[], metavar="TYPE",
+                        choices=sorted(SWITCHED_OFF) or None,
+                        help="run a reader that is switched off by default (see SWITCHED_OFF)")
     parser.add_argument("--record", type=Path, metavar="DIR",
                         help="also save every raw feed answer here (data/fixtures-live is ignored by git)")
     parser.add_argument("--replay", type=Path, metavar="DIR",
@@ -207,6 +225,7 @@ def main(argv: list[str] | None = None) -> int:
         companies = [company for company in companies if company["id"] in args.company]
 
     readers = dict(READERS)
+    readers.update({name: SWITCHED_OFF[name] for name in args.enable_reader})
     if args.greenhouse_pay:
         readers["greenhouse"] = lambda board, fetcher: greenhouse.read(board, fetcher, with_pay=True)
 
