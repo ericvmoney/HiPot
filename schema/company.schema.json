@@ -17,7 +17,7 @@
       "additionalProperties": false,
       "required": ["type", "board"],
       "properties": {
-        "type": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workday", "icims", "bamboohr", "adp", "eightfold", "other", "unknown"]},
+        "type": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workable", "bamboohr", "smartrecruiters", "recruitee", "breezy", "jazzhr", "teamtailor", "gem", "dover", "pinpoint", "jobvite", "paylocity", "paycom", "ukg", "workday", "icims", "adp", "eightfold", "other", "unknown"]},
         "board": {"type": ["string", "null"], "description": "Board token on that ATS, exactly as it appears in the feed address (case matters on Ashby)."}
       }
     },
