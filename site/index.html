@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HiPot Jobs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hardware engineering roles at clean-technology and electrification startups. No login, no tracking, and every role links to the company's own posting.">
+<meta name="referrer" content="no-referrer">
+<style>
+/* Layout: a filter column beside one ruled list of roles. On a phone the filters move into a sheet
+   opened from a bar that stays at the top of the list. */
+:root {
+  --bg: #f3f5f2;            /* cool paper */
+  --surface: #ffffff;
+  --ink: #17201d;
+  --muted: #55625c;
+  --line: #d3d9d4;
+  --accent: #0b5f6b;        /* insulation teal: links, actions, the Core tier */
+  --accent-ink: #ffffff;
+  --accent-soft: #e0eded;
+  --tag: #e9ede9;
+  --warn: #7a4f00;          /* hazard amber: development-build banner only */
+  --warn-soft: #fbefcf;
+  --focus: #17201d;
+  --sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101513; --surface: #171e1b; --ink: #e7ece9; --muted: #9ba8a2; --line: #2b3531;
+    --accent: #62c6d1; --accent-ink: #05252a; --accent-soft: #16353a; --tag: #222b28;
+    --warn: #f2c666; --warn-soft: #382c0c; --focus: #f2f6f3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101513; --surface: #171e1b; --ink: #e7ece9; --muted: #9ba8a2; --line: #2b3531;
+  --accent: #62c6d1; --accent-ink: #05252a; --accent-soft: #16353a; --tag: #222b28;
+  --warn: #f2c666; --warn-soft: #382c0c; --focus: #f2f6f3;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-block: 20px 40px;
+  padding-left: var(--gutter-l);
+  padding-right: var(--gutter-r);
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ul, ol, dl, dd, fieldset { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--accent); text-underline-offset: 0.15em; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+.page { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+/* Header */
+.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px; }
+.brand { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; min-width: 0; }
+.brand h1 { font-family: var(--display); font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.brand p { color: var(--muted); font-size: 0.9375rem; }
+.stamp { color: var(--muted); font-family: var(--mono); font-size: 0.75rem; }
+
+.banner {
+  background: var(--warn-soft); color: var(--warn); border: 1px solid currentColor;
+  border-radius: 4px; padding: 8px 12px; font-size: 0.875rem; font-weight: 600;
+}
+
+/* Two columns from 860px up */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.sidebar { display: none; }
+@media (min-width: 860px) {
+  .layout { grid-template-columns: 264px minmax(0, 1fr); gap: 32px; align-items: start; }
+  .sidebar {
+    display: flex; flex-direction: column; gap: 8px;
+    position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto;
+    padding: 2px 6px 2px 2px; margin: -2px -6px -2px -2px;   /* room for focus rings inside the scroller */
+  }
+  .filters-btn { display: none !important; }
+}
+.sidebar h2, .sheet h2 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Filter groups */
+.filters { display: flex; flex-direction: column; }
+.facet { border-top: 1px solid var(--line); }
+.facet:last-child { border-bottom: 1px solid var(--line); }
+.facet > summary {
+  display: flex; align-items: center; gap: 8px; cursor: pointer; list-style: none;
+  padding: 10px 2px; font-weight: 600; font-size: 0.9375rem; min-height: 44px;
+}
+.facet > summary::-webkit-details-marker { display: none; }
+.facet > summary::after {
+  content: ""; margin-left: auto; width: 7px; height: 7px; flex: none;
+  border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted);
+  transform: translateY(-2px) rotate(45deg);
+}
+.facet[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+.facet-n {
+  font-family: var(--mono); font-size: 0.6875rem; font-weight: 600; line-height: 1;
+  background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: 3px 6px;
+}
+.options { display: flex; flex-direction: column; padding: 0 2px 12px; }
+.opt { display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 4px 0; cursor: pointer; font-size: 0.9375rem; }
+.opt input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--accent); }
+.opt-label { flex: 1; min-width: 0; }
+.opt-count { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.opt.zero .opt-label, .opt.zero .opt-count { color: var(--muted); }
+.field { display: flex; flex-direction: column; gap: 4px; padding: 2px 0 8px; font-size: 0.9375rem; }
+.hint { color: var(--muted); font-size: 0.8125rem; padding-top: 4px; }
+@media (pointer: coarse) { .opt { min-height: 44px; } }
+
+/* Controls */
+.input, .select {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  min-height: 44px; padding: 8px 12px; width: 100%;
+}
+.input::placeholder { color: var(--muted); opacity: 1; }
+.select { padding-right: 8px; }
+.btn {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+  min-height: 44px; padding: 8px 14px; cursor: pointer; font-weight: 600; white-space: nowrap;
+}
+.btn:hover { border-color: var(--muted); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { border-color: var(--accent); filter: brightness(1.08); }
+.btn-quiet { background: transparent; border-color: transparent; color: var(--accent); padding-inline: 6px; }
+.btn-quiet:hover { border-color: transparent; text-decoration: underline; }
+
+/* Results column */
+.results { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.search { display: flex; flex-direction: column; gap: 4px; }
+.search label { font-size: 0.8125rem; font-weight: 600; color: var(--muted); }
+.bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); padding-block: 8px; border-bottom: 1px solid var(--line);
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+.count { flex: 1; min-width: 0; white-space: nowrap; font-family: var(--mono); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.count strong { font-weight: 700; }
+.sort { display: flex; align-items: center; gap: 8px; }
+.sort label { font-size: 0.8125rem; color: var(--muted); }
+.sort { min-width: 0; }
+.sort .select { width: auto; max-width: 100%; min-height: 40px; padding-block: 6px; }
+.filters-btn { min-height: 40px; padding-block: 6px; display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 480px) { .count .wide, .sort label { display: none; } }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; max-width: 100%;
+  background: var(--accent-soft); color: var(--ink); border: 1px solid transparent; border-radius: 999px;
+  padding: 4px 10px; font-size: 0.8125rem; cursor: pointer; min-height: 32px; text-align: left;
+}
+.chip:hover { border-color: var(--accent); }
+.chip::after { content: "\00d7"; font-size: 1rem; line-height: 1; color: var(--muted); }
+.chip-clear { background: transparent; color: var(--accent); font-weight: 600; }
+.chip-clear::after { content: none; }
+
+/* Company panel */
+.company {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+}
+.company-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.company-head h2 { font-family: var(--display); font-size: 1.25rem; line-height: 1.2; }
+.company dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 14px; font-size: 0.875rem; }
+.company dt { color: var(--muted); }
+.company dd { overflow-wrap: anywhere; }
+.company .btn { align-self: flex-start; }
+
+/* Role list */
+.roles { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.role { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 14px 16px; border-top: 1px solid var(--line); }
+.role:first-child { border-top: 0; }
+.role-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.role h3 { font-size: 1.0625rem; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
+.role h3 a { text-decoration: none; }
+.role h3 a:hover { text-decoration: underline; }
+.ext { font-family: var(--mono); font-size: 0.8em; margin-left: 0.3em; }
+.role-co { font-size: 0.9375rem; overflow-wrap: anywhere; }
+.co-btn {
+  background: none; border: 0; padding: 0; cursor: pointer; font-weight: 600; color: var(--ink);
+  text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 0.2em; text-align: left;
+}
+.co-btn:hover { text-decoration-color: var(--ink); }
+.tier {
+  display: inline-block; font-family: var(--mono); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; line-height: 1; padding: 3px 6px; border-radius: 3px; vertical-align: 0.1em;
+  border: 1px solid var(--accent); margin-inline: 4px 2px; white-space: nowrap;
+}
+.tier-core { background: var(--accent); color: var(--accent-ink); }
+.tier-enabling { color: var(--accent); }
+.tier-other { border-color: var(--muted); color: var(--muted); }
+.reason { color: var(--muted); }
+.where { color: var(--muted); font-size: 0.875rem; overflow-wrap: anywhere; }
+.summary { font-size: 0.875rem; max-width: 70ch; overflow-wrap: anywhere; }
+.summary > summary { cursor: pointer; color: var(--muted); width: fit-content; padding-block: 2px; }
+.summary > p { padding-top: 2px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px; }
+.tags li { font-size: 0.75rem; background: var(--tag); border: 1px solid transparent; border-radius: 3px; padding: 1px 7px; }
+.tags .tag-level { background: transparent; border-color: var(--line); font-weight: 600; }
+.role-side { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
+.pay { font-family: var(--mono); font-size: 0.875rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pay span { font-weight: 400; color: var(--muted); }
+.pay-none { font-weight: 400; color: var(--muted); }
+.date { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+@media (min-width: 640px) {
+  .role { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; }
+  .role-side { flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; align-items: flex-end; text-align: right; gap: 4px; }
+}
+
+.more { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.more p { color: var(--muted); font-family: var(--mono); font-size: 0.8125rem; }
+.state { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 28px 16px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.state p { max-width: 60ch; }
+
+/* Filter sheet (phone and tablet) */
+.sheet {
+  position: fixed; inset: 0 0 0 auto; margin: 0; padding: 0; border: 0;
+  width: min(100%, 420px); max-width: 100%; height: 100vh; height: 100dvh; max-height: none;
+  background: var(--bg); color: var(--ink);
+}
+.sheet::backdrop { background: rgb(0 0 0 / 0.45); }
+.sheet-inner { display: flex; flex-direction: column; height: 100%; }
+.sheet-head, .sheet-foot { display: flex; align-items: center; gap: 12px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.sheet-head { justify-content: space-between; padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.sheet-body { flex: 1; overflow-y: auto; padding-block: 8px 16px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.sheet-foot { padding-top: 10px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: var(--surface); }
+.sheet-foot .btn-primary { flex: 1; }
+.sheet-body .facet-groups > .facet:first-child { border-top: 0; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); padding-top: 16px; display: flex; flex-direction: column; gap: 10px; color: var(--muted); font-size: 0.875rem; }
+.foot p, .foot dl { max-width: 72ch; }
+.foot strong { color: var(--ink); }
+.foot dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; }
+.foot dt .tier { margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="brand">
+      <h1>HiPot</h1>
+      <p>Hardware engineering roles at clean-technology and electrification startups</p>
+    </div>
+    <p class="stamp" id="stamp" hidden></p>
+  </header>
+
+  <p class="banner" id="dev-banner" hidden>Development build. It includes companies that are not listed on the public board. Do not publish this build.</p>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-labelledby="sidebar-title">
+      <h2 id="sidebar-title">Filters</h2>
+      <form class="filters" id="filters" autocomplete="off">
+        <div class="facet-groups" id="facet-groups"></div>
+        <details class="facet" id="facet-pay" open>
+          <summary>Pay <span class="facet-n" id="facet-n-pay" hidden></span></summary>
+          <div class="options">
+            <div class="field">
+              <label for="f-pay">Minimum base pay</label>
+              <select class="select" id="f-pay"><option value="0">Any</option></select>
+            </div>
+            <label class="opt" for="f-paid">
+              <input type="checkbox" id="f-paid">
+              <span class="opt-label">Pay stated</span>
+            </label>
+            <p class="hint" id="pay-hint">Pay appears only when the employer published it. A minimum keeps roles whose published range reaches that figure and hides roles with no published pay.</p>
+          </div>
+        </details>
+      </form>
+    </aside>
+
+    <main class="results" id="results">
+      <div class="search">
+        <label for="q">Search title, company or location</label>
+        <input class="input" id="q" type="search" placeholder="battery test, Denver, firmware…" autocomplete="off" spellcheck="false" maxlength="80" enterkeyhint="search">
+      </div>
+
+      <div class="bar">
+        <button type="button" class="btn filters-btn" id="filters-btn" aria-haspopup="dialog">Filters <span class="facet-n" id="filters-n" hidden></span></button>
+        <p class="count" id="count" role="status" aria-live="polite">Loading roles…</p>
+        <div class="sort">
+          <label for="sort">Sort</label>
+          <select class="select" id="sort">
+            <option value="new">Newest</option>
+            <option value="pay">Highest pay</option>
+            <option value="co">Company A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="chips" id="chips" hidden></div>
+      <section class="company" id="company" aria-label="Company" tabindex="-1" hidden></section>
+
+      <h2 class="sr-only" id="roles-title">Roles</h2>
+      <ol class="roles" id="roles" aria-labelledby="roles-title" hidden></ol>
+      <div class="state" id="state" hidden></div>
+      <div class="more" id="more" hidden>
+        <button type="button" class="btn" id="more-btn">Show more</button>
+        <p id="more-note"></p>
+      </div>
+      <noscript><div class="state"><p>This board needs JavaScript to load and filter roles.</p></div></noscript>
+    </main>
+  </div>
+
+  <footer class="foot">
+    <p id="provisional-note" hidden></p>
+    <dl>
+      <dt><span class="tier tier-core">Core</span></dt>
+      <dd>The company's main product directly cuts emissions or electrifies something that burns fuel.</dd>
+      <dt><span class="tier tier-enabling">Enabling</span></dt>
+      <dd>Electric by design and likely to displace a dirtier alternative, though cutting emissions is not its purpose.</dd>
+    </dl>
+    <p>Every role links to the posting on the company's own job board. Pay appears only when the employer published it and is never estimated. Searching needs no login, and this page sets no cookies and does no tracking.</p>
+    <p>The name comes from the hipot test, which puts a high potential across a product's insulation to prove it holds before the product ships.</p>
+  </footer>
+</div>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-inner">
+    <div class="sheet-head">
+      <h2 id="sheet-title">Filters</h2>
+      <button type="button" class="btn btn-quiet" id="sheet-close">Close</button>
+    </div>
+    <div class="sheet-body" id="sheet-body"></div>
+    <div class="sheet-foot">
+      <button type="button" class="btn btn-quiet" id="sheet-clear">Clear all</button>
+      <button type="button" class="btn btn-primary" id="sheet-done">Show roles</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  'use strict';
+
+  var DATA_URL = 'data/board.json';
+  var BOARD_VERSION = 0;
+  var PAGE_SIZE = 50;
+  var SEARCH_DELAY_MS = 140;
+  var HOURS_PER_YEAR = 2080;   // hourly pay is compared with the minimum-pay filter at this many hours
+  var PAY_STEPS = [80000, 100000, 120000, 140000, 160000, 180000, 200000, 225000, 250000, 300000];
+  var SORTS = ['new', 'pay', 'co'];
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+  // Filter values that are not taxonomy ids. A leading '*' cannot occur in an id.
+  var NONE = '*none', REMOTE = '*remote', ELSEWHERE = '*elsewhere';
+
+  // One entry per checkbox group. `key` is also the key in the URL fragment.
+  var FACETS = [
+    { key: 'd', title: 'Discipline', tax: 'disciplines', none: 'Not tagged', open: true },
+    { key: 'l', title: 'Level', tax: 'levels', none: 'Not stated in the title', open: true },
+    { key: 'm', title: 'Location', tax: 'metros', open: true },
+    { key: 's', title: 'Sector', tax: 'sectors', none: 'Not recorded', open: false },
+    { key: 'st', title: 'Company stage', tax: 'stages', none: 'Not recorded', open: false }
+  ];
+
+  var board = null;
+  var roles = [];           // every role, newest first, with precomputed search and filter fields
+  var labels = {};          // taxonomy key -> { id: label }
+  var persona = null;       // Milestone 2: a candidate's persona file, loaded on their own device
+  var state = { q: '', d: new Set(), l: new Set(), m: new Set(), s: new Set(), st: new Set(), pay: 0, paid: false, c: '', sort: 'new' };
+  var results = [];         // roles that pass the filters, in display order
+  var shown = 0;            // how many of `results` are in the page
+  var lastHash = null;
+  var searchTimer = 0;
+
+  function $(id) { return document.getElementById(id); }
+
+  // Build an element. Data values only ever enter the page through `text` (textContent) or checked attributes.
+  function el(tag, props, children) {
+    var node = document.createElement(tag);
+    if (props) {
+      Object.keys(props).forEach(function (name) {
+        var value = props[name];
+        if (value === null || value === undefined || value === false) return;
+        if (name === 'text') node.textContent = value;
+        else if (name === 'class') node.className = value;
+        else node.setAttribute(name, value === true ? '' : value);
+      });
+    }
+    (children || []).forEach(function (child) {
+      if (child === null || child === undefined) return;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+
+  // Replace a node's children, skipping empty entries (replaceChildren would print "null").
+  function setChildren(node, children) {
+    node.replaceChildren.apply(node, children.filter(function (child) { return child !== null && child !== undefined && child !== ''; }));
+  }
+
+  function isHttps(url) { return typeof url === 'string' && /^https:\/\//i.test(url); }
+
+  // A link that leaves the site. Anything that is not https becomes plain text.
+  function outLink(url, text, hiddenText) {
+    if (!isHttps(url)) return el('span', { text: text });
+    return el('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, [
+      text,
+      el('span', { class: 'ext', 'aria-hidden': 'true', text: '↗' }),
+      hiddenText ? el('span', { class: 'sr-only', text: hiddenText }) : null
+    ]);
+  }
+
+  function fold(text) {
+    return String(text).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+
+  function formatDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+    if (!m) return '';
+    return Number(m[3]) + ' ' + MONTHS[Number(m[2]) - 1] + ' ' + m[1];
+  }
+
+  function plural(n, one, many) { return n.toLocaleString('en-US') + ' ' + (n === 1 ? one : many); }
+
+  // ---- Pay: shown exactly as published --------------------------------------------------------
+
+  var moneyFormats = {};
+  function money(amount, currency, compact) {
+    var key = currency + (compact ? ':c' : '');
+    try {
+      if (!moneyFormats[key]) {
+        moneyFormats[key] = new Intl.NumberFormat('en-US', compact
+          ? { style: 'currency', currency: currency, notation: 'compact', maximumFractionDigits: 1 }
+          : { style: 'currency', currency: currency, maximumFractionDigits: 2, minimumFractionDigits: 0 });
+      }
+      return moneyFormats[key].format(amount);
+    } catch (error) {
+      return currency + ' ' + amount.toLocaleString('en-US');
+    }
+  }
+
+  function payParts(pay) {
+    var yearly = pay.per === 'year';
+    var low = money(pay.min, pay.cur, yearly), high = money(pay.max, pay.cur, yearly);
+    var range = pay.min === pay.max ? high : (pay.min === 0 ? 'Up to ' + high : low + ' – ' + high);
+    return [range, yearly ? 'a year' : 'an hour'];
+  }
+
+  // The figure the minimum-pay filter and the pay sort compare: the top of a published USD range, per year.
+  function comparablePay(pay) {
+    if (!pay || pay.cur !== 'USD') return null;
+    return pay.per === 'hour' ? pay.max * HOURS_PER_YEAR : pay.max;
+  }
+
+  // ---- Persona ranking hook ---------------------------------------------------------------------
+
+  /**
+   * PERSONA RANKING HOOK (Milestone 2). Not implemented in this milestone.
+   *
+   * A later milestone ranks the filtered roles against a candidate's persona file
+   * (schema/persona.schema.json) here. `rolesInOrder` is the filtered list in the order the
+   * visitor chose; return the list in the order to display. The persona stays on the
+   * candidate's device: this function must never send it anywhere.
+   *
+   * With no persona (always the case today) the list is returned unchanged.
+   */
+  function rankRolesForPersona(rolesInOrder, candidatePersona) {
+    if (!candidatePersona) return rolesInOrder;
+    return rolesInOrder;
+  }
+
+  // ---- Preparing the data ---------------------------------------------------------------------
+
+  function prepare(data) {
+    board = data;
+    Object.keys(data.taxonomy).forEach(function (key) {
+      labels[key] = {};
+      data.taxonomy[key].forEach(function (entry) { labels[key][entry.id] = entry.label; });
+    });
+
+    roles = data.roles.filter(function (role) { return data.companies[role.co]; });
+    roles.forEach(function (role) {
+      var company = data.companies[role.co];
+      var metros = role.metros || [];
+      var places = metros.slice();
+      if (role.wp === 'remote') places.push(REMOTE);
+      if (!places.length) places.push(ELSEWHERE);
+      role.company = company;
+      role.time = Date.parse((role.posted || role.seen) + 'T00:00:00Z') || 0;
+      role.payCompare = comparablePay(role.pay);
+      role.facets = {
+        d: role.disc && role.disc.length ? role.disc : [NONE],
+        l: [role.level || NONE],
+        m: places,
+        s: company.sectors && company.sectors.length ? company.sectors : [NONE],
+        st: [company.stage || NONE]
+      };
+      role.haystack = fold([role.title, company.name].concat(
+        role.loc || [],
+        metros.map(function (id) { return labels.metros[id] || ''; }),
+        role.wp ? [labels.workplace[role.wp] || ''] : []
+      ).join(' \n '));
+    });
+    roles.sort(function (a, b) { return b.time - a.time; });   // stable: keeps the file's tie-break
+
+    FACETS.forEach(function (facet) {
+      facet.options = data.taxonomy[facet.tax].map(function (entry) { return { id: entry.id, label: entry.label }; });
+      if (facet.key === 'm') {
+        facet.options.push({ id: REMOTE, label: 'Remote' }, { id: ELSEWHERE, label: 'Other locations' });
+      }
+      if (facet.none) facet.options.push({ id: NONE, label: facet.none });
+      facet.byId = {};
+      facet.options.forEach(function (option) { option.total = 0; facet.byId[option.id] = option; });
+    });
+    roles.forEach(function (role) {
+      FACETS.forEach(function (facet) {
+        role.facets[facet.key].forEach(function (id) { if (facet.byId[id]) facet.byId[id].total += 1; });
+      });
+    });
+  }
+
+  // ---- Filter state in the URL fragment -------------------------------------------------------
+  //
+  // The fragment uses only lower-case letters, digits and hyphens, because some hosts pass nothing
+  // else between the address bar and the page. Tokens are joined by '--', which cannot occur inside
+  // a taxonomy id:   #d-systems--d-power-electronics--l-staff--m-denver--remote--pay-160000--q-battery-pack
+  // A word of the search text that is not plain a-z0-9 is written as '0u' plus four hex digits per character.
+
+  function encodeQuery(text) {
+    return fold(text).trim().split(/\s+/).filter(Boolean).map(function (word) {
+      if (/^[a-z0-9]+$/.test(word) && word.indexOf('0u') !== 0) return word;
+      var out = '0u';
+      for (var i = 0; i < word.length; i++) out += ('000' + word.charCodeAt(i).toString(16)).slice(-4);
+      return out;
+    }).join('-');
+  }
+
+  function decodeQuery(text) {
+    return text.split('-').filter(Boolean).map(function (word) {
+      if (!/^0u([0-9a-f]{4})+$/.test(word)) return word;
+      var out = '';
+      for (var i = 2; i < word.length; i += 4) out += String.fromCharCode(parseInt(word.substr(i, 4), 16));
+      return out;
+    }).join(' ').slice(0, 80);
+  }
+
+  function tokenFor(facet, id) {
+    if (id === REMOTE) return 'remote';
+    if (id === ELSEWHERE) return 'elsewhere';
+    return facet.key + '-' + (id === NONE ? 'none' : id);
+  }
+
+  function encodeState() {
+    var tokens = [];
+    var q = encodeQuery(state.q);
+    if (q) tokens.push('q-' + q);
+    FACETS.forEach(function (facet) {
+      facet.options.forEach(function (option) {
+        if (state[facet.key].has(option.id)) tokens.push(tokenFor(facet, option.id));
+      });
+    });
+    if (state.pay > 0) tokens.push('pay-' + state.pay);
+    if (state.paid) tokens.push('paid');
+    if (state.c) tokens.push('c-' + state.c);
+    if (state.sort !== 'new') tokens.push('sort-' + state.sort);
+    return tokens.join('--');
+  }
+
+  function decodeState(hash) {
+    var next = { q: '', d: new Set(), l: new Set(), m: new Set(), s: new Set(), st: new Set(), pay: 0, paid: false, c: '', sort: 'new' };
+    var facetByKey = {};
+    FACETS.forEach(function (facet) { facetByKey[facet.key] = facet; });
+    String(hash || '').replace(/^#/, '').split('--').forEach(function (token) {
+      if (token === 'remote') { next.m.add(REMOTE); return; }
+      if (token === 'elsewhere') { next.m.add(ELSEWHERE); return; }
+      if (token === 'paid') { next.paid = true; return; }
+      var cut = token.indexOf('-');
+      if (cut < 1) return;
+      var key = token.slice(0, cut), value = token.slice(cut + 1);
+      if (key === 'q') next.q = decodeQuery(value);
+      else if (key === 'pay') { if (/^\d{1,7}$/.test(value)) next.pay = Number(value); }
+      else if (key === 'sort') { if (SORTS.indexOf(value) > 0) next.sort = value; }
+      else if (key === 'c') { if (SLUG.test(value) && board.companies[value]) next.c = value; }
+      else if (facetByKey[key]) {
+        var facet = facetByKey[key];
+        var id = value === 'none' && facet.none ? NONE : value;
+        if (facet.byId[id] && id !== REMOTE && id !== ELSEWHERE) next[key].add(id);   // unknown ids are dropped
+      }
+    });
+    return next;
+  }
+
+  function writeHash() {
+    var hash = encodeState();
+    if (hash === lastHash) return;
+    lastHash = hash;
+    try {
+      if (hash) location.replace('#' + hash);
+      else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    } catch (error) {
+      try { location.hash = hash; } catch (ignored) { /* the view still works without a shareable address */ }
+    }
+  }
+
+  // ---- Filtering ------------------------------------------------------------------------------
+
+  // Returns the matching roles, and for every filter option how many roles it would give if ticked
+  // (counted against all the other filters, so the numbers stay useful inside a group).
+  function runFilters() {
+    var words = fold(state.q).split(/\s+/).filter(Boolean);
+    var needPay = state.paid || state.pay > 0;
+    var counts = FACETS.map(function () { return {}; });
+    var matched = [];
+
+    for (var i = 0; i < roles.length; i++) {
+      var role = roles[i];
+      if (state.c && role.co !== state.c) continue;
+      if (needPay && !role.pay) continue;
+      if (state.pay > 0 && !(role.payCompare !== null && role.payCompare >= state.pay)) continue;
+      var textOk = true;
+      for (var w = 0; w < words.length; w++) {
+        if (role.haystack.indexOf(words[w]) === -1) { textOk = false; break; }
+      }
+      if (!textOk) continue;
+
+      var failed = -1, failures = 0;
+      for (var f = 0; f < FACETS.length && failures < 2; f++) {
+        var chosen = state[FACETS[f].key];
+        if (!chosen.size) continue;
+        var values = role.facets[FACETS[f].key], hit = false;
+        for (var v = 0; v < values.length; v++) { if (chosen.has(values[v])) { hit = true; break; } }
+        if (!hit) { failed = f; failures += 1; }
+      }
+      if (failures === 0) {
+        matched.push(role);
+        for (var g = 0; g < FACETS.length; g++) bump(counts[g], role.facets[FACETS[g].key]);
+      } else if (failures === 1) {
+        bump(counts[failed], role.facets[FACETS[failed].key]);
+      }
+    }
+    return { matched: matched, counts: counts };
+  }
+
+  function bump(tally, ids) {
+    for (var i = 0; i < ids.length; i++) tally[ids[i]] = (tally[ids[i]] || 0) + 1;
+  }
+
+  function sortRoles(list) {
+    if (state.sort === 'pay') {
+      return list.slice().sort(function (a, b) {
+        return (b.payCompare === null ? -1 : b.payCompare) - (a.payCompare === null ? -1 : a.payCompare);
+      });
+    }
+    if (state.sort === 'co') {
+      return list.slice().sort(function (a, b) { return a.company.name.localeCompare(b.company.name, 'en', { sensitivity: 'base' }); });
+    }
+    return list;   // already newest first
+  }
+
+  function activeCount() {
+    var n = FACETS.reduce(function (sum, facet) { return sum + state[facet.key].size; }, 0);
+    return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0);
+  }
+
+  // ---- Building the filter controls (once) ------------------------------------------------------
+
+  function optionDomId(facet, id) {
+    return 'f-' + facet.key + '-' + (id.charAt(0) === '*' ? id.slice(1) : id);
+  }
+
+  function buildFilters() {
+    var host = $('facet-groups');
+    FACETS.forEach(function (facet) {
+      var box = el('div', { class: 'options', role: 'group', 'aria-label': facet.title });
+      facet.options.forEach(function (option) {
+        var input = el('input', { type: 'checkbox', id: optionDomId(facet, option.id) });
+        input.addEventListener('change', function () {
+          if (input.checked) state[facet.key].add(option.id); else state[facet.key].delete(option.id);
+          update();
+        });
+        option.input = input;
+        option.countNode = el('span', { class: 'opt-count' });
+        option.row = el('label', { class: 'opt', for: input.id }, [
+          input, el('span', { class: 'opt-label', text: option.label }), option.countNode
+        ]);
+        box.appendChild(option.row);
+      });
+      facet.badge = el('span', { class: 'facet-n', hidden: true });
+      facet.details = el('details', { class: 'facet', id: 'facet-' + facet.key, open: facet.open }, [
+        el('summary', null, [facet.title + ' ', facet.badge]), box
+      ]);
+      host.appendChild(facet.details);
+    });
+
+    var paySelect = $('f-pay');
+    PAY_STEPS.forEach(function (step) {
+      paySelect.appendChild(el('option', { value: String(step), text: money(step, 'USD', false) + ' or more' }));
+    });
+    if (roles.some(function (role) { return role.pay && role.pay.per === 'hour'; })) {
+      $('pay-hint').textContent += ' Hourly pay is compared at ' + HOURS_PER_YEAR.toLocaleString('en-US') + ' hours a year.';
+    }
+    if (roles.some(function (role) { return role.pay && role.pay.cur !== 'USD'; })) {
+      $('pay-hint').textContent += ' The minimum compares pay published in US dollars only.';
+    }
+  }
+
+  // Make the controls show `state` (after reading the address, or after "Clear all").
+  function syncControls() {
+    $('q').value = state.q;
+    $('sort').value = state.sort;
+    $('f-paid').checked = state.paid;
+    var paySelect = $('f-pay');
+    var custom = paySelect.querySelector('option[data-custom]');
+    if (custom) custom.remove();
+    if (state.pay > 0 && PAY_STEPS.indexOf(state.pay) === -1) {
+      paySelect.appendChild(el('option', { value: String(state.pay), 'data-custom': true, text: money(state.pay, 'USD', false) + ' or more' }));
+    }
+    paySelect.value = String(state.pay);
+    FACETS.forEach(function (facet) {
+      facet.options.forEach(function (option) { option.input.checked = state[facet.key].has(option.id); });
+      if (state[facet.key].size) facet.details.open = true;
+    });
+  }
+
+  // ---- Rendering --------------------------------------------------------------------------------
+
+  function tierBadge(company) {
+    var known = company.tier === 'core' || company.tier === 'enabling';
+    return el('span', { class: 'tier ' + (known ? 'tier-' + company.tier : 'tier-other'), text: labels.climate_tiers[company.tier] || company.tier });
+  }
+
+  function whereText(role) {
+    var places = (role.loc || []).slice(0, 3);
+    var extra = (role.loc || []).length - places.length;
+    var parts = places.slice();
+    if (extra > 0) parts.push('and ' + extra + ' more');
+    var workplace = role.wp ? labels.workplace[role.wp] : '';
+    var alreadySaid = role.wp === 'remote' && places.some(function (text) { return /remote/i.test(text); });
+    if (workplace && !alreadySaid) parts.push(workplace);
+    return parts.join(' · ') || 'Location not stated';
+  }
+
+  function roleNode(role) {
+    var company = role.company;
+    var companyButton = el('button', { type: 'button', class: 'co-btn', text: company.name, title: 'Show roles at ' + company.name });
+    companyButton.addEventListener('click', function () {
+      state.c = role.co;
+      update();
+      $('company').focus();   // the list was rebuilt, so put the keyboard at the company panel
+      window.scrollTo(0, 0);
+    });
+
+    var tags = el('ul', { class: 'tags', 'aria-label': 'Level and disciplines' });
+    if (role.level) tags.appendChild(el('li', { class: 'tag-level', text: labels.levels[role.level] || role.level }));
+    if (role.emp && role.emp !== 'full-time') tags.appendChild(el('li', { class: 'tag-level', text: { 'part-time': 'Part time', contract: 'Contract', intern: 'Internship' }[role.emp] || role.emp }));
+    (role.disc || []).forEach(function (id) { tags.appendChild(el('li', { text: labels.disciplines[id] || id })); });
+
+    var payNode;
+    if (role.pay) {
+      var parts = payParts(role.pay);
+      payNode = el('p', { class: 'pay' }, [parts[0] + ' ', el('span', { text: parts[1] })]);
+    } else {
+      payNode = el('p', { class: 'pay pay-none', text: 'Pay not stated' });
+    }
+    var dateIso = role.posted || role.seen;
+    var dateNode = el('p', { class: 'date' }, [
+      role.posted ? 'Posted ' : 'First seen ', el('time', { datetime: dateIso, text: formatDate(dateIso) })
+    ]);
+
+    return el('li', { class: 'role' }, [
+      el('div', { class: 'role-main' }, [
+        el('h3', null, [outLink(role.url, role.title, ' at ' + company.name + ' (opens the company’s own posting in a new tab)')]),
+        el('p', { class: 'role-co' }, [
+          companyButton, ' ', tierBadge(company), ' ',
+          company.reason ? el('span', { class: 'reason', text: company.reason }) : null
+        ]),
+        el('p', { class: 'where', text: whereText(role) }),
+        role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null,
+        tags.childNodes.length ? tags : null
+      ]),
+      el('div', { class: 'role-side' }, [payNode, dateNode])
+    ]);
+  }
+
+  function appendPage(moveFocus) {
+    var list = $('roles');
+    var fragment = document.createDocumentFragment();
+    var end = Math.min(shown + PAGE_SIZE, results.length);
+    var firstNew = null;
+    for (var i = shown; i < end; i++) {
+      var node = roleNode(results[i]);
+      if (!firstNew) firstNew = node;
+      fragment.appendChild(node);
+    }
+    list.appendChild(fragment);
+    shown = end;
+
+    var left = results.length - shown;
+    $('more').hidden = left === 0;
+    if (left > 0) {
+      $('more-btn').textContent = 'Show ' + Math.min(PAGE_SIZE, left) + ' more';
+      $('more-note').textContent = 'Showing ' + shown.toLocaleString('en-US') + ' of ' + results.length.toLocaleString('en-US');
+    }
+    if (moveFocus && firstNew) {
+      var target = firstNew.querySelector('a, button');
+      if (target) target.focus();
+    }
+  }
+
+  function renderList() {
+    var list = $('roles'), empty = $('state');
+    list.replaceChildren();
+    shown = 0;
+    if (!results.length) {
+      list.hidden = true;
+      $('more').hidden = true;
+      var clear = el('button', { type: 'button', class: 'btn', text: 'Clear search and filters' });
+      clear.addEventListener('click', clearAll);
+      setChildren(empty, [el('p', { text: roles.length ? 'No roles match this search and these filters.' : 'There are no roles on the board yet.' }), roles.length ? clear : null]);
+      empty.hidden = false;
+      return;
+    }
+    empty.hidden = true;
+    list.hidden = false;
+    appendPage(false);
+  }
+
+  function renderCount() {
+    var companies = new Set(results.map(function (role) { return role.co; })).size;
+    var filtered = results.length !== roles.length;
+    var node = $('count');
+    setChildren(node, [
+      el('strong', { text: results.length.toLocaleString('en-US') }),
+      filtered ? el('span', { class: 'wide', text: ' of ' + roles.length.toLocaleString('en-US') }) : null,
+      !filtered && roles.length === 1 ? ' role' : ' roles',
+      el('span', { class: 'wide', text: ' at ' + plural(companies, 'company', 'companies') })
+    ]);
+    $('sheet-done').textContent = 'Show ' + plural(results.length, 'role', 'roles');
+  }
+
+  function renderFacets(counts) {
+    FACETS.forEach(function (facet, index) {
+      var chosen = state[facet.key];
+      facet.options.forEach(function (option) {
+        var n = counts[index][option.id] || 0;
+        var isChosen = chosen.has(option.id);
+        option.countNode.textContent = n.toLocaleString('en-US');
+        option.row.classList.toggle('zero', n === 0 && !isChosen);
+        option.row.hidden = option.total === 0 && !isChosen;   // nothing on the board has this value
+      });
+      facet.badge.hidden = chosen.size === 0;
+      facet.badge.textContent = chosen.size ? String(chosen.size) : '';
+    });
+    var payActive = (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0);
+    $('facet-n-pay').hidden = payActive === 0;
+    $('facet-n-pay').textContent = payActive ? String(payActive) : '';
+    var active = activeCount();
+    $('filters-n').hidden = active === 0;
+    $('filters-n').textContent = active ? String(active) : '';
+    $('sheet-clear').hidden = active === 0 && !state.q && !state.c;
+  }
+
+  function renderChips() {
+    var host = $('chips');
+    var chips = [];
+    function chip(group, text, remove) {
+      var button = el('button', { type: 'button', class: 'chip', text: text, 'aria-label': 'Remove filter: ' + group + ' ' + text });
+      button.addEventListener('click', function () {
+        remove(); syncControls(); update();
+        var next = $('chips').querySelector('.chip');   // the chips were rebuilt: keep the keyboard nearby
+        (next || $('q')).focus();
+      });
+      chips.push(button);
+    }
+    if (state.c && board.companies[state.c]) chip('Company', board.companies[state.c].name, function () { state.c = ''; });
+    FACETS.forEach(function (facet) {
+      facet.options.forEach(function (option) {
+        if (state[facet.key].has(option.id)) {
+          var text = option.id === NONE ? facet.title + ': ' + option.label.toLowerCase() : option.label;
+          chip(facet.title, text, function () { state[facet.key].delete(option.id); });
+        }
+      });
+    });
+    if (state.pay > 0) chip('Pay', money(state.pay, 'USD', false) + ' or more', function () { state.pay = 0; });
+    if (state.paid) chip('Pay', 'Pay stated', function () { state.paid = false; });
+    if (chips.length) {
+      var clear = el('button', { type: 'button', class: 'chip chip-clear', text: 'Clear all' });
+      clear.addEventListener('click', clearAll);
+      chips.push(clear);
+    }
+    setChildren(host, chips);
+    host.hidden = chips.length === 0;
+  }
+
+  function renderCompany() {
+    var host = $('company');
+    var company = state.c ? board.companies[state.c] : null;
+    if (!company) { host.hidden = true; host.replaceChildren(); return; }
+    if (host.dataset.company === state.c && !host.hidden) return;
+    host.dataset.company = state.c;
+
+    var facts = el('dl');
+    function fact(term, node) { facts.appendChild(el('dt', { text: term })); facts.appendChild(el('dd', null, [node])); }
+    if (company.sectors && company.sectors.length) {
+      fact('Sector', company.sectors.map(function (id) { return labels.sectors[id] || id; }).join(', '));
+    }
+    if (company.stage) fact('Stage', labels.stages[company.stage] || company.stage);
+    if (company.hq) fact('Headquarters', company.hq);
+    if (isHttps(company.website)) fact('Website', outLink(company.website, company.website.replace(/^https:\/\/(www\.)?/i, '').replace(/\/$/, ''), ' (opens in a new tab)'));
+    if (isHttps(company.careers)) fact('Careers', outLink(company.careers, 'All openings on the company’s site', ' (opens in a new tab)'));
+
+    var back = el('button', { type: 'button', class: 'btn', text: 'Show all companies' });
+    back.addEventListener('click', function () { state.c = ''; update(); $('q').focus(); });
+    setChildren(host, [
+      el('div', { class: 'company-head' }, [el('h2', { text: company.name }), tierBadge(company)]),
+      company.reason ? el('p', { text: company.reason }) : null,
+      company.unlisted ? el('p', { class: 'hint', text: 'Not listed on the public board. Shown in this development build only.' }) : null,
+      facts.childNodes.length ? facts : null,
+      back
+    ]);
+    host.hidden = false;
+  }
+
+  function update() {
+    var outcome = runFilters();
+    results = rankRolesForPersona(sortRoles(outcome.matched), persona);
+    renderCount();
+    renderFacets(outcome.counts);
+    renderChips();
+    renderCompany();
+    renderList();
+    writeHash();
+  }
+
+  function clearAll() {
+    var sort = state.sort;
+    state = decodeState('');
+    state.sort = sort;
+    syncControls();
+    update();
+  }
+
+  // ---- Page furniture ---------------------------------------------------------------------------
+
+  function renderStatic() {
+    var stamp = $('stamp');
+    var day = formatDate(board.generated_at);
+    if (day) {
+      stamp.replaceChildren('Roles read ', el('time', { datetime: board.generated_at, text: day }));
+      stamp.hidden = false;
+    }
+    $('dev-banner').hidden = board.scope !== 'all';
+
+    var provisional = board.counts.companies_provisional, total = board.counts.companies;
+    if (provisional > 0) {
+      var scope = provisional === total ? 'each company' : provisional + ' of the ' + total + ' companies';
+      $('provisional-note').replaceChildren(
+        el('strong', { text: 'The company screen is provisional.' }),
+        ' The climate tier and reason shown for ' + scope + ' here are a first pass. They have not yet been checked against the company’s own site or approved.'
+      );
+      $('provisional-note').hidden = false;
+    }
+  }
+
+  function wireControls() {
+    $('q').addEventListener('input', function () {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () { state.q = $('q').value; update(); }, SEARCH_DELAY_MS);
+    });
+    $('filters').addEventListener('submit', function (event) { event.preventDefault(); });
+    $('sort').addEventListener('change', function () { state.sort = SORTS.indexOf($('sort').value) === -1 ? 'new' : $('sort').value; update(); });
+    $('f-pay').addEventListener('change', function () { state.pay = Number($('f-pay').value) || 0; update(); });
+    $('f-paid').addEventListener('change', function () { state.paid = $('f-paid').checked; update(); });
+    $('more-btn').addEventListener('click', function () { appendPage(true); });
+
+    // On a narrow screen the same filter form moves into a sheet and back.
+    var sheet = $('sheet'), form = $('filters');
+    $('filters-btn').addEventListener('click', function () {
+      $('sheet-body').appendChild(form);
+      if (typeof sheet.showModal === 'function') sheet.showModal(); else sheet.setAttribute('open', '');
+    });
+    // The form is put back here and again on the dialog's own `close` event (the Escape key),
+    // because that event can arrive late. Putting it back twice is harmless.
+    function restore() { if (form.parentElement !== $('sidebar')) $('sidebar').appendChild(form); }
+    function closeSheet() {
+      if (typeof sheet.close === 'function') { if (sheet.open) sheet.close(); } else sheet.removeAttribute('open');
+      restore();
+      $('filters-btn').focus();
+    }
+    sheet.addEventListener('close', restore);
+    sheet.addEventListener('click', function (event) { if (event.target === sheet) closeSheet(); });
+    $('sheet-close').addEventListener('click', closeSheet);
+    $('sheet-done').addEventListener('click', closeSheet);
+    $('sheet-clear').addEventListener('click', clearAll);
+    var wide = window.matchMedia('(min-width: 860px)');
+    var onWide = function (event) { if (event.matches) { if (sheet.open) closeSheet(); else restore(); } };
+    if (wide.addEventListener) wide.addEventListener('change', onWide); else wide.addListener(onWide);
+
+    window.addEventListener('hashchange', function () {
+      var hash = location.hash.replace(/^#/, '');
+      if (hash === lastHash) return;
+      state = decodeState(hash);
+      lastHash = hash;   // update() rewrites the address if this was not in normal form
+      syncControls();
+      update();
+    });
+  }
+
+  function fail(message) {
+    $('count').textContent = 'Roles did not load';
+    $('roles').hidden = true;
+    $('state').replaceChildren(el('p', { text: message }));
+    $('state').hidden = false;
+  }
+
+  function start() {
+    fetch(DATA_URL).then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    }).then(function (data) {
+      if (!data || data.board_version !== BOARD_VERSION || !Array.isArray(data.roles) || !data.companies || !data.taxonomy || !data.counts) {
+        throw new Error('unexpected data format');
+      }
+      prepare(data);
+      buildFilters();
+      renderStatic();
+      wireControls();
+      state = decodeState(location.hash);
+      syncControls();
+      update();
+    }).catch(function (error) {
+      fail('The role data did not load (' + (error && error.message ? error.message : 'unknown error') + '). Reload the page to try again.');
+    });
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>
