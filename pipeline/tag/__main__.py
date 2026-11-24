@@ -55,6 +55,10 @@ def main() -> int:
                         help="technician and trade roles (default: keep)")
     parser.add_argument("--hardest", type=int, default=0, help="print this many of the least certain titles")
     args = parser.parse_args()
+    # A Windows console may not encode every character in a title; print
+    # what it can rather than fail after the files are written.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(errors="replace")
 
     if not args.raw.exists():
         print(f"Raw file not found: {args.raw}", file=sys.stderr)
