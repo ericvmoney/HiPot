@@ -239,15 +239,34 @@ Borderline cases the screen must decide one by one, with the reason recorded: an
 Decided by Eric on 2026-11-23:
 
 1. **Name.** HiPot.
-2. **Gray-zone sectors.** In: fusion and fission; electric aviation that is not military or DoD. Out: autonomous vehicles, general robotics, data-center power, space. (Eric wrote "Fusion + Fusion"; read as fusion and fission, to be confirmed.)
+2. **Gray-zone sectors.** In: fusion and fission; electric aviation that is not military or DoD. Out: autonomous vehicles, general robotics, data-center power, space. ("Fusion + Fusion" meant fusion and fission; confirmed 2026-11-24.)
 3. **Startup definition.** Under 1,000 employees, and typically under 10 years old. Headcount is the hard line; age is a guide, so an older company under 1,000 people is flagged for a decision, not dropped automatically. This drops Rivian, Lucid, Tesla, Ford, Eaton, Cummins and Schneider. Redwood and Form Energy are near the headcount line and need a current figure.
 4. **Runtime.** `uv` and Python may be installed on this machine.
 
 Decided by Eric on 2026-11-24:
 
-5. **Role scope.** Cover the variety of roles at hardware companies, not only engineers (taxonomy version 1, section 5).
+5. **Role scope.** Cover the variety of roles at hardware companies, not only engineers (taxonomy version 1, section 5). Later the same day: corporate roles (sales, marketing, finance and legal, people and administration, IT) are brought in too, so every role type is listed.
 6. **Rippling.** Read Rippling boards (Aptera, AtmosZero, Torus), although Rippling's job-board documentation is behind a sign-in and its User Terms (section 2.2) prohibit automated extraction for use outside its services. Requests are spaced 6 seconds apart and stop on a 403 or 429. Recorded as a known risk in section 8.
 
 7. **Geography.** United States, every metropolitan area plus remote. Built 2026-11-24 from the Census Bureau's July 2023 delineations: 274 metro regions (162 combined statistical areas and 112 metropolitan areas outside any), with plant towns and suburbs placed by county (`tools/build_metros.py`, `pipeline/geo.py`). A role outside every metro is still found by state. Connecticut is not yet mapped: the 2023 delineations use its new planning regions, which the 2020 town files do not.
 
-Still open: none at the moment. Pending owner decisions on individual companies are in `data/screening/decisions-needed.md` once the scout delivers it.
+8. **Company screening rulings** (answers to `data/screening/decisions-needed.md`; applied by `tools/apply_screening.py`, change log `data/screening/applied-01.md`):
+   - A1. Drone delivery is electric aviation (Zipline, Wing in).
+   - A2. Clean products sold mainly to data centers are in for now (VEIR, Torus, Noon, the fission companies and others). Not ideal; to revisit. Products that run mainly on natural gas, and computing itself, stay out.
+   - A3. Defense business is fine so long as it is not the company's primary or only business (Xcimer, Pacific Fusion, Pyka, Pivotal, Regent in; Antares, H3X, Odys, Whisper, Elroy out).
+   - A4. Archer is in, despite about 1,160 employees.
+   - A5. Purely autonomous cars are out; transit-oriented autonomous electric vehicles are in (Glydways, Parallel Systems).
+   - A6. Robots built only to deploy solar are in for now. A6b. Mine operators are out (Mariana Minerals).
+   - A7. Mainspring is excluded for now (mostly natural gas today). A8. SENS is in.
+   - B1. Age is a guide, not a rule: older companies under 1,000 people are in.
+   - B2. Borderline headcount is included (Form Energy, Redwood, Commonwealth Fusion Systems). Applied as about 25 percent over the line at most; Scout Motors (Volkswagen subsidiary, about 1,250 and growing to 4,000), ChargePoint (1,440) and Atoms (2,000) stay out.
+   - B3. A company with no headcount figure is included.
+9. **Git commits** in this repository use Eric's personal GitHub account (ericvmoney, ericvmoney@gmail.com).
+
+Still open:
+
+10. **A sharper startup definition.** Eric asked for a proposal. Proposed, not yet agreed:
+    - **Independent:** not a subsidiary or division of a company with 1,000 or more people (this is what keeps Scout Motors and Wing-style units honest).
+    - **Under 1,000 people** on the latest dated figure, with about 25 percent tolerance (borderline, B2), and in when no figure exists (B3).
+    - **Still growing like a startup:** at least one of: founded within the last 15 years; raised venture or growth equity within the last 5 years; or public for less than 5 years.
+    - Reviewed once a quarter; a company that crosses a line gets a quarter's notice on the board before it leaves.

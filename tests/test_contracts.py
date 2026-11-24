@@ -101,8 +101,8 @@ def test_functions_are_complete_and_switchable():
     for entry in functions:
         assert entry["label"] and entry["covers"] and isinstance(entry["listed"], bool), entry["id"]
     listed = listed_functions(TAXONOMY)
-    assert {"engineering", "technician", "trades", "production", "supply-chain", "project-program"} <= listed
-    assert not {"sales-bd", "finance-legal", "people-admin"} & listed
+    # Every function is listed since 2026-11-24, when the owner brought corporate roles in.
+    assert listed == {entry["id"] for entry in functions}
     # Product and program moved from disciplines to functions in taxonomy version 1.
     assert not {"product", "program"} & {d["id"] for d in TAXONOMY["disciplines"]}
 

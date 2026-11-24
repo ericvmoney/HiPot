@@ -57,7 +57,8 @@ def test_every_role_is_kept_and_counted_by_function():
     summary = report["summary"]
     assert summary["postings"] == 5 and len(jobs_file["jobs"]) == 5 and len(report["records"]) == 5
     assert summary["by_function"] == {"engineering": 3, "finance-legal": 1, "sales-bd": 1}
-    assert summary["in_listed_functions"] == 3 and summary["in_unlisted_functions"] == 2
+    # Every function is listed since 2026-11-24 (corporate roles brought in by the owner).
+    assert summary["in_listed_functions"] == 5 and summary["in_unlisted_functions"] == 0
     backend = next(job for job in jobs_file["jobs"] if job["title"] == "Senior Backend Engineer")
     assert backend["disciplines"] == ["software"]
     mechanical = next(job for job in jobs_file["jobs"] if job["title"] == "Staff Mechanical Engineer")

@@ -9,12 +9,13 @@
 taxonomy_version: 1
 
 # Every role has exactly one function: the kind of work, whatever the field.
-# `listed: false` keeps a function's roles in jobs.json but off the public
+# `listed: false` would keep a function's roles in jobs.json but off the public
 # board; flipping it needs no re-tagging. Engineering and science roles carry
 # one to three disciplines; technician and trades roles carry one where the
 # title names a field ("electrical technician"); other functions may carry one.
 # Added in version 1 (2026-11-24) to cover the range of roles at hardware
-# companies, not only engineers.
+# companies, not only engineers. All functions are listed since 2026-11-24,
+# when the owner asked for corporate roles to be brought in.
 functions:
   - id: engineering
     label: Engineering
@@ -65,23 +66,23 @@ functions:
     covers: Product management for a physical product, industrial and product design, user research for hardware.
   - id: sales-bd
     label: Sales and business development
-    listed: false
+    listed: true
     covers: Sales, business development, origination, account management, customer success. Sales and applications engineers are engineering with the field discipline.
   - id: marketing
     label: Marketing and communications
-    listed: false
+    listed: true
     covers: Marketing, brand, communications, content, community and policy advocacy.
   - id: finance-legal
     label: Finance, legal and strategy
-    listed: false
+    listed: true
     covers: Finance, accounting, legal, strategy, corporate development, investor relations, land and permitting.
   - id: people-admin
     label: People and administration
-    listed: false
+    listed: true
     covers: Human resources, recruiting, office and executive administration.
   - id: it
     label: IT and security
-    listed: false
+    listed: true
     covers: Corporate IT, help desk, enterprise systems and corporate security.
     watch: Product software, data and cybersecurity of the product are engineering.
 

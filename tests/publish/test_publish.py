@@ -104,25 +104,38 @@ def test_include_unlisted_keeps_everything_and_says_so():
         assert bool(record.get("unlisted")) is (cid not in LISTED_IDS)
 
 
-def test_the_corporate_functions_are_unlisted_today():
-    # If this fails, taxonomy.yml changed which functions are listed: check the board still says the right thing.
-    assert {"sales-bd", "marketing", "finance-legal", "people-admin", "it"} <= UNLISTED_FUNCTIONS
-    assert "engineering" in LISTED_FUNCTIONS
+def test_every_function_is_listed_today():
+    # The owner asked on 2026-11-24 for corporate roles to be brought in, so every
+    # function is listed. If this fails, taxonomy.yml hid one again: check that the
+    # board's "How this board is built" text still says the right thing.
+    assert UNLISTED_FUNCTIONS == set()
+    assert {"engineering", "sales-bd", "finance-legal"} <= LISTED_FUNCTIONS
 
 
-@pytest.mark.parametrize("function", sorted(UNLISTED_FUNCTIONS))
+def taxonomy_hiding(*hidden: str) -> dict:
+    """A copy of the taxonomy with some functions switched to listed: false."""
+    taxonomy = copy.deepcopy(TAXONOMY)
+    for entry in taxonomy["functions"]:
+        if entry["id"] in hidden:
+            entry["listed"] = False
+    return taxonomy
+
+
+@pytest.mark.parametrize("function", ["sales-bd", "marketing", "finance-legal", "people-admin", "it"])
 def test_a_role_in_an_unlisted_function_never_appears_by_default(function):
+    # No function is unlisted today, so the switch is exercised on a modified copy.
+    taxonomy = taxonomy_hiding(function)
     reg = registry([company("alpha", "core", "in")])
     jobs = [job("a1", "alpha"), job("a2", "alpha", function=function, title="Account Executive, Utilities")]
-    board = build_board(jobs_file(jobs), reg, TAXONOMY)
+    board = build_board(jobs_file(jobs), reg, taxonomy)
     assert [role["id"] for role in board["roles"]] == ["a1"]
     assert "Account Executive" not in dumps_board(board)
     assert board["counts"]["left_out_function"] == 1 and board["counts"]["left_out_company"] == 0
     assert board["counts"]["functions"][function] == 0
     # The development build keeps it, and the taxonomy block marks the function as unlisted.
-    dev = build_board(jobs_file(jobs), reg, TAXONOMY, include_unlisted=True)
+    dev = build_board(jobs_file(jobs), reg, taxonomy, include_unlisted=True)
     assert sorted(role["id"] for role in dev["roles"]) == ["a1", "a2"]
-    assert {"id": function, "label": next(f["label"] for f in TAXONOMY["functions"] if f["id"] == function),
+    assert {"id": function, "label": next(f["label"] for f in taxonomy["functions"] if f["id"] == function),
             "listed": False} in dev["taxonomy"]["functions"]
 
 
