@@ -138,7 +138,12 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .loc-find { display: flex; flex-direction: column; gap: 6px; padding-bottom: 6px; }
 .loc-find .input { min-height: 38px; padding-block: 6px; font-size: 14px; }
 .opt-head { padding: 10px 0 2px; }
-.loc-more { align-self: flex-start; min-height: 36px; padding-inline: 0; }
+.loc-list {
+  display: block; max-height: 320px; overflow-y: auto; overscroll-behavior: contain;   /* block: flex rows would shrink */
+  margin-top: 4px; padding: 0 8px 6px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card);
+}
+.loc-list .opt { font-size: 13.5px; gap: 8px; }
+.loc-list .opt-head { position: sticky; top: 0; z-index: 1; background: var(--card); padding: 8px 0 6px; }
 @media (pointer: coarse) { .opt { min-height: 44px; } }
 
 /* Controls: pills, as in the hub */
@@ -213,10 +218,17 @@ body::before {
 .co-head .co-n { font-size: 13px; color: var(--muted); }
 .co-head .reason { font-size: 13px; color: var(--muted); flex-basis: 100%; }
 .role {
+  position: relative;
   display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px;
   background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px;
 }
 .role:hover { border-color: var(--ink); }
+/* Stretched link: the title's link covers the whole card, so a click anywhere opens the posting.
+   The company button and "From the posting" sit above it and keep their own actions. */
+.role h3 a::after { content: ""; position: absolute; inset: 0; border-radius: 10px; z-index: 0; }
+.role h3 a:focus-visible { outline: none; }
+.role h3 a:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 2px; }
+.role .co-btn, .role .summary { position: relative; z-index: 1; }
 .role-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .role h3 { font-size: 16px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
 .role h3 a { text-decoration: none; }
@@ -416,7 +428,6 @@ body::before {
   var BOARD_VERSION = 0;
   var PAGE_SIZE = 50;
   var COMPANY_ORDER = new Intl.Collator('en', { sensitivity: 'base' });
-  var LOCATION_SHORT_LIST = 6;   // metro areas, and states, shown before "Show all"
   var STATE_PREFIX = '*st-';     // location option ids for states: '*st-co'
   var SEARCH_DELAY_MS = 140;
   var HOURS_PER_YEAR = 2080;   // hourly pay is compared with the minimum-pay filter at this many hours
@@ -633,7 +644,7 @@ body::before {
         (role.loc || []).forEach(function (text) { places[id][text] = true; });
       });
     });
-    var rank = { metro: 0, state: 0 };
+    var counts = { metro: 0, state: 0 };
     facet.options.forEach(function (option) {
       var words = [option.label];
       if (option.kind === 'state') words.push(option.code);
@@ -644,9 +655,9 @@ body::before {
       }
       if (option.kind !== 'top') words = words.concat(Object.keys(places[option.id] || {}));
       option.search = fold(words.join(' \n '));
-      option.rank = option.total > 0 && rank[option.kind] !== undefined ? rank[option.kind]++ : 0;
+      if (option.total > 0 && counts[option.kind] !== undefined) counts[option.kind] += 1;
     });
-    facet.locationCounts = rank;
+    facet.locationCounts = counts;
   }
 
   // ---- Filter state in the URL fragment -------------------------------------------------------
@@ -808,10 +819,13 @@ body::before {
       if (facet.key === 'm') buildLocationTools(facet, box);
       var lastKind = null;
       facet.options.forEach(function (option) {
+        // Location: Remote and "outside any metro" stay in view; metro areas and states scroll.
+        var into = facet.key === 'm' && option.kind !== 'top' ? facet.scroller : box;
         if (facet.key === 'm' && option.kind !== lastKind && option.kind !== 'top') {
-          var head = el('p', { class: 'opt-head mono', text: option.kind === 'metro' ? 'Metro areas' : 'States' });
+          var n = facet.locationCounts[option.kind];
+          var head = el('p', { class: 'opt-head mono', text: (option.kind === 'metro' ? 'Metro areas' : 'States') + ' · ' + n });
           facet.heads[option.kind] = head;
-          box.appendChild(head);
+          into.appendChild(head);
         }
         lastKind = option.kind;
         var input = el('input', { type: 'checkbox', id: optionDomId(facet, option.id) });
@@ -824,9 +838,9 @@ body::before {
         option.row = el('label', { class: 'opt', for: input.id }, [
           input, el('span', { class: 'opt-label', text: option.label }), option.countNode
         ]);
-        box.appendChild(option.row);
+        into.appendChild(option.row);
       });
-      if (facet.key === 'm') { box.appendChild(facet.noMatch); box.appendChild(facet.moreButton); }
+      if (facet.key === 'm') { box.appendChild(facet.scroller); box.appendChild(facet.noMatch); }
       facet.badge = el('span', { class: 'facet-n', hidden: true });
       facet.details = el('details', { class: 'facet', id: 'facet-' + facet.key, open: facet.open }, [
         el('summary', null, [el('span', { class: 'mono', text: facet.title }), ' ', facet.badge]), box
@@ -848,7 +862,6 @@ body::before {
 
   function buildLocationTools(facet, box) {
     facet.heads = {};
-    facet.expanded = false;
     facet.find = el('input', {
       class: 'input', id: 'f-m-find', type: 'search', placeholder: 'City, metro area or state',
       autocomplete: 'off', spellcheck: 'false', maxlength: '60'
@@ -856,35 +869,27 @@ body::before {
     facet.find.addEventListener('input', function () { showLocations(facet); });
     box.appendChild(el('div', { class: 'loc-find' }, [el('label', { class: 'mono', for: 'f-m-find', text: 'Find a place' }), facet.find]));
     facet.noMatch = el('p', { class: 'hint', text: 'No place on the board matches.', hidden: true });
-    facet.moreButton = el('button', { type: 'button', class: 'btn btn-quiet loc-more', 'aria-controls': 'facet-m' });
-    facet.moreButton.addEventListener('click', function () { facet.expanded = !facet.expanded; showLocations(facet); });
+    facet.scroller = el('div', { class: 'loc-list', role: 'group', 'aria-label': 'Metro areas and states' });
   }
 
-  // Which location options to show: chosen ones always; otherwise those matching the place search,
-  // or, with no search, the busiest few of each kind until "Show all".
+  // Which location options to show: every place with roles, sorted by role count, narrowed by the
+  // place search. Ticked places always stay visible.
   function showLocations(facet) {
     var words = fold(facet.find.value).split(/\s+/).filter(Boolean);
-    var chosen = state.m, shownByKind = { metro: 0, state: 0 }, hiddenCount = 0, matches = 0;
+    var chosen = state.m, shownByKind = { metro: 0, state: 0 }, matches = 0;
     facet.options.forEach(function (option) {
       var visible;
       if (chosen.has(option.id)) visible = true;
       else if (option.total === 0) visible = false;
       else if (words.length) visible = words.every(function (word) { return option.search.indexOf(word) !== -1; });
-      else if (option.kind === 'top') visible = true;
-      else visible = facet.expanded || option.rank < LOCATION_SHORT_LIST;
-      if (!visible && !words.length && option.total > 0 && option.kind !== 'top') hiddenCount += 1;
+      else visible = true;
       if (visible && option.kind !== 'top') shownByKind[option.kind] += 1;
       if (visible && words.length) matches += 1;
       option.row.hidden = !visible;
     });
     Object.keys(facet.heads).forEach(function (kind) { facet.heads[kind].hidden = shownByKind[kind] === 0; });
+    facet.scroller.hidden = shownByKind.metro + shownByKind.state === 0;
     facet.noMatch.hidden = !(words.length && matches === 0);
-    var counts = facet.locationCounts;
-    facet.moreButton.hidden = words.length > 0 || (!facet.expanded && hiddenCount === 0);
-    facet.moreButton.textContent = facet.expanded
-      ? 'Show fewer places'
-      : 'Show all ' + plural(counts.metro, 'metro area', 'metro areas') + ' and ' + plural(counts.state, 'state', 'states');
-    facet.moreButton.setAttribute('aria-expanded', facet.expanded ? 'true' : 'false');
   }
 
   // Make the controls show `state` (after reading the address, or after "Clear all").
@@ -1155,6 +1160,11 @@ body::before {
 
   // ---- Page furniture ---------------------------------------------------------------------------
 
+  // A label lower-cased for use mid-sentence, leaving initialisms such as "IT" alone.
+  function midSentence(label) {
+    return label.charAt(1) === label.charAt(1).toUpperCase() ? label : label.charAt(0).toLowerCase() + label.slice(1);
+  }
+
   // "24 Nov 2026, 14:28" in the visitor's own time zone.
   function formatStamp(iso) {
     var when = new Date(iso);
@@ -1175,15 +1185,15 @@ body::before {
     $('stats').hidden = false;
     $('dev-banner').hidden = board.scope !== 'all';
 
-    var hidden = (board.taxonomy.functions || []).filter(function (entry) { return entry.listed === false; })
-      .map(function (entry) {
-        // Lower-case the first letter for mid-sentence use, but leave initialisms such as "IT" alone.
-        var label = entry.label;
-        return label.charAt(1) === label.charAt(1).toUpperCase() ? label : label.charAt(0).toLowerCase() + label.slice(1);
-      });
+    var functions = board.taxonomy.functions || [];
+    var hidden = functions.filter(function (entry) { return entry.listed === false; })
+      .map(function (entry) { return midSentence(entry.label); });
     if (hidden.length) {
       // Labels can contain commas ("finance, legal and strategy"), so the list is separated by semicolons.
-      $('unlisted-functions').textContent = 'Corporate roles are not listed: ' + hidden.join('; ') + '.';
+      $('unlisted-functions').textContent = 'Some role types are not listed: ' + hidden.join('; ') + '.';
+    } else if (functions.length) {
+      $('unlisted-functions').textContent = 'Every role type is listed, from ' + midSentence(functions[0].label) +
+        ' to ' + midSentence(functions[functions.length - 1].label) + '.';
     }
 
     var provisional = board.counts.companies_provisional, total = board.counts.companies;

@@ -117,9 +117,11 @@ def test_role_type_hues_live_in_the_stylesheet():
     }
 
 
-def test_location_filter_is_searchable_shortened_and_covers_states():
-    # Hundreds of metros exist: the list is ordered by role count, shortened, and searchable.
-    assert "var LOCATION_SHORT_LIST = 6;" in SCRIPT
+def test_location_filter_lists_every_place_in_a_searchable_scrolling_list():
+    # Every metro area and state with roles is listed, by role count, in a scrolling box with a search.
+    assert "LOCATION_SHORT_LIST" not in SCRIPT and "moreButton" not in SCRIPT
+    assert "facet.scroller = el('div', { class: 'loc-list'" in SCRIPT
+    assert re.search(r"\.loc-list \{[^}]*max-height: 320px; overflow-y: auto;", STYLE)
     assert "id: 'f-m-find', type: 'search'" in SCRIPT
     assert "(b.total - a.total)" in SCRIPT
     # States are location options in their own right, kept in the address as 'state-xx'.
@@ -127,6 +129,23 @@ def test_location_filter_is_searchable_shortened_and_covers_states():
     assert "states.forEach(function (code) { places.push(STATE_PREFIX + code); });" in SCRIPT
     # Long Census labels wrap rather than push the page wider.
     assert ".opt-label { flex: 1; min-width: 0; overflow-wrap: anywhere; }" in STYLE
+
+
+def test_whole_card_opens_the_posting_through_one_stretched_link():
+    # One real link per card (the title), stretched over the card; nothing interactive inside the link.
+    assert '.role h3 a::after { content: ""; position: absolute; inset: 0;' in STYLE
+    assert re.search(r"\.role \{\s*position: relative;", STYLE)
+    # The company button and "From the posting" sit above the stretched link and keep their own actions.
+    assert ".role .co-btn, .role .summary { position: relative; z-index: 1; }" in STYLE
+    # Keyboard focus on the title outlines the whole card.
+    assert ".role h3 a:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 2px; }" in STYLE
+    assert SCRIPT.count("href:") == 1
+
+
+def test_listed_role_types_sentence_follows_the_taxonomy():
+    assert "entry.listed === false" in SCRIPT
+    assert "'Every role type is listed, from '" in SCRIPT
+    assert "Corporate roles are not listed" not in PAGE
 
 
 def test_no_newline_inside_a_script_string():
