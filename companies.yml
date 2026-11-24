@@ -1,0 +1,1943 @@
+# HiPot company registry.
+#
+# Seeded from the old personal job hub on 2026-11-23. A company's roles are listed
+# only when climate.tier is core or enabling AND startup.status is in.
+#
+# climate.basis 'provisional' means a first pass from general knowledge that has
+# not been checked against the company's own site. Nothing here is approved yet.
+#
+# Owned by workstream A2 (company scout). New companies arrive as proposals in
+# data/screening/ and are added here only after approval.
+
+registry_version: 0
+companies:
+- id: 1-arc-power
+  name: 1 Arc Power
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: 1stavenuepower
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: advanced-energy
+  name: Advanced Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large public company.
+- id: aerovect
+  name: AeroVect
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: AeroVect
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous vehicles (airport ground equipment). Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: albedo
+  name: Albedo
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: albedo
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Satellite imaging. Out by decision on space.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: also
+  name: ALSO
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: Ridealso
+  read: auto
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric micromobility, spun out of Rivian.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Young spin-out, believed well under 1,000 people. Confirm.
+- id: alsym-energy
+  name: Alsym Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Non-lithium battery cells.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Around the 10-year mark. Its own board has not been located.
+  notes: The old hub read this company through LinkedIn only; its own board has not been located.
+- id: amperesand
+  name: Amperesand
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: amperesand
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: antora-energy
+  name: Antora Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: antora
+  read: auto
+  sectors:
+  - industrial-heat
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Thermal batteries for industrial heat and power.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: aptera
+  name: Aptera
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: aptera
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Solar-assisted electric vehicle.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: archer
+  name: Archer
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: archer56
+  read: auto
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric vertical-takeoff aircraft. Has a defense program alongside the civil one, so this is a borderline
+      case for Eric.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Public; headcount may exceed 1,000.
+- id: atmoszero
+  name: AtmosZero
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: atmoszero-careers
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electric heat-pump boilers for industrial steam.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: atomic-machines
+  name: Atomic Machines
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: atomicmachines
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: atoms
+  name: Atoms
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: atoms
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: base-power
+  name: Base Power
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: base-power
+  read: auto
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Home batteries operated as a distributed power plant.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Young company, believed under 1,000 people but growing fast. Confirm.
+- id: bedrock-robotics
+  name: Bedrock Robotics
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: bedrock-robotics
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous construction equipment. Out by decision on robotics.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: boom-supersonic
+  name: Boom Supersonic
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: boom-supersonic
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Supersonic jet. No credible climate case.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: canadian-solar
+  name: Canadian Solar
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: workday
+    board: canadiansolar
+  read: manual
+  sectors:
+  - solar
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules and storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large public company.
+- id: chargepoint
+  name: ChargePoint
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: EV charging hardware and network.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Believed above 1,000 people and older than 10 years. Likely out.
+- id: charm-industrial
+  name: Charm Industrial
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: charmindustrial
+  read: auto
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon removal by bio-oil sequestration.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: clearway-energy-group
+  name: Clearway Energy Group
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: clearwayjobs
+  read: auto
+  sectors:
+  - solar
+  - wind
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Renewable developer and owner.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large developer.
+- id: crusoe
+  name: Crusoe
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: Crusoe
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Data-center power and compute. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: cummins
+  name: Cummins
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: dexmate
+  name: Dexmate
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: dexmate
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: General robotics. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: eaton
+  name: Eaton
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: eightfold
+    board: eaton
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: electric-hydrogen
+  name: Electric Hydrogen
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrolyzer plants for green hydrogen.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed under 1,000 people. Confirm.
+- id: energy-vault
+  name: Energy Vault
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: EnergyVault
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Grid storage systems.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Public; headcount unknown.
+- id: enphase
+  name: Enphase
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - solar
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar microinverters and home storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large public company.
+- id: fervo-energy
+  name: Fervo Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: fervoenergy
+  read: auto
+  sectors:
+  - geothermal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Enhanced geothermal power.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed under 1,000 people. Confirm.
+- id: ford
+  name: Ford
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: form-energy
+  name: Form Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: formenergy
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Iron-air long-duration storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Headcount is near 1,000. Needs a current figure.
+- id: formlabs
+  name: Formlabs
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 3D printers. No climate case.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: generac
+  name: Generac
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+  notes: The old hub read this company through LinkedIn only; its own board has not been located.
+- id: glydways
+  name: Glydways
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: glydways
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: gram
+  name: GRAM
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: gram
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: h3x-technologies
+  name: H3X Technologies
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: h3x-technologies
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: humble-robotics
+  name: Humble Robotics
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: humble-robotics
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: General robotics. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: inferra
+  name: inferra
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: inferra
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: invenergy
+  name: Invenergy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: workday
+    board: invenergyllc
+  read: manual
+  sectors:
+  - solar
+  - wind
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Renewable developer. Also owns gas plants.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large developer.
+- id: kodiak
+  name: Kodiak
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: kodiak
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous trucking. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: lightship
+  name: Lightship
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: lightship
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric travel trailers.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: lucid-motors
+  name: Lucid Motors
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric vehicles.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Far above 1,000 people.
+- id: lunar-energy
+  name: Lunar Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: lunarenergy
+  read: auto
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Home battery and energy management.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed under 1,000 people. Confirm.
+- id: lunar-outpost
+  name: Lunar Outpost
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: bamboohr
+    board: lunaroutpost
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Lunar rovers. Out by decision on space.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: mainspring-energy
+  name: Mainspring Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: mainspringenergy
+  read: auto
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Fuel-flexible linear generators. Listed as Core in the plan; check the fuel mix actually deployed.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Believed under 1,000 people but older than 10 years. Eric to decide.
+- id: merlin-labs
+  name: Merlin Labs
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: merlinlabs
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous flight for defense and cargo aircraft.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: motional
+  name: Motional
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous vehicles. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: mytra
+  name: Mytra
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: mytra
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Warehouse robotics. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: nexamp
+  name: Nexamp
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors:
+  - solar
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Community solar and storage developer.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Older than 10 years; headcount unknown.
+- id: noon-energy
+  name: Noon Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: noonenergy
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Long-duration energy storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: nuro
+  name: Nuro
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous vehicles. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: on-energy
+  name: ON.energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: onenergy
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Data-center power. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: oshkosh
+  name: Oshkosh
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: workday
+    board: oshkoshcorporation
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: outrider
+  name: Outrider
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: outrider
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous yard trucks. Out by decision on autonomous vehicles, though the trucks are electric.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: pacific-fusion
+  name: Pacific Fusion
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: pacificfusion
+  read: auto
+  sectors:
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Fusion energy. In by Eric's decision on fusion and fission.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Young company, believed well under 1,000 people. Confirm.
+- id: peak-energy
+  name: Peak Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-ion grid storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Young company, believed well under 1,000 people. Confirm.
+- id: piaggio-fast-forward
+  name: Piaggio Fast Forward
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: piaggiofastforward
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Following robots. Out by decision on robotics.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: planted
+  name: Planted
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: planted
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: pronto
+  name: Pronto
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: pronto
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous haul trucks. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: proper-voltage
+  name: Proper Voltage
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: proper-voltage
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: qcells
+  name: Qcells
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Division of a large conglomerate.
+- id: rai-institute
+  name: RAI Institute
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: rai
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotics research. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: redwood-materials
+  name: Redwood Materials
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: redwoodmaterials
+  read: auto
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery recycling and cathode materials.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Headcount is near or above 1,000. Needs a current figure.
+- id: reliable-robotics
+  name: Reliable Robotics
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: reliable-robotics
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous flight systems for conventional aircraft.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: renesas
+  name: Renesas
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: res
+  name: RES
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - wind
+  - solar
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Renewable developer and contractor.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large and decades old.
+- id: rivian
+  name: Rivian
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric vehicles.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Far above 1,000 people.
+- id: rivian-and-volkswagen-group-technologies
+  name: Rivian and Volkswagen Group Technologies
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: rivianvw.tech
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Vehicle software and electronics joint venture.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Joint venture of two large carmakers; believed above 1,000 people.
+- id: rondo-energy
+  name: Rondo Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: rondoenergy
+  read: auto
+  sectors:
+  - industrial-heat
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Heat batteries for industrial process heat.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: schneider-electric
+  name: Schneider Electric
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: scout-motors
+  name: Scout Motors
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: scoutmotors
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric trucks and SUVs.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Volkswagen Group subsidiary; headcount may exceed 1,000.
+- id: serve-robotics
+  name: Serve Robotics
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: serverobotics
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Sidewalk delivery robots. Out by decision on robotics.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: skydio
+  name: Skydio
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: skydio
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Drones, largely for defense and public safety.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: null
+- id: solid-power
+  name: Solid Power
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: solidpower
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state battery cells and electrolyte.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Public and older than 10 years, believed under 1,000 people.
+- id: solv-energy
+  name: SOLV Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: workday
+    board: solvenergy
+  read: manual
+  sectors:
+  - solar
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar and storage construction.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large contractor.
+- id: span
+  name: SPAN
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: span
+  read: auto
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Smart electrical panels for home electrification.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed under 1,000 people. Confirm.
+- id: spinor-energy
+  name: Spinor Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: ashby
+    board: spinorenergy
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: stafl-systems
+  name: Stafl Systems
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: staflsystems
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: adp
+    board: null
+  read: manual
+  sectors:
+  - components
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Industrial battery chargers and DC power systems. Much of the business backs up engine generators; check.
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: Small, but decades old.
+- id: tau-motors
+  name: Tau Motors
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: null
+    approved: false
+  startup:
+    status: unscreened
+    reason: null
+- id: terawatt-infrastructure
+  name: Terawatt Infrastructure
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: terawattinfrastructure
+  read: auto
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Charging sites for electric fleets.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: tesla
+  name: Tesla
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: manual
+  sectors:
+  - ev
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric vehicles and storage.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Far above 1,000 people.
+- id: torus
+  name: Torus
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: torus
+  read: manual
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Flywheel and battery storage systems.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: urban-sky
+  name: Urban Sky
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: rippling
+    board: urban-sky
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Stratospheric balloon imaging. No climate case; closest to the space decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: ursa-major
+  name: Ursa Major
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Rocket propulsion and defense.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: null
+- id: veir
+  name: VEIR
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: veir
+  read: auto
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Superconducting power lines. Check how much of the business is now data-center power, which is out.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Believed well under 1,000 people. Confirm.
+- id: woodward
+  name: Woodward
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: workday
+    board: woodward
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: Large incumbent.
+- id: xcimer-energy
+  name: Xcimer Energy
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: xcimer
+  read: auto
+  sectors:
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Laser-driven fusion energy. In by Eric's decision on fusion and fission.
+    basis: provisional
+    approved: false
+  startup:
+    status: in
+    reason: Young company, believed well under 1,000 people. Confirm.
+- id: zipline
+  name: Zipline
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: greenhouse
+    board: null
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: unscreened
+    reason: null
+    basis: provisional
+    approved: false
+  startup:
+    status: review
+    reason: 'Electric drone delivery: robotics (out) or electric aviation (in)? Eric to decide. Headcount may exceed
+      1,000.'
+- id: zoox
+  name: Zoox
+  website: null
+  careers_url: null
+  hq: null
+  ats:
+    type: lever
+    board: zoox
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous vehicles. Out by decision.
+    basis: provisional
+    approved: false
+  startup:
+    status: out
+    reason: null

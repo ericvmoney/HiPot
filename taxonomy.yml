@@ -1,0 +1,136 @@
+# HiPot taxonomy, version 0.
+#
+# Every id used in jobs, companies and personas must appear here. The JSON
+# schemas only check that an id is a well-formed slug; `tools/validate.py`
+# checks membership against this file.
+#
+# Owned by the supervisor. Workstream A3 proposes changes; nobody else edits it.
+
+taxonomy_version: 0
+
+disciplines:
+  - id: systems
+    label: Systems
+    covers: Requirements, architecture, interfaces, integration, safety cases, verification planning.
+  - id: electrical
+    label: Electrical
+    covers: Board design, harness, high and low voltage distribution, electrical integration.
+  - id: power-electronics
+    label: Power electronics
+    covers: Converters, inverters, chargers, magnetics, gate drives.
+  - id: battery
+    label: Battery and cell
+    covers: Cell, module and pack engineering, battery management, electrochemistry applied to product.
+  - id: power-systems
+    label: Power systems and grid
+    covers: Interconnection, protection, studies, substation and plant electrical design.
+    watch: The title "power systems engineer" also means utility studies at non-hardware firms.
+  - id: mechanical
+    label: Mechanical
+    covers: Mechanical design, structures, mechanisms, enclosures, packaging.
+  - id: thermal
+    label: Thermal and fluids
+    covers: Thermal management, heat transfer, fluid systems, HVAC and refrigeration cycles.
+  - id: controls
+    label: Controls
+    covers: Control algorithms, modelling and simulation, plant controls for the company's own product.
+    watch: The title "controls engineer" also means PLC work for factory automation, which belongs in manufacturing.
+  - id: firmware
+    label: Firmware and embedded
+    covers: Embedded software, firmware, real-time systems, device drivers, bootloaders.
+    watch: The title "firmware engineer" also appears at storage-silicon and consumer-device firms.
+  - id: software
+    label: Software for hardware
+    covers: Test automation, tools, SCADA, energy management, fleet and device software tied to a physical product.
+  - id: test
+    label: Test and validation
+    covers: Design verification, hardware-in-the-loop, reliability, test equipment and fixtures.
+  - id: manufacturing
+    label: Manufacturing and process
+    covers: Manufacturing, process and industrial engineering, new product introduction, factory automation.
+  - id: chemical-process
+    label: Chemical and process
+    covers: Process design and scale-up for electrolyzers, fuels, carbon removal, materials refining.
+  - id: materials
+    label: Materials and R&D
+    covers: Materials science, electrochemistry and physics research roles tied to a hardware product.
+  - id: quality
+    label: Quality, safety and compliance
+    covers: Quality, product safety, certification, regulatory compliance.
+  - id: field
+    label: Field and applications
+    covers: Commissioning, field service, applications engineering, customer deployment.
+  - id: product
+    label: Hardware product
+    covers: Product management for a physical product.
+  - id: program
+    label: Program and project
+    covers: Technical program and project management for hardware development or deployment.
+
+levels:
+  - {id: intern, label: Intern or co-op}
+  - {id: entry, label: Entry}
+  - {id: mid, label: Mid}
+  - {id: senior, label: Senior}
+  - {id: staff, label: Staff or lead}
+  - {id: principal, label: Principal or architect}
+  - {id: manager, label: Manager}
+  - {id: director, label: Director or head}
+  - {id: executive, label: VP and above}
+# A job's level is null when the title does not state one.
+
+sectors:
+  - {id: energy-storage, label: Energy storage}
+  - {id: solar, label: Solar}
+  - {id: wind, label: Wind}
+  - {id: grid, label: Grid and transmission}
+  - {id: distributed-generation, label: Distributed generation and microgrids}
+  - {id: geothermal, label: Geothermal}
+  - {id: fusion, label: Fusion}
+  - {id: fission, label: Fission}
+  - {id: hydrogen, label: Hydrogen and clean fuels}
+  - {id: ev, label: Electric vehicles}
+  - {id: charging, label: Charging}
+  - {id: electric-aviation, label: Electric aviation (civil)}
+  - {id: electric-mobility, label: "Other electric mobility (micromobility, marine, rail, off-road)"}
+  - {id: buildings, label: Buildings and home electrification}
+  - {id: industrial-heat, label: Industrial heat and process}
+  - {id: carbon-removal, label: Carbon removal and capture}
+  - {id: battery-materials, label: Battery materials and recycling}
+  - {id: components, label: "Enabling components (motors, power semiconductors, cables)"}
+
+stages:
+  - {id: pre-seed, label: Pre-seed}
+  - {id: seed, label: Seed}
+  - {id: series-a, label: Series A}
+  - {id: series-b, label: Series B}
+  - {id: series-c, label: Series C}
+  - {id: late, label: Series D and later}
+  - {id: public, label: Public}
+  - {id: subsidiary, label: Subsidiary or spin-out}
+# A company's stage is null until someone has checked it.
+
+workplace:
+  - {id: onsite, label: On site}
+  - {id: hybrid, label: Hybrid}
+  - {id: remote, label: Remote}
+  - {id: unknown, label: Not stated}
+
+# Starting set only: the four metros the old hub tracked. Workstream A1
+# proposes the full list with the location parser.
+metros:
+  - {id: sf-bay-area, label: San Francisco Bay Area}
+  - {id: san-diego, label: San Diego}
+  - {id: denver, label: Denver and Front Range}
+  - {id: boston, label: Boston area}
+
+climate_tiers:
+  - {id: core, label: Core, listed: true}
+  - {id: enabling, label: Enabling, listed: true}
+  - {id: out, label: Out, listed: false}
+  - {id: unscreened, label: Not yet screened, listed: false}
+
+# How the old hub's tags map onto this taxonomy. Used only by the seed import.
+seed_maps:
+  old_hub_profiles: {sys: systems, elec: electrical, mech: mechanical, test: test, prod: product}
+  old_hub_where: {sf: sf-bay-area, sd: san-diego, denver: denver, boston: boston}

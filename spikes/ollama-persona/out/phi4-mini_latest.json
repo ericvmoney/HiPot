@@ -1,0 +1,151 @@
+{
+ "model": "phi4-mini:latest",
+ "wall_seconds": 95.2,
+ "load_seconds": 31.0,
+ "prompt_tokens": 969,
+ "output_tokens": 1118,
+ "tokens_per_second": 22.5,
+ "valid_json": true,
+ "schema_problems": [],
+ "skills": 17,
+ "skills_with_verbatim_evidence": 17,
+ "identity_leaks": [],
+ "persona": {
+  "persona_version": 0,
+  "generated": {
+   "by": "ollama/phi4-mini:latest",
+   "on_device": true,
+   "date": "2026-11-23",
+   "reviewed": false
+  },
+  "disciplines": [
+   "systems",
+   "electrical",
+   "power-electronics",
+   "battery"
+  ],
+  "level": "staff",
+  "domains": [
+   "energy-storage",
+   "grid",
+   "electric-aviation"
+  ],
+  "skills": [
+   {
+    "name": "MATLAB",
+    "years": 7,
+    "evidence": "MATLAB, Simulink, Stateflow, Embedded Coder, Python, C, CAN, Modbus, dSPACE HIL, Speedgoat, Jama, Git"
+   },
+   {
+    "name": "Simulink",
+    "years": 7,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Stateflow",
+    "years": 7,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Embedded Coder",
+    "years": 7,
+    "evidence": "MATLAB, Simulink, Stateflow, Embedded Coder, Python, C, CAN, Modbus, dSPACE HIL, Speedgoat, Jama, Git"
+   },
+   {
+    "name": "Python",
+    "years": 7,
+    "evidence": "Wrote Python tools for CAN log analysis and automated test reports."
+   },
+   {
+    "name": "C",
+    "years": 7,
+    "evidence": "MATLAB, Simulink, Stateflow, Embedded Coder, Python, C, CAN, Modbus, dSPACE HIL, Speedgoat, Jama, Git"
+   },
+   {
+    "name": "CAN",
+    "years": 7,
+    "evidence": "Wrote Python tools for CAN log analysis and automated test reports."
+   },
+   {
+    "name": "Modbus",
+    "years": 7,
+    "evidence": "Wrote Python tools for CAN log analysis and automated test reports."
+   },
+   {
+    "name": "dSPACE HIL",
+    "years": 7,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Speedgoat",
+    "years": 7,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Jama",
+    "years": 7,
+    "evidence": "Wrote system requirements and the hazard analysis inputs for UL 9540 and UL 9540A certification."
+   },
+   {
+    "name": "Git",
+    "years": 7,
+    "evidence": "MATLAB, Simulink, Stateflow, Embedded Coder, Python, C, CAN, Modbus, dSPACE HIL, Speedgoat, Jama, Git"
+   },
+   {
+    "name": "Standards: UL 9540",
+    "years": 7,
+    "evidence": "Wrote system requirements and the hazard analysis inputs for UL 9540 and UL 9540A certification."
+   },
+   {
+    "name": "Standards: UL 9540A",
+    "years": 7,
+    "evidence": "Wrote system requirements and the hazard analysis inputs for UL 9540 and UL 9540A certification."
+   },
+   {
+    "name": "Standards: IEEE 1547",
+    "years": 7,
+    "evidence": "Led a team of four through site acceptance testing at two utility sites (IEEE 1547 interconnection tests)."
+   },
+   {
+    "name": "Standards: IEC 61508",
+    "years": 3,
+    "evidence": "Functional safety analysis to IEC 61508 for the DC contactor control path."
+   },
+   {
+    "name": "Standards: ISO 26262",
+    "years": 3,
+    "evidence": "Supported vehicle-level validation and ISO 26262 work products for the battery pack."
+   }
+  ],
+  "standards": [
+   "UL 9540",
+   "UL 9540A",
+   "IEEE 1547",
+   "IEC 61508",
+   "ISO 26262"
+  ],
+  "locations": {
+   "metros": [
+    "Denver",
+    "Boulder"
+   ],
+   "remote": true,
+   "relocate": false
+  },
+  "hard_constraints": {
+   "work_authorization": "Staff or principal controls or systems roles at seed to Series B energy storage or grid companies."
+  },
+  "preferences": {
+   "stage": [
+    "seed",
+    "series-b"
+   ],
+   "sectors": [
+    "energy-storage",
+    "grid",
+    "electric-aviation"
+   ],
+   "min_base_usd": 185000
+  }
+ }
+}

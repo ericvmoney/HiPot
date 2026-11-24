@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/job.schema.json",
+  "title": "Job",
+  "description": "One open role. Ids for disciplines, level and metros come from taxonomy.yml; the schema checks their shape and tools/validate.py checks membership.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "company_id", "title", "url", "source", "locations", "metros",
+    "workplace", "disciplines", "level", "employment", "pay",
+    "posted_date", "first_seen", "last_seen", "tagging"
+  ],
+  "properties": {
+    "id": {
+      "description": "Stable across runs for the same posting. '{ats}:{board}:{posting_id}' when all three are known, otherwise 'web:' plus the first 12 hex digits of sha1 over the url, lower-cased title and lower-cased location text joined by newlines (some boards give every role the same address).",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9:._-]*$"
+    },
+    "company_id": {"$ref": "#/$defs/slug", "description": "Id of a company in companies.yml."},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "url": {
+      "description": "The posting on the company's own board. Never an aggregator or search result.",
+      "type": "string", "format": "uri", "pattern": "^https://"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ats", "board", "posting_id", "read"],
+      "properties": {
+        "ats": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workday", "icims", "bamboohr", "adp", "eightfold", "other", "unknown"]},
+        "board": {"type": ["string", "null"], "description": "The company's board token on that ATS."},
+        "posting_id": {"type": ["string", "null"]},
+        "read": {"enum": ["auto", "manual", "hosted"], "description": "auto: read from a feed. manual: read by a person. hosted: posted on HiPot by the employer."}
+      }
+    },
+    "locations": {
+      "description": "One entry per place the posting names. Structured fields are filled when the parser is confident.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "city": {"type": "string"},
+          "state": {"type": "string", "description": "Two-letter code for US states."},
+          "country": {"type": "string", "description": "ISO 3166-1 alpha-2."}
+        }
+      }
+    },
+    "metros": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "workplace": {"enum": ["onsite", "hybrid", "remote", "unknown"]},
+    "disciplines": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}], "description": "Null when the title does not state a level."},
+    "employment": {"enum": ["full-time", "part-time", "contract", "intern", "unknown"]},
+    "pay": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["min", "max", "currency", "period", "basis"],
+          "properties": {
+            "min": {"type": "integer", "minimum": 0},
+            "max": {"type": "integer", "minimum": 0},
+            "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+            "period": {"enum": ["year", "hour"]},
+            "basis": {"enum": ["feed", "posting-text", "seed"], "description": "Where the figures came from. Only what the employer published; never an estimate."}
+          }
+        }
+      ]
+    },
+    "posted_date": {"oneOf": [{"type": "string", "format": "date"}, {"type": "null"}], "description": "The date the feed reports as posted or last updated."},
+    "first_seen": {"type": "string", "format": "date-time"},
+    "last_seen": {"type": "string", "format": "date-time"},
+    "summary": {"type": "string", "maxLength": 500, "description": "Optional short plain-text excerpt of the posting."},
+    "tagging": {
+      "description": "Who or what set each tag, so a wrong tag can be traced.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disciplines_by", "level_by"],
+      "properties": {
+        "disciplines_by": {"$ref": "#/$defs/tagger"},
+        "level_by": {"$ref": "#/$defs/tagger"},
+        "model": {"type": ["string", "null"], "description": "Model name when a model set any tag."}
+      }
+    },
+    "hosted": {"type": "boolean", "description": "True for a role the employer posted on HiPot."},
+    "featured": {"type": "boolean"}
+  },
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "tagger": {"enum": ["rule", "model", "human", "seed"]}
+  }
+}

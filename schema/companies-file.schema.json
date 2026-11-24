@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/companies-file.schema.json",
+  "title": "Companies file",
+  "description": "The shape of companies.yml (the registry) and of companies.json (the copy the board page loads).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_version", "companies"],
+  "properties": {
+    "registry_version": {"const": 0},
+    "companies": {"type": "array", "items": {"$ref": "company.schema.json"}}
+  }
+}

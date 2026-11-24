@@ -1,0 +1,15 @@
+# Synthetic example. Not a real person.
+persona_version: 0
+generated: {by: "form", on_device: true, date: "2026-11-23", reviewed: true}
+disciplines: [systems, controls]
+level: staff
+domains: [energy-storage, ev]
+skills:
+  - {name: "Simulink", years: 10, evidence: "Controllers for three mobile storage systems"}
+  - {name: "Requirements management", years: 8}
+  - {name: "Hardware-in-the-loop testing", years: 6, evidence: "Built the HIL bench used for inverter firmware release"}
+standards: ["ISO 26262", "IEC 61508", "UL 9540"]
+locations: {metros: ["denver"], remote: true, relocate: false}
+hard_constraints: {work_authorization: "US", clearance: null}
+preferences: {stage: [seed, series-a, series-b], sectors: [energy-storage, grid], min_base_usd: 170000}
+exclude: {sectors: [], companies: []}

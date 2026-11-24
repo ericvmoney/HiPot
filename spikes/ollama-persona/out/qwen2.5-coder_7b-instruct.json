@@ -1,0 +1,121 @@
+{
+ "model": "qwen2.5-coder:7b-instruct",
+ "wall_seconds": 100.7,
+ "load_seconds": 22.1,
+ "prompt_tokens": 1036,
+ "output_tokens": 738,
+ "tokens_per_second": 9.6,
+ "valid_json": true,
+ "schema_problems": [],
+ "skills": 12,
+ "skills_with_verbatim_evidence": 10,
+ "identity_leaks": [],
+ "persona": {
+  "persona_version": 0,
+  "generated": {
+   "by": "ollama/qwen2.5-coder:7b-instruct",
+   "on_device": true,
+   "date": "2026-11-23",
+   "reviewed": false
+  },
+  "disciplines": [
+   "controls",
+   "systems"
+  ],
+  "level": "staff",
+  "domains": [
+   "energy-storage",
+   "grid"
+  ],
+  "skills": [
+   {
+    "name": "MATLAB",
+    "years": 11,
+    "evidence": "Developed grid-forming control algorithms in MATLAB and Simulink, auto-coded to a TI C2000 target."
+   },
+   {
+    "name": "Simulink",
+    "years": 11,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Stateflow",
+    "years": 11,
+    "evidence": "Built the Simulink plant model and state machine used for all controller releases; cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Embedded Coder",
+    "years": 11,
+    "evidence": "Auto-coded to a TI C2000 target."
+   },
+   {
+    "name": "Python",
+    "years": 11,
+    "evidence": "Wrote Python tools for CAN log analysis and automated test reports."
+   },
+   {
+    "name": "C",
+    "years": 11,
+    "evidence": "Auto-coded to a TI C2000 target."
+   },
+   {
+    "name": "CAN",
+    "years": 11,
+    "evidence": "Defined the Modbus and CAN interfaces between the battery management system, inverter and site controller."
+   },
+   {
+    "name": "Modbus",
+    "years": 11,
+    "evidence": "Defined the Modbus and CAN interfaces between the battery management system, inverter and site controller."
+   },
+   {
+    "name": "dSPACE HIL",
+    "years": 11,
+    "evidence": "Cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Speedgoat",
+    "years": 11,
+    "evidence": "Cut HIL regression time from 3 days to 6 hours."
+   },
+   {
+    "name": "Jama",
+    "years": 11,
+    "evidence": "Traced requirements to verification."
+   },
+   {
+    "name": "Git",
+    "years": 11,
+    "evidence": "Traced requirements to verification."
+   }
+  ],
+  "standards": [
+   "UL 9540",
+   "UL 9540A",
+   "IEEE 1547",
+   "IEC 61508",
+   "ISO 26262"
+  ],
+  "locations": {
+   "metros": [
+    "Fort Collins, Colorado"
+   ],
+   "remote": true,
+   "relocate": false
+  },
+  "hard_constraints": {
+   "work_authorization": "US citizen"
+  },
+  "preferences": {
+   "stage": [
+    "seed",
+    "series-b"
+   ],
+   "sectors": [
+    "energy-storage",
+    "grid"
+   ],
+   "min_base_usd": 185000
+  }
+ }
+}

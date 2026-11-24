@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/company.schema.json",
+  "title": "Company",
+  "description": "One company in the registry. A company's roles are listed only when climate.tier is 'core' or 'enabling' AND startup.status is 'in'. Sector and stage ids come from taxonomy.yml.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "ats", "read", "sectors", "stage", "climate", "startup"],
+  "properties": {
+    "id": {"$ref": "#/$defs/slug"},
+    "name": {"type": "string", "minLength": 1},
+    "website": {"oneOf": [{"type": "string", "format": "uri", "pattern": "^https://"}, {"type": "null"}]},
+    "careers_url": {"oneOf": [{"type": "string", "format": "uri", "pattern": "^https://"}, {"type": "null"}]},
+    "hq": {"type": ["string", "null"]},
+    "ats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "board"],
+      "properties": {
+        "type": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workday", "icims", "bamboohr", "adp", "eightfold", "other", "unknown"]},
+        "board": {"type": ["string", "null"], "description": "Board token on that ATS, exactly as it appears in the feed address (case matters on Ashby)."}
+      }
+    },
+    "read": {"enum": ["auto", "manual", "none"], "description": "auto: the collector reads a feed. manual: a person reads the board. none: not read."},
+    "sectors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "stage": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}]},
+    "founded": {"type": ["integer", "null"], "minimum": 1800, "maximum": 2100},
+    "headcount": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "as_of", "source"],
+          "properties": {
+            "value": {"type": "integer", "minimum": 1},
+            "as_of": {"type": "string", "format": "date"},
+            "source": {"type": "string", "description": "Where the figure came from."}
+          }
+        }
+      ]
+    },
+    "climate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "reason", "basis", "approved"],
+      "properties": {
+        "tier": {"enum": ["core", "enabling", "out", "unscreened"]},
+        "reason": {"type": ["string", "null"], "description": "One line. Required for every tier except 'unscreened'."},
+        "basis": {"enum": ["provisional", "agent", "human", null], "description": "provisional: the supervisor's first pass from general knowledge, not checked against the company's site."},
+        "approved": {"type": "boolean", "description": "True once Eric has approved the tier."}
+      },
+      "if": {"properties": {"tier": {"enum": ["core", "enabling", "out"]}}},
+      "then": {"properties": {"reason": {"type": "string", "minLength": 1}}}
+    },
+    "startup": {
+      "description": "The startup test: under 1,000 employees, typically under 10 years old.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason"],
+      "properties": {
+        "status": {"enum": ["in", "out", "review", "unscreened"], "description": "review: near a line, needs a figure or a decision."},
+        "reason": {"type": ["string", "null"]}
+      }
+    },
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"}
+  }
+}

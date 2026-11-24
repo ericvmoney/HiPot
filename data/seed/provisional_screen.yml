@@ -1,0 +1,101 @@
+# Provisional screen of the old hub's 89 companies against PLAN.md section 6
+# (climate rubric) and section 9 (startup test), written 2026-11-23.
+#
+# This is the supervisor's first pass from general knowledge. Nothing here was
+# checked against a company's own site, no headcount was looked up, and nothing
+# is approved. Companies the supervisor could not place with confidence are
+# left out and stay 'unscreened'. Workstream A2 replaces this with a checked
+# screen.
+#
+# startup: in | out | review     (review = near a line, needs a figure or a decision)
+
+companies:
+  # ---- Core: the product cuts emissions or electrifies something that burns fuel
+  Antora Energy: {tier: core, sectors: [industrial-heat, energy-storage], reason: "Thermal batteries for industrial heat and power.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  AtmosZero: {tier: core, sectors: [industrial-heat], reason: "Electric heat-pump boilers for industrial steam.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  Base Power: {tier: core, sectors: [energy-storage, buildings], reason: "Home batteries operated as a distributed power plant.", startup: in, startup_reason: "Young company, believed under 1,000 people but growing fast. Confirm."}
+  Charm Industrial: {tier: core, sectors: [carbon-removal], reason: "Carbon removal by bio-oil sequestration.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  Electric Hydrogen: {tier: core, sectors: [hydrogen], reason: "Electrolyzer plants for green hydrogen.", startup: in, startup_reason: "Believed under 1,000 people. Confirm."}
+  Fervo Energy: {tier: core, sectors: [geothermal], reason: "Enhanced geothermal power.", startup: in, startup_reason: "Believed under 1,000 people. Confirm."}
+  Lunar Energy: {tier: core, sectors: [energy-storage, buildings], reason: "Home battery and energy management.", startup: in, startup_reason: "Believed under 1,000 people. Confirm."}
+  Noon Energy: {tier: core, sectors: [energy-storage], reason: "Long-duration energy storage.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  Pacific Fusion: {tier: core, sectors: [fusion], reason: "Fusion energy. In by Eric's decision on fusion and fission.", startup: in, startup_reason: "Young company, believed well under 1,000 people. Confirm."}
+  Xcimer Energy: {tier: core, sectors: [fusion], reason: "Laser-driven fusion energy. In by Eric's decision on fusion and fission.", startup: in, startup_reason: "Young company, believed well under 1,000 people. Confirm."}
+  Peak Energy: {tier: core, sectors: [energy-storage], reason: "Sodium-ion grid storage.", startup: in, startup_reason: "Young company, believed well under 1,000 people. Confirm."}
+  Rondo Energy: {tier: core, sectors: [industrial-heat, energy-storage], reason: "Heat batteries for industrial process heat.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  SPAN: {tier: core, sectors: [buildings], reason: "Smart electrical panels for home electrification.", startup: in, startup_reason: "Believed under 1,000 people. Confirm."}
+  Terawatt Infrastructure: {tier: core, sectors: [charging], reason: "Charging sites for electric fleets.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  Torus: {tier: core, sectors: [energy-storage], reason: "Flywheel and battery storage systems.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  VEIR: {tier: core, sectors: [grid], reason: "Superconducting power lines. Check how much of the business is now data-center power, which is out.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+
+  # ---- Core, but near a startup line
+  Form Energy: {tier: core, sectors: [energy-storage], reason: "Iron-air long-duration storage.", startup: review, startup_reason: "Headcount is near 1,000. Needs a current figure."}
+  Redwood Materials: {tier: core, sectors: [battery-materials], reason: "Battery recycling and cathode materials.", startup: review, startup_reason: "Headcount is near or above 1,000. Needs a current figure."}
+  Mainspring Energy: {tier: core, sectors: [distributed-generation], reason: "Fuel-flexible linear generators. Listed as Core in the plan; check the fuel mix actually deployed.", startup: review, startup_reason: "Believed under 1,000 people but older than 10 years. Eric to decide."}
+  Nexamp: {tier: core, sectors: [solar, energy-storage], reason: "Community solar and storage developer.", startup: review, startup_reason: "Older than 10 years; headcount unknown."}
+  Solid Power: {tier: core, sectors: [energy-storage], reason: "Solid-state battery cells and electrolyte.", startup: review, startup_reason: "Public and older than 10 years, believed under 1,000 people."}
+  Energy Vault: {tier: core, sectors: [energy-storage], reason: "Grid storage systems.", startup: review, startup_reason: "Public; headcount unknown."}
+  Alsym Energy: {tier: core, sectors: [energy-storage], reason: "Non-lithium battery cells.", startup: review, startup_reason: "Around the 10-year mark. Its own board has not been located."}
+  ChargePoint: {tier: core, sectors: [charging], reason: "EV charging hardware and network.", startup: review, startup_reason: "Believed above 1,000 people and older than 10 years. Likely out."}
+  Stored Energy Systems (SENS): {tier: core, sectors: [components, energy-storage], reason: "Industrial battery chargers and DC power systems. Much of the business backs up engine generators; check.", startup: review, startup_reason: "Small, but decades old."}
+
+  # ---- Enabling: electric by design, displaces a dirtier alternative
+  Aptera: {tier: enabling, sectors: [ev], reason: "Solar-assisted electric vehicle.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  Lightship: {tier: enabling, sectors: [ev], reason: "Electric travel trailers.", startup: in, startup_reason: "Believed well under 1,000 people. Confirm."}
+  ALSO: {tier: enabling, sectors: [electric-mobility], reason: "Electric micromobility, spun out of Rivian.", startup: in, startup_reason: "Young spin-out, believed well under 1,000 people. Confirm."}
+  Scout Motors: {tier: enabling, sectors: [ev], reason: "Electric trucks and SUVs.", startup: review, startup_reason: "Volkswagen Group subsidiary; headcount may exceed 1,000."}
+  Archer: {tier: enabling, sectors: [electric-aviation], reason: "Electric vertical-takeoff aircraft. Has a defense program alongside the civil one, so this is a borderline case for Eric.", startup: review, startup_reason: "Public; headcount may exceed 1,000."}
+
+  # ---- Borderline on the rubric itself: left for a decision
+  Zipline: {tier: unscreened, reason: null, startup: review, startup_reason: "Electric drone delivery: robotics (out) or electric aviation (in)? Eric to decide. Headcount may exceed 1,000."}
+
+  # ---- Out by sector decision of 2026-11-23
+  AeroVect: {tier: out, reason: "Autonomous vehicles (airport ground equipment). Out by decision.", startup: in}
+  Kodiak: {tier: out, reason: "Autonomous trucking. Out by decision.", startup: review}
+  Motional: {tier: out, reason: "Autonomous vehicles. Out by decision.", startup: review}
+  Nuro: {tier: out, reason: "Autonomous vehicles. Out by decision.", startup: review}
+  Zoox: {tier: out, reason: "Autonomous vehicles. Out by decision.", startup: out}
+  Outrider: {tier: out, reason: "Autonomous yard trucks. Out by decision on autonomous vehicles, though the trucks are electric.", startup: in}
+  Pronto: {tier: out, reason: "Autonomous haul trucks. Out by decision.", startup: in}
+  Bedrock Robotics: {tier: out, reason: "Autonomous construction equipment. Out by decision on robotics.", startup: in}
+  Dexmate: {tier: out, reason: "General robotics. Out by decision.", startup: in}
+  Humble Robotics: {tier: out, reason: "General robotics. Out by decision.", startup: in}
+  RAI Institute: {tier: out, reason: "Robotics research. Out by decision.", startup: in}
+  Serve Robotics: {tier: out, reason: "Sidewalk delivery robots. Out by decision on robotics.", startup: in}
+  Mytra: {tier: out, reason: "Warehouse robotics. Out by decision.", startup: in}
+  Piaggio Fast Forward: {tier: out, reason: "Following robots. Out by decision on robotics.", startup: in}
+  Crusoe: {tier: out, reason: "Data-center power and compute. Out by decision.", startup: review}
+  ON.energy: {tier: out, reason: "Data-center power. Out by decision.", startup: in}
+  Albedo: {tier: out, reason: "Satellite imaging. Out by decision on space.", startup: in}
+  Lunar Outpost: {tier: out, reason: "Lunar rovers. Out by decision on space.", startup: in}
+  Urban Sky: {tier: out, reason: "Stratospheric balloon imaging. No climate case; closest to the space decision.", startup: in}
+  Ursa Major: {tier: out, reason: "Rocket propulsion and defense.", startup: in}
+  Boom Supersonic: {tier: out, reason: "Supersonic jet. No credible climate case.", startup: in}
+  Skydio: {tier: out, reason: "Drones, largely for defense and public safety.", startup: review}
+  Merlin Labs: {tier: out, reason: "Autonomous flight for defense and cargo aircraft.", startup: in}
+  Reliable Robotics: {tier: out, reason: "Autonomous flight systems for conventional aircraft.", startup: in}
+  Formlabs: {tier: out, reason: "3D printers. No climate case.", startup: review}
+
+  # ---- A climate case, but not a startup
+  Rivian: {tier: enabling, sectors: [ev], reason: "Electric vehicles.", startup: out, startup_reason: "Far above 1,000 people."}
+  Rivian and Volkswagen Group Technologies: {tier: enabling, sectors: [ev], reason: "Vehicle software and electronics joint venture.", startup: out, startup_reason: "Joint venture of two large carmakers; believed above 1,000 people."}
+  Lucid Motors: {tier: enabling, sectors: [ev], reason: "Electric vehicles.", startup: out, startup_reason: "Far above 1,000 people."}
+  Tesla: {tier: enabling, sectors: [ev, energy-storage], reason: "Electric vehicles and storage.", startup: out, startup_reason: "Far above 1,000 people."}
+  Enphase: {tier: core, sectors: [solar, energy-storage], reason: "Solar microinverters and home storage.", startup: out, startup_reason: "Large public company."}
+  Qcells: {tier: core, sectors: [solar], reason: "Solar modules.", startup: out, startup_reason: "Division of a large conglomerate."}
+  Canadian Solar: {tier: core, sectors: [solar, energy-storage], reason: "Solar modules and storage.", startup: out, startup_reason: "Large public company."}
+  Invenergy: {tier: core, sectors: [solar, wind, energy-storage], reason: "Renewable developer. Also owns gas plants.", startup: out, startup_reason: "Large developer."}
+  SOLV Energy: {tier: core, sectors: [solar, energy-storage], reason: "Solar and storage construction.", startup: out, startup_reason: "Large contractor."}
+  RES: {tier: core, sectors: [wind, solar, energy-storage], reason: "Renewable developer and contractor.", startup: out, startup_reason: "Large and decades old."}
+  Clearway Energy Group: {tier: core, sectors: [solar, wind, energy-storage], reason: "Renewable developer and owner.", startup: out, startup_reason: "Large developer."}
+
+  # ---- Large incumbents: out on size before the rubric matters
+  Ford: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Eaton: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Cummins: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Schneider Electric: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Oshkosh: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Woodward: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Renesas: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Generac: {tier: unscreened, reason: null, startup: out, startup_reason: "Large incumbent."}
+  Advanced Energy: {tier: unscreened, reason: null, startup: out, startup_reason: "Large public company."}

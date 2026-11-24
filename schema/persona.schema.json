@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/persona.schema.json",
+  "title": "Persona",
+  "description": "A candidate's reusable profile, built on their own device and owned by them. It holds no name, email, phone number or employer history. Discipline, level, sector, stage and metro ids come from taxonomy.yml.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["persona_version", "generated", "disciplines", "level", "skills", "locations"],
+  "properties": {
+    "persona_version": {"const": 0},
+    "generated": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["by", "on_device", "date"],
+      "properties": {
+        "by": {"type": "string", "description": "What produced the first draft, for example 'chrome-prompt-api', 'webllm/Llama-3.2-3B', 'ollama/qwen2.5:7b' or 'form'."},
+        "on_device": {"type": "boolean"},
+        "date": {"type": "string", "format": "date"},
+        "reviewed": {"type": "boolean", "description": "True once the candidate has confirmed the contents."}
+      }
+    },
+    "disciplines": {"type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}]},
+    "domains": {"description": "Sectors the candidate has worked in.", "type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "skills": {
+      "type": "array",
+      "maxItems": 60,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1, "maxLength": 80},
+          "years": {"type": "number", "minimum": 0, "maximum": 60},
+          "evidence": {"type": "string", "maxLength": 300, "description": "A line from the resume that supports the skill, so the candidate can check it."}
+        }
+      }
+    },
+    "standards": {"type": "array", "uniqueItems": true, "items": {"type": "string", "maxLength": 60}},
+    "locations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metros", "remote"],
+      "properties": {
+        "metros": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "remote": {"type": "boolean"},
+        "relocate": {"type": "boolean"}
+      }
+    },
+    "hard_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "work_authorization": {"type": ["string", "null"]},
+        "clearance": {"type": ["string", "null"]}
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "stage": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+        "sectors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+        "min_base_usd": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "exclude": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sectors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+        "companies": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "notes": {"type": "string", "maxLength": 1000}
+  },
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"}
+  }
+}

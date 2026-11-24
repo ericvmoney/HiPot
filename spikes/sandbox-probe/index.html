@@ -1,0 +1,227 @@
+<title>HiPot Sandbox Probe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one narrow column; a results table that reads like a test report (check, verdict, detail). */
+:root {
+  --bg: #f6f7f5; --panel: #ffffff; --fg: #17201c; --muted: #5b6862; --line: #d5dad6;
+  --pass: #17663d; --fail: #a4262c; --info: #1f4f82; --accent: #0b6e69;
+  --sans: "Inter", system-ui, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121715; --panel: #1a211e; --fg: #e6ece8; --muted: #9aa8a1; --line: #2f3a35;
+  --pass: #6fd49b; --fail: #ff8c8c; --info: #8bbcf0; --accent: #58c9c1; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121715; --panel: #1a211e; --fg: #e6ece8; --muted: #9aa8a1; --line: #2f3a35;
+  --pass: #6fd49b; --fail: #ff8c8c; --info: #8bbcf0; --accent: #58c9c1; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.5;
+  padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1 { font-size: 1.5rem; margin: 0; text-wrap: balance; }
+h2 { font-size: 1rem; margin: 0; }
+p { margin: 0; color: var(--muted); max-width: 65ch; }
+.wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.86rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-weight: 600; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; }
+td.v { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+td.d { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); word-break: break-word; min-width: 220px; }
+.pass { color: var(--pass); } .fail { color: var(--fail); } .info { color: var(--info); } .wait { color: var(--muted); }
+button { font: inherit; padding: 8px 14px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: var(--bg); cursor: pointer; }
+button.ghost { background: transparent; color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+pre { margin: 0; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; font-family: var(--mono); font-size: 0.75rem; overflow-x: auto; white-space: pre-wrap; word-break: break-word; }
+</style>
+
+<main>
+  <h1>HiPot sandbox probe</h1>
+  <p>Milestone 0 spike. This page tests what an artifact page may load and call, to decide where the on-device persona builder can run. It sends no personal data anywhere.</p>
+
+  <div class="wrap"><table>
+    <thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+
+  <h2>Local Ollama</h2>
+  <p>Calls the Ollama server on this computer (127.0.0.1:11434). It runs once after the checks above; the button runs it again.</p>
+  <div class="row">
+    <button id="run-ollama" type="button">Run the Ollama check again</button>
+    <button id="copy" type="button" class="ghost">Copy results</button>
+    <span id="copied" class="wait" role="status"></span>
+  </div>
+
+  <h2>Raw results</h2>
+  <pre id="json">running…</pre>
+</main>
+
+<script>
+(function () {
+  var results = {}, order = [], violations = [], policy = null;
+  var rows = document.getElementById("rows"), out = document.getElementById("json");
+
+  document.addEventListener("securitypolicyviolation", function (e) {
+    violations.push({ directive: e.effectiveDirective || e.violatedDirective, blocked: e.blockedURI });
+    if (!policy && e.originalPolicy) policy = e.originalPolicy;
+    render();
+  });
+
+  function set(key, label, verdict, detail) {
+    if (!(key in results)) order.push(key);
+    results[key] = { label: label, verdict: verdict, detail: detail == null ? "" : String(detail) };
+    render();
+  }
+
+  function render() {
+    rows.textContent = "";
+    order.forEach(function (key) {
+      var r = results[key], tr = document.createElement("tr");
+      [["", r.label], ["v " + r.verdict, r.verdict.toUpperCase()], ["d", r.detail]].forEach(function (cell) {
+        var td = document.createElement("td"); td.className = cell[0]; td.textContent = cell[1]; tr.appendChild(td);
+      });
+      rows.appendChild(tr);
+    });
+    out.textContent = JSON.stringify({ results: results, cspViolations: violations, policy: policy }, null, 1);
+  }
+
+  function timeout(promise, ms) {
+    return Promise.race([promise, new Promise(function (_, reject) { setTimeout(function () { reject(new Error("timed out after " + ms + " ms")); }, ms); })]);
+  }
+
+  function blockedBy(url) {
+    var host = url.replace(/^(\w+:\/\/[^\/]+).*/, "$1");
+    var hit = violations.filter(function (v) { return v.blocked && (v.blocked.indexOf(host) === 0 || url.indexOf(v.blocked) === 0); })[0];
+    return hit ? " [CSP " + hit.directive + "]" : "";
+  }
+
+  function probeFetch(key, label, url, options) {
+    set(key, label, "wait", url);
+    return timeout(fetch(url, options || {}), 8000).then(function (res) {
+      var note = res.type === "opaque" ? "opaque response (request left the page)" : "HTTP " + res.status;
+      set(key, label, res.type === "opaque" || res.ok ? "pass" : "fail", note + " · " + url);
+    }).catch(function (err) {
+      return new Promise(function (resolve) { setTimeout(resolve, 150); }).then(function () {
+        set(key, label, "fail", err.message + blockedBy(url) + " · " + url);
+      });
+    });
+  }
+
+  function probeScript(key, label, url, globalName) {
+    set(key, label, "wait", url);
+    return timeout(new Promise(function (resolve, reject) {
+      var s = document.createElement("script"); s.src = url;
+      s.onload = function () { resolve(); }; s.onerror = function () { reject(new Error("script did not load")); };
+      document.head.appendChild(s);
+    }), 15000).then(function () {
+      set(key, label, window[globalName] ? "pass" : "fail", (window[globalName] ? "loaded, global " : "loaded but no global ") + globalName);
+    }).catch(function (err) {
+      return new Promise(function (resolve) { setTimeout(resolve, 150); }).then(function () { set(key, label, "fail", err.message + blockedBy(url) + " · " + url); });
+    });
+  }
+
+  function attempt(key, label, fn) {
+    set(key, label, "wait", "");
+    return timeout(Promise.resolve().then(fn), 12000).then(function (detail) {
+      if (detail && detail.verdict) set(key, label, detail.verdict, detail.detail); else set(key, label, "pass", detail);
+    }).catch(function (err) { set(key, label, "fail", (err && err.message) || String(err)); });
+  }
+
+  var HF = "https://huggingface.co/mlc-ai/Llama-3.2-3B-Instruct-q4f16_1-MLC/resolve/main/mlc-chat-config.json";
+
+  var auto = [
+    function () { return attempt("env", "Browser", function () {
+      return { verdict: "info", detail: navigator.userAgent + " · cores " + navigator.hardwareConcurrency + " · deviceMemory " + (navigator.deviceMemory || "n/a") + " · crossOriginIsolated " + self.crossOriginIsolated + " · SharedArrayBuffer " + (typeof SharedArrayBuffer !== "undefined") };
+    }); },
+    function () { return probeFetch("own-file", "Fetch a data file published with the page", "probe.json"); },
+    function () { return probeFetch("hf", "Fetch model weights host (Hugging Face)", HF); },
+    function () { return probeFetch("hf-nocors", "Same, no-cors (separates CSP from CORS)", HF, { mode: "no-cors" }); },
+    function () { return probeFetch("gh-raw", "Fetch WebLLM model libraries host (raw.githubusercontent.com)", "https://raw.githubusercontent.com/mlc-ai/binary-mlc-llm-libs/main/README.md"); },
+    function () { return probeFetch("jsd-fetch", "Fetch (not script) from an allowed script CDN", "https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/package.json"); },
+    function () { return probeScript("pdfjs", "Load pdf.js from cdnjs", "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js", "pdfjsLib"); },
+    function () { return probeScript("mammoth", "Load mammoth.js (DOCX reader) from cdnjs", "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js", "mammoth"); },
+    function () { return probeScript("jsyaml", "Load js-yaml from cdnjs", "https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js", "jsyaml"); },
+    function () { return attempt("esm", "Import an ES module from jsDelivr (/npm/…/+esm)", function () {
+      return import("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm").then(function (m) { return "imported, exports: " + Object.keys(m).slice(0, 4).join(", "); });
+    }); },
+    function () { return attempt("wasm", "Compile WebAssembly in the page", function () {
+      var mod = new WebAssembly.Module(Uint8Array.of(0, 97, 115, 109, 1, 0, 0, 0));
+      return "module compiled (" + (mod instanceof WebAssembly.Module) + ")";
+    }); },
+    function () { return attempt("worker", "Start a Web Worker from a blob", function () {
+      return new Promise(function (resolve, reject) {
+        var w = new Worker(URL.createObjectURL(new Blob(["postMessage('alive')"], { type: "text/javascript" })));
+        w.onmessage = function (e) { resolve("worker says " + e.data); w.terminate(); };
+        w.onerror = function (e) { reject(new Error(e.message || "worker error")); };
+      });
+    }); },
+    function () { return attempt("webgpu", "WebGPU adapter", function () {
+      if (!navigator.gpu) return { verdict: "fail", detail: "navigator.gpu is not present in this frame" };
+      return navigator.gpu.requestAdapter().then(function (adapter) {
+        if (!adapter) return { verdict: "fail", detail: "navigator.gpu present, no adapter returned" };
+        var info = adapter.info || {};
+        return "adapter: " + [info.vendor, info.architecture, info.device, info.description].filter(Boolean).join(" / ") + " · maxBufferSize " + adapter.limits.maxBufferSize;
+      });
+    }); },
+    function () { return attempt("prompt-api", "Chrome built-in model (Prompt API)", function () {
+      if (typeof LanguageModel === "undefined") return { verdict: "fail", detail: "LanguageModel is not defined in this frame" };
+      return LanguageModel.availability().then(function (state) { return { verdict: state === "unavailable" ? "fail" : "pass", detail: "availability: " + state }; });
+    }); },
+    function () { return attempt("idb", "IndexedDB (model cache option)", function () {
+      return new Promise(function (resolve, reject) {
+        var req = indexedDB.open("hipot-probe", 1);
+        req.onsuccess = function () { req.result.close(); resolve("opened"); };
+        req.onerror = function () { reject(req.error || new Error("open failed")); };
+      });
+    }); },
+    function () { return attempt("cache", "Cache Storage (WebLLM's default weight cache)", function () {
+      return caches.open("hipot-probe").then(function () { return "opened"; });
+    }); },
+    function () { return attempt("opfs", "Origin private file system", function () {
+      return navigator.storage.getDirectory().then(function () { return "available"; });
+    }); },
+    function () { return attempt("quota", "Storage quota", function () {
+      return navigator.storage.estimate().then(function (e) { return { verdict: "info", detail: "quota " + Math.round(e.quota / 1048576) + " MB, used " + Math.round(e.usage / 1048576) + " MB" }; });
+    }); },
+    function () { return attempt("downloads", "File download capability (for persona.yml)", function () {
+      if (!window.claude || !window.claude.use) return { verdict: "fail", detail: "window.claude.use is not present" };
+      return window.claude.use("downloads").then(function (d) { return d ? "capability granted (save() not called)" : { verdict: "fail", detail: "use('downloads') resolved null" }; });
+    }); }
+  ];
+
+  function runOllama() {
+    return probeFetch("ollama-ip", "Ollama at 127.0.0.1 (CORS request)", "http://127.0.0.1:11434/api/tags")
+      .then(function () { return probeFetch("ollama-ip-nocors", "Ollama at 127.0.0.1, no-cors (separates CSP from CORS)", "http://127.0.0.1:11434/api/tags", { mode: "no-cors" }); })
+      .then(function () { return probeFetch("ollama-name", "Ollama at localhost (CORS request)", "http://localhost:11434/api/tags"); })
+      .then(function () { set("ollama-done", "Ollama checks", "info", "finished " + new Date().toISOString()); });
+  }
+
+  // Saves the report to the artifact's own store so the session that published
+  // this page can read it back. The report holds only what the table shows.
+  function save() {
+    if (!window.claude || !window.claude.use) return Promise.resolve();
+    return window.claude.use("db").then(function (db) {
+      if (!db) { set("saved", "Report saved for the supervisor", "info", "no store in this view; use Copy results"); return; }
+      var id = "run-" + new Date().toISOString().replace(/[^0-9]/g, "").slice(0, 14);
+      var doc = { at: new Date().toISOString(), report: JSON.stringify({ results: results, cspViolations: violations, policy: policy }) };
+      return db.doc("probe/" + id).set(doc).then(function () { set("saved", "Report saved for the supervisor", "pass", "probe/" + id); });
+    }).catch(function (err) { set("saved", "Report saved for the supervisor", "fail", (err && (err.message || err.code)) || String(err)); });
+  }
+
+  auto.reduce(function (chain, step) { return chain.then(step); }, Promise.resolve()).then(function () {
+    set("done", "Automatic checks", "info", "finished " + new Date().toISOString());
+    return runOllama();
+  }).then(save);
+
+  document.getElementById("run-ollama").addEventListener("click", function () { runOllama().then(save); });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var note = document.getElementById("copied");
+    navigator.clipboard.writeText(out.textContent).then(function () { note.textContent = "Copied"; }, function () {
+      var range = document.createRange(); range.selectNodeContents(out);
+      var sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      note.textContent = "Copy was refused. The results are selected; press Ctrl+C.";
+    });
+  });
+})();
+</script>

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/jobs-file.schema.json",
+  "title": "Jobs file",
+  "description": "The shape of jobs.json, the file the board page loads.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "source", "jobs"],
+  "properties": {
+    "schema_version": {"const": 0},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "source": {"type": "string", "description": "What produced the file, for example 'collector' or 'seed:old-hub-2026-11-23'."},
+    "jobs": {"type": "array", "items": {"$ref": "job.schema.json"}}
+  }
+}

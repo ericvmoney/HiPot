@@ -1,0 +1,148 @@
+"""Contract checks: the seed data validates, and the validator rejects bad data.
+
+Run from the repository root:  uv run pytest
+"""
+from __future__ import annotations
+
+import copy
+
+import pytest
+
+from pipeline.io import ROOT, load_json, load_yaml
+from pipeline.seed.import_old_hub import job_id, level_from_title, parse_pay, parse_source
+from tools.validate import check_companies, check_jobs, check_persona, schema_errors, schema_registry
+
+REGISTRY, SCHEMAS = schema_registry()
+TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
+JOBS = load_json(ROOT / "data" / "seed" / "jobs.json")
+COMPANIES = load_yaml(ROOT / "companies.yml")
+PERSONA = load_yaml(ROOT / "schema" / "examples" / "persona.example.yml")
+
+
+def job_errors(job: dict) -> list[str]:
+    return schema_errors(job, SCHEMAS["job.schema.json"], REGISTRY)
+
+
+def test_seed_jobs_validate():
+    assert schema_errors(JOBS, SCHEMAS["jobs-file.schema.json"], REGISTRY) == []
+    company_ids = {company["id"] for company in COMPANIES["companies"]}
+    assert check_jobs(JOBS, TAXONOMY, company_ids) == []
+    assert len(JOBS["jobs"]) > 400
+
+
+def test_registry_validates():
+    assert schema_errors(COMPANIES, SCHEMAS["companies-file.schema.json"], REGISTRY) == []
+    assert check_companies(COMPANIES, TAXONOMY) == []
+
+
+def test_example_persona_validates():
+    assert schema_errors(PERSONA, SCHEMAS["persona.schema.json"], REGISTRY) == []
+    assert check_persona(PERSONA, TAXONOMY) == []
+
+
+def test_no_seed_job_links_to_an_aggregator():
+    for job in JOBS["jobs"]:
+        assert "linkedin.com" not in job["url"]
+
+
+@pytest.mark.parametrize("field,value", [
+    ("url", "http://example.com/job"),          # not https
+    ("url", "not a url"),
+    ("first_seen", "2026-11-23"),               # date where a date-time is required
+    ("posted_date", "23 Nov 2026"),
+    ("workplace", "wfh"),
+    ("level", "Senior"),                        # not a slug
+    ("disciplines", ["Systems Engineering"]),
+    ("pay", {"min": 1, "max": 2, "currency": "usd", "period": "year", "basis": "seed"}),
+    ("pay", {"min": 1, "max": 2, "currency": "USD", "period": "year", "basis": "estimate"}),
+])
+def test_bad_job_fields_are_rejected(field, value):
+    job = copy.deepcopy(JOBS["jobs"][0])
+    assert job_errors(job) == []
+    job[field] = value
+    assert job_errors(job), f"{field}={value!r} should not validate"
+
+
+def test_unknown_job_field_and_missing_field_are_rejected():
+    job = copy.deepcopy(JOBS["jobs"][0])
+    job["score"] = 0.9
+    assert job_errors(job)
+    job = copy.deepcopy(JOBS["jobs"][0])
+    del job["tagging"]
+    assert job_errors(job)
+
+
+def test_taxonomy_membership_is_checked():
+    jobs = copy.deepcopy(JOBS)
+    jobs["jobs"] = jobs["jobs"][:1]
+    jobs["jobs"][0]["disciplines"] = ["underwater-basket-weaving"]
+    jobs["jobs"][0]["company_id"] = "no-such-company"
+    problems = check_jobs(jobs, TAXONOMY, {"some-company"})
+    assert any("unknown discipline" in line for line in problems)
+    assert any("not in the registry" in line for line in problems)
+
+
+def test_screened_company_needs_a_reason():
+    company = copy.deepcopy(COMPANIES["companies"][0])
+    company["climate"] = {"tier": "out", "reason": None, "basis": "human", "approved": True}
+    assert schema_errors(company, SCHEMAS["company.schema.json"], REGISTRY)
+
+
+def test_persona_rejects_identity_fields():
+    persona = copy.deepcopy(PERSONA)
+    persona["email"] = "someone@example.com"
+    assert schema_errors(persona, SCHEMAS["persona.schema.json"], REGISTRY)
+
+
+@pytest.mark.parametrize("url,expected", [
+    ("https://job-boards.greenhouse.io/antora/jobs/123", ("greenhouse", "antora", "123")),
+    ("https://boards.greenhouse.io/redwoodmaterials/jobs/456", ("greenhouse", "redwoodmaterials", "456")),
+    ("https://jobs.ashbyhq.com/Ridealso/9aba06b4", ("ashby", "Ridealso", "9aba06b4")),
+    ("https://jobs.lever.co/xcimer/790e748f", ("lever", "xcimer", "790e748f")),
+    ("https://ats.rippling.com/aptera/jobs/b166d73d", ("rippling", "aptera", "b166d73d")),
+    ("https://motional.com/open-positions/?gh_jid=7799671003#/7799671003", ("greenhouse", None, "7799671003")),
+    ("https://woodward.wd5.myworkdayjobs.com/en-US/x/job/y", ("workday", "woodward", None)),
+    ("https://www.zipline.com/careers/open-roles/1", ("unknown", None, None)),
+])
+def test_parse_source(url, expected):
+    source = parse_source(url)
+    assert (source["ats"], source["board"], source["posting_id"]) == expected
+    if expected[1] and expected[2]:
+        assert job_id(url, source) == ":".join(expected)
+    else:
+        assert job_id(url, source).startswith("web:")
+
+
+@pytest.mark.parametrize("title,expected", [
+    ("Senior Staff Mechanical Engineer", "staff"),
+    ("Sr. Firmware Engineer", "senior"),
+    ("Principal Engineer, SCADA", "principal"),
+    ("Manufacturing Engineering Manager", "manager"),
+    ("Senior Product Manager", "senior"),
+    ("Technical Program Manager", None),
+    ("Director, Power Device Engineering", "director"),
+    ("VP of Engineering", "executive"),
+    ("Engineer III, Energy Storage", "senior"),
+    ("Test Engineer II", "mid"),
+    ("Electrical Engineer I", "entry"),
+    ("Mechanical Engineering Intern", "intern"),
+    ("Mechanical Engineer, Machined Parts", None),
+    ("Validation Engineer - HV systems", None),   # lower-case v is not level five
+])
+def test_level_from_title(title, expected):
+    assert level_from_title(title) == expected
+
+
+def test_roles_sharing_one_address_get_different_ids():
+    url = "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=x"
+    source = parse_source(url)
+    first = job_id(url, source, "Senior Systems Engineer", "Longmont, CO")
+    second = job_id(url, source, "Electrical Test Engineer", "Longmont, CO")
+    assert first != second
+    assert first == job_id(url, source, "senior systems engineer ", "Longmont, CO")
+
+
+def test_parse_pay():
+    assert parse_pay("$140k-$205k") == {"min": 140000, "max": 205000, "currency": "USD", "period": "year", "basis": "seed"}
+    assert parse_pay("") is None
+    assert parse_pay("$205k-$140k") is None

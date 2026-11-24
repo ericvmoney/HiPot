@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw snapshots of the old personal hub (hold one person's search profile)
+data/seed/raw/
+
+# Pipeline outputs, rebuilt on every run
+data/jobs.raw.json
+data/jobs.json
+data/companies.json
+data/vectors.bin
+data/fixtures-live/
+
+# Anything personal: real resumes and personas never enter the repository
+private/
+*.resume.*
+persona.yml
+
+# Editor and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
