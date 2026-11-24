@@ -197,12 +197,11 @@ def main() -> int:
         "sources": {path.name: sha256(path) for path in (DELINEATION, PLACES, COUSUBS)},
         "note": "state -> normalised place name (pipeline.geo.normalise_place) -> metro id in taxonomy.yml. Connecticut is not mapped yet.",
         "places": places,
-    }, separators=(",", ":"), sort_keys=False) + "\n", encoding="utf-8")
+    }, separators=(",", ":"), sort_keys=False) + "\n", encoding="utf-8", newline="\n")
 
     text = TAXONOMY.read_text(encoding="utf-8")
     start, stop = text.index(BEGIN), text.index(END) + len(END)
-    TAXONOMY.write_text(text[:start] + metros_block(regions, counties) + text[stop:], encoding="utf-8", newline="
-")
+    TAXONOMY.write_text(text[:start] + metros_block(regions, counties) + text[stop:], encoding="utf-8", newline="\n")
 
     print(f"metro regions: {len(regions)}  "
           f"(CSAs {sum(k[0] == 'CSA' for k in regions)}, standalone metros {sum(k[0] == 'CBSA' for k in regions)})")
