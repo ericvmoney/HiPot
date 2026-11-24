@@ -1173,8 +1173,9 @@ companies:
   sources:
   - cu-lvc
   registry_id: null
-  decision: null
-  reason: University spinout; no company activity found.
+  decision: closed
+  reason: iFeather Technologies won awards in 2018-2019; its domain is now parked and nothing has appeared since
+    about 2019.
   ats: null
   open_roles: null
 - name: Infinite Power Solutions
@@ -1669,9 +1670,9 @@ companies:
   - bs-co-cleantech
   - inven-co-storage
   - inven-co-powerelec
-  registry_id: null
-  decision: null
-  reason: Its site's certificate has expired; status not established.
+  registry_id: prieto-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
   ats: null
   open_roles: null
 - name: PrimeStar Solar
@@ -1779,8 +1780,9 @@ companies:
   sources:
   - builtin-co-greentech
   registry_id: null
-  decision: null
-  reason: Its site carries unrelated gambling links; status not established.
+  decision: closed
+  reason: CB Insights lists RavenBrick (RavenWindow) as dead; latest company news is from 2017 and the domain now
+    carries gambling links.
   ats: null
   open_roles: null
 - name: RayChill
@@ -1886,18 +1888,6 @@ companies:
   reason: Solar installer of others' products.
   ats: null
   open_roles: null
-- name: ScarabTECH
-  website: https://scarabtech.com
-  hq: Glenwood Springs, CO
-  sources:
-  - bs-co-cleanenergy
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: null
-  decision: null
-  reason: Named by a Colorado source, but the company could not be identified.
-  ats: null
-  open_roles: null
 - name: Scoggins Enterprises
   website: null
   hq: Grand Junction, CO
@@ -1997,8 +1987,8 @@ companies:
   sources:
   - fundraise-insider-co
   registry_id: null
-  decision: null
-  reason: Named by a Colorado source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Develops and runs battery storage projects in Texas; a project developer, not a product company.
   ats: null
   open_roles: null
 - name: Solid Power
@@ -2212,8 +2202,8 @@ companies:
   sources:
   - cu-ascent
   registry_id: null
-  decision: null
-  reason: Named by a Colorado source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Medical wound dressing; not clean-tech.
   ats: null
   open_roles: null
 - name: Tereform
@@ -2297,8 +2287,8 @@ companies:
   - oedit-ai
   - bs-co-cleantech
   registry_id: null
-  decision: null
-  reason: Its site's certificate has expired and the latest news is from 2022; status not established.
+  decision: duplicate
+  reason: Now operates as Gradient Geothermal (transitionalenergy.us redirects there).
   ats: null
   open_roles: null
 - name: Travertine
@@ -2482,8 +2472,9 @@ companies:
   sources:
   - bs-co-cleantech
   registry_id: null
-  decision: null
-  reason: No news after 2022 and its site refused the connection; status not established.
+  decision: closed
+  reason: Last funding May 2022 (Wefunder); site refuses connections and investor questions go unanswered; no news
+    since early 2022.
   ats: null
   open_roles: null
 - name: Zero Carbon Systems
@@ -2505,8 +2496,8 @@ companies:
   - cu-lvc
   - cu-ascent
   registry_id: null
-  decision: null
-  reason: University research team; no company activity found.
+  decision: not-in-scope
+  reason: A CU Boulder lab team funded by an NSF I-Corps award; no company has been formed.
   ats: null
   open_roles: null
 - name: ZeroTwelve
@@ -2565,6 +2556,13 @@ excluded:
   sources:
   - bs-co-ev
   reason: Now headquartered in Deerfield Beach, FL, under Rad Life Mobility.
+- name: ScarabTECH
+  sources:
+  - bs-co-cleanenergy
+  - builtin-co-greentech
+  - builtin-co-energy
+  reason: Its own site says the plastic-to-fuel units are designed in Johannesburg, South Africa; the Glenwood Springs,
+    CO listing appears stale.
 - name: Sun Metalon
   sources:
   - ceo-cap-2026feb

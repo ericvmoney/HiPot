@@ -2429,6 +2429,36 @@ companies:
     Evidence: https://www.colorado.edu/venturepartners/2026/02/12/internal-news/university-colorado-ascent-deep-tech-accelerator-announces-2026-cohort
     https://www.colorado.edu/engineering/record-cuengineering-startups Region sources: cu-ascent, cu-ascent-2026.
     Confidence: medium. Unresolved: Domain, founded, headcount. Founder/CTO Emma Biesiada; advisor Mark Hernandez.'
+- id: prieto-battery
+  name: Prieto Battery
+  website: https://www.prietobattery.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: series-b
+  founded: 2009
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-ion batteries for defense, data-center and critical-infrastructure customers (replacing its earlier
+      3D solid-state lithium-ion design).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2009 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to get local issuer certificate (_ssl.c:1035)). Founded: https://dealroom.co/companies/prieto-battery.
+    Stage: Dealroom: total equity funding $10-50M; investors Stout Street Capital (Series A), Intel Capital, Stanley
+    Ventures and Pilatus Capital (Series B and later). Latest round date not shown. Flags: prietobattery.com redirects
+    to prieto.com, a live site (copyright 2026); CSU spin-out. Evidence: https://prieto.com/ https://dealroom.co/companies/prieto-battery
+    Region sources: csu-strata, bs-co-cleantech, inven-co-storage, inven-co-powerelec. Confidence: medium. Unresolved:
+    Date of the latest equity round.'
 - id: project-canary
   name: Project Canary
   website: https://www.projectcanary.com
