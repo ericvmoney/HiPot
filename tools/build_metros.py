@@ -201,7 +201,8 @@ def main() -> int:
 
     text = TAXONOMY.read_text(encoding="utf-8")
     start, stop = text.index(BEGIN), text.index(END) + len(END)
-    TAXONOMY.write_text(text[:start] + metros_block(regions, counties) + text[stop:], encoding="utf-8")
+    TAXONOMY.write_text(text[:start] + metros_block(regions, counties) + text[stop:], encoding="utf-8", newline="
+")
 
     print(f"metro regions: {len(regions)}  "
           f"(CSAs {sum(k[0] == 'CSA' for k in regions)}, standalone metros {sum(k[0] == 'CBSA' for k in regions)})")
