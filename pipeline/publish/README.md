@@ -5,10 +5,12 @@ Workstream A4. The publish step writes one data file; the page in `site/` reads 
 ## Build the data
 
 ```
-uv run python -m pipeline.publish                      # data/seed/jobs.json -> site/data/board.json, listed companies only
+uv run python -m pipeline.publish                      # data/jobs.json if it exists, else the seed -> site/data/board.json
 uv run python -m pipeline.publish --jobs data/jobs.json
 uv run python -m pipeline.publish --include-unlisted   # development only: every role, marked as such
 ```
+
+The command first prints which jobs file it read, for example `Input: C:\HiPot\data\jobs.json (default: the tagged data)`. Without `--jobs` it reads `data/jobs.json` when that file exists and falls back to `data/seed/jobs.json` otherwise. A `--jobs` path that does not exist stops with an error and writes nothing.
 
 - The jobs file and `companies.yml` are checked against the contracts first. On any failure the command exits 1 and writes nothing.
 - A role reaches the file only when its company is listed (`tools.validate.is_listed`) and its function is listed in `taxonomy.yml` (`tools.validate.listed_functions`). `--include-unlisted` keeps both kinds, sets `"scope": "all"`, marks each unlisted company and each unlisted function (`"listed": false` in the taxonomy block), and the page shows a "Development build" banner and labels those role types "(not listed)". Never publish that build.

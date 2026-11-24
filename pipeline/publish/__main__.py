@@ -1,6 +1,6 @@
 """Command line for the publish step.
 
-    uv run python -m pipeline.publish
+    uv run python -m pipeline.publish                 # data/jobs.json if it exists, else the seed
     uv run python -m pipeline.publish --jobs data/jobs.json --out site/data/board.json
     uv run python -m pipeline.publish --include-unlisted      # development only
 
@@ -18,12 +18,26 @@ from pipeline.publish.build import PublishError, build_board, write_board
 MAX_SHOWN = 15
 
 
+def default_jobs(root: Path | None = None) -> tuple[Path, str]:
+    """The jobs file to use when --jobs is not given, and why.
+
+    The tagger's output, data/jobs.json, when it exists; otherwise the seed, so the
+    board can still be built on a fresh checkout before the pipeline has run.
+    """
+    root = ROOT if root is None else root
+    tagged = root / "data" / "jobs.json"
+    if tagged.is_file():
+        return tagged, "default: the tagged data"
+    return root / "data" / "seed" / "jobs.json", "default: data/jobs.json not found, using the seed"
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m pipeline.publish",
         description="Join jobs, companies and taxonomy into the data file the board page loads.",
     )
-    parser.add_argument("--jobs", type=Path, default=ROOT / "data" / "seed" / "jobs.json")
+    parser.add_argument("--jobs", type=Path, default=None,
+                        help="jobs file; default data/jobs.json if it exists, else data/seed/jobs.json")
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--taxonomy", type=Path, default=ROOT / "taxonomy.yml")
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
@@ -32,6 +46,15 @@ def main(argv: list[str] | None = None) -> int:
         help="development only: keep roles at unlisted companies and in unlisted functions. Never publish this build.",
     )
     args = parser.parse_args(argv)
+
+    if args.jobs is None:
+        args.jobs, why = default_jobs()
+    else:
+        why = "given with --jobs"
+    print(f"Input: {args.jobs} ({why})")
+    if not args.jobs.is_file():
+        print(f"FAIL  nothing written: no jobs file at {args.jobs}", file=sys.stderr)
+        return 1
 
     try:
         board = build_board(
