@@ -60,7 +60,8 @@ def test_rippling_is_skipped_with_its_own_reason_and_never_requested():
     fetcher = FakeFetcher()
     raw = run([company("aptera", "rippling", "aptera", tier="enabling")], fetcher)
     entry = raw["run"]["companies"][0]
-    assert entry["status"] == "skipped" and entry["error"].startswith("no reader for rippling: ")
+    assert entry == {"company_id": "aptera", "ats": "rippling", "status": "skipped", "postings": 0,
+                     "error": "rippling: reader withheld pending a terms decision"}
     assert fetcher.calls == [] and raw["jobs"] == []
 
 

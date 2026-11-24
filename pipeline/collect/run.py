@@ -31,10 +31,13 @@ READERS: dict[str, Callable] = {
     "ashby": ashby.read,
 }
 HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com"}
-# An ATS with a public feed that is deliberately not read, and why.
+# An ATS whose boards are deliberately not read, and why. Rippling's job board
+# API documentation is behind a sign-in, so the endpoint cannot be confirmed,
+# and section 2.2 of its User Terms (https://app.rippling.com/legal/user)
+# prohibits extracting data for use outside its services. Reading it is the
+# owner's decision; until then no request is made to a Rippling board.
 NOT_READ = {
-    "rippling": "no reader for rippling: its job board API documentation is behind a sign-in "
-                "and its terms on automated use are unresolved",
+    "rippling": "rippling: reader withheld pending a terms decision",
 }
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
