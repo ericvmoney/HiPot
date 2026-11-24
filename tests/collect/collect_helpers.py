@@ -19,6 +19,7 @@ ADDRESSES = {
     "https://api.ashbyhq.com/posting-api/job-board/Ridealso": "ashby_Ridealso.json",
     "https://api.ashbyhq.com/posting-api/job-board/formenergy": "ashby_formenergy.json",
     "https://api.ashbyhq.com/posting-api/job-board/span": "ashby_span.json",
+    "https://api.ashbyhq.com/posting-api/job-board/base-power": "ashby_base-power.json",
     "https://api.rippling.com/platform/api/ats/v1/board/aptera/jobs": "rippling_aptera.json",
 }
 # Rippling needs one request per posting; these answers are keyed by posting uuid.

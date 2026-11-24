@@ -84,12 +84,23 @@ def employment_from_title(title: str) -> str:
     return "unknown"
 
 
+# Figures that can be pay for each period. The same bounds as the tagger's
+# (pipeline/tag/pay.py); tests/collect/test_collect_readers.py checks they agree.
+HOUR_MIN, HOUR_MAX = 7, 500
+YEAR_MIN, YEAR_MAX = 15_000, 1_500_000
+
+
 def pay(low, high, currency, period: str | None) -> dict | None:
     """A pay object with basis 'feed', or None when the figures do not fit the contract.
 
     The contract wants a minimum and a maximum as whole numbers, a three-letter
     currency and a period of year or hour. Nothing is converted or estimated:
     a monthly figure, a single-ended range or a missing currency gives None.
+
+    The figures must also fit the period the feed states. A feed that labels
+    "$23 to $25" as yearly (Base Power on Ashby does) has published an
+    interval that contradicts its own numbers; the period is not relabelled,
+    and the pay is left out for the tagger to read from the posting text.
     """
     if period not in ("year", "hour"):
         return None
@@ -99,6 +110,9 @@ def pay(low, high, currency, period: str | None) -> dict | None:
             return None
         numbers.append(int(round(value)))
     if numbers[0] > numbers[1]:
+        return None
+    floor, ceiling = (HOUR_MIN, HOUR_MAX) if period == "hour" else (YEAR_MIN, YEAR_MAX)
+    if not (floor <= numbers[0] and numbers[1] <= ceiling):
         return None
     if not isinstance(currency, str) or not re.fullmatch(r"[A-Za-z]{3}", currency):
         return None

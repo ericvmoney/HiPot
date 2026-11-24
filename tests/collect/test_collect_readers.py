@@ -83,20 +83,23 @@ def test_greenhouse_falls_back_to_the_hosted_address_when_the_feed_gives_http():
     assert drafts[0]["url"] == "https://job-boards.greenhouse.io/antora/jobs/6151698004"
 
 
-def test_greenhouse_pay_ranges():
+def test_greenhouse_pay_ranges_need_a_stated_period():
     # The shape documented for the single-posting endpoint with pay_transparency=true.
-    yearly = [{"min_cents": 5000000, "max_cents": 7500000, "currency_type": "USD", "title": "NYC Salary Range", "blurb": "..."}]
+    yearly = [{"min_cents": 5000000, "max_cents": 7500000, "currency_type": "USD", "title": "NYC Annual Salary Range", "blurb": "..."}]
     assert greenhouse.pay_from_ranges(yearly) == {"min": 50000, "max": 75000, "currency": "USD", "period": "year", "basis": "feed"}
-    hourly = [{"min_cents": 2800, "max_cents": 3550, "currency_type": "USD"}]
+    hourly = [{"min_cents": 2800, "max_cents": 3550, "currency_type": "USD", "title": "Hourly Range"}]
     assert greenhouse.pay_from_ranges(hourly) == {"min": 28, "max": 36, "currency": "USD", "period": "hour", "basis": "feed"}
-    assert greenhouse.pay_from_ranges([{"min_cents": 400000, "max_cents": 600000, "currency_type": "USD"}]) is None  # monthly? unclear
-    assert greenhouse.pay_from_ranges([{"min_cents": None, "max_cents": 7500000, "currency_type": "USD"}]) is None
+    # The documentation's own example title names no period, so it is not read.
+    unstated = [{"min_cents": 5000000, "max_cents": 7500000, "currency_type": "USD", "title": "NYC Salary Range", "blurb": "..."}]
+    assert greenhouse.pay_from_ranges(unstated) is None
+    assert greenhouse.pay_from_ranges([{"min_cents": 2800, "max_cents": 3550, "currency_type": "USD"}]) is None
+    assert greenhouse.pay_from_ranges([{"min_cents": None, "max_cents": 7500000, "currency_type": "USD", "title": "Annual"}]) is None
     assert greenhouse.pay_from_ranges([]) is None and greenhouse.pay_from_ranges(None) is None
 
 
 def test_greenhouse_with_pay_asks_once_per_posting_and_survives_a_refusal():
     base = "https://boards-api.greenhouse.io/v1/boards/antora/jobs"
-    ranges = [{"min_cents": 15000000, "max_cents": 19000000, "currency_type": "USD"}]
+    ranges = [{"min_cents": 15000000, "max_cents": 19000000, "currency_type": "USD", "title": "Annual base salary"}]
     fetcher = FakeFetcher(
         extra={f"{base}/6151698004": {"id": 6151698004, "pay_input_ranges": ranges}},
         failures={f"{base}/6128211004": Blocked("HTTP 429 from boards-api.greenhouse.io")},
@@ -230,6 +233,25 @@ def test_employment_from_text_and_title():
     assert normalize.employment_from_title("Internal Tools Engineer") == "unknown"
 
 
+def test_ashby_hourly_figures_labelled_yearly_are_left_out():
+    """Base Power's feed labels $23 to $25 as "1 YEAR" (recorded 2026-11-24)."""
+    answer = load_json(FIXTURES / "ashby_base-power.json")
+    labelled = [(c["interval"], c["minValue"], c["maxValue"])
+                for c in answer["jobs"][0]["compensation"]["summaryComponents"] if c["compensationType"] == "Salary"]
+    assert labelled == [("1 YEAR", 23, 25)]
+    drafts = ashby.read("base-power", FakeFetcher())
+    assert drafts[0]["pay"] is None                    # not relabelled as hourly; the tagger reads the text
+    assert drafts[1]["pay"] is None                    # $32 to $39 across two tiers, also labelled "1 YEAR"
+    yearly = by_title(ashby.read("formenergy", FakeFetcher()))["Supplier Quality Engineer"]["pay"]
+    assert yearly["period"] == "year" and yearly["min"] >= normalize.YEAR_MIN   # a real salary still passes
+
+
+def test_pay_bounds_match_the_tagger():
+    from pipeline.tag import pay as tag_pay
+    assert (normalize.HOUR_MIN, normalize.HOUR_MAX) == (tag_pay.HOUR_MIN, tag_pay.HOUR_MAX)
+    assert (normalize.YEAR_MIN, normalize.YEAR_MAX) == (tag_pay.YEAR_MIN, tag_pay.YEAR_MAX)
+
+
 def test_pay_rejects_what_the_contract_cannot_hold():
     good = {"min": 100000, "max": 120000, "currency": "USD", "period": "year", "basis": "feed"}
     assert normalize.pay(100000, 120000, "usd", "year") == good
@@ -240,6 +262,9 @@ def test_pay_rejects_what_the_contract_cannot_hold():
     assert normalize.pay(100000, 120000, None, "year") is None
     assert normalize.pay(100000, 120000, "USD", "month") is None
     assert normalize.pay(True, 120000, "USD", "year") is None
+    assert normalize.pay(23, 25, "USD", "year") is None               # an hourly rate labelled yearly
+    assert normalize.pay(90000, 120000, "USD", "hour") is None        # a salary labelled hourly
+    assert normalize.pay(23, 25, "USD", "hour")["period"] == "hour"
 
 
 def test_dates_and_department():
