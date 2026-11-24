@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
 
-from pipeline.collect import ashby, bamboohr, breezy, greenhouse, jazzhr, lever, recruitee, rippling, smartrecruiters, workable
+from pipeline.collect import ashby, bamboohr, breezy, greenhouse, jazzhr, lever, recruitee, rippling, smartrecruiters, teamtailor, workable
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
@@ -32,6 +32,7 @@ READERS: dict[str, Callable] = {
     "workable": workable.read,
     "recruitee": recruitee.read,
     "jazzhr": jazzhr.read,
+    "teamtailor": teamtailor.read,
     # These vendors' terms restrict automated reading. They run by the owner's
     # decision of 2026-11-24 (PLAN.md decision 6, recorded as a risk there);
     # each can be turned off for a run with --disable-reader TYPE.
@@ -47,7 +48,9 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          # Each Recruitee company has its own host; a 429 from one stops them all.
          "recruitee": "recruitee.com", "jazzhr": "app.jazz.co",
          # Each Breezy company has its own host; a 429 from one stops them all.
-         "breezy": "breezy.hr"}
+         "breezy": "breezy.hr",
+         # Teamtailor careers sites are on teamtailor.com or the company's own domain.
+         "teamtailor": "teamtailor.com"}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 

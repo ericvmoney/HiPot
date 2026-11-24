@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, breezy, jazzhr, recruitee, run as run_module, smartrecruiters, workable
+from pipeline.collect import bamboohr, breezy, jazzhr, recruitee, run as run_module, smartrecruiters, teamtailor, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -369,3 +369,47 @@ def test_breezy_page_without_a_job_block_gives_no_description():
 def test_breezy_a_refused_page_blocks_the_company():
     with pytest.raises(Blocked):
         breezy.read("zeno-power", FakeFetcher(failures={ZENO_CONTRACT: Blocked("HTTP 429 from zeno-power.breezy.hr")}))
+
+
+# --------------------------------------------------------------- Teamtailor
+
+AIRA = "https://career.airahome.com/jobs.rss?per_page=100&offset=0"
+
+
+def test_teamtailor_board_is_a_subdomain_or_a_whole_host():
+    assert teamtailor.feed_url("acme", 0) == "https://acme.teamtailor.com/jobs.rss?per_page=100&offset=0"
+    assert teamtailor.feed_url("career.airahome.com", 100) == "https://career.airahome.com/jobs.rss?per_page=100&offset=100"
+
+
+def test_teamtailor_fields():
+    fetcher = FakeFetcher()
+    drafts = {d["posting_id"]: d for d in teamtailor.read("career.airahome.com", fetcher)}
+    assert fetcher.calls == [(AIRA, None)]               # a short page is the last
+    installer = drafts["8790006"]
+    assert installer["title"] == "Heat Pump Installer"
+    assert installer["url"] == "https://career.airahome.com/jobs/8790006-heat-pump-installer"
+    assert installer["locations"] == [{"text": "Bury St Edmunds, United Kingdom", "city": "Bury St Edmunds", "country": "GB"}]
+    assert installer["workplace"] == "remote"            # remoteStatus "fully", as the company set it
+    assert installer["posted_date"] == "2026-11-24" and installer["department"] == "Service Operations"
+    assert installer["description_text"] and installer["pay"] is None
+    assert drafts["8784267"]["workplace"] == "hybrid"
+    assert drafts["8490762"]["workplace"] == "onsite" and drafts["8293908"]["workplace"] == "onsite"
+    assert [l["city"] for l in drafts["8782208"]["locations"]] == ["Manchester", "Sheffield"]
+
+
+def test_teamtailor_pages_until_a_short_page():
+    item = lambda n: (f"<item><title>Role {n}</title><link>https://acme.teamtailor.com/jobs/{n}-role</link>"
+                      f"<guid>g{n}</guid><pubDate>Tue, 24 Nov 2026 15:12:35 +0000</pubDate></item>")
+    feed = lambda numbers: f'<rss version="2.0"><channel>{"".join(item(n) for n in numbers)}</channel></rss>'
+    fetcher = FakeFetcher(extra={teamtailor.feed_url("acme", 0): feed(range(100)),
+                                 teamtailor.feed_url("acme", 100): feed(range(99, 130))})
+    drafts = teamtailor.read("acme", fetcher)
+    assert len(fetcher.calls) == 2
+    assert len(drafts) == 130                            # the posting on both pages is kept once
+
+
+def test_teamtailor_ids_and_a_bad_answer():
+    raw = collect([company("aira", "teamtailor", "career.airahome.com")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert "teamtailor:career.airahome.com:8790006" in {job["id"] for job in raw["jobs"]}
+    with pytest.raises(FetchError, match="not an RSS feed"):
+        teamtailor.parse("<html><body>Sign in</body></html>")

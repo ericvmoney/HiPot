@@ -31,6 +31,7 @@ ADDRESSES = {
 # Feeds that answer in XML or HTML rather than JSON.
 TEXT_ADDRESSES = {
     "https://app.jazz.co/feeds/export/jobs/coreshelltech": "jazzhr_coreshelltech.xml",
+    "https://career.airahome.com/jobs.rss?per_page=100&offset=0": "teamtailor_aira.rss",
     "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor": "breezy_zeno-power_783342e25463.html",
 }
 # Readers that make one request per posting ({base}/{posting}): these answers
