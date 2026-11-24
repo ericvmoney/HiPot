@@ -1,0 +1,1192 @@
+# Registry fixes 03: facts for the agreed startup test, for companies already in companies.yml.
+#
+# Written 2026-11-24 by workstream A2. Covers every registry company founded in 2011 or earlier, with
+# 1,000 to 5,000 people, or recorded as a subsidiary (53 companies), plus one hq fact found
+# while scouting Colorado (sperra).
+#
+# The test (owner, 2026-11-24): independent of any company at or over 4,000 people; under 4,000
+# people (about 25 percent tolerance, so up to 5,000; included when no figure exists); and at least one
+# growth sign: founded within 15 years (2011 or later), an equity raise within 5 years (since
+# 2021-11-24), or public for under 5 years (listed 2022 or later).
+#
+# Fields: parent (null when independent), last_raise (latest equity round), ipo_year, and headcount
+# only where a newer dated figure was found. 'preview' is the scout's reading of the test, for the
+# supervisor to check: 'was' is the current registry status. 13 statuses would change,
+# 5 of them for core or enabling companies:
+#   atoms out->in, crusoe review->in, formlabs review->in, invenergy out->in, lightbridge in->out, nexamp in->out, nuro review->in, skydio review->in, solv-energy out->in, motional review->out, piaggio-fast-forward in->out, rai-institute in->out, wing in->out
+#
+# A share sale by a company that was already public (at-the-market, registered direct, follow-on)
+# is not counted as venture or growth equity; Lightbridge and ChargePoint turn on that reading.
+#
+# Investment-firm owners (private equity, infrastructure funds) are read as independent, since the
+# firm itself is small; the companies affected say so in their reason. That reading is the scout's,
+# not yet the owner's.
+
+fixes:
+- id: advanced-energy
+  name: Advanced Energy
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 1995
+  ipo_source: https://en.wikipedia.org/wiki/Advanced_Energy
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '13,000 people, over the cap and its tolerance; no growth sign: founded 1981, no equity raise in five
+      years found, public over five years or private.'
+  notes: Long-public (Nasdaq AEIS since 1995), over 10,000 people. Registry figure is current (13,000 at 2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Advanced_Energy
+  confidence: high
+- id: archer
+  name: Archer
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2026-03
+    type: registered direct / private placement of common stock
+    amount: $430M
+    source: https://stocktwits.com/news-articles/markets/equity/achr-stock-dips-after-430m-fund-raise-announcement/cJaeolwR0M
+  ipo_year: 2021
+  ipo_source: https://en.wikipedia.org/wiki/Archer_Aviation
+  preview:
+    startup: in
+    was: in
+    tier: enabling
+    reason: '1,160 people, under the cap; its latest raise (registered direct / private placement of common stock,
+      2026-03) is a share sale by a company public since 2021, not counted as venture or growth equity; growth sign:
+      founded 2018.'
+  notes: 'Public via SPAC merger with Atlas Crest Investment Corp. II, September 2021 (just over 5 years ago). Earlier
+    equity raises: $850M registered direct (June 2025), $650M (November 2025). March 2026 $430M raise included Stellantis
+    and United. August 2026: proposed acquisition of Boeing''s Wisk, Insitu and SkyGrid for 19.75% of Archer''s
+    shares; Boeing would be a minority holder, not a parent. Stellantis is also a minority holder. Registry figure
+    is current (1,160 at 2025-12-31).'
+  evidence:
+  - https://en.wikipedia.org/wiki/Archer_Aviation
+  - https://stocktwits.com/news-articles/markets/equity/achr-stock-dips-after-430m-fund-raise-announcement/cJaeolwR0M
+  - https://www.businesswire.com/news/home/20250613219431/en
+  - https://www.businesswire.com/news/home/20251106381463/en
+  confidence: medium
+- id: atoms
+  name: Atoms
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-07-22'
+    type: venture round (led by Andreessen Horowitz)
+    amount: $1.7B
+    source: https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+  ipo_year: null
+  preview:
+    startup: in
+    was: out
+    tier: out
+    reason: '2,000 people, under the cap; growth sign: founded 2016; venture round (led by Andreessen Horowitz)
+      2026-07-22.'
+  notes: Atoms is Travis Kalanick's robotics/industrial AI company, the renamed owner of CloudKitchens (City Storage
+    Systems, founded 2016). Uber invested in the July 2026 round (minority). Reported over 2,000 staff, most in
+    the food/kitchen business, which matches the registry. Atoms acquired Pronto (autonomous haulage) to form an
+    Atoms Mining division. Registry figure is current.
+  evidence:
+  - https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+  - https://siliconangle.com/2026/07/23/industrial-automation-startup-atoms-raises-1-7b-funding/
+  - https://www.nrn.com/restaurant-technology/cloudkitchens-owner-raises-1-7b-to-automate-restaurants-and-more
+  confidence: medium
+- id: canadian-solar
+  name: Canadian Solar
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 2006
+  ipo_source: https://en.wikipedia.org/wiki/Canadian_Solar
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: '22,234 people, over the cap and its tolerance; no growth sign: founded 2001, no equity raise in five
+      years found, public over five years or private.'
+  notes: 'Long-public (Nasdaq CSIQ, November 2006), over 10,000 people. Its manufacturing arm CSI Solar listed separately
+    on the Shanghai Stock Exchange in June 2023 (a subsidiary, not a parent). A newer headcount than the registry''s
+    22,234 (2023) was not found: the FY2025 annual report is a Form 20-F filed April 2026, and its employee figure
+    was not reached within the search budget.'
+  evidence:
+  - https://en.wikipedia.org/wiki/Canadian_Solar
+  - https://finviz.com/news/343909/canadian-solar-files-annual-report-on-form-20-f-for-year-ended-december-31-2025
+  confidence: medium
+- id: chargepoint
+  name: ChargePoint
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026'
+    type: at-the-market offering
+    amount: unknown; ATM of up to $150M under a December 2025 shelf; shares outstanding rose from about 24M (2026-01-31)
+      to 26.85M (2026-08-28)
+    source: https://finviz.com/news/161476/why-chargepoint-chpt-stock-is-falling-today
+  ipo_year: 2021
+  ipo_source: https://en.wikipedia.org/wiki/ChargePoint
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: '1,440 people, under the cap; its latest raise (at-the-market offering, 2026) is a share sale by a company
+      public since 2021, not counted as venture or growth equity; no growth sign: founded 2007, no equity raise
+      in five years found, public over five years or private.'
+  notes: 'Public via SPAC merger with Switchback Energy, February 2021 (more than 5 years ago). Earlier confirmed
+    equity: $232M via ATM in fiscal 2024 (October 2023 release). The 2026 ATM use is inferred from the share count,
+    not confirmed. Registry figure is current (1,440 at 2026-01-31, FY2026 10-K).'
+  evidence:
+  - https://en.wikipedia.org/wiki/ChargePoint
+  - https://www.businesswire.com/news/home/20231011787292/en
+  - https://investors.chargepoint.com/news/news-details/2026/ChargePoint-Reports-Fourth-Quarter-and-Full-Fiscal-Year-2026-Financial-Results/default.aspx
+  confidence: low
+- id: clearway-energy-group
+  name: Clearway Energy Group
+  parent: 'Joint 50/50: Global Infrastructure Partners (now part of BlackRock) and TotalEnergies'
+  parent_headcount: BlackRock about 24,900 (2025); TotalEnergies about 101,513 (2025), per Wikipedia infoboxes
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: 'not independent: owned by Joint 50/50: Global Infrastructure Partners, which is over 4,000 people;
+      1,000 people, under the cap; growth sign: founded 2018.'
+  notes: Clearway Energy Group LLC (sponsor of listed Clearway Energy, Inc.) has been equally owned by GIP and TotalEnergies
+    since TotalEnergies bought 50% of GIP's stake, closing 2022-09-12. BlackRock agreed in January 2024 to acquire
+    GIP. Neither owner alone has a majority, but both are far over 4,000 people and jointly control it. Registry
+    figure is current.
+  evidence:
+  - https://www.sec.gov/Archives/edgar/data/1567683/000156768323000011/cwen-20221231.htm
+  - https://www.sec.gov/Archives/edgar/data/1567683/000156768324000015/cwen-20240331.htm
+  - https://en.wikipedia.org/wiki/BlackRock
+  - https://en.wikipedia.org/wiki/TotalEnergies
+  confidence: high
+- id: commonwealth-fusion-systems
+  name: Commonwealth Fusion Systems
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-07-30'
+    type: equity round (unnamed series)
+    amount: $1B
+    source: https://techcrunch.com/2026/07/30/fusion-power-darling-commonwealth-fusion-systems-raises-another-1b/
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '1,000 people, under the cap; growth sign: founded 2018; equity round (unnamed series) 2026-07-30.'
+  notes: Private MIT spin-out. The prior round was the $863M Series B2 (August 2025); total raised about $4B. Investors
+    include Eni, Temasek, Google and Breakthrough Energy Ventures (all minority). Executives talk of a future IPO.
+    Wikipedia lists 1,000+ employees (2025), which matches the registry.
+  evidence:
+  - https://en.wikipedia.org/wiki/Commonwealth_Fusion_Systems
+  - https://techcrunch.com/2026/07/30/fusion-power-darling-commonwealth-fusion-systems-raises-another-1b/
+  - https://datacenterdynamics.com/en/news/google-backed-fusion-firm-cfs-raises-1bn-in-equity-financing
+  confidence: high
+- id: connectder
+  name: ConnectDER
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2024-12
+    type: Series D
+    amount: $35M
+    source: https://www.utilitydive.com/news/blackrock-temasek-decarbonization-partners-venture-leads-35m-funding-round-connectder/734673/
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '64 people, under the cap; growth sign: founded 2011; Series D 2024-12.'
+  notes: Series D led by Decarbonization Partners (a BlackRock-Temasek joint venture), with MassMutual Ventures;
+    earlier $27M Series C (May 2023). No 2025-2026 round or acquisition found. connectder.com returned HTTP 429
+    to the automated fetch. Registry figure is current.
+  evidence:
+  - https://www.utilitydive.com/news/blackrock-temasek-decarbonization-partners-venture-leads-35m-funding-round-connectder/734673/
+  - https://chargedevs.com/newswire/connectder-raises-35-million-to-scale-its-meter-socket-adapters-for-ev-charging/
+  confidence: medium
+- id: crusoe
+  name: Crusoe
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-09-17'
+    type: Series F (initial closing)
+    amount: $3.9B at $30.9B post-money
+    source: https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding
+  ipo_year: null
+  preview:
+    startup: in
+    was: review
+    tier: out
+    reason: '1,528 people, under the cap; growth sign: founded 2018; Series F (initial closing) 2026-09-17.'
+  notes: Private. Co-led by Atreides, Mubadala Capital and Valor. Prior round $1.38B Series E at about $10B (October
+    2025). Seen as an IPO candidate; no filing found. Registry figure is current (1,528 at 2026-06-01).
+  evidence:
+  - https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding
+  - https://techcrunch.com/2026/09/17/crusoe-raises-3-9b-to-build-massive-data-centers-and-small-modular-ai-factories/
+  confidence: high
+- id: cummins
+  name: Cummins
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: null
+  ipo_source: not found; NYSE-listed (CMI) for decades
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '67,400 people, over the cap and its tolerance; no growth sign: founded 1919, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (over 10,000 people). Exact listing year not verified, so ipo_year is left
+    null even though it is public. Registry figure is current (67,400 at 2025-12-31; Wikipedia also gives 67,400
+    for 2025).
+  evidence:
+  - https://en.wikipedia.org/wiki/Cummins
+  confidence: medium
+- id: eaton
+  name: Eaton
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: null
+  ipo_source: not found; NYSE-listed (ETN) for decades
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: '92,000 people, over the cap and its tolerance; no growth sign: founded 1911, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (over 10,000 people). Exact listing year not verified, so ipo_year is left
+    null even though it is public. The registry's date (2026-11-24) looks like a retrieval stamp; Wikipedia gives
+    94,000 for 2024, close to the registry's 92,000.
+  evidence:
+  - https://en.wikipedia.org/wiki/Eaton_Corporation
+  confidence: medium
+- id: enphase
+  name: Enphase
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 2012
+  ipo_source: https://en.wikipedia.org/wiki/Enphase_Energy
+  headcount:
+    value: 2872
+    as_of: '2025-12-31'
+    source: Enphase 2026 annual meeting notice / proxy (as surfaced in search; the company PDF refused automated
+      fetch, so the as-of date is inferred) (https://newsroom.enphase.com/static-files/efd16b94-216f-46d6-9ded-e422520866fb)
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: '2,872 people, under the cap; no growth sign: founded 2006, no equity raise in five years found, public
+      over five years or private.'
+  notes: Public since its March 2012 Nasdaq IPO; no equity raise since (its financing has been convertible notes,
+    which are debt). Founded 2006.
+  evidence:
+  - https://investor.enphase.com/news-releases/news-release-details/enphase-energy-reports-financial-results-fourth-quarter-2025/
+  - https://newsroom.enphase.com/static-files/efd16b94-216f-46d6-9ded-e422520866fb
+  confidence: medium
+- id: flexgen
+  name: FlexGen
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2022-07
+    type: Series C
+    amount: $100M
+    source: https://wraltechwire.com/2022/07/19/durhams-flexgen-raises-100m-series-c-to-power-ongoing-growth-projects/
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '130 people, under the cap; growth sign: Series C 2022-07.'
+  notes: 'Series C anchored by Vitol (minority); earlier $150M equity commitment from Apollo funds (2021, minority).
+    January 2025: $75M credit line from J.P. Morgan (debt only). No acquisition of FlexGen found. Registry headcount
+    (130, 2022) is old, but no newer dated figure was found within the search budget.'
+  evidence:
+  - https://wraltechwire.com/2022/07/19/durhams-flexgen-raises-100m-series-c-to-power-ongoing-growth-projects/
+  - https://www.energy-storage.news/energy-trader-vitol-leads-us100-million-funding-round-for-bess-system-integrator-flexgen/
+  - https://www.energy-storage.news/flexgen-receives-us75-million-focuses-on-increasing-bankability
+  confidence: medium
+- id: ford
+  name: Ford
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 1956
+  ipo_source: https://en.wikipedia.org/wiki/Ford_Motor_Company
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '169,000 people, over the cap and its tolerance; no growth sign: founded 1903, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (over 10,000 people); IPO January 1956 (from general knowledge, page not
+    fetched). Registry figure is current (169,000 at 2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Ford_Motor_Company
+  confidence: medium
+- id: formlabs
+  name: Formlabs
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2021-05
+    type: Series E
+    amount: $150M at $2B valuation
+    source: https://techcrunch.com/2021/05/19/formlabs-raises-150m
+  ipo_year: null
+  preview:
+    startup: in
+    was: review
+    tier: out
+    reason: '1,099 people, under the cap; growth sign: founded 2011.'
+  notes: Private. Series E led by SoftBank Vision Fund 2 (minority). No 2022-2026 equity round found; an aggregator's
+    2024 'Series F' of $0.39M is unverified. The last raise is over 5 years old (May 2021). Wikipedia lists 750
+    employees (2026, uncited) against the registry's 1,099 (2026-06-01); registry figure kept as current.
+  evidence:
+  - https://en.wikipedia.org/wiki/Formlabs
+  - https://techcrunch.com/2021/05/19/formlabs-raises-150m
+  confidence: medium
+- id: generac
+  name: Generac
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 2010
+  ipo_source: https://en.wikipedia.org/wiki/Generac
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '9,400 people, over the cap and its tolerance; no growth sign: founded 1959, no equity raise in five
+      years found, public over five years or private.'
+  notes: NYSE IPO 2010-02-11 ($224M net). No equity raise since the IPO found. Owned by CCMP Capital before the
+    IPO; no parent now. Registry figure is current (9,400 at 2025-12-31; Wikipedia gives 9,239 for 2024).
+  evidence:
+  - https://en.wikipedia.org/wiki/Generac
+  confidence: high
+- id: hevo
+  name: HEVO
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2025-08-16'
+    type: crowdfunded convertible note (Wefunder)
+    amount: $0.58M
+    source: https://www.cbinsights.com/company/hevo/financials
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '9 people, under the cap; growth sign: founded 2011; crowdfunded convertible note (Wefunder) 2025-08-16.'
+  notes: Independent; no acquisition found. Funded mostly through small crowdfunding rounds (Wefunder, Republic);
+    total raised about $8-12M depending on source. A convertible note is not priced equity, so a strict equity test
+    may not count it. Registry figure is current (9 at 2026-03-01).
+  evidence:
+  - https://www.cbinsights.com/company/hevo/financials
+  - https://wefunder.com/hevo/updates
+  confidence: low
+- id: invenergy
+  name: Invenergy
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2023-06
+    type: growth equity (follow-on minority investment)
+    amount: $1B from Blackstone Infrastructure Partners
+    source: https://invenergy.com/news/invenergy-announces-1-billion-follow-on-investment-from-blackstone-infrastructure-partners
+  ipo_year: null
+  preview:
+    startup: in
+    was: out
+    tier: core
+    reason: '3,610 people, under the cap; growth sign: growth equity (follow-on minority investment) 2023-06.'
+  notes: 'Private, founder-led (Michael Polsky). Blackstone holds a minority stake (about $4B invested 2022-2023).
+    CDPQ holds 52.4% economic ownership of the subsidiary Invenergy Renewables LLC (since 2018), but Invenergy keeps
+    managerial control, and CDPQ does not own Invenergy itself. October 2026: a project-level strategic equity partnership
+    with HASI, in which Invenergy keeps majority ownership. Registry figure is current.'
+  evidence:
+  - https://en.wikipedia.org/wiki/Invenergy
+  - https://invenergy.com/news/invenergy-announces-1-billion-follow-on-investment-from-blackstone-infrastructure-partners
+  - https://invenergy.com/news/invenergy-strengthens-its-diversified-clean-energy-platform-through-new-equity-transactions-with-cdpq-and-amp-capital
+  - https://www.sidley.com/en/newslanding/newsannouncements/2026/10/sidley-represents-invenergy-in-strategic-equity-partnership-with-hasi
+  confidence: medium
+- id: lightbridge
+  name: Lightbridge
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2026-09
+    type: at-the-market offering
+    amount: $48.9M net in the nine months to 2026-09-30 (about 4.3M shares); $176.0M net in 2025
+    source: https://finviz.com/news/413010/lightbridge-provides-business-update-and-announces-third-quarter-fiscal-2026-financial-results
+  ipo_year: 2006
+  ipo_source: https://en.wikipedia.org/wiki/Lightbridge_Corporation
+  preview:
+    startup: out
+    was: in
+    tier: core
+    reason: '13 people, under the cap; its latest raise (at-the-market offering, 2026-09) is a share sale by a company
+      public since 2006, not counted as venture or growth equity; no growth sign: founded 1992, no equity raise
+      in five years found, public over five years or private.'
+  notes: Nasdaq-listed (LTBR). Public since 2006 via reverse merger of Thorium Power with Novastar Resources (from
+    general knowledge; page not fetched), so the IPO test does not apply. Growth sign comes from recent equity raises.
+    Registry figure is current (13 at 2026-11-19).
+  evidence:
+  - https://finviz.com/news/413010/lightbridge-provides-business-update-and-announces-third-quarter-fiscal-2026-financial-results
+  - https://finviz.com/news/322473/lightbridge-provides-business-update-and-announces-fiscal-year-2025-financial-results
+  confidence: medium
+- id: lucid-motors
+  name: Lucid Motors
+  parent: Public Investment Fund (Saudi Arabia), about 64% as of March 2025
+  parent_headcount: 3,321 employees (PIF 2025 annual report, published August 2026)
+  last_raise:
+    date: '2026-04-14'
+    type: follow-on offering plus private placement
+    amount: 'about $1.05B total: $300M underwritten common stock offering, $550M convertible preferred to PIF affiliate
+      Ayar, $200M from Uber'
+    source: https://electrek.co/2026/04/14/lucid-names-new-ceo-raises-over-1-billion-ramps-robotaxi-ambitions/
+  ipo_year: 2021
+  ipo_source: https://en.wikipedia.org/wiki/Lucid_Group
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: '9,000 people, over the cap and its tolerance; its latest raise (follow-on offering plus private placement,
+      2026-04-14) is a share sale by a company public since 2021, not counted as venture or growth equity; no growth
+      sign: founded 2007, no equity raise in five years found, public over five years or private.'
+  notes: Majority-owned by PIF. PIF itself had 3,321 employees at end-2025 (2,962 at end-2024), under the 4,000
+    line, although PIF controls companies with far larger workforces. Public via SPAC merger with Churchill Capital
+    Corp IV, 2021-07-26 (more than 5 years ago). Uber is a minority holder. Registry figure is current (9,000 at
+    2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Lucid_Group
+  - https://electrek.co/2026/04/14/lucid-names-new-ceo-raises-over-1-billion-ramps-robotaxi-ambitions/
+  - https://www.universalassetowners.com/registry/institution/public-investment-fund/
+  - https://www.argaam.com/en/article/articledetail/id/1836258
+  confidence: high
+- id: mainspring-energy
+  name: Mainspring Energy
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2025-04-14'
+    type: Series F
+    amount: $258M
+    source: https://www.mainspringenergy.com/news/mainspring-secures-258-million-in-financing-to-scale-linear-generator-business-adds-energy-and-tech-leaders-to-board
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: out
+    reason: '294 people, under the cap; growth sign: Series F 2025-04-14.'
+  notes: Private. Amazon is among the Series F backers (minority). PitchBook lists an October 2026 Series G and
+    a June 2026 IPO announcement; neither was confirmed elsewhere, so both are left out. Registry figure is current.
+  evidence:
+  - https://www.mainspringenergy.com/news/mainspring-secures-258-million-in-financing-to-scale-linear-generator-business-adds-energy-and-tech-leaders-to-board
+  - https://www.fenwick.com/insights/experience/fenwick-represents-mainspring-in-258m-series-f-funding
+  confidence: medium
+- id: metox-technologies
+  name: MetOx Technologies
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2024-11
+    type: Series B (final close)
+    amount: $15M (completing a $40M Series B extension)
+    source: https://prnewswire.com/news-releases/metox-secures-additional-strategic-funding-expanding-domestic-hts-manufacturing-capacity-302309540.html
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '80 people, under the cap; growth sign: Series B (final close) 2024-11.'
+  notes: Private (MetOx International, Houston). Series B began December 2023 (led by Koch Disruptive Technologies,
+    minority); $25M extension September 2024. No 2025-2026 round found. Registry figure is current.
+  evidence:
+  - https://prnewswire.com/news-releases/metox-secures-additional-strategic-funding-expanding-domestic-hts-manufacturing-capacity-302309540.html
+  - https://www.axios.com/pro/climate-deals/2024/09/23/metox-25m-superconducting-wires
+  - https://metoxtech.com
+  confidence: medium
+- id: nexamp
+  name: Nexamp
+  parent: Mitsubishi Corporation, via its wholly owned Diamond Generating Corporation (controlling stake since 2018)
+  parent_headcount: 'Mitsubishi Corporation: 63,037 consolidated, 4,456 parent-only (2026-03-31, per Wikipedia)'
+  last_raise:
+    date: 2024-04
+    type: growth equity
+    amount: $520M (led by Manulife Investment Management, with existing holders)
+    source: https://www.mitsubishicorp.com/jp/en/news/release/2024/0000053575.html
+  ipo_year: null
+  preview:
+    startup: out
+    was: in
+    tier: core
+    reason: 'not independent: owned by Mitsubishi Corporation, via its wholly owned Diamond Generating Corporation,
+      which is over 4,000 people; 464 people, under the cap; growth sign: growth equity 2024-04.'
+  notes: 'Diamond Generating took a near-majority stake in 2016 and a controlling stake in August 2018. The current
+    percentage was not confirmed after the 2024 raise, which brought in Manulife and Generate Capital. June 2025:
+    Mitsubishi announced a $3.9B plan to expand Nexamp. An aggregator''s $180M ''Series E'' (April 2026) is unverified.
+    A newer headcount than the registry''s 464 (2023) was not confirmed; Dealroom shows about 592, undated.'
+  evidence:
+  - https://www.utilitydive.com/press-release/20180824-diamond-generating-corp-takes-control-stake-in-nexamp-inc-acquires-bost/
+  - https://www.mitsubishicorp.com/jp/en/news/release/2024/0000053575.html
+  - https://www.mitsubishicorp.com/jp/en/about/project/nexamp/
+  - https://en.wikipedia.org/wiki/Mitsubishi_Corporation
+  confidence: medium
+- id: nuro
+  name: Nuro
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2025-08-21'
+    type: Series E (final close)
+    amount: $203M at $6B valuation
+    source: https://www.nuro.ai/blog/nuro-closes-203-million-series-e-financing-to-advance-its-ai-first-self-driving-technology-and-commercial-partnerships
+  ipo_year: null
+  preview:
+    startup: in
+    was: review
+    tier: out
+    reason: '1,166 people, under the cap; growth sign: founded 2016; Series E (final close) 2025-08-21.'
+  notes: Private. Uber and Nvidia are minority investors; Uber's commitment of close to $500M is milestone-based,
+    part of it in the Series E. No 2026 round found. Wikipedia lists 700 (2025, uncited); registry figure (1,166
+    at 2026-06-01) kept as current.
+  evidence:
+  - https://en.wikipedia.org/wiki/Nuro
+  - https://www.nuro.ai/blog/nuro-closes-203-million-series-e-financing-to-advance-its-ai-first-self-driving-technology-and-commercial-partnerships
+  confidence: high
+- id: oshkosh
+  name: Oshkosh
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 1985
+  ipo_source: general knowledge; not confirmed on https://en.wikipedia.org/wiki/Oshkosh_Corporation
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '18,400 people, over the cap and its tolerance; no growth sign: founded 1917, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (NYSE OSK, over 10,000 people). Registry figure is current (18,400 at 2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Oshkosh_Corporation
+  confidence: medium
+- id: qcells
+  name: Qcells
+  parent: Hanwha Solutions (part of Hanwha Group)
+  parent_headcount: 6,004 (2023, Wikipedia infobox for Hanwha Solutions); Hanwha Group is much larger
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: 'not independent: owned by Hanwha Solutions, which is over 4,000 people; no headcount figure (included);
+      no growth sign: founded 1999, no equity raise in five years found, public over five years or private.'
+  notes: Qcells is a division/subsidiary of Hanwha Solutions and is not listed on its own (the old Q-Cells SE listing
+    ended after its 2012 insolvency and Hanwha takeover). No dated Qcells headcount found.
+  evidence:
+  - https://en.wikipedia.org/wiki/Qcells
+  - https://en.wikipedia.org/wiki/Hanwha_Solutions
+  confidence: high
+- id: redwood-materials
+  name: Redwood Materials
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-01-28'
+    type: Series E (final close)
+    amount: about $425M total (first $350M close October 2025), at about $6B valuation
+    source: https://techcrunch.com/2026/01/28/redwood-attracts-google-for-its-425m-series-e-as-ai-power-needs-rise
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '1,215 people, under the cap; growth sign: founded 2017; Series E (final close) 2026-01-28.'
+  notes: Private, founded by J.B. Straubel. Series E led by Eclipse, with NVentures and Google (minority). Registry
+    figure is current (1,215 at 2026-04-21).
+  evidence:
+  - https://en.wikipedia.org/wiki/Redwood_Materials
+  - https://techcrunch.com/2026/01/28/redwood-attracts-google-for-its-425m-series-e-as-ai-power-needs-rise
+  - https://www.energy-storage.news/battery-recycler-redwood-receives-financing-boost-from-google-aims-to-expand-us-energy-storage-division/
+  confidence: high
+- id: renesas
+  name: Renesas
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 2003
+  ipo_source: https://en.wikipedia.org/wiki/Renesas_Electronics
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '21,915 people, over the cap and its tolerance; no growth sign: founded 2002, no equity raise in five
+      years found, public over five years or private.'
+  notes: Tokyo-listed since 2003 (as NEC Electronics; Renesas Electronics formed by merger in 2010). The state-backed
+    INCJ once held 69% but sold out in November 2023; no majority holder now. Over 10,000 people. Registry figure
+    is current (21,915 at 2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Renesas_Electronics
+  confidence: high
+- id: res
+  name: RES
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: out
+    tier: core
+    reason: '4,500 people, within the tolerance; no growth sign: founded 1981, no equity raise in five years found,
+      public over five years or private.'
+  notes: 'Renewable Energy Systems: privately held, owned by the McAlpine family (chair Gavin McAlpine); calls itself
+    the world''s largest independent renewable energy company. No change of control found. It is selling businesses
+    and projects (French arm to Hanwha Solutions; Topaz wind farm in Turkey; Dunbeg South, January 2026), and acquired
+    Blueshore in Australia. Founded 1981. Its 4,500 staff are over the 4,000 line. Registry figure is current. The
+    registry''s ''subsidiary'' stage looks wrong.'
+  evidence:
+  - https://www.pv-tech.org/res-targets-global-growth-strategy-after-completing-sale-of-france-arm
+  - https://www.res-group.com/wp-content/uploads/2026/09/pfg-report-fy25.pdf
+  confidence: medium
+- id: rivian
+  name: Rivian
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-04-30'
+    type: private placement (strategic equity from Volkswagen)
+    amount: about $1B (62.9M new shares at $15.90)
+    source: https://electrek.co/2026/05/05/volkswagen-rivian-stake-15-percent-largest-shareholder/
+  ipo_year: 2021
+  ipo_source: https://en.wikipedia.org/wiki/Rivian
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: '15,232 people, over the cap and its tolerance; its latest raise (private placement (strategic equity
+      from Volkswagen), 2026-04-30) is a share sale by a company public since 2021, not counted as venture or growth
+      equity; no growth sign: founded 2009, no equity raise in five years found, public over five years or private.'
+  notes: Nasdaq IPO November 2021 (just over 5 years ago). Volkswagen is now the largest shareholder at about 15.9%,
+    displacing Amazon (minority, not a parent). VW's deal is worth up to $5.8B through 2027, including another $460M
+    equity tranche after the first JV vehicle launches. Over 10,000 people. Registry figure is current (15,232 at
+    2025-12-31).
+  evidence:
+  - https://electrek.co/2026/05/05/volkswagen-rivian-stake-15-percent-largest-shareholder/
+  - https://techcrunch.com/2026/05/05/volkswagen-becomes-rivians-top-shareholder-displacing-amazon/
+  confidence: high
+- id: rivian-and-volkswagen-group-technologies
+  name: Rivian and Volkswagen Group Technologies
+  parent: Joint venture, 50% Volkswagen Group and 50% Rivian
+  parent_headcount: Volkswagen Group 682,724 (2024 average); Rivian 15,232 (2025-12-31)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: 'not independent: owned by Joint venture, 50% Volkswagen Group and 50% Rivian, which is over 4,000 people;
+      1,500 people, under the cap; growth sign: founded 2024.'
+  notes: Equal joint venture launched November 2024. Both owners are over 4,000 people. It is funded by its parents
+    under the VW-Rivian agreement, with no outside equity rounds. Registry figure is current.
+  evidence:
+  - https://en.wikipedia.org/wiki/Volkswagen_Group
+  - https://www.volkswagen-group.com/en/press-releases/faster-leaner-more-efficient-rivian-and-volkswagen-group-announce-the-launch-of-their-joint-venture-18828
+  confidence: high
+- id: runwise
+  name: Runwise
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2025-06-09'
+    type: Series B
+    amount: $55M (plus growth debt)
+    source: https://builtin.com/articles/runwise-raises-55m-series-b-20250609
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '125 people, under the cap; growth sign: Series B 2025-06-09.'
+  notes: Private. Series B led by Menlo Ventures. Its site gives no headcount or ownership details. Registry figure
+    is current (125 at 2025-06-01).
+  evidence:
+  - https://builtin.com/articles/runwise-raises-55m-series-b-20250609
+  - https://runwise.com
+  confidence: high
+- id: schneider-electric
+  name: Schneider Electric
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: null
+  ipo_source: not found; Euronext Paris (SU), listed for decades
+  headcount:
+    value: 173626
+    as_of: '2025-12-31'
+    source: Wikipedia finances table (company annual figures) (https://en.wikipedia.org/wiki/Schneider_Electric)
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: '173,626 people, over the cap and its tolerance; no growth sign: founded 1836, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (over 10,000 people). Exact listing year not verified, so ipo_year is left
+    null even though it is public. The registry's 150,000 is dated 2026-11-24, which looks like a retrieval stamp;
+    the 2025 figure is given because it differs a lot.
+  evidence:
+  - https://en.wikipedia.org/wiki/Schneider_Electric
+  confidence: medium
+- id: sila-nanotechnologies
+  name: Sila Nanotechnologies
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-07-21'
+    type: private equity round (growth)
+    amount: $300M at about $2.33B post-money
+    source: https://silanano.com/press/press-releases/sila-secures-300-million-in-private-funding-to-ramp-gigascale-anode-manufacturing-and-strengthen-americas-technology-sovereignty
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '478 people, under the cap; growth sign: founded 2011; private equity round (growth) 2026-07-21.'
+  notes: Private. Round led by Atreides and Sutter Hill; prior $375M (June 2024). Mercedes-Benz is a minority investor.
+    Separately, a conditional commitment of up to $1.4B from the US Office of Strategic Capital (debt, not closed).
+    Registry figure is current.
+  evidence:
+  - https://silanano.com/press/press-releases/sila-secures-300-million-in-private-funding-to-ramp-gigascale-anode-manufacturing-and-strengthen-americas-technology-sovereignty
+  - https://www.electrive.com/2026/07/22/sila-raises-300-million-to-expand-us-silicon-anode-production/
+  - https://en.wikipedia.org/wiki/Sila_Nanotechnologies
+  confidence: high
+- id: skydio
+  name: Skydio
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-04-23'
+    type: Series F
+    amount: $110M at $4.4B valuation
+    source: https://www.skydio.com/blog/skydio-series-f
+  ipo_year: null
+  preview:
+    startup: in
+    was: review
+    tier: out
+    reason: '1,081 people, under the cap; growth sign: founded 2014; Series F 2026-04-23.'
+  notes: 'Private. November 2026: Axon reportedly agreed to invest $1.2B (about 20% fully diluted, $5.2B pre-money),
+    closing late 2026 to early 2027. That stake would be a minority (single-outlet report; not yet closed). Registry
+    figure is current.'
+  evidence:
+  - https://www.skydio.com/blog/skydio-series-f
+  - https://dronexl.co/2026/04/23/skydio-110m-series-f-44-billion-valuation/
+  - https://dealroom.co/news/170172-axon-invests-1-2b-in-skydio-taking-drone-maker-to-a-5-2b-valuation/
+  confidence: high
+- id: solid-power
+  name: Solid Power
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: 2026-01
+    type: registered direct offering (common stock, pre-funded and common warrants)
+    amount: $130M gross, $121.3M net
+    source: https://www.barchart.com/story/news/37272391/solid-power-announces-pricing-of-130-million-registered-direct-offering
+  ipo_year: 2021
+  ipo_source: https://www.nasdaq.com/press-release/solid-power-reports-second-quarter-2026-results-2026-08-04
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '230 people, under the cap; its latest raise (registered direct offering (common stock, pre-funded and
+      common warrants), 2026-01) is a share sale by a company public since 2021, not counted as venture or growth
+      equity; growth sign: founded 2011.'
+  notes: 'Public via SPAC merger with Decarbonization Plus Acquisition III, December 2021 (just under 5 years ago
+    as of 2026-11-24; turns 5 around 2026-12-08). Also used an ATM: $88.8M net in 2025. Registry figure is current
+    (230 at 2025-12-31).'
+  evidence:
+  - https://www.barchart.com/story/news/37272391/solid-power-announces-pricing-of-130-million-registered-direct-offering
+  - https://www.businesswire.com/news/home/20260224365911/en
+  - https://www.nasdaq.com/press-release/solid-power-reports-second-quarter-2026-results-2026-08-04
+  confidence: medium
+- id: solv-energy
+  name: SOLV Energy
+  parent: American Securities (private equity), about 75% after the IPO
+  parent_headcount: not found; American Securities is a PE firm whose own staff is small, though its portfolio employs
+    far more
+  last_raise:
+    date: '2026-02-11'
+    type: IPO
+    amount: $512.5M (20.5M shares at $25); 23.575M shares with the greenshoe
+    source: https://www.bloomberg.com/news/articles/2026-02-11/power-engineering-firm-solv-energy-raises-512-5-million-in-ipo
+  ipo_year: 2026
+  ipo_source: https://www.renaissancecapital.com/IPO-Center/News/116914/american-securities-solar-project-builder-solv-energy-prices-ipo-at-25
+  preview:
+    startup: in
+    was: out
+    tier: core
+    reason: 'owned by an investment firm (American Securities), read as independent; 2,300 people, under the cap;
+      growth sign: IPO 2026-02-11; public since 2026.'
+  notes: Nasdaq IPO (ticker MWH) 2026-02-11, so public under 5 years. Majority-controlled by its PE sponsor, American
+    Securities. Registry figure is current (2,300 at 2026-02-01).
+  evidence:
+  - https://www.bloomberg.com/news/articles/2026-02-11/power-engineering-firm-solv-energy-raises-512-5-million-in-ipo
+  - https://www.renaissancecapital.com/IPO-Center/News/116914/american-securities-solar-project-builder-solv-energy-prices-ipo-at-25
+  - https://www.lw.com/en/news/2026/02/latham-watkins-advises-on-solv-energy-ipo
+  confidence: high
+- id: stafl-systems
+  name: Stafl Systems
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2024-06-27'
+    type: growth investment (WindSail Capital; type and stake not disclosed)
+    amount: undisclosed
+    source: https://www.businesswire.com/news/home/20240627562900/en/Stafl-Systems-Accelerates-Growth-with-Investment-from-WindSail-Capital
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: enabling
+    reason: '60 people, under the cap; growth sign: growth investment (WindSail Capital; type and stake not disclosed)
+      2024-06-27.'
+  notes: No acquisition found. WindSail often provides structured or debt-like growth capital, so whether this was
+    equity is unclear. Based in South San Francisco per CB Insights. Registry headcount (60, 2024-06-30) has no
+    newer dated figure.
+  evidence:
+  - https://www.businesswire.com/news/home/20240627562900/en/Stafl-Systems-Accelerates-Growth-with-Investment-from-WindSail-Capital
+  - https://www.cbinsights.com/company/stafl-systems
+  confidence: medium
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  parent: Industrial Growth Partners (private equity), acquired 2025-03-10
+  parent_headcount: not found; IGP is a small San Francisco PE firm
+  last_raise:
+    date: '2025-03-10'
+    type: private equity buyout
+    amount: undisclosed
+    source: https://mergr.com/transaction/industrial-growth-partners-acquires-stored-energy-systems
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: enabling
+    reason: 'owned by an investment firm (Industrial Growth Partners), read as independent; 291 people, under the
+      cap; growth sign: private equity buyout 2025-03-10.'
+  notes: Founded 1971, Longmont, CO. Bought from the founding Kaewert family by IGP; reported by deal databases
+    only, with no primary release found. A new CEO (Igor Stamenkovic) is named in August 2026 coverage. The PE owner
+    is small, so the 4,000-person parent test is likely not triggered, but the company is majority-owned. Registry
+    figure is current.
+  evidence:
+  - https://mergr.com/transaction/industrial-growth-partners-acquires-stored-energy-systems
+  - https://www.privsource.com/acquisitions/deal/YBSJwB
+  - https://coloradobiz.com/sens-expands-longmont-manufacturing-facility/
+  confidence: medium
+- id: terrapower
+  name: TerraPower
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2025-06-18'
+    type: equity round (unnamed series)
+    amount: $650M
+    source: https://www.terrapower.com/terrapower-announces-650-million-fundraise
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: '1,302 people, under the cap; growth sign: equity round (unnamed series) 2025-06-18.'
+  notes: Private, founded by Bill Gates (Cascade is the main investor; no majority parent disclosed). Investors
+    include NVentures, HD Hyundai and SK (minority). Aggregators list January 2026 deals ($250M equity; $40M secondary
+    led by KHNP), both unverified. Meta's January 2026 reactor agreement is a customer deal, not equity. Registry
+    figure is current.
+  evidence:
+  - https://www.terrapower.com/terrapower-announces-650-million-fundraise
+  - https://techcrunch.com/2025/06/20/nvidia-wants-in-on-the-nuclear-renaissance-invests-in-bill-gates-backed-terrapower
+  - https://en.wikipedia.org/wiki/TerraPower
+  confidence: high
+- id: tesla
+  name: Tesla
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: 2010
+  ipo_source: https://en.wikipedia.org/wiki/Tesla,_Inc.
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: '134,785 people, over the cap and its tolerance; no growth sign: founded 2003, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (Nasdaq IPO June 2010; from general knowledge, page not fetched). Registry
+    figure is current (134,785 at 2025-12-31).
+  evidence:
+  - https://en.wikipedia.org/wiki/Tesla,_Inc.
+  confidence: medium
+- id: woodward
+  name: Woodward
+  parent: null
+  parent_headcount: null
+  last_raise: null
+  ipo_year: null
+  ipo_source: not found; Nasdaq-listed (WWD, formerly WGOV) for decades
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: '10,200 people, over the cap and its tolerance; no growth sign: founded 1870, no equity raise in five
+      years found, public over five years or private.'
+  notes: Very large, long-public company (over 10,000 people). Exact listing year not verified, so ipo_year is left
+    null even though it is public. Registry figure is current (10,200 at 2025-10-31, FY2025).
+  evidence:
+  - https://en.wikipedia.org/wiki/Woodward,_Inc.
+  confidence: medium
+- id: zipline
+  name: Zipline
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-01-22'
+    type: venture round (series not stated)
+    amount: over $600M at $7.6B valuation
+    source: https://www.therobotreport.com/zipline-raises-over-600m-in-funding-surpasses-2m-commercial-drone-deliveries/
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: enabling
+    reason: '2,368 people, under the cap; growth sign: founded 2014; venture round (series not stated) 2026-01-22.'
+  notes: Private. Investors include Fidelity, Baillie Gifford, Valor and Tiger Global (minority); Toyota Tsusho
+    is a partner and investor (minority). Registry figure is current (2,368 at 2026-06-01).
+  evidence:
+  - https://www.therobotreport.com/zipline-raises-over-600m-in-funding-surpasses-2m-commercial-drone-deliveries/
+  - https://en.wikipedia.org/wiki/Zipline_(drone_delivery)
+  confidence: high
+- id: also
+  name: ALSO
+  parent: null
+  parent_headcount: null
+  last_raise:
+    date: '2026-08-19'
+    type: Series D
+    amount: $150M (led by Prysm Capital)
+    source: https://techcrunch.com/2026/08/19/rivian-spinout-also-raises-another-150-million
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: enabling
+    reason: '330 people, under the cap; growth sign: founded 2025; Series D 2026-08-19.'
+  notes: Spun out of Rivian in March 2025. Rivian keeps a 'substantial minority' stake and RJ Scaringe chairs the
+    board, so Rivian is not a parent; the registry's 'subsidiary' stage looks wrong. Raised $105M (Eclipse, March
+    2025), $200M (Greenoaks, July 2025, $1B post-money) and $150M Series D (August 2026), $455M in total. Registry
+    figure is current.
+  evidence:
+  - https://www.businesswire.com/news/home/20250326599387/en/Rivian-Spins-out-Micromobility-Business-into-New-Startup%E2%80%94Also-Inc.
+  - https://techcrunch.com/2026/08/19/rivian-spinout-also-raises-another-150-million
+  - https://techcrunch.com/2025/07/08/rivian-spinoff-also-raises-another-200m-to-build-e-bikes-and-more
+  confidence: high
+- id: motional
+  name: Motional
+  parent: Hyundai Motor Group (majority owner)
+  parent_headcount: 292,575 (2021, Wikipedia infobox)
+  last_raise:
+    date: 2024-05
+    type: funding from majority parent (Hyundai), with buyout of part of Aptiv's stake
+    amount: $475M round within a roughly $941M Hyundai injection
+    source: https://techcrunch.com/2024/05/02/hyundai-is-spending-close-to-1-billion-to-keep-self-driving-startup-motional-alive
+  ipo_year: null
+  preview:
+    startup: out
+    was: review
+    tier: out
+    reason: 'not independent: owned by Hyundai Motor Group, which is over 4,000 people; 765 people, under the cap;
+      growth sign: founded 2020; funding from majority parent (Hyundai), with buyout of part of Aptiv''s stake 2024-05.'
+  notes: Founded March 2020 as a Hyundai-Aptiv joint venture; Hyundai became majority owner in 2024 after Aptiv
+    stopped funding it. Targets a driverless Las Vegas launch by end-2026. No dated headcount found.
+  evidence:
+  - https://en.wikipedia.org/wiki/Motional
+  - https://techcrunch.com/2024/05/02/hyundai-is-spending-close-to-1-billion-to-keep-self-driving-startup-motional-alive
+  - https://en.wikipedia.org/wiki/Hyundai_Motor_Group
+  confidence: high
+- id: piaggio-fast-forward
+  name: Piaggio Fast Forward
+  parent: Piaggio Group (Piaggio & C. S.p.A., itself controlled by IMMSI)
+  parent_headcount: 5,925 (2023 annual results, per Wikipedia)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: in
+    tier: out
+    reason: 'not independent: owned by Piaggio Group, which is over 4,000 people; no headcount figure (included);
+      growth sign: founded 2015.'
+  notes: Boston-based subsidiary and robotics/mobility research centre of Piaggio Group, headed by Michele Colaninno;
+    maker of the gita robot. No outside funding or dated headcount found.
+  evidence:
+  - https://www.piaggiogroup.com/en/business
+  - https://www.piaggiogroup.com/sites/default/files/documents/PIAGGIO%20-%20Info%20di%20background%20FY2025_ING.pdf
+  - https://en.wikipedia.org/wiki/Piaggio
+  confidence: high
+- id: pronto
+  name: Pronto
+  parent: Atoms (Travis Kalanick's company)
+  parent_headcount: over 2,000 (2026 press reports on Atoms' July 2026 raise)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: out
+    reason: '175 people, under the cap; growth sign: founded 2018.'
+  notes: Autonomous haulage company (Pronto.ai). It bought rival SafeAI in July 2025, then was itself acquired by
+    Atoms to become the core of an Atoms Mining division. The acquisition is reported only in LinkedIn posts seen
+    in search; no completion date or primary release was found. The parent is under 4,000 people. Pronto's own last
+    round was not found.
+  evidence:
+  - https://techcrunch.com/2025/07/15/av-startup-pronto-ai-acquires-off-road-autonomous-vehicle-rival-safeai
+  - https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+  confidence: low
+- id: rai-institute
+  name: RAI Institute
+  parent: Hyundai Motor Group (founder and funder)
+  parent_headcount: 292,575 (2021, Wikipedia infobox)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: in
+    tier: out
+    reason: 'not independent: owned by Hyundai Motor Group, which is over 4,000 people; no headcount figure (included);
+      growth sign: founded 2022.'
+  notes: Robotics and AI Institute, launched August 2022 as the Boston Dynamics AI Institute by Hyundai Motor Group
+    and Boston Dynamics (80% Hyundai-owned) with over $400M initial funding; led by Marc Raibert. It is a research
+    institute, not a venture-funded startup. No dated headcount found.
+  evidence:
+  - https://hyundai.com/worldwide/en/newsroom/detail/hyundai-motor-group-launches-boston-dynamics-ai-institute-to-spearhead-advancements-in-artificial-intelligence-%2526-robotics-0000000106
+  - https://spectrum.ieee.org/boston-dynamics-ai-institute-hyundai
+  confidence: medium
+- id: scale-microgrids
+  name: Scale Microgrids
+  parent: EQT (via EQT Transition Infrastructure), acquired 2025 from Warburg Pincus and others
+  parent_headcount: EQT AB 1,160 (2021, Wikipedia infobox); the firm is under 4,000 people, its portfolio far larger
+  last_raise:
+    date: '2025-01-10'
+    type: private equity buyout
+    amount: undisclosed
+    source: https://eqtgroup.com/news/2025/eqt-to-acquire-distributed-energy-company-scale-microgrids
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: out
+    reason: 'owned by an investment firm (EQT), read as independent; 95 people, under the cap; growth sign: founded
+      2016; private equity buyout 2025-01-10.'
+  notes: Scale Microgrid Solutions LLC. Majority-owned by an infrastructure fund. The fund manager itself is under
+    4,000 people, so the test depends on whether PE ownership counts as a parent. No dated headcount found.
+  evidence:
+  - https://eqtgroup.com/news/2025/eqt-to-acquire-distributed-energy-company-scale-microgrids
+  - https://www.pv-tech.org/investment-firm-eqt-to-acquire-scale-microgrids/
+  - https://en.wikipedia.org/wiki/EQT_AB
+  confidence: high
+- id: scout-motors
+  name: Scout Motors
+  parent: Volkswagen Group (100%)
+  parent_headcount: 682,724 (2024 average, Wikipedia infobox)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: out
+    tier: enabling
+    reason: 'not independent: owned by Volkswagen Group, which is over 4,000 people; 900 people, under the cap;
+      growth sign: founded 2022.'
+  notes: Wholly owned, independently run VW subsidiary, founded 2022-05-24. No outside funding. Registry figure
+    is current.
+  evidence:
+  - https://en.wikipedia.org/wiki/Scout_Motors
+  - https://en.wikipedia.org/wiki/Volkswagen_Group
+  confidence: high
+- id: voltera
+  name: Voltera
+  parent: EQT Infrastructure (majority owner; spun out of EQT's EdgeConneX)
+  parent_headcount: EQT AB 1,160 (2021, Wikipedia infobox); the firm is under 4,000 people, its portfolio far larger
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: in
+    was: in
+    tier: core
+    reason: 'owned by an investment firm (EQT Infrastructure), read as independent; 76 people, under the cap; growth
+      sign: founded 2022.'
+  notes: 'May 2026: announced combination with Revel; the merged company (Voltera brand) is to be majority-owned
+    by EQT, with Global Infrastructure Partners (BlackRock) holding a minority. Closing not confirmed. No dated
+    headcount found.'
+  evidence:
+  - https://eqtgroup.com/current-portfolio/voltera/
+  - https://electrek.co/2026/05/28/revel-voltera-big-ev-charging-network-robotaxis/
+  - https://www.businesswire.com/news/home/20240227126326/en/
+  confidence: high
+- id: wing
+  name: Wing
+  parent: Alphabet Inc.
+  parent_headcount: 204,757 (September 2026, Wikipedia infobox)
+  last_raise: null
+  ipo_year: null
+  preview:
+    startup: out
+    was: in
+    tier: enabling
+    reason: 'not independent: owned by Alphabet Inc., which is over 4,000 people; 510 people, under the cap; growth
+      sign: founded 2012.'
+  notes: Alphabet subsidiary (Wing Aviation LLC); a project at X from 2012, a separate Alphabet company since July
+    2018. No outside funding found. Registry figure is current.
+  evidence:
+  - https://en.wikipedia.org/wiki/Wing_(company)
+  - https://en.wikipedia.org/wiki/Alphabet_Inc.
+  confidence: high
+- id: zoox
+  name: Zoox
+  parent: Amazon
+  parent_headcount: 1,576,000 (2025, Wikipedia infobox)
+  last_raise: null
+  ipo_year: null
+  headcount:
+    value: 2200
+    as_of: '2023-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Zoox_(company))
+  preview:
+    startup: out
+    was: out
+    tier: out
+    reason: 'not independent: owned by Amazon, which is over 4,000 people; 2,200 people, under the cap; growth sign:
+      founded 2014.'
+  notes: Founded 2014; Amazon signed the acquisition agreement 2020-06-26. Wholly owned subsidiary.
+  evidence:
+  - https://en.wikipedia.org/wiki/Zoox_(company)
+  - https://en.wikipedia.org/wiki/Amazon_(company)
+  confidence: high
+- id: sperra
+  name: Sperra
+  hq:
+    value: Boulder, CO
+    source: RCAM Technologies (rcamtechnologies.com, now redirects to sperra.com) is the former name of Sperra;
+      Colorado grant lists and the company describe a Boulder base. Registry hq is uncertain (San Pedro or Irvine,
+      CA).
+  notes: Sperra also has a UK entity. Check the Boulder versus California question against the company's own contact
+    page before changing hq.
+  confidence: medium
