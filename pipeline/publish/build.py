@@ -27,6 +27,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pipeline.publish import grades as paygrades
 from pipeline.publish import pay as paybands
 from pipeline.publish.states import US_STATES, states_for
 from tools.validate import check_companies, check_jobs, is_listed, listed_functions, schema_errors, schema_registry
@@ -156,8 +157,12 @@ def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlist
             "left_out_company": left_out_company, "left_out_function": left_out_function}
 
 
-def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False) -> dict:
-    """Return the board data as a dict. Raises PublishError on input that fails the contracts."""
+def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
+                grades: bool = True) -> dict:
+    """Return the board data as a dict. Raises PublishError on input that fails the contracts.
+
+    `grades` adds a pay-vs-market grade to each role with a published range (see grades.py).
+    """
     selected = _select(jobs_file, registry_file, taxonomy, include_unlisted)
     companies, kept = selected["companies"], selected["kept"]
     left_out_company, left_out_function = selected["left_out_company"], selected["left_out_function"]
@@ -168,11 +173,21 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
         for cid in sorted(used, key=lambda cid: (companies[cid]["name"].casefold(), cid))
     }
 
+    labels = _labels(taxonomy, kept)
+    records = [_role_record(job) for job in kept]
+    if grades:
+        found = paygrades.grades(kept)
+        for record in records:
+            if record["id"] in found:
+                record["grade"] = found[record["id"]]
+        labels["grades"] = [{"id": key, "label": label} for key, label in paygrades.GRADES]
+
     return {
         "board_version": BOARD_VERSION,
         "generated_at": jobs_file["generated_at"],
         "source": jobs_file["source"],
         "scope": "all" if include_unlisted else "listed",
+        "grades": grades,
         "counts": {
             "roles": len(kept),
             "companies": len(company_records),
@@ -183,9 +198,9 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
             "functions": {entry["id"]: sum(1 for job in kept if job["function"] == entry["id"])
                           for entry in taxonomy["functions"]},
         },
-        "taxonomy": _labels(taxonomy, kept),
+        "taxonomy": labels,
         "companies": company_records,
-        "roles": [_role_record(job) for job in kept],
+        "roles": records,
     }
 
 
@@ -241,7 +256,7 @@ def _compact(value: Any) -> str:
 def dumps_board(board: dict) -> str:
     """Serialize with one company and one role per line: small, stable, and readable in a diff."""
     lines = ["{"]
-    for key in ("board_version", "generated_at", "source", "scope", "counts", "taxonomy"):
+    for key in ("board_version", "generated_at", "source", "scope", "grades", "counts", "taxonomy"):
         lines.append(f"{_compact(key)}:{_compact(board[key])},")
     lines.append('"companies":{')
     entries = [f"{_compact(cid)}:{_compact(record)}" for cid, record in board["companies"].items()]

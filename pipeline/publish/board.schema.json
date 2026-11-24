@@ -4,11 +4,12 @@
   "description": "The shape of site/data/board.json, written by pipeline.publish and read by site/index.html. Owned by workstream A4; it is an internal format between the publish step and the page, not one of the shared contracts. A missing optional field means 'not stated'.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["board_version", "generated_at", "source", "scope", "counts", "taxonomy", "companies", "roles"],
+  "required": ["board_version", "generated_at", "source", "scope", "grades", "counts", "taxonomy", "companies", "roles"],
   "properties": {
     "board_version": {"const": 0},
     "generated_at": {"type": "string", "format": "date-time", "description": "Copied from the jobs file: when the role data was generated."},
     "source": {"type": "string"},
+    "grades": {"type": "boolean", "description": "True when roles carry pay-vs-market grades (publish --grades, the default)."},
     "scope": {"enum": ["listed", "all"], "description": "'all' is a development build that includes unlisted companies. Never publish it."},
     "counts": {
       "type": "object",
@@ -105,7 +106,21 @@
           },
           "posted": {"type": "string", "format": "date"},
           "seen": {"type": "string", "format": "date", "description": "The day the role was first seen."},
-          "summary": {"type": "string", "minLength": 1, "maxLength": 500}
+          "summary": {"type": "string", "minLength": 1, "maxLength": 500},
+          "grade": {
+            "description": "This role's published midpoint against comparable published ranges: same role group and level (the role's own, or 'none') and pay period, in market m. Not a salary estimate.",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["v", "g", "m", "n", "med", "pct"],
+            "properties": {
+              "v": {"enum": ["above", "at", "below"]},
+              "g": {"type": "string", "pattern": "^[df]-[a-z0-9]+(-[a-z0-9]+)*$", "description": "Role group compared with."},
+              "m": {"$ref": "#/$defs/slug", "description": "Market compared with: a metro id, 'remote' or 'us'."},
+              "n": {"type": "integer", "minimum": 5, "description": "Other postings in the comparison group."},
+              "med": {"type": "number", "minimum": 0, "description": "Their median midpoint."},
+              "pct": {"type": "integer", "description": "This role's midpoint against that median, in percent."}
+            }
+          }
         }
       }
     }

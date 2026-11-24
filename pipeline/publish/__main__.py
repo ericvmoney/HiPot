@@ -44,6 +44,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--pay-out", type=Path, default=None,
                         help="pay bands for the pay page; default pay.json beside --out")
     parser.add_argument(
+        "--grades", action=argparse.BooleanOptionalAction, default=True,
+        help="grade each role's published pay against comparable roles (default on; --no-grades to leave out)",
+    )
+    parser.add_argument(
         "--include-unlisted", action="store_true",
         help="development only: keep roles at unlisted companies and in unlisted functions. Never publish this build.",
     )
@@ -60,7 +64,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
-        board = build_board(*inputs, include_unlisted=args.include_unlisted)
+        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades)
         pay = build_pay(*inputs, include_unlisted=args.include_unlisted)
     except PublishError as error:
         print(f"FAIL  nothing written: {len(error.problems)} problem(s)", file=sys.stderr)
@@ -79,6 +83,14 @@ def main(argv: list[str] | None = None) -> int:
           f"({counts['left_out_company']} at unlisted companies, {counts['left_out_function']} in unlisted functions)")
     by_function = ", ".join(f"{fid} {n}" for fid, n in counts["functions"].items() if n)
     print(f"  by function: {by_function or 'none'}")
+    if board["grades"]:
+        graded = [role["grade"]["v"] for role in board["roles"] if "grade" in role]
+        with_pay = sum(1 for role in board["roles"] if role.get("pay"))
+        print(f"  pay grades: {len(graded)} of {with_pay} roles with pay "
+              f"(above {graded.count('above')}, at {graded.count('at')}, below {graded.count('below')}); "
+              f"--no-grades leaves them out")
+    else:
+        print("  pay grades: off (--no-grades)")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
 
     pay_out = args.pay_out or args.out.with_name("pay.json")
