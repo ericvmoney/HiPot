@@ -55,15 +55,40 @@ DESCRIPTOR = re.compile(
     r"unified government|urban county|city|town|township|village|borough|municipality|"
     r"plantation|CDP|zona urbana|comunidad|charter township|gore|grant|location|purchase)"
     r"(\s*\(balance\))?$")
-# Names job boards use that are not Census places, placed by the county they lie in.
+# Names job boards use that the Census files do not settle, placed by the county
+# they lie in. These override the lookup: use them for names that are not Census
+# places, and for names the Census gives to two places in different metros when
+# a job board almost always means one of them.
 MANUAL_PLACES = [
     ("NV", "McCarran", "32029"),             # Tahoe-Reno Industrial Center, Storey County
     ("NV", "Tahoe Reno Industrial Center", "32029"),
     ("NY", "Long Island", "36103"),          # Suffolk County
     ("CA", "Silicon Valley", "06085"),       # Santa Clara County
     ("CA", "Bay Area", "06075"),
+    ("CA", "SF Bay Area", "06075"),
     ("CA", "San Francisco Bay Area", "06075"),
+    ("CA", "East Bay", "06001"),             # Alameda County
+    ("CA", "El Cerrito", "06013"),           # the Contra Costa city, not the Riverside County CDP
+    ("CA", "La Jolla", "06073"),             # a San Diego neighbourhood
+    ("CA", "Greater San Diego", "06073"),
+    ("CA", "San Diego Area", "06073"),
+    ("CA", "San Diego County", "06073"),
+    ("CO", "Henderson", "08001"),            # Adams County, not a Census place
+    ("CO", "Berthoud", "08069"),             # mostly Larimer County; a sliver is in Weld
+    ("CO", "Greater Denver", "08031"),
+    ("CO", "Denver Metro", "08031"),
+    ("CO", "Denver Metro Area", "08031"),
+    ("CO", "Denver Area", "08031"),
+    ("MA", "Greater Boston", "25025"),       # Suffolk County
+    ("MA", "Greater Boston Area", "25025"),
+    ("MA", "Boston Area", "25025"),
+    ("MA", "Boston Metro", "25025"),
+    ("TX", "Dallas-Fort Worth", "48113"),    # Dallas County
+    ("TX", "DFW", "48113"),
+    ("TX", "Dallas Fort Worth Metroplex", "48113"),
 ]
+# Not mapped on purpose: "Front Range" (CO) spans the Denver and Fort Collins
+# regions, and "St. Landry" (LA) is a parish, not a town.
 # Extra names for places whose Census name is not what a job board writes.
 ALIASES = {
     ("TN", "Nashville-Davidson"): ["Nashville"],
@@ -127,6 +152,8 @@ def place_names(state: str, census_name: str) -> list[str]:
     alias = re.match(r"^(.*?)\s*\((.+)\)$", base)          # "San Buenaventura (Ventura)"
     if alias:
         names = [alias.group(1), alias.group(2)]
+    if base.endswith(" Town"):              # Massachusetts: "Franklin Town city"
+        names.append(base.removesuffix(" Town"))
     names += ALIASES.get((state, base), [])
     return names
 
@@ -150,8 +177,6 @@ def build_places(region_of_county: dict, regions: dict) -> tuple[dict, Counter]:
         state, statefp, countyfp, _, _, _, name, *_ = line.split("|")
         if state in NEW_ENGLAND:
             add(state, name, statefp + countyfp)
-    for state, name, county_fips in MANUAL_PLACES:
-        add(state, name, county_fips)
 
     places: dict[str, dict[str, str]] = defaultdict(dict)
     for (state, key), found in candidates.items():
@@ -168,6 +193,12 @@ def build_places(region_of_county: dict, regions: dict) -> tuple[dict, Counter]:
             stats["ambiguous_dropped"] += 1      # same name, different regions: do not guess
         else:
             stats["outside_metros"] += 1
+    for state, name, county_fips in MANUAL_PLACES:
+        region = region_of_county.get(county_fips)
+        if region is None:
+            sys.exit(f"hand-mapped place {name}, {state}: county {county_fips} is in no metro region")
+        places[state][normalise_place(name)] = regions[region]["id"]
+        stats["hand_mapped"] += 1
     return {state: dict(sorted(names.items())) for state, names in sorted(places.items())}, stats
 
 

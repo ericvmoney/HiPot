@@ -45,6 +45,14 @@ def test_every_lookup_target_is_a_taxonomy_metro():
     ("Brooklyn", "NY", "new-york-ny"),
     ("Kansas City", "KS", "kansas-city-mo"),     # metro crosses the state line
     ("austin", "tx", "austin-tx"),               # case does not matter
+    ("Franklin", "MA", "boston"),                # Census: "Franklin Town city"
+    ("Watertown", "MA", "boston"),
+    ("El Cerrito", "CA", "sf-bay-area"),         # two Census places; hand-mapped
+    ("Berthoud", "CO", "fort-collins-co"),       # spans two counties; hand-mapped
+    ("Henderson", "CO", "denver"),               # not a Census place
+    ("La Jolla", "CA", "san-diego"),
+    ("Dallas-Fort Worth", "TX", "dallas-tx"),
+    ("Greater Boston", "MA", "boston"),
 ])
 def test_metro_for(city, state, expected):
     assert metro_for(city, state) == expected
@@ -54,6 +62,7 @@ def test_metro_for(city, state, expected):
     ("Milford", "UT"),          # rural: no metro, the board still has the state
     ("North Haven", "CT"),      # Connecticut gap
     ("Atlantis", "CA"),         # not a place
+    ("Front Range", "CO"),      # spans two metro regions: not guessed
     ("Bengaluru", None),
     (None, "CA"),
 ])

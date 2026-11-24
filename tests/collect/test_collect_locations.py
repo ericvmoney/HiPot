@@ -138,13 +138,10 @@ KNOWN_DIFFERENCES = {
     "Fort Collins, CO": ["fort-collins-co"],
     "Fort Collins, CO; Windsor, CO": ["fort-collins-co"],
     "Loveland, CO": ["fort-collins-co"],
+    "Berthoud, Colorado": ["fort-collins-co"],   # hand-mapped to Larimer County
     "Petaluma, CA": ["santa-rosa-ca"],
-    # Not in the lookup today (reported to the supervisor for hand-mapping).
-    "Berthoud, Colorado": [],
-    "Henderson, CO": [],
-    "Henderson, Colorado": [],
-    "Littleton, CO; Pleasanton, CA; San Diego, CA; Franklin, MA": ["denver", "san-diego", "sf-bay-area"],
-    "Littleton, CO; San Diego, CA; Franklin, MA (remote)": ["denver", "san-diego"],
+    # Henderson CO and Franklin MA were pinned here as unmapped until the
+    # supervisor added them to the place lookup; they now agree with the old hub.
     # The old hub cut these strings short ("Cali", "United State"), so the second place cannot be read.
     "Reno, Nevada, United States; Sunnyvale, Californ": ["reno-nv"],
     "Reno, Nevada, United States; San Francisco, Cali": ["reno-nv"],
