@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, recruitee, run as run_module, smartrecruiters, workable
+from pipeline.collect import bamboohr, breezy, jazzhr, recruitee, run as run_module, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -69,10 +69,30 @@ def test_workable_ids_are_stable():
 
 # ----------------------------------------------------------------- BambooHR
 
-def test_bamboohr_is_switched_off_by_default():
-    assert "bamboohr" not in run_module.READERS and "bamboohr" in run_module.SWITCHED_OFF
-    reason = skip_reason(company("lunar-outpost", "bamboohr", "lunaroutpost"))
-    assert reason == "bamboohr: reader switched off pending a terms decision (--enable-reader bamboohr)"
+@pytest.mark.parametrize("ats", ["rippling", "bamboohr", "smartrecruiters", "breezy"])
+def test_readers_with_restricted_terms_run_by_default_and_can_be_turned_off(ats):
+    # The owner's standing rule (PLAN.md decision 6): they run, and each can be
+    # turned off for a run if a vendor or company objects.
+    assert ats in run_module.READERS and ats not in run_module.SWITCHED_OFF
+    entry = company("a", ats, "a")
+    assert skip_reason(entry) is None
+    readers = {name: read for name, read in run_module.READERS.items() if name != ats}
+    assert skip_reason(entry, readers, {ats}) == f"{ats}: reader turned off for this run (--disable-reader {ats})"
+
+
+def test_disable_reader_on_the_command_line(tmp_path, monkeypatch):
+    import yaml
+    registry = tmp_path / "companies.yml"
+    registry.write_text(yaml.safe_dump({"registry_version": 0, "companies": [company("lunar-outpost", "bamboohr", "lunaroutpost")]}),
+                        encoding="utf-8")
+    monkeypatch.setattr(run_module, "Fetcher", FakeFetcher)
+    out = tmp_path / "raw.json"
+    assert run_module.main(["--companies", str(registry), "--out", str(out), "--state", str(tmp_path / "s.json"),
+                            "--disable-reader", "bamboohr"]) == 0
+    from pipeline.io import load_json
+    raw = load_json(out)
+    assert raw["jobs"] == []
+    assert raw["run"]["companies"][0]["error"] == "bamboohr: reader turned off for this run (--disable-reader bamboohr)"
 
 
 def test_bamboohr_asks_the_list_then_each_posting():
@@ -108,10 +128,9 @@ def test_bamboohr_a_refused_detail_blocks_the_company():
         bamboohr.read("lunaroutpost", fetcher)
 
 
-def test_bamboohr_runs_when_switched_on():
-    readers = {**run_module.READERS, "bamboohr": run_module.SWITCHED_OFF["bamboohr"]}
+def test_bamboohr_ids_are_stable():
     raw = collect([company("lunar-outpost", "bamboohr", "lunaroutpost")], FakeFetcher(), SeenState(),
-                  readers=readers, now=lambda: "2026-11-24T16:00:00Z")
+                  now=lambda: "2026-11-24T16:00:00Z")
     assert sorted(job["id"] for job in raw["jobs"]) == ["bamboohr:lunaroutpost:297", "bamboohr:lunaroutpost:389"]
 
 
@@ -128,10 +147,6 @@ def test_a_redirect_is_reported_as_a_board_that_is_not_available():
 # ---------------------------------------------------------- SmartRecruiters
 
 SR_LIST = "https://api.smartrecruiters.com/v1/companies/EnPowerInc/postings"
-
-
-def test_smartrecruiters_is_switched_off_by_default():
-    assert "smartrecruiters" not in run_module.READERS and "smartrecruiters" in run_module.SWITCHED_OFF
 
 
 def test_smartrecruiters_asks_one_page_then_each_posting():
@@ -237,3 +252,116 @@ def test_recruitee_ids_are_stable():
     raw = collect([company("fastned", "recruitee", "fastned")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
     assert sorted(job["id"] for job in raw["jobs"]) == ["recruitee:fastned:2794271", "recruitee:fastned:2818749",
                                                          "recruitee:fastned:2835151"]
+
+
+# ------------------------------------------------------------------- JazzHR
+
+def test_jazzhr_asks_the_feed_once():
+    fetcher = FakeFetcher()
+    jazzhr.read("coreshelltech", fetcher)
+    assert fetcher.calls == [("https://app.jazz.co/feeds/export/jobs/coreshelltech", None)]
+
+
+def test_jazzhr_fields():
+    drafts = jazzhr.read("coreshelltech", FakeFetcher())
+    assert len(drafts) == 3
+    first = drafts[0]
+    assert first["title"] == "Human Resources Generalist"
+    assert first["posting_id"] == "H2WUH8feDa"
+    assert first["url"].startswith("https://coreshelltech.applytojob.com/apply/H2WUH8feDa/")
+    assert first["locations"] == [{"text": "San Leandro, CA, United States", "city": "San Leandro", "state": "CA", "country": "US"}]
+    assert first["employment"] == "full-time" and first["department"] == "Human Resources"
+    assert first["posted_date"] is None and first["pay"] is None and first["workplace"] is None
+    assert first["description_text"]
+
+
+def test_jazzhr_ids_come_from_the_posting_address():
+    assert jazzhr.posting_code("https://coreshelltech.applytojob.com/apply/U9Oe7DLe6N/Battery-Technician") == "U9Oe7DLe6N"
+    assert jazzhr.posting_code("https://example.com/careers/1") is None
+    raw = collect([company("coreshell", "jazzhr", "coreshelltech")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert "jazzhr:coreshelltech:H2WUH8feDa" in {job["id"] for job in raw["jobs"]}
+
+
+def test_jazzhr_closed_jobs_are_left_out_and_bad_answers_are_errors():
+    feed = ("<jobs><job><id>job_1</id><status>Closed</status><title>Old</title>"
+            "<url>https://a.applytojob.com/apply/X1/Old</url></job>"
+            "<job><id>job_2</id><status>Open</status><title>New</title>"
+            "<url>https://a.applytojob.com/apply/X2/New</url><type>Internship</type></job></jobs>")
+    drafts = jazzhr.read("a", FakeFetcher(extra={"https://app.jazz.co/feeds/export/jobs/a": feed}))
+    assert [(draft["posting_id"], draft["employment"]) for draft in drafts] == [("X2", "intern")]
+    with pytest.raises(FetchError, match="not XML"):
+        jazzhr.parse("<html><body>Not found")
+    with pytest.raises(FetchError, match="not a JazzHR job feed"):
+        jazzhr.parse("<html><body>Not found</body></html>")
+    with pytest.raises(FetchError, match="document type"):
+        jazzhr.parse('<!DOCTYPE jobs [<!ENTITY a "aaaa">]><jobs>&a;</jobs>')
+
+
+def test_hosts_that_get_more_room():
+    fetcher = Fetcher(client=httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(200))))
+    assert fetcher._interval_for("app.jazz.co") >= 10
+    assert fetcher._interval_for("api.smartrecruiters.com") >= 6     # robots.txt admits only LinkedInBot
+    assert fetcher._interval_for("lunaroutpost.bamboohr.com") >= 6   # matched by suffix
+    assert fetcher._interval_for("zeno-power.breezy.hr") >= 2
+    assert fetcher._interval_for("bamboohr.com.example.net") == 0.0
+    assert fetcher._interval_for("api.lever.co") == 0.0              # MIN_INTERVAL still applies
+
+
+# ------------------------------------------------------------------- Breezy
+
+ZENO_CONTRACT = "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor"
+# A minimal page, written for the test: no real Breezy posting page was
+# recorded, because the reader is switched off. Real pages carry the same
+# schema.org block for search engines; that it parses them is not verified.
+SYNTHETIC_PAGE = """<html><head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "JobPosting",
+ "title": "Electrical Engineer (Contractor)", "description": "<p>Design <b>power electronics</b>.</p><ul><li>PCB layout</li></ul>"}</script>
+</head><body><div class="description">Design power electronics.</div></body></html>"""
+
+
+def test_breezy_asks_the_list_then_each_posting_page():
+    fetcher = FakeFetcher()
+    breezy.read("zeno-power", fetcher)
+    urls = [url for url, _ in fetcher.calls]
+    assert urls[0] == "https://zeno-power.breezy.hr/json"
+    assert urls[1] == ZENO_CONTRACT and len(urls) == 5
+
+
+def test_breezy_fields():
+    drafts = {d["posting_id"]: d for d in breezy.read("zeno-power", FakeFetcher(extra={ZENO_CONTRACT: SYNTHETIC_PAGE}))}
+    contractor = drafts["783342e25463"]
+    assert contractor["title"] == "Electrical Engineer (Contractor)" and contractor["url"] == ZENO_CONTRACT
+    assert contractor["locations"] == [{"text": "Seattle, WA", "city": "Seattle", "state": "WA", "country": "US"}]
+    assert contractor["workplace"] == "hybrid" and contractor["employment"] == "contract"
+    assert contractor["pay"] == {"min": 55, "max": 75, "currency": "USD", "period": "hour", "basis": "feed"}
+    assert contractor["posted_date"] and contractor["description_text"] == "Design power electronics.\nPCB layout"
+    operator = drafts["9a5f4f91f333"]
+    assert operator["pay"]["min"] == 46 and operator["pay"]["max"] == 60 and operator["workplace"] is None
+    # No page answered for these: kept from the list without a description.
+    assert drafts["c81dbf07b00e"]["description_text"] == "" and drafts["c81dbf07b00e"]["pay"] is None
+    assert drafts["583f0039dfe1"]["locations"][0]["state"] == "DC"
+
+
+@pytest.mark.parametrize("text,country,expected", [
+    ("$120,000 – $180,000 / year", "US", (120000, 180000, "USD", "year")),
+    ("$45.67 – $60.10 / hour", "US", (46, 60, "USD", "hour")),
+    ("€50,000 - €60,000 / year", "DE", (50000, 60000, "EUR", "year")),
+    ("$120,000 – $180,000 / year", "CA", None),         # a dollar sign outside the US is not assumed
+    ("$120,000 – $180,000", "US", None),                # no period
+    ("$5,000 – $6,000 / month", "US", None),
+    ("Competitive", "US", None),
+    ("", "US", None),
+])
+def test_breezy_salary_text(text, country, expected):
+    found = breezy.pay_from_text(text, country)
+    assert (None if found is None else (found["min"], found["max"], found["currency"], found["period"])) == expected
+
+
+def test_breezy_page_without_a_job_block_gives_no_description():
+    assert breezy.description_from_page("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
+    assert breezy.description_from_page("<html><script type='application/ld+json'>{not json</script></html>") == ""
+
+
+def test_breezy_a_refused_page_blocks_the_company():
+    with pytest.raises(Blocked):
+        breezy.read("zeno-power", FakeFetcher(failures={ZENO_CONTRACT: Blocked("HTTP 429 from zeno-power.breezy.hr")}))
