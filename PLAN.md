@@ -229,6 +229,7 @@ Borderline cases the screen must decide one by one, with the reason recorded: an
 | Small on-device models invent persona fields | Bad matches, lost trust | Schema constraint, evidence line per skill, mandatory review screen. |
 | Phones cannot run the model | Half of visitors get the form only | The form is a first-class path, and a persona made on desktop imports on a phone. |
 | Feed terms of use | A company or ATS objects to listing | Public endpoints only, link to the original posting, remove on request, employer opt-out. Needs a legal read before M5. |
+| Rippling's terms prohibit automated extraction; read anyway by decision 6 | Rippling or a company objects; access is blocked | Slow, polite requests; stop on any block; ask the three companies for permission or read them by hand before launch. Needs the same legal read. |
 | Coverage stalls at the hand-read companies | Large employers missing | Workday and iCIMS readers in M3; otherwise leave them out and say so. |
 | Subscription terms for scheduled runs | Pipeline interrupted | Move scheduled Claude work to an API key before anything public depends on it. |
 | Climate tiering is contested | Credibility | Publish the rubric and the reason per company. |
@@ -242,6 +243,11 @@ Decided by Eric on 2026-11-23:
 3. **Startup definition.** Under 1,000 employees, and typically under 10 years old. Headcount is the hard line; age is a guide, so an older company under 1,000 people is flagged for a decision, not dropped automatically. This drops Rivian, Lucid, Tesla, Ford, Eaton, Cummins and Schneider. Redwood and Form Energy are near the headcount line and need a current figure.
 4. **Runtime.** `uv` and Python may be installed on this machine.
 
+Decided by Eric on 2026-11-24:
+
+5. **Role scope.** Cover the variety of roles at hardware companies, not only engineers (taxonomy version 1, section 5).
+6. **Rippling.** Read Rippling boards (Aptera, AtmosZero, Torus), although Rippling's job-board documentation is behind a sign-in and its User Terms (section 2.2) prohibit automated extraction for use outside its services. Requests are spaced 6 seconds apart and stop on a 403 or 429. Recorded as a known risk in section 8.
+
 Still open:
 
-5. **Geography.** Working assumption until told otherwise: United States first, all metros plus remote.
+7. **Geography.** Working assumption until told otherwise: United States first, all metros plus remote.
