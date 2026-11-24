@@ -115,7 +115,7 @@ employer intake ──► posting + declared criteria ──► review workspace
 
 - **Pipeline:** Python managed with `uv`, run on this machine. Deterministic code for fetching and normalizing; models only where rules run out.
 - **Front end:** one static page with plain JavaScript and no build step, so the same files work on artifact hosting and on any static host later.
-- **Contracts:** `schema/job.schema.json`, `schema/company.schema.json`, `schema/persona.schema.json`, `taxonomy.yml`. Every agent builds against these. Only the supervisor changes them.
+- **Contracts:** `schema/job.schema.json`, `schema/raw-job.schema.json`, `schema/company.schema.json`, `schema/persona.schema.json`, `taxonomy.yml`. Every agent builds against these. Only the supervisor changes them.
 - **Source of truth for a role:** the company's own board. A role that leaves the feed leaves the site on the next run.
 
 ### Persona file, first sketch
@@ -188,6 +188,13 @@ M4  A6
 A1, A3 and A4 can run at the same time because they meet only at the schemas. A4 builds against the seed data until A1 delivers.
 
 **Change after M0.** The sector and startup decisions leave 19 of the 89 seed companies listed (70 seed roles), with 11 more waiting on the startup test (98 roles). To reach 400 live roles in M1, the collector must read every hardware role at every level, and A2 must run a first pass during M1: screen the pending and unplaced seed companies, then add companies from investor portfolio boards until about 100 are listed. This is proposed, not yet agreed.
+
+**M1 division of work (started 2026-11-24).** The workstreams meet at three files:
+
+- **Collector (A1)** writes `data/jobs.raw.json` to `schema/raw-job.schema.json`: every posting on a board, hardware or not, with locations, metros, workplace, pay the feed carries as data, and the posting text. It collects companies whose tier is core or enabling and whose startup status is `in` or `review`, so pending companies are ready the day they are decided.
+- **Tagger (A3)** turns that into `data/jobs.json` to `schema/job.schema.json`: it adds disciplines, level, pay found in the posting text and a summary, and leaves out roles with no hardware discipline.
+- **Board (A4)** owns `site/` and `pipeline/publish/`, which joins `jobs.json` with the listed companies into the one data file the page loads. Only listed companies (core or enabling, startup `in`) reach that file.
+- **Scout (A2)** writes proposals to `data/screening/` only. The supervisor applies approved ones to `companies.yml`.
 
 ## 6. Climate rubric
 

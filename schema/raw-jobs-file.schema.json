@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/raw-jobs-file.schema.json",
+  "title": "Raw jobs file",
+  "description": "data/jobs.raw.json: the collector's output for one run, with a per-company record of what happened.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "run", "jobs"],
+  "properties": {
+    "schema_version": {"const": 0},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["started_at", "finished_at", "companies"],
+      "properties": {
+        "started_at": {"type": "string", "format": "date-time"},
+        "finished_at": {"type": "string", "format": "date-time"},
+        "companies": {
+          "description": "One entry per company the run considered, including those it skipped.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["company_id", "ats", "status", "postings", "error"],
+            "properties": {
+              "company_id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+              "ats": {"type": "string"},
+              "status": {
+                "description": "ok: feed read. error: the request or parse failed. blocked: the host refused us; do not retry or work around it. skipped: no reader for this ATS, or the company is not collected.",
+                "enum": ["ok", "error", "blocked", "skipped"]
+              },
+              "postings": {"type": "integer", "minimum": 0},
+              "error": {"type": ["string", "null"], "maxLength": 500}
+            }
+          }
+        }
+      }
+    },
+    "jobs": {"type": "array", "items": {"$ref": "raw-job.schema.json"}}
+  }
+}

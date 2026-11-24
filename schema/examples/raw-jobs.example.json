@@ -1,0 +1,31 @@
+{
+  "schema_version": 0,
+  "generated_at": "2026-11-24T16:00:00Z",
+  "run": {
+    "started_at": "2026-11-24T15:58:00Z",
+    "finished_at": "2026-11-24T16:00:00Z",
+    "companies": [
+      {"company_id": "antora-energy", "ats": "greenhouse", "status": "ok", "postings": 1, "error": null},
+      {"company_id": "stored-energy-systems-sens", "ats": "adp", "status": "skipped", "postings": 0, "error": "no reader for adp"}
+    ]
+  },
+  "jobs": [
+    {
+      "id": "greenhouse:antora:4000001",
+      "company_id": "antora-energy",
+      "title": "Senior Controls Engineer",
+      "url": "https://boards.greenhouse.io/antora/jobs/4000001",
+      "source": {"ats": "greenhouse", "board": "antora", "posting_id": "4000001", "read": "auto"},
+      "locations": [{"text": "Sunnyvale, CA", "city": "Sunnyvale", "state": "CA", "country": "US"}],
+      "metros": ["sf-bay-area"],
+      "workplace": "onsite",
+      "employment": "full-time",
+      "pay": null,
+      "posted_date": "2026-11-20",
+      "first_seen": "2026-11-24T16:00:00Z",
+      "last_seen": "2026-11-24T16:00:00Z",
+      "department": "Engineering / Controls",
+      "description_text": "Synthetic example. You will own the plant controller for a thermal battery. Salary range: $160,000 to $195,000."
+    }
+  ]
+}

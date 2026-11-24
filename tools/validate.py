@@ -10,6 +10,7 @@ Run from the repository root:
 
     uv run python -m tools.validate                      # seed jobs + registry + example persona
     uv run python -m tools.validate --jobs data/jobs.json
+    uv run python -m tools.validate --raw data/jobs.raw.json
     uv run python -m tools.validate --persona my.yml
 
 Exits 1 if anything fails.
@@ -71,6 +72,21 @@ def check_jobs(jobs_file: dict, taxonomy: dict, company_ids: set[str]) -> list[s
     return problems
 
 
+def check_raw_jobs(raw_file: dict, taxonomy: dict, company_ids: set[str]) -> list[str]:
+    metros = ids(taxonomy, "metros")
+    problems = []
+    counts = Counter(job["id"] for job in raw_file["jobs"])
+    problems += [f"duplicate job id {job_id} ({n} times)" for job_id, n in counts.items() if n > 1]
+    for job in raw_file["jobs"]:
+        tag = f"job {job['id']}"
+        problems += [f"{tag}: unknown metro '{m}'" for m in job["metros"] if m not in metros]
+        if job["company_id"] not in company_ids:
+            problems.append(f"{tag}: company_id '{job['company_id']}' is not in the registry")
+    problems += [f"run entry: company_id '{entry['company_id']}' is not in the registry"
+                 for entry in raw_file["run"]["companies"] if entry["company_id"] not in company_ids]
+    return problems
+
+
 def check_companies(registry_file: dict, taxonomy: dict) -> list[str]:
     sectors, stages = ids(taxonomy, "sectors"), ids(taxonomy, "stages")
     problems = []
@@ -118,6 +134,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Validate HiPot data files against the contracts.")
     parser.add_argument("--jobs", type=Path, default=ROOT / "data" / "seed" / "jobs.json")
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
+    parser.add_argument("--raw", type=Path, action="append", default=None, help="a collector output file (data/jobs.raw.json)")
     parser.add_argument("--persona", type=Path, action="append", default=None)
     args = parser.parse_args()
     personas = args.persona or sorted((SCHEMA_DIR / "examples").glob("persona*.yml"))
@@ -138,6 +155,13 @@ def main() -> int:
     if not problems:
         problems = check_jobs(jobs_file, taxonomy, company_ids)
     ok &= report(f"{args.jobs.name} ({len(jobs_file.get('jobs', []))} jobs)", problems)
+
+    for path in args.raw or sorted((SCHEMA_DIR / "examples").glob("raw-jobs*.json")):
+        raw_file = load_json(path)
+        problems = schema_errors(raw_file, schemas["raw-jobs-file.schema.json"], registry)
+        if not problems:
+            problems = check_raw_jobs(raw_file, taxonomy, company_ids)
+        ok &= report(f"{path.name} ({len(raw_file.get('jobs', []))} raw jobs)", problems)
 
     for path in personas:
         persona = load_yaml(path)

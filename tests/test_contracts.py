@@ -10,7 +10,7 @@ import pytest
 
 from pipeline.io import ROOT, load_json, load_yaml
 from pipeline.seed.import_old_hub import job_id, level_from_title, parse_pay, parse_source
-from tools.validate import check_companies, check_jobs, check_persona, schema_errors, schema_registry
+from tools.validate import check_companies, check_jobs, check_persona, check_raw_jobs, schema_errors, schema_registry
 
 REGISTRY, SCHEMAS = schema_registry()
 TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
@@ -146,3 +146,29 @@ def test_parse_pay():
     assert parse_pay("$140k-$205k") == {"min": 140000, "max": 205000, "currency": "USD", "period": "year", "basis": "seed"}
     assert parse_pay("") is None
     assert parse_pay("$205k-$140k") is None
+
+
+RAW = load_json(ROOT / "schema" / "examples" / "raw-jobs.example.json")
+
+
+def test_example_raw_jobs_validate():
+    assert schema_errors(RAW, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY) == []
+    company_ids = {company["id"] for company in COMPANIES["companies"]}
+    assert check_raw_jobs(RAW, TAXONOMY, company_ids) == []
+
+
+def test_raw_job_rejects_tagger_fields_and_needs_a_description():
+    tagged = copy.deepcopy(RAW)
+    tagged["jobs"][0]["disciplines"] = ["controls"]
+    assert schema_errors(tagged, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY)
+    bare = copy.deepcopy(RAW)
+    del bare["jobs"][0]["description_text"]
+    assert schema_errors(bare, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY)
+
+
+def test_raw_jobs_check_catches_unknown_metro_and_company():
+    bad = copy.deepcopy(RAW)
+    bad["jobs"][0]["metros"] = ["atlantis"]
+    bad["jobs"][0]["company_id"] = "no-such-company"
+    problems = check_raw_jobs(bad, TAXONOMY, {company["id"] for company in COMPANIES["companies"]})
+    assert any("metro" in line for line in problems) and any("registry" in line for line in problems)

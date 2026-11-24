@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hipot.example/schema/raw-job.schema.json",
+  "title": "Raw job",
+  "description": "One posting as the collector read it, before tagging. The collector fills everything a feed states or a location rule can decide. The tagger adds disciplines, level, pay found in the posting text, summary and the tagging record, and drops description_text and department to produce a Job (job.schema.json). The collector keeps every posting on a board, hardware or not; the tagger decides which are in scope.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "company_id", "title", "url", "source", "locations", "metros",
+    "workplace", "employment", "pay", "posted_date", "first_seen", "last_seen",
+    "department", "description_text"
+  ],
+  "properties": {
+    "id": {"$ref": "job.schema.json#/properties/id"},
+    "company_id": {"$ref": "job.schema.json#/properties/company_id"},
+    "title": {"$ref": "job.schema.json#/properties/title"},
+    "url": {"$ref": "job.schema.json#/properties/url"},
+    "source": {"$ref": "job.schema.json#/properties/source"},
+    "locations": {"$ref": "job.schema.json#/properties/locations"},
+    "metros": {"$ref": "job.schema.json#/properties/metros"},
+    "workplace": {
+      "$ref": "job.schema.json#/properties/workplace",
+      "description": "From a feed field or a location rule. 'unknown' when neither decides; the tagger may refine it from the posting text."
+    },
+    "employment": {"$ref": "job.schema.json#/properties/employment"},
+    "pay": {
+      "$ref": "job.schema.json#/properties/pay",
+      "description": "Only when the feed carries pay as structured data (basis 'feed'). Pay written in the posting text is the tagger's job; leave null here."
+    },
+    "posted_date": {"$ref": "job.schema.json#/properties/posted_date"},
+    "first_seen": {"$ref": "job.schema.json#/properties/first_seen"},
+    "last_seen": {"$ref": "job.schema.json#/properties/last_seen"},
+    "department": {
+      "description": "Department or team as the feed names it, parts joined with ' / '. Null when the feed has none.",
+      "type": ["string", "null"],
+      "maxLength": 300
+    },
+    "description_text": {
+      "description": "The posting body as plain text: tags removed, entities decoded, whitespace collapsed, cut to 20,000 characters. Empty string when the feed gives no body.",
+      "type": "string",
+      "maxLength": 20000
+    }
+  }
+}
