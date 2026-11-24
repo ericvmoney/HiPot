@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, jazzhr, recruitee, run as run_module, smartrecruiters, workable
+from pipeline.collect import bamboohr, breezy, jazzhr, recruitee, run as run_module, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -285,3 +285,67 @@ def test_jazzhr_closed_jobs_are_left_out_and_bad_answers_are_errors():
 def test_the_jazzhr_host_is_spaced_out():
     from pipeline.collect.fetch import HOST_INTERVALS
     assert HOST_INTERVALS["app.jazz.co"] >= 10
+
+
+# ------------------------------------------------------------------- Breezy
+
+ZENO_CONTRACT = "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor"
+# A minimal page, written for the test: no real Breezy posting page was
+# recorded, because the reader is switched off. Real pages carry the same
+# schema.org block for search engines; that it parses them is not verified.
+SYNTHETIC_PAGE = """<html><head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "JobPosting",
+ "title": "Electrical Engineer (Contractor)", "description": "<p>Design <b>power electronics</b>.</p><ul><li>PCB layout</li></ul>"}</script>
+</head><body><div class="description">Design power electronics.</div></body></html>"""
+
+
+def test_breezy_is_switched_off_by_default():
+    assert "breezy" not in run_module.READERS and "breezy" in run_module.SWITCHED_OFF
+
+
+def test_breezy_asks_the_list_then_each_posting_page():
+    fetcher = FakeFetcher()
+    breezy.read("zeno-power", fetcher)
+    urls = [url for url, _ in fetcher.calls]
+    assert urls[0] == "https://zeno-power.breezy.hr/json"
+    assert urls[1] == ZENO_CONTRACT and len(urls) == 5
+
+
+def test_breezy_fields():
+    drafts = {d["posting_id"]: d for d in breezy.read("zeno-power", FakeFetcher(extra={ZENO_CONTRACT: SYNTHETIC_PAGE}))}
+    contractor = drafts["783342e25463"]
+    assert contractor["title"] == "Electrical Engineer (Contractor)" and contractor["url"] == ZENO_CONTRACT
+    assert contractor["locations"] == [{"text": "Seattle, WA", "city": "Seattle", "state": "WA", "country": "US"}]
+    assert contractor["workplace"] == "hybrid" and contractor["employment"] == "contract"
+    assert contractor["pay"] == {"min": 55, "max": 75, "currency": "USD", "period": "hour", "basis": "feed"}
+    assert contractor["posted_date"] and contractor["description_text"] == "Design power electronics.\nPCB layout"
+    operator = drafts["9a5f4f91f333"]
+    assert operator["pay"]["min"] == 46 and operator["pay"]["max"] == 60 and operator["workplace"] is None
+    # No page answered for these: kept from the list without a description.
+    assert drafts["c81dbf07b00e"]["description_text"] == "" and drafts["c81dbf07b00e"]["pay"] is None
+    assert drafts["583f0039dfe1"]["locations"][0]["state"] == "DC"
+
+
+@pytest.mark.parametrize("text,country,expected", [
+    ("$120,000 – $180,000 / year", "US", (120000, 180000, "USD", "year")),
+    ("$45.67 – $60.10 / hour", "US", (46, 60, "USD", "hour")),
+    ("€50,000 - €60,000 / year", "DE", (50000, 60000, "EUR", "year")),
+    ("$120,000 – $180,000 / year", "CA", None),         # a dollar sign outside the US is not assumed
+    ("$120,000 – $180,000", "US", None),                # no period
+    ("$5,000 – $6,000 / month", "US", None),
+    ("Competitive", "US", None),
+    ("", "US", None),
+])
+def test_breezy_salary_text(text, country, expected):
+    found = breezy.pay_from_text(text, country)
+    assert (None if found is None else (found["min"], found["max"], found["currency"], found["period"])) == expected
+
+
+def test_breezy_page_without_a_job_block_gives_no_description():
+    assert breezy.description_from_page("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
+    assert breezy.description_from_page("<html><script type='application/ld+json'>{not json</script></html>") == ""
+
+
+def test_breezy_a_refused_page_blocks_the_company():
+    with pytest.raises(Blocked):
+        breezy.read("zeno-power", FakeFetcher(failures={ZENO_CONTRACT: Blocked("HTTP 429 from zeno-power.breezy.hr")}))

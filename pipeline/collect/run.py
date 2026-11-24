@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
 
-from pipeline.collect import ashby, bamboohr, greenhouse, jazzhr, lever, recruitee, rippling, smartrecruiters, workable
+from pipeline.collect import ashby, bamboohr, breezy, greenhouse, jazzhr, lever, recruitee, rippling, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
@@ -39,13 +39,16 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          # Each BambooHR company has its own host; a 429 from one stops them all.
          "bamboohr": "bamboohr.com", "smartrecruiters": "api.smartrecruiters.com",
          # Each Recruitee company has its own host; a 429 from one stops them all.
-         "recruitee": "recruitee.com", "jazzhr": "app.jazz.co"}
+         "recruitee": "recruitee.com", "jazzhr": "app.jazz.co",
+         # Each Breezy company has its own host; a 429 from one stops them all.
+         "breezy": "breezy.hr"}
 # Readers that are built and tested but not run unless asked for by name
 # (`--enable-reader <type>`), because the vendor's terms restrict automated
 # reading. The owner decides; the report quotes the clause.
 SWITCHED_OFF: dict[str, Callable] = {
     "bamboohr": bamboohr.read,                 # Terms of Service section 4.2
     "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
+    "breezy": breezy.read,                     # Terms of Service section 5(ix)
 }
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")

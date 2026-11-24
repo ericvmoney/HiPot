@@ -26,6 +26,7 @@ ADDRESSES = {
     "https://api.smartrecruiters.com/v1/companies/EnPowerInc/postings?limit=100&offset=0": "smartrecruiters_EnPowerInc.json",
     "https://fastned.recruitee.com/api/offers/": "recruitee_fastned.json",
     "https://greenerpowersolutions.recruitee.com/api/offers/": "recruitee_greenerpowersolutions.json",
+    "https://zeno-power.breezy.hr/json": "breezy_zeno-power.json",
 }
 # Feeds that answer in XML or HTML rather than JSON.
 TEXT_ADDRESSES = {

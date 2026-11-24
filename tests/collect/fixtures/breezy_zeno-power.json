@@ -1,0 +1,341 @@
+[
+ {
+  "id": "783342e25463",
+  "friendly_id": "783342e25463-electrical-engineer-contractor",
+  "name": "Electrical Engineer (Contractor)",
+  "url": "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor",
+  "published_date": "2026-11-24T00:47:06.825Z",
+  "type": {
+   "id": "contract",
+   "name": "Contract"
+  },
+  "location": {
+   "id": "0693ca1698f4",
+   "country": {
+    "name": "United States",
+    "id": "US"
+   },
+   "state": {
+    "id": "WA",
+    "name": "Washington"
+   },
+   "city": "Seattle",
+   "primary": true,
+   "is_remote": true,
+   "remote_details": {
+    "value": "hybrid",
+    "label": "Hybrid (Some remote, some in person)"
+   },
+   "name": "Seattle, WA"
+  },
+  "department": "",
+  "salary": "$55 – $75 / hour",
+  "company": {
+   "name": "Zeno Power",
+   "logo_url": null,
+   "friendly_id": "zeno-power",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "id": "0693ca1698f4",
+    "country": {
+     "name": "United States",
+     "id": "US"
+    },
+    "state": {
+     "id": "WA",
+     "name": "Washington"
+    },
+    "city": "Seattle",
+    "primary": true,
+    "is_remote": true,
+    "remote_details": {
+     "value": "hybrid",
+     "label": "Hybrid (Some remote, some in person)"
+    },
+    "name": "Seattle, WA"
+   }
+  ]
+ },
+ {
+  "id": "9a5f4f91f333",
+  "friendly_id": "9a5f4f91f333-hot-cell-operator",
+  "name": "Hot Cell Operator",
+  "url": "https://zeno-power.breezy.hr/p/9a5f4f91f333-hot-cell-operator",
+  "published_date": "2026-10-27T16:37:00.590Z",
+  "type": {
+   "id": "fullTime",
+   "name": "Full-Time"
+  },
+  "location": {
+   "country": {
+    "name": "United States",
+    "id": "US"
+   },
+   "state": {
+    "id": "CA",
+    "name": "California"
+   },
+   "city": "Sunol",
+   "primary": true,
+   "is_remote": false,
+   "name": "Sunol, CA",
+   "id": "22d4f95e8685"
+  },
+  "department": "",
+  "salary": "$45.67 – $60.10 / hour",
+  "company": {
+   "name": "Zeno Power",
+   "logo_url": null,
+   "friendly_id": "zeno-power",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "country": {
+     "name": "United States",
+     "id": "US"
+    },
+    "state": {
+     "id": "CA",
+     "name": "California"
+    },
+    "city": "Sunol",
+    "primary": true,
+    "is_remote": false,
+    "name": "Sunol, CA",
+    "id": "22d4f95e8685"
+   }
+  ]
+ },
+ {
+  "id": "583f0039dfe1",
+  "friendly_id": "583f0039dfe1-general-application",
+  "name": "General Application",
+  "url": "https://zeno-power.breezy.hr/p/583f0039dfe1-general-application",
+  "published_date": "2026-02-03T04:05:16.455Z",
+  "type": {
+   "id": "fullTime",
+   "name": "Full-Time"
+  },
+  "location": {
+   "country": {
+    "name": "United States",
+    "id": "US"
+   },
+   "state": {
+    "id": "DC",
+    "name": "Dist. of Columbia"
+   },
+   "city": "Washington",
+   "name": "Washington, DC",
+   "primary": true,
+   "streetAddress": {
+    "location": "709 G St NW, Washington, DC 20001, USA",
+    "components": [
+     {
+      "long_name": "709",
+      "short_name": "709",
+      "types": [
+       "street_number"
+      ]
+     },
+     {
+      "long_name": "G Street Northwest",
+      "short_name": "G St NW",
+      "types": [
+       "route"
+      ]
+     },
+     {
+      "long_name": "Northwest Washington",
+      "short_name": "Northwest Washington",
+      "types": [
+       "neighborhood",
+       "political"
+      ]
+     },
+     {
+      "long_name": "Washington",
+      "short_name": "Washington",
+      "types": [
+       "locality",
+       "political"
+      ]
+     },
+     {
+      "long_name": "District of Columbia",
+      "short_name": "DC",
+      "types": [
+       "administrative_area_level_1",
+       "political"
+      ]
+     },
+     {
+      "long_name": "United States",
+      "short_name": "US",
+      "types": [
+       "country",
+       "political"
+      ]
+     },
+     {
+      "long_name": "20001",
+      "short_name": "20001",
+      "types": [
+       "postal_code"
+      ]
+     },
+     {
+      "long_name": "3727",
+      "short_name": "3727",
+      "types": [
+       "postal_code_suffix"
+      ]
+     }
+    ]
+   }
+  },
+  "department": null,
+  "salary": "",
+  "company": {
+   "name": "Zeno Power",
+   "logo_url": null,
+   "friendly_id": "zeno-power",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "country": {
+     "name": "United States",
+     "id": "US"
+    },
+    "state": {
+     "id": "DC",
+     "name": "Dist. of Columbia"
+    },
+    "city": "Washington",
+    "name": "Washington, DC",
+    "primary": true,
+    "streetAddress": {
+     "location": "709 G St NW, Washington, DC 20001, USA",
+     "components": [
+      {
+       "long_name": "709",
+       "short_name": "709",
+       "types": [
+        "street_number"
+       ]
+      },
+      {
+       "long_name": "G Street Northwest",
+       "short_name": "G St NW",
+       "types": [
+        "route"
+       ]
+      },
+      {
+       "long_name": "Northwest Washington",
+       "short_name": "Northwest Washington",
+       "types": [
+        "neighborhood",
+        "political"
+       ]
+      },
+      {
+       "long_name": "Washington",
+       "short_name": "Washington",
+       "types": [
+        "locality",
+        "political"
+       ]
+      },
+      {
+       "long_name": "District of Columbia",
+       "short_name": "DC",
+       "types": [
+        "administrative_area_level_1",
+        "political"
+       ]
+      },
+      {
+       "long_name": "United States",
+       "short_name": "US",
+       "types": [
+        "country",
+        "political"
+       ]
+      },
+      {
+       "long_name": "20001",
+       "short_name": "20001",
+       "types": [
+        "postal_code"
+       ]
+      },
+      {
+       "long_name": "3727",
+       "short_name": "3727",
+       "types": [
+        "postal_code_suffix"
+       ]
+      }
+     ]
+    },
+    "id": "bd74ccc42ff2"
+   }
+  ]
+ },
+ {
+  "id": "c81dbf07b00e",
+  "friendly_id": "c81dbf07b00e-general-application",
+  "name": "General Application",
+  "url": "https://zeno-power.breezy.hr/p/c81dbf07b00e-general-application",
+  "published_date": "2026-08-07T18:05:21.646Z",
+  "type": {
+   "id": "fullTime",
+   "name": "Full-Time"
+  },
+  "location": {
+   "country": {
+    "name": "United States",
+    "id": "US"
+   },
+   "state": {
+    "id": "WA",
+    "name": "Washington"
+   },
+   "city": "Seattle",
+   "name": "Seattle, WA",
+   "primary": true,
+   "id": "ddc415f1e95a",
+   "is_remote": false
+  },
+  "department": null,
+  "salary": "",
+  "company": {
+   "name": "Zeno Power",
+   "logo_url": null,
+   "friendly_id": "zeno-power",
+   "isMultipleLocationsEnabled": true
+  },
+  "locations": [
+   {
+    "country": {
+     "name": "United States",
+     "id": "US"
+    },
+    "state": {
+     "id": "WA",
+     "name": "Washington"
+    },
+    "city": "Seattle",
+    "name": "Seattle, WA",
+    "primary": true,
+    "id": "ddc415f1e95a",
+    "is_remote": false
+   }
+  ]
+ }
+]
