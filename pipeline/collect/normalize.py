@@ -67,7 +67,9 @@ def employment_from_text(text: str | None) -> str:
 
 
 _TITLE_INTERN = re.compile(r"\bintern(ship)?\b|\bco-?op\b", re.I)
-_TITLE_CONTRACT = re.compile(r"[(\[-]\s*(contract|contractor|temporary|temp)\b|\bcontractor\)?\s*$", re.I)
+_TITLE_CONTRACT = re.compile(
+    r"[(\[][^)\]]*\b(contract|contractor|temporary|temp)\b[^)\]]*[)\]]"     # (Contract), (6 Month Contract)
+    r"|-\s*(contract|contractor|temporary|temp)\b|\bcontractor\s*$", re.I)
 _TITLE_PART_TIME = re.compile(r"\bpart[- ]time\b", re.I)
 
 

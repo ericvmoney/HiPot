@@ -31,6 +31,11 @@ READERS: dict[str, Callable] = {
     "ashby": ashby.read,
 }
 HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com"}
+# An ATS with a public feed that is deliberately not read, and why.
+NOT_READ = {
+    "rippling": "no reader for rippling: its job board API documentation is behind a sign-in "
+                "and its terms on automated use are unresolved",
+}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 
@@ -48,7 +53,7 @@ def skip_reason(company: dict, readers: dict = READERS) -> str | None:
         return f"not collected: startup status is '{status}'"
     ats = company["ats"]["type"]
     if ats not in readers:
-        return f"no reader for {ats}"
+        return NOT_READ.get(ats, f"no reader for {ats}")
     if not company["ats"]["board"]:
         return f"no board token for {ats}"
     return None

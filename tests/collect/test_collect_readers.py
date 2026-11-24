@@ -224,6 +224,8 @@ def test_employment_from_text_and_title():
     assert normalize.employment_from_title("Summer 2027 Firmware Intern") == "intern"
     assert normalize.employment_from_title("Battery Engineering Co-op") == "intern"
     assert normalize.employment_from_title("Test Technician (Contract)") == "contract"
+    assert normalize.employment_from_title("Technical Writer (6 Month Contract)") == "contract"
+    assert normalize.employment_from_title("Staff Recruiter- Contract") == "contract"
     assert normalize.employment_from_title("Contracts Manager") == "unknown"
     assert normalize.employment_from_title("Internal Tools Engineer") == "unknown"
 
