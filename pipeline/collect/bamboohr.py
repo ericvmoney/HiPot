@@ -1,4 +1,4 @@
-"""BambooHR reader. Switched off by default (run.SWITCHED_OFF): see below.
+"""BambooHR reader. Its terms restrict automated reading: see below.
 
 BambooHR documents no public job feed. Its API documentation
 (https://documentation.bamboohr.com) covers only the authenticated
@@ -16,8 +16,9 @@ www.bamboohr.com, which the fetcher reports as a redirect.
 Terms: BambooHR's Terms of Service (updated 2026-09-18,
 https://www.bamboohr.com/legal/terms-of-service) say in section 4.2 that the
 Service may not be used with "any robot, spider, other automated device" to
-copy content. The careers pages are on the Service's domain, so the reader is
-off until the owner decides.
+copy content. The careers pages are on the Service's domain. The reader runs
+by the owner's decision (PLAN.md decision 6); --disable-reader bamboohr turns
+it off for a run.
 
 Fields read. List: id, jobOpeningName, departmentLabel, employmentStatusLabel,
 location (city, state), atsLocation, isRemote. Detail (result.jobOpening):

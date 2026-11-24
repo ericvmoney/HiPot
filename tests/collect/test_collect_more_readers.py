@@ -73,7 +73,7 @@ def test_workable_ids_are_stable():
 def test_readers_with_restricted_terms_run_by_default_and_can_be_turned_off(ats):
     # The owner's standing rule (PLAN.md decision 6): they run, and each can be
     # turned off for a run if a vendor or company objects.
-    assert ats in run_module.READERS and ats not in run_module.SWITCHED_OFF
+    assert ats in run_module.READERS
     entry = company("a", ats, "a")
     assert skip_reason(entry) is None
     readers = {name: read for name, read in run_module.READERS.items() if name != ats}
@@ -310,13 +310,8 @@ def test_hosts_that_get_more_room():
 # ------------------------------------------------------------------- Breezy
 
 ZENO_CONTRACT = "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor"
-# A minimal page, written for the test: no real Breezy posting page was
-# recorded, because the reader is switched off. Real pages carry the same
-# schema.org block for search engines; that it parses them is not verified.
-SYNTHETIC_PAGE = """<html><head>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "JobPosting",
- "title": "Electrical Engineer (Contractor)", "description": "<p>Design <b>power electronics</b>.</p><ul><li>PCB layout</li></ul>"}</script>
-</head><body><div class="description">Design power electronics.</div></body></html>"""
+# The contractor's posting page is a real page recorded on 2026-11-24
+# (fixtures/breezy_zeno-power_783342e25463.html); the other pages answer 404.
 
 
 def test_breezy_asks_the_list_then_each_posting_page():
@@ -328,13 +323,15 @@ def test_breezy_asks_the_list_then_each_posting_page():
 
 
 def test_breezy_fields():
-    drafts = {d["posting_id"]: d for d in breezy.read("zeno-power", FakeFetcher(extra={ZENO_CONTRACT: SYNTHETIC_PAGE}))}
+    drafts = {d["posting_id"]: d for d in breezy.read("zeno-power", FakeFetcher())}
     contractor = drafts["783342e25463"]
     assert contractor["title"] == "Electrical Engineer (Contractor)" and contractor["url"] == ZENO_CONTRACT
     assert contractor["locations"] == [{"text": "Seattle, WA", "city": "Seattle", "state": "WA", "country": "US"}]
     assert contractor["workplace"] == "hybrid" and contractor["employment"] == "contract"
     assert contractor["pay"] == {"min": 55, "max": 75, "currency": "USD", "period": "hour", "basis": "feed"}
-    assert contractor["posted_date"] and contractor["description_text"] == "Design power electronics.\nPCB layout"
+    assert contractor["posted_date"]
+    assert contractor["description_text"].startswith("Company Overview\nZeno Power is the leading developer of nuclear batteries")
+    assert len(contractor["description_text"]) > 3000
     operator = drafts["9a5f4f91f333"]
     assert operator["pay"]["min"] == 46 and operator["pay"]["max"] == 60 and operator["workplace"] is None
     # No page answered for these: kept from the list without a description.
@@ -355,6 +352,13 @@ def test_breezy_fields():
 def test_breezy_salary_text(text, country, expected):
     found = breezy.pay_from_text(text, country)
     assert (None if found is None else (found["min"], found["max"], found["currency"], found["period"])) == expected
+
+
+def test_breezy_a_whole_place_typed_into_the_city_field():
+    # XL Batteries writes "Marlborough, MA" as the city, with no state field.
+    place = {"country": {"name": "United States", "id": "US"}, "city": "Marlborough, MA", "is_remote": False,
+             "name": "Marlborough, MA, US"}
+    assert breezy._place(place) == {"text": "Marlborough, MA, US", "city": "Marlborough", "state": "MA", "country": "US"}
 
 
 def test_breezy_page_without_a_job_block_gives_no_description():

@@ -48,11 +48,6 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "recruitee": "recruitee.com", "jazzhr": "app.jazz.co",
          # Each Breezy company has its own host; a 429 from one stops them all.
          "breezy": "breezy.hr"}
-# Readers that are built and tested but not run unless asked for by name
-# (`--enable-reader <type>`). Empty now: the owner's standing rule is that
-# readers run by default, restricted terms or not. Kept for a vendor that
-# objects; any reader can also be turned off for one run with --disable-reader.
-SWITCHED_OFF: dict[str, Callable] = {}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 
@@ -76,8 +71,6 @@ def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | No
     if ats not in readers:
         if ats in disabled:
             return f"{ats}: reader turned off for this run (--disable-reader {ats})"
-        if ats in SWITCHED_OFF:
-            return f"{ats}: reader switched off pending a terms decision (--enable-reader {ats})"
         return f"no reader for {ats}"
     if not company["ats"]["board"]:
         return f"no board token for {ats}"
@@ -218,9 +211,6 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE, help="first-seen state file")
     parser.add_argument("--greenhouse-pay", action="store_true",
                         help="one extra request per Greenhouse posting to read its structured pay range")
-    parser.add_argument("--enable-reader", action="append", default=[], metavar="TYPE",
-                        choices=sorted(SWITCHED_OFF) or None,
-                        help="run a reader that is switched off by default (see SWITCHED_OFF)")
     parser.add_argument("--disable-reader", action="append", default=[], metavar="TYPE", choices=sorted(READERS),
                         help="do not run this reader in this run (a vendor or company objected); may be repeated")
     parser.add_argument("--record", type=Path, metavar="DIR",
@@ -241,7 +231,6 @@ def main(argv: list[str] | None = None) -> int:
         companies = [company for company in companies if company["id"] in args.company]
 
     readers = dict(READERS)
-    readers.update({name: SWITCHED_OFF[name] for name in args.enable_reader})
     for name in args.disable_reader:
         readers.pop(name, None)
     if args.greenhouse_pay:

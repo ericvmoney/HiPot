@@ -1,4 +1,4 @@
-"""Breezy HR reader. Switched off by default (run.SWITCHED_OFF): see below.
+"""Breezy HR reader. Its terms restrict automated reading: see below.
 
 Breezy documents no public job feed. Its help centre describes only an embed
 widget, and its developer documentation (https://developer.breezy.hr) covers
@@ -15,8 +15,9 @@ block the page carries for search engines: one request per posting.
 Terms: Breezy's Terms of Service (updated 2026-08-10,
 https://breezy.hr/policies/terms), section 5 item (ix), prohibit accessing the
 Service "by any means other than our publicly supported interfaces (for
-example, 'scraping')". Whether /json is such an interface is not stated, so the
-reader is off until the owner decides.
+example, 'scraping')". Whether /json is such an interface is not stated. The
+reader runs by the owner's decision (PLAN.md decision 6); --disable-reader
+breezy turns it off for a run.
 
 Fields read. List: id, name, url, published_date, type (id, name), location
 and locations[] (city, state, country, is_remote, remote_details.value, name),
@@ -51,6 +52,10 @@ def _name(value) -> str | None:
 
 def _place(item: dict) -> dict | None:
     city = item.get("city") if isinstance(item.get("city"), str) else None
+    if city and "," in city:
+        # Some boards type the whole place into the city field ("Marlborough, MA",
+        # with no state field); the state is then read from the location text.
+        city = city.split(",")[0].strip()
     state, country = _name(item.get("state")), _name(item.get("country"))
     text = item.get("name") or ", ".join(part for part in (city, state, country) if part)
     if not text and item.get("is_remote"):
