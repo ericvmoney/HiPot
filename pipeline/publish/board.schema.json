@@ -13,18 +13,26 @@
     "counts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["roles", "companies", "roles_left_out", "companies_provisional"],
+      "required": ["roles", "companies", "roles_left_out", "left_out_company", "left_out_function", "companies_provisional", "functions"],
       "properties": {
         "roles": {"type": "integer", "minimum": 0},
         "companies": {"type": "integer", "minimum": 0},
         "roles_left_out": {"type": "integer", "minimum": 0},
-        "companies_provisional": {"type": "integer", "minimum": 0, "description": "Companies in this file whose climate tier is not yet approved."}
+        "left_out_company": {"type": "integer", "minimum": 0, "description": "Roles left out because their company is not listed."},
+        "left_out_function": {"type": "integer", "minimum": 0, "description": "Roles at listed companies left out because their function is not listed."},
+        "companies_provisional": {"type": "integer", "minimum": 0, "description": "Companies in this file whose climate tier is not yet approved."},
+        "functions": {
+          "description": "Roles in this file per function, for every function in the taxonomy, in taxonomy order.",
+          "type": "object",
+          "propertyNames": {"$ref": "#/$defs/slug"},
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        }
       }
     },
     "taxonomy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["disciplines", "levels", "sectors", "stages", "workplace", "metros", "climate_tiers"],
+      "required": ["functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "climate_tiers"],
       "patternProperties": {
         "^[a-z_]+$": {
           "type": "array",
@@ -32,7 +40,11 @@
             "type": "object",
             "additionalProperties": false,
             "required": ["id", "label"],
-            "properties": {"id": {"$ref": "#/$defs/slug"}, "label": {"type": "string", "minLength": 1}}
+            "properties": {
+              "id": {"$ref": "#/$defs/slug"},
+              "label": {"type": "string", "minLength": 1},
+              "listed": {"const": false, "description": "Functions only: present on a function whose roles are kept off the public board."}
+            }
           }
         }
       }
@@ -65,16 +77,17 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "co", "title", "url", "seen"],
+        "required": ["id", "co", "title", "url", "fn", "seen"],
         "properties": {
           "id": {"type": "string", "minLength": 1},
           "co": {"$ref": "#/$defs/slug", "description": "A key of 'companies'."},
           "title": {"type": "string", "minLength": 1},
           "url": {"type": "string", "pattern": "^https://", "description": "The posting on the company's own board."},
+          "fn": {"$ref": "#/$defs/slug", "description": "The role's function: an id from taxonomy.functions."},
           "loc": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
           "metros": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}},
           "wp": {"enum": ["onsite", "hybrid", "remote"]},
-          "disc": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}},
+          "disc": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Left out when the role has no discipline."},
           "level": {"$ref": "#/$defs/slug"},
           "emp": {"enum": ["full-time", "part-time", "contract", "intern"]},
           "pay": {

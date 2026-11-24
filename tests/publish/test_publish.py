@@ -15,7 +15,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from pipeline.io import ROOT, load_json, load_yaml
 from pipeline.publish import PublishError, build_board, dumps_board
 from pipeline.publish.__main__ import main
-from tools.validate import is_listed
+from tools.validate import is_listed, listed_functions
 
 TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
 JOBS = load_json(ROOT / "data" / "seed" / "jobs.json")
@@ -23,6 +23,8 @@ REGISTRY = load_yaml(ROOT / "companies.yml")
 BOARD_SCHEMA = load_json(ROOT / "pipeline" / "publish" / "board.schema.json")
 
 LISTED_IDS = {company["id"] for company in REGISTRY["companies"] if is_listed(company)}
+LISTED_FUNCTIONS = listed_functions(TAXONOMY)
+UNLISTED_FUNCTIONS = {entry["id"] for entry in TAXONOMY["functions"]} - LISTED_FUNCTIONS
 
 
 def board_errors(board: dict) -> list[str]:
@@ -47,10 +49,10 @@ def job(jid: str, cid: str, **extra) -> dict:
     record = {
         "id": jid, "company_id": cid, "title": f"Engineer {jid}", "url": f"https://example.com/jobs/{jid}",
         "source": {"ats": "greenhouse", "board": cid, "posting_id": jid, "read": "auto"},
-        "locations": [], "metros": [], "workplace": "unknown", "disciplines": [], "level": None,
-        "employment": "unknown", "pay": None, "posted_date": None,
+        "locations": [], "metros": [], "workplace": "unknown", "function": "engineering", "disciplines": [],
+        "level": None, "employment": "unknown", "pay": None, "posted_date": None,
         "first_seen": "2026-11-20T08:00:00-07:00", "last_seen": "2026-11-23T08:00:00-07:00",
-        "tagging": {"disciplines_by": "rule", "level_by": "rule", "model": None},
+        "tagging": {"function_by": "rule", "disciplines_by": "rule", "level_by": "rule", "model": None},
     }
     record.update(extra)
     return record
@@ -66,12 +68,13 @@ def registry(companies: list[dict]) -> dict:
 
 # --- Listing rule -----------------------------------------------------------
 
-def test_seed_default_build_holds_only_listed_companies():
+def test_seed_default_build_holds_only_listed_companies_and_functions():
     board = build_board(JOBS, REGISTRY, TAXONOMY)
-    expected = [j for j in JOBS["jobs"] if j["company_id"] in LISTED_IDS]
+    expected = [j for j in JOBS["jobs"] if j["company_id"] in LISTED_IDS and j["function"] in LISTED_FUNCTIONS]
     assert board["scope"] == "listed"
     assert len(board["roles"]) == len(expected) > 0
     assert {role["co"] for role in board["roles"]} <= LISTED_IDS
+    assert {role["fn"] for role in board["roles"]} <= LISTED_FUNCTIONS
     assert set(board["companies"]) <= LISTED_IDS
     assert not any(record.get("unlisted") for record in board["companies"].values())
     assert board["counts"]["roles_left_out"] == len(JOBS["jobs"]) - len(expected)
@@ -100,6 +103,43 @@ def test_include_unlisted_keeps_everything_and_says_so():
         assert bool(record.get("unlisted")) is (cid not in LISTED_IDS)
 
 
+def test_the_corporate_functions_are_unlisted_today():
+    # If this fails, taxonomy.yml changed which functions are listed: check the board still says the right thing.
+    assert {"sales-bd", "marketing", "finance-legal", "people-admin", "it"} <= UNLISTED_FUNCTIONS
+    assert "engineering" in LISTED_FUNCTIONS
+
+
+@pytest.mark.parametrize("function", sorted(UNLISTED_FUNCTIONS))
+def test_a_role_in_an_unlisted_function_never_appears_by_default(function):
+    reg = registry([company("alpha", "core", "in")])
+    jobs = [job("a1", "alpha"), job("a2", "alpha", function=function, title="Account Executive, Utilities")]
+    board = build_board(jobs_file(jobs), reg, TAXONOMY)
+    assert [role["id"] for role in board["roles"]] == ["a1"]
+    assert "Account Executive" not in dumps_board(board)
+    assert board["counts"]["left_out_function"] == 1 and board["counts"]["left_out_company"] == 0
+    assert board["counts"]["functions"][function] == 0
+    # The development build keeps it, and the taxonomy block marks the function as unlisted.
+    dev = build_board(jobs_file(jobs), reg, TAXONOMY, include_unlisted=True)
+    assert sorted(role["id"] for role in dev["roles"]) == ["a1", "a2"]
+    assert {"id": function, "label": next(f["label"] for f in TAXONOMY["functions"] if f["id"] == function),
+            "listed": False} in dev["taxonomy"]["functions"]
+
+
+def test_a_listed_function_at_an_unlisted_company_counts_as_a_company_exclusion():
+    reg = registry([company("alpha", "core", "in"), company("beta", "out", "in")])
+    jobs = [job("a1", "alpha"), job("b1", "beta"), job("b2", "beta", function="sales-bd")]
+    counts = build_board(jobs_file(jobs), reg, TAXONOMY)["counts"]
+    assert (counts["roles"], counts["roles_left_out"], counts["left_out_company"], counts["left_out_function"]) == (1, 2, 2, 0)
+
+
+@pytest.mark.parametrize("function", sorted(LISTED_FUNCTIONS))
+def test_every_listed_function_reaches_the_board(function):
+    reg = registry([company("alpha", "core", "in")])
+    board = build_board(jobs_file([job("a1", "alpha", function=function)]), reg, TAXONOMY)
+    assert [role["fn"] for role in board["roles"]] == [function]
+    assert board["counts"]["functions"][function] == 1
+
+
 # --- Shape ------------------------------------------------------------------
 
 @pytest.mark.parametrize("include_unlisted", [False, True])
@@ -112,11 +152,17 @@ def test_every_role_has_a_company_record_and_every_company_has_a_role(include_un
     board = build_board(JOBS, REGISTRY, TAXONOMY, include_unlisted=include_unlisted)
     used = {role["co"] for role in board["roles"]}
     assert used == set(board["companies"])
+    left_company = 0 if include_unlisted else sum(1 for j in JOBS["jobs"] if j["company_id"] not in LISTED_IDS)
+    left_function = 0 if include_unlisted else sum(
+        1 for j in JOBS["jobs"] if j["company_id"] in LISTED_IDS and j["function"] not in LISTED_FUNCTIONS)
     assert board["counts"] == {
         "roles": len(board["roles"]), "companies": len(board["companies"]),
         "roles_left_out": len(JOBS["jobs"]) - len(board["roles"]),
+        "left_out_company": left_company, "left_out_function": left_function,
         "companies_provisional": sum(1 for record in board["companies"].values() if record.get("provisional")),
+        "functions": {f["id"]: sum(1 for role in board["roles"] if role["fn"] == f["id"]) for f in TAXONOMY["functions"]},
     }
+    assert list(board["counts"]["functions"]) == [f["id"] for f in TAXONOMY["functions"]]
     for record in board["companies"].values():
         assert record["name"] and record["tier"]
         if record["tier"] in ("core", "enabling"):
@@ -128,6 +174,7 @@ def test_every_id_used_has_a_label(include_unlisted):
     board = build_board(JOBS, REGISTRY, TAXONOMY, include_unlisted=include_unlisted)
     labels = {key: {entry["id"] for entry in entries} for key, entries in board["taxonomy"].items()}
     for role in board["roles"]:
+        assert role["fn"] in labels["functions"]
         assert set(role.get("disc", [])) <= labels["disciplines"]
         assert set(role.get("metros", [])) <= labels["metros"]
         assert role.get("level") is None or role["level"] in labels["levels"]
@@ -150,7 +197,8 @@ def test_company_and_role_fields_are_carried_over():
         metros=["denver"], workplace="remote", disciplines=["controls", "systems"], level="staff",
         employment="full-time", pay=pay, posted_date="2026-11-21", summary="Own the inverter control loop.",
     )
-    board = build_board(jobs_file([full, job("a2", "alpha")]), reg, TAXONOMY)
+    product = job("a2", "alpha", function="product")   # no disciplines, as product roles usually have
+    board = build_board(jobs_file([full, product]), reg, TAXONOMY)
     assert board["generated_at"] == "2026-11-23T12:00:00-07:00"
     assert board["companies"]["alpha"] == {
         "name": "Alpha Motors", "tier": "enabling", "reason": "alpha reason.", "sectors": ["ev", "charging"],
@@ -161,13 +209,13 @@ def test_company_and_role_fields_are_carried_over():
     by_id = {role["id"]: role for role in board["roles"]}
     assert by_id["a1"] == {
         "id": "a1", "co": "alpha", "title": "Staff Controls Engineer", "url": "https://example.com/jobs/a1",
-        "loc": ["Denver, CO", "US remote"], "metros": ["denver"], "wp": "remote", "disc": ["controls", "systems"],
+        "fn": "engineering", "loc": ["Denver, CO", "US remote"], "metros": ["denver"], "wp": "remote", "disc": ["controls", "systems"],
         "level": "staff", "emp": "full-time", "pay": {"min": 150000, "max": 190000, "cur": "USD", "per": "year"},
         "posted": "2026-11-21", "seen": "2026-11-20", "summary": "Own the inverter control loop.",
     }
-    # Nothing stated stays nothing stated: no pay, level or workplace is invented.
+    # Nothing stated stays nothing stated: no pay, level, workplace or discipline is invented.
     assert by_id["a2"] == {"id": "a2", "co": "alpha", "title": "Engineer a2",
-                           "url": "https://example.com/jobs/a2", "seen": "2026-11-20"}
+                           "url": "https://example.com/jobs/a2", "fn": "product", "seen": "2026-11-20"}
     assert board_errors(board) == []
 
 

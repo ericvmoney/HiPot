@@ -29,7 +29,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
     parser.add_argument(
         "--include-unlisted", action="store_true",
-        help="development only: keep roles at companies that are not listed. Never publish this build.",
+        help="development only: keep roles at unlisted companies and in unlisted functions. Never publish this build.",
     )
     args = parser.parse_args(argv)
 
@@ -49,10 +49,12 @@ def main(argv: list[str] | None = None) -> int:
     size = write_board(board, args.out)
     counts = board["counts"]
     print(f"Wrote {args.out}")
-    print(f"  scope: {board['scope']}" + ("  (DEVELOPMENT BUILD: includes unlisted companies; do not publish)"
+    print(f"  scope: {board['scope']}" + ("  (DEVELOPMENT BUILD: includes unlisted companies and functions; do not publish)"
                                            if board["scope"] == "all" else ""))
-    print(f"  roles: {counts['roles']} at {counts['companies']} companies; "
-          f"{counts['roles_left_out']} roles at unlisted companies left out")
+    print(f"  roles: {counts['roles']} at {counts['companies']} companies; {counts['roles_left_out']} left out "
+          f"({counts['left_out_company']} at unlisted companies, {counts['left_out_function']} in unlisted functions)")
+    by_function = ", ".join(f"{fid} {n}" for fid, n in counts["functions"].items() if n)
+    print(f"  by function: {by_function or 'none'}")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
     return 0
 
