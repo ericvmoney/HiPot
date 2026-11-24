@@ -24,7 +24,9 @@ uv run python -m pipeline.publish --include-unlisted   # development only: every
 uv run python -m http.server 8734 --bind 127.0.0.1 --directory site
 ```
 
-Then open `http://localhost:8734/`. The page is one file, `site/index.html`, with its CSS and JavaScript inline. It loads nothing from another origin and fetches only `data/board.json`, by a relative address. To publish: the page, plus `data/board.json` at that same relative path.
+Then open `http://localhost:8734/`. The page is one file, `site/index.html`, with its CSS and JavaScript inline. Its only outside request is the Google Fonts stylesheet (Inter Tight and JetBrains Mono, with system fallbacks), the one stylesheet host artifact hosting allows. It fetches only `data/board.json`, by a relative address. To publish: the page, plus `data/board.json` at that same relative path.
+
+The look follows the owner's earlier job hub: its colour tokens (light and dark), type, pill controls, outlined mono tags and card layout. Role-type tags take one of six category hues, set in CSS by `data-fn`: engineering olive; technicians and trades rust; science and field operations blue; production and supply chain ochre; quality and EHS violet; projects and product rose. In the "Company A to Z" sort, roles sit under a company heading with a count, tier and reason.
 
 `index.html` is a complete document (doctype, `html`, `head`, `body`) so that it renders in standards mode on a plain static host. Artifact hosting wraps a page in its own document skeleton; a browser merges the nested tags, and a local copy wrapped that way rendered the same. Whether the publisher itself accepts a complete document has not been tested. If it does not, remove the `<!doctype>`, `<html>`, `<head>`, `</head>`, `<body>`, `</body>` and `</html>` lines and the charset and viewport `<meta>` lines; nothing else depends on them.
 

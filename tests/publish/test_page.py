@@ -18,13 +18,27 @@ def test_title_is_a_short_name_near_the_top():
     assert "<title>HiPot Jobs</title>" in PAGE[:8000]
 
 
-def test_page_loads_nothing_from_another_origin():
-    # No external scripts, stylesheets, fonts, images or frames: everything is inline.
+GOOGLE_FONTS = ("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700"
+                "&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap")
+
+
+def test_page_loads_nothing_from_another_origin_except_its_fonts():
+    # No external scripts, images or frames: script and styles are inline.
     assert PAGE.count("<script") == 1 and "<script src" not in PAGE
-    for needle in ("<link", "<img", "<iframe", "<object", "<embed", "@import", "url("):
+    for needle in ("<img", "<iframe", "<object", "<embed", "@import", "url("):
         assert needle not in PAGE, needle
-    # The only addresses written in the source are none at all; role links come from the data.
-    assert re.findall(r"""["'](?:https?:)?//[^"']+["']""", PAGE) == []
+    # The one stylesheet is Google Fonts, the only stylesheet host artifact hosting allows.
+    links = re.findall(r"<link [^>]*>", PAGE)
+    assert links == [
+        '<link rel="preconnect" href="https://fonts.googleapis.com">',
+        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
+        f'<link rel="stylesheet" href="{GOOGLE_FONTS}">',
+    ]
+    # Apart from those, no address is written in the source; role links come from the data.
+    addresses = re.findall(r"""["'](?:https?:)?//[^"']+["']""", PAGE)
+    assert sorted(addresses) == sorted(['"https://fonts.googleapis.com"', '"https://fonts.gstatic.com"', f'"{GOOGLE_FONTS}"'])
+    # Every font has a system fallback.
+    assert '--sans: "Inter Tight", system-ui,' in STYLE and '--mono: "JetBrains Mono", ui-monospace,' in STYLE
 
 
 def test_data_is_fetched_once_by_a_relative_address():
@@ -87,7 +101,20 @@ def test_role_type_is_the_first_filter_and_every_role_shows_its_function():
     for function_id in ("engineering", "technician", "sales-bd", "supply-chain"):
         assert f"'{function_id}'" not in SCRIPT
     # The function label leads the tag row, so the row is never empty for a role with no discipline.
-    assert "tags.appendChild(el('li', { class: 'tag-fn', text: labels.functions[role.fn] || role.fn }));" in SCRIPT
+    assert "tags.appendChild(el('li', { class: 'tag-fn', 'data-fn': role.fn, text: labels.functions[role.fn] || role.fn }));" in SCRIPT
+
+
+def test_role_type_hues_live_in_the_stylesheet():
+    # Each listed function gets one of the six category hues; the ids sit in CSS, not in the script.
+    hues = dict(re.findall(r'\.tag-fn\[data-fn="([a-z-]+)"\][^{]*\{ color: var\(--([a-z]+)\)', STYLE))
+    pairs = re.findall(r'\.tag-fn\[data-fn="([a-z-]+)"\], \.tag-fn\[data-fn="([a-z-]+)"\] \{ color: var\(--([a-z]+)\)', STYLE)
+    for first, second, hue in pairs:
+        hues[first] = hues[second] = hue
+    assert hues == {
+        "engineering": "olive", "technician": "rust", "trades": "rust", "science": "blue", "field-operations": "blue",
+        "production": "ochre", "supply-chain": "ochre", "quality-compliance": "violet", "ehs": "violet",
+        "project-program": "rose", "product": "rose",
+    }
 
 
 def test_location_filter_is_searchable_shortened_and_covers_states():
