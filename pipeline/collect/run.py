@@ -29,10 +29,16 @@ READERS: dict[str, Callable] = {
     "greenhouse": greenhouse.read,
     "lever": lever.read,
     "ashby": ashby.read,
-    "rippling": rippling.read,
     "workable": workable.read,
     "recruitee": recruitee.read,
     "jazzhr": jazzhr.read,
+    # These vendors' terms restrict automated reading. They run by the owner's
+    # decision of 2026-11-24 (PLAN.md decision 6, recorded as a risk there);
+    # each can be turned off for a run with --disable-reader TYPE.
+    "rippling": rippling.read,                 # User Terms section 2.2
+    "bamboohr": bamboohr.read,                 # Terms of Service section 4.2
+    "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
+    "breezy": breezy.read,                     # Terms of Service section 5(ix)
 }
 HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com",
          "rippling": "api.rippling.com", "workable": "apply.workable.com",
@@ -43,13 +49,10 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          # Each Breezy company has its own host; a 429 from one stops them all.
          "breezy": "breezy.hr"}
 # Readers that are built and tested but not run unless asked for by name
-# (`--enable-reader <type>`), because the vendor's terms restrict automated
-# reading. The owner decides; the report quotes the clause.
-SWITCHED_OFF: dict[str, Callable] = {
-    "bamboohr": bamboohr.read,                 # Terms of Service section 4.2
-    "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
-    "breezy": breezy.read,                     # Terms of Service section 5(ix)
-}
+# (`--enable-reader <type>`). Empty now: the owner's standing rule is that
+# readers run by default, restricted terms or not. Kept for a vendor that
+# objects; any reader can also be turned off for one run with --disable-reader.
+SWITCHED_OFF: dict[str, Callable] = {}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 
@@ -58,7 +61,7 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def skip_reason(company: dict, readers: dict = READERS) -> str | None:
+def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | None:
     """Why a company is not collected, or None when it is."""
     tier, status = company["climate"]["tier"], company["startup"]["status"]
     if tier not in COLLECT_TIERS:
@@ -71,6 +74,8 @@ def skip_reason(company: dict, readers: dict = READERS) -> str | None:
     # how its board was read before there was a reader for its system.
     ats = company["ats"]["type"]
     if ats not in readers:
+        if ats in disabled:
+            return f"{ats}: reader turned off for this run (--disable-reader {ats})"
         if ats in SWITCHED_OFF:
             return f"{ats}: reader switched off pending a terms decision (--enable-reader {ats})"
         return f"no reader for {ats}"
@@ -133,6 +138,7 @@ def collect(
     readers: dict | None = None,
     now: Callable[[], str] = utc_now,
     log: Callable[[str], None] = lambda line: None,
+    disabled=(),
 ) -> dict:
     """Run every reader and return the raw jobs file as a dict."""
     readers = READERS if readers is None else readers
@@ -141,7 +147,7 @@ def collect(
     limited_hosts: set[str] = set()
 
     for company in companies:
-        reason = skip_reason(company, readers)
+        reason = skip_reason(company, readers, disabled)
         if reason:
             entries.append(_entry(company, "skipped", error=reason))
             continue
@@ -215,6 +221,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--enable-reader", action="append", default=[], metavar="TYPE",
                         choices=sorted(SWITCHED_OFF) or None,
                         help="run a reader that is switched off by default (see SWITCHED_OFF)")
+    parser.add_argument("--disable-reader", action="append", default=[], metavar="TYPE", choices=sorted(READERS),
+                        help="do not run this reader in this run (a vendor or company objected); may be repeated")
     parser.add_argument("--record", type=Path, metavar="DIR",
                         help="also save every raw feed answer here (data/fixtures-live is ignored by git)")
     parser.add_argument("--replay", type=Path, metavar="DIR",
@@ -234,6 +242,8 @@ def main(argv: list[str] | None = None) -> int:
 
     readers = dict(READERS)
     readers.update({name: SWITCHED_OFF[name] for name in args.enable_reader})
+    for name in args.disable_reader:
+        readers.pop(name, None)
     if args.greenhouse_pay:
         readers["greenhouse"] = lambda board, fetcher: greenhouse.read(board, fetcher, with_pay=True)
 
@@ -247,7 +257,7 @@ def main(argv: list[str] | None = None) -> int:
     else:
         fetcher = Fetcher()
     try:
-        raw = collect(companies, fetcher, state, readers=readers, log=print)
+        raw = collect(companies, fetcher, state, readers=readers, log=print, disabled=set(args.disable_reader))
     finally:
         fetcher.close()
     state.forget_old(raw["generated_at"])

@@ -69,10 +69,30 @@ def test_workable_ids_are_stable():
 
 # ----------------------------------------------------------------- BambooHR
 
-def test_bamboohr_is_switched_off_by_default():
-    assert "bamboohr" not in run_module.READERS and "bamboohr" in run_module.SWITCHED_OFF
-    reason = skip_reason(company("lunar-outpost", "bamboohr", "lunaroutpost"))
-    assert reason == "bamboohr: reader switched off pending a terms decision (--enable-reader bamboohr)"
+@pytest.mark.parametrize("ats", ["rippling", "bamboohr", "smartrecruiters", "breezy"])
+def test_readers_with_restricted_terms_run_by_default_and_can_be_turned_off(ats):
+    # The owner's standing rule (PLAN.md decision 6): they run, and each can be
+    # turned off for a run if a vendor or company objects.
+    assert ats in run_module.READERS and ats not in run_module.SWITCHED_OFF
+    entry = company("a", ats, "a")
+    assert skip_reason(entry) is None
+    readers = {name: read for name, read in run_module.READERS.items() if name != ats}
+    assert skip_reason(entry, readers, {ats}) == f"{ats}: reader turned off for this run (--disable-reader {ats})"
+
+
+def test_disable_reader_on_the_command_line(tmp_path, monkeypatch):
+    import yaml
+    registry = tmp_path / "companies.yml"
+    registry.write_text(yaml.safe_dump({"registry_version": 0, "companies": [company("lunar-outpost", "bamboohr", "lunaroutpost")]}),
+                        encoding="utf-8")
+    monkeypatch.setattr(run_module, "Fetcher", FakeFetcher)
+    out = tmp_path / "raw.json"
+    assert run_module.main(["--companies", str(registry), "--out", str(out), "--state", str(tmp_path / "s.json"),
+                            "--disable-reader", "bamboohr"]) == 0
+    from pipeline.io import load_json
+    raw = load_json(out)
+    assert raw["jobs"] == []
+    assert raw["run"]["companies"][0]["error"] == "bamboohr: reader turned off for this run (--disable-reader bamboohr)"
 
 
 def test_bamboohr_asks_the_list_then_each_posting():
@@ -108,10 +128,9 @@ def test_bamboohr_a_refused_detail_blocks_the_company():
         bamboohr.read("lunaroutpost", fetcher)
 
 
-def test_bamboohr_runs_when_switched_on():
-    readers = {**run_module.READERS, "bamboohr": run_module.SWITCHED_OFF["bamboohr"]}
+def test_bamboohr_ids_are_stable():
     raw = collect([company("lunar-outpost", "bamboohr", "lunaroutpost")], FakeFetcher(), SeenState(),
-                  readers=readers, now=lambda: "2026-11-24T16:00:00Z")
+                  now=lambda: "2026-11-24T16:00:00Z")
     assert sorted(job["id"] for job in raw["jobs"]) == ["bamboohr:lunaroutpost:297", "bamboohr:lunaroutpost:389"]
 
 
@@ -128,10 +147,6 @@ def test_a_redirect_is_reported_as_a_board_that_is_not_available():
 # ---------------------------------------------------------- SmartRecruiters
 
 SR_LIST = "https://api.smartrecruiters.com/v1/companies/EnPowerInc/postings"
-
-
-def test_smartrecruiters_is_switched_off_by_default():
-    assert "smartrecruiters" not in run_module.READERS and "smartrecruiters" in run_module.SWITCHED_OFF
 
 
 def test_smartrecruiters_asks_one_page_then_each_posting():
@@ -282,9 +297,14 @@ def test_jazzhr_closed_jobs_are_left_out_and_bad_answers_are_errors():
         jazzhr.parse('<!DOCTYPE jobs [<!ENTITY a "aaaa">]><jobs>&a;</jobs>')
 
 
-def test_the_jazzhr_host_is_spaced_out():
-    from pipeline.collect.fetch import HOST_INTERVALS
-    assert HOST_INTERVALS["app.jazz.co"] >= 10
+def test_hosts_that_get_more_room():
+    fetcher = Fetcher(client=httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(200))))
+    assert fetcher._interval_for("app.jazz.co") >= 10
+    assert fetcher._interval_for("api.smartrecruiters.com") >= 6     # robots.txt admits only LinkedInBot
+    assert fetcher._interval_for("lunaroutpost.bamboohr.com") >= 6   # matched by suffix
+    assert fetcher._interval_for("zeno-power.breezy.hr") >= 2
+    assert fetcher._interval_for("bamboohr.com.example.net") == 0.0
+    assert fetcher._interval_for("api.lever.co") == 0.0              # MIN_INTERVAL still applies
 
 
 # ------------------------------------------------------------------- Breezy
@@ -297,10 +317,6 @@ SYNTHETIC_PAGE = """<html><head>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "JobPosting",
  "title": "Electrical Engineer (Contractor)", "description": "<p>Design <b>power electronics</b>.</p><ul><li>PCB layout</li></ul>"}</script>
 </head><body><div class="description">Design power electronics.</div></body></html>"""
-
-
-def test_breezy_is_switched_off_by_default():
-    assert "breezy" not in run_module.READERS and "breezy" in run_module.SWITCHED_OFF
 
 
 def test_breezy_asks_the_list_then_each_posting_page():
