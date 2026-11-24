@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hipot.example/schema/raw-job.schema.json",
   "title": "Raw job",
-  "description": "One posting as the collector read it, before tagging. The collector fills everything a feed states or a location rule can decide. The tagger adds disciplines, level, pay found in the posting text, summary and the tagging record, and drops description_text and department to produce a Job (job.schema.json). The collector keeps every posting on a board, hardware or not; the tagger decides which are in scope.",
+  "description": "One posting as the collector read it, before tagging. The collector fills everything a feed states or a location rule can decide. The tagger adds function, disciplines, level, pay found in the posting text, summary and the tagging record, and drops description_text and department to produce a Job (job.schema.json). The collector and the tagger both keep every posting; which functions reach the board is decided by `listed` in taxonomy.yml at the publish step.",
   "type": "object",
   "additionalProperties": false,
   "required": [

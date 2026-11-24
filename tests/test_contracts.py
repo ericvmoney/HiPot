@@ -9,8 +9,10 @@ import copy
 import pytest
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.seed.import_old_hub import job_id, level_from_title, parse_pay, parse_source
-from tools.validate import check_companies, check_jobs, check_persona, check_raw_jobs, schema_errors, schema_registry
+from pipeline.seed.import_old_hub import job_id, level_from_title, parse_pay, parse_source, seed_function
+from tools.validate import (
+    check_companies, check_jobs, check_persona, check_raw_jobs, listed_functions, schema_errors, schema_registry,
+)
 
 REGISTRY, SCHEMAS = schema_registry()
 TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
@@ -53,6 +55,9 @@ def test_no_seed_job_links_to_an_aggregator():
     ("workplace", "wfh"),
     ("level", "Senior"),                        # not a slug
     ("disciplines", ["Systems Engineering"]),
+    ("disciplines", ["systems", "electrical", "mechanical", "test"]),   # more than three
+    ("function", "Engineering"),               # not a slug
+    ("function", None),
     ("pay", {"min": 1, "max": 2, "currency": "usd", "period": "year", "basis": "seed"}),
     ("pay", {"min": 1, "max": 2, "currency": "USD", "period": "year", "basis": "estimate"}),
 ])
@@ -70,16 +75,48 @@ def test_unknown_job_field_and_missing_field_are_rejected():
     job = copy.deepcopy(JOBS["jobs"][0])
     del job["tagging"]
     assert job_errors(job)
+    job = copy.deepcopy(JOBS["jobs"][0])
+    del job["function"]
+    assert job_errors(job)
+    job = copy.deepcopy(JOBS["jobs"][0])
+    del job["tagging"]["function_by"]
+    assert job_errors(job)
 
 
 def test_taxonomy_membership_is_checked():
     jobs = copy.deepcopy(JOBS)
     jobs["jobs"] = jobs["jobs"][:1]
     jobs["jobs"][0]["disciplines"] = ["underwater-basket-weaving"]
+    jobs["jobs"][0]["function"] = "astrology"
     jobs["jobs"][0]["company_id"] = "no-such-company"
     problems = check_jobs(jobs, TAXONOMY, {"some-company"})
     assert any("unknown discipline" in line for line in problems)
+    assert any("unknown function" in line for line in problems)
     assert any("not in the registry" in line for line in problems)
+
+
+def test_functions_are_complete_and_switchable():
+    functions = TAXONOMY["functions"]
+    assert len({f["id"] for f in functions}) == len(functions)
+    for entry in functions:
+        assert entry["label"] and entry["covers"] and isinstance(entry["listed"], bool), entry["id"]
+    listed = listed_functions(TAXONOMY)
+    assert {"engineering", "technician", "trades", "production", "supply-chain", "project-program"} <= listed
+    assert not {"sales-bd", "finance-legal", "people-admin"} & listed
+    # Product and program moved from disciplines to functions in taxonomy version 1.
+    assert not {"product", "program"} & {d["id"] for d in TAXONOMY["disciplines"]}
+
+
+@pytest.mark.parametrize("title,profiles,expected", [
+    ("Senior Systems Engineer", ["sys"], "engineering"),
+    ("Staff Product Manager, Hardware", ["prod"], "product"),
+    ("Product Design Engineer", ["prod", "mech"], "engineering"),
+    ("Fusion Program Lead - Plant Control Systems", ["sys"], "project-program"),
+    ("Senior Construction Manager", ["elec"], "project-program"),
+    ("Test Technician II", ["test"], "technician"),
+])
+def test_seed_function(title, profiles, expected):
+    assert seed_function(title, profiles) == expected
 
 
 def test_screened_company_needs_a_reason():
@@ -92,6 +129,12 @@ def test_persona_rejects_identity_fields():
     persona = copy.deepcopy(PERSONA)
     persona["email"] = "someone@example.com"
     assert schema_errors(persona, SCHEMAS["persona.schema.json"], REGISTRY)
+
+
+def test_persona_function_membership_is_checked():
+    persona = copy.deepcopy(PERSONA)
+    persona["functions"] = ["engineering", "astrology"]
+    assert check_persona(persona, TAXONOMY) == ["unknown function 'astrology'"]
 
 
 @pytest.mark.parametrize("url,expected", [

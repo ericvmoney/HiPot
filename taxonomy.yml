@@ -1,4 +1,4 @@
-# HiPot taxonomy, version 0.
+# HiPot taxonomy, version 1.
 #
 # Every id used in jobs, companies and personas must appear here. The JSON
 # schemas only check that an id is a well-formed slug; `tools/validate.py`
@@ -6,7 +6,84 @@
 #
 # Owned by the supervisor. Workstream A3 proposes changes; nobody else edits it.
 
-taxonomy_version: 0
+taxonomy_version: 1
+
+# Every role has exactly one function: the kind of work, whatever the field.
+# `listed: false` keeps a function's roles in jobs.json but off the public
+# board; flipping it needs no re-tagging. Engineering and science roles carry
+# one to three disciplines; technician and trades roles carry one where the
+# title names a field ("electrical technician"); other functions may carry one.
+# Added in version 1 (2026-11-24) to cover the range of roles at hardware
+# companies, not only engineers.
+functions:
+  - id: engineering
+    label: Engineering
+    listed: true
+    covers: Engineers who design, develop, test, integrate, build or support the product, including software, data and manufacturing engineers.
+  - id: science
+    label: Science and research
+    listed: true
+    covers: Scientists and researchers in physics, chemistry, materials, electrochemistry and plasma work tied to the product.
+  - id: technician
+    label: Technicians
+    listed: true
+    covers: Lab, test, assembly, maintenance, calibration and field service technicians.
+  - id: trades
+    label: Skilled trades
+    listed: true
+    covers: Electricians, installers, welders, machinists, line workers and other licensed or skilled trades.
+  - id: production
+    label: Production and plant operations
+    listed: true
+    covers: Production associates and operators, shift and line supervisors, plant, facilities and production managers.
+  - id: supply-chain
+    label: Supply chain
+    listed: true
+    covers: Procurement, sourcing and commodity management, buyers, supplier development, planning, logistics, warehouse and materials.
+    watch: A supplier quality engineer is engineering with the quality discipline; a buyer or commodity manager is supply chain.
+  - id: quality-compliance
+    label: Quality, certification and compliance
+    listed: true
+    covers: Quality inspectors and auditors, quality management, certification, regulatory and product compliance specialists.
+    watch: Quality engineers are engineering with the quality discipline.
+  - id: ehs
+    label: Environment, health and safety
+    listed: true
+    covers: Workplace and site safety, environmental compliance, industrial hygiene.
+  - id: project-program
+    label: Projects and programs
+    listed: true
+    covers: Program, project, construction and deployment managers; project controls and scheduling.
+  - id: field-operations
+    label: Field and asset operations
+    listed: true
+    covers: Operations and maintenance management for deployed assets, site and fleet operations, service and deployment operations management.
+    watch: Field service technicians are technicians; commissioning and field engineers are engineering with the field discipline.
+  - id: product
+    label: Product and design
+    listed: true
+    covers: Product management for a physical product, industrial and product design, user research for hardware.
+  - id: sales-bd
+    label: Sales and business development
+    listed: false
+    covers: Sales, business development, origination, account management, customer success. Sales and applications engineers are engineering with the field discipline.
+  - id: marketing
+    label: Marketing and communications
+    listed: false
+    covers: Marketing, brand, communications, content, community and policy advocacy.
+  - id: finance-legal
+    label: Finance, legal and strategy
+    listed: false
+    covers: Finance, accounting, legal, strategy, corporate development, investor relations, land and permitting.
+  - id: people-admin
+    label: People and administration
+    listed: false
+    covers: Human resources, recruiting, office and executive administration.
+  - id: it
+    label: IT and security
+    listed: false
+    covers: Corporate IT, help desk, enterprise systems and corporate security.
+    watch: Product software, data and cybersecurity of the product are engineering.
 
 disciplines:
   - id: systems
@@ -40,8 +117,11 @@ disciplines:
     covers: Embedded software, firmware, real-time systems, device drivers, bootloaders.
     watch: The title "firmware engineer" also appears at storage-silicon and consumer-device firms.
   - id: software
-    label: Software for hardware
-    covers: Test automation, tools, SCADA, energy management, fleet and device software tied to a physical product.
+    label: Software
+    covers: Software engineering at a hardware company - device, fleet, controls, energy management, SCADA, tools, test automation, platform and web.
+  - id: data
+    label: Data and machine learning
+    covers: Data engineering, analytics, data science and machine learning on product, fleet, process or grid data.
   - id: test
     label: Test and validation
     covers: Design verification, hardware-in-the-loop, reliability, test equipment and fixtures.
@@ -54,18 +134,26 @@ disciplines:
   - id: materials
     label: Materials and R&D
     covers: Materials science, electrochemistry and physics research roles tied to a hardware product.
+  - id: nuclear-plasma
+    label: Nuclear and plasma
+    covers: Fission and fusion engineering, plasma physics, neutronics, radiation and shielding.
+  - id: optics
+    label: Optics, lasers and photonics
+    covers: Optical design, laser systems, photonics and optical metrology.
+  - id: civil-structural
+    label: Civil and structural
+    covers: Civil, structural and geotechnical engineering for sites, foundations, plants and installations.
+  - id: aerospace
+    label: Aerospace and flight
+    covers: Aircraft structures, aerodynamics, flight controls, flight test and airworthiness for electric aircraft.
   - id: quality
     label: Quality, safety and compliance
     covers: Quality, product safety, certification, regulatory compliance.
   - id: field
     label: Field and applications
-    covers: Commissioning, field service, applications engineering, customer deployment.
-  - id: product
-    label: Hardware product
-    covers: Product management for a physical product.
-  - id: program
-    label: Program and project
-    covers: Technical program and project management for hardware development or deployment.
+    covers: Commissioning, field engineering, applications and sales engineering, customer deployment.
+# Version 1 moved "product" and "program" out of disciplines: they are now the
+# functions `product` and `project-program`.
 
 levels:
   - {id: intern, label: Intern or co-op}
@@ -116,13 +204,285 @@ workplace:
   - {id: remote, label: Remote}
   - {id: unknown, label: Not stated}
 
-# Starting set only: the four metros the old hub tracked. Workstream A1
-# proposes the full list with the location parser.
+# BEGIN metros (generated by tools/build_metros.py from Census Bureau July 2023
+# delineations; edit the script, not this block). One entry per Combined
+# Statistical Area, or per Metropolitan Statistical Area outside any CSA.
 metros:
-  - {id: sf-bay-area, label: San Francisco Bay Area}
-  - {id: san-diego, label: San Diego}
-  - {id: denver, label: Denver and Front Range}
-  - {id: boston, label: Boston area}
+  - {id: abilene-tx, label: "Abilene-Sweetwater, TX", census: CSA 101}
+  - {id: albany-ga, label: "Albany, GA", census: CBSA 10500}
+  - {id: albany-ny, label: "Albany-Schenectady, NY", census: CSA 104}
+  - {id: albuquerque-nm, label: "Albuquerque-Santa Fe-Los Alamos, NM", census: CSA 105}
+  - {id: alexandria-la, label: "Alexandria, LA", census: CBSA 10780}
+  - {id: allentown-pa, label: "Allentown-Bethlehem-East Stroudsburg, PA-NJ", census: CSA 106}
+  - {id: altoona-pa, label: "Altoona-Huntingdon, PA", census: CSA 107}
+  - {id: amarillo-tx, label: "Amarillo-Borger, TX", census: CSA 108}
+  - {id: anchorage-ak, label: "Anchorage, AK", census: CBSA 11260}
+  - {id: anniston-al, label: "Anniston-Oxford, AL", census: CBSA 11500}
+  - {id: appleton-wi, label: "Appleton-Oshkosh-Neenah, WI", census: CSA 118}
+  - {id: asheville-nc, label: "Asheville-Waynesville-Brevard, NC", census: CSA 120}
+  - {id: atlanta-ga, label: "Atlanta--Athens-Clarke County--Sandy Springs, GA-AL", census: CSA 122}
+  - {id: augusta-ga, label: "Augusta-Richmond County, GA-SC", census: CBSA 12260}
+  - {id: austin-tx, label: "Austin-Round Rock-San Marcos, TX", census: CBSA 12420}
+  - {id: bakersfield-ca, label: "Bakersfield-Delano, CA", census: CBSA 12540}
+  - {id: bangor-me, label: "Bangor, ME", census: CBSA 12620}
+  - {id: baton-rouge-la, label: "Baton Rouge-Hammond, LA", census: CSA 132}
+  - {id: beaumont-tx, label: "Beaumont-Port Arthur, TX", census: CBSA 13140}
+  - {id: beckley-wv, label: "Beckley, WV", census: CBSA 13220}
+  - {id: bellingham-wa, label: "Bellingham, WA", census: CBSA 13380}
+  - {id: bend-or, label: "Bend, OR", census: CBSA 13460}
+  - {id: billings-mount, label: "Billings, MT", census: CBSA 13740}
+  - {id: binghamton-ny, label: "Binghamton, NY", census: CBSA 13780}
+  - {id: birmingham-al, label: "Birmingham-Cullman-Talladega, AL", census: CSA 142}
+  - {id: bismarck-nd, label: "Bismarck, ND", census: CBSA 13900}
+  - {id: blacksburg-va, label: "Blacksburg-Christiansburg-Radford, VA", census: CBSA 13980}
+  - {id: bloomington-in, label: "Bloomington-Bedford, IN", census: CSA 144}
+  - {id: bloomington-il, label: "Bloomington-Pontiac, IL", census: CSA 145}
+  - {id: boise-city-id, label: "Boise City-Mountain Home-Ontario, ID-OR", census: CSA 147}
+  - {id: boston, label: "Boston-Worcester-Providence, MA-RI-NH", census: CSA 148}
+  - {id: bowling-green-ky, label: "Bowling Green-Glasgow-Franklin, KY", census: CSA 150}
+  - {id: bozeman-mount, label: "Bozeman, MT", census: CBSA 14580}
+  - {id: brownsville-tx, label: "Brownsville-Harlingen-Raymondville, TX", census: CSA 154}
+  - {id: brunswick-ga, label: "Brunswick-St. Simons, GA", census: CBSA 15260}
+  - {id: buffalo-ny, label: "Buffalo-Cheektowaga-Olean, NY", census: CSA 160}
+  - {id: burlington-vt, label: "Burlington-South Burlington-Barre, VT", census: CSA 162}
+  - {id: cape-coral-fl, label: "Cape Coral-Fort Myers-Naples, FL", census: CSA 163}
+  - {id: cape-girardeau-mo, label: "Cape Girardeau-Sikeston, MO-IL", census: CSA 164}
+  - {id: casper-wy, label: "Casper, WY", census: CBSA 16220}
+  - {id: cedar-rapids-ia, label: "Cedar Rapids-Iowa City, IA", census: CSA 168}
+  - {id: champaign-il, label: "Champaign-Urbana-Danville, IL", census: CSA 169}
+  - {id: charleston-wv, label: "Charleston-Huntington-Ashland, WV-OH-KY", census: CSA 170}
+  - {id: charleston-sc, label: "Charleston-North Charleston, SC", census: CBSA 16700}
+  - {id: charlotte-nc, label: "Charlotte-Concord, NC-SC", census: CSA 172}
+  - {id: charlottesville-va, label: "Charlottesville, VA", census: CBSA 16820}
+  - {id: chattanooga-tn, label: "Chattanooga-Cleveland-Dalton, TN-GA-AL", census: CSA 174}
+  - {id: cheyenne-wy, label: "Cheyenne, WY", census: CBSA 16940}
+  - {id: chicago-il, label: "Chicago-Naperville, IL-IN-WI", census: CSA 176}
+  - {id: chico-ca, label: "Chico, CA", census: CBSA 17020}
+  - {id: cincinnati-oh, label: "Cincinnati-Wilmington, OH-KY-IN", census: CSA 178}
+  - {id: clarksville-tn, label: "Clarksville, TN-KY", census: CBSA 17300}
+  - {id: cleveland-oh, label: "Cleveland-Akron-Canton, OH", census: CSA 184}
+  - {id: college-station-tx, label: "College Station-Bryan, TX", census: CBSA 17780}
+  - {id: colorado-springs-co, label: "Colorado Springs, CO", census: CBSA 17820}
+  - {id: columbia-mo, label: "Columbia-Jefferson City-Moberly, MO", census: CSA 190}
+  - {id: columbia-sc, label: "Columbia-Sumter-Orangeburg, SC", census: CSA 192}
+  - {id: columbus-ga, label: "Columbus-Auburn-Opelika, GA-AL", census: CSA 194}
+  - {id: columbus-oh, label: "Columbus-Marion-Zanesville, OH", census: CSA 198}
+  - {id: corpus-christi-tx, label: "Corpus Christi-Kingsville-Alice, TX", census: CSA 204}
+  - {id: crestview-fl, label: "Crestview-Fort Walton Beach-Destin, FL", census: CBSA 18880}
+  - {id: dallas-tx, label: "Dallas-Fort Worth, TX-OK", census: CSA 206}
+  - {id: davenport-ia, label: "Davenport-Moline, IA-IL", census: CSA 209}
+  - {id: dayton-oh, label: "Dayton-Springfield-Kettering, OH", census: CSA 212}
+  - {id: decatur-il, label: "Decatur, IL", census: CBSA 19500}
+  - {id: denver, label: "Denver-Aurora-Greeley, CO", census: CSA 216}
+  - {id: des-moines-ia, label: "Des Moines-West Des Moines-Ames, IA", census: CSA 218}
+  - {id: detroit-mi, label: "Detroit-Warren-Ann Arbor, MI", census: CSA 220}
+  - {id: dothan-al, label: "Dothan-Enterprise-Ozark, AL", census: CSA 222}
+  - {id: dubuque-ia, label: "Dubuque, IA", census: CBSA 20220}
+  - {id: duluth-mn, label: "Duluth-Grand Rapids, MN-WI", census: CSA 228}
+  - {id: eagle-pass-tx, label: "Eagle Pass, TX", census: CBSA 20580}
+  - {id: eau-claire-wi, label: "Eau Claire-Menomonie, WI", census: CSA 232}
+  - {id: el-centro-ca, label: "El Centro, CA", census: CBSA 20940}
+  - {id: el-paso-tx, label: "El Paso-Las Cruces, TX-NM", census: CSA 238}
+  - {id: elmira-ny, label: "Elmira-Corning, NY", census: CSA 236}
+  - {id: enid-ok, label: "Enid, OK", census: CBSA 21420}
+  - {id: erie-pa, label: "Erie-Meadville, PA", census: CSA 240}
+  - {id: eugene-or, label: "Eugene-Springfield, OR", census: CBSA 21660}
+  - {id: evansville-in, label: "Evansville-Henderson, IN-KY", census: CSA 241}
+  - {id: fairbanks-ak, label: "Fairbanks-College, AK", census: CBSA 21820}
+  - {id: fargo-nd, label: "Fargo-Wahpeton, ND-MN", census: CSA 244}
+  - {id: farmington-nm, label: "Farmington, NM", census: CBSA 22140}
+  - {id: fayetteville-nc, label: "Fayetteville-Lumberton-Pinehurst, NC", census: CSA 246}
+  - {id: fayetteville-ar, label: "Fayetteville-Springdale-Rogers, AR", census: CBSA 22220}
+  - {id: flagstaff-az, label: "Flagstaff, AZ", census: CBSA 22380}
+  - {id: florence-sc, label: "Florence, SC", census: CBSA 22500}
+  - {id: florence-al, label: "Florence-Muscle Shoals-Russellville, AL", census: CSA 250}
+  - {id: fond-du-lac-wi, label: "Fond du Lac, WI", census: CBSA 22540}
+  - {id: fort-collins-co, label: "Fort Collins-Loveland, CO", census: CBSA 22660}
+  - {id: fort-smith-ar, label: "Fort Smith, AR-OK", census: CBSA 22900}
+  - {id: fort-wayne-in, label: "Fort Wayne-Huntington-Auburn, IN", census: CSA 258}
+  - {id: fresno-ca, label: "Fresno-Hanford-Corcoran, CA", census: CSA 260}
+  - {id: gadsden-al, label: "Gadsden, AL", census: CBSA 23460}
+  - {id: gainesville-fl, label: "Gainesville-Lake City, FL", census: CSA 264}
+  - {id: goldsboro-nc, label: "Goldsboro, NC", census: CBSA 24140}
+  - {id: grand-forks-nd, label: "Grand Forks, ND-MN", census: CBSA 24220}
+  - {id: grand-island-ne, label: "Grand Island, NE", census: CBSA 24260}
+  - {id: grand-junction-co, label: "Grand Junction, CO", census: CBSA 24300}
+  - {id: grand-rapids-mi, label: "Grand Rapids-Wyoming, MI", census: CSA 266}
+  - {id: great-falls-mount, label: "Great Falls, MT", census: CBSA 24500}
+  - {id: green-bay-wi, label: "Green Bay-Shawano, WI", census: CSA 267}
+  - {id: greensboro-nc, label: "Greensboro--Winston-Salem--High Point, NC", census: CSA 268}
+  - {id: greenville-sc, label: "Greenville-Spartanburg-Anderson, SC", census: CSA 273}
+  - {id: greenville-nc, label: "Greenville-Washington, NC", census: CSA 274}
+  - {id: gulfport-ms, label: "Gulfport-Biloxi, MS", census: CBSA 25060}
+  - {id: harrisburg-pa, label: "Harrisburg-York-Lebanon, PA", census: CSA 276}
+  - {id: harrisonburg-va, label: "Harrisonburg-Staunton-Stuarts Draft, VA", census: CSA 277}
+  - {id: hattiesburg-ms, label: "Hattiesburg-Laurel, MS", census: CSA 279}
+  - {id: helena-mount, label: "Helena, MT", census: CBSA 25740}
+  - {id: hilton-head-island-sc, label: "Hilton Head Island-Bluffton-Port Royal, SC", census: CBSA 25940}
+  - {id: homosassa-springs-fl, label: "Homosassa Springs, FL", census: CBSA 26140}
+  - {id: hot-springs-ar, label: "Hot Springs-Malvern, AR", census: CSA 284}
+  - {id: houma-la, label: "Houma-Bayou Cane-Thibodaux, LA", census: CBSA 26380}
+  - {id: houston-tx, label: "Houston-Pasadena, TX", census: CSA 288}
+  - {id: huntsville-al, label: "Huntsville-Decatur-Albertville, AL-TN", census: CSA 290}
+  - {id: idaho-falls-id, label: "Idaho Falls-Rexburg-Blackfoot, ID", census: CSA 292}
+  - {id: indianapolis-in, label: "Indianapolis-Carmel-Muncie, IN", census: CSA 294}
+  - {id: ithaca-ny, label: "Ithaca-Cortland, NY", census: CSA 296}
+  - {id: jackson-mi, label: "Jackson, MI", census: CBSA 27100}
+  - {id: jackson-tn, label: "Jackson, TN", census: CBSA 27180}
+  - {id: jackson-ms, label: "Jackson-Vicksburg-Brookhaven, MS", census: CSA 298}
+  - {id: jacksonville-nc, label: "Jacksonville, NC", census: CBSA 27340}
+  - {id: jacksonville-fl, label: "Jacksonville-Kingsland-Palatka, FL-GA", census: CSA 300}
+  - {id: johnson-city-tn, label: "Johnson City-Kingsport-Bristol, TN-VA", census: CSA 304}
+  - {id: johnstown-pa, label: "Johnstown-Somerset, PA", census: CSA 306}
+  - {id: jonesboro-ar, label: "Jonesboro-Paragould, AR", census: CSA 308}
+  - {id: joplin-mo, label: "Joplin-Miami, MO-OK-KS", census: CSA 309}
+  - {id: kahului-hi, label: "Kahului-Wailuku, HI", census: CBSA 27980}
+  - {id: kalamazoo-mi, label: "Kalamazoo-Battle Creek-Portage, MI", census: CSA 310}
+  - {id: kansas-city-mo, label: "Kansas City-Overland Park-Kansas City, MO-KS", census: CSA 312}
+  - {id: kennewick-wa, label: "Kennewick-Richland-Walla Walla, WA", census: CSA 314}
+  - {id: killeen-tx, label: "Killeen-Temple, TX", census: CBSA 28660}
+  - {id: knoxville-tn, label: "Knoxville-Morristown-Sevierville, TN", census: CSA 315}
+  - {id: la-crosse-wi, label: "La Crosse-Onalaska-Sparta, WI-MN", census: CSA 317}
+  - {id: lafayette-la, label: "Lafayette-New Iberia-Opelousas, LA", census: CSA 318}
+  - {id: lafayette-in, label: "Lafayette-West Lafayette-Frankfort, IN", census: CSA 320}
+  - {id: lake-charles-la, label: "Lake Charles-DeRidder, LA", census: CSA 324}
+  - {id: lake-havasu-city-az, label: "Lake Havasu City-Kingman, AZ", census: CBSA 29420}
+  - {id: lancaster-pa, label: "Lancaster, PA", census: CBSA 29540}
+  - {id: lansing-mi, label: "Lansing-East Lansing-Owosso, MI", census: CSA 330}
+  - {id: laredo-tx, label: "Laredo, TX", census: CBSA 29700}
+  - {id: las-vegas-nv, label: "Las Vegas-Henderson, NV", census: CSA 332}
+  - {id: lawton-ok, label: "Lawton-Duncan, OK", census: CSA 334}
+  - {id: lewiston-id, label: "Lewiston, ID-WA", census: CBSA 30300}
+  - {id: lexington-ky, label: "Lexington-Fayette--Richmond--Frankfort, KY", census: CSA 336}
+  - {id: lima-oh, label: "Lima-Van Wert-Celina, OH", census: CSA 338}
+  - {id: lincoln-ne, label: "Lincoln-Beatrice, NE", census: CSA 339}
+  - {id: little-rock-ar, label: "Little Rock-North Little Rock, AR", census: CSA 340}
+  - {id: logan-ut, label: "Logan, UT-ID", census: CBSA 30860}
+  - {id: longview-tx, label: "Longview, TX", census: CBSA 30980}
+  - {id: los-angeles-ca, label: "Los Angeles-Long Beach, CA", census: CSA 348}
+  - {id: louisville-jefferson-county-ky, label: "Louisville/Jefferson County--Elizabethtown, KY-IN", census: CSA 350}
+  - {id: lubbock-tx, label: "Lubbock-Plainview, TX", census: CSA 352}
+  - {id: lynchburg-va, label: "Lynchburg, VA", census: CBSA 31340}
+  - {id: macon-ga, label: "Macon-Bibb County--Warner Robins, GA", census: CSA 356}
+  - {id: madison-wi, label: "Madison-Janesville-Beloit, WI", census: CSA 357}
+  - {id: manhattan-ks, label: "Manhattan, KS", census: CBSA 31740}
+  - {id: mankato-mn, label: "Mankato-New Ulm, MN", census: CSA 359}
+  - {id: mansfield-oh, label: "Mansfield-Ashland-Bucyrus, OH", census: CSA 360}
+  - {id: mayaguez-pr, label: "Mayagüez-Aguadilla, PR", census: CSA 364}
+  - {id: mcallen-tx, label: "McAllen-Edinburg, TX", census: CSA 365}
+  - {id: medford-or, label: "Medford-Grants Pass, OR", census: CSA 366}
+  - {id: memphis-tn, label: "Memphis-Clarksdale-Forrest City, TN-MS-AR", census: CSA 368}
+  - {id: miami-fl, label: "Miami-Port St. Lucie-Fort Lauderdale, FL", census: CSA 370}
+  - {id: midland-tx, label: "Midland-Odessa-Andrews, TX", census: CSA 372}
+  - {id: milwaukee-wi, label: "Milwaukee-Racine-Waukesha, WI", census: CSA 376}
+  - {id: minneapolis-mn, label: "Minneapolis-St. Paul, MN-WI", census: CSA 378}
+  - {id: minot-nd, label: "Minot, ND", census: CBSA 33500}
+  - {id: missoula-mount, label: "Missoula, MT", census: CBSA 33540}
+  - {id: mobile-al, label: "Mobile-Daphne-Fairhope, AL", census: CSA 380}
+  - {id: monroe-la, label: "Monroe-Ruston, LA", census: CSA 384}
+  - {id: montgomery-al, label: "Montgomery-Selma, AL", census: CSA 388}
+  - {id: morgantown-wv, label: "Morgantown, WV", census: CBSA 34060}
+  - {id: myrtle-beach-sc, label: "Myrtle Beach-Conway, SC", census: CSA 396}
+  - {id: nashville-tn, label: "Nashville-Davidson--Murfreesboro, TN", census: CSA 400}
+  - {id: new-haven-ct, label: "New Haven-Hartford-Waterbury, CT", census: CSA 405}
+  - {id: new-orleans-la, label: "New Orleans-Metairie-Slidell, LA-MS", census: CSA 406}
+  - {id: new-york-ny, label: "New York-Newark, NY-NJ-CT-PA", census: CSA 408}
+  - {id: north-port-fl, label: "North Port-Bradenton, FL", census: CSA 412}
+  - {id: ocala-fl, label: "Ocala, FL", census: CBSA 36100}
+  - {id: oklahoma-city-ok, label: "Oklahoma City-Shawnee, OK", census: CSA 416}
+  - {id: omaha-ne, label: "Omaha-Fremont, NE-IA", census: CSA 420}
+  - {id: orlando-fl, label: "Orlando-Lakeland-Deltona, FL", census: CSA 422}
+  - {id: owensboro-ky, label: "Owensboro, KY", census: CBSA 36980}
+  - {id: paducah-ky, label: "Paducah-Mayfield, KY-IL", census: CSA 424}
+  - {id: palm-bay-fl, label: "Palm Bay-Melbourne-Titusville, FL", census: CBSA 37340}
+  - {id: panama-city-fl, label: "Panama City-Panama City Beach, FL", census: CBSA 37460}
+  - {id: parkersburg-wv, label: "Parkersburg-Marietta-Vienna, WV-OH", census: CSA 425}
+  - {id: pensacola-fl, label: "Pensacola-Ferry Pass-Brent, FL", census: CBSA 37860}
+  - {id: peoria-il, label: "Peoria-Canton, IL", census: CSA 427}
+  - {id: philadelphia-pa, label: "Philadelphia-Reading-Camden, PA-NJ-DE-MD", census: CSA 428}
+  - {id: phoenix-az, label: "Phoenix-Mesa, AZ", census: CSA 429}
+  - {id: pittsburgh-pa, label: "Pittsburgh-Weirton-Steubenville, PA-OH-WV", census: CSA 430}
+  - {id: pittsfield-ma, label: "Pittsfield, MA", census: CBSA 38340}
+  - {id: pocatello-id, label: "Pocatello, ID", census: CBSA 38540}
+  - {id: ponce-pr, label: "Ponce-Coamo, PR", census: CSA 434}
+  - {id: portland-me, label: "Portland-Lewiston-South Portland, ME", census: CSA 438}
+  - {id: portland-or, label: "Portland-Vancouver-Salem, OR-WA", census: CSA 440}
+  - {id: prescott-valley-az, label: "Prescott Valley-Prescott, AZ", census: CBSA 39150}
+  - {id: pueblo-co, label: "Pueblo-Cañon City, CO", census: CSA 444}
+  - {id: raleigh-nc, label: "Raleigh-Durham-Cary, NC", census: CSA 450}
+  - {id: rapid-city-sd, label: "Rapid City-Spearfish, SD", census: CSA 452}
+  - {id: redding-ca, label: "Redding-Red Bluff, CA", census: CSA 454}
+  - {id: reno-nv, label: "Reno-Carson City-Gardnerville Ranchos, NV-CA", census: CSA 456}
+  - {id: richmond-va, label: "Richmond, VA", census: CBSA 40060}
+  - {id: roanoke-va, label: "Roanoke, VA", census: CBSA 40220}
+  - {id: rochester-mn, label: "Rochester-Austin-Winona, MN", census: CSA 462}
+  - {id: rochester-ny, label: "Rochester-Batavia-Seneca Falls, NY", census: CSA 464}
+  - {id: rockford-il, label: "Rockford-Freeport-Rochelle, IL", census: CSA 466}
+  - {id: rocky-mount-nc, label: "Rocky Mount-Wilson-Roanoke Rapids, NC", census: CSA 468}
+  - {id: sacramento-ca, label: "Sacramento-Roseville, CA", census: CSA 472}
+  - {id: saginaw-mi, label: "Saginaw-Midland-Bay City, MI", census: CSA 474}
+  - {id: salinas-ca, label: "Salinas, CA", census: CBSA 41500}
+  - {id: salisbury-md, label: "Salisbury-Ocean Pines, MD", census: CSA 480}
+  - {id: salt-lake-city-ut, label: "Salt Lake City-Provo-Orem, UT-ID", census: CSA 482}
+  - {id: san-angelo-tx, label: "San Angelo, TX", census: CBSA 41660}
+  - {id: san-antonio-tx, label: "San Antonio-New Braunfels-Kerrville, TX", census: CSA 484}
+  - {id: san-diego, label: "San Diego-Chula Vista-Carlsbad, CA", census: CBSA 41740}
+  - {id: sf-bay-area, label: "San Jose-San Francisco-Oakland, CA", census: CSA 488}
+  - {id: san-juan-pr, label: "San Juan-Bayamón, PR", census: CSA 490}
+  - {id: san-luis-obispo-ca, label: "San Luis Obispo-Paso Robles, CA", census: CBSA 42020}
+  - {id: santa-maria-ca, label: "Santa Maria-Santa Barbara, CA", census: CBSA 42200}
+  - {id: santa-rosa-ca, label: "Santa Rosa-Petaluma, CA", census: CBSA 42220}
+  - {id: savannah-ga, label: "Savannah-Hinesville-Statesboro, GA", census: CSA 496}
+  - {id: scranton-pa, label: "Scranton--Wilkes-Barre, PA", census: CBSA 42540}
+  - {id: seattle-wa, label: "Seattle-Tacoma, WA", census: CSA 500}
+  - {id: sebring-fl, label: "Sebring, FL", census: CBSA 42700}
+  - {id: sheboygan-wi, label: "Sheboygan, WI", census: CBSA 43100}
+  - {id: shreveport-la, label: "Shreveport-Bossier City-Minden, LA", census: CSA 508}
+  - {id: sierra-vista-az, label: "Sierra Vista-Douglas, AZ", census: CBSA 43420}
+  - {id: sioux-city-ia, label: "Sioux City-Le Mars, IA-NE-SD", census: CSA 512}
+  - {id: sioux-falls-sd, label: "Sioux Falls, SD-MN", census: CBSA 43620}
+  - {id: south-bend-in, label: "South Bend-Elkhart-Mishawaka, IN-MI", census: CSA 515}
+  - {id: spokane-wa, label: "Spokane-Spokane Valley-Coeur d'Alene, WA-ID", census: CSA 518}
+  - {id: springfield-mo, label: "Springfield, MO", census: CBSA 44180}
+  - {id: springfield-ma, label: "Springfield-Amherst Town-Northampton, MA", census: CSA 521}
+  - {id: springfield-il, label: "Springfield-Jacksonville-Lincoln, IL", census: CSA 522}
+  - {id: saint-george-ut, label: "St. George, UT", census: CBSA 41100}
+  - {id: saint-louis-mo, label: "St. Louis-St. Charles-Farmington, MO-IL", census: CSA 476}
+  - {id: state-college-pa, label: "State College-DuBois, PA", census: CSA 524}
+  - {id: syracuse-ny, label: "Syracuse-Auburn, NY", census: CSA 532}
+  - {id: tallahassee-fl, label: "Tallahassee-Bainbridge, FL-GA", census: CSA 533}
+  - {id: tampa-fl, label: "Tampa-St. Petersburg-Clearwater, FL", census: CBSA 45300}
+  - {id: terre-haute-in, label: "Terre Haute, IN", census: CBSA 45460}
+  - {id: texarkana-tx, label: "Texarkana, TX-AR", census: CBSA 45500}
+  - {id: toledo-oh, label: "Toledo, OH", census: CBSA 45780}
+  - {id: topeka-ks, label: "Topeka, KS", census: CBSA 45820}
+  - {id: traverse-city-mi, label: "Traverse City, MI", census: CBSA 45900}
+  - {id: tucson-az, label: "Tucson-Nogales, AZ", census: CSA 536}
+  - {id: tulsa-ok, label: "Tulsa-Bartlesville-Muskogee, OK", census: CSA 538}
+  - {id: tuscaloosa-al, label: "Tuscaloosa, AL", census: CBSA 46220}
+  - {id: twin-falls-id, label: "Twin Falls, ID", census: CBSA 46300}
+  - {id: tyler-tx, label: "Tyler-Jacksonville, TX", census: CSA 540}
+  - {id: honolulu-hi, label: "Urban Honolulu, HI", census: CBSA 46520}
+  - {id: utica-ny, label: "Utica-Rome, NY", census: CBSA 46540}
+  - {id: valdosta-ga, label: "Valdosta, GA", census: CBSA 46660}
+  - {id: victoria-tx, label: "Victoria-Port Lavaca, TX", census: CSA 544}
+  - {id: virginia-beach-va, label: "Virginia Beach-Chesapeake, VA-NC", census: CSA 545}
+  - {id: visalia-ca, label: "Visalia, CA", census: CBSA 47300}
+  - {id: waco-tx, label: "Waco, TX", census: CBSA 47380}
+  - {id: washington-dc, label: "Washington-Baltimore-Arlington, DC-MD-VA-WV-PA", census: CSA 548}
+  - {id: waterloo-ia, label: "Waterloo-Cedar Falls, IA", census: CBSA 47940}
+  - {id: watertown-ny, label: "Watertown-Fort Drum, NY", census: CBSA 48060}
+  - {id: wausau-wi, label: "Wausau-Stevens Point-Wisconsin Rapids, WI", census: CSA 554}
+  - {id: wenatchee-wa, label: "Wenatchee-East Wenatchee, WA", census: CBSA 48300}
+  - {id: wheeling-wv, label: "Wheeling, WV-OH", census: CBSA 48540}
+  - {id: wichita-falls-tx, label: "Wichita Falls, TX", census: CBSA 48660}
+  - {id: wichita-ks, label: "Wichita-Arkansas City-Winfield, KS", census: CSA 556}
+  - {id: williamsport-pa, label: "Williamsport-Lock Haven, PA", census: CSA 558}
+  - {id: wilmington-nc, label: "Wilmington, NC", census: CBSA 48900}
+  - {id: yakima-wa, label: "Yakima, WA", census: CBSA 49420}
+  - {id: youngstown-oh, label: "Youngstown-Warren-Salem, OH", census: CSA 566}
+  - {id: yuma-az, label: "Yuma, AZ", census: CBSA 49740}
+# END metros
 
 climate_tiers:
   - {id: core, label: Core, listed: true}
@@ -132,5 +492,6 @@ climate_tiers:
 
 # How the old hub's tags map onto this taxonomy. Used only by the seed import.
 seed_maps:
-  old_hub_profiles: {sys: systems, elec: electrical, mech: mechanical, test: test, prod: product}
+  # "prod" (product roles) has no discipline: it sets the function to product.
+  old_hub_profiles: {sys: systems, elec: electrical, mech: mechanical, test: test}
   old_hub_where: {sf: sf-bay-area, sd: san-diego, denver: denver, boston: boston}

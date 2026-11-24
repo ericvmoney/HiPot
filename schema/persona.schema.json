@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hipot.example/schema/persona.schema.json",
   "title": "Persona",
-  "description": "A candidate's reusable profile, built on their own device and owned by them. It holds no name, email, phone number or employer history. Discipline, level, sector, stage and metro ids come from taxonomy.yml.",
+  "description": "A candidate's reusable profile, built on their own device and owned by them. It holds no name, email, phone number or employer history. Function, discipline, level, sector, stage and metro ids come from taxonomy.yml.",
   "type": "object",
   "additionalProperties": false,
   "required": ["persona_version", "generated", "disciplines", "level", "skills", "locations"],
@@ -19,6 +19,7 @@
         "reviewed": {"type": "boolean", "description": "True once the candidate has confirmed the contents."}
       }
     },
+    "functions": {"description": "Kinds of work the candidate wants, from taxonomy.yml functions. Absent means engineering.", "type": "array", "maxItems": 4, "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
     "disciplines": {"type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
     "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}]},
     "domains": {"description": "Sectors the candidate has worked in.", "type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},

@@ -2,7 +2,7 @@
 
 Checks, in order:
   1. Each file against its JSON Schema (formats included).
-  2. Every taxonomy id used (discipline, level, metro, sector, stage) exists in taxonomy.yml.
+  2. Every taxonomy id used (function, discipline, level, metro, sector, stage) exists in taxonomy.yml.
   3. Job ids are unique and every job's company_id is in the registry.
   4. Company ids are unique.
 
@@ -54,13 +54,21 @@ def ids(taxonomy: dict, key: str) -> set[str]:
     return {entry["id"] for entry in taxonomy[key]}
 
 
+def listed_functions(taxonomy: dict) -> set[str]:
+    """Functions whose roles reach the public board (`listed: true` in taxonomy.yml)."""
+    return {entry["id"] for entry in taxonomy["functions"] if entry.get("listed")}
+
+
 def check_jobs(jobs_file: dict, taxonomy: dict, company_ids: set[str]) -> list[str]:
     disciplines, levels, metros = ids(taxonomy, "disciplines"), ids(taxonomy, "levels"), ids(taxonomy, "metros")
+    functions = ids(taxonomy, "functions")
     problems = []
     counts = Counter(job["id"] for job in jobs_file["jobs"])
     problems += [f"duplicate job id {job_id} ({n} times)" for job_id, n in counts.items() if n > 1]
     for job in jobs_file["jobs"]:
         tag = f"job {job['id']}"
+        if job["function"] not in functions:
+            problems.append(f"{tag}: unknown function '{job['function']}'")
         problems += [f"{tag}: unknown discipline '{d}'" for d in job["disciplines"] if d not in disciplines]
         problems += [f"{tag}: unknown metro '{m}'" for m in job["metros"] if m not in metros]
         if job["level"] is not None and job["level"] not in levels:
@@ -104,6 +112,7 @@ def check_persona(persona: dict, taxonomy: dict) -> list[str]:
     disciplines, levels = ids(taxonomy, "disciplines"), ids(taxonomy, "levels")
     sectors, stages = ids(taxonomy, "sectors"), ids(taxonomy, "stages")
     problems = [f"unknown discipline '{d}'" for d in persona.get("disciplines", []) if d not in disciplines]
+    problems += [f"unknown function '{f}'" for f in persona.get("functions", []) if f not in ids(taxonomy, "functions")]
     if persona.get("level") is not None and persona["level"] not in levels:
         problems.append(f"unknown level '{persona['level']}'")
     problems += [f"unknown domain '{s}'" for s in persona.get("domains", []) if s not in sectors]

@@ -192,8 +192,10 @@ A1, A3 and A4 can run at the same time because they meet only at the schemas. A4
 **M1 division of work (started 2026-11-24).** The workstreams meet at three files:
 
 - **Collector (A1)** writes `data/jobs.raw.json` to `schema/raw-job.schema.json`: every posting on a board, hardware or not, with locations, metros, workplace, pay the feed carries as data, and the posting text. It collects companies whose tier is core or enabling and whose startup status is `in` or `review`, so pending companies are ready the day they are decided.
-- **Tagger (A3)** turns that into `data/jobs.json` to `schema/job.schema.json`: it adds disciplines, level, pay found in the posting text and a summary, and leaves out roles with no hardware discipline.
-- **Board (A4)** owns `site/` and `pipeline/publish/`, which joins `jobs.json` with the listed companies into the one data file the page loads. Only listed companies (core or enabling, startup `in`) reach that file.
+- **Tagger (A3)** turns that into `data/jobs.json` to `schema/job.schema.json`: it adds a function, disciplines, level, pay found in the posting text and a summary. It keeps every role.
+- **Board (A4)** owns `site/` and `pipeline/publish/`, which joins `jobs.json` with the listed companies into the one data file the page loads. A role reaches that file only when its company is listed (core or enabling, startup `in`) and its function is listed in `taxonomy.yml`.
+
+**Role functions (taxonomy version 1, 2026-11-24).** At Eric's request the board covers the range of roles at hardware companies, not only engineers. Every role has one function: engineering, science, technicians, skilled trades, production and plant operations, supply chain, quality and compliance, environment health and safety, projects and programs, field and asset operations, or product and design. Those are listed. Corporate functions (sales and business development, marketing, finance and legal, people and administration, IT) are tagged but not listed; each is one `listed:` line in `taxonomy.yml` to change. Product and program moved from disciplines to functions, and disciplines gained data, nuclear and plasma, optics, civil and structural, and aerospace.
 - **Scout (A2)** writes proposals to `data/screening/` only. The supervisor applies approved ones to `companies.yml`.
 
 ## 6. Climate rubric
@@ -227,6 +229,7 @@ Borderline cases the screen must decide one by one, with the reason recorded: an
 | Small on-device models invent persona fields | Bad matches, lost trust | Schema constraint, evidence line per skill, mandatory review screen. |
 | Phones cannot run the model | Half of visitors get the form only | The form is a first-class path, and a persona made on desktop imports on a phone. |
 | Feed terms of use | A company or ATS objects to listing | Public endpoints only, link to the original posting, remove on request, employer opt-out. Needs a legal read before M5. |
+| Rippling's terms prohibit automated extraction; read anyway by decision 6 | Rippling or a company objects; access is blocked | Slow, polite requests; stop on any block; ask the three companies for permission or read them by hand before launch. Needs the same legal read. |
 | Coverage stalls at the hand-read companies | Large employers missing | Workday and iCIMS readers in M3; otherwise leave them out and say so. |
 | Subscription terms for scheduled runs | Pipeline interrupted | Move scheduled Claude work to an API key before anything public depends on it. |
 | Climate tiering is contested | Credibility | Publish the rubric and the reason per company. |
@@ -240,6 +243,11 @@ Decided by Eric on 2026-11-23:
 3. **Startup definition.** Under 1,000 employees, and typically under 10 years old. Headcount is the hard line; age is a guide, so an older company under 1,000 people is flagged for a decision, not dropped automatically. This drops Rivian, Lucid, Tesla, Ford, Eaton, Cummins and Schneider. Redwood and Form Energy are near the headcount line and need a current figure.
 4. **Runtime.** `uv` and Python may be installed on this machine.
 
-Still open:
+Decided by Eric on 2026-11-24:
 
-5. **Geography.** Working assumption until told otherwise: United States first, all metros plus remote.
+5. **Role scope.** Cover the variety of roles at hardware companies, not only engineers (taxonomy version 1, section 5).
+6. **Rippling.** Read Rippling boards (Aptera, AtmosZero, Torus), although Rippling's job-board documentation is behind a sign-in and its User Terms (section 2.2) prohibit automated extraction for use outside its services. Requests are spaced 6 seconds apart and stop on a 403 or 429. Recorded as a known risk in section 8.
+
+7. **Geography.** United States, every metropolitan area plus remote. Built 2026-11-24 from the Census Bureau's July 2023 delineations: 274 metro regions (162 combined statistical areas and 112 metropolitan areas outside any), with plant towns and suburbs placed by county (`tools/build_metros.py`, `pipeline/geo.py`). A role outside every metro is still found by state. Connecticut is not yet mapped: the 2023 delineations use its new planning regions, which the 2020 town files do not.
+
+Still open: none at the moment. Pending owner decisions on individual companies are in `data/screening/decisions-needed.md` once the scout delivers it.
