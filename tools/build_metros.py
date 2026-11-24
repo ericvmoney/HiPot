@@ -70,6 +70,7 @@ MANUAL_PLACES = [
     ("CA", "East Bay", "06001"),             # Alameda County
     ("CA", "El Cerrito", "06013"),           # the Contra Costa city, not the Riverside County CDP
     ("CA", "La Jolla", "06073"),             # a San Diego neighbourhood
+    ("MA", "Marlboro", "25017"),             # common spelling of Marlborough, Middlesex County
     ("CA", "Greater San Diego", "06073"),
     ("CA", "San Diego Area", "06073"),
     ("CA", "San Diego County", "06073"),
