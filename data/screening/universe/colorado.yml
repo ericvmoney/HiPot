@@ -1,0 +1,2573 @@
+# Reference list for Colorado: companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: colorado
+built: '2026-11-25'
+sources:
+- id: ccia-members
+  name: Colorado Cleantech Industries Association - Our Members
+  url: https://coloradocleantech.com/our-members
+  note: single page of 55 logo links; names read from logos and links
+- id: ccia-celebration
+  name: Colorado Cleantech Innovation Celebration 2026 sponsors and partners
+  url: https://coloradocleantech.com/cleantech-innovation-celebration
+  note: no award winners published, only 11 sponsors; Cleantech Challenges page names no companies
+- id: oedit-ai
+  name: OEDIT Advanced Industries Accelerator grant press releases (Proof of Concept and Early-Stage Capital and
+    Retention, 2019-2025 cycles)
+  url: https://oedit.colorado.gov/category/advanced-industries-accelerator-grants
+  note: site returned 403 to fetches; companies read only from search-engine excerpts of the releases, so coverage
+    of each cycle is partial
+- id: oedit-ai-2023nov
+  name: OEDIT AI Accelerator grants to 32 startups and researchers, Nov 2023 (republished by Ark Valley Voice)
+  url: https://arkvalleyvoice.com/colorado-oedit-announces-grants-to-32-colorado-startups-and-researchers-boosting-advanced-industries/
+  note: full ESCR list of 25 companies
+- id: cu-vp-ai
+  name: CU Venture Partners posts on OEDIT AI Accelerator awards (2024, 2025, 2026)
+  url: https://www.colorado.edu/venturepartners/2025/11/20/external-news/colorado-office-economic-development-and-international-trade-announces-grants-university
+  note: only CU-linked recipients; also 2024/11/21 and 2026/06/02 posts
+- id: spl-ai-report-2022
+  name: Advanced Industries Accelerator Grant Program update to legislature, June 2022 (Colorado State Publications
+    Library copy)
+  url: https://spl.cde.state.co.us/artemis/govserials/gov3427internet/gov34272022internet.pdf
+  note: success stories only, no full recipient list
+- id: edc-named
+  name: Colorado EDC Job Growth Incentive / Strategic Fund awards named in Governor's Office and OEDIT releases
+  url: https://governorsoffice.colorado.gov/governor/news
+  note: monthly EDC approval pages use code names only; named awards read from search excerpts (colorado.gov sites
+    return 403) and Denver Gazette
+- id: ceo-cap-2026feb
+  name: Colorado Energy Office Clean Air Program grants, Feb 2026 (BizWest)
+  url: https://bizwest.com/2026/02/17/colorado-energy-office-awards-millions-in-grants-to-local-tech-firms/
+- id: ceo-cap-2026oct
+  name: Colorado Energy Office Clean Air Program and CITCO awards, Oct 2026 (ColoradoBiz)
+  url: https://coloradobiz.com/colorado-awards-13-9-million-industrial-emissions-reduction/
+- id: ceo-citco
+  name: Colorado Energy Office Colorado Industrial Tax Credit Offering awards (2025-2026)
+  url: https://energyoffice.colorado.gov/citco
+  note: energyoffice.colorado.gov returned 403; read from search excerpts and ColoradoBiz; June 2026 $32.8M round
+    only partly named
+- id: ceo-geothermal
+  name: Colorado Energy Office Geothermal Energy Grant Program and tax credit awards (2024-2026)
+  url: https://energyoffice.colorado.gov/press-releases
+  note: read from search excerpts; most recipients are local governments and schools
+- id: in2-portfolio
+  name: Wells Fargo Innovation Incubator (IN2) portfolio, co-run by NLR
+  url: https://in2ecosystem.com/portfolio
+  note: 70 companies, single page, no locations; only EdgePower is in Colorado
+- id: nlr-annual-2025
+  name: NLR Innovation and Entrepreneurship annual report FY2025 (IN2, West Gate, GCxN, Chevron Studio, Energy I-Corps)
+  url: https://www.nlr.gov/innovate/annual-report-2025
+  note: most named companies have no location; non-Colorado or unverified ones skipped
+- id: nlr-annual-2026
+  name: NLR Innovation and Entrepreneurship annual report FY2026
+  url: https://www.nlr.gov/innovate/annual-report-2026
+  note: Chevron Studio and GCxN joiners skipped as location unverified
+- id: nlr-westgate-innovators
+  name: NLR West Gate lab-embedded entrepreneurship, current innovators (cohorts 4-5)
+  url: https://www.nlr.gov/west-gate/innovators
+  note: fellows are embedded at NLR in Golden for two years; page names people, not companies
+- id: nlr-westgate-alumni
+  name: NLR West Gate alumni (cohorts 1-3)
+  url: https://www.nlr.gov/west-gate/alumni
+- id: doe-leep-2026
+  name: DOE Lab-Embedded Entrepreneurship Program 2026 cohort announcement (West Gate node)
+  url: https://www.energy.gov/technologycommercialization/articles/department-energy-welcomes-29-innovators-lab-embedded
+  note: only the 7 West Gate (Golden) startups kept; 20 at other nodes skipped
+- id: cu-vp-portfolio
+  name: CU Boulder Venture Partners startup portfolio (individual startup pages)
+  url: https://www.colorado.edu/venturepartners/startup-portfolio
+  note: the listing page is JavaScript-rendered and shows no companies; names came from individual startup-portfolio
+    pages found by site search
+- id: cu-vp-climate
+  name: CU Boulder Venture Partners climate, energy and sustainability featured startups
+  url: https://www.colorado.edu/venturepartners/technology-portfolio/licensing-opportunities-climate-energy-and-sustainability
+- id: cu-vp-battery
+  name: CU Boulder Venture Partners article on battery spinouts
+  url: https://www.colorado.edu/venturepartners/2026/06/02/internal-news/powerhouse-battery-breakthroughs
+  note: SiILion skipped (acquired by Tesla 2018)
+- id: cu-lvc
+  name: CU Boulder Lab Venture Challenge winners 2018-2026
+  url: https://www.colorado.edu/venturepartners/opportunities-and-events/lab-venture-challenge
+- id: cu-ascent
+  name: CU Ascent Deep Tech Accelerator cohorts 2022-2026
+  url: https://www.colorado.edu/venturepartners/ascent-deep-tech-accelerator
+  note: 2022-2023 cohorts list names only
+- id: csu-powerhouse
+  name: CSU Energy Institute Powerhouse Energy Campus, current and previous Resident Enterprise Partners
+  url: https://energy.colostate.edu/enterprise-partners/
+- id: csu-strata
+  name: CSU STRATA (formerly CSU Ventures) startups, via CSU news
+  url: https://csustrata.org/
+  note: csustrata.org returned an empty page; Prieto Battery taken from CSU news results
+- id: mines-news
+  name: Colorado School of Mines news on energy researchers and spinouts
+  url: https://www.mines.edu/news/all-news/2026/how-mines-researchers-are-advancing-solutions-for-next-generation-energy-systems.html
+  note: no Mines startup list found; ventures.mines.edu and minesventurefund.com list no companies
+- id: innosphere-startups
+  name: Innosphere Ventures, Our Startups and Earth and Space Systems Accelerator
+  url: https://innosphere.org/our-startups
+- id: innosphere-fund
+  name: Innosphere Ventures Fund portfolio
+  url: https://innospherefund.com/
+- id: bs-co-cleantech
+  name: 'BestStartup.us: 39 Best Colorado CleanTech Companies and Startups'
+  url: https://beststartup.us/39-best-colorado-cleantech-companies-and-startups/
+  note: 2022 list; mostly cleaning and services firms
+- id: bs-co-cleanenergy
+  name: 'BestStartup.us: 37 Best Colorado Clean Energy Companies and Startups'
+  url: https://beststartup.us/37-best-colorado-clean-energy-companies-and-startups/
+- id: bs-co-ev
+  name: 'BestStartup.us: 21 Best Colorado Electric Vehicle Companies and Startups'
+  url: https://beststartup.us/21-best-colorado-electric-vehicle-companies-and-startups/
+- id: inven-co-storage
+  name: 'Inven: Top 21 Energy Storage Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-21-energy-storage-companies-in-colorado
+- id: inven-co-powerelec
+  name: 'Inven: Top 22 Power Electronics Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-22-power-electronics-companies-in-colorado
+- id: inven-co-solarmfg
+  name: 'Inven: 23 Solar Panel Manufacturers in Colorado'
+  url: https://www.inven.ai/company-lists/top-23-solar-panel-manufacturing-companies-in-colorado
+  note: mostly installers despite title
+- id: inven-co-wind
+  name: 'Inven: Top 24 Wind Energy Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-24-wind-energy-companies-in-colorado
+- id: inven-co-renewable
+  name: 'Inven: Top 21 Renewable Energy Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-21-renewable-energy-companies-in-colorado
+- id: inven-co-smartgrid
+  name: 'Inven: Top 19 Smart Grid Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-19-smart-grid-companies-in-colorado
+- id: inven-co-electricpower
+  name: 'Inven: Top 24 Electric Power Companies in Colorado'
+  url: https://www.inven.ai/company-lists/top-24-electric-power-companies-in-colorado
+  note: mostly utilities and line contractors
+- id: builtin-co-sustain
+  name: 'Built In: Colorado companies focused on sustainability'
+  url: https://builtin.com/articles/homegrown-colorado-companies-focusing-sustainability
+- id: builtin-co-greentech
+  name: Built In Colorado greentech companies directory
+  url: https://www.builtincolorado.com/companies/type/greentech-companies
+  note: pages 1-6, ~115 companies
+- id: builtin-co-energy
+  name: Built In Colorado energy companies directory
+  url: https://www.builtincolorado.com/companies/type/energy-companies
+  note: pages 1-13, ~253 companies, mostly oil and gas, services, utilities
+- id: siteselection-clean
+  name: 'Site Selection: Clean as a whistle (Colorado cleantech, cites CCIA)'
+  url: https://siteselection.com/clean-as-a-whistle/
+- id: siteselection-renew
+  name: 'Site Selection: Commitment to renewables sparks Colorado''s clean energy industry'
+  url: https://siteselection.com/commitment-to-renewables-sparks-colorados-clean-energy-industry/
+- id: climatepower-co
+  name: 'Climate Power: State of the Clean Energy Boom, Colorado (Mar 2024)'
+  url: https://climatepower.us/wp-content/uploads/2024/03/State-of-the-Clean-Energy-Boom_Colorado.pdf
+- id: coloradobiz-made
+  name: 'ColoradoBiz: Made in Colorado, Cleantech/new energy (2012)'
+  url: https://coloradobiz.com/made-in-colorado-cleantech-new-energy/
+- id: coloradobiz-trends
+  name: 'ColoradoBiz: Cleantech trends'
+  url: https://coloradobiz.com/articles/cleantech-trends/
+- id: prospect-pueblo
+  name: 'The American Prospect: Low-key green Pueblo, Colorado (2023)'
+  url: https://prospect.org/environment/2023-10-12-low-key-green-pueblo-colorado/
+- id: fundraise-insider-co
+  name: 'Fundraise Insider: Colorado startups (funding list)'
+  url: https://fundraiseinsider.com/blog/colorado-startups/
+- id: cu-mse-spinoffs
+  name: 'CU Boulder Materials Science and Engineering: startup and spinoff companies'
+  url: https://www.colorado.edu/mse/startup-and-spinoff-companies
+- id: cu-ascent-2026
+  name: CU Ascent Deep Tech Accelerator 2026 cohort
+  url: https://www.colorado.edu/venturepartners/2026/02/12/internal-news/university-colorado-ascent-deep-tech-accelerator-announces-2026-cohort
+- id: cu-oedit-2024
+  name: 'CU Venture Partners: OEDIT Advanced Industries grants to CU startups (Nov 2024)'
+  url: https://www.colorado.edu/venturepartners/2024/11/21/external-news/oedit-announces-grants-university-colorado-startups-and-researchers-advanced-industries
+- id: cu-oedit-2025
+  name: 'CU Venture Partners: OEDIT Advanced Industries grants to CU startups (Nov 2025)'
+  url: https://www.colorado.edu/venturepartners/2025/11/20/external-news/colorado-office-economic-development-and-international-trade-announces-grants-university
+- id: cu-bcv
+  name: 'Coloradan: A look at Boulder Climate Ventures (Nov 2026)'
+  url: https://www.colorado.edu/coloradan/2026/11/09/look-boulder-climate-ventures
+- id: cu-startups-2025
+  name: 'CU Boulder Today: 5 CU Boulder startups to watch in 2025'
+  url: https://www.colorado.edu/today/2025/01/29/5-cu-boulder-startups-watch-2025
+- id: cu-whisper
+  name: 'CU Venture Partners: WHISPER Energy named to TechCrunch Battlefield 200'
+  url: https://www.colorado.edu/venturepartners/2025/08/27/external-news/cu-boulder-startup-whisper-energy-named-techcrunchs-2025-startup-battlefield-200
+- id: yellowscene-hydrogen
+  name: 'Yellow Scene: Your guide to hydrogen energy in Colorado (2024)'
+  url: https://yellowscene.com/2024/09/21/your-guide-to-hydrogen-energy-in-colorado/
+- id: thinkgeo-birch
+  name: 'ThinkGeoEnergy: Birch Geothermal profile'
+  url: https://www.thinkgeoenergy.com/birch-geothermal-rooted-in-speed-and-building-the-next-generation-of-enhanced-geothermal/
+- id: bev-vcbacked
+  name: Breakthrough Energy Ventures portfolio via vcbacked.co investor directory (locations shown)
+  url: https://www.vcbacked.co/directory/investors/breakthrough-energy-ventures
+  note: pages 1-8 scanned for Colorado cities; BEV's own page shows no locations
+- id: vcbacked-boulder
+  name: vcbacked.co Boulder city directory (page 1 of ~9 only)
+  url: https://www.vcbacked.co/directory/cities/united-states/colorado/boulder
+  note: Denver page 1 also read, nothing kept; remaining pages not read
+- id: prelude-portfolio
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: no locations shown; Colorado companies matched by name
+- id: congruent-portfolio
+  name: Congruent Ventures portfolio
+  url: https://congruentvc.com/portfolio/
+  note: no locations shown; matched by name
+- id: lowercarbon-portfolio
+  name: Lowercarbon Capital portfolio
+  url: https://lowercarbon.com/companies/
+  note: no locations shown; matched by name
+- id: elemental-portfolio
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+- id: cev-portfolio
+  name: Clean Energy Ventures portfolio
+  url: https://cleanenergyventures.com/portfolio/
+  note: no locations shown; matched by name
+- id: dcvc-portfolio
+  name: DCVC portfolio
+  url: https://www.dcvc.com/companies
+  note: no locations shown; matched by name
+- id: search-snippets
+  name: Web search result snippets (news and directory pages not fetched in full)
+  url: null
+  note: used only where a fetched list did not name the company; includes energy-storage.news, CPR/KUNC, CBS Colorado,
+    coloradobiz, assemblymag, coloradopolitics, metaltechnews, coloradobiz fusion week
+companies:
+- name: 3 Rocks Engineering
+  website: https://3rocksengineering.com
+  hq: Offices in Canon City, Buena Vista and Colorado Springs, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: not-in-scope
+  reason: Civil and water engineering services.
+  ats: null
+  open_roles: null
+- name: Abound Solar
+  website: null
+  hq: Loveland, CO
+  sources:
+  - coloradobiz-made
+  - coloradobiz-trends
+  registry_id: null
+  decision: closed
+  reason: Bankrupt 2012.
+  ats: null
+  open_roles: null
+- name: ADA Technologies
+  website: https://adatech.com
+  hq: Englewood, CO
+  sources:
+  - inven-co-storage
+  - inven-co-powerelec
+  - builtin-co-energy
+  registry_id: ada-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Advanced Emissions Solutions (Arq)
+  website: https://advancedemissionssolutions.com
+  hq: Greenwood Village, CO
+  sources:
+  - bs-co-cleanenergy
+  registry_id: advanced-emissions-solutions-arq
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: 07314255-f13e-4c20-b80c-2b4022218dc8
+  open_roles: null
+- name: Advanced Energy Industries
+  website: https://www.advancedenergy.com
+  hq: Denver, CO
+  sources:
+  - search-snippets
+  registry_id: advanced-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Agami Zero
+  website: https://www.agamizero.com
+  hq: Boulder, CO
+  sources:
+  - cu-lvc
+  - cu-ascent
+  - cu-ascent-2026
+  - search-snippets
+  registry_id: agami-zero
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ageto Energy
+  website: https://agetoenergy.com
+  hq: Fort Collins, CO
+  sources:
+  - oedit-ai
+  - builtin-co-greentech
+  registry_id: null
+  decision: closed
+  reason: Acquired by Generac; now part of Generac Industrial Energy (Generac is in the registry).
+  ats: null
+  open_roles: null
+- name: AirwayEV
+  website: https://www.airwayev.com
+  hq: Colorado
+  sources:
+  - bs-co-ev
+  registry_id: null
+  decision: closed
+  reason: Domain no longer resolves; no other activity found.
+  ats: null
+  open_roles: null
+- name: AlsoEnergy
+  website: https://alsoenergy.com
+  hq: Boulder, CO
+  sources:
+  - inven-co-smartgrid
+  registry_id: null
+  decision: not-in-scope
+  reason: Solar monitoring software (a Stem subsidiary since 2022).
+  ats:
+    type: bamboohr
+    token: alsoenergy
+  open_roles: null
+- name: Alta Resource Technologies
+  website: null
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - fundraise-insider-co
+  - cu-bcv
+  - dcvc-portfolio
+  registry_id: alta-resource-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Altela
+  website: null
+  hq: Englewood, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: null
+  decision: closed
+  reason: PitchBook lists it as out of business.
+  ats: null
+  open_roles: null
+- name: AMP
+  website: https://ampsortation.com
+  hq: Louisville, CO
+  sources:
+  - ccia-members
+  - builtin-co-sustain
+  - builtin-co-greentech
+  - prelude-portfolio
+  - congruent-portfolio
+  registry_id: amp
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: ampsortation
+  open_roles: 5
+- name: Ampt
+  website: https://www.ampt.com
+  hq: Fort Collins, CO
+  sources:
+  - inven-co-storage
+  registry_id: ampt
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Ampulse
+  website: https://ampulse.com
+  hq: Golden, CO
+  sources:
+  - bs-co-cleanenergy
+  registry_id: null
+  decision: closed
+  reason: Closed about 2012.
+  ats: null
+  open_roles: null
+- name: AnodeWorks
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-bcv
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Aquarry
+  website: null
+  hq: Colorado
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: not-in-scope
+  reason: Carbon-removal project developer using alkalinity added to pit lakes; no product of its own.
+  ats: null
+  open_roles: null
+- name: Aqueous Resources
+  website: null
+  hq: Denver, CO
+  sources:
+  - oedit-ai
+  registry_id: aqueous-resources
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Armada Power
+  website: https://armadapower.com
+  hq: Englewood, CO
+  sources:
+  - inven-co-smartgrid
+  registry_id: armada-power
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Ascent Solar Technologies
+  website: https://ascentsolar.com
+  hq: Thornton, CO
+  sources:
+  - coloradobiz-made
+  - inven-co-solarmfg
+  registry_id: ascent-solar-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Atargis Energy
+  website: https://atargis.com
+  hq: Pueblo, CO
+  sources:
+  - ccia-members
+  - oedit-ai
+  registry_id: atargis-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: AtmosZero
+  website: https://atmoszero.energy
+  hq: Loveland, CO
+  sources:
+  - ceo-cap-2026feb
+  - csu-powerhouse
+  - builtin-co-greentech
+  registry_id: atmoszero
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: atmoszero-careers
+  open_roles: null
+- name: Barber-Nichols
+  website: https://www.barber-nichols.com
+  hq: Arvada, CO
+  sources:
+  - builtin-co-energy
+  registry_id: barber-nichols
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: 7c93589b-cde5-4150-8a12-8b2c4e916295
+  open_roles: null
+- name: Big Blue Technologies
+  website: https://bigbluetech.com
+  hq: Cheyenne, WY
+  sources:
+  - ccia-members
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  - cu-vp-portfolio
+  registry_id: big-blue-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Bighorn Renewables
+  website: null
+  hq: Denver, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Birch Geothermal
+  website: https://www.birchgeothermal.com
+  hq: Colorado
+  sources:
+  - thinkgeo-birch
+  - search-snippets
+  registry_id: birch-geothermal
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Blaze Energy Technologies
+  website: null
+  hq: Colorado
+  sources:
+  - oedit-ai
+  registry_id: blaze-energy-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Blue Mountain Operations
+  website: https://www.bluemountainops.com/
+  hq: null
+  sources:
+  - ccia-members
+  registry_id: blue-mountain-operations
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Bolder Industries
+  website: https://bolderindustries.com
+  hq: Boulder, CO
+  sources:
+  - bs-co-cleanenergy
+  - siteselection-clean
+  - fundraise-insider-co
+  registry_id: bolder-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Bolt Renewable Battery Energy
+  website: null
+  hq: Colorado
+  sources:
+  - cu-vp-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Boulder Electric Vehicle
+  website: null
+  hq: Lafayette, CO
+  sources:
+  - coloradobiz-made
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: Ended production September 2014.
+  ats: null
+  open_roles: null
+- name: Brightspot Automation
+  website: https://brightspotautomation.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - nlr-westgate-alumni
+  registry_id: brightspot-automation
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Brint Tech
+  website: https://brint.tech
+  hq: Fort Collins, CO
+  sources:
+  - csu-powerhouse
+  - nlr-annual-2025
+  - innosphere-startups
+  registry_id: brint-tech
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Carbon America
+  website: https://carbonamerica.com
+  hq: Arvada, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: carbon-america
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Charm Industrial
+  website: https://charmindustrial.com
+  hq: San Francisco, CA
+  sources:
+  - ceo-citco
+  registry_id: charm-industrial
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: charmindustrial
+  open_roles: null
+- name: Colorado Earth
+  website: https://coloradoearth.com
+  hq: Lakewood, CO
+  sources:
+  - oedit-ai
+  registry_id: colorado-earth
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Colorado Griffin Energy
+  website: null
+  hq: Evergreen, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Cool Planet
+  website: https://www.coolplanet.com
+  hq: Greenwood Village, CO
+  sources:
+  - builtin-co-energy
+  registry_id: null
+  decision: closed
+  reason: Reported acquired by National Carbon Technologies (2020); no activity found since.
+  ats: null
+  open_roles: null
+- name: Coolerado
+  website: https://www.coolerado.com
+  hq: Denver, CO
+  sources:
+  - builtin-co-sustain
+  - coloradobiz-made
+  registry_id: coolerado
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: CoorsTek
+  website: https://www.coorstek.com
+  hq: Golden, CO
+  sources:
+  - coloradobiz-made
+  registry_id: coorstek
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Copper Labs
+  website: null
+  hq: Boulder, CO
+  sources:
+  - builtin-co-energy
+  registry_id: copper-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Cowboy Clean Fuels
+  website: null
+  hq: Denver, CO
+  sources:
+  - fundraise-insider-co
+  registry_id: cowboy-clean-fuels
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Crusoe Energy
+  website: https://www.crusoe.ai
+  hq: Denver, CO
+  sources:
+  - edc-named
+  - siteselection-renew
+  - lowercarbon-portfolio
+  - builtin-co-energy
+  - inven-co-powerelec
+  registry_id: crusoe
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: Crusoe
+  open_roles: null
+- name: CS Wind America
+  website: https://www.cswind.com
+  hq: Seoul, South Korea
+  sources:
+  - climatepower-co
+  - prospect-pueblo
+  registry_id: cs-wind-america
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Czero
+  website: null
+  hq: Fort Collins, CO
+  sources:
+  - csu-powerhouse
+  - builtin-co-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Engineering and prototyping services.
+  ats: null
+  open_roles: null
+- name: Danfoss Editron (formerly UQM Technologies)
+  website: https://www.danfoss.com
+  hq: Nordborg, Denmark
+  sources:
+  - bs-co-ev
+  - builtin-co-energy
+  registry_id: danfoss-editron-formerly-uqm-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: E-volv
+  website: null
+  hq: Littleton, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Earthview
+  website: null
+  hq: Denver, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: earthview
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ecovaleric
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-mse-spinoffs
+  registry_id: null
+  decision: duplicate
+  reason: Same company as EcoValeric Innovations.
+  ats: null
+  open_roles: null
+- name: EcoValeric Innovations
+  website: https://ecovaleric.com
+  hq: Boulder, CO
+  sources:
+  - cu-lvc
+  registry_id: ecovaleric-innovations
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: EdgePower
+  website: https://edgepower.com
+  hq: Aspen, CO
+  sources:
+  - in2-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: Building energy-management software and services; now Synapse Wireless.
+  ats: null
+  open_roles: null
+- name: eGauge Systems
+  website: https://www.egauge.net
+  hq: Boulder, CO
+  sources:
+  - builtin-co-greentech
+  - inven-co-smartgrid
+  - builtin-co-energy
+  registry_id: egauge-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Electra
+  website: https://electra.earth
+  hq: Boulder, CO
+  sources:
+  - ceo-citco
+  - fundraise-insider-co
+  - lowercarbon-portfolio
+  - search-snippets
+  registry_id: electra
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: electrasteel
+  open_roles: null
+- name: Electric Equipment & Engineering Co
+  website: https://eeeusa.com
+  hq: Denver, CO
+  sources:
+  - inven-co-powerelec
+  registry_id: electric-equipment-and-engineering-co
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: ElektriGreen
+  website: null
+  hq: Colorado
+  sources:
+  - siteselection-clean
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Element One
+  website: null
+  hq: Boulder, CO
+  sources:
+  - oedit-ai-2023nov
+  registry_id: element-one
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Emporia Energy
+  website: https://emporiaenergy.com
+  hq: Littleton, CO
+  sources:
+  - inven-co-storage
+  - inven-co-smartgrid
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: emporia
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: emporiarevolutionizinghomeenergy
+  open_roles: null
+- name: Encorp
+  website: https://encorp.com
+  hq: Fort Collins, CO
+  sources:
+  - inven-co-smartgrid
+  registry_id: encorp
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Endolith
+  website: null
+  hq: Arvada, CO
+  sources:
+  - nlr-annual-2026
+  registry_id: endolith
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Energy Fuels
+  website: https://www.energyfuels.com
+  hq: Lakewood, CO
+  sources:
+  - builtin-co-energy
+  - search-snippets
+  registry_id: energy-fuels
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats:
+    type: adp
+    token: e715f1d4-503d-480f-8910-9c8d566a74ed
+  open_roles: null
+- name: Entegrity Wind Systems
+  website: https://entegritywind.com
+  hq: Prince Edward Island, Canada
+  sources:
+  - inven-co-wind
+  registry_id: null
+  decision: closed
+  reason: Bankrupt 2009; domain now a spam page.
+  ats: null
+  open_roles: null
+- name: Envirofit
+  website: https://envirofit.org
+  hq: Fort Collins, CO
+  sources:
+  - csu-powerhouse
+  registry_id: envirofit
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: EsterCycle
+  website: https://estercycle.co
+  hq: Arvada, CO
+  sources:
+  - oedit-ai
+  - nlr-annual-2025
+  - nlr-westgate-alumni
+  registry_id: estercycle
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: eTuk USA
+  website: https://www.etukusa.com
+  hq: Colorado
+  sources:
+  - bs-co-ev
+  registry_id: etuk-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: ExoPower
+  website: https://exopower.tech
+  hq: Grand Junction, CO
+  sources:
+  - oedit-ai
+  - cu-vp-ai
+  - cu-ascent
+  - cu-oedit-2025
+  - search-snippets
+  registry_id: exopower
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: FlexEnergy Solutions
+  website: https://flexenergy.com
+  hq: Centennial, CO
+  sources:
+  - inven-co-renewable
+  - inven-co-smartgrid
+  - inven-co-electricpower
+  registry_id: flexenergy-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: e3e4b322-39cc-4a64-93d2-fcfbf36e4a0e
+  open_roles: null
+- name: Forge Nano
+  website: https://www.forgenano.com
+  hq: Thornton, CO
+  sources:
+  - cu-vp-portfolio
+  - cu-vp-battery
+  - cu-vp-climate
+  - cu-mse-spinoffs
+  - fundraise-insider-co
+  registry_id: forge-nano
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: forge-nano
+  open_roles: 18
+- name: Fortescue (Fortescue Zero / Future Industries)
+  website: https://fortescue.com
+  hq: Perth, Australia
+  sources:
+  - ccia-members
+  - siteselection-renew
+  - search-snippets
+  registry_id: fortescue-fortescue-zero-future-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: FrostCarbon
+  website: null
+  hq: Arvada, CO
+  sources:
+  - builtin-co-energy
+  registry_id: frostcarbon
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: GeoKiln
+  website: https://geokiln.com
+  hq: Houston, TX
+  sources:
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  registry_id: geokiln
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Geothermal Technologies, Inc.
+  website: null
+  hq: Maryland
+  sources:
+  - ceo-geothermal
+  registry_id: geothermal-technologies-inc
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gevo
+  website: https://gevo.com
+  hq: Englewood, CO
+  sources:
+  - builtin-co-energy
+  registry_id: gevo
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats:
+    type: rippling
+    token: gevo-careers
+  open_roles: 2
+- name: Gradient Geothermal
+  website: https://www.gradientgeothermal.com
+  hq: Denver, CO
+  sources:
+  - ccia-members
+  - ceo-geothermal
+  registry_id: gradient-geothermal
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Grand Valley Instrumentation
+  website: null
+  hq: Grand Junction, CO
+  sources:
+  - ceo-cap-2026oct
+  registry_id: grand-valley-instrumentation
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gravity Renewables
+  website: https://gravityrenewables.com
+  hq: Boulder, CO
+  sources:
+  - bs-co-cleanenergy
+  registry_id: gravity-renewables
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Green Steel Environmental
+  website: https://www.greensteelenvironmental.com
+  hq: Boulder, CO
+  sources:
+  - ccia-members
+  - cu-vp-portfolio
+  - cu-lvc
+  - cu-ascent
+  registry_id: green-steel-environmental
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GridVisibility
+  website: https://gridvisibility.com
+  hq: Longmont, CO
+  sources:
+  - oedit-ai
+  registry_id: gridvisibility
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: GTO Technologies
+  website: null
+  hq: Lakewood, CO
+  sources:
+  - mines-news
+  registry_id: gto-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: H3X Technologies
+  website: https://h3x.tech
+  hq: Louisville, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  - bs-co-ev
+  - inven-co-powerelec
+  registry_id: h3x-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: h3x-technologies
+  open_roles: null
+- name: Horne Technologies
+  website: https://www.hornetechnologies.com
+  hq: Longmont, CO
+  sources:
+  - ccia-members
+  - search-snippets
+  registry_id: horne-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Husk Power Systems
+  website: https://www.huskpowersystems.com
+  hq: Fort Collins, CO
+  sources:
+  - csu-powerhouse
+  - inven-co-renewable
+  - inven-co-electricpower
+  - search-snippets
+  registry_id: husk-power-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Hygge Power
+  website: https://hyggepower.com
+  hq: Boulder, CO
+  sources:
+  - bs-co-cleantech
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: hygge-power
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ICE Energy
+  website: https://www.ice-energy.com
+  hq: Santa Barbara, CA
+  sources:
+  - coloradobiz-made
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: Chapter 7 bankruptcy, December 2019.
+  ats: null
+  open_roles: null
+- name: iFeather
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-lvc
+  registry_id: null
+  decision: closed
+  reason: iFeather Technologies won awards in 2018-2019; its domain is now parked and nothing has appeared since
+    about 2019.
+  ats: null
+  open_roles: null
+- name: Infinite Power Solutions
+  website: https://infinitepowersolutions.com
+  hq: Littleton, CO
+  sources:
+  - bs-co-cleantech
+  registry_id: null
+  decision: closed
+  reason: Technology bought by Apple about 2013-2014; domain now an unrelated site.
+  ats: null
+  open_roles: null
+- name: ION Clean Energy
+  website: https://ioncleanenergy.com
+  hq: Boulder, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: ion-clean-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Iontra
+  website: https://iontra.com
+  hq: Centennial, CO
+  sources:
+  - oedit-ai
+  - inven-co-powerelec
+  - builtin-co-energy
+  registry_id: iontra
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: IX Power Clean Water
+  website: https://ixwater.com
+  hq: Golden, CO
+  sources:
+  - bs-co-cleantech
+  registry_id: ix-power-clean-water
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: KineticCore Solutions
+  website: https://kineticcore.com
+  hq: Loveland, CO
+  sources:
+  - oedit-ai
+  - nlr-annual-2025
+  - nlr-westgate-innovators
+  registry_id: kineticcore-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Koloma
+  website: https://koloma.com
+  hq: Denver, CO
+  sources:
+  - bev-vcbacked
+  - prelude-portfolio
+  registry_id: koloma
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Kratos Industries
+  website: https://kratosind.com
+  hq: Arvada / Golden, CO
+  sources:
+  - inven-co-powerelec
+  registry_id: kratos-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Last Wave Energy
+  website: https://lastwaveenergy.com
+  hq: Boulder, CO
+  sources:
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  registry_id: last-wave-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Latent Heat Solutions
+  website: null
+  hq: Golden, CO
+  sources:
+  - builtin-co-energy
+  registry_id: latent-heat-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Latimer Controls
+  website: https://www.latimercontrols.com
+  hq: Denver, CO
+  sources:
+  - nlr-westgate-alumni
+  - cu-vp-portfolio
+  - cu-vp-climate
+  - cu-ascent
+  registry_id: null
+  decision: not-in-scope
+  reason: Solar-plant control software.
+  ats: null
+  open_roles: null
+- name: Lightning eMotors
+  website: https://lightningemotors.com
+  hq: Loveland, CO
+  sources:
+  - siteselection-clean
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: Went into receivership; assets bought by Gillig.
+  ats: null
+  open_roles: null
+- name: Lightship
+  website: https://lightshiprv.com
+  hq: Broomfield, CO
+  sources:
+  - prelude-portfolio
+  - congruent-portfolio
+  - search-snippets
+  registry_id: lightship
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: lightship
+  open_roles: null
+- name: Lightspeed Road Solar
+  website: null
+  hq: Westminster, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: null
+  decision: closed
+  reason: No sign of activity since 2016; treated as closed.
+  ats: null
+  open_roles: null
+- name: Lignetics
+  website: https://www.lignetics.com
+  hq: Broomfield, CO
+  sources:
+  - builtin-co-energy
+  registry_id: lignetics
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: 63a09f66-cfab-450b-b3b3-e5b1c22230b5
+  open_roles: null
+- name: Living Ink Technologies
+  website: https://livingink.co
+  hq: Fort Collins, CO
+  sources:
+  - nlr-annual-2026
+  registry_id: living-ink-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LongPath Technologies
+  website: https://www.longpathtech.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - cu-vp-portfolio
+  - cu-vp-climate
+  - builtin-co-greentech
+  registry_id: longpath-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: LumenAstra
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-ascent
+  registry_id: null
+  decision: not-in-scope
+  reason: Medical temperature sensor; not clean-tech.
+  ats: null
+  open_roles: null
+- name: Mach Electric
+  website: null
+  hq: Colorado
+  sources:
+  - cu-lvc
+  - cu-ascent
+  registry_id: mach-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mana Battery
+  website: https://www.manabattery.us
+  hq: Boulder, CO
+  sources:
+  - ccia-members
+  - ccia-celebration
+  - oedit-ai
+  - cu-vp-ai
+  - nlr-westgate-alumni
+  - nlr-annual-2026
+  - cu-vp-portfolio
+  - cu-vp-battery
+  - cu-lvc
+  - cu-ascent
+  - cu-vp-climate
+  - cu-mse-spinoffs
+  - cu-oedit-2024
+  - cu-startups-2025
+  registry_id: mana-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Maplewell Energy
+  website: null
+  hq: Lafayette, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: not-in-scope
+  reason: Energy-management software.
+  ats: null
+  open_roles: null
+- name: Marvel Fusion
+  website: https://www.marvelfusion.com
+  hq: Munich, Germany
+  sources:
+  - ccia-members
+  - search-snippets
+  registry_id: marvel-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: marvelfusion
+  open_roles: 18
+- name: Meyer Burger
+  website: https://www.meyerburger.com
+  hq: Thun, Switzerland
+  sources:
+  - edc-named
+  - climatepower-co
+  registry_id: null
+  decision: closed
+  reason: Insolvent (2025); the Colorado Springs cell plant was cancelled in August 2024.
+  ats: null
+  open_roles: null
+- name: Minus Materials
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-mse-spinoffs
+  - lowercarbon-portfolio
+  registry_id: minus-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: New Day Hydrogen
+  website: https://newdayhydrogen.com/
+  hq: Englewood, CO
+  sources:
+  - ccia-members
+  - yellowscene-hydrogen
+  registry_id: new-day-hydrogen
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: New Iridium
+  website: null
+  hq: Boulder, CO
+  sources:
+  - fundraise-insider-co
+  registry_id: new-iridium
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NioCorp Developments
+  website: https://www.niocorp.com
+  hq: Centennial, CO
+  sources:
+  - fundraise-insider-co
+  registry_id: niocorp-developments
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nodiac
+  website: https://www.nodiac.ai
+  hq: Denver, CO
+  sources:
+  - ccia-members
+  registry_id: nodiac
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nova Terra
+  website: https://novaterrausa.com
+  hq: Golden, CO
+  sources:
+  - nlr-westgate-alumni
+  registry_id: nova-terra
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Olson Motor and Control
+  website: null
+  hq: Colorado Springs, CO
+  sources:
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: No sign of activity since a 2011 news item; treated as closed.
+  ats: null
+  open_roles: null
+- name: OMC Hydrogen
+  website: https://omcthermo.com
+  hq: Louisville, CO
+  sources:
+  - oedit-ai
+  registry_id: omc-hydrogen
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: OMC Thermochemistry
+  website: https://www.omcthermo.com
+  hq: Louisville, CO
+  sources:
+  - cu-vp-portfolio
+  - search-snippets
+  registry_id: null
+  decision: duplicate
+  reason: Same CU Boulder spinout as OMC Hydrogen (same founders, process and Louisville address).
+  ats: null
+  open_roles: null
+- name: Optibike
+  website: https://www.optibike.com
+  hq: Paonia, CO
+  sources:
+  - bs-co-ev
+  registry_id: optibike
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: OPX Biotechnologies
+  website: null
+  hq: Boulder, CO
+  sources:
+  - coloradobiz-trends
+  registry_id: null
+  decision: closed
+  reason: Acquired by Cargill (2015) and wound down.
+  ats: null
+  open_roles: null
+- name: Orka Switch
+  website: https://www.orkaswitch.com
+  hq: null
+  sources:
+  - ccia-members
+  registry_id: null
+  decision: not-in-scope
+  reason: Energy services and consulting across geothermal, hydrogen and oil and gas; no product found.
+  ats: null
+  open_roles: null
+- name: Orva Energy
+  website: https://orvaenergy.com
+  hq: Colorado
+  sources:
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  - cu-lvc
+  registry_id: orva-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Osmopure Technologies
+  website: https://www.osmopuretechnologies.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - cu-vp-ai
+  - nlr-annual-2025
+  - nlr-annual-2026
+  - nlr-westgate-innovators
+  - cu-lvc
+  - cu-ascent
+  - cu-oedit-2025
+  registry_id: osmopure-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: OTORO Energy
+  website: https://www.otoroenergy.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - spl-ai-report-2022
+  - cu-vp-portfolio
+  - cu-vp-battery
+  - cu-lvc
+  - cu-vp-climate
+  registry_id: otoro-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Outward Technologies
+  website: https://outward.tech
+  hq: Broomfield, CO
+  sources:
+  - oedit-ai
+  registry_id: outward-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: PAGE Technologies
+  website: https://pagetechnologies.io
+  hq: Boulder, CO
+  sources:
+  - ccia-members
+  - cu-mse-spinoffs
+  registry_id: page-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Palanquin Power
+  website: https://palanquinpower.com
+  hq: Golden, CO
+  sources:
+  - oedit-ai
+  - nlr-annual-2025
+  - nlr-westgate-alumni
+  registry_id: palanquin-power
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Peak Energy
+  website: https://peakenergy.com
+  hq: Burlingame, CA
+  sources:
+  - edc-named
+  - inven-co-storage
+  - search-snippets
+  registry_id: peak-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: peakenergy
+  open_roles: null
+- name: PEGI LLC
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-ascent
+  - cu-ascent-2026
+  registry_id: pegi-llc
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Prieto Battery
+  website: https://www.prietobattery.com
+  hq: Fort Collins, CO
+  sources:
+  - csu-strata
+  - bs-co-cleantech
+  - inven-co-storage
+  - inven-co-powerelec
+  registry_id: prieto-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: PrimeStar Solar
+  website: https://primestarsolar.com
+  hq: Arvada, CO
+  sources:
+  - bs-co-cleantech
+  - inven-co-solarmfg
+  - inven-co-renewable
+  registry_id: null
+  decision: closed
+  reason: Acquired by GE; CdTe technology sold to First Solar (2013); no longer operating.
+  ats: null
+  open_roles: null
+- name: Primus Wind Power
+  website: https://primuswindpower.com
+  hq: Lakewood, CO
+  sources:
+  - inven-co-wind
+  registry_id: null
+  decision: closed
+  reason: Acquired by Ryse Energy (2023); the brand now runs from Houston, TX.
+  ats: null
+  open_roles: null
+- name: Project Canary
+  website: https://www.projectcanary.com
+  hq: Denver, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: project-canary
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats:
+    type: pinpoint
+    token: projectcanary
+  open_roles: 4
+- name: Prometheus Materials
+  website: https://prometheusmaterials.com
+  hq: Longmont, CO
+  sources:
+  - ccia-members
+  - cu-vp-portfolio
+  - cu-vp-climate
+  - cu-mse-spinoffs
+  registry_id: prometheus-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Quest Thermal Group
+  website: https://questthermal.com
+  hq: Arvada, CO
+  sources:
+  - oedit-ai
+  registry_id: quest-thermal-group
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Radia
+  website: https://radia.com
+  hq: Boulder, CO
+  sources:
+  - inven-co-renewable
+  registry_id: radia
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: RapiCure Solutions
+  website: https://www.rapicuresolutions.com/
+  hq: Loveland, CO
+  sources:
+  - ccia-members
+  - oedit-ai-2023nov
+  registry_id: rapicure-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rare Earths Americas
+  website: null
+  hq: Denver, CO
+  sources:
+  - fundraise-insider-co
+  registry_id: rare-earths-americas
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rare Flora
+  website: https://rareflora.bio
+  hq: Golden, CO
+  sources:
+  - nlr-annual-2025
+  - nlr-westgate-innovators
+  registry_id: rare-flora
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: RavenWindow
+  website: https://ravenwindow.com
+  hq: Denver, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: null
+  decision: closed
+  reason: CB Insights lists RavenBrick (RavenWindow) as dead; latest company news is from 2017 and the domain now
+    carries gambling links.
+  ats: null
+  open_roles: null
+- name: RayChill
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-ascent
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: RCAM Technologies
+  website: https://sperra.com
+  hq: California, US (address uncertain; San Pedro or Irvine, CA; one directory says Boulder, CO)
+  sources:
+  - oedit-ai
+  - bs-co-cleanenergy
+  registry_id: sperra
+  decision: registry
+  reason: Registry entry 'sperra' is the same company under its current name.
+  ats:
+    type: rippling
+    token: sperra
+  open_roles: null
+- name: Rebound Technologies
+  website: https://www.rebound-tech.com
+  hq: Commerce City, CO
+  sources:
+  - fundraise-insider-co
+  - builtin-co-energy
+  - elemental-portfolio
+  - cev-portfolio
+  registry_id: rebound-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: rebound-technologies
+  open_roles: 0
+- name: Renegade Plastics
+  website: https://renegadeplastics.com/
+  hq: Denver, CO per own site
+  sources:
+  - ccia-members
+  registry_id: renegade-plastics
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rhea's Factory
+  website: https://rheasfactory.com
+  hq: Golden, CO
+  sources:
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  registry_id: rhea-s-factory
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: RINDEV
+  website: https://rindev.com
+  hq: Colorado
+  sources:
+  - bs-co-ev
+  registry_id: rindev
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Rushnu
+  website: https://www.rushnu.com
+  hq: Livermore, CA
+  sources:
+  - ccia-members
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  registry_id: rushnu
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: S2G/SEG Carbon
+  website: null
+  hq: unconfirmed
+  sources:
+  - ceo-citco
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Sandbox Solar
+  website: https://sandboxsolar.com
+  hq: Fort Collins, CO
+  sources:
+  - oedit-ai
+  registry_id: null
+  decision: not-in-scope
+  reason: Solar installer of others' products.
+  ats: null
+  open_roles: null
+- name: Scoggins Enterprises
+  website: null
+  hq: Grand Junction, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: scoggins-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Seditio
+  website: https://sedit.io/
+  hq: null
+  sources:
+  - ccia-members
+  registry_id: seditio
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sensatek Propulsion Technology
+  website: https://www.sensatek.com
+  hq: Daytona Beach, FL
+  sources:
+  - nlr-westgate-alumni
+  registry_id: sensatek-propulsion-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SiILion
+  website: null
+  hq: Colorado
+  sources:
+  - cu-vp-climate
+  - cu-vp-battery
+  registry_id: null
+  decision: closed
+  reason: Reported acquired by Tesla (2021); website shut down.
+  ats: null
+  open_roles: null
+- name: Silvis Materials
+  website: https://silvismaterials.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - bs-co-cleantech
+  - fundraise-insider-co
+  registry_id: silvis-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SimpleSUB Water
+  website: https://simplesubwater.com
+  hq: Wheat Ridge, CO
+  sources:
+  - oedit-ai-2023nov
+  registry_id: simplesub-water
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sionic Energy
+  website: https://sionicenergy.com
+  hq: Boulder, CO
+  sources:
+  - cu-vp-portfolio
+  registry_id: sionic-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sirius Energy
+  website: https://sirius-energy.com
+  hq: Boulder, CO
+  sources:
+  - inven-co-wind
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Skyhook Solar
+  website: https://skyhooksolar.com
+  hq: Grand Junction, CO
+  sources:
+  - inven-co-storage
+  registry_id: skyhook-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SMT Energy
+  website: null
+  hq: Boulder, CO
+  sources:
+  - fundraise-insider-co
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops and runs battery storage projects in Texas; a project developer, not a product company.
+  ats: null
+  open_roles: null
+- name: Solid Power
+  website: https://www.solidpowerbattery.com
+  hq: Louisville, CO
+  sources:
+  - edc-named
+  - cu-vp-portfolio
+  - cu-vp-climate
+  - cu-vp-battery
+  - cu-mse-spinoffs
+  - bs-co-ev
+  registry_id: solid-power
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: solidpower
+  open_roles: null
+- name: Source Energy
+  website: https://source.space
+  hq: Longmont, CO
+  sources:
+  - oedit-ai
+  registry_id: source-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Spark Ionx
+  website: https://sparkionx.com
+  hq: Denver, CO
+  sources:
+  - oedit-ai
+  - spl-ai-report-2022
+  registry_id: spark-ionx
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sphere Renewables
+  website: https://sphere-renewables.com
+  hq: Commerce City, CO
+  sources:
+  - inven-co-renewable
+  registry_id: sphere-renewables
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Spirae
+  website: https://www.spirae.com
+  hq: Fort Collins, CO
+  sources:
+  - csu-powerhouse
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Grid-control software.
+  ats: null
+  open_roles: null
+- name: Stalagmite
+  website: https://stalagmite.io
+  hq: Golden, CO
+  sources:
+  - nlr-annual-2025
+  - nlr-annual-2026
+  - doe-leep-2026
+  - nlr-westgate-innovators
+  registry_id: stalagmite
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Starfire Energy
+  website: https://www.starfireenergy.com
+  hq: Denver, CO
+  sources:
+  - oedit-ai
+  - siteselection-clean
+  - search-snippets
+  registry_id: starfire-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Steelhead Composites
+  website: https://steelheadcomposites.com
+  hq: Golden, CO
+  sources:
+  - bs-co-cleantech
+  - bs-co-cleanenergy
+  - builtin-co-energy
+  registry_id: steelhead-composites
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Stored Energy Systems
+  website: https://www.sens-usa.com
+  hq: Longmont, CO
+  sources:
+  - edc-named
+  - builtin-co-energy
+  - search-snippets
+  registry_id: stored-energy-systems-sens
+  decision: registry
+  reason: null
+  ats:
+    type: adp
+    token: null
+  open_roles: null
+- name: Sturman Industries
+  website: null
+  hq: Woodland Park, CO
+  sources:
+  - coloradobiz-made
+  registry_id: sturman-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sundolier
+  website: null
+  hq: Boulder, CO
+  sources:
+  - coloradobiz-made
+  registry_id: null
+  decision: closed
+  reason: No sign of activity since 2013; treated as closed.
+  ats: null
+  open_roles: null
+- name: SunPath
+  website: https://sunpathtech.com
+  hq: Louisville, CO
+  sources:
+  - oedit-ai
+  registry_id: sunpath
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SunTech Drive
+  website: https://suntechdrive.com
+  hq: Boulder, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: null
+  decision: closed
+  reason: Domain now redirects to an unrelated gambling site; no other activity found.
+  ats: null
+  open_roles: null
+- name: Sustainable Chemicals
+  website: null
+  hq: Colorado
+  sources:
+  - oedit-ai
+  registry_id: sustainable-chemicals
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Swift Solar
+  website: https://swiftsolar.com
+  hq: San Carlos, CA
+  sources:
+  - cu-mse-spinoffs
+  registry_id: swift-solar
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: swiftsolar
+  open_roles: null
+- name: Synforce
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-lvc
+  - cu-ascent
+  registry_id: synforce
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SynTech Bioenergy
+  website: https://syntechbioenergy.com
+  hq: Englewood, CO
+  sources:
+  - bs-co-cleanenergy
+  registry_id: null
+  decision: closed
+  reason: Website last updated 2017; legal address in Illinois; no current activity found. Treated as closed.
+  ats: null
+  open_roles: null
+- name: Table to Farm Compost
+  website: https://tabletofarmcompost.com
+  hq: Durango, CO
+  sources:
+  - oedit-ai-2023nov
+  registry_id: null
+  decision: not-in-scope
+  reason: Food-scrap collection and composting service.
+  ats: null
+  open_roles: null
+- name: TEGSAL
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-ascent
+  registry_id: null
+  decision: not-in-scope
+  reason: Medical wound dressing; not clean-tech.
+  ats: null
+  open_roles: null
+- name: Tereform
+  website: https://www.tereform.com
+  hq: Englewood, CO
+  sources:
+  - oedit-ai
+  - nlr-westgate-alumni
+  registry_id: tereform
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Terra CO2 Technologies
+  website: https://www.terraco2.com
+  hq: Golden, CO
+  sources:
+  - bev-vcbacked
+  - builtin-co-greentech
+  - fundraise-insider-co
+  registry_id: terra-co2-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Terralogic LCV
+  website: null
+  hq: null
+  sources:
+  - ccia-members
+  registry_id: null
+  decision: null
+  reason: Named by a Colorado source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: TerraLUX
+  website: null
+  hq: Longmont, CO
+  sources:
+  - coloradobiz-made
+  registry_id: terralux
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: The Hemp Plastic Company
+  website: null
+  hq: Boulder, CO
+  sources:
+  - builtin-co-greentech
+  registry_id: the-hemp-plastic-company
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Thunderbird Solar
+  website: null
+  hq: Denver, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Three-person solar design consultancy and equipment reseller.
+  ats: null
+  open_roles: null
+- name: Tierra Metrics
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-climate
+  registry_id: tierra-metrics
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Transitional Energy
+  website: https://transitionalenergy.us
+  hq: Denver, CO
+  sources:
+  - oedit-ai
+  - bs-co-cleantech
+  registry_id: null
+  decision: duplicate
+  reason: Now operates as Gradient Geothermal (transitionalenergy.us redirects there).
+  ats: null
+  open_roles: null
+- name: Travertine
+  website: https://travertinetech.com
+  hq: Boulder, CO
+  sources:
+  - builtin-co-greentech
+  - vcbacked-boulder
+  - cev-portfolio
+  registry_id: travertine
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: travertine
+  open_roles: null
+- name: TrelliSense
+  website: https://trellisense.com
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - ceo-cap-2026feb
+  registry_id: trellisense
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Tynt Technologies
+  website: https://www.tynt.io
+  hq: Boulder, CO
+  sources:
+  - oedit-ai
+  - cu-vp-portfolio
+  - vcbacked-boulder
+  - cu-mse-spinoffs
+  registry_id: tynt-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: USA Rare Earth
+  website: https://usare.com
+  hq: Stillwater, OK
+  sources:
+  - search-snippets
+  registry_id: usa-rare-earth
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: usare
+  open_roles: null
+- name: Vartega
+  website: https://www.vartega.com
+  hq: Golden, CO
+  sources:
+  - builtin-co-greentech
+  - fundraise-insider-co
+  registry_id: vartega
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Veolia Nuclear Solutions
+  website: https://nuclearsolutions.veolia.com
+  hq: Lafayette, CO
+  sources:
+  - bs-co-cleanenergy
+  registry_id: veolia-nuclear-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Vestas
+  website: https://www.vestas.com
+  hq: Aarhus, Denmark
+  sources:
+  - siteselection-clean
+  - climatepower-co
+  - coloradobiz-trends
+  registry_id: vestas
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Vieletech
+  website: https://vieletech.com
+  hq: Florissant, CO
+  sources:
+  - oedit-ai
+  registry_id: vieletech
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: VSK Energy
+  website: null
+  hq: Brighton, CO
+  sources:
+  - climatepower-co
+  registry_id: vsk-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: WATTMORE
+  website: null
+  hq: Denver, CO
+  sources:
+  - siteselection-clean
+  registry_id: null
+  decision: not-in-scope
+  reason: Energy-storage software.
+  ats: null
+  open_roles: null
+- name: Western Autotroph Company
+  website: null
+  hq: Parker, CO
+  sources:
+  - builtin-co-greentech
+  - builtin-co-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Wastewater-treatment microbes; no energy or emissions product.
+  ats: null
+  open_roles: null
+- name: WHISPER Energy
+  website: https://whisperenergy.io
+  hq: Boulder, CO
+  sources:
+  - cu-vp-portfolio
+  - cu-lvc
+  - cu-ascent
+  - cu-whisper
+  registry_id: whisper-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Woodward
+  website: https://www.woodward.com
+  hq: Fort Collins, CO
+  sources:
+  - search-snippets
+  registry_id: woodward
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: woodward
+  open_roles: null
+- name: Xcimer Energy
+  website: https://xcimer.energy
+  hq: Denver, CO
+  sources:
+  - ccia-members
+  - bev-vcbacked
+  - prelude-portfolio
+  - lowercarbon-portfolio
+  - search-snippets
+  registry_id: xcimer-energy
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: xcimer
+  open_roles: null
+- name: XFlow Energy
+  website: https://xflowenergy.com
+  hq: Colorado
+  sources:
+  - nlr-westgate-innovators
+  registry_id: xflow-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zaiser Motors
+  website: https://zaisermotors.com
+  hq: Colorado
+  sources:
+  - bs-co-cleantech
+  registry_id: null
+  decision: closed
+  reason: Last funding May 2022 (Wefunder); site refuses connections and investor questions go unanswered; no news
+    since early 2022.
+  ats: null
+  open_roles: null
+- name: Zero Carbon Systems
+  website: https://zerocarbonsystems.com
+  hq: Denver, CO area
+  sources:
+  - search-snippets
+  registry_id: zero-carbon-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats:
+    type: lever
+    token: zerocarbonsystems
+  open_roles: 3
+- name: Zero Gap Energy
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-lvc
+  - cu-ascent
+  registry_id: null
+  decision: not-in-scope
+  reason: A CU Boulder lab team funded by an NSF I-Corps award; no company has been formed.
+  ats: null
+  open_roles: null
+- name: ZeroTwelve
+  website: https://zerotwelve.com
+  hq: Golden, CO
+  sources:
+  - oedit-ai
+  registry_id: zerotwelve
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ZGEO Energy
+  website: https://zgeoenergy.com
+  hq: Colorado
+  sources:
+  - ceo-geothermal
+  registry_id: zgeo-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
+  ats: null
+  open_roles: null
+excluded:
+- name: Amprius Technologies
+  sources:
+  - edc-named
+  - climatepower-co
+  reason: Headquartered in Fremont, CA; the Brighton, CO plant plan was not confirmed as built. Belongs in the Bay
+    Area list.
+- name: Catalyze
+  sources:
+  - innosphere-fund
+  reason: Headquartered in Houston, TX; also a project developer, not a product company.
+- name: CREW Carbon
+  sources:
+  - ceo-cap-2026feb
+  reason: Headquartered in Brooklyn, NY; its site lists no Colorado project (named by a Colorado grant summary only).
+- name: DMC Biotechnologies (Dynamic Metabolic Control)
+  sources:
+  - bev-vcbacked
+  - builtin-co-greentech
+  reason: Headquartered in Morrisville, NC; Boulder is a distributor's address. Also not clean-tech (health ingredients).
+- name: Microvast
+  sources:
+  - climatepower-co
+  reason: Headquartered in Stafford, TX; a Colorado site was not confirmed.
+- name: Moser Energy Systems
+  sources:
+  - csu-powerhouse
+  reason: Headquartered in Evansville, WY; acquired by Atlas Energy Solutions (2025); natural-gas generators.
+- name: Origen Carbon Solutions
+  sources:
+  - ceo-citco
+  reason: Headquartered in Bristol, UK; Colorado is a proposed project site only.
+- name: QuietKat
+  sources:
+  - bs-co-ev
+  reason: Now headquartered in Deerfield Beach, FL, under Rad Life Mobility.
+- name: ScarabTECH
+  sources:
+  - bs-co-cleanenergy
+  - builtin-co-greentech
+  - builtin-co-energy
+  reason: Its own site says the plastic-to-fuel units are designed in Johannesburg, South Africa; the Glenwood Springs,
+    CO listing appears stale.
+- name: Sun Metalon
+  sources:
+  - ceo-cap-2026feb
+  reason: Headquartered in Wood Dale, IL; Colorado is one funded deployment, not a main site.
+- name: Vycarb
+  sources:
+  - ceo-cap-2026oct
+  reason: Headquartered in Brooklyn, NY; no Colorado site found.

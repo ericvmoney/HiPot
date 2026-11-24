@@ -1,0 +1,3789 @@
+# Proposals 02 (Colorado): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+companies:
+- id: ada-technologies
+  name: ADA Technologies
+  website: https://adatech.com
+  careers_url: null
+  hq: Englewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 1985
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Lithium and lithium-sulfur batteries whose main customers are defense agencies (owner ruling A3: defense
+      as the main business is out).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1985 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.adatech.com/history. Stage: private, no
+    venture rounds found; R&D mainly funded by third parties (over $50M in SBIR contracts and grants). Flags: defense
+    is main business (DoD, Air Force, Army, Navy customers); SBIR contract R&D firm. Evidence: https://adatech.com
+    https://www.adatech.com/history https://www.adatech.com/advanced-energy-storage Region sources: inven-co-storage,
+    inven-co-powerelec, builtin-co-energy. Confidence: medium. Unresolved: Headcount; ownership. Site address is
+    Englewood (Inverness Pkwy); input said Littleton.'
+- id: advanced-emissions-solutions-arq
+  name: Advanced Emissions Solutions (Arq)
+  website: https://advancedemissionssolutions.com
+  careers_url: null
+  hq: Greenwood Village, CO
+  ats:
+    type: paylocity
+    board: 07314255-f13e-4c20-b80c-2b4022218dc8
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1996
+  headcount:
+    value: 202
+    as_of: '2026-11-19'
+    source: StockAnalysis (from filings) (https://stockanalysis.com/stocks/arq/company/)
+  climate:
+    tier: out
+    reason: Activated carbon for water treatment and coal-plant emissions control.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 202 people (StockAnalysis (from filings), 2026-11-19); public, with a listing or offering reported in
+      2024.
+  notes: 'Board paylocity:07314255-f13e-4c20-b80c-2b4022218dc8 seen 2026-11-24, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: 202 employees; page updated 2026-11-19, figure undated
+    (likely last 10-K) Founded: https://stockanalysis.com/stocks/arq/company/. Stage: Nasdaq: ARQ; renamed from
+    Advanced Emissions Solutions to Arq, Inc. Feb 2024 (https://stockanalysis.com/stocks/arq/company/) Flags: renamed
+    Arq, Inc. (domain redirects to arq.com). Evidence: https://arq.com/ https://stockanalysis.com/stocks/arq/company/
+    Region sources: bs-co-cleanenergy. Confidence: high. Unresolved: Founding year conflict on StockAnalysis (1996
+    vs 1997).'
+- id: agami-zero
+  name: Agami Zero
+  website: https://www.agamizero.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Magnetically enhanced electrolysis producing hydrogen for off-grid EV fast charging and clean power
+      at remote or grid-limited sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: CU Lab Venture Challenge award $127,500 (2025-10-27,
+    https://www.colorado.edu/venturepartners/2025/10/27/internal-news/755000-awarded-university-colorado-innovators-advance-their-discoveries);
+    Ascent Deep Tech Accelerator 2026 cohort. Pre-seed inferred from grant-stage funding. Flags: early stage (university
+    spinout). Evidence: https://agamizero.com https://www.colorado.edu/venturepartners/2025/10/27/internal-news/755000-awarded-university-colorado-innovators-advance-their-discoveries
+    https://www.colorado.edu/venturepartners/2026/02/12/internal-news/university-colorado-ascent-deep-tech-accelerator-announces-2026-cohort
+    Region sources: cu-lvc, cu-ascent, cu-ascent-2026, search-snippets. Confidence: medium. Unresolved: Site under
+    refresh; founded, headcount. Co-founders Jafar Makrani (CEO) and Lyle Antieau III (CTO); PI Oana Luca.'
+- id: alta-resource-technologies
+  name: Alta Resource Technologies
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - battery-materials
+  stage: series-a
+  founded: 2022
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Protein-based process that separates rare earth elements for magnets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100 Founded: https://dealroom.co/companies/alta-resource-technologies.
+    Stage: Seed $5.1M Jan 2025 (DCVC, Voyager); Seed 2 $4.4M May 2025 incl. In-Q-Tel (Dealroom); CB Insights and
+    PitchBook list a Series A of about $28.4M (unconfirmed by primary source). Flags: founding year: Dealroom 2022,
+    CB Insights/PitchBook 2023; DARPA EMBER program collaborator. Evidence: https://dealroom.co/companies/alta-resource-technologies
+    https://finsmes.com/2025/01/alta-resource-technologies-raises-5-1m-in-seed-funding.html https://pitchbook.com/profiles/company/592533-82
+    https://www.businesswire.com/news/home/20250806731436/en Region sources: oedit-ai, fundraise-insider-co, cu-bcv,
+    dcvc-portfolio. Confidence: medium. Unresolved: Series A amount/date not confirmed; own domain unconfirmed (altaresourcetech.com
+    returned no content)'
+- id: amp
+  name: AMP
+  website: https://ampsortation.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: greenhouse
+    board: ampsortation
+  read: auto
+  sectors: []
+  stage: late
+  founded: 2015
+  headcount:
+    value: 268
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/amp-robotics)
+  climate:
+    tier: out
+    reason: AI-guided waste-sorting equipment and recycling plants. Recycled or bio-based materials; the climate
+      case is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending
+      the owner's call on materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 268 people (Dealroom, 2026-11-24); founded 2015, funding round reported in 2024.
+  notes: 'Board greenhouse:ampsortation seen 2026-11-24, linked from the company''s own site: 5 open roles, 1 US-remote.
+    Headcount note: Dealroom 268, band 100-500; undated, fetched 2026-11-24 Founded: https://dealroom.co/companies/amp-robotics.
+    Stage: Dealroom: Series D, December 2024, $91M (Blue Earth Capital, Range Ventures, XN, Liberty Mutual Investments);
+    total equity $100-500M. Evidence: https://ampsortation.com https://dealroom.co/companies/amp-robotics Region
+    sources: ccia-members, builtin-co-sustain, builtin-co-greentech, prelude-portfolio, congruent-portfolio. Confidence:
+    high.'
+- id: ampt
+  name: Ampt
+  website: https://www.ampt.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - components
+  stage: late
+  founded: 2007
+  headcount:
+    value: 61
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/ampt)
+  climate:
+    tier: core
+    reason: 'DC power electronics: string optimizers and a communication unit for solar and DC-coupled storage,
+      plus a battery converter delivering regulated 800 VDC for data center loads.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 61 people (Dealroom, 2026-11-24); founded 2007 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''current team size'' 61; undated
+    Founded: https://www.ampt.com/company/. Stage: Dealroom: Series C Jul 2015 $25M, Series D Sep 2017 $15M (company
+    timeline: $25M 2015, $15M 2017); privately held (https://dealroom.co/companies/ampt, https://www.ampt.com/company/)
+    Flags: data centers now a stated market alongside solar (not shown to be the main one). Evidence: https://www.ampt.com
+    https://www.ampt.com/company/ https://dealroom.co/companies/ampt Region sources: inven-co-storage. Confidence:
+    high.'
+- id: aqueous-resources
+  name: Aqueous Resources
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: subsidiary
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Direct lithium extraction and brine treatment technology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found. Owned by Lithos Group (sources disagree on parent) technology/process licensor,
+      not clearly a product seller, a company well under the cap; growth signs judged on the company itself.
+  notes: 'No job board found on the company''s site. Founded: https://sparkxyz-io-production.s3.amazonaws.com/uploads/project/one_pager/10882/d39cd283-8063-4a96-8d63-ddb7e4eb346c/aqueous%20resources%20llc_one_pager.pdf.
+    Stage: pv magazine calls it a subsidiary of lithium producer Lithos Group; CB Insights says subsidiary of Alchemist
+    Mining (and founded 2011); DOE $1.3M fast-track grant July 2023 (Kallanish). Flags: subsidiary of Lithos Group
+    (sources disagree on parent); technology/process licensor, not clearly a product seller. Evidence: https://www.cbinsights.com/company/aqueous-resources
+    https://www.pv-magazine-india.com/2024/02/06/lithos-technology-reduces-water-use-in-lithium-extraction https://kallanish.com/en/news/power-materials/market-reports/article-details/aqueous-resources-receives-dollar13-million-grant-from-us-government-0723
+    https://prnewswire.com/news-releases/aqueous-resources-signs-contract-for-usd-250-000-colorado-grant-301856317.html
+    Region sources: oedit-ai. Confidence: medium. Unresolved: Own domain; parent company (Lithos vs Alchemist Mining);
+    founding year (2022 incorporation per one-pager vs 2011 per CB Insights); headcount'
+- id: armada-power
+  name: Armada Power
+  website: https://armadapower.com
+  careers_url: null
+  hq: Englewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Controllers that make water heaters grid-responsive, sold with a managed service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: devices plus software/managed service. Evidence: https://armadapower.com
+    Region sources: inven-co-smartgrid. Confidence: low. Unresolved: HQ not stated on site (input says Englewood,
+    CO per listing; not confirmed); founding, headcount, funding not found.'
+- id: ascent-solar-technologies
+  name: Ascent Solar Technologies
+  website: https://ascentsolar.com
+  careers_url: null
+  hq: Thornton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: public
+  founded: 2005
+  headcount:
+    value: 18
+    as_of: '2026-11-21'
+    source: StockAnalysis (from filings) (https://stockanalysis.com/stocks/asti/company/)
+  climate:
+    tier: out
+    reason: Thin-film solar modules sold mainly for space, aerospace and drones; space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 18 people (StockAnalysis (from filings), 2026-11-21); founded 2005 and no equity raise in the last 5
+      years found, so no growth sign.
+  notes: 'No board found: home page not readable (404). Headcount note: 18 employees; page updated 2026-11-21, figure
+    itself undated (likely last annual report) Founded: https://stockanalysis.com/stocks/asti/company/. Stage: Nasdaq:
+    ASTI (https://stockanalysis.com/stocks/asti/company/) Flags: main markets are space/aerospace/satellites/UAV;
+    very small headcount. Evidence: https://stockanalysis.com/stocks/asti/company/ Region sources: coloradobiz-made,
+    inven-co-solarmfg. Confidence: medium. Unresolved: ascentsolar.com returned 404 at fetch time; HQ address 12300
+    Grant St, Thornton per StockAnalysis.'
+- id: atargis-energy
+  name: Atargis Energy
+  website: https://atargis.com
+  careers_url: null
+  hq: Pueblo, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: Cycloidal wave-energy converters.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2010 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: About page names 10 people in leadership and
+    development teams; no total given Founded: https://atargis.com/about. Stage: Own site lists DOE support (2011-12
+    tests, 2019), a $6.1M testing campaign in Canada (~2024) and a May 2024 state grant; no equity rounds found.
+    Flags: latest site news is from 2024. Evidence: https://atargis.com https://atargis.com/about Region sources:
+    ccia-members, oedit-ai. Confidence: medium. Unresolved: Headcount, equity funding'
+- id: barber-nichols
+  name: Barber-Nichols
+  website: https://www.barber-nichols.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: paylocity
+    board: 7c93589b-cde5-4150-8a12-8b2c4e916295
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom turbomachinery whose major markets are defense and aerospace.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Subsidiary of Graham Corporation since 2021.
+  notes: 'Board paylocity:7c93589b-cde5-4150-8a12-8b2c4e916295 seen 2026-11-24, linked from the company''s own site:
+    role count not read (no public feed). Stage: Wholly owned subsidiary of Graham Corporation (NYSE: GHM), per
+    its site. Flags: subsidiary of Graham Corporation; defense and aerospace are major markets (share not stated).
+    Evidence: https://www.barber-nichols.com Region sources: builtin-co-energy. Confidence: medium. Unresolved:
+    Founded year (site says 60 years of experience); headcount; defense share of revenue.'
+- id: big-blue-technologies
+  name: Big Blue Technologies
+  website: https://bigbluetech.com
+  careers_url: null
+  hq: Cheyenne, WY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2015
+  headcount: null
+  climate:
+    tier: core
+    reason: Primary magnesium metal (and calcium aluminate) made by an electrified aluminothermic process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2015, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Founded: https://bigbluetech.com/about. Stage: Own site: funded
+    by NSF, ARPA-E/US DOE, State of Colorado and ''Series Seed investors'' (amount not given); Wyoming Energy Authority
+    $1.5M award (Jun 2025); news item on a $10M DOE award; CB Insights lists ~$500K over 3 rounds (latest a $0.5M
+    grant, Jul 2021). Flags: HQ outside region (Cheyenne, WY); partnered with Garrison Minerals. Evidence: https://bigbluetech.com
+    https://bigbluetech.com/about https://www.cbinsights.com/company/big-blue-technologies https://www.colorado.edu/venturepartners/2025/06/16/external-news/big-blue-technologies-cu-boulder-spinout-selected-15m-award-wyoming-energy-authoritys
+    https://cowboystatedaily.com/2025/06/01/cheyenne-companies-want-to-set-up-biggest-magnesium-operation-in-north-america
+    Region sources: ccia-members, nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators, cu-vp-portfolio. Confidence:
+    medium. Unresolved: Headcount; seed amount; whether any Colorado site remains (input mentions a Denver pilot)'
+- id: birch-geothermal
+  name: Birch Geothermal
+  website: https://www.birchgeothermal.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Developer of next-generation enhanced geothermal systems (flow control, intelligent wells) for baseload
+      power; handles site selection, permitting and projects.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Site names five core team members and four
+    advisors. Stage: Launched publicly June 2026 as a portfolio company of Montauk Capital, which seeded it; amount
+    not disclosed (ThinkGeoEnergy, Runtime Wire). Flags: project developer. Evidence: https://birchgeothermal.com
+    https://www.thinkgeoenergy.com/birch-geothermal-rooted-in-speed-and-building-the-next-generation-of-enhanced-geothermal/
+    https://www.runtimewire.com/article/birch-geothermal-mike-matson-oilfield-tech-egs-launch Region sources: thinkgeo-birch,
+    search-snippets. Confidence: medium. Unresolved: City, founded year, funding amount.'
+- id: blaze-energy-technologies
+  name: Blaze Energy Technologies
+  website: null
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Compact bolt-on catalytic reformer that converts onboard ammonia into a hydrogen-rich fuel blend for
+      fuel-flexible (ammonia, methanol, LNG) engines, aimed at maritime vessels.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Founded: https://pulse2.com/blaze-energy-raises-6-5-million-seed-round-to-advance-flex-fuel-maritime-technology/.
+    Stage: $6.5M seed round (Pulse 2.0 headline, https://pulse2.com/blaze-energy-raises-6-5-million-seed-round-to-advance-flex-fuel-maritime-technology/;
+    ESG Today); date not confirmed. Pilot with Lomarlabs announced 2026-03-17 (ship.energy). Activate fellow (https://activate.org/blaze-energy-technologies).
+    Evidence: https://pulse2.com/blaze-energy-raises-6-5-million-seed-round-to-advance-flex-fuel-maritime-technology/
+    https://activate.org/blaze-energy-technologies https://ship.energy/information/lomarlabs-and-blaze-energy-teaming-up-for-multi-fuel-reformer-pilot/
+    Region sources: oedit-ai. Confidence: medium. Unresolved: Facts from search snippets only, pages not fetched;
+    domain, exact HQ city, seed date and headcount not found. CEO named as Rok Sitar.'
+- id: blue-mountain-operations
+  name: Blue Mountain Operations
+  website: https://www.bluemountainops.com/
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar-powered instrument-air compressors that replace gas-driven pneumatic devices, which vent methane;
+      customers are oil and gas operators (owner's call on methane, see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site mentions only a U.S. DOE methane-reduction
+    grant (no amount); no venture rounds found. Flags: main customers are oil and gas; HQ unconfirmed; phone number
+    has a 307 (Wyoming) area code. Evidence: https://bluemountainops.com Region sources: ccia-members. Confidence:
+    medium. Unresolved: HQ city/state, founding year, headcount, funding'
+- id: bolder-industries
+  name: Bolder Industries
+  website: https://bolderindustries.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2010
+  headcount: null
+  climate:
+    tier: out
+    reason: Recovered carbon black and oil from scrap tyres. Recycled or bio-based materials; the climate case is
+      lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's
+      call on materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2010 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom says under 100; no figure. Founded:
+    https://dealroom.co/companies/bolder-industries. Stage: Dealroom: $50-100M disclosed equity; investors (CGCIM,
+    Aravaipa Venture, Tauber Oil, Tiger Infrastructure Partners) entered at Series B or later; exact series not
+    shown. Flags: plants outside region (Maryville MO, Terre Haute IN, Antwerp Belgium). Evidence: https://bolderindustries.com
+    https://dealroom.co/companies/bolder-industries Region sources: bs-co-cleanenergy, siteselection-clean, fundraise-insider-co.
+    Confidence: medium. Unresolved: Latest series; headcount figure.'
+- id: brightspot-automation
+  name: Brightspot Automation
+  website: https://brightspotautomation.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electroluminescence, photoluminescence and UV-fluorescence imaging systems and contact-resistivity testers
+      that find defects in solar cells and modules.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://brightspotautomation.com Region sources:
+    oedit-ai, nlr-westgate-alumni. Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: brint-tech
+  name: Brint Tech
+  website: https://brint.tech
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Optical hydrogen leak-detection sensors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site mentions investment opportunities but gives no
+    rounds. Flags: pre-commercial (products in development). Evidence: https://brint.tech Region sources: csu-powerhouse,
+    nlr-annual-2025, innosphere-startups. Confidence: low. Unresolved: HQ (input says Fort Collins, CO; site does
+    not state), founded year, headcount, funding stage; Dealroom has no profile.'
+- id: carbon-america
+  name: Carbon America
+  website: https://carbonamerica.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2019
+  headcount:
+    value: 8
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/carbon-america)
+  climate:
+    tier: core
+    reason: Develops, builds and operates carbon capture, CO2 transport and geologic storage projects for industrial
+      and power emitters.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 8 people (Dealroom, 2026-11-24); founded 2019, funding round reported in 2021.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100; undated; may reflect
+    staff after FrostCarbon spin-off. Founded: https://dealroom.co/companies/carbon-america. Stage: Dealroom: Series
+    A Dec 2021 $30M (ArcTern, CPP Investments, Energy Impact Partners, Golden Properties). Flags: project developer
+    (CCS); projects outside region (Georgia, Southeast); spun off FrostCarbon in 2024. Evidence: https://carbonamerica.com
+    https://dealroom.co/companies/carbon-america Region sources: builtin-co-greentech, builtin-co-energy. Confidence:
+    medium. Unresolved: Whether physical counts (developer and operator of capture and storage projects).'
+- id: colorado-earth
+  name: Colorado Earth
+  website: https://coloradoearth.com
+  careers_url: null
+  hq: Lakewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Earthen masonry blocks (ecoBlocks) made from local earthen materials, plus design and construction of
+      earthen homes and buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Colorado Earth, LLC; founder and CEO Lisa Morey (site).
+    No funding rounds found. Evidence: https://coloradoearth.com Region sources: oedit-ai. Confidence: medium. Unresolved:
+    Founded year, headcount, funding. Site claims ''150+ million blocks'' produced.'
+- id: coolerado
+  name: Coolerado
+  website: https://www.coolerado.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: subsidiary
+  founded: 1999
+  headcount: null
+  climate:
+    tier: core
+    reason: High-efficiency indirect evaporative air conditioners.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Part of Seeley International since 2015; founded 1999 and no recent equity raise found.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''coolerado.com''. (_ssl.c:1035)). Founded: https://www.builtincolorado.com/company/coolerado.
+    Stage: Seeley International acquired substantially all assets of Coolerado Corp, announced about July 2015 (https://www.achrnews.com/articles/129995-seeley-international-acquires-coolerado)
+    Flags: subsidiary of Seeley International; coolerado.com now served under a Seeley (breezair.com.au) certificate;
+    brand may be folded into Seeley. Evidence: https://www.achrnews.com/articles/129995-seeley-international-acquires-coolerado
+    https://www.builtincolorado.com/company/coolerado Region sources: builtin-co-sustain, coloradobiz-made. Confidence:
+    medium. Unresolved: Whether the Denver plant still operates.'
+- id: coorstek
+  name: CoorsTek
+  website: https://www.coorstek.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1910
+  headcount:
+    value: 5900
+    as_of: '2015-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/CoorsTek)
+  climate:
+    tier: out
+    reason: Diversified technical ceramics; clean energy is a minor segment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: About 5,900 employees (over the 4,000 cap and its tolerance); founded 1910.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to get local issuer certificate (_ssl.c:1035)). Headcount note: About 5,900 as of 2015
+    (year only) Founded: https://en.wikipedia.org/wiki/CoorsTek. Stage: Private, no venture rounds; wholly owned
+    by Keystone Holdings LLC, a Coors family trust (https://en.wikipedia.org/wiki/CoorsTek) Flags: over 1,000 employees;
+    diversified ceramics maker; clean energy is a minor segment; makes armor and oil and gas proppants among many
+    lines. Evidence: https://en.wikipedia.org/wiki/CoorsTek Region sources: coloradobiz-made. Confidence: high.
+    Unresolved: Recent headcount.'
+- id: copper-labs
+  name: Copper Labs
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: series-a
+  founded: 2016
+  headcount:
+    value: 10
+    as_of: '2026-11-24'
+    source: Built In Colorado (https://www.builtincolorado.com/company/copper-labs)
+  climate:
+    tier: enabling
+    reason: In-home energy-monitoring devices and cloud for utilities' demand programmes.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 10 people (Built In Colorado, 2026-11-24); founded 2016.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total 10, undated; Dealroom says <100
+    Founded: https://www.builtincolorado.com/company/copper-labs. Stage: Dealroom: seed investors Tahoma Ventures,
+    Moonshots Capital, Blue Bear Capital, Capital Factory, Service Provider Capital, National Grid Partners; Series
+    A1 investor Clean Energy Ventures; total $10-50M; no dates (https://dealroom.co/companies/copper-labs) Flags:
+    hardware plus cloud; utilities are main partners. Evidence: https://www.builtincolorado.com/company/copper-labs
+    https://dealroom.co/companies/copper-labs Region sources: builtin-co-energy. Confidence: medium. Unresolved:
+    copperlabs.com returned 401; active status assumed from listings, not confirmed.'
+- id: cowboy-clean-fuels
+  name: Cowboy Clean Fuels
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-b
+  founded: 2020
+  headcount: null
+  climate:
+    tier: out
+    reason: Grows methane fuel with microbes in coal-bed wells in Wyoming; a natural-gas product.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Founded: https://builtin.com/articles/cowboy-clean-fuels-raises-7m.
+    Stage: Series A $7.5M 2023 led by Machan Investments; Series B about $13M 2024 led by Machan (ESG Today); CB
+    Insights total about $49M. 2025 10-year RNG offtake with Mercuria. Flags: operations in Wyoming (coal-bed methane
+    wells); CB Insights gives Greenwood Village address. Evidence: https://builtin.com/articles/cowboy-clean-fuels-raises-7m
+    https://www.esgtoday.com/cowboy-clean-fuels-raises-13-million-to-simultaneously-produce-biofuel-remove-co2/
+    https://www.cbinsights.com/company/cowboy-clean-fuels https://finance.yahoo.com/news/cowboy-clean-fuels-mercuria-announce-131600598.html
+    Region sources: fundraise-insider-co. Confidence: medium. Unresolved: Domain; headcount.'
+- id: cs-wind-america
+  name: CS Wind America
+  website: https://www.cswind.com
+  careers_url: null
+  hq: Seoul, South Korea
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: subsidiary
+  founded: 1988
+  headcount: null
+  climate:
+    tier: core
+    reason: Wind turbine towers; Pueblo, CO plant described as the world's largest tower factory.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Subsidiary of CS Wind (South Korea), a listed group; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/CS_Wind. Stage: US unit
+    of CS Wind Corporation (KRX: 112610); Pueblo plant acquired from Vestas in 2021. Flags: subsidiary of CS Wind
+    (South Korea); HQ outside region; main US site in Pueblo, CO. Evidence: https://en.wikipedia.org/wiki/CS_Wind
+    Region sources: climatepower-co, prospect-pueblo. Confidence: high. Unresolved: Headcount (Pueblo or group).'
+- id: danfoss-editron-formerly-uqm-technologies
+  name: Danfoss Editron (formerly UQM Technologies)
+  website: https://www.danfoss.com
+  careers_url: null
+  hq: Nordborg, Denmark
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: 1967
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric motors, generators and controllers for vehicles and ships.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Part of Danfoss (about 40,000 employees) since 2019; not independent.
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Headcount note:
+    Danfoss group has well over 1,000 employees; Longmont site headcount not found Founded: https://en.wikipedia.org/wiki/UQM_Technologies.
+    Stage: UQM acquired by Danfoss, effective 2019-07-31 (https://en.wikipedia.org/wiki/UQM_Technologies) Flags:
+    subsidiary of Danfoss; HQ outside region; over 1,000 employees (parent). Evidence: https://en.wikipedia.org/wiki/UQM_Technologies
+    Region sources: bs-co-ev, builtin-co-energy. Confidence: medium. Unresolved: Whether the Longmont site still
+    operates under Danfoss Editron (danfoss.com returned 403).'
+- id: earthview
+  name: Earthview
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2019
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: Built In Colorado (https://www.builtincolorado.com/company/earthview)
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 9 people (Built In Colorado, 2026-11-24); founded 2019, funding round reported in 2022.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total 9, undated Founded: https://www.builtincolorado.com/company/earthview.
+    Stage: Built In: had funded most of a seed round and planned a Series A in late 2022; no confirmation it closed
+    Flags: oil and gas is first listed market. Evidence: https://www.builtincolorado.com/company/earthview Region
+    sources: builtin-co-greentech, builtin-co-energy. Confidence: low. Unresolved: earthview.io returned an empty
+    page; current status unknown.'
+- id: ecovaleric-innovations
+  name: EcoValeric Innovations
+  website: https://ecovaleric.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Electrochemical bio-based solvent production. Recycled or bio-based materials; the climate case is lower-carbon
+      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
+      materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: CU Embark 2024 cohort (https://www.colorado.edu/venturepartners/2024/09/13/internal-news/2024-cohort-cu-boulders-embark-deep-tech-startup-creator-launches-new-startups);
+    2024 Lab Venture Challenge winner (https://www.colorado.edu/engineering/record-cuengineering-startups). Pre-seed
+    inferred. Flags: chemicals. Evidence: https://ecovaleric.com https://www.colorado.edu/venturepartners/2024/09/13/internal-news/2024-cohort-cu-boulders-embark-deep-tech-startup-creator-launches-new-startups
+    https://www.colorado.edu/mse/startup-and-spinoff-companies Region sources: cu-lvc. Confidence: medium. Unresolved:
+    Founded (likely 2024), headcount. Founder Roberta Leão; PI Adam Holewinski.'
+- id: egauge-systems
+  name: eGauge Systems
+  website: https://www.egauge.net
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Circuit-level energy meters for buildings and solar.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.egauge.net Region sources: builtin-co-greentech,
+    inven-co-smartgrid, builtin-co-energy. Confidence: medium. Unresolved: Founding year, headcount, ownership not
+    found (Dealroom and Built In slugs 404).'
+- id: electric-equipment-and-engineering-co
+  name: Electric Equipment & Engineering Co
+  website: https://eeeusa.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: 1922
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Custom switchboards, transfer switches and power distribution equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1922 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.eeeusa.com. Stage: Ownership not stated;
+    long-established, no venture rounds found Flags: data centers one of several listed sectors (telecom, utility,
+    healthcare, industrial). Evidence: https://www.eeeusa.com Region sources: inven-co-powerelec. Confidence: medium.
+    Unresolved: Ownership and headcount.'
+- id: element-one
+  name: Element One
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2005
+  headcount:
+    value: 2
+    as_of: '2026-11-24'
+    source: LinkedIn band (search snippet) (https://linkedin.com/company/elem1)
+  climate:
+    tier: enabling
+    reason: Colour-changing tape and paints that show hydrogen leaks.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 2 people (LinkedIn band (search snippet), 2026-11-24); founded 2005 and no equity raise in the last
+      5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: LinkedIn band 2-10; undated Founded: https://www.cbinsights.com/company/element-one.
+    Stage: DOE-funded (EERE success story); no venture rounds found. Evidence: https://www.energy.gov/node/983396
+    https://www.cbinsights.com/company/element-one https://linkedin.com/company/elem1 Region sources: oedit-ai-2023nov.
+    Confidence: medium. Unresolved: Own domain (element1.com is an unrelated Dutch company); current status'
+- id: encorp
+  name: Encorp
+  website: https://encorp.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: 1992
+  headcount:
+    value: 45
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/encorp)
+  climate:
+    tier: enabling
+    reason: Microgrid and distributed-energy control platform with its own controllers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 45 people (Dealroom, 2026-11-24); founded 1992 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''current team size'' 45; undated
+    Founded: https://dealroom.co/companies/encorp. Stage: Dealroom: Series C Mar 2000 $3.3M and Series D Oct 2001
+    $38M (Perseus, Wexford, Craig Drill); page history instead says $40M Series C in 2000; also says the distributed-energy
+    business was acquired by Primary Integration in the early 2010s. Current ownership unclear. Flags: controls
+    platform plus some hardware; software may be the core; possibly acquired (Primary Integration, early 2010s,
+    per Dealroom). Evidence: https://www.encorp.com https://dealroom.co/companies/encorp Region sources: inven-co-smartgrid.
+    Confidence: medium. Unresolved: Current owner; whether hardware or software is the main revenue.'
+- id: endolith
+  name: Endolith
+  website: null
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 20
+    as_of: '2026-04-21'
+    source: ColoradoBiz (https://coloradobiz.com/endolith-arvada-raises-16-5m-to-boost-copper-extraction/)
+  climate:
+    tier: enabling
+    reason: Engineered microbes that leach copper and other critical minerals for mining companies; it supplies
+      miners and does not run mines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 20 people (ColoradoBiz, 2026-04-21); founded 2022, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: About 20 across labs in Arvada and Westminster;
+    Dealroom band under 100. Founded: https://coloradobiz.com/endolith-arvada-raises-16-5m-to-boost-copper-extraction/.
+    Stage: Series A $16.5M led by Squadra Ventures, reported 2026-04-21 (ColoradoBiz); earlier seed $5.13M (TechCrunch,
+    2024-09-05). Mining.com reported a $13.5M raise labelled seed; sources conflict on amounts. Flags: main customers
+    are mining companies (partnership with BHP). Evidence: https://coloradobiz.com/endolith-arvada-raises-16-5m-to-boost-copper-extraction/
+    https://dealroom.co/companies/endolith https://techcrunch.com/2024/09/05/endolith-is-using-olympic-caliber-copper-microbes-to-address-the-copper-shortage
+    https://www.mining.com/us-biomining-startup-raises-13-5m-in-seed-funding/ Region sources: nlr-annual-2026. Confidence:
+    high. Unresolved: Domain (endolith.co does not resolve). Founded 2022 as a spin-off from Cemvita per ColoradoBiz;
+    Dealroom says 2021. physical judged yes (biological process and containerized units); could be seen as a service
+    to miners.'
+- id: energy-fuels
+  name: Energy Fuels
+  website: https://www.energyfuels.com
+  careers_url: null
+  hq: Lakewood, CO
+  ats:
+    type: adp
+    board: e715f1d4-503d-480f-8910-9c8d566a74ed
+  read: manual
+  sectors: []
+  stage: public
+  founded: 2006
+  headcount: null
+  climate:
+    tier: out
+    reason: Uranium and rare-earth mining and processing; mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2006 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board adp:e715f1d4-503d-480f-8910-9c8d566a74ed seen 2026-11-24, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://en.wikipedia.org/wiki/Energy_Fuels_Inc.. Stage: TSX: EFR (Wikipedia);
+    also NYSE American (UUUU) from general knowledge, not verified this session. Flags: mining operator (uranium
+    mines in Arizona, Utah, Wyoming); operations outside region. Evidence: https://www.energyfuels.com https://en.wikipedia.org/wiki/Energy_Fuels_Inc.
+    Region sources: builtin-co-energy, search-snippets. Confidence: high. Unresolved: Headcount not found.'
+- id: envirofit
+  name: Envirofit
+  website: https://envirofit.org
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2003
+  headcount: null
+  climate:
+    tier: core
+    reason: Fuel-efficient, low-emission cookstoves for households outside the US.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2003 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/Envirofit_International.
+    Stage: Wikipedia calls it a non-profit; its site calls it a market-based social enterprise using impact investing.
+    No venture rounds found. Flags: non-profit / social enterprise; customers mainly outside US. Evidence: https://envirofit.org
+    https://en.wikipedia.org/wiki/Envirofit_International Region sources: csu-powerhouse. Confidence: medium. Unresolved:
+    Headcount; current legal status (non-profit vs for-profit); site gives HQ only as Colorado.'
+- id: estercycle
+  name: EsterCycle
+  website: https://estercycle.co
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: out
+    reason: Chemical recycling of polyester plastics. Recycled or bio-based materials; the climate case is lower-carbon
+      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
+      materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://www.nrel.gov/west-gate/julia-curley-enabling-circular-bioplastics.
+    Stage: Grants only: VCBacked lists $250K total, latest a grant (Nov 2025); backers listed include Colorado Advanced
+    Industries Accelerator, NYSERDA, Venture For ClimateTech, Colorado Venture Capital Authority (PitchBook). Flags:
+    NREL (West Gate) spinout, Aug 2024. Evidence: https://estercycle.co https://www.nrel.gov/west-gate/julia-curley-enabling-circular-bioplastics
+    https://pitchbook.com/profiles/company/771764-59 https://www.vcbacked.co/company/estercycle Region sources:
+    oedit-ai, nlr-annual-2025, nlr-westgate-alumni. Confidence: medium. Unresolved: Headcount; any equity round'
+- id: etuk-usa
+  name: eTuk USA
+  website: https://www.etukusa.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric tuk-tuks (passenger shuttle, cargo, pickup and vending models) with custom builds, parts and
+      service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: unclear whether it manufactures or imports/sells vehicles.
+    Evidence: http://www.etukusa.com/ Region sources: bs-co-ev. Confidence: low. Unresolved: HQ city, founding,
+    headcount not stated on site; active status inferred from current pricing.'
+- id: exopower
+  name: ExoPower
+  website: https://exopower.tech
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: In-motion wireless charging for industrial mobile robots.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grants: $1.25M NSF plus $150K Colorado Advanced Industries
+    grant, announced 2026-09-15; approved for Colorado Jump-Start Program. Flags: CU Boulder spinout. Evidence:
+    https://www.colorado.edu/venturepartners/2026/09/15/exopower-awarded-14m-start-commercializing-wireless-mobile-charging-tech
+    https://thebusinesstimes.com/?p=38266 https://exopower.tech/ Region sources: oedit-ai, cu-vp-ai, cu-ascent,
+    cu-oedit-2025, search-snippets. Confidence: medium. Unresolved: Founding year, headcount, equity funding'
+- id: flexenergy-solutions
+  name: FlexEnergy Solutions
+  website: https://flexenergy.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: paylocity
+    board: e3e4b322-39cc-4a64-93d2-fcfbf36e4a0e
+  read: manual
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: 2000
+  headcount:
+    value: 20
+    as_of: '2025-12-09'
+    source: Business Wire release metadata (https://www.businesswire.com/news/home/20251209427355/en)
+  climate:
+    tier: out
+    reason: Turbine generators that run mainly on natural gas and oilfield gas.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 20 people (Business Wire release metadata, 2025-12-09); founded 2000 and no equity raise in the last
+      5 years found, so no growth sign.
+  notes: 'Board paylocity:e3e4b322-39cc-4a64-93d2-fcfbf36e4a0e seen 2026-11-24, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Sources disagree: Business Wire lists 20; SignalHire estimates
+    100-200 Founded: https://www.businesswire.com/news/home/20251209427355/en. Stage: CB Insights lists latest round
+    as private equity; acquired Ingersoll-Rand Energy Systems (MT250, Portsmouth NH plant) Dec 2010 Flags: runs
+    mainly on natural gas; oil and gas (oilfield electrification) listed first; data centers also a market; manufacturing
+    in New Hampshire. Evidence: https://www.flexenergy.com https://www.businesswire.com/news/home/20251209427355/en
+    https://www.cbinsights.com/investor/flexenergy Region sources: inven-co-renewable, inven-co-smartgrid, inven-co-electricpower.
+    Confidence: medium. Unresolved: Exact HQ city; headcount conflict; owner.'
+- id: forge-nano
+  name: Forge Nano
+  website: https://www.forgenano.com
+  careers_url: null
+  hq: Thornton, CO
+  ats:
+    type: breezy
+    board: forge-nano
+  read: manual
+  sectors:
+  - battery-materials
+  stage: public
+  founded: 2011
+  headcount:
+    value: 59
+    as_of: '2026-11-24'
+    source: Built In Colorado; undated, so as_of is the day it was read (https://www.builtincolorado.com/company/forge-nano)
+  climate:
+    tier: core
+    reason: Atomic layer deposition (ALD) coating technology and equipment for battery materials and semiconductors,
+      plus lithium-ion cells (Forge Battery) including for US defense.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 59 people (Built In Colorado; undated, so as_of is the day it was read, 2026-11-24); founded 2011, public,
+      with a listing or offering reported in 2026.
+  notes: 'Board breezy:forge-nano seen 2026-11-24, linked from the company''s own site: 18 open roles. Headcount
+    note: Built In figure, undated and likely stale (lists old Louisville, CO HQ). NC gigafactory planned to create
+    250+ jobs. Founded: https://dealroom.co/companies/forge-nano. Stage: Completed business combination with Archimedes
+    Tech SPAC Partners II on 2026-10-22; trades on Nasdaq as NANO / NANOW; about $1.2B pre-money (Forge Nano Holdings
+    10-Q, https://www.sec.gov/Archives/edgar/data/0002101833/000110465926127077/tmb-20260930x10q.htm; Loeb & Loeb
+    2026-04). Flags: defense is a stated target market (cells built in Colorado for defense customers); also targets
+    AI/semiconductor market. Evidence: https://www.forgenano.com https://www.forgenano.com/about https://dealroom.co/companies/forge-nano
+    https://www.builtincolorado.com/company/forge-nano https://www.loeb.com/en/newsevents/news/2026/04/loeb-advises-archimedes-tech-spac-partners-ii-on-1-2-billion-business-combination-with-forge-nano
+    Region sources: cu-vp-portfolio, cu-vp-battery, cu-vp-climate, cu-mse-spinoffs, fundraise-insider-co. Confidence:
+    high. Unresolved: Current headcount (10-Q not read for employees). Dealroom reports an all-stock acquisition
+    of HZO. Battery gigafactory in Morrisville, NC.'
+- id: fortescue-fortescue-zero-future-industries
+  name: Fortescue (Fortescue Zero / Future Industries)
+  website: https://fortescue.com
+  careers_url: null
+  hq: Perth, Australia
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: public
+  founded: 2003
+  headcount:
+    value: 11000
+    as_of: '2020-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Fortescue_(company))
+  climate:
+    tier: out
+    reason: Iron-ore mining group; green hydrogen and electrolyzers are a side business (mining operators are out,
+      owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: About 11,000 employees; public.
+  notes: 'No job board found on the company''s site. Headcount note: 11,000+ as of 2020 (year only). Founded: https://en.wikipedia.org/wiki/Fortescue_(company).
+    Stage: ASX: FMG. Fortescue Future Industries merged into Fortescue Metals Group July 2023. Flags: over 1,000
+    employees; HQ outside region (Australia); mining operator (iron ore is main business). Evidence: https://en.wikipedia.org/wiki/Fortescue_(company)
+    Region sources: ccia-members, siteselection-renew, search-snippets. Confidence: medium. Unresolved: Colorado
+    (Golden/Denver) technology centre not confirmed by sources read.'
+- id: frostcarbon
+  name: FrostCarbon
+  website: null
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: FrostCC modular cryogenic carbon capture trains for power plants, industrial facilities and pulp and
+      paper mills.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://carbonamerica.com. Stage: Carved out of Carbon
+    America in 2024; funding not disclosed. Flags: spin-off of Carbon America; pre-commercial (first commercial
+    project FID slated 2026); claims a partnership with a hyperscaler. Evidence: https://frostcarbon.com https://carbonamerica.com
+    Region sources: builtin-co-energy. Confidence: medium. Unresolved: HQ (input says Arvada; site does not state),
+    headcount, funding.'
+- id: geokiln
+  name: GeoKiln
+  website: https://geokiln.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Manufactured subsurface hydrogen: electric heaters in iron-rich rock trigger reactions that generate
+      hydrogen in place, produced through a well.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: West Gate cohort 5, status ''Prototype'', seeking funding
+    (https://www.nlr.gov/west-gate/innovators/alexei-tchnerniak-affordable-hydrogen). Flags: HQ outside region (directory
+    says Houston, TX); uses oil and gas style subsurface wells. Evidence: https://geokiln.com https://www.nlr.gov/west-gate/innovators/alexei-tchnerniak-affordable-hydrogen
+    Region sources: nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators. Confidence: medium. Unresolved: HQ,
+    founded, headcount, stage. Founder and CEO Alexei Tcherniak.'
+- id: geothermal-technologies-inc
+  name: Geothermal Technologies, Inc.
+  website: null
+  careers_url: null
+  hq: Maryland
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Developing a geothermal power plant tapping a hot sedimentary aquifer in the Denver-Julesburg Basin,
+      Weld County (pilot of 3-5 MW, up to 400 MW cited).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: $1M Colorado state award for a pilot well (CPR, 2025-04-25).
+    Flags: HQ outside region; project developer (would build and run its own plant). Evidence: https://www.businesswire.com/news/home/20230411005176/en
+    https://www.cpr.org/2025/04/25/geothermal-energy-pierce-colorado/ https://www.gem.wiki/D-J_Basin_geothermal_power_plant
+    Region sources: ceo-geothermal. Confidence: medium. Unresolved: Facts from search snippets; no 2026 status found
+    (GEM tracker lists pre-construction). Domain, founded, headcount, stage.'
+- id: gevo
+  name: Gevo
+  website: https://gevo.com
+  careers_url: null
+  hq: Englewood, CO
+  ats:
+    type: rippling
+    board: gevo-careers
+  read: auto
+  sectors: []
+  stage: public
+  founded: 2005
+  headcount:
+    value: 99
+    as_of: '2021-12-31'
+    source: Wikipedia (FY2021) (https://en.wikipedia.org/wiki/Gevo)
+  climate:
+    tier: core
+    reason: Sustainable aviation fuel and other low-carbon fuels from renewable feedstocks.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 99 people (Wikipedia (FY2021), 2021-12-31); founded 2005 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'Board rippling:gevo-careers seen 2026-11-24, linked from the company''s own site: 2 open roles. Headcount
+    note: Old figure (FY2021); likely higher after adding the North Dakota (Richardton) ethanol site. Founded: https://en.wikipedia.org/wiki/Gevo.
+    Stage: Nasdaq: GEVO. Flags: operating sites outside Colorado (Iowa RNG, Richardton ND, Luverne MN). Evidence:
+    https://gevo.com https://en.wikipedia.org/wiki/Gevo Region sources: builtin-co-energy. Confidence: high. Unresolved:
+    Current headcount.'
+- id: gradient-geothermal
+  name: Gradient Geothermal
+  website: https://www.gradientgeothermal.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular HXC geothermal units that use co-produced oilfield fluid heat for on-site power and cooling,
+      offered by subscription or rental, plus a geothermal equipment leasing division.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site: ''initially created by parent company X Machina
+    Sustainable Technologies''; part of the X Machina Capital Strategies portfolio (with Zefiro Methane Corp). Flags:
+    main customers are oil and gas; created by and part of X Machina portfolio. Evidence: https://gradientgeothermal.com
+    Region sources: ccia-members, ceo-geothermal. Confidence: medium. Unresolved: Founding year, headcount, exact
+    ownership share'
+- id: grand-valley-instrumentation
+  name: Grand Valley Instrumentation
+  website: null
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Autonomous landfill-gas wellhead tuning that raises methane capture at landfills.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.wastetodaymagazine.com/news/grand-valley-instrumentation-mesa-county-landfill-meerkat-monitoring-system
+    https://www.environmental-expert.com/companies/grand-valley-instrumentation-158588/products Region sources:
+    ceo-cap-2026oct. Confidence: medium. Unresolved: Facts from search snippets (Waste Today page returned empty).
+    Pilot at Mesa County Landfill planned Oct 2025-Jan 2026. Domain, founded, headcount, stage not found.'
+- id: gravity-renewables
+  name: Gravity Renewables
+  website: https://gravityrenewables.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: Owns and runs small hydroelectric plants.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2010 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No board found: home page not readable (error: ConnectTimeout: [WinError 10060] A connection attempt failed
+    because the connected party did not properly respond after a period of time, or established connection failed
+    because connected host). Headcount note: Dealroom only says team size ''<100'' (undated); no usable lower bound
+    Founded: https://dealroom.co/companies/gravity-renewables. Stage: Dealroom: investor-backed, total disclosed
+    equity $10-50M; BizWest reported a $3.2M raise (https://bizwest.com/gravity-renewables-raises-3-2-million/).
+    Search snippets say acquired by Relevate Power (New York hydropower redeveloper) in December 2024; not confirmed
+    from a primary source. Flags: possibly acquired by Relevate Power (Dec 2024, unconfirmed); plants are in other
+    states (NY, MA, NC etc.), not Colorado; operator of hydro plants, not equipment maker. Evidence: https://dealroom.co/companies/gravity-renewables
+    https://bizwest.com/gravity-renewables-raises-3-2-million/ https://www.cbinsights.com/company/gravity-renewables
+    Region sources: bs-co-cleanenergy. Confidence: low. Unresolved: Company site refused connections (ECONNREFUSED).
+    Founding year conflicts (Dealroom header 2010, About text 2013). Acquisition by Relevate Power in Dec 2024 seen
+    only in search summaries.'
+- id: green-steel-environmental
+  name: Green Steel Environmental
+  website: https://www.greensteelenvironmental.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (202). Stage: CU Boulder Venture Partners portfolio page lists
+    funding stage as ''Series A'' with no round, amount or date; treated as unconfirmed. Flags: CU Boulder spinout
+    (Embark Deep Tech Startup Creator). Evidence: https://www.colorado.edu/venturepartners/startup-portfolio/green-steel-environmental-llc
+    https://aim2flourish.com/innovations/turning-industrial-waste-into-cleaner-water Region sources: ccia-members,
+    cu-vp-portfolio, cu-lvc, cu-ascent. Confidence: medium. Unresolved: Own site returned no content; HQ (Boulder
+    per input, CU page only shows the university address), founding year, headcount, funding amounts'
+- id: gridvisibility
+  name: GridVisibility
+  website: https://gridvisibility.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: GVP point-on-wave grid sensors and a monitoring platform that ride on existing cable broadband networks
+      to monitor the distribution grid.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site: eight years of R&D incubation within CableLabs;
+    no rounds stated. Flags: CableLabs spinout. Evidence: https://www.gridvisibility.com Region sources: oedit-ai.
+    Confidence: medium. Unresolved: HQ (Longmont per input), founding year, headcount, funding'
+- id: gto-technologies
+  name: GTO Technologies
+  website: null
+  careers_url: null
+  hq: Lakewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Downhole tools for enhanced geothermal wells, including a high-temperature wellbore tractor that actuates
+      frac sleeves to control flow (conformance control).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Colorado School of Mines news (2026): closed final $2.7M
+    of a $5M seed round; Grantham Foundation largest investor. Flags: Colorado School of Mines affiliated startup.
+    Evidence: https://www.mines.edu/news/all-news/2026/gto-technologies-receives-final-27-million-of-5-million-seed-funding-round.html
+    https://pangea.stanford.edu/ERE/db/GeoConf/papers/SGW/2026/Fleckenstein.pdf https://www.oilandgas360.com/exclusive-gto-technologies-executive-interview-with-enercom/
+    Region sources: mines-news. Confidence: medium. Unresolved: Domain, founded year, headcount. Input says Golden;
+    2026 paper gives Lakewood address.'
+- id: horne-technologies
+  name: Horne Technologies
+  website: https://www.hornetechnologies.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  stage: seed
+  founded: 2008
+  headcount:
+    value: 8
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/horne-technologies)
+  climate:
+    tier: core
+    reason: Compact modular deuterium fusion devices, first sold as high-flux neutron sources, with modular power
+      and industrial heat units planned later.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 8 people (Dealroom, 2026-11-24); funding round reported in 2022.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''at a glance'' 8; undated, fetched
+    2026-11-24 Founded: https://dealroom.co/companies/horne-technologies. Stage: Dealroom: early-stage VC round,
+    $1.6M, March 2022, at $6.4M valuation; backers named include Free Radical Ventures, Aspect Holdings, Cottonwood
+    Technology Fund. Mapped to seed. Flags: neutron-test market includes satellites and defense systems (target
+    market, not confirmed main customer). Evidence: https://hornetechnologies.com https://dealroom.co/companies/horne-technologies
+    Region sources: ccia-members, search-snippets. Confidence: medium. Unresolved: Exact HQ city (Longmont vs Louisville);
+    later rounds'
+- id: husk-power-systems
+  name: Husk Power Systems
+  website: https://www.huskpowersystems.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  - solar
+  stage: null
+  founded: 2008
+  headcount:
+    value: 482
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/husk-power-systems)
+  climate:
+    tier: core
+    reason: Builds and runs solar-plus-storage community minigrids, mostly in India and Nigeria.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 482 people (Dealroom, 2026-11-24); founded 2008 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band 100-500; undated; workforce 66%
+    India, 26% Nigeria, under 2% US. Founded: https://dealroom.co/companies/husk-power-systems. Stage: Dealroom:
+    total disclosed equity $50-100M, 20 investors (IFC, Shell, ENGIE, DFC, Acumen); visible rounds only Sep 2025
+    $3.2M debt and Jan 2025 $500K grant. Site headlines say it seeks about $400M. Latest equity round letter not
+    found. Flags: operations almost entirely outside US (India, Nigeria); builds and runs minigrids (operator).
+    Evidence: https://huskpowersystems.com https://dealroom.co/companies/husk-power-systems Region sources: csu-powerhouse,
+    inven-co-renewable, inven-co-electricpower, search-snippets. Confidence: medium. Unresolved: Latest equity round
+    label (Series C/D?).'
+- id: hygge-power
+  name: Hygge Power
+  website: https://hyggepower.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular home energy storage system paired with planning and control software (MES, EME, RED layers).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'No job board found on the company''s site. Founded: https://hyggepower.com. Stage: No rounds found; site
+    lists RMI Third Derivative, Google for Startups, LG Nova and Free Electrons programs and two US patents. Evidence:
+    https://hyggepower.com Region sources: bs-co-cleantech, builtin-co-greentech, builtin-co-energy. Confidence:
+    low. Unresolved: HQ (input says Boulder; site does not state); headcount; funding. Site footer 2026.'
+- id: ion-clean-energy
+  name: ION Clean Energy
+  website: https://ioncleanenergy.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2008
+  headcount:
+    value: 44
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/ion-clean-energy)
+  climate:
+    tier: core
+    reason: Solvent-based point-source carbon capture systems, applied mostly at natural-gas power plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 44 people (Dealroom, 2026-11-24); funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom; undated; reports 25% team decline
+    over past year. Founded: https://ioncleanenergy.com. Stage: Dealroom: $45M Series A April 2024 at reported $180M
+    valuation; Chevron and Carbon Direct Capital among investors. Flags: focus on natural gas power plants with
+    capture; licensing, engineering and solvent sales model. Evidence: https://ioncleanenergy.com https://dealroom.co/companies/ion-clean-energy
+    Region sources: builtin-co-greentech. Confidence: high.'
+- id: iontra
+  name: Iontra
+  website: https://iontra.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - energy-storage
+  stage: series-c
+  founded: 2013
+  headcount:
+    value: 70
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/iontra)
+  climate:
+    tier: enabling
+    reason: Battery charge-control technology (firmware and chips) licensed to battery and device makers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 70 people (Dealroom, 2026-11-24); founded 2013, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 70, band under 100; undated, fetched
+    2026-11-24 Founded: https://dealroom.co/companies/iontra. Stage: Dealroom: Series C, November 2024, $45M led
+    by Volta Energy Technologies. Flags: mainly licensed algorithms/firmware; hardware is a delivery vehicle. Evidence:
+    https://iontra.com https://dealroom.co/companies/iontra Region sources: oedit-ai, inven-co-powerelec, builtin-co-energy.
+    Confidence: high.'
+- id: ix-power-clean-water
+  name: IX Power Clean Water
+  website: https://ixwater.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: oil and gas produced water is one of several markets.
+    Evidence: https://ixwater.com Region sources: bs-co-cleantech. Confidence: medium. Unresolved: Founding (footer
+    ''Copyright 2014-2026''), headcount, funding.'
+- id: kineticcore-solutions
+  name: KineticCore Solutions
+  website: https://kineticcore.com
+  careers_url: null
+  hq: Loveland, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: Flywheel-based, non-chemical energy storage battery for commercial and industrial peak power support
+      and EV fast charging.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Founded: https://vcpost.com/articles/128452/20240910/kineticcore-solutions-providing-a-new-spin-for-cost-effective-commercial-peak-power-support.htm.
+    Stage: West Gate cohort 4 (2025-27), status ''Bench scale'', seeking funding (https://www.nlr.gov/west-gate/james-clegern-kinetic-energy-storage/).
+    Aggregator totals conflict: $350K vs $1.5M raised (search snippets, CB Insights / Crunchbase); round types not
+    found. Flags: early stage (bench scale). Evidence: https://www.nlr.gov/west-gate/james-clegern-kinetic-energy-storage/
+    https://vcpost.com/articles/128452/20240910/kineticcore-solutions-providing-a-new-spin-for-cost-effective-commercial-peak-power-support.htm
+    https://www.nlr.gov/west-gate/innovators Region sources: oedit-ai, nlr-annual-2025, nlr-westgate-innovators.
+    Confidence: medium. Unresolved: Headcount; stage. Founded 2019 per search snippet of the VC Post article (co-founders
+    James, Jim and Chuck Clegern and Steve Milliren), not fetched directly. kineticcore.com not fetched.'
+- id: koloma
+  name: Koloma
+  website: https://koloma.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: series-b
+  founded: 2021
+  headcount:
+    value: 75
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/koloma)
+  climate:
+    tier: core
+    reason: Explores for and produces geologic (natural) hydrogen.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 75 people (Dealroom, 2026-11-24); founded 2021, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100; undated. Founded:
+    https://dealroom.co/companies/koloma. Stage: Dealroom: Series B Oct 2024, $50M shown (Mitsubishi Heavy Industries,
+    Osaka Gas), reported $1.2B valuation; total disclosed equity $100-500M. JERA investment per company site. Flags:
+    resource extraction (drilling for natural hydrogen). Evidence: https://koloma.com https://dealroom.co/companies/koloma
+    Region sources: bev-vcbacked, prelude-portfolio. Confidence: medium. Unresolved: Exact Series B total (Dealroom
+    shows only part).'
+- id: kratos-industries
+  name: Kratos Industries
+  website: https://kratosind.com
+  careers_url: null
+  hq: Arvada / Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Subsidiary of Legrand (about 38,000 employees); not independent.
+  notes: 'No job board found on the company''s site. Stage: Site says ''a brand of Legrand'' and links to Legrand
+    acquisition announcement (https://www.kratosind.com) Flags: subsidiary of Legrand; data centers listed first
+    among markets (may be main customers). Evidence: https://www.kratosind.com Region sources: inven-co-powerelec.
+    Confidence: medium. Unresolved: Acquisition date, founding year, headcount.'
+- id: last-wave-energy
+  name: Last Wave Energy
+  website: https://lastwaveenergy.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ultrathin battery current collectors that remove inactive mass from lithium-ion cells, for lighter,
+      high-discharge batteries (power tools, drones, EVs).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: West Gate cohort 5 (2026-28), status ''Bench scale'',
+    seeking funding (https://www.nlr.gov/west-gate/innovators/ryan-brow-ultralight-batteries). No rounds found;
+    pre-seed inferred from bench-scale lab-incubator stage. Flags: early stage (bench scale). Evidence: https://lastwaveenergy.com
+    https://www.nlr.gov/west-gate/innovators/ryan-brow-ultralight-batteries Region sources: nlr-annual-2026, doe-leep-2026,
+    nlr-westgate-innovators. Confidence: medium. Unresolved: Founded, headcount, funding. Founder Ryan Brow.'
+- id: latent-heat-solutions
+  name: Latent Heat Solutions
+  website: null
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Phase-change thermal-management products for lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: location unverified. Evidence: https://fastchats.informaengage.com/leaders-in/latent-heat-solutions-impact-of-passive-thermal-control-on-battery-safety/
+    https://patents.google.com/patent/US11411262 Region sources: builtin-co-energy. Confidence: low. Unresolved:
+    HQ (Golden, CO not confirmed), domain, founded, headcount, funding. Mentions aerospace and military applications.'
+- id: lignetics
+  name: Lignetics
+  website: https://www.lignetics.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: paylocity
+    board: 63a09f66-cfab-450b-b3b3-e5b1c22230b5
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1983
+  headcount: null
+  climate:
+    tier: out
+    reason: Wood pellets for heating and grilling; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1983 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board paylocity:63a09f66-cfab-450b-b3b3-e5b1c22230b5 seen 2026-11-24, linked from the company''s own site:
+    role count not read (no public feed). Founded: https://mergr.com/lignetics-overview. Stage: Private-equity owned:
+    EagleTree Capital acquired it from Taglich Private Equity and Mill Road Capital, Nov 1 2021 (https://www.businesswire.com/news/home/20211101005950/en/EagleTree-Capital-Acquires-Lignetics-From-Taglich-Private-Equity-and-Mill-Road-Capital)
+    Flags: private-equity owned (EagleTree Capital); plants mostly outside Colorado. Evidence: https://www.lignetics.com
+    https://www.businesswire.com/news/home/20211101005950/en/EagleTree-Capital-Acquires-Lignetics-From-Taglich-Private-Equity-and-Mill-Road-Capital
+    https://bizwest.com/2024/07/12/lignetics-buys-wood-pellets-business-from-outdoor-brands-umbrella-firm-revelyst
+    Region sources: builtin-co-energy. Confidence: medium. Unresolved: Headcount (likely large given 30 plants,
+    not found).'
+- id: living-ink-technologies
+  name: Living Ink Technologies
+  website: https://livingink.co
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2013
+  headcount:
+    value: 10
+    as_of: '2024-09-01'
+    source: Dynamic Tech Media (https://dynamictechmedia.com/living-ink/)
+  climate:
+    tier: out
+    reason: Algae-based black pigment. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
+      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
+      (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 10 people (Dynamic Tech Media, 2024-09-01); founded 2013.
+  notes: 'No job board found on the company''s site. Headcount note: Ten full-time employees (Sept 2024, month only,
+    via search snippet); Bounce Watch lists 11; Built In lists 2 (stale). Founded: https://coloradobiz.com/tech-startup-living-ink-technologies/.
+    Stage: $3M investment to scale Algae Black (Packworld, undated); CB Insights total $8M over 13 rounds, latest
+    a $0.25M competition award 2025-11-13; other aggregators give $2.8M-$4.9M. No named venture series found. Evidence:
+    https://www.livingink.co/ https://coloradobiz.com/tech-startup-living-ink-technologies/ https://dynamictechmedia.com/living-ink/
+    https://www.packworld.com/sustainable-packaging/bio-based/news/22938707/living-ink-technologies-living-ink-secures-funding-for-pigment-made-from-biomass-waste
+    Region sources: nlr-annual-2026. Confidence: medium. Unresolved: Stage (likely seed). Founded 2013 by two CSU
+    PhD students (search snippet). Algae Black named a TIME Best Invention of 2026 (site).'
+- id: longpath-technologies
+  name: LongPath Technologies
+  website: https://www.longpathtech.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2018
+  headcount:
+    value: 35
+    as_of: '2026-11-24'
+    source: Built In Colorado; undated, so as_of is the day it was read (https://www.builtincolorado.com/company/longpath-technologies)
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 35 people (Built In Colorado; undated, so as_of is the day it was read, 2026-11-24); founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Built In figure, undated. Site also lists an
+    office in Midland, TX. Founded: https://www.builtincolorado.com/company/longpath-technologies. Stage: Site reports
+    first disbursement of a $162 million US DOE loan; no venture round found in this pass (Dealroom slugs 404).
+    Flags: main customers are oil and gas operators. Evidence: https://longpathtech.com https://www.builtincolorado.com/company/longpath-technologies
+    Region sources: oedit-ai, cu-vp-portfolio, cu-vp-climate, builtin-co-greentech. Confidence: medium. Unresolved:
+    Venture stage and rounds not found.'
+- id: mach-electric
+  name: Mach Electric
+  website: null
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Process that produces aerospace-grade carbon fiber while directly sequestering CO2, for automotive and
+      aerospace.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: CU Venture Partners portfolio lists funding stage ''Pre-Seed''
+    (page updated 2025-12-05, https://www.colorado.edu/venturepartners/startup-portfolio/mach-electric-inc). Evidence:
+    https://www.colorado.edu/venturepartners/startup-portfolio/mach-electric-inc Region sources: cu-lvc, cu-ascent.
+    Confidence: medium. Unresolved: No website listed (LinkedIn only). Co-founder Spencer Dansereau. Founded, headcount.'
+- id: mana-battery
+  name: Mana Battery
+  website: https://www.manabattery.us
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - battery-materials
+  stage: seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-ion battery cells and electrolytes for mobility, stationary storage and defense applications.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Founded: https://www.colorado.edu/venturepartners/startup-portfolio/mana-battery-inc.
+    Stage: Dealroom news: $10.15M raised through a convertible note, 2026-10-09; Fundz: $10.15M seed led by Voyager
+    Ventures, 2026-10-12; Caplight dates a seed round to 2026-04-01; ARPA-E $500K award (Oct 2024-Apr 2026); joint
+    agreement with Saft (Aug 2026). Flags: CU Boulder spinout (founded Oct 2023). Evidence: https://manabattery.us
+    https://www.colorado.edu/venturepartners/startup-portfolio/mana-battery-inc https://dealroom.co/news/161124-mana-raises-10-15m-for-anode-free-china-free-sodium-battery/
+    https://app.fundz.net/companies/mana-battery https://www.ess-news.com/2026/08/06/us-french-partnership-targets-anode-free-sodium-ion-battery-commercialization/
+    Region sources: ccia-members, ccia-celebration, oedit-ai, cu-vp-ai, nlr-westgate-alumni, nlr-annual-2026, cu-vp-portfolio,
+    cu-vp-battery, cu-lvc, cu-ascent, cu-vp-climate, cu-mse-spinoffs, cu-oedit-2024, cu-startups-2025. Confidence:
+    medium. Unresolved: Headcount; primary announcement of the $10.15M round'
+- id: marvel-fusion
+  name: Marvel Fusion
+  website: https://www.marvelfusion.com
+  careers_url: null
+  hq: Munich, Germany
+  ats:
+    type: greenhouse
+    board: marvelfusion
+  read: auto
+  sectors:
+  - fusion
+  stage: series-b
+  founded: 2019
+  headcount:
+    value: 120
+    as_of: '2026-11-24'
+    source: Marvel Fusion website (https://marvelfusion.com)
+  climate:
+    tier: core
+    reason: 'Laser-driven inertial fusion technology: industrial laser systems, neutron sources and planned fusion
+      power plants; building a laser facility with Colorado State University in Fort Collins.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 120 people (Marvel Fusion website, 2026-11-24); founded 2019, funding round reported in 2025.
+  notes: 'Board greenhouse:marvelfusion seen 2026-11-24, token matched by name; board page checked: 18 open roles.
+    Headcount note: Own site says ''120+ scientists, engineers, and entrepreneurs'' (undated, fetched 2026-11-24);
+    Dealroom shows 112, band 100-500 Founded: https://marvelfusion.com. Stage: Dealroom: Series B, March 2025, $55M
+    (EIC Fund, EQT Ventures, Bayern Kapital, Tengelmann); own site cites EUR 385M total private and public funding.
+    Flags: HQ outside region (Munich, Germany); US site in Fort Collins, CO. Evidence: https://marvelfusion.com
+    https://dealroom.co/companies/marvel-fusion Region sources: ccia-members, search-snippets. Confidence: high.'
+- id: minus-materials
+  name: Minus Materials
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Biogenic limestone grown by calcareous microalgae for lower-carbon cement and concrete.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: CU Boulder Venture Partners lists pre-seed (page updated
+    Aug 2024); $125K Lab Venture Challenge; Fast Company reports seed investment from SOSV / IndieBio SF. Flags:
+    CU Boulder spinout. Evidence: https://www.colorado.edu/venturepartners/startup-portfolio/minus-materials-inc
+    https://indiebio.co/?p=16709 https://www.colorado.edu/today/2022/06/23/cities-future-may-be-built-algae-grown-limestone
+    Region sources: cu-mse-spinoffs, lowercarbon-portfolio. Confidence: medium. Unresolved: Founded year, domain,
+    headcount; stage pre-seed vs seed (SOSV).'
+- id: new-day-hydrogen
+  name: New Day Hydrogen
+  website: https://newdayhydrogen.com/
+  careers_url: null
+  hq: Englewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: pre-seed
+  founded: 2020
+  headcount:
+    value: 1
+    as_of: '2026-11-24'
+    source: Prospeo (search snippet) (https://prospeo.io/c/new-day-hydrogen)
+  climate:
+    tier: core
+    reason: Containerized HubStarter systems that produce hydrogen on site from water and electricity and fuel vehicle
+      fleets, sold as fueling-as-a-service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (Prospeo (search snippet), 2026-11-24); founded 2020.
+  notes: 'No job board found on the company''s site. Headcount note: Prospeo band 1-10; undated aggregator estimate
+    Founded: https://prospeo.io/c/new-day-hydrogen. Stage: Finta case study: closed a pre-seed round that unlocked
+    State of Colorado matching funds (amount/date not given); partner with Colorado State University on an ~$8.9M
+    federal grant for three I-25 hydrogen fueling stations. Evidence: https://newdayhydrogen.com https://trustfinta.com/case-study/new-day-hydrogen
+    https://news.yahoo.com/csu-day-hydrogen-awarded-nearly-130121641.html https://fuelcellsworks.com/news/colorado-state-university-to-develop-public-hydrogen-fueling-stations-with-8-9-million-federal-grant
+    Region sources: ccia-members, yellowscene-hydrogen. Confidence: medium. Unresolved: Founding year only from
+    an aggregator; pre-seed amount; HQ city'
+- id: new-iridium
+  name: New Iridium
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Light-driven photocatalysis platform for low-carbon chemicals from biomass and CO2 feedstocks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Founded: https://www.nature.com/articles/d41586-023-01647-0.pdf.
+    Stage: $2.65M seed led by Radicle Growth (with Evergreen Climate Innovations, Climate Insiders), announced June
+    2025; CB Insights total $5.57M, Bounce Watch $3.48M. Evidence: https://www.colorado.edu/venturepartners/startup-portfolio/new-iridium-inc
+    https://www.cbinsights.com/company/new-iridium https://www.nature.com/articles/d41586-023-01647-0.pdf Region
+    sources: fundraise-insider-co. Confidence: medium. Unresolved: Founded year disputed (2018 vs 2020); Nature
+    says CSU spinout while CU Boulder Venture Partners lists it; domain; headcount.'
+- id: niocorp-developments
+  name: NioCorp Developments
+  website: https://www.niocorp.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Niobium, scandium and rare-earth mine project; mining is out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (202). Stage: Publicly listed (Nasdaq: NB) from general knowledge;
+    not verified this session (site and Wikipedia fetches empty or 404). Flags: mining project developer (pre-production);
+    project outside region (Nebraska). Region sources: fundraise-insider-co. Confidence: low. Unresolved: All facts
+    unverified this session; founded, headcount, listing.'
+- id: nodiac
+  name: Nodiac
+  website: https://www.nodiac.ai
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Develops and runs small modular data centers; computing itself is out (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found. JDA with PowerBank Corp to colocate
+    1-20 MW containerized data centers with solar and storage; LOI with SkyVolt Energy (DCD). Flags: main customers
+    are AI companies; data center developer/operator; also has a Brooklyn, NY office; one startup directory says
+    founded 2025 (unconfirmed). Evidence: https://nodiac.ai https://www.datacenterdynamics.com/en/news/nodiac-partners-with-powerbank-to-colocate-modular-data-centers-with-solar-and-bess-across-north-america/
+    https://startup-seeker.com/company/nodiac~ai Region sources: ccia-members. Confidence: medium. Unresolved: Founding
+    year, headcount, funding'
+- id: nova-terra
+  name: Nova Terra
+  website: https://novaterrausa.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: EcoBlox cement-free, fireproof, decarbonized compressed-earth masonry blocks made from sustainable materials
+      in Colorado.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://novaterrausa.com Region sources: nlr-westgate-alumni.
+    Confidence: medium. Unresolved: Founded, headcount, funding. Site gives a PO Box in Golden. Similar product
+    to Colorado Earth (ecoBlocks); relationship not checked.'
+- id: omc-hydrogen
+  name: OMC Hydrogen
+  website: https://omcthermo.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Thermochemical (isothermal redox) process and reactors for green hydrogen and syngas from water and
+      CO2, driven by renewable electricity, waste heat or solar heat; now named OMC Thermochemistry.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Own site lists six team members Stage: CU Boulder
+    Venture Partners page lists funding stage ''Series A Round'' with no amount (likely what it is raising); won
+    a 2023 DOE competition; Third Derivative cohort 22-2. Flags: CU Boulder spinout. Evidence: https://www.omcthermo.com/
+    https://www.colorado.edu/venturepartners/omc-hydrogen https://third-derivative.org/portfolio/omc-h2 Region sources:
+    oedit-ai. Confidence: medium. Unresolved: Founding year, headcount, funding; HQ conflict'
+- id: optibike
+  name: Optibike
+  website: https://www.optibike.com
+  careers_url: null
+  hq: Paonia, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Custom high-performance electric bikes designed and hand-built in Colorado, with in-house PowerStorm
+      motor and battery systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://optibike.com Region sources: bs-co-ev. Confidence:
+    medium. Unresolved: Founding year not stated (site says ''Celebrating 20 Years'', started in a Boulder garage);
+    headcount and funding not found.'
+- id: orva-energy
+  name: Orva Energy
+  website: https://orvaenergy.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Beyond-lithium battery cathode materials from earth-abundant, domestically sourced elements, discovered
+      with machine learning.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: CU Lab Venture Challenge 2026 finalist (https://www.colorado.edu/venturepartners/node/2952,
+    2026-09-15); West Gate cohort 5 innovator Evan Flitz (https://www.nlr.gov/west-gate/innovators). No rounds found;
+    pre-seed inferred. Flags: early stage (research). Evidence: https://www.colorado.edu/venturepartners/node/2952
+    https://www.nlr.gov/west-gate/innovators Region sources: nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators,
+    cu-lvc. Confidence: medium. Unresolved: orvaenergy.com failed TLS check (Squarespace), so domain not verified.
+    Co-founders Evan Flitz and Chunmei Ban (CU Boulder). Founded, headcount.'
+- id: osmopure-technologies
+  name: Osmopure Technologies
+  website: https://www.osmopuretechnologies.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Partner logos include NASA, DOE, NSF, NRL, Activate
+    and West Gate; no funding figures. Flags: site copyright 2024 only. Evidence: https://osmopuretechnologies.com
+    Region sources: oedit-ai, cu-vp-ai, nlr-annual-2025, nlr-annual-2026, nlr-westgate-innovators, cu-lvc, cu-ascent,
+    cu-oedit-2025. Confidence: medium. Unresolved: HQ (Boulder per input), founding year, headcount, funding'
+- id: otoro-energy
+  name: OTORO Energy
+  website: https://www.otoroenergy.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: seed
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Non-flammable, pH-neutral flow battery (metal chelate electrolyte) for 10+ hour grid storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020, funding round reported in 2022.
+  notes: 'No job board found on the company''s site. Founded: https://www.colorado.edu/venturepartners/startup-portfolio/otoro-energy-inc.
+    Stage: CU RASEI (2021-10-25): seed investment from an unnamed major US utility plus a $4.14M DOE award with
+    partners; own site cites ''$5M+'' raised; a 2022 application said it was seeking $25M (not confirmed closed).
+    Flags: CU Boulder spinout. Evidence: https://otoroenergy.com https://www.colorado.edu/venturepartners/startup-portfolio/otoro-energy-inc
+    https://www.colorado.edu/rasei/2021/10/25/otoro-energy-receives-4m-seed-funding https://www.energy-storage.news/us-doe-puts-us18m-into-long-duration-energy-storage-manufacturing-rd/
+    Region sources: oedit-ai, spl-ai-report-2022, cu-vp-portfolio, cu-vp-battery, cu-lvc, cu-vp-climate. Confidence:
+    medium. Unresolved: Headcount; seed amount; any later round'
+- id: outward-technologies
+  name: Outward Technologies
+  website: https://outward.tech
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Solar concentrators now aimed at space and lunar use; space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: now focused on space/lunar applications, not terrestrial
+    clean energy. Evidence: https://outward.tech/ Region sources: oedit-ai. Confidence: medium. Unresolved: Founding
+    year, headcount, funding'
+- id: page-technologies
+  name: PAGE Technologies
+  website: https://pagetechnologies.io
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: pre-commercial (field testing, early access). Evidence:
+    https://pagetechnologies.io Region sources: ccia-members, cu-mse-spinoffs. Confidence: medium. Unresolved: HQ
+    (Boulder per input, not on site), founding year, headcount, funding'
+- id: palanquin-power
+  name: Palanquin Power
+  website: https://palanquinpower.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Rack-level power conversion hardware, first for data centers (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grants only: Colorado Advanced Industries grant, NSF
+    SBIR Phase I; UT Austin spinout supported by NREL. Flags: main customers are data centers; pre-commercial. Evidence:
+    https://palanquinpower.com Region sources: oedit-ai, nlr-annual-2025, nlr-westgate-alumni. Confidence: medium.
+    Unresolved: Founding year, headcount, equity funding'
+- id: pegi-llc
+  name: PEGI LLC
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Germicidal treatment for HVAC coils; energy savings are secondary.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Ascent Deep Tech Accelerator 2026 cohort (https://www.colorado.edu/venturepartners/2026/02/12/internal-news/university-colorado-ascent-deep-tech-accelerator-announces-2026-cohort).
+    Related PEGI sterilizer startup SteriO3 won 2024 LVC. Pre-seed inferred. Flags: early stage (university spinout).
+    Evidence: https://www.colorado.edu/venturepartners/2026/02/12/internal-news/university-colorado-ascent-deep-tech-accelerator-announces-2026-cohort
+    https://www.colorado.edu/engineering/record-cuengineering-startups Region sources: cu-ascent, cu-ascent-2026.
+    Confidence: medium. Unresolved: Domain, founded, headcount. Founder/CTO Emma Biesiada; advisor Mark Hernandez.'
+- id: prieto-battery
+  name: Prieto Battery
+  website: https://www.prietobattery.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: series-b
+  founded: 2009
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-ion batteries for defense, data-center and critical-infrastructure customers (replacing its earlier
+      3D solid-state lithium-ion design).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2009 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to get local issuer certificate (_ssl.c:1035)). Founded: https://dealroom.co/companies/prieto-battery.
+    Stage: Dealroom: total equity funding $10-50M; investors Stout Street Capital (Series A), Intel Capital, Stanley
+    Ventures and Pilatus Capital (Series B and later). Latest round date not shown. Flags: prietobattery.com redirects
+    to prieto.com, a live site (copyright 2026); CSU spin-out. Evidence: https://prieto.com/ https://dealroom.co/companies/prieto-battery
+    Region sources: csu-strata, bs-co-cleantech, inven-co-storage, inven-co-powerelec. Confidence: medium. Unresolved:
+    Date of the latest equity round.'
+- id: project-canary
+  name: Project Canary
+  website: https://www.projectcanary.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: pinpoint
+    board: projectcanary
+  read: manual
+  sectors: []
+  stage: series-b
+  founded: 2019
+  headcount:
+    value: 76
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/project-canary)
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 76 people (Dealroom, 2026-11-24); founded 2019, funding round reported in 2022.
+  notes: 'Board pinpoint:projectcanary seen 2026-11-24, linked from the company''s own site: 4 open roles. Headcount
+    note: Dealroom current team size 76, undated, down 14.6% year on year Founded: https://en.wikipedia.org/wiki/Project_Canary.
+    Stage: Series A $10M Apr 2021; Series B $111M Feb 2022 led by Insight Partners; acquired Aeris Technologies
+    (laser gas analyzers, Hayward CA) Mar 2022 (https://en.wikipedia.org/wiki/Project_Canary, https://prnewswire.com/news-releases/project-canary-announces-acquisition-of-aeris-technologies-expanding-services-beyond-oil-and-gas-301509618.html)
+    Flags: main customers are oil and gas operators; hardware plus data/software. Evidence: https://www.projectcanary.com
+    https://en.wikipedia.org/wiki/Project_Canary https://dealroom.co/companies/project-canary Region sources: builtin-co-greentech.
+    Confidence: high. Unresolved: Founding year conflict: Wikipedia 2019, Dealroom 2018.'
+- id: prometheus-materials
+  name: Prometheus Materials
+  website: https://prometheusmaterials.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: series-a
+  founded: 2021
+  headcount:
+    value: 16
+    as_of: '2026-11-24'
+    source: PitchBook (search snippet) (https://pitchbook.com/profiles/company/483680-80)
+  climate:
+    tier: core
+    reason: ProZERO, a carbon-negative bio-based supplemental blend that replaces part of the cement in ready-mix,
+      precast, block and pavers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 16 people (PitchBook (search snippet), 2026-11-24); founded 2021, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: PitchBook 16 (undated); Prospeo band 11-20
+    Founded: https://www.colorado.edu/venturepartners/startup-portfolio/prometheus-materials-inc. Stage: Series
+    A $8M in 2022 led by Sofinnova Partners (Microsoft also an investor); PitchBook lists Series A1 (Jul 2024) and
+    Series A3 $10.5M (Jan 2026), total $24.8M; CB Insights says $14.25M over two rounds. Flags: CU Boulder spinout.
+    Evidence: https://prometheusmaterials.com https://pitchbook.com/profiles/company/483680-80 https://www.cpr.org/2022/06/20/bio-cement-prometheus-materials/
+    https://www.cbinsights.com/company/prometheus-materials Region sources: ccia-members, cu-vp-portfolio, cu-vp-climate,
+    cu-mse-spinoffs. Confidence: medium. Unresolved: Later round amounts not confirmed against a primary source'
+- id: quest-thermal-group
+  name: Quest Thermal Group
+  website: https://questthermal.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Cryogenic insulation whose main customers are NASA and aerospace primes.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Own site: developing technology for NASA and
+    aerospace primes ''since 2006'' (not stated as founding year) Flags: main customers are NASA and aerospace primes.
+    Evidence: https://www.questthermal.com Region sources: oedit-ai. Confidence: medium. Unresolved: Founding year,
+    headcount, funding'
+- id: radia
+  name: Radia
+  website: https://radia.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-c
+  founded: 2016
+  headcount:
+    value: 83
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/radia)
+  climate:
+    tier: out
+    reason: Very large fuel-burning cargo aircraft for wind blades and military airlift; no electric or emissions
+      case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 83 people (Dealroom, 2026-11-24); founded 2016, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''current team size'' 83; undated,
+    as_of is fetch date Founded: https://dealroom.co/companies/radia. Stage: Dealroom: Series B May 2022 $65M (reported
+    $1B valuation); Series C Mar 2024 $35M; company says more than $150M raised; was raising up to $300M from 2024
+    (https://dealroom.co/companies/radia) Flags: home page pitches defense airlift and commercial logistics as its
+    two markets; wind blades not stressed on home page; aircraft still in development. Evidence: http://radia.com/
+    https://dealroom.co/companies/radia Region sources: inven-co-renewable. Confidence: medium. Unresolved: Whether
+    wind-blade transport is still the primary market vs defense; no first-flight date found.'
+- id: rapicure-solutions
+  name: RapiCure Solutions
+  website: https://www.rapicuresolutions.com/
+  careers_url: null
+  hq: Loveland, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Fast-curing resin for infrastructure repair; no climate case found.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive only: NSF SBIR Fast-Track award (Aug 2025),
+    Colorado OEDIT grants (Nov 2023), Chevron Technology Ventures Catalyst Program (Jul 2026). Evidence: https://rapicuresolutions.com
+    Region sources: ccia-members, oedit-ai-2023nov. Confidence: medium. Unresolved: Founding year, headcount, equity
+    funding'
+- id: rare-earths-americas
+  name: Rare Earths Americas
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 2025
+  headcount: null
+  climate:
+    tier: out
+    reason: Rare-earth mining exploration; mining is out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025, public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Founded: https://www.miningstockeducation.com/2025/08/rare-earths-americas-launches-us-brazil-platform-to-pursue-heavy-rare-earth-supply/.
+    Stage: IPO on NYSE American (REA) May 2026 raised $63.3M at about $368M valuation (mining.com; Mining Weekly
+    2026-04-29). Flags: mining exploration company; projects outside region (Brazil, Georgia). Evidence: https://www.miningweekly.com/article/rare-earths-americas-announces-ipo-on-nyse-2026-04-29
+    https://www.mining.com/?p=1205674 https://www.semafor.com/article/05/07/2026/rare-earth-americas-bets-on-trump-backed-mining-boom
+    Region sources: fundraise-insider-co. Confidence: medium. Unresolved: Domain, headcount. Not to be confused
+    with American Rare Earths (ASX: ARR, Lakewood office).'
+- id: rare-flora
+  name: Rare Flora
+  website: https://rareflora.bio
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Phytomining of rare earths from mine tailings; mineral extraction is out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: West Gate cohort 4 (2025-27), status ''Prototype'',
+    seeking funding (https://www.nlr.gov/west-gate/ying-sun-plant-based-mining). Flags: mineral extraction (phytomining).
+    Evidence: https://www.rareflora.bio/ https://www.nlr.gov/west-gate/ying-sun-plant-based-mining Region sources:
+    nlr-annual-2025, nlr-westgate-innovators. Confidence: medium. Unresolved: HQ, founded, headcount, stage. Co-founder
+    Ying Sun.'
+- id: rebound-technologies
+  name: Rebound Technologies
+  website: https://www.rebound-tech.com
+  careers_url: null
+  hq: Commerce City, CO
+  ats:
+    type: breezy
+    board: rebound-technologies
+  read: manual
+  sectors:
+  - industrial-heat
+  - energy-storage
+  stage: null
+  founded: 2012
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: Built In Colorado (https://www.builtincolorado.com/company/rebound-technologies)
+  climate:
+    tier: core
+    reason: IcePoint freeze-point-suppression cooling and AgileEnergy systems that store industrial cooling as ice
+      for cold chain and food processing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 9 people (Built In Colorado, 2026-11-24); founded 2012.
+  notes: 'Board breezy:rebound-technologies seen 2026-11-24, linked from the company''s own site: 0 open roles.
+    Headcount note: Built In total 9, undated Founded: https://www.builtincolorado.com/company/rebound-technologies.
+    Evidence: https://www.rebound-tech.com https://www.builtincolorado.com/company/rebound-technologies Region sources:
+    fundraise-insider-co, builtin-co-energy, elemental-portfolio, cev-portfolio. Confidence: medium. Unresolved:
+    Funding stage not found (Dealroom slug 404).'
+- id: renegade-plastics
+  name: Renegade Plastics
+  website: https://renegadeplastics.com/
+  careers_url: null
+  hq: Denver, CO per own site
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: PVC-free coated fabrics and tarps. Recycled or bio-based materials; the climate case is lower-carbon
+      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
+      materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/renegade-plastics.
+    Stage: Pre-seed round led by Schneider Resources Holding, May 2024 (PR Newswire); Closed Loop Partners catalytic
+    loan, Oct 2026 (Waste Dive, Dealroom news). Flags: HQ conflict: Denver/Golden, CO vs Green Bay, WI. Evidence:
+    https://renegadeplastics.com https://prnewswire.com/news-releases/renegade-plastics-closes-pre-seed-investment-led-by-schneider-resources-holding-302139339.html
+    https://www.wastedive.com/news/recycled-plastic-textile-maker-gets-loan-boost-from-closed-loop-partners/873005/
+    https://www.plasticstoday.com/sustainability/closed-loop-partners-backs-startup-s-pp-fabric Region sources:
+    ccia-members. Confidence: medium. Unresolved: Headcount, round amounts'
+- id: rhea-s-factory
+  name: Rhea's Factory
+  website: https://rheasfactory.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Enzymes that break down plastic and textile waste. Recycled or bio-based materials; the climate case
+      is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the
+      owner's call on materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: West Gate cohort 5, status ''Prototype'', seeking funding
+    for first commercial demonstration plant (https://www.nlr.gov/west-gate/innovators/arzu-sandıkçı-enzymes-for-recycling).
+    Supporters listed on site: Berkeley SkyDeck, H&M Foundation Global Change Award 2026 winner, Clean Tech Open.
+    Pre-seed inferred. Evidence: https://rheasfactory.com https://www.nlr.gov/west-gate/innovators Region sources:
+    nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators. Confidence: medium. Unresolved: HQ (Berkeley SkyDeck
+    link suggests California origin), founded, headcount. CEO Arzu Sandıkçı.'
+- id: rindev
+  name: RINDEV
+  website: https://rindev.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Unity, an electric side-by-side off-road vehicle (500+ peak hp, up to 350 miles range), taking preorders.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: pre-production (preorders only). Evidence: https://rindev.com
+    Region sources: bs-co-ev. Confidence: low. Unresolved: City, founding, headcount, funding not found; Dealroom
+    slug 404.'
+- id: rushnu
+  name: Rushnu
+  website: https://www.rushnu.com
+  careers_url: null
+  hq: Livermore, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: On-site modular units that capture industrial CO2 and waste heat to produce chlorine, bleach, hydrochloric
+      acid and carbonated minerals (precipitated calcium carbonate).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023, funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Founded: https://rushnu.com/team. Stage: Bounce Watch: $100K
+    pre-seed Oct 2022 and a seed investment from mHUB on 2023-09-29; PitchBook total raised $1.41M; CB Insights
+    $200K over 6 rounds. Aggregator data only; own team page says founded 2023 (conflicts with a 2022 pre-seed).
+    Flags: HQ outside region (California); Colorado site (Golden, NLR West Gate) not confirmed. Evidence: https://rushnu.com
+    https://rushnu.com/team https://pitchbook.com/profiles/company/503572-96 https://www.cbinsights.com/company/rushnu
+    https://bouncewatch.com/company/rushnu Region sources: ccia-members, nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators.
+    Confidence: medium. Unresolved: Colorado presence, headcount, confirmed round sizes'
+- id: scoggins-enterprises
+  name: Scoggins Enterprises
+  website: null
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2003
+  headcount:
+    value: 5
+    as_of: '2026-11-24'
+    source: Built In Colorado (https://www.builtincolorado.com/company/scoggins-enterprises)
+  climate:
+    tier: out
+    reason: Diesel-engine efficiency devices for oilfield service companies.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 5 people (Built In Colorado, 2026-11-24); founded 2003 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total 5, undated Founded: https://www.builtincolorado.com/company/scoggins-enterprises.
+    Flags: main customers are frac / oil and gas service companies. Evidence: https://www.builtincolorado.com/company/scoggins-enterprises
+    Region sources: builtin-co-greentech. Confidence: low. Unresolved: No website; whether technology is a physical
+    product; current status.'
+- id: seditio
+  name: Seditio
+  website: https://sedit.io/
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: GPU compute clusters sited with solar and batteries; computing itself is out (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: main customers are AI compute buyers (model labs, hyperscalers);
+    sells compute, not hardware; no evidence of operating sites. Evidence: https://sedit.io Region sources: ccia-members.
+    Confidence: medium. Unresolved: HQ, founding year, headcount, funding; operating status of any site'
+- id: sensatek-propulsion-technology
+  name: Sensatek Propulsion Technology
+  website: https://www.sensatek.com
+  careers_url: null
+  hq: Daytona Beach, FL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2015
+  headcount:
+    value: 7
+    as_of: '2026-03-01'
+    source: LeadIQ (https://leadiq.com/c/sensatek-propulsion-technology-inc/5a1dbc8c2300005c00babc4b)
+  climate:
+    tier: out
+    reason: Wireless sensors for turbine engines, partly for defense; no climate case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 7 people (LeadIQ, 2026-03-01); founded 2015.
+  notes: 'No job board found on the company''s site. Headcount note: LeadIQ estimate about 7 (March 2026, month
+    only); PitchBook 9; Parsers.vc band 11-50; all via search snippets. Founded: https://incubator.ucf.edu/sensatek/.
+    Stage: Venture backers listed on site: Rhapsody Venture Partners, Constellation Energy, Invenergy; R&D support
+    from NSF, DOE, AFWERX. No round names found. Flags: HQ outside region (Colorado presence is West Gate cohort
+    3, Golden); some defense R&D funding (AFWERX). Evidence: https://sensatek.com https://incubator.ucf.edu/sensatek/
+    https://leadiq.com/c/sensatek-propulsion-technology-inc/5a1dbc8c2300005c00babc4b https://www.bloomberg.com/profile/company/1643662D:US
+    Region sources: nlr-westgate-alumni. Confidence: medium. Unresolved: Stage. Founded November 2015 to commercialize
+    UCF technology (snippet). Turbine customers include power generation and aerospace OEMs; defense share unknown.'
+- id: silvis-materials
+  name: Silvis Materials
+  website: https://silvismaterials.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: out
+    reason: Bio-based polymer binder. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
+      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
+      (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Founded: https://silvismaterials.com. Stage: NSF SBIR Phase
+    I $400K (2022) and Phase II $1M (2023); OEDIT and LaunchTN support; investors/accelerators thanked include Techstars,
+    GFI Partners, MIT E14 Fund; no priced round found. Flags: pre-commercial (pilots in 2026). Evidence: https://silvismaterials.com
+    Region sources: oedit-ai, bs-co-cleantech, fundraise-insider-co. Confidence: medium. Unresolved: Headcount,
+    equity round'
+- id: simplesub-water
+  name: SimpleSUB Water
+  website: https://simplesubwater.com
+  careers_url: null
+  hq: Wheat Ridge, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.simplesubwater.com Region sources: oedit-ai-2023nov.
+    Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: sionic-energy
+  name: Sionic Energy
+  website: https://sionicenergy.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: 2011
+  headcount:
+    value: 15
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/sionic-energy)
+  climate:
+    tier: core
+    reason: Silicon-anode lithium-ion cell technology (electrolyte plus silicon anode) licensed to cell makers as
+      factory-ready IP.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 15 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2011.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100. Founded:
+    https://dealroom.co/companies/sionic-energy. Stage: Formerly Nohms Technologies. Dealroom: $12M late-stage VC
+    round July 2021 (Phoenix Venture Partners and others); $200K grant April 2025; total $10-50M. Series letter
+    not given. Flags: licenses IP rather than manufacturing at scale; HQ sources disagree (Boulder vs Rochester,
+    NY). Evidence: https://sionicenergy.com https://dealroom.co/companies/sionic-energy Region sources: cu-vp-portfolio.
+    Confidence: medium. Unresolved: Current HQ; stage letter; physical unclear because the business model is IP
+    licensing of a cell technology.'
+- id: skyhook-solar
+  name: Skyhook Solar
+  website: https://skyhooksolar.com
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Transportable industrial-grade solar generators ('Solar Stations') with battery storage and EV / e-bike
+      charging.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ now Grand Junction per site footer, not Aspen. Evidence:
+    https://skyhooksolar.com Region sources: inven-co-storage. Confidence: medium. Unresolved: Founding year (site
+    says ''5 Years of Experience''), headcount and funding not found; Dealroom slug 404.'
+- id: source-energy
+  name: Source Energy
+  website: https://source.space
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Solar modules and arrays for satellites; space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No job board found on the company''s site. Founded: https://www.linkedin.com/company/source-space. Stage:
+    Listed in F4 Fund portfolio; no round details found. Flags: space solar for satellites, not terrestrial clean
+    energy; LinkedIn describes it as a defense and space manufacturer. Evidence: https://source.space https://www.linkedin.com/company/source-space
+    https://f4.fund/startups/source-space https://www.nanosats.eu/org/source Region sources: oedit-ai. Confidence:
+    medium. Unresolved: Headcount, funding; share of defense customers'
+- id: spark-ionx
+  name: Spark Ionx
+  website: https://sparkionx.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: TuffBrane patented anion exchange membranes for electrolyzers (and other electrochemical devices).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site: accepted into Creative Destruction Lab (CDL);
+    no funding figures. Evidence: https://www.sparkionx.com https://members.wtcdenver.org/active-member-listing/Details/spark-ionx-inc-3229916
+    Region sources: oedit-ai, spl-ai-report-2022. Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: sphere-renewables
+  name: Sphere Renewables
+  website: https://sphere-renewables.com
+  careers_url: null
+  hq: Commerce City, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Components and logistics for wind, solar and storage projects.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: mix of manufacturing and logistics/distribution; facilities
+    in USA, Mexico, Europe, China. Evidence: https://sphere-renewables.com Region sources: inven-co-renewable. Confidence:
+    medium. Unresolved: Site lists Sphere North (Fort Lupton) and Sphere South (Commerce City) but no named HQ;
+    founding (''over 15 years of experience''), headcount and ownership not found.'
+- id: stalagmite
+  name: Stalagmite
+  website: https://stalagmite.io
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Mine-water treatment that recovers cobalt and other battery metals; customers are mining operators.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: West Gate cohort 5 (2026-28), seeking funding (https://www.nlr.gov/west-gate/innovators/ryan-herz-thyhsen-critical-minerals-from-mine-waste).
+    Flags: main customers are mining operators. Evidence: https://stalagmite.io/ https://www.nlr.gov/west-gate/innovators/ryan-herz-thyhsen-critical-minerals-from-mine-waste
+    Region sources: nlr-annual-2025, nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators. Confidence: medium.
+    Unresolved: HQ, founded, headcount, stage. Site says ''Water treatment for mining, built by miners''. Director
+    Ryan Herz-Thyhsen.'
+- id: starfire-energy
+  name: Starfire Energy
+  website: https://www.starfireenergy.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: series-b
+  founded: 2007
+  headcount:
+    value: 2
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/starfire-energy)
+  climate:
+    tier: core
+    reason: Modular carbon-free ammonia synthesis plants (Rapid Ramp NH3) and ammonia cracking systems (Prometheus
+      Carbon-free Fire) that run on intermittent wind and solar power.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 2 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); funding round reported in
+      2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''at a glance'' says 2 employees and
+    a band of under 100; undated and doubtful (same page lists six open Denver roles). Founded: https://dealroom.co/companies/starfire-energy.
+    Stage: Series B $24M, Oct/Nov 2022 (Dealroom; Axios says led by Samsung Ventures, https://www.axios.com/pro/climate-deals/2022/11/01/starfire-energy-series-b-samsung-ventures-ammonia-production).
+    Dealroom text says $39.6M raised over nine rounds as of late 2023. Flags: company website shows only an empty
+    directory listing (2026-11-24); may be inactive. Evidence: https://starfireenergy.com https://dealroom.co/companies/starfire-energy
+    https://www.axios.com/pro/climate-deals/2022/11/01/starfire-energy-series-b-samsung-ventures-ammonia-production
+    Region sources: oedit-ai, siteselection-clean, search-snippets. Confidence: medium. Unresolved: Current status:
+    site is an empty ''Index of /'' page and no 2026 news found. Founded 2007 as solar company, pivoted to ammonia
+    2016.'
+- id: steelhead-composites
+  name: Steelhead Composites
+  website: https://steelheadcomposites.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2012
+  headcount:
+    value: 30
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/steelhead-composites)
+  climate:
+    tier: enabling
+    reason: Composite pressure vessels for hydrogen and natural gas, also sold to aerospace and defense.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 30 people (Dealroom, 2026-11-24); founded 2012.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100; undated. Founded:
+    https://dealroom.co/companies/steelhead-composites. Stage: Dealroom: Aug 2024 $15M at $60M valuation; Jul 2023
+    $1.9M; investors include Rockies Venture Club, Denver Angels, WorldQuant Ventures; round labels not shown. Flags:
+    aerospace and defense is one of its main markets (alongside hydrogen and CNG). Evidence: https://steelheadcomposites.com
+    https://dealroom.co/companies/steelhead-composites Region sources: bs-co-cleantech, bs-co-cleanenergy, builtin-co-energy.
+    Confidence: medium. Unresolved: Round label for Aug 2024 raise.'
+- id: sturman-industries
+  name: Sturman Industries
+  website: null
+  careers_url: null
+  hq: Woodland Park, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Digital valves and hydraulics for engines; mostly R&D services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Sources disagree: LeadIQ shows about 11 (Dec
+    2024) and 45 US employees on the same page; a Gazette article from about 2009 said 41 after layoffs (75 earlier)
+    Flags: R&D / engineering services may be main business. Evidence: https://gazette.com/?p=625218 https://leadiq.com/c/sturman-industries/5a1d82c524000024005d8328/employee-directory?page=5
+    https://mapquest.com/us/colorado/sturman-industries-355130926 Region sources: coloradobiz-made. Confidence:
+    low. Unresolved: sturmanindustries.com refused connections; current product line and status not confirmed.'
+- id: sunpath
+  name: SunPath
+  website: https://sunpathtech.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Patented daylighting system that harvests sunlight with solar collectors and channels it indoors through
+      fiber optics, initially for indoor farming.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Third Derivative accelerator (cohort tag 417, https://third-derivative.org/startups/sunpath);
+    CB Insights lists incubator/accelerator stage with Wells Fargo Innovation Incubator and Third Derivative as
+    investors (search snippet). Site says ''SunPath is Coming Soon'' (pre-launch). Flags: pre-launch. Evidence:
+    https://third-derivative.org/startups/sunpath https://sunpathtech.com/ https://www.cbinsights.com/company/sunpath
+    Region sources: oedit-ai. Confidence: medium. Unresolved: Founded year, headcount. Identity matched via Third
+    Derivative profile; directory description (''technology for efficient buildings'') is generic. Not the Atlanta
+    installer Sunpath Solar.'
+- id: sustainable-chemicals
+  name: Sustainable Chemicals
+  website: null
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: Plant-based biopolymer for films. Recycled or bio-based materials; the climate case is lower-carbon
+      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
+      materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Founded: https://www.ptonline.com/articles/from-sugar-to-plastic-without-the-bug.
+    Flags: identity matched by name and product only (Plastics Technology article; page refuses automated fetch).
+    Evidence: https://www.ptonline.com/articles/from-sugar-to-plastic-without-the-bug Region sources: oedit-ai.
+    Confidence: low. Unresolved: Domain, city, shrink-film application, headcount, funding'
+- id: synforce
+  name: Synforce
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular photo-thermo-catalysis device using light and heat for carbon-free fuel production and destruction
+      of PFAS in water.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: CU Lab Venture Challenge 2025 finalist as Synforce (2025-09-24);
+    award of $125,000 listed under the name ''Synergia'' with the same team (PI Longji Cui) on 2025-10-27. Pre-seed
+    inferred. Flags: early stage (university research team); name differs between sources (Synforce vs Synergia).
+    Evidence: https://www.colorado.edu/venturepartners/2025/09/24/internal-news/get-front-row-seat-university-colorados-next-big-ideas-competing-750000
+    https://www.colorado.edu/venturepartners/2025/10/27/internal-news/755000-awarded-university-colorado-innovators-advance-their-discoveries
+    Region sources: cu-lvc, cu-ascent. Confidence: medium. Unresolved: Whether incorporated; domain, founded, headcount.'
+- id: tereform
+  name: Tereform
+  website: https://www.tereform.com
+  careers_url: null
+  hq: Englewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Recycles textile waste into nylon and polyester. Recycled or bio-based materials; the climate case is
+      lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's
+      call on materials (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own news: ''$1.25M Investment from AccelR8 and Toyota
+    Ventures'' (date not shown); also H&M Global Change Award and OEDIT proof-of-concept grant. Round name not stated;
+    mapped to pre-seed by size. Evidence: https://tereform.com Region sources: oedit-ai, nlr-westgate-alumni. Confidence:
+    medium. Unresolved: Founding year, headcount, round name/date'
+- id: terra-co2-technologies
+  name: Terra CO2 Technologies
+  website: https://www.terraco2.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2016
+  headcount:
+    value: 39
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/terraco2)
+  climate:
+    tier: core
+    reason: Low-carbon supplementary cementitious material (cement replacement) made from silicate rock feedstocks
+      from existing aggregate mines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 39 people (Dealroom, 2026-11-24); founded 2016.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100; undated. Founded:
+    https://dealroom.co/companies/terraco2. Stage: Dealroom: May 2026 $22M late-stage VC round led by All Aboard
+    at reported $125M valuation; July 2025 debt from SVB and Stifel; total equity $100-500M; series letter not shown.
+    Flags: Dealroom lists HQ as Vancouver, Canada (conflicts with Golden, CO). Evidence: https://dealroom.co/companies/terraco2
+    Region sources: bev-vcbacked, builtin-co-greentech, fundraise-insider-co. Confidence: medium. Unresolved: Own
+    site returned 403; HQ conflict; series label.'
+- id: terralux
+  name: TerraLUX
+  website: null
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: LED lighting modules; general lighting, no climate case under the rubric. Rebranded Sielo; status uncertain.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: rebranded as Sielo; sielo.com redirects to iepsys.com
+    (IEP Systems, emergency lighting inverters), relationship unclear. Evidence: https://www.terralux.com https://iepsys.com/
+    Region sources: coloradobiz-made. Confidence: low. Unresolved: Whether Terralux/Sielo was acquired or merged
+    into IEP Systems; founding; headcount.'
+- id: the-hemp-plastic-company
+  name: The Hemp Plastic Company
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2018
+  headcount:
+    value: 3
+    as_of: '2026-11-24'
+    source: aggregator listings (Datanyze/ZoomInfo); undated, so as_of is the day it was read (https://www.datanyze.com/companies/the-hemp-plastic/346744101)
+  climate:
+    tier: out
+    reason: Hemp-filled plastic resins. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
+      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
+      (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 3 people (aggregator listings (Datanyze/ZoomInfo); undated, so as_of is the day it was read, 2026-11-24);
+      founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Sources range from about 3 to 8 employees;
+    undated. Founded: https://www.builtincolorado.com/company/hemp-plastic-company. Stage: CB Insights total raised
+    $1.63M; no round label. Flags: one directory says established 2017. Evidence: https://www.builtincolorado.com/company/hemp-plastic-company
+    https://www.cbinsights.com/company/hemp-plastic https://www.plasticsmachinerymanufacturing.com/compounding/article/21151224/injection-molding
+    Region sources: builtin-co-greentech. Confidence: low. Unresolved: Own site (hempplastic.com) not checked; current
+    activity.'
+- id: tierra-metrics
+  name: Tierra Metrics
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Soil-emissions sensors for agriculture; measurement only.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Early-stage; pitched at 2025 Ascent Deep Tech Accelerator
+    showcase; underlying research part of a $2M UC Berkeley-led project Flags: very early stage (university spinout).
+    Evidence: https://www.colorado.edu/today/2025/11/20/window-underground-new-sensors-measure-emissions-soil-real-time
+    Region sources: cu-vp-climate. Confidence: low. Unresolved: Website, founding year, headcount, funding.'
+- id: trellisense
+  name: TrelliSense
+  website: https://trellisense.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: oil and gas listed first among target sectors (with
+    agriculture and landfills). Evidence: https://www.trellisense.com Region sources: oedit-ai, ceo-cap-2026feb.
+    Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: tynt-technologies
+  name: Tynt Technologies
+  website: https://www.tynt.io
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Dimmable glass and dynamic light-control film using reversible metal electrodeposition (RME), for windows,
+      skylights and smart glasses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom page for ''tynt'' appears merged with
+    an unrelated publisher-tools company (Salt Lake City, staff in Pakistan); headcount there not used. Founded:
+    https://tynt.io/about. Stage: Dealroom About text says $16.8M raised incl. Starlight Ventures and Prime Impact
+    Fund; investors grouped under Series A (Inovia, Verdex, Panorama) on a page that mixes two companies (https://dealroom.co/companies/tynt).
+    Not confirmed elsewhere. Evidence: https://tynt.io https://tynt.io/about https://dealroom.co/companies/tynt
+    https://www.colorado.edu/mse/startup-and-spinoff-companies Region sources: oedit-ai, cu-vp-portfolio, vcbacked-boulder,
+    cu-mse-spinoffs. Confidence: medium. Unresolved: Stage (possibly series-a; Dealroom record unreliable) and headcount.
+    CU Boulder spinout (Michael McGehee).'
+- id: vartega
+  name: Vartega
+  website: https://www.vartega.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2014
+  headcount: null
+  climate:
+    tier: out
+    reason: Carbon-fiber recycling. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
+      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
+      (see the region report).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2014, funding round reported in 2026.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''vartega.com''. (_ssl.c:1035)). Headcount note:
+    Dealroom shows 1 employee and band under 100 (inconsistent). Founded: https://dealroom.co/companies/vartega.
+    Stage: Dealroom: $11.2M Series A Dec 2023; Jan 2024 $10M round (Techstars, HG Ventures, Diamond Edge, Circular
+    Innovation Fund); Feb 2026 exempt offering filing for a planned $6M raise. Flags: company site has a misconfigured
+    certificate (possible lapse). Evidence: https://dealroom.co/companies/vartega Region sources: builtin-co-greentech,
+    fundraise-insider-co. Confidence: medium. Unresolved: Headcount; Dealroom header says Denver, About says Golden;
+    current site status.'
+- id: veolia-nuclear-solutions
+  name: Veolia Nuclear Solutions
+  website: https://nuclearsolutions.veolia.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 300
+    as_of: '2026-11-24'
+    source: Built In Colorado (https://www.builtincolorado.com/company/veolia-nuclear-solutions)
+  climate:
+    tier: enabling
+    reason: Nuclear waste vitrification and remote-handling systems.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Subsidiary of Veolia (over 200,000 employees); not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total employees; undated. Stage: Unit
+    of Veolia (French environmental services group). Flags: subsidiary of Veolia; nuclear waste and federal (DOE)
+    services; parent over 1,000 employees. Evidence: https://www.builtincolorado.com/company/veolia-nuclear-solutions
+    https://nuclearsolutions.veolia.com/en/media/press-releases/veolia-nuclear-solutions-opens-new-lafayette-office-design-and-develop-new
+    Region sources: bs-co-cleanenergy. Confidence: medium. Unresolved: Own site returned 403; founded year.'
+- id: vestas
+  name: Vestas
+  website: https://www.vestas.com
+  careers_url: null
+  hq: Aarhus, Denmark
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: public
+  founded: 1945
+  headcount:
+    value: 36973
+    as_of: '2025-01-01'
+    source: Wikipedia (infobox) (https://en.wikipedia.org/wiki/Vestas)
+  climate:
+    tier: core
+    reason: Wind turbines; Colorado sites make blades (Windsor) and nacelles (Brighton).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: About 37,000 employees; public since 1998.
+  notes: 'No job board found on the company''s site. Headcount note: 2025 figure, year only; Wikipedia says Windsor
+    blade plant about 750 employees (undated). Founded: https://en.wikipedia.org/wiki/Vestas. Stage: Nasdaq Copenhagen:
+    VWS. Flags: over 1,000 employees; HQ outside region (Denmark); main sites in Colorado. Evidence: https://en.wikipedia.org/wiki/Vestas
+    Region sources: siteselection-clean, climatepower-co, coloradobiz-trends. Confidence: high. Unresolved: Current
+    operating status of Windsor and Brighton plants not confirmed in sources read.'
+- id: vieletech
+  name: Vieletech
+  website: https://vieletech.com
+  careers_url: null
+  hq: Florissant, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Combustion-engine research controllers; no climate case.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: combustion-engine controls, weak clean-tech fit; staffed
+    by former Drivven / NI Powertrain Controls team. Evidence: https://www.vieletech.com Region sources: oedit-ai.
+    Confidence: medium. Unresolved: HQ (Florissant per input), founding year, headcount, funding'
+- id: vsk-energy
+  name: VSK Energy
+  website: null
+  careers_url: null
+  hq: Brighton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Planned solar PV module factory (2 GW initial, up to 4 GW) in Brighton, CO; joint venture of Vikram
+      Solar, Phalanx Impact Partners and Das & Co.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Announced up to 900 jobs (June 2023); no actual
+    headcount found Stage: JV announced June 2023, about $250M planned investment, state tax credits up to $9.17M
+    (https://www.areadevelopment.com/newsitems/6-23-2023/vsk-energy-brighton-colorado.shtml) Flags: planned plant;
+    no evidence it was built or operating; vskenergy.com now redirects to an unrelated events site; partly owned
+    by India-based Vikram Solar. Evidence: https://www.coloradopolitics.com/2023/06/22/250-million-solar-panel-plant-headed-for-brighton-bringing-up-to-900-high-paying-jobs-a02d83fa-6dc4-51b8-bc28-70d44c444264/
+    https://www.areadevelopment.com/newsitems/6-23-2023/vsk-energy-brighton-colorado.shtml https://www.vskenergy.com
+    Region sources: climatepower-co. Confidence: low. Unresolved: Whether the Brighton plant was ever built; HQ
+    of the JV; current status. Only 2023 announcements found; the domain redirecting elsewhere suggests the project
+    may have been abandoned.'
+- id: whisper-energy
+  name: WHISPER Energy
+  website: https://whisperenergy.io
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: pre-seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Battery-free wireless sensors for building energy savings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Founded: https://www.colorado.edu/venturepartners/startup-portfolio/whisper-energy-inc.
+    Stage: CU Venture Partners portfolio lists funding round ''Pre-Seed'' (page updated 2026-04-08). TechCrunch
+    Startup Battlefield 200, 2025. Flags: hardware sensor plus software/shared-savings service. Evidence: https://whisperenergy.io
+    https://www.colorado.edu/venturepartners/startup-portfolio/whisper-energy-inc https://www.colorado.edu/engineering/record-cuengineering-startups
+    Region sources: cu-vp-portfolio, cu-lvc, cu-ascent, cu-whisper. Confidence: medium. Unresolved: Headcount. Founder
+    and CEO Galen Williams.'
+- id: xflow-energy
+  name: XFlow Energy
+  website: https://xflowenergy.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount:
+    value: 5
+    as_of: '2026-11-24'
+    source: company site team list (https://xflowenergy.com)
+  climate:
+    tier: core
+    reason: XFE-13, a 30 kW vertical-axis wind turbine for onsite power generation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 5 people (company site team list, 2026-11-24); founding year and funding not found, so included as a
+      missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Count of team members named on the About section
+    (5), not a stated headcount. Stage: Support from NREL and US DOE (site); West Gate cohort 4 (https://www.nlr.gov/west-gate/ian-brownstein-affordable-wind-energy).
+    No venture rounds found. Evidence: https://xflowenergy.com https://www.nlr.gov/west-gate/innovators Region sources:
+    nlr-westgate-innovators. Confidence: medium. Unresolved: Founded, HQ city, funding.'
+- id: zero-carbon-systems
+  name: Zero Carbon Systems
+  website: https://zerocarbonsystems.com
+  careers_url: null
+  hq: Denver, CO area
+  ats:
+    type: lever
+    board: zerocarbonsystems
+  read: auto
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Direct air capture machines removing CO2 from air.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board lever:zerocarbonsystems seen 2026-11-24, linked from the company''s own site: 3 open roles, 1 US-remote.
+    Headcount note: Dealroom says under 100. Flags: acquired by Zero Carbon Systems; domain redirects to zerocarbonsystems.com;
+    Dealroom lists HQ New York; Global Thermostat was acquired by Zero Carbon Systems in May 2024; the direct air
+    capture business continues in Brighton, CO under that name.. Evidence: https://zerocarbonsystems.com/news https://dealroom.co/companies/global-thermostat
+    Region sources: search-snippets. Confidence: medium. Unresolved: Whether Brighton, CO facility continues under
+    ZCS; ZCS HQ.'
+- id: zerotwelve
+  name: ZeroTwelve
+  website: https://zerotwelve.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Z12, a biochar-based drop-in cement replacement that makes concrete a carbon sink.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.zerotwelve.com Region sources: oedit-ai.
+    Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: zgeo-energy
+  name: ZGEO Energy
+  website: https://zgeoenergy.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Develops utility-scale geothermal power plants; flagship Good Shepherd Ranch project in western Colorado,
+      20-80 MW targeted by 2029.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: project developer (would build and run its own plant).
+    Evidence: https://zgeoenergy.com Region sources: ceo-geothermal. Confidence: medium. Unresolved: Founded, headcount,
+    funding.'
