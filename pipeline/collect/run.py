@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
 
-from pipeline.collect import ashby, greenhouse, lever
+from pipeline.collect import ashby, greenhouse, lever, rippling
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
@@ -29,16 +29,10 @@ READERS: dict[str, Callable] = {
     "greenhouse": greenhouse.read,
     "lever": lever.read,
     "ashby": ashby.read,
+    "rippling": rippling.read,
 }
-HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com"}
-# An ATS whose boards are deliberately not read, and why. Rippling's job board
-# API documentation is behind a sign-in, so the endpoint cannot be confirmed,
-# and section 2.2 of its User Terms (https://app.rippling.com/legal/user)
-# prohibits extracting data for use outside its services. Reading it is the
-# owner's decision; until then no request is made to a Rippling board.
-NOT_READ = {
-    "rippling": "rippling: reader withheld pending a terms decision",
-}
+HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com",
+         "rippling": "api.rippling.com"}
 COLLECT_TIERS = ("core", "enabling")
 COLLECT_STARTUP = ("in", "review")
 
@@ -56,7 +50,7 @@ def skip_reason(company: dict, readers: dict = READERS) -> str | None:
         return f"not collected: startup status is '{status}'"
     ats = company["ats"]["type"]
     if ats not in readers:
-        return NOT_READ.get(ats, f"no reader for {ats}")
+        return f"no reader for {ats}"
     if not company["ats"]["board"]:
         return f"no board token for {ats}"
     return None

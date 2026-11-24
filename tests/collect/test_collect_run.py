@@ -56,13 +56,17 @@ def test_skip_reason(entry, reason):
     assert skip_reason(entry) == reason
 
 
-def test_rippling_is_skipped_with_its_own_reason_and_never_requested():
+def test_rippling_is_collected_with_one_request_per_posting():
     fetcher = FakeFetcher()
     raw = run([company("aptera", "rippling", "aptera", tier="enabling")], fetcher)
     entry = raw["run"]["companies"][0]
-    assert entry == {"company_id": "aptera", "ats": "rippling", "status": "skipped", "postings": 0,
-                     "error": "rippling: reader withheld pending a terms decision"}
-    assert fetcher.calls == [] and raw["jobs"] == []
+    assert entry == {"company_id": "aptera", "ats": "rippling", "status": "ok", "postings": 2, "error": None}
+    assert [job["id"] for job in raw["jobs"]] == [
+        "rippling:aptera:f056cda4-2893-414b-8eb9-14f7dcb790cf",
+        "rippling:aptera:b166d73d-8607-4708-8b32-a5f53b115f7b",
+    ]
+    assert len(fetcher.calls) == 3
+    assert schema_errors(raw, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY) == []
 
 
 def test_every_company_gets_an_entry_and_skipped_ones_are_not_requested():

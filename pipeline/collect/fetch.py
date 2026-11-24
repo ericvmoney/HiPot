@@ -23,6 +23,10 @@ import httpx
 
 USER_AGENT = "job-feed-reader/0.1 (python-httpx)"
 MIN_INTERVAL = 1.0
+# Hosts that get more room than MIN_INTERVAL. Rippling publishes no limit we can
+# read; one third-party write-up cites 100 requests per 10 minutes, so its host
+# is asked at most once every 6 seconds.
+HOST_INTERVALS = {"api.rippling.com": 6.0}
 TIMEOUT = 30.0
 RETRY_WAIT = 5.0
 BLOCK_STATUSES = (403, 429)
@@ -43,6 +47,7 @@ class Fetcher:
         self,
         client: httpx.Client | None = None,
         min_interval: float = MIN_INTERVAL,
+        host_intervals: dict[str, float] | None = None,
         clock: Callable[[], float] = time.monotonic,
         sleep: Callable[[float], None] = time.sleep,
     ) -> None:
@@ -52,6 +57,7 @@ class Fetcher:
             headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
         )
         self._min_interval = min_interval
+        self._host_intervals = HOST_INTERVALS if host_intervals is None else host_intervals
         self._clock = clock
         self._sleep = sleep
         self._last: dict[str, float] = {}
@@ -63,7 +69,8 @@ class Fetcher:
     def _wait_for(self, host: str) -> None:
         last = self._last.get(host)
         if last is not None:
-            remaining = self._min_interval - (self._clock() - last)
+            interval = max(self._min_interval, self._host_intervals.get(host, 0.0))
+            remaining = interval - (self._clock() - last)
             if remaining > 0:
                 self._sleep(remaining)
 

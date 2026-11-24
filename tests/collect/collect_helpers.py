@@ -19,6 +19,11 @@ ADDRESSES = {
     "https://api.ashbyhq.com/posting-api/job-board/Ridealso": "ashby_Ridealso.json",
     "https://api.ashbyhq.com/posting-api/job-board/formenergy": "ashby_formenergy.json",
     "https://api.ashbyhq.com/posting-api/job-board/span": "ashby_span.json",
+    "https://api.rippling.com/platform/api/ats/v1/board/aptera/jobs": "rippling_aptera.json",
+}
+# Rippling needs one request per posting; these answers are keyed by posting uuid.
+RIPPLING_DETAILS = {
+    "https://api.rippling.com/platform/api/ats/v1/board/aptera/jobs": "rippling_aptera_details.json",
 }
 
 
@@ -40,6 +45,11 @@ class FakeFetcher:
             return self.extra[url]
         if url in ADDRESSES:
             return load_json(FIXTURES / ADDRESSES[url])
+        base, _, uuid = url.rpartition("/")
+        if base in RIPPLING_DETAILS:
+            details = load_json(FIXTURES / RIPPLING_DETAILS[base])
+            if uuid in details:
+                return details[uuid]
         raise FetchError(f"HTTP 404: no fixture for {url}")
 
     def close(self) -> None:
