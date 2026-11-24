@@ -16,7 +16,7 @@ Headcount is the hard line (under 1,000). Age is a guide (typically under 10 yea
 
 Second fact the owner needs: no stated headcount. Estimates run from 375 (Built In, 2026-07) to job-site bands of 1,001 or more (2026). It raised $1.5B on 2026-11-05 and its board shows 315 open roles, so it may already be over the line. Founded 2014 (12 years).
 
-Same question for **Wing** (Alphabet's drone delivery subsidiary) and **Elroy Air** (hybrid-electric autonomous cargo aircraft), which the new proposals hold back on this decision.
+Same question for **Wing** (Alphabet's drone delivery subsidiary, founded 2012, about 510 people, 42 open roles), which proposals-01 holds at `review` on this decision. Elroy Air is held out on the defense question (A3) instead.
 
 Scout's recommendation: treat battery-electric delivery aircraft as electric aviation (in), but keep Zipline at startup `review` until a stated headcount is found.
 
@@ -39,6 +39,20 @@ Cases under that line:
 | Atomic Machines | Relays for 800 V DC | First product is for AI data-center power. | Out |
 | Spinor Energy | Superconducting magnetic storage | Aimed at AI data centers; three people. | Out |
 
+New proposals under the same line (proposals-01):
+
+| Company | Product | Data-center facts | Proposed |
+|---|---|---|---|
+| Oklo, Kairos Power, Aalo Atomics, Valar Atomics, Deep Fission, Last Energy, TerraPower, Alva Energy, Blue Energy | Fission power plants, reactors or project delivery | Each names data centers or hyperscalers (Google, Meta and others) as main or lead customers. | Core (generation sold as power) |
+| Exowatt | Modular solar-thermal storage | Main customers are data centers. | Core (generation and storage) |
+| Arbor Energy | Turbines burning natural gas or biomass with carbon capture | Pivoted from carbon removal; main customers are data centers. | Out |
+| Hyliion | KARNO generators, mostly on natural gas | Aimed at data centers and the military; no longer an EV powertrain maker. | Out |
+| Karman Industries | Heat pumps | Pivoted from industrial heat to data-center cooling. | Out |
+| Scale Microgrids | Gas and solar microgrids, developer | Increasingly data centers; private-equity owned. | Out |
+| Panthalassa | Wave-powered ocean nodes | The nodes' stated product is on-board AI compute. | Out (on-site compute); owner may see it as generation |
+
+If the owner wants generation sold to data centers out as well, the nine fission companies and Exowatt move out of the listing.
+
 Smaller ties, noted but not changing a proposal: SPAN (XFRA home GPU nodes, 2026-04), Form Energy (30 GWh for a Google site, 12 GWh for Crusoe), Redwood (Crusoe is Redwood Energy's main customer), Energy Vault (Crusoe site deal, up to 25 MW), Peak Energy (Series B partly to enter the data-center market), Mainspring (unnamed data-center customers).
 
 ### A3. Weapons and defense ties at otherwise clean companies [defense]
@@ -49,8 +63,15 @@ Smaller ties, noted but not changing a proposal: SPAN (XFRA home GPU nodes, 2026
 | Pacific Fusion (listed) | Pulsed-power fusion | Memorandum of understanding with the National Nuclear Security Administration (2026-08). Not a defense customer. | Keep core |
 | H3X Technologies | Electric motor drives | CEO said in 2024 that defense is the current focus (drones, submarines, a classified customer); also two civil regional-aircraft programs. | Out; owner may prefer enabling |
 | Stafl Systems | Battery packs and controls | Lists defense among aviation, marine and off-highway markets. | Enabling |
+| Antares (new) | Nuclear microreactors | Main customers so far are the US military, for base power. | Core |
+| Pyka (new) | Autonomous electric aircraft for crop spraying and cargo | Has defense customers beside agriculture. | Enabling |
+| Pivotal (new) | Single-seat electric VTOL aircraft | Has a defense product line and an Air Force contract. | Enabling |
+| Regent (new) | Electric seagliders for coastal transport | US Marine Corps contracts beside ferry operators. | Enabling (held at review: no headcount) |
+| Odys Aviation (new) | Hybrid-electric VTOL | Current product line is tactical drones, including counter-drone work. | Out |
+| Whisper Aero (new) | Electric ducted fans and drones | Named customers are mainly DoD and the Air Force. | Out |
+| Elroy Air (new) | Hybrid-electric autonomous cargo aircraft | Defense customers; Kratos Defense to manufacture; SPAC pending. | Out |
 
-Question: does a defense customer beside a clean main product move a company out, or only when defense is the main business?
+Question: does a defense customer beside a clean main product move a company out, or only when defense is the main business? The proposals use the second reading, except for military electric aviation, which the owner already put out.
 
 ### A4. Archer: civil aircraft plus a defense program [archer]
 
@@ -76,6 +97,10 @@ Question: does the autonomous-vehicle rule cover guided transit and rail, or onl
 ### A6. Robots that build solar plants [robotics]
 
 The owner put general robotics out. Three new candidates make robots for one clean job only: **Charge Robotics** and **Cosmic Robotics** (solar module installation) and **Built Robotics** (autonomous pile driving, mostly for solar farms). Planted (seed list) also installs its arrays with robots but sells the solar plant. Question: is a robot built only to deploy solar faster in (solar sector) or out (robotics)? Proposed out until decided.
+
+### A6b. Mining and refining for battery metals [mining]
+
+**Mariana Minerals** (proposals-01, 97 open roles) runs its own mines and refineries for copper, lithium and nickel, using its own automation software; founded 2024, about 124 people. The rubric has no line for mining. The battery-materials sector covers refining (Redwood, Still Bright, Lilac), but not mine operation; and KoBold Metals (exploration only) was not proposed. Proposed **enabling**. Question: are mine operators for battery and grid metals in, and at which tier?
 
 ### A7. Mainspring's linear generators: core, enabling or out? [mainspring]
 
@@ -104,13 +129,45 @@ About half its catalog is chargers and starting systems that keep diesel and gas
 
 Facts for listing: each is far under the headcount line, and each still behaves like a growth company (Mainspring raised a $242M Series G in 2026; Solid Power is pre-revenue at scale). Against: the board's promise is startups, and a 15-to-19-year-old company stretches it. Nexamp is also a developer whose engineering roles are mostly project and field roles.
 
+The same guide holds 20 new proposals at `review` (founded 2015 or earlier, all under 1,000 people):
+
+| Company | Founded | Headcount | Open roles |
+|---|---|---|---|
+| TerraPower | 2008 | not found; one source suggests it may be over 1,000 (not verified) | 93 |
+| Faraday Future | 2014 | 288 (Form 10-K, 2025-12-31) | 65 |
+| Helion | 2013 | about 500 to 800 | 65 |
+| Oklo | 2013 | about 200 | 54 |
+| SES AI | 2012 | 215 | 43 |
+| Wing | 2012 | about 510 (Alphabet subsidiary) | 42 |
+| Sila Nanotechnologies | 2011 | not found | 31 |
+| Niron Magnetics | 2014 | about 150 | 18 |
+| Blue Current | 2015 | about 42 | 16 |
+| Xos | 2015 | 99 (Form 10-K) | 13 |
+| Lightbridge | 1992 | 13 | 12 |
+| Aventon | 2013 | about 121 | 10 |
+| Factorial Energy | 2013 (2019 spin-out) | about 132; its open roles are in South Korea | 10 |
+| Group14 Technologies | 2015 | about 295 | 10 |
+| MetOx Technologies | 2002 | about 80 | 10 |
+| FlexGen | 2009 | about 130 (2022) | 6 |
+| Twelve | 2015 | about 361 | 6 |
+| Runwise | 2010 (another source says 2018) | about 125 | 4 |
+| ConnectDER | 2011 | about 64 | 1 |
+| HEVO | 2011 | under 100 | 1 |
+
+Hyliion (2015) is also past the guide but is proposed out on tier. The five with the most open roles (TerraPower, Faraday Future, Helion, Oklo, SES AI) carry 320 roles between them, so this answer matters more for coverage than any other.
+
 Scout's recommendation: list Mainspring and Solid Power; hold Nexamp (developer) and Alsym (no board) whatever the age answer; Stafl is the owner's call.
 
 ### B2. Near the headcount line [near-line]
 
 - **Form Energy:** about 900 people (company presentation to a Minnesota House committee, 2026-03-17; read from a search snippet only, the PDF text was not opened). Weirton alone passed 400 in 2026-06 and plans 750 or more by 2028; $750M Series G in 2026-08. Proposed **in** with a quarterly re-check. Question: list a company within about 10 percent of the line on the latest figure, or hold it at `review`?
 - **Redwood Materials:** about 1,215, but only by arithmetic: TechCrunch (2026-04-21) reported about 135 layoffs as 10 percent of staff. Aggregators show 560 to 850 (undated). Proposed **out**. Question: accept a derived figure, or hold at `review` until a stated total is found?
+- **Commonwealth Fusion Systems** (new): over 1,000 employees on the sources found; proposed `out`. 136 open roles, the largest board among the new companies.
 - **Base Power** (listed today): 368 (Revelio, 2026-03) to a 501-1,000 band (an investor job board); 183 open roles and a second factory planned. Proposed to stay in, with a quarterly re-check. No decision needed now; flagged so it is not missed.
+
+### B3. No headcount found [no figure]
+
+Not an owner decision, but these new proposals are held at `review` only because no headcount at all was found: Avnos, Blue Energy, Exowatt, Fourth Power, Highland Electric Fleets, Infinite Machine, Last Energy, Lilac Solutions, Limelight Steel, Phoenix Tailings, Regent, USA Rare Earth, Voltera, Vulcan Elements. Each is young and very likely under 1,000; a figure from the next pass would move most to `in`. Vulcan Elements (58 roles) and Regent (69) matter most.
 
 ## C. Not questions, but the owner should know
 
