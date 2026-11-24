@@ -1195,7 +1195,7 @@ companies:
   flags:
   - A transit system that takes cars off the road, which is a climate case the AV decision may not have meant to
     exclude. Asked in decisions-needed.md.
-  decision: glydways
+  decision: autonomy
   evidence:
   - https://www.glydways.com/about/
   - https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/
@@ -1305,7 +1305,7 @@ companies:
   flags:
   - Also sells to civil electric aviation (two regional aircraft programs) and marine. Out on the defense rule as
     stated by its CEO in 2024; owner may prefer enabling.
-  decision: defense-components
+  decision: defense
   evidence:
   - https://www.h3x.tech/
   - https://techcrunch.com/2024/08/06/h3x-scales-up-its-electric-aerospace-ambitions-with-20m-in-new-funding
@@ -1962,7 +1962,7 @@ companies:
   flags:
   - Headcount could cross 1,000 within a year; no company-stated figure found. Listed in decisions-needed.md as
     a watch item.
-  decision: null
+  decision: near-line
   check: pass, re-check headcount
   evidence:
   - https://techcrunch.com/2026/08/03/base-power-raises-another-1b-to-save-the-grid-using-backyard-batteries/
@@ -2307,7 +2307,7 @@ companies:
   flags:
   - 'Both announced 2026 deals are for AI data centers (Meta reservation up to 100 GWh; 1 GW joint venture). A clean
     product whose announced customers are data centers: listed in decisions-needed.md.'
-  decision: null
+  decision: datacenter
   check: pass, with a question for the owner
   evidence:
   - https://pv-magazine-usa.com/2026/04/21/meta-signs-100-gwh-supply-agreement-for-noon-energys-ultra-long-duration-storage/
@@ -2364,7 +2364,7 @@ companies:
   flags:
   - 'Signed a memorandum of understanding with the National Nuclear Security Administration (2026-08): defense-adjacent,
     not a defense customer.'
-  decision: null
+  decision: defense
   check: pass
   evidence:
   - https://www.pacificfusion.com/resources/news
@@ -2655,7 +2655,7 @@ companies:
   - 'FAILS the product check: on 2026-11-11 Torus launched Foundry, a modular AI-inference unit (power, storage,
     cooling, compute), with $500M of new capital and AI cloud providers as first customers. Data-center power is
     out by decision. Tier kept at core because storage is still what it ships; listed in decisions-needed.md.'
-  decision: null
+  decision: datacenter
   check: 'FAIL: product no longer matches the record'
   evidence:
   - https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/
@@ -2712,7 +2712,7 @@ companies:
   - 'FAILS the product check: the recorded product (overhead superconducting transmission lines) is no longer the
     lead. The 2026-10 Series C and trade press describe data-center cable as the first commercial product. No source
     gives the share of business. Proposed ''out'' pending the owner''s call; listed in decisions-needed.md.'
-  decision: null
+  decision: datacenter
   check: 'FAIL: product no longer matches the record'
   evidence:
   - https://ventureburn.com/veir-raises-110m-superconducting-power-ai-data-centres/
@@ -2769,7 +2769,7 @@ companies:
   flags:
   - 'RTX invested (2026-09) and signed a teaming agreement to use Xcimer lasers in directed-energy weapons. Fusion
     remains the stated mission. Weapons work is out under the rubric: listed in decisions-needed.md.'
-  decision: null
+  decision: defense
   check: pass, with a question for the owner
   evidence:
   - https://www.citybiz.co/?p=901097
