@@ -4,7 +4,7 @@ from __future__ import annotations
 import pytest
 
 from pipeline.io import ROOT, load_yaml
-from pipeline.tag.rules import MAX_DISCIPLINES, RULES, classify
+from pipeline.tag.rules import MAX_DISCIPLINES, RULES, TEXT_CUES, classify
 
 TAXONOMY_IDS = {entry["id"] for entry in load_yaml(ROOT / "taxonomy.yml")["disciplines"]}
 
@@ -182,3 +182,9 @@ def test_other_functions_carry_at_most_one_discipline_named_in_the_title():
     # Corporate functions carry none.
     assert tags("Senior Analyst, Manufacturing Finance") == []
     assert tags("Project Developer") == []
+
+
+def test_every_text_cue_names_a_taxonomy_discipline():
+    # A cue for a retired id ("program", "product") once produced roles that
+    # failed validation and stopped the publish step.
+    assert set(TEXT_CUES) <= TAXONOMY_IDS

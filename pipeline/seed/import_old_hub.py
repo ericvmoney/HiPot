@@ -24,7 +24,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 
 from pipeline.io import ROOT, dump_json, dump_yaml, load_yaml
 
@@ -95,6 +95,13 @@ def parse_source(url: str) -> dict:
     return {"ats": ats, "board": board, "posting_id": posting}
 
 
+def _id_part(text: str) -> str:
+    """A board token or posting id made safe for an id: decoded from the address,
+    with anything outside letters, digits, '.', '_' and '-' replaced by '-'.
+    Some boards have spaces in their token ("Karman%20Industries")."""
+    return re.sub(r"[^A-Za-z0-9._-]+", "-", unquote(text)).strip("-")
+
+
 def job_id(url: str, source: dict, title: str = "", location: str = "") -> str:
     """Stable id for a posting.
 
@@ -102,7 +109,7 @@ def job_id(url: str, source: dict, title: str = "", location: str = "") -> str:
     is no posting id the title and location go into the hash as well.
     """
     if source["board"] and source["posting_id"]:
-        return f"{source['ats']}:{source['board']}:{source['posting_id']}"
+        return f"{source['ats']}:{_id_part(source['board'])}:{_id_part(source['posting_id'])}"
     key = "\n".join((url, title.strip().lower(), location.strip().lower()))
     return "web:" + hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
 

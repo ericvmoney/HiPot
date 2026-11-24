@@ -176,6 +176,22 @@ def test_level_from_title(title, expected):
     assert level_from_title(title) == expected
 
 
+def test_a_board_token_with_a_space_gives_a_valid_id():
+    url = "https://jobs.ashbyhq.com/Karman%20Industries/5863cf02-a3c9-47ac-8d67-11cc42db2670"
+    identifier = job_id(url, parse_source(url))
+    assert identifier == "ashby:Karman-Industries:5863cf02-a3c9-47ac-8d67-11cc42db2670"
+    job = copy.deepcopy(JOBS["jobs"][0])
+    job["id"] = identifier
+    assert job_errors(job) == []
+
+
+def test_ids_without_unsafe_characters_are_unchanged():
+    # The seed ids must not move when the id rule learns to clean tokens.
+    for job in JOBS["jobs"]:
+        if job["source"]["board"] and job["source"]["posting_id"]:
+            assert job["id"] == job_id(job["url"], job["source"])
+
+
 def test_roles_sharing_one_address_get_different_ids():
     url = "https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=x"
     source = parse_source(url)

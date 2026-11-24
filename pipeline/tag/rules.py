@@ -316,9 +316,8 @@ TEXT_CUES = {
     "systems": [r"requirements", r"system architecture", r"interface control", r"\bicds?\b",
                 r"verification and validation", r"trade stud(y|ies)", r"\bmbse\b", r"sysml", r"\bfmea\b",
                 r"hazard analysis", r"\bdoors\b", r"\bjama\b", r"conops"],
-    "product": [r"roadmaps?", r"product requirements", r"\bprds?\b", r"customer discovery", r"product strategy"],
-    "program": [r"milestones", r"risk registers?", r"program management", r"gantt", r"\bpmp\b",
-                r"project schedules?"],
+    # No "product" or "program" cues: since taxonomy v1 those are functions, not
+    # disciplines, and a cue here would emit an id the taxonomy does not have.
 }
 TEXT_CUES_NEEDED = 3
 TEXT_CUES_KEPT = 2
