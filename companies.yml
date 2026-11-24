@@ -141,14 +141,14 @@ companies:
   name: Advanced Energy
   website: null
   careers_url: null
-  hq: null
+  hq: Denver, CO
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1981
   headcount:
     value: 13000
     as_of: '2025-12-31'
@@ -162,7 +162,8 @@ companies:
     status: out
     reason: About 13,000 employees (FY2025 10-K (figure via StockAnalysis and filings tracker; 10-K text not opened),
       2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: aepnus-technology
   name: Aepnus Technology
   website: https://aepnus.com
@@ -176,7 +177,10 @@ companies:
   - battery-materials
   stage: seed
   founded: 2021
-  headcount: null
+  headcount:
+    value: 17
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/aepnus-technology/employees)
   climate:
     tier: core
     reason: Electrolyzers that turn sodium sulfate waste from battery-materials plants into caustic soda and sulfuric
@@ -192,20 +196,23 @@ companies:
     Customers: Battery cathode and lithium producers. Pilot partners are Ultium CAM (GM and POSCO), Vale and Nemaska
     Lithium at Becancour, Quebec. Evidence: https://aepnus.com https://aepnus.com/media https://dealroom.co/companies/aepnus-technology/
     Confidence: medium. Unresolved: No exact headcount. Investors in the seed round were not named on the pages
-    fetched. LinkedIn refused automated access.'
+    fetched. LinkedIn refused automated access. Missing facts filled from data/screening/registry-fixes.'
 - id: aerovect
   name: AeroVect
   website: null
   careers_url: null
-  hq: null
+  hq: South San Francisco, CA
   ats:
     type: ashby
     board: AeroVect
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-a
+  founded: 2020
+  headcount:
+    value: 111
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/aerovect/employees)
   climate:
     tier: out
     reason: Autonomous vehicles (airport ground equipment). Out by decision.
@@ -214,6 +221,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: air-company
   name: Air Company
   website: https://aircompany.com
@@ -285,15 +293,18 @@ companies:
   name: Albedo
   website: null
   careers_url: null
-  hq: null
+  hq: Broomfield, CO
   ats:
     type: greenhouse
     board: albedo
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 73
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/albedo)
   climate:
     tier: out
     reason: Satellite imaging. Out by decision on space.
@@ -302,6 +313,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: also
   name: ALSO
   website: null
@@ -437,7 +449,10 @@ companies:
   - components
   stage: series-a
   founded: 2023
-  headcount: null
+  headcount:
+    value: 258
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/amperesand/employees)
   climate:
     tier: enabling
     reason: Silicon-carbide solid-state transformers for grid and data-center power conversion.
@@ -446,8 +461,8 @@ companies:
   startup:
     status: in
     reason: Headcount not found; founded 2023; Series A $80M (2025-11).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A2 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A2 (2026-11-24) applied.
 - id: antares
   name: Antares
   website: https://antaresindustries.com
@@ -692,7 +707,7 @@ companies:
   read: auto
   sectors:
   - fusion
-  stage: null
+  stage: series-a
   founded: 2018
   headcount:
     value: 50
@@ -716,7 +731,7 @@ companies:
     https://builtin.com/company/avalanche-energy https://www.avalanchefusion.com/news-release/avalanche-energy-raises-29-million-following-plasma-physics-breakthroughs
     https://www.geekwire.com/2026/soviet-secrets-and-star-wars-prototypes-avalanche-raises-29m-for-its-desktop-sized-power-quest/
     https://www.energytech.com/next-gen-nuclear/news/55370217/avalanche-energy-secures-52m-darpa-funding-to-advance-fusion-powered-batteries-for-military
-    Confidence: medium. Unresolved: Round letter; Dealroom page not found.'
+    Confidence: medium. Unresolved: Round letter; Dealroom page not found. Missing facts filled from data/screening/registry-fixes.'
 - id: aventon
   name: Aventon
   website: https://aventon.com
@@ -763,7 +778,10 @@ companies:
   - carbon-removal
   stage: series-a
   founded: 2020
-  headcount: null
+  headcount:
+    value: 29
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/avnos/employees)
   climate:
     tier: core
     reason: Modular, factory-built Hybrid Direct Air Capture (HDAC) systems that remove CO2 and produce water as
@@ -784,7 +802,7 @@ companies:
     carbon removal, not electrification. Evidence: https://www.avnos.com/ https://www.canarymedia.com/articles/carbon-capture/avnos-raises-36m-to-pull-co2-and-water-from-the-sky
     https://businesswire.com/news/home/20240206271792/en/Avnos-Inc.-Secures-36-Million-in-Series-A-Funding-Led-by-NextEra-Energy
     https://www.businesswire.com/news/home/20251106363047/en/Avnos-Secures-Up-to-$17-Million-in-Funding-to-Build-Flagship-DAC-Facility
-    Confidence: medium. Unresolved: Headcount; HQ (Los Angeles vs New Jersey).'
+    Confidence: medium. Unresolved: Headcount; HQ (Los Angeles vs New Jersey). Missing facts filled from data/screening/registry-fixes.'
 - id: base-power
   name: Base Power
   website: null
@@ -852,15 +870,18 @@ companies:
   name: Bedrock Robotics
   website: null
   careers_url: null
-  hq: null
+  hq: San Francisco, CA
   ats:
     type: ashby
     board: bedrock-robotics
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-c
+  founded: 2024
+  headcount:
+    value: 188
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/bedrock-robotics/employees)
   climate:
     tier: out
     reason: Autonomous construction equipment. Out by decision on robotics.
@@ -869,6 +890,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: blue-current
   name: Blue Current
   website: https://bluecurrent.com
@@ -916,7 +938,10 @@ companies:
   - fission
   stage: series-b
   founded: 2023
-  headcount: null
+  headcount:
+    value: 107
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/blue-energy/employees)
   climate:
     tier: core
     reason: Factory/shipyard-prefabricated nuclear power plants delivered by barge and assembled on site; first
@@ -939,20 +964,24 @@ companies:
     Evidence: https://www.blueenergy.co/ https://www.businesswire.com/news/home/20241008971139/en/Blue- https://techcrunch.com/2026/04/21/blue-energy-raises-380m-to-build-grid-scale-nuclear-reactors-in-shipyards/
     https://www.axios.com/pro/climate-deals/2026/04/21/blue-energy-smrs-small-nuclear-reactors-gas-prefab https://wnn.world-nuclear.org/articles/blue-energy-and-crusoe-unveil-texas-nuclear-powered-data-centre-plan
     https://www.gunder.com/en/news-insights/client-news/blue-energy-raises-dollar380-million-financing Confidence:
-    medium. Unresolved: Headcount; HQ city; official round label for the $380M raise.'
+    medium. Unresolved: Headcount; HQ city; official round label for the $380M raise. Missing facts filled from
+    data/screening/registry-fixes.'
 - id: boom-supersonic
   name: Boom Supersonic
   website: null
   careers_url: null
-  hq: null
+  hq: Centennial, CO
   ats:
     type: rippling
     board: boom-supersonic
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2014
+  headcount:
+    value: 244
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/boom-technology/employees)
   climate:
     tier: out
     reason: Supersonic jet. No credible climate case.
@@ -961,6 +990,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: boston-materials
   name: Boston Materials
   website: https://bomaterials.com
@@ -972,7 +1002,7 @@ companies:
   read: auto
   sectors:
   - components
-  stage: null
+  stage: series-a
   founded: 2016
   headcount:
     value: 33
@@ -993,7 +1023,7 @@ companies:
     Ventures); round letter not stated. https://dealroom.co/companies/boston-materials Flags: about 10 years old
     (founded 2016); product is a material/component, not a system. Evidence: https://dealroom.co/companies/boston-materials
     Confidence: medium. Unresolved: Round letter for Nov 2024 raise not confirmed; whether thermal-interface customers
-    are mainly data center / AI electronics not checked.'
+    are mainly data center / AI electronics not checked. Missing facts filled from data/screening/registry-fixes.'
 - id: brimstone
   name: Brimstone
   website: https://brimstone.com
@@ -1064,7 +1094,7 @@ companies:
   name: Canadian Solar
   website: null
   careers_url: null
-  hq: null
+  hq: Kitchener, ON, Canada
   ats:
     type: workday
     board: canadiansolar
@@ -1072,9 +1102,12 @@ companies:
   sectors:
   - solar
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2001
+  headcount:
+    value: 22234
+    as_of: '2023-01-01'
+    source: Wikipedia (from annual report) (https://en.wikipedia.org/wiki/Canadian_Solar)
   climate:
     tier: core
     reason: Solar modules and storage.
@@ -1083,6 +1116,7 @@ companies:
   startup:
     status: out
     reason: Large public company.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: captura
   name: Captura
   website: https://capturacorp.com
@@ -1129,8 +1163,8 @@ companies:
   read: auto
   sectors:
   - solar
-  stage: null
-  founded: null
+  stage: series-b
+  founded: 2021
   headcount:
     value: 31
     as_of: '2026-11-24'
@@ -1150,7 +1184,8 @@ companies:
     and EPCs (none named). Flags: robotics (solar construction automation, not general robotics). Decision needed:
     decisions-needed.md [robotics]. Evidence: https://chargerobotics.com https://dealroom.co/companies/charge-robotics/
     Confidence: medium. Unresolved: Founding year not found (the company site has no about page and LinkedIn refused
-    access). Round type for the July 2026 raise not confirmed. Owner ruling A6 (2026-11-24) applied.'
+    access). Round type for the July 2026 raise not confirmed. Owner ruling A6 (2026-11-24) applied. Missing facts
+    filled from data/screening/registry-fixes.'
 - id: chargepoint
   name: ChargePoint
   website: null
@@ -1207,7 +1242,7 @@ companies:
   name: Clearway Energy Group
   website: null
   careers_url: null
-  hq: null
+  hq: San Francisco, CA
   ats:
     type: greenhouse
     board: clearwayjobs
@@ -1216,9 +1251,12 @@ companies:
   - solar
   - wind
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 2018
+  headcount:
+    value: 1000
+    as_of: '2026-11-24'
+    source: Clearway Energy Group website (https://www.clearwayenergygroup.com/)
   climate:
     tier: core
     reason: Renewable developer and owner.
@@ -1227,6 +1265,7 @@ companies:
   startup:
     status: out
     reason: Large developer.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: commonwealth-fusion-systems
   name: Commonwealth Fusion Systems
   website: https://cfs.energy
@@ -1407,15 +1446,18 @@ companies:
   name: Crusoe
   website: null
   careers_url: null
-  hq: null
+  hq: Denver, CO
   ats:
     type: ashby
     board: Crusoe
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2018
+  headcount:
+    value: 1528
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/crusoe-energy-systems/employees)
   climate:
     tier: out
     reason: Data-center power and compute. Out by decision.
@@ -1424,18 +1466,19 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: cummins
   name: Cummins
   website: null
   careers_url: null
-  hq: null
+  hq: Columbus, IN
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1919
   headcount:
     value: 67400
     as_of: '2025-12-31'
@@ -1448,12 +1491,13 @@ companies:
   startup:
     status: out
     reason: About 67,400 employees (FY2025 10-K (figure via 10-K summaries), 2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: dandelion-energy
   name: Dandelion Energy
   website: https://dandelionenergy.com
   careers_url: null
-  hq: null
+  hq: Arlington, VA
   ats:
     type: ashby
     board: dandelion
@@ -1482,7 +1526,8 @@ companies:
     and others) and homeowners. Flags: installer/service business as much as hardware maker. Evidence: https://dealroom.co/companies/dandelion-energy
     https://dandelionenergy.com/about https://dandelionenergy.com/news Confidence: medium. Unresolved: HQ not confirmed:
     Dealroom says only ''Arlington''; 2026 press datelines are Bellingham, MA; BBB listing Mount Kisco, NY; job
-    locations Denver, Maryland, Peekskill NY. Dealroom ''preferred round: ACQUISITION'' field unexplained.'
+    locations Denver, Maryland, Peekskill NY. Dealroom ''preferred round: ACQUISITION'' field unexplained. Missing
+    facts filled from data/screening/registry-fixes.'
 - id: deep-fission
   name: Deep Fission
   website: https://deepfission.com
@@ -1522,15 +1567,18 @@ companies:
   name: Dexmate
   website: null
   careers_url: null
-  hq: null
+  hq: Santa Clara, CA
   ats:
     type: ashby
     board: dexmate
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: seed
+  founded: 2024
+  headcount:
+    value: 51
+    as_of: '2026-11-24'
+    source: Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Dexmate)
   climate:
     tier: out
     reason: General robotics. Out by decision.
@@ -1539,18 +1587,19 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: eaton
   name: Eaton
   website: null
   careers_url: null
-  hq: null
+  hq: Dublin, Ireland
   ats:
     type: eightfold
     board: eaton
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1911
   headcount:
     value: 92000
     as_of: '2026-11-24'
@@ -1565,7 +1614,8 @@ companies:
     status: out
     reason: About 92,000 employees (Eaton corporate site ('>92K employees', alongside 2025 sales); 10-K human-capital
       figure not read, 2025 (FY2025)).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: electra
   name: Electra
   website: https://electra.earth
@@ -1703,7 +1753,7 @@ companies:
   read: auto
   sectors:
   - electric-aviation
-  stage: null
+  stage: series-b
   founded: 2016
   headcount:
     value: 45
@@ -1727,7 +1777,7 @@ companies:
     [defense]. Evidence: https://dealroom.co/companies/elroy-air https://thenextweb.com/news/elroy-air-800m-spac-deal
     https://aviationweek.com/aerospace/advanced-air-mobility/elroy-air-plans-spac-merger-fund-heavy-lift-vtol-drone-production
     https://www.sec.gov/Archives/edgar/data/0002088805/000121390026116482/ea0299133-07.htm Confidence: medium. Unresolved:
-    Whether the SPAC has closed (would make it public); last private round letter.'
+    Whether the SPAC has closed (would make it public); last private round letter. Missing facts filled from data/screening/registry-fixes.'
 - id: emporia
   name: Emporia
   website: https://emporiaenergy.com
@@ -1739,7 +1789,7 @@ companies:
   read: auto
   sectors:
   - buildings
-  stage: null
+  stage: series-b
   founded: 2018
   headcount:
     value: 97
@@ -1760,7 +1810,8 @@ companies:
     over 3 rounds, latest 2025-07-30. No named series round found. https://www.cbinsights.com/company/emporia/financials
     Customers: Homeowners; strategic investors Honda and Siemens. Evidence: https://www.emporiaenergy.com/about
     https://builtin.com/company/emporia-energy https://www.cbinsights.com/company/emporia/financials https://www.endeavorcolorado.org/companies/emporia-energy
-    Confidence: medium. Unresolved: Stage (no named round); headcount sources disagree.'
+    Confidence: medium. Unresolved: Stage (no named round); headcount sources disagree. Missing facts filled from
+    data/screening/registry-fixes.'
 - id: energy-vault
   name: Energy Vault
   website: null
@@ -1792,7 +1843,7 @@ companies:
   name: Enphase
   website: null
   careers_url: null
-  hq: null
+  hq: Fremont, CA
   ats:
     type: unknown
     board: null
@@ -1800,9 +1851,12 @@ companies:
   sectors:
   - solar
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2006
+  headcount:
+    value: 2781
+    as_of: '2024-01-01'
+    source: Wikipedia (from 10-K) (https://en.wikipedia.org/wiki/Enphase_Energy)
   climate:
     tier: core
     reason: Solar microinverters and home storage.
@@ -1811,6 +1865,7 @@ companies:
   startup:
     status: out
     reason: Large public company.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: ev-realty
   name: EV Realty
   website: https://evrealtyus.com
@@ -1859,7 +1914,10 @@ companies:
   - energy-storage
   stage: series-a
   founded: 2023
-  headcount: null
+  headcount:
+    value: 121
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/exowatt/employees)
   climate:
     tier: core
     reason: Modular solar-thermal energy storage systems (Exowatt P3) that store solar energy as heat and convert
@@ -1878,7 +1936,8 @@ companies:
     are data centers. Decision needed: decisions-needed.md [datacenter]. Evidence: https://en.wikipedia.org/wiki/Exowatt
     https://www.datacenterdynamics.com/en/news/exowatt-raises-70m-in-series-a-funding-touts-90gwh-pipeline-from-data-center-market/
     https://techcrunch.com/2025/11/13/sam-atlman-backed-exowatt-wants-to-power-ai-data-centers-with-billions-of-hot-rocks
-    https://www.cbinsights.com/company/exowatt/financials Confidence: medium. Unresolved: Headcount not found.'
+    https://www.cbinsights.com/company/exowatt/financials Confidence: medium. Unresolved: Headcount not found. Missing
+    facts filled from data/screening/registry-fixes.'
 - id: factorial-energy
   name: Factorial Energy
   website: https://factorialenergy.com
@@ -2055,14 +2114,14 @@ companies:
   name: Ford
   website: null
   careers_url: null
-  hq: null
+  hq: Dearborn, MI
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1903
   headcount:
     value: 169000
     as_of: '2025-12-31'
@@ -2075,7 +2134,8 @@ companies:
   startup:
     status: out
     reason: About 169,000 employees (Ford FY2025 10-K ('about 169,000 employees worldwide'), 2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: form-energy
   name: Form Energy
   website: null
@@ -2111,15 +2171,18 @@ companies:
   name: Formlabs
   website: null
   careers_url: null
-  hq: null
+  hq: Somerville, MA
   ats:
     type: greenhouse
     board: null
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2011
+  headcount:
+    value: 1099
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/formlabs/employees)
   climate:
     tier: out
     reason: 3D printers. No climate case.
@@ -2128,6 +2191,7 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: fortera
   name: Fortera
   website: https://forterausa.com
@@ -2211,7 +2275,10 @@ companies:
   - energy-storage
   stage: series-a
   founded: 2021
-  headcount: null
+  headcount:
+    value: 30
+    as_of: '2026-04-28'
+    source: Company statement (CEO in Leader's Edge interview) (https://www.leadersedge.com/industry/peak-power-plug-in)
   climate:
     tier: core
     reason: Utility-scale thermal battery that stores electricity as heat in graphite blocks with liquid tin and
@@ -2232,19 +2299,19 @@ companies:
     https://www.bostonglobe.com/2026/09/23/business/fourth-power-graphite-tin-battery/ https://www.businesswire.com/news/home/20250916363021/en/Fourth-Power-Raises-20-Million-to-Commercialize-Low-Cost-Utility-Scale-Energy-Storage-Solution
     Confidence: medium. Unresolved: Headcount. Founding year conflicts (one source says 2021; TechCrunch Dec 2023
     says founded ''last year'', i.e. 2022). HQ given as Bedford MA (Boston Globe 2026) but earlier coverage says
-    Cambridge or Boston MA.'
+    Cambridge or Boston MA. Missing facts filled from data/screening/registry-fixes.'
 - id: generac
   name: Generac
   website: null
   careers_url: null
-  hq: null
+  hq: Waukesha, WI
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1959
   headcount:
     value: 9400
     as_of: '2025-12-31'
@@ -2257,7 +2324,8 @@ companies:
   startup:
     status: out
     reason: About 9,400 employees (Generac FY2025 10-K (filed 2026-02-18, via summaries), 2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: general-matter
   name: General Matter
   website: https://generalmatter.com
@@ -2269,7 +2337,7 @@ companies:
   read: auto
   sectors:
   - fission
-  stage: null
+  stage: series-a
   founded: 2024
   headcount:
     value: 18
@@ -2291,7 +2359,8 @@ companies:
     Customers: US government (DOE $900M contract, January 2026) and reactor operators. Flags: main customer is US
     government (DOE); nuclear fuel enrichment, not power generation. Evidence: https://dealroom.co/companies/general-matter
     https://www.generalmatter.com/ https://newkentuckyhome.ky.gov/Newsroom/NewsPage/20250805_GeneralMatter https://finance.yahoo.com/news/900-million-contract-set-accelerate-162920887.html
-    Confidence: medium. Unresolved: Current headcount (Dealroom figure looks stale); round letter of 2025 raise.'
+    Confidence: medium. Unresolved: Current headcount (Dealroom figure looks stale); round letter of 2025 raise.
+    Missing facts filled from data/screening/registry-fixes.'
 - id: glydways
   name: Glydways
   website: null
@@ -2305,7 +2374,10 @@ companies:
   - electric-mobility
   stage: series-c
   founded: 2016
-  headcount: null
+  headcount:
+    value: 311
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/glydways/employees)
   climate:
     tier: enabling
     reason: Small autonomous electric pods on dedicated guideways, sold to transit agencies to replace car trips.
@@ -2314,8 +2386,8 @@ companies:
   startup:
     status: in
     reason: About 90 to 240 people (aggregators, undated); founded 2016 (as Wayfarer), about 10 years.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A5 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A5 (2026-11-24) applied.
 - id: gram
   name: GRAM
   website: null
@@ -2418,7 +2490,7 @@ companies:
   read: auto
   sectors:
   - wind
-  stage: null
+  stage: pre-seed
   founded: 2021
   headcount:
     value: 35
@@ -2442,7 +2514,7 @@ companies:
     services business (rotor engineering and repair) rather than a product maker; ownership/funding unknown. Evidence:
     https://gulfwindtechnology.com/ https://builtin.com/company/gulf-wind-technology https://www.opportunitylouisiana.gov/news/gulf-wind-technology-and-shell-collaborate-to-establish-offshore-wind-energy-hub-at-avondale-global-gateway
     Confidence: medium. Unresolved: Funding stage and ownership not found; Dealroom has no profile. Built In also
-    lists an office in Hickory, NC.'
+    lists an office in Hickory, NC. Missing facts filled from data/screening/registry-fixes.'
 - id: h3x-technologies
   name: H3X Technologies
   website: null
@@ -2456,7 +2528,10 @@ companies:
   - components
   stage: series-a
   founded: 2020
-  headcount: null
+  headcount:
+    value: 87
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/h3x/employees)
   climate:
     tier: out
     reason: Electric motor drives; the company says defense is its current focus, and defense as the main business
@@ -2466,8 +2541,8 @@ companies:
   startup:
     status: in
     reason: Headcount not found; founded 2020.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A3 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A3 (2026-11-24) applied.
 - id: harbinger
   name: Harbinger
   website: https://harbingermotors.com
@@ -2655,7 +2730,10 @@ companies:
   - charging
   stage: series-a
   founded: 2011
-  headcount: null
+  headcount:
+    value: 9
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/hevo/employees)
   climate:
     tier: core
     reason: Wireless (inductive) EV charging hardware (Rezonant) and Journey charging software, increasingly aimed
@@ -2674,7 +2752,7 @@ companies:
     and autonomous-vehicle charging partnerships. Flags: older than 10 years (founded 2011); small, crowdfunding-financed.
     Evidence: https://hevo.com/ https://dealroom.co/companies/hevo-power https://www.cbinsights.com/company/hevo/financials
     https://theevreport.com/hevo-targets-commercial-ev-fleet-wireless-charging-ahead-of-act-expo-2026 Confidence:
-    low. Unresolved: Headcount; date of Series A1.'
+    low. Unresolved: Headcount; date of Series A1. Missing facts filled from data/screening/registry-fixes.'
 - id: hgen
   name: Hgen
   website: https://hgen.com
@@ -2716,9 +2794,12 @@ companies:
   read: auto
   sectors:
   - charging
-  stage: null
+  stage: late
   founded: 2019
-  headcount: null
+  headcount:
+    value: 225
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/highland-electric-fleets/employees)
   climate:
     tier: core
     reason: 'Turnkey fleet-electrification-as-a-service: electric school buses and other vehicles, charging, financing
@@ -2733,20 +2814,23 @@ companies:
     with engineering or technical titles; locations seen: Beverly, MA, Boston, MA, California. Founded: https://www.highlandfleets.com.
     Customers: School districts and municipalities (e.g. Montgomery County Public Schools MD, 236 buses; LA28 Games
     buses). Flags: service/financing company, not a hardware maker. Evidence: https://www.highlandfleets.com Confidence:
-    medium. Unresolved: Headcount, funding stage.'
+    medium. Unresolved: Headcount, funding stage. Missing facts filled from data/screening/registry-fixes.'
 - id: humble-robotics
   name: Humble Robotics
   website: null
   careers_url: null
-  hq: null
+  hq: San Francisco, CA
   ats:
     type: lever
     board: humble-robotics
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-a
+  founded: 2025
+  headcount:
+    value: 11
+    as_of: '2026-11-24'
+    source: Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Humble-Robotics)
   climate:
     tier: out
     reason: General robotics. Out by decision.
@@ -2755,6 +2839,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: hyliion
   name: Hyliion
   website: https://hyliion.com
@@ -2867,7 +2952,7 @@ companies:
     board: inferra
   read: auto
   sectors: []
-  stage: null
+  stage: seed
   founded: 2026
   headcount: null
   climate:
@@ -2879,7 +2964,8 @@ companies:
   startup:
     status: unscreened
     reason: Not checked.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: infinite-machine
   name: Infinite Machine
   website: https://infinitemachine.com
@@ -2892,8 +2978,11 @@ companies:
   sectors:
   - electric-mobility
   stage: seed
-  founded: null
-  headcount: null
+  founded: 2021
+  headcount:
+    value: 28
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/infinite-machine/employees)
   climate:
     tier: enabling
     reason: 'Electric two-wheelers: the Olto two-seat bike-lane vehicle and the P1 electric scooter/motorcycle.'
@@ -2909,7 +2998,8 @@ companies:
     Customers: Consumers. Flags: consumer vehicle product; one sample role location is Asia. Evidence: https://www.infinitemachine.com/
     https://techcrunch.com/2024/10/29/infinite-machine-raises-9m-a16z-led-round-to-convince-americans-to-buy-scooters
     https://prnewswire.com/news-releases/infinite-machine-raises-9-3m-in-seed-round-led-by-a16z-to-fuel-non-car-revolution-302289974.html
-    Confidence: medium. Unresolved: Founding year and headcount not found; no round since October 2024 found.'
+    Confidence: medium. Unresolved: Founding year and headcount not found; no round since October 2024 found. Missing
+    facts filled from data/screening/registry-fixes.'
 - id: infinitum
   name: Infinitum
   website: https://goinfinitum.com
@@ -2981,7 +3071,7 @@ companies:
   name: Invenergy
   website: null
   careers_url: null
-  hq: null
+  hq: Chicago, IL
   ats:
     type: workday
     board: invenergyllc
@@ -2990,9 +3080,12 @@ companies:
   - solar
   - wind
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2001
+  headcount:
+    value: 3610
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/invenergy/employees)
   climate:
     tier: core
     reason: Renewable developer. Also owns gas plants.
@@ -3001,6 +3094,7 @@ companies:
   startup:
     status: out
     reason: Large developer.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: kairos-power
   name: Kairos Power
   website: https://kairospower.com
@@ -3012,7 +3106,7 @@ companies:
   read: auto
   sectors:
   - fission
-  stage: null
+  stage: late
   founded: 2016
   headcount:
     value: 273
@@ -3036,7 +3130,7 @@ companies:
     customers are data centers (Google); older than 10 years (founded 2016). Decision needed: decisions-needed.md
     [datacenter]. Evidence: https://builtin.com/company/kairos-power https://techcrunch.com/2024/10/14/google-signed-a-deal-to-power-data-centers-with-nuclear-micro-reactors-from-kairos-but-the-2030-timeline-is-very-optimistic
     https://dealroom.co/news/163058-kairos-power-raises-643m-to-build-nuclear-reactors-for-google/ Confidence: medium.
-    Unresolved: Stage label; dated headcount from company or press.'
+    Unresolved: Stage label; dated headcount from company or press. Missing facts filled from data/screening/registry-fixes.'
 - id: karman-industries
   name: Karman Industries
   website: https://karmanindustries.com
@@ -3050,7 +3144,10 @@ companies:
   - industrial-heat
   stage: series-a
   founded: 2024
-  headcount: null
+  headcount:
+    value: 33
+    as_of: '2026-06-23'
+    source: Caplight (https://www.caplight.com/company/karman-industries)
   climate:
     tier: enabling
     reason: Electric heat pumps for industrial heat and data-center cooling.
@@ -3068,20 +3165,24 @@ companies:
     pivoted from industrial heat to data center cooling. Decision needed: decisions-needed.md [datacenter]. Evidence:
     https://www.karmanindustries.com/ https://dealroom.co/companies/karman-industries https://www.facilitiesdive.com/news/using-carbon-dioxide-to-cool-data-centers-reduces-energy-use-25-karman-in/811441/
     https://www.districtenergy.org/blogs/district-energy/2026/01/28/karman-launches-10mw-modular-heat-processing-unit
-    Confidence: medium. Unresolved: Headcount; exact Series A date. Owner ruling A2 (2026-11-24) applied.'
+    Confidence: medium. Unresolved: Headcount; exact Series A date. Owner ruling A2 (2026-11-24) applied. Missing
+    facts filled from data/screening/registry-fixes.'
 - id: kodiak
   name: Kodiak
   website: null
   careers_url: null
-  hq: null
+  hq: Mountain View, CA
   ats:
     type: greenhouse
     board: kodiak
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2018
+  headcount:
+    value: 342
+    as_of: '2026-11-24'
+    source: Stock Analysis (company filings); undated, so as_of is the day it was read (https://stockanalysis.com/stocks/kdk/company/)
   climate:
     tier: out
     reason: Autonomous trucking. Out by decision.
@@ -3090,20 +3191,24 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: last-energy
   name: Last Energy
   website: https://lastenergy.com
   careers_url: null
-  hq: null
+  hq: Austin, TX
   ats:
     type: lever
     board: last-energy
   read: auto
   sectors:
   - fission
-  stage: null
+  stage: series-c
   founded: 2019
-  headcount: null
+  headcount:
+    value: 124
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/last-energy/employees)
   climate:
     tier: core
     reason: PWR-20, a factory-made 20 MWe small modular pressurised-water reactor, which the company builds, owns
@@ -3120,7 +3225,8 @@ companies:
     and utilities; data centers listed first among target industries (no named customer). Flags: data centers named
     as a lead target market; owner-operator / power seller model. Decision needed: decisions-needed.md [datacenter].
     Evidence: https://www.lastenergy.com https://www.lastenergy.com/about https://www.lastenergy.com/company Confidence:
-    low. Unresolved: HQ (job board shows Austin and Bryan, TX), headcount, funding stage.'
+    low. Unresolved: HQ (job board shows Austin and Bryan, TX), headcount, funding stage. Missing facts filled from
+    data/screening/registry-fixes.'
 - id: lightbridge
   name: Lightbridge
   website: https://ltbridge.com
@@ -3192,7 +3298,10 @@ companies:
   - battery-materials
   stage: series-c
   founded: 2016
-  headcount: null
+  headcount:
+    value: 135
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/lilac-solutions/employees)
   climate:
     tier: core
     reason: Ion-exchange direct lithium extraction technology and media for producing lithium from brines, with
@@ -3209,7 +3318,7 @@ companies:
     about page). Earlier: Series B $150M (2021), Series A $20M (2020). Customers: Offtake with Traxys (January 2026).
     DOE award of about $100M for the Great Salt Lake project (August 2026). Evidence: https://lilacsolutions.com/
     https://lilacsolutions.com/about/ Confidence: medium. Unresolved: Exact HQ city (the site says only the East
-    Bay of California; the job board lists Berkeley) and headcount.'
+    Bay of California; the job board lists Berkeley) and headcount. Missing facts filled from data/screening/registry-fixes.'
 - id: limelight-steel
   name: Limelight Steel
   website: https://limelightsteel.com
@@ -3223,7 +3332,10 @@ companies:
   - industrial-heat
   stage: seed
   founded: 2021
-  headcount: null
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: PitchBook; undated, so as_of is the day it was read (https://pitchbook.com/profiles/company/503166-88)
   climate:
     tier: core
     reason: Laser furnace that uses semiconductor laser diodes to reduce iron ore to molten iron (electric ironmaking
@@ -3240,21 +3352,25 @@ companies:
     (Caplight total ~ $9.32M, latest grant 2024-07-12). https://pitchbook.com/profiles/company/503166-88 Flags:
     early R&D stage; backer Anglo American (mining). Evidence: https://www.limelightsteel.com/ https://www.cbinsights.com/company/limelight-steel
     https://pitchbook.com/profiles/company/503166-88 https://www.caplight.com/company/limelight-steel https://asme.org/Topics-Resources/Content/Using-Lasers-to-Produce-Green-Steel
-    Confidence: medium. Unresolved: Headcount; any round after 2021 (pre-seed vs seed disagreement).'
+    Confidence: medium. Unresolved: Headcount; any round after 2021 (pre-seed vs seed disagreement). Missing facts
+    filled from data/screening/registry-fixes.'
 - id: lucid-motors
   name: Lucid Motors
   website: null
   careers_url: null
-  hq: null
+  hq: Newark, CA
   ats:
     type: greenhouse
     board: null
   read: auto
   sectors:
   - ev
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2007
+  headcount:
+    value: 9000
+    as_of: '2025-12-31'
+    source: Lucid 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/lcid/employees/)
   climate:
     tier: enabling
     reason: Electric vehicles.
@@ -3263,6 +3379,7 @@ companies:
   startup:
     status: out
     reason: Far above 1,000 people.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: lunar-energy
   name: Lunar Energy
   website: null
@@ -3294,15 +3411,18 @@ companies:
   name: Lunar Outpost
   website: null
   careers_url: null
-  hq: null
+  hq: Golden, CO
   ats:
     type: bamboohr
     board: lunaroutpost
   read: manual
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2017
+  headcount:
+    value: 168
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/lunar-outpost)
   climate:
     tier: out
     reason: Lunar rovers. Out by decision on space.
@@ -3311,6 +3431,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: lydian
   name: Lydian
   website: https://lydianlabs.com
@@ -3447,15 +3568,18 @@ companies:
   name: Merlin Labs
   website: null
   careers_url: null
-  hq: null
+  hq: Boston, MA
   ats:
     type: lever
     board: merlinlabs
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2018
+  headcount:
+    value: 208
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/merlin-labs)
   climate:
     tier: out
     reason: Autonomous flight for defense and cargo aircraft.
@@ -3464,6 +3588,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: metox-technologies
   name: MetOx Technologies
   website: https://metoxtech.com
@@ -3569,15 +3694,18 @@ companies:
   name: Motional
   website: null
   careers_url: null
-  hq: null
+  hq: Boston, MA
   ats:
     type: greenhouse
     board: null
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 2020
+  headcount:
+    value: 765
+    as_of: '2026-08-01'
+    source: Built In (https://builtin.com/company/motional/faq/stability-growth)
   climate:
     tier: out
     reason: Autonomous vehicles. Out by decision.
@@ -3586,19 +3714,23 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: mytra
   name: Mytra
   website: null
   careers_url: null
-  hq: null
+  hq: South San Francisco, CA
   ats:
     type: rippling
     board: mytra
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-c
+  founded: 2022
+  headcount:
+    value: 174
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/mytra/employees/)
   climate:
     tier: out
     reason: Warehouse robotics. Out by decision.
@@ -3607,6 +3739,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: nexamp
   name: Nexamp
   website: null
@@ -3738,15 +3871,18 @@ companies:
   name: Nuro
   website: null
   careers_url: null
-  hq: null
+  hq: Mountain View, CA
   ats:
     type: greenhouse
     board: null
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2016
+  headcount:
+    value: 1166
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/nuro/employees/)
   climate:
     tier: out
     reason: Autonomous vehicles. Out by decision.
@@ -3755,6 +3891,7 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: odys-aviation
   name: Odys Aviation
   website: https://odysaviation.com
@@ -3831,16 +3968,19 @@ companies:
   name: ON.energy
   website: null
   careers_url: null
-  hq: null
+  hq: Miami, FL
   ats:
     type: greenhouse
     board: onenergy
   read: auto
   sectors:
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2016
+  headcount:
+    value: 267
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/on-energy/)
   climate:
     tier: enabling
     reason: Battery storage and power systems for data centers and industrial sites.
@@ -3849,19 +3989,19 @@ companies:
   startup:
     status: in
     reason: No headcount figure found; included under the owner's rule for missing figures (2026-11-24).
-  notes: Owner ruling A2 (2026-11-24) applied.
+  notes: Owner ruling A2 (2026-11-24) applied. Missing facts filled from data/screening/registry-fixes.
 - id: oshkosh
   name: Oshkosh
   website: null
   careers_url: null
-  hq: null
+  hq: Oshkosh, WI
   ats:
     type: workday
     board: oshkoshcorporation
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1917
   headcount:
     value: 18400
     as_of: '2025-12-31'
@@ -3874,20 +4014,24 @@ companies:
   startup:
     status: out
     reason: About 18,400 employees (Oshkosh 2025 Annual Report / 10-K, 2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: outrider
   name: Outrider
   website: null
   careers_url: null
-  hq: null
+  hq: Golden, CO
   ats:
     type: greenhouse
     board: outrider
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2017
+  headcount:
+    value: 123
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/outrider/employees/)
   climate:
     tier: out
     reason: Autonomous yard trucks. Out by decision on autonomous vehicles, though the trucks are electric.
@@ -3896,6 +4040,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: pacific-fusion
   name: Pacific Fusion
   website: null
@@ -4025,9 +4170,12 @@ companies:
   sectors:
   - components
   - battery-materials
-  stage: null
+  stage: series-b
   founded: 2019
-  headcount: null
+  headcount:
+    value: 135
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/phoenix-tailings)
   climate:
     tier: enabling
     reason: Refines rare earth metals and alloys from ores and mining waste (tailings).
@@ -4044,19 +4192,19 @@ companies:
     military systems for the US and allies. Flags: possible defense customers (rare earths for military systems).
     Evidence: https://phoenixtailings.com/ https://phoenixtailings.com/about https://builtin.com/company/phoenix-tailings
     Confidence: low. Unresolved: Funding stage, headcount and exact HQ (Woburn per Built In, Burlington per job
-    listings).'
+    listings). Missing facts filled from data/screening/registry-fixes.'
 - id: piaggio-fast-forward
   name: Piaggio Fast Forward
   website: null
   careers_url: null
-  hq: null
+  hq: Boston, MA
   ats:
     type: greenhouse
     board: piaggiofastforward
   read: auto
   sectors: []
-  stage: null
-  founded: null
+  stage: subsidiary
+  founded: 2015
   headcount: null
   climate:
     tier: out
@@ -4066,6 +4214,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: pivotal
   name: Pivotal
   website: https://pivotal.aero
@@ -4117,7 +4266,10 @@ companies:
   - solar
   stage: series-b
   founded: 2020
-  headcount: null
+  headcount:
+    value: 150
+    as_of: '2026-04-01'
+    source: blue News (SDA) (https://www.bluewin.ch/en/news/culture-of-fear-and-total-chaos-employees-sharply-criticize-vegan-company-3200184.html)
   climate:
     tier: core
     reason: Robot-installed, terrain-following solar arrays delivered as turnkey solar plants.
@@ -4126,20 +4278,24 @@ companies:
   startup:
     status: in
     reason: About 30 to 45 people (aggregators, undated); founded 2020.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: pronto
   name: Pronto
   website: null
   careers_url: null
-  hq: null
+  hq: San Francisco, CA
   ats:
     type: greenhouse
     board: pronto
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 2018
+  headcount:
+    value: 175
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/pronto-ai/employees/)
   climate:
     tier: out
     reason: Autonomous haul trucks. Out by decision.
@@ -4148,6 +4304,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: proper-voltage
   name: Proper Voltage
   website: null
@@ -4161,7 +4318,10 @@ companies:
   - energy-storage
   stage: seed
   founded: 2019
-  headcount: null
+  headcount:
+    value: 50
+    as_of: '2026-11-24'
+    source: Vaia Talents (aggregator); undated, so as_of is the day it was read (https://talents.vaia.com/companies/proper-voltage/)
   climate:
     tier: out
     reason: Battery interface hardware that lets product makers swap battery packs; markets are critical power,
@@ -4171,7 +4331,8 @@ companies:
   startup:
     status: in
     reason: Headcount not found; founded 2019 (as ZapBatt); seed stage.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: pure-lithium
   name: Pure Lithium
   website: https://purelithium.io
@@ -4242,15 +4403,15 @@ companies:
   name: Qcells
   website: null
   careers_url: null
-  hq: null
+  hq: Seoul, South Korea
   ats:
     type: unknown
     board: null
   read: manual
   sectors:
   - solar
-  stage: null
-  founded: null
+  stage: subsidiary
+  founded: 1999
   headcount: null
   climate:
     tier: core
@@ -4260,6 +4421,7 @@ companies:
   startup:
     status: out
     reason: Division of a large conglomerate.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: quaise-energy
   name: Quaise Energy
   website: https://quaise.com
@@ -4336,14 +4498,14 @@ companies:
   name: RAI Institute
   website: null
   careers_url: null
-  hq: null
+  hq: Cambridge, MA
   ats:
     type: lever
     board: rai
   read: auto
   sectors: []
-  stage: null
-  founded: null
+  stage: subsidiary
+  founded: 2022
   headcount: null
   climate:
     tier: out
@@ -4353,6 +4515,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: range-energy
   name: Range Energy
   website: https://range.energy
@@ -4430,8 +4593,11 @@ companies:
   sectors:
   - electric-aviation
   stage: series-b
-  founded: null
-  headcount: null
+  founded: 2020
+  headcount:
+    value: 213
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/regent-craft/employees/)
   climate:
     tier: enabling
     reason: All-electric Seaglider wing-in-ground-effect vessels (hull, hydrofoil and wing modes) for fast coastal
@@ -4452,20 +4618,23 @@ companies:
     https://www.regentcraft.com/ https://www.regentcraft.com/news/regent-secures-240-million-series-b-funding-to-scale-seaglider-manufacturing-and-transform-maritime-mobility
     https://aviationweek.com/aerospace/advanced-air-mobility/regent-raises-240m-advance-seaglider-manufacturing
     https://www.defensedaily.com/regent-raises-240-million-to-transition-seagliders-to-manufacturing/business-financial/
-    Confidence: medium. Unresolved: Founding year and headcount.'
+    Confidence: medium. Unresolved: Founding year and headcount. Missing facts filled from data/screening/registry-fixes.'
 - id: reliable-robotics
   name: Reliable Robotics
   website: null
   careers_url: null
-  hq: null
+  hq: Mountain View, CA
   ats:
     type: ashby
     board: reliable-robotics
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2017
+  headcount:
+    value: 258
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/reliable-robotics/employees/)
   climate:
     tier: out
     reason: Autonomous flight systems for conventional aircraft.
@@ -4474,6 +4643,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: remora
   name: Remora
   website: https://remoracarbon.com
@@ -4513,14 +4683,14 @@ companies:
   name: Renesas
   website: null
   careers_url: null
-  hq: null
+  hq: Tokyo, Japan
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 2002
   headcount:
     value: 21915
     as_of: '2025-12-31'
@@ -4533,12 +4703,13 @@ companies:
   startup:
     status: out
     reason: About 21,915 employees (Renesas human resources data (sustainability), Bureau Veritas-verified, 2025-12-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: res
   name: RES
   website: null
   careers_url: null
-  hq: null
+  hq: Kings Langley, United Kingdom
   ats:
     type: unknown
     board: null
@@ -4547,9 +4718,12 @@ companies:
   - wind
   - solar
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 1981
+  headcount:
+    value: 4500
+    as_of: '2026-11-24'
+    source: RES (company statement) (https://www.res-group.com/about-us/)
   climate:
     tier: core
     reason: Renewable developer and contractor.
@@ -4558,20 +4732,24 @@ companies:
   startup:
     status: out
     reason: Large and decades old.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: rivian
   name: Rivian
   website: null
   careers_url: null
-  hq: null
+  hq: Irvine, CA
   ats:
     type: unknown
     board: null
   read: manual
   sectors:
   - ev
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2009
+  headcount:
+    value: 15232
+    as_of: '2025-12-31'
+    source: Rivian 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/rivn/employees/)
   climate:
     tier: enabling
     reason: Electric vehicles.
@@ -4580,20 +4758,24 @@ companies:
   startup:
     status: out
     reason: Far above 1,000 people.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: rivian-and-volkswagen-group-technologies
   name: Rivian and Volkswagen Group Technologies
   website: null
   careers_url: null
-  hq: null
+  hq: Palo Alto, CA
   ats:
     type: ashby
     board: rivianvw.tech
   read: auto
   sectors:
   - ev
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 2024
+  headcount:
+    value: 1500
+    as_of: '2025-11-01'
+    source: Volkswagen Group (company statement) (https://www.volkswagen-group.com/en/press-releases/one-year-after-its-founding-joint-venture-between-volkswagen-group-and-rivian-shows-strong-progress-19980)
   climate:
     tier: enabling
     reason: Vehicle software and electronics joint venture.
@@ -4602,6 +4784,7 @@ companies:
   startup:
     status: out
     reason: Joint venture of two large carmakers; believed above 1,000 people.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: rondo-energy
   name: Rondo Energy
   website: null
@@ -4678,7 +4861,10 @@ companies:
   - distributed-generation
   stage: subsidiary
   founded: 2016
-  headcount: null
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/scale-microgrids)
   climate:
     tier: out
     reason: Develops and operates natural-gas and solar microgrids, increasingly for data centers; private-equity
@@ -4702,19 +4888,20 @@ companies:
     [datacenter]. Evidence: https://www.scalemicrogrids.com/ https://eqtgroup.com/thinq/infrastructure/scale-from-niche-energy-provider-to-ai-power-player
     https://www.microgridknowledge.com/scale-microgrid-warburg-pincus https://www.latitudemedia.com/news/scale-buys-reload-as-the-hunt-for-powered-land-heats-up/
     https://www.energytech.com/distributed-energy/article/21261761/scale-microgrids-fortified-for-future-projects-by-new-225m-financing-round
-    Confidence: medium. Unresolved: Headcount; exact HQ city; date and size of EQT acquisition.'
+    Confidence: medium. Unresolved: Headcount; exact HQ city; date and size of EQT acquisition. Missing facts filled
+    from data/screening/registry-fixes.'
 - id: schneider-electric
   name: Schneider Electric
   website: null
   careers_url: null
-  hq: null
+  hq: Rueil-Malmaison, France
   ats:
     type: unknown
     board: null
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1836
   headcount:
     value: 150000
     as_of: '2026-11-24'
@@ -4727,7 +4914,8 @@ companies:
   startup:
     status: out
     reason: About 150,000 employees (Schneider Electric corporate site, undated (2025-2026 website)).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: scout-motors
   name: Scout Motors
   website: null
@@ -4759,15 +4947,18 @@ companies:
   name: Serve Robotics
   website: null
   careers_url: null
-  hq: null
+  hq: San Carlos, CA
   ats:
     type: ashby
     board: serverobotics
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2017
+  headcount:
+    value: 380
+    as_of: '2025-12-31'
+    source: Serve Robotics 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/serv/employees/)
   climate:
     tier: out
     reason: Sidewalk delivery robots. Out by decision on robotics.
@@ -4776,6 +4967,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: ses-ai
   name: SES AI
   website: https://ses.ai
@@ -4825,7 +5017,10 @@ companies:
   - battery-materials
   stage: late
   founded: 2011
-  headcount: null
+  headcount:
+    value: 478
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/sila-nanotechnologies/employees/)
   climate:
     tier: core
     reason: Titan Silicon, a silicon-carbon anode material for lithium-ion batteries, made at its Moses Lake, WA
@@ -4847,20 +5042,24 @@ companies:
     target markets. Evidence: https://silanano.com/press/press-releases/sila-secures-300-million-in-private-funding-to-ramp-gigascale-anode-manufacturing-and-strengthen-americas-technology-sovereignty
     https://electrive.com/2026/08/11/us-government-offers-sila-up-to-1-4-billion-in-funding https://www.geekwire.com/2026/next-gen-battery-startup-sila-raises-300m-to-expand-washington-state-manufacturing-plant/
     https://cryptobriefing.com/sila-nanotechnologies-funding-dod-loan-unverified/ Confidence: medium. Unresolved:
-    Headcount. Round letter for the 2026 round not stated; stage ''late'' rests on founding year and scale of funding.'
+    Headcount. Round letter for the 2026 round not stated; stage ''late'' rests on founding year and scale of funding.
+    Missing facts filled from data/screening/registry-fixes.'
 - id: skydio
   name: Skydio
   website: null
   careers_url: null
-  hq: null
+  hq: San Mateo, CA
   ats:
     type: ashby
     board: skydio
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2014
+  headcount:
+    value: 1081
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/skydio/employees/)
   climate:
     tier: out
     reason: Drones, largely for defense and public safety.
@@ -4869,6 +5068,7 @@ companies:
   startup:
     status: review
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: solid-power
   name: Solid Power
   website: null
@@ -4902,7 +5102,7 @@ companies:
   name: SOLV Energy
   website: null
   careers_url: null
-  hq: null
+  hq: San Diego, CA
   ats:
     type: workday
     board: solvenergy
@@ -4910,9 +5110,12 @@ companies:
   sectors:
   - solar
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2008
+  headcount:
+    value: 2300
+    as_of: '2026-02-01'
+    source: Renaissance Capital (IPO profile, from prospectus) (https://www.renaissancecapital.com/Profile/MWH/SOLV-Energy/IPO)
   climate:
     tier: core
     reason: Solar and storage construction.
@@ -4921,6 +5124,7 @@ companies:
   startup:
     status: out
     reason: Large contractor.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: span
   name: SPAN
   website: null
@@ -5028,7 +5232,7 @@ companies:
   read: auto
   sectors:
   - energy-storage
-  stage: null
+  stage: seed
   founded: 2025
   headcount:
     value: 3
@@ -5042,8 +5246,8 @@ companies:
   startup:
     status: in
     reason: Three employees (PitchBook); founded 2025.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A2 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A2 (2026-11-24) applied.
 - id: stafl-systems
   name: Stafl Systems
   website: null
@@ -5056,7 +5260,7 @@ companies:
   sectors:
   - components
   - energy-storage
-  stage: null
+  stage: late
   founded: 2010
   headcount:
     value: 60
@@ -5072,7 +5276,8 @@ companies:
     status: in
     reason: About 60 people (company release, 2024-06); founded 2010, about 16 years. Past the age guide. Older
       than 10 years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: standard-nuclear
   name: Standard Nuclear
   website: https://standardnuclear.com
@@ -5152,7 +5357,7 @@ companies:
   sectors:
   - grid
   - components
-  stage: null
+  stage: subsidiary
   founded: 1971
   headcount:
     value: 291
@@ -5167,8 +5372,8 @@ companies:
     status: in
     reason: 291 employees in 2026-07 (ColoradoBiz, company figures); founded 1971, about 55 years. Older than 10
       years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A8 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A8 (2026-11-24) applied.
 - id: swift-solar
   name: Swift Solar
   website: https://swiftsolar.com
@@ -5211,7 +5416,7 @@ companies:
   sectors:
   - solar
   stage: public
-  founded: null
+  founded: 2018
   headcount:
     value: 562
     as_of: '2026-11-24'
@@ -5229,7 +5434,7 @@ companies:
     TE. Formerly FREYR Battery, Inc., renamed T1 Energy Inc. in February 2025 (Stock Analysis). Flags: public company;
     formerly FREYR Battery (renamed February 2025). Evidence: https://stockanalysis.com/stocks/te/company/ Confidence:
     medium. Unresolved: Founding year (FREYR''s history goes back to Norway), and headcount not checked against
-    the 10-K.'
+    the 10-K. Missing facts filled from data/screening/registry-fixes.'
 - id: tandem-pv
   name: Tandem PV
   website: https://tandempv.com
@@ -5334,7 +5539,7 @@ companies:
   sectors:
   - charging
   stage: null
-  founded: null
+  founded: 2021
   headcount:
     value: 110
     as_of: '2026-11-24'
@@ -5347,7 +5552,8 @@ companies:
   startup:
     status: in
     reason: About 60 to 110 people (third-party estimates, undated).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: terradot
   name: Terradot
   website: https://terradot.earth
@@ -5394,7 +5600,10 @@ companies:
   - fission
   stage: late
   founded: 2008
-  headcount: null
+  headcount:
+    value: 1302
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/terrapower/employees/)
   climate:
     tier: core
     reason: Natrium sodium-cooled fast reactor with molten-salt storage, plus medical isotopes through TerraPower
@@ -5402,9 +5611,9 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: No headcount found; founded 2008. Older than 10 years but well under 1,000 people; age is a guide, not
-      a rule (owner, 2026-11-24).
+    status: out
+    reason: '1,302 people (Revelio Labs (https://www.reveliolabs.com/companies/terrapower/employees/), 2026-06-01):
+      over the 1,000-person line by more than the borderline allowance.'
   notes: 'Board greenhouse:terrapowerllc loaded 2026-11-24, linked from the company''s own site: 93 open roles,
     23 with engineering or technical titles; locations seen: Bellevue, WA, Bellevue, WA , Bellevue, WA & Everett,
     WA. Founded: https://www.terrapower.com/about. Stage: $650M fundraise June 18 2025; $830M secured in 2022 including
@@ -5414,12 +5623,12 @@ companies:
     State of Kansas agreement (Sept 2025). Flags: older than 10 years; main customers are data centers (Meta, Sabey);
     spun out of Intellectual Ventures (2012); possibly over 1,000 employees (not verified). Decision needed: decisions-needed.md
     [datacenter]. Evidence: https://www.terrapower.com/about https://www.terrapower.com/news Confidence: medium.
-    Unresolved: Headcount.'
+    Unresolved: Headcount. Missing facts filled from data/screening/registry-fixes.'
 - id: tesla
   name: Tesla
   website: null
   careers_url: null
-  hq: null
+  hq: Austin, TX
   ats:
     type: unknown
     board: null
@@ -5427,9 +5636,12 @@ companies:
   sectors:
   - ev
   - energy-storage
-  stage: null
-  founded: null
-  headcount: null
+  stage: public
+  founded: 2003
+  headcount:
+    value: 134785
+    as_of: '2025-12-31'
+    source: Tesla 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/tsla/employees/)
   climate:
     tier: enabling
     reason: Electric vehicles and storage.
@@ -5438,6 +5650,7 @@ companies:
   startup:
     status: out
     reason: Far above 1,000 people.
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: the-nuclear-company
   name: The Nuclear Company
   website: https://thenuclearcompany.com
@@ -5610,15 +5823,18 @@ companies:
   name: Urban Sky
   website: null
   careers_url: null
-  hq: null
+  hq: Denver, CO
   ats:
     type: rippling
     board: urban-sky
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2019
+  headcount:
+    value: 96
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/urban-sky)
   climate:
     tier: out
     reason: Stratospheric balloon imaging. No climate case; closest to the space decision.
@@ -5627,19 +5843,23 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: ursa-major
   name: Ursa Major
   website: null
   careers_url: null
-  hq: null
+  hq: Berthoud, CO
   ats:
     type: greenhouse
     board: null
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2015
+  headcount:
+    value: 476
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/ursa-major/employees/)
   climate:
     tier: out
     reason: Rocket propulsion and defense.
@@ -5648,6 +5868,7 @@ companies:
   startup:
     status: in
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
 - id: usa-rare-earth
   name: USA Rare Earth
   website: https://usare.com
@@ -5660,8 +5881,11 @@ companies:
   sectors:
   - components
   stage: public
-  founded: null
-  headcount: null
+  founded: 2019
+  headcount:
+    value: 132
+    as_of: '2025-12-31'
+    source: USA Rare Earth 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/usar/employees/)
   climate:
     tier: enabling
     reason: Sintered neodymium rare-earth magnets from a plant in Stillwater, Oklahoma, plus a rare-earth deposit
@@ -5677,7 +5901,7 @@ companies:
     OK. Stage: Nasdaq USAR; FY2025 results published (https://usare.gcs-web.com/news-releases/news-release-details/usa-rare-earth-reports-fourth-quarter-and-full-year-2025).
     Flags: owns a mining deposit (Round Top, Texas). Evidence: https://www.sec.gov/Archives/edgar/data/1970622/000121390025026445/0001213900-25-026445-index.html
     https://usare.gcs-web.com/news-releases/news-release-details/usa-rare-earth-reports-fourth-quarter-and-full-year-2025
-    Confidence: low. Unresolved: Headcount and founding year.'
+    Confidence: low. Unresolved: Headcount and founding year. Missing facts filled from data/screening/registry-fixes.'
 - id: utility-global
   name: Utility Global
   website: https://utilityglobal.com
@@ -5892,7 +6116,10 @@ companies:
   - charging
   stage: subsidiary
   founded: 2022
-  headcount: null
+  headcount:
+    value: 76
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/voltera)
   climate:
     tier: core
     reason: Develops, owns and operates EV charging hubs for fleets, ride-hail and robotaxi operators, including
@@ -5914,7 +6141,8 @@ companies:
     rather than hardware maker. Evidence: https://www.volterapower.com/ https://eqtgroup.com/current-portfolio/voltera/
     https://www.morningstar.com/news/dow-jones/202605265919/voltera-to-merge-with-revel https://www.pehub.com/eqt-backed-voltera-and-ev-rideshare-platform-revel-to-merge/
     https://builtin.com/company/voltera Confidence: medium. Unresolved: No reliable headcount; HQ conflict (site
-    footer Culver City, CA; earlier sources Palo Alto, CA and Herndon, VA); merger closing not confirmed.'
+    footer Culver City, CA; earlier sources Palo Alto, CA and Herndon, VA); merger closing not confirmed. Missing
+    facts filled from data/screening/registry-fixes.'
 - id: voya-energy
   name: Voya Energy
   website: https://voya.energy
@@ -5962,7 +6190,10 @@ companies:
   - components
   stage: series-a
   founded: 2023
-  headcount: null
+  headcount:
+    value: 84
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/vulcan-elements/employees/)
   climate:
     tier: enabling
     reason: Sintered neodymium-iron-boron rare-earth permanent magnets made in the US, for motors and generators.
@@ -5980,7 +6211,7 @@ companies:
     Dive frames the Benson plant as defense supply); plans 1,000 jobs at one plant. Evidence: https://www.commerce.nc.gov/news/press-releases/2025/11/18/governor-stein-announces-vulcan-elements-selects-johnston-county-1000-job-magnet-factory-investing
     https://www.manufacturingdive.com/news/vulcan-elements-benson-north-carolina-magnet-facility-defense-rare-earth/806075/
     https://www.axios.com/pro/climate-deals/2026/03/17/vulcan-elements-washington-harbour-rare-earth-magnet Confidence:
-    medium. Unresolved: Current headcount; share of defense customers.'
+    medium. Unresolved: Current headcount; share of defense customers. Missing facts filled from data/screening/registry-fixes.'
 - id: whisper-aero
   name: Whisper Aero
   website: https://whisper.aero
@@ -6057,14 +6288,14 @@ companies:
   name: Woodward
   website: null
   careers_url: null
-  hq: null
+  hq: Fort Collins, CO
   ats:
     type: workday
     board: woodward
   read: manual
   sectors: []
-  stage: null
-  founded: null
+  stage: public
+  founded: 1870
   headcount:
     value: 10200
     as_of: '2025-10-31'
@@ -6077,7 +6308,8 @@ companies:
   startup:
     status: out
     reason: About 10,200 employees (Woodward FY2025 10-K (full-time, via summaries), 2025-10-31).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes.
 - id: xcimer-energy
   name: Xcimer Energy
   website: null
@@ -6222,7 +6454,10 @@ companies:
   - electric-aviation
   stage: late
   founded: 2014
-  headcount: null
+  headcount:
+    value: 2368
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/zipline/employees/)
   climate:
     tier: enabling
     reason: Battery-electric delivery aircraft for retail, restaurant and hospital deliveries, replacing car and
@@ -6234,21 +6469,24 @@ companies:
     reason: No stated headcount. Estimates run from 375 (Built In, 2026-07) to 1,001 or more (two job-site bands,
       2026); founded 2014, 12 years. Board shows 315 open roles, which suggests a company near or above 1,000. No
       headcount figure found; included under the owner's rule for missing figures (2026-11-24).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling A1 (2026-11-24) applied.
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Owner ruling A1 (2026-11-24) applied.
 - id: zoox
   name: Zoox
   website: null
   careers_url: null
-  hq: null
+  hq: Foster City, CA
   ats:
     type: lever
     board: zoox
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: subsidiary
+  founded: 2014
+  headcount:
+    value: 6653
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/zoox/employees/)
   climate:
     tier: out
     reason: Autonomous vehicles. Out by decision.
@@ -6257,3 +6495,4 @@ companies:
   startup:
     status: out
     reason: null
+  notes: Missing facts filled from data/screening/registry-fixes.
