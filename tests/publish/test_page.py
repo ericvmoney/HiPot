@@ -90,6 +90,24 @@ def test_role_type_is_the_first_filter_and_every_role_shows_its_function():
     assert "tags.appendChild(el('li', { class: 'tag-fn', text: labels.functions[role.fn] || role.fn }));" in SCRIPT
 
 
+def test_location_filter_is_searchable_shortened_and_covers_states():
+    # Hundreds of metros exist: the list is ordered by role count, shortened, and searchable.
+    assert "var LOCATION_SHORT_LIST = 6;" in SCRIPT
+    assert "id: 'f-m-find', type: 'search'" in SCRIPT
+    assert "(b.total - a.total)" in SCRIPT
+    # States are location options in their own right, kept in the address as 'state-xx'.
+    assert "if (id.indexOf(STATE_PREFIX) === 0) return 'state-' + id.slice(STATE_PREFIX.length);" in SCRIPT
+    assert "states.forEach(function (code) { places.push(STATE_PREFIX + code); });" in SCRIPT
+    # Long Census labels wrap rather than push the page wider.
+    assert ".opt-label { flex: 1; min-width: 0; overflow-wrap: anywhere; }" in STYLE
+
+
+def test_no_newline_inside_a_script_string():
+    # A raw line break inside quotes stops the whole script; it slipped in once through an edit tool.
+    for quote in ("'", '"'):
+        assert not re.search(quote + r"[^" + quote + r"\n]*\n[^" + quote + r"\n]*" + quote + r"\)", SCRIPT)
+
+
 def test_filter_state_has_a_set_for_every_filter_group():
     assert "FACETS.forEach(function (facet) { fresh[facet.key] = new Set(); });" in SCRIPT
     assert SCRIPT.count("emptyState()") >= 2

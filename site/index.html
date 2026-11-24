@@ -119,11 +119,19 @@ a { color: var(--accent); text-underline-offset: 0.15em; }
 .options { display: flex; flex-direction: column; padding: 0 2px 12px; }
 .opt { display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 4px 0; cursor: pointer; font-size: 0.9375rem; }
 .opt input { width: 18px; height: 18px; margin: 0; flex: none; accent-color: var(--accent); }
-.opt-label { flex: 1; min-width: 0; }
+.opt-label { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .opt-count { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .opt.zero .opt-label, .opt.zero .opt-count { color: var(--muted); }
 .field { display: flex; flex-direction: column; gap: 4px; padding: 2px 0 8px; font-size: 0.9375rem; }
 .hint { color: var(--muted); font-size: 0.8125rem; padding-top: 4px; }
+.loc-find { display: flex; flex-direction: column; gap: 4px; padding-bottom: 6px; font-size: 0.8125rem; }
+.loc-find label { color: var(--muted); }
+.loc-find .input { min-height: 40px; padding-block: 6px; }
+.opt-head {
+  padding: 10px 0 2px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.loc-more { align-self: flex-start; min-height: 36px; padding-inline: 0; font-weight: 600; }
 @media (pointer: coarse) { .opt { min-height: 44px; } }
 
 /* Controls */
@@ -167,6 +175,7 @@ body::before {
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .chip {
+  overflow-wrap: anywhere;
   display: inline-flex; align-items: center; gap: 6px; max-width: 100%;
   background: var(--accent-soft); color: var(--ink); border: 1px solid transparent; border-radius: 999px;
   padding: 4px 10px; font-size: 0.8125rem; cursor: pointer; min-height: 32px; text-align: left;
@@ -362,6 +371,8 @@ body::before {
   var DATA_URL = 'data/board.json';
   var BOARD_VERSION = 0;
   var PAGE_SIZE = 50;
+  var LOCATION_SHORT_LIST = 6;   // metro areas, and states, shown before "Show all"
+  var STATE_PREFIX = '*st-';     // location option ids for states: '*st-co'
   var SEARCH_DELAY_MS = 140;
   var HOURS_PER_YEAR = 2080;   // hourly pay is compared with the minimum-pay filter at this many hours
   var PAY_STEPS = [80000, 100000, 120000, 140000, 160000, 180000, 200000, 225000, 250000, 300000];
@@ -509,9 +520,11 @@ body::before {
     roles.forEach(function (role) {
       var company = data.companies[role.co];
       var metros = role.metros || [];
+      var states = role.st || [];
       var places = metros.slice();
       if (role.wp === 'remote') places.push(REMOTE);
-      if (!places.length) places.push(ELSEWHERE);
+      if (!places.length) places.push(ELSEWHERE);   // outside every metro area, and not remote
+      states.forEach(function (code) { places.push(STATE_PREFIX + code); });
       role.company = company;
       role.time = Date.parse((role.posted || role.seen) + 'T00:00:00Z') || 0;
       role.payCompare = comparablePay(role.pay);
@@ -526,6 +539,7 @@ body::before {
       role.haystack = fold([role.title, company.name].concat(
         role.loc || [],
         metros.map(function (id) { return labels.metros[id] || ''; }),
+        states.map(function (code) { return labels.states[code] || ''; }),
         role.wp ? [labels.workplace[role.wp] || ''] : []
       ).join(' \n '));
     });
@@ -537,7 +551,11 @@ body::before {
         return { id: entry.id, label: entry.listed === false ? entry.label + ' (not listed)' : entry.label };
       });
       if (facet.key === 'm') {
-        facet.options.push({ id: REMOTE, label: 'Remote' }, { id: ELSEWHERE, label: 'Other locations' });
+        facet.options.forEach(function (option) { option.kind = 'metro'; });
+        facet.options.push({ id: REMOTE, label: 'Remote', kind: 'top' }, { id: ELSEWHERE, label: 'Outside any metro area', kind: 'top' });
+        (data.taxonomy.states || []).forEach(function (entry) {
+          facet.options.push({ id: STATE_PREFIX + entry.id, label: entry.label, kind: 'state', code: entry.id });
+        });
       }
       if (facet.none) facet.options.push({ id: NONE, label: facet.none });
       facet.byId = {};
@@ -548,6 +566,40 @@ body::before {
         role.facets[facet.key].forEach(function (id) { if (facet.byId[id]) facet.byId[id].total += 1; });
       });
     });
+    prepareLocations(FACETS.filter(function (facet) { return facet.key === 'm'; })[0]);
+  }
+
+  // The location list can hold hundreds of metro areas, so it is ordered by how many roles each has,
+  // shortened until the visitor asks for more, and searchable by metro, state or the places roles name.
+  function prepareLocations(facet) {
+    var order = { top: 0, metro: 1, state: 2 };
+    facet.options.sort(function (a, b) {
+      return (order[a.kind] - order[b.kind]) || (b.total - a.total) || a.label.localeCompare(b.label);
+    });
+    // Option id -> place names from the roles it covers. Only roles with one location count: a role in
+    // Weirton and Berkeley would otherwise make "Weirton" find the Bay Area.
+    var places = {};
+    roles.forEach(function (role) {
+      if ((role.loc || []).length !== 1) return;
+      role.facets.m.forEach(function (id) {
+        if (!places[id]) places[id] = {};
+        (role.loc || []).forEach(function (text) { places[id][text] = true; });
+      });
+    });
+    var rank = { metro: 0, state: 0 };
+    facet.options.forEach(function (option) {
+      var words = [option.label];
+      if (option.kind === 'state') words.push(option.code);
+      if (option.kind === 'metro') {
+        // "Pittsburgh-Weirton-Steubenville, PA-OH-WV": add the state names the label's codes stand for.
+        var codes = (option.label.split(', ').pop() || '').split('-');
+        codes.forEach(function (code) { if (labels.states[code.toLowerCase()]) words.push(labels.states[code.toLowerCase()]); });
+      }
+      if (option.kind !== 'top') words = words.concat(Object.keys(places[option.id] || {}));
+      option.search = fold(words.join(' \n '));
+      option.rank = option.total > 0 && rank[option.kind] !== undefined ? rank[option.kind]++ : 0;
+    });
+    facet.locationCounts = rank;
   }
 
   // ---- Filter state in the URL fragment -------------------------------------------------------
@@ -578,6 +630,7 @@ body::before {
   function tokenFor(facet, id) {
     if (id === REMOTE) return 'remote';
     if (id === ELSEWHERE) return 'elsewhere';
+    if (id.indexOf(STATE_PREFIX) === 0) return 'state-' + id.slice(STATE_PREFIX.length);
     return facet.key + '-' + (id === NONE ? 'none' : id);
   }
 
@@ -612,10 +665,11 @@ body::before {
       else if (key === 'pay') { if (/^\d{1,7}$/.test(value)) next.pay = Number(value); }
       else if (key === 'sort') { if (SORTS.indexOf(value) > 0) next.sort = value; }
       else if (key === 'c') { if (SLUG.test(value) && board.companies[value]) next.c = value; }
+      else if (key === 'state') { if (/^[a-z]{2}$/.test(value) && facetByKey.m.byId[STATE_PREFIX + value]) next.m.add(STATE_PREFIX + value); }
       else if (facetByKey[key]) {
         var facet = facetByKey[key];
         var id = value === 'none' && facet.none ? NONE : value;
-        if (facet.byId[id] && id !== REMOTE && id !== ELSEWHERE) next[key].add(id);   // unknown ids are dropped
+        if (facet.byId[id] && id.charAt(0) !== '*') next[key].add(id);   // unknown ids are dropped
       }
     });
     return next;
@@ -703,7 +757,15 @@ body::before {
     var host = $('facet-groups');
     FACETS.forEach(function (facet) {
       var box = el('div', { class: 'options', role: 'group', 'aria-label': facet.title });
+      if (facet.key === 'm') buildLocationTools(facet, box);
+      var lastKind = null;
       facet.options.forEach(function (option) {
+        if (facet.key === 'm' && option.kind !== lastKind && option.kind !== 'top') {
+          var head = el('p', { class: 'opt-head', text: option.kind === 'metro' ? 'Metro areas' : 'States' });
+          facet.heads[option.kind] = head;
+          box.appendChild(head);
+        }
+        lastKind = option.kind;
         var input = el('input', { type: 'checkbox', id: optionDomId(facet, option.id) });
         input.addEventListener('change', function () {
           if (input.checked) state[facet.key].add(option.id); else state[facet.key].delete(option.id);
@@ -716,6 +778,7 @@ body::before {
         ]);
         box.appendChild(option.row);
       });
+      if (facet.key === 'm') { box.appendChild(facet.noMatch); box.appendChild(facet.moreButton); }
       facet.badge = el('span', { class: 'facet-n', hidden: true });
       facet.details = el('details', { class: 'facet', id: 'facet-' + facet.key, open: facet.open }, [
         el('summary', null, [facet.title + ' ', facet.badge]), box
@@ -733,6 +796,47 @@ body::before {
     if (roles.some(function (role) { return role.pay && role.pay.cur !== 'USD'; })) {
       $('pay-hint').textContent += ' The minimum compares pay published in US dollars only.';
     }
+  }
+
+  function buildLocationTools(facet, box) {
+    facet.heads = {};
+    facet.expanded = false;
+    facet.find = el('input', {
+      class: 'input', id: 'f-m-find', type: 'search', placeholder: 'City, metro area or state',
+      autocomplete: 'off', spellcheck: 'false', maxlength: '60'
+    });
+    facet.find.addEventListener('input', function () { showLocations(facet); });
+    box.appendChild(el('div', { class: 'loc-find' }, [el('label', { for: 'f-m-find', text: 'Find a place' }), facet.find]));
+    facet.noMatch = el('p', { class: 'hint', text: 'No place on the board matches.', hidden: true });
+    facet.moreButton = el('button', { type: 'button', class: 'btn btn-quiet loc-more', 'aria-controls': 'facet-m' });
+    facet.moreButton.addEventListener('click', function () { facet.expanded = !facet.expanded; showLocations(facet); });
+  }
+
+  // Which location options to show: chosen ones always; otherwise those matching the place search,
+  // or, with no search, the busiest few of each kind until "Show all".
+  function showLocations(facet) {
+    var words = fold(facet.find.value).split(/\s+/).filter(Boolean);
+    var chosen = state.m, shownByKind = { metro: 0, state: 0 }, hiddenCount = 0, matches = 0;
+    facet.options.forEach(function (option) {
+      var visible;
+      if (chosen.has(option.id)) visible = true;
+      else if (option.total === 0) visible = false;
+      else if (words.length) visible = words.every(function (word) { return option.search.indexOf(word) !== -1; });
+      else if (option.kind === 'top') visible = true;
+      else visible = facet.expanded || option.rank < LOCATION_SHORT_LIST;
+      if (!visible && !words.length && option.total > 0 && option.kind !== 'top') hiddenCount += 1;
+      if (visible && option.kind !== 'top') shownByKind[option.kind] += 1;
+      if (visible && words.length) matches += 1;
+      option.row.hidden = !visible;
+    });
+    Object.keys(facet.heads).forEach(function (kind) { facet.heads[kind].hidden = shownByKind[kind] === 0; });
+    facet.noMatch.hidden = !(words.length && matches === 0);
+    var counts = facet.locationCounts;
+    facet.moreButton.hidden = words.length > 0 || (!facet.expanded && hiddenCount === 0);
+    facet.moreButton.textContent = facet.expanded
+      ? 'Show fewer places'
+      : 'Show all ' + plural(counts.metro, 'metro area', 'metro areas') + ' and ' + plural(counts.state, 'state', 'states');
+    facet.moreButton.setAttribute('aria-expanded', facet.expanded ? 'true' : 'false');
   }
 
   // Make the controls show `state` (after reading the address, or after "Clear all").
@@ -878,8 +982,9 @@ body::before {
         var isChosen = chosen.has(option.id);
         option.countNode.textContent = n.toLocaleString('en-US');
         option.row.classList.toggle('zero', n === 0 && !isChosen);
-        option.row.hidden = option.total === 0 && !isChosen;   // nothing on the board has this value
+        if (facet.key !== 'm') option.row.hidden = option.total === 0 && !isChosen;   // nothing on the board has this value
       });
+      if (facet.key === 'm') showLocations(facet);
       facet.badge.hidden = chosen.size === 0;
       facet.badge.textContent = chosen.size ? String(chosen.size) : '';
     });
@@ -908,7 +1013,8 @@ body::before {
     FACETS.forEach(function (facet) {
       facet.options.forEach(function (option) {
         if (state[facet.key].has(option.id)) {
-          var text = option.id === NONE ? facet.title + ': ' + option.label.toLowerCase() : option.label;
+          var text = option.id === NONE ? facet.title + ': ' + option.label.toLowerCase()
+            : option.kind === 'state' ? option.label + ' (state)' : option.label;
           chip(facet.title, text, function () { state[facet.key].delete(option.id); });
         }
       });
