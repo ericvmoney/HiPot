@@ -74,3 +74,12 @@ A minimum keeps a role when the top of its published range reaches the figure. I
 ## Persona hook
 
 `rankRolesForPersona(rolesInOrder, candidatePersona)` in `site/index.html` is where Milestone 2 ranks the filtered roles against a persona file. Today it returns the list unchanged and no persona can be loaded.
+
+## Pay bands (`site/data/pay.json`)
+
+The publish step also writes `pay.json` beside `board.json` (`--pay-out` to move it). The shape is in [pay.schema.json](pay.schema.json); the rules are in `pay.py`.
+
+- **Source.** Only the roles that reach the board, and only pay their employers published in US dollars with a low end above zero. Nothing is estimated and no gap is filled.
+- **Periods.** Yearly and hourly pay are separate bands and are never converted.
+- **Groups.** Role group: the first discipline for engineering and science roles (`d-mechanical`), otherwise the function (`f-technician`). Level: the role's level, or `none`. Market: each metro region the role names, `remote` for remote roles, and `us` for every role in the United States. A role is outside the US only when every location it names is in another country.
+- **Figures.** Median low end, median high end, median midpoint, and the count. Below 3 postings a band carries its count and no figures.

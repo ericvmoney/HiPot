@@ -27,10 +27,12 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pipeline.publish import pay as paybands
 from pipeline.publish.states import US_STATES, states_for
 from tools.validate import check_companies, check_jobs, is_listed, listed_functions, schema_errors, schema_registry
 
 BOARD_VERSION = 0
+PAY_VERSION = 0
 
 # Taxonomy lists the page needs labels for, in the order the page shows them.
 TAXONOMY_KEYS = ("functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "climate_tiers")
@@ -134,8 +136,8 @@ def _role_record(job: dict) -> dict[str, Any]:
     return record
 
 
-def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False) -> dict:
-    """Return the board data as a dict. Raises PublishError on input that fails the contracts."""
+def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool) -> dict[str, Any]:
+    """The roles that reach the board, newest first, with the counts the board reports."""
     _check_inputs(jobs_file, registry_file, taxonomy)
 
     companies = {company["id"]: company for company in registry_file["companies"]}
@@ -150,6 +152,15 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
     # Newest first; ties broken by company name, title and id so the order never depends on the input order.
     kept.sort(key=lambda job: (companies[job["company_id"]]["name"].casefold(), job["title"].casefold(), job["id"]))
     kept.sort(key=_role_date, reverse=True)
+    return {"companies": companies, "kept": kept,
+            "left_out_company": left_out_company, "left_out_function": left_out_function}
+
+
+def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False) -> dict:
+    """Return the board data as a dict. Raises PublishError on input that fails the contracts."""
+    selected = _select(jobs_file, registry_file, taxonomy, include_unlisted)
+    companies, kept = selected["companies"], selected["kept"]
+    left_out_company, left_out_function = selected["left_out_company"], selected["left_out_function"]
 
     used = {job["company_id"] for job in kept}
     company_records = {
@@ -176,6 +187,51 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
         "companies": company_records,
         "roles": [_role_record(job) for job in kept],
     }
+
+
+def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False) -> dict:
+    """Pay bands for the candidate pay page, from the same roles the board shows."""
+    kept = _select(jobs_file, registry_file, taxonomy, include_unlisted)["kept"]
+    found = paybands.bands(kept)
+    return {
+        "pay_version": PAY_VERSION,
+        "generated_at": jobs_file["generated_at"],
+        "scope": "all" if include_unlisted else "listed",
+        "min_postings": paybands.MIN_BAND,
+        "counts": {
+            "postings": sum(1 for job in kept if paybands.usable_pay(job) and paybands.markets(job)),
+            "year": sum(1 for job in kept if paybands.usable_pay(job) and job["pay"]["period"] == "year"
+                        and paybands.markets(job)),
+            "hour": sum(1 for job in kept if paybands.usable_pay(job) and job["pay"]["period"] == "hour"
+                        and paybands.markets(job)),
+            "left_out": sum(1 for job in kept if job["pay"] and not (paybands.usable_pay(job) and paybands.markets(job))),
+        },
+        "labels": {
+            "groups": paybands.group_labels(taxonomy, (band["g"] for band in found)),
+            "levels": [{"id": entry["id"], "label": entry["label"]} for entry in taxonomy["levels"]]
+                      + [{"id": "none", "label": "Level not stated"}],
+            "markets": paybands.market_labels(taxonomy, (band["m"] for band in found)),
+        },
+        "bands": found,
+    }
+
+
+def dumps_pay(pay: dict) -> str:
+    """One band per line, like the board file."""
+    head = {key: value for key, value in pay.items() if key != "bands"}
+    lines = ["{"] + [f"{_compact(key)}:{_compact(value)}," for key, value in head.items()]
+    lines.append('"bands":[')
+    lines.append(",\n".join(_compact(band) for band in pay["bands"]))
+    lines += ["]", "}"]
+    return "\n".join(lines) + "\n"
+
+
+def write_pay(pay: dict, path: Path | str) -> int:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = dumps_pay(pay).encode("utf-8")
+    path.write_bytes(data)
+    return len(data)
 
 
 def _compact(value: Any) -> str:
