@@ -263,10 +263,12 @@ Decided by Eric on 2026-11-24:
    - B3. A company with no headcount figure is included.
 9. **Git commits** in this repository use Eric's personal GitHub account (ericvmoney, ericvmoney@gmail.com).
 
-Still open:
-
-10. **A sharper startup definition.** Eric asked for a proposal. Proposed, not yet agreed:
-    - **Independent:** not a subsidiary or division of a company with 1,000 or more people (this is what keeps Scout Motors and Wing-style units honest).
-    - **Under 1,000 people** on the latest dated figure, with about 25 percent tolerance (borderline, B2), and in when no figure exists (B3).
-    - **Still growing like a startup:** at least one of: founded within the last 15 years; raised venture or growth equity within the last 5 years; or public for less than 5 years.
+10. **Startup definition** (agreed 2026-11-24, with the cap raised from the proposal's 1,000 to 4,000). A company is a startup when it is:
+    - **independent:** not a subsidiary or division of a company at or above the cap (owners recorded in `companies.yml` as `parent`);
+    - **under 4,000 people** on the latest dated figure, with about 25 percent tolerance (up to 5,000), and in when no figure exists;
+    - **still growing like a startup:** at least one of founded within the last 15 years, an equity raise within the last 5 years (`last_raise`), or public for less than 5 years (`ipo_year`). Where those facts are missing, a private venture-stage company is included and a public one is not.
+    - Applied by `startup_test()` in `tools/apply_screening.py`; an owner ruling by name still wins (Archer). This supersedes the age guide (B1) and the borderline rule (B2). First effect: TerraPower and Invenergy in; SENS, Wing, Solid Power and Lightbridge out, pending the scout's facts on owners, raises and listing years.
     - Reviewed once a quarter; a company that crosses a line gets a quarter's notice on the board before it leaves.
+11. **Blocked discovery sources** may be read in the desktop app's built-in browser at a person's pace (Eric, 2026-11-24). No CAPTCHA, bot challenge, login or paywall is ever passed; such sources are listed for Eric to open. Job postings still come only through the collector's readers.
+
+Next after the current coverage run (Eric, 2026-11-24): a draft of the in-browser resume parser, and artifact hosting prepared for first testing.

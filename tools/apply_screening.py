@@ -33,9 +33,11 @@ SCREENING = ROOT / "data" / "screening"
 PROPOSAL_FILES = "proposals-*.yml"        # proposals-01.yml, proposals-02-colorado.yml, ...
 FIX_FILES = "registry-fixes-*.yml"        # facts for companies already in the registry
 LOG = SCREENING / "applied-latest.md"     # applied-01.md keeps the first run's log
-HEADCOUNT_LINE, BORDERLINE = 1000, 1250   # B2: up to about 25 percent over counts as borderline
+HEADCOUNT_LINE, BORDERLINE = 4000, 5000   # agreed 2026-11-24: 4,000 people, about 25 percent tolerance
+VENTURE_STAGES = {"pre-seed", "seed", "series-a", "series-b", "series-c", "late"}
 READABLE = set(COLLECTOR_READERS)   # systems the collector reads with no switch needed
 TODAY = "2026-11-24"
+YEAR = int(TODAY[:4])
 
 HEADER = """\
 # HiPot company registry.
@@ -65,13 +67,24 @@ STARTUP_IN_BY_RULE = {
     "no figure": "No headcount figure found; included under the owner's rule for missing figures (2026-11-24).",
     "near-line": "Near the 1,000-person line; borderline companies are included (owner, 2026-11-24).",
 }
+# Owners of subsidiaries well above the cap, recorded until the scout's
+# registry-fixes-03 supplies sourced values. A company whose owner is unknown
+# is not treated as a subsidiary.
+KNOWN_PARENTS = {
+    "scout-motors": "Volkswagen Group",
+    "qcells": "Hanwha Group",
+    "rivian-and-volkswagen-group-technologies": "Rivian and Volkswagen Group",
+    "zoox": "Amazon",
+    "wing": "Alphabet",
+    "clearway-energy-group": "Global Infrastructure Partners and TotalEnergies",
+}
+
 # Each entry: the question it settles, and the fields it sets.
 OWNER_RULINGS: dict[str, dict] = {
     # A1: drone delivery is electric aviation.
     "zipline": {"q": "A1", "tier": "enabling", "sectors": ["electric-aviation"],
-                "reason": "Battery-electric delivery aircraft for retail, restaurant and hospital deliveries, replacing car and van trips.",
-                "startup": "in", "startup_rule": "no figure"},
-    "wing": {"q": "A1", "tier": "enabling", "sectors": ["electric-aviation"], "startup": "in", "startup_rule": "age"},
+                "reason": "Battery-electric delivery aircraft for retail, restaurant and hospital deliveries, replacing car and van trips."},
+    "wing": {"q": "A1", "tier": "enabling", "sectors": ["electric-aviation"]},
     # A2: clean products sold to data centers are included for now. Fossil-fuelled
     # products (Arbor, Hyliion, Scale Microgrids) and compute (Crusoe) stay out.
     "veir": {"q": "A2", "tier": "core", "sectors": ["grid"],
@@ -83,11 +96,11 @@ OWNER_RULINGS: dict[str, dict] = {
     "spinor-energy": {"q": "A2", "tier": "core", "sectors": ["energy-storage"],
                       "reason": "Superconducting magnetic energy storage, aimed first at AI data centers."},
     "karman-industries": {"q": "A2", "tier": "enabling", "sectors": ["industrial-heat"],
-                          "reason": "Electric heat pumps for industrial heat and data-center cooling.", "startup": "in", "startup_rule": "no figure"},
+                          "reason": "Electric heat pumps for industrial heat and data-center cooling."},
     "panthalassa": {"q": "A2", "tier": "enabling", "sectors": ["distributed-generation"],
                     "reason": "Wave-powered ocean nodes that generate their own electricity, first used to run on-board computing."},
     "on-energy": {"q": "A2", "tier": "enabling", "sectors": ["energy-storage"], "basis": "provisional",
-                  "reason": "Battery storage and power systems for data centers and industrial sites.", "startup": "in", "startup_rule": "no figure"},
+                  "reason": "Battery storage and power systems for data centers and industrial sites."},
     # A3: defense as a side business is fine; as the main business it is out.
     "antares": {"q": "A3", "tier": "out",
                 "reason": "Factory-built nuclear microreactors whose main customers so far are the US military; defense as the main business is out."},
@@ -112,18 +125,11 @@ OWNER_RULINGS: dict[str, dict] = {
     "mariana-minerals": {"q": "A6b", "tier": "out",
                          "reason": "Operates mines and refineries for copper, lithium and nickel; mine operation is out."},
     # A7: Mainspring is excluded for now.
-    "mainspring-energy": {"q": "A7", "tier": "out", "startup": "in", "startup_rule": "age",
+    "mainspring-energy": {"q": "A7", "tier": "out",
                           "reason": "Linear generators that mostly run on natural gas or biogas today; excluded for now."},
     # A8: SENS is included.
-    "stored-energy-systems-sens": {"q": "A8", "tier": "enabling", "sectors": ["grid", "components"], "startup": "in", "startup_rule": "age",
+    "stored-energy-systems-sens": {"q": "A8", "tier": "enabling", "sectors": ["grid", "components"],
                                    "reason": "DC power systems, chargers and controls for utilities, switchgear and backup power."},
-    # B2: borderline headcount is included. Not borderline: Scout Motors (a
-    # Volkswagen subsidiary at about 1,250 and planning 4,000), ChargePoint (1,440),
-    # Atoms (2,000).
-    "form-energy": {"q": "B2", "startup": "in", "startup_rule": "near-line"},
-    "redwood-materials": {"q": "B2", "startup": "in", "startup_rule": "near-line"},
-    "commonwealth-fusion-systems": {"q": "B2", "startup": "in",
-                                    "startup_reason": "Sources say just over 1,000 people; borderline companies are included (owner, 2026-11-24)."},
 }
 
 
@@ -169,9 +175,59 @@ def fill_missing(company: dict, fix: dict) -> None:
             company[field] = value
     if company.get("headcount") is None and (fix.get("headcount") or {}).get("value") is not None:
         company["headcount"] = headcount_from_review(fix)
+    # Startup-definition facts (registry-fixes-03 onward).
+    if "parent" in fix and company.get("parent") is None:
+        parent = fix["parent"]
+        company["parent"] = parent.get("value") if isinstance(parent, dict) else parent
+    raise_ = fix.get("last_raise")
+    if raise_ and company.get("last_raise") is None and raise_.get("date"):
+        company["last_raise"] = {"date": str(raise_["date"]), "type": raise_.get("type") or "equity round",
+                                 "source": raise_.get("source") or "registry-fixes"}
+    ipo = fix.get("ipo_year")
+    ipo = ipo.get("value") if isinstance(ipo, dict) else ipo
+    if ipo and company.get("ipo_year") is None:
+        company["ipo_year"] = int(ipo)
     note = "Missing facts filled from data/screening/registry-fixes."
-    if any(fix.get(f) for f in ("hq", "founded", "stage", "headcount")) and note not in (company.get("notes") or ""):
+    if any(fix.get(f) for f in ("hq", "founded", "stage", "headcount", "parent", "last_raise", "ipo_year")) \
+            and note not in (company.get("notes") or ""):
         company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
+def startup_test(company: dict) -> tuple[str, str]:
+    """The startup definition agreed on 2026-11-24 (PLAN.md section 9, item 10).
+
+    Independent; under 4,000 people with about 25 percent tolerance (in when no
+    figure exists); and at least one growth sign: founded within 15 years, an
+    equity raise within 5 years, or public for under 5 years. Where the facts
+    for the growth sign are missing, a private venture-stage company is given
+    the benefit of the doubt and a public one is not.
+    """
+    head = company.get("headcount") or {}
+    count = head.get("value")
+    size = f"{count:,} people ({head.get('source')}, {head.get('as_of')})" if count else "no headcount figure found"
+    if company.get("parent"):
+        return "out", f"Part of {company['parent']}; not independent."
+    if count and count > BORDERLINE:
+        return "out", f"{size}: over the 4,000-person line."
+    signs = []
+    founded, stage = company.get("founded"), company.get("stage")
+    if founded and founded > YEAR - 15:
+        signs.append(f"founded {founded}")
+    raise_ = company.get("last_raise")
+    if raise_ and int(str(raise_["date"])[:4]) > YEAR - 5:
+        signs.append(f"{raise_['type']} in {str(raise_['date'])[:4]}")
+    ipo = company.get("ipo_year")
+    if ipo and ipo > YEAR - 5:
+        signs.append(f"public since {ipo}")
+    owner = "owner not yet checked" if stage == "subsidiary" else "independent"
+    if signs:
+        return "in", f"{owner.capitalize()}; {size}; growth sign: {', '.join(signs)}."
+    if founded is None:
+        return "in", f"{owner.capitalize()}; {size}; founding year not found, so included."
+    if stage in VENTURE_STAGES and not raise_:
+        return "in", (f"{owner.capitalize()}; {size}; founded {founded} but venture-backed ({stage}); "
+                      f"latest round not yet checked, so included.")
+    return "out", f"{owner.capitalize()}; {size}; founded {founded}, with no equity raise in 5 years or recent listing found."
 
 
 def apply_ruling(company: dict, ruling: dict) -> None:
@@ -225,24 +281,16 @@ def main() -> int:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
 
-    # The headcount line: a dated figure beyond the borderline allowance takes a
-    # listed company out, unless the owner ruled on it by name (OWNER_RULINGS).
-    for company in companies.values():
-        head = company.get("headcount") or {}
-        if company["startup"]["status"] == "in" and (head.get("value") or 0) > BORDERLINE and company["id"] not in OWNER_RULINGS:
-            company["startup"] = {"status": "out", "reason": (
-                f"{head['value']:,} people ({head['source']}, {head['as_of']}): over the 1,000-person line "
-                f"by more than the borderline allowance.")}
+    for cid, parent in KNOWN_PARENTS.items():
+        if cid in companies and companies[cid].get("parent") is None:
+            companies[cid]["parent"] = parent
 
-    # B1 and B3 as blanket rules: a company held at 'review' only for its age or
-    # for a missing headcount is in. Anything held for another reason stays.
+    # The agreed startup definition, for every company that has been looked at.
+    # An owner ruling that names a company (OWNER_RULINGS) still wins, below.
     for company in companies.values():
-        reason = company["startup"].get("reason") or ""
-        if company["startup"]["status"] == "review" and company["id"] not in OWNER_RULINGS:
-            if "Older than 10 years" in reason or re.search(r"founded (19|20)(0\d|1[0-5])", reason, re.I):
-                company["startup"] = {"status": "in", "reason": rule_reason(reason, "age")}
-            elif "No headcount" in reason or "not found" in reason.lower() or "Headcount not found" in reason:
-                company["startup"] = {"status": "in", "reason": rule_reason(reason, "no figure")}
+        if company["startup"]["status"] != "unscreened":
+            status, reason = startup_test(company)
+            company["startup"] = {"status": status, "reason": reason}
 
     missing = [cid for cid in OWNER_RULINGS if cid not in companies]
     if missing:

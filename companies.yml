@@ -35,7 +35,7 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 20 to 100 people (aggregators, undated); founding year not found. Low confidence.
+    reason: Independent; no headcount figure found; founding year not found, so included.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: aalo-atomics
   name: Aalo Atomics
@@ -62,7 +62,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 162 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 162 people (Dealroom (https://dealroom.co/companies/aalo-atomics), 2026-11-24); growth
+      sign: founded 2023.'
   notes: 'Board rippling:aalo-atomics loaded 2026-11-24, linked from the company''s own site: 90 open roles, 61
     with engineering or technical titles; locations seen: Austin, TX, Idaho Falls, ID. Founded: https://dealroom.co/companies/aalo-atomics.
     Stage: Series B, $100M, August 2025 (Dealroom); a later May 2026 ''Late VC'' round (Ontario Teachers'' Pension
@@ -95,7 +96,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 20 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 20 people (Dealroom (https://dealroom.co/companies/acceleron-fusion), 2026-11-24); growth
+      sign: founded 2023.'
   notes: 'Board greenhouse:acceleronfusion loaded 2026-11-24, token matched by name; board page title checked: 3
     open roles, 2 with engineering or technical titles; locations seen: Cambridge, MA. Founded: https://dealroom.co/companies/acceleron-fusion.
     Stage: Series A $24M co-led by Lowercarbon Capital and Collaborative Fund, December 2024 (ANS headline calls
@@ -130,7 +132,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 23 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 23 people (Dealroom (https://dealroom.co/companies/adden-energy), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board rippling:adden-energy loaded 2026-11-24, token matched by name; board page title checked: 4 open
     roles, 4 with engineering or technical titles; locations seen: Waltham, MA. Founded: https://dealroom.co/companies/adden-energy.
     Stage: Series A, $15M, October 2024 (Dealroom; also linked from company site as an Axios Pro item). Earlier
@@ -160,8 +163,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 13,000 employees (FY2025 10-K (figure via StockAnalysis and filings tracker; 10-K text not opened),
-      2025-12-31).
+    reason: '13,000 people (FY2025 10-K (figure via StockAnalysis and filings tracker; 10-K text not opened) https://www.sec.gov/Archives/edgar/data/927003/0001104659-26-014731-index.html,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: aepnus-technology
@@ -189,7 +192,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'Dealroom: band under 100 (no count); founded 2021.'
+    reason: 'Independent; 17 people (Revelio Labs (https://www.reveliolabs.com/companies/aepnus-technology/employees),
+      2026-03-01); growth sign: founded 2021.'
   notes: 'Board rippling:aepnus-technology loaded 2026-11-24, token matched by name; board page title checked: 1
     open roles, 1 with engineering or technical titles; locations seen: Oakland, CA. Founded: https://dealroom.co/companies/aepnus-technology/.
     Stage: $8M seed financing announced June 2024 (company media page posts dated 2024-06-14 and 2024-06-17). https://aepnus.com/media
@@ -220,7 +224,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 111 people (Revelio Labs (https://www.reveliolabs.com/companies/aerovect/employees), 2026-06-01);
+      growth sign: founded 2020.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: air-company
   name: Air Company
@@ -247,7 +252,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 89 people (Built In, 2026-11-24); founded 2017.
+    reason: 'Independent; 89 people (Built In (https://builtin.com/company/air-company), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'Board greenhouse:aircompany loaded 2026-11-24, linked from the company''s own site: 7 open roles, 5 with
     engineering or technical titles; locations seen: New Britain, Pennsylvania, United States. Founded: https://builtin.com/company/air-company.
     Stage: $69M Series B announced 2024-09-18 per company site. https://www.aircompany.com/ Customers: Defense customers:
@@ -282,7 +288,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 50 people (Dealroom, 2026-11-24); founded 2019.
+    reason: 'Independent; 50 people (Dealroom (https://dealroom.co/companies/aircapture), 2026-11-24); growth sign:
+      founded 2019.'
   notes: 'Board greenhouse:aircapture loaded 2026-11-24, linked from the company''s own site: 5 open roles, 4 with
     engineering or technical titles; locations seen: Berkeley, CA. Founded: https://dealroom.co/companies/aircapture.
     Stage: Series A $50M, June 2025, lead Larsen Lam Foundation (reported $200M valuation), per Dealroom. https://dealroom.co/companies/aircapture
@@ -312,7 +319,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 73 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/albedo),
+      2026-11-24); growth sign: founded 2020.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: also
   name: ALSO
@@ -338,7 +346,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 330 people (Revelio estimate, 2026-03), founded 2025.
+    reason: 'Owner not yet checked; 330 people (Revelio Labs estimate (third-party) (undated; read 2026-11-24) https://www.reveliolabs.com/companies/also/employees,
+      2026-11-24); growth sign: founded 2025.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: alsym-energy
   name: Alsym Energy
@@ -364,9 +373,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'About 60 to 80 people (aggregators), so well under 1,000, but founded 2015 (Built In only), about 11
-      years: past the age guide by a year. Owner to decide. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).'
+    reason: 'Independent; 72 people (Built In company profile (aggregator, undated; date is the day it was read)
+      https://builtin.com/company/alsym-energy, 2026-11-24); growth sign: founded 2015.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: alva-energy
   name: Alva Energy
@@ -392,7 +400,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 24 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 24 people (Dealroom (https://dealroom.co/companies/alva-energy), 2026-11-24); growth sign:
+      founded 2023.'
   notes: 'Board ashby:alva-energy loaded 2026-11-24, token matched by name; board page title checked: 8 open roles,
     5 with engineering or technical titles; locations seen: Cambridge (Hybrid), Cambridge, MA, New York, NY (Hybrid).
     Founded: https://dealroom.co/companies/alva-energy. Stage: Series A $33M, February 2026, led by Playground Global
@@ -426,7 +435,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 15 people (Built In, 2026-11-24); founded 2022.
+    reason: 'Independent; 15 people (Built In (https://builtin.com/company/ammobia), 2026-11-24); growth sign: founded
+      2022.'
   notes: 'Board lever:ammobia loaded 2026-11-24, token matched by name; board page title checked: 2 open roles,
     0 with engineering or technical titles; locations seen: San Francisco, California. Founded: https://builtin.com/company/ammobia.
     Stage: Seed $7.5M, January 2026 (company press release 2026-01-14; TechCrunch 2026-01-13). Earlier $4.2M seed,
@@ -460,7 +470,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Headcount not found; founded 2023; Series A $80M (2025-11).
+    reason: 'Independent; 258 people (Revelio Labs (https://www.reveliolabs.com/companies/amperesand/employees),
+      2026-06-01); growth sign: founded 2023.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A2 (2026-11-24) applied.
 - id: antares
@@ -488,7 +499,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 100 people (Built In, 2026-11-24); founded 2023.
+    reason: 'Independent; 100 people (Built In (https://builtin.com/company/antares), 2026-11-24); growth sign:
+      founded 2023.'
   notes: 'Board ashby:Antares loaded 2026-11-24, linked from the company''s own site: 83 open roles, 67 with engineering
     or technical titles; locations seen: DC, Idaho Falls, Los Angeles. Founded: https://builtin.com/company/antares.
     Stage: Series C $470M ($370M equity, $100M debt), 2026-07-27, co-led by Paradigm and Caffeinated Capital (TechCrunch,
@@ -523,7 +535,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 220 to 270 people (PitchBook, Dealroom; undated 2025-2026), founded 2018.
+    reason: 'Independent; 271 people (PitchBook profile (third-party) (undated; read 2026-11-24) https://pitchbook.com/profiles/company/228529-72,
+      2026-11-24); growth sign: founded 2018.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: aptera
   name: Aptera
@@ -549,7 +562,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 57 employees at 2026-03-31 (company results); current company re-founded 2019.
+    reason: 'Independent; 57 people (Aptera Q1 2026 results press release (company) https://www.globenewswire.com/news-release/2026/05/13/3294552/0/en/Aptera-Motors-Reports-First-Quarter-2026-Financial-Results.html,
+      2026-03-31); growth sign: founded 2019.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: arbor-energy
   name: Arbor Energy
@@ -576,7 +590,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 69 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 69 people (Dealroom (https://dealroom.co/companies/arbor-energy), 2026-11-24); growth
+      sign: founded 2022.'
   notes: 'Board greenhouse:arborenergy loaded 2026-11-24, linked from the company''s own site: 20 open roles, 11
     with engineering or technical titles; locations seen: El Segundo, CA, El Segundo, CA , Remote, USA. Founded:
     https://dealroom.co/companies/arbor-energy. Stage: Series A $55M, 2025-10-21, co-led by Lowercarbon Capital
@@ -641,7 +656,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 20 to 40 people (third-party estimates), founded 2021.
+    reason: 'Independent; 28 people (Dealroom profile (third-party) (undated; read 2026-11-24) https://dealroom.co/companies/atmoszero/,
+      2026-11-24); growth sign: founded 2021.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: atomic-machines
   name: Atomic Machines
@@ -667,7 +683,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 130 people (Built In); founded 2019.
+    reason: 'Independent; 129 people (Built In company profile (aggregator, undated; date is the day it was read
+      via search) https://builtin.com/company/atomic-machines, 2026-11-24); growth sign: founded 2019.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
     ruling A2 (2026-11-24) applied.
 - id: atoms
@@ -693,8 +710,10 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: More than 2,000 people (LinkedIn count reported 2026-03); founded 2016 as City Storage Systems.
+    status: in
+    reason: 'Independent; 2,000 people (Press report citing LinkedIn public profiles; the CEO said ''thousands of
+      employees'' https://finance.yahoo.com/news/travis-kalanick-debuts-plan-gainfully-192647148.html, 2026-03-14);
+      growth sign: founded 2016.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: avalanche-energy
   name: Avalanche Energy
@@ -721,7 +740,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 50 people (Built In, 2026-11-24); founded 2018.
+    reason: 'Independent; 50 people (Built In (https://builtin.com/company/avalanche-energy), 2026-11-24); growth
+      sign: founded 2018.'
   notes: 'Board ashby:avalanchefusion loaded 2026-11-24, linked from the company''s own site: 10 open roles, 7 with
     engineering or technical titles; locations seen: Seattle, Washington. Founded: https://builtin.com/company/avalanche-energy.
     Stage: Raised $29M in February 2026 led by RA Capital Management (round letter not stated); total funding $105M
@@ -757,8 +777,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 121 people (Dealroom, 2026-11-24); founded 2013. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 121 people (Dealroom (https://dealroom.co/companies/aventon), 2026-11-24); growth sign:
+      founded 2013.'
   notes: 'Board lever:aventon loaded 2026-11-24, linked from the company''s own site: 10 open roles, 0 with engineering
     or technical titles; locations seen: Brea, California, New Hampshire, Northern California. Founded: https://dealroom.co/companies/aventon.
     Stage: Venture round Nov 2022 (reported $590M valuation, amount undisclosed; HSG listed as Series A investor)
@@ -790,8 +810,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2020. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 29 people (Revelio Labs (https://www.reveliolabs.com/companies/avnos/employees), 2026-03-01);
+      growth sign: founded 2020.'
   notes: 'Board greenhouse:avnos loaded 2026-11-24, token matched by name; board page title checked: 1 open roles,
     0 with engineering or technical titles; locations seen: Bridgewater, NJ. Founded: https://www.canarymedia.com/articles/carbon-capture/avnos-raises-36m-to-pull-co2-and-water-from-the-sky.
     Stage: Series A $36M led by NextEra Energy Resources, 2024-02-06 (https://businesswire.com/news/home/20240206271792/en/Avnos-Inc.-Secures-36-Million-in-Series-A-Funding-Led-by-NextEra-Energy);
@@ -828,8 +848,9 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'Under 1,000 on every source found, but the range is wide: 368 (Revelio, 2026-03) to a 501-1,000 band
-      on an investor job board. Founded 2023. Growing fast; re-check each quarter.'
+    reason: 'Independent; 368 people (Revelio Labs data via Silicon Valley Investclub (third-party) (undated; read
+      2026-11-24) https://siliconvalleyinvestclub.com/id/companies/base-power/, 2026-11-24); growth sign: founded
+      2023.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: bedrock-energy
   name: Bedrock Energy
@@ -856,7 +877,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 28 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 28 people (Dealroom (https://dealroom.co/companies/bedrock-energy), 2026-11-24); growth
+      sign: founded 2022.'
   notes: 'Board lever:bedrockenergy loaded 2026-11-24, linked from the company''s own site: 6 open roles, 2 with
     engineering or technical titles; locations seen: Austin, Texas, Colorado, New York, NY / Los Angeles, CA / Denver,
     CO. Founded: https://dealroom.co/companies/bedrock-energy. Stage: Series B $24M led by Clean Energy Ventures
@@ -889,7 +911,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 188 people (Revelio Labs (https://www.reveliolabs.com/companies/bedrock-robotics/employees),
+      2026-06-01); growth sign: founded 2024.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: blue-current
   name: Blue Current
@@ -915,8 +938,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 42 people (Built In, 2026-11-24); founded 2015. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 42 people (Built In (https://builtin.com/company/blue-current), 2026-11-24); growth sign:
+      founded 2015.'
   notes: 'Board greenhouse:bluecurrent loaded 2026-11-24, linked from the company''s own site: 16 open roles, 13
     with engineering or technical titles; locations seen: Hayward CA. Founded: https://builtin.com/company/blue-current.
     Stage: Series D extension of more than $80M led by Amazon, with Koch Disruptive Technologies, Piedmont Capital,
@@ -950,8 +973,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2023. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 107 people (Revelio Labs (https://www.reveliolabs.com/companies/blue-energy/employees),
+      2026-06-01); growth sign: founded 2023.'
   notes: 'Board ashby:blue-energy loaded 2026-11-24, linked from the company''s own site: 17 open roles, 4 with
     engineering or technical titles; locations seen: DC - Chevy Chase, MD, DC - North Bethesda, MD, Greater Houston.
     Founded: https://www.businesswire.com/news/home/20241008971139/en/Blue-. Stage: $380M equity+debt financing
@@ -989,7 +1012,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 244 people (Revelio Labs (https://www.reveliolabs.com/companies/boom-technology/employees),
+      2026-06-01); growth sign: founded 2014.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: boston-materials
   name: Boston Materials
@@ -1016,7 +1040,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 33 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 33 people (Dealroom (https://dealroom.co/companies/boston-materials), 2026-11-24); growth
+      sign: founded 2016.'
   notes: 'Board lever:boston-materials loaded 2026-11-24, linked from the company''s own site: 9 open roles, 8 with
     engineering or technical titles; locations seen: Billerica, MA. Founded: https://dealroom.co/companies/boston-materials.
     Stage: Dealroom lists last round as ''Early VC'', $14M, November 2024 (investors incl. Collaborative Fund, Valo
@@ -1049,7 +1074,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 71 people (Dealroom, 2026-11-24); founded 2019.
+    reason: 'Independent; 71 people (Dealroom (https://dealroom.co/companies/brimstone-energy), 2026-11-24); growth
+      sign: founded 2019.'
   notes: 'Board ashby:brimstone loaded 2026-11-24, linked from the company''s own site: 1 open roles, 0 with engineering
     or technical titles; locations seen: Reno, NV. Founded: https://dealroom.co/companies/brimstone-energy. Stage:
     Series A, $55M, March 2022 co-led by Breakthrough Energy Ventures and DCVC; later grants only (DOE $189M award
@@ -1081,7 +1107,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 40 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 40 people (Dealroom (https://dealroom.co/companies/built-robotics), 2026-11-24); growth
+      sign: founded 2016.'
   notes: 'Board ashby:built-robotics loaded 2026-11-24, linked from the company''s own site: 7 open roles, 5 with
     engineering or technical titles; locations seen: Jobsites across the US, Remote, San Francisco, California USA.
     Founded: https://dealroom.co/companies/built-robotics. Stage: Series C $64M, April 2022, Founders Fund, Fifth
@@ -1115,7 +1142,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Large public company.
+    reason: '22,234 people (Wikipedia (from annual report) (https://en.wikipedia.org/wiki/Canadian_Solar), 2023-01-01):
+      over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: captura
   name: Captura
@@ -1142,7 +1170,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 42 people (Built In, 2026-11-24); founded 2021.
+    reason: 'Independent; 42 people (Built In (https://builtin.com/company/captura), 2026-11-24); growth sign: founded
+      2021.'
   notes: 'Board greenhouse:captura loaded 2026-11-24, linked from the company''s own site: 3 open roles, 3 with
     engineering or technical titles; locations seen: Pasadena, CA. Founded: https://builtin.com/company/captura.
     Stage: First close of $12.5M Series B announced June 2026 (company/trade press, cleanthinking.de 2026-06-29
@@ -1176,7 +1205,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 31 people (Dealroom, 2026-11-24); founding year not found.
+    reason: 'Independent; 31 people (Dealroom (https://dealroom.co/companies/charge-robotics/), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board ashby:charge-robotics loaded 2026-11-24, linked from the company''s own site: 15 open roles, 10
     with engineering or technical titles; locations seen: Field, San Leandro HQ. Stage: Dealroom lists a $22M early-stage
     VC round in July 2026 at a reported $88M valuation, investors undisclosed. The round letter (seed or Series
@@ -1210,7 +1240,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 1,440 employees at 2026-01-31 (fiscal 2026 Form 10-K); founded 2007. Over the hard line.
+    reason: Independent; 1,440 people (ChargePoint FY2026 Form 10-K (filed 2026-04-02), via Medici List summary
+      and stockanalysis.com https://www.boardroomalpha.com/sec/chpt-10-k-2026-04-02-0001777393-26-000013, 2026-01-31);
+      founded 2007, with no equity raise in 5 years or recent listing found.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: charm-industrial
   name: Charm Industrial
@@ -1236,7 +1268,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 100 people (company job posting; LeadIQ 2026-02), founded 2018.
+    reason: 'Independent; 95 people (LeadIQ estimate (third-party) (undated; read 2026-11-24) https://leadiq.com/c/charm-industrial/5b19a08f390000a000c64d39,
+      2026-11-24); growth sign: founded 2018.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: clearway-energy-group
   name: Clearway Energy Group
@@ -1264,8 +1297,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Large developer.
+    reason: Part of Global Infrastructure Partners and TotalEnergies; not independent.
   notes: Missing facts filled from data/screening/registry-fixes.
+  parent: Global Infrastructure Partners and TotalEnergies
 - id: commonwealth-fusion-systems
   name: Commonwealth Fusion Systems
   website: https://cfs.energy
@@ -1291,7 +1325,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Sources say just over 1,000 people; borderline companies are included (owner, 2026-11-24).
+    reason: 'Independent; 1,000 people (Dealroom (https://dealroom.co/companies/commonwealth-fusion-systems), 2026-11-24);
+      growth sign: founded 2018.'
   notes: 'Board lever:cfsenergy loaded 2026-11-24, linked from the company''s own site: 136 open roles, 105 with
     engineering or technical titles; locations seen: Ayer, MA, Devens, MA, Devens, MA & Richmond, VA. Founded: https://dealroom.co/companies/commonwealth-fusion-systems.
     Stage: $863M Series B2 announced 2025-08-28, on top of $1.8B Series B (2021); total ~$3B. Series B label but
@@ -1326,8 +1361,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 64 people (Dealroom, 2026-11-24); founded 2011. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 64 people (Dealroom (https://dealroom.co/companies/connectder), 2026-11-24); founded 2011
+      but venture-backed (late); latest round not yet checked, so included.
   notes: 'Board greenhouse:connectder loaded 2026-11-24, token matched by name; board page title checked: 1 open
     roles, 1 with engineering or technical titles; locations seen: Philadelphia, Pennsylvania, United States; Remote.
     Founded: https://dealroom.co/companies/connectder. Stage: Series D, $35M, December 2024 (Dealroom; investors
@@ -1359,7 +1394,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 11 people (Activate job board listing, 2026-11-24); founded 2022.
+    reason: 'Independent; 11 people (Activate job board listing (https://jobs.activate.org/companies/copper-2-27e4baf3-8c2c-4cc5-9660-8ea6a2e15471),
+      2026-11-24); growth sign: founded 2022.'
   notes: 'Board greenhouse:copperhome loaded 2026-11-24, linked from the company''s own site: 2 open roles, 1 with
     engineering or technical titles; locations seen: Berkeley, California, United States. Founded: https://www.cbinsights.com/company/channing-street-copper.
     Stage: Series A $28M led by Prelude Ventures, August 2025, plus venture debt; about $38-39M raised total (Axios,
@@ -1393,8 +1429,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 8 people (Y Combinator company page; undated, so as_of is the day it was read, 2026-11-24); founded
-      2024.
+    reason: 'Independent; 8 people (Y Combinator company page; undated, so as_of is the day it was read (https://www.ycombinator.com/companies/cosmic-robotics),
+      2026-11-24); growth sign: founded 2024.'
   notes: 'Board ashby:cosmic-robotics loaded 2026-11-24, linked from the company''s own site: 5 open roles, 4 with
     engineering or technical titles; locations seen: Cosmic HQ, Field. Founded: https://www.ycombinator.com/companies/cosmic-robotics.
     Stage: Backed by Y Combinator (YC page lists batch as Summer 2026); no priced round found (https://www.ycombinator.com/companies/cosmic-robotics).
@@ -1428,8 +1464,9 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 35 people (Search-result summary of April 2026 Long Beach press coverage (original article could not
-      be fetched), 2026-04-01); founded 2023.
+    reason: 'Independent; 35 people (Search-result summary of April 2026 Long Beach press coverage (original article
+      could not be fetched) (https://newstimes.com.ng/2026/04/this-long-beach-startup-says-it-has-a-patch-for-californias-power-problems/),
+      2026-04-01); growth sign: founded 2023.'
   notes: 'Board ashby:criticalloop loaded 2026-11-24, linked from the company''s own site: 18 open roles, 11 with
     engineering or technical titles; locations seen: Long Beach (On-site), Torrance (Hybrid), Torrance (On-Site).
     Founded: https://simplify.jobs/c/Critical-Loop. Stage: $26M Series A led by Conifer Infrastructure Partners
@@ -1464,8 +1501,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: 'Independent; 1,528 people (Revelio Labs (https://www.reveliolabs.com/companies/crusoe-energy-systems/employees),
+      2026-06-01); growth sign: founded 2018.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: cummins
   name: Cummins
@@ -1490,7 +1528,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 67,400 employees (FY2025 10-K (figure via 10-K summaries), 2025-12-31).
+    reason: '67,400 people (FY2025 10-K (figure via 10-K summaries) https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: dandelion-energy
@@ -1518,7 +1557,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 114 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 114 people (Dealroom (https://dealroom.co/companies/dandelion-energy), 2026-11-24); growth
+      sign: founded 2017.'
   notes: 'Board ashby:dandelion loaded 2026-11-24, linked from the company''s own site: 11 open roles, 0 with engineering
     or technical titles; locations seen: Denver, CO, Maryland, Peekskill, NY. Founded: https://dealroom.co/companies/dandelion-energy.
     Stage: Series C, $40M at a reported $350M valuation, September 2024 (Dealroom). Series B $70M, November 2022.
@@ -1552,7 +1592,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 51 people (StockAnalysis (S&P Global Market Intelligence profile), 2026-11-20); founded 2023.
+    reason: 'Independent; 51 people (StockAnalysis (S&P Global Market Intelligence profile) (https://stockanalysis.com/stocks/fisn/company/),
+      2026-11-20); growth sign: founded 2023.'
   notes: 'Board greenhouse:deepfissioninc loaded 2026-11-24, linked from the company''s own site: 2 open roles,
     1 with engineering or technical titles; locations seen: Parsons, Kansas, United States, Remote - US. Founded:
     https://stockanalysis.com/stocks/fisn/company/. Stage: Went public by reverse merger with Surfside Acquisition
@@ -1586,7 +1627,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 51 people (Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Dexmate),
+      2026-11-24); growth sign: founded 2024.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: eaton
   name: Eaton
@@ -1612,8 +1654,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 92,000 employees (Eaton corporate site ('>92K employees', alongside 2025 sales); 10-K human-capital
-      figure not read, 2025 (FY2025)).
+    reason: '92,000 people (Eaton corporate site (''>92K employees'', alongside 2025 sales); 10-K human-capital
+      figure not read (undated; read 2026-11-24) https://eaton.com/gb/en-gb/company.html, 2026-11-24): over the
+      4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: electra
@@ -1641,7 +1684,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 107 people (Built In, 2026-11-24); founded 2020.
+    reason: 'Independent; 107 people (Built In (https://builtin.com/company/electra), 2026-11-24); growth sign:
+      founded 2020.'
   notes: 'Board greenhouse:electrasteel loaded 2026-11-24, linked from the company''s own site: 3 open roles, 2
     with engineering or technical titles; locations seen: Boulder, Colorado, United States, Broomfield, Colorado,
     United States. Founded: https://builtin.com/company/electra. Stage: Series B, $186M, co-led by Capricorn Investment
@@ -1675,7 +1719,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 18 people (Y Combinator company page, 2026-11-24); founded 2023.
+    reason: 'Independent; 18 people (Y Combinator company page (https://www.ycombinator.com/companies/electric-air-2),
+      2026-11-24); growth sign: founded 2023.'
   notes: 'Board ashby:electricair loaded 2026-11-24, linked from the company''s own site: 5 open roles, 3 with engineering
     or technical titles; locations seen: Americas (US, Canada, Latin America), Redwood City. Founded: https://www.ycombinator.com/companies/electric-air-2.
     Stage: Y Combinator Summer 2023; seed April 2023, about $500K total over two rounds (CB Insights, via search
@@ -1708,8 +1753,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 350 people and shrinking (352 on Simplify, 2026-03; company said 'more than 300' on 2025-12-03),
-      founded 2020.
+    reason: 'Independent; 352 people (Simplify.jobs company page (third-party) (undated; read 2026-11-24) https://simplify.jobs/c/EH2,
+      2026-11-24); growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: electrified-thermal-solutions
   name: Electrified Thermal Solutions
@@ -1735,7 +1780,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 24 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 24 people (Dealroom (https://dealroom.co/companies/electrified-thermal-solutions), 2026-11-24);
+      growth sign: founded 2020.'
   notes: 'Board lever:ElectrifiedThermalSolutions loaded 2026-11-24, linked from the company''s own site: 7 open
     roles, 5 with engineering or technical titles; locations seen: Charlestown, MA, Europe. Founded: https://dealroom.co/companies/electrified-thermal-solutions.
     Stage: Series A $19M, December 2024 (Dealroom; investors listed under Series A); ArcelorMittal financing September
@@ -1766,7 +1812,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 45 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 45 people (Dealroom (https://dealroom.co/companies/elroy-air), 2026-11-24); growth sign:
+      founded 2016.'
   notes: 'Board lever:elroyair loaded 2026-11-24, linked from the company''s own site: 7 open roles, 4 with engineering
     or technical titles; locations seen: Byron, CA. Founded: https://dealroom.co/companies/elroy-air. Stage: Announced
     2026-06-26 a SPAC merger with Columbus Circle Capital Corp II (to be renamed Inflection Point Acquisition Corp
@@ -1803,7 +1850,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 97 people (Built In, 2026-11-24); founded 2018.
+    reason: 'Independent; 97 people (Built In (https://builtin.com/company/emporia-energy), 2026-11-24); growth
+      sign: founded 2018.'
   notes: 'Board greenhouse:emporiarevolutionizinghomeenergy loaded 2026-11-24, linked from the company''s own site:
     4 open roles, 3 with engineering or technical titles; locations seen: Littleton, Colorado. Founded: https://www.emporiaenergy.com/about.
     Stage: Strategic minority investments from Honda (June 2024) and Siemens (Aug 2025); CB Insights reports $7M
@@ -1837,7 +1885,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 148 employees at 2025-12-31 (fiscal 2025 Form 10-K); founded 2017, 9 years.
+    reason: 'Independent; 148 people (Energy Vault FY2025 Form 10-K (filed 2026-03-18), via stockanalysis.com (S&P
+      Global) https://stockanalysis.com/stocks/nrgv/employees/, 2025-12-31); growth sign: founded 2017.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: enphase
   name: Enphase
@@ -1864,7 +1913,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Large public company.
+    reason: Independent; 2,781 people (Wikipedia (from 10-K) (https://en.wikipedia.org/wiki/Enphase_Energy), 2024-01-01);
+      founded 2006, with no equity raise in 5 years or recent listing found.
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: ev-realty
   name: EV Realty
@@ -1891,7 +1941,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 22 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 22 people (Dealroom (https://dealroom.co/companies/ev-realty), 2026-11-24); growth sign:
+      founded 2021.'
   notes: 'Board lever:evrealty-us loaded 2026-11-24, linked from the company''s own site: 1 open roles, 0 with engineering
     or technical titles; locations seen: San Francisco, CA. Founded: https://dealroom.co/companies/ev-realty. Stage:
     $75M growth equity led by NGP Energy Capital, announced 2025-09-18 (https://www.freightwaves.com/news/ev-realty-secures-75-million-investment-from-ngp-for-charging-expansion);
@@ -1926,8 +1977,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2023. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 121 people (Revelio Labs (https://www.reveliolabs.com/companies/exowatt/employees), 2026-06-01);
+      growth sign: founded 2023.'
   notes: 'Board lever:exowatt loaded 2026-11-24, token matched by name; board page title checked: 19 open roles,
     12 with engineering or technical titles; locations seen: Austin, TX, Miami, FL. Founded: https://en.wikipedia.org/wiki/Exowatt.
     Stage: Series A $70M ($35M equity, $35M debt) led by Felicis, April 2025 (https://www.datacenterdynamics.com/en/news/exowatt-raises-70m-in-series-a-funding-touts-90gwh-pipeline-from-data-center-market/);
@@ -1963,8 +2014,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 132 people (Dealroom, 2026-11-24); founded 2013. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 132 people (Dealroom (https://dealroom.co/companies/factorial-energy/), 2026-11-24); growth
+      sign: founded 2013.'
   notes: 'Board greenhouse:factorialenergy loaded 2026-11-24, linked from the company''s own site: 10 open roles,
     8 with engineering or technical titles; locations seen: Cheonan, South Korea, Cheonan, South Korea . Founded:
     https://factorialenergy.com/about/. Stage: Completed its business combination with SPAC Cartesian Growth Corporation
@@ -2002,8 +2053,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 288 people (Faraday Future FY2025 Form 10-K, 2025-12-31); founded 2014. Older than 10 years but well
-      under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 288 people (Faraday Future FY2025 Form 10-K (https://www.boardroomalpha.com/sec/ffai-10-k-2026-03-31-0001628280-26-022509),
+      2025-12-31); growth sign: founded 2014.'
   notes: 'Board greenhouse:faradayfuture loaded 2026-11-24, token matched by name; board page title checked: 65
     open roles, 10 with engineering or technical titles; locations seen: Bay Area, California, United States; El
     Segundo, California, United States; New York, New York, United States; San Jose, California, United States,
@@ -2039,7 +2090,9 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 200 employees (figure carried by IPO trackers for fiscal 2025), founded 2017.
+    reason: 'Independent; 199 people (PitchBook / StockAnalysis / Macrotrends / Renaissance Capital (third-party,
+      likely from S-1) (undated; read 2026-11-24) https://www.renaissancecapital.com/Profile/FRVO/Fervo-Energy/IPO,
+      2026-11-24); growth sign: founded 2017.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: fleetzero
   name: Fleetzero
@@ -2066,7 +2119,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 41 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 41 people (Dealroom (https://dealroom.co/companies/fleetzero), 2026-11-24); growth sign:
+      founded 2021.'
   notes: 'Board lever:fleetzero loaded 2026-11-24, linked from the company''s own site: 3 open roles, 2 with engineering
     or technical titles; locations seen: Houston, TX. Founded: https://www.fleetzero.com/. Stage: Series A $43M,
     January 2026 (Maersk Growth, Y Combinator and others) per Dealroom; company site also mentions a 2023 Series
@@ -2099,8 +2153,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 130 people (WRAL TechWire, 2022-07-25); founded 2009. Older than 10 years but well under 1,000 people;
-      age is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 130 people (WRAL TechWire (https://wraltechwire.com/2022/07/25/startup-spotlight-flexgen-is-powering-up-with-100m-tremendous-growth-curve/),
+      2022-07-25); founded 2009 but venture-backed (series-c); latest round not yet checked, so included.
   notes: 'Board rippling:external-job-board loaded 2026-11-24, linked from the company''s own site: 6 open roles,
     2 with engineering or technical titles; locations seen: Durham, NC, Remote (Finland), Remote (Germany). Founded:
     https://www.cbinsights.com/company/flexgen-power-systems. Stage: $100M Series C (2022, https://wraltechwire.com/2022/07/19/durhams-flexgen-raises-100m-series-c-to-power-ongoing-growth-projects/);
@@ -2133,7 +2187,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 169,000 employees (Ford FY2025 10-K ('about 169,000 employees worldwide'), 2025-12-31).
+    reason: '169,000 people (Ford FY2025 10-K (''about 169,000 employees worldwide'') https://www.stocktitan.net/sec-filings/F/10-k-ford-motor-co-files-annual-report-f23ff60b0df9.html,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: form-energy
@@ -2161,12 +2216,10 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'About 900 people (company presentation to a Minnesota House committee, 2026-03-17, read from a search
-      snippet only). Founded 2017. Under the line by about 10 percent and growing: Weirton alone had more than 400
-      in 2026-06 and plans 750 or more by 2028. Near the 1,000-person line; borderline companies are included (owner,
-      2026-11-24).'
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling B2 (2026-11-24) applied.
+    reason: 'Independent; 900 people (Form Energy presentation to Minnesota House Energy Finance and Policy Committee
+      (as quoted in search snippet) https://www.house.mn.gov/comm/docs/1FQ0jdp7kkm9UzrAPkN7ZA.pdf, 2026-03-17);
+      growth sign: founded 2017.'
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: formlabs
   name: Formlabs
   website: null
@@ -2189,8 +2242,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: Independent; 1,099 people (Revelio Labs (https://www.reveliolabs.com/companies/formlabs/employees),
+      2026-06-01); founded 2011 but venture-backed (late); latest round not yet checked, so included.
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: fortera
   name: Fortera
@@ -2217,7 +2271,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 90 people (CB Insights (via search snippet), 2023-01-01); founded 2019.
+    reason: 'Independent; 90 people (CB Insights (via search snippet) (https://www.cbinsights.com/company/calera),
+      2023-01-01); growth sign: founded 2019.'
   notes: 'Board greenhouse:forteracorporation loaded 2026-11-24, linked from the company''s own site: 5 open roles,
     2 with engineering or technical titles; locations seen: Houston, Texas, San Jose, CA. Founded: https://www.canarymedia.com/articles/clean-industry/fortera-lands-85m-to-scale-up-low-carbon-cement.
     Stage: Series C $85M, August 2024, led by Khosla Ventures and Temasek, valuation $355M (Business Wire 2024-08-20;
@@ -2254,7 +2309,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 20 people (Company website, 2026-11-24); founded 2022.
+    reason: 'Independent; 20 people (Company website (https://www.found-industries.com/), 2026-11-24); growth sign:
+      founded 2022.'
   notes: 'Board greenhouse:foundenergy loaded 2026-11-24, linked from the company''s own site: 6 open roles, 4 with
     engineering or technical titles; locations seen: Cambridge, MA. Founded: https://dealroom.co/companies/found-energy.
     Stage: $12M seed, April 2024 per Dealroom (company site says 2023); later only grants ($350K MassCEC Feb 2026,
@@ -2287,8 +2343,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2021. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 30 people (Company statement (CEO in Leader''s Edge interview) (https://www.leadersedge.com/industry/peak-power-plug-in),
+      2026-04-28); growth sign: founded 2021.'
   notes: 'Board ashby:fourth-power loaded 2026-11-24, linked from the company''s own site: 1 open roles, 1 with
     engineering or technical titles; locations seen: Bedford, MA. Founded: https://techcrunch.com/2023/12/12/fourth-power-series-a/.
     Stage: $20M Series A Plus, Sept 16 2025, led by Munich Re Ventures with DCVC and Breakthrough Energy Ventures
@@ -2323,7 +2379,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 9,400 employees (Generac FY2025 10-K (filed 2026-02-18, via summaries), 2025-12-31).
+    reason: '9,400 people (Generac FY2025 10-K (filed 2026-02-18, via summaries) https://www.stocktitan.net/sec-filings/GNRC/10-k-generac-holdings-inc-files-annual-report-df1b123c851e.html,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: general-matter
@@ -2351,7 +2408,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 18 people (Dealroom, 2026-11-24); founded 2024.
+    reason: 'Independent; 18 people (Dealroom (https://dealroom.co/companies/general-matter), 2026-11-24); growth
+      sign: founded 2024.'
   notes: 'Board greenhouse:generalmatter loaded 2026-11-24, linked from the company''s own site: 132 open roles,
     77 with engineering or technical titles; locations seen:  Paducah, KY, Los Angeles, Los Angeles . Founded: https://dealroom.co/companies/general-matter.
     Stage: Dealroom: ''Early VC'' $50M April 2025 led by Founders Fund (round letter not stated); DOE $900M contract/award
@@ -2385,7 +2443,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 90 to 240 people (aggregators, undated); founded 2016 (as Wayfarer), about 10 years.
+    reason: 'Independent; 311 people (Revelio Labs (https://www.reveliolabs.com/companies/glydways/employees), 2026-06-01);
+      growth sign: founded 2016.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A5 (2026-11-24) applied.
 - id: gram
@@ -2435,7 +2494,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 197 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 197 people (Dealroom (https://dealroom.co/companies/gridware), 2026-11-24); growth sign:
+      founded 2020.'
   notes: 'Board lever:gridware loaded 2026-11-24, linked from the company''s own site: 19 open roles, 10 with engineering
     or technical titles; locations seen: Remote, San Francisco, CA. Founded: https://builtin.com/company/gridware.
     Stage: Series B $55M led by Tiger Global and Generation Investment Management, 2025-11-17. https://www.gridware.io/news/gridware-raises-55-million-growth-round-to-accelerate-u-s-deployments-and-support-global-expansion
@@ -2468,8 +2528,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 295 people (Revelio Labs, 2026-03-01); founded 2015. Older than 10 years but well under 1,000 people;
-      age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 295 people (Revelio Labs (https://www.reveliolabs.com/companies/group14/employees), 2026-03-01);
+      growth sign: founded 2015.'
   notes: 'Board greenhouse:group14 loaded 2026-11-24, linked from the company''s own site: 10 open roles, 2 with
     engineering or technical titles; locations seen: Moses Lake, WA, Seattle, WA, Woodinville, WA. Founded: https://dealroom.co/companies/group14-technologies.
     Stage: Series D $463M announced 2025-08-20 (Cooley); EUR 150M Series D extension for a plant in Sagunto, Spain
@@ -2504,7 +2564,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 35 people (Built In, 2026-11-24); founded 2021.
+    reason: 'Independent; 35 people (Built In (https://builtin.com/company/gulf-wind-technology), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board greenhouse:gulfwindtechnology loaded 2026-11-24, token matched by name; board page title checked:
     3 open roles, 3 with engineering or technical titles; locations seen: APPLICANTS MUST BE ABLE TO COMMUTE TO
     NEW ORLEANS WHEN NOT IN THE FIELD. Based in Avondale, LA, with extensive travel to wind energy sites throughout
@@ -2540,7 +2601,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Headcount not found; founded 2020.
+    reason: 'Independent; 87 people (Revelio Labs (https://www.reveliolabs.com/companies/h3x/employees), 2026-06-01);
+      growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A3 (2026-11-24) applied.
 - id: harbinger
@@ -2567,7 +2629,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 450 people (Orange County Business Journal, 2025-11-01); founded 2021.
+    reason: 'Independent; 450 people (Orange County Business Journal (https://www.ocbj.com/automobiles/fedex-joins-160m-harbinger-raise/),
+      2025-11-01); growth sign: founded 2021.'
   notes: 'Board greenhouse:harbingermotors loaded 2026-11-24, token matched by name; board page title checked: 85
     open roles, 56 with engineering or technical titles; locations seen: Garden Grove, CA, Garden Grove, CA , Sturgis,
     MI. Founded: https://www.freightwaves.com/?p=585117. Stage: Series D $240M co-led by Tiger Global, Capricorn
@@ -2602,7 +2665,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 81 people (Dealroom, 2026-11-24); founded 2018.
+    reason: 'Independent; 81 people (Dealroom (https://dealroom.co/companies/heart-aerospace), 2026-11-24); growth
+      sign: founded 2018.'
   notes: 'Board greenhouse:heartaerospace loaded 2026-11-24, linked from the company''s own site: 1 open roles,
     0 with engineering or technical titles; locations seen: Torrance, CA. Founded: https://dealroom.co/companies/heart-aerospace.
     Stage: Series B $107M, February 2024 (EQT Ventures, Breakthrough Energy Ventures, Air Canada); further $40M
@@ -2637,7 +2701,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 167 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 167 people (Dealroom (https://dealroom.co/companies/heirloom-carbon), 2026-11-24); growth
+      sign: founded 2020.'
   notes: 'Board ashby:heirloomcarbon loaded 2026-11-24, linked from the company''s own site: 3 open roles, 3 with
     engineering or technical titles; locations seen: Brisbane, CA. Founded: https://dealroom.co/companies/heirloom-carbon.
     Stage: Series B, $150M, December 2024 (reported $600M valuation) per Dealroom; company year-end note confirms
@@ -2672,8 +2737,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 800 people (GeekWire, 2026-01-01); founded 2013. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 800 people (GeekWire (https://geekwire.com/2026/with-a-headcount-topping-800-helion-opens-seattle-office-in-pursuit-of-fusion-energy/),
+      2026-01-01); growth sign: founded 2013.'
   notes: 'Board ashby:helion loaded 2026-11-24, linked from the company''s own site: 65 open roles, 46 with engineering
     or technical titles; locations seen: Everett, WA, Seattle, WA. Founded: https://www.helionenergy.com/about/.
     Stage: $425M raised in 2025 to scale manufacturing, earlier $500M raise tied to Polaris (round letters not confirmed
@@ -2710,7 +2775,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 89 people (Dealroom, 2026-11-24); founded 2024.
+    reason: 'Independent; 89 people (Dealroom (https://dealroom.co/companies/heron-power), 2026-11-24); growth sign:
+      founded 2024.'
   notes: 'Board ashby:heron-power loaded 2026-11-24, linked from the company''s own site: 60 open roles, 47 with
     engineering or technical titles; locations seen: Scotts Valley. Founded: https://dealroom.co/companies/heron-power.
     Stage: Series B $140M, February 2026, Atreides, Breakthrough Energy Ventures, Capricorn, Energy Impact Partners
@@ -2742,8 +2808,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2011. Older than 10 years but well under 1,000 people; age is a guide, not
-      a rule (owner, 2026-11-24).
+    reason: Independent; 9 people (Revelio Labs (https://www.reveliolabs.com/companies/hevo/employees), 2026-03-01);
+      founded 2011 but venture-backed (series-a); latest round not yet checked, so included.
   notes: 'Board lever:hevo loaded 2026-11-24, token matched by name; board page title checked: 1 open roles, 0 with
     engineering or technical titles; locations seen: New York, NY. Founded: https://dealroom.co/companies/hevo-power.
     Stage: Dealroom lists a Series A1 (VoLo Earth Ventures), amount/date undisclosed; since then equity crowdfunding
@@ -2777,7 +2843,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 13 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 13 people (Dealroom (https://dealroom.co/companies/hgen), 2026-11-24); growth sign: founded
+      2021.'
   notes: 'Board lever:hgen loaded 2026-11-24, linked from the company''s own site: 6 open roles, 5 with engineering
     or technical titles; locations seen: Los Angeles. Founded: https://dealroom.co/companies/hgen. Stage: Seed,
     $5M, September 2024 (Dealroom; Founders Fund, Fontinalis, Seven Seven Six). https://dealroom.co/companies/hgen
@@ -2808,8 +2875,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2019. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 225 people (Revelio Labs (https://www.reveliolabs.com/companies/highland-electric-fleets/employees),
+      2026-06-01); growth sign: founded 2019.'
   notes: 'Board lever:highlandfleets-2 loaded 2026-11-24, linked from the company''s own site: 11 open roles, 6
     with engineering or technical titles; locations seen: Beverly, MA, Boston, MA, California. Founded: https://www.highlandfleets.com.
     Customers: School districts and municipalities (e.g. Montgomery County Public Schools MD, 236 buses; LA28 Games
@@ -2838,7 +2905,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 11 people (Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Humble-Robotics),
+      2026-11-24); growth sign: founded 2025.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: hyliion
   name: Hyliion
@@ -2865,8 +2933,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 113 people (StockAnalysis (from company filings), 2025-12-31); founded 2015. Older than 10 years but
-      well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 113 people (StockAnalysis (from company filings) (https://stockanalysis.com/stocks/hyln/employees/),
+      2025-12-31); growth sign: founded 2015.'
   notes: 'Board greenhouse:hyliion loaded 2026-11-24, token matched by name; board page title checked: 20 open roles,
     13 with engineering or technical titles; locations seen: Austin, Texas, Austin, Texas, United States, Austin,
     Texas, United States . Founded: https://dealroom.co/companies/hyliion. Stage: NYSE HYLN since October 2020 via
@@ -2902,7 +2970,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 80 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 80 people (Dealroom (https://dealroom.co/companies/impulse-labs), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board ashby:impulse loaded 2026-11-24, linked from the company''s own site: 2 open roles, 2 with engineering
     or technical titles; locations seen: San Francisco. Founded: https://dealroom.co/companies/impulse-labs. Stage:
     Series A $20M led by Lux Capital (with Fifth Wall, Construct Capital, Lachy Groom), November 2022; no later
@@ -2934,7 +3003,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 43 people (Dealroom, 2026-11-24); founded 2024.
+    reason: 'Independent; 43 people (Dealroom (https://dealroom.co/companies/inertia), 2026-11-24); growth sign:
+      founded 2024.'
   notes: 'Board ashby:inertia loaded 2026-11-24, token known, feed loaded: 5 open roles, 3 with engineering or technical
     titles; locations seen: Livermore. Founded: https://dealroom.co/companies/inertia. Stage: Series A, $450M, February
     2026, led by Bessemer with GV, Threshold and others (SiliconANGLE 2026-02-11; Dealroom lists $1.8B valuation
@@ -2990,8 +3060,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founding year not found. No headcount figure found; included under the owner's rule
-      for missing figures (2026-11-24).
+    reason: 'Independent; 28 people (Revelio Labs (https://www.reveliolabs.com/companies/infinite-machine/employees),
+      2026-06-01); growth sign: founded 2021.'
   notes: 'Board ashby:infinite-machine loaded 2026-11-24, token matched by name; board page title checked: 5 open
     roles, 1 with engineering or technical titles; locations seen: Asia, New York. Stage: Seed round $9.3M led by
     a16z American Dynamism, October 2024 (PR Newswire, TechCrunch). https://prnewswire.com/news-releases/infinite-machine-raises-9-3m-in-seed-round-led-by-a16z-to-fuel-non-car-revolution-302289974.html
@@ -3025,7 +3095,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 248 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 248 people (Dealroom (https://dealroom.co/companies/infinitum-electric), 2026-11-24);
+      growth sign: founded 2016.'
   notes: 'Board greenhouse:infinitumelectric loaded 2026-11-24, linked from the company''s own site: 16 open roles,
     4 with engineering or technical titles; locations seen: Austin, TX, Austin, TX/Liberty Lake, WA, Austin, Texas.
     Founded: https://goinfinitum.com/about/. Stage: Series E $185M led by Just Climate, Nov 2023, plus $35M Series
@@ -3056,7 +3127,7 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'Dealroom: band under 100 (no count); founded 2021.'
+    reason: 'Independent; no headcount figure found; growth sign: founded 2021.'
   notes: 'Board rippling:inlyte-energy loaded 2026-11-24, token matched by name; board page title checked: 5 open
     roles, 2 with engineering or technical titles; locations seen: On-site / Hybrid / Remote, On-site / hybrid /
     remote, San Leandro, CA. Founded: https://dealroom.co/companies/inlyte-energy/. Stage: $8M seed led by At One
@@ -3092,8 +3163,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: out
-    reason: Large developer.
+    status: in
+    reason: Independent; 3,610 people (Revelio Labs (https://www.reveliolabs.com/companies/invenergy/employees),
+      2026-06-01); founded 2001 but venture-backed (late); latest round not yet checked, so included.
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: kairos-power
   name: Kairos Power
@@ -3120,7 +3192,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 273 people (Built In, 2026-11-24); founded 2016.
+    reason: 'Independent; 273 people (Built In (https://builtin.com/company/kairos-power), 2026-11-24); growth sign:
+      founded 2016.'
   notes: 'Board greenhouse:kairospower loaded 2026-11-24, linked from the company''s own site: 79 open roles, 58
     with engineering or technical titles; locations seen: Alameda, CA, Alameda, CA , Alameda, CA , Albuquerque,
     NM or Remote. Founded: https://builtin.com/company/kairos-power. Stage: Private; no lettered rounds found. October
@@ -3155,8 +3228,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2024. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 33 people (Caplight (https://www.caplight.com/company/karman-industries), 2026-06-23);
+      growth sign: founded 2024.'
   notes: 'Board ashby:Karman%20Industries loaded 2026-11-24, linked from the company''s own site: 48 open roles,
     35 with engineering or technical titles; locations seen: Los Angeles. Founded: https://dealroom.co/companies/karman-industries.
     Stage: Series A, $20M led by Riot Ventures; most sources date it 2026-04-14 (one aggregator says 2026-01-26).
@@ -3189,8 +3262,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: 'Independent; 342 people (Stock Analysis (company filings); undated, so as_of is the day it was read
+      (https://stockanalysis.com/stocks/kdk/company/), 2026-11-24); growth sign: founded 2018.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: last-energy
   name: Last Energy
@@ -3217,8 +3291,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2019. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 124 people (Revelio Labs (https://www.reveliolabs.com/companies/last-energy/employees),
+      2026-06-01); growth sign: founded 2019.'
   notes: 'Board lever:last-energy loaded 2026-11-24, linked from the company''s own site: 25 open roles, 13 with
     engineering or technical titles; locations seen: Austin or Bryan, TX, Austin, TX, Bryan, TX. Founded: https://www.lastenergy.com/about.
     Stage: No funding information on the company pages fetched (news page 404). Customers: Energy-intensive industry
@@ -3250,9 +3324,9 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: 13 people (StockAnalysis (S&P Global Market Intelligence profile), 2026-11-19); founded 1992. Older
-      than 10 years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    status: out
+    reason: Independent; 13 people (StockAnalysis (S&P Global Market Intelligence profile) (https://stockanalysis.com/stocks/ltbr/company/),
+      2026-11-19); founded 1992, with no equity raise in 5 years or recent listing found.
   notes: 'Board greenhouse:lightbridgecorporationanevadacorporation loaded 2026-11-24, linked from the company''s
     own site: 12 open roles, 7 with engineering or technical titles; locations seen: Idaho Falls, Idaho Falls, ID,
     Remote. Founded: https://stockanalysis.com/stocks/ltbr/company/. Stage: Listed on Nasdaq as LTBR (StockAnalysis).
@@ -3283,7 +3357,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 100 people (third-party estimates, 2026), founded 2020.
+    reason: 'Independent; 109 people (6figr estimate (third-party) (undated; read 2026-11-24) https://6figr.com/company/lightship,
+      2026-11-24); growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: lilac-solutions
   name: Lilac Solutions
@@ -3310,8 +3385,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2016. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 135 people (Revelio Labs (https://www.reveliolabs.com/companies/lilac-solutions/employees),
+      2026-06-01); growth sign: founded 2016.'
   notes: 'Board rippling:lilac-solutions loaded 2026-11-24, linked from the company''s own site: 2 open roles, 1
     with engineering or technical titles; locations seen: Berkeley, CA, United States. Founded: https://lilacsolutions.com/about/.
     Stage: Series C of $145M in 2024, led by Mercuria, Lowercarbon Capital and Breakthrough Energy Ventures (company
@@ -3344,8 +3419,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2021. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 9 people (PitchBook; undated, so as_of is the day it was read (https://pitchbook.com/profiles/company/503166-88),
+      2026-11-24); growth sign: founded 2021.'
   notes: 'Board ashby:limelight-steel loaded 2026-11-24, linked from the company''s own site: 3 open roles, 1 with
     engineering or technical titles; locations seen: Headquarters. Founded: https://www.cbinsights.com/company/limelight-steel.
     Stage: Seed $3.25M, 2021-11-11 per PitchBook (CB Insights says pre-seed Dec 2021); later DOE SBIR/ARPA-E grants
@@ -3378,7 +3453,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Far above 1,000 people.
+    reason: '9,000 people (Lucid 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/lcid/employees/),
+      2025-12-31): over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: lunar-energy
   name: Lunar Energy
@@ -3405,7 +3481,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 190 to 225 people (third-party estimates, undated), founded 2020.
+    reason: 'Independent; 224 people (BounceWatch estimate (third-party) (undated; read 2026-11-24) https://bouncewatch.com/company/lunar-energy,
+      2026-11-24); growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: lunar-outpost
   name: Lunar Outpost
@@ -3430,7 +3507,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 168 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/lunar-outpost),
+      2026-11-24); growth sign: founded 2017.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: lydian
   name: Lydian
@@ -3457,7 +3535,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 45 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 45 people (Dealroom (https://dealroom.co/companies/lydian-labs), 2026-11-24); growth sign:
+      founded 2022.'
   notes: 'Board ashby:lydian loaded 2026-11-24, linked from the company''s own site: 4 open roles, 4 with engineering
     or technical titles; locations seen: Boston. Founded: https://dealroom.co/companies/lydian-labs. Stage: Series
     A, $43M, July 2026 (Dealroom; Galvanize, Union Square Ventures, Breakthrough Energy Ventures). https://dealroom.co/companies/lydian-labs
@@ -3489,7 +3568,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 23 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 23 people (Dealroom (https://dealroom.co/companies/magrathea), 2026-11-24); growth sign:
+      founded 2022.'
   notes: 'Board greenhouse:magrathea loaded 2026-11-24, linked from the company''s own site: 1 open roles, 0 with
     engineering or technical titles; locations seen: Salt Lake City Area, Utah. Founded: https://dealroom.co/companies/magrathea.
     Stage: Series A $24M co-led by Resource Technology Capital and Balerion Space Ventures (company says May 2026;
@@ -3524,8 +3604,9 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 300 people (Built In; older estimates about 400); founded 2010 as EtaGen, about 16 years. Past
-      the age guide. Older than 10 years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 294 people (Built In company profile (aggregator, undated; date is the day it was read)
+      https://builtin.com/company/mainspring-energy, 2026-11-24); founded 2010 but venture-backed (late); latest
+      round not yet checked, so included.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
     ruling A7 (2026-11-24) applied.
 - id: mariana-minerals
@@ -3552,7 +3633,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 124 people (StartupHub.ai; undated, so as_of is the day it was read, 2026-11-24); founded 2024.
+    reason: 'Independent; 124 people (StartupHub.ai; undated, so as_of is the day it was read (https://startuphub.ai/startups/mariana-minerals),
+      2026-11-24); growth sign: founded 2024.'
   notes: 'Board ashby:marianaminerals loaded 2026-11-24, linked from the company''s own site: 97 open roles, 57
     with engineering or technical titles; locations seen: Ann Arbor, MI, Houston, TX, Joaquin, TX. Founded: https://fortune.com/2026/08/03/power-ai-khosla-a16z-bet-startup-reinvent-mining-mariana-minerals/.
     Stage: $310M Series B, Aug 3 2026, led by Khosla Ventures at $1.5B valuation; about $400M total raised (https://fortune.com/2026/08/03/power-ai-khosla-a16z-bet-startup-reinvent-mining-mariana-minerals/;
@@ -3587,7 +3669,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 208 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/merlin-labs),
+      2026-11-24); growth sign: founded 2018.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: metox-technologies
   name: MetOx Technologies
@@ -3614,8 +3697,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 80 people (Dealroom, 2026-11-24); founded 2002. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 80 people (Dealroom (https://dealroom.co/companies/metal-oxide-technologies), 2026-11-24);
+      founded 2002 but venture-backed (series-b); latest round not yet checked, so included.
   notes: 'Board greenhouse:metoxinternationalinc loaded 2026-11-24, linked from the company''s own site: 10 open
     roles, 9 with engineering or technical titles; locations seen: Houston, TX. Founded: https://dealroom.co/companies/metal-oxide-technologies.
     Stage: Series B extension $25M, September 2024 (PR Newswire / Axios Pro); Dealroom also lists Series B $15M,
@@ -3651,7 +3734,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 52 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 52 people (Dealroom (https://dealroom.co/companies/mojave-energy-systems), 2026-11-24);
+      growth sign: founded 2022.'
   notes: 'Board lever:mojave-energy-systems loaded 2026-11-24, token matched by name; board page title checked:
     9 open roles, 6 with engineering or technical titles; locations seen: Anderson, SC, Anderson/Piedmont/Greenville
     SC area OR Sunnyvale, CA, Remote, U.S.. Founded: https://dealroom.co/companies/mojave-energy-systems. Stage:
@@ -3683,7 +3767,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 23 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 23 people (Dealroom (https://dealroom.co/companies/molten-industries), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board lever:moltenindustries loaded 2026-11-24, linked from the company''s own site: 1 open roles, 0 with
     engineering or technical titles; locations seen: Oakland, California. Founded: https://dealroom.co/companies/molten-industries.
     Stage: Series A $25M, June 2024, Breakthrough Energy Ventures, Union Square Ventures (Dealroom). https://dealroom.co/companies/molten-industries
@@ -3712,8 +3797,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: 'Owner not yet checked; 765 people (Built In (https://builtin.com/company/motional/faq/stability-growth),
+      2026-08-01); growth sign: founded 2020.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: mytra
   name: Mytra
@@ -3738,7 +3824,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 174 people (Revelio Labs (https://www.reveliolabs.com/companies/mytra/employees/), 2026-06-01);
+      growth sign: founded 2022.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: nexamp
   name: Nexamp
@@ -3765,9 +3852,9 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 'About 400 to 500 people (PitchBook 2023: 464; Solar Power World 2025: 505); founded 2007, about 19
-      years. Past the age guide. Older than 10 years but well under 1,000 people; age is a guide, not a rule (owner,
-      2026-11-24).'
+    reason: Independent; 464 people (PitchBook profile (aggregator; '2023' per search summary, exact date unknown)
+      https://pitchbook.com/profiles/company/53431-93, 2023-12-31); founded 2007 but venture-backed (late); latest
+      round not yet checked, so included.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: niron-magnetics
   name: Niron Magnetics
@@ -3794,8 +3881,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 150 people (Dealroom, 2026-11-24); founded 2014. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 150 people (Dealroom (https://dealroom.co/companies/niron-magnetics), 2026-11-24); growth
+      sign: founded 2014.'
   notes: 'Board rippling:niron loaded 2026-11-24, linked from the company''s own site: 18 open roles, 7 with engineering
     or technical titles; locations seen: Minneapolis, MN, Sartell, MN. Founded: https://dealroom.co/companies/niron-magnetics.
     Stage: $25M strategic round (Samsung Ventures, Allison, Magna), 2024-02-20, labelled ''Series E - II'' by CB
@@ -3834,7 +3921,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 45 people (Dealroom, 2026-11-24); founded 2018.
+    reason: 'Independent; 45 people (Dealroom (https://dealroom.co/companies/nitricity), 2026-11-24); growth sign:
+      founded 2018.'
   notes: 'Board greenhouse:nitricity loaded 2026-11-24, linked from the company''s own site: 3 open roles, 2 with
     engineering or technical titles; locations seen: Madrid, Spain, San Francisco Bay Area. Founded: https://dealroom.co/companies/nitricity.
     Stage: Series B, $50M, September 2025 (Dealroom; Energy Impact Partners, Fine Structure Ventures, World Fund).
@@ -3865,7 +3953,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 75 people (Revelio, 2026-03), founded 2018.
+    reason: 'Independent; 73 people (Revelio Labs estimate (third-party) (undated; read 2026-11-24) https://www.reveliolabs.com/companies/noon-energy/employees,
+      2026-11-24); growth sign: founded 2018.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: nuro
   name: Nuro
@@ -3889,8 +3978,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: 'Independent; 1,166 people (Revelio Labs (https://www.reveliolabs.com/companies/nuro/employees/), 2026-06-01);
+      growth sign: founded 2016.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: odys-aviation
   name: Odys Aviation
@@ -3917,7 +4007,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 56 people (Dealroom, 2026-11-24); founded 2019.
+    reason: 'Independent; 56 people (Dealroom (https://dealroom.co/companies/odys-aviation), 2026-11-24); growth
+      sign: founded 2019.'
   notes: 'Board ashby:odys-aviation loaded 2026-11-24, token matched by name; board page title checked: 20 open
     roles, 15 with engineering or technical titles; locations seen: Long Beach CA, Munich, Germany. Founded: https://dealroom.co/companies/odys-aviation.
     Stage: Series A $26M, October 2025 (reported $104M valuation), investors Tuchen Ventures and Nova Threshold,
@@ -3951,8 +4042,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 200 people (Oklo overview fact sheet (company), 2026-04-01); founded 2013. Older than 10 years but well
-      under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 200 people (Oklo overview fact sheet (company) (https://s203.q4cdn.com/103172959/files/doc_downloads/2026/04/Oklo-Overview-Fact-Sheet-2.pdf),
+      2026-04-01); growth sign: founded 2013.'
   notes: 'Board greenhouse:oklo loaded 2026-11-24, linked from the company''s own site: 54 open roles, 30 with engineering
     or technical titles; locations seen: Any, Austin, Texas, Idaho Falls, ID. Founded: https://www.sec.gov/Archives/edgar/data/0001849056/000162828025014490/oklo-20241231.htm.
     Stage: Listed on NYSE (OKLO); FY2025 Form 10-K filed 2026-03-17, accession 0001628280-26-018698. https://www.boardroomalpha.com/sec/oklo-10-k-2026-03-17-0001628280-26-018698
@@ -3988,7 +4079,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount figure found; included under the owner's rule for missing figures (2026-11-24).
+    reason: 'Independent; 267 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/on-energy/),
+      2026-11-24); growth sign: founded 2016.'
   notes: Owner ruling A2 (2026-11-24) applied. Missing facts filled from data/screening/registry-fixes.
 - id: oshkosh
   name: Oshkosh
@@ -4013,7 +4105,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 18,400 employees (Oshkosh 2025 Annual Report / 10-K, 2025-12-31).
+    reason: '18,400 people (Oshkosh 2025 Annual Report / 10-K https://online.flippingbook.com/view/225999757/19/,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: outrider
@@ -4039,7 +4132,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 123 people (Revelio Labs (https://www.reveliolabs.com/companies/outrider/employees/),
+      2026-06-01); growth sign: founded 2017.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: pacific-fusion
   name: Pacific Fusion
@@ -4065,7 +4159,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: More than 200 people (Sacra, 2026-06), founded 2023.
+    reason: 'Independent; 200 people (Sacra profile, ''more than 200'' (third-party) (undated; read 2026-11-24)
+      https://sacra.com/c/pacific-fusion/, 2026-11-24); growth sign: founded 2023.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: panthalassa
   name: Panthalassa
@@ -4091,7 +4186,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 120 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 120 people (Dealroom (https://dealroom.co/companies/panthalassa), 2026-11-24); growth
+      sign: founded 2016.'
   notes: 'Board greenhouse:panthalassa loaded 2026-11-24, linked from the company''s own site: 52 open roles, 30
     with engineering or technical titles; locations seen: Hybrid , Portland, OR, Portland, OR / Hybrid. Founded:
     https://dealroom.co/companies/panthalassa. Stage: Series B (Dealroom lists as other financing), $140M at a reported
@@ -4125,7 +4221,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 58 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 58 people (Dealroom (https://dealroom.co/companies/parallel-systems), 2026-11-24); growth
+      sign: founded 2020.'
   notes: 'Board greenhouse:parallel loaded 2026-11-24, linked from the company''s own site: 21 open roles, 14 with
     engineering or technical titles; locations seen: Fillmore, CA, Los Angeles, CA. Founded: https://dealroom.co/companies/parallel-systems.
     Stage: Series B, $38M, April 2025 (Dealroom). https://dealroom.co/companies/parallel-systems Customers: Railroads,
@@ -4156,7 +4253,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 125 people (Inside Climate News, 2026-06), founded 2023.
+    reason: 'Independent; 125 people (Inside Climate News (trade press) (undated; read 2026-11-24) https://insideclimatenews.org/news/18062026/inside-clean-energy-general-motors-sodium-ion-batteries/,
+      2026-11-24); growth sign: founded 2023.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: phoenix-tailings
   name: Phoenix Tailings
@@ -4183,8 +4281,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2019. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 135 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/phoenix-tailings),
+      2026-11-24); growth sign: founded 2019.'
   notes: 'Board lever:PhoenixTailings loaded 2026-11-24, linked from the company''s own site: 20 open roles, 10
     with engineering or technical titles; locations seen: Burlington, MA, Exeter, NH, Rochester, NY. Founded: https://builtin.com/company/phoenix-tailings.
     Stage: No funding round found on the company site. Search budget exhausted. Customers: No customers named. Built
@@ -4213,7 +4311,7 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2015.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: pivotal
   name: Pivotal
@@ -4240,7 +4338,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 100 people (AOL (news article), 2026-11-24); founded 2016.
+    reason: 'Independent; 100 people (AOL (news article) (https://www.aol.com/news/dream-owning-flying-car-california-110000749.html),
+      2026-11-24); growth sign: founded 2016.'
   notes: 'Board lever:pivotal loaded 2026-11-24, linked from the company''s own site: 41 open roles, 29 with engineering
     or technical titles; locations seen: California - Remote, Miami, Florida, Palo Alto, CA. Founded: https://www.cbinsights.com/company/pivotal-9.
     Stage: No funding round disclosed; backed by Larry Page per evtol.news. Renamed from Opener in October 2023.
@@ -4277,7 +4376,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 30 to 45 people (aggregators, undated); founded 2020.
+    reason: 'Independent; 150 people (blue News (SDA) (https://www.bluewin.ch/en/news/culture-of-fear-and-total-chaos-employees-sharply-criticize-vegan-company-3200184.html),
+      2026-04-01); growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: pronto
@@ -4303,7 +4403,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Owner not yet checked; 175 people (Revelio Labs (https://www.reveliolabs.com/companies/pronto-ai/employees/),
+      2026-06-01); growth sign: founded 2018.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: proper-voltage
   name: Proper Voltage
@@ -4330,7 +4431,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Headcount not found; founded 2019 (as ZapBatt); seed stage.
+    reason: 'Independent; 50 people (Vaia Talents (aggregator); undated, so as_of is the day it was read (https://talents.vaia.com/companies/proper-voltage/),
+      2026-11-24); growth sign: founded 2019.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: pure-lithium
@@ -4357,7 +4459,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 27 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 27 people (Dealroom (https://dealroom.co/companies/pure-lithium), 2026-11-24); growth
+      sign: founded 2020.'
   notes: 'Board rippling:pure-lithium loaded 2026-11-24, token matched by name; board page title checked: 1 open
     roles, 1 with engineering or technical titles; locations seen: Chicago, IL. Founded: https://dealroom.co/companies/pure-lithium.
     Stage: Series A $15M, March 2024, led by Oxy Low Carbon Ventures (Dealroom). https://dealroom.co/companies/pure-lithium
@@ -4389,7 +4492,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 130 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 130 people (Dealroom (https://dealroom.co/companies/pyka), 2026-11-24); growth sign: founded
+      2017.'
   notes: 'Board lever:pyka loaded 2026-11-24, linked from the company''s own site: 16 open roles, 10 with engineering
     or technical titles; locations seen: Alameda HQ, Brazil, California. Founded: https://dealroom.co/companies/pyka.
     Stage: Series B, $40M, September 2024 (Dealroom; TechCrunch 2024-09-23). https://techcrunch.com/2024/09/23/pyka-fields-interest-from-defense-as-40m-round-goes-to-scaling-up-its-electric-autonomous-planes
@@ -4420,8 +4524,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Division of a large conglomerate.
+    reason: Part of Hanwha Group; not independent.
   notes: Missing facts filled from data/screening/registry-fixes.
+  parent: Hanwha Group
 - id: quaise-energy
   name: Quaise Energy
   website: https://quaise.com
@@ -4447,7 +4552,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 72 people (Dealroom, 2026-11-24); founded 2018.
+    reason: 'Independent; 72 people (Dealroom (https://dealroom.co/companies/quaise/), 2026-11-24); growth sign:
+      founded 2018.'
   notes: 'Board greenhouse:quaise loaded 2026-11-24, token known, feed loaded: 6 open roles, 4 with engineering
     or technical titles; locations seen: Denver, CO, Houston, TX. Founded: https://dealroom.co/companies/quaise/.
     Stage: Dealroom''s latest disclosed round is a $21M Series A in March 2024, at a $200M valuation. Dealroom also
@@ -4486,7 +4592,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 66 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 66 people (Dealroom (https://dealroom.co/companies/quilt-2), 2026-11-24); growth sign:
+      founded 2022.'
   notes: 'Board greenhouse:quilt loaded 2026-11-24, linked from the company''s own site: 8 open roles, 2 with engineering
     or technical titles; locations seen: Account Executive: New Partner Sales, HQ - Redwood City, CA , Partner Field
     Trainer. Founded: https://dealroom.co/companies/quilt-2. Stage: Series B, $20M, announced 2025-12-08, total
@@ -4514,7 +4621,7 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2022.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: range-energy
   name: Range Energy
@@ -4541,7 +4648,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 47 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 47 people (Dealroom (https://dealroom.co/companies/range-energy), 2026-11-24); growth
+      sign: founded 2021.'
   notes: 'Board ashby:range.energy loaded 2026-11-24, linked from the company''s own site: 7 open roles, 4 with
     engineering or technical titles; locations seen: Mountain View, CA. Founded: https://dealroom.co/companies/range-energy.
     Stage: Series A $23.5M, 2024-02-28, led by Trousdale Ventures with UP.Partners, R7, Yamaha Motor Ventures (Business
@@ -4576,11 +4684,10 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 1,215 people, derived from a layoff of about 135 described as 10 percent of staff (TechCrunch,
-      2026-04-21). Not a stated total; aggregators show 560 to 850 (undated, likely stale). Near the 1,000-person
-      line; borderline companies are included (owner, 2026-11-24).
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
-    ruling B2 (2026-11-24) applied.
+    reason: 'Independent; 1,215 people (Derived: TechCrunch reports about 135 layoffs = about 10% of workforce (implies
+      ~1,350 before, ~1,215 after); not a reported total https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/,
+      2026-04-21); growth sign: founded 2017.'
+  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: regent
   name: Regent
   website: https://regentcraft.com
@@ -4606,8 +4713,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founding year not found. No headcount figure found; included under the owner's rule
-      for missing figures (2026-11-24).
+    reason: 'Independent; 213 people (Revelio Labs (https://www.reveliolabs.com/companies/regent-craft/employees/),
+      2026-06-01); growth sign: founded 2020.'
   notes: 'Board ashby:REGENT loaded 2026-11-24, linked from the company''s own site: 69 open roles, 34 with engineering
     or technical titles; locations seen: North Kingstown, Rhode Island, USA, Washington DC, USA. Stage: Series B
     $240M (equal equity and debt) co-led by Mare Liberum and AE Ventures, Erebor Bank debt, announced 2026-08-27;
@@ -4642,7 +4749,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 258 people (Revelio Labs (https://www.reveliolabs.com/companies/reliable-robotics/employees/),
+      2026-06-01); growth sign: founded 2017.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: remora
   name: Remora
@@ -4669,7 +4777,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 70 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 70 people (Dealroom (https://dealroom.co/companies/remora-carbon), 2026-11-24); growth
+      sign: founded 2020.'
   notes: 'Board greenhouse:remoracarbon loaded 2026-11-24, token matched by name; board page title checked: 8 open
     roles, 4 with engineering or technical titles; locations seen: Wixom, Michigan, United States. Founded: https://dealroom.co/companies/remora-carbon.
     Stage: Series B, $60M, June 2023 led by Valor Equity Partners (Dealroom, citing Carbon Herald); CB Insights
@@ -4702,7 +4811,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 21,915 employees (Renesas human resources data (sustainability), Bureau Veritas-verified, 2025-12-31).
+    reason: '21,915 people (Renesas human resources data (sustainability), Bureau Veritas-verified https://www.renesas.com/about/sustainability/human-resources-data,
+      2025-12-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: res
@@ -4731,7 +4841,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Large and decades old.
+    reason: Owner not yet checked; 4,500 people (RES (company statement) (https://www.res-group.com/about-us/),
+      2026-11-24); founded 1981, with no equity raise in 5 years or recent listing found.
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: rivian
   name: Rivian
@@ -4757,7 +4868,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Far above 1,000 people.
+    reason: '15,232 people (Rivian 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/rivn/employees/),
+      2025-12-31): over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: rivian-and-volkswagen-group-technologies
   name: Rivian and Volkswagen Group Technologies
@@ -4783,8 +4895,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Joint venture of two large carmakers; believed above 1,000 people.
+    reason: Part of Rivian and Volkswagen Group; not independent.
   notes: Missing facts filled from data/screening/registry-fixes.
+  parent: Rivian and Volkswagen Group
 - id: rondo-energy
   name: Rondo Energy
   website: null
@@ -4810,7 +4923,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 135 to 160 people (Dealroom, undated), founded 2020.
+    reason: 'Independent; 159 people (Dealroom profile (third-party) (undated; read 2026-11-24) https://dealroom.co/companies/rondo-energy/,
+      2026-11-24); growth sign: founded 2020.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: runwise
   name: Runwise
@@ -4837,8 +4951,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 125 people (Coverager (citing LinkedIn), 2025-06-01); founded 2010. Older than 10 years but well under
-      1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 125 people (Coverager (citing LinkedIn) (https://coverager.com/runwise-raises-55-million/),
+      2025-06-01); founded 2010 but venture-backed (series-b); latest round not yet checked, so included.
   notes: 'Board greenhouse:runwise loaded 2026-11-24, linked from the company''s own site: 4 open roles, 3 with
     engineering or technical titles; locations seen: Boston, MA, Chicago, Illinois , New York, NY. Founded: https://dealroom.co/companies/runwise.
     Stage: Series B $55M, June 2025, led by Menlo Ventures with MassMutual Ventures, Nuveen, Munich Re Ventures
@@ -4873,8 +4987,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2016. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Owner not yet checked; 95 people (Built In; undated, so as_of is the day it was read (https://builtin.com/company/scale-microgrids),
+      2026-11-24); growth sign: founded 2016.'
   notes: 'Board lever:ScaleMicrogridSolutions loaded 2026-11-24, linked from the company''s own site: 9 open roles,
     3 with engineering or technical titles; locations seen: Any location, New York, NY, Ridgewood, NJ. Founded:
     https://eqtgroup.com/thinq/infrastructure/scale-from-niche-energy-provider-to-ai-power-player. Stage: Acquired
@@ -4913,7 +5027,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 150,000 employees (Schneider Electric corporate site, undated (2025-2026 website)).
+    reason: '150,000 people (Schneider Electric corporate site (undated; read 2026-11-24) https://www.se.com/ww/en/about-us/,
+      2026-11-24): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: scout-motors
@@ -4940,9 +5055,9 @@ companies:
     approved: false
   startup:
     status: out
-    reason: 'About 900 at the South Carolina plant (2026-11-13) plus about 365 corporate staff moving to Charlotte:
-      at least about 1,250 and rising (plans 4,000 at the plant).'
+    reason: Part of Volkswagen Group; not independent.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  parent: Volkswagen Group
 - id: serve-robotics
   name: Serve Robotics
   website: null
@@ -4966,7 +5081,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 380 people (Serve Robotics 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/serv/employees/),
+      2025-12-31); growth sign: founded 2017.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: ses-ai
   name: SES AI
@@ -4993,8 +5109,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 215 people (Stock Analysis (company profile), 2026-11-18); founded 2012. Older than 10 years but well
-      under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 215 people (Stock Analysis (company profile) (https://stockanalysis.com/stocks/ses/company/),
+      2026-11-18); growth sign: founded 2012.'
   notes: 'Board greenhouse:sesai loaded 2026-11-24, linked from the company''s own site: 43 open roles, 35 with
     engineering or technical titles; locations seen: China, Greater Boston (Woburn, MA) – On-site/Hybrid, Shanghai,
     China. Founded: https://stockanalysis.com/stocks/ses/company/. Stage: Listed on NYSE (ticker SES), per the Stock
@@ -5029,8 +5145,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2011. Older than 10 years but well under 1,000 people; age is a guide, not
-      a rule (owner, 2026-11-24).
+    reason: Independent; 478 people (Revelio Labs (https://www.reveliolabs.com/companies/sila-nanotechnologies/employees/),
+      2026-06-01); founded 2011 but venture-backed (late); latest round not yet checked, so included.
   notes: 'Board greenhouse:silananotechnologies loaded 2026-11-24, linked from the company''s own site: 31 open
     roles, 18 with engineering or technical titles; locations seen: Alameda, CA, Japan, Moses Lake, WA. Founded:
     https://silanano.com/press/press-releases/sila-secures-300-million-in-private-funding-to-ramp-gigascale-anode-manufacturing-and-strengthen-americas-technology-sovereignty.
@@ -5066,8 +5182,9 @@ companies:
     basis: provisional
     approved: false
   startup:
-    status: review
-    reason: null
+    status: in
+    reason: 'Independent; 1,081 people (Revelio Labs (https://www.reveliolabs.com/companies/skydio/employees/),
+      2026-06-01); growth sign: founded 2014.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: solid-power
   name: Solid Power
@@ -5093,10 +5210,10 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: 230 employees at 2025-12-31 (fiscal 2025 Form 10-K) and shrinking; founded 2011 (sources say 2011 or
-      2012), about 15 years. Past the age guide. Older than 10 years but well under 1,000 people; age is a guide,
-      not a rule (owner, 2026-11-24).
+    status: out
+    reason: Independent; 230 people (Solid Power FY2025 Form 10-K (filed 2026-02-25), via stockanalysis.com (S&P
+      Global) https://stockanalysis.com/stocks/sldp/employees/, 2025-12-31); founded 2011, with no equity raise
+      in 5 years or recent listing found.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: solv-energy
   name: SOLV Energy
@@ -5123,7 +5240,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Large contractor.
+    reason: Independent; 2,300 people (Renaissance Capital (IPO profile, from prospectus) (https://www.renaissancecapital.com/Profile/MWH/SOLV-Energy/IPO),
+      2026-02-01); founded 2008, with no equity raise in 5 years or recent listing found.
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: span
   name: SPAN
@@ -5149,7 +5267,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 220 to 400 people (third-party estimates, 2026), founded 2018.
+    reason: 'Independent; 401 people (Silicon Valley Investclub tear sheet (third-party) (undated; read 2026-11-24)
+      https://siliconvalleyinvestclub.com/companies/span/, 2026-11-24); growth sign: founded 2018.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: sparkcharge
   name: SparkCharge
@@ -5176,7 +5295,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 39 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 39 people (Dealroom (https://dealroom.co/companies/sparkcharge), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'Board rippling:sparkcharge loaded 2026-11-24, token matched by name; board page title checked: 6 open
     roles, 0 with engineering or technical titles; locations seen: Burlingame, CA, Somerville, MA, South Gate, CA.
     Founded: https://dealroom.co/companies/sparkcharge. Stage: Series A-1 $15.5M led by Monte''s Fam plus $15M venture
@@ -5210,7 +5330,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 22 people (LeadIQ, 2026-04-01); founded 2017.
+    reason: 'Independent; 22 people (LeadIQ (https://leadiq.com/c/sperra/5de66ba194535a8f0441b6d2), 2026-04-01);
+      growth sign: founded 2017.'
   notes: 'Board rippling:sperra loaded 2026-11-24, token matched by name; board page title checked: 1 open roles,
     1 with engineering or technical titles; locations seen: Remote (United Kingdom). Founded: https://craft.co/sperra.
     Stage: Reported $2M seed round (undated, trysignalbase.com); otherwise mostly government grants (CB Insights:
@@ -5245,7 +5366,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Three employees (PitchBook); founded 2025.
+    reason: 'Independent; 3 people (PitchBook profile (aggregator, undated; date is the day it was read via search)
+      https://pitchbook.com/profiles/company/1241571-97, 2026-11-24); growth sign: founded 2025.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A2 (2026-11-24) applied.
 - id: stafl-systems
@@ -5274,8 +5396,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 60 people (company release, 2024-06); founded 2010, about 16 years. Past the age guide. Older
-      than 10 years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: Independent; 60 people (June 2024 press release on WindSail investment (as quoted by CB Insights) https://www.cbinsights.com/company/stafl-systems,
+      2024-06-30); founded 2010 but venture-backed (late); latest round not yet checked, so included.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: standard-nuclear
@@ -5302,7 +5424,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 92 people (Dealroom, 2026-11-24); founded 2024.
+    reason: 'Independent; 92 people (Dealroom (https://dealroom.co/companies/standard-nuclear), 2026-11-24); growth
+      sign: founded 2024.'
   notes: 'Board greenhouse:standardnuclearinc loaded 2026-11-24, linked from the company''s own site: 18 open roles,
     14 with engineering or technical titles; locations seen: Idaho Falls, ID, Oak Ridge, TN, Richland, WA. Founded:
     https://wnn.world-nuclear.org/articles/doe-makes-first-pick-for-advanced-fuel-pilot-project. Stage: IPO on NYSE
@@ -5338,7 +5461,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 20 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 20 people (Dealroom (https://dealroom.co/companies/still-bright/), 2026-11-24); growth
+      sign: founded 2022.'
   notes: 'Board ashby:stillbright loaded 2026-11-24, linked from the company''s own site: 2 open roles, 0 with engineering
     or technical titles; locations seen: Kenilworth, NJ. Founded: https://techcrunch.com/2025/07/30/how-a-new-jersey-startup-found-an-electrifying-way-to-slash-copper-costs/.
     Stage: $18.7M seed led by Material Impact and Breakthrough Energy Ventures, reported 2025-07-30. https://techcrunch.com/2025/07/30/how-a-new-jersey-startup-found-an-electrifying-way-to-slash-copper-costs/
@@ -5369,9 +5493,9 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: 291 employees in 2026-07 (ColoradoBiz, company figures); founded 1971, about 55 years. Older than 10
-      years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    status: out
+    reason: Owner not yet checked; 291 people (ColoradoBiz (company figures at new-facility opening) https://coloradobiz.com/sens-expands-longmont-manufacturing-facility/,
+      2026-07-31); founded 1971, with no equity raise in 5 years or recent listing found.
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A8 (2026-11-24) applied.
 - id: swift-solar
@@ -5398,7 +5522,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 76 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 76 people (Dealroom (https://dealroom.co/companies/swift-solar), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'Board greenhouse:swiftsolar loaded 2026-11-24, linked from the company''s own site: 6 open roles, 5 with
     engineering or technical titles; locations seen: San Carlos, California, United States. Founded: https://dealroom.co/companies/swift-solar.
     Stage: Series A $27M, June 2024 (Dealroom). https://dealroom.co/companies/swift-solar Customers: Automotive,
@@ -5428,7 +5553,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 562 people (Stock Analysis (company profile), 2026-11-24); founding year not found.
+    reason: 'Independent; 562 people (Stock Analysis (company profile) (https://stockanalysis.com/stocks/te/company/),
+      2026-11-24); growth sign: founded 2018.'
   notes: 'Board ashby:t1energy loaded 2026-11-24, token matched by name; board page title checked: 60 open roles,
     30 with engineering or technical titles; locations seen: Austin, TX, Dallas, TX, New York, NY. Stage: NYSE ticker
     TE. Formerly FREYR Battery, Inc., renamed T1 Energy Inc. in February 2025 (Stock Analysis). Flags: public company;
@@ -5459,7 +5585,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 47 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 47 people (Dealroom (https://dealroom.co/companies/tandem-pv), 2026-11-24); growth sign:
+      founded 2016.'
   notes: 'Board ashby:tandempv loaded 2026-11-24, token matched by name; board page title checked: 5 open roles,
     4 with engineering or technical titles; locations seen: Fremont. Founded: https://dealroom.co/companies/tandem-pv.
     Stage: Series A $50M (equity and debt) led by Eclipse, March 2025. https://www.pv-magazine.com/2025/03/06/tandem-pv-moves-toward-perovskite-manufacturing-with-50-million-funding/
@@ -5488,7 +5615,7 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 11 to 50 people (job listing, undated); founded 2017, 9 years.
+    reason: 'Independent; no headcount figure found; growth sign: founded 2017.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: tempo
   name: Tempo
@@ -5515,7 +5642,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 8 people (Dealroom (as Redoxblox), 2026-11-24); founded 2020.
+    reason: 'Independent; 8 people (Dealroom (as Redoxblox) (https://dealroom.co/companies/redoxblox), 2026-11-24);
+      growth sign: founded 2020.'
   notes: 'Board greenhouse:tempo loaded 2026-11-24, token matched by name; board page title checked: 5 open roles,
     4 with engineering or technical titles; locations seen: San Diego, San Diego, CA, San Diego, California, United
     States. Founded: https://dealroom.co/companies/redoxblox. Stage: Series A $40.7M, October 2024, led by Prelude
@@ -5551,7 +5679,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 60 to 110 people (third-party estimates, undated).
+    reason: 'Independent; 110 people (Dealroom mapped profiles (third-party) (undated; read 2026-11-24) https://dealroom.co/companies/terawattinfrastructure/,
+      2026-11-24); growth sign: founded 2021.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: terradot
@@ -5579,7 +5708,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 83 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 83 people (Dealroom (https://dealroom.co/companies/terradot), 2026-11-24); growth sign:
+      founded 2022.'
   notes: 'Board rippling:terradot-careers loaded 2026-11-24, linked from the company''s own site: 6 open roles,
     2 with engineering or technical titles; locations seen: New York, NY, San Francisco, CA, São Paulo, Brazil.
     Founded: https://dealroom.co/companies/terradot. Stage: Series A, $54M, December 2024 (Dealroom; investors incl.
@@ -5611,9 +5741,9 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: '1,302 people (Revelio Labs (https://www.reveliolabs.com/companies/terrapower/employees/), 2026-06-01):
-      over the 1,000-person line by more than the borderline allowance.'
+    status: in
+    reason: Independent; 1,302 people (Revelio Labs (https://www.reveliolabs.com/companies/terrapower/employees/),
+      2026-06-01); founded 2008 but venture-backed (late); latest round not yet checked, so included.
   notes: 'Board greenhouse:terrapowerllc loaded 2026-11-24, linked from the company''s own site: 93 open roles,
     23 with engineering or technical titles; locations seen: Bellevue, WA, Bellevue, WA , Bellevue, WA & Everett,
     WA. Founded: https://www.terrapower.com/about. Stage: $650M fundraise June 18 2025; $830M secured in 2022 including
@@ -5649,7 +5779,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Far above 1,000 people.
+    reason: '134,785 people (Tesla 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/tsla/employees/),
+      2025-12-31): over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: the-nuclear-company
   name: The Nuclear Company
@@ -5676,7 +5807,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 162 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 162 people (Dealroom (https://dealroom.co/companies/the-nuclear-company), 2026-11-24);
+      growth sign: founded 2023.'
   notes: 'Board greenhouse:thenuclearcompany loaded 2026-11-24, linked from the company''s own site: 63 open roles,
     24 with engineering or technical titles; locations seen: Columbia, South Carolina, Columbia, South Carolina;
     Lexington, Kentucky, Columbia, South Carolina; Lexington, Kentucky; Washington, DC. Founded: https://dealroom.co/companies/the-nuclear-company.
@@ -5712,7 +5844,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 107 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 107 people (Dealroom (https://dealroom.co/companies/thea-energy), 2026-11-24); growth
+      sign: founded 2022.'
   notes: 'Board lever:thea.energy loaded 2026-11-24, linked from the company''s own site: 59 open roles, 45 with
     engineering or technical titles; locations seen: Kearny, NJ. Founded: https://dealroom.co/companies/thea-energy.
     Stage: Series B, $100M, May 2026 (Dealroom); Series A $20M, February 2024. Spun out of Princeton University
@@ -5742,7 +5875,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Nearly 400 employees (company release, 2026-11-11), founded 2021.
+    reason: 'Independent; 400 people (Torus press release (''nearly 400 employees'') https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/,
+      2026-11-11); growth sign: founded 2021.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: travertine
   name: Travertine
@@ -5769,7 +5903,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 43 people (Dealroom, 2026-11-24); founded 2022.
+    reason: 'Independent; 43 people (Dealroom (https://dealroom.co/companies/travertine-technologies), 2026-11-24);
+      growth sign: founded 2022.'
   notes: 'Board lever:travertine loaded 2026-11-24, linked from the company''s own site: 3 open roles, 2 with engineering
     or technical titles; locations seen: Boulder, CO. Founded: https://dealroom.co/companies/travertine-technologies.
     Stage: $8.5M round co-led by Holcim MAQER Ventures with Grantham Foundation, Clean Energy Ventures, Bidra, announced
@@ -5805,8 +5940,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 361 people (Built In, 2026-11-24); founded 2015. Older than 10 years but well under 1,000 people; age
-      is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 361 people (Built In (https://builtin.com/company/twelve), 2026-11-24); growth sign: founded
+      2015.'
   notes: 'Board ashby:twelve loaded 2026-11-24, linked from the company''s own site: 6 open roles, 2 with engineering
     or technical titles; locations seen: Berkeley, CA, Moses Lake, WA, Remote - US. Founded: https://jobs.techstars.com/companies/twelve-2.
     Stage: Series C $200M within a $645M package (plus $400M project equity and $45M credit), led by TPG, 2024-09-19
@@ -5842,7 +5977,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 96 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/urban-sky),
+      2026-11-24); growth sign: founded 2019.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: ursa-major
   name: Ursa Major
@@ -5867,7 +6003,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: null
+    reason: 'Independent; 476 people (Revelio Labs (https://www.reveliolabs.com/companies/ursa-major/employees/),
+      2026-06-01); growth sign: founded 2015.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: usa-rare-earth
   name: USA Rare Earth
@@ -5894,8 +6031,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founding year not found. No headcount figure found; included under the owner's rule
-      for missing figures (2026-11-24).
+    reason: 'Independent; 132 people (USA Rare Earth 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/usar/employees/),
+      2025-12-31); growth sign: founded 2019.'
   notes: 'Board rippling:usare loaded 2026-11-24, token matched by name; board page title checked: 12 open roles,
     4 with engineering or technical titles; locations seen: Remote (United States), Sierra Blanca, TX, Stillwater,
     OK. Stage: Nasdaq USAR; FY2025 results published (https://usare.gcs-web.com/news-releases/news-release-details/usa-rare-earth-reports-fourth-quarter-and-full-year-2025).
@@ -5927,7 +6064,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 25 people (Built In, 2026-11-24); founded 2018.
+    reason: 'Independent; 25 people (Built In (https://builtin.com/company/utility-global), 2026-11-24); growth
+      sign: founded 2018.'
   notes: 'Board lever:utilityglobal loaded 2026-11-24, token matched by name; board page title checked: 6 open roles,
     6 with engineering or technical titles; locations seen: Englewood, Houston. Founded: https://builtin.com/company/utility-global.
     Stage: Series D first close $100M led by Ara Partners and APG, announced 2026-02-17 per company site. https://utilityglobal.com/
@@ -5960,7 +6098,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 100 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 100 people (Dealroom (https://dealroom.co/companies/valar-atomics), 2026-11-24); growth
+      sign: founded 2023.'
   notes: 'Board greenhouse:valaratomics loaded 2026-11-24, token matched by name; board page title checked: 123
     open roles, 92 with engineering or technical titles; locations seen: Orangeville, Utah, United States, Torrance,
     CA, Torrance, California, United States. Founded: https://dealroom.co/companies/valar-atomics. Stage: Series
@@ -5999,7 +6138,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 62 people (Dealroom, 2026-11-24); founded 2023.
+    reason: 'Independent; 62 people (Dealroom (https://dealroom.co/companies/vaulted-deep), 2026-11-24); growth
+      sign: founded 2023.'
   notes: 'Board ashby:vaulted-deep loaded 2026-11-24, linked from the company''s own site: 5 open roles, 0 with
     engineering or technical titles; locations seen: Houston, Hutchinson, Kansas. Founded: https://dealroom.co/companies/vaulted-deep.
     Stage: Series A, about $32M, November 2024, led by Prelude Ventures (Dealroom). https://dealroom.co/companies/vaulted-deep
@@ -6033,7 +6173,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 90 to 105 people (third-party estimates, 2026), founded 2019.
+    reason: 'Independent; 103 people (Dealroom profile (third-party) (undated; read 2026-11-24) https://dealroom.co/companies/veir/,
+      2026-11-24); growth sign: founded 2019.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Owner
     ruling A2 (2026-11-24) applied.
 - id: veo
@@ -6061,7 +6202,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 270 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 270 people (Dealroom (https://dealroom.co/companies/veoride), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'Board greenhouse:operationscareers loaded 2026-11-24, linked from the company''s own site: 21 open roles,
     5 with engineering or technical titles; locations seen: Alexandria, Virginia, United States; Washington DC,
     Birmingham, Alabama, United States, Bronx, New York, United States. Founded: https://prnewswire.com/news-releases/veo-raises-16-million-in-funding-to-scale-across-the-us-paving-the-way-to-profitable-sustainable-micromobility-301332405.html.
@@ -6095,7 +6237,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 50 people (Dealroom, 2026-11-24); founded 2016.
+    reason: 'Independent; 50 people (Dealroom (https://dealroom.co/companies/via-separations), 2026-11-24); growth
+      sign: founded 2016.'
   notes: 'Board lever:viaseparations loaded 2026-11-24, token matched by name; board page title checked: 2 open
     roles, 2 with engineering or technical titles; locations seen: Watertown, MA. Founded: https://dealroom.co/companies/via-separations.
     Stage: $36M round, April 2026, at a reported $190M valuation (Massachusetts Clean Energy Center, Aramco Ventures,
@@ -6128,8 +6271,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2022. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Owner not yet checked; 76 people (Built In; undated, so as_of is the day it was read (https://builtin.com/company/voltera),
+      2026-11-24); growth sign: founded 2022.'
   notes: 'Board greenhouse:volterapower loaded 2026-11-24, linked from the company''s own site: 3 open roles, 0
     with engineering or technical titles; locations seen: Arlington, Virginia, United States, Arlington, Virginia,
     United States; Brooklyn, NY; Remote. Founded: https://eqtgroup.com/current-portfolio/voltera/. Stage: Launched
@@ -6168,7 +6311,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 36 people (Dealroom, 2026-11-24); founded 2025.
+    reason: 'Independent; 36 people (Dealroom (https://dealroom.co/companies/voya-energy), 2026-11-24); growth sign:
+      founded 2025.'
   notes: 'Board ashby:Voya%20Energy loaded 2026-11-24, linked from the company''s own site: 6 open roles, 5 with
     engineering or technical titles; locations seen: Hayward. Founded: https://dealroom.co/companies/voya-energy.
     Stage: Series A $35M, late August 2026 (Business Wire via press); earlier $13M seed November 2025. Press says
@@ -6201,8 +6345,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No headcount found; founded 2023. No headcount figure found; included under the owner's rule for missing
-      figures (2026-11-24).
+    reason: 'Independent; 84 people (Revelio Labs (https://www.reveliolabs.com/companies/vulcan-elements/employees/),
+      2026-06-01); growth sign: founded 2023.'
   notes: 'Board greenhouse:vulcanelements loaded 2026-11-24, linked from the company''s own site: 58 open roles,
     30 with engineering or technical titles; locations seen: Benson, NC, Benson, North Carolina, Benson, North Carolina,
     United States. Founded: https://www.mining.com/?p=1186493. Stage: Series A $65M (https://www.mining.com/?p=1185655);
@@ -6237,7 +6381,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 84 people (Dealroom, 2026-11-24); founded 2020.
+    reason: 'Independent; 84 people (Dealroom (https://dealroom.co/companies/whisper-aero), 2026-11-24); growth
+      sign: founded 2020.'
   notes: 'Board greenhouse:whisperaero loaded 2026-11-24, linked from the company''s own site: 11 open roles, 8
     with engineering or technical titles; locations seen: Crossville, Tennessee, United States, Nashville or Crossville,
     TN, Nashville, Tennessee, United States. Founded: https://dealroom.co/companies/whisper-aero. Stage: Series
@@ -6272,9 +6417,8 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: Alphabet subsidiary; no Wing headcount found separately. Held on the drone-delivery decision. Older
-      than 10 years but well under 1,000 people; age is a guide, not a rule (owner, 2026-11-24).
+    status: out
+    reason: Part of Alphabet; not independent.
   notes: 'Board greenhouse:wing loaded 2026-11-24, token matched by name; board page title checked: 42 open roles,
     19 with engineering or technical titles; locations seen: Dallas, Texas; Durham, North Carolina, United States,
     Durham, North Carolina, United States, Palo Alto, California. Founded: https://wing.com/about. Stage: Alphabet
@@ -6284,6 +6428,7 @@ companies:
     sold. Decision needed: decisions-needed.md [zipline]. Evidence: https://wing.com/about https://6figr.com/company/wing
     https://fourweekmba.com/ai-alphabets-wing-plans-125m-fort-worth-drone-plant-100-jobs/ Confidence: medium. Unresolved:
     Company-stated headcount. Owner ruling A1 (2026-11-24) applied.'
+  parent: Alphabet
 - id: woodward
   name: Woodward
   website: null
@@ -6307,7 +6452,8 @@ companies:
     approved: false
   startup:
     status: out
-    reason: About 10,200 employees (Woodward FY2025 10-K (full-time, via summaries), 2025-10-31).
+    reason: '10,200 people (Woodward FY2025 10-K (full-time, via summaries) https://www.stocktitan.net/sec-filings/WWD/10-k-woodward-inc-files-annual-report-6062813d9a10.html,
+      2025-10-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
 - id: xcimer-energy
@@ -6334,7 +6480,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: About 140 to 200 people (third-party estimates, 2026), founded 2022.
+    reason: 'Independent; 170 people (Revelio Labs estimate (third-party) (undated; read 2026-11-24) https://www.reveliolabs.com/companies/xcimer-energy/employees,
+      2026-11-24); growth sign: founded 2022.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: xos
   name: Xos
@@ -6361,8 +6508,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 99 people (Xos 10-K for FY2025, 2025-12-31); founded 2015. Older than 10 years but well under 1,000
-      people; age is a guide, not a rule (owner, 2026-11-24).
+    reason: 'Independent; 99 people (Xos 10-K for FY2025 (https://www.boardroomalpha.com/sec/xos-10-k-2026-03-30-0001819493-26-000008),
+      2025-12-31); growth sign: founded 2015.'
   notes: 'Board greenhouse:xosinc loaded 2026-11-24, linked from the company''s own site: 13 open roles, 12 with
     engineering or technical titles; locations seen: Bay Area, U.S., Byrdstown, TN, Los Angeles, CA. Founded: https://www.boardroomalpha.com/sec/xos-10-k-2026-03-30-0001819493-26-000008.
     Stage: Nasdaq XOS since the 2021 business combination with NextGen Acquisition Corp (10-K). Customers: UPS (190+
@@ -6398,7 +6545,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 97 people (Dealroom, 2026-11-24); founded 2021.
+    reason: 'Independent; 97 people (Dealroom (https://dealroom.co/companies/zanskar), 2026-11-24); growth sign:
+      founded 2021.'
   notes: 'Board lever:Zanskar loaded 2026-11-24, linked from the company''s own site: 13 open roles, 6 with engineering
     or technical titles; locations seen: Animas, New Mexico, Salt Lake City, Utah. Founded: https://dealroom.co/companies/zanskar.
     Stage: Series C $115M, 2026-01-21, led by Spring Lane Capital; plus $40M development capital facility 2026-04-16
@@ -6432,7 +6580,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: 147 people (Dealroom, 2026-11-24); founded 2017.
+    reason: 'Independent; 147 people (Dealroom (https://dealroom.co/companies/zap-energy), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'Board rippling:zap-energy-careers loaded 2026-11-24, linked from the company''s own site: 18 open roles,
     12 with engineering or technical titles; locations seen: Everett, WA, Washington, DC. Founded: https://dealroom.co/companies/zap-energy.
     Stage: Series D $130M, July 2024 (reported $520M valuation), investors incl. Soros-linked Explore.Dream.Discover.,
@@ -6466,9 +6615,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: No stated headcount. Estimates run from 375 (Built In, 2026-07) to 1,001 or more (two job-site bands,
-      2026); founded 2014, 12 years. Board shows 315 open roles, which suggests a company near or above 1,000. No
-      headcount figure found; included under the owner's rule for missing figures (2026-11-24).
+    reason: 'Independent; 2,368 people (Revelio Labs (https://www.reveliolabs.com/companies/zipline/employees/),
+      2026-06-01); growth sign: founded 2014.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A1 (2026-11-24) applied.
 - id: zoox
@@ -6494,5 +6642,6 @@ companies:
     approved: false
   startup:
     status: out
-    reason: null
+    reason: Part of Amazon; not independent.
   notes: Missing facts filled from data/screening/registry-fixes.
+  parent: Amazon

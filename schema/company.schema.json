@@ -53,8 +53,26 @@
       "if": {"properties": {"tier": {"enum": ["core", "enabling", "out"]}}},
       "then": {"properties": {"reason": {"type": "string", "minLength": 1}}}
     },
+    "parent": {"type": ["string", "null"], "description": "The owning company, when this one is a subsidiary, division or joint venture. Null when independent."},
+    "last_raise": {
+      "description": "The latest equity round found: venture, growth or private equity.",
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["date", "type", "source"],
+          "properties": {
+            "date": {"type": "string", "pattern": "^\\d{4}(-\\d{2}(-\\d{2})?)?$", "description": "Year, year-month or full date."},
+            "type": {"type": "string", "description": "For example 'Series B', 'growth equity', 'private equity'."},
+            "source": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "ipo_year": {"type": ["integer", "null"], "minimum": 1800, "maximum": 2100, "description": "Year the company listed publicly, including by SPAC merger."},
     "startup": {
-      "description": "The startup test: under 1,000 employees, typically under 10 years old.",
+      "description": "The startup test agreed 2026-11-24 (PLAN.md section 9): independent, under 4,000 people (about 25 percent tolerance), and at least one growth sign (founded within 15 years, an equity raise within 5 years, or public for under 5 years).",
       "type": "object",
       "additionalProperties": false,
       "required": ["status", "reason"],
