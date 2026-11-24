@@ -71,6 +71,7 @@ The policy allows network requests only to the page's own origin and Google Font
 - **The page cannot reach the candidate's own Ollama.**
 - **Everything else the persona flow needs works**: reading PDF and DOCX, YAML, file import, download, local storage.
 - **One in-page route is still open: Chrome's built-in model**, which needs no download by the page. Whether Chrome exposes it inside an artifact's frame is the one unanswered question. To answer it, open the probe link in desktop Chrome while signed in; the page saves its report and the supervisor reads it back.
+- Second run, 2026-11-24 17:51 UTC, in the desktop app's built-in browser pane after it was signed in: every result the same, built-in model still unavailable. The pane is the same Chromium build as the app (its browser string says so), so this does not answer the Chrome question. That still needs the link opened in desktop Chrome.
 - In-browser embeddings for ranking hit the same wall (the 23 MB model and its runtime file would have to be published in pieces). For M2, rank with persona fields and keyword scoring in plain JavaScript and leave embeddings for the move off artifact hosting.
 
 ## Spike 2: the local companion route
