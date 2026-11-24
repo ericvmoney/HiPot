@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import re
+import xml.etree.ElementTree as ElementTree
 from html.parser import HTMLParser
 
 MAX_DESCRIPTION = 20_000
@@ -71,3 +72,18 @@ def clip(text: str, limit: int = MAX_DESCRIPTION) -> str:
 def join_text(*blocks: str | None) -> str:
     """Join already-plain blocks, dropping the empty ones."""
     return collapse("\n".join(block for block in blocks if block))
+
+
+class NotXML(ValueError):
+    """An answer that should be an XML feed and is not, or is unsafe to parse."""
+
+
+def parse_xml(text: str) -> ElementTree.Element:
+    """An XML feed's root element. A feed that declares a document type or
+    entities is refused rather than expanded; job feeds have no need of one."""
+    if "<!DOCTYPE" in text[:2000].upper() or "<!ENTITY" in text.upper():
+        raise NotXML("feed declares a document type; not parsed")
+    try:
+        return ElementTree.fromstring(text.lstrip("﻿"))
+    except ElementTree.ParseError as error:
+        raise NotXML(f"answer was not XML ({error})") from error

@@ -28,13 +28,12 @@ only when the address has no code.
 """
 from __future__ import annotations
 
-import xml.etree.ElementTree as ElementTree
 from urllib.parse import urlsplit
 
 from pipeline.collect import normalize
 from pipeline.collect.fetch import FetchError, Fetcher
 from pipeline.collect.locations import structured_location
-from pipeline.collect.text import html_to_text
+from pipeline.collect.text import NotXML, html_to_text, parse_xml
 
 FEED = "https://app.jazz.co/feeds/export/jobs/{board}"
 
@@ -50,14 +49,10 @@ def posting_code(url: str) -> str | None:
 
 def parse(text: str) -> list[dict]:
     """The <job> elements as dicts of their child elements' text."""
-    # The feed has no document type; one that declares entities is refused
-    # rather than expanded.
-    if "<!DOCTYPE" in text[:2000].upper() or "<!ENTITY" in text.upper():
-        raise FetchError("feed declares a document type; not parsed")
     try:
-        root = ElementTree.fromstring(text.lstrip("﻿"))
-    except ElementTree.ParseError as error:
-        raise FetchError(f"answer was not XML ({error})") from error
+        root = parse_xml(text)
+    except NotXML as error:
+        raise FetchError(str(error)) from error
     if root.tag != "jobs":
         raise FetchError(f"answer was not a JazzHR job feed (root element <{root.tag}>)")
     return [{child.tag: (child.text or "").strip() for child in job} for job in root.iter("job")]
