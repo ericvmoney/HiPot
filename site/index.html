@@ -5,7 +5,7 @@
 <title>HiPot Jobs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Hardware engineering roles at clean-technology and electrification startups. No login, no tracking, and every role links to the company's own posting.">
+<meta name="description" content="Engineering, technician, production and other roles at clean-technology and electrification hardware startups. No login, no tracking, and every role links to the company's own posting.">
 <meta name="referrer" content="no-referrer">
 <style>
 /* Layout: a filter column beside one ruled list of roles. On a phone the filters move into a sheet
@@ -219,6 +219,10 @@ body::before {
 .tags { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px; }
 .tags li { font-size: 0.75rem; background: var(--tag); border: 1px solid transparent; border-radius: 3px; padding: 1px 7px; }
 .tags .tag-level { background: transparent; border-color: var(--line); font-weight: 600; }
+.tags .tag-fn {
+  background: transparent; padding-inline: 0 2px; color: var(--muted); font-weight: 600;
+  font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; align-self: center;
+}
 .role-side { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
 .pay { font-family: var(--mono); font-size: 0.875rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .pay span { font-weight: 400; color: var(--muted); }
@@ -262,12 +266,12 @@ body::before {
   <header class="top">
     <div class="brand">
       <h1>HiPot</h1>
-      <p>Hardware engineering roles at clean-technology and electrification startups</p>
+      <p>Jobs at hardware startups in clean technology and electrification</p>
     </div>
     <p class="stamp" id="stamp" hidden></p>
   </header>
 
-  <p class="banner" id="dev-banner" hidden>Development build. It includes companies that are not listed on the public board. Do not publish this build.</p>
+  <p class="banner" id="dev-banner" hidden>Development build. It includes companies and role types that are not listed on the public board. Do not publish this build.</p>
 
   <div class="layout">
     <aside class="sidebar" id="sidebar" aria-labelledby="sidebar-title">
@@ -294,7 +298,7 @@ body::before {
     <main class="results" id="results">
       <div class="search">
         <label for="q">Search title, company or location</label>
-        <input class="input" id="q" type="search" placeholder="battery test, Denver, firmware…" autocomplete="off" spellcheck="false" maxlength="80" enterkeyhint="search">
+        <input class="input" id="q" type="search" placeholder="battery test, technician, Denver…" autocomplete="off" spellcheck="false" maxlength="80" enterkeyhint="search">
       </div>
 
       <div class="bar">
@@ -370,7 +374,8 @@ body::before {
 
   // One entry per checkbox group. `key` is also the key in the URL fragment.
   var FACETS = [
-    { key: 'd', title: 'Discipline', tax: 'disciplines', none: 'Not tagged', open: true },
+    { key: 'f', title: 'Role type', tax: 'functions', open: true },
+    { key: 'd', title: 'Discipline', tax: 'disciplines', open: true },
     { key: 'l', title: 'Level', tax: 'levels', none: 'Not stated in the title', open: true },
     { key: 'm', title: 'Location', tax: 'metros', open: true },
     { key: 's', title: 'Sector', tax: 'sectors', none: 'Not recorded', open: false },
@@ -381,13 +386,20 @@ body::before {
   var roles = [];           // every role, newest first, with precomputed search and filter fields
   var labels = {};          // taxonomy key -> { id: label }
   var persona = null;       // Milestone 2: a candidate's persona file, loaded on their own device
-  var state = { q: '', d: new Set(), l: new Set(), m: new Set(), s: new Set(), st: new Set(), pay: 0, paid: false, c: '', sort: 'new' };
+  var state = emptyState();
   var results = [];         // roles that pass the filters, in display order
   var shown = 0;            // how many of `results` are in the page
   var lastHash = null;
   var searchTimer = 0;
 
   function $(id) { return document.getElementById(id); }
+
+  // No search, no filters, newest first. One empty set per checkbox group in FACETS.
+  function emptyState() {
+    var fresh = { q: '', pay: 0, paid: false, c: '', sort: 'new' };
+    FACETS.forEach(function (facet) { fresh[facet.key] = new Set(); });
+    return fresh;
+  }
 
   // Build an element. Data values only ever enter the page through `text` (textContent) or checked attributes.
   function el(tag, props, children) {
@@ -504,7 +516,8 @@ body::before {
       role.time = Date.parse((role.posted || role.seen) + 'T00:00:00Z') || 0;
       role.payCompare = comparablePay(role.pay);
       role.facets = {
-        d: role.disc && role.disc.length ? role.disc : [NONE],
+        f: [role.fn],
+        d: role.disc || [],
         l: [role.level || NONE],
         m: places,
         s: company.sectors && company.sectors.length ? company.sectors : [NONE],
@@ -519,7 +532,10 @@ body::before {
     roles.sort(function (a, b) { return b.time - a.time; });   // stable: keeps the file's tie-break
 
     FACETS.forEach(function (facet) {
-      facet.options = data.taxonomy[facet.tax].map(function (entry) { return { id: entry.id, label: entry.label }; });
+      // Options come from the taxonomy; renderFacets hides any with no role in this file.
+      facet.options = data.taxonomy[facet.tax].map(function (entry) {
+        return { id: entry.id, label: entry.listed === false ? entry.label + ' (not listed)' : entry.label };
+      });
       if (facet.key === 'm') {
         facet.options.push({ id: REMOTE, label: 'Remote' }, { id: ELSEWHERE, label: 'Other locations' });
       }
@@ -582,7 +598,7 @@ body::before {
   }
 
   function decodeState(hash) {
-    var next = { q: '', d: new Set(), l: new Set(), m: new Set(), s: new Set(), st: new Set(), pay: 0, paid: false, c: '', sort: 'new' };
+    var next = emptyState();
     var facetByKey = {};
     FACETS.forEach(function (facet) { facetByKey[facet.key] = facet; });
     String(hash || '').replace(/^#/, '').split('--').forEach(function (token) {
@@ -765,7 +781,8 @@ body::before {
       window.scrollTo(0, 0);
     });
 
-    var tags = el('ul', { class: 'tags', 'aria-label': 'Level and disciplines' });
+    var tags = el('ul', { class: 'tags', 'aria-label': 'Role type, level and disciplines' });
+    tags.appendChild(el('li', { class: 'tag-fn', text: labels.functions[role.fn] || role.fn }));
     if (role.level) tags.appendChild(el('li', { class: 'tag-level', text: labels.levels[role.level] || role.level }));
     if (role.emp && role.emp !== 'full-time') tags.appendChild(el('li', { class: 'tag-level', text: { 'part-time': 'Part time', contract: 'Contract', intern: 'Internship' }[role.emp] || role.emp }));
     (role.disc || []).forEach(function (id) { tags.appendChild(el('li', { text: labels.disciplines[id] || id })); });
@@ -790,8 +807,8 @@ body::before {
           company.reason ? el('span', { class: 'reason', text: company.reason }) : null
         ]),
         el('p', { class: 'where', text: whereText(role) }),
-        role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null,
-        tags.childNodes.length ? tags : null
+        tags,
+        role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null
       ]),
       el('div', { class: 'role-side' }, [payNode, dateNode])
     ]);

@@ -78,5 +78,22 @@ def test_persona_hook_exists_and_no_persona_interface_is_built():
     assert 'type="file"' not in PAGE and "resume" not in PAGE.lower()
 
 
+def test_role_type_is_the_first_filter_and_every_role_shows_its_function():
+    facets = SCRIPT[SCRIPT.index("var FACETS = ["):SCRIPT.index("];", SCRIPT.index("var FACETS = ["))]
+    keys = re.findall(r"\{ key: '([a-z]+)'", facets)
+    assert keys[0] == "f" and "tax: 'functions'" in facets.splitlines()[1]
+    assert len(keys) == len(set(keys))
+    # Function ids and labels come from the data file, never from a list in the page.
+    for function_id in ("engineering", "technician", "sales-bd", "supply-chain"):
+        assert f"'{function_id}'" not in SCRIPT
+    # The function label leads the tag row, so the row is never empty for a role with no discipline.
+    assert "tags.appendChild(el('li', { class: 'tag-fn', text: labels.functions[role.fn] || role.fn }));" in SCRIPT
+
+
+def test_filter_state_has_a_set_for_every_filter_group():
+    assert "FACETS.forEach(function (facet) { fresh[facet.key] = new Set(); });" in SCRIPT
+    assert SCRIPT.count("emptyState()") >= 2
+
+
 def test_page_and_publish_step_agree_on_the_data_version():
     assert f"var BOARD_VERSION = {BOARD_VERSION};" in SCRIPT
