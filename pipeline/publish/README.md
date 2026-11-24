@@ -56,7 +56,16 @@ Values within one group are alternatives; groups combine with "and". Unknown tok
 
 ## Location filter
 
-One control holds Remote, "Outside any metro area", metro areas and states. Metro areas and states are each sorted by how many roles they have and shortened to the six busiest until the visitor chooses "Show all". A "Find a place" box searches metro labels, state names and codes, and the place names of single-location roles, so "Weirton" finds the Pittsburgh region and "Texas" finds the Texas metros and the state. Ticked places always stay visible. Choices within the control combine with "or".
+One control holds Remote, "Outside any metro area", metro areas and states. Every metro area and state with roles is listed, each group sorted by how many roles it has, inside a box that scrolls on its own (320px tall) with a sticky group heading and count. A "Find a place" box searches metro labels, state names and codes, and the place names of single-location roles, so "Weirton" finds the Pittsburgh region and "Texas" finds the Texas metros and the state. Ticked places always stay visible. Choices within the control combine with "or".
+
+### Later: filters as dropdowns with checkboxes (not built)
+
+The owner wants each long filter to become a dropdown holding checkboxes once the lists are full size. How I would build it, with no framework:
+
+- **Control:** a button per filter (the "disclosure" pattern: `aria-expanded`, `aria-controls`) that opens a panel under it. Inside the panel, the same checkbox rows the sidebar uses today; for Location also the place search. The button shows the choice: "Location: Denver +2". It is not an ARIA listbox or combobox, because checkboxes in a panel are simpler and work with every screen reader.
+- **Placement:** on desktop, a row of these buttons above the list in place of the sidebar, with the panel positioned under its button. On a phone, the same panels open full width inside the existing filter sheet.
+- **Behaviour:** Escape or a click outside closes the panel and returns focus to its button; Tab moves through the checkboxes; one panel is open at a time. Ticking applies at once, as now, so the URL fragment, chips and counts need no change.
+- **Code:** `buildFilters` already builds each group's option rows into one element; the panel is that element moved into a positioned container. The filter state, `runFilters` and the fragment code stay as they are.
 
 ## Pay filter
 
