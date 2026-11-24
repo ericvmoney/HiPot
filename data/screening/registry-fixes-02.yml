@@ -1,0 +1,1251 @@
+# Registry fixes 02: facts missing from companies already in companies.yml.
+#
+# Written 2026-11-24 by workstream A2 (company scout). Each entry gives only the
+# fields companies.yml lacks, each with its source. Nothing here overrides a value
+# the registry already holds. A headcount without a date carries the day it was
+# read as as_of, and its source says so. 'flags' marks entries where a new figure
+# bears on whether the company should stay listed.
+#
+# Filled: hq 47, founded 51, headcount 59, stage 60
+# (of 92 companies with at least one missing field).
+# Still without hq: none.
+
+fixes:
+- id: 1-arc-power
+  name: 1 Arc Power
+  confidence: low
+  unresolved: 'Could not identify the company: no website in registry and two searches found only similarly named
+    firms (Arc Power, Longmont CO / Dubendorf CH space DC-DC converters; ARC Power UK/Rwanda mini-grids; 1AP at
+    1ap.com). Needs a website or sector to disambiguate.'
+  still_missing:
+  - founded
+  - headcount
+  - stage
+- id: advanced-energy
+  name: Advanced Energy
+  hq:
+    value: Denver, CO
+    source: https://en.wikipedia.org/wiki/Advanced_Energy
+  founded:
+    value: 1981
+    source: https://en.wikipedia.org/wiki/Advanced_Energy
+  stage:
+    value: public
+    evidence: Advanced Energy Industries, listed on Nasdaq as AEIS; founded in Fort Collins, CO in 1981, HQ now
+      Denver. https://en.wikipedia.org/wiki/Advanced_Energy
+  confidence: high
+- id: aepnus-technology
+  name: Aepnus Technology
+  headcount:
+    value: 17
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/aepnus-technology/employees)
+  headcount_notes: Revelio says about 17 employees as of March 2026 (month only; first day used). Directory listings
+    give a 1-10 band. Company site gives no team size.
+  confidence: medium
+- id: aerovect
+  name: AeroVect
+  hq:
+    value: South San Francisco, CA
+    source: https://dealroom.co/companies/aerovect
+  founded:
+    value: 2020
+    source: https://dealroom.co/companies/aerovect
+  headcount:
+    value: 111
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/aerovect/employees)
+  headcount_notes: Revelio says about 111 employees as of June 2026 (month only; first day used). Dealroom shows
+    78, undated.
+  stage:
+    value: series-a
+    evidence: $18M Series A led by Nava Ventures, Sept/Oct 2024, per PitchBook (https://pitchbook.com/profiles/company/437593-24)
+      and Crunchbase; no company press release found. Dealroom shows seed rounds Aug 2020 and Jul 2022.
+  confidence: medium
+  unresolved: Series A known only from aggregators.
+- id: albedo
+  name: Albedo
+  hq:
+    value: Broomfield, CO
+    source: https://dealroom.co/companies/albedo
+  founded:
+    value: 2020
+    source: https://dealroom.co/companies/albedo
+  headcount:
+    value: 73
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/albedo)
+  headcount_notes: Dealroom shows 73 employees, undated (band <100). Revelio's 'albedo' page is a different company.
+    Company site (https://albedo.com) gives no headcount or HQ.
+  stage:
+    value: series-b
+    evidence: $100M Series B reported April 2025 at a reported $285M valuation (Dealroom, citing a news report).
+      Dealroom also notes an Oct 2025 announcement that Albedo would exit commercial imagery and focus on building
+      satellite buses. https://dealroom.co/companies/albedo
+  confidence: medium
+  unresolved: HQ from Dealroom only; company site does not state it (Albedo has also been described as Denver-based).
+- id: amperesand
+  name: Amperesand
+  headcount:
+    value: 258
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/amperesand/employees)
+  headcount_notes: Revelio (Amperesand Pte Ltd, Singapore) says 258 as of June 2026 (month only; first day used),
+    but its regional breakdown sums to 252. Dealroom shows 133, undated, and lists HQ as Reno with a $30M Series
+    A in June 2026.
+  confidence: medium
+  unresolved: Two aggregators disagree by about 2x.
+- id: avalanche-energy
+  name: Avalanche Energy
+  stage:
+    value: series-a
+    evidence: $40M Series A led by Lowercarbon Capital, Oct 2022 (https://www.canarymedia.com/articles/nuclear/avalanche-raises-40m-to-pursue-vision-of-tiny-nuclear-fusion-reactor);
+      followed by an unnamed $29M round led by RA Capital, 2026-02-03 (https://www.avalanchefusion.com/news-release/avalanche-energy-raises-29-million-following-plasma-physics-breakthroughs),
+      and a further $14.9M Form D raise reported by GeekWire in 2026.
+  confidence: medium
+  unresolved: The 2026 rounds are not labelled; the $29M round may be counted as a Series B elsewhere.
+- id: avnos
+  name: Avnos
+  headcount:
+    value: 29
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/avnos/employees)
+  headcount_notes: Revelio says about 29 as of March 2026 (month only; first day used). Built In shows 30 (undated);
+    Wellfound 11-50; Climatebase 11-20.
+  confidence: medium
+- id: bedrock-robotics
+  name: Bedrock Robotics
+  hq:
+    value: San Francisco, CA
+    source: https://simplify.jobs/c/Bedrock-Robotics
+  founded:
+    value: 2024
+    source: https://simplify.jobs/c/Bedrock-Robotics
+  headcount:
+    value: 188
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/bedrock-robotics/employees)
+  headcount_notes: Revelio says about 188 as of June 2026 (month only; first day used). Simplify band 51-200.
+  stage:
+    value: series-c
+    evidence: '$600M Series C co-led by CapitalG and Emergence Capital at a $4.1B valuation, 2026-10-26 (https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/).
+      Earlier: $80M seed plus Series A, Jul 2025; $270M Series B, Feb 2026.'
+  confidence: high
+- id: blue-energy
+  name: Blue Energy
+  headcount:
+    value: 107
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/blue-energy/employees)
+  headcount_notes: Revelio (Blue Energy, Chevy Chase MD, founded 2023) says 107 as of June 2026 (month only; first
+    day used). Dealroom shows 71, undated; Simplify band 51-200.
+  confidence: medium
+- id: boom-supersonic
+  name: Boom Supersonic
+  hq:
+    value: Centennial, CO
+    source: https://en.wikipedia.org/wiki/Boom_Technology
+  founded:
+    value: 2014
+    source: https://en.wikipedia.org/wiki/Boom_Technology
+  headcount:
+    value: 244
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/boom-technology/employees)
+  headcount_notes: Revelio (Boom Technology) says about 244 as of June 2026 (month only; first day used). Wikipedia
+    infobox gives 150, undated.
+  stage:
+    value: late
+    evidence: $300M new funding announced 2025-12-09, led by Darsana Capital Partners (https://boomsupersonic.com/news;
+      https://sacra.com/c/boom-supersonic); over $600M raised in total; $100M Series B closed in 2019.
+  confidence: medium
+  unresolved: Round name for the Dec 2025 raise not stated; late is inferred from size and history.
+- id: boston-materials
+  name: Boston Materials
+  stage:
+    value: series-a
+    evidence: $12M Series A2 led by Good Growth Capital, 2022-11-03 (https://www.businesswire.com/news/home/20221103005291/en/Boston-Materials-Secures-12-Million-From-Good-Growth-Capital-and-Strategic-Partners-GS-Group-and-PTT-Global-Chemical);
+      $8M Series A May 2021; CB Insights lists a Series A-IV on 2025-09-09 (https://www.cbinsights.com/company/boston-materials/financials).
+  confidence: medium
+- id: canadian-solar
+  name: Canadian Solar
+  hq:
+    value: Kitchener, ON, Canada
+    source: https://en.wikipedia.org/wiki/Canadian_Solar
+  founded:
+    value: 2001
+    source: https://en.wikipedia.org/wiki/Canadian_Solar
+  headcount:
+    value: 22234
+    as_of: '2023-01-01'
+    source: Wikipedia (from annual report) (https://en.wikipedia.org/wiki/Canadian_Solar)
+  headcount_notes: Wikipedia gives 22,234 for 2023 (year only; first day used).
+  stage:
+    value: public
+    evidence: Listed on Nasdaq as CSIQ. https://en.wikipedia.org/wiki/Canadian_Solar
+  confidence: medium
+  unresolved: Headcount is from 2023; later annual reports not checked.
+- id: charge-robotics
+  name: Charge Robotics
+  founded:
+    value: 2021
+    source: https://ycombinator.com/companies/charge-robotics
+  stage:
+    value: series-b
+    evidence: $22M Series B announced March 2025, after a $17M Series A in July 2024 (https://seedtable.com/companies/charge-robotics/funding-rounds/series-b-2025-03;
+      https://pv-magazine-usa.com/2025/03/17/mit-based-startup-launches-solar-construction-robotics-system/). YC
+      Summer 2021.
+  confidence: medium
+- id: clearway-energy-group
+  name: Clearway Energy Group
+  hq:
+    value: San Francisco, CA
+    source: https://allivyfair.ei.columbia.edu/content/clearway-energy-group
+  founded:
+    value: 2018
+    source: https://www.sec.gov/Archives/edgar/data/1567683/000162828026010952/cwen-20251231.htm
+  headcount:
+    value: 1000
+    as_of: '2026-11-24'
+    source: Clearway Energy Group website (https://www.clearwayenergygroup.com/)
+  headcount_notes: Company site says 1000+ employees, undated; as_of is the fetch date. Lower bound given.
+  stage:
+    value: subsidiary
+    evidence: CEG is equally owned by GIP (part of BlackRock since 2024-10-01) and TotalEnergies, per Clearway Energy
+      Inc. FY2025 10-K; formed when NRG sold its renewables platform to GIP on 2018-08-31. https://www.sec.gov/Archives/edgar/data/1567683/000162828026010952/cwen-20251231.htm
+  confidence: medium
+  unresolved: Founded year is the 2018 carve-out from NRG; the platform's history goes back further.
+- id: crusoe
+  name: Crusoe
+  hq:
+    value: Denver, CO
+    source: https://www.reveliolabs.com/companies/crusoe-energy-systems/employees
+  founded:
+    value: 2018
+    source: https://www.crusoe.ai/about/company
+  headcount:
+    value: 1528
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/crusoe-energy-systems/employees)
+  headcount_notes: Revelio (Crusoe Energy Systems) says about 1,528 as of June 2026 (month only; first day used).
+    Built In shows about 2,100, undated. Press releases carry a San Francisco and Denver dateline; Built In and
+    Revelio list Denver.
+  stage:
+    value: late
+    evidence: $3.9B Series F at a $30.9B post-money valuation, 2026-09-17 (https://www.crusoe.ai/resources/newsroom/crusoe-announces-series-f-funding);
+      $1.375B Series E Oct 2025.
+  confidence: high
+- id: cummins
+  name: Cummins
+  hq:
+    value: Columbus, IN
+    source: https://en.wikipedia.org/wiki/Cummins
+  founded:
+    value: 1919
+    source: https://en.wikipedia.org/wiki/Cummins
+  stage:
+    value: public
+    evidence: Listed on NYSE as CMI; S&P 500 component. https://en.wikipedia.org/wiki/Cummins
+  confidence: high
+- id: dandelion-energy
+  name: Dandelion Energy
+  hq:
+    value: Arlington, VA
+    source: https://dandelionenergy.com/contact
+  confidence: medium
+  unresolved: Contact page gives the HQ address 1515 N. Courthouse Rd, Suite 730, Arlington VA, but also says Headquartered
+    in DC; the homepage BBB badge points to Mount Kisco, NY (earlier location).
+- id: dexmate
+  name: Dexmate
+  hq:
+    value: Santa Clara, CA
+    source: https://simplify.jobs/c/Dexmate
+  founded:
+    value: 2024
+    source: https://simplify.jobs/c/Dexmate
+  headcount:
+    value: 51
+    as_of: '2026-11-24'
+    source: Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Dexmate)
+  headcount_notes: Band 51-200, undated; lower bound given.
+  stage:
+    value: seed
+    evidence: About $41M seed per a Form D equity offering, Feb 2026, reported Mar 2026 with LG Technology Ventures
+      (https://www.vcbacked.co/company/dexmate); NEC Orchestrating Future Fund investment 2026-08-25, amount undisclosed
+      (https://roboticsandautomationnews.com/2026/08/25/nec-invests-in-us-based-robotics-startup-dexmate/104453/).
+      No Series A found.
+  confidence: low
+  unresolved: Round name comes from aggregators only.
+- id: eaton
+  name: Eaton
+  hq:
+    value: Dublin, Ireland
+    source: https://en.wikipedia.org/wiki/Eaton_Corporation
+  founded:
+    value: 1911
+    source: https://en.wikipedia.org/wiki/Eaton_Corporation
+  stage:
+    value: public
+    evidence: Eaton Corporation plc, listed on NYSE as ETN; primary US administrative center in Beachwood, OH. https://en.wikipedia.org/wiki/Eaton_Corporation
+  flags:
+  - Legal domicile is Dublin, Ireland; the main US administrative centre is Beachwood, OH.
+  confidence: high
+- id: elroy-air
+  name: Elroy Air
+  stage:
+    value: series-b
+    evidence: 'Last private round: about $49M led by Shield Capital, Feb 2024 (https://www.cooley.com/news/coverage/2024/2024-02-08-elroy-air-announces-nearly-50-million-in-new-funding),
+      labelled Series B by Dealroom (https://dealroom.co/companies/elroy-air/); $40M Series A 2021. Pending SPAC
+      merger with Inflection Point Acquisition Corp. VII (IPXG): S-4 declared effective, announced 2026-11-05, closing
+      expected after a December 2026 shareholder meeting, planned Nasdaq ticker ELRY.'
+  confidence: medium
+  unresolved: Becomes public if the SPAC closes in Dec 2026; recheck then.
+- id: emporia
+  name: Emporia
+  stage:
+    value: series-b
+    evidence: Endeavor Colorado lists stage Series B, $16M total raised, last financing a private secondary (https://www.endeavorcolorado.org/companies/emporia-energy).
+      CB Insights lists a corporate minority investment by Siemens on 2025-07-30 (https://www.cbinsights.com/company/emporia/financials).
+      No dated Series B announcement found.
+  confidence: low
+  unresolved: Series B not confirmed by a primary source.
+- id: enphase
+  name: Enphase
+  hq:
+    value: Fremont, CA
+    source: https://stockanalysis.com/stocks/enph/company/
+  founded:
+    value: 2006
+    source: https://en.wikipedia.org/wiki/Enphase_Energy
+  headcount:
+    value: 2781
+    as_of: '2024-01-01'
+    source: Wikipedia (from 10-K) (https://en.wikipedia.org/wiki/Enphase_Energy)
+  headcount_notes: Wikipedia gives 2,781 for 2024 (year only; first day used; likely the 10-K year-end figure).
+    Stock Analysis shows 2,872, undated; Revelio shows 2,882 as of June 2026.
+  stage:
+    value: public
+    evidence: Listed on Nasdaq as ENPH. https://en.wikipedia.org/wiki/Enphase_Energy
+  confidence: high
+- id: exowatt
+  name: Exowatt
+  headcount:
+    value: 121
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/exowatt/employees)
+  headcount_notes: 'Revelio says about 121 as of June 2026 (month only; first day used). Other estimates: PitchBook
+    76, Built In 42; a16z job board band 51-200.'
+  confidence: medium
+- id: ford
+  name: Ford
+  hq:
+    value: Dearborn, MI
+    source: https://en.wikipedia.org/wiki/Ford_Motor_Company
+  founded:
+    value: 1903
+    source: https://en.wikipedia.org/wiki/Ford_Motor_Company
+  stage:
+    value: public
+    evidence: Ford Motor Company, listed on NYSE as F. https://en.wikipedia.org/wiki/Ford_Motor_Company
+  confidence: high
+- id: formlabs
+  name: Formlabs
+  hq:
+    value: Somerville, MA
+    source: https://dealroom.co/companies/formlabs
+  founded:
+    value: 2011
+    source: https://dealroom.co/companies/formlabs
+  headcount:
+    value: 1099
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/formlabs/employees)
+  headcount_notes: Revelio says about 1,099 as of June 2026 (month only; first day used). Built In shows 750; Dealroom
+    band 500-1,000, maps 792; all undated.
+  stage:
+    value: late
+    evidence: $150M Series E led by SoftBank Vision Fund 2 at a $2B valuation, 2021-05-19 (https://formlabs.com/company/press/formlabs-raises-series-e-funding-led-by-softbank-vision-fund-2).
+      No later round found.
+  confidence: high
+- id: fourth-power
+  name: Fourth Power
+  headcount:
+    value: 30
+    as_of: '2026-04-28'
+    source: Company statement (CEO in Leader's Edge interview) (https://www.leadersedge.com/industry/peak-power-plug-in)
+  headcount_notes: CEO Arvin Ganesan said a team of about 30 in an interview dated 2026-04-28. Revelio shows about
+    45 as of June 2026 (https://www.reveliolabs.com/companies/fourth-power/employees).
+  confidence: medium
+- id: generac
+  name: Generac
+  hq:
+    value: Waukesha, WI
+    source: https://en.wikipedia.org/wiki/Generac_Power_Systems
+  founded:
+    value: 1959
+    source: https://en.wikipedia.org/wiki/Generac_Power_Systems
+  stage:
+    value: public
+    evidence: Listed on NYSE as GNRC; S&P 500 component. https://en.wikipedia.org/wiki/Generac_Power_Systems
+  confidence: high
+  unresolved: A 2012 source cited on Wikipedia suggests a move to nearby Genesee, WI; not confirmed.
+- id: general-matter
+  name: General Matter
+  stage:
+    value: series-a
+    evidence: $50M Series A led by Founders Fund, April 2025, at a $200M valuation per Dealroom (https://dealroom.co/companies/general-matter/;
+      https://www.bloomberg.com/news/articles/2025-04-14/peter-thiel-joins-board-of-enriched-uranium-startup-general-matter).
+      Axios reported 2026-03-13 that it was raising about $500M at about $2B pre-money (https://www.axios.com/pro/climate-deals/2026/03/13/general-matter-nuclear-fuel-enriched-uranium-haleu);
+      close not confirmed. $900M DOE award is a grant, not equity.
+  confidence: medium
+  unresolved: If the reported ~$500M round closed, stage is later than Series A.
+- id: glydways
+  name: Glydways
+  headcount:
+    value: 311
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/glydways/employees)
+  headcount_notes: Revelio says 311 as of June 2026 (month only; first day used), down from 328 in Q1 2026. Built
+    In shows 86; Growjo about 218; Latka about 173.
+  confidence: medium
+  unresolved: Aggregators disagree widely.
+- id: gram
+  name: GRAM
+  confidence: low
+  unresolved: 'Could not identify the company: no website in registry; searches returned only unrelated names (Gram
+    Power, Jaipur; Gram Oorja, Pune; a Gram listed by CB Insights with no sector). Needs a website to disambiguate.'
+  still_missing:
+  - founded
+  - headcount
+  - stage
+- id: gulf-wind-technology
+  name: Gulf Wind Technology
+  stage:
+    value: pre-seed
+    evidence: No equity round found. Funding on record is a $1.1M US DOE grant, Aug 2024 (https://www.vcbacked.co/company/gulf-wind-technology),
+      and a $10M Shell New Energies US commitment to a Shell Gulf Wind Technology Accelerator program (https://www.oedigital.com/news/503566-shell-invests-in-gulf-wind-technology-for-gulf-of-mexico-wind-turbine-project).
+  confidence: low
+  unresolved: Stage inferred from grant-only funding; the Shell deal may include equity.
+- id: h3x-technologies
+  name: H3X Technologies
+  headcount:
+    value: 87
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/h3x/employees)
+  headcount_notes: Revelio (H3X, Louisville CO, founded 2021) says 87 as of June 2026 (month only; first day used).
+  confidence: medium
+- id: hevo
+  name: HEVO
+  headcount:
+    value: 9
+    as_of: '2026-03-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/hevo/employees)
+  headcount_notes: Revelio (HEVO Inc., Brooklyn NY, founded 2011) says 9 as of March 2026 (month only; first day
+    used); its 2025 figure is given as 10 or 17 on the same page.
+  confidence: medium
+- id: highland-electric-fleets
+  name: Highland Electric Fleets
+  headcount:
+    value: 225
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/highland-electric-fleets/employees)
+  headcount_notes: Revelio (HQ Beverly, MA) says about 225 as of June 2026 (month only; first day used).
+  stage:
+    value: late
+    evidence: Up to $150M new equity from Aiga Capital Partners, 2025-12-12 (https://www.lw.com/en/news/2025/12/latham-watkins-advises-highland-electric-fleets-on-equity-investment-from-aiga-capital-partners);
+      $75M preferred equity from Galvanize, reported 2026-06-02 (https://www.axios.com/pro/climate-deals/2026/06/02/highland-75m-galvanize-credit);
+      $253M raise led by Vision Ridge in Feb 2021. Growth equity, so late.
+  confidence: medium
+- id: humble-robotics
+  name: Humble Robotics
+  hq:
+    value: San Francisco, CA
+    source: https://simplify.jobs/c/Humble-Robotics
+  founded:
+    value: 2025
+    source: https://thenextweb.com/news/humble-robotics-51m-series-a-cabless-electric-autonomous-trucks
+  headcount:
+    value: 11
+    as_of: '2026-11-24'
+    source: Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Humble-Robotics)
+  headcount_notes: Band 11-50, undated; lower bound given.
+  stage:
+    value: series-a
+    evidence: $51M Series A led by Obvious Ventures, announced Nov 2026, after a $24M seed led by Eclipse; total
+      about $75M (https://www.robotics247.com/article/autonomous-electric-hauling-company-humble-robotics-raises-51m-series-a).
+  confidence: medium
+  unresolved: Founded 2025 per press coverage; Simplify lists 2026.
+- id: inferra
+  name: inferra
+  stage:
+    value: seed
+    evidence: An Inferra in Menlo Park, CA, founded 2026, filed an SEC Form D for $19.3M dated 2026-07-14; Refactor
+      Capital listed as investor (https://valueaddvc.com/pulse/company/inferra). Round not named; seed inferred
+      from company age.
+  confidence: low
+  unresolved: Not confirmed that this Inferra is the registry company (no website in registry). No headcount found.
+  still_missing:
+  - headcount
+- id: infinite-machine
+  name: Infinite Machine
+  founded:
+    value: 2021
+    source: https://theautopian.com/this-startup-company-wants-you-to-ride-its-brutalist-electric-scooter-rather-than-drive-a-car-in-your-city
+  headcount:
+    value: 28
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/infinite-machine/employees)
+  headcount_notes: Revelio (Infinite Machine Technologies, Inc., Brooklyn NY) says about 28 as of June 2026 (month
+    only; first day used). Revelio gives founded 1992, which does not fit this company, so the match is uncertain.
+    Company site lists HQ in Long Island City, NY.
+  confidence: low
+  unresolved: Founded year from a single source (The Autopian); Revelio match uncertain.
+- id: inlyte-energy
+  name: Inlyte Energy
+  confidence: low
+  unresolved: No usable headcount figure.
+  still_missing:
+  - headcount
+- id: invenergy
+  name: Invenergy
+  hq:
+    value: Chicago, IL
+    source: https://en.wikipedia.org/wiki/Invenergy
+  founded:
+    value: 2001
+    source: https://en.wikipedia.org/wiki/Invenergy
+  headcount:
+    value: 3610
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/invenergy/employees)
+  headcount_notes: Revelio (Invenergy LLC) says about 3,610 as of June 2026 (month only; first day used).
+  stage:
+    value: late
+    evidence: Privately held; Blackstone invested about $3B for a minority stake in early 2022; CDPQ invested from
+      2013 and held 52.4% of Invenergy Renewables in 2018. https://en.wikipedia.org/wiki/Invenergy
+  confidence: medium
+- id: kairos-power
+  name: Kairos Power
+  stage:
+    value: late
+    evidence: 'Private; no priced venture rounds announced. Oct 2026 report: $643M lined up for its Tennessee Hermes
+      2 reactor, $368M from private investors (GV, DCVC, Samsung C&T) and $275M from DOE (https://dealroom.co/news/163058-kairos-power-raises-643m-to-build-nuclear-reactors-for-google/).
+      Caplight estimates $906.8M total raised. Late is inferred from scale; it does not raise named rounds.'
+  confidence: low
+  unresolved: Stage is a judgement call; Revelio shows about 636 employees (June 2026) for context.
+- id: karman-industries
+  name: Karman Industries
+  headcount:
+    value: 33
+    as_of: '2026-06-23'
+    source: Caplight (https://www.caplight.com/company/karman-industries)
+  headcount_notes: Caplight says it grew from 26 to 33 employees as of 2026-06-23. Built In shows 13, undated; Dealroom
+    band under 100.
+  confidence: medium
+- id: kodiak
+  name: Kodiak
+  hq:
+    value: Mountain View, CA
+    source: https://stockanalysis.com/stocks/kdk/company/
+  founded:
+    value: 2018
+    source: https://stockanalysis.com/stocks/kdk/company/
+  headcount:
+    value: 342
+    as_of: '2026-11-24'
+    source: Stock Analysis (company filings); undated, so as_of is the day it was read (https://stockanalysis.com/stocks/kdk/company/)
+  headcount_notes: Stock Analysis shows 342 employees, undated (likely the FY2025 10-K figure). Revelio (Kodiak
+    Robotics) shows about 744 as of June 2026, which may include contractors.
+  stage:
+    value: public
+    evidence: Kodiak AI, Inc. listed on Nasdaq as KDK after its 2025 business combination with Ares Acquisition
+      Corporation II; FY2025 10-K filed 2026-03-11 (https://www.boardroomalpha.com/sec/kdk-10-k-2026-03-11-0001628280-26-016910).
+  confidence: high
+  unresolved: Headcount sources disagree by about 2x.
+- id: last-energy
+  name: Last Energy
+  hq:
+    value: Austin, TX
+    source: https://simplify.jobs/c/Last-Energy
+  headcount:
+    value: 124
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/last-energy/employees)
+  headcount_notes: Revelio says about 124 as of June 2026 (month only; first day used). Simplify band 51-200.
+  stage:
+    value: series-c
+    evidence: Oversubscribed Series C of more than $100M led by Astera Institute, 2025-12-16 (https://techcrunch.com/2025/12/16/nuclear-startup-last-energy-raises-100m-for-its-steel-encased-micro-reactor).
+  confidence: medium
+  unresolved: 'HQ conflict: Simplify says Austin, TX; Revelio and earlier Series B coverage say Washington, DC.
+    Company site does not state it.'
+- id: lilac-solutions
+  name: Lilac Solutions
+  headcount:
+    value: 135
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/lilac-solutions/employees)
+  headcount_notes: Revelio (HQ Oakland, CA) says about 135 as of June 2026 (month only; first day used).
+  confidence: medium
+- id: limelight-steel
+  name: Limelight Steel
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: PitchBook; undated, so as_of is the day it was read (https://pitchbook.com/profiles/company/503166-88)
+  headcount_notes: PitchBook figure of 9 taken from its search snippet; the page refuses automated clients (HTTP
+    403) and was not read. Khosla jobs board band 1-10; Climatebase 6-10.
+  confidence: low
+  unresolved: Undated; PitchBook page could not be fetched.
+- id: lucid-motors
+  name: Lucid Motors
+  hq:
+    value: Newark, CA
+    source: https://en.wikipedia.org/wiki/Lucid_Motors
+  founded:
+    value: 2007
+    source: https://en.wikipedia.org/wiki/Lucid_Motors
+  headcount:
+    value: 9000
+    as_of: '2025-12-31'
+    source: Lucid 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/lcid/employees/)
+  headcount_notes: Founded 2007 as Atieva; renamed Lucid Motors in October 2016. Dealroom maps 7,693 (undated).
+  stage:
+    value: public
+    evidence: 'Nasdaq: LCID, listed July 2021 via SPAC merger with Churchill Capital IV; Saudi PIF majority holder
+      (about 64% as of March 2025).'
+  confidence: high
+- id: lunar-outpost
+  name: Lunar Outpost
+  hq:
+    value: Golden, CO
+    source: https://dealroom.co/companies/lunar-outpost
+  founded:
+    value: 2017
+    source: https://dealroom.co/companies/lunar-outpost
+  headcount:
+    value: 168
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/lunar-outpost)
+  headcount_notes: Dealroom figure is undated; Dealroom band 100-500.
+  stage:
+    value: series-b
+    evidence: Series B, $30M, May 2026 (Dealroom funding history, https://dealroom.co/companies/lunar-outpost).
+  confidence: medium
+  unresolved: Headcount has no as-of date; Series B not cross-checked with a press release.
+- id: merlin-labs
+  name: Merlin Labs
+  hq:
+    value: Boston, MA
+    source: https://dealroom.co/companies/merlin-labs
+  founded:
+    value: 2018
+    source: https://dealroom.co/companies/merlin-labs
+  headcount:
+    value: 208
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/merlin-labs)
+  headcount_notes: Dealroom figure is undated; Dealroom band 100-500.
+  stage:
+    value: public
+    evidence: Business combination with Inflection Point Acquisition Corp. IV closed March 16, 2026; trades on Nasdaq
+      as MRLN from March 17, 2026 (https://www.barchart.com/story/news/778641/merlin-and-inflection-point-acquisition-corp-iv-announce-closing-of-business-combination).
+  confidence: high
+  unresolved: Headcount undated.
+- id: motional
+  name: Motional
+  hq:
+    value: Boston, MA
+    source: https://motional.com/about
+  founded:
+    value: 2020
+    source: https://motional.com/about
+  headcount:
+    value: 765
+    as_of: '2026-08-01'
+    source: Built In (https://builtin.com/company/motional/faq/stability-growth)
+  headcount_notes: Built In page updated August 2026 (month only, first day used). Revelio Labs gives about 947
+    (March 2026); 6figr about 815. About 550 laid off (about 40%) in 2024.
+  stage:
+    value: subsidiary
+    evidence: Hyundai Motor Group / Aptiv autonomous-driving JV formed March 2020; majority-owned by Hyundai Motor
+      Group (https://motional.com/about).
+  confidence: medium
+- id: mytra
+  name: Mytra
+  hq:
+    value: South San Francisco, CA
+    source: https://www.reveliolabs.com/companies/mytra/employees/
+  founded:
+    value: 2022
+    source: https://techcrunch.com/?p=2807973
+  headcount:
+    value: 174
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/mytra/employees/)
+  headcount_notes: Revelio June 2026 (month only; first day used). PitchBook lists 170 (undated); Simplify lists
+    201-500 band.
+  stage:
+    value: series-c
+    evidence: $120M Series C led by Avenir Growth, January 15, 2026 (https://siliconangle.com/2026/01/15/warehouse-automation-startup-mytra-snags-120m-funding/).
+  confidence: medium
+  unresolved: 'HQ conflicts: Revelio and CB Insights (111 Pine Ave) say South San Francisco, CA; PitchBook and Pulse
+    2.0 say Brisbane, CA.'
+- id: nuro
+  name: Nuro
+  hq:
+    value: Mountain View, CA
+    source: https://www.reveliolabs.com/companies/nuro/employees/
+  founded:
+    value: 2016
+    source: https://www.reveliolabs.com/companies/nuro/employees/
+  headcount:
+    value: 1166
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/nuro/employees/)
+  headcount_notes: Revelio Q2 2026 (June 2026, month only; first day used).
+  stage:
+    value: late
+    evidence: Series E $203M total ($106M April 2025 plus $97M August 2025, incl. Nvidia, Uber) at $6B valuation
+      (https://www.businesswire.com/news/home/20250821665495/en).
+  confidence: high
+- id: on-energy
+  name: ON.energy
+  hq:
+    value: Miami, FL
+    source: https://dealroom.co/companies/on-energy/
+  founded:
+    value: 2016
+    source: https://dealroom.co/companies/on-energy/
+  headcount:
+    value: 267
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/on-energy/)
+  headcount_notes: Dealroom figure undated; band 100-500.
+  stage:
+    value: series-b
+    evidence: $20M Series B (infra growth equity) led by Ultra Capital, June 2023 (https://www.businesswire.com/news/home/20230613115791/en);
+      later events are debt/project finance (e.g. $78M construction credit, January 2025 per Dealroom).
+  confidence: medium
+- id: oshkosh
+  name: Oshkosh
+  hq:
+    value: Oshkosh, WI
+    source: https://stockanalysis.com/stocks/osk/company/
+  founded:
+    value: 1917
+    source: https://en.wikipedia.org/wiki/Oshkosh_Corporation
+  stage:
+    value: public
+    evidence: 'NYSE: OSK (https://stockanalysis.com/stocks/osk/company/).'
+  confidence: high
+- id: outrider
+  name: Outrider
+  hq:
+    value: Golden, CO
+    source: https://techcrunch.com/2023/01/19/outrider-raises-73m-to-scale-its-autonomous-electric-yard-truck-operation
+  founded:
+    value: 2017
+    source: https://www.robotics247.com/article/outrider_raises_73m_series_c_to_accelerate_adoption_of_autonomous_yard_trucks/software
+  headcount:
+    value: 123
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/outrider/employees/)
+  headcount_notes: Revelio Q2 2026 (June 2026, first day used). Revelio lists HQ Brighton, CO and founded 1995 for
+    'Outrider Technologies, Inc.' - founding year there looks wrong, so the match is medium confidence.
+  stage:
+    value: late
+    evidence: $62M Series D, November 2024 (https://www.orrick.com/en/News/2024/11/Autonomous-Yard-Operations-for-Logistics-Hubs-Outrider-Closes-62-Million-Series-D-Funding-Round).
+  confidence: medium
+  unresolved: 'HQ: press through 2024 says Golden, CO; Revelio says Brighton, CO (possible move).'
+- id: phoenix-tailings
+  name: Phoenix Tailings
+  headcount:
+    value: 135
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/phoenix-tailings)
+  headcount_notes: Dealroom figure undated; band 100-500. Dealroom lists HQ Woburn, MA, founded 2019 (not requested).
+  stage:
+    value: series-b
+    evidence: 'Series B: $43M first close (late 2024) led by Envisioning Partners, expanded to $76M (April 2025),
+      then a $40.2M B-3 round in February 2026 bringing Series B to $116.6M at a reported $360M valuation (https://www.businesswire.com/news/home/20260219710465/en).
+      June 2026 $500M debt from the Office of Strategic Capital and a $66M DOE grant are non-equity.'
+  confidence: medium
+- id: piaggio-fast-forward
+  name: Piaggio Fast Forward
+  hq:
+    value: Boston, MA
+    source: https://www.piaggiogroup.com/en/archive/press-releases/piaggio-group-new-production-facility-subsidiary-pff-boston-robotics-urban
+  founded:
+    value: 2015
+    source: https://wide.piaggiogroup.com/en/articles/innovation/piaggio-group-leader-in-mobility-of-the-future/index.html
+  stage:
+    value: subsidiary
+    evidence: Established in 2015 and controlled by Piaggio Group; Piaggio press release calls PFF its Boston subsidiary
+      (https://www.piaggiogroup.com/en/archive/press-releases/piaggio-group-new-production-facility-subsidiary-pff-boston-robotics-urban).
+  confidence: medium
+  unresolved: headcount
+  still_missing:
+  - headcount
+- id: pivotal
+  name: Pivotal
+  confidence: low
+  unresolved: stage - privately funded by Larry Page with no disclosed series; none of the stage labels fits on
+    the evidence found.
+  still_missing:
+  - stage
+- id: planted
+  name: Planted
+  headcount:
+    value: 150
+    as_of: '2026-04-01'
+    source: blue News (SDA) (https://www.bluewin.ch/en/news/culture-of-fear-and-total-chaos-employees-sharply-criticize-vegan-company-3200184.html)
+  headcount_notes: 'Trade press, April 2026 (month only; first day used): about 150 employees, 46 in production,
+    down from 200 the company cited at end-2025. Revelio Labs shows about 326 (June 2026), which conflicts.'
+  confidence: medium
+- id: pronto
+  name: Pronto
+  hq:
+    value: San Francisco, CA
+    source: https://techcrunch.com/2025/07/15/av-startup-pronto-ai-acquires-off-road-autonomous-vehicle-rival-safeai
+  founded:
+    value: 2018
+    source: https://www.reveliolabs.com/companies/pronto-ai/employees/
+  headcount:
+    value: 175
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/pronto-ai/employees/)
+  headcount_notes: Revelio June 2026 (first day used).
+  stage:
+    value: subsidiary
+    evidence: Acquired by Atoms (Travis Kalanick's robotics company, formerly City Storage Systems), March 2026;
+      Kalanick was already the largest investor (https://techcrunch.com/2026/03/13/travis-kalanick-launches-a-new-company-called-atoms-focused-on-robotics/;
+      Dealroom news). Earlier funding undisclosed, not a traditional VC series.
+  confidence: medium
+  unresolved: Exact close date of the Atoms acquisition (TechCrunch March 2026 said 'about to'; Dealroom and a LinkedIn
+    post say complete).
+- id: proper-voltage
+  name: Proper Voltage
+  headcount:
+    value: 50
+    as_of: '2026-11-24'
+    source: Vaia Talents (aggregator); undated, so as_of is the day it was read (https://talents.vaia.com/companies/proper-voltage/)
+  headcount_notes: Band 50-100 (lower bound used), undated, seen in search results for Vaia Talents; not confirmed
+    on fetch. Company (battery operating system 'bOS', Carlsbad, CA per https://propervoltage.com) does not state
+    a team size.
+  confidence: low
+  unresolved: No dated or first-party headcount found.
+- id: qcells
+  name: Qcells
+  hq:
+    value: Seoul, South Korea
+    source: https://en.wikipedia.org/wiki/Qcells
+  founded:
+    value: 1999
+    source: https://en.wikipedia.org/wiki/Qcells
+  stage:
+    value: subsidiary
+    evidence: Operates as the Qcells division of Hanwha Solutions (Hanwha Group); Q-Cells founded 1999 in Bitterfeld-Wolfen,
+      Germany, acquired by Hanwha in 2012 (https://www.hanwha.com/companies/hanwha-solutions-qcells-division.do).
+  confidence: medium
+  unresolved: headcount (only Georgia-site figures available).
+  still_missing:
+  - headcount
+- id: rai-institute
+  name: RAI Institute
+  hq:
+    value: Cambridge, MA
+    source: https://rai-inst.com/about/
+  founded:
+    value: 2022
+    source: https://spectrum.ieee.org/marc-raibert-boston-dynamics-instutute
+  stage:
+    value: subsidiary
+    evidence: Founded August 2022 as the Boston Dynamics AI Institute, launched and funded by Hyundai Motor Group
+      with $400M (https://www.therobotreport.com/robotics-ai-institute-boston-dynamics-to-make-humanoids-more-useful-with-reinforcement-learning/).
+  confidence: medium
+  unresolved: headcount; 'subsidiary' assumes the Hyundai-funded institute is a Hyundai entity, not an independent
+    nonprofit - not confirmed.
+  still_missing:
+  - headcount
+- id: regent
+  name: Regent
+  founded:
+    value: 2020
+    source: https://www.inc.com/rob-verger/regent-seaglider-flying-boat/91179058
+  headcount:
+    value: 213
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/regent-craft/employees/)
+  headcount_notes: Revelio June 2026 (first day used). TrueUp 120 (undated); 6figr 122 (June 2025); Dealroom band
+    100-500; company said 135+ Rhode Island jobs as of August 2024. Revelio lists founded 2021; Inc. says 2020.
+  confidence: medium
+- id: reliable-robotics
+  name: Reliable Robotics
+  hq:
+    value: Mountain View, CA
+    source: https://dealroom.co/companies/reliable-robotics
+  founded:
+    value: 2017
+    source: https://www.reveliolabs.com/companies/reliable-robotics/employees/
+  headcount:
+    value: 258
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/reliable-robotics/employees/)
+  headcount_notes: Revelio June 2026 (first day used); Dealroom shows 238 (undated).
+  stage:
+    value: late
+    evidence: $160M Series D led by Nimble Partners, April 21, 2026 (https://www.businesswire.com/news/home/20260421825512/en/);
+      extended October 2026 (new tranche $115M incl. $25M SVB debt), Series D total $275M, valuation above $1B (https://techcrunch.com/2026/10/20/spacex-alums-aviation-startup-lands-115m-topping-1b-valuation/).
+  confidence: high
+- id: renesas
+  name: Renesas
+  hq:
+    value: Tokyo, Japan
+    source: https://en.wikipedia.org/wiki/Renesas_Electronics
+  founded:
+    value: 2002
+    source: https://en.wikipedia.org/wiki/Renesas_Electronics
+  stage:
+    value: public
+    evidence: Tokyo Stock Exchange 6723, Nikkei 225 component (https://en.wikipedia.org/wiki/Renesas_Electronics).
+  confidence: high
+- id: res
+  name: RES
+  hq:
+    value: Kings Langley, United Kingdom
+    source: https://www.res-group.com/about-us/
+  founded:
+    value: 1981
+    source: https://www.res-group.com/about-us/
+  headcount:
+    value: 4500
+    as_of: '2026-11-24'
+    source: RES (company statement) (https://www.res-group.com/about-us/)
+  headcount_notes: Company says 'over 4,500 people'; page undated, so as_of is the retrieval date. Built In shows
+    about 3,506; UK entity reported 760 for FY to Oct 2024. Wikipedia gives founding 1982; Companies House shows
+    Renewable Energy Systems Ltd incorporated 8 Oct 1981. Global HQ in Kings Langley, Hertfordshire; US HQ in Denver
+    since 2023.
+  stage:
+    value: subsidiary
+    evidence: Privately owned by the Sir Robert McAlpine family trust; started 1981 as a team within Sir Robert
+      McAlpine (https://www.res-group.com/about-us/; https://www.mynewsmag.co.uk/private-firm-re-energised-after-reaching-big-sales-league/).
+  confidence: medium
+  unresolved: 'Stage: family-trust-owned private company - ''subsidiary'' is the nearest label; check the ownership
+    structure if the distinction matters.'
+- id: rivian
+  name: Rivian
+  hq:
+    value: Irvine, CA
+    source: https://en.wikipedia.org/wiki/Rivian
+  founded:
+    value: 2009
+    source: https://en.wikipedia.org/wiki/Rivian
+  headcount:
+    value: 15232
+    as_of: '2025-12-31'
+    source: Rivian 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/rivn/employees/)
+  headcount_notes: Founded June 2009 in Rockledge, FL as Mainstream Motors.
+  stage:
+    value: public
+    evidence: 'Nasdaq: RIVN since November 2021 IPO (https://en.wikipedia.org/wiki/Rivian).'
+  confidence: high
+- id: rivian-and-volkswagen-group-technologies
+  name: Rivian and Volkswagen Group Technologies
+  hq:
+    value: Palo Alto, CA
+    source: https://vision-mobility.de/en/news/vw-seals-partnership-with-rivian-the-western-counterpart-to-xpeng-350673.html
+  founded:
+    value: 2024
+    source: https://www.volkswagen-group.com/en/press-releases/faster-leaner-more-efficient-rivian-and-volkswagen-group-announce-the-launch-of-their-joint-venture-18828
+  headcount:
+    value: 1500
+    as_of: '2025-11-01'
+    source: Volkswagen Group (company statement) (https://www.volkswagen-group.com/en/press-releases/one-year-after-its-founding-joint-venture-between-volkswagen-group-and-rivian-shows-strong-progress-19980)
+  headcount_notes: '''More than 1,500 employees'' in the one-year update (November 2025, month only; first day used).
+    Teams in the USA, Canada, Sweden, Serbia and Berlin. About 1,000 at launch.'
+  stage:
+    value: subsidiary
+    evidence: 50-50 joint venture of Rivian and Volkswagen Group launched November 2024; deal worth up to $5.8B
+      (https://www.businesswire.com/news/home/20241112561975/en).
+  confidence: medium
+  unresolved: Palo Alto HQ is from launch-time reporting ('based in Palo Alto initially'); not confirmed for 2026.
+- id: scale-microgrids
+  name: Scale Microgrids
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/scale-microgrids)
+  headcount_notes: Built In figure undated (another Built In page shows 108); PitchBook lists 116 (undated).
+  confidence: low
+  unresolved: No dated headcount.
+- id: schneider-electric
+  name: Schneider Electric
+  hq:
+    value: Rueil-Malmaison, France
+    source: https://en.wikipedia.org/wiki/Schneider_Electric
+  founded:
+    value: 1836
+    source: https://en.wikipedia.org/wiki/Schneider_Electric
+  stage:
+    value: public
+    evidence: 'Euronext Paris: SU, CAC 40 component (https://en.wikipedia.org/wiki/Schneider_Electric).'
+  confidence: high
+- id: serve-robotics
+  name: Serve Robotics
+  hq:
+    value: San Carlos, CA
+    source: https://stockanalysis.com/stocks/serv/company/
+  founded:
+    value: 2017
+    source: https://stockanalysis.com/stocks/serv/company/
+  headcount:
+    value: 380
+    as_of: '2025-12-31'
+    source: Serve Robotics 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/serv/employees/)
+  headcount_notes: 370 full-time plus 10 part-time at FY2025 year-end. Founded 2017 inside Postmates (Postmates
+    X), spun out as Serve in 2021.
+  stage:
+    value: public
+    evidence: 'Nasdaq: SERV (https://stockanalysis.com/stocks/serv/company/).'
+  confidence: medium
+  unresolved: 'HQ: Stock Analysis gives 1360 Bayport Ave, San Carlos, CA; earlier filings used Redwood City, CA
+    - not re-checked against the latest 10-K cover.'
+- id: sila-nanotechnologies
+  name: Sila Nanotechnologies
+  headcount:
+    value: 478
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/sila-nanotechnologies/employees/)
+  headcount_notes: Revelio June 2026 (first day used). Dealroom maps 429 (undated), band 100-500.
+  confidence: medium
+- id: skydio
+  name: Skydio
+  hq:
+    value: San Mateo, CA
+    source: https://en.wikipedia.org/wiki/Skydio
+  founded:
+    value: 2014
+    source: https://en.wikipedia.org/wiki/Skydio
+  headcount:
+    value: 1081
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/skydio/employees/)
+  headcount_notes: Revelio June 2026 (first day used).
+  stage:
+    value: late
+    evidence: $110M Series F led by existing investors at $4.4B valuation, April 2026 (https://www.skydio.com/blog/skydio-series-f);
+      Axon minority investment of about $1.2B at $5.2B pre-money reported November 2026 (https://dealroom.co/news/170172-axon-invests-1-2b-in-skydio-taking-drone-maker-to-a-5-2b-valuation/).
+  confidence: high
+- id: solv-energy
+  name: SOLV Energy
+  hq:
+    value: San Diego, CA
+    source: https://www.renaissancecapital.com/Profile/MWH/SOLV-Energy/IPO
+  founded:
+    value: 2008
+    source: https://www.renaissancecapital.com/IPO-Center/News/116625/solar-project-builder-solv-energy-sets-terms-for-482-million-ipo
+  headcount:
+    value: 2300
+    as_of: '2026-02-01'
+    source: Renaissance Capital (IPO profile, from prospectus) (https://www.renaissancecapital.com/Profile/MWH/SOLV-Energy/IPO)
+  headcount_notes: '''Employees at IPO'' (IPO February 2026; month only, first day used). The prospectus date of
+    the count was not checked; may exclude craft/temporary labor.'
+  stage:
+    value: public
+    evidence: 'IPO priced at $25 on February 10, 2026, Nasdaq: MWH; American Securities kept about 75% (https://www.renaissancecapital.com/IPO-Center/News/116914/american-securities-solar-project-builder-solv-energy-prices-ipo-at-25).'
+  confidence: high
+- id: spinor-energy
+  name: Spinor Energy
+  stage:
+    value: seed
+    evidence: PitchBook lists one early-stage VC deal dated January 2026 (amount undisclosed), investors Link Ventures
+      and Onto Ventures; founded 2025, Mountain View, CA, 3 employees (https://pitchbook.com/profiles/company/1241571-97).
+      Seen in search snippet only.
+  confidence: low
+  unresolved: No press release found; 'seed' inferred from company age and size - PitchBook's label is 'early-stage
+    VC'.
+- id: stafl-systems
+  name: Stafl Systems
+  stage:
+    value: late
+    evidence: Undisclosed growth-equity investment from WindSail Capital Group, June 27, 2024 (https://www.businesswire.com/news/home/20240627562900/en/Stafl-Systems-Accelerates-Growth-with-Investment-from-WindSail-Capital);
+      CB Insights classifies it as growth equity. Company founded 2010, South San Francisco.
+  confidence: medium
+  unresolved: No later rounds found; WindSail may hold control, which would make it closer to 'subsidiary'.
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  stage:
+    value: subsidiary
+    evidence: Acquired (buyout) by private equity firm Industrial Growth Partners, reportedly March 10, 2025 (https://mergr.com/transaction/industrial-growth-partners-acquires-stored-energy-systems);
+      earlier a management buyout per CB Insights.
+  confidence: medium
+  unresolved: Deal date from deal databases only; PE-owned portfolio company mapped to 'subsidiary'.
+- id: t1-energy
+  name: T1 Energy
+  founded:
+    value: 2018
+    source: https://battery-tech.net/company/freyr-battery-now-t1-energy-inc/
+  confidence: high
+- id: tau-motors
+  name: Tau Motors
+  confidence: low
+  unresolved: headcount
+  still_missing:
+  - headcount
+- id: terawatt-infrastructure
+  name: Terawatt Infrastructure
+  founded:
+    value: 2021
+    source: https://www.terawattinfrastructure.com/about
+  confidence: medium
+  unresolved: 'stage - no funding round fetched; search budget ran out. Recalled but not verified here: about $1B
+    raised at launch in 2022, led by Vision Ridge Partners (infrastructure growth equity, which would map to ''late'').'
+  still_missing:
+  - stage
+- id: terrapower
+  name: TerraPower
+  headcount:
+    value: 1302
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/terrapower/employees/)
+  headcount_notes: Revelio June 2026 (first day used).
+  flags:
+  - Listed now, but this figure (1,302) is over the 1,000 line and over the 25 percent tolerance; startup status
+    needs a look.
+  confidence: medium
+- id: tesla
+  name: Tesla
+  hq:
+    value: Austin, TX
+    source: https://stockanalysis.com/stocks/tsla/company/
+  founded:
+    value: 2003
+    source: https://stockanalysis.com/stocks/tsla/company/
+  headcount:
+    value: 134785
+    as_of: '2025-12-31'
+    source: Tesla 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/tsla/employees/)
+  stage:
+    value: public
+    evidence: 'Nasdaq: TSLA, IPO June 29, 2010 (https://stockanalysis.com/stocks/tsla/company/).'
+  confidence: high
+- id: urban-sky
+  name: Urban Sky
+  hq:
+    value: Denver, CO
+    source: https://dealroom.co/companies/urban-sky
+  founded:
+    value: 2019
+    source: https://dealroom.co/companies/urban-sky
+  headcount:
+    value: 96
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/urban-sky)
+  headcount_notes: Dealroom figure undated; Dealroom band shown as 100-500, inconsistent with 96.
+  stage:
+    value: series-b
+    evidence: Series B, $30M, February 2025, reported $120M valuation (Dealroom funding history, https://dealroom.co/companies/urban-sky).
+  confidence: medium
+  unresolved: Headcount undated; Series B not cross-checked with a press release.
+- id: ursa-major
+  name: Ursa Major
+  hq:
+    value: Berthoud, CO
+    source: https://dealroom.co/companies/ursa-major-technologies
+  founded:
+    value: 2015
+    source: https://en.wikipedia.org/wiki/Ursa_Major_Technologies
+  headcount:
+    value: 476
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/ursa-major/employees/)
+  headcount_notes: Revelio June 2026 (first day used). Dealroom shows 472 (undated), band 500-1k; Wikipedia about
+    270 (2023).
+  stage:
+    value: late
+    evidence: $100M round classed 'Late VC' by Dealroom, November 2025, reported $600M valuation (Alsop Louie, Principia
+      Growth, Eclipse, Woodline), plus $50M debt (https://dealroom.co/companies/ursa-major-technologies); follows
+      an $85M Series C, December 2021 (https://en.wikipedia.org/wiki/Ursa_Major_Technologies).
+  confidence: medium
+  unresolved: Series letter of the November 2025 round not confirmed (Dealroom label only).
+- id: usa-rare-earth
+  name: USA Rare Earth
+  founded:
+    value: 2019
+    source: https://stockanalysis.com/stocks/usar/company/
+  headcount:
+    value: 132
+    as_of: '2025-12-31'
+    source: USA Rare Earth 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/usar/employees/)
+  headcount_notes: 'Stock Analysis lists HQ Stillwater, OK; Nasdaq: USAR.'
+  confidence: medium
+- id: via-separations
+  name: Via Separations
+  confidence: low
+  unresolved: stage - no series letter found for the 2026 rounds; search budget ran out.
+  still_missing:
+  - stage
+- id: voltera
+  name: Voltera
+  headcount:
+    value: 76
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/voltera)
+  headcount_notes: Built In profile describes the EQT-backed EV-charging Voltera (founded 2022) but lists HQ Waterloo,
+    ON, which belongs to the unrelated PCB-printer Voltera Inc. - the count may be mixed. Undated. Own site (Culver
+    City, CA) lists 9 leaders and 7 board members, no headcount. A combination with Revel (EQT majority, GIP minority,
+    Voltera brand) was announced May 26, 2026.
+  confidence: low
+  unresolved: headcount unreliable; post-Revel-combination headcount unknown.
+- id: vulcan-elements
+  name: Vulcan Elements
+  headcount:
+    value: 84
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/vulcan-elements/employees/)
+  headcount_notes: Revelio June 2026 (first day used); Revelio lists Durham, NC and founded 2023.
+  confidence: medium
+- id: woodward
+  name: Woodward
+  hq:
+    value: Fort Collins, CO
+    source: https://stockanalysis.com/stocks/wwd/company/
+  founded:
+    value: 1870
+    source: https://stockanalysis.com/stocks/wwd/company/
+  stage:
+    value: public
+    evidence: 'Nasdaq: WWD (https://stockanalysis.com/stocks/wwd/company/).'
+  confidence: high
+- id: zipline
+  name: Zipline
+  headcount:
+    value: 2368
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/zipline/employees/)
+  headcount_notes: Revelio June 2026 (first day used). Revelio profile 'Zipline (United States)', San Francisco,
+    founded 2014 - founding year matches the drone company but the profile does not name its business.
+  flags:
+  - Listed now, but this figure (2,368) is over the 1,000 line and over the 25 percent tolerance; startup status
+    needs a look.
+  - Revelio's profile matches Zipline's founding year and city but does not name the business; check against a company
+    figure before acting.
+  confidence: medium
+- id: zoox
+  name: Zoox
+  hq:
+    value: Foster City, CA
+    source: https://en.wikipedia.org/wiki/Zoox_(company)
+  founded:
+    value: 2014
+    source: https://en.wikipedia.org/wiki/Zoox_(company)
+  headcount:
+    value: 6653
+    as_of: '2026-06-01'
+    source: Revelio Labs (https://www.reveliolabs.com/companies/zoox/employees/)
+  headcount_notes: Revelio June 2026 (first day used). Wikipedia gives about 2,200 (2023), so the Revelio figure
+    may include Amazon-attributed profiles.
+  stage:
+    value: subsidiary
+    evidence: Wholly owned by Amazon; merger agreement June 26, 2020, over $1.2B (https://en.wikipedia.org/wiki/Zoox_(company)).
+  confidence: medium
