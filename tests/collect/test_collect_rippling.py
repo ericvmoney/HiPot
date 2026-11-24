@@ -83,6 +83,16 @@ def test_employment_codes(kind, expected):
     assert rippling.employment(kind) == expected
 
 
+def test_an_intern_title_wins_over_the_temp_code():
+    details = load_json(FIXTURES / "rippling_aptera_details.json")
+    details[FIRST]["name"] = "Power Electrical Engineer Intern (Summer 2027)"
+    details[FIRST]["employmentType"] = {"label": "TEMP", "id": "Temporary / Intern"}
+    details[SECOND]["employmentType"] = {"label": "TEMP", "id": "Temporary / Intern"}
+    extra = {f"{LIST}/{uuid}": answer for uuid, answer in details.items()}
+    drafts = rippling.read("aptera", FakeFetcher(extra=extra))
+    assert [made["employment"] for made in drafts] == ["intern", "contract"]
+
+
 def test_pay_from_pay_range_details():
     # Shape as third-party write-ups report it; this board publishes none.
     ranges = [

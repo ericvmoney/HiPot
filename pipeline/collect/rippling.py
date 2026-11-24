@@ -85,14 +85,17 @@ def _draft(uuid: str, entries: list[dict], detail: dict | None) -> dict:
         description = {"role": description if isinstance(description, str) else ""}
     department = (detail.get("department") or {}).get("name") or (first.get("department") or {}).get("label")
     title = detail.get("name") or first.get("name") or ""
-    found = employment(detail.get("employmentType"))
+    # Rippling files interns under TEMP ("Temporary / Intern"), so a title that
+    # says intern wins over the code.
+    from_title = normalize.employment_from_title(title)
+    found = "intern" if from_title == "intern" else employment(detail.get("employmentType"))
     return normalize.draft(
         posting_id=uuid,
         title=title,
         url=first.get("url") or detail.get("url") or "",
         locations=[parse_location(piece) for piece in dict.fromkeys(pieces)],
         workplace=None,          # the feed has no workplace field; the location rules decide
-        employment=found if found != "unknown" else normalize.employment_from_title(title),
+        employment=found if found != "unknown" else from_title,
         pay=pay(detail.get("payRangeDetails")),
         posted_date=normalize.iso_date(detail.get("createdOn")),
         department=normalize.department(department),
