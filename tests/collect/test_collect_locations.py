@@ -82,53 +82,90 @@ def test_split_locations(text, expected):
 
 @pytest.mark.parametrize("text,metro", [
     ("Sunnyvale, CA", "sf-bay-area"),
-    ("Petaluma, CA", "sf-bay-area"),
-    ("San Francisco Bay Area, California, United States", "sf-bay-area"),
+    ("Palo Alto", "sf-bay-area"),                       # a bare city from BARE_CITIES
+    ("Fremont Office", "sf-bay-area"),
+    ("San Francisco Bay Area, California, United States", "sf-bay-area"),   # a region the lookup knows
     ("Carlsbad, CA", "san-diego"),
-    ("Berthoud, Colorado", "denver"),
-    ("Fort Collins, CO", "denver"),
+    ("Thornton, CO", "denver"),
     ("Worcester, MA", "boston"),
-    ("Greater Boston Area", "boston"),
-    # The same city name in another state or country is not the metro
-    ("Richmond, VA", None),
-    ("Newark, NJ", None),
-    ("Louisville, KY", None),
-    ("Henderson, NV", None),
-    ("Wilmington, DE", None),
+    ("Weirton, WV", "pittsburgh-pa"),
+    ("Long Island, NY", "new-york-ny"),
+    ("Austin, TX", "austin-tx"),
+    # The same city name in another state is that state's metro, not the old hub's
+    ("Richmond, VA", "richmond-va"),
+    ("Newark, NJ", "new-york-ny"),
+    ("Henderson, NV", "las-vegas-nv"),
+    ("Aurora, IL", "chicago-il"),
+    # Outside the US, or no place at all
     ("Brisbane, Australia", None),
     ("Cambridge, UK", None),
     ("San Jose, Costa Rica", None),
-    ("Aurora, IL", None),
-    ("Austin, TX", None),
+    ("Toronto, ON, Canada", None),
     ("Remote", None),
+    ("Remote, USA", None),
+    ("Remote - Colorado", None),                        # a state alone is not a metro
+    ("California", None),
+    ("Cambridge", None),                                # no state: not guessed
+    ("Region: TOLA", None),
 ])
 def test_metro_for(text, metro):
     assert metro_for(parse_location(text)) == metro
 
 
-def test_metro_ids_exist_in_the_taxonomy():
-    from pipeline.collect.locations import METRO_CITIES, METRO_REGIONS
+def test_every_metro_is_a_taxonomy_id():
     known = {entry["id"] for entry in load_yaml(ROOT / "taxonomy.yml")["metros"]}
-    assert set(METRO_CITIES) | set(METRO_REGIONS.values()) <= known
+    found = set()
+    for job in SEED:
+        found |= set(metros_for([parse_location(piece) for piece in split_locations(_seed_text(job))]))
+    assert found and found <= known
 
 
 def test_metros_for_several_places():
     locations = [parse_location(piece) for piece in split_locations("Golden, CO, Houston, TX, Oakland, CA")]
-    assert metros_for(locations) == ["denver", "sf-bay-area"]
+    assert metros_for(locations) == ["denver", "houston-tx", "sf-bay-area"]
 
 
 def _seed_text(job: dict) -> str:
     return "; ".join(location["text"] for location in job["locations"])
 
 
-def test_metros_agree_with_every_row_the_old_hub_tagged():
-    """The old hub's region tags are the specification for the metro rules."""
-    disagreements = []
+OLD_HUB_METROS = {"sf-bay-area", "san-diego", "denver", "boston"}
+
+# Seed rows where the shared Census lookup and the old hub's four regions part
+# ways, with the metros the collector now gives. Everything else must agree.
+KNOWN_DIFFERENCES = {
+    # Census draws these as their own areas; the old hub filed them under Denver or the Bay Area.
+    "Fort Collins, CO": ["fort-collins-co"],
+    "Fort Collins, CO; Windsor, CO": ["fort-collins-co"],
+    "Loveland, CO": ["fort-collins-co"],
+    "Petaluma, CA": ["santa-rosa-ca"],
+    # Not in the lookup today (reported to the supervisor for hand-mapping).
+    "Berthoud, Colorado": [],
+    "Henderson, CO": [],
+    "Henderson, Colorado": [],
+    "Littleton, CO; Pleasanton, CA; San Diego, CA; Franklin, MA": ["denver", "san-diego", "sf-bay-area"],
+    "Littleton, CO; San Diego, CA; Franklin, MA (remote)": ["denver", "san-diego"],
+    # The old hub cut these strings short ("Cali", "United State"), so the second place cannot be read.
+    "Reno, Nevada, United States; Sunnyvale, Californ": ["reno-nv"],
+    "Reno, Nevada, United States; San Francisco, Cali": ["reno-nv"],
+    "Carson City, NV; San Francisco, California, Unit": ["reno-nv"],
+    "McCarran, NV; San Francisco, California, United": ["reno-nv"],
+    "San Francisco Bay Area, California, United State": [],
+}
+
+
+def test_metros_agree_with_the_old_hub_apart_from_known_differences():
+    """The old hub's region tags, restricted to its four metros, still hold everywhere else."""
+    seen = set()
     for job in SEED:
-        locations = [parse_location(piece) for piece in split_locations(_seed_text(job))]
-        if metros_for(locations) != job["metros"]:
-            disagreements.append((_seed_text(job), job["metros"], metros_for(locations)))
-    assert disagreements == []
+        text = _seed_text(job)
+        metros = metros_for([parse_location(piece) for piece in split_locations(text)])
+        if text in KNOWN_DIFFERENCES:
+            seen.add(text)
+            assert metros == KNOWN_DIFFERENCES[text], text
+        else:
+            assert sorted(set(metros) & OLD_HUB_METROS) == job["metros"], text
+    assert seen == set(KNOWN_DIFFERENCES)
 
 
 def test_remote_agrees_with_the_old_hub_except_where_its_text_was_cut_short():

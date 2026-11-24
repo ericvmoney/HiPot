@@ -1,20 +1,24 @@
 """Location, metro and workplace rules.
 
-Ported from the old personal hub. Its collector code is lost; what survives is
-its output: 513 rows of location text with the region tags it assigned
-(`data/seed/jobs.json` carries both). The rules below reproduce those tags and
-are tested against them in `tests/collect/test_locations.py`.
+The location and workplace rules are ported from the old personal hub. Its
+collector code is lost; what survives is its output: 513 rows of location text
+with the region tags it assigned (`data/seed/jobs.json` carries both), and the
+tests in `tests/collect/test_collect_locations.py` check the rules against them.
 
 Three things come out of a posting's location text:
 
   locations   one entry per place, with city, state and country filled only
               when the text has a shape we can read without guessing
-  metros      ids from taxonomy.yml
+  metros      ids from taxonomy.yml, from the shared place lookup in
+              pipeline/geo.py (Census metro and combined areas); this module
+              keeps no metro table of its own
   workplace   remote / hybrid / onsite when the text says so, else unknown
 """
 from __future__ import annotations
 
 import re
+
+from pipeline import geo
 
 US_STATES = {
     "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR", "california": "CA",
@@ -63,83 +67,41 @@ COUNTRIES = {
 }
 _ALPHA2 = set(COUNTRIES.values())
 
-# Metro membership by (city, state). Cities marked True are distinctive enough
-# to be recognized without a state beside them ("Palo Alto", "Boston"); the
-# rest share a name with a place elsewhere ("Richmond", "Newark", "Louisville")
-# and count only with their state.
-METRO_CITIES: dict[str, tuple[str, dict[str, bool]]] = {
-    "sf-bay-area": ("CA", {
-        "San Francisco": True, "South San Francisco": True, "Oakland": True, "Berkeley": True,
-        "Emeryville": True, "Alameda": False, "San Leandro": True, "Hayward": False,
-        "Fremont": True, "Newark": False, "Union City": False, "Richmond": False,
-        "El Cerrito": True, "Albany": False, "Pleasanton": False, "Dublin": False,
-        "Livermore": False, "San Ramon": True, "Walnut Creek": True, "Concord": False,
-        "Pittsburg": False, "Antioch": False, "Martinez": False, "Benicia": True,
-        "Vallejo": True, "Fairfield": False, "Vacaville": True, "Napa": True, "Petaluma": True,
-        "Santa Rosa": False, "Novato": True, "San Rafael": True, "Sausalito": True,
-        "Mill Valley": True, "Brisbane": False, "Daly City": True, "San Bruno": True,
-        "Millbrae": True, "Burlingame": False, "San Mateo": True, "Foster City": True,
-        "Belmont": False, "San Carlos": False, "Redwood City": True, "Menlo Park": True,
-        "East Palo Alto": True, "Palo Alto": True, "Los Altos": True, "Mountain View": True,
-        "Sunnyvale": True, "Cupertino": True, "Santa Clara": True, "San Jose": False,
-        "Milpitas": True, "Campbell": False, "Los Gatos": True, "Saratoga": False,
-        "Morgan Hill": True, "Gilroy": True, "Half Moon Bay": True, "Pacifica": True,
-        "Lafayette": False, "Orinda": True, "Moraga": True, "Danville": False,
-    }),
-    "san-diego": ("CA", {
-        "San Diego": True, "Carlsbad": False, "Oceanside": False, "Vista": False,
-        "San Marcos": False, "Escondido": True, "Encinitas": True, "Solana Beach": True,
-        "Del Mar": True, "La Jolla": True, "Poway": True, "Chula Vista": True,
-        "National City": False, "El Cajon": True, "La Mesa": False, "Santee": False,
-        "Coronado": False, "Imperial Beach": True,
-    }),
-    "denver": ("CO", {
-        "Denver": True, "Aurora": False, "Lakewood": False, "Arvada": True, "Westminster": False,
-        "Thornton": False, "Northglenn": True, "Commerce City": True, "Henderson": False,
-        "Brighton": False, "Fort Lupton": True, "Centennial": False, "Englewood": False,
-        "Littleton": False, "Greenwood Village": True, "Lone Tree": True,
-        "Highlands Ranch": True, "Parker": False, "Castle Rock": True, "Golden": False,
-        "Wheat Ridge": True, "Broomfield": True, "Boulder": False, "Louisville": False,
-        "Lafayette": False, "Superior": False, "Erie": False, "Longmont": True,
-        "Frederick": False, "Firestone": False, "Berthoud": True, "Loveland": False,
-        "Johnstown": False, "Windsor": False, "Fort Collins": True, "Greeley": False,
-    }),
-    "boston": ("MA", {
-        "Boston": True, "Cambridge": False, "Somerville": False, "Charlestown": False,
-        "Medford": False, "Malden": False, "Everett": False, "Chelsea": False, "Revere": False,
-        "Brookline": False, "Newton": False, "Watertown": False, "Waltham": True,
-        "Belmont": False, "Arlington": False, "Lexington": False, "Bedford": False,
-        "Burlington": False, "Woburn": True, "Wilmington": False, "Billerica": True,
-        "Chelmsford": True, "Lowell": False, "Andover": False, "North Andover": True,
-        "Lawrence": False, "Quincy": False, "Braintree": True, "Needham": True,
-        "Wellesley": False, "Natick": True, "Framingham": True, "Marlborough": False,
-        "Hudson": False, "Westborough": True, "Hopkinton": False, "Milford": False,
-        "Franklin": False, "Norwood": False, "Canton": False, "Dedham": True, "Concord": False,
-        "Acton": False, "Littleton": False, "Devens": True, "Ayer": False, "Peabody": True,
-        "Danvers": True, "Salem": False, "Beverly": False, "Lynn": False, "Worcester": False,
-    }),
-}
+# Places job boards write without their state ("Palo Alto", "Fremont Office").
+# Only names that are unambiguous on the boards this project reads; a name that
+# is common elsewhere ("Richmond", "Newark", "Louisville") needs its state. This
+# table supplies a state for parsing; the metro comes from pipeline/geo.py.
+BARE_CITIES = {name.lower(): (name, state) for state, names in {
+    "CA": (
+        "San Francisco", "South San Francisco", "Oakland", "Berkeley", "Emeryville", "San Leandro",
+        "Fremont", "El Cerrito", "San Ramon", "Walnut Creek", "Benicia", "Vallejo", "Vacaville", "Napa",
+        "Petaluma", "Novato", "San Rafael", "Sausalito", "Mill Valley", "Daly City", "San Bruno",
+        "Millbrae", "San Mateo", "Foster City", "Redwood City", "Menlo Park", "East Palo Alto",
+        "Palo Alto", "Los Altos", "Mountain View", "Sunnyvale", "Cupertino", "Santa Clara", "Milpitas",
+        "Los Gatos", "Morgan Hill", "Gilroy", "Half Moon Bay", "Pacifica", "Orinda", "Moraga",
+        "San Diego", "Escondido", "Encinitas", "Solana Beach", "Del Mar", "La Jolla", "Poway",
+        "Chula Vista", "El Cajon", "Imperial Beach",
+    ),
+    "CO": (
+        "Denver", "Arvada", "Northglenn", "Commerce City", "Fort Lupton", "Greenwood Village",
+        "Lone Tree", "Highlands Ranch", "Castle Rock", "Wheat Ridge", "Broomfield", "Longmont",
+        "Berthoud", "Fort Collins",
+    ),
+    "MA": (
+        "Boston", "Waltham", "Woburn", "Billerica", "Chelmsford", "North Andover", "Braintree",
+        "Needham", "Natick", "Framingham", "Westborough", "Dedham", "Devens", "Peabody", "Danvers",
+    ),
+}.items() for name in names}
 
-# Region names that stand for a whole metro.
-METRO_REGIONS = {
-    "san francisco bay area": "sf-bay-area", "sf bay area": "sf-bay-area", "bay area": "sf-bay-area",
-    "silicon valley": "sf-bay-area", "east bay": "sf-bay-area",
-    "greater san diego": "san-diego", "san diego area": "san-diego", "san diego county": "san-diego",
-    "greater denver": "denver", "denver metro": "denver", "denver metro area": "denver",
-    "denver area": "denver", "front range": "denver",
-    "greater boston": "boston", "boston area": "boston", "boston metro": "boston",
-    "greater boston area": "boston",
+# Region names a board may write instead of a city. They give the parser a
+# state; whether a region maps to a metro is the place lookup's decision.
+REGION_STATES = {
+    "san francisco bay area": "CA", "sf bay area": "CA", "bay area": "CA", "silicon valley": "CA",
+    "east bay": "CA", "greater san diego": "CA", "san diego area": "CA", "san diego county": "CA",
+    "greater denver": "CO", "denver metro": "CO", "denver metro area": "CO", "denver area": "CO",
+    "front range": "CO", "greater boston": "MA", "boston area": "MA", "boston metro": "MA",
+    "greater boston area": "MA",
 }
-_REGION_STATE = {"sf-bay-area": "CA", "san-diego": "CA", "denver": "CO", "boston": "MA"}
-
-_BY_CITY_STATE: dict[tuple[str, str], str] = {}
-_BARE_CITY: dict[str, tuple[str, str, str]] = {}  # lower name -> (City, ST, metro)
-for _metro, (_state, _cities) in METRO_CITIES.items():
-    for _city, _distinct in _cities.items():
-        _BY_CITY_STATE[(_city.lower(), _state)] = _metro
-        if _distinct:
-            _BARE_CITY[_city.lower()] = (_city, _state, _metro)
-_STATE_NAME = {code: name for name, code in US_STATES.items()}
 
 _REMOTE = re.compile(r"\bremote\b|\bwork from home\b|\bwfh\b|\btelecommut|\banywhere\b|\bdistributed\b", re.I)
 _NOT_REMOTE = re.compile(r"\b(?:not|non|no)[- ]remote\b", re.I)
@@ -231,8 +193,8 @@ def parse_location(text: str) -> dict:
 
     Structured fields are filled only for shapes that leave no doubt:
     "City, ST", "City, State", either followed by a country, "US-ST-City",
-    a state or country alone, "City, Country", and a bare city from the metro
-    table. Anything else keeps only its text.
+    a state or country alone, "City, Country", and a bare city from
+    BARE_CITIES. Anything else keeps only its text.
     """
     location = {"text": text.strip()}
     core = _undecorated(text)
@@ -265,7 +227,7 @@ def parse_location(text: str) -> dict:
     if state:
         if len(parts) == 1:
             return {**location, "state": state, "country": "US"}
-        if len(parts) == 2 and _city(parts[0]) and parts[0].lower() not in METRO_REGIONS:
+        if len(parts) == 2 and _city(parts[0]) and parts[0].lower() not in REGION_STATES:
             return {**location, "city": parts[0], "state": state, "country": "US"}
         return {**location, "state": state, "country": "US"} if country == "US" else location
     if province:
@@ -278,10 +240,10 @@ def parse_location(text: str) -> dict:
         if spaced and spaced.group(2) in US_STATE_CODES and country in (None, "US") and _city(spaced.group(1)):
             return {**location, "city": spaced.group(1), "state": spaced.group(2), "country": "US"}
         name = parts[0].lower()
-        if name in METRO_REGIONS:
-            return {**location, "state": _REGION_STATE[METRO_REGIONS[name]], "country": "US"}
-        if name in _BARE_CITY and country in (None, "US"):
-            city, bare_state, _ = _BARE_CITY[name]
+        if name in REGION_STATES:
+            return {**location, "state": REGION_STATES[name], "country": "US"}
+        if name in BARE_CITIES and country in (None, "US"):
+            city, bare_state = BARE_CITIES[name]
             return {**location, "city": city, "state": bare_state, "country": "US"}
         if country and country != "US" and _city(parts[0]):
             return {**location, "city": parts[0], "country": country}
@@ -331,40 +293,24 @@ def structured_location(text: str, city: str | None, region: str | None, country
 
 
 def metro_for(location: dict) -> str | None:
-    """Metro id for one parsed place, or None."""
-    country = location.get("country")
-    if country not in (None, "US"):
-        return None
-    city, state = location.get("city"), location.get("state")
-    if city and state:
-        found = _BY_CITY_STATE.get((city.lower(), state))
-        if found:
-            return found
-    return _scan_for_metro(location["text"])
+    """Metro id for one parsed US place, from the shared place lookup, or None.
 
-
-def _scan_for_metro(text: str) -> str | None:
-    """Find a metro in text the parser could not structure.
-
-    A distinctive city name counts wherever it stands as a whole word. Any
-    other city in the table counts only when its state follows it.
+    A place needs a state. With a city, the lookup is by city and state. Without
+    one, the first part of the text is tried as a place name, so a region the
+    lookup knows ("San Francisco Bay Area, California", "Long Island, NY") still
+    maps. A remote entry that names only a state or a country gets no metro.
     """
-    lowered = _undecorated(text).lower()
-    for region, metro in METRO_REGIONS.items():
-        if re.search(rf"\b{re.escape(region)}\b", lowered):
-            return metro
-    for (city, state), metro in sorted(_BY_CITY_STATE.items(), key=lambda item: -len(item[0][0])):
-        match = re.search(rf"(?<![\w-]){re.escape(city)}(?![\w-])", lowered)
-        if not match:
-            continue
-        tail = lowered[match.end():]
-        if re.match(rf"\s*,?\s*(?:{state.lower()}|{_STATE_NAME[state]})\b", tail):
-            return metro
-        follower = re.match(r"\s*,\s*([a-z][a-z .]*)", tail)
-        elsewhere = follower and (_state_code(follower.group(1).strip().upper()) or _state_code(follower.group(1)))
-        if city in _BARE_CITY and not elsewhere:
-            return metro
-    return None
+    if location.get("country") not in (None, "US"):
+        return None
+    state = location.get("state")
+    if not state:
+        return None
+    if location.get("city"):
+        return geo.metro_for(location["city"], state)
+    name = _undecorated(location["text"]).split(",")[0].strip()
+    if not name or _state_code(name) or name.lower() in COUNTRIES:
+        return None
+    return geo.metro_for(name, state)
 
 
 def metros_for(locations: list[dict]) -> list[str]:

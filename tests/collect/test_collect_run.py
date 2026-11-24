@@ -114,7 +114,7 @@ def test_output_validates_against_the_raw_jobs_contract():
             {"text": "Somerville, MA", "city": "Somerville", "state": "MA", "country": "US"},
             {"text": "Weirton, WV", "city": "Weirton", "state": "WV", "country": "US"},
         ],
-        "metros": ["boston"],
+        "metros": ["boston", "pittsburgh-pa"],          # Somerville, MA and Weirton, WV
         "workplace": "remote",
         "employment": "full-time",
         "pay": {"min": 97240, "max": 167728, "currency": "USD", "period": "year", "basis": "feed"},
@@ -356,10 +356,9 @@ def test_command_line_offline_end_to_end(tmp_path, capsys):
 def test_report_lists_unmapped_us_locations():
     raw = run()
     cities, vague = unmapped_us_locations(raw["jobs"])
-    assert cities["Weirton, WV"] == 3 and cities["Pratt, KS"] == 1 and cities["Miami, FL"] == 1
-    assert "San Jose, CA" not in cities and "Broomfield, CO" not in cities        # these map to metros
+    assert cities == {"Pratt, KS": 1}                  # a rural plant outside every metro region
     assert not vague
     text = render(raw)
     assert "Postings per ATS: ashby 6, greenhouse 4, lever 3" in text
     assert "Structured pay (basis feed): 4 of 13 postings" in text
-    assert "   3  Weirton, WV" in text
+    assert "US locations with no metro: 1 distinct cities" in text and "     1  Pratt, KS" in text
