@@ -12,6 +12,7 @@ from pipeline.collect import bamboohr, breezy, gem, jazzhr, recruitee, run as ru
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
+from pipeline.collect.text import job_posting_description
 
 
 def by_title(drafts):
@@ -208,6 +209,14 @@ def test_smartrecruiters_workplace(place, expected):
     assert smartrecruiters._workplace(place) == expected
 
 
+def test_smartrecruiters_a_remote_place_with_on_site_flags():
+    # Seen live at Mission Critical Group: city "Remote", both flags false.
+    place = {"city": "Remote", "region": "", "country": "us", "remote": False, "hybrid": False,
+             "fullLocation": "Remote, , United States"}
+    assert smartrecruiters._workplace(place) is None
+    assert smartrecruiters._location(place) == [{"text": "Remote, United States", "country": "US"}]
+
+
 # ---------------------------------------------------------------- Recruitee
 
 def test_recruitee_asks_once_per_board():
@@ -362,8 +371,8 @@ def test_breezy_a_whole_place_typed_into_the_city_field():
 
 
 def test_breezy_page_without_a_job_block_gives_no_description():
-    assert breezy.description_from_page("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
-    assert breezy.description_from_page("<html><script type='application/ld+json'>{not json</script></html>") == ""
+    assert job_posting_description("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
+    assert job_posting_description("<html><script type='application/ld+json'>{not json</script></html>") == ""
 
 
 def test_breezy_a_refused_page_blocks_the_company():
