@@ -1,0 +1,3007 @@
+# Seed review: the old hub's companies checked against real sources.
+#
+# Workstream A2 (company scout), 2026-11-24. Every entry is a PROPOSAL for the
+# supervisor and the owner; nothing here changes companies.yml.
+#
+# Groups
+#   review      core or enabling in companies.yml, startup status 'review' (11)
+#   zipline     the drone-delivery question (1)
+#   unscreened  tier 'unscreened' in companies.yml, not large incumbents (13)
+#   listed      the 19 companies that pass the listing rule today: lighter check
+#   incumbent   large companies already marked startup 'out': tier filled in only
+#
+# Per entry
+#   current     what companies.yml says now
+#   proposed    tier, sectors, startup status and one-line reasons (rubric PLAN.md
+#               section 6, startup test section 9)
+#   changes     how the proposal differs from companies.yml
+#   board       what the board probe found (data/screening/tools/probe_boards.py):
+#               the company's site read once, then the public feed loaded once
+#   decision    key of the question in decisions-needed.md, if any
+#   headcount   best dated figure; aggregator figures (Built In, PitchBook,
+#               Revelio, Dealroom and similar) are estimates and lower confidence
+#   confidence  high, medium or low for the facts as a whole
+#
+# Facts were gathered by web search and page reads on 2026-11-24. Where a figure
+# was not found it is null, and 'unresolved' says what is missing.
+
+review_version: 0
+date: '2026-11-24'
+companies:
+- id: alsym-energy
+  name: Alsym Energy
+  group: review
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: review
+  product: Sodium-ion battery cells and systems (Na-Series), marketed as non-flammable, for stationary storage;
+    it explicitly targets AI data centers (800VDC, no active cooling), grid storage, mining and marine/industrial
+    sites.
+  hq: Malden, MA
+  founded: 2015
+  founded_source: https://builtin.com/company/alsym-energy
+  headcount:
+    value: 72
+    as_of: '2026-11-24'
+    source: Built In company profile (aggregator, undated; date is the day it was read)
+    url: https://builtin.com/company/alsym-energy
+  headcount_notes: 'Built In shows 72 total employees (67 product/tech). Other aggregators: LeadIQ about 61 (Oct
+    2025); others 42-80; Kscope about 460 (outlier). No company-stated figure was found. Every estimate is far below
+    1,000. Active engineering hiring in Malden in Aug-Oct 2026 (Thrive and General Catalyst portfolio boards).'
+  stage: series-c
+  stage_evidence: Series C, $78M, 2024-04-03, co-led by Tata Limited and General Catalyst (https://www.businesswire.com/news/home/20240403675138/en/Alsym-Energy-Announces-78M-Funding-Round-Led-by-Tata-Limited-and-General-Catalyst).
+    CB Insights dates it 2024-02-22. No later priced round found; one aggregator shows an uncorroborated $200k entry
+    in May 2025.
+  board:
+    recorded:
+      ats: unknown
+      token: null
+    checked: '2026-11-24'
+    confirmed: false
+    result: no Greenhouse, Lever, Ashby or Rippling board found; the site links to linkedin
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Non-flammable sodium-ion battery cells and systems for stationary storage.
+    startup: review
+    startup_reason: 'About 60 to 80 people (aggregators), so well under 1,000, but founded 2015 (Built In only),
+      about 11 years: past the age guide by a year. Owner to decide.'
+  customers: 'Data centers are a headline target (alsym.com/datacenters). 2026 agreements: ESS Inc LOI for 8.5 GWh
+    of cells/modules; Juniper Energy 500 MWh (California); ERITY 9 GWh mining-sector agreement; Re:Build Manufacturing
+    MOU for US cell manufacturing. These are partnerships and agreements, not confirmed revenue.'
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Its own board is LinkedIn Jobs only; no Greenhouse, Lever, Ashby or Rippling board found by the site read or
+    by search. It cannot be read automatically even if approved.
+  - Data centers are a headline target market beside grid, mining and marine storage.
+  decision: age
+  evidence:
+  - https://www.alsym.com/
+  - https://www.alsym.com/about
+  - https://builtin.com/company/alsym-energy
+  - https://techcrunch.com/2024/04/03/alsym-series-c
+  - https://www.businesswire.com/news/home/20240403675138/en/Alsym-Energy-Announces-78M-Funding-Round-Led-by-Tata-Limited-and-General-Catalyst
+  - https://www.energy-storage.news/ess-inc-partners-with-alsym-energy-for-8-5gwh-of-us-sodium-ion-bess-cells/
+  - https://www.energy-storage.news/alsym-energy-signs-9gwh-sodium-ion-bess-agreement-with-consultancy-for-global-mining-operations/
+  - https://jobs.thrivecap.com/companies/alsym-energy-2
+  confidence: medium
+  unresolved: No company-stated headcount. Founding year (2015) comes only from Built In. The ATS behind the Getro
+    postings could not be seen (apply links not exposed).
+- id: archer
+  name: Archer
+  group: review
+  current:
+    tier: enabling
+    sectors:
+    - electric-aviation
+    startup: review
+  product: Develops the Midnight piloted electric VTOL air taxi. Also sells its electric powertrain to third parties
+    and runs a defense line (Archer Defense) building a hybrid-electric autonomous VTOL with Anduril. Owns Hawthorne
+    Airport (bought Dec 2025). Is acquiring Boeing's Wisk Aero (autonomous eVTOL), Insitu (military drones) and
+    SkyGrid.
+  hq: San Jose, CA
+  founded: 2018
+  founded_source: https://en.wikipedia.org/wiki/Archer_Aviation
+  headcount:
+    value: 1160
+    as_of: '2025-12-31'
+    source: Archer 2025 Form 10-K (filed 2026-03-02), as summarized by sec-api.io and stockanalysis.com (S&P Global)
+    url: https://www.sec.gov/Archives/edgar/data/1824502/0001824502-26-000019-index.html
+  headcount_notes: '10-K: 1,160 full-time employees plus 500 contingent workers (1,660 total) at 2025-12-31. Prior
+    year-ends: 774 (2024), 578 (2023), 390 (2022), 209 (2021) (stockanalysis.com). Growing fast. The pending Boeing
+    deal (Wisk, Insitu, SkyGrid; signed 2026-08-10; HSR expired Sep 2026; one of about 20 approvals outstanding
+    at 2026-11-09) would add Insitu''s and Wisk''s staff, which would raise headcount well above this. Already over
+    1,000 full-time employees, without the acquisitions.'
+  stage: public
+  stage_evidence: 'NYSE: ACHR. Raised $430M alongside the Anduril partnership (2024-12-12). Boeing will receive
+    shares equal to 19.75% of pre-closing Class A (about 16.5% after closing) plus warrants.'
+  board:
+    recorded:
+      ats: greenhouse
+      token: archer56
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: archer56
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 78
+    engineering_titles: 54
+    sample_locations:
+    - Arlington, Texas, United States
+    - Arlington, Texas, United States; San Jose, California, United States
+    - Huntington Beach, California, United States
+    - Salinas South Hanger (1585 Moffett)
+  proposed:
+    tier: enabling
+    sectors:
+    - electric-aviation
+    reason: Electric vertical-takeoff air taxi (Midnight) for civil passenger service; has a defense line with Anduril.
+    startup: out
+    startup_reason: 1,160 full-time employees plus 500 contingent workers at 2025-12-31 (2025 Form 10-K). Over the
+      1,000 line before the pending Boeing deal (Wisk, Insitu, SkyGrid) adds more.
+  customers: 'Civil: United Airlines conditional order (up to 200 aircraft plus option for 100), UAE launch program,
+    US eIPP pilot partner. Defense: US Air Force (AFWERX Agility Prime, up to $142M), Anduril partnership, powertrain
+    supply for Anduril/EDGE Omen UAV. Insitu (pending) adds a military drone business with >$200M/yr revenue.'
+  changes:
+  - startup review -> out
+  - fill stage, founded, headcount, hq
+  flags:
+  - Fails the hard headcount line, so the civil-versus-defense question no longer decides whether it is listed.
+    Facts are in decisions-needed.md in case the owner wants to record a rule for future cases.
+  - Pending acquisition of Insitu (military drones, more than $200M a year in revenue) would make defense its largest
+    revenue line.
+  decision: archer
+  evidence:
+  - https://www.sec.gov/Archives/edgar/data/1824502/0001824502-26-000019-index.html
+  - https://stockanalysis.com/stocks/achr/employees/
+  - https://sec-api.io/insights/archer-aviation-achr-q3-2026-earnings-midnight-in-faa-phase-4-of-4-boeing-deal-for-wisk-insitu-and-skygrid-pending-1-35bn-cash-sec-filing-analysis
+  - https://www.businesswire.com/news/home/20241212020131/en/Archer-Announces-Strategic-Partnership-With-Anduril-to-Develop-Hybrid-VTOL-Military-Aircraft-Raises-An-Additional-430M
+  - https://investors.archer.com/news/news-details/2026/Anduril-and-Archer-Unveil-Jointly-Developed-Autonomous-VTOL-Platform-For-Commercial-and-Defense-Applications/default.aspx
+  - https://theaviationist.com/2025/11/19/archer-supply-hybrid-powertrain-omen-aav/
+  - https://investors.boeing.com/investors/news/press-release-details/2026/Archer-to-Shape-Physical-AI-Future-of-Aerospace-and-Defense-with-Acquisition-of-Boeings-Wisk-Aero-Insitu-and-SkyGrid-Subsidiaries-Boeing-to-Invest-in-Archer-and-Collaborate/
+  - https://www.axios.com/2026/08/10/boeing-archer-air-taxis-deal
+  - https://afwerx.com/news/afwerx-sbir-sttr-program-supports-rapid-evtol-deployment-agile-logistics/
+  - https://en.wikipedia.org/wiki/Archer_Aviation
+  confidence: high
+  unresolved: I did not read the 10-K text directly (EDGAR not fetched); the 1,160 figure agrees across two independent
+    summaries. The Boeing deal had not closed at 2026-11-09. No dollar value was found for the Thunder program or
+    any DoD contract for it.
+- id: chargepoint
+  name: ChargePoint
+  group: review
+  current:
+    tier: core
+    sectors:
+    - charging
+    startup: review
+  product: EV charging hardware (AC Level 2 and DC fast chargers) plus cloud software subscriptions and services,
+    sold to businesses, fleets, multifamily and residential customers in North America and Europe.
+  hq: Campbell, CA
+  founded: 2007
+  founded_source: https://en.wikipedia.org/wiki/ChargePoint
+  headcount:
+    value: 1440
+    as_of: '2026-01-31'
+    source: ChargePoint FY2026 Form 10-K (filed 2026-04-02), via Medici List summary and stockanalysis.com
+    url: https://www.boardroomalpha.com/sec/chpt-10-k-2026-04-02-0001777393-26-000013
+  headcount_notes: 'About 1,440 employees worldwide at FY-end 2026-01-31. History (stockanalysis.com): 1,395 (Jan
+    2025), 1,650 (Jan 2024), 1,650 (Jan 2023), 1,436 (Jan 2022); the 2024-2025 drop reflects layoffs. PitchBook
+    (undated) shows 1,523. Over the 1,000 line.'
+  stage: public
+  stage_evidence: 'NYSE: CHPT (public via SPAC, 2021).'
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: chargepoint
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 42
+    engineering_titles: 16
+    sample_locations:
+    - Austria
+    - CA - Remote
+    - CA-BC-Vancouver
+    - France (FR)
+  proposed:
+    tier: core
+    sectors:
+    - charging
+    reason: EV charging hardware and network software.
+    startup: out
+    startup_reason: About 1,440 employees at 2026-01-31 (fiscal 2026 Form 10-K); founded 2007. Over the hard line.
+  customers: Commercial site hosts, fleets, residential. Not a data-center or defense business.
+  changes:
+  - startup review -> out
+  - set ats to greenhouse:chargepoint
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  evidence:
+  - https://www.boardroomalpha.com/sec/chpt-10-k-2026-04-02-0001777393-26-000013
+  - https://stockanalysis.com/stocks/chpt/employees/
+  - https://medici-list.vercel.app/company/chargepoint-holdings-inc-1777393
+  - https://investors.chargepoint.com/news/news-details/2026/ChargePoint-Reports-Fourth-Quarter-and-Full-Fiscal-Year-2026-Financial-Results/default.aspx
+  confidence: high
+  unresolved: Job-board system not confirmed (a Workday-engineer posting mentions Greenhouse as an internal HR tool,
+    but no public board link was seen). Founding year and HQ are from general reference, not re-verified this session.
+- id: energy-vault
+  name: Energy Vault
+  group: review
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: review
+  product: 'Today mainly lithium-ion battery energy storage systems (B-VAULT BESS) plus project ownership and operation
+    (''Asset Vault'', over 1 GW under management by Q1 2026). Gravity storage (EVx/EVy) and green-hydrogen hybrid
+    systems remain in the portfolio but are minor. It has moved into data-center power: a Feb 2026 framework with
+    Crusoe to deploy Crusoe Spark modular data centers (up to 25 MW load) at its Snyder, Texas site.'
+  hq: Westlake Village, CA
+  founded: 2017
+  founded_source: https://en.wikipedia.org/wiki/Energy_Vault
+  headcount:
+    value: 148
+    as_of: '2025-12-31'
+    source: Energy Vault FY2025 Form 10-K (filed 2026-03-18), via stockanalysis.com (S&P Global)
+    url: https://stockanalysis.com/stocks/nrgv/employees/
+  headcount_notes: 148 employees at 2025-12-31 (142 full-time, 6 part-time). Down from 163 (2024) and 183 (2023);
+    177 (2022); 74 (2021). Revelio Labs gives 142-147 for 2025.
+  stage: public
+  stage_evidence: 'NYSE: NRGV (public via SPAC with Novus Capital II, Feb 2022).'
+  board:
+    recorded:
+      ats: lever
+      token: EnergyVault
+    checked: '2026-11-24'
+    ats: lever
+    token: EnergyVault
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 19
+    engineering_titles: 9
+    sample_locations:
+    - Australia
+    - Japan
+    - Lugano
+    - Melbourne, VIC
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Grid battery storage systems, plus storage plants it owns and operates; gravity storage is now a minor
+      line.
+    startup: in
+    startup_reason: 148 employees at 2025-12-31 (fiscal 2025 Form 10-K); founded 2017, 9 years.
+  customers: Utilities and IPPs for BESS (backlog $2.3B at Q3 2026). Data-center business via Crusoe 'powered-shell'
+    partnership, with initial deployments expected in 2026.
+  changes:
+  - startup review -> in
+  - fill stage, founded, headcount, hq
+  flags:
+  - Signed a framework with Crusoe (2026-02) to host modular data centers of up to 25 MW at its Snyder, Texas site.
+    Small beside a $2.3B storage backlog; noted, not a reason to change the tier.
+  - Revenue fell 61 percent year on year in Q3 2026.
+  decision: null
+  evidence:
+  - https://stockanalysis.com/stocks/nrgv/employees/
+  - https://www.boardroomalpha.com/sec/nrgv-10-k-2026-03-18-0001828536-26-000022
+  - https://secure.businesswire.com/news/home/20260316733320/en/Energy-Vault-Reports-Q4-and-Full-Year-2025-Financial-Results
+  - https://www.panabee.com/news/energy-vault-earnings-q3-2026
+  - https://www.canarymedia.com/articles/long-duration-energy-storage/why-energy-vault-went-from-disrupting-batteries-to-selling-them
+  - https://en.wikipedia.org/wiki/Energy_Vault
+  - https://www.energyvault.com/careers
+  confidence: high
+  unresolved: 'HQ is listed differently by source (Westlake Village; Wikipedia: Thousand Oaks; older: Lugano, Switzerland);
+    not checked against the 10-K cover. Share of revenue by product line not found.'
+- id: form-energy
+  name: Form Energy
+  group: review
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: review
+  product: Iron-air multi-day (about 100-hour) battery storage systems for utilities, manufactured at Form Factory
+    1 in Weirton, WV.
+  hq: Somerville, MA
+  founded: 2017
+  founded_source: https://energy.mit.edu/?p=49969
+  headcount:
+    value: 900
+    as_of: '2026-03-17'
+    source: Form Energy presentation to Minnesota House Energy Finance and Policy Committee (as quoted in search
+      snippet)
+    url: https://www.house.mn.gov/comm/docs/1FQ0jdp7kkm9UzrAPkN7ZA.pdf
+  headcount_notes: 'All dated figures found: (1) ~900 total, with 250+ Somerville and 400+ Weirton, in the 2026-03-17
+    deck to the MN House. The total comes from a search snippet; I could not extract the PDF text myself. (2) Weirton
+    >400 employees per NAM article dated 2026-06-16, with a plan for at least 750 there by 2028. (3) Weirton >350
+    team members plus about 40 open roles per a company statement in Feb 2025, at the time of a ''restructuring
+    affecting some employees'' at Form Factory 1 (Weirton Daily Times, 2025-02; number affected not disclosed).
+    (4) Weirton 250 (WVPublic, undated, at the $150M federal grant) and 300 (Advanced Energy United fact sheet,
+    undated). (5) Small layoff Mar 2024 (unverified Blind thread). (6) MIT News (2024-02-29): about 250 at Somerville
+    HQ. Aggregators: Autobound 891 (2026-09-29), Built In 577, TrueUp 1,000, rejobs about 1,000 ''source: formenergy.com'',
+    LinkedIn 501-1,000. Company careers page says it ''employs hundreds''. Growth in 2026: $750M Series G (Aug 2026),
+    $270M credit facility (Sep 2026), Weirton hiring ongoing (postings dated Aug 2026). Best estimate is about 900,
+    close to the 1,000 line and rising.'
+  stage: late
+  stage_evidence: Series G, $750M, 2026-08-12, led by T. Rowe Price (https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid);
+    plus $270M credit facility Sep 2026; over $2B raised in total including grants.
+  board:
+    recorded:
+      ats: ashby
+      token: formenergy
+    checked: '2026-11-24'
+    ats: ashby
+    token: formenergy
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 205
+    engineering_titles: 150
+    sample_locations:
+    - Berkeley, CA
+    - Remote (USA)
+    - Somerville, MA
+    - Weirton, WV
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Iron-air batteries for 100-hour grid storage, made in Weirton, West Virginia.
+    startup: in
+    startup_reason: 'About 900 people (company presentation to a Minnesota House committee, 2026-03-17, read from
+      a search snippet only). Founded 2017. Under the line by about 10 percent and growing: Weirton alone had more
+      than 400 in 2026-06 and plans 750 or more by 2028.'
+  customers: 'Utilities (Great River Energy 150 MWh, first commercial system due 2027; Xcel Energy) and data centers:
+    30 GWh with Xcel for a Google data center in Pine Island, MN; 12 GWh supply agreement with Crusoe (starting
+    2027). Contracted backlog over 80 GWh (June 2026).'
+  changes:
+  - startup review -> in
+  - fill stage, founded, headcount, hq
+  flags:
+  - Likely to cross 1,000 within a year or two. Proposed 'in' on the current figure with a re-check each quarter;
+    see decisions-needed.md.
+  - Has data-center deals (30 GWh with Xcel for a Google site; 12 GWh with Crusoe) beside its utility customers.
+    The product is grid storage.
+  decision: near-line
+  evidence:
+  - https://www.house.mn.gov/comm/docs/1FQ0jdp7kkm9UzrAPkN7ZA.pdf
+  - https://nam.org/6-form-energy-triples-commercial-sales-and-scales-manufacturing-to-meet-demand-for-reliable-power/
+  - https://www.weirtondailytimes.com/news/local-news/2025/02/restructuring-affecting-some-employees-at-form-factory-1/
+  - https://wvpublic.org/form-energy-gets-150-million-federal-grant-to-hire-600-workers/
+  - https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid
+  - https://www.technologyreview.com/2026/10/06/1145020/2026-climate-tech-companies-to-watch-form-energy-iron-batteries/
+  - https://www.energy-storage.news/iron-air-us-ldes-startup-form-energy-secures-us750-million-series-g-financing/
+  - https://formenergy.com/careers/
+  - https://energy.mit.edu/?p=49969
+  - https://news.mit.edu/2024/power-when-sun-doesnt-shine-0229
+  confidence: medium
+  unresolved: The ~900 total is from a search snippet of the MN deck; I could not open the PDF text to confirm (site
+    figures 250+ and 400+ do not sum to 900, so other sites such as Berkeley, CA and remote staff are presumably
+    included). No headcount after June 2026. Ashby token not visible.
+- id: mainspring-energy
+  name: Mainspring Energy
+  group: review
+  current:
+    tier: core
+    sectors:
+    - distributed-generation
+    startup: review
+  product: 'Linear generators (flameless, low-temperature reaction converting fuel to electricity directly), 250
+    kW units scaling to 100+ MW, sold for onsite and grid power. Fuel-flexible: natural gas, biogas, propane or
+    hydrogen (ammonia also cited).'
+  hq: Menlo Park, CA
+  founded: 2010
+  founded_source: https://builtin.com/company/mainspring-energy
+  headcount:
+    value: 294
+    as_of: '2026-11-24'
+    source: Built In company profile (aggregator, undated; date is the day it was read)
+    url: https://builtin.com/company/mainspring-energy
+  headcount_notes: 'Aggregator figures only: Built In 294; Thunder Said Energy about 400 (around the 2022 Series
+    E); Wellfound 201-500; General Catalyst jobs 51-200. A planned Pittsburgh factory is to ''create more than 600
+    jobs'' (Latitude, May 2025), a future figure. No company-stated figure found. All estimates are under 1,000,
+    but rapid scale-up (AEP order, Series G) may make them stale.'
+  stage: late
+  stage_evidence: Series G, $242M, 2026 (reported by Utility Dive 2026-10-15; over $1B raised in total); earlier
+    Series F $258M, 2025-04-14, led by General Catalyst (https://www.mainspringenergy.com/news/mainspring-secures-258-million-in-financing-to-scale-linear-generator-business-adds-energy-and-tech-leaders-to-board).
+  board:
+    recorded:
+      ats: lever
+      token: mainspringenergy
+    checked: '2026-11-24'
+    ats: lever
+    token: mainspringenergy
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 93
+    engineering_titles: 76
+    sample_locations:
+    - Long Island, NY
+    - Menlo Park, CA
+    - Monterrey, Nuevo León
+    - Remote
+  proposed:
+    tier: enabling
+    sectors:
+    - distributed-generation
+    reason: Linear generators that turn fuel into electricity without a flame; most units run on natural gas or
+      biogas today, with hydrogen only in pilots.
+    startup: review
+    startup_reason: About 300 people (Built In; older estimates about 400); founded 2010 as EtaGen, about 16 years.
+      Past the age guide.
+  customers: Commercial and industrial (Fortune 500), utilities (NextEra unit; AEP agreement for up to 1.6 GW through
+    2034, first 190 MW for delivery in 2027, announced 2026-10-13, worth up to $4B), and a growing number of unnamed
+    data-center customers (first AI data center designed to scale to hundreds of MW in 25-50 MW blocks, per May
+    2025).
+  changes:
+  - tier core -> enabling
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Tier moved from core to enabling: the deployed fleet mostly burns fossil gas, so the main product does not
+    itself cut emissions the way the core rule describes. It displaces diesel and older gas generation and can run
+    on biogas or hydrogen. Owner to decide.'
+  - Has a growing but unquantified data-center customer base (company declines to name customers).
+  decision: mainspring
+  evidence:
+  - https://www.mainspringenergy.com/news/mainspring-secures-258-million-in-financing-to-scale-linear-generator-business-adds-energy-and-tech-leaders-to-board
+  - https://www.latitudemedia.com/news/one-year-inside-mainsprings-data-center-pipeline/
+  - https://www.utilitydive.com/news/aep-mainspring-linear-generators-bloom-fuel-cell-google-wyoming/833104
+  - https://www.bloomberg.com/news/articles/2025-04-14/menlo-park-based-energy-startup-nabs-258-million-to-power-data-centers
+  - https://www.mainspringenergy.com/solutions/data-center/
+  - https://builtin.com/company/mainspring-energy
+  - https://thundersaidenergy.com/downloads/mainspring-energy-linear-generator-breakthrough/
+  - https://jobs.lever.co/mainspringenergy/f33c3a03-eb9a-47ec-9fdb-7d4786791544
+  confidence: medium
+  unresolved: No authoritative headcount; no published fuel split or data-center revenue share. Series G date and
+    lead not confirmed from a primary release. Careers URL inferred from the Lever board; the page itself was not
+    loaded.
+- id: nexamp
+  name: Nexamp
+  group: review
+  current:
+    tier: core
+    sectors:
+    - solar
+    - energy-storage
+    startup: review
+  product: Developer, builder, owner and operator of distributed solar and battery storage, mainly community solar,
+    selling subscriptions to households and businesses. It does not make hardware.
+  hq: Boston, MA
+  founded: 2007
+  founded_source: https://www.solarpowerworldonline.com/suppliers/nexamp/
+  headcount:
+    value: 464
+    as_of: '2023-12-31'
+    source: PitchBook profile (aggregator; '2023' per search summary, exact date unknown)
+    url: https://pitchbook.com/profiles/company/53431-93
+  headcount_notes: 'Other figures: Solar Power World supplier profile 505 (2025 listing); Built In about 400; ''more
+    than 300 employees'' (2021 report at Generate Capital investment); Terra.do 201-500. Under 1,000 by all sources.
+    CB Insights lists a New York address, apparently an outlier.'
+  stage: late
+  stage_evidence: 'Private, infrastructure-investor backed rather than VC-stage: $680M package in 2021 ($240M equity
+    led by Generate Capital plus $440M debt); $520M raise led by Manulife Investment Management in 2024 (https://canarymedia.com/articles/solar/nexamp-nabs-520m-to-build-community-solar-across-the-us).
+    2026 project financings: $106M (First Citizens, Jul 2026), $200M (Nuveen), Captona preferred equity (Oct 2026).
+    ''late'' is used here as the nearest category; there are no lettered rounds.'
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: nexamp
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 41
+    engineering_titles: 23
+    sample_locations:
+    - All Offices
+    - Aurora, IL
+    - Boston, MA
+    - Chicago, IL
+  proposed:
+    tier: core
+    sectors:
+    - solar
+    - energy-storage
+    reason: Develops, builds, owns and operates community solar and battery storage; it does not make hardware.
+    startup: review
+    startup_reason: 'About 400 to 500 people (PitchBook 2023: 464; Solar Power World 2025: 505); founded 2007, about
+      19 years. Past the age guide.'
+  customers: Community-solar subscribers (residential and commercial) and utilities, across several US states (NY,
+    IL, ME, MA, MD, etc.).
+  changes:
+  - set ats to greenhouse:nexamp
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'A project developer, not a product company: its engineering roles are project, interconnection and field roles
+    rather than product hardware design.'
+  - '''late'' is the nearest stage id; it is funded by infrastructure investors, not lettered venture rounds.'
+  decision: age
+  evidence:
+  - https://www.solarpowerworldonline.com/suppliers/nexamp/
+  - https://pitchbook.com/profiles/company/53431-93
+  - https://builtin.com/company/nexamp
+  - https://canarymedia.com/articles/solar/nexamp-nabs-520m-to-build-community-solar-across-the-us
+  - https://www.pv-tech.org/nexamp-secures-a-further-us240m-in-equity-investment-to-fund-growth-plans
+  - https://mercomindia.com/nexamp-secures-106-million-financing-community-solar-projects
+  - https://boards.greenhouse.io/embed/job_board?for=nexamp
+  confidence: medium
+  unresolved: Headcount only from aggregators (newest dated ~2023-2025). Stage category is a poor fit (infrastructure-backed
+    private company).
+- id: redwood-materials
+  name: Redwood Materials
+  group: review
+  current:
+    tier: core
+    sectors:
+    - battery-materials
+    startup: review
+  product: Battery recycling and battery-materials production (cathode active material, copper foil) from end-of-life
+    batteries and scrap, plus Redwood Energy, launched June 2025, which builds energy storage systems from second-life
+    EV battery packs, aimed first at AI data centers.
+  hq: Carson City, NV
+  founded: 2017
+  founded_source: https://research.contrary.com/company/redwood-materials
+  headcount:
+    value: 1215
+    as_of: '2026-04-21'
+    source: 'Derived: TechCrunch reports about 135 layoffs = about 10% of workforce (implies ~1,350 before, ~1,215
+      after); not a reported total'
+    url: https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/
+  headcount_notes: 'The value is my arithmetic, not a stated figure. Layoffs: about 5% in late Nov 2025 (TechCrunch,
+    2025-11-26) and about 135 people / about 10% in Apr 2026, across engineering and operations, with the COO retiring
+    the same week. Aggregators: Contrary 853; Built In 561 (both undated, likely stale). Implied headcount is above
+    1,000 even after the cuts.'
+  stage: late
+  stage_evidence: Series E, $425M, closed about Jan 2026, valuation 'north of $6B', Google and Nvidia participating
+    (https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/).
+  board:
+    recorded:
+      ats: greenhouse
+      token: redwoodmaterials
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: redwoodmaterials
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 97
+    engineering_titles: 62
+    sample_locations:
+    - Carson City, NV
+    - Carson City, NV; San Francisco, California, United States
+    - McCarran, NV
+    - McCarran, NV; San Francisco, California, United States
+  proposed:
+    tier: core
+    sectors:
+    - battery-materials
+    - energy-storage
+    reason: Battery recycling and battery materials, plus second-life battery storage systems (Redwood Energy).
+    startup: out
+    startup_reason: About 1,215 people, derived from a layoff of about 135 described as 10 percent of staff (TechCrunch,
+      2026-04-21). Not a stated total; aggregators show 560 to 850 (undated, likely stale).
+  customers: 'Materials: automakers and cell makers. Redwood Energy: Crusoe (12 MW/63 MWh second-life microgrid
+    powering Crusoe Spark modular data centers in Nevada, 2025; expanded from 4 to 24 modular data centers, about
+    7x compute, announced March 2026); Rivian (facility power). Pipeline said to include unnamed hyperscalers. Google
+    and Nvidia are investors, not named customers.'
+  changes:
+  - startup review -> out
+  - sectors ['battery-materials'] -> ['battery-materials', 'energy-storage']
+  - fill stage, founded, headcount, hq
+  flags:
+  - The only figure above 1,000 is arithmetic on a layoff percentage. If a stated total under 1,000 turns up, revisit.
+  - Redwood Energy's first and largest customer is Crusoe, for AI data-center power; the company says it is refocusing
+    on that business.
+  decision: near-line
+  evidence:
+  - https://techcrunch.com/2026/04/21/redwood-materials-lays-off-10-in-restructuring-to-chase-energy-storage-business/
+  - https://techcrunch.com/2026/04/23/redwood-materials-loses-coo-amid-layoffs-restructuring/
+  - https://www.electrive.com/2026/04/22/redwood-materials-pivots-to-energy-storage-and-cuts-10-of-jobs/
+  - https://techcrunch.com/2025/06/26/redwood-materials-launches-energy-storage-business-and-its-first-target-is-ai-data-centers
+  - https://www.energy-storage.news/recycler-redwood-builds-63mwh-second-life-ev-battery-microgrid-for-ai-data-centre/
+  - https://techcrunch.com/2026/02/19/an-ai-data-center-boom-is-fueling-redwoods-energy-storage-business/
+  - https://research.contrary.com/company/redwood-materials
+  - https://job-boards.greenhouse.io/redwoodmaterials/jobs/5992299004
+  confidence: medium
+  unresolved: No company-stated total headcount; the value is derived from layoff percentages. Careers URL inferred
+    (the Greenhouse board was seen via search; the careers page was not loaded).
+- id: scout-motors
+  name: Scout Motors
+  group: review
+  current:
+    tier: enabling
+    sectors:
+    - ev
+    startup: review
+  product: Electric and range-extended (gas-generator EREV) SUVs and pickups (Traveler, Terra) under the revived
+    Scout brand; plant in Blythewood, SC; production vehicles from 2027, customer deliveries from 2028.
+  hq: Charlotte, NC
+  founded: 2022
+  founded_source: https://en.wikipedia.org/wiki/Scout_Motors
+  headcount:
+    value: 900
+    as_of: '2026-11-13'
+    source: Fox Carolina (South Carolina plant only)
+    url: https://www.foxcarolina.com/2026/11/13/scout-motors-offers-look-inside-blythewood-plant-construction-nears-final-stage/
+  headcount_notes: '900 is South Carolina only (an earlier States Newsroom report split it as about 600 engineering/management
+    plus 300 factory). Corporate staff are separate: about 365 in Northern Virginia were relocating to Charlotte
+    (city of Charlotte, Nov 2025; Bisnow says more than 350). The Charlotte HQ plans 1,200 jobs by 2030 and the
+    SC plant more than 4,000 jobs. Total company headcount is therefore at least about 1,250 now and rising. Built
+    In shows 259 (stale). Over the 1,000 line.'
+  stage: subsidiary
+  stage_evidence: Independent US subsidiary of Volkswagen Group, created 2022-05-11; Charlotte HQ announced 2025-11-12
+    (https://www.charlottenc.gov/City-News/Scout-Motors-Announcement).
+  board:
+    recorded:
+      ats: greenhouse
+      token: scoutmotors
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: scoutmotors
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 218
+    engineering_titles: 81
+    sample_locations:
+    - Blythewood, SC; Charlotte, NC; Novi, Michigan
+    - Blythewood, South Carolina, United States
+    - Blythewood, South Carolina, United States; Charlotte, North Carolina, United States
+    - Charlotte, NC
+  proposed:
+    tier: enabling
+    sectors:
+    - ev
+    reason: Electric and range-extended (gasoline generator) SUVs and pickups; Volkswagen Group subsidiary.
+    startup: out
+    startup_reason: 'About 900 at the South Carolina plant (2026-11-13) plus about 365 corporate staff moving to
+      Charlotte: at least about 1,250 and rising (plans 4,000 at the plant).'
+  customers: Consumer vehicles. Wholly owned by Volkswagen Group.
+  changes:
+  - startup review -> out
+  - fill stage, founded, headcount, hq
+  flags:
+  - Range-extended models carry a gasoline generator; electric by design only in part.
+  decision: null
+  evidence:
+  - https://www.foxcarolina.com/2026/11/13/scout-motors-offers-look-inside-blythewood-plant-construction-nears-final-stage/
+  - https://www.charlottenc.gov/City-News/Scout-Motors-Announcement
+  - https://www.axios.com/local/charlotte/2025/11/12/commonwealth-scout-motors-plaza-midwood
+  - https://www.bisnow.com/news/charlotte/construction-development/scout-motors-to-bring-new-corporate-headquarters-to-charlotte-131877
+  - https://en.wikipedia.org/wiki/Scout_Motors
+  - https://wtop.com/business-finance/2023/03/tysons-based-ev-startup-will-make-scout-vehicles-in-south-carolina
+  - https://job-boards.greenhouse.io/scoutmotors/jobs/5081257007
+  confidence: medium
+  unresolved: No single company-wide headcount was published. HQ is Charlotte by announcement (staff in temporary
+    offices; permanent site under construction). Careers URL inferred; the Greenhouse token was seen via search.
+- id: solid-power
+  name: Solid Power
+  group: review
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: review
+  product: Sulfide-based solid electrolyte materials and solid-state battery cell designs, licensed and supplied
+    to automakers and cell makers (BMW, Ford, SK On, Samsung SDI). Electrolyte production and pilot cell lines in
+    Colorado.
+  hq: Louisville, CO
+  founded: 2011
+  founded_source: https://www.bccresearch.com/company-index/profile/solid-power-inc/history
+  headcount:
+    value: 230
+    as_of: '2025-12-31'
+    source: Solid Power FY2025 Form 10-K (filed 2026-02-25), via stockanalysis.com (S&P Global)
+    url: https://stockanalysis.com/stocks/sldp/employees/
+  headcount_notes: 230 at 2025-12-31, down from 260 (2024), 270 (2023), 236 (2022), 127 (2021). Built In lists 127
+    (stale). Shrinking.
+  stage: public
+  stage_evidence: 'Nasdaq: SLDP (public via SPAC with Decarbonization Plus III, Dec 2021). 10-K for FY2025 filed
+    2026-02-25 (https://www.boardroomalpha.com/sec/sldp-10-k-2026-02-25-0001104659-26-019435).'
+  board:
+    recorded:
+      ats: greenhouse
+      token: solidpower
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: solidpower
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 8
+    engineering_titles: 4
+    sample_locations:
+    - '14902 Grant Street, #120, Thornton CO 80023'
+    - 14902 Grant Street, Unit 120, Thornton CO 80023
+    - 486 S. Pierce Ave, Suite E
+    - Denver, CO
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    - battery-materials
+    reason: Sulfide solid electrolyte and solid-state cell designs licensed to automakers and cell makers.
+    startup: review
+    startup_reason: 230 employees at 2025-12-31 (fiscal 2025 Form 10-K) and shrinking; founded 2011 (sources say
+      2011 or 2012), about 15 years. Past the age guide.
+  customers: Automotive OEMs and cell manufacturers.
+  changes:
+  - sectors ['energy-storage'] -> ['energy-storage', 'battery-materials']
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Added battery-materials: the electrolyte is a material it produces and sells.'
+  decision: age
+  evidence:
+  - https://stockanalysis.com/stocks/sldp/employees/
+  - https://www.boardroomalpha.com/sec/sldp-10-k-2026-02-25-0001104659-26-019435
+  - https://www.businesswire.com/news/home/20260224365911/en/solid-power-reports-full-year-2025-results/
+  - https://www.bccresearch.com/company-index/profile/solid-power-inc/history
+  - https://www.colorado.edu/venturepartners/startup-portfolio/solid-power-inc-sldp
+  - https://job-boards.greenhouse.io/solidpower/jobs/5802369004
+  confidence: high
+  unresolved: Founding year 2011 vs 2012. 10-K human-capital text not read directly.
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  group: review
+  current:
+    tier: core
+    sectors:
+    - components
+    - energy-storage
+    startup: review
+  product: 'Industrial battery chargers and DC power systems: engine-start battery chargers for generator sets (MicroGenius,
+    EnerGenius) and NiZn engine-starting systems (SuperTorque 8Z/8R/8ZR); switchgear and industrial DC power systems
+    (PowerCab, PowerCab2, MicroCab); battery monitoring and redundancy (SC4, Best Battery Selector). Now also markets
+    integrated power systems (power conversion, storage, distribution, controls).'
+  hq: Longmont, CO
+  founded: 1971
+  founded_source: https://www.cbinsights.com/company/stored-energy-systems
+  headcount:
+    value: 291
+    as_of: '2026-07-31'
+    source: ColoradoBiz (company figures at new-facility opening)
+    url: https://coloradobiz.com/sens-expands-longmont-manufacturing-facility/
+  headcount_notes: 'ColoradoBiz (2026-08-24): 50 at end-2020, 230 at end-2025, 291 in July 2026, about 300 expected
+    by end of Aug 2026. Moved from California to Longmont in 1992 with 3 employees. The Jan 2025 state incentive
+    projected 314 new jobs. Aggregators: Built In 300, others 141 or 51-200. Fast hiring since 2020; new 105,000
+    sq ft facility at 375 Disc Drive opened Aug 2026.'
+  stage: null
+  stage_evidence: Privately held, established 1971; CB Insights lists ownership as 'Management Buyout'. No venture
+    rounds found. New CEO appointed Jan 2026. None of the listed stage categories fits, so left null.
+  board:
+    recorded:
+      ats: adp
+      token: null
+    checked: '2026-11-24'
+    confirmed: false
+    result: no Greenhouse, Lever, Ashby or Rippling board found; the site links to adp, linkedin
+  proposed:
+    tier: out
+    sectors:
+    - components
+    reason: Mainly chargers and starting systems that keep diesel and gas generator engines ready to start, plus
+      DC power systems for switchgear; no climate purpose in the main line.
+    startup: review
+    startup_reason: 291 employees in 2026-07 (ColoradoBiz, company figures); founded 1971, about 55 years.
+  customers: Data centers (company says its systems support more than 80% of North American data centers, through
+    genset starting), utilities and grid operators, oil and gas, hospitals and health care, and industrial users.
+    Sells largely to generator OEMs and switchgear builders.
+  changes:
+  - tier core -> out
+  - sectors ['components', 'energy-storage'] -> ['components']
+  - fill founded, headcount, hq
+  flags:
+  - Tier moved from core to out. About half its catalog lines are engine-start chargers; the company says its systems
+    back more than 80 percent of North American data centers through generator starting. Revenue split not published.
+  - Reads through ADP Workforce Now, which the collector cannot read.
+  decision: sens
+  evidence:
+  - https://www.sens-usa.com/
+  - https://www.sens-usa.com/careers
+  - https://coloradobiz.com/sens-expands-longmont-manufacturing-facility/
+  - https://www.areadevelopment.com/newsItems/1-25-2025/stored-energy-systems-longmont-colorado.shtml
+  - https://www.cbinsights.com/company/stored-energy-systems
+  - https://www.businesswire.com/news/home/20220510005027/en/
+  - https://rss.globenewswire.com/news-release/2025/08/06/3128368/0/en/SENS-Announces-SuperTorque-8ZR-Factory-packaged-Complete-Genset-Engine-Starting-System.html
+  confidence: medium
+  unresolved: Revenue share (engine-start chargers vs other DC power) not published. The Colorado governor's release
+    (colorado.gov) returned 403 to the fetcher, so the Jan 2025 details come from Area Development and search summaries.
+    Ownership (management buyout vs PE) unclear.
+- id: zipline
+  name: Zipline
+  group: zipline
+  current:
+    tier: unscreened
+    sectors: []
+    startup: review
+  product: 'Autonomous delivery drones and the delivery service built on them: Platform 2 (P2), a fully electric,
+    battery-powered VTOL/fixed-wing aircraft that lowers a tethered ''droid'' to the doorstep, and the original
+    fixed-wing Platform 1 (medical deliveries in Africa).'
+  hq: South San Francisco, CA
+  founded: 2014
+  founded_source: https://www.wikiwand.com/en/Zipline_(drone_delivery_company)
+  headcount: null
+  headcount_notes: No company-stated figure. Built In 375 (page updated 2026-07-16); Wikipedia infobox 500-1,000;
+    Welcome to the Jungle job pages 1,001+ with 34% growth in 12 months (2026); Techstars jobs 1,001-5,000. The
+    2026 raises ($600M Jan, $200M Mar, $1.5B Nov) fund hiring and US manufacturing, so it is likely near or above
+    1,000, but this is unconfirmed.
+  stage: late
+  stage_evidence: '$1.5B round, 2026-11-05, $21.5B post-money, led by Paradigm, WCM and Layer Global (https://dronexl.co/2026/11/05/zipline-1-5-billion-raise-walmart-300-sites/);
+    earlier 2026: >$600M (Jan, $7.6B valuation) plus $200M extension (Mar).'
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: flyzipline
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 315
+    engineering_titles: 173
+    sample_locations:
+    - Abidjan, Côte d’Ivoire
+    - Abidjan, Côte d’Ivoire; Abuja, Nigeria; Accra, Ghana; Cape Town, South Africa; Kigali, Rwanda; Lagos, Nigeria
+    - Abuja, Nigeria
+    - Amarillo, Texas, USA
+  proposed:
+    tier: enabling
+    sectors:
+    - electric-aviation
+    reason: Battery-electric delivery aircraft and the delivery service built on them, for retail, restaurants and
+      health systems.
+    startup: review
+    startup_reason: No stated headcount. Estimates run from 375 (Built In, 2026-07) to 1,001 or more (two job-site
+      bands, 2026); founded 2014, 12 years. Board shows 315 open roles, which suggests a company near or above 1,000.
+  customers: 'Retail and restaurants (Walmart: national deal for 300 more sites, Nov 2026; Uber/Uber Eats is both
+    investor and customer, targeting 1M deliveries per day by 2029), health systems, and governments (Rwanda, Ghana,
+    Kenya; Rwanda contract for up to 2M deliveries by 2029).'
+  changes:
+  - tier unscreened -> enabling
+  - sectors [] -> ['electric-aviation']
+  - set ats to greenhouse:flyzipline
+  - fill stage, founded, hq
+  flags:
+  - 'Tier depends on the owner''s decision: autonomous drone delivery as electric aviation (in) or as robotics (out).'
+  - US military work found only in 2018-2019 (a Defense Department trial with the Marines and a Defense Innovation
+    Unit project); nothing for 2025-2026.
+  decision: zipline
+  evidence:
+  - https://dronexl.co/2026/11/05/zipline-1-5-billion-raise-walmart-300-sites/
+  - https://techcrunch.com/?p=3084562
+  - https://www.cnbc.com/2023/03/15/zipline-unveils-p2-delivery-drones-that-dock-and-recharge-autonomously.html
+  - https://www.businesswire.com/news/home/20230315005438/en
+  - https://www.zipline.com/
+  - https://www.zipline.com/careers
+  - https://www.wikiwand.com/en/Zipline_(drone_delivery_company)
+  - https://builtin.com/company/zipline
+  - https://www.fedscoop.com/diu-drone-project/
+  - https://spectrum.ieee.org/zipline-successfully-deploys-medical-delivery-drones-with-us-military
+  - https://www.diu.mil/solutions/portfolio/catalog/a0Tt0000009En59EAC-a0ht000000AYgyNAAT
+  confidence: medium
+  unresolved: 'Headcount unresolved (estimates from 375 to over 1,000). Job board: zipline.com/open-roles is internal;
+    no external ATS token seen.'
+- id: 1-arc-power
+  name: 1 Arc Power
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: Factory-built, modular 'firm' solar-plus-storage power plants (100 MW to 1 GW) sold as one integrated
+    system covering generation, storage, power conversion and controls, with design, installation and O&M, offered
+    as purchase, lease or power-as-a-service. Marketed under a 'Hyperfirm' architecture. It is a system integrator
+    and developer (13.2 GW pipeline cited); no evidence that it manufactures components itself.
+  hq: Mountain View, CA
+  founded: null
+  founded_source: null
+  headcount: null
+  headcount_notes: 'Aggregators only: 50-100 (one profile) vs 20+ (another), both undated. The leadership page lists
+    12 leaders. All open roles are in Mountain View, CA.'
+  stage: null
+  stage_evidence: No funding round found. Founded by the founder and former CEO of 8minute Solar / Avantus, linked
+    to the investment firm 1st Avenue Capital.
+  board:
+    recorded:
+      ats: greenhouse
+      token: 1stavenuepower
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: 1stavenuepower
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 13
+    engineering_titles: 9
+    sample_locations:
+    - Mountain View, CA
+    - 'Mountain View, CA '
+  proposed:
+    tier: core
+    sectors:
+    - solar
+    - energy-storage
+    reason: Factory-built solar-plus-storage power plants sold as one integrated system; formerly 1st Avenue Power.
+    startup: in
+    startup_reason: About 20 to 100 people (aggregators, undated); founding year not found. Low confidence.
+  customers: Targets data centers (including a hyperscaler), industrial electrification, utilities. Reference project
+    Eland I & II (Kern County, CA) for LADWP, which 1AP's site says was developed by Avantus and owned by Arevon.
+  changes:
+  - tier unscreened -> core
+  - startup unscreened -> in
+  - sectors [] -> ['solar', 'energy-storage']
+  - fill hq
+  flags:
+  - 'Main stated customers are data centers (including a hyperscaler), beside utilities and industry: the ''clean
+    product, data-center customer'' question.'
+  - A system integrator and developer; no evidence it makes its own components.
+  decision: datacenter
+  evidence:
+  - https://www.1ap.com/
+  - https://www.1ap.com/careers
+  - https://www.1ap.com/our-technology
+  - https://www.1ap.com/leadership
+  - https://www.nacleanenergy.com/solar/1st-avenue-power-unveils-the-first-fully-integrated-clean-power-system-of-the-ai-era
+  - https://www.infocastinc.com/2026-solar-wind-finance-investment-sponsors/1st-avenue-power
+  - https://job-boards.greenhouse.io/1stavenuepower/jobs/4972081008
+  confidence: low
+  unresolved: Founding year, headcount, funding and HQ address not found (Mountain View is inferred from job locations).
+    Whether it designs or makes any of its own hardware is unclear; one 2025 listing credits it with the first GW-scale
+    plant for a US hyperscaler (June 2025), which was not verified.
+- id: amperesand
+  name: Amperesand
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: Medium-voltage silicon-carbide solid-state transformers (SST) and power platform that replace conventional
+    transformers and power-conversion stages, now aimed mainly at AI data centers. Technology came out of NTU Singapore
+    research.
+  hq: Singapore
+  founded: 2023
+  founded_source: https://www.cbinsights.com/company/amperesand
+  headcount: null
+  headcount_notes: No figure found in sources read. Team drawn from ABB, GE, Siemens and Vestas veterans.
+  stage: series-a
+  stage_evidence: Series A, $80M, 2025-11-18, co-led by Walden Catalyst Ventures and Temasek (https://www.businesswire.com/news/home/20251118244299/en/Amperesand-Raises-80M-Series-A);
+    seed $12.45M Feb 2024 (Xora Innovation and Material Impact, with TDK Ventures).
+  board:
+    recorded:
+      ats: greenhouse
+      token: amperesand
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: amperesand
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 56
+    engineering_titles: 36
+    sample_locations:
+    - Reno, Nevada, United States
+    - Reno, Nevada, United States; San Francisco, California, United States
+    - Reno, Nevada, United States; Sunnyvale, California, United States
+    - San Francisco, California, United States
+  proposed:
+    tier: out
+    sectors:
+    - grid
+    reason: Silicon-carbide solid-state transformers aimed mainly at AI data centers; data-center power is out by
+      decision. Headquartered in Singapore.
+    startup: in
+    startup_reason: Headcount not found; founded 2023; Series A $80M (2025-11).
+  customers: 'Data centers: yes, the primary target. First commercial deployment with PSA International (Port of
+    Singapore), then pilots with hyperscale AI customers (unnamed). Plans 30 MW of commercial systems in 2026, mostly
+    for hyperscale AI customers. A 1.5 MW SST has run on Singapore''s grid since 2022.'
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - sectors [] -> ['grid']
+  - fill stage, founded, hq
+  flags:
+  - 'Out on two counts under the working rules: data-center power and a Singapore headquarters. The board''s role
+    locations should be checked if the owner reconsiders.'
+  decision: datacenter
+  evidence:
+  - https://www.businesswire.com/news/home/20251118244299/en/Amperesand-Raises-80M-Series-A
+  - https://techcrunch.com/2025/01/21/amperesand-targets-data-centers-as-the-next-big-customer-for-its-solid-state-transformers
+  - https://www.latitudemedia.com/news/amperesand-bags-over-12-million-for-solid-state-transformer-tech/
+  - https://www.cbinsights.com/company/amperesand
+  - https://www.ntu.edu.sg/innovates/news-events/news/detail/built-to-scale--from-lab-breakthrough-to-global-power-player
+  confidence: medium
+  unresolved: Headcount; US presence for hardware roles; careers page URL; hyperscaler customer names.
+- id: atomic-machines
+  name: Atomic Machines
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'AI-native micro-manufacturing platform (the ''Matter Compiler'') that builds MEMS-scale machines from
+    digital designs without per-device tooling. First product: PrimeSwitch PS-150, a bistable electromechanical
+    relay for AI data centers moving to 800VDC power distribution (claims 50-microsecond opening).'
+  hq: Emeryville, CA
+  founded: 2019
+  founded_source: https://www.cbinsights.com/company/atomic-machines
+  headcount:
+    value: 129
+    as_of: '2026-11-24'
+    source: Built In company profile (aggregator, undated; date is the day it was read via search)
+    url: https://builtin.com/company/atomic-machines
+  headcount_notes: Built In 129 (lists HQ as Berkeley); Simplify 201-500. Offices in Emeryville and Santa Clara
+    per job postings. Under 1,000 by all sources.
+  stage: series-b
+  stage_evidence: Emerged from stealth 2026-10-07 with $250M raised to date; databases list a Series A and a later
+    Series B (Gigafund, Valor Equity Partners, Construct Capital); amounts per round not disclosed (https://thenextweb.com/news/atomic-machines-250m-matter-compiler-micro-machines).
+  board:
+    recorded:
+      ats: greenhouse
+      token: atomicmachines
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: atomicmachines
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 37
+    engineering_titles: 23
+    sample_locations:
+    - Atlanta, GA, Raleigh-Durham, NC, Nashville, TN, and Boston, MA
+    - Emeryville or Santa Clara, CA
+    - Emeryville or Santa Clara, California
+    - 'Emeryville or Santa Clara, California '
+  proposed:
+    tier: out
+    sectors: []
+    reason: Micro-manufacturing platform whose first product is a relay for AI data-center 800 V DC power; no climate
+      case, and data-center power is out.
+    startup: in
+    startup_reason: About 130 people (Built In); founded 2019.
+  customers: First product targets AI data-center power distribution; customers not named.
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  evidence:
+  - https://thenextweb.com/news/atomic-machines-250m-matter-compiler-micro-machines
+  - https://www.cbinsights.com/company/atomic-machines
+  - https://builtin.com/company/atomic-machines
+  - https://simplify.jobs/c/Atomic-Machines
+  - https://job-boards.greenhouse.io/atomicmachines/jobs/4231211009
+  confidence: medium
+  unresolved: Latest round label (Series B) is from databases, not a company release. Headcount is aggregator only.
+    Company site not loaded.
+- id: atoms
+  name: Atoms
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'Industrial robotics and automation holding company (the rebrand of City Storage Systems, March 2026)
+    with three divisions: Atoms Food (CloudKitchens ghost kitchens and Lab37 ''Bowl Builder'' kitchen automation),
+    Atoms Mining (autonomous mining machines, via its acquisition of Pronto) and Atoms Transport (robotic wheelbases
+    and autonomous movement). Not a clean-tech company.'
+  hq: Los Angeles, CA (not confirmed; job postings are mainly San Francisco)
+  founded: 2016
+  founded_source: https://fortune.com/2026/03/14/travis-kalanick-startup-atoms-stealth-mode-pronto-robotics-self-driving-uber/
+  headcount:
+    value: 2000
+    as_of: '2026-03-14'
+    source: Press report citing LinkedIn public profiles; the CEO said 'thousands of employees'
+    url: https://finance.yahoo.com/news/travis-kalanick-debuts-plan-gainfully-192647148.html
+  headcount_notes: 'More than 2,000 per LinkedIn profile count (reported Mar 2026); CEO: ''We have thousands of
+    employees.'' Built In shows about 497 and founded 2019 (likely covers only part of the business). Over the 1,000
+    line.'
+  stage: late
+  stage_evidence: $1.7B equity round led by Andreessen Horowitz, announced 2026-07-22, with Bain Capital, Fifth
+    Wall and Uber (https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/).
+  board:
+    recorded:
+      ats: greenhouse
+      token: atoms
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: atoms
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 162
+    engineering_titles: 75
+    sample_locations:
+    - Austin, TX
+    - Bogotá, COL
+    - Dallas, TX
+    - Jakarta, Indonesia
+  proposed:
+    tier: out
+    sectors: []
+    reason: Robotics and automation holding company (ghost kitchens, autonomous mining, robotic transport); general
+      robotics and autonomous vehicles are out.
+    startup: out
+    startup_reason: More than 2,000 people (LinkedIn count reported 2026-03); founded 2016 as City Storage Systems.
+  customers: Restaurants and food delivery, mining operators, heavy industry.
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> out
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  evidence:
+  - https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+  - https://siliconangle.com/2026/07/23/industrial-automation-startup-atoms-raises-1-7b-funding/
+  - https://fortune.com/2026/03/14/travis-kalanick-startup-atoms-stealth-mode-pronto-robotics-self-driving-uber/
+  - https://finance.yahoo.com/news/travis-kalanick-debuts-plan-gainfully-192647148.html
+  - https://builtin.com/company/atoms-atoms-co
+  - https://job-boards.greenhouse.io/atoms/jobs/8536606002
+  confidence: medium
+  unresolved: HQ not confirmed. Founding year 2016 (City Storage Systems) vs 2019 (Built In). Headcount is a LinkedIn-based
+    estimate.
+- id: glydways
+  name: Glydways
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'On-demand personal rapid transit: small autonomous electric pods (''Glydcars'') running on dedicated
+    narrow guideways, sold as transit systems to cities and agencies; vehicles are produced in partnership with
+    Suzuki.'
+  hq: South San Francisco, CA
+  founded: 2016
+  founded_source: https://www.cbinsights.com/company/glydways
+  headcount: null
+  headcount_notes: 'Aggregators only, undated: Built In 86; another about 240; StartupHub about 218; Welcome to
+    the Jungle 101-200; another 201-500. Under 1,000 by all sources.'
+  stage: series-c
+  stage_evidence: Series C, $170M, 2026-04-14, co-led by Suzuki Motor, ACS Group and Khosla Ventures (https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/).
+    Bloomberg reported talks for about $250M more, and one aggregator headline (Aug 2026) claims a further $60M,
+    unverified. CB Insights shows a different Series C ($101.31M, Sep 2025).
+  board:
+    recorded:
+      ats: greenhouse
+      token: glydways
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: glydways
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 13
+    engineering_titles: 11
+    sample_locations:
+    - Atlanta, GA
+    - Remote
+    - Richmond, CA
+    - Richmond, CA - Hybrid
+  proposed:
+    tier: out
+    sectors:
+    - electric-mobility
+    reason: Autonomous electric pods on dedicated guideways sold as public transit systems; out under the autonomous-vehicle
+      decision.
+    startup: in
+    startup_reason: About 90 to 240 people (aggregators, undated); founded 2016 (as Wayfarer), about 10 years.
+  customers: 'Public transit agencies and cities: South Metro Atlanta / Hartsfield-Jackson pilot (MARTA $10M, ATL
+    $3M grant), San Jose, East Contra Costa County, NYC area, UAE; Glydways Japan.'
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - sectors [] -> ['electric-mobility']
+  - fill stage, founded, hq
+  flags:
+  - A transit system that takes cars off the road, which is a climate case the AV decision may not have meant to
+    exclude. Asked in decisions-needed.md.
+  decision: autonomy
+  evidence:
+  - https://www.glydways.com/about/
+  - https://techcrunch.com/2026/04/15/this-khosla-backed-autonomous-pod-startup-just-raised-170m-now-its-aiming-for-more/
+  - https://builtin.com/articles/glydways-secures-170m-series-c-20260417
+  - https://www.cbinsights.com/company/glydways
+  - https://app.welcometothejungle.com/companies/Glydways
+  - https://builtin.com/company/glydways
+  confidence: medium
+  unresolved: 'Electric not confirmed from a first-party page. Founding year: CB Insights 2016, while the About
+    page has a staff member working on Glydways since 2017. Headcount is aggregator only.'
+- id: gram
+  name: GRAM
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'Robotics/AI startup building ''insectoids'': meter-scale, legged, general-purpose robots meant to work
+    in large swarms, with a stated mission of self-replication (''an SR, or self-replication, company'') and long-term
+    space industrialization. Not a clean-tech company.'
+  hq: San Francisco Bay Area (Palo Alto), CA; also El Segundo, CA
+  founded: null
+  founded_source: null
+  headcount: null
+  headcount_notes: Not found. The board listed 18 open jobs when read; postings describe roles as 'founding', which
+    suggests an early-stage team.
+  stage: null
+  stage_evidence: Postings say only 'backed by leading investors'; no round, amount or investor names found.
+  board:
+    recorded:
+      ats: greenhouse
+      token: gram
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: gram
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 18
+    engineering_titles: 14
+    sample_locations:
+    - El Segundo, California, United States
+    - San Francisco Bay Area, California, United States
+  proposed:
+    tier: out
+    sectors: []
+    reason: Swarms of legged general-purpose robots; general robotics is out.
+    startup: unscreened
+    startup_reason: 'Not checked: no website, funding or headcount found.'
+  changes:
+  - tier unscreened -> out
+  - fill hq
+  flags: []
+  decision: null
+  evidence:
+  - https://job-boards.greenhouse.io/gram/jobs/4000952009
+  - https://job-boards.greenhouse.io/gram/jobs/4364453009
+  - https://job-boards.greenhouse.io/gram/jobs/4009063009
+  confidence: low
+  unresolved: Legal name, website, founding year, funding, headcount all unknown.
+- id: h3x-technologies
+  name: H3X Technologies
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: High power-density integrated motor drives (motor, inverter and sometimes gearbox in one unit), 30 kW
+    to 1 MW+ (HPDM-30/90S/180D/180R/250/350/500, plus megawatt-class in development) and the HPDG-30 genset.
+  hq: Louisville, CO
+  founded: 2020
+  founded_source: https://www.cbinsights.com/company/h3x-technologies
+  headcount: null
+  headcount_notes: Not found in sources read.
+  stage: series-a
+  stage_evidence: Series A, $20M, 2024-08-06, led by Infinite Capital with Lockheed Martin Ventures and others (https://techcrunch.com/2024/08/06/h3x-scales-up-its-electric-aerospace-ambitions-with-20m-in-new-funding).
+    CB Insights total about $28.7M. No 2025-2026 round found.
+  board:
+    recorded:
+      ats: ashby
+      token: h3x-technologies
+    checked: '2026-11-24'
+    ats: ashby
+    token: h3x-technologies
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 5
+    engineering_titles: 4
+    sample_locations:
+    - Louisville, Colorado
+  proposed:
+    tier: out
+    sectors:
+    - components
+    reason: High power-density electric motor drives; the company says defense is its current focus (drones, submarines,
+      a classified customer).
+    startup: in
+    startup_reason: Headcount not found; founded 2020.
+  customers: Defense is the current focus (UAS, submarines, a classified customer; US Air Force and NASA contracts
+    completed); aerospace (two commercial aviation customers developing 19-seat and 30-seat aircraft; Stralis Aircraft
+    hydrogen-electric demonstrator; eVTOL; rocket actuators); marine (ferries, workboats, unmanned surface vessels);
+    heavy industry (mining vehicles).
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - sectors [] -> ['components']
+  - fill stage, founded, hq
+  flags:
+  - Also sells to civil electric aviation (two regional aircraft programs) and marine. Out on the defense rule as
+    stated by its CEO in 2024; owner may prefer enabling.
+  decision: defense
+  evidence:
+  - https://www.h3x.tech/
+  - https://techcrunch.com/2024/08/06/h3x-scales-up-its-electric-aerospace-ambitions-with-20m-in-new-funding
+  - https://prnewswire.com/news-releases/h3x-closes-oversubscribed-20m-series-a-to-advance-revolutionary-electric-motors-in-aerospace-defense-and-marine-sectors-302214981.html
+  - https://www.businesswire.com/news/home/20230228005731/en/Lockheed-Martin-Ventures-Invests-in-High-Performance-Electric-Motor-Manufacturer-H3X
+  - https://www.cbinsights.com/company/h3x-technologies
+  - https://govtech.com/transportation/denver-startup-wants-to-lead-advanced-electric-motor-market
+  confidence: medium
+  unresolved: Headcount; any 2025-2026 funding or contracts; share of revenue by market.
+- id: inferra
+  name: inferra
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: Not established. Inferra Inc. (Menlo Park, founded 2026) appears to be an AI software company (inferra.ai).
+    Its HN Hiring posting lists software roles (Engineering Manager Platform, Staff SWE Product Security, Staff
+    SWE AI) in SF/NYC. No hardware product found.
+  hq: Menlo Park, CA (per SEC Form D)
+  founded: 2026
+  founded_source: https://valueaddvc.com/pulse/company/inferra
+  headcount: null
+  headcount_notes: Not found.
+  stage: null
+  stage_evidence: 'SEC Form D: about $19.28M sold of a $19,999,956 offering, first sale 2026-07-14, filed 2026-07-30,
+    13 investors, industry ''Other Technology'' (https://vcbeast.com/deals/inferra-form-d-2026-07-14). Round label
+    not disclosed.'
+  board:
+    recorded:
+      ats: ashby
+      token: inferra
+    checked: '2026-11-24'
+    ats: ashby
+    token: inferra
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 7
+    engineering_titles: 3
+    sample_locations:
+    - Menlo Park
+    - Menlo Park Hybrid
+    - US Remote
+  proposed:
+    tier: out
+    sectors: []
+    reason: Appears to be an early-stage AI software company (identity inferred from the board name only); no hardware
+      product found.
+    startup: unscreened
+    startup_reason: Not checked.
+  changes:
+  - tier unscreened -> out
+  - fill founded, hq
+  flags:
+  - Identity low confidence.
+  decision: null
+  evidence:
+  - https://vcbeast.com/deals/inferra-form-d-2026-07-14
+  - https://valueaddvc.com/pulse/company/inferra
+  - https://www.hnhiring.com/locations/dc
+  - https://jobs.ashbyhq.com/inferra
+  confidence: low
+  unresolved: The link between the Ashby token 'inferra' and Inferra Inc. / inferra.ai is inferred from the name
+    only; the product is unknown.
+- id: planted
+  name: Planted
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'Turnkey robotic solar-plant deployment: site-planning software, high-density terrain-following solar
+    arrays, energy storage, and an autonomous field-robot fleet that installs the arrays, plus construction and
+    O&M under one agreement. Next-generation robot ''Sage'' enters the field late 2026.'
+  hq: Oakland, CA
+  founded: 2020
+  founded_source: https://www.sustainabletimes.co.uk/post/oakland-based-planted-solar-lands-12-million-to-rethink-solar-deployment-at-scale
+  headcount: null
+  headcount_notes: 'Aggregators only, undated: Built In 32; Dealroom and Bouncewatch 45; Prospeo 21-50. Small.'
+  stage: series-b
+  stage_evidence: $31.8M round, 2026-09-15, co-led by Piva Capital and RA Capital Management Planetary Health, with
+    Breakthrough Energy Ventures, Gigascale, Google and Khosla (https://powermag.com/planted-raises-31-8-million-to-accelerate-autonomous-solar-deployment).
+    Round letter not stated in sources read; prior rounds were a $20M Series A (Jun 2024) and $12M (Jul 2025). 'series-b'
+    is inferred from that sequence and is not stated by the company.
+  board:
+    recorded:
+      ats: ashby
+      token: planted
+    checked: '2026-11-24'
+    ats: ashby
+    token: planted
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 9
+    engineering_titles: 6
+    sample_locations:
+    - Oakland, CA
+    - Sydney, Australia
+  proposed:
+    tier: core
+    sectors:
+    - solar
+    reason: Robot-installed, terrain-following solar arrays delivered as turnkey solar plants.
+    startup: in
+    startup_reason: About 30 to 45 people (aggregators, undated); founded 2020.
+  customers: Solar developers and IPPs (partners include White Pine, Cultivate Power, SolAmerica); positioned for
+    data-center power. Deployed >10 MW in 2025, targets 100 MW in 2026; fleet committed through 2027; pipeline >20
+    GW.
+  changes:
+  - tier unscreened -> core
+  - startup unscreened -> in
+  - sectors [] -> ['solar']
+  - fill stage, founded, hq
+  flags:
+  - Stage inferred from its round sequence; the 2026-09 round letter was not stated.
+  - Positions itself for data-center power as one market among solar developers.
+  decision: null
+  evidence:
+  - https://www.plantedsolar.com/
+  - https://powermag.com/planted-raises-31-8-million-to-accelerate-autonomous-solar-deployment
+  - https://www.latitudemedia.com/news/google-is-backing-planted-solars-plan-for-clean-data-center-power/
+  - https://www.pv-magazine.com/2025/08/05/planted-solar-expanding-terrain-conforming-pv-plant-design-platform/
+  - https://builtin.com/company/planted-solar
+  - https://www.sustainabletimes.co.uk/post/oakland-based-planted-solar-lands-12-million-to-rethink-solar-deployment-at-scale
+  confidence: medium
+  unresolved: Round letter for the Sep 2026 raise; headcount is aggregator only.
+- id: proper-voltage
+  name: Proper Voltage
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'Battery Operating System (bOS): hardware and firmware that act as a universal adapter between battery
+    packs and end products, so manufacturers can swap battery chemistries without redesign or recertification. Markets:
+    critical power, defense, robotics/commercial.'
+  hq: Carlsbad, CA
+  founded: 2019
+  founded_source: https://www.cbinsights.com/company/zapbatt
+  headcount: null
+  headcount_notes: Not found (Vaia's 50-100 figure appears to be a generic or mismatched listing).
+  stage: seed
+  stage_evidence: Seed about $3.58M, 2023-03-17, Commonweal Ventures participating (CB Insights). Totals reported
+    $6.5-7.2M (Simplify, VCBacked; VCBacked shows the latest round as May 2026, unverified). Formerly ZapBatt.
+  board:
+    recorded:
+      ats: rippling
+      token: proper-voltage
+    checked: '2026-11-24'
+    ats: rippling
+    token: proper-voltage
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 19
+    engineering_titles: 14
+    sample_locations:
+    - Carlsbad, CA
+    - Remote
+    - Remote (Remote, US)
+    - Remote (United States)
+  proposed:
+    tier: out
+    sectors:
+    - energy-storage
+    reason: Battery interface hardware that lets product makers swap battery packs; markets are critical power,
+      defense and robotics, with no clear climate case.
+    startup: in
+    startup_reason: Headcount not found; founded 2019 (as ZapBatt); seed stage.
+  customers: Battery producers and product OEMs; named partners include Toshiba and Unigrid. Defense is a listed
+    market.
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - sectors [] -> ['energy-storage']
+  - fill stage, founded, hq
+  flags:
+  - 'Low-confidence call: it could be read as enabling if its packs mostly replace lead-acid or engines. Not asked
+    of the owner; revisit if evidence turns up.'
+  decision: null
+  evidence:
+  - https://propervoltage.com/
+  - https://www.cbinsights.com/company/zapbatt
+  - https://app.dealroom.co/companies/proper_voltage
+  - https://www.vcbacked.co/company/proper-voltage
+  - https://simplify.jobs/c/Proper-Voltage
+  - https://ats.rippling.com/proper-voltage/jobs/dc68a10d-2ef7-464c-85e2-05d640897623
+  - https://jobs.lever.co/propervoltage/4f492854-25a4-40ee-a640-279b99613e2a
+  confidence: medium
+  unresolved: Headcount; whether there was a 2026 round; founding year 2019 vs 2020.
+- id: spinor-energy
+  name: Spinor Energy
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: Superconducting power systems; PitchBook describes superconducting magnetic energy storage (SMES) for
+    AI data centers, while f4.fund describes superconducting power systems for grid, industrial and AI-era high-power
+    infrastructure.
+  hq: Mountain View, CA
+  founded: 2025
+  founded_source: https://pitchbook.com/profiles/company/1241571-97
+  headcount:
+    value: 3
+    as_of: '2026-11-24'
+    source: PitchBook profile (aggregator, undated; date is the day it was read via search)
+    url: https://pitchbook.com/profiles/company/1241571-97
+  headcount_notes: 'PitchBook: 3 employees. Very early stage.'
+  stage: null
+  stage_evidence: 'PitchBook: early-stage VC with Link Ventures and Onto Ventures; amount and round label behind
+    paywall. Probably pre-seed or seed, but not confirmed.'
+  board:
+    recorded:
+      ats: ashby
+      token: spinorenergy
+    checked: '2026-11-24'
+    ats: ashby
+    token: spinorenergy
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 8
+    engineering_titles: 8
+    sample_locations:
+    - Mountain View
+  proposed:
+    tier: out
+    sectors:
+    - grid
+    reason: Superconducting magnetic energy storage aimed at AI data centers (per PitchBook); data-center power
+      is out by decision.
+    startup: in
+    startup_reason: Three employees (PitchBook); founded 2025.
+  customers: 'Target: AI data centers, grid, industrial (pre-commercial).'
+  changes:
+  - tier unscreened -> out
+  - startup unscreened -> in
+  - sectors [] -> ['grid']
+  - fill founded, headcount, hq
+  flags:
+  - Pre-commercial; low confidence on the product.
+  decision: datacenter
+  evidence:
+  - https://pitchbook.com/profiles/company/1241571-97
+  - https://f4.fund/startups/spinorenergy
+  confidence: low
+  unresolved: No company website or press found; f4.fund returned 403 to the fetcher (content from search snippet).
+    Funding amount and stage unknown. Do not confuse with SpinorX (defunct).
+- id: stafl-systems
+  name: Stafl Systems
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: Lithium-ion battery packs (12-1000 V), battery management systems (BMS1000/2000 series), vehicle control
+    units, electric powertrains and telematics hardware; engineering services for custom packs.
+  hq: South San Francisco, CA
+  founded: 2010
+  founded_source: https://www.cbinsights.com/company/stafl-systems
+  headcount:
+    value: 60
+    as_of: '2024-06-30'
+    source: June 2024 press release on WindSail investment (as quoted by CB Insights)
+    url: https://www.cbinsights.com/company/stafl-systems
+  headcount_notes: About 60 employees in two South San Francisco offices (June 2024; the release gives only the
+    month, so the exact day is not known). No later figure. A MapQuest listing marks the address 'Closed', which
+    conflicts with active Rippling postings; operating status unverified.
+  stage: null
+  stage_evidence: 'Founder-led company that grew from a solo consultancy (site: ''since 2010''); WindSail Capital
+    Group invested in June 2024 (growth/credit investor, not a lettered round). No category fits, so left null.'
+  board:
+    recorded:
+      ats: rippling
+      token: staflsystems
+    checked: '2026-11-24'
+    ats: rippling
+    token: staflsystems
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 7
+    engineering_titles: 6
+    sample_locations:
+    - South San Francisco, CA
+  proposed:
+    tier: enabling
+    sectors:
+    - components
+    - energy-storage
+    reason: Lithium-ion battery packs, battery management systems and electric powertrain controls for electric
+      aircraft, boats and off-highway vehicles.
+    startup: review
+    startup_reason: About 60 people (company release, 2024-06); founded 2010, about 16 years. Past the age guide.
+  customers: Aviation (electric aircraft), defense, marine and off-highway vehicles per its own description; also
+    EVs and motorcycles, mining vehicles, stationary storage and EV fast chargers.
+  changes:
+  - tier unscreened -> enabling
+  - startup unscreened -> review
+  - sectors [] -> ['components', 'energy-storage']
+  - fill founded, headcount, hq
+  flags:
+  - Lists defense among its markets beside aviation, marine and off-highway.
+  - A map listing marks its address closed while its board is active; operating status not independently confirmed.
+  decision: age
+  evidence:
+  - https://staflsystems.squarespace.com/about
+  - https://staflsystems.squarespace.com/products
+  - https://www.cbinsights.com/company/stafl-systems
+  - https://ats.rippling.com/staflsystems/jobs/706e3a3d-20fc-4298-a22b-ff6df032cd3a
+  confidence: medium
+  unresolved: Current headcount; terms of the WindSail investment; the 'Closed' map listing. The site is served
+    from a squarespace.com domain; the primary domain was not confirmed.
+- id: tau-motors
+  name: Tau Motors
+  group: unscreened
+  current:
+    tier: unscreened
+    sectors: []
+    startup: unscreened
+  product: 'Software-defined power conversion: rare-earth-free electric motors and eMachines (Gamma platform, copper
+    and steel, no rare-earth magnets) plus integrated power electronics and inverters (Ion platform) and controls,
+    for EVs, energy systems and data centers.'
+  hq: Redwood City, CA
+  founded: 2017
+  founded_source: https://www.cbinsights.com/company/tau-motors
+  headcount: null
+  headcount_notes: Job listing gives company size 11-50 (undated). Small.
+  stage: series-a
+  stage_evidence: 'Series A-II, 2025-09-02, HELLA Ventures participating (CB Insights; amount not disclosed). Totals
+    disagree: CB Insights $750K, Caplight $7.75M, a job posting $6.3M, PitchBook $34.2M.'
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: tau
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 3
+    engineering_titles: 3
+    sample_locations:
+    - Redwood City, CA
+    - 'Redwood City, CA '
+  proposed:
+    tier: enabling
+    sectors:
+    - components
+    reason: Rare-earth-free electric motors and integrated inverters for EVs and energy systems.
+    startup: in
+    startup_reason: 11 to 50 people (job listing, undated); founded 2017, 9 years.
+  customers: Partners in automotive, energy, defense, solar, aerospace, marine, space, industrial and wind (company
+    site); HELLA Ventures invested (Sep 2025); job ads mention data-center power conversion. No named customers.
+  changes:
+  - tier unscreened -> enabling
+  - startup unscreened -> in
+  - sectors [] -> ['components']
+  - set ats to greenhouse:tau
+  - fill stage, founded, hq
+  flags:
+  - Job ads also mention data-center power conversion; one market among several.
+  decision: null
+  evidence:
+  - https://www.taumotors.com/
+  - https://www.taumotors.com/careers
+  - https://www.cbinsights.com/company/tau-motors
+  - https://pitchbook.com/profiles/company/469958-77
+  - https://www.taumotors.com/newsroom/tau-showcases-gamma-emachine-at-climate-week-2025-validation-of-rare-earth-free-electric-motor-platform-highlighted-at-columbia-center-of-advanced-electrification
+  confidence: medium
+  unresolved: Greenhouse token; funding total (sources range from $0.75M to $34.2M); headcount.
+- id: also
+  name: ALSO
+  group: listed
+  current:
+    tier: enabling
+    sectors:
+    - electric-mobility
+    startup: in
+  product: 'Micromobility vehicles: TM-B e-bike (Launch Edition $4,500) and two e-quad variants; Rivian spin-out'
+  hq: Palo Alto, CA
+  founded: 2025
+  founded_source: null
+  headcount:
+    value: 330
+    as_of: 2026-03
+    source: Revelio Labs estimate (third-party)
+    url: https://www.reveliolabs.com/companies/also/employees
+  headcount_notes: About 70 at spin-out (TechCrunch, 2025-03-26). TrueUp lists 70 (undated, likely stale); Clera
+    201-500; Eclipse job board 51-200.
+  stage: subsidiary
+  stage_evidence: $105M from Eclipse at spin-out (Mar 2025, https://techcrunch.com/2025/03/26/rivian-spins-out-a-new-micromobility-startup-called-also-with-105m-from-eclipse);
+    $200M led by Greenoaks at ~$1B valuation (Jul 2025, https://builtin.com/articles/also-inc-raises-200m-20250711).
+    Round letter for the $200M not confirmed; series-b is inferred.
+  board:
+    recorded:
+      ats: ashby
+      token: Ridealso
+    checked: '2026-11-24'
+    ats: ashby
+    token: Ridealso
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 20
+    engineering_titles: 14
+    sample_locations:
+    - Los Angeles
+    - Miami
+    - Palo Alto
+  proposed:
+    tier: enabling
+    sectors:
+    - electric-mobility
+    reason: Electric bikes and quads; spun out of Rivian in 2025.
+    startup: in
+    startup_reason: About 330 people (Revelio estimate, 2026-03), founded 2025.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Stage is a judgement: venture-funded spin-out in which Rivian keeps a minority stake. ''subsidiary'' is the
+    taxonomy id for spin-outs; ''series-b'' would also be defensible.'
+  decision: null
+  check: pass
+  evidence:
+  - https://www.electrive.com/2025/10/27/rivian-spin-off-also-presents-e-bike-and-e-quads-for-us-and-europe
+  - https://techcrunch.com/2026/07/31/rivian-spinoff-also-to-start-delivering-e-bikes-after-months-of-delays/
+  - https://www.reveliolabs.com/companies/also/employees
+  confidence: medium
+  unresolved: Whether TM-B deliveries actually completed after July 2026; official headcount.
+- id: antora-energy
+  name: Antora Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - industrial-heat
+    - energy-storage
+    startup: in
+  product: 'Thermal batteries: solid carbon blocks resistively heated to up to 2,400 C, delivering industrial heat
+    and power; multi-day storage'
+  hq: Sunnyvale, CA
+  founded: 2018
+  founded_source: Most sources say 2018 (Axios, Contrary Research); CB Insights says 2017. https://www.axios.com/pro/climate-deals/2023/09/13/antora-energy-turns-on-first-thermal-battery
+  headcount:
+    value: 271
+    as_of: undated (2025-2026)
+    source: PitchBook profile (third-party)
+    url: https://pitchbook.com/profiles/company/228529-72
+  headcount_notes: Dealroom 261; RocketReach 243; TrueUp ~220; Prospeo 201-500; Built In 26 (clearly incomplete).
+    Range ~220-270.
+  stage: series-c
+  stage_evidence: $550M Series C closed late July 2026, led by Copenhagen Infrastructure Partners, ~$2.47B valuation
+    reported (https://axios.com/pro/climate-deals/2026/07/30/antora-550m-thermal-batteries; https://www.energy-storage.news/antora-energy-closes-us550-million-series-c-to-scale-us-thermal-battery-deployment/
+    - 403 to fetcher, seen in search)
+  board:
+    recorded:
+      ats: greenhouse
+      token: antora
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: antora
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 44
+    engineering_titles: 26
+    sample_locations:
+    - Big Stone City, SD
+    - Big Stone City, South Dakota
+    - Pratt, Kansas
+    - Remote
+  proposed:
+    tier: core
+    sectors:
+    - industrial-heat
+    - energy-storage
+    reason: Carbon-block thermal batteries that deliver industrial heat and power from renewable electricity.
+    startup: in
+    startup_reason: About 220 to 270 people (PitchBook, Dealroom; undated 2025-2026), founded 2018.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Series C coverage names data centers as a target market; no data-center deal announced.
+  decision: null
+  check: pass
+  evidence:
+  - https://axios.com/pro/climate-deals/2026/07/30/antora-550m-thermal-batteries
+  - https://gcn.com/antora-energy-plans-gwh-thermal-battery/22391/
+  - https://news.bloomberglaw.com/energy/battery-startup-raises-550-million-amid-boom-in-ai-data-centers
+  confidence: medium
+  unresolved: Founding year not confirmed in a source this session (commonly cited as 2017, unverified). No company-stated
+    headcount.
+- id: aptera
+  name: Aptera
+  group: listed
+  current:
+    tier: enabling
+    sectors:
+    - ev
+    startup: in
+  product: Solar-assisted three-wheeled electric vehicle; validation vehicles built on a low-volume line in Carlsbad
+  hq: Carlsbad, CA
+  founded: 2019
+  founded_source: Current company re-founded 2019; the original Aptera Motors (2005/2006) was liquidated in 2011.
+    https://en.wikipedia.org/wiki/Aptera_Motors
+  headcount:
+    value: 57
+    as_of: '2026-03-31'
+    source: Aptera Q1 2026 results press release (company)
+    url: https://www.globenewswire.com/news-release/2026/05/13/3294552/0/en/Aptera-Motors-Reports-First-Quarter-2026-Financial-Results.html
+  headcount_notes: 37 at 2025-03-31 per same release. StockAnalysis 30 at 2025-06-30 (stale).
+  stage: public
+  stage_evidence: Listed on Nasdaq as SEV from 2025-10-16; $9M public offering at $2.00; $17.1M new capital in Q1
+    2026 (https://aptera.us/q1-2026-financial-results/)
+  board:
+    recorded:
+      ats: rippling
+      token: aptera
+    checked: '2026-11-24'
+    ats: rippling
+    token: aptera
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 6
+    engineering_titles: 6
+    sample_locations:
+    - Carlsbad, CA
+  proposed:
+    tier: enabling
+    sectors:
+    - ev
+    reason: Solar-assisted three-wheel electric vehicle.
+    startup: in
+    startup_reason: 57 employees at 2026-03-31 (company results); current company re-founded 2019.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Thin cash position ($17.7M at 2026-03-31); watch for a shutdown.
+  decision: null
+  check: pass
+  evidence:
+  - https://aptera.us/q1-2026-financial-results/
+  - https://www.nasdaq.com/press-release/aptera-motors-completes-first-vehicle-validation-assembly-line-2026-03-03
+  confidence: high
+  unresolved: Founding year ambiguous (original company 2005, relaunched 2019; not verified this session). No news
+    checked after mid-2026 beyond Q1 results.
+- id: atmoszero
+  name: AtmosZero
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - industrial-heat
+    startup: in
+  product: Electric air-source heat-pump steam boilers (Boiler 2.0) for industrial and commercial steam
+  hq: Loveland, CO
+  founded: 2021
+  founded_source: null
+  headcount:
+    value: 28
+    as_of: undated
+    source: Dealroom profile (third-party)
+    url: https://dealroom.co/companies/atmoszero/
+  headcount_notes: LinkedIn company size 11-50 (search snippet, undated); Built In 18; Prospeo 21-50; BizWest article
+    said 23 growing to ~40 (undated). CSU magazine says launched as a CSU startup in 2022.
+  stage: series-a
+  stage_evidence: $21M Series A (2024, https://impactalpha.com/atmoszero-raises-21-million-for-zero-carbon-industrial-boilers/);
+    Mitsubishi Heavy Industries corporate minority investment 2026-03-23 and Colorado Clean Air grant 2026-02-12
+    per CB Insights (https://www.cbinsights.com/company/atmoszero/financials)
+  board:
+    recorded:
+      ats: rippling
+      token: atmoszero-careers
+    checked: '2026-11-24'
+    ats: rippling
+    token: atmoszero-careers
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 14
+    engineering_titles: 13
+    sample_locations:
+    - Loveland, CO
+  proposed:
+    tier: core
+    sectors:
+    - industrial-heat
+    reason: Electric heat-pump boilers that replace gas-fired industrial steam boilers.
+    startup: in
+    startup_reason: About 20 to 40 people (third-party estimates), founded 2021.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  check: pass
+  evidence:
+  - https://www.facilitiesdive.com/news/atmoszero-electric-boilers-industrial-steam-fundraise-greenhouse-gas-emissions-reductions/707933/
+  - https://cleantechnica.com/2026/02/24/new-electric-heat-pump-chases-fossil-fuels-out-of-the-boiler-room/
+  - https://magazine.csusystem.edu/2026/05/04/full-steam-ahead/
+  confidence: medium
+  unresolved: Founding year 2021 vs 2022 (CSU). MHI investment amount not disclosed.
+- id: base-power
+  name: Base Power
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    - buildings
+    startup: in
+  product: Home batteries (new Base Core, 39.2 kWh) owned by Base and rented to homeowners, dispatched as a distributed
+    power plant in ERCOT; expanding to Illinois and utility partnerships
+  hq: Austin, TX
+  founded: 2023
+  founded_source: null
+  headcount:
+    value: 368
+    as_of: 2026-03
+    source: Revelio Labs data via Silicon Valley Investclub (third-party)
+    url: https://siliconvalleyinvestclub.com/id/companies/base-power/
+  headcount_notes: 'Revelio series: 105 (2024), 314 (2025), 368 (Mar 2026). Dealroom 421 with 92 open roles (undated).
+    One listing 600 (undated). a16z job board band 501-1,000; Simplify 201-500. Bitscale 152 (2026-03-04, likely
+    undercount). Earlier plan for a $265M battery plant creating 500 jobs (https://finance.yahoo.com/news/zach-dells-power-plans-create-173412623.html).
+    Aug 2026 factory tour: 100+ systems installed/day, 100+ field staff, second factory near Austin airport due
+    2027-2028. Growth since March 2026 is likely substantial; no company-stated total found.'
+  stage: late
+  stage_evidence: $1B Series D at $13B post-money announced 2026-08-03, led by Ribbit, Addition, Valor, JPMorganChase
+    SIG (https://techcrunch.com/2026/08/03/base-power-raises-another-1b-to-save-the-grid-using-backyard-batteries/).
+    Prior $1B Series C Oct 2025, $200M Series B Apr 2025. DeFiLlama lists Series D as 2026-06-23 (likely aggregator
+    error).
+  board:
+    recorded:
+      ats: ashby
+      token: base-power
+    checked: '2026-11-24'
+    ats: ashby
+    token: base-power
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 183
+    engineering_titles: 88
+    sample_locations:
+    - Austin, TX
+    - Bloomingdale, IL
+    - Dallas, TX
+    - Houston, TX
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    - buildings
+    reason: Home batteries it owns and dispatches as a distributed power plant.
+    startup: in
+    startup_reason: 'Under 1,000 on every source found, but the range is wide: 368 (Revelio, 2026-03) to a 501-1,000
+      band on an investor job board. Founded 2023. Growing fast; re-check each quarter.'
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Headcount could cross 1,000 within a year; no company-stated figure found. Listed in decisions-needed.md as
+    a watch item.
+  decision: near-line
+  check: pass, re-check headcount
+  evidence:
+  - https://techcrunch.com/2026/08/03/base-power-raises-another-1b-to-save-the-grid-using-backyard-batteries/
+  - https://sacra.com/c/base-power/
+  - https://dallasinnovates.com/?p=293521
+  - https://dealroom.co/companies/base-power/
+  confidence: low
+  unresolved: Current (Nov 2026) headcount; sources span ~370 to 501-1,000 band.
+- id: charm-industrial
+  name: Charm Industrial
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - carbon-removal
+    startup: in
+  product: Carbon removal by converting biomass to bio-oil and injecting it underground (bio-oil sequestration)
+  hq: San Francisco, CA
+  founded: 2018
+  founded_source: null
+  headcount:
+    value: 95
+    as_of: 2026-02
+    source: LeadIQ estimate (third-party)
+    url: https://leadiq.com/c/charm-industrial/5b19a08f390000a000c64d39
+  headcount_notes: Company job posting says 'over a hundred employees' with sites in San Francisco, Colorado and
+    Kansas (undated). Dealroom 99; Prospeo 51-100; Built In 39 (stale).
+  stage: series-b
+  stage_evidence: $100M Series B, Jun 2024, ~$400M valuation reported (https://www.citybiz.co/article/425961/charm-industrial-raises-100m-in-series-b/)
+  board:
+    recorded:
+      ats: lever
+      token: charmindustrial
+    checked: '2026-11-24'
+    ats: lever
+    token: charmindustrial
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 11
+    engineering_titles: 7
+    sample_locations:
+    - Fort Lupton, CO
+    - St. Landry, LA
+    - Washington, DC
+  proposed:
+    tier: core
+    sectors:
+    - carbon-removal
+    reason: 'Carbon removal: converts biomass to bio-oil and injects it underground.'
+    startup: in
+    startup_reason: About 100 people (company job posting; LeadIQ 2026-02), founded 2018.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  check: pass
+  evidence:
+  - https://www.citybiz.co/article/425961/charm-industrial-raises-100m-in-series-b/
+  - https://leadiq.com/c/charm-industrial/5b19a08f390000a000c64d39
+  - https://www.trueup.io/co/charm-industrial
+  confidence: medium
+  unresolved: Any 2025-2026 equity round; official headcount.
+- id: electric-hydrogen
+  name: Electric Hydrogen
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - hydrogen
+    startup: in
+  product: PEM electrolyzer stacks and full 100 MW-class HYPRPlant green-hydrogen plants; stack factory in Devens,
+    MA
+  hq: Natick, MA (factory in Devens, MA)
+  founded: 2020
+  founded_source: null
+  headcount:
+    value: 352
+    as_of: 2026-03
+    source: Simplify.jobs company page (third-party)
+    url: https://simplify.jobs/c/EH2
+  headcount_notes: 'Company press release (2025-12-03, cited on Simplify) says ''more than 300'' across US, Europe,
+    Australia, LATAM. Simplify growth: -7% (6 mo), -18% (1 yr), -27% (2 yr), consistent with shrinkage. Clay 363
+    (undated); Built In 309; TrueUp 210 (undated).'
+  stage: series-c
+  stage_evidence: Series C $380M (2023, not re-verified this session); >$600M equity raised per Canary Media; Simplify
+    lists $798.3M across 7 rounds, latest $100M debt May 2024 (https://simplify.jobs/c/EH2)
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: eh2
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 15
+    engineering_titles: 11
+    sample_locations:
+    - Devens, Massachusetts, United States
+    - Houston, Texas, United States
+    - Remote, Europe
+    - Remote, United States
+  proposed:
+    tier: core
+    sectors:
+    - hydrogen
+    reason: PEM electrolyzer stacks and complete 100 MW-class green hydrogen plants.
+    startup: in
+    startup_reason: About 350 people and shrinking (352 on Simplify, 2026-03; company said 'more than 300' on 2025-12-03),
+      founded 2020.
+  changes:
+  - set ats to greenhouse:eh2
+  - fill stage, founded, headcount, hq
+  flags:
+  - Headcount down roughly 18 to 27 percent over one to two years; strategy shifting to Europe.
+  decision: null
+  check: pass
+  evidence:
+  - https://www.canarymedia.com/articles/hydrogen/green-hydrogen-us-startup-pressing-on
+  - https://simplify.jobs/c/EH2
+  - https://devenscommunity.com/news/amazon-backed-startup-to-open-major-cleantech-factory-in-devens
+  confidence: medium
+  unresolved: Whether the headcount decline reflects formal layoffs (none found). One search including the CEO's
+    name was blocked by the tool's privacy filter, so CEO-specific coverage was not checked.
+- id: fervo-energy
+  name: Fervo Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - geothermal
+    startup: in
+  product: Enhanced geothermal power plants it builds, owns and operates (Cape Station, Utah); sells power under
+    long-term PPAs
+  hq: Houston, TX
+  founded: 2017
+  founded_source: Co-founded 2017 (Fortune, 2026-05-14). https://fortune.com/2026/05/14/fervo-clean-energy-biggest-ipo-10b-valuation-powered-earths-heat-ai-hunger/
+  headcount:
+    value: 199
+    as_of: 2025 (fiscal year-end, per trackers)
+    source: PitchBook / StockAnalysis / Macrotrends / Renaissance Capital (third-party, likely from S-1)
+    url: https://www.renaissancecapital.com/Profile/FRVO/Fervo-Energy/IPO
+  headcount_notes: 'Could not read the S-1/424(b)(4) Human Capital section: ir.fervoenergy.com static files returned
+    HTTP 403. Other estimates: Built In 175; LeadIQ ~202 (Jan 2026); UnifyGTM 255 observed profiles (Jul 2026);
+    kscope ~660 (unreliable). Well under 1,000 on every source.'
+  stage: public
+  stage_evidence: IPO priced 2026-05-12 at $27, 70M shares, $1.89B raised; Nasdaq FRVO from 2026-05-13 (https://www.axios.com/pro/climate-deals/2026/05/13/fervo-prices-27-upsized;
+    https://techcrunch.com/2026/05/13/geothermal-startup-fervo-energy-pops-33-in-ipo-debut-fueled-by-ai-data-center-demand)
+  board:
+    recorded:
+      ats: greenhouse
+      token: fervoenergy
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: fervoenergy
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 60
+    engineering_titles: 18
+    sample_locations:
+    - Golden, CO
+    - Golden, CO, Houston, TX
+    - Golden, CO, Houston, TX, Milford, UT, Oakland, CA, Reno, NV, Salt Lake City, UT
+    - Golden, CO, Houston, TX, Oakland, CA
+  proposed:
+    tier: core
+    sectors:
+    - geothermal
+    reason: Builds, owns and operates enhanced geothermal power plants.
+    startup: in
+    startup_reason: About 200 employees (figure carried by IPO trackers for fiscal 2025), founded 2017.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Went public 2026-05-13 (Nasdaq FRVO); registry stage should change to public.
+  - The S-1 employee count itself was not read (investor site refused automated fetches).
+  decision: null
+  check: pass
+  evidence:
+  - https://www.bloomberg.com/news/articles/2026-05-12/geothermal-energy-developer-fervo-raises-1-89-billion-in-us-ipo
+  - https://www.renaissancecapital.com/Profile/FRVO/Fervo-Energy/IPO
+  - https://pitchbook.com/profiles/company/228101-95
+  confidence: medium
+  unresolved: Exact employee count from S-1 or 10-Q (403 on IR site; EDGAR not reached). Founding year commonly
+    cited as 2017, not verified this session.
+- id: lightship
+  name: Lightship
+  group: listed
+  current:
+    tier: enabling
+    sectors:
+    - ev
+    startup: in
+  product: All-electric travel trailers (AE.1 Cosmos, Atmos and Panos trims) built in Colorado
+  hq: Broomfield, CO
+  founded: 2020
+  founded_source: Company describes itself as founded in 2020; address in Broomfield, CO. https://www.cbinsights.com/company/lightship-1
+  headcount:
+    value: 109
+    as_of: 2026-09
+    source: 6figr estimate (third-party)
+    url: https://6figr.com/company/lightship
+  headcount_notes: Dealroom <100; a job posting band 101-200. April 2026 expansion adds ~44k sq ft and local manufacturing
+    jobs.
+  stage: series-b
+  stage_evidence: $34M Series B Jan 2024 (https://www.manufacturing.net/automotive/news/22884234/lightship-raises-34m-to-bring-allelectric-travel-trailer-to-market);
+    CB Insights reports a ~$26.6M Series C Dec 2025 (https://www.cbinsights.com/company/lightship-1/financials)
+    - not confirmed by a primary source
+  board:
+    recorded:
+      ats: lever
+      token: lightship
+    checked: '2026-11-24'
+    ats: lever
+    token: lightship
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 6
+    engineering_titles: 3
+    sample_locations:
+    - Broomfield, CO
+    - South San Francisco, CA
+  proposed:
+    tier: enabling
+    sectors:
+    - ev
+    reason: All-electric travel trailers with their own drive battery.
+    startup: in
+    startup_reason: About 100 people (third-party estimates, 2026), founded 2020.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - A Series C (2025-12) is reported by CB Insights only; stage kept at series-b until a primary source confirms
+    it.
+  decision: null
+  check: pass
+  evidence:
+  - https://electrek.co/2026/04/14/lightship-quadruples-electric-travel-trailer-production-colorado/
+  - https://www.techbrew.com/stories/2025/12/02/electric-rv-startup-lightship-2026-plans
+  - https://www.electrive.com/2026/04/15/lightship-expands-us-facility-for-electric-caravans/
+  confidence: medium
+  unresolved: Founding year and HQ city not confirmed; Series C unconfirmed.
+- id: lunar-energy
+  name: Lunar Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    - buildings
+    startup: in
+  product: Home battery system (Lunar System) plus Lunar Gridshare VPP / distributed energy management software
+  hq: Mountain View, CA
+  founded: 2020
+  founded_source: null
+  headcount:
+    value: 224
+    as_of: undated
+    source: BounceWatch estimate (third-party)
+    url: https://bouncewatch.com/company/lunar-energy
+  headcount_notes: exa.ai 186; Built In 82 (likely stale); Dealroom 100-500; Prelude Ventures 51-200; employbl 200-500.
+    No company figure found.
+  stage: late
+  stage_evidence: $232M across Series C and Series D (Series D $102M led by B Capital and Prelude), announced early
+    Feb 2026; >$530M raised since 2020 (https://www.energy-storage.news/lunar-energy-raises-us232-million-to-scale-vpp-software-globally/)
+  board:
+    recorded:
+      ats: greenhouse
+      token: lunarenergy
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: lunarenergy
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 19
+    engineering_titles: 16
+    sample_locations:
+    - Mountain View, CA
+    - Shenzhen, China
+    - UK
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    - buildings
+    reason: Home battery system and the software that runs home batteries as a virtual power plant.
+    startup: in
+    startup_reason: About 190 to 225 people (third-party estimates, undated), founded 2020.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags: []
+  decision: null
+  check: pass
+  evidence:
+  - https://www.energy-storage.news/lunar-energy-raises-us232-million-to-scale-vpp-software-globally/
+  - https://cleantechnica.com/2026/02/08/us-energy-storage-startup-moves-in-on-the-residential-market-with-another-232-million/
+  confidence: medium
+  unresolved: Reliable dated headcount.
+- id: noon-energy
+  name: Noon Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: in
+  product: Ultra-long-duration (100+ hour) carbon-oxygen reversible battery storage
+  hq: Palo Alto, CA
+  founded: 2018
+  founded_source: null
+  headcount:
+    value: 73
+    as_of: 2026-03
+    source: Revelio Labs estimate (third-party)
+    url: https://www.reveliolabs.com/companies/noon-energy/employees
+  headcount_notes: Dealroom 76; Built In 33; ZoomInfo 11-50; job boards 51-200.
+  stage: series-a
+  stage_evidence: $28M Series A (Canary Media, https://www.canarymedia.com/articles/long-duration-energy-storage/noon-energy-raises-28m-for-a-whole-new-kind-of-long-duration-storage);
+    aggregator total $30.8M across 3 rounds. No 2026 equity round found.
+  board:
+    recorded:
+      ats: greenhouse
+      token: noonenergy
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: noonenergy
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 1
+    engineering_titles: 1
+    sample_locations:
+    - Mountain View, California, United States
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Carbon-oxygen battery for 100-hour-plus storage of renewable power.
+    startup: in
+    startup_reason: About 75 people (Revelio, 2026-03), founded 2018.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Both announced 2026 deals are for AI data centers (Meta reservation up to 100 GWh; 1 GW joint venture). A clean
+    product whose announced customers are data centers: listed in decisions-needed.md.'
+  decision: datacenter
+  check: pass, with a question for the owner
+  evidence:
+  - https://pv-magazine-usa.com/2026/04/21/meta-signs-100-gwh-supply-agreement-for-noon-energys-ultra-long-duration-storage/
+  - https://www.reveliolabs.com/companies/noon-energy/employees
+  confidence: medium
+  unresolved: Any 2026 financing round.
+- id: pacific-fusion
+  name: Pacific Fusion
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - fusion
+    startup: in
+  product: Pulser-driven (pulsed-power) inertial fusion; demonstration system and research/manufacturing campus
+    in Albuquerque, NM
+  hq: Fremont / San Leandro, CA (Bay Area); New Mexico campus
+  founded: 2023
+  founded_source: null
+  headcount:
+    value: 200
+    as_of: 2026-06
+    source: Sacra profile, 'more than 200' (third-party)
+    url: https://sacra.com/c/pacific-fusion/
+  headcount_notes: 'Sacra: 87 in early 2025 to >200 by June 2026. Built In 57 (unreviewed, stale).'
+  stage: series-a
+  stage_evidence: $900M+ Series A led by General Catalyst, Oct 2024, released in milestone tranches (https://www.bloomberg.com/news/articles/2024-10-25/nuclear-startup-pacific-fusion-raises-900-million-in-funding);
+    Sacra reports total commitments >$1B by June 2026 (unconfirmed).
+  board:
+    recorded:
+      ats: greenhouse
+      token: pacificfusion
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: pacificfusion
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 39
+    engineering_titles: 31
+    sample_locations:
+    - Albuquerque, NM
+    - Fremont, CA
+    - Los Lunas, NM
+    - San Leandro, CA
+  proposed:
+    tier: core
+    sectors:
+    - fusion
+    reason: Pulsed-power inertial fusion energy. In by the owner's decision on fusion.
+    startup: in
+    startup_reason: More than 200 people (Sacra, 2026-06), founded 2023.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Signed a memorandum of understanding with the National Nuclear Security Administration (2026-08): defense-adjacent,
+    not a defense customer.'
+  decision: defense
+  check: pass
+  evidence:
+  - https://www.pacificfusion.com/resources/news
+  - https://sacra.com/c/pacific-fusion/
+  - https://www.generalcatalyst.com/stories/our-investment-in-pacific-fusion
+  confidence: medium
+  unresolved: Exact HQ city; scope of NNSA MOU.
+- id: peak-energy
+  name: Peak Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: in
+  product: Passively cooled sodium-ion battery energy storage systems for the grid; 4 GWh factory planned in California
+  hq: Burlingame, CA
+  founded: 2023
+  founded_source: null
+  headcount:
+    value: 125
+    as_of: 2026-06
+    source: Inside Climate News (trade press)
+    url: https://insideclimatenews.org/news/18062026/inside-clean-energy-general-motors-sodium-ion-batteries/
+  headcount_notes: 'CEO interview (ESS News, 2026-10-30): ~120 people in Burlingame. Built In 200 (undated); Climatebase
+    51-100.'
+  stage: series-b
+  stage_evidence: $108M Series B led by GM Ventures, closed 2026-10-21 (https://pv-magazine-usa.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/);
+    $55M Series A 2024.
+  board:
+    recorded:
+      ats: greenhouse
+      token: null
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: peakenergy
+    confirmed: true
+    found_by: token from the old hub, feed loaded
+    open_roles: 21
+    engineering_titles: 17
+    sample_locations:
+    - Burlingame, CA
+    - Burlingame, CA or Broomfield, CO
+    - Burlingame, California
+    - Burlingame, California or Broomfield, Colorado
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Sodium-ion battery storage systems for the grid.
+    startup: in
+    startup_reason: About 125 people (Inside Climate News, 2026-06), founded 2023.
+  changes:
+  - set ats to greenhouse:peakenergy
+  - fill stage, founded, headcount, hq
+  flags:
+  - Series B (2026-10) is partly to enter the data-center market; grid storage remains the product.
+  decision: null
+  check: pass
+  evidence:
+  - https://pv-magazine-usa.com/2026/10/23/sodium-ion-storage-maker-peak-energy-raises-108-million-in-gm-led-round/
+  - https://www.ess-news.com/2026/10/30/peak-energy-ceo-anywhere-lfp-ess-goes-we-go-and-we-do-it-better/
+  confidence: high
+  unresolved: null
+- id: rondo-energy
+  name: Rondo Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - industrial-heat
+    - energy-storage
+    startup: in
+  product: 'Rondo Heat Battery: brick thermal storage charged by electricity, delivering industrial heat/steam'
+  hq: Alameda, CA
+  founded: 2020
+  founded_source: 'World Economic Forum profile: founded 2020, Alameda, CA. https://www.weforum.org/organizations/rondo-energy/'
+  headcount:
+    value: 159
+    as_of: undated
+    source: Dealroom profile (third-party)
+    url: https://dealroom.co/companies/rondo-energy/
+  headcount_notes: Another profile ~135; job board 101-250.
+  stage: series-b
+  stage_evidence: $60M Series B Aug 2023 (https://www.energy-storage.news/thermal-storage-firm-rondo-energy-raises-us60-million/);
+    CB Insights lists Series B-II 2024-06-19 and an undisclosed round 2025-05-22; ~$75M project funding with Breakthrough
+    Energy Catalyst and EIB.
+  board:
+    recorded:
+      ats: greenhouse
+      token: rondoenergy
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: rondoenergy
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 13
+    engineering_titles: 5
+    sample_locations:
+    - Alameda, CA
+    - Alameda, California
+    - Dubai, UAE
+    - Madrid
+  proposed:
+    tier: core
+    sectors:
+    - industrial-heat
+    - energy-storage
+    reason: Brick heat batteries that turn electricity into industrial heat and steam.
+    startup: in
+    startup_reason: About 135 to 160 people (Dealroom, undated), founded 2020.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - Its first commercial unit supplies steam to an enhanced oil recovery site (Holmes Western, Kern County). The
+    product still displaces gas-fired steam; noted for the owner.
+  decision: null
+  check: pass
+  evidence:
+  - https://www.cbinsights.com/company/rondo-energy/financials
+  - https://www.powermag.com/tag/rondo-energy/
+  - https://rondo.com/press-releases
+  confidence: low
+  unresolved: HQ and founding year not confirmed this session; no 2026 news found.
+- id: span
+  name: SPAN
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - buildings
+    startup: in
+  product: Smart electrical panels with energy management; new XFRA distributed data-center product (GPU inference
+    nodes in homes/small commercial sites)
+  hq: San Francisco, CA
+  founded: 2018
+  founded_source: Founded 2018 (CB Insights; Solar Power World). https://www.cbinsights.com/company/spanio
+  headcount:
+    value: 401
+    as_of: 2026-10
+    source: Silicon Valley Investclub tear sheet (third-party)
+    url: https://siliconvalleyinvestclub.com/companies/span/
+  headcount_notes: Same source ~220 around Mar 2026; RocketReach 244; Built In 180 (2026-04-04). Revelio's ~800-980
+    figure is for Span d.d. (Croatia), unrelated.
+  stage: series-c
+  stage_evidence: Series C ~$163M (of planned $176M), 2026-01-27 per CB Insights (https://www.cbinsights.com/company/spanio/financials);
+    Eaton $75M strategic investment Mar 2026 (https://www.solarpowerworldonline.com/2026/03/eaton-invests-into-spans-smart-panel-and-energy-intelligence-business/)
+  board:
+    recorded:
+      ats: ashby
+      token: span
+    checked: '2026-11-24'
+    ats: ashby
+    token: span
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 31
+    engineering_titles: 11
+    sample_locations:
+    - Bengaluru
+    - Mountain
+    - 'Region: TOLA'
+    - Remote
+  proposed:
+    tier: core
+    sectors:
+    - buildings
+    reason: Smart electrical panels that let a home electrify without a service upgrade.
+    startup: in
+    startup_reason: About 220 to 400 people (third-party estimates, 2026), founded 2018.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'Launched XFRA (2026-04), GPU inference nodes installed in homes: a data-center product line beside the panel
+    business. No deployment figures found.'
+  decision: null
+  check: pass
+  evidence:
+  - https://www.span.io/blog/span-announces-xfra-a-distributed-data-center-solution-to-close-the-speed-to-power-gap-for-ai-compute-demand
+  - https://www.solarpowerworldonline.com/2026/03/eaton-invests-into-spans-smart-panel-and-energy-intelligence-business/
+  confidence: medium
+  unresolved: Founding year not confirmed; share of business in XFRA unknown.
+- id: terawatt-infrastructure
+  name: Terawatt Infrastructure
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - charging
+    startup: in
+  product: Charging depots for electric and autonomous vehicle fleets (heavy-duty and robotaxi)
+  hq: San Francisco, CA
+  founded: null
+  founded_source: Not verified. Believed 2021; the one search run did not return a source.
+  headcount:
+    value: 110
+    as_of: undated
+    source: Dealroom mapped profiles (third-party)
+    url: https://dealroom.co/companies/terawattinfrastructure/
+  headcount_notes: Built In 58 (SF page 44); ZoomInfo and Wellfound 51-200; Welcome to the Jungle 101-200.
+  stage: null
+  stage_evidence: $1B+ raise in 2022 (https://techcrunch.com/2022/09/13/ex-googlers-terawatt-raises-1b-to-expand-commercial-ev-charging/amp);
+    up to $300M senior secured debt led by RBC, 2026-06-24 (https://mercomindia.com/terawatt-secures-up-to-300-million-debt-financing).
+    Round letter for the 2022 equity not confirmed; total raised $1.1B-1.4B per aggregators.
+  board:
+    recorded:
+      ats: lever
+      token: terawattinfrastructure
+    checked: '2026-11-24'
+    ats: lever
+    token: terawattinfrastructure
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 13
+    engineering_titles: 5
+    sample_locations:
+    - Greater Toronto Area, ON
+    - Los Angeles, CA
+    - Miami, FL
+    - Remote
+  proposed:
+    tier: core
+    sectors:
+    - charging
+    reason: Builds and operates charging depots for electric truck and car fleets.
+    startup: in
+    startup_reason: About 60 to 110 people (third-party estimates, undated).
+  changes:
+  - fill headcount, hq
+  flags:
+  - Now also serves autonomous-vehicle fleets (reported as a Waymo charging partner). The product is charging, which
+    is in; autonomous vehicles themselves are out.
+  - Round letter not confirmed ($1B+ raised 2022, debt 2026), so stage left empty.
+  decision: null
+  check: pass
+  evidence:
+  - https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging
+  - https://mercomindia.com/terawatt-secures-up-to-300-million-debt-financing
+  confidence: medium
+  unresolved: Founding year; equity round labels.
+- id: torus
+  name: Torus
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - energy-storage
+    startup: in
+  product: Torus Reserve flywheel-plus-battery storage; since Nov 2026 also Foundry, a modular AI-inference infrastructure
+    unit packaging power, storage, cooling, networking and compute
+  hq: Salt Lake City, UT
+  founded: 2021
+  founded_source: null
+  headcount:
+    value: 400
+    as_of: '2026-11-11'
+    source: Torus press release ('nearly 400 employees')
+    url: https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/
+  headcount_notes: 'Company: 88 at start of 2025, nearly 200 at end of 2025, nearly 300 in July 2026 (Business Wire
+    2026-07-22). Built In 196 (stale). Growing ~100 per 4 months.'
+  stage: late
+  stage_evidence: $500M growth capital led by Magnetar with ICONIQ, Origin, Ridgeline, Trinity Capital, announced
+    2026-11-11; one analysis calls it a Series C (unconfirmed). $200M from Magnetar Sep 2025.
+  board:
+    recorded:
+      ats: rippling
+      token: torus
+    checked: '2026-11-24'
+    ats: rippling
+    token: torus
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 31
+    engineering_titles: 21
+    sample_locations:
+    - Remote (United States)
+    - Salt Lake City, UT
+  proposed:
+    tier: core
+    sectors:
+    - energy-storage
+    reason: Flywheel-plus-battery storage systems for commercial sites and utilities.
+    startup: in
+    startup_reason: Nearly 400 employees (company release, 2026-11-11), founded 2021.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'FAILS the product check: on 2026-11-11 Torus launched Foundry, a modular AI-inference unit (power, storage,
+    cooling, compute), with $500M of new capital and AI cloud providers as first customers. Data-center power is
+    out by decision. Tier kept at core because storage is still what it ships; listed in decisions-needed.md.'
+  decision: datacenter
+  check: 'FAIL: product no longer matches the record'
+  evidence:
+  - https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/
+  - https://thenextweb.com/news/torus-foundry-500m-magnetar-modular-ai-inference
+  - https://lasvegassun.com/news/2026/jul/22/torus-gigaone-sets-production-records-six-months-a/
+  confidence: high
+  unresolved: Round label; how much revenue comes from Foundry vs storage.
+- id: veir
+  name: VEIR
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - grid
+    startup: in
+  product: High-temperature superconducting power delivery; first product a 3 MW low-voltage superconducting cable
+    system for inside AI data centers (originally overhead transmission lines)
+  hq: Woburn, MA
+  founded: 2019
+  founded_source: null
+  headcount:
+    value: 103
+    as_of: undated
+    source: Dealroom profile (third-party)
+    url: https://dealroom.co/companies/veir/
+  headcount_notes: Bouncewatch 94; UnifyGTM 91 observed profiles (Jul 2026); 6figr ~74 (Jun 2025).
+  stage: series-c
+  stage_evidence: $110M Series C co-led by Matter Venture Partners and Tyche Partners, Oct 2026, total $225M (https://ventureburn.com/veir-raises-110m-superconducting-power-ai-data-centres/)
+  board:
+    recorded:
+      ats: greenhouse
+      token: veir
+    checked: '2026-11-24'
+    ats: greenhouse
+    token: veir
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 9
+    engineering_titles: 4
+    sample_locations:
+    - Woburn, Massachusetts, United States
+  proposed:
+    tier: out
+    sectors:
+    - grid
+    reason: Superconducting power cables whose first product is power delivery inside AI data centers; data-center
+      power is out by decision.
+    startup: in
+    startup_reason: About 90 to 105 people (third-party estimates, 2026), founded 2019.
+  changes:
+  - tier core -> out
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'FAILS the product check: the recorded product (overhead superconducting transmission lines) is no longer the
+    lead. The 2026-10 Series C and trade press describe data-center cable as the first commercial product. No source
+    gives the share of business. Proposed ''out'' pending the owner''s call; listed in decisions-needed.md.'
+  decision: datacenter
+  check: 'FAIL: product no longer matches the record'
+  evidence:
+  - https://ventureburn.com/veir-raises-110m-superconducting-power-ai-data-centres/
+  - https://techcrunch.com/2025/11/12/microsoft-backed-veir-targets-data-centers-for-its-megawatt-class-superconductors
+  confidence: medium
+  unresolved: Whether transmission-line work continues at all.
+- id: xcimer-energy
+  name: Xcimer Energy
+  group: listed
+  current:
+    tier: core
+    sectors:
+    - fusion
+    startup: in
+  product: Laser-driven inertial fusion using high-energy excimer (gas) lasers; planned Vulcan breakeven demo early
+    2030s
+  hq: Denver, CO
+  founded: 2022
+  founded_source: null
+  headcount:
+    value: 170
+    as_of: 2026-03
+    source: Revelio Labs estimate (third-party)
+    url: https://www.reveliolabs.com/companies/xcimer-energy/employees
+  headcount_notes: Built In 200; UnifyGTM 142 observed profiles (Jul 2026); Welcome to the Jungle 101-200. Dealroom/Prelude
+    give founding 2021.
+  stage: series-a
+  stage_evidence: $100M Series A 2024 (https://www.esgtoday.com/fusion-energy-tech-startup-xcimer-raises-100-million);
+    RTX Ventures minority investment Sep 2026, labeled Series A-6 ($55M, 2026-09-09) by Forge (https://forgeglobal.com/xcimer-energy_stock/);
+    total equity 'nearly $200M'. DOE Milestone award up to $30.5M (Oct 2026).
+  board:
+    recorded:
+      ats: lever
+      token: xcimer
+    checked: '2026-11-24'
+    ats: lever
+    token: xcimer
+    confirmed: true
+    found_by: link on the company's own site
+    open_roles: 74
+    engineering_titles: 48
+    sample_locations:
+    - Denver, CO
+    - Tucson, AZ
+  proposed:
+    tier: core
+    sectors:
+    - fusion
+    reason: Laser-driven inertial fusion energy. In by the owner's decision on fusion.
+    startup: in
+    startup_reason: About 140 to 200 people (third-party estimates, 2026), founded 2022.
+  changes:
+  - fill stage, founded, headcount, hq
+  flags:
+  - 'RTX invested (2026-09) and signed a teaming agreement to use Xcimer lasers in directed-energy weapons. Fusion
+    remains the stated mission. Weapons work is out under the rubric: listed in decisions-needed.md.'
+  decision: defense
+  check: pass, with a question for the owner
+  evidence:
+  - https://www.citybiz.co/?p=901097
+  - https://www.businessreport.com/article/fusion-energy-finds-a-new-national-defense-market
+  - https://world-nuclear-news.org/articles/fusion-firm-xcimer-announces-fresh-doe-milestones-funding
+  confidence: medium
+  unresolved: Exact round label and amount of the RTX round.
+- id: advanced-energy
+  name: Advanced Energy
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Precision power conversion, measurement and control (power supplies for semiconductor equipment, data
+    centers, industrial and medical)
+  headcount:
+    value: 13000
+    as_of: '2025-12-31'
+    source: FY2025 10-K (figure via StockAnalysis and filings tracker; 10-K text not opened)
+    url: https://www.sec.gov/Archives/edgar/data/927003/0001104659-26-014731-index.html
+  proposed:
+    tier: out
+    sectors: []
+    reason: Power supplies for semiconductor tools, data centers and industry. No climate purpose.
+    startup: out
+    startup_reason: About 13,000 employees (FY2025 10-K (figure via StockAnalysis and filings tracker; 10-K text
+      not opened), 2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.sec.gov/Archives/edgar/data/927003/0001104659-26-014731-index.html
+  - https://stockanalysis.com/stocks/aeis/employees/
+  confidence: high
+- id: cummins
+  name: Cummins
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Diesel, natural gas and alternative-fuel engines, power generation, components; Accelera zero-emissions
+    unit (halted electrolyzer sales)
+  headcount:
+    value: 67400
+    as_of: '2025-12-31'
+    source: FY2025 10-K (figure via 10-K summaries)
+    url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+  proposed:
+    tier: out
+    sectors: []
+    reason: Diesel and gas engines and generators; its zero-emission unit is a small part.
+    startup: out
+    startup_reason: About 67,400 employees (FY2025 10-K (figure via 10-K summaries), 2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+  confidence: high
+- id: eaton
+  name: Eaton
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Electrical power management equipment (switchgear, UPS, breakers, data-center power), aerospace and vehicle
+    components
+  headcount:
+    value: 92000
+    as_of: 2025 (FY2025)
+    source: Eaton corporate site ('>92K employees', alongside 2025 sales); 10-K human-capital figure not read
+    url: https://eaton.com/gb/en-gb/company.html
+  proposed:
+    tier: enabling
+    sectors: []
+    reason: Electrical power management equipment; electrification is the business but emissions are not the purpose.
+    startup: out
+    startup_reason: About 92,000 employees (Eaton corporate site ('>92K employees', alongside 2025 sales); 10-K
+      human-capital figure not read, 2025 (FY2025)).
+  changes:
+  - tier unscreened -> enabling
+  evidence:
+  - https://eaton.com/gb/en-gb/company.html
+  - https://www.businesswire.com/news/home/20260202111800/en/
+  confidence: medium
+- id: ford
+  name: Ford
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Cars, trucks and commercial vehicles (Ford Blue, Model e, Ford Pro)
+  headcount:
+    value: 169000
+    as_of: '2025-12-31'
+    source: Ford FY2025 10-K ('about 169,000 employees worldwide')
+    url: https://www.stocktitan.net/sec-filings/F/10-k-ford-motor-co-files-annual-report-f23ff60b0df9.html
+  proposed:
+    tier: out
+    sectors: []
+    reason: Mostly combustion vehicles.
+    startup: out
+    startup_reason: About 169,000 employees (Ford FY2025 10-K ('about 169,000 employees worldwide'), 2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.stocktitan.net/sec-filings/F/10-k-ford-motor-co-files-annual-report-f23ff60b0df9.html
+  confidence: high
+- id: generac
+  name: Generac
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Home standby and commercial/industrial generators, energy storage and grid services
+  headcount:
+    value: 9400
+    as_of: '2025-12-31'
+    source: Generac FY2025 10-K (filed 2026-02-18, via summaries)
+    url: https://www.stocktitan.net/sec-filings/GNRC/10-k-generac-holdings-inc-files-annual-report-df1b123c851e.html
+  proposed:
+    tier: out
+    sectors: []
+    reason: Mostly fuel-burning generators, with a storage line.
+    startup: out
+    startup_reason: About 9,400 employees (Generac FY2025 10-K (filed 2026-02-18, via summaries), 2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.boardroomalpha.com/sec/gnrc-10-k-2026-02-18-0001437749-26-004568
+  confidence: high
+- id: oshkosh
+  name: Oshkosh
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: 'Specialty vehicles: access equipment (JLG), defense trucks, fire/emergency, refuse and delivery vehicles'
+  headcount:
+    value: 18400
+    as_of: '2025-12-31'
+    source: Oshkosh 2025 Annual Report / 10-K
+    url: https://online.flippingbook.com/view/225999757/19/
+  proposed:
+    tier: out
+    sectors: []
+    reason: Specialty and defense trucks.
+    startup: out
+    startup_reason: About 18,400 employees (Oshkosh 2025 Annual Report / 10-K, 2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://online.flippingbook.com/view/225999757/19/
+  confidence: high
+- id: renesas
+  name: Renesas
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Microcontrollers, analog, power and SoC semiconductors (automotive, industrial, infrastructure)
+  headcount:
+    value: 21915
+    as_of: '2025-12-31'
+    source: Renesas human resources data (sustainability), Bureau Veritas-verified
+    url: https://www.renesas.com/about/sustainability/human-resources-data
+  proposed:
+    tier: out
+    sectors: []
+    reason: General semiconductors.
+    startup: out
+    startup_reason: About 21,915 employees (Renesas human resources data (sustainability), Bureau Veritas-verified,
+      2025-12-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.renesas.com/about/sustainability/human-resources-data
+  - https://www.renesas.com/document/rep/2025-bureau-veritas-uk-verification-opinion
+  confidence: high
+- id: schneider-electric
+  name: Schneider Electric
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: 'Energy management and industrial automation: electrical distribution, data-center power and cooling,
+    software'
+  headcount:
+    value: 150000
+    as_of: undated (2025-2026 website)
+    source: Schneider Electric corporate site
+    url: https://www.se.com/ww/en/about-us/
+  proposed:
+    tier: enabling
+    sectors: []
+    reason: Energy management and electrical distribution equipment.
+    startup: out
+    startup_reason: About 150,000 employees (Schneider Electric corporate site, undated (2025-2026 website)).
+  changes:
+  - tier unscreened -> enabling
+  evidence:
+  - https://www.se.com/ww/en/about-us/
+  - https://www.se.com/ww/en/about-us/investor-relations/regulatory-information/annual-reports
+  confidence: medium
+- id: woodward
+  name: Woodward
+  group: incumbent
+  current:
+    tier: unscreened
+    sectors: []
+    startup: out
+  product: Control systems and components for aerospace (fuel, actuation) and industrial (engines, turbines, power
+    generation)
+  headcount:
+    value: 10200
+    as_of: '2025-10-31'
+    source: Woodward FY2025 10-K (full-time, via summaries)
+    url: https://www.stocktitan.net/sec-filings/WWD/10-k-woodward-inc-files-annual-report-6062813d9a10.html
+  proposed:
+    tier: out
+    sectors: []
+    reason: Controls for aircraft engines, gas turbines and engines.
+    startup: out
+    startup_reason: About 10,200 employees (Woodward FY2025 10-K (full-time, via summaries), 2025-10-31).
+  changes:
+  - tier unscreened -> out
+  evidence:
+  - https://www.stocktitan.net/sec-filings/WWD/10-k-woodward-inc-files-annual-report-6062813d9a10.html
+  confidence: high
