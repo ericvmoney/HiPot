@@ -1,47 +1,45 @@
-"""Discipline and scope rules.
+"""Discipline rules, and the entry point that tags one posting.
 
-`classify(title, department, text)` decides, in this order:
+`classify(title, department, text)` returns the role's function (see
+function.py) and up to three disciplines, decided in this order:
 
-  1. Is the title a function the board does not list (sales, recruiting,
-     finance, legal, ...)? Then the role is left out, with the reason.
-  2. Which disciplines does the title name? Phrases are tried from the most
+  1. Which disciplines does the title name? Phrases are tried from the most
      specific to the most general, and each match is blanked so a general
      word cannot re-read it ("power electronics" is not also "electronics").
-  3. If the title names none, the department is read the same way.
-  4. If that also names none and the title is an engineering title, the
-     posting text is scored against a short list of phrases per discipline.
+  2. For engineering and science roles whose title names none, the
+     department is read the same way, then the posting text is scored
+     against a short list of phrases per discipline.
+  3. Technician, trades and other roles keep at most one discipline, and
+     only one the title names ("electrical technician" is electrical).
 
 Every decision carries a confidence and notes, so the evaluation sheet and
 the run report can show which roles the rules were least sure of.
 
-Discipline ids come from taxonomy.yml. Nothing here invents an id.
+Discipline and function ids come from taxonomy.yml. Nothing here invents an id.
 """
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
 
+from pipeline.tag.function import decide_function
+
 MAX_DISCIPLINES = 3
+# Functions that carry one to three disciplines; every other function carries at most one.
+TECHNICAL_FUNCTIONS = frozenset({"engineering", "science"})
 
-# Disciplines that, named beside a generic software title, show the software
-# is tied to the product's hardware.
-HARD_DISCIPLINES = frozenset({
-    "electrical", "power-electronics", "battery", "power-systems", "mechanical", "thermal",
-    "controls", "firmware", "test", "manufacturing", "chemical-process", "materials", "field",
-})
-
-# Placeholders resolved after matching.
+# Placeholder resolved after matching.
 PROCESS = "?process"      # "process engineer": manufacturing or chemical-process
-SOFTWARE = "?software"    # generic software title: in scope only with a hardware tie
 
 
 @dataclass
 class Decision:
-    in_scope: bool
+    function: str
     disciplines: list[str] = field(default_factory=list)
-    reason: str | None = None        # why a role was left out
-    confidence: str = "high"         # high | medium | low
-    evidence: str = "title"          # title | department | text | none
+    function_evidence: str = "title"     # title | department | text | default
+    function_confidence: str = "high"    # high | medium | low
+    confidence: str = "high"             # of the disciplines: high | medium | low
+    evidence: str = "title"              # what decided the disciplines: title | department | text | none
     notes: list[str] = field(default_factory=list)
 
 
@@ -54,156 +52,8 @@ class Hit:
     note: str | None
 
 
-# --------------------------------------------------------------------------
-# Titles the board does not list. Checked before the discipline rules.
-# `unless` names title words that cancel the rule.
-# --------------------------------------------------------------------------
-
-def _out(reason: str, pattern: str, unless: str | None = None):
-    return reason, re.compile(pattern), re.compile(unless) if unless else None
-
-
-OUT_RULES = [
-    _out("general-application",
-         r"general (application|interest|consideration)|future (opportunit\w+|openings?|roles?)|open application"
-         r"|talent (community|network|pool)|don'?t see|join (our|the) team|expression of interest|speculative"),
-    _out("recruiting", r"recruit\w+|talent (acquisition|partner|sourc\w+|scout)|\bsourcer\b"),
-    _out("people-hr",
-         r"human resources|\bhr\b|\bhrbp\b|\bhris\b|\bpeople (ops|operations|partner|team|business|experience|analytics"
-         r"|manager|programs?|lead|coordinator|generalist|systems|&|and)\b|(head|chief|vp|vice president|director),? (of )?people\b"
-         r"|chief people|learning (and|&) development|\bl&d\b|compensation|benefits|payroll|total rewards"
-         r"|employee (relations|experience|engagement)|workplace (experience|manager|coordinator|operations)"
-         r"|immigration|diversity|\bdei\b|talent (management|development)"),
-    _out("finance-accounting",
-         r"financ\w+|accountant|accounting|accounts (payable|receivable)|\bfp&a\b|treasury|\btax\b|bookkeep\w+"
-         r"|billing|revenue|investor relations|\bcfo\b|(internal|financial|it) audit\w*|credit (analyst|manager)"
-         r"|collections|capital markets|underwrit\w+|insurance|actuar\w+|equity (admin\w*|analyst)"),
-    _out("finance-accounting", r"\bcontroller\b",
-         unless=r"engineer|firmware|hardware|design|motor|charge|power plant|\bplant controller (engineer|software)"),
-    _out("legal",
-         r"\blegal\b|counsel|attorney|paralegal|lawyer|contracts? (manager|administrator|specialist|analyst)"
-         r"|patent (agent|attorney|counsel)|compliance (counsel|officer)"
-         r"|(trade|export|legal|tax|financial|sox|privacy|ethics|corporate|hr) compliance|\bprivacy\b"),
-    _out("policy",
-         r"\bpolicy\b|government (affairs|relations)|public (affairs|policy)|regulatory affairs|legislative"
-         r"|lobby\w+|external affairs|community (relations|engagement|affairs|manager)|market (design|policy)"),
-    _out("marketing-communications",
-         r"marketing|public relations|\bpr\b|brand\w*|copywrit\w+|social media|graphic design\w*|creative"
-         r"|events? (manager|coordinator|lead|specialist)|videograph\w+|photograph\w+|\bseo\b|demand gen\w*"
-         r"|\bcontent\b|storytell\w+|\beditor\w*|growth (product|marketing|lead|manager|analyst|analytics|operations)"
-         r"|member experience"),
-    _out("marketing-communications", r"\bcommunications?\b",
-         unless=r"engineer|systems|hardware|protocol|technician|firmware|network"),
-    _out("sales",
-         r"\bsales\b|account (executive|manager|director|rep\w*)|business development|\bbdr\b|\bsdr\b"
-         r"|channel (manager|partner)|partner(ship)?s? (manager|lead|director|development)|partnerships"
-         r"|commercial (manager|director|lead|operations|strategy|development|analyst|associate)"
-         r"|originat\w+|deal (desk|structur\w+)|\bpricing\b|\bproposals?\b|bid (manager|coordinator)|\brfp\b"
-         r"|go[- ]to[- ]market|\bgtm\b|dealer|\bretail\b|merchandis\w+|estimat(or|ion|ing)",
-         unless=r"sales engineer|solutions engineer"),
-    _out("customer-success",
-         r"customer (success|experience|service|care|operations|relations|advocate)|client (success|services|partner)"
-         r"|customer support\b(?! engineer)|call cent(er|re)"),
-    _out("supply-chain",
-         r"supply chain|procurement|purchas\w+|\bbuyer\b|sourcing|commodity|supply (manager|management|planning|planner)"
-         r"|global supply|materials? (manager|planner|planning|management|coordinator|handler|analyst)"
-         r"|materials? (associate|clerk|supervisor)|\bplanner\b|planning (manager|analyst)"
-         r"|(production|master|materials?) scheduler|logistics|warehous\w+"
-         r"|inventory|shipping|receiving|fulfillment|distribution (cent(er|re)|manager)|customs|category manager"
-         r"|vendor manag\w+|supplier (manager|management|relationship|operations)|stockroom|expedit\w+|demand plann\w+"
-         r"|\bs&op\b|order (management|fulfillment)|freight",
-         unless=r"supplier (quality|industriali[sz]ation|development) engineer|supplier quality|tooling engineer"),
-    _out("it",
-         r"\bit\b|information (technology|systems|security)|help ?desk|incident response"
-         r"|desktop support|sys(tems?)? ?admin\w*|network (administrator|operations|security|engineer|architect)"
-         r"|cyber ?security|security (engineer|analyst|architect|operations|manager)|\berp\b|netsuite"
-         r"|salesforce|\bsap\b|business (systems|applications|intelligence)|enterprise (applications|systems|architect)"
-         r"|systems analyst|\bplm\b|teamcenter"),
-    _out("admin",
-         r"executive assistant|administrative|\badmin\b|receptionist|office (manager|coordinator|administrator|assistant)"
-         r"|front desk|chief of staff|personal assistant|travel (coordinator|manager)"),
-    _out("business",
-         r"\bstrategy\b|strategic|corporate development|business (operations|analyst|manager|planning)|\bbizops\b"
-         r"|digital transformation"
-         r"|chief (executive|operating|commercial|revenue|marketing|financial|people|legal|administrative|business|strategy)"
-         r"|\bceo\b|\bcoo\b|\bcmo\b|\bcro\b|founder|general manager|venture|investment|investor|economist"
-         r"|(business|financial|market|commercial|strategy|investment|operations|sales) analyst"
-         r"|market (research|intelligence|development)|asset manag\w+|energy (markets?|trad\w+)|\btrader\b"
-         r"|power marketing|\bofftake\b"),
-    _out("project-development",
-         r"project develop\w+|(real estate|land|site) (development|acquisition)|land (agent|manager)|\blandman\b"
-         r"|real estate|permitting|permit (coordinator|manager|specialist)|\bsiting\b"),
-    _out("facilities-ehs",
-         r"facilit(y|ies)|\behs\b|\bhse\b|\behs&s\b|\besh\b|environment(al)?,? health|health (and|&) safety"
-         r"|occupational|industrial hygien\w+|janitor\w*|custodi\w+|security (guard|officer)|groundskeep\w+"
-         r"|safety (manager|specialist|coordinator|officer|director|technician|professional)"
-         r"|environmental (engineer|scientist|specialist|manager|compliance|planner|analyst|coordinator)"
-         r"|sustainability|\besg\b"),
-    _out("operator-production",
-         r"\boperators?\b|assembler|(production|manufacturing) (associate|worker|team member|specialist)"
-         r"|material handler|forklift|\bpicker\b|\bpacker\b|laborer|\bhelper\b|\bdriver\b(?! (engineer|design|ic))"
-         r"|\bcleaner\b|team member",
-         unless=r"gate driver|motor driver|driver (engineer|design|development|board)"),
-    _out("documentation-training",
-         r"technical writer|technical (illustrator|publications?)|documentation (specialist|manager|lead)"
-         r"|document controls?\b|\btrainer\b|\btraining\b|instructional design\w*|curriculum"),
-    _out("design-ux",
-         r"\bux\b|user (experience|interface|research\w*)|product design(er)?\b(?! engineer)"
-         r"|(visual|interaction|content|brand|web|graphic) design\w*|creative director"),
-]
-
-# Out-of-scope functions as a department names them. Used only when the title
-# names no discipline.
-DEPARTMENT_OUT = re.compile(
-    r"\bsales\b|marketing|\bpeople\b|human resources|\bhr\b|talent|recruit|financ|accounting|\blegal\b|g&a"
-    r"|general (and|&) admin|administrat|\bit\b|information technology|business development|policy|government"
-    r"|communications|customer success|\bcorporate\b|strategy|real estate|workplace|supply chain|procurement"
-    r"|purchasing|logistics|commercial|partnerships|\bgrowth\b|business systems"
-    r"|enterprise (systems|technology|applications)"
-)
-DEPARTMENT_OUT_REASON = [
-    ("sales", r"\bsales\b|business development|commercial|partnerships|\bgrowth\b"),
-    ("marketing-communications", r"marketing|communications"),
-    ("recruiting", r"talent|recruit"),
-    ("people-hr", r"\bpeople\b|human resources|\bhr\b|workplace"),
-    ("finance-accounting", r"financ|accounting"),
-    ("legal", r"\blegal\b"),
-    ("policy", r"policy|government"),
-    ("it", r"\bit\b|information technology|business systems|enterprise (systems|technology|applications)"),
-    ("supply-chain", r"supply chain|procurement|purchasing|logistics"),
-    ("customer-success", r"customer success"),
-    ("project-development", r"real estate"),
-    ("business", r"."),
-]
-
-# Departments that overrule a title naming only a broad discipline.
-DEPARTMENT_VETO = re.compile(
-    r"information technology|\bit\b|business systems|enterprise (systems|technology|applications)|\blegal\b|policy"
-    r"|government|\bgrowth\b|marketing|\bpeople\b|human resources|\bhr\b|financ|accounting|talent"
-)
-BROAD_DISCIPLINES = frozenset({"quality", "field", "product", "program", "systems"})
-# Role nouns that are usually coordination or support, not engineering.
-SUPPORT_NOUN = re.compile(r"\b(associate|coordinator|specialist|analyst|administrator|clerk|agent)\b")
-
-# Left out by a judgement the owner may want to reverse, so the evaluation
-# sheet samples them as unsure.
-JUDGEMENT_REASONS = frozenset({"facilities-ehs", "operator-production", "project-development", "policy"})
-
-# A department whose untitled roles are still engineering work.
-ENGINEERING_DEPARTMENT = re.compile(
-    r"engineer|\br ?& ?d\b|research|\bscience\b|hardware|product development|air vehicle|powertrain|airframe"
-)
-
-# A role noun that marks hands-on trade or technician work. Kept by default.
-TECHNICIAN = re.compile(
-    r"\btechnicians?\b|\btech\b|machinist|welder|electrician|\bmechanic\b|fabricator|\binspector\b|installer|lineman"
-)
-
-# Titles that are engineering work even when no discipline word is present.
-ENGINEERING_TITLE = re.compile(
-    r"engineer|scientist|technician|technologist|designer|architect|researcher|physicist|chemist|machinist"
-    r"|electrician|welder|\bmechanic\b|\bintern(ship)?\b|\bco-?op\b|\bcto\b|chief technology|r&d|\bhardware\b"
-)
+# Business functions whose roles carry no discipline.
+CORPORATE_FUNCTIONS = frozenset({"sales-bd", "marketing", "finance-legal", "people-admin", "it"})
 
 # --------------------------------------------------------------------------
 # Discipline phrases, most specific first. Each match is blanked afterwards.
@@ -217,12 +67,20 @@ RULES = [
     # Phrases that would mislead the general words below.
     _rule(r"member of (the )?technical staff|chief of staff"),
     _rule(r"fuel cells?|solar cells?|photovoltaic cells?|work ?cells?|cell (phone|culture|tower)"),
-    _rule(r"(change|configuration|inventory|cost|export|internal|financial|access|production|materials?|traffic) controls?"),
+    _rule(r"(change|configuration|document|inventory|cost|export|internal|financial|access|production|materials?|traffic) controls?"),
     _rule(r"control (room|tower|cent(er|re))"),
     _rule(r"data quality|safety[- ]critical|safety software|production forecast\w*|\breserves\b"),
     _rule(r"quality controls?|quality assurance", "quality"),
-    _rule(r"projects? controls?|planning (and|&) controls?|\bpp&c\b|(project|production|program) steering( (and|&) controls?)?",
-          "program"),
+    _rule(r"projects? controls?|planning (and|&) controls?|\bpp&c\b|(project|production|program) steering( (and|&) controls?)?"),
+
+    # Aerospace before software, controls, test and electrical take its words.
+    _rule(r"flight controls?", "aerospace", "controls"),
+    _rule(r"flight test\w*", "aerospace", "test"),
+    _rule(r"flight software", "software", "aerospace"),
+    _rule(r"avionics", "electrical", "aerospace"),
+    _rule(r"airframe", "aerospace", "mechanical"),
+    _rule(r"aerodynamic\w*|airworthiness|flight (dynamics|sciences|physics|performance)|\bevtol\b|aircraft"
+          r"|propellers?|air vehicle", "aerospace"),
     _rule(r"crash( (and |& )?safety)?", "mechanical"),
     _rule(r"power quality", "power-systems"),
     _rule(r"control panels?", "electrical"),
@@ -238,12 +96,13 @@ RULES = [
     _rule(r"embedded (software|sw|linux|firmware)|embedded|firmware|\bfw\b|\brtos\b|bootloader|device drivers?"
           r"|\bbsp\b|autosar|microcontrollers?|\bmcu\b", "firmware"),
 
-    # Generic software titles: resolved later, in scope only with a hardware tie.
-    _rule(r"software automation|automation software|site reliability|forward deployed|software|\bdevelopers?\b|programmer|back[- ]?end|front[- ]?end|full[- ]?stack|dev ?ops|\bsre\b|\bcloud\b"
-          r"|platform engineer\w*|infrastructure engineer\w*|data (engineer\w*|scien\w+|analy\w+|platform|architect)"
-          r"|machine learning|\bml\b|\bai\b|artificial intelligence|deep learning|computer vision|perception"
-          r"|\bweb\b|mobile (engineer|developer|app\w*)|\bios\b|android|\bqa\b|applied scientist|analytics engineer"
-          r"|database|\bui\b|\bdigital\b", SOFTWARE),
+    # Data and machine learning, then software of every kind.
+    _rule(r"data (engineer\w*|scien\w+|analy\w+|platform|architect\w*|ops)|\bdataops\b|machine learning|\bml\b|\bai\b"
+          r"|artificial intelligence|deep learning|computer vision|perception|applied scientist|analytics", "data"),
+    _rule(r"software automation|automation software|site reliability|forward deployed|software|\bdevelopers?\b"
+          r"|programmer|back[- ]?end|front[- ]?end|full[- ]?stack|dev ?ops|\bsre\b|\bcloud\b|platform engineer\w*"
+          r"|infrastructure engineer\w*|\bweb\b|mobile (engineer|developer|app\w*)|\bios\b|android|\bqa\b"
+          r"|database|\bui\b|\bdigital\b|\bhpc\b|\bsw\b", "software"),
 
     # Power electronics before electrical.
     _rule(r"(\bev\b|evse|charger|charging) (service |field )?(technician|installer)", "field"),
@@ -269,7 +128,7 @@ RULES = [
     # Thermal and fluids.
     _rule(r"thermo[- ]?mechanical", "thermal", "mechanical"),
     _rule(r"\bthermal|\bthermo\w*|heat (transfer|exchangers?|pumps?|rejection)|\bfluids?\b|\bhvac\b|air handling|refrigera\w+|cooling"
-          r"|cryogen\w*|\bcryo\b|\bcfd\b|combustion|aerodynamic\w*|aero[- ]?thermal|hydraulics?|pneumatics?|\bvacuum\b",
+          r"|cryogen\w*|\bcryo\b|\bcfd\b|combustion|aero[- ]?thermal|hydraulics?|pneumatics?|\bvacuum\b",
           "thermal"),
 
     # Controls. Factory flavour is decided afterwards.
@@ -279,7 +138,7 @@ RULES = [
     _rule(r"vehicle dynamics", "mechanical", "controls"),
     _rule(r"\bcontrols?\b|\bgnc\b|guidance,? navigation|simulink|model[- ]based design|state estimation"
           r"|model(l)?ing (and|&|,) simulation|simulation (and|&) model(l)?ing|model(l)?ing (and|&) controls?"
-          r"|flight dynamics", "controls"),
+          , "controls"),
     _rule(r"model(l)?ing|simulation|algorithms?", "controls", weak=True, note="modelling-generic"),
 
     # Test and validation.
@@ -317,9 +176,11 @@ RULES = [
           r"|postdoc\w*|post[- ]doctoral|thin[- ]film", "materials"),
     _rule(r"scientist|research (engineer|associate|scientist|fellow|technician|assistant)|researcher", "materials",
           note="research-word"),
-    _rule(r"physicist|physics|plasma|nuclear|neutronics|superconduct\w+|\bmagnets?\b", "materials",
-          weak=True, note="taxonomy-gap:physics-nuclear"),
-    _rule(r"optic\w*|photonics?|\blasers?\b", "materials", weak=True, note="taxonomy-gap:optics"),
+    _rule(r"plasma|nuclear|neutronics|fusion (energy|power|systems?|engineer\w*|program)|fission|\bife\b"
+          r"|inertial fusion|implosion|radiation|shielding|tritium|target (design|area|diagnostics)|molten salt",
+          "nuclear-plasma"),
+    _rule(r"electro-?optic\w*|optic\w*|photonics?|\blasers?\b|stray light|\bdiode\b", "optics"),
+    _rule(r"physicist|physics|superconduct\w+|\bmagnets?\b", "materials", note="physics-generic"),
     _rule(r"epitax\w+", "materials"),
     _rule(r"reservoir|geolog\w+|geoscien\w+|geophysic\w+|geochem\w+|seismolog\w+|subsurface", "materials",
           weak=True, note="taxonomy-gap:subsurface"),
@@ -333,15 +194,17 @@ RULES = [
           r"|\binstall\w+|\bsite (engineer|manager|supervisor|technician|lead|superintendent|operations"
           r"|integration)|superintendent|start-?up (engineer|technician|manager)|lineman", "field"),
     _rule(r"deployments?", "field", note="deployment-word"),
-    _rule(r"construction|\bcivil\b|geotechnical", "field", weak=True, note="taxonomy-gap:civil-construction"),
+    _rule(r"\bcivil\b|geotechnical|foundations?|steel structures?|(epc|site|construction)\b.{0,25}structur\w*"
+          r"|structur\w*.{0,25}\b(epc|civil)\b", "civil-structural"),
+    _rule(r"construction"),
     _rule(r"\bepc\b", "field", weak=True, note="epc"),
 
-    # Product and program.
+    # Product and program words are functions, not disciplines (taxonomy v1).
+    # They are blanked so the words inside them are not read as disciplines.
     _rule(r"product (manager|management|owner|line manager)|(head|director|vp|vice president),? (of )?product\b"
-          r"|product lead", "product"),
+          r"|product lead"),
     _rule(r"(program|project) (manager|management|lead|director|engineer\w*|coordinator|scheduler|delivery)"
-          r"|\bscheduler\b|\bpmo\b|\btpm\b"
-          r"|technical program|program chief|programs? (and|&)|director,? (of )?programs?\b", "program"),
+          r"|\bscheduler\b|\bpmo\b|\btpm\b|technical program|programs? (and|&)|director,? (of )?programs?\b"),
     _rule(r"chief engineer", "systems", weak=True, note="chief-engineer"),
 
     # Mechanical.
@@ -363,7 +226,7 @@ RULES = [
     _rule(r"\bfpga\b|\basic\b|digital design", "electrical", "firmware"),
     _rule(r"electrical|electronics?|\bpcba?\b|board design|circuits?|\banalog\b|mixed[- ]signal|\brf\b|antennas?"
           r"|harness\w*|\bwir(e|ing)\b|\bcabl(e|es|ing)\b|\bewis\b|high[- ]voltage|low[- ]voltage|\bhv\b|\blv\b"
-          r"|avionics|schematics?|electric (machines?|motors?|drives?|powertrain)|\bmotors?\b|e-?motor|electrician",
+          r"|schematics?|electric (machines?|motors?|drives?|powertrain)|\bmotors?\b|e-?motor|electrician",
           "electrical"),
     _rule(r"hardware (design )?engineer\w*|hardware (design|development)", "electrical", note="hardware-generic"),
     _rule(r"\bhardware\b|\bsensors?\b", "electrical", weak=True, note="hardware-generic"),
@@ -410,22 +273,6 @@ MANUFACTURING_TEXT = [
     r"work instructions?", r"\blean\b", r"six sigma", r"\bnpi\b", r"throughput", r"\boee\b", r"pfmea",
     r"cycle time", r"high[- ]volume", r"statistical process control", r"operators",
 ]
-
-# Words that tie a generic software title to hardware.
-TIE_TITLE = re.compile(
-    r"fleet|telemetry|\bdevices?\b|\biot\b|robot\w*|vehicle|charging|charger|\bgrid\b|energy|hardware|simulation"
-    r"|(engineering|hardware|test|manufacturing|lab) tools?|factory|manufacturing|\bplant\b|\bedge\b|real[- ]time"
-    r"|autonomy|drone|aircraft|flight|sensors?|physics|model(l)?ing|optimi[sz]ation|forecasting|dispatch|\bder\b"
-    r"|solar|storage|battery|thermal|\bpower\b|infotainment|avionics|\bbms\b|\bplc\b|operational technology"
-)
-TIE_TEXT = [
-    r"firmware", r"embedded", r"telemetry", r"\bscada\b", r"\bplcs?\b", r"modbus", r"can ?bus|\bcanopen\b|j1939",
-    r"\bhil\b|hardware[- ]in[- ]the[- ]loop", r"test automation", r"labview", r"\bsensors?\b", r"real[- ]time",
-    r"\brtos\b", r"edge devices?", r"\biot\b", r"\bocpp\b", r"data acquisition", r"control systems?",
-    r"\bfleet\b", r"manufacturing execution|\bmes\b", r"hardware (teams?|engineers?)", r"physical (systems?|devices?|assets?)",
-    r"test (stands?|equipment|benches)", r"energy management system", r"\bderms?\b", r"device (software|drivers?)",
-]
-TIE_TEXT_NEEDED = 2
 
 # Phrases in the posting text, per discipline. Used only when the title and
 # the department name nothing, and only for engineering titles.
@@ -565,16 +412,20 @@ def _read(text: str) -> tuple[list[str], list[str], bool]:
         strong = [hit for hit in strong if hit.note != "hardware-generic"] or strong
     # Beside a software title, "automation", "deployment" and "research" are
     # software words: test automation, software deployment, AI research.
-    if any(hit.discipline in (SOFTWARE, "software") for hit in strong):
+    if any(hit.discipline in ("software", "data") for hit in strong):
         software_words = ("automation-word", "deployment-word", "research-word")
         strong = [hit for hit in strong if hit.note not in software_words]
+    # "Laser Physicist" is optics; generic physics adds materials only when
+    # nothing more specific is named.
+    if any(hit.discipline in ("optics", "nuclear-plasma") for hit in strong):
+        strong = [hit for hit in strong if hit.note != "physics-generic"]
     used = strong
     if not strong:
         # Among weak readings, a specific word ("laser", "reservoir") beats
         # a generic one ("simulation", "integration").
         generic = ("modelling-generic", "integration-generic")
         used = [hit for hit in hits if hit.note not in generic] or hits
-    quiet = ("automation-word", "deployment-word", "research-word")
+    quiet = ("automation-word", "deployment-word", "research-word", "physics-generic")
     notes = list(dict.fromkeys(hit.note for hit in used if hit.note and hit.note not in quiet))
     return _cap(_ordered(used, text)), notes, bool(hits) and not strong
 
@@ -584,7 +435,7 @@ def _cap(disciplines: list[str]) -> list[str]:
     "Battery Software & Controls Integration Engineer" keeps battery,
     software and controls, and loses systems."""
     kept = list(disciplines)
-    for broad in ("systems", "program"):
+    for broad in ("systems",):
         if len(kept) > MAX_DISCIPLINES and broad in kept:
             kept.remove(broad)
     return kept[:MAX_DISCIPLINES]
@@ -603,21 +454,6 @@ def _resolve_process(title: str, department: str, text: str) -> tuple[str, bool]
     return "manufacturing", True
 
 
-def _has_tie(title: str, department: str, text: str, others: list[str]) -> tuple[bool, str, str]:
-    """Is a generic software title tied to hardware? Returns (tied, evidence, confidence)."""
-    if any(discipline in HARD_DISCIPLINES for discipline in others):
-        return True, "title", "high"
-    if TIE_TITLE.search(title):
-        return True, "title", "medium"
-    if department:
-        named, _, _ = _read(department)
-        if any(discipline in HARD_DISCIPLINES for discipline in named) or TIE_TITLE.search(department):
-            return True, "department", "medium"
-    if _count(TIE_TEXT, text) >= TIE_TEXT_NEEDED:
-        return True, "text", "low"
-    return False, "none", "medium"
-
-
 def _from_text(text: str) -> list[str]:
     scores = {discipline: _count(patterns, text) for discipline, patterns in TEXT_CUES.items()}
     ranked = sorted((d for d, score in scores.items() if score >= TEXT_CUES_NEEDED), key=lambda d: (-scores[d], d))
@@ -629,59 +465,31 @@ def _lower(confidence: str, to: str) -> str:
     return order[max(order.index(confidence), order.index(to))]
 
 
-def classify(title: str, department: str | None = None, text: str | None = None,
-             keep_technicians: bool = True) -> Decision:
-    """Scope and disciplines for one posting."""
+
+
+def classify(title: str, department: str | None = None, text: str | None = None) -> Decision:
+    """Function and disciplines for one posting."""
     title_n = normalise(title)
     department_n = normalise(department)
     text_n = normalise(text)
 
     disciplines, notes, weak_only = _read(title_n)
+    strong_starts = [hit.start for hit in _hits(title_n) if not hit.weak]
+    role = decide_function(title_n, department_n, text_n, disciplines, weak_only, strong_starts)
+    notes = notes + role.notes
+    confidence = "low" if weak_only else "high"
+    evidence = "title" if disciplines else "none"
 
-    # 1. Functions the board does not list. An engineer or technician whose
-    #    title names a discipline before the off-list word stays in
-    #    ("Controls Engineer - Warehouse Automation").
-    for reason, pattern, unless in OUT_RULES:
-        match = pattern.search(title_n)
-        if not match or (unless and unless.search(title_n)):
-            continue
-        hands_on = re.search(r"\b(engineers?|technicians?|scientists?)\b", title_n)
-        named_first = [hit for hit in _hits(title_n)
-                       if not hit.weak and hit.discipline != SOFTWARE and hit.start < match.start()]
-        if hands_on and named_first:
-            notes.append(f"out-word-in-title:{reason}")
-            break
-        return Decision(False, reason=reason, evidence="title",
-                        confidence="medium" if reason in JUDGEMENT_REASONS else "high")
-
-    if not keep_technicians and TECHNICIAN.search(title_n):
-        return Decision(False, reason="technician", evidence="title")
-
-    confidence, evidence = "high", "title"
-    if weak_only:
-        confidence = "low"
-
-    # 2. Placeholders.
+    # "Process engineer" is manufacturing at a factory and chemical-process at a plant.
     if PROCESS in disciplines:
         resolved, defaulted = _resolve_process(title_n, department_n, text_n)
         disciplines = [resolved if d == PROCESS else d for d in disciplines]
         if defaulted:
             notes.append("process-engineer-default")
             confidence = _lower(confidence, "medium")
-
-    if SOFTWARE in disciplines:
-        others = [d for d in disciplines if d != SOFTWARE]
-        tied, tie_evidence, tie_confidence = _has_tie(title_n, department_n, text_n, others)
-        if not tied:
-            return Decision(False, reason="software-no-hardware-tie", evidence="title", confidence="medium",
-                            notes=["no-tie-found"] if not text_n else [])
-        disciplines = ["software" if d == SOFTWARE else d for d in disciplines]
-        confidence = _lower(confidence, tie_confidence)
-        if tie_evidence != "title":
-            notes.append(f"software-tie-from-{tie_evidence}")
     disciplines = list(dict.fromkeys(disciplines))
 
-    # 3. Controls at a factory is manufacturing work.
+    # Controls at a factory is manufacturing work.
     if "controls" in disciplines and "manufacturing" not in disciplines:
         factory = bool(FACTORY_TITLE.search(title_n)) or bool(FACTORY_DEPARTMENT.search(department_n))
         if not factory and text_n:
@@ -698,64 +506,45 @@ def classify(title: str, department: str | None = None, text: str | None = None,
         notes.remove("plc")
 
     for note in notes:
-        if note in ("power-systems-phrase", "hardware-generic", "instrumentation-generic", "maintenance",
-                    "sales-engineering") or note.startswith("out-word-in-title"):
+        if note in ("power-systems-phrase", "hardware-generic", "instrumentation-generic", "maintenance"):
             confidence = _lower(confidence, "medium")
-        if note.startswith("taxonomy-gap") or note == "sales-engineering":
+        if note.startswith("taxonomy-gap"):
             confidence = _lower(confidence, "low")
 
-    # A title that names a discipline outright is settled. The department is
-    # not added on top: department names are too loose ("Operations and
-    # Maintenance", "Flight Test and Operational Safety") to tag from.
-    if disciplines and not weak_only:
-        # One exception: a title that names only a broad discipline, in a
-        # department that is plainly not hardware ("Compliance Director" in
-        # Legal, "Applications Engineer" in Business Systems), is left out.
-        if set(disciplines) <= BROAD_DISCIPLINES and DEPARTMENT_VETO.search(department_n):
-            reason = next(name for name, pattern in DEPARTMENT_OUT_REASON if re.search(pattern, department_n))
-            return Decision(False, reason=reason, evidence="department", confidence="medium",
-                            notes=["department-veto"])
-        if SUPPORT_NOUN.search(title_n) and not re.search(r"engineer|technician|scientist|electrician", title_n):
-            notes.append("support-role-noun")
-            confidence = _lower(confidence, "medium")
-        return Decision(True, disciplines[:MAX_DISCIPLINES], confidence=confidence, evidence=evidence, notes=notes)
+    technical = role.function in TECHNICAL_FUNCTIONS
+    if technical and (not disciplines or weak_only):
+        # The department, then the posting text, for an engineering or science
+        # role whose title names no field outright.
+        department_named: list[str] = []
+        if department_n:
+            department_named, _, department_weak = _read(department_n)
+            department_named = [d for d in department_named if d != PROCESS]
+            if department_weak:
+                department_named = []
+        gap = any(note.startswith("taxonomy-gap") for note in notes)
+        if department_named:
+            disciplines = list(dict.fromkeys(department_named + disciplines))
+            confidence, evidence = "medium", "department"
+            notes.append("from-department")
+        elif text_n and not gap and (from_text := _from_text(text_n)):
+            disciplines = list(dict.fromkeys(from_text + disciplines))
+            confidence, evidence = "low", "text"
+            notes.append("from-text")
 
-    # 4. The department decides when the title names nothing, or names only
-    #    a generic word.
-    department_named: list[str] = []
-    if department_n:
-        department_named, _, department_weak = _read(department_n)
-        department_named = [d for d in department_named if d not in (SOFTWARE, PROCESS)]
-        if department_weak:
-            department_named = []
+    if technical:
+        disciplines = _cap(disciplines)
+        if not disciplines:
+            notes.append("no-discipline")
+    else:
+        # Other functions carry at most one discipline, and only one the
+        # title names outright ("Electrical Technician", "Global Supply
+        # Manager - Electronics").
+        # Corporate functions carry none: "Project Developer" is not software,
+        # and "Senior Analyst, Manufacturing Finance" is not manufacturing.
+        keep = disciplines and not weak_only and role.function not in CORPORATE_FUNCTIONS
+        disciplines = disciplines[:1] if keep else []
+    if not disciplines:
+        evidence, confidence = "none", "high" if not technical else "low"
 
-    hands_on = bool(re.search(r"engineer|technician|scientist|\bintern(ship)?\b|\bco-?op\b|physicist|designer", title_n))
-    engineering = bool(ENGINEERING_TITLE.search(title_n)) or bool(ENGINEERING_DEPARTMENT.search(department_n))
-
-    if department_named and (engineering or weak_only or re.search(
-            r"manager|lead|supervisor|director|head|specialist|coordinator|vp|vice president|chief", title_n)):
-        merged = list(dict.fromkeys(department_named + disciplines))[:MAX_DISCIPLINES]
-        return Decision(True, merged, confidence="medium" if hands_on else "low", evidence="department",
-                        notes=notes + ["from-department"])
-
-    if department_n and DEPARTMENT_OUT.search(department_n) and not (disciplines and hands_on):
-        reason = next(name for name, pattern in DEPARTMENT_OUT_REASON if re.search(pattern, department_n))
-        return Decision(False, reason=reason, evidence="department", confidence="medium")
-
-    # 5. The posting text, for engineering titles and engineering
-    #    departments. Not for the physics, optics and subsurface titles the
-    #    taxonomy has no discipline for: the text scores would only add noise.
-    gap = any(note.startswith("taxonomy-gap") for note in notes)
-    if engineering and text_n and not gap:
-        from_text = _from_text(text_n)
-        if from_text:
-            merged = list(dict.fromkeys(from_text + disciplines))[:MAX_DISCIPLINES]
-            return Decision(True, merged, confidence="low", evidence="text", notes=notes + ["from-text"])
-
-    if disciplines:   # weak title rules only
-        return Decision(True, disciplines[:MAX_DISCIPLINES], confidence="low", evidence="title", notes=notes)
-
-    if engineering:
-        return Decision(False, reason="unplaced-engineering-title", evidence="none", confidence="low",
-                        notes=["no-rule-matched"])
-    return Decision(False, reason="no-hardware-discipline", evidence="none", confidence="medium")
+    return Decision(role.function, disciplines, role.evidence, role.confidence, confidence, evidence,
+                    list(dict.fromkeys(notes)))

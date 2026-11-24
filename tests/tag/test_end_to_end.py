@@ -27,13 +27,14 @@ def test_example_raw_file():
     jobs_file, report = tag_file(EXAMPLE, now=NOW)
     valid(jobs_file)
     [job] = jobs_file["jobs"]
+    assert job["function"] == "engineering"
     assert job["disciplines"] == ["controls"]
     assert job["level"] == "senior"
     assert job["pay"] == {"min": 160000, "max": 195000, "currency": "USD", "period": "year", "basis": "posting-text"}
-    assert job["tagging"] == {"disciplines_by": "rule", "level_by": "rule", "model": None}
+    assert job["tagging"] == {"function_by": "rule", "disciplines_by": "rule", "level_by": "rule", "model": None}
     assert "description_text" not in job and "department" not in job
     assert job["summary"].startswith("Synthetic example.")
-    assert report["summary"]["kept"] == 1 and report["summary"]["left_out"] == 0
+    assert report["summary"]["by_function"] == {"engineering": 1}
 
 
 def _raw(title, **changes):
@@ -42,7 +43,7 @@ def _raw(title, **changes):
     return job
 
 
-def test_left_out_roles_are_counted_with_reasons():
+def test_every_role_is_kept_and_counted_by_function():
     raw_file = copy.deepcopy(EXAMPLE)
     raw_file["jobs"] += [
         _raw("Senior Accountant", department="Finance", description_text=""),
@@ -54,9 +55,11 @@ def test_left_out_roles_are_counted_with_reasons():
     jobs_file, report = tag_file(raw_file, now=NOW)
     valid(jobs_file)
     summary = report["summary"]
-    assert summary["postings"] == 5 and summary["kept"] == 2 and summary["left_out"] == 3
-    assert summary["left_out_by_reason"] == {"finance-accounting": 1, "sales": 1, "software-no-hardware-tie": 1}
-    assert len(report["records"]) == 5
+    assert summary["postings"] == 5 and len(jobs_file["jobs"]) == 5 and len(report["records"]) == 5
+    assert summary["by_function"] == {"engineering": 3, "finance-legal": 1, "sales-bd": 1}
+    assert summary["in_listed_functions"] == 3 and summary["in_unlisted_functions"] == 2
+    backend = next(job for job in jobs_file["jobs"] if job["title"] == "Senior Backend Engineer")
+    assert backend["disciplines"] == ["software"]
     mechanical = next(job for job in jobs_file["jobs"] if job["title"] == "Staff Mechanical Engineer")
     assert mechanical["workplace"] == "onsite"          # the collector's value is kept
     assert mechanical["pay"]["min"] == 180000
@@ -97,6 +100,6 @@ def test_command_line(tmp_path):
         cwd=ROOT, capture_output=True, text=True, check=False,
     )
     assert result.returncode == 0, result.stderr
-    assert "Kept:" in result.stdout
+    assert "Postings tagged: 1" in result.stdout
     valid(load_json(out_path))
-    assert load_json(report_path)["summary"]["kept"] == 1
+    assert load_json(report_path)["summary"]["postings"] == 1

@@ -10,9 +10,7 @@ TAXONOMY_IDS = {entry["id"] for entry in load_yaml(ROOT / "taxonomy.yml")["disci
 
 
 def tags(title, department=None, text=None):
-    decision = classify(title, department, text)
-    assert decision.in_scope, f"{title!r} left out: {decision.reason}"
-    return decision.disciplines
+    return classify(title, department, text).disciplines
 
 
 # One or more titles per discipline: (title, the discipline that must lead).
@@ -50,9 +48,17 @@ LEADS = [
     ("Supplier Quality Engineer", "quality"),
     ("Commissioning Engineer", "field"),
     ("Field Service Technician", "field"),
-    ("Senior Product Manager, Hardware", "product"),
-    ("Technical Program Manager, Battery", "program"),
-    ("Project Engineer", "program"),
+    ("Senior Software Engineer, Backend", "software"),
+    ("Senior Data Scientist", "data"),
+    ("Battery Data Engineer", "data"),
+    ("Plasma Physicist", "nuclear-plasma"),
+    ("Director of Nuclear Engineering", "nuclear-plasma"),
+    ("Optical Engineer", "optics"),
+    ("Laser Physicist", "optics"),
+    ("Civil Engineer", "civil-structural"),
+    ("Staff EPC Structural Engineer", "civil-structural"),
+    ("Senior Flight Test Engineer", "aerospace"),
+    ("Aerodynamics Engineer", "aerospace"),
 ]
 
 
@@ -80,8 +86,9 @@ def test_general_words_do_not_reread_a_specific_phrase():
     assert tags("Control Systems Engineer II") == ["controls"]
     # "Quality Control" is quality, not controls.
     assert tags("Quality Control Technician") == ["quality"]
-    # "Project controls" is program work.
-    assert tags("Project Controls Engineer - Cost & Planning") == ["program"]
+    # "Project controls" and "document control" are not the controls discipline.
+    assert "controls" not in tags("Project Controls Engineer - Cost & Planning")
+    assert tags("Document Control Specialist") == []
     # "Fuel cell" is not battery.
     assert "battery" not in classify("Fuel Cell Engineer").disciplines
 
@@ -111,7 +118,7 @@ def test_process_engineer_follows_its_context():
     chemical_text = "Own the P&IDs and PFDs, run Aspen models and HAZOP reviews for the pilot plant reactors."
     assert tags("Process Engineer", text=chemical_text) == ["chemical-process"]
     unsure = classify("Process Engineer")
-    assert unsure.in_scope and "process-engineer-default" in unsure.notes
+    assert unsure.function == "engineering" and "process-engineer-default" in unsure.notes
 
 
 def test_at_most_three_disciplines_and_all_from_the_taxonomy():
@@ -133,15 +140,25 @@ def test_every_rule_names_only_taxonomy_ids():
 
 def test_department_decides_when_the_title_names_nothing():
     decision = classify("Senior Engineer", department="Engineering / Mechanical Design Engineering")
-    assert decision.in_scope and decision.disciplines == ["mechanical"] and decision.evidence == "department"
+    assert decision.disciplines == ["mechanical"] and decision.evidence == "department"
 
 
 def test_text_decides_last_and_is_marked_low_confidence():
     text = ("You will design schematics and PCBAs in Altium, review circuits, choose connectors and "
             "debug boards with oscilloscopes.")
-    decision = classify("Engineering Technician", text=text)
-    assert decision.in_scope and decision.disciplines[0] == "electrical"
+    decision = classify("Engineer II", text=text)
+    assert decision.disciplines[0] == "electrical"
     assert decision.evidence == "text" and decision.confidence == "low"
+
+
+def test_product_and_program_are_no_longer_disciplines():
+    for title in ("Senior Product Manager, Hardware", "Technical Program Manager", "Project Engineer"):
+        assert not {"product", "program"} & set(classify(title).disciplines), title
+
+
+def test_software_needs_no_hardware_tie():
+    assert tags("Senior Software Engineer, Backend") == ["software"]
+    assert tags("Staff DevOps Engineer") == ["software"]
 
 
 def test_title_wins_over_department_and_text():
@@ -151,7 +168,17 @@ def test_title_wins_over_department_and_text():
 
 
 def test_taxonomy_gaps_are_kept_but_marked():
-    for title in ("Plasma Physicist", "Optical Engineer", "Reservoir Engineer", "Civil Engineer"):
-        decision = classify(title)
-        assert decision.in_scope and decision.confidence == "low", title
-        assert any(note.startswith("taxonomy-gap") for note in decision.notes), title
+    decision = classify("Reservoir Engineer")
+    assert decision.function == "engineering" and decision.confidence == "low"
+    assert "taxonomy-gap:subsurface" in decision.notes
+
+
+def test_other_functions_carry_at_most_one_discipline_named_in_the_title():
+    assert tags("Electrical Technician") == ["electrical"]
+    assert tags("Journeyman Electrician (Austin)") == ["electrical"]
+    assert tags("Global Supply Manager - Electronics & PCB") == ["electrical"]
+    assert tags("Field Service Technician") == ["field"]
+    assert tags("Warehouse Associate") == []
+    # Corporate functions carry none.
+    assert tags("Senior Analyst, Manufacturing Finance") == []
+    assert tags("Project Developer") == []
