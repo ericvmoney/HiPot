@@ -99,3 +99,24 @@ Check that it looks right in the claude.ai viewer, on a phone, and in desktop Ch
 - **Hidden role types.** Sales, marketing, finance and legal, people and administration, and IT are tagged but hidden. Keep them hidden?
 - **Git commit identity.** Commits in this repository use ericvmoney@gmail.com, not your work email. Is that right?
 - **"Fusion + Fusion".** Your answer was recorded as fusion and fission. Confirm?
+
+## Handover: state at the end of 2026-11-24
+
+Written so a new supervisor session can pick up without the conversation. Read PLAN.md section 9 (decisions) first.
+
+**Published.** Private board, version 2: https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ (3,642 roles at 143 companies; built from `data/jobs.json` collected before Colorado). Republish by publishing `site/index.html` with `data/board.json` as a supporting file to the same artifact.
+
+**Registry.** 338 companies, 221 listed, after Colorado (`proposals-02-colorado.yml`) and the startup facts (`registry-fixes-03.yml`). Apply screening with `uv run python -m tools.apply_screening` (idempotent; log in `data/screening/applied-latest.md`). Coverage: `uv run python -m tools.coverage`.
+
+**In flight when this was written** (side sessions, each on its own branch under `.claude/worktrees/`; merge verified work into `main` and push, per the owner's standing instruction):
+- A2 company scout: Bay Area reference list and proposals next, then remote, then other regions.
+- A1 collector: Paylocity reader, then Workday and iCIMS; then a proposal for a reader of companies' own careers pages (129 of 157 Colorado companies have no job-board system). SmartRecruiters live trial approved by the owner in A1's session.
+- A4 board: pay page (`site/pay.html`), pay bands, BLS "Gov. wage" column from `data/pay/bls-oews-2025.json`, and above/at/below-market grades shown in local builds only until the owner reviews them.
+- A full collection over the 338-company registry was running in the supervisor session (`--record data/fixtures-live`). If it did not finish, run it again: collect, tag, validate, publish, then republish the artifact.
+
+**Waiting on the owner.**
+- Sector calls from the Colorado pass: methane monitoring sold to oil and gas (proposed core, flagged); recycled and bio-based materials (13 companies, proposed out); water treatment (proposed out); new taxonomy sectors for methane monitoring and biofuels (supervisor proposes adding them).
+- Browser reads of blocked discovery sources (state grant pages, SBIR) were refused by the scout session's own permission check; only the owner can approve them there.
+- Label sheet `data/eval/labels.csv` (checkpoint D).
+
+**Next after the current run** (owner, 2026-11-24): a draft of the in-browser resume parser, and artifact hosting prepared for first testing.
