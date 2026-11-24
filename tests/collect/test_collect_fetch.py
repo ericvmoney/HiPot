@@ -156,6 +156,26 @@ def test_record_then_replay(tmp_path):
         replay.get_json("https://api.example.com/v1/boards/other/jobs")
 
 
+def test_text_answers_follow_the_same_rules_and_record_and_replay(tmp_path):
+    seen = []
+
+    def handler(request):
+        seen.append(request.headers["accept"])
+        if request.url.path == "/refused":
+            return httpx.Response(429)
+        return httpx.Response(200, text="<jobs><job>Ä</job></jobs>\r\n")
+    clock = Clock()
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    recorder = RecordingFetcher(tmp_path / "live", client=client, clock=clock, sleep=clock.sleep)
+    url = "https://feeds.example.com/export/jobs/acme"
+    assert recorder.get_text(url) == "<jobs><job>Ä</job></jobs>\r\n"
+    assert "xml" in seen[0]
+    with pytest.raises(Blocked):
+        recorder.get_text("https://feeds.example.com/refused")
+    assert [path.name for path in (tmp_path / "live").iterdir()] == ["feeds.example.com_export_jobs_acme.txt"]
+    assert ReplayFetcher(tmp_path / "live").get_text(url) == "<jobs><job>Ä</job></jobs>\r\n"
+
+
 # ---------------------------------------------------------------------- text
 
 def test_html_to_text():

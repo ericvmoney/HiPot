@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, run as run_module, workable
+from pipeline.collect import bamboohr, recruitee, run as run_module, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -123,3 +123,117 @@ def test_a_redirect_is_reported_as_a_board_that_is_not_available():
     with pytest.raises(FetchError, match=r"HTTP 302: redirected to https://www.bamboohr.com/ \(board moved or not available\)"):
         fetcher.get_json("https://ambri.bamboohr.com/careers/list")
     assert fetcher.requests == 1
+
+
+# ---------------------------------------------------------- SmartRecruiters
+
+SR_LIST = "https://api.smartrecruiters.com/v1/companies/EnPowerInc/postings"
+
+
+def test_smartrecruiters_is_switched_off_by_default():
+    assert "smartrecruiters" not in run_module.READERS and "smartrecruiters" in run_module.SWITCHED_OFF
+
+
+def test_smartrecruiters_asks_one_page_then_each_posting():
+    fetcher = FakeFetcher()
+    smartrecruiters.read("EnPowerInc", fetcher)
+    urls = [url for url, _ in fetcher.calls]
+    assert urls[0] == f"{SR_LIST}?limit=100&offset=0"
+    assert urls[1:] == [f"{SR_LIST}/{posting}" for posting in
+                        ("744000163336380", "744000158306981", "744000158308679", "744000153041479")]
+
+
+def test_smartrecruiters_pages_until_total_found():
+    page = lambda ids, total: {"offset": 0, "limit": 100, "totalFound": total,
+                               "content": [{"id": str(i), "name": f"Role {i}"} for i in ids]}
+    fetcher = FakeFetcher(extra={
+        "https://api.smartrecruiters.com/v1/companies/Big/postings?limit=100&offset=0": page(range(100), 150),
+        "https://api.smartrecruiters.com/v1/companies/Big/postings?limit=100&offset=100": page(range(100, 150), 150),
+    })
+    drafts = smartrecruiters.read("Big", fetcher)
+    assert len(drafts) == 150
+    assert sum("postings?limit" in url for url, _ in fetcher.calls) == 2
+
+
+def test_smartrecruiters_fields():
+    drafts = {draft["posting_id"]: draft for draft in smartrecruiters.read("EnPowerInc", FakeFetcher())}
+    engineer = drafts["744000163336380"]
+    assert engineer["title"] == "Manufacturing Engineer"
+    assert engineer["url"] == "https://jobs.smartrecruiters.com/EnPowerInc/744000163336380-manufacturing-engineer"
+    assert engineer["locations"] == [{"text": "Indianapolis, IN, United States", "city": "Indianapolis", "state": "IN", "country": "US"}]
+    assert engineer["workplace"] == "onsite" and engineer["employment"] == "full-time"
+    assert engineer["posted_date"] == "2026-11-23"
+    assert engineer["description_text"].startswith("Responsible for leading process development")
+    # The feed gives a maximum and no minimum: not a range the contract can hold.
+    assert engineer["pay"] is None
+    # No detail recorded: kept from the list, with an address built from the id.
+    technician = drafts["744000158306981"]
+    assert technician["url"] == "https://jobs.smartrecruiters.com/EnPowerInc/744000158306981"
+    assert technician["description_text"] == ""
+
+
+@pytest.mark.parametrize("compensation,expected", [
+    ({"min": 80000, "max": 100000, "currency": "USD", "period": "YEARLY"}, (80000, 100000, "year")),
+    ({"min": 25, "max": 32, "currency": "USD", "period": "HOURLY"}, (25, 32, "hour")),
+    ({"min": 5000, "max": 6000, "currency": "USD", "period": "MONTHLY"}, None),
+    ({"max": 87550, "currency": "USD", "period": "YEARLY"}, None),
+])
+def test_smartrecruiters_pay(compensation, expected):
+    found = smartrecruiters._pay(compensation)
+    assert (found and (found["min"], found["max"], found["period"])) == expected or (found is None and expected is None)
+
+
+@pytest.mark.parametrize("place,expected", [
+    ({"remote": True, "hybrid": False}, "remote"),
+    ({"remote": False, "hybrid": True}, "hybrid"),
+    ({"remote": False, "hybrid": False}, "onsite"),
+    ({}, None),
+])
+def test_smartrecruiters_workplace(place, expected):
+    assert smartrecruiters._workplace(place) == expected
+
+
+# ---------------------------------------------------------------- Recruitee
+
+def test_recruitee_asks_once_per_board():
+    fetcher = FakeFetcher()
+    recruitee.read("fastned", fetcher)
+    assert fetcher.calls == [("https://fastned.recruitee.com/api/offers/", None)]
+
+
+def test_recruitee_fields():
+    drafts = {draft["posting_id"]: draft for draft in recruitee.read("fastned", FakeFetcher())}
+    remote = drafts["2794271"]
+    assert remote["workplace"] == "remote" and remote["employment"] == "full-time"
+    assert remote["locations"] == [{"text": "Hamburg, Hamburg, Germany", "city": "Hamburg", "country": "DE"}]
+    assert remote["url"] == "https://fastned.recruitee.com/o/elektriker-elektroniker-im-aussendienst-nord-mwd"
+    assert remote["posted_date"] == "2026-10-22"
+    assert remote["description_text"]
+    assert drafts["2818749"]["workplace"] == "onsite"
+    student = drafts["2835151"]
+    assert student["workplace"] == "hybrid" and student["employment"] == "contract"
+
+
+def test_recruitee_pay_and_a_custom_domain():
+    drafts = {draft["title"]: draft for draft in recruitee.read("greenerpowersolutions", FakeFetcher())}
+    specialist = drafts["Procurement Specialist"]
+    # The feed writes the figures as strings.
+    assert specialist["pay"] == {"min": 40000, "max": 67000, "currency": "EUR", "period": "year", "basis": "feed"}
+    assert specialist["url"] == "https://careers.greenerpowersolutions.com/o/procurement-specialist"
+    # A monthly stipend is not a period the contract holds.
+    assert drafts["Marketing Internship"]["pay"] is None and drafts["Marketing Internship"]["employment"] == "intern"
+
+
+@pytest.mark.parametrize("code,expected", [
+    ("fulltime_permanent", "full-time"), ("fulltime", "full-time"), ("fulltime_fixed_term", "contract"),
+    ("parttime_permanent", "part-time"), ("internship", "intern"), ("traineeship", "intern"),
+    ("temporary", "contract"), ("freelance", "contract"), (None, "unknown"),
+])
+def test_recruitee_employment_codes(code, expected):
+    assert recruitee._employment(code, "Engineer") == expected
+
+
+def test_recruitee_ids_are_stable():
+    raw = collect([company("fastned", "recruitee", "fastned")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert sorted(job["id"] for job in raw["jobs"]) == ["recruitee:fastned:2794271", "recruitee:fastned:2818749",
+                                                         "recruitee:fastned:2835151"]

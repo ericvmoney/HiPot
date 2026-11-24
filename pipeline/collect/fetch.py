@@ -74,11 +74,11 @@ class Fetcher:
             if remaining > 0:
                 self._sleep(remaining)
 
-    def _get(self, url: str, params: dict | None) -> httpx.Response:
+    def _get(self, url: str, params: dict | None, headers: dict | None = None) -> httpx.Response:
         host = urlsplit(url).netloc.lower()
         self._wait_for(host)
         try:
-            return self._client.get(url, params=params)
+            return self._client.get(url, params=params, headers=headers)
         finally:
             # Counted from the end of the request, so a slow answer still
             # leaves a full interval before the next one.
@@ -87,10 +87,23 @@ class Fetcher:
 
     def get_json(self, url: str, params: dict | None = None) -> Any:
         """GET a URL and return its parsed JSON body."""
+        response = self._answer(url, params)
+        try:
+            return response.json()
+        except ValueError as error:
+            raise FetchError(f"answer was not JSON ({error})") from error
+
+    def get_text(self, url: str, params: dict | None = None) -> str:
+        """GET a URL and return its body as text (an XML feed, a posting page)."""
+        return self._answer(url, params, {"Accept": "application/xml, text/xml, text/html;q=0.9, */*;q=0.5"}).text
+
+    def _answer(self, url: str, params: dict | None, headers: dict | None = None) -> httpx.Response:
+        """One GET with the rules applied: a block raises, one retry on 5xx or a
+        transport failure, and anything but 200 is an error."""
         response = None
         for attempt in (1, 2):
             try:
-                response = self._get(url, params)
+                response = self._get(url, params, headers)
             except httpx.TimeoutException as error:
                 failure = f"timed out after {TIMEOUT:g}s ({type(error).__name__})"
             except httpx.HTTPError as error:
@@ -115,10 +128,7 @@ class Fetcher:
                              "(board moved or not available)")
         if response.status_code != 200:
             raise FetchError(f"HTTP {response.status_code}")
-        try:
-            return response.json()
-        except ValueError as error:
-            raise FetchError(f"answer was not JSON ({error})") from error
+        return response
 
 
 def record_name(url: str) -> str:
@@ -150,6 +160,16 @@ class RecordingFetcher(Fetcher):
             json.dump(data, handle, ensure_ascii=False)
         return data
 
+    def get_text(self, url: str, params: dict | None = None) -> str:
+        text = super().get_text(url, params)
+        with open(self._directory / text_record_name(url), "w", encoding="utf-8", newline="") as handle:
+            handle.write(text)
+        return text
+
+
+def text_record_name(url: str) -> str:
+    return record_name(url)[: -len(".json")] + ".txt"
+
 
 class ReplayFetcher:
     """Answers from files saved by RecordingFetcher. Makes no network request."""
@@ -168,3 +188,11 @@ class ReplayFetcher:
         self.requests += 1
         with open(path, encoding="utf-8") as handle:
             return json.load(handle)
+
+    def get_text(self, url: str, params: dict | None = None) -> str:
+        path = self._directory / text_record_name(url)
+        if not path.exists():
+            raise FetchError(f"no saved answer for {url}")
+        self.requests += 1
+        with open(path, encoding="utf-8", newline="") as handle:
+            return handle.read()
