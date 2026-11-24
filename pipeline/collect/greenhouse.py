@@ -18,7 +18,8 @@ field when there is one and otherwise from the location rules.
 
 Pay is not in the list answer. The documented single-posting endpoint returns
 `pay_input_ranges` when asked with `pay_transparency=true`; `read(...,
-with_pay=True)` makes that one extra request per posting.
+with_pay=True)` makes that one extra request per posting. Those ranges have no
+period field, so a range counts only when its title or blurb names one.
 """
 from __future__ import annotations
 
@@ -69,12 +70,17 @@ def _employment(job: dict) -> str:
     return normalize.employment_from_title(job.get("title") or "")
 
 
-def pay_from_ranges(ranges) -> dict | None:
-    """Pay from `pay_input_ranges`. The feed gives cents and no period.
+_HOURLY = re.compile(r"\bhour(ly)?\b|/\s?hr\b", re.I)
+_YEARLY = re.compile(r"\bannual(ly)?\b|\byear(ly)?\b|\bper annum\b", re.I)
 
-    A range is read as yearly when it is at least 10,000 in its currency and as
-    hourly when it is under 1,000; anything between is left out. When a posting
-    has several ranges (one per region), the first that fits is used.
+
+def pay_from_ranges(ranges) -> dict | None:
+    """Pay from `pay_input_ranges`. The feed gives cents and no period field.
+
+    The period is taken only from the range's own title or blurb ("Hourly
+    Range", "annual base salary"). When neither says, the range is left out:
+    the size of the figures is not used to guess. When a posting has several
+    ranges (one per region), the first that fits is used.
     """
     for item in ranges or []:
         if not isinstance(item, dict):
@@ -82,9 +88,10 @@ def pay_from_ranges(ranges) -> dict | None:
         low, high = item.get("min_cents"), item.get("max_cents")
         if not all(isinstance(value, (int, float)) and not isinstance(value, bool) for value in (low, high)):
             continue
-        low, high = low / 100, high / 100
-        period = "year" if low >= 10_000 else "hour" if high < 1_000 else None
-        found = normalize.pay(low, high, item.get("currency_type"), period)
+        words = f"{item.get('title') or ''} {item.get('blurb') or ''}"
+        hourly, yearly = bool(_HOURLY.search(words)), bool(_YEARLY.search(words))
+        period = "hour" if hourly and not yearly else "year" if yearly and not hourly else None
+        found = normalize.pay(low / 100, high / 100, item.get("currency_type"), period)
         if found:
             return found
     return None
