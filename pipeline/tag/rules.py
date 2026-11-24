@@ -70,7 +70,7 @@ OUT_RULES = [
     _out("recruiting", r"recruit\w+|talent (acquisition|partner|sourc\w+|scout)|\bsourcer\b"),
     _out("people-hr",
          r"human resources|\bhr\b|\bhrbp\b|\bhris\b|\bpeople (ops|operations|partner|team|business|experience|analytics"
-         r"|manager|programs?|lead|coordinator|generalist|systems|&|and)\b|(head|chief|vp|director),? (of )?people\b"
+         r"|manager|programs?|lead|coordinator|generalist|systems|&|and)\b|(head|chief|vp|vice president|director),? (of )?people\b"
          r"|chief people|learning (and|&) development|\bl&d\b|compensation|benefits|payroll|total rewards"
          r"|employee (relations|experience|engagement)|workplace (experience|manager|coordinator|operations)"
          r"|immigration|diversity|\bdei\b|talent (management|development)"),

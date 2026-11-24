@@ -36,6 +36,9 @@ def level_from_title(title: str) -> str | None:
 
     if re.search(r"\bintern(ship)?s?\b|\bco-?op\b|working student|\bstudent\b", lowered):
         return "intern"
+    # "Spring 2027 Optical Engineering Fellow" is a term placement.
+    if re.search(r"\bfellow\b", lowered) and re.search(r"\b(summer|winter|spring|fall|autumn)\b.*\b20\d\d\b|\b20\d\d\b.*\b(summer|winter|spring|fall|autumn)\b", lowered):
+        return "intern"
     if re.search(r"\b[se]?vp\b|vice[- ]president|\bchief \w+( \w+)? officer\b|\bc[etofpr]o\b|\bpresident\b", lowered):
         return "executive"
     if re.search(r"director|\bhead of\b|^head\b|\bhead,|general manager", lowered):

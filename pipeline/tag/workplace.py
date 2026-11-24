@@ -40,7 +40,9 @@ _TEXT = {
         r"|\bhybrid (in[- ]office|on[- ]?site|remote)\b|\bhybrid work flexibility\b"
         r"|\b(remote|onsite|on-site) or hybrid\b|\bhybrid or (remote|onsite|on-site)\b"
         r"|\b(\d|one|two|three|four)( ?(to|-) ?(\d|two|three|four))? days (a|per|each) week (in|at|on)[- ]?(the |our )?(office|site|lab)\b"
-        r"|\bin[- ]office (\d|one|two|three|four) days\b", re.I),
+        r"|\bin[- ]office (\d|one|two|three|four) days\b"
+        r"|\b(in|at) (the|our) (office|site|lab) (\d|one|two|three|four)( ?(to|-) ?(\d|two|three|four))? days (a|per|each) week\b",
+        re.I),
     "onsite": re.compile(
         r"\b(this|the) (is|role is|position is|job is) (a |an )?(fully |100% |full[- ]time )?(on[- ]?site|in[- ]person)\b"
         r"|\b(fully|100%) (on[- ]?site|in[- ]person) " + _ROLE + r"\b"
