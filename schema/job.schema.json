@@ -2,12 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hipot.example/schema/job.schema.json",
   "title": "Job",
-  "description": "One open role. Ids for disciplines, level and metros come from taxonomy.yml; the schema checks their shape and tools/validate.py checks membership.",
+  "description": "One open role. Ids for function, disciplines, level and metros come from taxonomy.yml; the schema checks their shape and tools/validate.py checks membership. jobs.json holds every role at a collected company; the publish step decides which functions and companies reach the board.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "id", "company_id", "title", "url", "source", "locations", "metros",
-    "workplace", "disciplines", "level", "employment", "pay",
+    "workplace", "function", "disciplines", "level", "employment", "pay",
     "posted_date", "first_seen", "last_seen", "tagging"
   ],
   "properties": {
@@ -50,7 +50,8 @@
     },
     "metros": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
     "workplace": {"enum": ["onsite", "hybrid", "remote", "unknown"]},
-    "disciplines": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "function": {"$ref": "#/$defs/slug", "description": "The kind of work: one id from taxonomy.yml functions."},
+    "disciplines": {"type": "array", "uniqueItems": true, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Technical fields, most relevant first. Expected for engineering and science roles; optional for others."},
     "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}], "description": "Null when the title does not state a level."},
     "employment": {"enum": ["full-time", "part-time", "contract", "intern", "unknown"]},
     "pay": {
@@ -78,8 +79,9 @@
       "description": "Who or what set each tag, so a wrong tag can be traced.",
       "type": "object",
       "additionalProperties": false,
-      "required": ["disciplines_by", "level_by"],
+      "required": ["function_by", "disciplines_by", "level_by"],
       "properties": {
+        "function_by": {"$ref": "#/$defs/tagger"},
         "disciplines_by": {"$ref": "#/$defs/tagger"},
         "level_by": {"$ref": "#/$defs/tagger"},
         "model": {"type": ["string", "null"], "description": "Model name when a model set any tag."}
