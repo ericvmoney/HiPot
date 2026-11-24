@@ -167,6 +167,25 @@ def read_rows(html: str) -> list[dict]:
     return rows
 
 
+SEED_FUNCTION_RULES = (
+    # Order matters: the first match wins. The old hub kept only engineering-led
+    # searches, so anything unmatched is engineering. The tagger replaces these.
+    (re.compile(r"\b(program|project|construction|deployment)\s+(manager|management|lead|director)\b|\bTPM\b", re.I), "project-program"),
+    (re.compile(r"\bproduct\s+(manager|management|lead|owner|director)\b|\bindustrial design", re.I), "product"),
+    (re.compile(r"\btechnician\b", re.I), "technician"),
+)
+
+
+def seed_function(title: str, profiles: list[str]) -> str:
+    """A first-pass function for an old-hub row: from the title, then the 'prod' profile."""
+    for pattern, function in SEED_FUNCTION_RULES:
+        if pattern.search(title):
+            return function
+    if profiles == ["prod"] and not re.search(r"\bengineer", title, re.I):
+        return "product"
+    return "engineering"
+
+
 def build(snapshot: Path) -> tuple[dict, dict, dict]:
     html = snapshot.read_text(encoding="utf-8")
     taxonomy = load_yaml(ROOT / "taxonomy.yml")
@@ -204,14 +223,15 @@ def build(snapshot: Path) -> tuple[dict, dict, dict]:
             "locations": [{"text": part.strip(" ,")} for part in row["location"].split(";") if part.strip(" ,")],
             "metros": sorted({where_map[w] for w in row["where"] if w in where_map}),
             "workplace": "remote" if "remote" in row["where"] else "unknown",
-            "disciplines": sorted({profile_map[p] for p in row["profiles"]}),
+            "function": seed_function(row["title"], row["profiles"]),
+            "disciplines": sorted({profile_map[p] for p in row["profiles"] if p in profile_map})[:3],
             "level": level,
             "employment": "unknown",
             "pay": parse_pay(row["pay"]),
             "posted_date": row["updated"] or None,
             "first_seen": row["first_seen"],
             "last_seen": last_run,
-            "tagging": {"disciplines_by": "seed", "level_by": "rule", "model": None},
+            "tagging": {"function_by": "seed", "disciplines_by": "seed", "level_by": "rule", "model": None},
         })
 
     jobs.sort(key=lambda job: (job["company_id"], job["title"].lower(), job["id"]))
