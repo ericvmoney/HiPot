@@ -46,9 +46,71 @@ uv run python -m tools.validate --jobs data/jobs.json
 uv run pytest                                    # contract tests
 uv run python -m pipeline.seed.import_old_hub    # rebuild data/seed/jobs.json from the saved snapshot
 uv run python -m tools.build_metros              # rebuild metro regions and data/geo/places.json from data/geo/source/
+uv run python -m tools.serve_board               # serve site/ at http://localhost:8734/ (see below)
 ```
 
+Next steps and the manual checks that help most right now: [reports/M1-status.md](reports/M1-status.md).
+
 The seed import needs `data/seed/raw/old_hub_2026-11-23.html`, which is not in the repository because it holds one person's search profile. It never overwrites `companies.yml` unless given `--force`.
+
+## Build and run the board locally
+
+The board is a static page (`site/index.html`) that loads one data file, `site/data/board.json`. Building that file takes three steps: collect, tag, publish. Then a local web server shows the page. Every generated file below is ignored by git.
+
+Commands are for PowerShell on Windows, run from the repository root. If `uv` is not found in a new window, restart the terminal after installing it (`winget install astral-sh.uv`).
+
+**1. Collect** the postings from every company's public job board (network; takes about 5 to 8 minutes, mostly because Rippling boards are read 6 seconds apart):
+
+```powershell
+uv run python -m pipeline.collect
+```
+
+Writes `data/jobs.raw.json` and remembers when each role was first seen in `data/state/seen.json`. Add `--company <id>` to read one company. Add `--record data/fixtures-live` to save every feed answer, then rebuild later with no network using `--replay data/fixtures-live`.
+
+**2. Tag** every posting with role type, disciplines, level, pay and workplace (no network, a few seconds):
+
+```powershell
+uv run python -m pipeline.tag
+```
+
+Reads `data/jobs.raw.json`, writes `data/jobs.json`. Add `--hardest 40` to print the titles the rules were least sure of.
+
+**3. Check** both files against the contracts:
+
+```powershell
+uv run python -m tools.validate --raw data/jobs.raw.json --jobs data/jobs.json
+```
+
+**4. Publish** the board's data file:
+
+```powershell
+uv run python -m pipeline.publish --jobs data/jobs.json
+```
+
+Writes `site/data/board.json` with only listed companies (core or enabling climate tier, startup status `in`) and listed role types (`listed: true` in `taxonomy.yml`). It prints how many roles were kept and why the rest were left out.
+
+**5. Serve and open** the page:
+
+```powershell
+uv run python -m tools.serve_board
+```
+
+Then open <http://localhost:8734/>. Stop the server with Ctrl+C. Use `--port 9000` if 8734 is taken; the script says so rather than silently sharing the port with another server. In the Claude desktop app, the `board` entry in `.claude/launch.json` starts the same server in the browser pane. Opening `site/index.html` directly from disk does not work: the browser blocks the page from loading its data file.
+
+**Shortcuts**
+
+- Already collected today? Skip step 1. Tagging and publishing reuse the last `data/jobs.raw.json`.
+- No collected data at all? `uv run python -m pipeline.publish --jobs data/seed/jobs.json` builds the board from the old hub's 502 seed roles (70 listed).
+- To see everything the screen hides, add `--include-unlisted` to the publish step. The page then shows a "Development build" banner. Never publish that build.
+- After changing `companies.yml` or `taxonomy.yml` (for example a role type's `listed:` switch), only step 4 needs re-running.
+
+**Checking a change**
+
+```powershell
+uv run pytest -q
+```
+
+Runs every test offline, about 15 seconds.
 
 ## Rules that are not negotiable
 

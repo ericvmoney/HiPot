@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "board",
+      "runtimeExecutable": "uv",
+      "runtimeArgs": ["run", "python", "-m", "tools.serve_board"],
+      "port": 8734
+    }
+  ]
+}
