@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, recruitee, run as run_module, smartrecruiters, workable
+from pipeline.collect import bamboohr, jazzhr, recruitee, run as run_module, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -237,3 +237,51 @@ def test_recruitee_ids_are_stable():
     raw = collect([company("fastned", "recruitee", "fastned")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
     assert sorted(job["id"] for job in raw["jobs"]) == ["recruitee:fastned:2794271", "recruitee:fastned:2818749",
                                                          "recruitee:fastned:2835151"]
+
+
+# ------------------------------------------------------------------- JazzHR
+
+def test_jazzhr_asks_the_feed_once():
+    fetcher = FakeFetcher()
+    jazzhr.read("coreshelltech", fetcher)
+    assert fetcher.calls == [("https://app.jazz.co/feeds/export/jobs/coreshelltech", None)]
+
+
+def test_jazzhr_fields():
+    drafts = jazzhr.read("coreshelltech", FakeFetcher())
+    assert len(drafts) == 3
+    first = drafts[0]
+    assert first["title"] == "Human Resources Generalist"
+    assert first["posting_id"] == "H2WUH8feDa"
+    assert first["url"].startswith("https://coreshelltech.applytojob.com/apply/H2WUH8feDa/")
+    assert first["locations"] == [{"text": "San Leandro, CA, United States", "city": "San Leandro", "state": "CA", "country": "US"}]
+    assert first["employment"] == "full-time" and first["department"] == "Human Resources"
+    assert first["posted_date"] is None and first["pay"] is None and first["workplace"] is None
+    assert first["description_text"]
+
+
+def test_jazzhr_ids_come_from_the_posting_address():
+    assert jazzhr.posting_code("https://coreshelltech.applytojob.com/apply/U9Oe7DLe6N/Battery-Technician") == "U9Oe7DLe6N"
+    assert jazzhr.posting_code("https://example.com/careers/1") is None
+    raw = collect([company("coreshell", "jazzhr", "coreshelltech")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert "jazzhr:coreshelltech:H2WUH8feDa" in {job["id"] for job in raw["jobs"]}
+
+
+def test_jazzhr_closed_jobs_are_left_out_and_bad_answers_are_errors():
+    feed = ("<jobs><job><id>job_1</id><status>Closed</status><title>Old</title>"
+            "<url>https://a.applytojob.com/apply/X1/Old</url></job>"
+            "<job><id>job_2</id><status>Open</status><title>New</title>"
+            "<url>https://a.applytojob.com/apply/X2/New</url><type>Internship</type></job></jobs>")
+    drafts = jazzhr.read("a", FakeFetcher(extra={"https://app.jazz.co/feeds/export/jobs/a": feed}))
+    assert [(draft["posting_id"], draft["employment"]) for draft in drafts] == [("X2", "intern")]
+    with pytest.raises(FetchError, match="not XML"):
+        jazzhr.parse("<html><body>Not found")
+    with pytest.raises(FetchError, match="not a JazzHR job feed"):
+        jazzhr.parse("<html><body>Not found</body></html>")
+    with pytest.raises(FetchError, match="document type"):
+        jazzhr.parse('<!DOCTYPE jobs [<!ENTITY a "aaaa">]><jobs>&a;</jobs>')
+
+
+def test_the_jazzhr_host_is_spaced_out():
+    from pipeline.collect.fetch import HOST_INTERVALS
+    assert HOST_INTERVALS["app.jazz.co"] >= 10

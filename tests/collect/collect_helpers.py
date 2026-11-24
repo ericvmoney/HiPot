@@ -27,6 +27,10 @@ ADDRESSES = {
     "https://fastned.recruitee.com/api/offers/": "recruitee_fastned.json",
     "https://greenerpowersolutions.recruitee.com/api/offers/": "recruitee_greenerpowersolutions.json",
 }
+# Feeds that answer in XML or HTML rather than JSON.
+TEXT_ADDRESSES = {
+    "https://app.jazz.co/feeds/export/jobs/coreshelltech": "jazzhr_coreshelltech.xml",
+}
 # Readers that make one request per posting ({base}/{posting}): these answers
 # are keyed by posting id (a uuid on Rippling). Postings with no recorded detail
 # get a 404, which exercises each reader's fallback.
@@ -70,6 +74,17 @@ class FakeFetcher:
             details = load_json(FIXTURES / RIPPLING_DETAILS[base])
             if uuid in details:
                 return details[uuid]
+        raise FetchError(f"HTTP 404: no fixture for {url}")
+
+    def get_text(self, url: str, params: dict | None = None) -> str:
+        self.calls.append((url, params))
+        self.requests += 1
+        if url in self.failures:
+            raise self.failures[url]
+        if url in self.extra:
+            return self.extra[url]
+        if url in TEXT_ADDRESSES:
+            return (FIXTURES / TEXT_ADDRESSES[url]).read_text(encoding="utf-8")
         raise FetchError(f"HTTP 404: no fixture for {url}")
 
     def close(self) -> None:

@@ -26,7 +26,9 @@ MIN_INTERVAL = 1.0
 # Hosts that get more room than MIN_INTERVAL. Rippling publishes no limit we can
 # read; one third-party write-up cites 100 requests per 10 minutes, so its host
 # is asked at most once every 6 seconds.
-HOST_INTERVALS = {"api.rippling.com": 6.0}
+# JazzHR calls its feed "heavily rate-limited" and gives no figure; it is one
+# request per company, so ten seconds apart costs little.
+HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0}
 TIMEOUT = 30.0
 RETRY_WAIT = 5.0
 BLOCK_STATUSES = (403, 429)
