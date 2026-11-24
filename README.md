@@ -47,6 +47,7 @@ uv run pytest                                    # contract tests
 uv run python -m pipeline.seed.import_old_hub    # rebuild data/seed/jobs.json from the saved snapshot
 uv run python -m tools.build_metros              # rebuild metro regions and data/geo/places.json from data/geo/source/
 uv run python -m tools.serve_board               # serve site/ at http://localhost:8734/ (see below)
+uv run python -m tools.build_wages               # rebuild data/pay/bls-oews-2025.json from the BLS file in data/pay/source/
 ```
 
 Next steps and the manual checks that help most right now: [reports/M1-status.md](reports/M1-status.md).

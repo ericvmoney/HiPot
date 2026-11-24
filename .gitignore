@@ -32,3 +32,6 @@ data/screening/cache/
 
 # Census source files; tools/build_metros.py rebuilds the committed lookup from them
 data/geo/source/
+
+# BLS wage files; downloaded by hand through the browser (BLS refuses scripted requests)
+data/pay/source/
