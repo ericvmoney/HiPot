@@ -8,10 +8,11 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, breezy, gem, jazzhr, recruitee, run as run_module, smartrecruiters, teamtailor, workable
+from pipeline.collect import bamboohr, breezy, gem, jazzhr, paylocity, recruitee, run as run_module, smartrecruiters, teamtailor, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
+from pipeline.collect.text import job_posting_description
 
 
 def by_title(drafts):
@@ -208,6 +209,14 @@ def test_smartrecruiters_workplace(place, expected):
     assert smartrecruiters._workplace(place) == expected
 
 
+def test_smartrecruiters_a_remote_place_with_on_site_flags():
+    # Seen live at Mission Critical Group: city "Remote", both flags false.
+    place = {"city": "Remote", "region": "", "country": "us", "remote": False, "hybrid": False,
+             "fullLocation": "Remote, , United States"}
+    assert smartrecruiters._workplace(place) is None
+    assert smartrecruiters._location(place) == [{"text": "Remote, United States", "country": "US"}]
+
+
 # ---------------------------------------------------------------- Recruitee
 
 def test_recruitee_asks_once_per_board():
@@ -362,8 +371,8 @@ def test_breezy_a_whole_place_typed_into_the_city_field():
 
 
 def test_breezy_page_without_a_job_block_gives_no_description():
-    assert breezy.description_from_page("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
-    assert breezy.description_from_page("<html><script type='application/ld+json'>{not json</script></html>") == ""
+    assert job_posting_description("<html><script type='application/ld+json'>{\"@type\": \"Organization\"}</script></html>") == ""
+    assert job_posting_description("<html><script type='application/ld+json'>{not json</script></html>") == ""
 
 
 def test_breezy_a_refused_page_blocks_the_company():
@@ -453,3 +462,51 @@ def test_gem_ids_are_stable():
                   now=lambda: "2026-11-24T16:00:00Z")
     assert "gem:butcher-power-products:am9icG9zdDrAinBn0igPiiY7k5M-csUZ" in {job["id"] for job in raw["jobs"]}
     assert {tuple(job["metros"]) for job in raw["jobs"]} == {("sacramento-ca",), ("houston-tx",), ()}
+
+
+# ---------------------------------------------------------------- Paylocity
+
+PTT = "3c0c9b43-2c62-43f8-b766-5f9fe7284368"
+
+
+def test_paylocity_asks_the_board_then_each_posting_page():
+    fetcher = FakeFetcher()
+    drafts = paylocity.read(PTT, fetcher)
+    urls = [url for url, _ in fetcher.calls]
+    assert urls[0] == f"https://recruiting.paylocity.com/recruiting/jobs/All/{PTT}"
+    assert urls[1] == "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4692187"
+    assert len(urls) == 1 + len(drafts) == 20
+
+
+def test_paylocity_fields():
+    drafts = {d["posting_id"]: d for d in paylocity.read(PTT, FakeFetcher())}
+    supervisor = drafts["4692187"]
+    assert supervisor["title"] == "Production Supervisor"
+    assert supervisor["url"] == "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4692187"
+    assert supervisor["locations"] == [{"text": "Canonsburg, PA", "city": "Canonsburg", "state": "PA", "country": "US"}]
+    assert supervisor["posted_date"] == "2026-11-24" and supervisor["workplace"] is None
+    # The full description from the posting page's schema.org block.
+    assert supervisor["description_text"].startswith("Description\nThe Production Supervisor leads and develops")
+    assert len(supervisor["description_text"]) > 1000
+    # No posting page recorded: the board's short description is kept.
+    assistant = drafts["4692030"]
+    assert 0 < len(assistant["description_text"]) < 200
+    assert drafts["2696450"]["workplace"] == "remote"
+    assert drafts["4656379"]["department"] == "Human Resources"
+    assert drafts["3923835"]["locations"][0]["city"] == "Raeford"
+
+
+def test_paylocity_board_page_problems_are_errors():
+    with pytest.raises(FetchError, match="no window.pageData"):
+        paylocity.page_data("<html>Sign in</html>")
+    with pytest.raises(FetchError, match="not JSON"):
+        paylocity.page_data("<script>window.pageData = {broken</script>")
+    with pytest.raises(FetchError, match="no job list"):
+        paylocity.page_data('<script>window.pageData = {"Jobs": null};</script>')
+    page = '<script>window.pageData = {"Jobs": [{"JobId": 1, "JobTitle": "Internal", "IsInternal": true}]};</script>'
+    assert paylocity.read("x", FakeFetcher(extra={"https://recruiting.paylocity.com/recruiting/jobs/All/x": page})) == []
+
+
+def test_paylocity_ids_are_stable():
+    raw = collect([company("pa-transformer", "paylocity", PTT)], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert f"paylocity:{PTT}:4692187" in {job["id"] for job in raw["jobs"]}

@@ -45,7 +45,9 @@ def _location(place) -> list[dict]:
     if not isinstance(place, dict):
         return []
     city, region, country = place.get("city"), place.get("region"), (place.get("country") or "").upper() or None
-    text = place.get("fullLocation") or ", ".join(part for part in (city, region, country) if part)
+    # fullLocation keeps empty parts ("Remote, , United States"); they are dropped.
+    full = ", ".join(part.strip() for part in (place.get("fullLocation") or "").split(",") if part.strip())
+    text = full or ", ".join(part for part in (city, region, country) if part)
     return [structured_location(text, city, region, country)] if text else []
 
 
@@ -56,6 +58,9 @@ def _workplace(place) -> str | None:
         return "remote"
     if place.get("hybrid") is True:
         return "hybrid"
+    if (place.get("city") or "").strip().lower() == "remote":
+        # The flags say on-site but the place is "Remote": the location rules decide.
+        return None
     # The API filters on locationType REMOTE, HYBRID or ONSITE, so two explicit
     # false flags mean on-site.
     if place.get("remote") is False and place.get("hybrid") is False:

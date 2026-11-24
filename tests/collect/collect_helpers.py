@@ -35,6 +35,8 @@ TEXT_ADDRESSES = {
     "https://app.jazz.co/feeds/export/jobs/coreshelltech": "jazzhr_coreshelltech.xml",
     "https://career.airahome.com/jobs.rss?per_page=100&offset=0": "teamtailor_aira.rss",
     "https://zeno-power.breezy.hr/p/783342e25463-electrical-engineer-contractor": "breezy_zeno-power_783342e25463.html",
+    "https://recruiting.paylocity.com/recruiting/jobs/All/3c0c9b43-2c62-43f8-b766-5f9fe7284368": "paylocity_ptt_board.html",
+    "https://recruiting.paylocity.com/Recruiting/Jobs/Details/4692187": "paylocity_ptt_4692187.html",
 }
 # Readers that make one request per posting ({base}/{posting}): these answers
 # are keyed by posting id (a uuid on Rippling). Postings with no recorded detail
