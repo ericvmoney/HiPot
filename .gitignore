@@ -29,3 +29,6 @@ Thumbs.db
 data/state/
 site/data/board.json
 data/screening/cache/
+
+# Census source files; tools/build_metros.py rebuilds the committed lookup from them
+data/geo/source/

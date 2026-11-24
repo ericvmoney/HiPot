@@ -248,6 +248,6 @@ Decided by Eric on 2026-11-24:
 5. **Role scope.** Cover the variety of roles at hardware companies, not only engineers (taxonomy version 1, section 5).
 6. **Rippling.** Read Rippling boards (Aptera, AtmosZero, Torus), although Rippling's job-board documentation is behind a sign-in and its User Terms (section 2.2) prohibit automated extraction for use outside its services. Requests are spaced 6 seconds apart and stop on a 403 or 429. Recorded as a known risk in section 8.
 
-Still open:
+7. **Geography.** United States, every metropolitan area plus remote. Built 2026-11-24 from the Census Bureau's July 2023 delineations: 274 metro regions (162 combined statistical areas and 112 metropolitan areas outside any), with plant towns and suburbs placed by county (`tools/build_metros.py`, `pipeline/geo.py`). A role outside every metro is still found by state. Connecticut is not yet mapped: the 2023 delineations use its new planning regions, which the 2020 town files do not.
 
-7. **Geography.** Working assumption until told otherwise: United States first, all metros plus remote.
+Still open: none at the moment. Pending owner decisions on individual companies are in `data/screening/decisions-needed.md` once the scout delivers it.

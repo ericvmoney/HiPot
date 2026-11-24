@@ -24,6 +24,7 @@ A public job board for hardware roles at clean tech and electrification startups
 | `design/` | Tokens, mark, templates | A8 |
 | `spikes/` | Throwaway experiments | Supervisor |
 | `tools/` | Validation and build helpers | Supervisor |
+| `pipeline/geo.py`, `data/geo/places.json` | US place to metro region lookup, built by `tools/build_metros.py` from Census files | Supervisor |
 
 One writer per directory. A change to anything under `schema/` or to `taxonomy.yml` goes through the supervisor.
 
@@ -44,6 +45,7 @@ uv run python -m tools.validate                  # seed jobs, registry and examp
 uv run python -m tools.validate --jobs data/jobs.json
 uv run pytest                                    # contract tests
 uv run python -m pipeline.seed.import_old_hub    # rebuild data/seed/jobs.json from the saved snapshot
+uv run python -m tools.build_metros              # rebuild metro regions and data/geo/places.json from data/geo/source/
 ```
 
 The seed import needs `data/seed/raw/old_hub_2026-11-23.html`, which is not in the repository because it holds one person's search profile. It never overwrites `companies.yml` unless given `--force`.
