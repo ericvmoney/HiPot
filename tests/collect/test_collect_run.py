@@ -56,6 +56,19 @@ def test_skip_reason(entry, reason):
     assert skip_reason(entry) == reason
 
 
+def test_read_manual_is_collected_when_there_is_a_reader_and_read_none_is_not():
+    manual = {**company("a", "lever", "a"), "read": "manual"}
+    assert skip_reason(manual) is None
+    assert skip_reason({**manual, "read": "none"}) == "not collected: the registry says read: none"
+
+
+def test_a_switched_off_reader_is_named_in_the_skip_reason(monkeypatch):
+    monkeypatch.setitem(run_module.SWITCHED_OFF, "workday", lambda board, fetcher: [])
+    reason = skip_reason(company("a", "workday", "a"))
+    assert reason == "workday: reader switched off pending a terms decision (--enable-reader workday)"
+    assert skip_reason(company("a", "workday", "a"), {**run_module.READERS, "workday": run_module.SWITCHED_OFF["workday"]}) is None
+
+
 def test_rippling_is_collected_with_one_request_per_posting():
     fetcher = FakeFetcher()
     raw = run([company("aptera", "rippling", "aptera", tier="enabling")], fetcher)
