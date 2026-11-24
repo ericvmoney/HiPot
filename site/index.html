@@ -632,7 +632,10 @@ body::before {
   function prepareLocations(facet) {
     var order = { top: 0, metro: 1, state: 2 };
     facet.options.sort(function (a, b) {
-      return (order[a.kind] - order[b.kind]) || (b.total - a.total) || a.label.localeCompare(b.label);
+      // Metro areas by role count; states A to Z by name (the owner's choice), so a state is easy to find.
+      if (order[a.kind] !== order[b.kind]) return order[a.kind] - order[b.kind];
+      if (a.kind === 'state') return a.label.localeCompare(b.label, 'en');
+      return (b.total - a.total) || a.label.localeCompare(b.label, 'en');
     });
     // Option id -> place names from the roles it covers. Only roles with one location count: a role in
     // Weirton and Berkeley would otherwise make "Weirton" find the Bay Area.

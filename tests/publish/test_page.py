@@ -123,7 +123,9 @@ def test_location_filter_lists_every_place_in_a_searchable_scrolling_list():
     assert "facet.scroller = el('div', { class: 'loc-list'" in SCRIPT
     assert re.search(r"\.loc-list \{[^}]*max-height: 320px; overflow-y: auto;", STYLE)
     assert "id: 'f-m-find', type: 'search'" in SCRIPT
-    assert "(b.total - a.total)" in SCRIPT
+    # Metro areas by role count; states A to Z by name.
+    assert "if (a.kind === 'state') return a.label.localeCompare(b.label, 'en');" in SCRIPT
+    assert "return (b.total - a.total) || a.label.localeCompare(b.label, 'en');" in SCRIPT
     # States are location options in their own right, kept in the address as 'state-xx'.
     assert "if (id.indexOf(STATE_PREFIX) === 0) return 'state-' + id.slice(STATE_PREFIX.length);" in SCRIPT
     assert "states.forEach(function (code) { places.push(STATE_PREFIX + code); });" in SCRIPT
