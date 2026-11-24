@@ -61,3 +61,31 @@ def test_startup_test_growth_signs():
     assert startup_test(company(founded=1990, stage="late"))[0] == "in"            # venture-backed, round unchecked
     assert startup_test(company(founded=1990, stage=None))[0] == "out"
     assert startup_test(company(founded=None))[0] == "in"
+
+
+from tools.apply_screening import parent_is_large  # noqa: E402
+
+
+def test_parent_counts_only_when_large():
+    assert parent_is_large("Volkswagen Group 682,724 (2024 average)")
+    assert not parent_is_large("EQT AB 1,160 (2021, Wikipedia infobox)")
+    assert not parent_is_large("not found; American Securities is a PE firm")
+    assert not parent_is_large(None)
+    nexamp = company(founded=2007, stage="late")
+    fill_missing(nexamp, {"id": "x", "parent": "Mitsubishi Corporation", "parent_headcount": "63,037 consolidated"})
+    assert startup_test(nexamp)[0] == "out"
+    solv = company(founded=2008, stage="public", ipo_year=2026)
+    fill_missing(solv, {"id": "x", "parent": "American Securities (private equity)", "parent_headcount": "not found"})
+    assert solv["parent"] is None and startup_test(solv)[0] == "in"
+
+
+def test_share_sales_by_public_companies_are_not_growth_funding():
+    sale = {"date": "2026-09", "type": "at-the-market offering", "source": "s"}
+    assert startup_test(company(founded=1992, stage="public", last_raise=sale))[0] == "out"
+    private = {"date": "2023-06", "type": "growth equity (follow-on minority investment)", "source": "s"}
+    assert startup_test(company(founded=2001, stage="late", last_raise=private))[0] == "in"
+
+
+def test_founded_fifteen_years_ago_still_counts():
+    assert startup_test(company(founded=2011, stage="public"))[0] == "in"
+    assert startup_test(company(founded=2010, stage="public"))[0] == "out"

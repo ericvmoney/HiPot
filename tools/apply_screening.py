@@ -67,18 +67,6 @@ STARTUP_IN_BY_RULE = {
     "no figure": "No headcount figure found; included under the owner's rule for missing figures (2026-11-24).",
     "near-line": "Near the 1,000-person line; borderline companies are included (owner, 2026-11-24).",
 }
-# Owners of subsidiaries well above the cap, recorded until the scout's
-# registry-fixes-03 supplies sourced values. A company whose owner is unknown
-# is not treated as a subsidiary.
-KNOWN_PARENTS = {
-    "scout-motors": "Volkswagen Group",
-    "qcells": "Hanwha Group",
-    "rivian-and-volkswagen-group-technologies": "Rivian and Volkswagen Group",
-    "zoox": "Amazon",
-    "wing": "Alphabet",
-    "clearway-energy-group": "Global Infrastructure Partners and TotalEnergies",
-}
-
 # Each entry: the question it settles, and the fields it sets.
 OWNER_RULINGS: dict[str, dict] = {
     # A1: drone delivery is electric aviation.
@@ -167,18 +155,38 @@ def apply_review(company: dict, entry: dict) -> None:
     company["notes"] = f"Checked by the company scout on {TODAY}; facts and sources in data/screening/seed-review.yml."
 
 
+def parent_is_large(text) -> bool:
+    """True when the owner's headcount (the first figure in the scout's note) is
+    at or above the cap. No figure counts as small: investment firms."""
+    if isinstance(text, int):
+        return text >= HEADCOUNT_LINE
+    found = re.search(r"\d[\d,]*", str(text or ""))
+    return bool(found) and int(found.group().replace(",", "")) >= HEADCOUNT_LINE
+
+
+SHARE_SALE = re.compile(r"at-the-market|\bATM\b|registered direct|follow-on|secondary|shelf", re.I)
+
+
 def fill_missing(company: dict, fix: dict) -> None:
     """Fill hq, founded, stage and headcount where the registry has none."""
     for field in ("hq", "founded", "stage"):
         value = (fix.get(field) or {}).get("value")
         if company.get(field) is None and value is not None:
             company[field] = value
-    if company.get("headcount") is None and (fix.get("headcount") or {}).get("value") is not None:
-        company["headcount"] = headcount_from_review(fix)
-    # Startup-definition facts (registry-fixes-03 onward).
-    if "parent" in fix and company.get("parent") is None:
-        parent = fix["parent"]
-        company["parent"] = parent.get("value") if isinstance(parent, dict) else parent
+    newer = headcount_from_review(fix) if (fix.get("headcount") or {}).get("value") is not None else None
+    if newer and (company.get("headcount") is None or newer["as_of"] > company["headcount"]["as_of"]):
+        company["headcount"] = newer
+    # Startup-definition facts (registry-fixes-03 onward). An owner makes a company
+    # not independent only when the owner itself is at or above the cap; a company
+    # owned by an investment firm or a small company counts as independent.
+    if fix.get("parent") and company.get("parent") is None:
+        parent = fix["parent"].get("value") if isinstance(fix["parent"], dict) else fix["parent"]
+        if parent_is_large(fix.get("parent_headcount")):
+            company["parent"] = parent
+        else:
+            note = f"Owned by {parent}; counted as independent (owner under {HEADCOUNT_LINE:,} people or an investment firm)."
+            if note not in (company.get("notes") or ""):
+                company["notes"] = f"{company.get('notes') or ''} {note}".strip()
     raise_ = fix.get("last_raise")
     if raise_ and company.get("last_raise") is None and raise_.get("date"):
         company["last_raise"] = {"date": str(raise_["date"]), "type": raise_.get("type") or "equity round",
@@ -211,10 +219,14 @@ def startup_test(company: dict) -> tuple[str, str]:
         return "out", f"{size}: over the 4,000-person line."
     signs = []
     founded, stage = company.get("founded"), company.get("stage")
-    if founded and founded > YEAR - 15:
+    if founded and founded >= YEAR - 15:          # "within the last 15 years" includes the boundary year
         signs.append(f"founded {founded}")
     raise_ = company.get("last_raise")
-    if raise_ and int(str(raise_["date"])[:4]) > YEAR - 5:
+    # A share sale by a company that is already public is not startup funding.
+    five_years_ago = f"{YEAR - 5}{TODAY[4:7]}"          # compared by year and month
+    already_public = company.get("stage") == "public" or company.get("ipo_year")
+    if raise_ and str(raise_["date"])[:7] >= five_years_ago[:len(str(raise_["date"])[:7])] \
+            and not (already_public and SHARE_SALE.search(raise_["type"])):
         signs.append(f"{raise_['type']} in {str(raise_['date'])[:4]}")
     ipo = company.get("ipo_year")
     if ipo and ipo > YEAR - 5:
@@ -280,10 +292,6 @@ def main() -> int:
     for fix in fixes:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
-
-    for cid, parent in KNOWN_PARENTS.items():
-        if cid in companies and companies[cid].get("parent") is None:
-            companies[cid]["parent"] = parent
 
     # The agreed startup definition, for every company that has been looked at.
     # An owner ruling that names a company (OWNER_RULINGS) still wins, below.

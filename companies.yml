@@ -1361,8 +1361,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; 64 people (Dealroom (https://dealroom.co/companies/connectder), 2026-11-24); founded 2011
-      but venture-backed (late); latest round not yet checked, so included.
+    reason: 'Independent; 64 people (Dealroom (https://dealroom.co/companies/connectder), 2026-11-24); growth sign:
+      founded 2011.'
   notes: 'Board greenhouse:connectder loaded 2026-11-24, token matched by name; board page title checked: 1 open
     roles, 1 with engineering or technical titles; locations seen: Philadelphia, Pennsylvania, United States; Remote.
     Founded: https://dealroom.co/companies/connectder. Stage: Series D, $35M, December 2024 (Dealroom; investors
@@ -2243,8 +2243,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; 1,099 people (Revelio Labs (https://www.reveliolabs.com/companies/formlabs/employees),
-      2026-06-01); founded 2011 but venture-backed (late); latest round not yet checked, so included.
+    reason: 'Independent; 1,099 people (Revelio Labs (https://www.reveliolabs.com/companies/formlabs/employees),
+      2026-06-01); growth sign: founded 2011.'
   notes: Missing facts filled from data/screening/registry-fixes.
 - id: fortera
   name: Fortera
@@ -2808,8 +2808,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; 9 people (Revelio Labs (https://www.reveliolabs.com/companies/hevo/employees), 2026-03-01);
-      founded 2011 but venture-backed (series-a); latest round not yet checked, so included.
+    reason: 'Independent; 9 people (Revelio Labs (https://www.reveliolabs.com/companies/hevo/employees), 2026-03-01);
+      growth sign: founded 2011.'
   notes: 'Board lever:hevo loaded 2026-11-24, token matched by name; board page title checked: 1 open roles, 0 with
     engineering or technical titles; locations seen: New York, NY. Founded: https://dealroom.co/companies/hevo-power.
     Stage: Dealroom lists a Series A1 (VoLo Earth Ventures), amount/date undisclosed; since then equity crowdfunding
@@ -5145,8 +5145,8 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; 478 people (Revelio Labs (https://www.reveliolabs.com/companies/sila-nanotechnologies/employees/),
-      2026-06-01); founded 2011 but venture-backed (late); latest round not yet checked, so included.
+    reason: 'Independent; 478 people (Revelio Labs (https://www.reveliolabs.com/companies/sila-nanotechnologies/employees/),
+      2026-06-01); growth sign: founded 2011.'
   notes: 'Board greenhouse:silananotechnologies loaded 2026-11-24, linked from the company''s own site: 31 open
     roles, 18 with engineering or technical titles; locations seen: Alameda, CA, Japan, Moses Lake, WA. Founded:
     https://silanano.com/press/press-releases/sila-secures-300-million-in-private-funding-to-ramp-gigascale-anode-manufacturing-and-strengthen-americas-technology-sovereignty.
@@ -5210,10 +5210,9 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: Independent; 230 people (Solid Power FY2025 Form 10-K (filed 2026-02-25), via stockanalysis.com (S&P
-      Global) https://stockanalysis.com/stocks/sldp/employees/, 2025-12-31); founded 2011, with no equity raise
-      in 5 years or recent listing found.
+    status: in
+    reason: 'Independent; 230 people (Solid Power FY2025 Form 10-K (filed 2026-02-25), via stockanalysis.com (S&P
+      Global) https://stockanalysis.com/stocks/sldp/employees/, 2025-12-31); growth sign: founded 2011.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
 - id: solv-energy
   name: SOLV Energy
