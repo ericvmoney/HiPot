@@ -54,6 +54,7 @@ def test_every_lookup_target_is_a_taxonomy_metro():
     ("Dallas-Fort Worth", "TX", "dallas-tx"),
     ("Greater Boston", "MA", "boston"),
     ("Marlboro", "MA", "boston"),                # spelling of Marlborough on job boards
+    ("Spicewood", "TX", "austin-tx"),            # not a Census place; hand-mapped
 ])
 def test_metro_for(city, state, expected):
     assert metro_for(city, state) == expected

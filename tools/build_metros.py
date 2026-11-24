@@ -86,6 +86,7 @@ MANUAL_PLACES = [
     ("MA", "Boston Metro", "25025"),
     ("TX", "Dallas-Fort Worth", "48113"),    # Dallas County
     ("TX", "DFW", "48113"),
+    ("TX", "Spicewood", "48453"),            # unincorporated, Travis County (Austin region)
     ("TX", "Dallas Fort Worth Metroplex", "48113"),
 ]
 # Not mapped on purpose: "Front Range" (CO) spans the Denver and Fort Collins
