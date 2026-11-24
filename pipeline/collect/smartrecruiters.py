@@ -1,4 +1,4 @@
-"""SmartRecruiters reader. Switched off by default (run.SWITCHED_OFF): see below.
+"""SmartRecruiters reader. Its terms restrict automated reading: see below.
 
 Documentation: the Posting API,
 https://developers.smartrecruiters.com/reference/v1listpostings and
@@ -18,7 +18,8 @@ Policy" (https://developers.smartrecruiters.com/docs/the-smartrecruiters-platfor
 That policy (v.4.2026a, section 2.2.2(b)) prohibits "scraping, harvesting, or
 systematic and/or large-scale data extraction". robots.txt on
 api.smartrecruiters.com also disallows every client but LinkedInBot. The reader
-is off until the owner decides.
+runs by the owner's decision (PLAN.md decision 6), at most one request every
+6 s to the host; --disable-reader smartrecruiters turns it off for a run.
 
 Fields read. List: id, name, releasedDate, location (city, region, country,
 fullLocation, remote, hybrid), department.label, typeOfEmployment, totalFound.
