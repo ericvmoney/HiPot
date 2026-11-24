@@ -56,7 +56,7 @@ Values within one group are alternatives; groups combine with "and". Unknown tok
 
 ## Location filter
 
-One control holds Remote, "Outside any metro area", metro areas and states. Every metro area and state with roles is listed, each group sorted by how many roles it has, inside a box that scrolls on its own (320px tall) with a sticky group heading and count. A "Find a place" box searches metro labels, state names and codes, and the place names of single-location roles, so "Weirton" finds the Pittsburgh region and "Texas" finds the Texas metros and the state. Ticked places always stay visible. Choices within the control combine with "or".
+One control holds Remote, "Outside any metro area", metro areas and states. Every metro area and state with roles is listed: metro areas by how many roles they have, states A to Z by name, inside a box that scrolls on its own (320px tall) with a sticky group heading and count. A "Find a place" box searches metro labels, state names and codes, and the place names of single-location roles, so "Weirton" finds the Pittsburgh region and "Texas" finds the Texas metros and the state. Ticked places always stay visible. Choices within the control combine with "or".
 
 ### Later: filters as dropdowns with checkboxes (not built)
 
