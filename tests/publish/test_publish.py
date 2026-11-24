@@ -14,7 +14,8 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from pipeline.io import ROOT, load_json, load_yaml
 from pipeline.publish import PublishError, build_board, dumps_board
-from pipeline.publish.__main__ import main
+from pipeline.publish import __main__ as cli
+from pipeline.publish.__main__ import default_jobs, main
 from tools.validate import is_listed, listed_functions
 
 TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
@@ -303,14 +304,20 @@ def test_a_role_at_an_unknown_company_is_refused():
         build_board(jobs_file([job("a1", "ghost")]), registry([company("alpha", "core", "in")]), TAXONOMY)
 
 
+SEED_PATH = str(ROOT / "data" / "seed" / "jobs.json")
+# The registry and taxonomy stay the real ones when a test points the repository root elsewhere.
+CONTRACT_ARGS = ["--companies", str(ROOT / "companies.yml"), "--taxonomy", str(ROOT / "taxonomy.yml")]
+
+
 def test_command_line_writes_the_file(tmp_path, capsys):
+    # --jobs is explicit so the test means the same in a checkout that has data/jobs.json.
     out = tmp_path / "data" / "board.json"
-    assert main(["--out", str(out)]) == 0
+    assert main(["--jobs", SEED_PATH, "--out", str(out)]) == 0
     assert out.read_text(encoding="utf-8") == dumps_board(build_board(JOBS, REGISTRY, TAXONOMY))
     assert load_json(out)["scope"] == "listed"
     assert "DEVELOPMENT BUILD" not in capsys.readouterr().out
 
-    assert main(["--out", str(out), "--include-unlisted"]) == 0
+    assert main(["--jobs", SEED_PATH, "--out", str(out), "--include-unlisted"]) == 0
     assert load_json(out)["scope"] == "all"
     assert "DEVELOPMENT BUILD" in capsys.readouterr().out
 
@@ -323,3 +330,49 @@ def test_command_line_writes_nothing_on_bad_input(tmp_path, capsys):
     assert main(["--jobs", str(jobs_path), "--out", str(out)]) == 1
     assert not out.exists()
     assert "nothing written" in capsys.readouterr().err
+
+
+# --- Which jobs file the bare command reads ---------------------------------
+
+def test_default_input_is_the_tagged_data_when_it_exists(tmp_path):
+    (tmp_path / "data" / "seed").mkdir(parents=True)
+    (tmp_path / "data" / "seed" / "jobs.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "data" / "jobs.json").write_text("{}", encoding="utf-8")
+    path, why = default_jobs(tmp_path)
+    assert path == tmp_path / "data" / "jobs.json" and "tagged" in why
+
+
+def test_default_input_falls_back_to_the_seed(tmp_path):
+    path, why = default_jobs(tmp_path)
+    assert path == tmp_path / "data" / "seed" / "jobs.json" and "seed" in why
+
+
+def test_bare_command_uses_and_names_the_tagged_data(tmp_path, monkeypatch, capsys):
+    tagged = tmp_path / "data" / "jobs.json"
+    tagged.parent.mkdir(parents=True)
+    small = copy.deepcopy(JOBS)
+    small["jobs"] = [j for j in small["jobs"] if j["company_id"] in LISTED_IDS][:3]
+    tagged.write_text(json.dumps(small), encoding="utf-8")
+    monkeypatch.setattr(cli, "ROOT", tmp_path)
+    out = tmp_path / "board.json"
+    assert main(["--out", str(out), *CONTRACT_ARGS]) == 0
+    assert f"Input: {tagged} (default: the tagged data)" in capsys.readouterr().out
+    assert len(load_json(out)["roles"]) == 3
+
+
+def test_bare_command_falls_back_to_the_seed_and_says_so(tmp_path, monkeypatch, capsys):
+    seed = tmp_path / "data" / "seed" / "jobs.json"
+    seed.parent.mkdir(parents=True)
+    seed.write_text(json.dumps(JOBS), encoding="utf-8")
+    monkeypatch.setattr(cli, "ROOT", tmp_path)
+    out = tmp_path / "board.json"
+    assert main(["--out", str(out), *CONTRACT_ARGS]) == 0
+    assert "(default: data/jobs.json not found, using the seed)" in capsys.readouterr().out
+    assert load_json(out)["source"] == JOBS["source"]
+
+
+def test_a_missing_jobs_file_is_a_clear_error_not_a_traceback(tmp_path, capsys):
+    out = tmp_path / "board.json"
+    assert main(["--jobs", str(tmp_path / "nope.json"), "--out", str(out)]) == 1
+    assert "no jobs file at" in capsys.readouterr().err
+    assert not out.exists()
