@@ -32,7 +32,7 @@
     "taxonomy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "climate_tiers"],
+      "required": ["functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "states", "climate_tiers"],
       "patternProperties": {
         "^[a-z_]+$": {
           "type": "array",
@@ -86,6 +86,7 @@
           "fn": {"$ref": "#/$defs/slug", "description": "The role's function: an id from taxonomy.functions."},
           "loc": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
           "metros": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}},
+          "st": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z]{2}$"}, "description": "US states the role's locations name, as lower-case USPS codes. Keys of taxonomy.states."},
           "wp": {"enum": ["onsite", "hybrid", "remote"]},
           "disc": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Left out when the role has no discipline."},
           "level": {"$ref": "#/$defs/slug"},

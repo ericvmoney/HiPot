@@ -209,7 +209,7 @@ def test_company_and_role_fields_are_carried_over():
     by_id = {role["id"]: role for role in board["roles"]}
     assert by_id["a1"] == {
         "id": "a1", "co": "alpha", "title": "Staff Controls Engineer", "url": "https://example.com/jobs/a1",
-        "fn": "engineering", "loc": ["Denver, CO", "US remote"], "metros": ["denver"], "wp": "remote", "disc": ["controls", "systems"],
+        "fn": "engineering", "loc": ["Denver, CO", "US remote"], "metros": ["denver"], "st": ["co"], "wp": "remote", "disc": ["controls", "systems"],
         "level": "staff", "emp": "full-time", "pay": {"min": 150000, "max": 190000, "cur": "USD", "per": "year"},
         "posted": "2026-11-21", "seen": "2026-11-20", "summary": "Own the inverter control loop.",
     }

@@ -13,7 +13,10 @@ Rules, in the order they are applied:
 3. A role keeps only what a visitor needs. Null, empty and "unknown" values
    are left out to keep the file small; the page treats a missing field as
    "not stated". Pay is copied as published and never derived.
-4. The output depends only on the input: the generated time is the jobs
+4. Location: the taxonomy block carries only the metros used by roles in the
+   file, and a `states` list of the US states they name. Every role carries
+   its states (`st`), so a role outside every metro can still be found.
+5. The output depends only on the input: the generated time is the jobs
    file's own `generated_at`, roles are sorted newest first with a fixed
    tie-break, and keys are written in a fixed order. The same input gives the
    same bytes.
@@ -24,6 +27,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pipeline.publish.states import US_STATES, states_for
 from tools.validate import check_companies, check_jobs, is_listed, listed_functions, schema_errors, schema_registry
 
 BOARD_VERSION = 0
@@ -55,12 +59,19 @@ def _check_inputs(jobs_file: dict, registry_file: dict, taxonomy: dict) -> None:
         raise PublishError([f"jobs: {line}" for line in problems])
 
 
-def _labels(taxonomy: dict) -> dict[str, list[dict[str, Any]]]:
+def _labels(taxonomy: dict, kept: list[dict]) -> dict[str, list[dict[str, Any]]]:
     labels = {key: [{"id": entry["id"], "label": entry["label"]} for entry in taxonomy[key]] for key in TAXONOMY_KEYS}
     listed = listed_functions(taxonomy)
     for entry in labels["functions"]:
         if entry["id"] not in listed:
             entry["listed"] = False
+    # The metro list has hundreds of regions; keep only those used, in taxonomy order.
+    used_metros = {metro for job in kept for metro in job["metros"]}
+    labels["metros"] = [entry for entry in labels["metros"] if entry["id"] in used_metros]
+    used_states = {state for job in kept for state in states_for(job["locations"])}
+    labels["states"] = [{"id": code.lower(), "label": name}
+                        for code, name in sorted(US_STATES.items(), key=lambda item: item[1])
+                        if code.lower() in used_states]
     return labels
 
 
@@ -101,6 +112,9 @@ def _role_record(job: dict) -> dict[str, Any]:
         record["loc"] = [place["text"] for place in job["locations"]]
     if job["metros"]:
         record["metros"] = list(job["metros"])
+    states = states_for(job["locations"])
+    if states:
+        record["st"] = states
     if job["workplace"] != "unknown":
         record["wp"] = job["workplace"]
     if job["disciplines"]:
@@ -158,7 +172,7 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
             "functions": {entry["id"]: sum(1 for job in kept if job["function"] == entry["id"])
                           for entry in taxonomy["functions"]},
         },
-        "taxonomy": _labels(taxonomy),
+        "taxonomy": _labels(taxonomy, kept),
         "companies": company_records,
         "roles": [_role_record(job) for job in kept],
     }
