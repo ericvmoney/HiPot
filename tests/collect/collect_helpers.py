@@ -24,6 +24,8 @@ ADDRESSES = {
     "https://apply.workable.com/api/v1/widget/accounts/anthro": "workable_anthro.json",
     "https://lunaroutpost.bamboohr.com/careers/list": "bamboohr_lunaroutpost_list.json",
     "https://api.smartrecruiters.com/v1/companies/EnPowerInc/postings?limit=100&offset=0": "smartrecruiters_EnPowerInc.json",
+    "https://fastned.recruitee.com/api/offers/": "recruitee_fastned.json",
+    "https://greenerpowersolutions.recruitee.com/api/offers/": "recruitee_greenerpowersolutions.json",
 }
 # Readers that make one request per posting ({base}/{posting}): these answers
 # are keyed by posting id (a uuid on Rippling). Postings with no recorded detail

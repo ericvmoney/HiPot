@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, run as run_module, smartrecruiters, workable
+from pipeline.collect import bamboohr, recruitee, run as run_module, smartrecruiters, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -192,3 +192,48 @@ def test_smartrecruiters_pay(compensation, expected):
 def test_smartrecruiters_workplace(place, expected):
     assert smartrecruiters._workplace(place) == expected
 
+
+# ---------------------------------------------------------------- Recruitee
+
+def test_recruitee_asks_once_per_board():
+    fetcher = FakeFetcher()
+    recruitee.read("fastned", fetcher)
+    assert fetcher.calls == [("https://fastned.recruitee.com/api/offers/", None)]
+
+
+def test_recruitee_fields():
+    drafts = {draft["posting_id"]: draft for draft in recruitee.read("fastned", FakeFetcher())}
+    remote = drafts["2794271"]
+    assert remote["workplace"] == "remote" and remote["employment"] == "full-time"
+    assert remote["locations"] == [{"text": "Hamburg, Hamburg, Germany", "city": "Hamburg", "country": "DE"}]
+    assert remote["url"] == "https://fastned.recruitee.com/o/elektriker-elektroniker-im-aussendienst-nord-mwd"
+    assert remote["posted_date"] == "2026-10-22"
+    assert remote["description_text"]
+    assert drafts["2818749"]["workplace"] == "onsite"
+    student = drafts["2835151"]
+    assert student["workplace"] == "hybrid" and student["employment"] == "contract"
+
+
+def test_recruitee_pay_and_a_custom_domain():
+    drafts = {draft["title"]: draft for draft in recruitee.read("greenerpowersolutions", FakeFetcher())}
+    specialist = drafts["Procurement Specialist"]
+    # The feed writes the figures as strings.
+    assert specialist["pay"] == {"min": 40000, "max": 67000, "currency": "EUR", "period": "year", "basis": "feed"}
+    assert specialist["url"] == "https://careers.greenerpowersolutions.com/o/procurement-specialist"
+    # A monthly stipend is not a period the contract holds.
+    assert drafts["Marketing Internship"]["pay"] is None and drafts["Marketing Internship"]["employment"] == "intern"
+
+
+@pytest.mark.parametrize("code,expected", [
+    ("fulltime_permanent", "full-time"), ("fulltime", "full-time"), ("fulltime_fixed_term", "contract"),
+    ("parttime_permanent", "part-time"), ("internship", "intern"), ("traineeship", "intern"),
+    ("temporary", "contract"), ("freelance", "contract"), (None, "unknown"),
+])
+def test_recruitee_employment_codes(code, expected):
+    assert recruitee._employment(code, "Engineer") == expected
+
+
+def test_recruitee_ids_are_stable():
+    raw = collect([company("fastned", "recruitee", "fastned")], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
+    assert sorted(job["id"] for job in raw["jobs"]) == ["recruitee:fastned:2794271", "recruitee:fastned:2818749",
+                                                         "recruitee:fastned:2835151"]
