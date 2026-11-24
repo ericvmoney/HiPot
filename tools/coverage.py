@@ -52,7 +52,7 @@ from tools.validate import is_listed
 
 UNIVERSE = ROOT / "data" / "screening" / "universe"
 BOARD = ROOT / "site" / "data" / "board.json"
-READERS = {"greenhouse", "lever", "ashby", "rippling"}
+READERS = {"greenhouse", "lever", "ashby", "rippling"}   # fallback only; the collector's list is used
 DROPPED = {"not-in-scope", "closed", "duplicate"}
 
 
@@ -81,7 +81,7 @@ def region_figures(universe: dict, registry: dict[str, dict], roles_by_company: 
         screened.append(company)
         if is_listed(company):
             listed.append(company)
-            if company.get("read") == "auto" and company["ats"]["type"] in supported:
+            if company.get("read") != "none" and company["ats"]["type"] in supported:
                 readable.append(company)
     unread_ats = Counter((e.get("ats") or {}).get("type") or "none found" for e in in_scope
                          if (e.get("ats") or {}).get("type") not in supported)

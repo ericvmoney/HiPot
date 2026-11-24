@@ -3,12 +3,13 @@
 Inputs
   companies.yml                          the registry as it stands
   data/screening/seed-review.yml         the scout's checks of the seed companies
-  data/screening/proposals-01.yml        the scout's new companies
+  data/screening/proposals-*.yml         the scout's new companies, every file
+  data/screening/registry-fixes-*.yml    facts the registry lacks (filled, never overwritten)
   OWNER_RULINGS below                    the owner's answers to decisions-needed.md
 
 Outputs
   companies.yml                          updated in place
-  data/screening/applied-01.md           what changed, company by company
+  data/screening/applied-latest.md       what the last run changed, company by company
 
 Re-running gives the same result. Order of precedence: owner rulings, then the
 scout's checked facts, then what the registry already held.
@@ -17,18 +18,23 @@ scout's checked facts, then what the registry already held.
 """
 from __future__ import annotations
 
+import copy
 import re
 import sys
 from collections import Counter
 
 from pipeline.io import ROOT, dump_yaml, load_yaml
+from pipeline.collect.run import READERS as COLLECTOR_READERS
 from tools.validate import check_companies, is_listed, schema_errors, schema_registry
 
 REGISTRY = ROOT / "companies.yml"
 REVIEW = ROOT / "data" / "screening" / "seed-review.yml"
-PROPOSALS = ROOT / "data" / "screening" / "proposals-01.yml"
-LOG = ROOT / "data" / "screening" / "applied-01.md"
-READABLE = {"greenhouse", "lever", "ashby", "rippling"}
+SCREENING = ROOT / "data" / "screening"
+PROPOSAL_FILES = "proposals-*.yml"        # proposals-01.yml, proposals-02-colorado.yml, ...
+FIX_FILES = "registry-fixes-*.yml"        # facts for companies already in the registry
+LOG = SCREENING / "applied-latest.md"     # applied-01.md keeps the first run's log
+HEADCOUNT_LINE, BORDERLINE = 1000, 1250   # B2: up to about 25 percent over counts as borderline
+READABLE = set(COLLECTOR_READERS)   # systems the collector reads with no switch needed
 TODAY = "2026-11-24"
 
 HEADER = """\
@@ -155,6 +161,19 @@ def apply_review(company: dict, entry: dict) -> None:
     company["notes"] = f"Checked by the company scout on {TODAY}; facts and sources in data/screening/seed-review.yml."
 
 
+def fill_missing(company: dict, fix: dict) -> None:
+    """Fill hq, founded, stage and headcount where the registry has none."""
+    for field in ("hq", "founded", "stage"):
+        value = (fix.get(field) or {}).get("value")
+        if company.get(field) is None and value is not None:
+            company[field] = value
+    if company.get("headcount") is None and (fix.get("headcount") or {}).get("value") is not None:
+        company["headcount"] = headcount_from_review(fix)
+    note = "Missing facts filled from data/screening/registry-fixes."
+    if any(fix.get(f) for f in ("hq", "founded", "stage", "headcount")) and note not in (company.get("notes") or ""):
+        company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
 def apply_ruling(company: dict, ruling: dict) -> None:
     if "tier" in ruling:
         company["climate"]["tier"] = ruling["tier"]
@@ -175,6 +194,8 @@ def apply_ruling(company: dict, ruling: dict) -> None:
 
 def rule_reason(old: str | None, rule: str) -> str:
     kept = re.sub(r"\s*(Older than 10 years: owner to decide\.|Needs a headcount figure before listing\.)", "", old or "").strip()
+    if STARTUP_IN_BY_RULE[rule] in kept:       # already applied on an earlier run
+        return kept
     return f"{kept} {STARTUP_IN_BY_RULE[rule]}".strip()
 
 
@@ -184,8 +205,10 @@ def summary(company: dict) -> str:
 
 def main() -> int:
     registry = load_yaml(REGISTRY)
+    original = copy.deepcopy(registry)
     review = {entry["id"]: entry for entry in load_yaml(REVIEW)["companies"]}
-    proposals = load_yaml(PROPOSALS)["companies"]
+    proposals = [c for path in sorted(SCREENING.glob(PROPOSAL_FILES)) for c in load_yaml(path)["companies"]]
+    fixes = [f for path in sorted(SCREENING.glob(FIX_FILES)) for f in load_yaml(path)["fixes"]]
     companies = {company["id"]: company for company in registry["companies"]}
     before = {cid: (summary(c), is_listed(c)) for cid, c in companies.items()}
 
@@ -197,6 +220,19 @@ def main() -> int:
         if proposal["id"] not in companies:
             companies[proposal["id"]] = proposal
             added.append(proposal["id"])
+
+    for fix in fixes:
+        if fix["id"] in companies:
+            fill_missing(companies[fix["id"]], fix)
+
+    # The headcount line: a dated figure beyond the borderline allowance takes a
+    # listed company out, unless the owner ruled on it by name (OWNER_RULINGS).
+    for company in companies.values():
+        head = company.get("headcount") or {}
+        if company["startup"]["status"] == "in" and (head.get("value") or 0) > BORDERLINE and company["id"] not in OWNER_RULINGS:
+            company["startup"] = {"status": "out", "reason": (
+                f"{head['value']:,} people ({head['source']}, {head['as_of']}): over the 1,000-person line "
+                f"by more than the borderline allowance.")}
 
     # B1 and B3 as blanket rules: a company held at 'review' only for its age or
     # for a missing headcount is in. Anything held for another reason stays.
@@ -223,7 +259,7 @@ def main() -> int:
     if problems:
         print("\n".join(problems[:20]))
         sys.exit("the new registry does not validate; nothing written")
-    if out == registry:
+    if out == original:
         print("companies.yml already matches the screening and rulings; nothing written (change log kept).")
         return 0
     dump_yaml(out, REGISTRY, header=HEADER)

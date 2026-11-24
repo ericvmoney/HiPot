@@ -3,11 +3,12 @@
 For each candidate (name, website domain, optional token hints) the script:
 
   1. Reads the company's own site, if robots.txt allows it: the home page and
-     one careers page. It looks for a link to Greenhouse, Lever, Ashby or
-     Rippling (and notes any other job-board system it sees).
+     up to two careers pages. It looks for a link to Greenhouse, Lever, Ashby or
+     Rippling, or to another job-board system (Workable, BambooHR, Workday and
+     others); for those with a public feed it records a role count.
   2. Loads the public board feed once for every token found that way.
-  3. Only if the site gave no token: tries a few tokens formed from the company
-     name. A hit found by a guess is marked 'guess' and must be checked by a
+  3. Only if the site gave no token for any system: tries a few tokens formed
+     from the company name on the four systems the collector reads. A hit found by a guess is marked 'guess' and must be checked by a
      person (the board's own name and sample titles are recorded for that).
 
 Fetching is polite: one request at a time per host, at least 1.2 s apart, a
@@ -67,6 +68,36 @@ LINK_PATTERNS = {
 }
 NOT_TOKENS = {"embed", "v1", "boards", "api", "jobs", "job_board", "js", "include", "assets", "static", "en-us"}
 
+# Other systems with a token in the link, and a public feed where one exists (for a role count only).
+OTHER_LINKS = {
+    "workable": [r"apply\.workable\.com/(?:api/v1/widget/accounts/)?([A-Za-z0-9_\-]+)", r"([A-Za-z0-9_\-]+)\.workable\.com"],
+    "bamboohr": [r"([A-Za-z0-9_\-]+)\.bamboohr\.com"],
+    "smartrecruiters": [r"(?:jobs|careers)\.smartrecruiters\.com/([A-Za-z0-9_\-]+)", r"api\.smartrecruiters\.com/v1/companies/([A-Za-z0-9_\-]+)"],
+    "recruitee": [r"([A-Za-z0-9_\-]+)\.recruitee\.com"],
+    "breezy": [r"([A-Za-z0-9_\-]+)\.breezy\.hr"],
+    "jazzhr": [r"([A-Za-z0-9_\-]+)\.applytojob\.com"],
+    "teamtailor": [r"([A-Za-z0-9_\-]+)\.teamtailor\.com"],
+    "pinpoint": [r"([A-Za-z0-9_\-]+)\.pinpointhq\.com"],
+    "dover": [r"app\.dover\.com/(?:apply|jobs)/([A-Za-z0-9_\-]+)"],
+    "gem": [r"jobs\.gem\.com/([A-Za-z0-9_\-]+)"],
+    "jobvite": [r"jobs\.jobvite\.com/([A-Za-z0-9_\-]+)"],
+    "icims": [r"careers-([A-Za-z0-9_\-]+)\.icims\.com", r"([A-Za-z0-9_\-]+)\.icims\.com"],
+    "workday": [r"([A-Za-z0-9_\-]+\.wd[0-9]+\.myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?[A-Za-z0-9_\-]+)"],
+    "paylocity": [r"recruiting\.paylocity\.com/[Rr]ecruiting/[Jj]obs/(?:All|Details)/([A-Za-z0-9\-]+)"],
+    "paycom": [r"paycomonline\.net/v4/ats/web\.php/jobs\?clientkey=([A-Za-z0-9]+)"],
+    "ukg": [r"([A-Za-z0-9_\-]+\.ultipro\.com/[A-Za-z0-9_\-]+/JobBoard/[A-Za-z0-9\-]+)", r"(recruiting[0-9]?\.ultipro\.com/[A-Za-z0-9_\-]+/JobBoard/[A-Za-z0-9\-]+)"],
+    "adp": [r"workforcenow\.adp\.com/[^\"'\s]*cid=([A-Za-z0-9\-]+)"],
+}
+OTHER_NOT_TOKENS = NOT_TOKENS | {"www", "apply", "jobs", "careers", "app", "help", "support", "cdn", "static", "assets", "api"}
+OTHER_FEEDS = {
+    "workable": ("https://apply.workable.com/api/v1/widget/accounts/{token}", lambda d: len(d.get("jobs", []))),
+    "bamboohr": ("https://{token}.bamboohr.com/careers/list", lambda d: len(d.get("result", []))),
+    "smartrecruiters": ("https://api.smartrecruiters.com/v1/companies/{token}/postings", lambda d: d.get("totalFound")),
+    "recruitee": ("https://{token}.recruitee.com/api/offers/", lambda d: len(d.get("offers", []))),
+    "breezy": ("https://{token}.breezy.hr/json", lambda d: len(d) if isinstance(d, list) else None),
+    "pinpoint": ("https://{token}.pinpointhq.com/postings.json", lambda d: len(d.get("data", []))),
+}
+
 # Other systems: recorded so the registry can say why a company is not readable yet.
 OTHER_SYSTEMS = {
     "workday": "myworkdayjobs.com", "workable": "workable.com", "bamboohr": ".bamboohr.com",
@@ -91,6 +122,9 @@ ENG_TITLE = re.compile(
     r"\btest\b|chemist|physicist|operator|machinist|welder|electrician|commissioning|technologist",
     re.I,
 )
+REMOTE = re.compile(r"remote|anywhere|distributed|work from home|virtual", re.I)
+NOT_US = re.compile(r"canada|united kingdom|\buk\b|europe|emea|germany|india|australia|mexico|brazil|netherlands|"
+                    r"france|spain|ireland|israel|japan|singapore|philippines|poland|portugal|latam|apac|toronto|london", re.I)
 STOP_WORDS = {"inc", "co", "corp", "company", "the", "llc"}
 SUFFIX_WORDS = {"energy", "technologies", "technology", "power", "systems", "labs", "motors", "industries",
                 "materials", "solutions", "enterprises", "aero", "aviation", "electric", "tech"}
@@ -139,6 +173,14 @@ def find_links(text: str) -> tuple[dict[str, list[str]], list[str]]:
             for token in re.findall(pattern, text):
                 token = token.strip(".").split("?")[0]
                 if token.lower() in NOT_TOKENS or len(token) < 2:
+                    continue
+                if token not in found.setdefault(system, []):
+                    found[system].append(token)
+    for system, patterns in OTHER_LINKS.items():
+        for pattern in patterns:
+            for token in re.findall(pattern, text):
+                token = token.strip(".").split("?")[0]
+                if token.lower() in OTHER_NOT_TOKENS or len(token) < 2:
                     continue
                 if token not in found.setdefault(system, []):
                     found[system].append(token)
@@ -237,7 +279,7 @@ def summarize(system: str, token: str, status: int | None, text: str, name: str)
     except ValueError:
         out["error"] = "not JSON"
         return out
-    titles, places, board_name, link_hosts = [], [], None, set()
+    titles, places, board_name, link_hosts, remote_flags = [], [], None, set(), []
     if system == "greenhouse":
         jobs = data.get("jobs", [])
         for job in jobs:
@@ -250,32 +292,54 @@ def summarize(system: str, token: str, status: int | None, text: str, name: str)
         for job in jobs:
             titles.append(job.get("text", ""))
             places.append((job.get("categories") or {}).get("location", "") or "")
+            remote_flags.append(str(job.get("workplaceType", "")).lower() == "remote")
     elif system == "ashby":
         jobs = [job for job in data.get("jobs", []) if job.get("isListed", True)]
         for job in jobs:
             titles.append(job.get("title", ""))
             places.append(job.get("location", "") or "")
+            remote_flags.append(bool(job.get("isRemote")) or str(job.get("workplaceType", "")).lower() == "remote")
     else:
         jobs = data if isinstance(data, list) else data.get("items", data.get("jobs", []))
         for job in jobs:
             titles.append(job.get("name", ""))
             places.append(((job.get("workLocation") or {}).get("label", "")) or "")
+    remote_flags += [False] * (len(places) - len(remote_flags))
+    remote_us = sum(1 for place, flag in zip(places, remote_flags)
+                    if (flag or REMOTE.search(place or "")) and not NOT_US.search(place or ""))
     words = [w for w in re.sub(r"[^a-z0-9 ]+", " ", name.lower()).split() if w not in STOP_WORDS]
     full = r"\s*".join(re.escape(w) for w in words) or re.escape(name.lower())
     mentions = len(re.findall(full, text, re.I))
     out.update({
         "open_roles": len(jobs),
         "engineering_titles": sum(bool(ENG_TITLE.search(title)) for title in titles),
+        "remote_us_roles": remote_us,
         "board_name": board_name,
         "link_hosts": sorted(h for h in link_hosts if h),
         "name_mentions": mentions,
         "sample_titles": titles[:6],
         "sample_locations": sorted({p for p in places if p})[:6],
+        "location_counts": dict(sorted(__import__("collections").Counter(p or "unstated" for p in places).items(),
+                                       key=lambda kv: -kv[1])[:12]),
     })
     return out
 
 
 def probe(fetcher: Fetcher, system: str, token: str, name: str) -> dict:
+    if system not in FEEDS:
+        out = {"system": system, "token": token, "status": None, "open_roles": None}
+        if system in OTHER_FEEDS:
+            url, count = OTHER_FEEDS[system]
+            status, text, _ = fetcher.get(url.format(token=token))
+            out["status"] = status
+            if status == 200:
+                try:
+                    out["open_roles"] = count(json.loads(text))
+                except (ValueError, AttributeError, TypeError):
+                    out["error"] = "not JSON"
+        else:
+            out["status"] = "no-feed"  # token from the company's own careers link; roles not counted
+        return out
     status, text, _ = fetcher.get(FEEDS[system].format(token=token))
     return summarize(system, token, status, text, name)
 
@@ -292,9 +356,9 @@ def run_company(fetcher: Fetcher, name: str, domain: str | None, sector: str, hi
             result = probe(fetcher, system, token, name)
             result["found_by"] = "company-site"
             record["probes"].append(result)
-            if result.get("status") == 200:
+            if result.get("status") in (200, "no-feed"):
                 hits.append(result)
-    if not hits:
+    if not hits and not site_tokens:
         guesses = list(dict.fromkeys(hints + name_tokens(name, domain)))[:len(hints) + 3]
         systems = list(FEEDS)
         random.shuffle(systems)  # spread the load across the four hosts
@@ -309,7 +373,7 @@ def run_company(fetcher: Fetcher, name: str, domain: str | None, sector: str, hi
             if hits and (hits[-1].get("name_mentions", 0) > 0 or hits[-1].get("board_name")):
                 break
     if hits:
-        hits.sort(key=lambda r: (r["found_by"] != "company-site", -r.get("open_roles", 0)))
+        hits.sort(key=lambda r: (r["found_by"] != "company-site", r["system"] not in FEEDS, -(r.get("open_roles") or 0)))
         record["board"] = hits[0]
         record["other_hits"] = hits[1:]
     record["probes"] = [p for p in record["probes"] if p.get("status") != 404]  # keep the file small
@@ -339,7 +403,7 @@ def main() -> int:
             done[row[0]] = record
             target.write_text(json.dumps(done, indent=1, ensure_ascii=False), encoding="utf-8")
         board = record.get("board")
-        print(f"{row[0]}: " + (f"{board['system']}:{board['token']} {board.get('open_roles')} roles ({board['found_by']})"
+        print(f"{row[0]}: " + (f"{board['system']}:{board['token']} {board.get('open_roles')} roles ({board.get('found_by')})"
                                if board else "no board found"), flush=True)
 
     with ThreadPoolExecutor(max_workers=10) as pool:
