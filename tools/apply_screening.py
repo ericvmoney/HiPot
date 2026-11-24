@@ -22,13 +22,14 @@ import sys
 from collections import Counter
 
 from pipeline.io import ROOT, dump_yaml, load_yaml
+from pipeline.collect.run import READERS as COLLECTOR_READERS
 from tools.validate import check_companies, is_listed, schema_errors, schema_registry
 
 REGISTRY = ROOT / "companies.yml"
 REVIEW = ROOT / "data" / "screening" / "seed-review.yml"
 PROPOSALS = ROOT / "data" / "screening" / "proposals-01.yml"
 LOG = ROOT / "data" / "screening" / "applied-01.md"
-READABLE = {"greenhouse", "lever", "ashby", "rippling"}
+READABLE = set(COLLECTOR_READERS)   # systems the collector reads with no switch needed
 TODAY = "2026-11-24"
 
 HEADER = """\
