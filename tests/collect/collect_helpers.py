@@ -27,6 +27,8 @@ ADDRESSES = {
     "https://fastned.recruitee.com/api/offers/": "recruitee_fastned.json",
     "https://greenerpowersolutions.recruitee.com/api/offers/": "recruitee_greenerpowersolutions.json",
     "https://zeno-power.breezy.hr/json": "breezy_zeno-power.json",
+    "https://api.gem.com/job_board/v0/butcher-power-products/job_posts/": "gem_butcher-power-products.json",
+    "https://api.gem.com/job_board/v0/piqenergy/job_posts/": "gem_piqenergy.json",
 }
 # Feeds that answer in XML or HTML rather than JSON.
 TEXT_ADDRESSES = {

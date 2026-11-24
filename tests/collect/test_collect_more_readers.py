@@ -8,7 +8,7 @@ import httpx
 import pytest
 from collect_helpers import FakeFetcher, company
 
-from pipeline.collect import bamboohr, breezy, jazzhr, recruitee, run as run_module, smartrecruiters, teamtailor, workable
+from pipeline.collect import bamboohr, breezy, gem, jazzhr, recruitee, run as run_module, smartrecruiters, teamtailor, workable
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.run import collect, skip_reason
 from pipeline.collect.state import SeenState
@@ -413,3 +413,43 @@ def test_teamtailor_ids_and_a_bad_answer():
     assert "teamtailor:career.airahome.com:8790006" in {job["id"] for job in raw["jobs"]}
     with pytest.raises(FetchError, match="not an RSS feed"):
         teamtailor.parse("<html><body>Sign in</body></html>")
+
+
+# ---------------------------------------------------------------------- Gem
+
+def test_gem_asks_once_per_board():
+    fetcher = FakeFetcher()
+    gem.read("butcher-power-products", fetcher)
+    assert fetcher.calls == [("https://api.gem.com/job_board/v0/butcher-power-products/job_posts/", None)]
+
+
+def test_gem_fields_and_the_state_from_an_office_address():
+    drafts = {d["title"]: d for d in gem.read("butcher-power-products", FakeFetcher())}
+    inspector = drafts["Quality Control Inspector (Fabrication & Assembly)"]
+    assert inspector["posting_id"] == "am9icG9zdDrAinBn0igPiiY7k5M-csUZ"
+    assert inspector["url"] == "https://jobs.gem.com/butcher-power-products/am9icG9zdDrAinBn0igPiiY7k5M-csUZ"
+    # "Rancho Cordova, United States"; the office is "11261 Trade Center Drive Rancho Cordova, CA 95742".
+    assert inspector["locations"] == [{"text": "Rancho Cordova, United States", "city": "Rancho Cordova", "state": "CA", "country": "US"}]
+    assert inspector["workplace"] == "onsite" and inspector["employment"] == "full-time"
+    assert inspector["posted_date"] == "2026-06-10" and inspector["department"] == "Quality Control"
+    assert inspector["description_text"] and inspector["pay"] is None
+    # "410 West Rd, Houston Texas 77038": a state name without a comma.
+    assert drafts["Project Director, Houston"]["locations"][0]["state"] == "TX"
+    remote = drafts["Electrical Engineering Manager"]
+    assert remote["workplace"] == "remote" and remote["locations"] == [{"text": "United States - Remote", "country": "US"}]
+
+
+def test_gem_a_city_with_no_matching_office_keeps_no_state():
+    drafts = gem.read("piqenergy", FakeFetcher())
+    places = sorted(d["locations"][0]["text"] for d in drafts)
+    assert places == ["Athens, Greece", "San Francisco, United States"]
+    athens = next(d for d in drafts if d["locations"][0]["text"] == "Athens, Greece")
+    assert athens["locations"][0] == {"text": "Athens, Greece", "city": "Athens", "country": "GR"}
+    assert athens["workplace"] == "hybrid"
+
+
+def test_gem_ids_are_stable():
+    raw = collect([company("butcher-power", "gem", "butcher-power-products")], FakeFetcher(), SeenState(),
+                  now=lambda: "2026-11-24T16:00:00Z")
+    assert "gem:butcher-power-products:am9icG9zdDrAinBn0igPiiY7k5M-csUZ" in {job["id"] for job in raw["jobs"]}
+    assert {tuple(job["metros"]) for job in raw["jobs"]} == {("sacramento-ca",), ("houston-tx",), ()}
