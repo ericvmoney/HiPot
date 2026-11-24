@@ -87,7 +87,7 @@ uv run python -m tools.validate --raw data/jobs.raw.json --jobs data/jobs.json
 uv run python -m pipeline.publish --jobs data/jobs.json
 ```
 
-Writes `site/data/board.json` with only listed companies (core or enabling climate tier, startup status `in`) and listed role types (`listed: true` in `taxonomy.yml`). It prints how many roles were kept and why the rest were left out.
+Without `--jobs` it uses `data/jobs.json` when that file exists and the seed otherwise, and prints which file it read. Writes `site/data/board.json` with only listed companies (core or enabling climate tier, startup status `in`) and listed role types (`listed: true` in `taxonomy.yml`). It prints how many roles were kept and why the rest were left out.
 
 **5. Serve and open** the page:
 
