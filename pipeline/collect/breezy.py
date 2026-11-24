@@ -26,14 +26,12 @@ the JobPosting block's description (HTML).
 """
 from __future__ import annotations
 
-import html
-import json
 import re
 
 from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
 from pipeline.collect.locations import structured_location
-from pipeline.collect.text import html_to_text
+from pipeline.collect.text import html_to_text, job_posting_description
 
 API = "https://{board}.breezy.hr/json"
 
@@ -41,7 +39,6 @@ API = "https://{board}.breezy.hr/json"
 _SALARY = re.compile(
     r"^\s*([$€£])\s?([\d,]+(?:\.\d+)?)\s*[–—-]\s*[$€£]?\s?([\d,]+(?:\.\d+)?)\s*/\s*(year|hour|yr|hr)\s*$", re.I)
 _PERIOD = {"year": "year", "yr": "year", "hour": "hour", "hr": "hour"}
-_LD_JSON = re.compile(r"<script[^>]+type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>", re.S | re.I)
 
 
 def _name(value) -> str | None:
@@ -92,20 +89,6 @@ def pay_from_text(text, country: str | None) -> dict | None:
     return normalize.pay(number(low), number(high), currency, _PERIOD[period.lower()])
 
 
-def description_from_page(page: str) -> str:
-    """The description in a posting page's schema.org JobPosting block."""
-    for block in _LD_JSON.findall(page or ""):
-        try:
-            data = json.loads(html.unescape(block) if "&quot;" in block else block)
-        except ValueError:
-            continue
-        items = data if isinstance(data, list) else (data.get("@graph") or [data]) if isinstance(data, dict) else []
-        for item in items:
-            if isinstance(item, dict) and item.get("@type") == "JobPosting":
-                return html_to_text(item.get("description"))
-    return ""
-
-
 def _draft(job: dict, description: str) -> dict:
     title = job.get("name") or ""
     kind = job.get("type") or {}
@@ -138,7 +121,7 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
         description = ""
         if (job.get("url") or "").startswith("https://"):
             try:
-                description = description_from_page(fetcher.get_text(job["url"]))
+                description = job_posting_description(fetcher.get_text(job["url"]))
             except Blocked:
                 raise
             except FetchError:

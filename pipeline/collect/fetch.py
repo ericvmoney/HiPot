@@ -31,10 +31,10 @@ MIN_INTERVAL = 1.0
 # SmartRecruiters documents 10 requests a second, but its robots.txt admits only
 # LinkedIn's crawler, so it gets the same room as Rippling. BambooHR says only
 # that requests "can be throttled" if too frequent; its company hosts get 6 s too.
-# Breezy publishes nothing; its company hosts get 2 s. A key starting with "."
+# Breezy and Paylocity publish nothing; their hosts get 2 s. A key starting with "."
 # matches every host ending in it.
 HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecruiters.com": 6.0,
-                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0}
+                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0}
 TIMEOUT = 30.0
 RETRY_WAIT = 5.0
 BLOCK_STATUSES = (403, 429)

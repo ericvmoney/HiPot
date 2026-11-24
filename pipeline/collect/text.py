@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 import xml.etree.ElementTree as ElementTree
 from html.parser import HTMLParser
@@ -84,6 +85,24 @@ def parse_xml(text: str) -> ElementTree.Element:
     if "<!DOCTYPE" in text[:2000].upper() or "<!ENTITY" in text.upper():
         raise NotXML("feed declares a document type; not parsed")
     try:
-        return ElementTree.fromstring(text.lstrip("﻿"))
+        return ElementTree.fromstring(text.lstrip("\ufeff"))
     except ElementTree.ParseError as error:
         raise NotXML(f"answer was not XML ({error})") from error
+
+
+_LD_JSON = re.compile(r"<script[^>]+type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>", re.S | re.I)
+
+
+def job_posting_description(page: str) -> str:
+    """The description in a posting page's schema.org JobPosting block (the
+    block a page carries for search engines), as plain text; "" when there is none."""
+    for block in _LD_JSON.findall(page or ""):
+        try:
+            data = json.loads(html.unescape(block) if "&quot;" in block else block)
+        except ValueError:
+            continue
+        items = data if isinstance(data, list) else (data.get("@graph") or [data]) if isinstance(data, dict) else []
+        for item in items:
+            if isinstance(item, dict) and item.get("@type") == "JobPosting":
+                return html_to_text(item.get("description"))
+    return ""
