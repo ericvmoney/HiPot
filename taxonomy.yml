@@ -1,4 +1,4 @@
-# HiPot taxonomy, version 0.
+# HiPot taxonomy, version 1.
 #
 # Every id used in jobs, companies and personas must appear here. The JSON
 # schemas only check that an id is a well-formed slug; `tools/validate.py`
@@ -6,7 +6,84 @@
 #
 # Owned by the supervisor. Workstream A3 proposes changes; nobody else edits it.
 
-taxonomy_version: 0
+taxonomy_version: 1
+
+# Every role has exactly one function: the kind of work, whatever the field.
+# `listed: false` keeps a function's roles in jobs.json but off the public
+# board; flipping it needs no re-tagging. Engineering and science roles carry
+# one to three disciplines; technician and trades roles carry one where the
+# title names a field ("electrical technician"); other functions may carry one.
+# Added in version 1 (2026-11-24) to cover the range of roles at hardware
+# companies, not only engineers.
+functions:
+  - id: engineering
+    label: Engineering
+    listed: true
+    covers: Engineers who design, develop, test, integrate, build or support the product, including software, data and manufacturing engineers.
+  - id: science
+    label: Science and research
+    listed: true
+    covers: Scientists and researchers in physics, chemistry, materials, electrochemistry and plasma work tied to the product.
+  - id: technician
+    label: Technicians
+    listed: true
+    covers: Lab, test, assembly, maintenance, calibration and field service technicians.
+  - id: trades
+    label: Skilled trades
+    listed: true
+    covers: Electricians, installers, welders, machinists, line workers and other licensed or skilled trades.
+  - id: production
+    label: Production and plant operations
+    listed: true
+    covers: Production associates and operators, shift and line supervisors, plant, facilities and production managers.
+  - id: supply-chain
+    label: Supply chain
+    listed: true
+    covers: Procurement, sourcing and commodity management, buyers, supplier development, planning, logistics, warehouse and materials.
+    watch: A supplier quality engineer is engineering with the quality discipline; a buyer or commodity manager is supply chain.
+  - id: quality-compliance
+    label: Quality, certification and compliance
+    listed: true
+    covers: Quality inspectors and auditors, quality management, certification, regulatory and product compliance specialists.
+    watch: Quality engineers are engineering with the quality discipline.
+  - id: ehs
+    label: Environment, health and safety
+    listed: true
+    covers: Workplace and site safety, environmental compliance, industrial hygiene.
+  - id: project-program
+    label: Projects and programs
+    listed: true
+    covers: Program, project, construction and deployment managers; project controls and scheduling.
+  - id: field-operations
+    label: Field and asset operations
+    listed: true
+    covers: Operations and maintenance management for deployed assets, site and fleet operations, service and deployment operations management.
+    watch: Field service technicians are technicians; commissioning and field engineers are engineering with the field discipline.
+  - id: product
+    label: Product and design
+    listed: true
+    covers: Product management for a physical product, industrial and product design, user research for hardware.
+  - id: sales-bd
+    label: Sales and business development
+    listed: false
+    covers: Sales, business development, origination, account management, customer success. Sales and applications engineers are engineering with the field discipline.
+  - id: marketing
+    label: Marketing and communications
+    listed: false
+    covers: Marketing, brand, communications, content, community and policy advocacy.
+  - id: finance-legal
+    label: Finance, legal and strategy
+    listed: false
+    covers: Finance, accounting, legal, strategy, corporate development, investor relations, land and permitting.
+  - id: people-admin
+    label: People and administration
+    listed: false
+    covers: Human resources, recruiting, office and executive administration.
+  - id: it
+    label: IT and security
+    listed: false
+    covers: Corporate IT, help desk, enterprise systems and corporate security.
+    watch: Product software, data and cybersecurity of the product are engineering.
 
 disciplines:
   - id: systems
@@ -40,8 +117,11 @@ disciplines:
     covers: Embedded software, firmware, real-time systems, device drivers, bootloaders.
     watch: The title "firmware engineer" also appears at storage-silicon and consumer-device firms.
   - id: software
-    label: Software for hardware
-    covers: Test automation, tools, SCADA, energy management, fleet and device software tied to a physical product.
+    label: Software
+    covers: Software engineering at a hardware company - device, fleet, controls, energy management, SCADA, tools, test automation, platform and web.
+  - id: data
+    label: Data and machine learning
+    covers: Data engineering, analytics, data science and machine learning on product, fleet, process or grid data.
   - id: test
     label: Test and validation
     covers: Design verification, hardware-in-the-loop, reliability, test equipment and fixtures.
@@ -54,18 +134,26 @@ disciplines:
   - id: materials
     label: Materials and R&D
     covers: Materials science, electrochemistry and physics research roles tied to a hardware product.
+  - id: nuclear-plasma
+    label: Nuclear and plasma
+    covers: Fission and fusion engineering, plasma physics, neutronics, radiation and shielding.
+  - id: optics
+    label: Optics, lasers and photonics
+    covers: Optical design, laser systems, photonics and optical metrology.
+  - id: civil-structural
+    label: Civil and structural
+    covers: Civil, structural and geotechnical engineering for sites, foundations, plants and installations.
+  - id: aerospace
+    label: Aerospace and flight
+    covers: Aircraft structures, aerodynamics, flight controls, flight test and airworthiness for electric aircraft.
   - id: quality
     label: Quality, safety and compliance
     covers: Quality, product safety, certification, regulatory compliance.
   - id: field
     label: Field and applications
-    covers: Commissioning, field service, applications engineering, customer deployment.
-  - id: product
-    label: Hardware product
-    covers: Product management for a physical product.
-  - id: program
-    label: Program and project
-    covers: Technical program and project management for hardware development or deployment.
+    covers: Commissioning, field engineering, applications and sales engineering, customer deployment.
+# Version 1 moved "product" and "program" out of disciplines: they are now the
+# functions `product` and `project-program`.
 
 levels:
   - {id: intern, label: Intern or co-op}
@@ -132,5 +220,6 @@ climate_tiers:
 
 # How the old hub's tags map onto this taxonomy. Used only by the seed import.
 seed_maps:
-  old_hub_profiles: {sys: systems, elec: electrical, mech: mechanical, test: test, prod: product}
+  # "prod" (product roles) has no discipline: it sets the function to product.
+  old_hub_profiles: {sys: systems, elec: electrical, mech: mechanical, test: test}
   old_hub_where: {sf: sf-bay-area, sd: san-diego, denver: denver, boston: boston}

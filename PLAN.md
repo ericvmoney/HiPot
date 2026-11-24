@@ -192,8 +192,10 @@ A1, A3 and A4 can run at the same time because they meet only at the schemas. A4
 **M1 division of work (started 2026-11-24).** The workstreams meet at three files:
 
 - **Collector (A1)** writes `data/jobs.raw.json` to `schema/raw-job.schema.json`: every posting on a board, hardware or not, with locations, metros, workplace, pay the feed carries as data, and the posting text. It collects companies whose tier is core or enabling and whose startup status is `in` or `review`, so pending companies are ready the day they are decided.
-- **Tagger (A3)** turns that into `data/jobs.json` to `schema/job.schema.json`: it adds disciplines, level, pay found in the posting text and a summary, and leaves out roles with no hardware discipline.
-- **Board (A4)** owns `site/` and `pipeline/publish/`, which joins `jobs.json` with the listed companies into the one data file the page loads. Only listed companies (core or enabling, startup `in`) reach that file.
+- **Tagger (A3)** turns that into `data/jobs.json` to `schema/job.schema.json`: it adds a function, disciplines, level, pay found in the posting text and a summary. It keeps every role.
+- **Board (A4)** owns `site/` and `pipeline/publish/`, which joins `jobs.json` with the listed companies into the one data file the page loads. A role reaches that file only when its company is listed (core or enabling, startup `in`) and its function is listed in `taxonomy.yml`.
+
+**Role functions (taxonomy version 1, 2026-11-24).** At Eric's request the board covers the range of roles at hardware companies, not only engineers. Every role has one function: engineering, science, technicians, skilled trades, production and plant operations, supply chain, quality and compliance, environment health and safety, projects and programs, field and asset operations, or product and design. Those are listed. Corporate functions (sales and business development, marketing, finance and legal, people and administration, IT) are tagged but not listed; each is one `listed:` line in `taxonomy.yml` to change. Product and program moved from disciplines to functions, and disciplines gained data, nuclear and plasma, optics, civil and structural, and aerospace.
 - **Scout (A2)** writes proposals to `data/screening/` only. The supervisor applies approved ones to `companies.yml`.
 
 ## 6. Climate rubric
