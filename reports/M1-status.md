@@ -1,6 +1,6 @@
 # Milestone 1: status, next steps and manual checkpoints
 
-Written 2026-11-24, after the four Milestone 1 workstreams were merged into `main`.
+Written 2026-11-24, after the four Milestone 1 workstreams were merged into `main`. Updated the same afternoon after the owner's screening rulings and the first full-registry run.
 
 ## Where Milestone 1 stands
 
@@ -8,12 +8,12 @@ Exit test from [PLAN.md](../PLAN.md): a public link, no login, 400+ live roles, 
 
 | Part of the exit test | State | How it was checked |
 |---|---|---|
-| 400+ live roles | **435 roles at 17 companies** on the current provisional company screen | Full run on 2026-11-24: 1,290 postings collected, tagged and validated; publish step output |
+| 400+ live roles | **3,736 roles at 146 companies** after the owner's screening rulings (148 listed companies) | Full run on 2026-11-24: 3,736 postings collected from 146 boards with no errors or blocks, tagged and validated; publish step output |
 | No login | Met: static page, no accounts, cookies, analytics or ads | Page code review by the board workstream; browser check |
 | Filters | Met: role type, discipline, level, location (274 metro regions, states, remote), sector, stage, pay | Browser checks at desktop and 375 px, light and dark, with real data |
-| Public link | **Not done.** Nothing is published yet | |
+| Public link | **Private link for review:** https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ (owner only). Public sharing waits for the owner | Published 2026-11-24; same page and data as the local build |
 | Refreshed daily | **Not done.** Every step runs by hand today | |
-| Style of the example board | **In progress.** The board workstream is restyling the page to the old hub's look | |
+| Style of the example board | Met: restyled to the old hub's look; full metro and state lists; whole card opens the posting | Browser checks at desktop and 375 px, light and dark |
 
 Other things that are true now:
 
