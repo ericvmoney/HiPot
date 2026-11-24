@@ -107,6 +107,12 @@ class Fetcher:
 
         if response.status_code == 404:
             raise FetchError("HTTP 404: no board at this address (wrong or retired board token)")
+        if 300 <= response.status_code < 400:
+            # Redirects are not followed. Some systems send a retired board to
+            # their own home page instead of answering 404.
+            target = response.headers.get("location", "")[:120]
+            raise FetchError(f"HTTP {response.status_code}: redirected to {target or 'an unstated address'} "
+                             "(board moved or not available)")
         if response.status_code != 200:
             raise FetchError(f"HTTP {response.status_code}")
         try:
@@ -118,7 +124,10 @@ class Fetcher:
 def record_name(url: str) -> str:
     """File name for a saved answer: host and path, made safe for a file system."""
     parts = urlsplit(url)
-    safe = "".join(ch if ch.isalnum() or ch in "-." else "_" for ch in parts.netloc + parts.path)
+    # A query written into the address (a paging offset) is part of the name;
+    # parameters passed separately are not, so older recordings still replay.
+    key = parts.netloc + parts.path + (f"_{parts.query}" if parts.query else "")
+    safe = "".join(ch if ch.isalnum() or ch in "-." else "_" for ch in key)
     return safe.strip("_") + ".json"
 
 
