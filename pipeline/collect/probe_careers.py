@@ -301,7 +301,9 @@ class SavedPages:
             self._live.close()
 
 
-def probe(company: dict, fetcher) -> dict:
+def probe(company: dict, fetcher, obey_robots: bool = True) -> dict:
+    """One company. With obey_robots false (PLAN.md decision 12b), pages that
+    robots.txt disallows are read anyway and the entry's 'robots' says which."""
     website = company["website"]
     parts = urlsplit(website)
     home = f"https://{parts.netloc}{parts.path or '/'}"
@@ -329,10 +331,14 @@ def probe(company: dict, fetcher) -> dict:
             # No robots.txt (404 or 410, or sent elsewhere) means nothing is
             # disallowed. Any other failure: the rules are unknown, so stop.
             if not str(error).startswith(("HTTP 404", "HTTP 410", "HTTP 30")):
-                return _done(entry, start, fetcher, "error", note=f"robots.txt could not be read: {str(error)[:100]}")
+                if obey_robots:
+                    return _done(entry, start, fetcher, "error", note=f"robots.txt could not be read: {str(error)[:100]}")
+                entry["robots"] = f"robots.txt could not be read ({str(error)[:60]}); read under decision 12b"
             robots.parse([])
         if not robots.can_fetch("*", home):
-            return _done(entry, start, fetcher, "robots-disallowed", note="robots.txt disallows the home page")
+            if obey_robots:
+                return _done(entry, start, fetcher, "robots-disallowed", note="robots.txt disallows the home page")
+            entry["robots"] = "robots.txt disallows the home page; read under decision 12b"
 
         final_home, page = get(home)
         why = refusal(page)
@@ -357,8 +363,10 @@ def probe(company: dict, fetcher) -> dict:
         found_page = False
         for candidate in candidates:
             if not robots.can_fetch("*", candidate):
-                entry["note"] = f"robots.txt disallows {urlsplit(candidate).path}"
-                continue
+                if obey_robots:
+                    entry["note"] = f"robots.txt disallows {urlsplit(candidate).path}"
+                    continue
+                entry["robots"] = f"robots.txt disallows {urlsplit(candidate).path}; read under decision 12b"
             try:
                 final, careers = get(candidate)
             except Blocked:
@@ -404,9 +412,15 @@ def _done(entry: dict, start: int, fetcher, outcome: str, **values) -> dict:
     return entry
 
 
-def companies_to_probe(registry: list[dict]) -> list[dict]:
+def companies_to_probe(registry: list[dict], established: bool = False) -> list[dict]:
+    """Companies with a website and no known job-board system: listed ones, or
+    with `established`, every core or enabling company (PLAN.md decision 14)."""
+    def wanted(company):
+        if established:
+            return company["climate"]["tier"] in ("core", "enabling")
+        return is_listed(company)
     return [company for company in registry
-            if is_listed(company) and company["ats"]["type"] == "unknown" and company.get("website")]
+            if wanted(company) and company["ats"]["type"] == "unknown" and company.get("website")]
 
 
 def summary(entries: list[dict]) -> dict:
@@ -435,11 +449,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--keep", action="append", default=[], metavar="ID",
                         help="with --replay: keep this company's entry from the existing --out file unchanged")
     parser.add_argument("--only", action="append", help="probe only this company id (may be repeated)")
+    parser.add_argument("--name", default="careers-probe-01", help="the probe's name, written into the file")
+    parser.add_argument("--established", action="store_true",
+                        help="probe every core or enabling company, established ones too (decision 14)")
+    parser.add_argument("--read-disallowed", action="store_true",
+                        help="read pages robots.txt disallows, noting it (decision 12b)")
     args = parser.parse_args(argv)
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(errors="replace")
 
-    targets = companies_to_probe(load_yaml(args.companies)["companies"])
+    targets = companies_to_probe(load_yaml(args.companies)["companies"], established=args.established)
     if args.only:
         targets = [company for company in targets if company["id"] in args.only]
     previous = {}
@@ -461,7 +480,8 @@ def main(argv: list[str] | None = None) -> int:
             if company["id"] in previous and company["id"] in args.keep:
                 entry = previous[company["id"]]
             else:
-                entry = probe(company, live if live is not None and company["id"] in args.live_for else fetcher)
+                entry = probe(company, live if live is not None and company["id"] in args.live_for else fetcher,
+                              obey_robots=not args.read_disallowed)
             entries.append(entry)
             print(f"{entry['outcome']:<17} {company['id']}: {entry['note'] or entry['method'] or ''} "
                   f"({entry['postings']} postings, {entry['requests']} requests)")
@@ -471,10 +491,11 @@ def main(argv: list[str] | None = None) -> int:
             live.close()
             print(f"{live.live_requests} live requests for pages the earlier pass had not saved")
     document = {
-        "probe": "careers-probe-01",
+        "probe": args.name,
         "made_by": "A1 collector, python -m pipeline.collect.probe_careers",
         "started_at": started,
-        "rules": "robots.txt obeyed for '*'; at most 4 page requests and 6 requests with redirects per company; "
+        "rules": ("robots.txt read for '*' and disallowed pages read anyway, noted per company (decision 12b); "
+                  if args.read_disallowed else "robots.txt obeyed for '*'; ") + "at most 4 page requests and 6 requests with redirects per company; "
                  "3 s between requests to a host; GET only; no JavaScript, no forms; stop on 403, 429, sign-in or bot check",
         "outcomes": OUTCOMES,
         "summary": summary(entries),
