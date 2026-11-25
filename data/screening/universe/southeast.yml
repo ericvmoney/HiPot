@@ -254,18 +254,19 @@ companies:
   sources:
   - ornl-ic
   registry_id: null
-  decision: null
-  reason: Its domain no longer resolves; status not established.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Cohort 2020. Closure inferred from
+    the dead domain plus the founder having moved to a full-time government fellowship; no shutdown notice found.
   ats: null
   open_roles: null
 - name: Adion Solar
-  website: null
+  website: https://adionsolar.com
   hq: Madison, GA
   sources:
   - cp-ga-2025
-  registry_id: null
-  decision: null
-  reason: May be a distributor or installer rather than a maker; not established.
+  registry_id: adion-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Adroit Materials
@@ -278,24 +279,15 @@ companies:
   reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
   ats: null
   open_roles: null
-- name: Advanced Nano Projects
-  website: null
-  hq: South Korea
-  sources:
-  - e2-ky
-  registry_id: null
-  decision: null
-  reason: Sources name it Advanced Nano Products; identity not established.
-  ats: null
-  open_roles: null
 - name: Agriwater
   website: https://agriwater.tech
   hq: Oak Ridge, TN
   sources:
   - ornl-ic
   registry_id: null
-  decision: null
-  reason: Its domain now redirects to an unrelated site; status not established.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure inferred from the lapsed domain
+    only; no shutdown notice found. Redirect target not visited.
   ats: null
   open_roles: null
 - name: Albemarle
@@ -364,7 +356,8 @@ companies:
   - ornl-ic
   registry_id: null
   decision: null
-  reason: Its site returns 404; status not established.
+  reason: Identity check found nothing conclusive. The source's 'battery materials believed' is not supported by
+    the profile. Not settled; quota ran out.
   ats: null
   open_roles: null
 - name: Anovion Technologies
@@ -659,7 +652,8 @@ companies:
   - ornl-ic
   registry_id: null
   decision: null
-  reason: Its site shows a 2021 copyright and nothing newer; status not established.
+  reason: Identity check found nothing conclusive. Stale but not dead; the Oak Ridge, TN location comes from the
+    source only.
   ats: null
   open_roles: null
 - name: DEHN
@@ -767,7 +761,8 @@ companies:
   - ic
   registry_id: null
   decision: null
-  reason: Its domain no longer resolves; status not established.
+  reason: 'Identity check found nothing conclusive. Leans closed (no working site), but no shutdown news was checked:
+    the usage quota ran out before the planned news search.'
   ats: null
   open_roles: null
 - name: Electro-Mechanical
@@ -787,7 +782,7 @@ companies:
   - ornl-ic
   registry_id: null
   decision: null
-  reason: Its site is a placeholder; status not established.
+  reason: Identity check found nothing conclusive. Cohort 2024 to 2026 pages not checked; quota ran out.
   ats: null
   open_roles: null
 - name: Emrgy
@@ -929,7 +924,8 @@ companies:
   - cox-cleantech
   registry_id: null
   decision: null
-  reason: Its site may be stale and gives no location; status not established.
+  reason: Identity check found nothing conclusive. Southeast location not established; Durham, NC appears only as
+    a 2023 event venue.
   ats: null
   open_roles: null
 - name: Framatome
@@ -982,9 +978,9 @@ companies:
   hq: Denver, NC
   sources:
   - cp-nc-2025
-  registry_id: null
-  decision: null
-  reason: Parent and identity not established.
+  registry_id: green-new-energy-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
   ats: null
   open_roles: null
 - name: Hanon Systems
@@ -1061,7 +1057,8 @@ companies:
   - arpa-e
   registry_id: null
   decision: null
-  reason: Its site's newest items date from about 2017; status not established.
+  reason: Identity check found nothing conclusive. Stale site; no activity found after 2019. Leans dormant; not
+    settled.
   ats: null
   open_roles: null
 - name: HyperJet Fusion
@@ -1071,7 +1068,7 @@ companies:
   - arpa-e
   registry_id: null
   decision: null
-  reason: No activity found after 2021; status not established.
+  reason: Identity check found nothing conclusive. Not settled; quota ran out.
   ats: null
   open_roles: null
 - name: Hyundai Motor Group Metaplant America
@@ -1212,24 +1209,14 @@ companies:
   reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Mateis Solar
-  website: null
-  hq: Greenville County, SC
-  sources:
-  - cp-sc-2024
-  registry_id: null
-  decision: null
-  reason: Known only from a reshoring database entry; identity not established.
-  ats: null
-  open_roles: null
 - name: Microporous
   website: https://microporous.com
   hq: Piney Flats, TN
   sources:
   - cp-va-2025
-  registry_id: null
-  decision: null
-  reason: Its domain shows a 'domain for sale' page; status not established.
+  registry_id: microporous
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Mojave Energy Systems
@@ -1412,16 +1399,6 @@ companies:
   registry_id: pomega-energy-storage-technologies-kontrolmatik
   decision: registry
   reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
-  ats: null
-  open_roles: null
-- name: PowerBox
-  website: null
-  hq: Alabama
-  sources:
-  - madeinalabama-battery
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: PowerSecure
@@ -1724,23 +1701,23 @@ companies:
   open_roles: null
 - name: Sunlight Batteries USA
   website: https://www.sunlightgroup.com
-  hq: Not confirmed
+  hq: Greensboro, NC
   sources:
   - e2-nc
   - cp-nc-2025
-  registry_id: null
-  decision: null
-  reason: The domain found belongs to a Singapore switchgear company; identity not established.
+  registry_id: sunlight-batteries-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
   ats: null
   open_roles: null
 - name: SunMaxTech Solar
-  website: null
-  hq: Not found
+  website: https://www.sunmaxtech.com
+  hq: Dalton, GA
   sources:
   - cp-ga-2025
-  registry_id: null
-  decision: null
-  reason: No site found; identity and plant status not established.
+  registry_id: sunmaxtech-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Sustaera
@@ -1793,7 +1770,7 @@ companies:
   - cp-tn-2024
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not settled.
   ats: null
   open_roles: null
 - name: Tetramer Technologies
@@ -1846,7 +1823,7 @@ companies:
   - ornl-ic
   registry_id: null
   decision: null
-  reason: Its site returns 404; status not established.
+  reason: Identity check found nothing conclusive. Not settled; quota ran out.
   ats: null
   open_roles: null
 - name: Unitech North America
@@ -1866,7 +1843,8 @@ companies:
   - sace-onepagers
   registry_id: null
   decision: null
-  reason: Its domain now shows unrelated real-estate text; status not established.
+  reason: 'Identity check found nothing conclusive. Plant status: announced, no evidence it was built or cancelled.
+    The loss of both domains is a closure warning sign; recheck before listing. Sources: https://chargedevs.com/newswire/urbix-to-negotiate'
   ats: null
   open_roles: null
 - name: Vantem
@@ -1959,6 +1937,10 @@ companies:
   ats: null
   open_roles: null
 excluded:
+- name: Advanced Nano Projects
+  sources:
+  - e2-ky
+  reason: Advanced Nano Products is headquartered in South Korea; Elizabethtown, KY is one plant.
 - name: AESC (Envision AESC)
   sources:
   - e2-sc
@@ -2109,6 +2091,11 @@ excluded:
   - e2-tn
   - cp-tn-2024
   reason: 'Headquartered outside the US (Aurora, Ontario, Canada; site: Stanton, ); no main site in the region found.'
+- name: Mateis Solar
+  sources:
+  - cp-sc-2024
+  reason: Now INDEPWR Solar, headquartered in Irvine, CA, with modules made overseas; no Greenville County plant
+    found.
 - name: Mercedes-Benz
   sources:
   - c2es-se
@@ -2135,6 +2122,10 @@ excluded:
   sources:
   - c2es-se
   reason: 'Headquartered outside the US (Switzerland (US HQ: Columbia, SC)); no main site in the region found.'
+- name: PowerBox
+  sources:
+  - madeinalabama-battery
+  reason: Headquartered in Champaign, IL; Tuscaloosa, AL is a second office.
 - name: Princeton NuEnergy
   sources:
   - c2es-sc
