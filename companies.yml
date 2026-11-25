@@ -5971,6 +5971,42 @@ companies:
     reason: 'Independent; 51 people (Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Dexmate),
       2026-11-24); growth sign: founded 2024.'
   notes: Missing facts filled from data/screening/registry-fixes.
+- id: dg-matrix
+  name: DG Matrix
+  website: https://dgmatrix.com
+  careers_url: https://www.dgmatrix.com/careers
+  hq: Morrisville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: series-a
+  founded: null
+  headcount:
+    value: 250
+    as_of: '2026-11-25'
+    source: DG Matrix About page
+  climate:
+    tier: out
+    reason: Multi-port solid-state transformers whose recent products and press are for AI data centers; equipment
+      made mainly for data centers is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 250 people (DG Matrix About page, 2026-11-25); founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on solid-state transformer startups (results naming DG Matrix alongside Amperesand and Heron Power);
+    facts from own site.. Flags: main customers are data centers (recent products and press are for AI data centers;
+    grid, EV-fleet and microgrid lines also offered); co-founder/CTO is an NC State professor; site does not call
+    it a FREEDM spinout. Stage: 60M USD Series A announced 2026-02-18, led by Engine Ventures with ABB, Cerberus
+    Ventures, Chevron Technology Ventures (search summary of Business Wire release https://www.businesswire.com/news/home/20260218937765/en/
+    ; Business Wire refuses automated clients, not read). Earlier 20M USD seed, March 2025 (search summary of chargedevs.com,
+    not read: robots.txt bars ClaudeBot). Evidence: https://www.dgmatrix.com/ https://www.dgmatrix.com/about https://www.dgmatrix.com/careers
+    https://www.dgmatrix.com/news-and-media https://www.businesswire.com/news/home/20260218937765/en/ Confidence:
+    medium.'
 - id: diamond-foundry
   name: Diamond Foundry
   website: https://www.diamondfoundry.com
@@ -6094,6 +6130,36 @@ companies:
     feed). Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/duranium. Stage:
     YC S25; no priced round found. Evidence: https://www.ycombinator.com/companies/duranium Region sources: yc-directory.
     Confidence: medium. Unresolved: Funding.'
+- id: dynapower
+  name: Dynapower
+  website: https://dynapower.com
+  careers_url: https://sensata.wd1.myworkdayjobs.com/Sensata-Careers/page/fda7a61bd64210014f29b5c561950000
+  hq: South Burlington, VT
+  ats:
+    type: workday
+    board: sensata.wd1/Sensata-Careers
+  read: manual
+  sectors:
+  - energy-storage
+  - hydrogen
+  stage: subsidiary
+  founded: 1963
+  headcount: null
+  climate:
+    tier: core
+    reason: Energy-storage inverters, electrolyzer power supplies and fuel-cell inverters (a Sensata company).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1963, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of US utility-storage inverter makers; confirmed on own site.. Flags: subsidiary
+    of Sensata Technologies; markets: hydrogen, e-mobility, energy storage (incl. data centers, solar+storage, microgrids),
+    industry (incl. mining), government/defense. Stage: Site footer and careers link identify it as part of Sensata
+    Technologies; acquisition date not stated on the pages read. Evidence: https://dynapower.com/ https://dynapower.com/about-us/
+    Confidence: medium.'
 - id: earth-ai
   name: EARTH AI
   website: https://www.earth-ai.com
@@ -7288,6 +7354,38 @@ companies:
     American Century Investments); total $10-50M; no dates. Evidence: https://enzinc.com/ https://dealroom.co/companies/enzinc
     Region sources: caltestbed-directory, cec-eif-showcase, cec-nopa, calseed-awardees, third-derivative, arpae-projects.
     Confidence: medium. Unresolved: Round amounts and dates not shown.'
+- id: epc-power
+  name: EPC Power
+  website: https://epcpower.com
+  careers_url: https://www.epcpower.com/about/careers
+  hq: Poway, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: late
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: Grid-forming power conversion systems for utility-scale energy storage and microgrids; data centers
+      are one of its markets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founded 2010 but venture-backed (late); latest round not yet
+      checked, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of US grid-forming inverter makers; confirmed on own site.. Flags: pending acquisition
+    by Flex (4.4B USD); data centers named first among its markets alongside utility-scale storage and microgrids;
+    no revenue split given. Stage: Controlling shareholders Goldman Sachs Alternatives and Cleanhill Partners (Cleanhill
+    first invested 2021), per the Flex sale announcement 2026-09-03. Evidence: https://www.epcpower.com/ https://www.epcpower.com/about/company
+    https://www.epcpower.com/news/epc-power-announces-sale-to-flex-for-4-4b https://www.epcpower.com/about/careers
+    Confidence: high.'
 - id: epic-cleantec
   name: Epic Cleantec
   website: https://www.epiccleantec.com
@@ -17993,6 +18091,36 @@ companies:
     reason: Owner not yet checked; 4,500 people (RES (company statement) (https://www.res-group.com/about-us/),
       2026-11-24); founded 1981, with no equity raise in 5 years or recent listing found.
   notes: Missing facts filled from data/screening/registry-fixes.
+- id: resilient-power-systems
+  name: Resilient Power Systems
+  website: https://resilientpowersystems.com
+  careers_url: null
+  hq: Austin, TX (not confirmed)
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - charging
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state-transformer-based power conversion (an Eaton company); facts from search summaries only.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search results on solid-state transformer startups (mentioned as acquired by Eaton).. Flags: subsidiary
+    of Eaton; identity of domain not confirmed; facts only from search snippets. Stage: Search summaries: ''acquired
+    last year by Eaton'' (relative to Feb 2026 coverage) and ecmag snippet on Eaton''s purchase of Austin-based
+    Resilient Power Systems. Own site not read (robots.txt names ClaudeBot/anthropic-ai with Disallow rules); eaton.com
+    and ecmag.com return 403. Evidence: https://www.ecmag.com/magazine/articles/article-detail/and-so-it-goes--new-solid-state-tech-could-transform-utility-and-data-center-power-control
+    Confidence: low.'
 - id: resollant
   name: Resollant
   website: https://resollant.com
@@ -18024,6 +18152,38 @@ companies:
     funding stage not found in third-party sources. customers set to oil and gas because startup.network says the
     2026 1 TPD pilot is with four unnamed oil and gas companies; stated target customers also include refineries,
     petrochemicals, steel, cement, aluminum, so oil and gas may not be the sole main customer.'
+- id: resolute-grid
+  name: Resolute Grid
+  website: https://resolutegrid.com
+  careers_url: https://www.resolutegrid.com/careers/
+  hq: Texas (Dallas per one directory; first facility and test lab in Austin)
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: seed
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: American-made large power transformers (30 to 350 MVA, up to 345 kV) built to cut the multi-year wait
+      for grid transformers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2025.'
+  notes: 'Owner request 2026-11-25 (Resolute Grid). Found via: Owner request; identity confirmed on resolutegrid.com
+    (careers page applications go by email, no job board).. Flags: conventional (iron-core) large power transformers,
+    not power electronics; design-inquiry form lists High Performance Compute alongside Utility, Government, Manufacturing,
+    Developer, EPC; Venture Dallas ''Startup of the year'' badge on home page; funding facts only from aggregator
+    search snippets. Stage: CB Insights search snippet: Seed VC round dated 2025-12-01 with Stage 1 Ventures, amount
+    not given. Dealroom search snippet: 18.2M USD ''Early VC'' round, undated (Dealroom not read: robots.txt bars
+    ClaudeBot). Sources disagree on amount; no press release found. Evidence: https://www.resolutegrid.com/ https://www.resolutegrid.com/careers/
+    https://www.resolutegrid.com/sitemap.xml https://www.cbinsights.com/company/resolute-grid https://app.dealroom.co/companies/resolute_grid
+    Confidence: medium.'
 - id: resolute-methane
   name: Resolute Methane
   website: https://resolutemethane.com
@@ -19924,6 +20084,35 @@ companies:
     type: registered direct offering (common stock, pre-funded and common warrants)
     source: https://www.barchart.com/story/news/37272391/solid-power-announces-pricing-of-130-million-registered-direct-offering
   ipo_year: 2021
+- id: solid-state-power
+  name: Solid State Power
+  website: https://solidstatepower.net
+  careers_url: null
+  hq: Farmers Branch, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state distribution transformers (Solid State PowerHub) in a utility pilot with EPRI.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on solid-state power substation / power-electronic transformer utility pilots (MGRID result).. Flags:
+    demonstration stage (MGRID correction notes most SST products are at announced/funded stage); utility focus;
+    data centers not mentioned. Stage: News page: consortium won a DOE grant to commercialize PowerHub (2024-12-03);
+    no venture rounds listed. Evidence: https://solidstatepower.net/ https://solidstatepower.net/page6news.html
+    https://mgrid.org/2026/04/30/epri-and-six-major-us-utilities-are-demonstrating-an-all-solid-state-25-kva-pole-mount-transformer-from-solid-state-power/
+    https://mgrid.org/entity/solid-state-power-inc-ssp/ Confidence: medium.'
 - id: solidec
   name: Solidec
   website: https://solidec.com
@@ -20740,6 +20929,35 @@ companies:
     date: '2025-03-10'
     type: private equity buyout
     source: https://mergr.com/transaction/industrial-growth-partners-acquires-stored-energy-systems
+- id: stormentum
+  name: Stormentum
+  website: https://stormentum.com
+  careers_url: https://www.stormentum.com/careers
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Modular UPS, battery and rectifier power systems for AI data centers; data-center equipment is out (decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on US grid-forming inverter startups (Axios Pro result); facts from own site.. Flags: main customers
+    are data centers; sells through OEMs and integrators; also EV charging and microgrids. Stage: Axios Pro search
+    snippet (2025-10-23): next-gen inverter startup raising up to 8M USD seed; close not confirmed. Not read. Evidence:
+    https://www.stormentum.com/ https://www.stormentum.com/careers https://www.axios.com/pro/climate-deals/2025/10/23/inverter-seed-stormentum
+    Confidence: medium.'
 - id: sturman-industries
   name: Sturman Industries
   website: null
@@ -21087,6 +21305,36 @@ companies:
     Ag Ventures Alliance, Grantham Foundation); $1.5M King Philanthropies grant Jan 2023. Evidence: https://www.switchbioworks.com
     https://dealroom.co/companies/switch-bioworks Region sources: arpae-projects. Confidence: high. Tier set under
     owner decision 13.'
+- id: switched-source
+  name: Switched Source
+  website: https://switchedsource.com
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: Medium-voltage power-electronic devices that balance phases and tie feeders on utility distribution
+      grids.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2016.'
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of grid power-flow-control makers; confirmed on own site.. Flags: one deployment
+    at a US military installation (ARPA-E/ESTCP); main customers are utilities. Stage: Over 17M USD raised, announced
+    2026-10-13, led by Cubit Capital with ABB, Emerald Technology Ventures, Red Cedar Ventures, Southern States,
+    Southwire; round stage not named. Also a five-year 99M USD DOE project to deploy Phase-EQ units in the Southeast.
+    Evidence: https://www.switchedsource.com/ https://www.switchedsource.com/about-us/ https://www.switchedsource.com/2026/10/13/switched-source-secures-over-17-million-to-help-utilities-add-grid-capacity-faster/
+    https://www.switchedsource.com/page-sitemap.xml Confidence: high.'
 - id: sylvatex
   name: Sylvatex
   website: https://www.sylvatex.com
@@ -21954,6 +22202,37 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: legal name
     Titan Advanced Energy Solutions. Evidence: https://www.titanaes.com/ Region sources: masscec-investments. Confidence:
     medium. Unresolved: Founded, headcount, funding.'
+- id: tmeic-corporation-americas
+  name: TMEIC Corporation Americas
+  website: https://tmeic.com
+  careers_url: https://www.tmeic.com/careers/
+  hq: null
+  ats:
+    type: workable
+    board: tmeic-corporation-americas
+  read: manual
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 5000
+    as_of: '2026-11-25'
+    source: TMEIC website
+  climate:
+    tier: core
+    reason: Utility-scale photovoltaic inverters and substation equipment (the Americas arm of TMEIC, Japan).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; 5,000 people (TMEIC website, 2026-11-25); founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of utility-scale inverter makers with US operations; checked on own site.. Flags:
+    subsidiary of a Japanese group; over 1,000 employees (global); oil and gas, mining, metals among listed industries;
+    US HQ and US manufacturing not confirmed (contact page returned 403). Stage: Americas arm of the TMEIC group
+    (Japan site tmeic.co.jp; Europe careers on toshiba.eu); parent not named on the pages read. Evidence: https://www.tmeic.com/
+    https://www.tmeic.com/careers/ Confidence: low.'
 - id: torus
   name: Torus
   website: null
