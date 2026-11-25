@@ -26044,12 +26044,12 @@ companies:
 - id: ohmium-international
   name: Ohmium International
   website: https://ohmium.com
-  careers_url: null
+  careers_url: https://ohmium.wd12.myworkdayjobs.com/Ohmium_Careers
   hq: Newark, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: workday
+    board: ohmium.wd12/Ohmium_Careers
+  read: auto
   sectors:
   - hydrogen
   stage: series-c
