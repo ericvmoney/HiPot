@@ -2,6 +2,7 @@
 # electrification products here, drawn from the named sources below (not from companies.yml).
 # Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
 # that turned out not to be in the region; they are not part of the list.
+# Quarantined sources (robots.txt barred the pages read): builtin-energy, builtin-sf-greentech. Companies named only by them were removed.
 
 region: bay-area
 built: '2026-11-25'
@@ -114,10 +115,6 @@ sources:
   name: Lowercarbon Capital portfolio
   url: https://lowercarbon.com/companies/
   note: 102 companies, no locations; region from knowledge
-- id: builtin-sf-greentech
-  name: Built In SF greentech companies directory
-  url: https://builtinsf.com/companies/type/greentech-companies
-  note: pages 1-7, 127 listings
 - id: builtin-sf-cleantech-article
   name: Built In SF article, 15 San Francisco cleantech companies (2023)
   url: https://www.builtinsf.com/articles/san-francisco-bay-area-cleantech-companies
@@ -243,11 +240,6 @@ sources:
   note: 263 companies read from the page's own records request; Singapore community and life-science, computing
     and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
     found.
-- id: builtin-energy
-  name: Built In energy company directory
-  url: https://builtin.com/companies/type/energy-companies
-  note: '266 pages. Combined with greentech: 5,543 distinct companies, 1,710 matched clean-tech keywords and were
-    read by hand. Mostly oil and gas, utilities, installers, developers and software.'
 - id: climatetechlist-remote
   name: Climate Tech List, 'Remote companies' search
   url: https://www.climatetechlist.com/search/text/Remote
@@ -316,16 +308,6 @@ companies:
     type: ashby
     token: aclima
   open_roles: 1
-- name: Actuate
-  website: https://actuateiot.com
-  hq: San Mateo, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: actuate
-  decision: registry
-  reason: null
-  ats: null
-  open_roles: null
 - name: Aemetis
   website: https://www.aemetis.com/
   hq: Cupertino, CA
@@ -978,7 +960,6 @@ companies:
   sources:
   - cec-nopa
   - elemental-portfolio
-  - builtin-sf-greentech
   - third-derivative
   registry_id: capture6
   decision: registry
@@ -1491,16 +1472,6 @@ companies:
     type: workday
     token: enovix
   open_roles: null
-- name: Enphase Energy
-  website: https://enphase.com
-  hq: Fremont, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: enphase
-  decision: registry
-  reason: null
-  ats: null
-  open_roles: null
 - name: Enventix
   website: https://enventixinc.com/
   hq: San Francisco Bay Area, CA
@@ -1531,16 +1502,6 @@ companies:
   - third-derivative
   - arpae-projects
   registry_id: enzinc
-  decision: registry
-  reason: null
-  ats: null
-  open_roles: null
-- name: Epic Cleantec
-  website: https://www.epiccleantec.com
-  hq: San Francisco, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: epic-cleantec
   decision: registry
   reason: null
   ats: null
@@ -1630,16 +1591,6 @@ companies:
   reason: Renamed Liminal Insights; listed under that name.
   ats: null
   open_roles: null
-- name: Fenix International
-  website: https://www.fenixintl.com
-  hq: San Francisco, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: fenix-international
-  decision: registry
-  reason: null
-  ats: null
-  open_roles: null
 - name: Ferveret
   website: https://www.ferveret.com
   hq: San Francisco, CA
@@ -1694,18 +1645,6 @@ companies:
   reason: Domain parked for sale; no other trace found.
   ats: null
   open_roles: null
-- name: Form Energy
-  website: https://formenergy.com
-  hq: Somerville, MA
-  sources:
-  - builtin-sf-greentech
-  registry_id: form-energy
-  decision: registry
-  reason: null
-  ats:
-    type: ashby
-    token: formenergy
-  open_roles: null
 - name: Fortera
   website: https://forterausa.com
   hq: San Jose, CA
@@ -1728,16 +1667,6 @@ companies:
   registry_id: forum-mobility
   decision: registry
   reason: null
-  ats: null
-  open_roles: null
-- name: Full Cycle Bioplastics
-  website: https://www.fullcyclebioplastics.com
-  hq: Bay Area, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: null
-  decision: closed
-  reason: Latest dated material is from June 2020; domain does not resolve.
   ats: null
   open_roles: null
 - name: Galvanized Energy
@@ -1807,7 +1736,6 @@ companies:
   hq: South San Francisco, CA
   sources:
   - khosla-sustainability
-  - builtin-sf-greentech
   registry_id: glydways
   decision: registry
   reason: null
@@ -1967,7 +1895,6 @@ companies:
   - bev
   - prelude
   - lowercarbon-portfolio
-  - builtin-sf-greentech
   - collab-fund
   - arpae-projects
   - oced-award-wednesdays
@@ -2067,7 +1994,6 @@ companies:
   website: https://impulselabs.com
   hq: San Francisco, CA
   sources:
-  - builtin-sf-greentech
   - third-derivative
   registry_id: impulse-labs
   decision: registry
@@ -2234,24 +2160,11 @@ companies:
   reason: null
   ats: null
   open_roles: null
-- name: Kiverdi
-  website: https://www.kiverdi.com
-  hq: San Leandro, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: kiverdi
-  decision: registry
-  reason: null
-  ats:
-    type: bamboohr
-    token: kiverdi
-  open_roles: null
 - name: KoBold Metals
   website: https://koboldmetals.com
   hq: Berkeley, CA
   sources:
   - bev
-  - builtin-sf-greentech
   - arpae-projects
   registry_id: kobold-metals
   decision: registry
@@ -2332,7 +2245,6 @@ companies:
   - lowercarbon
   - bev
   - lowercarbon-portfolio
-  - builtin-sf-greentech
   registry_id: lilac-solutions
   decision: registry
   reason: null
@@ -2428,18 +2340,6 @@ companies:
   reason: null
   ats: null
   open_roles: null
-- name: Lucid Group
-  website: https://www.lucidmotors.com/
-  hq: Newark, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: lucid-motors
-  decision: registry
-  reason: Registry entry 'lucid-motors' is the same company under its current name.
-  ats:
-    type: greenhouse
-    token: null
-  open_roles: null
 - name: Lunar Energy
   website: https://lunarenergy.com
   hq: Mountain View, CA
@@ -2447,7 +2347,6 @@ companies:
   - dcvc
   - prelude
   - piva-portfolio
-  - builtin-sf-greentech
   registry_id: lunar-energy
   decision: registry
   reason: null
@@ -2531,7 +2430,6 @@ companies:
   website: https://www.mangomaterials.com
   hq: Redwood City, CA
   sources:
-  - builtin-sf-greentech
   - collab-fund
   registry_id: mango-materials
   decision: registry
@@ -2915,7 +2813,6 @@ companies:
   - elemental-portfolio
   - overture-portfolio
   - lowercarbon-portfolio
-  - builtin-sf-greentech
   - arpae-projects
   registry_id: nitricity
   decision: registry
@@ -3017,7 +2914,6 @@ companies:
   hq: Newark, CA
   sources:
   - greentown
-  - builtin-energy
   registry_id: ohmium-international
   decision: registry
   reason: 'Proposed in proposals-03-bay-area-additions.yml: core, startup in.'
@@ -3103,7 +2999,6 @@ companies:
   website: https://www.orangecharger.com
   hq: North Fair Oaks
   sources:
-  - builtin-sf-greentech
   - climactic
   registry_id: orange-charger
   decision: registry
@@ -3290,7 +3185,6 @@ companies:
   - cec-nopa
   - bev
   - piva-portfolio
-  - builtin-sf-greentech
   registry_id: planted
   decision: registry
   reason: Registry entry 'planted' is the same company under its current name.
@@ -3519,18 +3413,6 @@ companies:
   reason: 'Proposed in proposals-03-bay-area-additions.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: Range Energy
-  website: https://range.energy
-  hq: Mountain View, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: range-energy
-  decision: registry
-  reason: null
-  ats:
-    type: ashby
-    token: range.energy
-  open_roles: null
 - name: RareTerra
   website: https://www.rare-terra.com/
   hq: Berkeley, CA
@@ -3636,7 +3518,6 @@ companies:
   website: https://rhoic.co
   hq: Emeryville / Berkeley, CA
   sources:
-  - builtin-sf-greentech
   - activate-2024
   registry_id: rhoic
   decision: registry
@@ -3703,7 +3584,6 @@ companies:
   website: https://www.rubi.earth
   hq: Alameda, CA
   sources:
-  - builtin-sf-greentech
   - collab-fund
   - climactic
   - third-derivative
@@ -3872,7 +3752,6 @@ companies:
   - elemental-portfolio
   - overture-portfolio
   - fifthwall-climate-press
-  - builtin-sf-greentech
   - wireframe
   - collab-fund
   - in2-portfolio
@@ -4016,7 +3895,6 @@ companies:
   sources:
   - caltestbed-directory
   - cec-nopa
-  - builtin-sf-greentech
   - builtin-sf-cleantech-article
   - third-derivative
   - arpae-projects
@@ -4088,18 +3966,6 @@ companies:
   reason: null
   ats: null
   open_roles: null
-- name: Terradot
-  website: https://terradot.earth
-  hq: San Francisco, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: terradot
-  decision: registry
-  reason: null
-  ats:
-    type: rippling
-    token: terradot-careers
-  open_roles: null
 - name: Terranox AI
   website: https://terranox.ai
   hq: San Francisco, CA
@@ -4149,16 +4015,6 @@ companies:
   registry_id: null
   decision: not-in-scope
   reason: Engine and motor control software licensed to automakers.
-  ats: null
-  open_roles: null
-- name: TurnOnGreen
-  website: https://www.turnongreen.com
-  hq: San Jose, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: turnongreen
-  decision: registry
-  reason: null
   ats: null
   open_roles: null
 - name: Twelve
@@ -4273,18 +4129,6 @@ companies:
   reason: Coastal olivine spreading for carbon removal; a removal-credit service, not a product.
   ats: null
   open_roles: null
-- name: View
-  website: https://view.com/
-  hq: Milpitas, CA
-  sources:
-  - builtin-sf-greentech
-  registry_id: view
-  decision: registry
-  reason: null
-  ats:
-    type: jobvite
-    token: view
-  open_roles: null
 - name: Visibl Semiconductors
   website: https://visiblsemi.com
   hq: San Francisco, CA
@@ -4315,7 +4159,6 @@ companies:
   website: https://voltacharging.com
   hq: San Francisco, CA
   sources:
-  - builtin-sf-greentech
   - builtin-sf-cleantech-article
   registry_id: null
   decision: closed
@@ -4548,10 +4391,6 @@ excluded:
   - collab-fund
   - arpae-projects
   reason: Its own site lists Juneau, AK and Tulsa, OK.
-- name: GAF Energy
-  sources:
-  - builtin-energy
-  reason: Moved its headquarters to Georgetown, TX after the San Jose site closed in December 2025.
 - name: Heimdal
   sources:
   - kb-ba-hardware
