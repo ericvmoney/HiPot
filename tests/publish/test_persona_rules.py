@@ -111,6 +111,23 @@ def test_role_headers_on_one_or_two_lines_in_either_order(js, header):
     assert "Acme" not in json.dumps(found["persona"])
 
 
+def test_non_technical_work_gets_no_discipline_from_stray_words(js):
+    from tools.validate import check_persona
+    found = extract(js, SUPPLY_CHAIN)
+    persona = found["persona"]
+    # "power electronics" and "semiconductors" appear in the bullets, but the candidate buys them.
+    assert persona["functions"] == ["supply-chain"] and persona["disciplines"] == [] and found["shortList"] == []
+    saved = js.call("PersonaRules.forSaving", persona)
+    assert saved["disciplines"] == [] and check_persona(saved, load_yaml(ROOT / "taxonomy.yml")) == []
+    # A discipline named in a title is still proposed.
+    titled = extract(js, SUPPLY_CHAIN.replace("Supply Chain Manager |", "Manufacturing Supply Chain Manager |"))
+    assert titled["persona"]["disciplines"] == ["manufacturing"]
+    # Technical work still gets proposals from the experience text.
+    assert extract(js, RESUME_01)["persona"]["disciplines"] == ["controls", "systems"]
+    assert js.call("PersonaRules.isTechnical", []) and js.call("PersonaRules.isTechnical", ["supply-chain", "science"])
+    assert not js.call("PersonaRules.isTechnical", ["supply-chain", "finance-legal"])
+
+
 def test_the_home_metro_is_proposed_only_when_the_candidate_will_not_relocate(js):
     assert extract(js, TECHNICIAN)["persona"]["locations"]["metros"] == ["austin-tx"]   # Round Rock, TX 78664
     willing = extract(js, RESUME_01.replace("not looking to relocate", "happy to relocate"))
