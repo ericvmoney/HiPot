@@ -12234,8 +12234,8 @@ companies:
   careers_url: https://www.enervenue.com/careers
   hq: Fremont, CA
   ats:
-    type: other
-    board: https://www.enervenue.com/careers
+    type: rippling
+    board: enervenue-inc
   read: auto
   sectors:
   - hydrogen
@@ -13276,12 +13276,12 @@ companies:
 - id: evoqua-water-technologies
   name: Evoqua Water Technologies
   website: https://www.evoqua.com
-  careers_url: null
+  careers_url: https://xylem.wd5.myworkdayjobs.com/xylem-careers
   hq: Pittsburgh, PA
   ats:
     type: workday
-    board: xylem
-  read: manual
+    board: xylem.wd5/xylem-careers
+  read: auto
   sectors:
   - water
   stage: subsidiary
@@ -15067,12 +15067,12 @@ companies:
 - id: ge-vernova
   name: GE Vernova
   website: https://www.gevernova.com
-  careers_url: null
+  careers_url: https://careers.gevernova.com/
   hq: Cambridge, MA
   ats:
     type: workday
-    board: gevernova
-  read: manual
+    board: gevernova.wd5/Vernova_ExternalSite
+  read: auto
   sectors:
   - wind
   - grid
@@ -21049,8 +21049,8 @@ companies:
   careers_url: https://www.li.me/about/careers
   hq: San Francisco, CA
   ats:
-    type: ashby
-    board: Lime
+    type: other
+    board: https://www.li.me/about/careers
   read: auto
   sectors:
   - electric-mobility
@@ -21147,12 +21147,12 @@ companies:
 - id: linevision
   name: LineVision
   website: https://www.linevisioninc.com
-  careers_url: null
+  careers_url: https://www.linevisioninc.com/careers
   hq: Boston, MA
   ats:
     type: paylocity
-    board: '4683948'
-  read: manual
+    board: e85e8980-8325-4e41-9404-be920804d97d
+  read: auto
   sectors:
   - grid
   - components
@@ -24558,8 +24558,8 @@ companies:
   careers_url: https://www.navierboat.com/careers
   hq: Alameda, CA
   ats:
-    type: greenhouse
-    board: navierboat
+    type: other
+    board: https://www.navierboat.com/careers
   read: auto
   sectors:
   - ev
@@ -29905,7 +29905,7 @@ companies:
   hq: San Jose, CA
   ats:
     type: other
-    board: https://careers.quantumscape.com/
+    board: https://careers.quantumscape.com/search/
   read: auto
   sectors:
   - energy-storage
@@ -32097,12 +32097,12 @@ companies:
 - id: sa-recycling
   name: SA Recycling
   website: https://www.sarecycling.com/
-  careers_url: null
+  careers_url: https://www.sarecycling.com/company/careers/
   hq: Orange, CA
   ats:
     type: workday
-    board: sarecycling
-  read: manual
+    board: sarecycling.wd503/SA_Recycling_Careers
+  read: auto
   sectors:
   - recycling
   stage: null
@@ -38075,12 +38075,12 @@ companies:
 - id: trojan-battery
   name: Trojan Battery
   website: https://www.trojanbattery.com/
-  careers_url: null
+  careers_url: https://www.trojanbattery.com/about-us/careers
   hq: Santa Fe Springs, CA
   ats:
     type: workday
-    board: trojanbattery
-  read: manual
+    board: trojanbattery.wd5/Trojan
+  read: auto
   sectors:
   - energy-storage
   stage: subsidiary
@@ -41578,8 +41578,8 @@ companies:
   careers_url: https://zeromotorcycles.com/employment
   hq: Scotts Valley, CA
   ats:
-    type: other
-    board: https://zeromotorcycles.com/employment
+    type: recruitee
+    board: zeromotorcycles
   read: auto
   sectors:
   - electric-mobility
