@@ -271,4 +271,13 @@ Decided by Eric on 2026-11-24:
     - Reviewed once a quarter; a company that crosses a line gets a quarter's notice on the board before it leaves.
 11. **Blocked discovery sources** may be read in the desktop app's built-in browser at a person's pace (Eric, 2026-11-24). No CAPTCHA, bot challenge, login or paywall is ever passed; such sources are listed for Eric to open. Job postings still come only through the collector's readers.
 
+12. **Careers-page reader** (Eric, 2026-11-24): the collector's proposal (`reports/careers-page-proposal.md`) is accepted and the reader is to be built, with two exceptions.
+    - Where a company's own site sends candidates to LinkedIn as the only place its jobs are posted, the reader follows that link and lists those postings; the link then goes to the company's posting on LinkedIn. Other aggregators stay excluded, and no sign-in or bot check is ever passed.
+    - robots.txt is not taken at face value: pages are still read, at a reduced frequency.
+13. **Sectors** (Eric, 2026-11-24):
+    - In: recycled and bio-based materials; water treatment and measurement.
+    - Out: data-center companies of any kind (equipment, cooling, computing, building or running data centers), except energy-sector companies (generation, storage, grid equipment) that sell to data centers. Applied in `tools/apply_screening.py`: Atomic Machines, Karman Industries and Panthalassa out; VEIR, Amperesand, Spinor, ON.energy and the generation companies stay in.
+14. **Established companies** (Eric, 2026-11-24): older and larger companies are accepted once the board can filter by company type. The listing rule becomes the climate tier alone, and the startup test becomes a label (startup or established) with a filter on the board; the registry then expands to include more established climate companies. Until the filter ships, the published board keeps the startup-only rule.
+15. **New roles** (Eric, 2026-11-24): a "New" flag and filter for roles first seen in the last 3 business days.
+
 Next after the current coverage run (Eric, 2026-11-24): a draft of the in-browser resume parser, and artifact hosting prepared for first testing.

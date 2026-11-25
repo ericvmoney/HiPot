@@ -75,20 +75,24 @@ OWNER_RULINGS: dict[str, dict] = {
     "zipline": {"q": "A1", "tier": "enabling", "sectors": ["electric-aviation"],
                 "reason": "Battery-electric delivery aircraft for retail, restaurant and hospital deliveries, replacing car and van trips."},
     "wing": {"q": "A1", "tier": "enabling", "sectors": ["electric-aviation"]},
-    # A2: clean products sold to data centers are included for now. Fossil-fuelled
+    # A2, as revised by the owner later on 2026-11-24: "Data center companies of any
+    # kind" are out, "exceptions for energy sector companies that interact with data
+    # center folks". So energy companies (generation, storage, grid equipment) that
+    # sell to data centers stay in; equipment, cooling and computing made for data
+    # centers, and companies that build or run them, are out. Fossil-fuelled
     # products (Arbor, Hyliion, Scale Microgrids) and compute (Crusoe) stay out.
     "veir": {"q": "A2", "tier": "core", "sectors": ["grid"],
              "reason": "High-temperature superconducting power cables that move electricity with far lower losses; first product serves AI data centers."},
     "amperesand": {"q": "A2", "tier": "enabling", "sectors": ["grid", "components"],
                    "reason": "Silicon-carbide solid-state transformers for grid and data-center power conversion."},
-    "atomic-machines": {"q": "A2", "tier": "enabling", "sectors": ["components"],
-                        "reason": "Micro-manufactured relays and switches for 800 V DC power systems, first for AI data centers."},
+    "atomic-machines": {"q": "A2", "tier": "out", "sectors": ["components"],
+                        "reason": "Relays and switches made first for AI data-center power systems; data-center equipment is out."},
     "spinor-energy": {"q": "A2", "tier": "core", "sectors": ["energy-storage"],
                       "reason": "Superconducting magnetic energy storage, aimed first at AI data centers."},
-    "karman-industries": {"q": "A2", "tier": "enabling", "sectors": ["industrial-heat"],
-                          "reason": "Electric heat pumps for industrial heat and data-center cooling."},
-    "panthalassa": {"q": "A2", "tier": "enabling", "sectors": ["distributed-generation"],
-                    "reason": "Wave-powered ocean nodes that generate their own electricity, first used to run on-board computing."},
+    "karman-industries": {"q": "A2", "tier": "out", "sectors": ["industrial-heat"],
+                          "reason": "Heat pumps now aimed at data-center cooling; data-center equipment is out."},
+    "panthalassa": {"q": "A2", "tier": "out", "sectors": ["distributed-generation"],
+                    "reason": "Wave-powered ocean nodes whose stated product is on-board computing; computing is out."},
     "on-energy": {"q": "A2", "tier": "enabling", "sectors": ["energy-storage"], "basis": "provisional",
                   "reason": "Battery storage and power systems for data centers and industrial sites."},
     # A3: defense as a side business is fine; as the main business it is out.

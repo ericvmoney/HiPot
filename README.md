@@ -115,7 +115,7 @@ Runs every test offline, about 15 seconds.
 
 ## Rules that are not negotiable
 
-1. A role's link goes to the company's own posting. Nothing enters the data from an aggregator or a search result.
+1. A role's link goes to the company's own posting. Nothing enters the data from an aggregator or a search result. One exception (PLAN.md decision 12): when a company's own site sends candidates to LinkedIn as the only place it posts jobs, those postings are read there and linked there.
 2. Real resumes and personas never enter the repository and never go to a cloud model. Tests use synthetic ones.
 3. No field anywhere scores or ranks a person.
 4. Pay is what the employer published, never an estimate.
