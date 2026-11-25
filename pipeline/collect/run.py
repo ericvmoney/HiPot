@@ -20,10 +20,10 @@ from urllib.parse import urlsplit
 from typing import Callable
 
 from pipeline.collect import normalize
-from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable
+from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable, workday
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
-from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
+from pipeline.collect.state import DEFAULT_RUNS, DEFAULT_STATE, SeenState, record_run, write_json_atomic
 from pipeline.collect.text import clip
 from pipeline.io import ROOT, load_yaml
 from pipeline.seed.import_old_hub import job_id, parse_source
@@ -39,6 +39,7 @@ READERS: dict[str, Callable] = {
     "teamtailor": teamtailor.read,
     "gem": gem.read,
     "paylocity": paylocity.read,
+    "workday": workday.read,
     # These vendors' terms restrict automated reading. They run by the owner's
     # decision of 2026-11-24 (PLAN.md decision 6, recorded as a risk there);
     # each can be turned off for a run with --disable-reader TYPE.
@@ -61,7 +62,9 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "breezy": "breezy.hr",
          # Teamtailor careers sites are on teamtailor.com or the company's own domain.
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
-         "paylocity": "recruiting.paylocity.com"}
+         "paylocity": "recruiting.paylocity.com",
+         # Each Workday tenant has its own host; a 429 from one stops them all.
+         "workday": "myworkdayjobs.com"}
 COLLECT_TIERS = ("core", "enabling")
 
 
@@ -228,6 +231,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE, help="first-seen state file")
+    parser.add_argument("--careers-state", type=Path, default=careers.STATE_PATH,
+                        help="careers-page reader state (weekly reads where robots.txt disallows)")
+    parser.add_argument("--runs", type=Path, default=DEFAULT_RUNS,
+                        help="run history: per run, the companies read (not written with --replay)")
     parser.add_argument("--greenhouse-pay", action="store_true",
                         help="one extra request per Greenhouse posting to read its structured pay range")
     parser.add_argument("--disable-reader", action="append", default=[], metavar="TYPE", choices=sorted(READERS),
@@ -250,7 +257,7 @@ def main(argv: list[str] | None = None) -> int:
         companies = [company for company in companies if company["id"] in args.company]
 
     readers = dict(READERS)
-    careers_context = careers.Context.load()
+    careers_context = careers.Context.load(args.careers_state)
     readers["other"] = lambda board, fetcher: careers.read(board, fetcher, careers_context)
     for name in args.disable_reader:
         readers.pop(name, None)
@@ -274,6 +281,8 @@ def main(argv: list[str] | None = None) -> int:
     state.forget_old(raw["generated_at"])
     write_json_atomic(raw, args.out)
     state.save(args.state)
+    if not args.replay:
+        record_run(raw, args.runs)
 
     print(summary(raw))
     print(f"{fetcher.requests} requests; wrote {args.out}")

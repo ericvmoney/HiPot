@@ -74,3 +74,35 @@ class SeenState:
 
     def save(self, path: Path = DEFAULT_STATE) -> None:
         write_json_atomic({"state_version": 0, "jobs": dict(sorted(self.jobs.items()))}, path)
+
+
+DEFAULT_RUNS = ROOT / "data" / "state" / "runs.json"
+MAX_RUNS = 400
+
+
+def record_run(raw: dict, path: Path = DEFAULT_RUNS, keep: int = MAX_RUNS) -> dict:
+    """Append one run to the run history and keep the last `keep` runs.
+
+    data/state/runs.json:
+
+        {"state_version": 0,
+         "runs": [{"started_at": "2026-11-25T18:00:00Z", "finished_at": "...",
+                   "read": ["antora-energy", ...],        # status ok or partial
+                   "partial": ["steelhead-composites"]}]} # the partial ones, also in "read"
+
+    Oldest first. The board uses it for the exact date a company was first
+    read. Runs with --replay are not recorded: they read saved answers, not
+    the companies.
+    """
+    history = load_json(path) if path.exists() else {"state_version": 0, "runs": []}
+    entries = raw["run"]["companies"]
+    run = {
+        "started_at": raw["run"]["started_at"],
+        "finished_at": raw["run"]["finished_at"],
+        "read": sorted(entry["company_id"] for entry in entries if entry["status"] in ("ok", "partial")),
+        "partial": sorted(entry["company_id"] for entry in entries if entry["status"] == "partial"),
+    }
+    history["runs"] = (history.get("runs") or []) + [run]
+    history["runs"] = history["runs"][-keep:]
+    write_json_atomic(history, path)
+    return run

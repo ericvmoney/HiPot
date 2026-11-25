@@ -49,7 +49,7 @@ def run(companies=COMPANIES, fetcher=None, state=None, **kwargs) -> dict:
     (company("a", "ashby", "a", status="out"), None),
     (company("a", "ashby", "a", status="unscreened"), None),
     (company("a", "adp", None), "no reader for adp"),
-    (company("a", "workday", "a"), "no reader for workday"),
+    (company("a", "jobvite", "a"), "no reader for jobvite"),
     (company("a", "unknown", None), "no reader for unknown"),
     (company("a", "greenhouse", None), "no board token for greenhouse"),
 ])
@@ -387,3 +387,31 @@ def test_an_unknown_run_status_is_refused():
                    "companies": [{"company_id": "a", "ats": "other", "status": "maybe", "postings": 0, "error": None}]},
            "jobs": []}
     assert schema_errors(raw, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY)
+
+
+def test_run_history_is_appended_and_capped(tmp_path):
+    from pipeline.collect.state import record_run
+    path = tmp_path / "runs.json"
+    def raw(n):
+        return {"run": {"started_at": f"2026-11-25T{n:02d}:00:00Z", "finished_at": f"2026-11-25T{n:02d}:05:00Z",
+                        "companies": [{"company_id": "a", "status": "ok"}, {"company_id": "b", "status": "partial"},
+                                      {"company_id": "c", "status": "blocked"}, {"company_id": "d", "status": "skipped"}]}}
+    for n in range(5):
+        record_run(raw(n), path, keep=3)
+    history = load_json(path)
+    assert [run["started_at"][11:13] for run in history["runs"]] == ["02", "03", "04"]
+    assert history["runs"][-1]["read"] == ["a", "b"] and history["runs"][-1]["partial"] == ["b"]
+
+
+def test_a_replay_run_leaves_the_run_history_alone(tmp_path, monkeypatch):
+    import yaml
+    registry = tmp_path / "companies.yml"
+    registry.write_text(yaml.safe_dump({"registry_version": 0, "companies": [company("lightship", "lever", "lightship")]}), encoding="utf-8")
+    runs = tmp_path / "runs.json"
+    monkeypatch.setattr(run_module, "Fetcher", FakeFetcher)
+    common = ["--companies", str(registry), "--out", str(tmp_path / "raw.json"), "--state", str(tmp_path / "s.json"), "--runs", str(runs)]
+    assert main(common) == 0
+    assert load_json(runs)["runs"][0]["read"] == ["lightship"]
+    (tmp_path / "saved").mkdir()
+    main(common + ["--replay", str(tmp_path / "saved")])
+    assert len(load_json(runs)["runs"]) == 1
