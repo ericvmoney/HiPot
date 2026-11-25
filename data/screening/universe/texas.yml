@@ -1,0 +1,1725 @@
+# Reference list for Texas: companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: texas
+built: '2026-11-25'
+sources:
+- id: halliburton-labs
+  name: Halliburton Labs companies page
+  url: https://halliburtonlabs.com/companies/
+  note: 42 companies listed (current and alumni mixed); 5 in Texas
+- id: rice-cea-1
+  name: Rice Alliance Clean Energy Accelerator Class 1 (2021)
+  url: https://news.rice.edu/news/2021/rice-alliance-clean-energy-accelerator-announces-inaugural-class
+  note: release gives no HQs; Texas HQ from prior knowledge, flagged in notes
+- id: rice-cea-2
+  name: Rice Alliance Clean Energy Accelerator Class 2 (2022)
+  url: https://news.rice.edu/news/2022/rice-alliance-clean-energy-accelerator-announces-class-2-startups
+  note: release gives no HQs
+- id: rice-cea-3
+  name: Rice Alliance Clean Energy Accelerator Class 3 (2023)
+  url: https://news.rice.edu/news/2023/rice-alliance-clean-energy-accelerator-announces-class-3-ventures
+  note: release gives no HQs
+- id: rice-cea-5
+  name: Rice Alliance Clean Energy Accelerator Class 5 (2025)
+  url: https://news.rice.edu/news/2025/12-startups-selected-join-class-5-rice-alliance-clean-energy-accelerator
+  note: HQs from Energy Capital coverage https://energycapitalhtx.com/rice-clean-energy-accelerator-2025
+- id: gtx-2025h2
+  name: Greentown Houston new members H2 2025 (InnovationMap and Energy Capital coverage)
+  url: https://houston.innovationmap.com/greentown-labs-new-startups-2674856687.html
+  note: same list at https://energycapitalhtx.com/greentown-houston-q3-q4-2025; 14 Texas companies named, 9 kept
+- id: gtx-2026h1
+  name: Greentown Houston new members H1 2026 (Energy Capital)
+  url: https://energycapitalhtx.com/greentown-new-members-2026
+  note: 5 Texas companies named, 1 hardware
+- id: gtx-6tx
+  name: Greentown Labs adds 6 Texas startups to Houston incubator (Energy Capital)
+  url: https://energycapitalhtx.com/greentown-labs
+- id: gtx-2023
+  name: 9 startups join Greentown Houston (Energy Capital)
+  url: https://energycapitalhtx.com/greentown-labs-houston-new-startups
+  note: no HQs stated; only Helix Earth confirmed Texas (Rice spinout)
+- id: gtx-2024q2
+  name: Greentown Labs newest climatetech members, July 2024 (Energy Capital)
+  url: https://energycapitalhtx.com/greentown-labs-new-climatetech-companies
+- id: gtx-inaugural
+  name: Greentown Houston inaugural cohort (InnovationMap)
+  url: https://houston.innovationmap.com/greentown-houston-names-inaugural-cohort-2648220845.html
+- id: gtx-gomake-2026
+  name: Greentown Go Make 2026 cohort (Energy Capital tag page summary)
+  url: https://energycapitalhtx.com/greentown-go-make-2026-cohort
+  note: read via https://energycapitalhtx.com/tag/greentown-houston
+- id: heti-members
+  name: Houston Energy Transition Initiative members
+  url: https://htxenergytransition.org/members/
+  note: mostly majors, utilities, consultancies and nonprofits
+- id: builtin-sa-greentech
+  name: Built In San Antonio greentech companies
+  url: https://builtin.com/companies/location/san-antonio/type/greentech-companies
+  note: 1 page (8 companies)
+- id: ati-energy
+  name: Austin Technology Incubator energy portfolio
+  url: https://ati.utexas.edu/companies/energy/
+- id: ati-alumni
+  name: Austin Technology Incubator alumni companies
+  url: https://ati.utexas.edu/companies/alumni/
+  note: names only, no sectors; energy ones picked by name and prior knowledge
+- id: ut-dti-showcase
+  name: UT Austin Discovery to Impact Venture Showcase
+  url: https://discoverytoimpact.utexas.edu/?p=3955
+- id: ut-seed-fund-search
+  name: UT Austin news on UT Seed Fund investments (web search results)
+  url: https://news.utexas.edu/tag/discovery-to-impact/
+  note: from search snippets of news.utexas.edu articles
+- id: rice-mag-lab-launch
+  name: Rice Magazine 'From Lab to Launch' spinout feature
+  url: https://magazine.rice.edu/spring-2026/lab-launch
+- id: rice-etvf-2026
+  name: Rice Alliance Energy Tech Venture Forum 2026 most promising companies
+  url: https://news.rice.edu/news/2026/future-energy-tech-takes-houston-rice-alliances-energy-tech-venture-forum
+  note: no HQs given; Texas ones matched to Greentown coverage
+- id: e2-texas
+  name: E2 clean energy project announcements, Texas
+  url: https://e2.org/announcements/states/texas/
+  note: 21 entries, Sep 2022 - Dec 2023 only
+- id: web-tx-solar-mfg
+  name: Texas solar module and cell factories (web search plus Inside Climate News and Electrek articles)
+  url: https://insideclimatenews.org/news/27082025/t1-energy-texas-united-states-solar-manufacturing/
+  note: also https://electrek.co/2026/06/03/another-giant-solar-factory-is-coming-to-texas/
+- id: web-tx-battery-mfg
+  name: Texas battery and battery-materials plants (web search results)
+  url: https://www.energy-storage.news/chinese-battery-manufacturer-hithium-ships-first-units-from-texas-bess-assembly-plant/
+- id: web-tx-transformers
+  name: Texas transformer and grid-equipment plants (web search results)
+  url: https://www.publicpower.org/periodical/article/mgm-transformers-vantran-announce-opening-texas-transformer-manufacturing-facility
+- id: web-houston-hydrogen
+  name: Houston hydrogen companies (web search results)
+  url: https://energycapitalhtx.com/tag/green-hydrogen-technology
+- id: lexisnexis-tx-innov
+  name: LexisNexis top 10 most innovative startups in Texas (InnovationMap)
+  url: https://houston.innovationmap.com/most-innovative-companies-texas-2025-2672302598.html
+- id: energycapital-time-greentech
+  name: Energy Capital tag page on Time's America's Top GreenTech Companies
+  url: https://energycapitalhtx.com/tag/americas-top-greentech-companies
+- id: web-houston-geothermal
+  name: Houston geothermal companies (web search results)
+  url: https://energycapitalhtx.com/tag/geothermal-energy-startup
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: cev
+  name: Clean Energy Ventures portfolio
+  url: https://cleanenergyventures.com/portfolio
+  note: 32 current plus 16 legacy/pre-fund companies.
+- id: congruent
+  name: Congruent Ventures portfolio
+  url: https://www.congruentvc.com/portfolio
+  note: 62 companies listed.
+- id: cri
+  name: Chain Reaction Innovations (Argonne) cohorts 2017-2026
+  url: https://chainreaction.anl.gov/innovators/
+  note: 10 cohort pages, ~50 companies; quantum, bio and medical companies skipped.
+- id: cyclotron-road
+  name: Cyclotron Road (Berkeley Lab) fellows by year, 2015-2026
+  url: https://cyclotronroad.lbl.gov/fellows/fellows-by-year/
+  note: ~100 companies; almost all overlap the Activate Berkeley community; Cuberg (closed) and Mosaic Materials
+    (acquired) skipped.
+- id: dcvc
+  name: DCVC companies (energy-climate and industrial-transformation sectors)
+  url: https://www.dcvc.com/companies
+  note: 60 of 301 companies are tagged energy-climate or industrial-transformation; only those were reviewed.
+- id: doe-oced
+  name: DOE Office of Clean Energy Demonstrations award posts
+  url: https://www.energy.gov/cmei/oced/listings/oced-news
+  note: Award Wednesday posts and other OCED news (59 articles). Most awards went to utilities, co-ops, tribes and
+    large incumbents, which were skipped. The OCED selections pages now return 404.
+- id: eip
+  name: Energy Impact Partners portfolio
+  url: https://www.energyimpactpartners.com/_portfolio/
+  note: 151 cards (current and exits); cards give description and site URL but no names, so names come from descriptions
+    and domains.
+- id: elemental
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 141 companies with HQ city (113 US).
+- id: engine
+  name: Engine Ventures companies
+  url: https://engineventures.com/companies
+  note: 61 companies.
+- id: galvanize
+  name: Galvanize Climate Solutions venture and growth portfolio
+  url: https://galvanizeclimate.com/venture-and-growth
+  note: 25 venture/growth companies; seed page (45, mostly food and ag via Ponderosa) reviewed, none taken.
+- id: khosla
+  name: Khosla Ventures sustainability companies
+  url: https://www.khoslaventures.com/category/sustainability
+  note: 14 companies in the sustainability category.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: own-careers
+  name: Companies' own careers pages, read directly
+  url: null
+  note: About 223 sites checked with a remote-wording scan (plus a few by hand); 12 refused (401/403/429), 1 timed
+    out; quote in each company's note
+- id: prelude
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: 61 companies including exits.
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: shell-gamechanger
+  name: Shell GameChanger start-ups (graduates since 2021 and current projects)
+  url: https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/shell-gamechanger/portfolio.html
+  note: ~110 names, client-rendered (read in a browser after rejecting optional cookies). No HQ shown; many non-US.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: voyager
+  name: Voyager Ventures portfolio
+  url: https://www.voyagervc.com/portfolio
+  note: 41 companies over 5 pages.
+- id: web-search-snippets
+  name: Web search results quoting company job posts or remote-job board profiles
+  url: null
+  note: 10 web searches used; only kept where the company's own words or a remote-job board profile were quoted
+- id: west-gate
+  name: NLR (formerly NREL) West Gate lab-embedded entrepreneurship, cohorts 1-5
+  url: https://www.nlr.gov/west-gate/alumni
+  note: Alumni page names companies; current-innovator company names and HQs reused from this session's Colorado
+    harvest of the innovator detail pages (https://www.nlr.gov/west-gate/innovators).
+- id: yc
+  name: Y Combinator company directory (yc-oss public JSON mirror)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
+    climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
+companies:
+- name: 1PointFive
+  website: https://1pointfive.com
+  hq: Houston, TX
+  sources:
+  - doe-oced
+  registry_id: 1pointfive
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: 360 Energy
+  website: https://www.360energyco.com/
+  hq: Austin, TX
+  sources:
+  - halliburton-labs
+  registry_id: 360-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ACE Green Recycling
+  website: https://acegreenrecycling.com
+  hq: Houston, TX
+  sources:
+  - e2-texas
+  - third-derivative
+  registry_id: ace-green-recycling
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ACT-ion Battery Technologies
+  website: null
+  hq: Dallas, TX
+  sources:
+  - web-tx-battery-mfg
+  registry_id: act-ion-battery-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Aeon Blue Technologies
+  website: null
+  hq: Austin, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Aeromine Technologies, Inc.
+  website: https://aerominepower.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: aeromine-technologies-inc
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Alma Energy
+  website: https://almaenergy.net
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: alma-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: alma
+  open_roles: 27
+- name: AMPeers
+  website: https://ampeers-llc.com
+  hq: Houston, TX
+  sources:
+  - gtx-2025h2
+  - greentown
+  registry_id: ampeers
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats:
+    type: ashby
+    token: ampeers
+  open_roles: 4
+- name: Anning Corporation
+  website: https://anning.io
+  hq: Houston, TX
+  sources:
+  - activate
+  - greentown
+  registry_id: anning-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Applied Bioplastics
+  website: https://appliedbioplastics.com
+  hq: Austin, TX
+  sources:
+  - gtx-inaugural
+  registry_id: applied-bioplastics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Applied Carbon
+  website: https://appliedcarbon.com
+  hq: Houston, TX
+  sources:
+  - congruent
+  - elemental
+  registry_id: applied-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: workable
+    token: appliedcarbon
+  open_roles: 1
+- name: AtmoSpark
+  website: null
+  hq: Houston, TX
+  sources:
+  - rice-cea-5
+  registry_id: atmospark
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Atonometrics
+  website: https://atonometrics.com
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: atonometrics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Axis Sky Renewables
+  website: https://axissky.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Base Power Company
+  website: https://www.basepowercompany.com/
+  hq: Austin, TX
+  sources:
+  - lc
+  - eip
+  registry_id: base-power
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: base-power
+  open_roles: null
+- name: Bedrock Energy
+  website: https://bedrockenergy.com
+  hq: Austin, TX
+  sources:
+  - cev
+  - eip
+  - third-derivative
+  - elemental
+  - remotefirstjobs
+  registry_id: bedrock-energy
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: bedrockenergy
+  open_roles: null
+- name: Biosimo
+  website: null
+  hq: Houston, TX
+  sources:
+  - gtx-2025h2
+  - gtx-gomake-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Black Mountain Metals
+  website: null
+  hq: Fort Worth, TX
+  sources:
+  - gtx-inaugural
+  registry_id: black-mountain-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Branch Energy
+  website: https://branchenergy.com
+  hq: Houston, TX
+  sources:
+  - prelude
+  - cev
+  registry_id: branch-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: rippling
+    token: branch
+  open_roles: 26
+- name: Canadian Solar
+  website: https://www.canadiansolar.com/
+  hq: Kitchener, ON, Canada
+  sources:
+  - web-tx-solar-mfg
+  - e2-texas
+  registry_id: canadian-solar
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: canadiansolar.wd5/CanadianSolar
+  open_roles: null
+- name: Carbonext
+  website: null
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: CarbonFree
+  website: https://carbonfree.cc
+  hq: San Antonio, TX
+  sources:
+  - greentown
+  registry_id: carbonfree
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Cemvita
+  website: https://www.cemvita.com/
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: cemvita
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CLS Wind
+  website: https://clswind.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: cls-wind
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Coflux Purification
+  website: https://cofluxpurification.com
+  hq: Houston, TX
+  sources:
+  - energycapital-time-greentech
+  registry_id: coflux-purification
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Criterion Energy Partners
+  website: null
+  hq: Houston, TX
+  sources:
+  - rice-cea-1
+  - greentown
+  registry_id: null
+  decision: closed
+  reason: Listed as out of business in a PitchBook search snippet.
+  ats: null
+  open_roles: null
+- name: Daikin
+  website: https://www.daikin.com/
+  hq: Osaka, Japan
+  sources:
+  - heti-members
+  registry_id: daikin
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Deep Anchor Solutions
+  website: https://deepanchorsolutions.com
+  hq: Houston, TX
+  sources:
+  - activate
+  - greentown
+  registry_id: deep-anchor-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: DexMat
+  website: https://dexmat.com
+  hq: Houston, TX
+  sources:
+  - energycapital-time-greentech
+  - third-derivative
+  - shell-gamechanger
+  registry_id: dexmat
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Earthly Labs
+  website: https://earthlylabs.com
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: earthly-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Eaton
+  website: https://www.eaton.com/
+  hq: Dublin, Ireland
+  sources:
+  - e2-texas
+  registry_id: eaton
+  decision: registry
+  reason: null
+  ats:
+    type: eightfold
+    token: eaton
+  open_roles: null
+- name: Element Resources
+  website: https://elementresources.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: not-in-scope
+  reason: Hydrogen infrastructure developer with no projects or product listed.
+  ats: null
+  open_roles: null
+- name: Elemental Advanced Materials
+  website: null
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: elemental-advanced-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ELM Microgrid
+  website: https://elmmicrogrid.com
+  hq: The Colony, TX
+  sources:
+  - e2-texas
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: EnergyX
+  website: https://energyx.com/
+  hq: San Juan, Puerto Rico
+  sources:
+  - web-tx-battery-mfg
+  registry_id: energyx
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Euphree
+  website: https://euphree.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: euphree
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Excipio Energy
+  website: https://excipioenergy.com
+  hq: Houston, TX
+  sources:
+  - gtx-inaugural
+  registry_id: excipio-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ExxonMobil
+  website: https://corporate.exxonmobil.com/
+  hq: Spring, TX
+  sources:
+  - heti-members
+  registry_id: exxonmobil
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Fervo Energy
+  website: https://fervoenergy.com/
+  hq: Houston, TX
+  sources:
+  - lexisnexis-tx-innov
+  - energycapital-time-greentech
+  - web-houston-geothermal
+  - bev
+  - prelude
+  - congruent
+  - dcvc
+  - galvanize
+  - activate
+  - cyclotron-road
+  - elemental
+  - greentown
+  - arpa-e
+  registry_id: fervo-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: fervoenergy
+  open_roles: null
+- name: Fleetzero
+  website: https://fleetzero.com
+  hq: Houston, TX
+  sources:
+  - bev
+  - yc
+  registry_id: fleetzero
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: fleetzero
+  open_roles: null
+- name: Flexodes
+  website: https://flexodes.com
+  hq: Sugar Land, TX
+  sources:
+  - third-derivative
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: FlowCellutions
+  website: https://flowcellutions.com
+  hq: Houston, TX
+  sources:
+  - activate
+  - greentown
+  registry_id: flowcellutions
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: FluxWorks
+  website: https://fluxworks.co
+  hq: Conroe, TX
+  sources:
+  - greentown
+  registry_id: fluxworks
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: FreeStar Power
+  website: https://freestarpower.com
+  hq: Humble, TX
+  sources:
+  - greentown
+  registry_id: freestar-power
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: freestar
+  open_roles: 6
+- name: GeoFuels
+  website: https://geofuels.com
+  hq: Sugar Land, TX
+  sources:
+  - greentown
+  registry_id: geofuels
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: GeoKiln Energy Innovation
+  website: https://geokiln.com
+  hq: Houston, TX
+  sources:
+  - rice-cea-5
+  - gtx-2025h2
+  - greentown
+  - west-gate
+  registry_id: geokiln
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Giga Energy
+  website: https://www.gigaenergy.com/
+  hq: Houston, TX
+  sources:
+  - web-tx-transformers
+  registry_id: giga-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats:
+    type: ashby
+    token: giga-energy
+  open_roles: 61
+- name: GigaDAC
+  website: https://gigadac.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: gigadac
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gold H2
+  website: https://goldh2.com
+  hq: Houston, TX
+  sources:
+  - web-houston-hydrogen
+  registry_id: gold-h2
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Green Giant Energy Texas
+  website: null
+  hq: Houston, TX
+  sources:
+  - e2-texas
+  - web-tx-battery-mfg
+  registry_id: green-giant-energy-texas
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Group1
+  website: https://group1.ai
+  hq: Austin, TX
+  sources:
+  - ut-seed-fund-search
+  registry_id: group1
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Helical Solar
+  website: https://helicalsolar.com
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Helix Earth Technologies
+  website: https://helixearth.com
+  hq: Houston, TX
+  sources:
+  - gtx-2023
+  - rice-mag-lab-launch
+  - greentown
+  - cri
+  registry_id: helix-earth-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Hephae
+  website: https://hephae.io
+  hq: Spring, TX
+  sources:
+  - elemental
+  registry_id: hephae
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Hertha Metals
+  website: https://herthametals.com
+  hq: Conroe, TX
+  sources:
+  - khosla
+  - cev
+  - third-derivative
+  - greentown
+  registry_id: hertha-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: jazzhr
+    token: herthametals
+  open_roles: null
+- name: HEXAspec
+  website: https://hexaspec.com
+  hq: Houston, TX
+  sources:
+  - rice-mag-lab-launch
+  registry_id: hexaspec
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: HIF Global
+  website: https://hifglobal.com/
+  hq: Houston, TX
+  sources:
+  - heti-members
+  registry_id: hif-global
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Hunt Energy Enterprises
+  website: null
+  hq: Dallas, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: not-in-scope
+  reason: Venture and investment unit of Hunt Consolidated; its perovskite unit merged into CubicPV in 2021.
+  ats: null
+  open_roles: null
+- name: Ideal Power
+  website: https://www.idealpower.com/
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  - arpa-e
+  registry_id: ideal-power
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Ignis H2 Energy
+  website: null
+  hq: Houston, TX
+  sources:
+  - web-houston-geothermal
+  registry_id: ignis-h2-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Inductive Robotics
+  website: https://inductiverobotics.com
+  hq: Austin, TX
+  sources:
+  - ati-energy
+  registry_id: inductive-robotics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Infinitum
+  website: https://goinfinitum.com
+  hq: Austin, TX
+  sources:
+  - galvanize
+  registry_id: infinitum
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: infinitumelectric
+  open_roles: null
+- name: INOVUES
+  website: https://inovues.com
+  hq: Houston, TX
+  sources:
+  - ati-alumni
+  - greentown
+  registry_id: inovues
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: inovues
+  open_roles: 1
+- name: J R Thermal
+  website: null
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Janta Power
+  website: https://jantaus.com
+  hq: Dallas, TX
+  sources:
+  - gtx-6tx
+  - third-derivative
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: John Cockerill Hydrogen
+  website: https://johncockerill.com
+  hq: Belgium
+  sources:
+  - e2-texas
+  registry_id: john-cockerill-hydrogen
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Junchuang North America
+  website: null
+  hq: Fort Worth, TX
+  sources:
+  - e2-texas
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Kanin Energy
+  website: https://kaninenergy.com
+  hq: Houston, TX
+  sources:
+  - rice-cea-1
+  - heti-members
+  - greentown
+  registry_id: kanin-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Licube
+  website: null
+  hq: Houston, TX
+  sources:
+  - gtx-6tx
+  - rice-etvf-2026
+  - greentown
+  registry_id: licube
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: LOCOAL
+  website: https://locoal.com
+  hq: Boerne, TX
+  sources:
+  - gtx-2025h2
+  registry_id: locoal
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Lummus Technology
+  website: https://www.lummustechnology.com/
+  hq: Houston, TX
+  sources:
+  - web-houston-hydrogen
+  registry_id: lummus-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
+  ats:
+    type: workday
+    token: lummustechnology.wd501.myworkdayjobs.com/LummusTechnology
+  open_roles: null
+- name: LyondellBasell
+  website: https://www.lyondellbasell.com/
+  hq: Houston, TX
+  sources:
+  - heti-members
+  registry_id: lyondellbasell
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Mars Materials
+  website: https://www.marsmaterials.com
+  hq: Oakland, CA
+  sources:
+  - greentown
+  registry_id: mars-materials
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Materials Nova
+  website: https://materialsnova.com
+  hq: Austin, TX
+  sources:
+  - ut-dti-showcase
+  registry_id: materials-nova
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mati Carbon
+  website: https://mati.earth
+  hq: Houston, TX
+  sources:
+  - own-careers
+  registry_id: null
+  decision: not-in-scope
+  reason: Enhanced rock weathering run as a carbon-removal service, mainly outside the US.
+  ats: null
+  open_roles: null
+- name: Mazama Energy
+  website: https://mazamaenergy.com
+  hq: Frisco, TX
+  sources:
+  - khosla
+  registry_id: mazama-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MCatalysis
+  website: https://mcatalysis.com
+  hq: Houston / Dallas, TX
+  sources:
+  - gtx-2025h2
+  - rice-etvf-2026
+  - greentown
+  registry_id: mcatalysis
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MetOx
+  website: https://metoxtech.com
+  hq: Houston, TX
+  sources:
+  - elemental
+  - arpa-e
+  registry_id: metox-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: metoxinternationalinc
+  open_roles: null
+- name: Mission Solar Energy
+  website: https://www.missionsolar.com/
+  hq: San Antonio, TX
+  sources:
+  - builtin-sa-greentech
+  - web-tx-solar-mfg
+  - e2-texas
+  registry_id: mission-solar-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38
+  open_roles: null
+- name: Momentum Technologies
+  website: https://momentum.technology/
+  hq: Carrollton, TX
+  sources:
+  - halliburton-labs
+  registry_id: momentum-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: rippling
+    token: momentum
+  open_roles: 11
+- name: Nanotech Materials
+  website: https://nanotechmaterials.com/
+  hq: Houston, TX
+  sources:
+  - halliburton-labs
+  - rice-cea-2
+  registry_id: nanotech-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: New Dominion Enterprises
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - ati-energy
+  registry_id: new-dominion-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NOC Energy
+  website: https://nocenergy.com
+  hq: Houston, TX
+  sources:
+  - third-derivative
+  - greentown
+  registry_id: noc-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Noodoe
+  website: https://noodoe.com
+  hq: Houston, TX
+  sources:
+  - energycapital-time-greentech
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: PHNX Materials
+  website: https://phnxmaterials.com
+  hq: Houston, TX
+  sources:
+  - activate
+  registry_id: phnx-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Pressure Core
+  website: https://pressurecore.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: pressure-core
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Quaise Energy
+  website: https://quaise.com
+  hq: Cambridge, MA
+  sources:
+  - energycapital-time-greentech
+  - web-houston-geothermal
+  - prelude
+  - engine
+  - greentown
+  registry_id: quaise-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: quaise
+  open_roles: null
+- name: Quidnet Energy
+  website: https://www.quidnetenergy.com/
+  hq: Houston, TX
+  sources:
+  - bev
+  - cev
+  - arpa-e
+  registry_id: quidnet-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Red Shift Energy
+  website: https://www.rsenrg.com/
+  hq: Corpus Christi, TX
+  sources:
+  - halliburton-labs
+  registry_id: red-shift-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Renu Robotics
+  website: https://renurobotics.com
+  hq: San Antonio, TX
+  sources:
+  - builtin-sa-greentech
+  registry_id: renu-robotics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Resilient Grid
+  website: null
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: null
+  decision: null
+  reason: 'Identity not established: the only match, resilientgrid.com, is grid software from Evanston, IL. Not
+    the same as Resolute Grid, which the owner asked about (see proposals-04-additions.yml).'
+  ats: null
+  open_roles: null
+- name: Resollant
+  website: https://resollant.com
+  hq: The Woodlands, TX
+  sources:
+  - rice-cea-5
+  - gtx-2025h2
+  - greentown
+  registry_id: resollant
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Resonant Thermal Systems
+  website: null
+  hq: Houston, TX
+  sources:
+  - gtx-2025h2
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: REVOLUTION Turbine Technologies
+  website: null
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Revterra
+  website: https://revterra.energy
+  hq: Houston, TX
+  sources:
+  - gtx-inaugural
+  - greentown
+  registry_id: revterra
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sage Geosystems
+  website: https://www.sagegeosystems.com/
+  hq: Houston, TX
+  sources:
+  - lexisnexis-tx-innov
+  - web-houston-geothermal
+  registry_id: sage-geosystems
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Scalvy
+  website: https://scalvy.com
+  hq: Austin, TX
+  sources:
+  - azolla
+  registry_id: scalvy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SeebeckCell Technologies
+  website: null
+  hq: Arlington, TX
+  sources:
+  - greentown
+  registry_id: seebeckcell-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SEG Solar
+  website: https://www.segsolar.com/
+  hq: Houston, TX
+  sources:
+  - web-tx-solar-mfg
+  - e2-texas
+  registry_id: seg-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sheetak
+  website: https://sheetak.com
+  hq: Austin, TX
+  sources:
+  - gtx-2026h1
+  - greentown
+  registry_id: sheetak
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Shine Labs
+  website: null
+  hq: Austin, TX
+  sources:
+  - ut-dti-showcase
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats:
+    type: rippling
+    token: shine
+  open_roles: 4
+- name: Siemens
+  website: https://www.siemens.com/
+  hq: Germany
+  sources:
+  - e2-texas
+  - web-tx-transformers
+  registry_id: siemens
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Simon NA Corp
+  website: null
+  hq: Not found
+  sources:
+  - e2-texas
+  registry_id: simon-na-corp
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Simora Core
+  website: https://simoracore.com
+  hq: Houston, TX
+  sources:
+  - activate
+  registry_id: simora-core
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: SK Signet
+  website: https://sksignet.com
+  hq: Bucheon, Gyeonggi-do, South Korea
+  sources:
+  - e2-texas
+  registry_id: sk-signet
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Skyven Technologies
+  website: https://skyven.co
+  hq: Farmers Branch, TX
+  sources:
+  - voyager
+  - third-derivative
+  - doe-oced
+  - web-search-snippets
+  registry_id: skyven-technologies-texas
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: workable
+    token: skyven-technologies
+  open_roles: 6
+- name: SLB
+  website: https://www.slb.com/
+  hq: Houston, TX
+  sources:
+  - heti-members
+  registry_id: slb
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Solidec
+  website: https://solidec.com
+  hq: Houston, TX
+  sources:
+  - rice-mag-lab-launch
+  - activate
+  - third-derivative
+  - greentown
+  registry_id: solidec
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Solugen
+  website: https://solugen.com/
+  hq: Houston, TX
+  sources:
+  - energycapital-time-greentech
+  - lc
+  - yc
+  registry_id: solugen
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: solugen
+  open_roles: 3
+- name: SolvCor
+  website: https://www.solvcor.com/
+  hq: Houston, TX
+  sources:
+  - halliburton-labs
+  registry_id: solvcor
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SpringCycle Energy
+  website: https://springcycleenergy.com
+  hq: Houston, TX
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Supra Elemental Recovery
+  website: null
+  hq: Austin, TX
+  sources:
+  - ut-dti-showcase
+  - ut-seed-fund-search
+  registry_id: supra-elemental-recovery
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Syzygy Plasmonics
+  website: https://plasmonics.tech/
+  hq: Houston, TX
+  sources:
+  - web-houston-hydrogen
+  - engine
+  - greentown
+  - arpa-e
+  registry_id: syzygy-plasmonics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: T1 Energy
+  website: https://t1energy.com
+  hq: Austin, TX
+  sources:
+  - web-tx-solar-mfg
+  - e2-texas
+  registry_id: t1-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: t1energy
+  open_roles: null
+- name: Tesla
+  website: https://www.tesla.com/
+  hq: Austin, TX
+  sources:
+  - web-tx-battery-mfg
+  - e2-texas
+  registry_id: tesla
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: TexPower
+  website: https://texpower.us
+  hq: Houston, TX
+  sources:
+  - third-derivative
+  registry_id: texpower
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: TOYO Solar
+  website: https://toyo-solar.com
+  hq: Not stated on site
+  sources:
+  - web-tx-solar-mfg
+  registry_id: toyo-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Turbo Power Semiconductor
+  website: https://turbopowersemi.com
+  hq: Austin, TX
+  sources:
+  - ati-energy
+  - ut-dti-showcase
+  registry_id: turbo-power-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Utility Global
+  website: https://utilityglobal.com
+  hq: Houston, TX
+  sources:
+  - energycapital-time-greentech
+  registry_id: utility-global
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: utilityglobal
+  open_roles: null
+- name: VanTran Transformers
+  website: https://vantran.com
+  hq: Waco, TX
+  sources:
+  - web-tx-transformers
+  registry_id: vantran-transformers
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Vaulted Deep
+  website: https://vaulteddeep.com
+  hq: Houston, TX
+  sources:
+  - lc
+  - prelude
+  registry_id: vaulted-deep
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: vaulted-deep
+  open_roles: null
+- name: Waaree Energies
+  website: https://waaree.com
+  hq: Mumbai, India
+  sources:
+  - e2-texas
+  registry_id: waaree-energies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: WattSto Energy
+  website: null
+  hq: Houston, TX
+  sources:
+  - gtx-2025h2
+  - gtx-6tx
+  - greentown
+  registry_id: wattsto-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wise Energie
+  website: null
+  hq: Houston, TX
+  sources:
+  - gtx-2025h2
+  - greentown
+  registry_id: wise-energie
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wootz
+  website: https://wootznano.com
+  hq: Houston, TX
+  sources:
+  - rice-cea-2
+  registry_id: wootz
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: XGS Energy
+  website: https://xgsenergy.com
+  hq: Houston, TX
+  sources:
+  - web-houston-geothermal
+  - arpa-e
+  registry_id: xgs-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Yotta Energy
+  website: https://yottaenergy.com
+  hq: Austin, TX
+  sources:
+  - ati-alumni
+  registry_id: yotta-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: yotta
+  open_roles: 4
+- name: Zentra Power Technologies
+  website: https://zentrapower.com
+  hq: Austin, TX
+  sources:
+  - ati-energy
+  registry_id: zentra-power-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zero Electric
+  website: null
+  hq: Austin, TX
+  sources:
+  - ati-energy
+  registry_id: zero-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: zero
+  open_roles: 4
+- name: Zeta Energy
+  website: https://zetaenergy.com
+  hq: Houston, TX
+  sources:
+  - arpa-e
+  registry_id: zeta-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
+  ats:
+    type: lever
+    token: zeta
+  open_roles: 33
+excluded:
+- name: Cabot Corporation
+  sources:
+  - e2-texas
+  reason: Headquartered in Boston, MA, outside the region; no main site in the region found.
+- name: Celadyne Technologies
+  sources:
+  - ut-seed-fund-search
+  reason: Headquartered in Chicago, IL, outside the region; no main site in the region found.
+- name: EarthEn Energy
+  sources:
+  - rice-cea-3
+  reason: Its own site gives San Francisco, CA.
+- name: GS Vortex Systems
+  sources:
+  - gtx-2024q2
+  - ati-energy
+  reason: Headquartered in Portland; no Texas site found.
+- name: Hammond Power Solutions
+  sources:
+  - web-tx-transformers
+  reason: Headquartered outside the US (Guelph, Ontario, Canada); no main site in the region found.
+- name: Hithium
+  sources:
+  - web-tx-battery-mfg
+  reason: Headquartered outside the US (Xiamen, China (footer names Xiamen Hithi); no main site in the region found.
+- name: Induction Food Systems
+  sources:
+  - ati-energy
+  reason: Its own site gives Durham, NC (and offices near Chicago); a Texas presence was not confirmed.
+- name: MGM Transformers
+  sources:
+  - web-tx-transformers
+  reason: Headquartered in Vernon, CA; its Texas plant is listed separately as VanTran Transformers.
+- name: Nascent Materials
+  sources:
+  - ut-seed-fund-search
+  reason: Headquartered in Newark, NJ, outside the region; no main site in the region found.
+- name: Renewell Energy
+  sources:
+  - rice-cea-1
+  reason: Its own site gives Bakersfield, CA.
+- name: Sanmina
+  sources:
+  - web-tx-transformers
+  reason: Headquartered in San Jose, CA, outside the region; no main site in the region found.
+- name: Wildcat Discovery Technologies
+  sources:
+  - web-tx-battery-mfg
+  reason: Its domain now redirects to HOLYVOLT in Stockholm; no Texas site confirmed.
+- name: XCharge North America
+  sources:
+  - e2-texas
+  reason: Headquartered outside the US (XCharge group has dual HQ in Germany and); no main site in the region found.
