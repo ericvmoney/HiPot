@@ -6,8 +6,62 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
+- id: actasys
+  name: Actasys
+  website: https://www.actasysinc.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: Active-airflow cooling modules sold mainly for data centers; data-center equipment is out (decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom says only ''under 100'' (61% US, 39%
+    Israel), undated. Founded: https://dealroom.co/companies/actasys. Stage: Dealroom: $10-50M disclosed equity
+    funding; investors (shown as seed-stage entrants) include Volvo Cars Tech Fund, Next Gear Ventures, Monhegan
+    Capital, Plug and Play, plus DOE, NASA, NYSERDA and SBIR grants. Round types and dates not shown. https://dealroom.co/companies/actasys
+    Flags: main customers are data centers; part of team in Israel. Evidence: https://actasysinc.com https://dealroom.co/companies/actasys
+    Region sources: bny-tenants. Confidence: medium. Unresolved: Exact headcount; round types and dates.'
+- id: adsorptech
+  name: Adsorptech
+  website: https://adsorptech.com
+  careers_url: null
+  hq: Middlesex, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2002
+  headcount: null
+  climate:
+    tier: out
+    reason: Industrial oxygen-production equipment; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2002 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.adsorptech.com/about. Stage: Private;
+    no venture rounds found. Rutgers EcoComplex incubator graduate. Flags: domain found on own (adsorptech.com);
+    input had none; industrial gas equipment, clean-tech link unclear. Evidence: https://www.adsorptech.com https://www.adsorptech.com/about
+    https://ecocomplex.rutgers.edu/incubator-businesses.html Region sources: rutgers-ecocomplex. Confidence: medium.
+    Unresolved: Headcount; ownership.'
 - id: amatec
   name: Amatec
   website: https://amatec-corp.com
@@ -100,6 +154,59 @@ companies:
     planned 2027). Evidence: https://andluca.com Region sources: njeda-csit-seed-r1, princeton-acee. Confidence:
     medium. Unresolved: HQ not stated (input says Princeton, NJ; Bay Area installs and Empire State Development
     support suggest other locations); founded year; headcount; funding.'
+- id: applied-power
+  name: Applied Power
+  website: https://appliedps.com
+  careers_url: null
+  hq: Hicksville, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-power inverters (5-500 kW), converters and power supplies, IGBT and SCR gate driver boards, and
+      semiconductor stack assemblies.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: site copyright 2015 (possibly stale);
+    markets listed: railway, research labs and the drilling industry. Evidence: https://www.appliedps.com Region
+    sources: inven-ny-power-electronics. Confidence: medium. Unresolved: Whether still operating; founding; headcount;
+    ownership.'
+- id: aquatherm-industries
+  name: Aquatherm Industries
+  website: https://aquathermsolar.com
+  careers_url: null
+  hq: Lakewood, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 1989
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar thermal pool heating systems and solar collectors, manufactured at its Lakewood, NJ plant.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1989 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.aquathermsolar.com/. Stage: Private, no
+    venture rounds found. Predecessor Solar Industries, Inc. dates to 1976. Evidence: https://www.aquathermsolar.com/
+    Region sources: inven-nj-geothermal. Confidence: high. Unresolved: Headcount.'
 - id: arbela-laboratories
   name: Arbela Laboratories
   website: null
@@ -180,6 +287,33 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding stated; Dealroom slug bettergy 404. Evidence:
     https://www.bettergy.com Region sources: arpa-e. Confidence: medium. Unresolved: Domain found by guess; Peekskill
     address matches the input. Founding year, headcount, funding not found.'
+- id: biopipe
+  name: Biopipe
+  website: https://biopipe.co
+  careers_url: null
+  hq: Ridgefield Park, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular biological sewage treatment system that treats wastewater to irrigation quality without sludge
+      (10 to 1,000 m3/day).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by LifeQuest World Corp. Turkish origin; not independent.
+  notes: 'No job board found on the company''s site. Stage: Own site says Biopipe was acquired by LifeQuest World
+    Corp. (OTC: LQWC) in 2019. https://biopipe.co/ Flags: subsidiary of LifeQuest World Corp.; Turkish origin. Evidence:
+    https://biopipe.co/ Region sources: inven-nj-water. Confidence: medium. Unresolved: Founding year, headcount;
+    global HQ is 100 Challenger Road (Ridgefield Park, NJ 07660); where systems are built.'
 - id: brookhaven-technology-group
   name: Brookhaven Technology Group
   website: https://www.brookhaventech.com
@@ -350,6 +484,69 @@ companies:
     Region sources: njeda-csit-seed-r4, njeda-csit-demo-r2. Confidence: medium. Unresolved: Site gives no address,
     founded year or headcount; HQ from NJEDA. About page not read (fetch safety check rate-limited). Latest site
     news dated 3 Nov 2026.'
+- id: cenntro-electric-group
+  name: Cenntro Electric Group
+  website: https://cenntroauto.com
+  careers_url: null
+  hq: Freehold, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: public
+  founded: 2013
+  headcount:
+    value: 260
+    as_of: '2025-03-01'
+    source: Cenntro Inc. FY2024 10-K (https://www.sec.gov/Archives/edgar/data/1707919/000114036125011607/ef20038940_10k.htm)
+  climate:
+    tier: enabling
+    reason: Commercial electric vehicles, assembled in New Jersey from kits made in China.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 260 people (Cenntro Inc. FY2024 10-K, 2025-03-01); founded 2013, public, with a listing or offering
+      reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: 260 full-time ''as of the date hereof'' in
+    the FY2024 10-K (filed early 2025; month approximate). Aggregators show 315 for 2023. Founded: https://www.sec.gov/Archives/edgar/data/1707919/000114036125011607/ef20038940_10k.htm.
+    Stage: Listed on NASDAQ (CENN) via reverse merger with Naked Brand Group on 2021-12-30; redomiciled as Cenntro
+    Inc. (Nevada), trading from 2024-02-27. https://www.sec.gov/Archives/edgar/data/1707919/000114036125011607/ef20038940_10k.htm
+    Flags: vehicle kits made in China, assembled in Freehold, NJ and Ontario, CA. Evidence: https://www.cenntroauto.com/
+    https://www.sec.gov/Archives/edgar/data/1707919/000114036125011607/ef20038940_10k.htm Region sources: inven-nj-ev.
+    Confidence: high. Unresolved: The 2025 proxy gives a corporate office in Iselin, NJ (33 Wood Ave South), so
+    HQ may have moved from Freehold. Founded year is when Cenntro Motor Corporation was registered (2013-03-22).'
+- id: cero-nj
+  name: Cero NJ
+  website: https://www.cero-global.com
+  careers_url: null
+  hq: Edgewater, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: 2025
+  headcount:
+    value: 1
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (FTE count) (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: out
+    reason: In-vehicle device that stabilizes diesel-engine control signals; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (CSIT Annual Report 2025 Awardee Profiles (FTE count), 2025-01-01); founded 2025, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Incorporated January 2025; $75,000 CSIT Clean Tech R&D
+    Seed Grant (Round 4 release 2026-01-08); no equity round found. Flags: Cero NJ LLC is the NJ entity; the brand
+    is Cero Global. Stage pre-seed is inferred from grant-only funding.. Evidence: c e r o - g Region sources: njeda-csit-seed-r4.
+    Confidence: low.'
 - id: chemfinity-technologies
   name: ChemFinity Technologies
   website: https://chemfinitytech.com
@@ -438,6 +635,86 @@ companies:
     Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Site address 303 College Road East, Princeton
     (NJEDA says Plainsboro Township). Site lists 5 issued US patents, 12 pending. Founded, headcount, funding not
     found; about page not read (rate-limited).'
+- id: curtis-instruments
+  name: Curtis Instruments
+  website: https://www.curtisinstruments.com
+  careers_url: null
+  hq: Mount Kisco, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - components
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Motor controllers, instruments and battery chargers for electric vehicles and machines.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Parker Hannifin; not independent.
+  notes: 'No job board found on the company''s site. Stage: Parker-Hannifin announced completion of its acquisition
+    of Curtis Instruments on 2025-09-18. https://www.curtisinstruments.com/news Flags: acquired by Parker Hannifin
+    (Sept 2025); subsidiary of Parker Hannifin. Evidence: https://www.curtisinstruments.com https://www.curtisinstruments.com/news
+    Region sources: inven-ny-ev. Confidence: high. Unresolved: Founding year; headcount.'
+- id: dranetz
+  name: Dranetz
+  website: https://dranetz.com
+  careers_url: null
+  hq: Edison, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Power-quality analyzers and monitoring systems for utilities and industry.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by GMC Instruments; not independent.
+  notes: 'No job board found on the company''s site. Stage: Site says Dranetz is part of GMC Instruments (test and
+    measurement group). https://www.dranetz.com/ Flags: subsidiary of GMC Instruments. Evidence: https://www.dranetz.com/
+    https://www.dranetz.com/contact-us/ Region sources: inven-nj-smart-grid. Confidence: high. Unresolved: Founding
+    year, headcount, date joined GMC Instruments.'
+- id: dynatec-systems
+  name: Dynatec Systems
+  website: https://dynatecsystems.com
+  careers_url: null
+  hq: Burlington, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: 1978
+  headcount: null
+  climate:
+    tier: core
+    reason: Membrane bioreactors and wastewater membrane systems, delivered as design-build or design-build-own-operate
+      projects, plus membrane cleaning chemicals.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1978 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.dynatecsystems.com/. Flags: partly a design-build
+    contractor; unclear whether it manufactures the systems. Evidence: https://www.dynatecsystems.com/ Region sources:
+    inven-nj-water. Confidence: medium. Unresolved: Whether it makes the membranes/systems in-house; headcount;
+    ownership.'
 - id: eew-american-offshore-structures
   name: EEW American Offshore Structures
   website: https://eew-group.com
@@ -505,6 +782,91 @@ companies:
     than product sales. Evidence: https://dealroom.co/companies/eion Region sources: njeda-csit-seed-r1, njeda-csit-rd-vouchers.
     Confidence: medium. Unresolved: eion.team did not resolve; Dealroom gives eioncarbon.com, which could not be
     fetched (safety check rate-limited twice). Whether the main revenue is the mineral product or carbon credits.'
+- id: electro-industries-gaugetech
+  name: Electro Industries/GaugeTech
+  website: https://electroind.com
+  careers_url: null
+  hq: Westbury, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Power-quality and revenue energy meters for utilities and industry.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Hubbell; not independent.
+  notes: 'No job board found on the company''s site. Stage: Hubbell Incorporated (NYSE: HUBB) acquired Electro Industries/GaugeTech
+    for about $60M cash in Q2 2023 (MarketScreener); Mergr dates it 2023-07-25 as an add-on by Hubbell Power Systems.
+    Site carries Hubbell branding. https://www.marketscreener.com/quote/stock/HUBBELL-INCORPORATED-25531608/news/Hubbell-Incorporated-acquired-Electro-Industries-GaugeTech-Inc-for-60-million-44452494/
+    Flags: subsidiary of Hubbell. Evidence: https://www.electroind.com/ https://www.electroind.com/about-us/ https://www.marketscreener.com/quote/stock/HUBBELL-INCORPORATED-25531608/news/Hubbell-Incorporated-acquired-Electro-Industries-GaugeTech-Inc-for-60-million-44452494/
+    https://mergr.com/company/hubbell-power-systems/ma Region sources: inven-ny-smart-grid. Confidence: high. Unresolved:
+    Founding year (first digital meter 1975, ''over 45 years''); headcount; exact close date (sources differ: Q2
+    vs July 2023).'
+- id: electronic-concepts
+  name: Electronic Concepts
+  website: https://ecicaps.com
+  careers_url: null
+  hq: Eatontown, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 1969
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Film capacitors for energy storage, DC-link and power-electronics uses.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1969 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.ecicaps.com. Stage: Private, no venture
+    rounds; veteran-owned small business (own site). Flags: second plant in Oughterard, Ireland; AS9100D aerospace
+    certification. Evidence: https://www.ecicaps.com Region sources: inven-nj-power-electronics. Confidence: high.
+    Unresolved: Headcount.'
+- id: energy-catalysis
+  name: Energy Catalysis
+  website: null
+  careers_url: null
+  hq: Bordentown, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2003
+  headcount:
+    value: 1
+    as_of: '2016-08-01'
+    source: Inknowvation company profile (https://inknowvation.com/node/18957)
+  climate:
+    tier: out
+    reason: Contract research on catalysts for liquid fuels, including from coal; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 1 people (Inknowvation company profile, 2016-08-01); founded 2003 and no equity raise in the last 5
+      years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Band 1-4; profile last edited 2016-08-05 (month
+    given, so as_of is first of month). Founded: https://inknowvation.com/node/18957. Stage: Private; SBIR-funded
+    R&D small business, no venture rounds found. Flags: R&D contractor, no product seen; fuels from coal and petroleum
+    residua; no source newer than 2016. Evidence: https://inknowvation.com/node/18957 https://ecocomplex.rutgers.edu/incubator-businesses.html
+    Region sources: rutgers-ecocomplex. Confidence: low. Unresolved: Current status; website.'
 - id: energy-research-company
   name: Energy Research Company
   website: https://er-co.com
@@ -535,6 +897,42 @@ companies:
     Region sources: njeda-csit-demo-r1, njeda-csit-seed-r3, njeda-csit-seed-45. Confidence: medium. Unresolved:
     Own site er-co.com returned an empty page to the fetcher; product and 1991 founding come from a search snippet
     of a MapQuest listing; address 400 Leland Ave, Plainfield. Headcount not found.'
+- id: eos-energy-enterprises
+  name: Eos Energy Enterprises
+  website: https://www.eose.com
+  careers_url: null
+  hq: Edison, NJ
+  ats:
+    type: workday
+    board: eosenergystorage
+  read: manual
+  sectors:
+  - energy-storage
+  stage: public
+  founded: 2008
+  headcount:
+    value: 787
+    as_of: '2026-11-24'
+    source: PitchBook (search snippet); undated, so as_of is the day it was read (https://pitchbook.com/profiles/company/54113-50)
+  climate:
+    tier: core
+    reason: Zinc-based long-duration battery energy storage systems (Eos Z3, Indensity, Cube), made on an automated
+      line near Pittsburgh, PA.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 787 people (PitchBook (search snippet); undated, so as_of is the day it was read, 2026-11-24); founded
+      2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board workday:eosenergystorage.wd1.myworkdayjobs.com/EoS seen 2026-11-25, linked from the company''s own
+    site: role count not read (no public feed). Headcount note: Undated PitchBook figure seen in a search snippet;
+    latest 10-K not read. Founded: https://digital.fidelity.com/prgw/digital/research/quote/dashboard/summary?symbol=EOSE
+    (search snippet; company site also says 2008). Stage: Listed Nov 2020 via merger with SPAC B. Riley Principal
+    Merger Corp. II (closed 2020-11-16); Nasdaq: EOSE from 2020-11-17. https://investors.eose.com/news-releases/news-release-details/b-riley-principal-merger-corp-ii-and-eos-energy-storage-complete
+    (search snippet; investors.eose.com returned 403) Flags: manufacturing in Pennsylvania. Evidence: https://www.eose.com
+    https://investors.eose.com/news-releases/news-release-details/b-riley-principal-merger-corp-ii-and-eos-energy-storage-complete
+    https://pitchbook.com/profiles/company/54113-50 Region sources: inven-nj-storage, inven-nj-geothermal. Confidence:
+    high. Unresolved: Current headcount from a filing.'
 - id: ev-buddy
   name: EV Buddy
   website: https://evbuddy.net
@@ -591,8 +989,8 @@ companies:
     reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
       B3).
   notes: 'No job board found on the company''s site. Stage: No funding stated; Dealroom slug every-electric 404.
-    Evidence: https://everyelectric.com Region sources: activate. Confidence: medium. Unresolved: Founding year,
-    headcount and funding not found. Office at Brooklyn Navy Yard (63 Flushing Ave).'
+    Evidence: https://everyelectric.com Region sources: bny-tenants, activate. Confidence: medium. Unresolved: Founding
+    year, headcount and funding not found. Office at Brooklyn Navy Yard (63 Flushing Ave).'
 - id: evolve-hydrogen
   name: Evolve Hydrogen
   website: https://www.evolvehydrogen.com
@@ -735,6 +1133,64 @@ companies:
     in Connecticut''). Evidence: https://fastmetalsinc.com Region sources: activate-ny, azolla, activate, greentown.
     Confidence: medium. Unresolved: HQ city (input says New York, city not stated; site hints Connecticut); founded
     year; headcount; round type. Technology from CEO''s PhD work at WPI.'
+- id: fluitec-wind
+  name: Fluitec Wind
+  website: https://fluitecwind.com
+  careers_url: null
+  hq: Jersey City, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Lubricant-care products and services for wind turbines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectTimeout: [WinError 10060] A connection attempt failed
+    because the connected party did not properly respond after a period of time, or established connection failed
+    because connected host). Flags: fluitecwind.com refused the connection; facts are from fluitec.com; wind is
+    one of several industries; turbines and power plants generally. Evidence: https://www.fluitec.com/ Region sources:
+    inven-nj-wind. Confidence: low. Unresolved: Whether Fluitec Wind is a separate unit; HQ (input guess Jersey
+    City, NJ); founding year; headcount.'
+- id: fuji-electric-corp-of-america
+  name: Fuji Electric Corp. of America
+  website: https://americas.fujielectric.com
+  careers_url: null
+  hq: Edison, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Drives, power semiconductors, UPS and power-distribution equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Fuji Electric; not independent.
+  notes: 'No job board found on the company''s site. Stage: US arm of Fuji Electric (Japan): its About page presents
+    ''Fuji Electric Global'' (established 1923, 26,955 employees) without naming the legal parent. https://americas.fujielectric.com/about-us/
+    Flags: subsidiary of Fuji Electric (Japan); over 1,000 employees (group); US sales arm; US manufacturing not
+    stated. Evidence: https://americas.fujielectric.com https://americas.fujielectric.com/about-us/ Region sources:
+    inven-nj-power-electronics. Confidence: medium. Unresolved: Founding year of the US company; US headcount; any
+    US plant.'
 - id: fundamental-carbon
   name: Fundamental Carbon
   website: https://ourosmaterials.com
@@ -765,6 +1221,92 @@ companies:
     markets. Evidence: https://ourosmaterials.com/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
     Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Ouros site lists only ''New York, New York'';
     NJEDA gives Piscataway, NJ. Site does not mention Fundamental Carbon. Founded, headcount not found.'
+- id: glasco-uv
+  name: Glasco UV
+  website: https://glascouv.com
+  careers_url: null
+  hq: Mahwah, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: UV disinfection systems, replacements and retrofits for water and wastewater treatment.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Private, family-owned and woman-owned, no venture rounds
+    (per its site). Evidence: https://www.glascouv.com/ https://glascouv.com/about-us/ Region sources: inven-nj-water.
+    Confidence: high. Unresolved: Founding year (vertical program from the 1980s); headcount.'
+- id: graver-water-systems
+  name: Graver Water Systems
+  website: https://graver.com
+  careers_url: null
+  hq: Warren, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Industrial water treatment equipment, including condensate polishing systems for power plants.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Marmon Holdings; not independent.
+  notes: 'No board found: home page not readable (202). Stage: Graver Water is a unit of Marmon Water within Marmon
+    Holdings, a Berkshire Hathaway company (Berkshire fully owned Marmon from 2013). https://www.environmental-expert.com/companies/graver-marmon-industrial-water-57808
+    Flags: subsidiary of Marmon Holdings (Berkshire Hathaway); power plant condensate polishing is a main line (includes
+    gas-fired plants). Evidence: https://www.environmental-expert.com/companies/graver-marmon-industrial-water-57808
+    https://www.gravertech.com/about/our-history https://www.watertechonline.com/home/article/14172202/condensate-polishing-graver-technologies
+    Region sources: inven-nj-water. Confidence: medium. Unresolved: graver.com returned an empty script-only page;
+    HQ (input guess Warren, NJ), founding year, headcount not confirmed.'
+- id: gravity
+  name: Gravity
+  website: https://gravitytechnologies.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: ashby
+    board: gravity
+  read: auto
+  sectors:
+  - charging
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Own-design DC fast chargers (DEAPs, 30-500 kW) and power cabinets with software, sold to fleets and
+      installed at host sites; also runs public charging stations in New York and California.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:gravity seen 2026-11-25, token matched by name; board page checked: 9 open roles. Stage: Seed
+    round led by GV (Google Ventures); amount and date not found. https://www.citybiz.co/article/490929/google-ventures-leads-seed-funding-round-in-gravity/
+    (search snippet) Flags: no taxi fleet mentioned on current site. Evidence: https://gravitytechnologies.com https://electrek.co/2024/03/04/google-ev-charging-startup-gravity-fastest-public-chargers-in-us/
+    https://www.citybiz.co/article/490929/google-ventures-leads-seed-funding-round-in-gravity/ Region sources: inven-ny-ev.
+    Confidence: medium. Unresolved: Founding year, headcount, seed amount and date, any later rounds, where chargers
+    are built.'
 - id: gridless-power-corporation
   name: Gridless Power Corporation
   website: https://gridlesspower.com
@@ -800,6 +1342,34 @@ companies:
     gridlesspower.com returned empty pages to the fetcher, so current activity unconfirmed. HQ sources disagree:
     directories give 7905 Browning Rd, Pennsauken; the 2018 NJEDA release and others say Collingswood, NJ. Founded
     2010 is from Craft (search snippet).'
+- id: hevi
+  name: Hevi
+  website: https://gethevi.com
+  careers_url: null
+  hq: East Windsor, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: All-electric heavy equipment such as loaders and forklifts.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: The HEVI site''s Investor Relations link points to ir.gtec-tech.com,
+    Greenland Technologies Holding Corp. (NASDAQ: GTEC, established 2006), which lists HEVI in its navigation; relationship
+    inferred, not stated. https://ir.gtec-tech.com/ Flags: likely subsidiary or brand of Greenland Technologies
+    (NASDAQ: GTEC); inferred from IR link. Evidence: https://gethevi.com/ https://gethevi.com/about-us https://ir.gtec-tech.com/
+    Region sources: inven-nj-ev. Confidence: medium. Unresolved: Founding year; headcount; explicit statement of
+    the Greenland ownership; where major components are made.'
 - id: hit-nano
   name: HiT Nano
   website: https://hitnanoinc.com
@@ -872,6 +1442,32 @@ companies:
     Region sources: doe-edf. Confidence: high. Unresolved: Headcount sources disagree widely (748 to 4,350). Sources
     disagree on whether the IPO was postponed (registration kept) or withdrawn. ENR, S&P Global and Rowan pages
     could not be fetched (safety-check rate limit / redirect).'
+- id: hungerford-and-terry
+  name: Hungerford & Terry
+  website: https://hungerfordterry.com
+  careers_url: null
+  hq: Clayton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: 1909
+  headcount: null
+  climate:
+    tier: core
+    reason: Engineered potable and industrial water treatment systems (greensand filters, arsenic, iron, manganese
+      and radium removal).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1909 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://hungerfordterry.com/. Stage: Private, employee-owned,
+    no venture rounds (per its site). Evidence: https://hungerfordterry.com/ Region sources: inven-nj-water. Confidence:
+    high. Unresolved: Headcount.'
 - id: hydronic-shell-technologies
   name: Hydronic Shell Technologies
   website: https://hydronicshell.com
@@ -901,6 +1497,59 @@ companies:
     demonstration funding. No equity rounds found. Evidence: https://www.hydronicshell.com https://naturalrefrigerants.com/news/high-temperature-co2-heat-pump-team-is-runner-up-in-new-yorks-empire-technology-prize/
     Region sources: governor-empire-prize. Confidence: medium. Unresolved: HQ not stated on own site (input says
     Long Island City, NY); founding year, headcount and funding not found.'
+- id: igneo
+  name: Igneo
+  website: https://igneo.com
+  careers_url: null
+  hq: White Plains, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Processes low-grade electronic scrap to recover metals.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Korea Zinc; not independent.
+  notes: 'No job board found on the company''s site. Stage: igneo.com redirects to pedalpoint.co; PedalPoint, formed
+    2021 as a subsidiary of Korea Zinc, lists ''PedalPoint Technologies (formerly IGNEO)'' among its five companies.
+    https://pedalpoint.co/companies/ Flags: subsidiary of Korea Zinc (via PedalPoint). Evidence: https://pedalpoint.co/
+    https://pedalpoint.co/companies/ https://pedalpoint.co/about/ Region sources: inven-ny-ewaste. Confidence: medium.
+    Unresolved: Acquisition date, plant location, HQ (input guess White Plains, NY), founding year, headcount.'
+- id: innate-energy
+  name: Innate Energy
+  website: null
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: ashby
+    board: innate
+  read: auto
+  sectors:
+  - energy-storage
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Membraneless, pumpless zinc-bromine flow battery that circulates itself by gravity.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:innate seen 2026-11-24, token matched by name; board page checked: 3 open roles. Stage: Activate
+    fellowship (non-dilutive); no equity round found. Flags: Identity is now clear from Activate; no company website
+    found, HQ taken from the source list.. Evidence: A c t i v a Region sources: activate. Confidence: low.'
 - id: innosepra
   name: InnoSepra
   website: https://innosepra.com
@@ -930,36 +1579,6 @@ companies:
     sources: njeda-csit-demo-r2. Confidence: medium. Unresolved: Own site lists 452 Lincoln Blvd, Middlesex, NJ
     (Middlesex County), not Warren County as in the input. Unclear whether it sells equipment or licenses technology.
     Founding year, headcount and funding not found.'
-- id: it-s-electric
-  name: It's Electric
-  website: https://itselectric.us
-  careers_url: null
-  hq: Brooklyn, NY
-  ats:
-    type: workable
-    board: itselectric
-  read: manual
-  sectors:
-  - charging
-  - ev
-  stage: null
-  founded: null
-  headcount: null
-  climate:
-    tier: core
-    reason: Curbside Level-2 EV chargers installed at no cost to property owners and powered by the adjacent building's
-      spare electrical capacity; operates the charging network.
-    basis: agent
-    approved: false
-  startup:
-    status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
-  notes: 'Board workable:itselectric seen 2026-11-25, linked from the company''s own site: 2 open roles. Stage:
-    No funding stated on own site; Dealroom slugs itselectric and its-electric 404. Flags: designs own charger but
-    business is charging-network operation. Evidence: https://itselectric.us Region sources: third-derivative, greentown,
-    laci. Confidence: medium. Unresolved: Founding year, headcount and funding not found. Site lists operations
-    in NYC, Jersey City, Yonkers, Newburgh, Boston, Detroit, LA, SF and others.'
 - id: kelvin
   name: Kelvin
   website: https://kel.vin
@@ -992,6 +1611,94 @@ companies:
     Elemental Excelerator, Oct 2023. Flags: formerly Radiator Labs. Evidence: https://kel.vin https://dealroom.co/companies/kelvin
     Region sources: elemental. Confidence: high. Unresolved: Founding year conflicts within Dealroom: 2011 in header,
     2013 in About section.'
+- id: komline-sanderson
+  name: Komline-Sanderson
+  website: https://komline.com
+  careers_url: null
+  hq: Peapack, NJ
+  ats:
+    type: adp
+    board: 612bb66e-3607-4733-b0b5-ee07c92bf575
+  read: manual
+  sectors:
+  - water
+  stage: null
+  founded: 1946
+  headcount: null
+  climate:
+    tier: core
+    reason: Separation, filtration, drying and sludge-handling equipment for water, wastewater, agriculture and
+      industry; custom machining and fabrication.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1946 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board adp:612bb66e-3607-4733-b0b5-ee07c92bf575 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://komline.com/about/about-us/. Stage: Private, no venture rounds
+    found; parent of ten Komline brands. Evidence: https://www.komline.com/ https://komline.com/about/about-us/
+    Region sources: inven-nj-water. Confidence: high. Unresolved: Headcount; manufacturing location.'
+- id: leviton
+  name: Leviton
+  website: https://www.leviton.com
+  careers_url: null
+  hq: Melville, NY
+  ats:
+    type: icims
+    board: internal-leviton
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1906
+  headcount:
+    value: 6500
+    as_of: '2026-11-24'
+    source: Leviton careers site; undated, so as_of is the day it was read (https://careers.leviton.com/our-locations)
+  climate:
+    tier: out
+    reason: Electrical wiring devices, load centers and lighting controls for buildings in general; EV chargers
+      are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '6,500 people (Leviton careers site; undated, so as_of is the day it was read, 2026-11-24): over the
+      4,000 cap and its tolerance.'
+  notes: 'Board icims:internal-leviton seen 2026-11-25, linked from the company''s own site: role count not read
+    (no public feed). Headcount note: Careers site says 6,500+ (undated, from a search snippet); LinkedIn band 5,001-10,000.
+    Founded: https://leviton.com/company/about-leviton/our-history. Stage: Private (Leviton Manufacturing Co., Inc.),
+    no venture rounds; ownership details not checked. HQ in Melville since 2009. Flags: over 1,000 employees; established
+    private manufacturer. Evidence: https://leviton.com/company/about-leviton/our-history https://careers.leviton.com/our-locations
+    https://en.wikipedia.org/wiki/Leviton Region sources: inven-ny-smart-grid. Confidence: medium. Unresolved: Own
+    about pages returned 404 to direct fetch; facts come from search snippets of its history and careers pages.'
+- id: levy-electric
+  name: Levy Electric
+  website: https://levyelectric.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electric scooters with swappable battery packs (Levy Light, Plus+, Max), spare parts, subscriptions
+      and Levy Fleets rental-fleet software.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found (site has an Investors link without details).
+    Flags: whether scooters are designed in-house is not stated. Evidence: https://levyelectric.com Region sources:
+    inven-ny-ev. Confidence: medium. Unresolved: Founding, headcount, funding.'
 - id: materium-technologies
   name: Materium Technologies
   website: https://materiumtech.com
@@ -1106,6 +1813,39 @@ companies:
     a Brooklyn office and Newark, NJ R&D site (both in region), HQ not explicitly named. Target markets include
     hospitality, residential, healthcare, retail, cold chain and data centers (data centers not the main stated
     customer). Founding year, headcount, funding not found.'
+- id: nanosepex
+  name: NanoSepex
+  website: null
+  careers_url: null
+  hq: Bridgewater, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - water
+  stage: pre-seed
+  founded: null
+  headcount:
+    value: 2
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (FTE count) (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: core
+    reason: Carbon-nanotube-immobilized membranes (CNIM) and filtration systems for solvent recovery from dilute
+      waste streams, biofuel refining and solvent-laden wastewater; NJIT-developed technology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 2 people (CSIT Annual Report 2025 Awardee Profiles (FTE count), 2025-01-01); funding round reported
+      in 2026.
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive funding only: SBIR awards from NSF, USDA
+    and NIEHS (per CSIT profile), CSIT R&D voucher (2021), Clean Tech demonstration grant (2025-01-03) and $75,000
+    Round 4 R&D Seed Grant (2026-01-08). No equity round found. Flags: Active as of the January 2026 grant despite
+    having no working website; earlier address Newark (NJIT).. Evidence: N J E D A   Region sources: njeda-csit-seed-r4,
+    njeda-csit-demo-r2, njeda-csit-rd-vouchers. Confidence: low.'
 - id: neutroelectric-becq
   name: Neutroelectric (BECQ)
   website: https://becqtech.com
@@ -1135,6 +1875,210 @@ companies:
     https://inknowvation.com/node/174154 Region sources: njeda-csit-demo-r1, njeda-csit-seed-45. Confidence: medium.
     Unresolved: Site copyright is 2022 only, so current activity unconfirmed. Address 808 Market Street, Camden,
     from an SBIR listing snippet. Founded and headcount not found.'
+- id: noble-geofurnace
+  name: Noble Geofurnace
+  website: null
+  careers_url: null
+  hq: Keyport, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: pre-seed
+  founded: null
+  headcount:
+    value: 1
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (FTE count) (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: core
+    reason: Smart Wind Turbine Residential, a small rooftop wind turbine designed to pair with rooftop solar.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (CSIT Annual Report 2025 Awardee Profiles (FTE count), 2025-01-01); funding round reported
+      in 2026.
+  notes: 'No job board found on the company''s site. Stage: $75,000 CSIT Clean Tech R&D Seed Grant Round 4 (release
+    2026-01-08); no equity round found. Flags: Despite the name, the funded product is a residential wind turbine,
+    not geothermal. No website found.. Evidence: N J E D A   Region sources: njeda-csit-seed-r4. Confidence: low.'
+- id: novtech
+  name: Novtech
+  website: null
+  careers_url: null
+  hq: Bridgewater, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: pre-seed
+  founded: 2022
+  headcount:
+    value: 1
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: enabling
+    reason: Process-intensification equipment for the chemical industry that combines reaction and separation to
+      cut energy use.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (CSIT Annual Report 2025 Awardee Profiles, 2025-01-01); founded 2022, funding round reported
+      in 2026.
+  notes: 'No job board found on the company''s site. Stage: $75,000 CSIT Clean Tech R&D Seed Grant Round 4 (release
+    2026-01-08); no equity round found. Flags: Process technology; physical set true as it is a chemical process/equipment
+    rather than software. No website found.. Evidence: N J E D A   Region sources: njeda-csit-seed-r4. Confidence:
+    low.'
+- id: nuvvon
+  name: Nuvvon
+  website: https://nuvvon.com
+  careers_url: null
+  hq: Parsippany, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state lithium-metal battery cells using a proprietary solid polymer electrolyte; sells 1 Ah and
+      5 Ah prototype pouch cells, 20 Ah planned.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; listed as a Rutgers EcoComplex incubator
+    graduate (''Sidhu Labs Nuvvon Labs''). https://ecocomplex.rutgers.edu/incubator-businesses.html Flags: domain
+    found on own (nuvvon.com); input had none. Evidence: https://www.nuvvon.com https://www.nuvvon.com/about https://ecocomplex.rutgers.edu/incubator-businesses.html
+    Region sources: rutgers-ecocomplex. Confidence: medium. Unresolved: Founding year, headcount, funding.'
+- id: nwl
+  name: NWL
+  website: https://nwl.com
+  careers_url: null
+  hq: Bordentown, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Transformers, inductors and power supplies for industrial, utility and military uses.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by American Superconductor; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://www.nwl.com/about (founded ''in the 1930s''
+    as Nothelfer Winding Laboratories; no exact year). Stage: Acquired by American Superconductor (AMSC, Nasdaq)
+    in July 2024. https://www.nwl.com/about Flags: acquired by American Superconductor (July 2024); military is
+    a named market; 150,000 sq ft plant in Bordentown, NJ. Evidence: https://www.nwl.com https://www.nwl.com/about
+    Region sources: inven-nj-power-electronics. Confidence: high. Unresolved: Exact founding year; headcount.'
+- id: ocean-power-technologies
+  name: Ocean Power Technologies
+  website: https://oceanpowertechnologies.com
+  careers_url: null
+  hq: Monroe Township, NJ
+  ats:
+    type: adp
+    board: c353f402-97ea-4b3b-9103-73bbb3211550
+  read: manual
+  sectors:
+  - distributed-generation
+  stage: public
+  founded: 1984
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Wave- and solar-powered offshore buoys that supply power and data for maritime and defense uses.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1984 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board adp:c353f402-97ea-4b3b-9103-73bbb3211550 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://en.wikipedia.org/wiki/Ocean_Power_Technologies. Stage: Listed
+    on NYSE American as OPTT (Wikipedia); listing year not found. https://en.wikipedia.org/wiki/Ocean_Power_Technologies
+    Flags: government and defense is the first-listed market (DHS buoys, US Navy, Anduril Lattice integration);
+    offshore energy is a listed market; autonomous surface vessels. Evidence: https://www.oceanpowertechnologies.com
+    https://en.wikipedia.org/wiki/Ocean_Power_Technologies Region sources: njeda-clean-energy-newsletter-2026-07,
+    inven-nj-storage. Confidence: medium. Unresolved: Listing year; headcount; share of revenue from defense and
+    oil and gas.'
+- id: pallidus
+  name: Pallidus
+  website: https://pallidus.com
+  careers_url: null
+  hq: Albany, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Silicon carbide wafers for power electronics (proprietary SiC process).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: pallidus.com/about serves gambling
+    spam (2026-11-25): site may be compromised or neglected; home page copyright 2024; announced Feb 2023 a $443M,
+    405-job HQ and plant move to Rock Hill, SC; a Nov 2024 report (via CB Insights snippet citing Manufacturing
+    Dive) says the move was dropped; may be inactive. Evidence: https://www.pallidus.com https://www.pallidus.com/about
+    https://www.manufacturingdive.com/news/pallidus-relocates-hqs-operations-to-south-carolina/643081/ https://www.cbinsights.com/company/pallidus
+    Region sources: inven-ny-power-electronics. Confidence: low. Unresolved: Whether still operating; whether any
+    wafers are produced; founding; headcount; funding.'
+- id: panasonic-electric-works-corp-of-america
+  name: Panasonic Electric Works Corp. of America
+  website: https://pewa.panasonic.com
+  careers_url: null
+  hq: New Providence, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Relays, sensors, capacitors and other electronic components for general industry; no climate case under
+      the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Panasonic; not independent.
+  notes: 'No job board found on the company''s site. Stage: Domain now redirects to na.industrial.panasonic.com,
+    copyright Panasonic Corporation of North America. https://na.industrial.panasonic.com/ Flags: subsidiary of
+    Panasonic (Panasonic Corporation of North America); over 1,000 employees likely at parent level, not checked;
+    input product description is wrong. Evidence: https://na.industrial.panasonic.com/ Region sources: inven-nj-power-electronics.
+    Confidence: medium. Unresolved: Whether the Panasonic Electric Works entity still exists separately; NJ site;
+    headcount.'
 - id: pave-motors
   name: Pave Motors
   website: https://www.pavemotors.com
@@ -1218,6 +2162,97 @@ companies:
     named ONR (Office of Naval Research). Dealroom slugs 404. Flags: possible defense (ONR) sponsorship; share of
     business unknown. Evidence: https://pliantenergy.com Region sources: newlab-posts. Confidence: medium. Unresolved:
     Founded year, headcount, funding, whether defense is the main customer.'
+- id: plug-power
+  name: Plug Power
+  website: https://www.plugpower.com
+  careers_url: null
+  hq: Latham, NY
+  ats:
+    type: workday
+    board: plugpower
+  read: manual
+  sectors:
+  - hydrogen
+  stage: public
+  founded: 1997
+  headcount:
+    value: 3353
+    as_of: '2022-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Plug_Power)
+  climate:
+    tier: core
+    reason: Hydrogen fuel cell systems (GenDrive, ProGen), PEM electrolyzers, liquid hydrogen production, cryogenic
+      storage and hydrogen fueling.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 3,353 people (Wikipedia, 2022-01-01); founded 1997 and no equity raise in the last 5 years found, so
+      no growth sign.
+  notes: 'Board workday:plugpower.wd5.myworkdayjobs.com/Plug_Power_Inc seen 2026-11-25, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Year only (2022). Founded: https://en.wikipedia.org/wiki/Plug_Power.
+    Stage: IPO October 1999, Nasdaq: PLUG. https://en.wikipedia.org/wiki/Plug_Power Flags: over 1,000 employees.
+    Evidence: https://www.plugpower.com/about-us/ https://en.wikipedia.org/wiki/Plug_Power Region sources: governor-plug-slingerlands,
+    governor-esd-search. Confidence: high. Unresolved: Current headcount; HQ street (Latham vs Slingerlands); any
+    2025-26 going-concern language not checked.'
+- id: polaris-america
+  name: Polaris America
+  website: https://polarisamerica.com
+  careers_url: null
+  hq: Allenwood, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Community-scale wind turbines, 20 kW to 100 kW, 'American made in central New Jersey', sold direct and
+      through dealers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.polarisamerica.com/ Region sources: inven-nj-wind,
+    inven-nj-geothermal. Confidence: medium. Unresolved: About page answered 403 to a second request, so stopped
+    on the site. Founding year (copyright from 2012), headcount, ownership, physical HQ (input guess Lakewood, NJ).'
+- id: pollux-technologies
+  name: Pollux Technologies
+  website: https://lumiaq.com
+  careers_url: null
+  hq: Piscataway, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: pre-seed
+  founded: 2018
+  headcount:
+    value: 4
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (FTE count; a second entry gives 5.2) (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: enabling
+    reason: 'Now trading as Lumiaq: connected sensors that monitor HVAC filters.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 4 people (CSIT Annual Report 2025 Awardee Profiles (FTE count; a second entry gives 5.2), 2025-01-01);
+      founded 2018, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive funding listed on lumiaq.com: NSF SBIR
+    Phase I, CSIT Clean Tech Seed Grant ($74,960, 2022-08-08), Pilot Clean Tech Demonstration grant (2025-01-03)
+    and Clean Tech R&D Voucher. No equity round found. Flags: Legal entity is still Pollux Technologies LLC; it
+    trades as Lumiaq.. Evidence: C S I T   2 Region sources: njeda-csit-seed-45, njeda-csit-demo-r2. Confidence:
+    low.'
 - id: polygone-systems
   name: PolyGone Systems
   website: https://polygonesystems.com
@@ -1276,6 +2311,39 @@ companies:
     Nothing found; Built In and Dealroom slugs popwheels 404. Region sources: ufl-acre. Confidence: low. Unresolved:
     popwheels.com and www.popwheels.com did not resolve (DNS error EAI_AGAIN, three tries; may be a local DNS fault,
     not closure). Everything else unknown.'
+- id: power-edison
+  name: Power Edison
+  website: https://www.poweredison.com
+  careers_url: null
+  hq: New Jersey
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Trailer-mounted mobile battery energy storage systems (TerraCharge; e.g. a 3 MW / 12 MWh system for
+      a US utility in 2021) sold, rented or leased, with its own switchgear, interconnection and quick-connect equipment;
+      EV Edison subsidiary targets EV charging sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in one search. Flags: main customers
+    are utilities (Con Edison pilot); integrator: whether it builds the battery systems or only packages them is
+    unclear. Evidence: https://poweredison.com https://www.canarymedia.com/articles/batteries/whats-better-than-a-big-battery-how-about-a-big-battery-you-can-move-around
+    https://www.businesswire.com/news/home/20230913264790/en/Power-Edison-Unveils-Industry-Leading-Utility-Grade-Mobile-Energy-Storage-System
+    Region sources: choosenj-clean-energy, inven-nj-storage, inven-nj-smart-grid. Confidence: medium. Unresolved:
+    Founding year (Canary Media Dec 2021 says five years of development), headcount, funding; own site is script-rendered
+    and unreadable; status ''active'' rests on a live site and 2023 product news.'
 - id: princeton-critical-minerals-pureli
   name: Princeton Critical Minerals (PureLi)
   website: https://pcmtech.com
@@ -1399,6 +2467,32 @@ companies:
     to a domain-for-sale page). Facts from search snippets only; Dealroom public slug purenanotech returned 404.
     Founding year, headcount and funding not found. Partner in organizing NJIT''s Nanobubble 2026 conference (Aug
     2026), so likely active.'
+- id: pvilion
+  name: Pvilion
+  website: https://pvilion.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Solar structures built on photovoltaic fabric: solar sails, solar canopies and mobile solar tents.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: lists defense among industries served (not stated as
+    main customer). Evidence: https://pvilion.com/ Region sources: inven-ny-solar-mfg. Confidence: medium. Unresolved:
+    Founding year, headcount, funding, factory location.'
 - id: pwrcor
   name: PwrCor
   website: https://pwrcor.com
@@ -1428,6 +2522,60 @@ companies:
     pwrcor 404. Evidence: https://www.pwrcor.com/ Region sources: third-derivative. Confidence: low. Unresolved:
     Own site footer copyright 2023 and no dated news, so current activity unconfirmed. HQ, founding year, headcount,
     funding or any public listing not found.'
+- id: qei
+  name: QEI
+  website: https://qeiinc.com
+  careers_url: null
+  hq: Springfield, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Utility automation hardware (RTUs, data concentrators, distributed I/O, capacitor controllers, control
+      panels and control houses) plus SCADA/ADMS software.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Private, no venture rounds found; acquired ECS (ADMS
+    software). Flags: hardware and software mix. Evidence: https://www.qeiinc.com/ Region sources: inven-nj-smart-grid.
+    Confidence: medium. Unresolved: Founding year (''60 years of automation solutions''); headcount; ownership.'
+- id: quadlogic-controls
+  name: Quadlogic Controls
+  website: https://quadlogic.com
+  careers_url: null
+  hq: Long Island City, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Revenue-grade electric submeters for multifamily and commercial buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Private, no venture rounds found. Its billing and field
+    services were rebranded as Metergy Solutions (trademark used under license). Evidence: https://www.quadlogic.com/
+    Region sources: inven-ny-smart-grid. Confidence: medium. Unresolved: Founding year, headcount, manufacturing
+    location, ownership link to Metergy Solutions. HQ from footer address (30-30 47th Ave), not labelled HQ.'
 - id: queens-carbon
   name: Queens Carbon
   website: https://queenscarbon.com
@@ -1515,6 +2663,92 @@ companies:
     stated on site; Dealroom slug renewco2 404. Evidence: https://renewco2.com Region sources: njeda-csit-seed-r1,
     njeda-csit-seed-r3. Confidence: medium. Unresolved: HQ not stated (input says Cranford, NJ); founded year; headcount;
     funding; Rutgers origin not confirmed.'
+- id: resintech
+  name: ResinTech
+  website: https://resintech.com
+  careers_url: null
+  hq: Camden, NJ
+  ats:
+    type: adp
+    board: 5093d500-696f-400d-a0a9-fa327104888a
+  read: manual
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ion-exchange resins, activated carbon and specialty media, cartridges and point-of-use water systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board adp:5093d500-696f-400d-a0a9-fa327104888a seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Stage: Private, family-owned, no venture rounds (per its about page). Flags:
+    plants in the US and China. Evidence: https://www.resintech.com/about Region sources: inven-nj-water. Confidence:
+    high. Unresolved: Founding year (''over 30 years'', 40th anniversary mentioned); headcount.'
+- id: reworld
+  name: Reworld
+  website: https://www.reworldwaste.com
+  careers_url: null
+  hq: Florham Park, NJ
+  ats:
+    type: workday
+    board: reworld
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1939
+  headcount:
+    value: 4200
+    as_of: '2026-11-25'
+    source: Reworld site (undated) (https://www.reworldwaste.com)
+  climate:
+    tier: out
+    reason: Waste collection, handling and disposal, including waste-to-energy incineration; no climate case under
+      the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 4,200 people (Reworld site (undated), 2026-11-25). Owned by a larger company; not independent.
+  notes: 'Board workday:reworld.wd5.myworkdayjobs.com/External seen 2026-11-25, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Site says ''4,200 people''; undated, as_of is the date
+    read. Founded: https://en.wikipedia.org/wiki/Covanta. Stage: EQT completed a $5.3B acquisition of Covanta Holding
+    in December 2021; EQT Infrastructure later sold 25% to GIC. Renamed Reworld April 2024. https://en.wikipedia.org/wiki/Covanta
+    Flags: over 1,000 employees; owned by EQT (private equity); waste-to-energy operator; founded 1939 as Ogden
+    Corporation. Evidence: https://www.reworldwaste.com https://en.wikipedia.org/wiki/Covanta Region sources: choosenj-clean-energy,
+    inven-nj-ewaste. Confidence: high. Unresolved: Current HQ street (Florham Park vs Morristown).'
+- id: satec
+  name: Satec
+  website: https://satec-global.com
+  careers_url: null
+  hq: Union, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: 1987
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Power meters, power-quality analyzers and current sensors.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1987 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.satec-global.com/about-us/. Stage: Private
+    (SATEC Group), no venture rounds found. Flags: HQ possibly outside the US (Hebrew-language site option suggests
+    Israel; not confirmed). Evidence: https://www.satec-global.com/ https://www.satec-global.com/about-us/ Region
+    sources: inven-nj-smart-grid. Confidence: medium. Unresolved: Global HQ and whether the US office is in Union,
+    NJ; headcount; manufacturing location.'
 - id: shutterbug-exchange
   name: Shutterbug Exchange
   website: https://shutterbugexchange.com
@@ -1658,6 +2892,36 @@ companies:
     Prize awards. Dealroom slug 404. Evidence: https://supercleanglass.com Region sources: aertc-incubator. Confidence:
     medium. Unresolved: HQ not stated (input says Stony Brook, NY); founded year, headcount, funding. ''Recent news''
     section is empty.'
+- id: swind-power
+  name: Swind Power
+  website: null
+  careers_url: null
+  hq: Princeton Junction, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: pre-seed
+  founded: 2021
+  headcount:
+    value: 1
+    as_of: '2025-01-01'
+    source: CSIT Annual Report 2025 Awardee Profiles (https://www.njcsit.gov/wp-content/uploads/2026/05/CSIT-Annual-Report-2025-Awardee-Profiles.pdf)
+  climate:
+    tier: core
+    reason: Drag-driven, sail-type vertical axis turbine for wind (and water) energy.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (CSIT Annual Report 2025 Awardee Profiles, 2025-01-01); founded 2021, funding round reported
+      in 2025.
+  notes: 'No job board found on the company''s site. Stage: Grant-only: $72,510 CSIT Clean Tech Seed Grant (2022-08-08)
+    and a later CSIT award profiled in the 2025 annual report; no equity round found. Flags: One-person company
+    with no website found; listed in a 2025 CSIT profile, so treated as active.. Evidence: N J   T e c Region sources:
+    njeda-csit-demo-r1, njeda-csit-seed-45. Confidence: low.'
 - id: thermolift
   name: ThermoLift
   website: https://thermoliftsolutions.com
@@ -1722,6 +2986,35 @@ companies:
     Bidra Innovations, DCVC). Also a 2018 $1.6M DOE solar office award under former name GreenBlu. Flags: formerly
     GreenBlu, Inc.. Evidence: https://tidalmetals.com https://dealroom.co/companies/tidal-metals Region sources:
     dcvc, halliburton-labs. Confidence: high.'
+- id: treadstone-technologies
+  name: Treadstone Technologies
+  website: https://www.treadstone-technologies.com
+  careers_url: null
+  hq: Monmouth Junction, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Patented corrosion-resistant coatings for metal components: DOT bipolar plate coating, TiOx coating
+      for PEM electrolyzers, DuraC carbon coating for automotive fuel cell plates.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Over $12M in competitively awarded US government grants
+    since 2010 (own site); no venture rounds found. Flags: coating technology; whether it sells coated parts, coating
+    services or licences is not stated. Evidence: https://www.treadstone-technologies.com Region sources: inven-nj-storage.
+    Confidence: medium. Unresolved: Founding year; headcount; business model.'
 - id: turnover-labs
   name: Turnover Labs
   website: https://turnoverlabs.com
@@ -1749,6 +3042,93 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Team page shows five named people; not a headcount.
     Stage: No funding stated on own site; Dealroom slug turnover-labs 404. Evidence: https://turnoverlabs.com Region
     sources: activate, greentown. Confidence: medium. Unresolved: Founding year, headcount, funding not found.'
+- id: ugsi-chemical-feed
+  name: UGSI Chemical Feed
+  website: https://ugsichemicalfeed.com
+  careers_url: null
+  hq: Vineland, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Chemical feed and disinfection equipment: on-site hypochlorite generators, polymer blending systems,
+      chemical metering pumps, dry feeders and mixers.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: ugsichemicalfeed.com redirects to cleanwater1.com, which
+    lists UGSI Chemical Feed as one of its six divisions. https://cleanwater1.com/ Flags: division of cleanwater1,
+    Inc.. Evidence: https://cleanwater1.com/ Region sources: inven-nj-water. Confidence: medium. Unresolved: HQ
+    and plant (input guess Vineland, NJ), founding year, headcount, cleanwater1''s own HQ and ownership.'
+- id: unagi-scooters
+  name: Unagi Scooters
+  website: https://unagiscooters.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric scooters (Model One Voyager and Classic, refurbished units) sold outright and by monthly All-Access
+      subscription.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: CB Insights (search snippet): latest round Series A-II,
+    $17.3M, 2023-04-19. https://www.cbinsights.com/company/unagi-scooters/financials Flags: site copyright ''Scooter
+    ORA ABC LLC dba Unagi'': the original Unagi, Inc. may have gone through an assignment for benefit of creditors,
+    with the brand now run by a successor entity; one search found no report of this. Evidence: https://unagiscooters.com
+    https://www.cbinsights.com/company/unagi-scooters/financials Region sources: inven-ny-ev. Confidence: low. Unresolved:
+    Who owns and runs the brand now; founding; headcount.'
+- id: unitedsic-qorvo
+  name: UnitedSiC (Qorvo)
+  website: https://unitedsic.com
+  careers_url: null
+  hq: Princeton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Silicon carbide power semiconductors (SiC JFETs, cascode FETs, Schottky diodes).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by onsemi; not independent.
+  notes: 'No job board found on the company''s site. Stage: onsemi (Nasdaq: ON) agreed 2024-12-09 to buy Qorvo''s
+    SiC JFET business including the United Silicon Carbide subsidiary for $115M cash; completed 2025-01-15. unitedsic.com
+    now 301-redirects to onsemi.com. https://investor.onsemi.com/news-releases/news-release-details/onsemi-completes-acquisition-qorvos-silicon-carbide-jfet
+    Flags: subsidiary of onsemi (no longer Qorvo); onsemi pitches it mainly for AI data center power supplies. Evidence:
+    https://unitedsic.com/ https://investor.onsemi.com/news-releases/news-release-details/onsemi-completes-acquisition-qorvos-silicon-carbide-jfet
+    https://www.yolegroup.com/industry-news/onsemi-to-acquire-qorvos-silicon-carbide-jfet-business-including-united-silicon-carbide-subsidiary/
+    Region sources: inven-nj-ev. Confidence: high. Unresolved: Whether the Princeton site is still operating under
+    onsemi; founding year; headcount.'
 - id: urban-electric-power
   name: Urban Electric Power
   website: https://urbanelectricpower.com
@@ -1865,3 +3245,113 @@ companies:
     Tinto, NYSERDA, Shell Ventures) and carbon-removal buyers (Frontier, Stripe, Klarna, Milkywire, DOE) but no
     round. Dealroom slug vycarb 404. Flags: carbon removal. Evidence: https://vycarb.com Region sources: newlab-posts,
     activate, third-derivative. Confidence: medium. Unresolved: Headcount; funding round and stage.'
+- id: wedeco-xylem
+  name: Wedeco (Xylem)
+  website: https://wedeco.com
+  careers_url: null
+  hq: Rye Brook, NY
+  ats:
+    type: workday
+    board: xylem
+  read: manual
+  sectors:
+  - water
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: UV and ozone disinfection and oxidation systems for water and wastewater treatment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'Board workday:xylem.wd5.myworkdayjobs.com/xylem-careers seen 2026-11-25, linked from the company''s own
+    site: role count not read (no public feed). Stage: wedeco.com 301-redirects to Xylem''s Wedeco brand page; Wedeco
+    is a Xylem (NYSE: XYL) brand. https://www.xylem.com/en-us/brand/wedeco/ Flags: brand of Xylem. Evidence: https://wedeco.com/
+    https://www.xylem.com/en-us/brand/wedeco/ Region sources: inven-ny-water. Confidence: medium. Unresolved: Where
+    Wedeco''s main operations are (not stated on the Xylem page); Xylem HQ and listing year not checked; whether
+    any Rye Brook, NY site remains.'
+- id: wisewell
+  name: Wisewell
+  website: https://wisewell.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Home water purification systems (countertop Sparkle and Nano, floor-standing Model 1) with RO filtration
+      and remineralization.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: products in pre-order / early-access stage. Evidence:
+    https://wisewell.com/ Region sources: inven-ny-water. Confidence: medium. Unresolved: About page answered 403,
+    so stopped on the site; HQ (input guess Brooklyn, NY), founding year, headcount, funding. Dealroom slug 404.'
+- id: wright-energy-storage-technologies
+  name: Wright Energy Storage Technologies
+  website: https://wrightenergystorage.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Supercapacitor (electrostatic) energy storage systems for residential to utility-scale stationary use;
+      says 3,500+ systems running.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: plans production in Africa, Europe
+    and North America; manufacturing location not stated. Evidence: https://www.wrightenergystorage.com https://www.wrightenergystorage.com/about
+    Region sources: inven-ny-storage. Confidence: medium. Unresolved: Founding year, headcount, funding, factory
+    location.'
+- id: yank-technologies
+  name: Yank Technologies
+  website: https://yanktechnologies.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Long-range, high-power wireless charging systems for vehicles and devices.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Evidence: https://yanktechnologies.com Region
+    sources: inven-ny-power-electronics. Confidence: medium. Unresolved: Founding year, headcount, funding.'

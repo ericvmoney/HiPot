@@ -71,6 +71,115 @@ sources:
 - id: njeda-csit-rd-vouchers
   name: NJEDA CSIT initial Clean Tech R&D voucher awardees (2021)
   url: https://www.njeda.gov/csit-announces-initial-clean-tech-rd-program-awardees/
+- id: bny-tenants
+  name: Brooklyn Navy Yard tenant directory (tenant pages via sitemap)
+  url: https://www.brooklynnavyyard.org/tenant-sitemap.xml
+  note: 322 tenant slugs screened by name; likely candidates opened; Power/Energy sector page lists no tenants
+- id: nycedc-bat-pilots
+  name: NYCEDC Climate Innovation Pilot Program at Brooklyn Army Terminal (2023 release)
+  url: https://edc.nyc/press-release/nycedc-launches-climate-innovation-pilot-program-brooklyn-army-terminal-sunset-park
+  note: edc.nyc /node/ pages then returned a Radware bot challenge; stopped using edc.nyc (2025 cohort releases
+    not read)
+- id: choosenj-clean-energy
+  name: Choose New Jersey clean energy industry page (industry leaders logos)
+  url: https://www.choosenj.com/key-industries/clean-energy/
+  note: logos only; clean energy guide is form-gated
+- id: rutgers-ecocomplex
+  name: Rutgers EcoComplex clean-energy incubator businesses (current and graduates)
+  url: https://ecocomplex.rutgers.edu/incubator-businesses.html
+  note: names only for graduates; HiT Nano and Princeton NuEnergy already in pass A
+- id: governor-plug-slingerlands
+  name: 'NY Governor release: Plug Power $55M Slingerlands manufacturing facility'
+  url: https://www.governor.ny.gov/news/governor-hochul-announces-groundbreaking-plug-powers-55-million-manufacturing-facility-albany
+- id: governor-ge-vernova-schenectady
+  name: 'NY Governor release: GE Vernova $41M Schenectady plant investment'
+  url: https://www.governor.ny.gov/news/governor-hochul-announces-ge-vernova-invest-41-million-schenectady-plant-creating-50-new-high
+- id: governor-esd-search
+  name: Web search of governor.ny.gov / esd.ny.gov clean-energy manufacturing releases
+  url: https://esd.ny.gov/industries/cleantech-and-renewable-energy
+  note: ESD cleantech page and factsheet name no companies; most named releases are upstate outside region
+- id: njeda-clean-energy-newsletter-2026-07
+  name: NJEDA Clean Energy Newsletter, July 2026
+  url: https://www.njeda.gov/wp-content/uploads/2026/07/NJEDA-Clean-Energy-Newsletter.pdf
+- id: njeda-take-charge-vendors
+  name: NJEDA Take Charge interested EV-charging vendor list (2026)
+  url: https://www.njeda.gov/wp-content/uploads/2026/03/Take-Charge-Interested-Vendor-List.pdf
+  note: 13 vendors; most out of region, consultants or installers
+- id: search-nj-power-electronics
+  name: Web search results (pv-tech, crunchbase) on NJ power-electronics makers
+  url: https://www.pv-tech.org/princeton_power_systems_opens_new_inverter_energy_storage_production_facili/
+  note: search snippets only
+- id: inven-nj-storage
+  name: 'Inven: Top 22 energy storage companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-22-energy-storage-companies-in-new-jersey
+- id: inven-ny-storage
+  name: 'Inven: Top 23 energy storage companies in New York'
+  url: https://www.inven.ai/company-lists/top-23-energy-storage-companies-in-new-york
+  note: statewide list; upstate entries outside region skipped
+- id: inven-ny-power-electronics
+  name: 'Inven: Top 23 power electronics companies in New York'
+  url: https://www.inven.ai/company-lists/top-23-power-electronics-companies-in-new-york
+  note: mostly generic/aerospace power supplies, skipped
+- id: inven-nj-power-electronics
+  name: 'Inven: Top 21 power electronics companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-21-power-electronics-companies-in-new-jersey
+  note: mostly generic power supplies and distributors, skipped
+- id: inven-ny-ev
+  name: 'Inven: Top 23 electric vehicle companies in New York'
+  url: https://www.inven.ai/company-lists/top-23-electric-vehicle-companies-in-new-york
+- id: inven-nj-ev
+  name: 'Inven: Top 24 electric vehicle companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-24-electric-vehicle-companies-in-new-jersey
+  note: many electrical contractors, skipped
+- id: inven-ny-solar-mfg
+  name: 'Inven: Top 22 solar panel manufacturing companies in New York'
+  url: https://www.inven.ai/company-lists/top-22-solar-panel-manufacturing-companies-in-new-york
+  note: almost all installers
+- id: inven-nj-solar-mfg
+  name: 'Inven: Top 23 solar panel manufacturing companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-23-solar-panel-manufacturing-companies-in-new-jersey
+  note: almost all installers/distributors
+- id: inven-ny-smart-grid
+  name: 'Inven: Top 22 smart grid companies in New York'
+  url: https://www.inven.ai/company-lists/top-22-smart-grid-companies-in-new-york
+- id: inven-nj-smart-grid
+  name: 'Inven: Top 19 smart grid companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-19-smart-grid-companies-in-new-jersey
+- id: inven-ny-wind
+  name: 'Inven: Top 24 wind energy companies in New York'
+  url: https://www.inven.ai/company-lists/top-24-wind-energy-companies-in-new-york
+  note: mostly developers, retailers, consultants
+- id: inven-nj-wind
+  name: 'Inven: Top 19 wind energy companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-19-wind-energy-companies-in-new-jersey
+  note: mostly developers, contractors, consultants
+- id: inven-nj-geothermal
+  name: 'Inven: Top 22 geothermal energy companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-22-geothermal-energy-companies-in-new-jersey
+- id: inven-nj-water
+  name: 'Inven: Top 19 water treatment companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-19-water-treatment-companies-in-new-jersey
+- id: inven-ny-water
+  name: 'Inven: Top 23 water treatment companies in New York'
+  url: https://www.inven.ai/company-lists/top-23-water-treatment-companies-in-new-york
+- id: inven-ny-renewable
+  name: 'Inven: Top 21 renewable energy companies in New York'
+  url: https://www.inven.ai/company-lists/top-21-renewable-energy-companies-in-new-york
+  note: mostly developers and investors
+- id: inven-nj-renewable
+  name: 'Inven: Top 20 renewable energy companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-20-renewable-energy-companies-in-new-jersey
+  note: mostly developers and installers
+- id: inven-nj-ewaste
+  name: 'Inven: Top 24 e-waste recycling companies in New Jersey'
+  url: https://www.inven.ai/company-lists/top-24-e-waste-recycling-companies-in-new-jersey
+- id: inven-ny-ewaste
+  name: 'Inven: Top 22 e-waste recycling companies in New York'
+  url: https://www.inven.ai/company-lists/top-22-e-waste-recycling-companies-in-new-york
+- id: search-hudson-valley
+  name: Web search results on Hudson Valley clean-energy manufacturing
+  url: https://solarindustrymag.com/solartech-renewables-to-open-new-york-manufacturing-plant
+  note: search snippet only
 - id: activate
   name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
   url: https://activate-companies-index.softr.app/
@@ -156,6 +265,36 @@ sources:
   note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
     climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
 companies:
+- name: Actasys
+  website: https://www.actasysinc.com
+  hq: Brooklyn, NY
+  sources:
+  - bny-tenants
+  registry_id: actasys
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Adsorptech
+  website: https://adsorptech.com
+  hq: Middlesex, NJ
+  sources:
+  - rutgers-ecocomplex
+  registry_id: adsorptech
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: AERG
+  website: null
+  hq: New Jersey
+  sources:
+  - rutgers-ecocomplex
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
 - name: Air Company
   website: https://aircompany.com
   hq: Brooklyn, NY
@@ -178,7 +317,18 @@ companies:
   - njeda-csit-demo-r2
   registry_id: null
   decision: null
-  reason: Its site is a placeholder; product and status not established.
+  reason: Identity check found nothing conclusive. Identity is clear (AIVacua LLC, grant recipient) but the site
+    is still a placeholder and no newer activity was found; neither active nor closed can be shown.
+  ats: null
+  open_roles: null
+- name: AL-G Technologies
+  website: null
+  hq: New Jersey
+  sources:
+  - rutgers-ecocomplex
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: Amatec
@@ -225,6 +375,26 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Applied Power
+  website: https://appliedps.com
+  hq: Hicksville, NY
+  sources:
+  - inven-ny-power-electronics
+  registry_id: applied-power
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Aquatherm Industries
+  website: https://aquathermsolar.com
+  hq: Lakewood, NJ
+  sources:
+  - inven-nj-geothermal
+  registry_id: aquatherm-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
 - name: Arbela Laboratories
   website: null
   hq: Randolph, NJ
@@ -246,6 +416,16 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Auxilium Energy
+  website: null
+  hq: New Jersey
+  sources:
+  - rutgers-ecocomplex
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
 - name: Bettergy
   website: https://bettergy.com
   hq: Peekskill, NY
@@ -254,6 +434,16 @@ companies:
   registry_id: bettergy
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Biopipe
+  website: https://biopipe.co
+  hq: Ridgefield Park, NJ
+  sources:
+  - inven-nj-water
+  registry_id: biopipe
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
   ats: null
   open_roles: null
 - name: BlocPower
@@ -275,19 +465,20 @@ companies:
   - njeda-csit-seed-45
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Identity (product, town) now known, but no website or post-2022
+    activity found; D&B not fetched.
   ats: null
   open_roles: null
 - name: BRISEA Group
-  website: null
+  website: https://brisea.com
   hq: Parsippany, NJ
   sources:
   - njeda-csit-demo-r1
   - njeda-csit-seed-45
   - njeda-csit-rd-vouchers
   registry_id: null
-  decision: null
-  reason: No site found; the source's description suggests technology-transfer services. Identity not established.
+  decision: not-in-scope
+  reason: Environmental and energy consulting, incubation and project development; no product of its own.
   ats: null
   open_roles: null
 - name: Brookhaven Technology Group
@@ -372,14 +563,24 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Cenntro Electric Group
+  website: https://cenntroauto.com
+  hq: Freehold, NJ
+  sources:
+  - inven-nj-ev
+  registry_id: cenntro-electric-group
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
 - name: Cero NJ
-  website: https://cero-global.com
+  website: https://www.cero-global.com
   hq: Edgewater, NJ
   sources:
   - njeda-csit-seed-r4
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: cero-nj
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: ChemFinity Technologies
@@ -390,6 +591,16 @@ companies:
   registry_id: chemfinity-technologies
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Chemical and Metal Technologies
+  website: null
+  hq: New Jersey
+  sources:
+  - rutgers-ecocomplex
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: Clip
@@ -420,6 +631,18 @@ companies:
   registry_id: null
   decision: not-in-scope
   reason: Building inspection, commissioning and energy-management services.
+  ats: null
+  open_roles: null
+- name: Convalt Energy
+  website: https://convalt.com
+  hq: New York, NY
+  sources:
+  - inven-ny-renewable
+  - inven-ny-solar-mfg
+  - inven-ny-wind
+  registry_id: null
+  decision: null
+  reason: Its solar factories are proposed or on hold; no operating product found.
   ats: null
   open_roles: null
 - name: Convergent Energy + Power
@@ -455,14 +678,24 @@ companies:
     sourcing, cost and carbon emissions.'
   ats: null
   open_roles: null
+- name: Curtis Instruments
+  website: https://www.curtisinstruments.com
+  hq: Mount Kisco, NY
+  sources:
+  - inven-ny-ev
+  registry_id: curtis-instruments
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
 - name: Cycle Retrotech
   website: null
   hq: Long Island City, NY
   sources:
   - governor-empire-prize
   registry_id: null
-  decision: null
-  reason: Named as a retrofit partner of Hydronic Shell; whether it makes a product or is a contractor is not established.
+  decision: not-in-scope
+  reason: Multifamily retrofit provider (project management and installation), not a maker.
   ats: null
   open_roles: null
 - name: Dandelion Energy
@@ -476,6 +709,39 @@ companies:
   ats:
     type: ashby
     token: dandelion
+  open_roles: null
+- name: David Energy
+  website: https://davidenergy.com
+  hq: New York, NY
+  sources:
+  - inven-ny-smart-grid
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Retail electricity supply for businesses in Con Edison territory, bundled with
+    free plug-in LFP batteries it installs and manages remotely.'
+  ats:
+    type: ashby
+    token: davidenergy
+  open_roles: 0
+- name: Dranetz
+  website: https://dranetz.com
+  hq: Edison, NJ
+  sources:
+  - inven-nj-smart-grid
+  registry_id: dranetz
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Dynatec Systems
+  website: https://dynatecsystems.com
+  hq: Burlington, NJ
+  sources:
+  - inven-nj-water
+  registry_id: dynatec-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
   open_roles: null
 - name: EEW American Offshore Structures
   website: https://eew-group.com
@@ -498,6 +764,36 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Electro Industries/GaugeTech
+  website: https://electroind.com
+  hq: Westbury, NY
+  sources:
+  - inven-ny-smart-grid
+  registry_id: electro-industries-gaugetech
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Electronic Concepts
+  website: https://ecicaps.com
+  hq: Eatontown, NJ
+  sources:
+  - inven-nj-power-electronics
+  registry_id: electronic-concepts
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Energy Catalysis
+  website: null
+  hq: Bordentown, NJ
+  sources:
+  - rutgers-ecocomplex
+  registry_id: energy-catalysis
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
+  ats: null
+  open_roles: null
 - name: Energy Research Company
   website: https://er-co.com
   hq: Plainfield, NJ
@@ -509,6 +805,32 @@ companies:
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
   ats: null
+  open_roles: null
+- name: Enertiv
+  website: https://www.enertiv.com
+  hq: New York, NY
+  sources:
+  - nycedc-bat-pilots
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Sustainability software platform for commercial real estate (reporting/compliance,
+    decarbonization planning, real-time monitoring, tenant utility bill'
+  ats:
+    type: rippling
+    token: enertiv-jobs
+  open_roles: 1
+- name: Eos Energy Enterprises
+  website: https://www.eose.com
+  hq: Edison, NJ
+  sources:
+  - inven-nj-storage
+  - inven-nj-geothermal
+  registry_id: eos-energy-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats:
+    type: workday
+    token: eosenergystorage.wd1.myworkdayjobs.com/EoS
   open_roles: null
 - name: EV Buddy
   website: https://evbuddy.net
@@ -535,6 +857,7 @@ companies:
   website: https://everyelectric.com
   hq: Brooklyn, NY
   sources:
+  - bny-tenants
   - activate
   registry_id: every-electric
   decision: registry
@@ -557,8 +880,9 @@ companies:
   sources:
   - njeda-csit-seed-45
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure inferred from the lapsed domain
+    and no news after 2022; moderate confidence.
   ats: null
   open_roles: null
 - name: Exodys Energy
@@ -605,14 +929,35 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Fluitec Wind
+  website: https://fluitecwind.com
+  hq: Jersey City, NJ
+  sources:
+  - inven-nj-wind
+  registry_id: fluitec-wind
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
 - name: FPG PowerPLUS
   website: https://1fpg.com
-  hq: New Jersey
+  hq: Manchester and Flanders, NJ
   sources:
   - njeda-csit-seed-45
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Power and electrification unit of First Priority Group, an emergency-vehicle builder and dealer; no product
+    of its own described.
+  ats: null
+  open_roles: null
+- name: Fuji Electric Corp. of America
+  website: https://americas.fujielectric.com
+  hq: Edison, NJ
+  sources:
+  - inven-nj-power-electronics
+  registry_id: fuji-electric-corp-of-america
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
   ats: null
   open_roles: null
 - name: Fundamental Carbon
@@ -625,6 +970,20 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: GE Vernova
+  website: https://www.gevernova.com
+  hq: Cambridge, MA
+  sources:
+  - governor-ge-vernova-schenectady
+  - governor-esd-search
+  - inven-ny-wind
+  registry_id: ge-vernova
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: gevernova
+  open_roles: null
 - name: Gendell Associates
   website: null
   hq: Hudson County, NJ
@@ -632,9 +991,43 @@ companies:
   - njeda-csit-seed-r3
   registry_id: null
   decision: null
-  reason: No site found; the name suggests a professional practice. Identity not established.
+  reason: Identity check found nothing conclusive. The 'P.A.' suffix marks a New Jersey professional association
+    (e.g. an architecture or engineering practice), so this is probably a professional firm with a product side
+    project rather than a startup
   ats: null
   open_roles: null
+- name: Glasco UV
+  website: https://glascouv.com
+  hq: Mahwah, NJ
+  sources:
+  - inven-nj-water
+  registry_id: glasco-uv
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Graver Water Systems
+  website: https://graver.com
+  hq: Warren, NJ
+  sources:
+  - inven-nj-water
+  registry_id: graver-water-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Gravity
+  website: https://gravitytechnologies.com
+  hq: New York, NY
+  sources:
+  - inven-ny-ev
+  registry_id: gravity
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: gravity
+  open_roles: 9
 - name: Green Blu
   website: null
   hq: Hamilton, NJ
@@ -643,6 +1036,17 @@ companies:
   registry_id: null
   decision: duplicate
   reason: Same company as Tidal Metals, which was formerly GreenBlu, Inc.
+  ats: null
+  open_roles: null
+- name: Greenspot Smart Mobility
+  website: https://joingreenspot.com
+  hq: Jersey City, NJ
+  sources:
+  - inven-nj-ev
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops, installs, owns and operates EV charging stations and mobility hubs
+    for cities, property owners and fleets (equipment sourced from others).'
   ats: null
   open_roles: null
 - name: Gridless Power Corporation
@@ -654,6 +1058,38 @@ companies:
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
   ats: null
+  open_roles: null
+- name: H&C Metals
+  website: https://hcmetals.com
+  hq: Newark, NJ
+  sources:
+  - inven-nj-ewaste
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Hevi
+  website: https://gethevi.com
+  hq: East Windsor, NJ
+  sources:
+  - inven-nj-ev
+  registry_id: hevi
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Hevo
+  website: https://hevo.com
+  hq: New York, NY (Brooklyn)
+  sources:
+  - inven-ny-ev
+  registry_id: hevo
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: hevo
   open_roles: null
 - name: HiT Nano
   website: https://hitnanoinc.com
@@ -679,6 +1115,26 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
   ats: null
   open_roles: null
+- name: Hugo Neu
+  website: https://hugoneu.com
+  hq: New York, NY
+  sources:
+  - inven-ny-ewaste
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Hungerford & Terry
+  website: https://hungerfordterry.com
+  hq: Clayton, NJ
+  sources:
+  - inven-nj-water
+  registry_id: hungerford-and-terry
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
 - name: Hydronic Shell Technologies
   website: https://hydronicshell.com
   hq: Long Island City, NY
@@ -700,14 +1156,24 @@ companies:
     bill storage.'
   ats: null
   open_roles: null
+- name: Igneo
+  website: https://igneo.com
+  hq: White Plains, NY
+  sources:
+  - inven-ny-ewaste
+  registry_id: igneo
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
 - name: Innate Energy
   website: null
   hq: New York, NY
   sources:
   - activate
-  registry_id: null
-  decision: null
-  reason: innate.energy belongs to an unrelated business; the company's own site was not found.
+  registry_id: innate-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats:
     type: ashby
     token: innate
@@ -722,20 +1188,42 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: It's Electric
-  website: https://itselectric.us
+- name: IoTecha
+  website: https://iotecha.com
+  hq: Cranbury, NJ
+  sources:
+  - inven-nj-ev
+  - inven-nj-smart-grid
+  registry_id: null
+  decision: null
+  reason: Its domain no longer resolves; status not established.
+  ats: null
+  open_roles: null
+- name: itselectric
+  website: https://www.itselectric.us
   hq: Brooklyn, NY
   sources:
+  - nycedc-bat-pilots
   - third-derivative
   - greentown
   - laci
-  registry_id: it-s-electric
-  decision: registry
-  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  registry_id: null
+  decision: duplicate
+  reason: Same company as It's Electric.
   ats:
     type: workable
     token: itselectric
   open_roles: 2
+- name: Karh
+  website: https://karh.energy
+  hq: New York, NY
+  sources:
+  - inven-ny-smart-grid
+  registry_id: null
+  decision: null
+  reason: Its site has almost no content; identity not established.
+  ats: null
+  open_roles: null
 - name: Kelvin
   website: https://kel.vin
   hq: Brooklyn, NY
@@ -744,6 +1232,62 @@ companies:
   registry_id: kelvin
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Key Capture Energy
+  website: https://keycaptureenergy.com
+  hq: Albany, NY
+  sources:
+  - inven-ny-storage
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops, owns and operates large battery-storage projects; a project developer, not a maker.
+  ats:
+    type: jazzhr
+    token: 20230417161904_8clld49cklrdhnma
+  open_roles: null
+- name: Komline-Sanderson
+  website: https://komline.com
+  hq: Peapack, NJ
+  sources:
+  - inven-nj-water
+  registry_id: komline-sanderson
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats:
+    type: adp
+    token: 612bb66e-3607-4733-b0b5-ee07c92bf575
+  open_roles: null
+- name: Leviton
+  website: https://www.leviton.com
+  hq: Melville, NY
+  sources:
+  - inven-ny-smart-grid
+  registry_id: leviton
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
+  ats:
+    type: icims
+    token: internal-leviton
+  open_roles: null
+- name: Levy Electric
+  website: https://levyelectric.com
+  hq: New York, NY
+  sources:
+  - inven-ny-ev
+  registry_id: levy-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Lynkwell
+  website: https://lynkwell.com
+  hq: Albany, NY
+  sources:
+  - inven-ny-ev
+  registry_id: null
+  decision: not-in-scope
+  reason: EV-charging management software and services; most of its chargers come from other makers.
   ats: null
   open_roles: null
 - name: Materium Technologies
@@ -767,14 +1311,25 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: MGN MicroGrid Networks
+  website: https://mgn.energy
+  hq: New York, NY
+  sources:
+  - inven-ny-storage
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops and operates battery-storage facilities; a project developer, not a maker.
+  ats: null
+  open_roles: null
 - name: Michrinik Technologies
   website: null
   hq: Cedar Knolls, NJ
   sources:
   - njeda-csit-rd-vouchers
   registry_id: null
-  decision: null
-  reason: No site found; product known only from the grant source.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure inferred from the lapsed domain
+    and no trace after 2021; moderate confidence.
   ats: null
   open_roles: null
 - name: Miller Proctor Nickolas (MPN)
@@ -799,6 +1354,16 @@ companies:
     type: lever
     token: mimic
   open_roles: 1
+- name: mPhase Technologies
+  website: https://mphasetech.com
+  hq: Clifton, NJ
+  sources:
+  - inven-nj-ev
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
 - name: NanoSepex
   website: null
   hq: Bridgewater, NJ
@@ -806,9 +1371,9 @@ companies:
   - njeda-csit-seed-r4
   - njeda-csit-demo-r2
   - njeda-csit-rd-vouchers
-  registry_id: null
-  decision: null
-  reason: No site found; product known only from the grant source.
+  registry_id: nanosepex
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Neutroelectric (BECQ)
@@ -820,6 +1385,26 @@ companies:
   registry_id: neutroelectric-becq
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: New Age Solar
+  website: https://newagesolar.com
+  hq: Clarksburg, NJ
+  sources:
+  - inven-nj-storage
+  registry_id: null
+  decision: null
+  reason: May be a reseller or assembler rather than a maker; not established.
+  ats: null
+  open_roles: null
+- name: NezaBikes
+  website: https://nezabikes.com
+  hq: Brooklyn, NY
+  sources:
+  - bny-tenants
+  registry_id: null
+  decision: closed
+  reason: 'Closed: domain no longer resolves (DNS ENOTFOUND, 2026-11-25) identity uncertain'
   ats: null
   open_roles: null
 - name: Ninedot Energy
@@ -837,6 +1422,16 @@ companies:
   hq: Keyport, NJ
   sources:
   - njeda-csit-seed-r4
+  registry_id: noble-geofurnace
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Novele
+  website: https://novele.com
+  hq: New York, NY
+  sources:
+  - inven-ny-storage
   registry_id: null
   decision: null
   reason: Named by a source, but the company could not be identified.
@@ -847,6 +1442,49 @@ companies:
   hq: Bridgewater, NJ
   sources:
   - njeda-csit-seed-r4
+  registry_id: novtech
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Nuvvon
+  website: https://nuvvon.com
+  hq: Parsippany, NJ
+  sources:
+  - rutgers-ecocomplex
+  registry_id: nuvvon
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NWL
+  website: https://nwl.com
+  hq: Bordentown, NJ
+  sources:
+  - inven-nj-power-electronics
+  registry_id: nwl
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Ocean Power Technologies
+  website: https://oceanpowertechnologies.com
+  hq: Monroe Township, NJ
+  sources:
+  - njeda-clean-energy-newsletter-2026-07
+  - inven-nj-storage
+  registry_id: ocean-power-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats:
+    type: adp
+    token: c353f402-97ea-4b3b-9103-73bbb3211550
+  open_roles: null
+- name: OhmGrid
+  website: https://ohmgrid.com
+  hq: Marlton, NJ
+  sources:
+  - inven-nj-storage
   registry_id: null
   decision: null
   reason: Named by a source, but the company could not be identified.
@@ -868,8 +1506,41 @@ companies:
   sources:
   - activate
   registry_id: null
-  decision: null
-  reason: onednano.com refused connections; product known only from the grant source.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure inferred from both domains
+    being expired or parked; no last-news date found (web search quota ran out). Moderate confidence.
+  ats: null
+  open_roles: null
+- name: Orenda
+  website: https://orendapower.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-storage
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops, builds and operates battery-storage projects; a project developer, not a maker.
+  ats:
+    type: greenhouse
+    token: orenda
+  open_roles: 17
+- name: Pallidus
+  website: https://pallidus.com
+  hq: Albany, NY
+  sources:
+  - inven-ny-power-electronics
+  registry_id: pallidus
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Panasonic Electric Works Corp. of America
+  website: https://pewa.panasonic.com
+  hq: New Providence, NJ
+  sources:
+  - inven-nj-power-electronics
+  registry_id: panasonic-electric-works-corp-of-america
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Pave Motors
@@ -899,7 +1570,19 @@ companies:
   - njeda-csit-seed-45
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Identity known only from 2022 grant records; no website or later
+    activity found.
+  ats: null
+  open_roles: null
+- name: PK Metals
+  website: https://pkmetals.com
+  hq: Coram, NY
+  sources:
+  - inven-ny-ewaste
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Full-service scrap recycling yard for metals, plastic, electronics and cardboard,
+    plus debris container and transport services on Long Island.'
   ats: null
   open_roles: null
 - name: Pliant Energy Systems
@@ -912,15 +1595,39 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
   ats: null
   open_roles: null
+- name: Plug Power
+  website: https://www.plugpower.com
+  hq: Latham, NY
+  sources:
+  - governor-plug-slingerlands
+  - governor-esd-search
+  registry_id: plug-power
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats:
+    type: workday
+    token: plugpower.wd5.myworkdayjobs.com/Plug_Power_Inc
+  open_roles: null
+- name: Polaris America
+  website: https://polarisamerica.com
+  hq: Allenwood, NJ
+  sources:
+  - inven-nj-wind
+  - inven-nj-geothermal
+  registry_id: polaris-america
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
 - name: Pollux Technologies
-  website: null
-  hq: Middlesex County, NJ
+  website: https://lumiaq.com
+  hq: Piscataway, NJ
   sources:
   - njeda-csit-seed-45
   - njeda-csit-demo-r2
-  registry_id: null
-  decision: null
-  reason: No site found; product known only from the grant source.
+  registry_id: pollux-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: PolyGone Systems
@@ -939,6 +1646,18 @@ companies:
   sources:
   - ufl-acre
   registry_id: popwheels
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Power Edison
+  website: https://www.poweredison.com
+  hq: New Jersey
+  sources:
+  - choosenj-clean-energy
+  - inven-nj-storage
+  - inven-nj-smart-grid
+  registry_id: power-edison
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
@@ -979,6 +1698,17 @@ companies:
     type: bamboohr
     token: pnecycle
   open_roles: 6
+- name: Princeton Power Systems
+  website: null
+  hq: Lawrence Township
+  sources:
+  - search-nj-power-electronics
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closure unconfirmed: only directory listings (Craft ''Closed'', CB Insights ''Out of Business'',
+    updated 2014) seen via search snippets military applications were a stated market'
+  ats: null
+  open_roles: null
 - name: Project Plastic
   website: https://projectplastic.site
   hq: New Jersey
@@ -999,6 +1729,16 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Pvilion
+  website: https://pvilion.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-solar-mfg
+  registry_id: pvilion
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
 - name: PwrCor
   website: https://pwrcor.com
   hq: New York, NY
@@ -1007,6 +1747,26 @@ companies:
   registry_id: pwrcor
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: QEI
+  website: https://qeiinc.com
+  hq: Springfield, NJ
+  sources:
+  - inven-nj-smart-grid
+  registry_id: qei
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Quadlogic Controls
+  website: https://quadlogic.com
+  hq: Long Island City, NY
+  sources:
+  - inven-ny-smart-grid
+  registry_id: quadlogic-controls
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Queens Carbon
@@ -1023,6 +1783,16 @@ companies:
     type: breezy
     token: queens-carbon
   open_roles: 5
+- name: Radiator Labs
+  website: https://www.radiatorlabs.com
+  hq: Brooklyn, NY
+  sources:
+  - bny-tenants
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Kelvin (renamed in 2023).
+  ats: null
+  open_roles: null
 - name: Redox Metals
   website: null
   hq: New York
@@ -1047,6 +1817,69 @@ companies:
     type: breezy
     token: renewco2
   open_roles: 9
+- name: ResinTech
+  website: https://resintech.com
+  hq: Camden, NJ
+  sources:
+  - inven-nj-water
+  registry_id: resintech
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: adp
+    token: 5093d500-696f-400d-a0a9-fa327104888a
+  open_roles: null
+- name: REV Charging
+  website: https://www.revfastcharging.com
+  hq: Newark, NJ
+  sources:
+  - njeda-take-charge-vendors
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: DC fast and 80 A Level 2 EV charging ''solutions'' (site wording); NJEDA vendor
+    list describes REV Charging LLC as EV charging as a service, technical a'
+  ats: null
+  open_roles: null
+- name: Revel
+  website: https://gorevel.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-ev
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Public DC fast-charging hubs in cities (100 live stalls, 260+ coming); fleet
+    charging; rideshare not described on current home page.'
+  ats:
+    type: ashby
+    token: revel
+  open_roles: 30
+- name: Revivn
+  website: https://www.revivn.com
+  hq: Brooklyn, NY
+  sources:
+  - bny-tenants
+  - inven-ny-ewaste
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: IT hardware lifecycle service: device pickup, data sanitization, asset tracking
+    and reporting, with device donations to nonprofits.'
+  ats:
+    type: greenhouse
+    token: revivn
+  open_roles: 12
+- name: Reworld
+  website: https://www.reworldwaste.com
+  hq: Florham Park, NJ
+  sources:
+  - choosenj-clean-energy
+  - inven-nj-ewaste
+  registry_id: reworld
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
+  ats:
+    type: workday
+    token: reworld.wd5.myworkdayjobs.com/External
+  open_roles: null
 - name: Riggs Distler & Company
   website: https://www.riggsdistler.com
   hq: Cherry Hill, NJ
@@ -1065,8 +1898,9 @@ companies:
   sources:
   - njeda-csit-rd-vouchers
   registry_id: null
-  decision: null
-  reason: No site found; product known only from the grant source.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure inferred from the lapsed domain
+    and no trace after 2021; moderate confidence. Not searched by name (search quota spent).
   ats: null
   open_roles: null
 - name: Runwise
@@ -1082,6 +1916,41 @@ companies:
   ats:
     type: greenhouse
     token: runwise
+  open_roles: null
+- name: SAMR
+  website: https://samrinc.com
+  hq: Lakewood, NJ
+  sources:
+  - inven-nj-ewaste
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: samrinc.com now serves EACR Inc., an electronics, battery, lamp and solar-panel
+    recycling and data-destruction service with a licensed facility in Lak'
+  ats: null
+  open_roles: null
+- name: Satec
+  website: https://satec-global.com
+  hq: Union, NJ
+  sources:
+  - inven-nj-smart-grid
+  registry_id: satec
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Scale Microgrids
+  website: https://scalemicrogrids.com
+  hq: New Jersey (city not confirmed; job listing shows Ridgewood, NJ)
+  sources:
+  - choosenj-clean-energy
+  - inven-nj-storage
+  - inven-nj-smart-grid
+  registry_id: scale-microgrids
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: ScaleMicrogridSolutions
   open_roles: null
 - name: Shutterbug Exchange
   website: https://shutterbugexchange.com
@@ -1114,6 +1983,36 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Solar Compounds Corporation
+  website: https://solarcompounds.com
+  hq: Linden, NJ
+  sources:
+  - inven-nj-solar-mfg
+  registry_id: null
+  decision: null
+  reason: Its site sells cables, not the solar panels the source described; whether it makes anything is not established.
+  ats: null
+  open_roles: null
+- name: SolarTech Renewables
+  website: null
+  hq: Kingston, NY
+  sources:
+  - search-hudson-valley
+  registry_id: null
+  decision: closed
+  reason: 'Inferred: only 2009-2011 news found and no website.'
+  ats: null
+  open_roles: null
+- name: SSI Aeration
+  website: https://ssiaeration.com
+  hq: Poughkeepsie, NY
+  sources:
+  - inven-ny-water
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
 - name: Still Bright
   website: https://stillbright.co
   hq: Kenilworth, NJ
@@ -1129,14 +2028,25 @@ companies:
     type: ashby
     token: stillbright
   open_roles: null
+- name: Sun Source Energy Products
+  website: https://sunsourceproducts.com
+  hq: Netcong, NJ
+  sources:
+  - inven-nj-solar-mfg
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Factory-authorized distributor/wholesaler of solar thermal water and pool heating
+    equipment (SunEarth and Aquatherm collectors, tanks, controllers).'
+  ats: null
+  open_roles: null
 - name: Sunowner
-  website: null
-  hq: New Jersey
+  website: https://sunowner.com
+  hq: Whippany, NJ
   sources:
   - njeda-csit-seed-45
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Residential solar sales and installation.
   ats: null
   open_roles: null
 - name: SunRay Scientific
@@ -1152,13 +2062,13 @@ companies:
   ats: null
   open_roles: null
 - name: Sunthetics
-  website: null
+  website: https://sunthetics.io
   hq: New York, NY
   sources:
   - ufl-acre
   registry_id: null
-  decision: null
-  reason: Its domain is for sale; current status not established.
+  decision: not-in-scope
+  reason: Pivoted to SuntheticsML, an AI experimentation platform for chemical R&D (software).
   ats: null
   open_roles: null
 - name: SuperClean Glass
@@ -1173,14 +2083,27 @@ companies:
   open_roles: null
 - name: Swind Power
   website: null
-  hq: Princeton, NJ
+  hq: Princeton Junction, NJ
   sources:
   - njeda-csit-demo-r1
   - njeda-csit-seed-45
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: swind-power
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
+  open_roles: null
+- name: TerraCycle
+  website: https://www.terracycle.com
+  hq: Trenton, NJ
+  sources:
+  - rutgers-ecocomplex
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Collection and recycling programs for hard-to-recycle waste (Zero Waste Box,
+    brand-sponsored programs, commercial and municipal programs) and the Loop'
+  ats:
+    type: paylocity
+    token: 0e6f52c3-18b3-4884-ab4d-e1d9947cbe07
   open_roles: null
 - name: Thea Energy
   website: https://thea.energy
@@ -1217,6 +2140,26 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Treadstone Technologies
+  website: https://www.treadstone-technologies.com
+  hq: Monmouth Junction, NJ
+  sources:
+  - inven-nj-storage
+  registry_id: treadstone-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Triton Solar
+  website: https://tritonsolar.com
+  hq: Cherry Hill, NJ
+  sources:
+  - inven-nj-storage
+  registry_id: null
+  decision: null
+  reason: May be a reseller rather than a maker; not established.
+  ats: null
+  open_roles: null
 - name: Turnover Labs
   website: https://turnoverlabs.com
   hq: Brooklyn, NY
@@ -1226,6 +2169,57 @@ companies:
   registry_id: turnover-labs
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: UGSI Chemical Feed
+  website: https://ugsichemicalfeed.com
+  hq: Vineland, NJ
+  sources:
+  - inven-nj-water
+  registry_id: ugsi-chemical-feed
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Unagi Scooters
+  website: https://unagiscooters.com
+  hq: New York, NY
+  sources:
+  - inven-ny-ev
+  registry_id: unagi-scooters
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Unique Electric Solutions
+  website: https://uesmfg.com
+  hq: Smithtown, NY
+  sources:
+  - inven-ny-ev
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: United Wind
+  website: https://unitedwind.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-wind
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Distributed wind developer that leased other makers'' turbines (e.g. Bergey Excel
+    10) to farms and businesses through WindLease; it did not make turbin'
+  ats: null
+  open_roles: null
+- name: UnitedSiC (Qorvo)
+  website: https://unitedsic.com
+  hq: Princeton, NJ
+  sources:
+  - inven-nj-ev
+  registry_id: unitedsic-qorvo
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup out.'
   ats: null
   open_roles: null
 - name: Urban Electric Power
@@ -1247,6 +2241,16 @@ companies:
   registry_id: urban-mining-industries
   decision: registry
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Verdant Power
+  website: https://verdantpower.com
+  hq: New York, NY
+  sources:
+  - inven-ny-renewable
+  registry_id: null
+  decision: null
+  reason: Its site now describes advisory services rather than turbines; current business not established.
   ats: null
   open_roles: null
 - name: Voltaic Systems
@@ -1271,6 +2275,18 @@ companies:
   reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: Wedeco (Xylem)
+  website: https://wedeco.com
+  hq: Rye Brook, NY
+  sources:
+  - inven-ny-water
+  registry_id: wedeco-xylem
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats:
+    type: workday
+    token: xylem.wd5.myworkdayjobs.com/xylem-careers
+  open_roles: null
 - name: WeSolar CSP
   website: null
   hq: Princeton, NJ
@@ -1278,8 +2294,40 @@ companies:
   - njeda-csit-seed-r1
   - njeda-csit-demo-r1
   registry_id: null
-  decision: null
-  reason: No site found; product known only from the grant source.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. The US entity appears wound down (dead
+    domain) while the Dubai parent continues; Justia trademark records returned 403 and were not read. Moderate
+    confidence.
+  ats: null
+  open_roles: null
+- name: Wisewell
+  website: https://wisewell.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-water
+  registry_id: wisewell
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wright Energy Storage Technologies
+  website: https://wrightenergystorage.com
+  hq: New York, NY
+  sources:
+  - inven-ny-storage
+  registry_id: wright-energy-storage-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Yank Technologies
+  website: https://yanktechnologies.com
+  hq: Brooklyn, NY
+  sources:
+  - inven-ny-power-electronics
+  registry_id: yank-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Zaic Design
@@ -1301,6 +2349,10 @@ excluded:
   sources:
   - third-derivative
   reason: Headquartered in Madison, WI, outside the region; no main site in the region found.
+- name: Brilliant Light Power
+  sources:
+  - inven-nj-renewable
+  reason: Headquartered in Newtown, PA, outside the region; no main site in the region found.
 - name: Cella Mineral Storage
   sources:
   - activate
@@ -1312,6 +2364,10 @@ excluded:
   sources:
   - newlab-posts
   reason: Headquartered in Detroit, MI, outside the region; no main site in the region found.
+- name: EMR USA
+  sources:
+  - inven-nj-ewaste
+  reason: 'Headquartered outside the US (Warrington, United Kingdom; site: Camden); no main site in the region found.'
 - name: Fermi Energy
   sources:
   - activate-ny
@@ -1320,15 +2376,31 @@ excluded:
   sources:
   - governor-empire-prize
   reason: Headquartered in Minnesota; no main site in the region found.
+- name: IceStone
+  sources:
+  - bny-tenants
+  reason: Production has moved from the Brooklyn Navy Yard to Georgia.
 - name: LS Cable & System America
   sources:
   - njeda-osw-assessment
   reason: Subsidiary of LS Cable & System (South Korea) with its US base outside the region; no main site in the
     region found.
+- name: Merit Controls
+  sources:
+  - inven-nj-smart-grid
+  reason: Its site gives Bethlehem, PA as headquarters.
+- name: Mersen
+  sources:
+  - choosenj-clean-energy
+  reason: Headquartered in Courbevoie, France; its New Jersey site was not confirmed.
 - name: NextGen Battery Technologies
   sources:
   - njeda-csit-seed-r1
   reason: Headquartered in Arlington, VA, outside the region; no main site in the region found.
+- name: RWL Water
+  sources:
+  - inven-ny-water
+  reason: Headquartered in Plymouth, MN, outside the region; no main site in the region found.
 - name: Solargik
   sources:
   - builtin-nyc-greentech
@@ -1337,6 +2409,14 @@ excluded:
   sources:
   - njeda-osw-assessment
   reason: Headquartered in Carrollton, GA; no main site in the region found.
+- name: Swft
+  sources:
+  - inven-ny-ev
+  reason: Headquartered in Bloomington, MN, outside the region; no main site in the region found.
+- name: Taprogge America
+  sources:
+  - inven-ny-water
+  reason: 'Headquartered outside the US (Wetter (Ruhr), Germany; site: Farmingdal); no main site in the region found.'
 - name: Voltic
   sources:
   - yc
