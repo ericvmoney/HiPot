@@ -239,7 +239,8 @@ companies:
   - search-purdue
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Generic name; a Purdue Foundry or Purdue Research Foundation
+    page would be the next check.
   ats: null
   open_roles: null
 - name: Aeroseal
@@ -271,10 +272,9 @@ companies:
   hq: Chicago, IL
   sources:
   - polsky-resurgence
-  registry_id: null
-  decision: null
-  reason: Early-stage (TRL 2) methane- and CO2-to-fuels process; whether the methane is biogas or natural gas is
-    not established.
+  registry_id: agc-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Air Energy
@@ -301,13 +301,13 @@ companies:
   ats: null
   open_roles: null
 - name: Alpha Nur
-  website: null
-  hq: Chicago, IL
+  website: https://www.alphanur.com
+  hq: Downers Grove, IL
   sources:
   - polsky-resurgence
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: alpha-nur
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: American Battery Solutions
@@ -340,7 +340,8 @@ companies:
   - annarbor-spark-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not searched (search budget spent). Domain is live, so the company
+    likely still exists.
   ats: null
   open_roles: null
 - name: Aquarry
@@ -365,13 +366,13 @@ companies:
   ats: null
   open_roles: null
 - name: ArborWind
-  website: null
+  website: https://www.arborwind.com
   hq: Ann Arbor, MI
   sources:
   - builtin-states
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: arborwind
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Arisdyne Systems
@@ -424,7 +425,8 @@ companies:
   - search-umich
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Generic name; the University of Michigan startup list is excluded
+    by rule (innovationpartnerships.umich.edu).
   ats: null
   open_roles: null
 - name: BeoBatt
@@ -434,7 +436,9 @@ companies:
   - nu-trienens-q
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Domain is registered, which suggests an early venture, but nothing
+    ties it to the source's description. The closest lead is a Northwestern-licensed thermal-runaway separator membrane
+    (inventions.invo
   ats: null
   open_roles: null
 - name: Bila Solar
@@ -580,8 +584,10 @@ companies:
   sources:
   - mhub-energytech
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: 'Inferred from the identity pass; no shutdown notice unless stated. Weak closure: the mHUB Energy Tech
+    Accelerator page still shows a ''Sea Quest'' logo in its portfolio, so a rename to ''Sea Quest'' cannot be ruled
+    out. HQ is from the source.'
   ats: null
   open_roles: null
 - name: Celadyne Technologies
@@ -683,9 +689,9 @@ companies:
   hq: Chanhassen, MN
   sources:
   - cleantech-open-2025
-  registry_id: null
-  decision: null
-  reason: Its site gives no location and little detail; identity not established.
+  registry_id: crucible-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: CryoCellar
@@ -813,8 +819,10 @@ companies:
   sources:
   - search-umich
   registry_id: null
-  decision: null
-  reason: Its site certificate has expired and no recent news was found.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure is inferred (IP sold, dead
+    certificate, no news since 2021), not documented by a filing or announcement. Wellfound profile fetch was refused
+    by this session's permis
   ats: null
   open_roles: null
 - name: Ensor
@@ -824,7 +832,8 @@ companies:
   - search-umn
   registry_id: null
   decision: null
-  reason: No site found; product known only from the source.
+  reason: Identity check found nothing conclusive. Product matches the source but location and activity are unconfirmed.
+    Crunchbase page not fetched.
   ats: null
   open_roles: null
 - name: Enspired Solutions
@@ -844,7 +853,8 @@ companies:
   - evergreen-portfolio
   registry_id: null
   decision: null
-  reason: No activity found after 2016.
+  reason: Identity check found nothing conclusive. Input notes no activity after 2016; closure plausible but not
+    evidenced.
   ats: null
   open_roles: null
 - name: ESSPI
@@ -884,17 +894,18 @@ companies:
   - search-umn
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. May be a UMN licensee shell for CPG technology; nothing confirms
+    it.
   ats: null
   open_roles: null
 - name: Flow Environmental Systems
-  website: null
+  website: https://www.flowenvirosys.com
   hq: Rogers, MN
   sources:
   - grid-catalyst
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: flow-environmental-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Flux XII
@@ -962,7 +973,8 @@ companies:
   - mhub-energytech
   registry_id: null
   decision: null
-  reason: The domain found is an academic lab site; identity not established.
+  reason: Identity check found nothing conclusive. No company domain, address or activity after 2024 found. HQ is
+    from the source.
   ats: null
   open_roles: null
 - name: GenAlpha Nuclear Technologies
@@ -1206,9 +1218,9 @@ companies:
   hq: South Bend, IN
   sources:
   - third-derivative
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: ionic-liquid-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: IROC
@@ -1218,7 +1230,7 @@ companies:
   - search-nu
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Acronym name; may be a research project rather than a company.
   ats: null
   open_roles: null
 - name: JUA Technologies International
@@ -1236,9 +1248,9 @@ companies:
   hq: Batavia, IL
   sources:
   - mhub-energytech
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: kazadi-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: KB Powertrain
@@ -1268,7 +1280,8 @@ companies:
   - search-nu
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Possibly a spinout of the Northwestern low-temperature PFAS destruction
+    work; unconfirmed.
   ats: null
   open_roles: null
 - name: L-H Battery Company
@@ -1376,9 +1389,9 @@ companies:
   hq: Loveland, OH
   sources:
   - mhub-energytech
-  registry_id: null
-  decision: null
-  reason: Its own domain does not resolve; identity not established.
+  registry_id: metasorbex
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Mettle Ops
@@ -1493,9 +1506,9 @@ companies:
   sources:
   - evergreen-portfolio
   - evergreen
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: netenergy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Nexceris (formerly NexTech Materials)
@@ -1576,7 +1589,8 @@ companies:
   - remotefirstjobs
   registry_id: null
   decision: null
-  reason: The domain found belongs to OmniOn Power (ex-ABB Power Conversion); no East Troy, WI company found.
+  reason: Identity check found nothing conclusive. The source (remotefirstjobs) may conflate OmniOn Power with an
+    older East Troy inverter maker of a similar name; not confirmed. Not a match for omnionpower.com.
   ats:
     type: workday
     token: omnionpower.wd5.myworkdayjobs.com/External
@@ -1671,7 +1685,7 @@ companies:
   - search-umn
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Biofuel process, arguably outside clean-energy hardware scope.
   ats: null
   open_roles: null
 - name: Power to Hydrogen (P2H2)
@@ -1687,13 +1701,13 @@ companies:
   ats: null
   open_roles: null
 - name: PRC Wind
-  website: null
+  website: https://www.prcwind.com
   hq: Minneapolis, MN
   sources:
   - builtin-states
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Develops utility-scale wind, solar and storage projects; a project developer, not a maker.
   ats: null
   open_roles: null
 - name: Pyran
@@ -1809,13 +1823,13 @@ companies:
     token: scoutmotors
   open_roles: null
 - name: Searen
-  website: null
-  hq: Norwood, OH
+  website: https://www.searen.com
+  hq: Cincinnati, OH
   sources:
   - builtin-states
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: searen
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Sesame Solar
@@ -1880,8 +1894,9 @@ companies:
   sources:
   - beststartup-ohio
   registry_id: null
-  decision: null
-  reason: Its domain does not resolve; its EdgeEV business continues as EdgeEnergy (listed separately).
+  decision: duplicate
+  reason: Renamed EdgeEnergy, which is listed separately. Rename not independently confirmed this session (edgeenergy.com
+    returned 404 and appears unrelated). Treat as a duplicate of the separate EdgeEnergy entry.
   ats: null
   open_roles: null
 - name: SkySpecs
@@ -1986,7 +2001,8 @@ companies:
   - annarbor-spark-2025
   registry_id: null
   decision: null
-  reason: The domain found (alset.life) is a different company; identity not established.
+  reason: Identity check found nothing conclusive. alset.life should not be used for this entry. Possibly the same
+    team as ALSET (similar product), unconfirmed.
   ats: null
   open_roles: null
 - name: Tikal Industries
@@ -2059,7 +2075,7 @@ companies:
   - ohio-third-frontier
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Possibly an OSU CHPPE spinout; unconfirmed.
   ats: null
   open_roles: null
 - name: Volexion

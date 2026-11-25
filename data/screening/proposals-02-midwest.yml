@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: 75f
   name: 75F
@@ -157,6 +157,33 @@ companies:
     types. Evidence: https://aeternalupcycling.com Region sources: mhub-energytech. Confidence: medium. Unresolved:
     HQ not stated (Chicago backers mHUB and Polsky suggest Chicago, IL, unverified); founded year (site (c) 2023-2026),
     headcount and funding not found.'
+- id: agc-carbon
+  name: AGC Carbon
+  website: https://agccarbon.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Early-stage syngas process that turns methane and CO2 into low-carbon fuels and chemicals; whether its
+      methane is biogas or natural gas is not stated.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: agccarbon.com (fetched 2026-11-25): raising a $3MM Series
+    Seed round; TRL-2 current state Flags: Site does not give HQ; Chicago from polsky-resurgence. Methane feedstock
+    (biogas vs natural gas) still not stated on the site.. Evidence: O w n   s i Region sources: polsky-resurgence.
+    Confidence: low.'
 - id: alithic
   name: Alithic
   website: null
@@ -189,6 +216,33 @@ companies:
     Region sources: uw-spinoffs. Confidence: medium. Unresolved: CB Insights (per search summary) lists Brooklyn,
     NY as HQ while UW coverage places the team and demo plant in Madison (Robertson Road). Domain and headcount
     not found.'
+- id: alpha-nur
+  name: Alpha Nur
+  website: https://www.alphanur.com
+  careers_url: null
+  hq: Downers Grove, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: pre-seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Recycles legacy government nuclear material into HALEU fuel feedstock for advanced reactors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Search-result business profile lists a $30K pre-seed
+    round from the University of Chicago, Aug 2023 (unverified); own site mentions equity financing without amounts
+    and DOE grant selection in 2026 Flags: Nuclear fuel recycling, not storage or hydrogen. Founded 2021 per founder
+    bio on own site; started in Booth College New Venture Challenge.. Evidence: O w n   s i Region sources: polsky-resurgence.
+    Confidence: low.'
 - id: american-battery-solutions
   name: American Battery Solutions
   website: https://www.americanbatterysolutions.com/
@@ -281,6 +335,31 @@ companies:
     Innovations (footer ''Arbor Batteries Inc.''); arborbatteries.com redirects to arborbi.com. A U-M story reportedly
     gives co-founding in 2023 but that page is off limits, so founded left null. Headcount not found; HQ city from
     search results, not the site.'
+- id: arborwind
+  name: ArborWind
+  website: https://www.arborwind.com
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vertical-axis wind turbines (PT180) for farms, C&I sites, schools and communities.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: No dated activity after December 2019 found; site still
+    up. Status after 2019 is unconfirmed.. Evidence: O w n   s i Region sources: builtin-states. Confidence: low.'
 - id: arisdyne-systems
   name: Arisdyne Systems
   website: https://www.arisdyne.com
@@ -868,6 +947,32 @@ companies:
     manufacturer (founded 1945). Evidence: https://www.crown.com/en-us/about-us.html https://builtin.com/company/crown-equipment-corporation
     Region sources: search-ohio-third-frontier. Confidence: high. Unresolved: Fuel-cell forklift work not checked
     on site.'
+- id: crucible-energy
+  name: Crucible Energy
+  website: https://crucible.energy
+  careers_url: null
+  hq: Chanhassen, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Self-healing superconducting mesh power networks with integrated storage, planned with AI grid simulation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Site gives no address; Chanhassen from cleantech-open-2025.
+    Appears pre-product (claims only, no pilot named). No news after June 2025.. Evidence: O w n   s i Region sources:
+    cleantech-open-2025. Confidence: low.'
 - id: cryocellar
   name: CryoCellar
   website: https://cryocellar.com/
@@ -1202,6 +1307,31 @@ companies:
     https://www.areadevelopment.com/newsitems/1-3-2023/eve-energy-north-america-lewis-center-ohio.shtml Region sources:
     e2-announcements. Confidence: medium. Unresolved: No 2024-2026 status for the Lewis Center expansion found;
     company website not identified. Founded 2014 from search-result summary of the cited article.'
+- id: flow-environmental-systems
+  name: Flow Environmental Systems
+  website: https://www.flowenvirosys.com
+  careers_url: null
+  hq: Rogers, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Commercial CO2 heat pumps replacing chillers and boilers in multifamily, office, school and public buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Founded year and funding not stated on either page..
+    Evidence: O w n   s i Region sources: grid-catalyst. Confidence: low.'
 - id: flux-xii
   name: Flux XII
   website: https://www.flux12.com/
@@ -1874,6 +2004,34 @@ companies:
   notes: 'No job board found on the company''s site. Founded: https://inventev.com. Evidence: https://inventev.com
     Region sources: arpa-e. Confidence: medium. Unresolved: Site says founded ''2010/2011''; headcount and funding
     not found; Dealroom 404.'
+- id: ionic-liquid-solutions
+  name: Ionic Liquid Solutions
+  website: https://ionicliquidsolutions.com
+  careers_url: null
+  hq: South Bend, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proprietary ionic-liquid chemistry, including additives enabling next-generation battery electrolytes.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''ionicliquidsolutions.com''. (_ssl.c:1035)).
+    Flags: Site copyright is 2018 and shows no dated news; the third-derivative listing is the only later sign of
+    activity. Treat ''active'' as weak.. Evidence: O w n   s i Region sources: third-derivative. Confidence: low.'
 - id: jua-technologies-international
   name: JUA Technologies International
   website: null
@@ -1903,6 +2061,33 @@ companies:
     Region sources: search-purdue. Confidence: medium. Unresolved: Latest news found is 2022, so current status
     unknown; juatechnologies.com is a domain for sale. A USDA NIFA record lists a Carmel, IN address while Purdue
     places HQ in West Lafayette.'
+- id: kazadi-enterprises
+  name: Kazadi Enterprises
+  website: https://www.kazadienterprises.com/
+  careers_url: null
+  hq: Batavia, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Absorption-based cooling and dehumidification driven by ambient heat, cutting electricity use of commercial
+      refrigeration.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ from the source, not confirmed on a fetched page.
+    A CB Insights snippet implies founding about 2020 (unverified). f4.fund profile answered 403 and was not pursued;
+    Argonne pages excluded by rule.. Evidence: m H U B   E Region sources: mhub-energytech. Confidence: low.'
 - id: kb-powertrain
   name: KB Powertrain
   website: null
@@ -2226,6 +2411,33 @@ companies:
     https://www.citybiz.co/?p=906004 https://www.cbinsights.com/company/marel-power-solutions Region sources: evergreen-portfolio,
     halliburton-labs, evergreen. Confidence: medium. Unresolved: HQ and founded year come from search snippets (CB
     Insights), not opened pages; headcount not found; dealroom slug returned 404.'
+- id: metasorbex
+  name: Metasorbex
+  website: https://www.metasorbex.com/
+  careers_url: null
+  hq: Loveland, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Programmable sorbent materials platform (nanocarbons) for lower-energy carbon capture/utilization and
+      rare-earth separation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Flags:
+    Site gives no address; Loveland, OH from the source. Scope has widened from carbon capture to rare-earth separation..
+    Evidence: O w n   d o Region sources: mhub-energytech. Confidence: low.'
 - id: mettle-ops
   name: Mettle Ops
   website: null
@@ -2497,6 +2709,31 @@ companies:
     Evidence: https://www.natureworksllc.com/about-natureworks https://dealroom.co/companies/natureworks Region
     sources: builtin-states. Confidence: high. Unresolved: Input said Plymouth, MN; Dealroom says Minnetonka, MN;
     own page does not state HQ.'
+- id: netenergy
+  name: NETenergy
+  website: https://www.netenergytes.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Liquid cooling with thermal storage for AI data centers; data-center equipment is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Product focus has moved from commercial air conditioning
+    to data-center cooling with integrated thermal storage. Funding rounds not stated.. Evidence: O w n   s i Region
+    sources: evergreen-portfolio, evergreen. Confidence: low.'
 - id: nexceris-formerly-nextech-materials
   name: Nexceris (formerly NexTech Materials)
   website: https://nexceris.com/
@@ -3004,6 +3241,33 @@ companies:
   notes: 'No job board found on the company''s site. Flags: pivoted from direct air capture to air-pollution control.
     Evidence: https://sandboxenviro.com/index.html Region sources: mhub-energytech. Confidence: medium. Unresolved:
     Site says ''manufacturing in Chicago, IL'' but does not label HQ; founded year, headcount and funding not found.'
+- id: searen
+  name: Searen
+  website: https://www.searen.com
+  careers_url: null
+  hq: Cincinnati, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vacuum AirLift (VAL) water treatment for aquaculture and industrial/municipal water (PFAS, dissolved
+      gases, reuse).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Source said Norwood, OH; the site address is Cincinnati
+    (Norwood is an enclave of Cincinnati). Latest dated item on site is 2023, so activity after 2023 not confirmed..
+    Evidence: O w n   s i Region sources: builtin-states. Confidence: low.'
 - id: sesame-solar
   name: Sesame Solar
   website: https://sesame.solar
