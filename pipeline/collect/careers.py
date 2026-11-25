@@ -1,0 +1,471 @@
+"""Careers-page reader: companies' own careers pages (ATS type 'other').
+
+The registry's board for such a company is the address of its careers page.
+The reader asks robots.txt, then the careers page, and works out what the page
+offers, in this order:
+
+  1. a link to a job-board system: nothing is read here; the run entry says
+     'ats-found' and names the system and token, for the registry;
+  2. schema.org JobPosting blocks on the page;
+  3. links to posting pages on the company's own site (a plain listing): each
+     posting page is read, for its JobPosting block or else its title and text;
+  4. links to the company's jobs on LinkedIn, when the page sends candidates
+     there to apply (PLAN.md decision 12). Only public job pages
+     (linkedin.com/jobs/view/<id>) are read, at least 10 s apart, at most
+     LINKEDIN_CAP a run. Any sign-in wall, CAPTCHA or bot check stops LinkedIn
+     for the rest of the run and the company is 'blocked'.
+
+Other aggregators (Indeed, ZipRecruiter, Glassdoor and the like) are never
+followed, and a posting is kept only when its address is on the company's own
+domain or, for case 4, on linkedin.com.
+
+robots.txt is read but not taken at face value (decision 12): when it
+disallows the careers page, the page is still read, but at most once every
+ROBOTS_DISALLOWED_EVERY days per site. In between, the postings from the last
+read are carried forward with their real last-seen time, and the run entry
+says so. A state file (data/state/careers.json) remembers those reads.
+
+Every other rule of polite fetching holds: at least 3 s between requests to a
+host (10 s for LinkedIn), at most MAX_REQUESTS per company, GET only, no
+JavaScript, no forms, and a stop on any 403, 429, sign-in page or bot check.
+
+Run statuses (schema/raw-jobs-file.schema.json): ok, partial (a cap was hit or
+posting pages failed), none-open, unreadable (JavaScript-built list, PDFs only,
+or nothing recognisable), no-careers-page (the page is gone), ats-found,
+blocked, skipped.
+"""
+from __future__ import annotations
+
+import hashlib
+import html as html_lib
+import json
+import re
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
+from urllib.robotparser import RobotFileParser
+
+from pipeline.collect import normalize
+from pipeline.collect.fetch import Blocked, FetchError
+from pipeline.collect.locations import parse_location, structured_location
+from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_WORDS, ats_links, links,
+                                            on_site, posting_links, refusal, registrable, visible_text)
+from pipeline.collect.text import html_to_text
+from pipeline.io import ROOT
+
+STATE_PATH = ROOT / "data" / "state" / "careers.json"
+MAX_REQUESTS = 25                 # per company per run, robots.txt included
+LINKEDIN_CAP = 30                 # LinkedIn requests per run, all companies together
+ROBOTS_DISALLOWED_EVERY = 7       # days between reads of a site whose robots.txt disallows the page
+MIN_DESCRIPTION = 200
+
+_LINKEDIN_HOST = re.compile(r"(^|\.)linkedin\.com$", re.I)
+_LINKEDIN_JOB = re.compile(r"https?://(?:[a-z]{2,3}\.)?(?:www\.)?linkedin\.com/jobs/view/(?:[^/?#]*-)?(\d{6,})", re.I)
+_LINKEDIN_COMPANY_JOBS = re.compile(r"https?://(?:[a-z]{2,3}\.)?(?:www\.)?linkedin\.com/company/([^/?#]+)/jobs", re.I)
+_LINKEDIN_WALL = re.compile(r"/authwall|/login|/signup|/checkpoint|/uas/", re.I)
+_H1 = re.compile(r"<h1\b[^>]*>(.*?)</h1>", re.I | re.S)
+_TITLE = re.compile(r"<title\b[^>]*>(.*?)</title>", re.I | re.S)
+_MAIN = re.compile(r"<(main|article)\b[^>]*>(.*?)</\1>", re.I | re.S)
+_CHROME = re.compile(r"<(nav|header|footer|aside|form)\b.*?</\1>", re.I | re.S)
+_LOCATION_LINE = re.compile(r"\b(?i:location)\s*[:\-]\s*([A-Z][A-Za-z .'-]+,\s*[A-Z]{2}\b|[A-Z][A-Za-z .'-]+,\s*[A-Z][a-z]+)")
+_PERIOD = {"YEAR": "year", "ANNUAL": "year", "HOUR": "hour", "HOURLY": "hour"}
+_EMPLOYMENT = {"FULL_TIME": "full-time", "PART_TIME": "part-time", "CONTRACTOR": "contract", "TEMPORARY": "contract",
+               "INTERN": "intern", "PER_DIEM": "contract"}
+
+
+def utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+# ------------------------------------------------------------------- state
+
+@dataclass
+class Context:
+    """What the reader keeps across companies in a run and across runs."""
+    path: Path | None = None
+    sites: dict = field(default_factory=dict)          # domain -> {"read_at": iso, "drafts": [...]}
+    linkedin_requests: int = 0
+    linkedin_blocked: str | None = None
+    now: datetime = field(default_factory=utc_now)
+
+    @classmethod
+    def load(cls, path: Path = STATE_PATH) -> "Context":
+        sites = {}
+        if path.exists():
+            with open(path, encoding="utf-8") as handle:
+                sites = json.load(handle).get("sites", {})
+        return cls(path=path, sites=sites)
+
+    def save(self) -> None:
+        if self.path is None:
+            return
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = self.path.with_suffix(".tmp")
+        with open(temporary, "w", encoding="utf-8", newline="\n") as handle:
+            json.dump({"state_version": 0, "sites": self.sites}, handle, ensure_ascii=False, indent=1)
+        temporary.replace(self.path)
+
+
+# --------------------------------------------------------- page helpers
+
+def job_posting_items(page: str) -> list[dict]:
+    """The schema.org JobPosting objects in a page's JSON-LD blocks."""
+    found = []
+    for block in _LD.findall(page or ""):
+        try:
+            data = json.loads(html_lib.unescape(block) if "&quot;" in block else block)
+        except ValueError:
+            continue
+        stack = [data]
+        while stack:
+            item = stack.pop()
+            if isinstance(item, list):
+                stack.extend(item)
+            elif isinstance(item, dict):
+                kind = item.get("@type")
+                if kind == "JobPosting" or (isinstance(kind, list) and "JobPosting" in kind):
+                    found.append(item)
+                stack.extend(value for key, value in item.items() if key in ("@graph", "itemListElement", "item"))
+    return found
+
+
+def _text_of(markup) -> str:
+    return " ".join(html_lib.unescape(re.sub(r"<[^>]+>", " ", markup or "")).split())
+
+
+def _place_from_ld(item: dict) -> list[dict]:
+    places = item.get("jobLocation") or []
+    places = places if isinstance(places, list) else [places]
+    found = []
+    for place in places:
+        address = (place or {}).get("address") if isinstance(place, dict) else None
+        if isinstance(address, str):
+            found.append(parse_location(address))
+            continue
+        if not isinstance(address, dict):
+            continue
+        city, region = address.get("addressLocality"), address.get("addressRegion")
+        country = address.get("addressCountry")
+        country = country.get("name") if isinstance(country, dict) else country
+        parts = [part for part in (city, region, country) if isinstance(part, str) and part.strip()]
+        if parts:
+            found.append(structured_location(", ".join(parts), city, region, country))
+    if not found and str(item.get("jobLocationType", "")).upper() == "TELECOMMUTE":
+        found.append(parse_location("Remote"))
+    return found
+
+
+def _pay_from_ld(item: dict) -> dict | None:
+    salary = item.get("baseSalary")
+    if not isinstance(salary, dict):
+        return None
+    value = salary.get("value") if isinstance(salary.get("value"), dict) else salary
+    low, high = value.get("minValue"), value.get("maxValue")
+    unit = str(value.get("unitText") or salary.get("unitText") or "").upper()
+    number = lambda v: float(v) if isinstance(v, str) and re.fullmatch(r"\d+(\.\d+)?", v) else v
+    return normalize.pay(number(low), number(high), salary.get("currency"), _PERIOD.get(unit))
+
+
+def _employment_from_ld(item: dict, title: str) -> str:
+    kinds = item.get("employmentType")
+    for kind in (kinds if isinstance(kinds, list) else [kinds]):
+        if isinstance(kind, str) and kind.upper() in _EMPLOYMENT:
+            return _EMPLOYMENT[kind.upper()]
+    return normalize.employment_from_title(title)
+
+
+def _expired(item: dict, today: datetime) -> bool:
+    through = normalize.iso_date(item.get("validThrough")) if isinstance(item.get("validThrough"), str) else None
+    return bool(through) and through < today.date().isoformat()
+
+
+def _posting_id(url: str) -> str:
+    """The posting address's path (and query, when it identifies the posting)."""
+    parts = urlsplit(url)
+    key = parts.path.strip("/") + (f"?{parts.query}" if parts.query else "")
+    return key or hashlib.sha1(url.encode("utf-8")).hexdigest()[:12]
+
+
+def draft_from_ld(item: dict, url: str, today: datetime) -> dict | None:
+    title = _text_of(item.get("title") or item.get("name"))
+    if not title or _expired(item, today):
+        return None
+    posting_url = item.get("url") if isinstance(item.get("url"), str) and item["url"].startswith("https://") else url
+    identifier = item.get("identifier")
+    if isinstance(identifier, dict):
+        identifier = identifier.get("value")
+    if posting_url != url:
+        posting = _posting_id(posting_url)
+    else:
+        # Several postings on one page: told apart by identifier, else by title.
+        tail = str(identifier) if identifier else re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:80]
+        posting = f"{_posting_id(url)}#{tail}"
+    department = item.get("occupationalCategory") if isinstance(item.get("occupationalCategory"), str) else None
+    return normalize.draft(
+        posting_id=posting,
+        title=title,
+        url=posting_url,
+        locations=_place_from_ld(item),
+        workplace="remote" if str(item.get("jobLocationType", "")).upper() == "TELECOMMUTE" else None,
+        employment=_employment_from_ld(item, title),
+        pay=_pay_from_ld(item),
+        posted_date=normalize.iso_date(item.get("datePosted")) if isinstance(item.get("datePosted"), str) else None,
+        department=normalize.department(department),
+        description_text=html_to_text(item.get("description")),
+    )
+
+
+def draft_from_page(page: str, url: str, today: datetime) -> dict | None:
+    """A posting page without a JobPosting block: its heading and main text."""
+    items = job_posting_items(page)
+    if items:
+        return draft_from_ld(items[0], url, today)
+    heading = _H1.search(page) or _TITLE.search(page)
+    title = _text_of(heading.group(1)) if heading else ""
+    title = re.split(r"\s+[|–—-]\s+", title)[0].strip() if not _H1.search(page) else title
+    body = _MAIN.search(page)
+    text = html_to_text(_CHROME.sub(" ", body.group(2) if body else page))
+    if not title or len(text) < MIN_DESCRIPTION:
+        return None
+    where = _LOCATION_LINE.search(text)
+    return normalize.draft(
+        posting_id=_posting_id(url),
+        title=title,
+        url=url,
+        locations=[parse_location(where.group(1))] if where else [],
+        workplace=None,
+        employment=normalize.employment_from_title(title),
+        pay=None,
+        posted_date=None,
+        department=None,
+        description_text=text,
+    )
+
+
+def linkedin_targets(page: str, base: str) -> tuple[list[str], list[str]]:
+    """LinkedIn job pages, and LinkedIn company-jobs pages, that a careers page
+    sends candidates to. A plain LinkedIn profile link (a footer icon) is not one."""
+    jobs, company_pages = [], []
+    for url, label in links(page, base):
+        job = _LINKEDIN_JOB.match(url)
+        if job:
+            canonical = f"https://www.linkedin.com/jobs/view/{job.group(1)}"
+            if canonical not in jobs:
+                jobs.append(canonical)
+            continue
+        company = _LINKEDIN_COMPANY_JOBS.match(url)
+        if company or (re.search(r"linkedin\.com/company/", url, re.I) and _JOB_WORDS.search(label or "")):
+            slug = company.group(1) if company else url.rstrip("/").split("/company/")[1].split("/")[0]
+            target = f"https://www.linkedin.com/company/{slug}/jobs"
+            if target not in company_pages:
+                company_pages.append(target)
+    return jobs, company_pages
+
+
+# ------------------------------------------------------------------- reader
+
+class _Cap(Exception):
+    pass
+
+
+def _canonical(url: str) -> str:
+    parts = urlsplit(url)
+    return urlunsplit(("https", parts.netloc.lower(), parts.path or "/", parts.query, ""))
+
+
+def read(board: str, fetcher, context: Context | None = None) -> normalize.ReadResult:
+    context = context or Context()
+    careers_url = _canonical(board)
+    host = urlsplit(careers_url).netloc
+    domain = registrable(host)
+    stay = lambda url: on_site(url, domain)
+    used = [0]
+
+    def get(url: str, within=stay) -> tuple[str, str]:
+        if used[0] >= MAX_REQUESTS:
+            raise _Cap()
+        used[0] += 1
+        before = fetcher.requests
+        try:
+            return fetcher.get_page(url, within, max_redirects=2)
+        finally:
+            used[0] += max(0, fetcher.requests - before - 1)     # redirect hops count too
+
+    # robots.txt: read, but not taken at face value.
+    robots = RobotFileParser()
+    try:
+        _final, text = get(f"https://{host}/robots.txt")
+        robots.parse(text.splitlines())
+    except FetchError as error:
+        if isinstance(error, Blocked):
+            raise
+        robots.parse([])
+    disallowed = not robots.can_fetch("*", careers_url)
+    site = context.sites.get(domain)
+    if disallowed and site and site.get("read_at"):
+        last = datetime.fromisoformat(site["read_at"].replace("Z", "+00:00"))
+        if context.now - last < timedelta(days=ROBOTS_DISALLOWED_EVERY):
+            drafts = site.get("drafts") or []
+            return normalize.ReadResult(
+                drafts=drafts, status=site.get("status", "ok"), seen_at=site["read_at"],
+                note=(f"robots.txt disallows the careers page: read at most every {ROBOTS_DISALLOWED_EVERY} days; "
+                      f"not read this run, {len(drafts)} postings carried from {site['read_at'][:10]}"))
+
+    result = _read_page(careers_url, get, stay, domain, context)
+    if disallowed:
+        result.note = "; ".join(part for part in (
+            f"robots.txt disallows the careers page: read on the {ROBOTS_DISALLOWED_EVERY}-day schedule", result.note) if part)
+        stamp = context.now.strftime("%Y-%m-%dT%H:%M:%SZ")
+        if result.status in ("ok", "partial", "none-open"):
+            context.sites[domain] = {"read_at": stamp, "status": result.status, "drafts": result.drafts}
+        result.seen_at = None
+    else:
+        context.sites.pop(domain, None)
+    return result
+
+
+def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> normalize.ReadResult:
+    try:
+        final, page = get(careers_url)
+    except FetchError as error:
+        if isinstance(error, Blocked):
+            raise
+        if str(error).startswith(("HTTP 404", "HTTP 410")):
+            return normalize.ReadResult(status="no-careers-page", note=f"{careers_url}: {str(error)[:120]}")
+        raise
+    except _Cap:
+        return normalize.ReadResult(status="partial", note="request cap reached")
+    why = refusal(page)
+    if why:
+        raise Blocked(f"{why} on {urlsplit(final).netloc}")
+
+    systems = ats_links(page)
+    if systems:
+        named = ", ".join(f"{s['type']}:{s['board'] or '?'}" for s in systems)
+        return normalize.ReadResult(status="ats-found", note=f"careers page links to {named}")
+
+    today = context.now
+    drafts: list[dict] = []
+    for item in job_posting_items(page):
+        made = draft_from_ld(item, final, today)
+        if made and (on_site(made["url"], domain)):
+            drafts.append(made)
+    if drafts:
+        return normalize.ReadResult(drafts=_unique(drafts), note="read from JobPosting blocks")
+
+    postings = posting_links(page, final, domain)
+    if postings:
+        failed, capped = 0, False
+        for url in postings:
+            try:
+                landed, body = get(url)
+            except _Cap:
+                capped = True
+                break
+            except FetchError as error:
+                if isinstance(error, Blocked):
+                    raise
+                failed += 1
+                continue
+            if refusal(body):
+                raise Blocked(f"{refusal(body)} on {urlsplit(landed).netloc}")
+            made = draft_from_page(body, landed, today)
+            if made and on_site(made["url"], domain):
+                drafts.append(made)
+            else:
+                failed += 1
+        drafts = _unique(drafts)
+        if capped or failed:
+            missing = len(postings) - len(drafts)
+            why = "request cap reached" if capped else f"{failed} posting pages could not be read"
+            return normalize.ReadResult(drafts=drafts, status="partial",
+                                        note=f"{why}; {len(drafts)} of {len(postings)} listed postings read ({missing} missing)")
+        return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} posting pages from the listing")
+
+    jobs, company_pages = linkedin_targets(page, final)
+    if jobs or company_pages:
+        return _read_linkedin(jobs, company_pages, get, context)
+
+    text = visible_text(page)
+    pdfs = [url for url, label in links(page, final) if url.lower().split("?")[0].endswith(".pdf")
+            and _JOB_WORDS.search(url + " " + label)]
+    if pdfs:
+        return normalize.ReadResult(status="unreadable", note=f"postings given only as PDFs ({len(pdfs)})")
+    if _NONE_OPEN.search(text):
+        return normalize.ReadResult(status="none-open", note=_NONE_OPEN.search(text).group(0)[:80])
+    if len(text) < 600 and _JS_APP.search(page):
+        return normalize.ReadResult(status="unreadable", note="the list is built by JavaScript")
+    return normalize.ReadResult(status="unreadable", note="neither postings nor a no-openings notice found on the page")
+
+
+def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Context) -> normalize.ReadResult:
+    """Public LinkedIn job pages the company's careers page sends candidates to."""
+    if context.linkedin_blocked:
+        return normalize.ReadResult(status="blocked", note=f"LinkedIn not asked: {context.linkedin_blocked} earlier in this run")
+    on_linkedin = lambda url: bool(_LINKEDIN_HOST.search(urlsplit(url).netloc)) and not _LINKEDIN_WALL.search(urlsplit(url).path)
+
+    def ask(url: str) -> tuple[str, str]:
+        if context.linkedin_requests >= LINKEDIN_CAP:
+            raise _Cap()
+        context.linkedin_requests += 1
+        try:
+            landed, body = get(url, on_linkedin)
+        except Blocked as error:
+            context.linkedin_blocked = str(error)[:120]
+            raise
+        except FetchError as error:
+            if "redirected" in str(error) and ("authwall" in str(error) or "login" in str(error) or "signup" in str(error)):
+                context.linkedin_blocked = "LinkedIn showed a sign-in wall"
+                raise Blocked(context.linkedin_blocked) from None
+            raise
+        why = refusal(body) or ("sign-in wall" if _LINKEDIN_WALL.search(urlsplit(landed).path) else None)
+        if why:
+            context.linkedin_blocked = f"LinkedIn showed a {why}"
+            raise Blocked(context.linkedin_blocked)
+        return landed, body
+
+    today = context.now
+    drafts, failed, capped = [], 0, False
+    try:
+        for company_page in company_pages:
+            if jobs:
+                break
+            _landed, body = ask(company_page)
+            for url, _label in links(body, company_page):
+                found = _LINKEDIN_JOB.match(url)
+                if found:
+                    canonical = f"https://www.linkedin.com/jobs/view/{found.group(1)}"
+                    if canonical not in jobs:
+                        jobs.append(canonical)
+        for url in jobs:
+            _landed, body = ask(url)
+            items = job_posting_items(body)
+            made = draft_from_ld(items[0], url, today) if items else None
+            if made:
+                made["url"], made["posting_id"] = url, "linkedin-" + url.rsplit("/", 1)[-1]
+                drafts.append(made)
+            else:
+                failed += 1
+    except _Cap:
+        capped = True
+    except FetchError as error:
+        if isinstance(error, Blocked):
+            raise
+        failed += 1
+    drafts = _unique(drafts)
+    if not jobs and not drafts:
+        return normalize.ReadResult(status="none-open", note="careers page points to LinkedIn, which lists no public jobs")
+    if capped or failed:
+        why = f"LinkedIn cap of {LINKEDIN_CAP} requests a run reached" if capped else f"{failed} LinkedIn pages could not be read"
+        return normalize.ReadResult(drafts=drafts, status="partial", note=f"{why}; {len(drafts)} of {len(jobs)} read")
+    return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} postings on LinkedIn, where the careers page points")
+
+
+def _unique(drafts: list[dict]) -> list[dict]:
+    seen, kept = set(), []
+    for made in drafts:
+        if made["posting_id"] not in seen:
+            seen.add(made["posting_id"])
+            kept.append(made)
+    return kept
