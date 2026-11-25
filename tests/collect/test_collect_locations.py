@@ -45,7 +45,7 @@ def parsed(text: str) -> dict:
     ("Remote", {}),
     ("Remote, USA", {"country": "US"}),
     ("USA - Remote", {"country": "US"}),
-    ("US remote (Michigan)", {"country": "US"}),
+    ("US remote (Michigan)", {"state": "MI", "country": "US"}),
     ("Remote - Colorado", {"state": "CO", "country": "US"}),
     # Outside the US
     ("Toronto, ON, Canada", {"city": "Toronto", "state": "ON", "country": "CA"}),
@@ -235,3 +235,38 @@ def test_is_remote_only():
     assert is_remote_only(parse_location("Remote, USA"))
     assert not is_remote_only(parse_location("Remote - Colorado"))
     assert not is_remote_only(parse_location("Austin, TX"))
+
+
+# Remote places as boards wrote them in the live runs of 2026-11-24/25 (Workday,
+# iCIMS, Ashby and others). Each says which country the remote work is in, so
+# the board can tell US-remote from remote elsewhere.
+@pytest.mark.parametrize("text,expected", [
+    ("United Kingdom - Remote", {"country": "GB"}),          # Canadian Solar, Workday
+    ("England - Remote", {"country": "GB"}),
+    ("Wales, UK - Remote", {"country": "GB"}),
+    ("Canada - Remote", {"country": "CA"}),
+    ("CA Remote - Ontario", {"state": "ON", "country": "CA"}),
+    ("Germany - Remote", {"country": "DE"}),
+    ("Remote - India", {"country": "IN"}),
+    ("US - Remote", {"country": "US"}),
+    ("Remote (United States)", {"country": "US"}),
+    ("Remote, USA", {"country": "US"}),
+    ("Remote - IN", {"state": "IN", "country": "US"}),       # SOLV Energy: Indiana, not India
+    ("Remote - CA", {"state": "CA", "country": "US"}),
+    ("US-CA-Remote", {"state": "CA", "country": "US"}),      # iCIMS
+    ("Home Office (MT)", {"state": "MT", "country": "US"}),
+    ("Remote", {}),                                          # no country given: left unknown
+])
+def test_remote_places_carry_their_country(text, expected):
+    found = parse_location(text)
+    assert {key: value for key, value in found.items() if key != "text"} == expected
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("Germany - Hamburg", {"city": "Hamburg", "country": "DE"}),      # was read as Spain
+    ("United Kingdom - London", {"city": "London", "country": "GB"}),
+    ("United Kingdom - Northern Ireland", {"country": "GB"}),
+])
+def test_workday_country_dash_place(text, expected):
+    found = parse_location(text)
+    assert {key: value for key, value in found.items() if key != "text"} == expected

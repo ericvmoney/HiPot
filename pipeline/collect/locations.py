@@ -49,7 +49,7 @@ COUNTRIES = {
     "united states": "US", "united states of america": "US", "usa": "US", "us": "US",
     "u.s.": "US", "u.s.a.": "US", "u.s": "US",
     "canada": "CA", "mexico": "MX", "united kingdom": "GB", "uk": "GB", "u.k.": "GB",
-    "england": "GB", "scotland": "GB", "wales": "GB", "great britain": "GB",
+    "england": "GB", "scotland": "GB", "wales": "GB", "northern ireland": "GB", "great britain": "GB",
     "ireland": "IE", "germany": "DE", "france": "FR", "spain": "ES", "portugal": "PT",
     "italy": "IT", "netherlands": "NL", "the netherlands": "NL", "belgium": "BE",
     "switzerland": "CH", "austria": "AT", "sweden": "SE", "norway": "NO", "denmark": "DK",
@@ -110,7 +110,7 @@ _ONSITE = re.compile(r"\bon[- ]?site\b|\bin[- ]office\b|\bin[- ]person\b", re.I)
 # Words a board adds to a place name that are not part of the place.
 _DECORATION = re.compile(
     r"\b(?:remote|hybrid|on[- ]?site|in[- ]office|in[- ]person|office|headquarters|hq|"
-    r"possible|considered|eligible|based|only|flexible|within|anywhere|in)\b", re.I)
+    r"possible|considered|eligible|based|only|flexible|within|anywhere|home|(?-i:in))\b", re.I)
 _CITY_SHAPE = re.compile(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'\-]{1,39}")
 _REGION_WORD = re.compile(r"\b(?:area|region|county|metro)\b|^greater\b", re.I)
 _STREET_ADDRESS = re.compile(r"(?:^|,)\s*([A-Za-z][A-Za-z .\'\-]{1,39}?),?\s+([A-Z]{2})\s+\d{5}(?:-\d{4})?$")
@@ -174,18 +174,56 @@ def _city(text: str) -> str | None:
     cleaned = text.strip()
     if not _CITY_SHAPE.fullmatch(cleaned) or _DECORATION.search(cleaned) or _REGION_WORD.search(cleaned):
         return None
+    if cleaned.lower() in COUNTRIES:      # "Wales, UK": a nation, not a city
+        return None
     return cleaned
+
+
+def _bracketed_place(match: re.Match) -> str:
+    """A parenthetical that names a country or US state is kept as a part:
+    "Remote (United States)", "Home Office (MT)". Others are dropped."""
+    inner = match.group(1).strip()
+    if country_code(inner) or _state_code(inner):
+        return f", {inner}"
+    return " "
 
 
 def _undecorated(text: str) -> str:
     """The place name without parentheticals and workplace words."""
-    text = re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", text)
+    text = re.sub(r"\(([^)]*)\)", _bracketed_place, text)
+    text = re.sub(r"\[[^\]]*\]", " ", text)
     text = re.sub(r"\s+[-–—]\s+(US|USA|United States)\b", r", \1", text, flags=re.I)
     text = _DECORATION.sub(" ", text)
     text = re.sub(r"\s*[-–—:]\s*(?=,|$)|^\s*[-–—:]\s*", " ", text)
     text = re.sub(r"\s+", " ", text)
     text = re.sub(r"\s*,(\s*,)+", ",", text)
     return text.strip(" ,-–—:")
+
+
+_DASHED = re.compile(r"^(.+?)\s+[-–—]\s+(.+)$")
+
+
+def _country_dash_place(core: str) -> dict | None:
+    """Workday's "<Country> - <Place>": "United Kingdom - London", "Germany -
+    Hamburg", "CA - Ontario" (a two-letter code counts as a country only when
+    the place is one of its provinces or states)."""
+    match = _DASHED.match(core)
+    if not match or "," in core:
+        return None
+    left, right = match.group(1).strip(), match.group(2).strip()
+    country = COUNTRIES.get(left.lower())
+    province = _province_code(right)
+    if country is None and left.upper() == "CA" and province:
+        country = "CA"
+    if country is None or country == "US" and left.upper() == left and len(left) == 2 and not _state_code(right):
+        return None
+    if country == "CA" and province:
+        return {"state": province, "country": "CA"}
+    if country == "US":
+        state = _state_code(right)
+        return {"state": state, "country": "US"} if state else {"country": "US"}
+    city = _city(right)
+    return {"city": city, "country": country} if city else {"country": country}
 
 
 def parse_location(text: str) -> dict:
@@ -200,6 +238,14 @@ def parse_location(text: str) -> dict:
     core = _undecorated(text)
     if not core:
         return location
+
+    alone = re.fullmatch(r"US-([A-Z]{2})", core)        # "US-CA-Remote" (iCIMS) once undecorated
+    if alone and alone.group(1) in US_STATE_CODES:
+        return {**location, "state": alone.group(1), "country": "US"}
+
+    dashed = _country_dash_place(core)
+    if dashed:
+        return {**location, **dashed}
 
     code = _REQ_CODE.match(core)
     if code and code.group(1) in US_STATE_CODES and _city(code.group(2)):
@@ -229,6 +275,8 @@ def parse_location(text: str) -> dict:
             return {**location, "state": state, "country": "US"}
         if len(parts) == 2 and _city(parts[0]) and parts[0].lower() not in REGION_STATES:
             return {**location, "city": parts[0], "state": state, "country": "US"}
+        if len(parts) == 2 and COUNTRIES.get(parts[0].lower()) == "US":     # "US remote (Michigan)"
+            return {**location, "state": state, "country": "US"}
         return {**location, "state": state, "country": "US"} if country == "US" else location
     if province:
         if len(parts) == 2 and _city(parts[0]):
