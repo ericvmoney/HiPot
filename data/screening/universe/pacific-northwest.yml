@@ -179,8 +179,9 @@ companies:
   sources:
   - arpa-e
   registry_id: null
-  decision: null
-  reason: Its website shows 'Account Suspended'; current status not established.
+  decision: closed
+  reason: 'Inferred from a dead, parked or suspended domain and old news; no shutdown notice. Weak closed: no bankruptcy
+    or shutdown notice found; the operating successor is Mazama Energy (https://mazamaenergy.com/, Frisco TX, foun'
   ats: null
   open_roles: null
 - name: Apex Drive Laboratories
@@ -276,8 +277,9 @@ companies:
   sources:
   - wa-commerce-cef
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: 'Inferred from a dead, parked or suspended domain and old news; no shutdown notice. Weak closed: dead
+    domain and no activity after 2017. Separate company from BattGenie (also UW, same testbed address).'
   ats: null
   open_roles: null
 - name: BattGenie
@@ -287,8 +289,8 @@ companies:
   - cta-members
   - wa-commerce-cef
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Battery-management software and digital twins.
   ats: null
   open_roles: null
 - name: Bio Fiber Industries
@@ -392,8 +394,10 @@ companies:
   sources:
   - wa-commerce-cef
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: 'Inferred from a dead, parked or suspended domain and old news; no shutdown notice. Weak closed: parked,
+    for-sale domain only; no shutdown notice found. HQ is outside the Pacific Northwest; it appears via a Washington
+    Cle'
   ats: null
   open_roles: null
 - name: Demand Energy Networks
@@ -668,13 +672,13 @@ companies:
   ats: null
   open_roles: null
 - name: Mauka Energy
-  website: null
+  website: https://www.maukaenergy.com
   hq: Corvallis, OR
   sources:
   - osu-advantage-clients
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Software tools for EV range and fleet-cost mapping.
   ats: null
   open_roles: null
 - name: McKinstry
@@ -727,9 +731,9 @@ companies:
   sources:
   - cta-members
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: molecule-works
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Mtek Energy Solutions
@@ -747,9 +751,9 @@ companies:
   hq: Renton, WA
   sources:
   - wa-commerce-cef
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: mujielectric
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Mutual Materials
@@ -771,8 +775,8 @@ companies:
   - osu-advantage-clients
   - osu-advantage-news
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Acquired by Tandem PV (in the registry) on 2026-08-03.
   ats: null
   open_roles: null
 - name: NextWatts
@@ -782,8 +786,8 @@ companies:
   - cta-members
   - wcet-partners
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Building energy engineering services; no product named.
   ats: null
   open_roles: null
 - name: Nimbus Aerospace
@@ -1028,9 +1032,9 @@ companies:
   hq: Seattle, WA
   sources:
   - cta-members
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: samsar
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Sekisui Aerospace
@@ -1117,8 +1121,10 @@ companies:
   sources:
   - wa-commerce-cef
   registry_id: null
-  decision: null
-  reason: Its own domain does not resolve; status not established.
+  decision: closed
+  reason: 'Inferred from a dead, parked or suspended domain and old news; no shutdown notice. Weak closed: no shutdown
+    notice or last-news date found. The re-hosted blog sits under another organisation''s name, which suggests the
+    bu'
   ats: null
   open_roles: null
 - name: SolarX Works
@@ -1154,13 +1160,13 @@ companies:
   ats: null
   open_roles: null
 - name: StorEdgeAI
-  website: null
+  website: https://storedge-ai.com
   hq: Bothell, WA
   sources:
   - wa-commerce-cef
-  registry_id: null
-  decision: null
-  reason: Third-party profiles conflict on what it makes; identity not established.
+  registry_id: storedgeai
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Sunshot Energy
@@ -1233,8 +1239,9 @@ companies:
   sources:
   - greentown
   registry_id: null
-  decision: null
-  reason: Its site shows a 2021 copyright and nothing newer; status not established.
+  decision: closed
+  reason: 'Inferred from a dead, parked or suspended domain and old news; no shutdown notice. Weak closed on last-news
+    date (Feb 2020) only; the site is still hosted. HQ is from the source; the site''s awards point to Massachusetts '
   ats: null
   open_roles: null
 - name: Willamette Technical Fabricators

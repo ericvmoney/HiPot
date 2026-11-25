@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: aris-hydronics
   name: Aris Hydronics
@@ -839,6 +839,65 @@ companies:
     (Giantleap, W.L. Gore & Associates, Indico Capital Partners, Safar Partners). https://dealroom.co/companies/membrion
     Evidence: https://www.membrion.com/about https://dealroom.co/companies/membrion https://builtin.com/company/membrion
     Region sources: cta-members, third-derivative. Confidence: high.'
+- id: molecule-works
+  name: Molecule Works
+  website: https://moleculeworks.com
+  careers_url: null
+  hq: Richland, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2015
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Thin porous metal and ceramic membranes and membrane devices for gas, water and chemical separations.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2015.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded small business: DOE SBIR Phase I $199,936
+    (2021-06-28 to 2022-06-27); CB Insights shows about $2.05M raised in total (search summary). No equity round
+    found. Flags: Company name is styled ''Molecule Works Inc.'' / ''MoleculeWorks''. Its homepage renders client-side
+    and gave no text; a raw-HTML fetch of moleculeworks.com was refused by this session''s permission check and
+    not attempted another way. No news newer than 2023 found, so activity is likely but not confirme. Evidence:
+    D O E   E E Region sources: cta-members, greentown. Confidence: low.'
+- id: mujielectric
+  name: MujiElectric
+  website: null
+  careers_url: null
+  hq: Renton, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: High-efficiency wide-bandgap perovskite solar cells (licensed NREL technology, working with the University
+      of Washington).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant-funded: Washington Commerce Research, Development
+    and Demonstration grant $1,997,500 (reported 2024-09-20, https://www.perovskite-info.com/washington-state-department-commerce-grants-funding-development-high-efficiency);
+    DOE American-Made Perovskite Startup Prize Power Up winner ($40,000; contest ran to July 2024). No equity round
+    found. Flags: No company website found. Newest evidence is the 2024 grant and prize; nothing in 2025-2026 seen,
+    so ''active'' rests on the multi-year Commerce grant.. Evidence: D O E   A m Region sources: wa-commerce-cef.
+    Confidence: low.'
 - id: mutual-materials
   name: Mutual Materials
   website: https://www.mutualmaterials.com
@@ -1259,6 +1318,33 @@ companies:
     Flags: subsidiary of Toyota Tsusho (since July 2025); large company (headcount not sourced, very likely over
     1,000); metals recycler and steel mill. Evidence: https://en.wikipedia.org/wiki/Radius_Recycling Region sources:
     or-cleantech-taskforce. Confidence: high. Unresolved: Headcount; company site returned only a title.'
+- id: samsar
+  name: Samsar
+  website: null
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Repurposes electric-vehicle batteries into lower-cost energy storage for businesses and consumers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Identified only from its current CTA membership; no
+    website, founding year or funding found. Active status rests on the directory listing.. Evidence: C l e a n
+    T Region sources: cta-members. Confidence: low.'
 - id: sekisui-aerospace
   name: Sekisui Aerospace
   website: https://www.sekisuiaerospace.com
@@ -1492,6 +1578,36 @@ companies:
     power among target uses. Evidence: https://starsh2.com Region sources: pnnl-flc, cascadia-cca-alumni. Confidence:
     medium. Unresolved: HQ from directory only (site home page gives none; /about 404). Founding year, headcount,
     funding not found.'
+- id: storedgeai
+  name: StorEdgeAI
+  website: https://storedge-ai.com
+  careers_url: null
+  hq: Bothell, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: Li-ion battery energy storage system architecture without centralised power converters or chillers;
+      earlier DOE-funded solar-powered non-wire energy carrier.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded: DOE award DE-EE0009331 (solar non-wire
+    energy carrier, NEPA CX posted 2021-07-27 and a 2023 CX), plus Washington Clean Energy Fund per source. Site
+    says the company ''invested over $4 million'' in development; no equity round found. Flags: The conflicting
+    profiles reconcile: the 2020-2023 DOE project was a solar energy carrier, the current site sells a compact Li-ion
+    BESS, which matches the Commerce description.. Evidence: s t o r e d Region sources: wa-commerce-cef. Confidence:
+    low.'
 - id: zila-bioworks
   name: ZILA BioWorks
   website: https://www.zilaworks.com
