@@ -117,3 +117,17 @@ def test_listing_year_from_the_scouts_wording():
     assert listing_year("listed 2022 or 2023 (sources differ)") == 2022     # the stricter reading
     assert listing_year("Large public company.") is None
     assert listing_year("founded 2011; raised a Series B in 2024") is None  # a raise is not a listing
+
+
+from tools.apply_screening import retier  # noqa: E402
+
+
+def test_retier_needs_a_named_ruling():
+    company = {"climate": {"tier": "out", "reason": "Recycling; pending ruling.", "basis": "agent", "approved": False},
+               "sectors": [], "notes": None}
+    retier(company, {"climate": {"tier": "enabling", "reason": "Recycles textiles."}})      # no ruling: ignored
+    assert company["climate"]["tier"] == "out"
+    retier(company, {"climate": {"tier": "enabling", "reason": "Recycles textiles."}, "sectors": ["recycling"],
+                     "ruling": "decision 13"})
+    assert company["climate"]["tier"] == "enabling" and company["sectors"] == ["recycling"]
+    assert "decision 13" in company["notes"]

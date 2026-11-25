@@ -259,6 +259,23 @@ def listing_year(reason: str | None) -> int | None:
     return int(found.group(1)) if found else None
 
 
+def retier(company: dict, fix: dict) -> None:
+    """A tier change the scout proposes under an owner decision. Allowed only
+    when the fix names the decision (`ruling`), so the scout cannot re-tier a
+    company on its own judgement."""
+    climate = fix.get("climate") or {}
+    if not (climate.get("tier") and fix.get("ruling")):
+        return
+    company["climate"].update(tier=climate["tier"], basis="agent")
+    if climate.get("reason"):
+        company["climate"]["reason"] = climate["reason"]
+    if fix.get("sectors"):
+        company["sectors"] = fix["sectors"]
+    note = f"Tier set under owner {fix['ruling']}."
+    if note not in (company.get("notes") or ""):
+        company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
 def apply_probe(company: dict, entry: dict) -> None:
     """A careers-page probe result: fill the careers address, and take a job
     board it found when the registry has none (ats type 'unknown')."""
@@ -331,6 +348,7 @@ def main() -> int:
     for fix in fixes:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
+            retier(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
     for entry in probes:
