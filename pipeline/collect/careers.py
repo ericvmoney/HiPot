@@ -49,7 +49,7 @@ from urllib.robotparser import RobotFileParser
 from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError
 from pipeline.collect.locations import parse_location, structured_location
-from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_WORDS, ats_links, links,
+from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_TITLE, _JOB_WORDS, ats_links, links,
                                             on_site, posting_links, refusal, registrable, visible_text)
 from pipeline.collect.text import html_to_text
 from pipeline.io import ROOT
@@ -498,11 +498,6 @@ def inline_postings(page: str, url: str, today) -> list[dict]:
     return drafts or heading_postings(page, heading.end(), url)
 
 
-# Whole words: "Engineer" is a title, "Engineering" (a team) is not.
-_JOB_TITLE = re.compile(r"\b(?:engineer|technician|scientist|manager|director|designer|developer|analyst|specialist|"
-                        r"operator|mechanic|electrician|chemist|physicist|lead|head of|associate|coordinator|"
-                        r"intern|assistant|planner|buyer|accountant|controller|architect|machinist|welder|"
-                        r"assembler|inspector|supervisor|officer|administrator|representative|consultant)s?\b", re.I)
 _ANY_HEADING = re.compile(r"<(h[1-6])\b[^>]*>(.*?)</\1>", re.I | re.S)
 _PAGE_END = re.compile(r"<footer\b", re.I)
 

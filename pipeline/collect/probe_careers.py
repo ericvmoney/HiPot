@@ -202,11 +202,24 @@ def job_postings(page: str) -> int:
     return count
 
 
+# Words that make a heading or an address read as one job. Whole words:
+# "Engineer" is a title, "Engineering" (a team) is not.
+_JOB_TITLE = re.compile(
+    r"\b(?:engineer|technician|technologist|scientist|researcher|manager|director|designer|developer|programmer|"
+    r"analyst|specialist|operator|mechanic|electrician|chemist|physicist|metallurgist|lead|head|chief|vp|president|"
+    r"executive|associate|coordinator|intern|assistant|planner|buyer|accountant|controller|architect|machinist|"
+    r"welder|fitter|fabricator|assembler|installer|inspector|tester|supervisor|foreman|superintendent|estimator|"
+    r"scheduler|officer|administrator|representative|consultant|recruiter|generalist|clerk|driver|lineman|"
+    r"millwright|advisor|strategist|counsel|paralegal|writer|editor|partner|staff)s?\b", re.I)
+# A posting id in an address: a long number, or a UUID.
+_POSTING_ID = re.compile(r"^(?:\d{4,}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$", re.I)
+
+
 def posting_links(page: str, base: str, domain: str) -> list[str]:
     """Links on a careers page that look like single postings on the company's own site."""
     careers_path = urlsplit(base).path.rstrip("/")
     found = []
-    for url, _label in links(page, base):
+    for url, label in links(page, base):
         if not on_site(url, domain) or AGGREGATORS.search(url):
             continue
         path = urlsplit(url).path.rstrip("/")
@@ -214,7 +227,12 @@ def posting_links(page: str, base: str, domain: str) -> list[str]:
             continue
         last = path.rsplit("/", 1)[-1]
         under_careers = careers_path and path.startswith(careers_path + "/") and path.count("/") > careers_path.count("/")
-        if (under_careers or _POSTING_PATH.match(path)) and not _NOT_POSTING.match(last) and ("-" in last or last.isdigit()):
+        # One job, not a careers section ("who-we-are", "life-at-acme", "jobs-us"): the address or the
+        # link names a job title, or the address ends in a posting id.
+        words = last.replace("-", " ").replace("_", " ")
+        reads_as_job = bool(_JOB_TITLE.search(words) or _JOB_TITLE.search(label or "") or _POSTING_ID.match(last)
+                            or _POSTING_ID.match(path.rsplit("/", 2)[-2] if path.count("/") >= 2 else ""))
+        if (under_careers or _POSTING_PATH.match(path)) and not _NOT_POSTING.match(last) and reads_as_job:
             if url.split("#")[0] not in found:
                 found.append(url.split("#")[0])
     return found
