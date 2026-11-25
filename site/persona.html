@@ -176,7 +176,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
 
     <fieldset class="card" id="fs-disciplines">
       <legend class="mono">Disciplines</legend>
-      <p class="help">One to six. Ticked ones were proposed from your job titles and the words in your experience; rules often miss or over-pick here, so check them.</p>
+      <p class="help">Up to six. Ticked ones were proposed from your job titles and the words in your experience; rules often miss or over-pick here, so check them. Disciplines are technical fields: at least one is needed for engineering, science or technician work, and none for other kinds of work, such as supply chain.</p>
       <div class="checks" id="disciplines"></div>
       <div class="row">
         <button type="button" class="btn btn-small" id="all-disciplines" aria-expanded="false">Show all disciplines</button>
@@ -561,7 +561,14 @@ var PersonaRules = (function () {
     return (text.match(re) || []).length;
   }
 
-  function proposeDisciplines(clean) {
+  // Disciplines are technical fields. For a candidate who wants only non-technical work (supply chain,
+  // finance, ...) nothing is proposed from the experience text: only a discipline named in a job title.
+  var TECHNICAL = ['engineering', 'science', 'technician'];
+  function isTechnical(functions) {
+    return !functions || !functions.length || functions.some(function (f) { return TECHNICAL.indexOf(f) !== -1; });
+  }
+
+  function proposeDisciplines(clean, technical) {
     var recentTitles = words(clean.roles.slice(0, 2).map(function (r) { return r.title; }).join(' \n '));
     var allTitles = words(clean.roles.map(function (r) { return r.title; }).join(' \n '));
     var body = words([].concat(clean.summary, clean.wants, clean.roles.reduce(function (a, r) { return a.concat(r.bullets); }, [])).join(' \n '));
@@ -572,6 +579,7 @@ var PersonaRules = (function () {
       var inLabel = new RegExp('\\b' + escapeRe(label));
       if (inLabel.test(recentTitles)) { score += 12; inTitle = true; }
       else if (inLabel.test(allTitles)) score += 5;
+      if (!technical) return { id: entry.id, score: score, inTitle: inTitle };
       // The experience text counts only when it names two or more of the discipline's terms: one word
       // ("inverter" in a controls resume) is not a discipline.
       var distinct = 0, fromBody = 0;
@@ -580,7 +588,7 @@ var PersonaRules = (function () {
       return { id: entry.id, score: score, inTitle: inTitle };
     }).sort(function (a, b) { return b.score - a.score; });
     var ticked = scores.filter(function (s) { return s.inTitle; }).map(function (s) { return s.id; });
-    if (!ticked.length && scores[0] && scores[0].score > 0) ticked = [scores[0].id];
+    if (technical && !ticked.length && scores[0] && scores[0].score > 0) ticked = [scores[0].id];
     var shortList = scores.filter(function (s) { return s.score > 0; }).slice(0, 8).map(function (s) { return s.id; });
     ticked.forEach(function (id) { if (shortList.indexOf(id) === -1) shortList.unshift(id); });
     return { ticked: ticked.slice(0, 6), shortList: shortList };
@@ -803,7 +811,8 @@ var PersonaRules = (function () {
     var everything = clean.all.join(' \n ');
     var prefsText = [].concat(clean.header, clean.wants, clean.summary).join(' \n ');
     var experienceText = [].concat(clean.summary, clean.roles.reduce(function (a, r) { return a.concat([r.title], r.bullets); }, [])).join(' \n ');
-    var discipline = proposeDisciplines(clean);
+    var functions = functionsFrom(clean.roles);
+    var discipline = proposeDisciplines(clean, isTechnical(functions));
 
     var remote = /open to remote|remote (?:roles|work|positions|ok|friendly)|fully remote|remote-first|work remotely/i.test(prefsText) &&
                  !/no remote|not (?:open to|interested in) remote|on-?site only/i.test(prefsText);
@@ -818,7 +827,7 @@ var PersonaRules = (function () {
     var draft = {
       persona_version: 0,
       generated: { by: GENERATED_BY, on_device: true, date: localDate(), reviewed: false },
-      functions: functionsFrom(clean.roles),
+      functions: functions,
       disciplines: discipline.ticked,
       level: mostRecent ? levelFrom(mostRecent.title) : null,
       domains: sectorsIn(experienceText),
@@ -867,7 +876,7 @@ var PersonaRules = (function () {
     return out;
   }
 
-  return { extract: extract, forSaving: forSaving, localDate: localDate, EMAIL: EMAIL, PHONE: PHONE, LINK: LINK };
+  return { extract: extract, forSaving: forSaving, isTechnical: isTechnical, localDate: localDate, EMAIL: EMAIL, PHONE: PHONE, LINK: LINK };
 })();
 </script>
 
@@ -998,7 +1007,7 @@ var PersonaRules = (function () {
   function renderDisciplines() {
     var ids = showAllDisciplines ? tax.disciplines.map(function (d) { return d.id; })
       : proposals.disciplines.concat(persona.disciplines).filter(function (id, i, all) { return all.indexOf(id) === i; });
-    if (!ids.length) ids = tax.disciplines.map(function (d) { return d.id; });
+    if (!ids.length && PersonaRules.isTechnical(persona.functions)) ids = tax.disciplines.map(function (d) { return d.id; });
     var entries = ids.map(function (id) { return tax.disciplines.filter(function (d) { return d.id === id; })[0]; }).filter(Boolean);
     checkList($('disciplines'), entries, persona.disciplines, function (id, on) { toggle(persona.disciplines, id, on); refreshOutput(); }, function (entry) {
       return el('small', { text: entry.covers || '' });
@@ -1130,7 +1139,9 @@ var PersonaRules = (function () {
   function validate(p) {
     var errors = [];
     var ids = function (key) { return tax[key].map(function (e) { return e.id; }); };
-    if (!p.disciplines.length) errors.push('Tick at least one discipline.');
+    // As tools/validate.check_persona: disciplines are needed for engineering, science or technician work
+    // (no kind of work ticked means engineering), and optional otherwise.
+    if (!p.disciplines.length && PersonaRules.isTechnical(p.functions)) errors.push('Tick at least one discipline for engineering, science or technician work.');
     if (p.disciplines.length > 6) errors.push('Tick at most six disciplines.');
     p.disciplines.forEach(function (d) { if (ids('disciplines').indexOf(d) === -1) errors.push('Unknown discipline "' + d + '".'); });
     if (p.functions && p.functions.length > 4) errors.push('Tick at most four kinds of work.');

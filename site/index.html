@@ -433,7 +433,7 @@ body::before {
         <p><strong>Companies are screened for climate fit before their roles appear,</strong> under a written rubric. <span id="unlisted-functions"></span></p>
         <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
-        <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies and sectors you left out, and roles whose published pay tops out below your minimum, are hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
+        <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Remote means remote in the US: a role whose only places are in other countries gains nothing for place. A persona for non-technical work, such as supply chain, needs no discipline; then discipline counts the same for every role. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies and sectors you left out, and roles whose published pay tops out below your minimum, are hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
         <p id="provisional-note"><strong>The company screen is provisional.</strong> The climate tier and reason shown for each company are a first pass. They have not yet been checked against the company's own site or approved.</p>
         <p class="mono" id="run-note"></p>
       </div>
@@ -481,6 +481,12 @@ var HiPotRank = (function () {
   var NOT_MOVING = -10;        // place points for an on-site role elsewhere when the candidate will not relocate
   var HOURS_PER_YEAR = 2080;
   var DEFAULT_FUNCTIONS = ['engineering'];
+  var TECHNICAL = ['engineering', 'science', 'technician'];
+  // Remote means remote in the US: the board is for US candidates. A remote role counts as US when it
+  // names a US metro area or state, or a place that says US; it counts as abroad when every place it
+  // names is another country or region. A bare "Remote" counts as US.
+  var US_WORDS = /\b(?:united states|usa|us)\b|\bu\.s\b/i;
+  var ABROAD = /\b(?:united kingdom|uk|great britain|britain|england|scotland|wales|ireland|germany|deutschland|france|paris|netherlands|amsterdam|spain|portugal|italy|switzerland|austria|belgium|denmark|sweden|norway|finland|poland|czech|europe|emea|apac|latam|latin america|india|bangalore|bengaluru|china|japan|korea|singapore|taiwan|australia|new zealand|canada|ontario|toronto|vancouver|quebec|montreal|british columbia|alberta|mexico|brazil|chile|colombia|argentina|israel|united arab emirates|uae|dubai|saudi|south africa|philippines|vietnam|indonesia)\b/i;
   // Level steps. Managers sit beside staff engineers; moving between the IC and management tracks is one more step.
   var LADDER = { intern: 0, entry: 1, mid: 2, senior: 3, staff: 4, principal: 5, manager: 4, director: 5, executive: 6 };
   var MANAGEMENT = { manager: true, director: true, executive: true };
@@ -495,11 +501,14 @@ var HiPotRank = (function () {
     if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('this is not a persona file');
     if (data.persona_version !== 0) throw new Error('this is not a HiPot persona file (persona_version 0)');
     var disciplines = slugs(data.disciplines);
-    if (!disciplines.length) throw new Error('the persona names no discipline');
+    var functions = slugs(data.functions);
+    // As tools/validate.check_persona: engineering, science and technician work need a discipline.
+    if (!disciplines.length && (!functions.length || functions.some(function (f) { return TECHNICAL.indexOf(f) !== -1; }))) {
+      throw new Error('the persona names no discipline, which engineering, science and technician work need');
+    }
     var loc = data.locations && typeof data.locations === 'object' ? data.locations : {};
     var prefs = data.preferences && typeof data.preferences === 'object' ? data.preferences : {};
     var exclude = data.exclude && typeof data.exclude === 'object' ? data.exclude : {};
-    var functions = slugs(data.functions);
     var minBase = prefs.min_base_usd;
     return {
       functions: functions.length ? functions : DEFAULT_FUNCTIONS.slice(),
@@ -527,6 +536,18 @@ var HiPotRank = (function () {
       preferences: { sectors: p.sectors, stage: p.stages, min_base_usd: p.minBase },
       exclude: { sectors: p.excludeSectors, companies: strings((data.exclude || {}).companies) }
     };
+  }
+
+  // The role's first place when every place it names is outside the US, else null.
+  function abroad(role) {
+    if ((role.metros || []).length || (role.st || []).length) return null;
+    var places = (role.loc || []).filter(function (text) { return typeof text === 'string' && text.trim(); });
+    if (!places.length) return null;
+    var foreign = places.every(function (text) {
+      var words = text.replace(/[-_]+/g, ' ');   // "United-Kingdom---Remote"
+      return ABROAD.test(words) && !US_WORDS.test(words);
+    });
+    return foreign ? places[0].trim() : null;
   }
 
   function levelSteps(a, b) {
@@ -589,9 +610,11 @@ var HiPotRank = (function () {
       hits.push(id);
       best = Math.max(best, Math.max(0.4, 1 - 0.15 * i));
     });
-    if (hits.length) parts.disc = Math.round(WEIGHTS.disc * Math.min(1, best + (hits.length > 1 ? 0.12 : 0)) * 10) / 10;
+    if (!p.disciplines.length) parts.disc = WEIGHTS.disc / 2;   // non-technical work: disciplines neither help nor hurt
+    else if (hits.length) parts.disc = Math.round(WEIGHTS.disc * Math.min(1, best + (hits.length > 1 ? 0.12 : 0)) * 10) / 10;
     else parts.disc = disc.length ? 0 : Math.round(WEIGHTS.disc * 0.25 * 10) / 10;   // no discipline on the role: unknown, not a mismatch
     if (!fnOk) why.push(label('functions', role.fn) + ' role');
+    else if (!p.disciplines.length) why.push(label('functions', role.fn));
     else if (hits.length) why.push(hits.slice(0, 2).map(function (id) { return label('disciplines', id); }).join(' and '));
     else if (disc.length) why.push(label('disciplines', disc[0]) + ', not one of your disciplines');
     else why.push(label('functions', role.fn));
@@ -612,9 +635,14 @@ var HiPotRank = (function () {
     // Place.
     var metros = role.metros || [];
     var here = metros.filter(function (id) { return p.metros.indexOf(id) !== -1; });
-    var remote = role.wp === 'remote';
+    var away = abroad(role);
+    var remote = role.wp === 'remote' && !away;   // remote counts only within the US
     var placeNames = here.slice(0, 2).map(function (id) { return shortMetro(label('metros', id)); });
-    if (here.length || (remote && p.remote)) {
+    if (away) {
+      // Outside the US, remote or not: a US candidate would have to move abroad.
+      parts.place = p.relocate === false ? NOT_MOVING : 0;
+      why.push((role.wp === 'remote' ? 'remote from ' : '') + away.replace(/\s*[-–(]\s*remote\)?\s*$/i, '') + ', outside the US');
+    } else if (here.length || (remote && p.remote)) {
       parts.place = WEIGHTS.place;
       why.push(placeNames.concat(remote ? ['remote'] : []).join(' or '));
     } else if (remote) {
@@ -666,7 +694,8 @@ var HiPotRank = (function () {
   // One line saying what the persona asks for, for the "Persona in use" bar.
   function describe(p, labels) {
     function label(list, id) { return (labels[list] && labels[list][id]) || id; }
-    var bits = [p.disciplines.slice(0, 3).map(function (id) { return label('disciplines', id); }).join(', ')];
+    var bits = [p.disciplines.length ? p.disciplines.slice(0, 3).map(function (id) { return label('disciplines', id); }).join(', ')
+                                     : p.functions.map(function (id) { return label('functions', id); }).join(', ')];
     if (p.level) bits.push(label('levels', p.level));
     var places = p.metros.slice(0, 2).map(function (id) { return shortMetro(label('metros', id)); });
     if (p.remote) places.push('remote');
