@@ -93,6 +93,36 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/1849-bio.
     Stage: YC S24; no priced round found. Flags: customers are mining companies. Evidence: https://www.ycombinator.com/companies/1849-bio
     Region sources: yc-directory. Confidence: medium. Unresolved: Funding.'
+- id: 1pointfive
+  name: 1PointFive
+  website: https://1pointfive.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Builds direct air capture plants with geologic CO2 storage hubs and sells carbon removal credits and
+      CO2 storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Input says Occidental subsidiary;
+    fetched pages call Oxy only a ''partner'' and do not state ownership. https://www.1pointfive.com/about Flags:
+    subsidiary of Occidental (per input; not confirmed on fetched pages); parent is an oil and gas company. Evidence:
+    https://1pointfive.com https://www.1pointfive.com/about Region sources: doe-oced. Confidence: medium. Unresolved:
+    Founding year, headcount, ownership confirmation. STRATOS DAC plant (Ector County TX, up to 500,000 t/yr) is
+    under construction; South Texas DAC hub has up to $500M DOE support. Credit buyers are Microsoft, Amazon and
+    ANA, not oil and gas. Dealroom and Built In 404.'
 - id: 24m-technologies
   name: 24M Technologies
   website: https://24-m.com
@@ -129,6 +159,35 @@ companies:
     https://www.builtinboston.com/company/24m-technologies Region sources: mit-sloan-cleantech, builtin-boston-greentech,
     builtin-boston-energy, arpa-e, builtin-greentech, builtin-energy. Confidence: medium. Unresolved: Latest round
     name; whether revenue is mainly licensing or product sales.'
+- id: 360-energy
+  name: 360 Energy
+  website: https://www.360energyco.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Behind-the-meter gas-fired power and managed compute infrastructure (AI/HPC, bitcoin mining) using field
+      gas at oil and gas pad sites. Runs mainly on natural gas (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2021.'
+  notes: 'No job board found on the company''s site. Founded: https://360energyco.com/about. Stage: Halliburton
+    Labs strategic investment Q4 2024, amount not disclosed (https://360energyco.com/about). No priced round found.
+    Flags: runs mainly on natural gas; main customers are oil and gas; serves data centers / AI compute and bitcoin
+    mining; began as an upstream producer in the Barnett Shale. Evidence: https://360energyco.com https://360energyco.com/about
+    Region sources: halliburton-labs. Confidence: medium. Unresolved: Headcount, funding stage. Site says 50+ MW
+    operating, 350+ MW contracted; field operations in Midland, TX. Customers split across AI/HPC, bitcoin miners
+    and oil and gas producers; none named.'
 - id: 6k
   name: 6K
   website: https://www.6kinc.com
@@ -234,6 +293,35 @@ companies:
     https://ans.org/news/article-6626/acceleron-fusion-raises-24m-in-seed-funding-to-advance-lowtemp-fusion Confidence:
     medium. Unresolved: Company site unreachable; domain listed by Dealroom (acceleron.energy) differs from input
     domain.'
+- id: ace-green-recycling
+  name: ACE Green Recycling
+  website: https://acegreenrecycling.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery recycling technology (GREENLEAD for lead-acid, LITHIUM FIRST for lithium-ion) recovering lead,
+      lithium, cobalt, nickel and graphite; ACE Lead Recycling Facility in Silsbee, TX under development.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site describes a proposed business combination with
+    Athena Technology Acquisition Corp. II (SPAC) with a $32M PIPE; closing and ticker not stated. Flags: pending
+    SPAC listing (status not confirmed). Evidence: https://www.acegreenrecycling.com https://cleantechnica.com/2024/12/05/ace-green-recycling-becoming-a-public-company-leading-on-sustainable-battery-recycling/
+    Region sources: e2-texas, third-derivative. Confidence: medium. Unresolved: Whether the SPAC merger closed;
+    founding year and headcount.'
 - id: aclara
   name: Aclara
   website: https://www.aclara.com
@@ -293,6 +381,36 @@ companies:
     Ventures, Bidra Innovations, HG Ventures); earlier $13M Jul 2023 entry; About text says $20.2M raised. https://dealroom.co/companies/aclarity
     Evidence: https://aclaritywater.com https://dealroom.co/companies/aclarity Region sources: massventures. Confidence:
     high. Unresolved: Input HQ guess Clinton, MA; site and Dealroom both say Medway, MA.'
+- id: act-ion-battery-technologies
+  name: ACT-ion Battery Technologies
+  website: null
+  careers_url: null
+  hq: Dallas, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Cathode active materials (LFP, LMFP, sodium-ion work) made with its ACT-ivate process at a pilot plant
+      in Carrollton, TX (opened Nov 2026).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: $7.5M Pre-Series A, Feb 2025, led by BASF Venture Capital
+    with Hunt Energy Enterprises, Mirae Asset, Arosa, LG Technology Ventures (https://natlawreview.com/press-releases/act-ion-raises-75-million-pre-series-round-led-basf-venture-capital).
+    Flags: spinout of Hunt Energy Enterprises. Evidence: https://www.basf.com/global/en/who-we-are/organization/group-companies/BASF_Venture-Capital/publications/2026/261103_ACT-ion
+    https://dallasinnovates.com/dallas-based-lithium-ion-battery-materials-startup-act%e2%80%91ion-raises-7-5m/
+    https://www.chemengonline.com/act-ion-to-establish-advanced-cathode-pilot-plant-in-carrollton-texas Region sources:
+    web-tx-battery-mfg. Confidence: medium. Unresolved: Own domain, founding year and headcount not found. Pre-Series
+    A mapped to seed.'
 - id: active-surfaces
   name: Active Surfaces
   website: https://www.activesurfaces.tech
@@ -683,6 +801,40 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/aernata.
     Stage: YC Spring 2026; no priced round found. Flags: very early (founded 2026, 2 people). Evidence: https://www.ycombinator.com/companies/aernata
     Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
+- id: aeromine-technologies-inc
+  name: Aeromine Technologies, Inc.
+  website: https://aerominepower.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - wind
+  stage: series-a
+  founded: 2020
+  headcount:
+    value: 11
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/aeromine-technologies)
+  climate:
+    tier: core
+    reason: Motionless rooftop wind energy units mounted along building edges (about 10 ft tall; 10 units about
+      50 kW nameplate), sold with installation and maintenance, often paired with solar.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 11 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/aeromine-technologies),
+      2026-11-24); growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 11, undated. Founded: https://dealroom.co/companies/aeromine-technologies.
+    Stage: Dealroom: Series A, May 2024, $9M (investors listed include Veriten and Thornton Tomasetti); grant of
+    $1.1M from Danish Energy Agency, Nov 2023. Evidence: https://dealroom.co/companies/aeromine-technologies Region
+    sources: greentown. Confidence: medium. Unresolved: Dealroom gives website aerominetechnologies.com, not the
+    input domain aerominepower.com; likely same company (name, product and Houston match) but not checked against
+    the site.'
 - id: aeroshield-materials
   name: AeroShield Materials
   website: https://www.aeroshield.tech
@@ -1191,6 +1343,39 @@ companies:
     Flags: subsidiary of Johnson Controls; main customers are data centers, with military customers also named.
     Evidence: https://alloyenterprises.co https://dealroom.co/companies/alloy-enterprises Region sources: builtin-boston-greentech.
     Confidence: high. Unresolved: Dealroom lists HQ as Somerville; site address is Burlington, MA.'
+- id: alma-energy
+  name: Alma Energy
+  website: https://almaenergy.net
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ashby
+    board: alma
+  read: auto
+  sectors:
+  - geothermal
+  - battery-materials
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Direct lithium extraction from natural/geothermal brines using a chlor-alkali electrodialysis process
+      (lab stage).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2021.'
+  notes: 'Board ashby:alma seen 2026-11-24, token matched by name; board page checked: 27 open roles, 18 US-remote.
+    Founded: https://pitchbook.com/profiles/company/512699-68. Stage: No venture round found. Joint project with
+    UTEP received a $500,000 TAMEST prize (per search snippet of mining.com; page itself returned 403). MDPI 2025
+    review rates its technology TRL 3, lab. Flags: lab stage (TRL 3). Evidence: https://pitchbook.com/profiles/company/512699-68
+    https://www.mining.com/electrodialysis-technology-to-extract-lithium-from-thermal-sources-gets-award/ https://www.mdpi.com/2075-163X/15/5/512
+    https://onepetro.org/OTCONF/proceedings-abstract/24OTC/1-24OTC/544769 Region sources: greentown. Confidence:
+    low. Unresolved: Founded year is from a PitchBook search snippet only (PitchBook page 403). A MapQuest listing
+    shows an unrelated-looking ''Alma Energy, LLC'' in Golden, CO marked closed; probably a different entity. Headcount
+    and stage not found; no Dealroom page.'
 - id: aloft-systems
   name: Aloft Systems
   website: https://aloft.systems
@@ -1381,12 +1566,12 @@ companies:
 - id: amber-kinetics
   name: Amber Kinetics
   website: https://amberkinetics.com/
-  careers_url: null
+  careers_url: https://amberkinetics.com/careers/
   hq: Union City, CA
   ats:
-    type: bamboohr
-    board: amberkinetics
-  read: manual
+    type: unknown
+    board: null
+  read: none
   sectors:
   - energy-storage
   - industrial-heat
@@ -1425,8 +1610,8 @@ companies:
   founded: null
   headcount: null
   climate:
-    tier: enabling
-    reason: Solid-state AC switching and AC-to-DC conversion chips for electrical devices and buildings (AmberSemi).
+    tier: out
+    reason: Power-management chips mounted on AI server boards for data centers; data-center equipment is out.
     basis: agent
     approved: false
   startup:
@@ -1436,7 +1621,8 @@ companies:
     now brands itself AmberSemi. Has BusinessWire releases from March 2025 and a 2026 profile citing more than 50
     US patents. Caution: ambersemi.com currently serves an unrelated Shanghai equipment maker, so the US company''s
     current domain is unconfirmed.. Evidence: https://www.businesswire.com/news/home/20250317967866/en https://prnewswire.com/news-releases/at-apec-2024-ambersemi-to-demonstrate-its-silicon-based-ac-to-dc-power-conversion-technology-302070039.html
-    https://www.cbinsights.com/company/amber-solutions Region sources: kb-ba-hardware. Confidence: low.'
+    https://www.cbinsights.com/company/amber-solutions Region sources: kb-ba-hardware. Confidence: low. Owner ruling
+    A2 (2026-11-24) applied.'
 - id: ambient-photonics
   name: Ambient Photonics
   website: https://www.ambientphotonics.com
@@ -1598,6 +1784,36 @@ companies:
     total equity $100-500M. Evidence: https://ampsortation.com https://dealroom.co/companies/amp-robotics Region
     sources: ccia-members, builtin-co-sustain, builtin-co-greentech, prelude-portfolio, congruent-portfolio. Confidence:
     high. Tier set under owner decision 13.'
+- id: ampeers
+  name: AMPeers
+  website: https://ampeers-llc.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ashby
+    board: ampeers
+  read: auto
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-temperature superconductor wire for power cables and machines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:ampeers seen 2026-11-24, token matched by name; board page checked: 4 open roles. Stage: Funded
+    mainly by DOE and Navy SBIR/STTR grants (e.g. USD 1.15M DOE STTR Phase II; USD 206,500 DOE Office of Science
+    grant Feb 2024) per search snippets of https://www.highergov.com/grant/DESC0024855 and UH news. Caplight snippet
+    claims a seed round dated 2026-06-05 (unverified); CB Insights snippet total USD 18.54M vs Caplight USD 6.95M.
+    Flags: Navy among grant funders. Evidence: https://www.uh.edu/news-events/stories/2023/october-2023/10102023-doe-superconductivity-funding.php
+    https://www.highergov.com/grant/DESC0024855 https://www.caplight.com/company/ampeers Region sources: gtx-2025h2,
+    greentown. Confidence: low. Unresolved: Company site refused the connection (ECONNREFUSED). Founded year disputed
+    in snippets (2008, 2009, 2016). Headcount and stage.'
 - id: amperesand
   name: Amperesand
   website: null
@@ -1724,6 +1940,32 @@ companies:
     little content. Weak evidence of current operations beyond the live site and University of Michigan coverage
     of its 24M cell-testing work.. Evidence: https://and.aero https://battery-tech.net/company/and-battery-aero-aba/
     https://www.halo.science/company/and-battery-aero Region sources: arpae-projects. Confidence: low.'
+- id: anning-corporation
+  name: Anning Corporation
+  website: https://anning.io
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Exploration and production systems for geologic hydrogen.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: No funding disclosed. Site
+    cites the Breakthrough Energy Fellows program and Climate Capital. https://anning.io Evidence: https://anning.io
+    Region sources: activate, greentown. Confidence: medium. Unresolved: Founding year, headcount, funding. Dealroom
+    404 (anning-corporation, anning). Site pitches 500 MW projects for hyperscale AI data centers but names no customers.'
 - id: anode-technology-company
   name: Anode Technology Company
   website: https://anode.tech
@@ -1909,6 +2151,67 @@ companies:
     (LOIs, with industrial buyers); nuclear fission. Evidence: https://apolloatomics.com https://dealroom.co/companies/apollo-atomics
     Region sources: yc. Confidence: medium. Unresolved: Seed amount differs ($31M table vs $26M description); site
     does not state HQ.'
+- id: applied-bioplastics
+  name: Applied Bioplastics
+  website: https://appliedbioplastics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Plant-fiber biocomposites: BioFi thermoplastic (agricultural waste bonded to PP/PE) and BTR Board biothermoset
+      resin composite (Jutin, woven jute).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site lists backers (GSV, MassChallenge, Greentown) and
+    SXSW Pitch wins 2020 and 2021; no amounts. Evidence: https://www.appliedbioplastics.com Region sources: gtx-inaugural.
+    Confidence: medium. Unresolved: HQ (input guess Austin, TX; not stated on site), founded, headcount, stage.
+    Domain guessed (not in input).'
+- id: applied-carbon
+  name: Applied Carbon
+  website: https://appliedcarbon.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: workable
+    board: appliedcarbon
+  read: manual
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2020
+  headcount:
+    value: 18
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/applied-carbon)
+  climate:
+    tier: core
+    reason: Mobile in-field machines that convert crop residues into biochar for carbon removal (formerly Climate
+      Robotics).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 18 people (Dealroom (https://dealroom.co/companies/applied-carbon), 2026-11-24); growth
+      sign: founded 2020.'
+  notes: 'Board workable:appliedcarbon seen 2026-11-24, linked from the company''s own site: 1 open roles. Headcount
+    note: Dealroom 18; undated, as viewed 2026-11-24; Dealroom shows team size down 33% over the past year. Founded:
+    https://dealroom.co/companies/applied-carbon. Stage: $21.5M Series A announced 2024-07-31. https://agfundernews.com/applied-carbon-rakes-in-21-5m-series-a-to-sequester-carbon-at-scale-via-biochar
+    Flags: formerly Climate Robotics. Evidence: https://appliedcarbon.com https://dealroom.co/companies/applied-carbon
+    https://agfundernews.com/applied-carbon-rakes-in-21-5m-series-a-to-sequester-carbon-at-scale-via-biochar https://globalaginvesting.com/agtech-startup-applied-carbon-secures-21-5m-in-series-a-round-for-biochar-tech/
+    Region sources: congruent, elemental. Confidence: high. Unresolved: Global AgInvesting (citing Crunchbase) says
+    $21.5M is total raised since 2020, not just the Series A.'
 - id: applied-kinetics
   name: Applied Kinetics
   website: https://appliedkinetics.ai
@@ -2440,6 +2743,34 @@ companies:
     tests, 2019), a $6.1M testing campaign in Canada (~2024) and a May 2024 state grant; no equity rounds found.
     Flags: latest site news is from 2024. Evidence: https://atargis.com https://atargis.com/about Region sources:
     ccia-members, oedit-ai. Confidence: medium. Unresolved: Headcount, equity funding'
+- id: atmospark
+  name: AtmoSpark
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electric-field-driven dehumidification and atmospheric water extraction technology (patent US 12,227,924
+      B2, electro-conductive extraction of water molecules from air).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding found. Crunchbase snippet lists CEO Tejus
+    Mane and co-founder Aniket Khade. Evidence: https://patentsgazette.uspto.gov/week07/OG/html/1531-3/US12227924-20250218.html
+    https://crunchbase.com/organization/atmospark Region sources: rice-cea-5. Confidence: low. Unresolved: atmospark.com
+    is a parked domain for sale (GoDaddy); no company site found. Founded, headcount, stage, current status. Houston
+    location from patent assignee (AtmoSpark Technologies, Houston).'
 - id: atmoszero
   name: AtmosZero
   website: null
@@ -2559,6 +2890,34 @@ companies:
     date: '2026-07-22'
     type: venture round (led by Andreessen Horowitz)
     source: https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+- id: atonometrics
+  name: Atonometrics
+  website: https://atonometrics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: 2007
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Photovoltaic performance measurement equipment (a Kipp & Zonen / OTT HydroMet company).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 2007, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.kippzonen.com/about-atonometrics. Stage:
+    atonometrics.com redirects to kippzonen.com, which says Atonometrics continues ''as part of Kipp & Zonen'' (OTT
+    HydroMet). Flags: subsidiary of Kipp & Zonen / OTT HydroMet. Evidence: https://www.kippzonen.com/about-atonometrics
+    Region sources: ati-alumni. Confidence: high. Unresolved: Acquisition date and whether an Austin site still
+    operates.'
 - id: automat-solutions
   name: Automat Solutions
   website: https://www.automatsoln.com/
@@ -2929,6 +3288,36 @@ companies:
     https://www.thinkgeoenergy.com/birch-geothermal-rooted-in-speed-and-building-the-next-generation-of-enhanced-geothermal/
     https://www.runtimewire.com/article/birch-geothermal-mike-matson-oilfield-tech-egs-launch Region sources: thinkgeo-birch,
     search-snippets. Confidence: medium. Unresolved: City, founded year, funding amount.'
+- id: black-mountain-metals
+  name: Black Mountain Metals
+  website: null
+  careers_url: null
+  hq: Fort Worth, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nickel and copper mining for battery cathode materials; bought the Lanfranchi nickel project in Western
+      Australia and held about 20% of ASX-listed Poseidon Nickel (2018). Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Private; mining.com describes the buyer as US private
+    equity firm Black Mountain (2018). Lanfranchi bought from Panoramic Resources for USD 15.1M in 2018 (search
+    snippets). Flags: mining operator; main assets outside US (Western Australia). Evidence: https://hartenergy.com/companies/black-mountain-metals
+    https://www.mining.com/web/u-s-private-equity-firm-black-mountain-buy-australia-nickel-project/ https://www.miningweekly.com/article/black-mountain-sees-exploration-potential-at-lanfranchi-2018-10-23
+    Region sources: gtx-inaugural. Confidence: low. Unresolved: No company site found; no news after 2019 found,
+    so current status and holdings unknown. Founded, headcount.'
 - id: blackburn-energy
   name: Blackburn Energy
   website: https://blackburnenergy.com
@@ -3312,9 +3701,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/boston-materials)
   climate:
-    tier: enabling
-    reason: Carbon-fiber composite materials, including Liquid Metal ZRT thermal interface materials, for high-performance
-      electronics, aerospace and electrified mobility.
+    tier: out
+    reason: Thermal interface material for AI and data-center chips; data-center equipment is out.
     basis: agent
     approved: false
   startup:
@@ -3327,7 +3715,8 @@ companies:
     Ventures); round letter not stated. https://dealroom.co/companies/boston-materials Flags: about 10 years old
     (founded 2016); product is a material/component, not a system. Evidence: https://dealroom.co/companies/boston-materials
     Confidence: medium. Unresolved: Round letter for Nov 2024 raise not confirmed; whether thermal-interface customers
-    are mainly data center / AI electronics not checked. Missing facts filled from data/screening/registry-fixes.'
+    are mainly data center / AI electronics not checked. Missing facts filled from data/screening/registry-fixes.
+    Owner ruling A2 (2026-11-24) applied.'
 - id: boston-metal
   name: Boston Metal
   website: https://www.bostonmetal.com
@@ -3363,6 +3752,41 @@ companies:
     100-500M. Flags: wholly owned subsidiary in Brazil. Evidence: https://dealroom.co/companies/boston-metal Region
     sources: engine-ventures, mit-news-startups, bev, prelude, eip, engine, arpa-e. Confidence: high. Unresolved:
     Own site not fetched.'
+- id: branch-energy
+  name: Branch Energy
+  website: https://branchenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: rippling
+    board: branch
+  read: auto
+  sectors:
+  - energy-storage
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 25
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/branch-energy)
+  climate:
+    tier: core
+    reason: Arc, a containerized behind-the-meter battery system that Branch funds, installs, owns and operates
+      for commercial sites as a virtual power plant, also acting as retail electricity provider in Texas.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 25 people (Dealroom (https://dealroom.co/companies/branch-energy), 2026-11-24); growth
+      sign: founded 2020.'
+  notes: 'Board rippling:branch seen 2026-11-24, token matched by name; board page checked: 26 open roles, 8 US-remote.
+    Headcount note: Dealroom 25, band <100; undated, as viewed 2026-11-24. Founded: https://dealroom.co/companies/branch-energy.
+    Stage: Seed $4.5M Aug 2021; Series A $11M Aug 2024 (Zero Infinity Partners, Prelude); Series B $33M Sep 2026
+    co-led by Piva Capital and Clean Energy Ventures (Dealroom description; not in its funding table). https://dealroom.co/companies/branch-energy
+    Flags: energy-as-a-service / retail electricity provider model; unclear whether Arc hardware is its own design.
+    Evidence: https://dealroom.co/companies/branch-energy Region sources: prelude, cev. Confidence: medium. Unresolved:
+    Company site returned empty content twice (likely a JavaScript-only page); whether Branch designs or makes the
+    Arc hardware.'
 - id: bridge-12-technologies
   name: Bridge 12 Technologies
   website: https://bridge12.com
@@ -4007,6 +4431,34 @@ companies:
     (CCS); projects outside region (Georgia, Southeast); spun off FrostCarbon in 2024. Evidence: https://carbonamerica.com
     https://dealroom.co/companies/carbon-america Region sources: builtin-co-greentech, builtin-co-energy. Confidence:
     medium. Unresolved: Whether physical counts (developer and operator of capture and storage projects).'
+- id: carbonfree
+  name: CarbonFree
+  website: https://carbonfree.cc
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Captures industrial CO2 and turns it into industrial minerals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Own site names investors Fortistar, Apollo Investment
+    Corporation, Berg & Berg Enterprises, Husky Partners and Braemar Energy Ventures; no rounds or amounts given.
+    Flags: domain inferred (carbonfree.cc, San Antonio address matches). Evidence: https://www.carbonfree.cc/ https://www.carbonfree.cc/about
+    Region sources: greentown. Confidence: medium. Unresolved: Founded year, headcount, round/stage; Dealroom slugs
+    carbonfree / carbonfree_chemicals 404. SkyMine plant address in San Antonio listed; plant operating status not
+    confirmed.'
 - id: carnot-compression
   name: Carnot Compression
   website: https://www.carnotcompression.com/
@@ -4087,6 +4539,45 @@ companies:
   notes: 'No job board found on the company''s site. Evidence: https://www.cemcycle.com Region sources: masscec-pr-4-5m,
     wpi-startups, greentown. Confidence: medium. Unresolved: HQ (input Cambridge), founded, headcount, funding;
     domain guessed, content matches'
+- id: cemvita
+  name: Cemvita
+  website: https://www.cemvita.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - recycling
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 51
+    as_of: '2026-11-24'
+    source: Dealroom / FundedIQ (https://dealroom.co/companies/cemvita-factory)
+  climate:
+    tier: core
+    reason: Engineers microbes to make bio-based products (FermOil renewable bio-oils, soil/plant products, fermentation-derived
+      materials) from CO2 and other feedstocks; primary model is now to develop and license the technology with
+      partners deploying it.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 51 people (Dealroom / FundedIQ (https://dealroom.co/companies/cemvita-factory), 2026-11-24);
+      growth sign: founded 2017.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom says headcount under 100 (no exact
+    band shown); FundedIQ (search snippet) band 51-100; lower bound used. Undated. Founded: https://houston.innovationmap.com/cemvita-factory-series-a-8090-partners-2654630319.html.
+    Stage: Series A initial closing led by 8090 Partners, amount undisclosed, Aug 11 2021 (InnovationMap). Aggregators
+    (search snippets) list a further $6.5M round Feb 2024 of unknown type; Dealroom shows total funding $10-50M
+    (''over $15 million''). Later round types unverified. Flags: licensing model: partners lead deployment; spinouts
+    Endolith (biomining) and Eclipse Energy (subsurface biotech, depleted oil and gas reservoirs); investors include
+    Oxy Low Carbon Ventures. Evidence: https://cemvita.com/ https://dealroom.co/companies/cemvita-factory https://houston.innovationmap.com/cemvita-factory-series-a-8090-partners-2654630319.html
+    Region sources: greentown. Confidence: medium. Unresolved: Exact headcount; type of rounds after the 2021 Series
+    A; whether Cemvita itself still operates a production plant (Dealroom mentions 500 bbl/day at a first commercial
+    plant, own site stresses licensing).'
 - id: cf-technologies
   name: CF Technologies
   website: null
@@ -4384,6 +4875,56 @@ companies:
     amounts disclosed. Flags: pivoted from sail cargo to floating AI compute; main customers are AI compute; autonomous
     vessel. Evidence: https://clippership.co Region sources: fifty-years. Confidence: medium. Unresolved: Funding
     stage; headcount; HQ given only as ''build in South San Francisco'' (directory says San Francisco).'
+- id: cls-wind
+  name: CLS Wind
+  website: https://clswind.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Self-elevating wind turbine installation and maintenance platforms (KINKA LIFT onshore, ORCA LIFT offshore).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Flags: UK entity
+    registered in Edinburgh. Evidence: https://clswind.com Region sources: greentown. Confidence: medium. Unresolved:
+    Founding year, headcount, funding. Dealroom 404.'
+- id: coflux-purification
+  name: Coflux Purification
+  website: https://cofluxpurification.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Patent-pending catalyst that captures and destroys PFAS in wastewater, built to fit standard UV reactors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site. Evidence: https://www.cofluxpurification.com
+    Region sources: energycapital-time-greentech. Confidence: medium. Unresolved: Domain guessed (site says technology
+    was built in Rice University labs). HQ, founding year, headcount and funding unknown.'
 - id: colorado-earth
   name: Colorado Earth
   website: https://coloradoearth.com
@@ -5068,6 +5609,39 @@ companies:
     a Solar Impulse PDF (the file returned 403). The directory says Cambridge, MA, but no usable third-party source
     confirms the HQ; the only other hits were Greentown pages, which were excluded. Founded year, headcount and
     funding not found. Built In Boston returned 404.'
+- id: daikin
+  name: Daikin
+  website: https://www.daikin.com/
+  careers_url: null
+  hq: Osaka, Japan
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: public
+  founded: 1924
+  headcount:
+    value: 104095
+    as_of: '2026-03-31'
+    source: Daikin corporate data (https://www.daikin.com/corporate/overview/summary/data)
+  climate:
+    tier: core
+    reason: Heat pumps and high-efficiency HVAC equipment; its Texas campus in Waller is a main US site.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '104,095 people (Daikin corporate data (https://www.daikin.com/corporate/overview/summary/data), 2026-03-31):
+      over the 4,000-person line.'
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Headcount
+    note: Consolidated figure as of 2026-03-31; non-consolidated 8,212. Founded: https://www.daikin.com/corporate/overview/summary/data.
+    Stage: Listed on Tokyo Stock Exchange, TYO 6367 (https://en.wikipedia.org/wiki/Daikin); listing year not found
+    in fetched sources. Flags: over 1,000 employees; HQ outside region; main Texas site: Daikin Texas Technology
+    Park, Waller, TX (opened 2017, consolidates Goodman manufacturing; Goodman acquired 2012). Evidence: https://www.daikin.com/corporate/overview/summary/data
+    https://en.wikipedia.org/wiki/Daikin Region sources: heti-members. Confidence: high. Unresolved: TSE listing
+    year.'
 - id: dandelion-energy
   name: Dandelion Energy
   website: https://dandelionenergy.com
@@ -5217,6 +5791,32 @@ companies:
     Bridge Fund), amounts and dates not shown; description says $18M raised. https://dealroom.co/companies/de-ice
     Evidence: https://deice.com https://dealroom.co/companies/de-ice Region sources: greentown. Confidence: medium.
     Unresolved: Series A date and amount; headcount. Air Canada is launch customer.'
+- id: deep-anchor-solutions
+  name: Deep Anchor Solutions
+  website: https://deepanchorsolutions.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Deeply Embedded Ring Anchor (DERA), a compact anchor for floating wind, marine, solar, nuclear, aquaculture
+      and infrastructure.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Evidence: https://www.deepanchorsolutions.com/
+    Region sources: activate, greentown. Confidence: medium. Unresolved: HQ not stated on site (input said Houston);
+    founding year, headcount, funding. Dealroom 404. Oil and gas is not among the applications listed on the site.'
 - id: deep-fission
   name: Deep Fission
   website: https://deepfission.com
@@ -5317,6 +5917,34 @@ companies:
     over 1,000 employees; data-center power is a major Delta business line (share not checked). Region sources:
     kb-ba-hardware. Confidence: low. Unresolved: Delta pages fetched returned 404; Fremont address, founding year
     and headcount not confirmed.'
+- id: dexmat
+  name: DexMat
+  website: https://dexmat.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: seed
+  founded: 2015
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Carbon nanotube fiber (Galvorn) made as a lighter, lower-carbon alternative to copper and aluminium
+      conductors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2015.'
+  notes: 'No job board found on the company''s site. Founded: https://www.dexmat.com/about. Stage: First venture
+    round in 2023 led by Shell Ventures (amount undisclosed); 2026 seed round of more than $5M led by non sibi ventures
+    (https://www.dexmat.com/about). Evidence: https://www.dexmat.com/about Region sources: energycapital-time-greentech,
+    third-derivative, shell-gamechanger. Confidence: high. Unresolved: Headcount (Built In slug 404). Customers
+    span aerospace and defense, data centers, wire and cable, automotive and energy; none named as main.'
 - id: dexmate
   name: Dexmate
   website: null
@@ -5343,6 +5971,42 @@ companies:
     reason: 'Independent; 51 people (Simplify (size band); undated, so as_of is the day it was read (https://simplify.jobs/c/Dexmate),
       2026-11-24); growth sign: founded 2024.'
   notes: Missing facts filled from data/screening/registry-fixes.
+- id: dg-matrix
+  name: DG Matrix
+  website: https://dgmatrix.com
+  careers_url: https://www.dgmatrix.com/careers
+  hq: Morrisville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: series-a
+  founded: null
+  headcount:
+    value: 250
+    as_of: '2026-11-25'
+    source: DG Matrix About page
+  climate:
+    tier: out
+    reason: Multi-port solid-state transformers whose recent products and press are for AI data centers; equipment
+      made mainly for data centers is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 250 people (DG Matrix About page, 2026-11-25); founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on solid-state transformer startups (results naming DG Matrix alongside Amperesand and Heron Power);
+    facts from own site.. Flags: main customers are data centers (recent products and press are for AI data centers;
+    grid, EV-fleet and microgrid lines also offered); co-founder/CTO is an NC State professor; site does not call
+    it a FREEDM spinout. Stage: 60M USD Series A announced 2026-02-18, led by Engine Ventures with ABB, Cerberus
+    Ventures, Chevron Technology Ventures (search summary of Business Wire release https://www.businesswire.com/news/home/20260218937765/en/
+    ; Business Wire refuses automated clients, not read). Earlier 20M USD seed, March 2025 (search summary of chargedevs.com,
+    not read: robots.txt bars ClaudeBot). Evidence: https://www.dgmatrix.com/ https://www.dgmatrix.com/about https://www.dgmatrix.com/careers
+    https://www.dgmatrix.com/news-and-media https://www.businesswire.com/news/home/20260218937765/en/ Confidence:
+    medium.'
 - id: diamond-foundry
   name: Diamond Foundry
   website: https://www.diamondfoundry.com
@@ -5466,6 +6130,36 @@ companies:
     feed). Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/duranium. Stage:
     YC S25; no priced round found. Evidence: https://www.ycombinator.com/companies/duranium Region sources: yc-directory.
     Confidence: medium. Unresolved: Funding.'
+- id: dynapower
+  name: Dynapower
+  website: https://dynapower.com
+  careers_url: https://sensata.wd1.myworkdayjobs.com/Sensata-Careers/page/fda7a61bd64210014f29b5c561950000
+  hq: South Burlington, VT
+  ats:
+    type: workday
+    board: sensata.wd1/Sensata-Careers
+  read: manual
+  sectors:
+  - energy-storage
+  - hydrogen
+  stage: subsidiary
+  founded: 1963
+  headcount: null
+  climate:
+    tier: core
+    reason: Energy-storage inverters, electrolyzer power supplies and fuel-cell inverters (a Sensata company).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1963, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of US utility-storage inverter makers; confirmed on own site.. Flags: subsidiary
+    of Sensata Technologies; markets: hydrogen, e-mobility, energy storage (incl. data centers, solar+storage, microgrids),
+    industry (incl. mining), government/defense. Stage: Site footer and careers link identify it as part of Sensata
+    Technologies; acquisition date not stated on the pages read. Evidence: https://dynapower.com/ https://dynapower.com/about-us/
+    Confidence: medium.'
 - id: earth-ai
   name: EARTH AI
   website: https://www.earth-ai.com
@@ -5497,6 +6191,32 @@ companies:
     Stage: YC S19; no round found in this pass. Flags: mineral exploration and drilling (mining); field operations
     location not verified. Evidence: https://www.ycombinator.com/companies/earth-ai Region sources: yc-directory.
     Confidence: low. Unresolved: Own site not fetched; funding; where field operations are.'
+- id: earthly-labs
+  name: Earthly Labs
+  website: https://earthlylabs.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: CiCi carbon capture units that capture and reuse CO2 from small sources such as breweries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Listed as a Chart Industries brand on earthlylabs.com;
+    site says Chart is now part of Baker Hughes. Flags: subsidiary of Chart Industries (Baker Hughes). Evidence:
+    https://www.earthlylabs.com Region sources: ati-alumni. Confidence: medium. Unresolved: Acquisition date, founded,
+    HQ (input guess Austin, TX), headcount. Domain guessed (not in input).'
 - id: earthview
   name: Earthview
   website: null
@@ -5984,6 +6704,41 @@ companies:
     Stage: DOE-funded (EERE success story); no venture rounds found. Evidence: https://www.energy.gov/node/983396
     https://www.cbinsights.com/company/element-one https://linkedin.com/company/elem1 Region sources: oedit-ai-2023nov.
     Confidence: medium. Unresolved: Own domain (element1.com is an unrelated Dutch company); current status'
+- id: elemental-advanced-materials
+  name: Elemental Advanced Materials
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2019
+  headcount:
+    value: 1
+    as_of: '2026-10-14'
+    source: Battery Business Directory (https://batterybusinessdirectory.org/profile/elemental-advanced-materials)
+  climate:
+    tier: core
+    reason: Converts waste plastics, gases and other carbon feedstocks into graphene and carbon nano-onions with
+      hydrogen as a co-product, in a continuous single-step process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 1 people (Battery Business Directory (https://batterybusinessdirectory.org/profile/elemental-advanced-materials),
+      2026-10-14); growth sign: founded 2019.'
+  notes: 'No job board found on the company''s site. Headcount note: Band 1-10; as_of is the directory page''s last-updated
+    date. Likely understated if a $20M round closed in 2025. Founded: https://batterybusinessdirectory.org/profile/elemental-advanced-materials.
+    Stage: Search snippet of a post: ''Elemental Advanced Materials Closes $20M to Scale Production of Carbon Nanomaterials'',
+    June 2025, led by Taranis; round type not stated, source page not read. Evidence: https://www.graphene-info.com/elemental-advanced-materials
+    https://batterybusinessdirectory.org/profile/elemental-advanced-materials https://www.crunchbase.com/organization/elemental-recycling
+    Region sources: greentown. Confidence: medium. Unresolved: Domain likely elementaladm.com (from search results,
+    not fetched). Round type for the June 2025 $20M not confirmed. Address 11603 Brittmoore Park Drive, Houston
+    per graphene-info. Formerly Elemental Recycling (Crunchbase/LinkedIn slugs).'
 - id: elementium-materials
   name: Elementium Materials
   website: https://elementium.io
@@ -6328,6 +7083,37 @@ companies:
     reason: 'Independent; 148 people (Energy Vault FY2025 Form 10-K (filed 2026-03-18), via stockanalysis.com (S&P
       Global) https://stockanalysis.com/stocks/nrgv/employees/, 2025-12-31); growth sign: founded 2017.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+- id: energyx
+  name: EnergyX
+  website: https://energyx.com/
+  careers_url: null
+  hq: San Juan, Puerto Rico
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: series-b
+  founded: 2018
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium extraction and refining to battery-grade lithium carbonate and hydroxide; Project Lonestar demonstration
+      plant in Hooks, TX (about 250 t/y LCE, commissioned Mar 2026).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2018.'
+  notes: 'No job board found on the company''s site. Founded: https://energyx.com/about. Stage: $50M Series B in
+    2023 led by General Motors (https://energyx.com/about); investors also include POSCO and Eni Next; $5M DOE grant
+    for Project Lonestar. Flags: HQ outside region (San Juan, PR); main sites in TX (Austin science HQ, Hooks plant);
+    lithium extraction. Evidence: https://energyx.com/about https://builtin.com/company/energyx Region sources:
+    web-tx-battery-mfg. Confidence: medium. Unresolved: Sources disagree: the site says founded 2018 (also ''began
+    in 2017''), HQ San Juan; Built In lists HQ Fort Lauderdale, FL and founded 2020 (possibly a different or outdated
+    entry). Headcount and any round after 2023 unknown.'
 - id: enervenue
   name: EnerVenue
   website: https://enervenue.com
@@ -6568,6 +7354,38 @@ companies:
     American Century Investments); total $10-50M; no dates. Evidence: https://enzinc.com/ https://dealroom.co/companies/enzinc
     Region sources: caltestbed-directory, cec-eif-showcase, cec-nopa, calseed-awardees, third-derivative, arpae-projects.
     Confidence: medium. Unresolved: Round amounts and dates not shown.'
+- id: epc-power
+  name: EPC Power
+  website: https://epcpower.com
+  careers_url: https://www.epcpower.com/about/careers
+  hq: Poway, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: late
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: Grid-forming power conversion systems for utility-scale energy storage and microgrids; data centers
+      are one of its markets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founded 2010 but venture-backed (late); latest round not yet
+      checked, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of US grid-forming inverter makers; confirmed on own site.. Flags: pending acquisition
+    by Flex (4.4B USD); data centers named first among its markets alongside utility-scale storage and microgrids;
+    no revenue split given. Stage: Controlling shareholders Goldman Sachs Alternatives and Cleanhill Partners (Cleanhill
+    first invested 2021), per the Flex sale announcement 2026-09-03. Evidence: https://www.epcpower.com/ https://www.epcpower.com/about/company
+    https://www.epcpower.com/news/epc-power-announces-sale-to-flex-for-4-4b https://www.epcpower.com/about/careers
+    Confidence: high.'
 - id: epic-cleantec
   name: Epic Cleantec
   website: https://www.epiccleantec.com
@@ -6771,6 +7589,32 @@ companies:
   notes: 'No job board found on the company''s site. Flags: unclear whether it manufactures or imports/sells vehicles.
     Evidence: http://www.etukusa.com/ Region sources: bs-co-ev. Confidence: low. Unresolved: HQ city, founding,
     headcount not stated on site; active status inferred from current pricing.'
+- id: euphree
+  name: Euphree
+  website: https://euphree.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric bicycles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Site claims 170+ dealers and 10,000+
+    riders. Stage: Not found. Flags: consumer e-bike brand; manufacturing location unknown. Evidence: https://euphree.com
+    https://euphree.com/pages/about-us Region sources: greentown. Confidence: medium. Unresolved: Founding year,
+    headcount, funding, where bikes are made. Dealroom 404.'
 - id: ev-realty
   name: EV Realty
   website: https://evrealtyus.com
@@ -6918,13 +7762,42 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+    status: out
+    reason: Part of Xylem; not independent.
   notes: 'Board workday:xylem.wd5.myworkdayjobs.com/xylem-careers seen 2026-11-24, linked from the company''s own
     site: role count not read (no public feed). Stage: evoqua.com redirects to xylem.com/en-us/brand/evoqua, which
     says ''In 2023, Evoqua joined forces with Xylem''. Flags: subsidiary of Xylem; HQ outside region (input lists
     Tewksbury, MA site; not verified). Evidence: https://www.xylem.com/en-us/brand/evoqua/ Region sources: builtin-boston-greentech.
-    Confidence: medium. Unresolved: Tewksbury, MA site; headcount.'
+    Confidence: medium. Unresolved: Tewksbury, MA site; headcount. Missing facts filled from data/screening/registry-fixes.'
+  parent: Xylem
+- id: excipio-energy
+  name: Excipio Energy
+  website: https://excipioenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Excibuoy patented floating platform for multiple offshore energy systems and an E-OTEC hybrid ocean
+      thermal energy concept; also consulting for offshore oil and gas and energy transition.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site. Flags: consulting for
+    offshore oil and gas is part of the business. Evidence: https://www.excipioenergy.com Region sources: gtx-inaugural.
+    Confidence: low. Unresolved: HQ (input guess Houston, TX; site lists offices without naming HQ), founded (footer
+    copyright 2016 only), headcount, stage; whether the platform is beyond concept stage. Domain guessed (not in
+    input).'
 - id: exopower
   name: ExoPower
   website: https://exopower.tech
@@ -7021,6 +7894,38 @@ companies:
     CEO Carla Pinzon). Evidence: https://expand.tech https://www.activate.org/expand-power-technologies https://climatebase.org/job/74501553/founding-electrical-engineer
     Region sources: activate, cyclotron-road. Confidence: medium. Unresolved: Founded year and funding. Own site
     returned almost no text. Berkeley location is from a job posting seen in a search snippet.'
+- id: exxonmobil
+  name: ExxonMobil
+  website: https://corporate.exxonmobil.com/
+  careers_url: null
+  hq: Spring, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - carbon-removal
+  stage: public
+  founded: 1999
+  headcount:
+    value: 57900
+    as_of: '2025-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/ExxonMobil)
+  climate:
+    tier: out
+    reason: Oil, gas and chemicals major; its low-carbon business is a small part. Fossil extraction is out.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '57,900 people (Wikipedia infobox (https://en.wikipedia.org/wiki/ExxonMobil), 2025-01-01): over the
+      4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2025). Founded: https://en.wikipedia.org/wiki/ExxonMobil.
+    Stage: NYSE: XOM; current company formed 1999-11-30 by the Exxon-Mobil merger, listed since then (predecessors
+    listed far earlier) (https://en.wikipedia.org/wiki/ExxonMobil). Flags: over 1,000 employees; oil and gas is
+    the main business; low-carbon lines are a small part of the business. Evidence: https://en.wikipedia.org/wiki/ExxonMobil
+    Region sources: heti-members. Confidence: high.'
 - id: factorial-energy
   name: Factorial Energy
   website: https://factorialenergy.com
@@ -7469,15 +8374,42 @@ companies:
     engineers''. Stage: Site shows Y50 and HF0 investor logos; no rounds disclosed. Flags: autonomous aircraft.
     Evidence: https://floatcargo.com Region sources: fifty-years. Confidence: medium. Unresolved: Founded year,
     headcount, funding stage; no Dealroom or Built In SF profile.'
+- id: flowcellutions
+  name: FlowCellutions
+  website: https://flowcellutions.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: State-of-health diagnostics (sensors plus software platform and dashboard) for commercial flow batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Flags: sensor
+    hardware plus software subscription. Evidence: https://www.flowcellutions.com Region sources: activate, greentown.
+    Confidence: low. Unresolved: The domain was blank in the input; flowcellutions.com matches the product description.
+    HQ (input said Houston), founding year, headcount and funding were not found.'
 - id: fluence-energy
   name: Fluence Energy
   website: https://fluenceenergy.com
-  careers_url: null
+  careers_url: https://fluenceenergy.wd12.myworkdayjobs.com/en-US/fluenceenergy-jobs
   hq: Arlington, VA
   ats:
     type: workday
-    board: fluenceenergy
-  read: manual
+    board: fluenceenergy.wd12/fluenceenergy-jobs
+  read: auto
   sectors:
   - energy-storage
   stage: public
@@ -7501,6 +8433,38 @@ companies:
     Class A on Nasdaq). Launched Jan 2018 by Siemens and AES, which remain major holders. Evidence: https://fluenceenergy.com/
     https://fluenceenergy.com/about/ https://fluenceenergy.com/energy-storage-careers/ https://dealroom.co/companies/fluence-energy
     https://stockanalysis.com/stocks/flnc/employees/ Confidence: high.'
+- id: fluxworks
+  name: FluxWorks
+  website: https://fluxworks.co
+  careers_url: null
+  hq: Conroe, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2021
+  headcount:
+    value: 13
+    as_of: '2026-11-24'
+    source: FluxWorks website (https://fluxworks.co)
+  climate:
+    tier: enabling
+    reason: Magnetic gears (Celestial Gear CG series) and magnetically geared actuators for robotics and mechatronics,
+      designed and machined in Conroe, TX.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 13 people (FluxWorks website (https://fluxworks.co), 2026-11-24); growth sign: founded
+      2021.'
+  notes: 'No job board found on the company''s site. Headcount note: 13 crew members shown on site, as viewed 2026-11-24;
+    site calls it a small team. Founded: https://fluxworks.co. Stage: No funding mentioned. https://fluxworks.co
+    Flags: first product ''coming soon''; standard gear launch early 2027. Evidence: https://fluxworks.co Region
+    sources: greentown. Confidence: medium. Unresolved: Funding; the ''dual-use'' (defense) angle in the input is
+    not on the site. Dealroom 404.'
 - id: ford
   name: Ford
   website: null
@@ -7830,6 +8794,34 @@ companies:
     Confidence: medium. Unresolved: Headcount. Founding year conflicts (one source says 2021; TechCrunch Dec 2023
     says founded ''last year'', i.e. 2022). HQ given as Bedford MA (Boston Globe 2026) but earlier coverage says
     Cambridge or Boston MA. Missing facts filled from data/screening/registry-fixes.'
+- id: freestar-power
+  name: FreeStar Power
+  website: https://freestarpower.com
+  careers_url: null
+  hq: Humble, TX
+  ats:
+    type: greenhouse
+    board: freestar
+  read: auto
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'HarvesterIPS home power system: DC-bus hybrid with 20 kW inverter, batteries, solar and wind inputs,
+      and a built-in natural gas or propane generator.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board greenhouse:freestar seen 2026-11-24, token matched by name; board page checked: 6 open roles, 5
+    US-remote. Headcount note: Not found. Stage: Not found. Flags: includes natural gas/propane generator; residential
+    product. Evidence: https://freestarpower.com Region sources: greentown. Confidence: medium. Unresolved: Founding
+    year, headcount, funding.'
 - id: frostcarbon
   name: FrostCarbon
   website: null
@@ -8031,6 +9023,33 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug genh 404. Evidence: https://genh.co
     Region sources: greentown, laci. Confidence: medium. Unresolved: Founding, headcount, funding.'
+- id: geofuels
+  name: GeoFuels
+  website: https://geofuels.com
+  careers_url: null
+  hq: Sugar Land, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - geothermal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Uses geothermal power and brines with methane pyrolysis to make hydrogen and precursors for e-methanol,
+      gasoline and SAF (Geofuels LLC).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Evidence: https://geofuels.com
+    Region sources: greentown. Confidence: low. Unresolved: HQ not stated (input said Sugar Land); founding year,
+    headcount, funding; whether any plant exists.'
 - id: geokiln
   name: GeoKiln
   website: https://geokiln.com
@@ -8118,6 +9137,69 @@ companies:
     Stage: Nasdaq: GEVO. Flags: operating sites outside Colorado (Iowa RNG, Richardton ND, Luverne MN). Evidence:
     https://gevo.com https://en.wikipedia.org/wiki/Gevo Region sources: builtin-co-energy. Confidence: high. Unresolved:
     Current headcount. Tier set under owner decision 13.'
+- id: giga-energy
+  name: Giga Energy
+  website: https://www.gigaenergy.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ashby
+    board: giga-energy
+  read: auto
+  sectors:
+  - grid
+  stage: null
+  founded: 2019
+  headcount:
+    value: 150
+    as_of: '2026-11-24'
+    source: Giga Energy (company statement) (https://gigaenergy.com/about)
+  climate:
+    tier: out
+    reason: Builds electrical and cooling infrastructure for AI data centers and develops and leases its own data-center
+      sites; companies that build or run data centers are out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 150 people (Giga Energy (company statement) (https://gigaenergy.com/about), 2026-11-24);
+      growth sign: founded 2019.'
+  notes: 'Board ashby:giga-energy seen 2026-11-24, linked from the company''s own site: 61 open roles, 36 US-remote.
+    Headcount note: Own site says ''150+ employees across the U.S. and internationally'' (undated). Built In lists
+    41 total employees (https://builtin.com/company/giga-energy). Founded: https://gigaenergy.com/about. Stage:
+    No funding information on own site or Built In; not checked further. Flags: main customers are data centers
+    (AI/data centers headline; also utilities, renewables, oil and gas, bitcoin mining); bitcoin-mining equipment
+    line; factories in Houston, TX (transformers) and Long Beach/Los Angeles, CA (switchboards). Evidence: https://gigaenergy.com/
+    https://gigaenergy.com/about https://builtin.com/company/giga-energy Region sources: web-tx-transformers. Confidence:
+    medium. Unresolved: Funding/stage; Dealroom page (giga_energy) 404. Tier set under owner decision 13.'
+- id: gigadac
+  name: GigaDAC
+  website: https://gigadac.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Filter-less direct air capture contactors (Alto) for liquid sorbents, plus sale of food-grade CO2 (legal
+      name Victory Over Carbon Inc.).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: NSF support in 2023 and NSF
+    funding for its first commercial system in 2025; no amounts. https://gigadac.com Flags: first contactor deliveries
+    planned 2027. Evidence: https://gigadac.com https://gigadac.com/about Region sources: greentown. Confidence:
+    medium. Unresolved: HQ not stated (input said Houston); founding year, headcount, private funding. Dealroom
+    404.'
 - id: gillig
   name: Gillig
   website: https://www.gillig.com/
@@ -8241,6 +9323,35 @@ companies:
       growth sign: founded 2016.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Owner ruling A5 (2026-11-24) applied.
+- id: gold-h2
+  name: Gold H2
+  website: https://goldh2.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Hydrogen produced underground by bioengineered microbes injected into depleted oil reservoirs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Spun out of Cemvita after a Permian Basin pilot with
+    undisclosed funding; earlier funding led by Chart Industries and 8090 Industries (https://houston.innovationmap.com/cemvita-gold-h2-prabhdeep-singh-sekhon-2668104107.html).
+    Flags: spinout of Cemvita; works in depleted oil fields with oil and gas partners (ChampionX); main customers
+    not stated. Evidence: https://houston.innovationmap.com/cemvita-gold-h2-prabhdeep-singh-sekhon-2668104107.html
+    https://energycapitalhtx.com/cemvita-championx-gold-hydrogen-testing Region sources: web-houston-hydrogen. Confidence:
+    medium. Unresolved: goldh2.com returned an empty page. Founding/spinout year, headcount, round size and whether
+    Cemvita retains control unknown.'
 - id: gopowerev
   name: GoPowerEV
   website: https://gopowerev.com/
@@ -8347,7 +9458,8 @@ companies:
     source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/gradient)
   climate:
     tier: core
-    reason: Window-mounted heat pump air conditioners (R-32), sold direct to consumers.
+    reason: All-weather 120V window heat pumps that heat and cool from a standard outlet, for homes and multifamily
+      buildings.
     basis: agent
     approved: false
   startup:
@@ -8472,6 +9584,36 @@ companies:
     Region sources: bs-co-cleanenergy. Confidence: low. Unresolved: Company site refused connections (ECONNREFUSED).
     Founding year conflicts (Dealroom header 2010, About text 2013). Acquisition by Relevate Power in Dec 2024 seen
     only in search summaries.'
+- id: green-giant-energy-texas
+  name: Green Giant Energy Texas
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Planned lithium-ion battery recycling plant in greater Houston (about 1,800 t/y), as a JV with ACE Green
+      Recycling under a non-binding 2023 LOI.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Subsidiary of Green Giant Inc. (NASDAQ: GGE); LOI signed
+    Mar 2023 (https://www.recyclingtoday.com/news/green-giant-ace-green-recycling-partner-develop-lithium-ion-battery-recycling-facility-texas).
+    Flags: subsidiary of Green Giant Inc.; plant only planned as of 2023; not confirmed built. Evidence: https://www.recyclingtoday.com/news/green-giant-ace-green-recycling-partner-develop-lithium-ion-battery-recycling-facility-texas
+    https://waste360.com/waste-recycling/green-giant-energy-texas-and-ace-green-recycling-plan-to-develop-lithium-ion-recycling-facility-in-texas
+    Region sources: e2-texas, web-tx-battery-mfg. Confidence: medium. Unresolved: Whether the JV was finalized or
+    the plant built; no news after 2023 found.'
 - id: green-steel-environmental
   name: Green Steel Environmental
   website: https://www.greensteelenvironmental.com
@@ -8676,6 +9818,33 @@ companies:
     https://techcrunch.com/?p=3144417 Flags: Dealroom ''gritt'' profile mixes this company with a Brazilian sales
     consultancy. Evidence: https://gritt.ai https://techcrunch.com/?p=3144417 Region sources: congruent, climactic.
     Confidence: medium. Unresolved: HQ city (Belmont, CA unconfirmed), founded, headcount'
+- id: group1
+  name: Group1
+  website: https://group1.ai
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Potassium-ion battery cells and backup power modules; storage sold to data centers stays in (decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site mentions an investment from UT Austin''s Discovery
+    to Impact seed fund; no amount or date. Flags: main customers are data centers. Evidence: https://group1.ai
+    Region sources: ut-seed-fund-search. Confidence: medium. Unresolved: HQ not stated on page (input says Austin).
+    Founding year, headcount and round details unknown.'
 - id: group14-technologies
   name: Group14 Technologies
   website: https://group14.technology
@@ -9059,6 +10228,65 @@ companies:
     Evidence: https://helixcarbon.co https://www.helixcarbon.co/news Region sources: masscec-pr-4m, masscec-investments,
     mit-news-startups, third-derivative. Confidence: medium. Unresolved: founded, headcount; input HQ Milton but
     site says Cambridge; downstream oil and gas is one of five listed sectors (steel listed first)'
+- id: helix-earth-technologies
+  name: Helix Earth Technologies
+  website: https://helixearth.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Helix MICRA, a bolt-on retrofit for commercial rooftop HVAC units that removes humidity from outdoor
+      air before cooling.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: USD 12M oversubscribed Seed 2 round plus NSF SBIR Phase
+    II grant, per site (https://www.helixearth.com); date not given. Evidence: https://www.helixearth.com https://seedfund.nsf.gov/centers/ceps/retrofit-dehumidifiers-enhance-air-conditioner-efficiency
+    Region sources: gtx-2023, rice-mag-lab-launch, greentown, cri. Confidence: medium. Unresolved: Founded, headcount,
+    date of Seed 2. Built In returned 429.'
+- id: hephae
+  name: Hephae
+  website: https://hephae.io
+  careers_url: null
+  hq: Spring, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: series-a
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Ultra-high-temperature drilling and measurement-while-drilling tools (Pandora210) for enhanced and superhot
+      geothermal wells, rented at day rates (Hephae Energy Technology).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Founded: https://energycapitalhtx.com/amp/hephae-geothermal-17m-series-a-2677222238.
+    Stage: $17.8M Series A announced July 2026, co-led by Susquehanna Sustainable Investments and Underground Ventures,
+    with Nabors as an existing investor; $24.7M raised in total. https://energycapitalhtx.com/amp/hephae-geothermal-17m-series-a-2677222238
+    Flags: identity uncertain: input domain hephae.io is an unrelated consumer-app software studio; real company
+    domain appears to be hephaeet.com. Evidence: https://hephae.io https://energycapitalhtx.com/amp/hephae-geothermal-17m-series-a-2677222238
+    https://www.axios.com/pro/climate-deals/2026/07/09/hephae-funding-hot-rock-geothermal https://www.thinkgeoenergy.com/hephae-successfully-deploys-mwd-system-at-210-oc-circulation-temperature-in-geothermal-well/
+    Region sources: elemental. Confidence: medium. Unresolved: Headcount. hephaeet.com returned empty content. Customers
+    are geothermal developers (Fervo, Mazama), not oil and gas. One Canary Media snippet claimed it ''went public'',
+    which conflicts with other coverage and was not verified.'
 - id: hera-materials-atacama-biomaterials
   name: Hera Materials (Atacama Biomaterials)
   website: https://heramaterials.com
@@ -9118,6 +10346,40 @@ companies:
     (Dealroom). https://dealroom.co/companies/heron-power Customers: Target buyers are solar, battery storage and
     data center developers; no named customers. Flags: data center developers among target customers. Evidence:
     https://dealroom.co/companies/heron-power Confidence: medium. Unresolved: Series B not confirmed in press.'
+- id: hertha-metals
+  name: Hertha Metals
+  website: https://herthametals.com
+  careers_url: null
+  hq: Conroe, TX
+  ats:
+    type: jazzhr
+    board: herthametals
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 20
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/hertha-metals)
+  climate:
+    tier: core
+    reason: Single-step furnace process that turns any iron ore into high-purity iron and steel; sells iron and
+      steel grades.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 20 people (Dealroom (https://dealroom.co/companies/hertha-metals), 2026-11-24); growth
+      sign: founded 2022.'
+  notes: 'Board jazzhr:herthametals seen 2026-11-24, linked from the company''s own site: role count not read (no
+    public feed). Headcount note: Dealroom 20, band <100; undated, as viewed 2026-11-24. Founded: https://dealroom.co/companies/hertha-metals.
+    Stage: Seed $17M (Khosla, Pear, Clean Energy Ventures, BlackWell). Dealroom table dates it July 2026, while
+    its description says over $17M raised by July 2025. https://dealroom.co/companies/hertha-metals Evidence: https://herthametals.com
+    https://dealroom.co/companies/hertha-metals Region sources: khosla, cev, third-derivative, greentown. Confidence:
+    high. Unresolved: Exact seed date. Pilot plant (1 t/day) is in Houston; a 10,000 t/yr Houston plant is targeted
+    for 2027 and a 500,000 t/yr mill for 2030 (location unstated). Site also mentions a ''$1 billion plan''.'
 - id: hevo
   name: HEVO
   website: https://hevo.com
@@ -9158,6 +10420,31 @@ companies:
     date: '2025-08-16'
     type: crowdfunded convertible note (Wefunder)
     source: https://www.cbinsights.com/company/hevo/financials
+- id: hexaspec
+  name: HEXAspec
+  website: https://hexaspec.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Inorganic fillers for semiconductor packaging; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site; Built In slug 404. Flags:
+    semiconductor packaging material; site does not name data centers as customers. Evidence: https://www.hexaspec.com
+    Region sources: rice-mag-lab-launch. Confidence: medium. Unresolved: Domain guessed (Houston 77004 address).
+    Founding year, headcount and funding unknown.'
 - id: hgen
   name: Hgen
   website: https://hgen.com
@@ -9189,6 +10476,36 @@ companies:
     $5M, September 2024 (Dealroom; Founders Fund, Fontinalis, Seven Seven Six). https://dealroom.co/companies/hgen
     Customers: Heavy industry (manufacturing, transportation, energy). Evidence: https://www.hgen.com/ https://dealroom.co/companies/hgen
     Confidence: medium.'
+- id: hif-global
+  name: HIF Global
+  website: https://hifglobal.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - hydrogen
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: Builds and runs eFuels plants making e-gasoline and e-methanol from green hydrogen and captured CO2
+      (Haru Oni, Chile, operating; projects in Uruguay, Chile, Brazil, Australia).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2016.'
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/HIF_Global. Stage: Private;
+    shareholders listed on site: AME (founder), EIG, Porsche, Idemitsu, JOGMEC, MOL, Baker Hughes, Gemstone (https://hifglobal.com/about-us).
+    Round sizes not found. Flags: plants outside US; Texas activity limited to evaluating opportunities in Matagorda
+    County. Evidence: https://hifglobal.com https://hifglobal.com/about-us https://hifglobal.com/locations https://en.wikipedia.org/wiki/HIF_Global
+    Region sources: heti-members. Confidence: medium. Unresolved: Headcount; funding round sizes (stage id left
+    null since strategic/infrastructure equity, not venture rounds).'
 - id: highland-electric-fleets
   name: Highland Electric Fleets
   website: https://highlandfleets.com
@@ -9459,6 +10776,66 @@ companies:
     needed: decisions-needed.md [datacenter]. Evidence: https://dealroom.co/companies/hyliion https://stockanalysis.com/stocks/hyln/employees/
     https://www.reveliolabs.com/companies/hyliion-holdings/employees Confidence: medium. Unresolved: Headcount not
     confirmed from the 10-K text itself; named customers not found.'
+- id: ideal-power
+  name: Ideal Power
+  website: https://www.idealpower.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: B-TRAN bidirectional power semiconductor switches (also SymCool modules and known-good die) for data
+      centers, energy storage, grid and EV charging.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: NASDAQ: IPWR (site). IPO in 2013 from prior knowledge;
+    not verified in this pass. Evidence: https://www.idealpower.com/about Region sources: ati-alumni, arpa-e. Confidence:
+    high. Unresolved: Founding year and headcount not on site (Built In slug 404). Listing year 2013 not verified
+    from a source this pass.'
+- id: ignis-h2-energy
+  name: Ignis H2 Energy
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: series-a
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Geothermal exploration and development company (now branded Ignis Energy) using oil-and-gas methods
+      and AI; projects in the US, Turkiye, Indonesia and Italy.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2021.'
+  notes: 'No job board found on the company''s site. Headcount note: One unnamed profile in a search snippet put
+    the team at about 16; not recorded. Founded: https://www.thinkgeoenergy.com/ignis-energy-raises-13-6-million-to-support-global-portfolio-of-geothermal-projects/.
+    Stage: Series A final close $13.6M, June 2025, after a $12.5M first close in Feb 2025 (https://natlawreview.com/press-releases/ignis-energy-announces-final-close-136m-series-round-advance-global);
+    backers include Nabors Industries. Flags: developer/explorer; not clear it builds and runs its own plants yet;
+    oil and gas backers (Nabors). Evidence: https://natlawreview.com/press-releases/ignis-energy-announces-final-close-136m-series-round-advance-global
+    https://www.thinkgeoenergy.com/ignis-energy-raises-13-6-million-to-support-global-portfolio-of-geothermal-projects/
+    https://www.citybiz.co/article/662604/ignis-h2-energy-raises-12-5m-in-series-a/ Region sources: web-houston-geothermal.
+    Confidence: medium. Unresolved: Own domain not reached (ignis-h2.com certificate mismatch). Founding year comes
+    from search-snippet summaries, not a fetched page.'
 - id: impossible-metals
   name: Impossible Metals
   website: https://impossiblemetals.com
@@ -9526,6 +10903,38 @@ companies:
     round found. https://techcrunch.com/?p=2439818 Customers: Homeowners and residential buyers. Evidence: https://dealroom.co/companies/impulse-labs
     https://techcrunch.com/?p=2439818 https://www.cbinsights.com/company/impulse-labs Confidence: medium. Unresolved:
     Whether a post-2022 round exists.'
+- id: inductive-robotics
+  name: Inductive Robotics
+  website: https://inductiverobotics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: pre-seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Autonomous EV charging for parking lots: charging robots dispatched to parked cars fitted with a smart
+      adapter, plus docking stations; offered to parking operators as a subscription service.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Founded: https://startupintros.com/orgs/inductive-robotics.
+    Stage: Search snippets only: StartupIntros reports $100K raised in 1 round; another source (not usable as evidence)
+    said it was raising a $2M pre-seed. Austin Technology Incubator member (ati.utexas.edu). Flags: builds its own
+    robot hardware but sells charging as a subscription service; founded year and Austin HQ from search snippets
+    (StartupIntros), not own site. Evidence: https://www.inductiverobotics.com/ https://www.inductiverobotics.com/product
+    https://ati.utexas.edu/company/inductive-robotics/ https://startupintros.com/orgs/inductive-robotics Region
+    sources: ati-energy. Confidence: low. Unresolved: Headcount; confirmed founding year and funding; own site states
+    no location. Dealroom inductive_robotics 404.'
 - id: industrial-microbes
   name: Industrial Microbes
   website: https://imicrobes.com
@@ -9629,7 +11038,8 @@ companies:
     source: Dealroom (https://dealroom.co/companies/infinite-cooling)
   climate:
     tier: core
-    reason: Captures and recycles water from cooling-tower plumes at power plants and industrial sites.
+    reason: TowerPulse wireless sensors and analytics that cut water and energy use in cooling towers at power plants
+      and industrial sites.
     basis: agent
     approved: false
   startup:
@@ -9775,6 +11185,39 @@ companies:
     https://dealroom.co/companies/inlyte-energy/ https://www.highergov.com/grant/DEOE0001001/ https://www.energy.ca.gov/filebrowser/download/8011?fid=8011
     Confidence: medium. Unresolved: No exact headcount. The company website returned empty content. A post-seed
     round may exist but none was found.'
+- id: inovues
+  name: INOVUES
+  website: https://inovues.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: breezy
+    board: inovues
+  read: manual
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount:
+    value: 7
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/inovues)
+  climate:
+    tier: core
+    reason: Patented non-invasive glazing retrofit systems that add energy-saving and smart-glass performance to
+      existing building windows and facades without replacing them.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 7 people (Built In (https://builtin.com/company/inovues), 2026-11-24); founding year not
+      found, so included.
+  notes: 'Board breezy:inovues seen 2026-11-24, linked from the company''s own site: 1 open roles. Headcount note:
+    Built In ''total employees'' 7; undated, date is retrieval date. Site lists offices in Houston, TX and New York,
+    NY. Stage: Site names investors (Saint-Gobain, Lateral Capital, Momentum Glass, Central Texas Angel, F4SE, E8,
+    VC Fuel, RGA Ventures, Paulos Holdings) with no round amounts or dates. Dealroom slug returned 404. Evidence:
+    https://www.inovues.com/about https://builtin.com/company/inovues Region sources: ati-alumni, greentown. Confidence:
+    medium. Unresolved: Founding year and round stage unknown.'
 - id: intertie
   name: Intertie
   website: https://www.intertie.com/
@@ -10041,6 +11484,38 @@ companies:
     filing not fetched). Flags: public company; may be over 1,000 employees (not verified). Evidence: https://www.builtinsf.com/company/joby-aviation
     Region sources: cec-nopa-ztm, kb-ba-hardware. Confidence: medium. Unresolved: Headcount from a 10-K.'
   ipo_year: 2021
+- id: john-cockerill-hydrogen
+  name: John Cockerill Hydrogen
+  website: https://johncockerill.com
+  careers_url: null
+  hq: Belgium
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: subsidiary
+  founded: 1817
+  headcount: null
+  climate:
+    tier: core
+    reason: Pressurized alkaline electrolyzer systems (30 MW units); 1 GW/yr electrolyzer gigafactory in Baytown,
+      TX announced Oct 2023.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1817, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Headcount note: Baytown plant expected to create 200 jobs (2023
+    announcement). Founded: https://johncockerill.com/en/. Stage: Hydrogen business unit of the John Cockerill group
+    (2025 group turnover EUR 1.649B, https://johncockerill.com/en/); group ownership not stated. Baytown: factory
+    bought Oct 2023, $34M federal tax credit Apr 2024 (https://johncockerill.com/en/press-and-news/news/john-cockerill-hydrogen-awarded-34-million-in-tax-credit-for-the-baytown-gigafactory-project/).
+    Flags: subsidiary of John Cockerill group; HQ outside region; main site in TX (Baytown gigafactory); group also
+    has a defense business line. Evidence: https://johncockerill.com/en/ https://johncockerill.com/en/press-and-news/news/john-cockerill-advances-us-expansion-of-hydrogen-in-houston-area-with-launch-of-gigafactory-in-baytown/
+    https://hydrogen.johncockerill.com/en/north-america/ Region sources: e2-texas. Confidence: medium. Unresolved:
+    Whether Baytown is producing now; group headcount and ownership.'
 - id: jupiter-volta
   name: Jupiter Volta
   website: https://jupitervolta.com
@@ -10105,6 +11580,33 @@ companies:
     [datacenter]. Evidence: https://builtin.com/company/kairos-power https://techcrunch.com/2024/10/14/google-signed-a-deal-to-power-data-centers-with-nuclear-micro-reactors-from-kairos-but-the-2030-timeline-is-very-optimistic
     https://dealroom.co/news/163058-kairos-power-raises-643m-to-build-nuclear-reactors-for-google/ Confidence: medium.
     Unresolved: Stage label; dated headcount from company or press. Missing facts filled from data/screening/registry-fixes.'
+- id: kanin-energy
+  name: Kanin Energy
+  website: https://kaninenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Develops, owns and runs waste-heat-to-power plants at industrial sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Credit facilities from PaceZero Capital Partners (2025-08-12)
+    and a second facility (2025-08-18) per site; no equity round found. Flags: plant it builds and runs (project
+    developer); industries served include natural gas and refineries. Evidence: https://kaninenergy.com https://www.kaninenergy.com/about
+    Region sources: rice-cea-1, heti-members, greentown. Confidence: medium. Unresolved: Founded, headcount, stage;
+    HQ not designated (Houston listed first).'
 - id: kara
   name: Kara
   website: https://karalabs.ai/
@@ -10261,9 +11763,9 @@ companies:
   careers_url: null
   hq: San Leandro, CA
   ats:
-    type: bamboohr
-    board: kiverdi
-  read: manual
+    type: unknown
+    board: null
+  read: none
   sectors:
   - recycling
   stage: null
@@ -10390,7 +11892,8 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers.
+    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers; a Legrand brand since
+      2026.
     basis: agent
     approved: false
   startup:
@@ -10551,6 +12054,35 @@ companies:
   notes: 'No job board found on the company''s site. Flags: location unverified. Evidence: https://fastchats.informaengage.com/leaders-in/latent-heat-solutions-impact-of-passive-thermal-control-on-battery-safety/
     https://patents.google.com/patent/US11411262 Region sources: builtin-co-energy. Confidence: low. Unresolved:
     HQ (Golden, CO not confirmed), domain, founded, headcount, funding. Mentions aerospace and military applications.'
+- id: licube
+  name: Licube
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrodialysis process for recovering lithium from underused sources and producing ultra-high-purity
+      lithium compounds (for fusion, pharma, semiconductors, solid-state batteries).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding found. Won Track B (non-monetary) of the
+    CERAWeek 2026 pitch competition (2026-03-27); presented at Rice Alliance Energy Tech Venture Forum (2026-09).
+    Evidence: https://energycapitalhtx.com/greentown-labs https://energycapitalhtx.com/tag/licube https://houston.innovationmap.com/hecw-rice-alliance-greentown-pitch-winners-2026-2677900341.html
+    Region sources: gtx-6tx, rice-etvf-2026, greentown. Confidence: medium. Unresolved: HQ sources disagree: Austin,
+    TX (Energy Capital HTX, July 2025) vs Houston, TX (CERAWeek and Rice Alliance coverage, 2026); both in Texas.
+    Domain, founded, headcount, stage not found; no Dealroom or Built In page.'
 - id: lightbridge
   name: Lightbridge
   website: https://ltbridge.com
@@ -11010,6 +12542,39 @@ companies:
     undisclosed); Mar 2025 MassCEC grant USD 350K. Flags: hardware plus SaaS; also sells carbon credits. Evidence:
     https://www.locicontrols.com/ https://dealroom.co/companies/loci-controls Region sources: masscec-investments.
     Confidence: high.'
+- id: locoal
+  name: LOCOAL
+  website: https://locoal.com
+  careers_url: null
+  hq: Boerne, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount:
+    value: 8
+    as_of: '2026-11-24'
+    source: LOCOAL about page (https://www.locoal.com/about)
+  climate:
+    tier: core
+    reason: RAINMAKER system that turns wood and biomass waste into biochar (on sale now), with wood oil, wood vinegar
+      and syngas listed as coming soon.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 8 people (LOCOAL about page (https://www.locoal.com/about), 2026-11-24); founding year
+      not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Eight team members listed on the about page;
+    not a stated total. Stage: Site says it is seed-funded by an AFWERX dual-innovation contract and is seeking
+    investors (https://www.locoal.com); no equity round found. Flags: AFWERX (US Air Force) contract funding. Evidence:
+    https://www.locoal.com https://www.locoal.com/about Region sources: gtx-2025h2. Confidence: medium. Unresolved:
+    Founded (site copyright 2023 only). Domain guessed (not in input) but matches the climate-tech description and
+    Boerne, TX.'
 - id: longpath-technologies
   name: LongPath Technologies
   website: https://www.longpathtech.com
@@ -11164,6 +12729,42 @@ companies:
     https://www.therobotreport.com/luminous-gets-funding-to-bring-lumi-solar-construction-robot-to-australia/ Region
     sources: masscec-investments, masscec-pr-tax-incentives, masscec-pr-criticalmass-3-9m. Confidence: medium. Unresolved:
     venture round type and amounts'
+- id: lummus-technology
+  name: Lummus Technology
+  website: https://www.lummustechnology.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: workday
+    board: lummustechnology
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1907
+  headcount:
+    value: 616
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/lummus-technology)
+  climate:
+    tier: out
+    reason: Licenses process technology mainly to refining, petrochemical and gas-processing customers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 616 people (Built In (https://builtin.com/company/lummus-technology), 2026-11-24); founded
+      1907, with no equity raise in 5 years or recent listing found.
+  notes: 'Board workday:lummustechnology.wd501.myworkdayjobs.com/LummusTechnology seen 2026-11-24, linked from the
+    company''s own site: role count not read (no public feed). Headcount note: Built In ''total employees'' figure,
+    undated (retrieval date used); likely understates a global firm. Own site says ''115+ years of technology leadership''.
+    Founded: https://builtin.com/company/lummus-technology. Stage: Ownership not stated on own site; JVs listed
+    (CLG with Chevron, Lummus Digital with TCG Digital). Private, no venture rounds; owner not verified in this
+    pass. Flags: main customers are refining, petrochemical and gas processing (oil and gas); mainly technology
+    licensing and services, with some equipment and catalysts; established company (founded 1907). Evidence: https://www.lummustechnology.com/
+    https://www.lummustechnology.com/about https://builtin.com/company/lummus-technology Region sources: web-houston-hydrogen.
+    Confidence: medium. Unresolved: Current owner(s) and stage; company-stated headcount; the Pasadena, TX green
+    hydrogen pilot plant was not confirmed on the pages read. Dealroom slugs lummus_technology / lummus-technology
+    returned 404; Wikipedia page 404.'
 - id: lunar-energy
   name: Lunar Energy
   website: null
@@ -11252,6 +12853,36 @@ companies:
     Customers: Airlines, fuel buyers and corporate offtakers; synthetic fuel plant operators. Evidence: https://www.lydianlabs.com/
     https://dealroom.co/companies/lydian-labs Confidence: medium. Unresolved: Founding year conflict: Dealroom header
     2022 vs Dealroom About text 2021. Tier set under owner decision 13.'
+- id: lyondellbasell
+  name: LyondellBasell
+  website: https://www.lyondellbasell.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: public
+  founded: 2007
+  headcount:
+    value: 20000
+    as_of: '2024-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/LyondellBasell)
+  climate:
+    tier: out
+    reason: Petrochemicals and polymers producer; its circular and low-carbon business is a small part.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '20,000 people (Wikipedia infobox (https://en.wikipedia.org/wiki/LyondellBasell), 2024-01-01): over
+      the 4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: About 20,000; year only (2024). Founded: https://en.wikipedia.org/wiki/LyondellBasell.
+    Stage: NYSE: LYB; listed on NYSE 2010-10-14 after emerging from Chapter 11 (https://en.wikipedia.org/wiki/LyondellBasell).
+    Flags: over 1,000 employees. Evidence: https://www.lyondellbasell.com/en/about-us/ https://en.wikipedia.org/wiki/LyondellBasell
+    Region sources: heti-members. Confidence: high. Unresolved: MoReTec status not checked (product page 404).'
 - id: lyten
   name: Lyten
   website: https://lyten.com
@@ -11831,6 +13462,32 @@ companies:
     robotics and drone makers; defense share unclear; second site in Columbus, IN. Evidence: https://massmagnetics.com
     Region sources: greentown, yc. Confidence: medium. Unresolved: Founding, headcount, funding; whether defense
     is the main customer.'
+- id: materials-nova
+  name: Materials Nova
+  website: https://materialsnova.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Novel materials for water treatment and biomedical devices, plus consulting.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site. Flags: part consulting.
+    Evidence: https://www.materialsnova.com Region sources: ut-dti-showcase. Confidence: medium. Unresolved: Domain
+    guessed (site header ''Austin, TX''). Founding year, headcount, funding and whether materials are sold as products
+    unknown.'
 - id: maxout-renewables
   name: Maxout Renewables
   website: https://www.maxoutrenewables.com/
@@ -11859,6 +13516,67 @@ companies:
     American-Made Solar Prize grand prize winner (Dec 2020). No equity round found. Evidence: https://maxoutrenewables.com
     Region sources: calseed-awardees. Confidence: medium. Unresolved: Founding year, headcount, equity funding.
     No Dealroom profile.'
+- id: mazama-energy
+  name: Mazama Energy
+  website: https://mazamaenergy.com
+  careers_url: null
+  hq: Frisco, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: series-b
+  founded: 2023
+  headcount:
+    value: 24
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/mazama-energy)
+  climate:
+    tier: core
+    reason: Superhot-rock enhanced geothermal power projects using its own drilling and reservoir technology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 24 people (Dealroom (https://dealroom.co/companies/mazama-energy), 2026-11-24); growth
+      sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 24, band <100; undated, as viewed
+    2026-11-24. Founded: https://dealroom.co/companies/mazama-energy. Stage: Series A $36M Oct 2025 led by Khosla;
+    Series B $135M Sep 2026 (Dealroom summary citing TechCrunch and GlobeNewswire; Centaurus Capital and Doerr Capital
+    leads). https://dealroom.co/companies/mazama-energy Flags: project sites outside region (Newberry, Oregon);
+    HQ in Frisco TX. Evidence: https://mazamaenergy.com https://dealroom.co/companies/mazama-energy Region sources:
+    khosla. Confidence: high. Unresolved: Site targets utilities and hyperscalers/AI companies but names no contracts,
+    so ''main customers are data centers'' is not established.'
+- id: mcatalysis
+  name: MCatalysis
+  website: https://mcatalysis.com
+  careers_url: null
+  hq: Houston / Dallas, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Small modular refining units that make drop-in liquid fuels and chemicals (BTEX, gasoline, jet, diesel,
+      heavy fuel oil) from distributed hydrocarbon feedstocks such as plastic waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Site names three leaders (CEO Michael Irwin).
+    Stage: USD 5M seed round announced 2026-09-09, led by HL Energy Ventures with Oxford Science Enterprises; earlier
+    pre-seed from HL Energy Ventures announced 2025-09-09 (https://mcatalysis.com). Evidence: https://mcatalysis.com
+    https://www.mcatalysis.com/about https://www.mcatalysis.com/team Region sources: gtx-2025h2, rice-etvf-2026,
+    greentown. Confidence: medium. Unresolved: Founded, headcount; which office is HQ.'
 - id: membravo
   name: Membravo
   website: https://membravo.com
@@ -12198,6 +13916,44 @@ companies:
     https://indiebio.co/?p=16709 https://www.colorado.edu/today/2022/06/23/cities-future-may-be-built-algae-grown-limestone
     Region sources: cu-mse-spinoffs, lowercarbon-portfolio. Confidence: medium. Unresolved: Founded year, domain,
     headcount; stage pre-seed vs seed (SOSV).'
+- id: mission-solar-energy
+  name: Mission Solar Energy
+  website: https://www.missionsolar.com/
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38
+  read: manual
+  sectors:
+  - solar
+  - grid
+  stage: subsidiary
+  founded: 2014
+  headcount:
+    value: 70
+    as_of: '2025-01-01'
+    source: Solar Power World (company president's ITC testimony) (https://www.solarpowerworldonline.com/2026/09/texas-records-suggest-oci-is-bringing-elite-solar-to-mission-solar-energy-manufacturing-site/)
+  climate:
+    tier: core
+    reason: Makes solar modules (N-type bifacial and rooftop) for residential, commercial and utility markets at
+      a San Antonio plant.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 70 people (Solar Power World (company president''s ITC testimony) (https://www.solarpowerworldonline.com/2026/09/texas-records-suggest-oci-is-bringing-elite-solar-to-mission-solar-energy-manufacturing-site/),
+      2025-01-01); growth sign: founded 2014.'
+  notes: 'Board ukg:recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38 seen 2026-11-24,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Year only (2025,
+    first day used). Previously over 200 workers; president testified the company had ''temporarily ceased all manufacturing
+    operations and related employment'' (article Sep 18 2026), so current headcount may be near zero. Founded: https://www.missionsolar.com/about-us/.
+    Stage: Own site: ''Mission Solar Energy is a subsidiary of OCI Holdings'' (South Korea), led in the US by OCI
+    Enterprises. Flags: subsidiary of OCI Holdings (South Korea); manufacturing temporarily ceased per 2026 ITC
+    testimony; 2 GW / $265M cell factory announced 2025 never progressed past warehouse stage; Aug 2026 Texas filing
+    shows Elite Solar factory planned at the site. Evidence: https://www.missionsolar.com/about-us/ https://www.solarpowerworldonline.com/2026/09/texas-records-suggest-oci-is-bringing-elite-solar-to-mission-solar-energy-manufacturing-site/
+    Region sources: builtin-sa-greentech, web-tx-solar-mfg, e2-texas. Confidence: medium. Unresolved: Whether manufacturing
+    has restarted or the company will close; no closure or WARN notice found as of Sep 2026.'
 - id: mitra-chem
   name: Mitra Chem
   website: https://www.mitrachem.com
@@ -12322,6 +14078,34 @@ companies:
     Customers: Target markets fertilizer, steel, batteries, jet fuel; none named. Flags: fossil gas fuel (natural
     gas feedstock for pyrolysis). Evidence: https://www.moltenindustries.com/ https://dealroom.co/companies/molten-industries
     Confidence: medium.'
+- id: momentum-technologies
+  name: Momentum Technologies
+  website: https://momentum.technology/
+  careers_url: null
+  hq: Carrollton, TX
+  ats:
+    type: rippling
+    board: momentum
+  read: auto
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: MSX modular processing systems that recover high-purity critical minerals and metals from battery waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2016.'
+  notes: 'Board rippling:momentum seen 2026-11-24, token matched by name; board page checked: 11 open roles. Founded:
+    https://momentum.technology/about. Stage: Board includes investor representatives from TechMet and Tailwater
+    Capital (https://momentum.technology/about); no round amounts found. Evidence: https://momentum.technology https://momentum.technology/about
+    Region sources: halliburton-labs. Confidence: medium. Unresolved: Headcount, funding stage. Dealroom slug not
+    found (404).'
 - id: motional
   name: Motional
   website: null
@@ -12371,7 +14155,8 @@ companies:
     source: Built In SF (https://www.builtinsf.com/company/motiv-power-systems)
   climate:
     tier: enabling
-    reason: Electric medium-duty truck and bus chassis (step vans, box trucks, shuttle and school buses).
+    reason: 'Class 4 to 6 battery-electric trucks and buses; merged with Workhorse Group (Nasdaq: WKHS) in December
+      2025 and operates under the Workhorse name.'
     basis: agent
     approved: false
   startup:
@@ -12382,7 +14167,7 @@ companies:
     alert handshake failure (_ssl.c:1035)). Headcount note: Built In figure, undated. Founded: https://www.builtinsf.com/company/motiv-power-systems.
     Stage: No funding data found. Evidence: https://www.builtinsf.com/company/motiv-power-systems Region sources:
     cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: medium. Unresolved: motivps.com failed with a TLS handshake
-    error, so status is from Built In only; funding/stage.'
+    error, so status is from Built In only; funding/stage. Missing facts filled from data/screening/registry-fixes.'
 - id: muon-vision
   name: Muon Vision
   website: https://muonvision.com
@@ -12494,15 +14279,46 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: Independent; 48 people (Dealroom (https://dealroom.co/companies/nanoramic), 2026-11-24); founded 2010,
-      with no equity raise in 5 years or recent listing found.
+    status: in
+    reason: 'Independent; 48 people (Dealroom (https://dealroom.co/companies/nanoramic), 2026-11-24); growth sign:
+      equity round in 2026.'
   notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
     https://dealroom.co/companies/nanoramic. Stage: Company-named rounds: ''Series 1'' $54M Nov 2025 (GM Ventures,
     Samsung Ventures, ITOCHU, Top Material; Dealroom calls it late-stage VC); ''Series 2'' first close Sept 2026
     at $250M pre-money led by Catalus Capital, amount undisclosed (Dealroom). Evidence: https://nanoramic.com https://dealroom.co/companies/nanoramic
     Region sources: mit-sloan-cleantech. Confidence: medium. Unresolved: Dealroom lists both Wakefield and Boston;
-    mapping of ''Series 1/2'' to standard stages.'
+    mapping of ''Series 1/2'' to standard stages. Missing facts filled from data/screening/registry-fixes.'
+  last_raise:
+    date: 2026-09
+    type: equity round
+    source: Equity raises in November 2025 ($54M) and September 2026, per the registry's own notes and reports/M3-spot-check-01.md.
+- id: nanotech-materials
+  name: Nanotech Materials
+  website: https://nanotechmaterials.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Insulative and heat-rejecting coatings: cool roof coating, wildfire fire-protective coating and industrial
+      insulative coating (prevents corrosion under insulation).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Founded: https://www.nanotechmaterials.com/company. Stage:
+    No funding information on site. Evidence: https://nanotechmaterials.com https://nanotechmaterials.com/about
+    https://www.nanotechmaterials.com/company Region sources: halliburton-labs, rice-cea-2. Confidence: medium.
+    Unresolved: Headcount, funding stage.'
 - id: natel-energy
   name: Natel Energy
   website: https://www.natelenergy.com/
@@ -12685,6 +14501,38 @@ companies:
     https://news.yahoo.com/csu-day-hydrogen-awarded-nearly-130121641.html https://fuelcellsworks.com/news/colorado-state-university-to-develop-public-hydrogen-fueling-stations-with-8-9-million-federal-grant
     Region sources: ccia-members, yellowscene-hydrogen. Confidence: medium. Unresolved: Founding year only from
     an aggregator; pre-seed amount; HQ city'
+- id: new-dominion-enterprises
+  name: New Dominion Enterprises
+  website: null
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Inorganic electrolyte materials (first product an electrolyte additive) meant to make lithium batteries
+      safer and more durable, under an exclusive Idaho National Laboratory license.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: One directory in a search snippet gave about
+    4 employees, but the snippet did not name which directory, so not recorded. Stage: Air Force SBIR funding, a
+    Phase II AFWERX SBIR, and about $2.2M in AFWERX contracts reported; no equity round found. Flags: SBIR/AFWERX
+    (Air Force) funded; HQ sources disagree (San Antonio vs Austin incubator address). Evidence: https://ati.utexas.edu/company/nde/
+    https://battery-tech.net/company/new-dominion-enterprises-inc/ https://www.cbinsights.com/company/new-dominion
+    Region sources: ati-energy. Confidence: medium. Unresolved: Own domain not found; founding year, headcount and
+    equity funding unknown. ATI and battery-tech.net say San Antonio; CB Insights and an SBIR record use the Austin
+    Technology Incubator address.'
 - id: new-iridium
   name: New Iridium
   website: null
@@ -12929,6 +14777,35 @@ companies:
   notes: 'No job board found on the company''s site. Evidence: https://noblethermo.com/ Region sources: activate-companies,
     cyclotron-road-fellows, cec-eif-showcase, calseed-awardees. Confidence: medium. Unresolved: Founded, headcount
     and funding not found; Dealroom 404.'
+- id: noc-energy
+  name: NOC Energy
+  website: https://nocenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: NOC Cell, which converts electricity into high-temperature industrial heat (with thermal storage and
+      hybrid gas integration) to replace fossil burners.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Investors and accelerators
+    listed (densai ventures, SOSV, HAX, Third Derivative, 360 Capital); no rounds. https://nocenergy.com Evidence:
+    https://nocenergy.com Region sources: third-derivative, greentown. Confidence: medium. Unresolved: HQ (input
+    said Houston), founding year, headcount, round. Cement is named as a focus (Fives, Schneider partnerships);
+    oil and gas is not mentioned. Dealroom 404.'
 - id: nodiac
   name: Nodiac
   website: https://www.nodiac.ai
@@ -12971,8 +14848,9 @@ companies:
   founded: 2024
   headcount: null
   climate:
-    tier: core
-    reason: Modular ion-concentration-polarization system that recovers cooling-tower water for reuse.
+    tier: out
+    reason: Recovers cooling-tower blowdown water for reuse, sold mainly to data centers; data-center cooling equipment
+      is out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -12984,7 +14862,8 @@ companies:
     centers (pilots at a 1.5 MW data center in Ohio; delivered with Park Place Technologies); MIT spinout. Evidence:
     https://www.nona-technologies.com/ https://tlo.mit.edu/industry-entrepreneurs/startups/nona-technologies https://news.mit.edu/2022/100k-competition-nona-0516
     Region sources: masscec-investments, mit-tlo-startups. Confidence: medium. Unresolved: Headcount; funding round.
-    Earlier MIT material described seawater desalination; current product is cooling-tower water reuse.'
+    Earlier MIT material described seawater desalination; current product is cooling-tower water reuse. Tier set
+    under owner decision 13.'
 - id: noon-energy
   name: Noon Energy
   website: null
@@ -14372,6 +16251,34 @@ companies:
     not shown; total disclosed $10-50M. https://dealroom.co/companies/phase-two-chemicals Flags: facilities in Hangzhou
     and Shaoxing, China. Evidence: https://phasetwochemicals.com https://dealroom.co/companies/phase-two-chemicals
     Region sources: greentown. Confidence: medium. Unresolved: Series A amount and date; headcount.'
+- id: phnx-materials
+  name: PHNX Materials
+  website: https://phnxmaterials.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Refines industrial byproduct waste into gallium, germanium, silicon and low-CO2 cement replacements.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Site claims ''$15M+'' total
+    funding; no rounds. https://phnxmaterials.com Flags: HQ possibly outside region (pilot plant in Ohio, labs in
+    California). Evidence: https://phnxmaterials.com Region sources: activate. Confidence: medium. Unresolved: HQ
+    (input said Houston; site names only Ohio and California sites), founding year, headcount, rounds. Dealroom
+    404.'
 - id: phoebus-american-energy-systems
   name: Phoebus American Energy Systems
   website: https://phoebusamerican.us
@@ -14901,6 +16808,32 @@ companies:
     2024 cohort; Bay Area location not stated on own site; early-stage enabling technology. Evidence: https://praio.co/
     https://activate.org/praio Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount,
     stage Tier set under owner decision 13.'
+- id: pressure-core
+  name: Pressure Core
+  website: https://pressurecore.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Generates electricity from waste pressure at gas pipeline letdown stations; customers are pipeline operators.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Site offers project
+    financing from third-party capital. Flags: main customers are oil and gas (gas pipelines and letdown stations);
+    partial: industrial facilities and gas power plants also listed. Evidence: https://pressurecore.com Region sources:
+    greentown. Confidence: medium. Unresolved: Founding year, headcount, funding.'
 - id: prieto-battery
   name: Prieto Battery
   website: https://www.prietobattery.com
@@ -15376,6 +17309,41 @@ companies:
     aerospace primes ''since 2006'' (not stated as founding year) Flags: main customers are NASA and aerospace primes.
     Evidence: https://www.questthermal.com Region sources: oedit-ai. Confidence: medium. Unresolved: Founding year,
     headcount, funding'
+- id: quidnet-energy
+  name: Quidnet Energy
+  website: https://www.quidnetenergy.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 2013
+  headcount:
+    value: 20
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/quidnet-energy)
+  climate:
+    tier: core
+    reason: 'Geomechanical energy storage (GES) modules: long-duration pumped-hydro storage in rock formations,
+      1-10 MW per module.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 20 people (Built In (https://builtin.com/company/quidnet-energy), 2026-11-24);
+      growth sign: founded 2013.'
+  notes: 'No job board found on the company''s site. Headcount note: Built In ''20 Total Employees'', undated; may
+    predate acquisition Founded: web search snippet (article stating founded in 2013; not fetched). Stage: Company
+    site: ''Hunt Consolidated, a Quidnet Energy partner, has acquired the company''s Geomechanical Energy Storage
+    technology''; site footer now ''(c) 2026 Hunt Consolidated''. Earlier: Breakthrough Energy Ventures investor;
+    $10M from Hunt Energy Network May 2024; ARPA-E SCALEUP $10M (Nov 2022). Flags: acquired by Hunt Consolidated
+    (technology acquisition, date unknown). Evidence: https://quidnetenergy.com/ https://quidnetenergy.com/news/
+    https://builtin.com/company/quidnet-energy Region sources: bev, cev, arpa-e. Confidence: medium. Unresolved:
+    Acquisition date and terms; whether the Quidnet entity still exists.'
 - id: quilt
   name: Quilt
   website: https://quilt.com
@@ -15732,6 +17700,34 @@ companies:
     Evidence: https://www.rebound-tech.com https://www.builtincolorado.com/company/rebound-technologies Region sources:
     fundraise-insider-co, builtin-co-energy, elemental-portfolio, cev-portfolio. Confidence: medium. Unresolved:
     Funding stage not found (Dealroom slug 404).'
+- id: red-shift-energy
+  name: Red Shift Energy
+  website: https://www.rsenrg.com/
+  careers_url: null
+  hq: Corpus Christi, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular plasma system that splits hydrogen sulfide into hydrogen and elemental sulfur at the wellhead
+      or in gathering infrastructure.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Site lists five leaders (CEO and co-founder
+    Howard Nelson). Stage: DOE SBIR award, NSF SBIR Phase I completed; ties to Capital Factory, Halliburton Labs,
+    Bechtel (https://rsenrg.com). No equity round found. Pre-commercial; first field deployment targeted 3Q 2027.
+    Flags: main customers are oil and gas; pre-commercial. Evidence: https://rsenrg.com Region sources: halliburton-labs.
+    Confidence: medium. Unresolved: HQ (input guess Corpus Christi, TX not confirmed), founded, headcount, stage.'
 - id: redwood-materials
   name: Redwood Materials
   website: null
@@ -15984,6 +17980,40 @@ companies:
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
   ipo_year: 2003
+- id: renu-robotics
+  name: Renu Robotics
+  website: https://renurobotics.com
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2018
+  headcount:
+    value: 27
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/renu-robotics)
+  climate:
+    tier: enabling
+    reason: 'All-electric autonomous mowers that maintain vegetation at solar plants (owner ruling A6: robots built
+      for solar are in).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 27 people (Built In (https://builtin.com/company/renu-robotics), 2026-11-24); growth sign:
+      founded 2018.'
+  notes: 'No job board found on the company''s site. Headcount note: Built In total employees, undated (retrieval
+    date used). Own site: over 100 units in the field in 20 states. Founded: https://www.renurobotics.com/about.
+    Stage: Aggregator search snippets conflict: $3.5M seed Jun 2021; a $20M round May 2022 (type not given); totals
+    $7.1M-$31.5M. Not verified from a primary source. Flags: autonomous off-road vehicle (site mowing, not road);
+    domain inferred (renurobotics.com, San Antonio address matches). Evidence: https://www.renurobotics.com/ https://www.renurobotics.com/about
+    https://builtin.com/company/renu-robotics Region sources: builtin-sa-greentech. Confidence: medium. Unresolved:
+    Stage (2022 round type unknown); Dealroom slugs renu_robotics / renu-robotics 404.'
 - id: reon-technology
   name: REON Technology
   website: https://reoncorp.com
@@ -16067,6 +18097,99 @@ companies:
     reason: Owner not yet checked; 4,500 people (RES (company statement) (https://www.res-group.com/about-us/),
       2026-11-24); founded 1981, with no equity raise in 5 years or recent listing found.
   notes: Missing facts filled from data/screening/registry-fixes.
+- id: resilient-power-systems
+  name: Resilient Power Systems
+  website: https://resilientpowersystems.com
+  careers_url: null
+  hq: Austin, TX (not confirmed)
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - charging
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state-transformer-based power conversion (an Eaton company); facts from search summaries only.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search results on solid-state transformer startups (mentioned as acquired by Eaton).. Flags: subsidiary
+    of Eaton; identity of domain not confirmed; facts only from search snippets. Stage: Search summaries: ''acquired
+    last year by Eaton'' (relative to Feb 2026 coverage) and ecmag snippet on Eaton''s purchase of Austin-based
+    Resilient Power Systems. Own site not read (robots.txt names ClaudeBot/anthropic-ai with Disallow rules); eaton.com
+    and ecmag.com return 403. Evidence: https://www.ecmag.com/magazine/articles/article-detail/and-so-it-goes--new-solid-state-tech-could-transform-utility-and-data-center-power-control
+    Confidence: low.'
+- id: resollant
+  name: Resollant
+  website: https://resollant.com
+  careers_url: null
+  hq: The Woodlands, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Compact plug-and-play plasma (methane pyrolysis) reactor that makes hydrogen without combustion or CO2
+      emissions, with solid carbon/graphite as a co-product.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: startup.network lists stage as ''prototype or product
+    is ready'', no funding disclosed (page last changed 2025-06-25). Accelerators: Rice Alliance Clean Energy Accelerator
+    Class 5, VentureWell Aspire Climatetech 2025, Energy Tech Nexus Liftoff, Rose Rock Bridge. Flags: pilot planned
+    with oil and gas companies; pre-commercial. Evidence: https://startup.network/projects/506200.html https://houston.innovationmap.com/greentown-labs-new-startups-2674856687.html
+    Region sources: rice-cea-5, gtx-2025h2, greentown. Confidence: medium. Unresolved: Founded year, headcount and
+    funding stage not found in third-party sources. customers set to oil and gas because startup.network says the
+    2026 1 TPD pilot is with four unnamed oil and gas companies; stated target customers also include refineries,
+    petrochemicals, steel, cement, aluminum, so oil and gas may not be the sole main customer.'
+- id: resolute-grid
+  name: Resolute Grid
+  website: https://resolutegrid.com
+  careers_url: https://www.resolutegrid.com/careers/
+  hq: Texas (Dallas per one directory; first facility and test lab in Austin)
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: seed
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: American-made large power transformers (30 to 350 MVA, up to 345 kV) built to cut the multi-year wait
+      for grid transformers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2025.'
+  notes: 'Owner request 2026-11-25 (Resolute Grid). Found via: Owner request; identity confirmed on resolutegrid.com
+    (careers page applications go by email, no job board).. Flags: conventional (iron-core) large power transformers,
+    not power electronics; design-inquiry form lists High Performance Compute alongside Utility, Government, Manufacturing,
+    Developer, EPC; Venture Dallas ''Startup of the year'' badge on home page; funding facts only from aggregator
+    search snippets. Stage: CB Insights search snippet: Seed VC round dated 2025-12-01 with Stage 1 Ventures, amount
+    not given. Dealroom search snippet: 18.2M USD ''Early VC'' round, undated (Dealroom not read: robots.txt bars
+    ClaudeBot). Sources disagree on amount; no press release found. Evidence: https://www.resolutegrid.com/ https://www.resolutegrid.com/careers/
+    https://www.resolutegrid.com/sitemap.xml https://www.cbinsights.com/company/resolute-grid https://app.dealroom.co/companies/resolute_grid
+    Confidence: medium.'
 - id: resolute-methane
   name: Resolute Methane
   website: https://resolutemethane.com
@@ -16211,6 +18334,35 @@ companies:
     https://www.ycombinator.com/companies/revoy. Stage: YC W22; no round found in this pass. Evidence: https://www.ycombinator.com/companies/revoy
     https://www.revoy.com/ Region sources: yc-directory, overture-portfolio, root-ventures. Confidence: medium.
     Unresolved: Funding; current headcount.'
+- id: revterra
+  name: Revterra
+  website: https://revterra.energy
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: series-a
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Kinetic (flywheel) energy storage for grid stability and EV fast charging.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    USD 6M Series A led by Equinor Ventures with SCF Ventures, 2022-07-25 (https://houston.innovationmap.com/revterra-corp-equinor-ventures-ben-jawdat-2657725398.html).
+    Evidence: https://houston.innovationmap.com/revterra-corp-equinor-ventures-ben-jawdat-2657725398.html https://www.finsmes.com/?p=233709
+    Region sources: gtx-inaugural, greentown. Confidence: medium. Unresolved: revterra.energy does not resolve (DNS)
+    and revterra.com is a HostPapa placeholder page, so current status is unclear. Founded (InnovationMap called
+    it five years old in 2022, so about 2017), headcount. Dealroom and Built In slugs 404.'
 - id: rhea-s-factory
   name: Rhea's Factory
   website: https://rheasfactory.com
@@ -16724,6 +18876,44 @@ companies:
     https://rushnu.com/team https://pitchbook.com/profiles/company/503572-96 https://www.cbinsights.com/company/rushnu
     https://bouncewatch.com/company/rushnu Region sources: ccia-members, nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators.
     Confidence: medium. Unresolved: Colorado presence, headcount, confirmed round sizes'
+- id: sage-geosystems
+  name: Sage Geosystems
+  website: https://www.sagegeosystems.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  - energy-storage
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 20
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/sage-geosystems-/)
+  climate:
+    tier: core
+    reason: Geothermal baseload power generation and EarthStore geopressured geothermal energy storage (8+ hours
+      to multi-day).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 20 people (Dealroom (https://dealroom.co/companies/sage-geosystems-/), 2026-11-24); growth
+      sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 20 (also shows a ''<100'' band and
+    42.9% growth); undated, date is retrieval date. Another aggregator in a search snippet estimated about 40. Founded:
+    https://dealroom.co/companies/sage-geosystems-/. Stage: Series B $97M, Jan 2026, Ormat Technologies and Carbon
+    Direct (https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/1/sage-geosystems-raises-97m-for-world-s-1st-pressure-geothermal-power-plant-97375130);
+    Series A first close $17M, Feb 2024, led by Chesapeake Energy (https://www.businesswire.com/news/home/20240215518846/en).
+    Flags: applications include data centers and defense (Fort Bliss, NAS Corpus Christi feasibility studies); Meta
+    logo among partners; oil and gas investors (Chesapeake, Nabors). Evidence: https://www.sagegeosystems.com https://dealroom.co/companies/sage-geosystems-/
+    https://www.businesswire.com/news/home/20240215518846/en https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/1/sage-geosystems-raises-97m-for-world-s-1st-pressure-geothermal-power-plant-97375130
+    Region sources: lexisnexis-tx-innov, web-houston-geothermal. Confidence: high. Unresolved: Main customer mix
+    not stated; site lists data centers, defense, utilities and O&G repurposing as applications.'
 - id: sakuu
   name: Sakuu
   website: https://www.sakuu.com
@@ -16805,6 +18995,41 @@ companies:
     date: '2025-01-10'
     type: private equity buyout
     source: https://eqtgroup.com/news/2025/eqt-to-acquire-distributed-energy-company-scale-microgrids
+- id: scalvy
+  name: Scalvy
+  website: https://scalvy.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - components
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 41
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/scalvy)
+  climate:
+    tier: core
+    reason: Modular power electronics ('Power Neurons' and rack-level PCS) for AI data centers, energy storage and
+      electric mobility.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 41 people (Dealroom (https://dealroom.co/companies/scalvy), 2026-11-24); growth sign:
+      founded 2022.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 41, band <100; undated, as viewed
+    2026-11-24. Founded: https://dealroom.co/companies/scalvy. Stage: Series A $13.9M, March 2026 (company press
+    releases; Dealroom $14M; Azolla, SkyRiver, Silicon Badia, Climate Capital); earlier $3M July 2023. https://scalvy.com
+    ; https://dealroom.co/companies/scalvy Flags: HQ possibly California (Dealroom description says ''based in California'').
+    Evidence: https://scalvy.com https://dealroom.co/companies/scalvy Region sources: azolla. Confidence: medium.
+    Unresolved: Which office is the HQ. AI data centers are listed first among three target markets, but no customers
+    are named.'
 - id: schneider-electric
   name: Schneider Electric
   website: null
@@ -16913,6 +19138,63 @@ companies:
   notes: 'No job board found on the company''s site. Flags: main customers are AI compute buyers (model labs, hyperscalers);
     sells compute, not hardware; no evidence of operating sites. Evidence: https://sedit.io Region sources: ccia-members.
     Confidence: medium. Unresolved: HQ, founding year, headcount, funding; operating status of any site'
+- id: seebeckcell-technologies
+  name: SeebeckCell Technologies
+  website: null
+  careers_url: null
+  hq: Arlington, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Liquid-based thermoelectric generators that recover industrial waste heat for power and remove battery
+      replacement in IoT devices.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding found. In first class of Rice Alliance Clean
+    Energy Accelerator, MassChallenge Texas Houston cohort, invited to Chevron Technology Ventures Catalyst Program
+    (InnovationMap, 2021-11-09). Flags: HQ Arlington TX, not Houston; latest source is from 2021. Evidence: https://houston.innovationmap.com/the-postage-cartcom-seebeckcell-venostent-clutch-2655525990.html
+    Region sources: greentown. Confidence: low. Unresolved: InnovationMap (2021) says it targets petroleum and gas
+    industries and emerging markets, so oil and gas customers are a stated focus but may not be the only one. Current
+    status unknown (no source after 2021). Co-founder/CEO Ali Farzbod. Founded, headcount, stage not found; Dealroom
+    404.'
+- id: seg-solar
+  name: SEG Solar
+  website: https://www.segsolar.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules (6.5 GW module and 5 GW cell capacity overall) from an integrated supply chain.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2021.'
+  notes: 'No job board found on the company''s site. Founded: https://www.segsolar.com/about. Stage: Ownership and
+    funding not stated on site. Flags: manufacturing in USA and Indonesia. Evidence: https://www.segsolar.com/about
+    Region sources: web-tx-solar-mfg, e2-texas. Confidence: medium. Unresolved: Parent company, Tomball plant details
+    and headcount not on site.'
 - id: sensatek-propulsion-technology
   name: Sensatek Propulsion Technology
   website: https://www.sensatek.com
@@ -17098,6 +19380,60 @@ companies:
     cell plant); some products aimed at data centers; drone cells marketed as NDAA-compliant (possible defense customers);
     part of the product is software (AI platform). Evidence: https://ses.ai/ https://stockanalysis.com/stocks/ses/company/
     Confidence: medium. Unresolved: Headcount not checked against the 10-K. SEC EDGAR was not fetched.'
+- id: sheetak
+  name: Sheetak
+  website: https://sheetak.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Thermoelectric coolers and modules for electronics; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Site news says it is hiring engineers to expand
+    Austin manufacturing. Stage: No funding information on site. Evidence: https://sheetak.com https://www.sheetak.com/about
+    Region sources: gtx-2026h1, greentown. Confidence: medium. Unresolved: Founded, headcount, stage. Built In returned
+    429 (stopped on that site).'
+- id: siemens
+  name: Siemens
+  website: https://www.siemens.com/
+  careers_url: null
+  hq: Germany
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: public
+  founded: 1847
+  headcount: null
+  climate:
+    tier: enabling
+    reason: EV chargers among many industrial products; its Texas plant makes chargers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1847, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Headcount note: Page gives about 86,000 employees in Germany
+    only; no global total or date. Founded: https://www.siemens.com/global/en/company/about.html. Stage: Publicly
+    listed (Frankfurt, ticker SIE) per prior knowledge; listing year not verified this pass. Flags: over 1,000 employees;
+    HQ outside region; main sites in TX (Carrollton, Grand Prairie). Evidence: https://www.siemens.com/global/en/company/about.html
+    Region sources: e2-texas, web-tx-transformers. Confidence: medium. Unresolved: Global headcount, listing year
+    and the Texas plants not verified from a fetched source.'
 - id: signetron
   name: Signetron
   website: https://signetron.com
@@ -17196,6 +19532,60 @@ companies:
     GFI Partners, MIT E14 Fund; no priced round found. Flags: pre-commercial (pilots in 2026). Evidence: https://silvismaterials.com
     Region sources: oedit-ai, bs-co-cleantech, fundraise-insider-co. Confidence: medium. Unresolved: Headcount,
     equity round Tier set under owner decision 13.'
+- id: simon-na-corp
+  name: Simon NA Corp
+  website: null
+  careers_url: null
+  hq: Not found
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: EV doors for Tesla's Austin factory; car body parts, no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Simwon is a subsidiary of Myoung Shin Industry Co. Ltd.
+    (South Korea), per San Antonio Express-News coverage reposted at https://livebrooks.com/making-news/tesla-supplier-opening-a-plant-at-brooks-joining-a-growing-south-side-automotive-manufacturing-hub-san-antonio-express-news/.
+    Flags: subsidiary of Myoung Shin Industry; identity uncertain (Simon vs Simwon spelling); auto parts supplier.
+    Evidence: https://livebrooks.com/making-news/tesla-supplier-opening-a-plant-at-brooks-joining-a-growing-south-side-automotive-manufacturing-hub-san-antonio-express-news/
+    https://e2.org/announcements/states/texas/ Region sources: e2-texas. Confidence: low. Unresolved: That Simon
+    NA Corp (e2 listing) is Simwon NA Corp. is inferred, not confirmed. Plant jobs, opening date and investment
+    unknown.'
+- id: simora-core
+  name: Simora Core
+  website: https://simoracore.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Developing brushless, magnet-free motors and generators with controllable rotor excitation; no commercial
+      products yet.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Flags: pre-product.
+    Evidence: https://simoracore.com Region sources: activate. Confidence: low. Unresolved: HQ (input said Houston),
+    founding year, headcount, funding.'
 - id: simplesub-water
   name: SimpleSUB Water
   website: https://simplesubwater.com
@@ -17343,6 +19733,34 @@ companies:
     mit-news-startups, mit-tlo-startups, azolla, activate, greentown, halliburton-labs, arpa-e. Confidence: medium.
     Unresolved: HQ: Dealroom says Cambridge, a Boston Business Journal headline on the site calls it a Watertown
     company.'
+- id: sk-signet
+  name: SK Signet
+  website: https://sksignet.com
+  careers_url: null
+  hq: Bucheon, Gyeonggi-do, South Korea
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Integrated ultra-fast EV chargers from 30 kW to 400 kW, including split 400 kW dispenser setups.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: SK Inc. took a majority stake in Signet EV in 2021 (prior
+    knowledge, not verified this pass); site does not name a parent. Flags: subsidiary of SK group (unverified);
+    HQ outside region; Plano, TX factory not mentioned on site. Evidence: https://www.sksignet.com Region sources:
+    e2-texas. Confidence: medium. Unresolved: Plano, TX plant, parent ownership, founding year and headcount not
+    verified.'
 - id: skycool-systems
   name: SkyCool Systems
   website: https://www.skycoolsystems.com/
@@ -17462,6 +19880,66 @@ companies:
     lists investors at seed stage and total disclosed equity $100-500M band (https://dealroom.co/companies/skyven-technologies).
     Evidence: https://www.skyven.co/ https://skyven.co/about-us/ https://skyven.co/careers/ https://dealroom.co/companies/skyven-technologies
     Confidence: medium.'
+- id: skyven-technologies-texas
+  name: Skyven Technologies
+  website: https://skyven.co
+  careers_url: null
+  hq: Farmers Branch, TX
+  ats:
+    type: workable
+    board: skyven-technologies
+  read: manual
+  sectors:
+  - buildings
+  stage: null
+  founded: 2013
+  headcount: null
+  climate:
+    tier: core
+    reason: Arcturus industrial steam-generating heat pumps that recover low-grade heat (up to 215 C steam), offered
+      partly as energy-as-a-service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2013.'
+  notes: 'Board workable:skyven-technologies seen 2026-11-24, linked from the company''s own site: 6 open roles.
+    Headcount note: Dealroom shows band <100 only; no count. Founded: https://dealroom.co/companies/skyven-technologies.
+    Stage: Dealroom groups six investors under ''Seed'' with no rounds or dates; total disclosed funding range $100-500M.
+    https://dealroom.co/companies/skyven-technologies Evidence: https://skyven.co https://dealroom.co/companies/skyven-technologies
+    Region sources: voyager, third-derivative, doe-oced, web-search-snippets. Confidence: medium. Unresolved: Funding
+    rounds and stage. Named customer: California Dairies (six projects). Offices also in the Netherlands, Belgium
+    and Fresno CA.'
+- id: slb
+  name: SLB
+  website: https://www.slb.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: public
+  founded: 1926
+  headcount:
+    value: 111000
+    as_of: '2024-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Schlumberger)
+  climate:
+    tier: out
+    reason: Oilfield technology and services; its new-energy lines are a small part. Fossil extraction is out.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '111,000 people (Wikipedia infobox (https://en.wikipedia.org/wiki/Schlumberger), 2024-01-01): over the
+      4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2024). Founded: https://en.wikipedia.org/wiki/Schlumberger.
+    Stage: NYSE: SLB; listed on NYSE 1962-02-02 (https://en.wikipedia.org/wiki/Schlumberger). Flags: over 1,000
+    employees; main customers are oil and gas; new energy is a small part of the business. Evidence: https://en.wikipedia.org/wiki/Schlumberger
+    Region sources: heti-members. Confidence: high.'
 - id: smart-wires
   name: Smart Wires
   website: https://www.smartwires.com
@@ -17612,6 +20090,96 @@ companies:
     type: registered direct offering (common stock, pre-funded and common warrants)
     source: https://www.barchart.com/story/news/37272391/solid-power-announces-pricing-of-130-million-registered-direct-offering
   ipo_year: 2021
+- id: solid-state-power
+  name: Solid State Power
+  website: https://solidstatepower.net
+  careers_url: null
+  hq: Farmers Branch, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state distribution transformers (Solid State PowerHub) in a utility pilot with EPRI.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on solid-state power substation / power-electronic transformer utility pilots (MGRID result).. Flags:
+    demonstration stage (MGRID correction notes most SST products are at announced/funded stage); utility focus;
+    data centers not mentioned. Stage: News page: consortium won a DOE grant to commercialize PowerHub (2024-12-03);
+    no venture rounds listed. Evidence: https://solidstatepower.net/ https://solidstatepower.net/page6news.html
+    https://mgrid.org/2026/04/30/epri-and-six-major-us-utilities-are-demonstrating-an-all-solid-state-25-kva-pole-mount-transformer-from-solid-state-power/
+    https://mgrid.org/entity/solid-state-power-inc-ssp/ Confidence: medium.'
+- id: solidec
+  name: Solidec
+  website: https://solidec.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Autonomous electrochemical generators that make hydrogen peroxide, formic acid, acetic acid and syngas
+      on site (for water treatment, semiconductors, food and beverage, mining).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site; Dealroom slug returned
+    404. Evidence: https://www.solidec.com Region sources: rice-mag-lab-launch, activate, third-derivative, greentown.
+    Confidence: medium. Unresolved: HQ not stated on site (input says Houston). Founding year, headcount and funding
+    unknown.'
+- id: solugen
+  name: Solugen
+  website: https://solugen.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: breezy
+    board: solugen
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2016
+  headcount:
+    value: 161
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/solugen)
+  climate:
+    tier: core
+    reason: Chemicals made from plant-based feedstocks using its own enzymes and metal catalysts in Bioforge plants
+      it designs, builds and runs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 161 people (Built In (https://builtin.com/company/solugen), 2026-11-24); growth sign:
+      founded 2016.'
+  notes: 'Board breezy:solugen seen 2026-11-24, linked from the company''s own site: 3 open roles. Headcount note:
+    Built In ''total employees''; undated, date is retrieval date. Founded: https://builtin.com/company/solugen.
+    Stage: Site lists backers (Baillie Gifford, BlackRock, Temasek, GIC, Founders Fund, Lowercarbon and others)
+    without rounds or dates; no round fetched this pass. Evidence: https://solugen.com/about https://builtin.com/company/solugen
+    Region sources: energycapital-time-greentech, lc, yc. Confidence: high. Unresolved: Latest round not verified
+    this pass (a 2021 Series C is widely reported but not checked).'
 - id: solv-energy
   name: SOLV Energy
   website: null
@@ -17671,6 +20239,31 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Evidence: https://www.solvanic.com Region sources: masscec-pr-4-5m.
     Confidence: medium. Unresolved: HQ (input Cambridge), founded, headcount, funding; domain guessed, content matches'
+- id: solvcor
+  name: SolvCor
+  website: https://www.solvcor.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Liquid cooling for AI and data centers; data-center equipment is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site. Flags: main customers
+    are data centers. Evidence: https://solvcor.com Region sources: halliburton-labs. Confidence: low. Unresolved:
+    Founded, headcount, stage. Data-center focus inferred from product lines (AI liquid cooling, data center cooling);
+    no customers named. Input describes a liquid cooling additive.'
 - id: sonocharge-energy
   name: Sonocharge Energy
   website: https://www.sonocharge.com/
@@ -18342,6 +20935,35 @@ companies:
     date: '2025-03-10'
     type: private equity buyout
     source: https://mergr.com/transaction/industrial-growth-partners-acquires-stored-energy-systems
+- id: stormentum
+  name: Stormentum
+  website: https://stormentum.com
+  careers_url: https://www.stormentum.com/careers
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Modular UPS, battery and rectifier power systems for AI data centers; data-center equipment is out (decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Web search on US grid-forming inverter startups (Axios Pro result); facts from own site.. Flags: main customers
+    are data centers; sells through OEMs and integrators; also EV charging and microgrids. Stage: Axios Pro search
+    snippet (2025-10-23): next-gen inverter startup raising up to 8M USD seed; close not confirmed. Not read. Evidence:
+    https://www.stormentum.com/ https://www.stormentum.com/careers https://www.axios.com/pro/climate-deals/2025/10/23/inverter-seed-stormentum
+    Confidence: medium.'
 - id: sturman-industries
   name: Sturman Industries
   website: null
@@ -18517,6 +21139,36 @@ companies:
     Evidence: https://www.supercarb.tech/ https://activate.org/supercarb https://activate.org/news/activate-fellow-news-july-2026
     Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount, stage Tier set under
     owner decision 13.'
+- id: supra-elemental-recovery
+  name: Supra Elemental Recovery
+  website: null
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Reusable 3D-printed sorbent cartridges that selectively recover critical minerals (first gallium and
+      scandium) from mine tailings, industrial byproducts and e-waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: UT Discovery to Impact invested $250,000 in its pre-seed
+    round (launch announced Feb 3-4, 2026, https://news.utexas.edu/2026/02/04/ut-startup-to-recover-rare-earth-minerals-from-industrial-and-e-waste-strengthen-u-s-supply-chain/);
+    CB Insights lists $2M total raised. Evidence: https://news.utexas.edu/2026/02/04/ut-startup-to-recover-rare-earth-minerals-from-industrial-and-e-waste-strengthen-u-s-supply-chain/
+    https://www.recyclingtoday.com/news/supra-elemental-recovery-inc-launches-to-recover-high-purity-critical-minerals
+    https://www.cbinsights.com/company/supra-elemental-recovery Region sources: ut-dti-showcase, ut-seed-fund-search.
+    Confidence: medium. Unresolved: Own domain not found. Founding year (public launch Feb 2026) and headcount unknown;
+    the $250K and $2M figures may be different rounds.'
 - id: suryatech-ev-power
   name: Suryatech EV Power
   website: https://suryatechpower.com
@@ -18659,6 +21311,36 @@ companies:
     Ag Ventures Alliance, Grantham Foundation); $1.5M King Philanthropies grant Jan 2023. Evidence: https://www.switchbioworks.com
     https://dealroom.co/companies/switch-bioworks Region sources: arpae-projects. Confidence: high. Tier set under
     owner decision 13.'
+- id: switched-source
+  name: Switched Source
+  website: https://switchedsource.com
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: Medium-voltage power-electronic devices that balance phases and tie feeders on utility distribution
+      grids.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2016.'
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of grid power-flow-control makers; confirmed on own site.. Flags: one deployment
+    at a US military installation (ARPA-E/ESTCP); main customers are utilities. Stage: Over 17M USD raised, announced
+    2026-10-13, led by Cubit Capital with ABB, Emerald Technology Ventures, Red Cedar Ventures, Southern States,
+    Southwire; round stage not named. Also a five-year 99M USD DOE project to deploy Phase-EQ units in the Southeast.
+    Evidence: https://www.switchedsource.com/ https://www.switchedsource.com/about-us/ https://www.switchedsource.com/2026/10/13/switched-source-secures-over-17-million-to-help-utilities-add-grid-capacity-faster/
+    https://www.switchedsource.com/page-sitemap.xml Confidence: high.'
 - id: sylvatex
   name: Sylvatex
   website: https://www.sylvatex.com
@@ -18714,6 +21396,40 @@ companies:
     Evidence: https://www.colorado.edu/venturepartners/2025/09/24/internal-news/get-front-row-seat-university-colorados-next-big-ideas-competing-750000
     https://www.colorado.edu/venturepartners/2025/10/27/internal-news/755000-awarded-university-colorado-innovators-advance-their-discoveries
     Region sources: cu-lvc, cu-ascent. Confidence: medium. Unresolved: Whether incorporated; domain, founded, headcount.'
+- id: syzygy-plasmonics
+  name: Syzygy Plasmonics
+  website: https://plasmonics.tech/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - biofuels
+  stage: null
+  founded: 2018
+  headcount:
+    value: 59
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/syzygy-plasmonics)
+  climate:
+    tier: core
+    reason: Light-driven reactor cells that turn waste biogas and renewable power into sustainable aviation fuel
+      (NovaSAF); first plant in Uruguay targets 2028.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 59 people (Built In (https://builtin.com/company/syzygy-plasmonics), 2026-11-24); growth
+      sign: founded 2018.'
+  notes: 'No job board found on the company''s site. Headcount note: Built In ''total employees''; undated, date
+    is retrieval date. Founded: https://builtin.com/company/syzygy-plasmonics. Stage: Site shows backers (Toyota,
+    Equinor, Chevron, BP, Aramco) with no rounds or dates; first plant NovaSAF 1 in Uruguay with 100% offtake to
+    Trafigura. Flags: oil and gas companies among backers, not stated customers; first commercial plant outside
+    US (Uruguay). Evidence: https://plasmonics.tech/about https://builtin.com/company/syzygy-plasmonics Region sources:
+    web-houston-hydrogen, engine, greentown, arpa-e. Confidence: high. Unresolved: Latest round not verified.'
 - id: t1-energy
   name: T1 Energy
   website: https://t1energy.com
@@ -19201,6 +21917,34 @@ companies:
       2025-12-31): over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
   ipo_year: 2010
+- id: texpower
+  name: TexPower
+  website: https://texpower.us
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: series-a
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Cathode materials for lithium-ion batteries (LFP, LMFP, NMA and NMC).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Founded: https://texpowerev.com/.
+    Stage: Site says Series A from strategic investors in 2023; amount and date undisclosed. https://texpowerev.com/
+    Evidence: https://texpowerev.com/ Region sources: third-derivative. Confidence: medium. Unresolved: Headcount;
+    Series A amount. texpower.us redirects to texpowerev.com. NMC in the product list contains cobalt, unlike the
+    input''s ''cobalt-free''. Has worked with DOE, DoD and the US Army (not stated as customers).'
 - id: thalon-materials
   name: Thalon Materials
   website: https://thalonmaterials.io
@@ -19464,6 +22208,37 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: legal name
     Titan Advanced Energy Solutions. Evidence: https://www.titanaes.com/ Region sources: masscec-investments. Confidence:
     medium. Unresolved: Founded, headcount, funding.'
+- id: tmeic-corporation-americas
+  name: TMEIC Corporation Americas
+  website: https://tmeic.com
+  careers_url: https://www.tmeic.com/careers/
+  hq: null
+  ats:
+    type: workable
+    board: tmeic-corporation-americas
+  read: manual
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 5000
+    as_of: '2026-11-25'
+    source: TMEIC website
+  climate:
+    tier: core
+    reason: Utility-scale photovoltaic inverters and substation equipment (the Americas arm of TMEIC, Japan).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; 5,000 people (TMEIC website, 2026-11-25); founding year not found, so included.
+  notes: 'Owner request 2026-11-25 (scan for solid-state transformers and grid power-conversion makers). Found via:
+    Candidate from prior knowledge of utility-scale inverter makers with US operations; checked on own site.. Flags:
+    subsidiary of a Japanese group; over 1,000 employees (global); oil and gas, mining, metals among listed industries;
+    US HQ and US manufacturing not confirmed (contact page returned 403). Stage: Americas arm of the TMEIC group
+    (Japan site tmeic.co.jp; Europe careers on toshiba.eu); parent not named on the pages read. Evidence: https://www.tmeic.com/
+    https://www.tmeic.com/careers/ Confidence: low.'
 - id: torus
   name: Torus
   website: null
@@ -19491,6 +22266,33 @@ companies:
     reason: 'Independent; 400 people (Torus press release (''nearly 400 employees'') https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/,
       2026-11-11); growth sign: founded 2021.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+- id: toyo-solar
+  name: TOYO Solar
+  website: https://toyo-solar.com
+  careers_url: null
+  hq: Not stated on site
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: public
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar cells and PV modules from wafers up; Houston-area module plant reached 2 GW in Oct 2026 after
+      starting commercial production Oct 2025; US subsidiary address in Humble, TX.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2022.'
+  notes: 'No job board found on the company''s site. Founded: https://www.toyo-solar.com. Stage: Nasdaq: TOYO, listed
+    2024 via a SPAC merger (prior knowledge; not verified this pass: the investor page returned 404). Flags: HQ
+    outside region; main site in TX (Humble/Houston module plant). Evidence: https://www.toyo-solar.com Region sources:
+    web-tx-solar-mfg. Confidence: medium. Unresolved: Listing details, HQ city and headcount not verified.'
 - id: transaera
   name: Transaera
   website: https://www.transaera.com
@@ -19507,8 +22309,8 @@ companies:
   headcount: null
   climate:
     tier: core
-    reason: MOF-based desiccant coatings and devices that dehumidify air before cooling, integrated with standard
-      air conditioners; licenses to AC makers.
+    reason: Rooftop heat pumps for commercial buildings that use MOF desiccants to dry air before cooling, cutting
+      cooling energy.
     basis: agent
     approved: false
   startup:
@@ -19636,6 +22438,33 @@ companies:
     Alliance, California Energy Commission, Katapult Ocean, OESI, OWIH). 2023 Ventus Award winner. Flags: also offices
     in Edinburgh UK and Oslo Norway. Evidence: https://tritonanchor.com/ Region sources: masscec-t2m. Confidence:
     medium. Unresolved: Founded, headcount, funding. Dealroom 404.'
+- id: turbo-power-semiconductor
+  name: Turbo Power Semiconductor
+  website: https://turbopowersemi.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ultra-high-voltage silicon carbide power chips (TurboMOS, rated 15 kV and up) for solid-state transformers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Evidence: https://www.turbopowersemi.com
+    Region sources: ati-energy, ut-dti-showcase. Confidence: medium. Unresolved: Domain guessed (site content matches
+    the product). The site does not state the HQ, so Austin comes from the input. Founding year, headcount and funding
+    unknown.'
 - id: turnongreen
   name: TurnOnGreen
   website: https://www.turnongreen.com
@@ -20044,6 +22873,42 @@ companies:
     https://www.bloomberg.com/news/articles/2026-03-31/palmer-luckey-backed-nuclear-startup-valar-lands-2-billion-valuation
     Confidence: medium. Unresolved: Current headcount (123 open roles suggests well above 100); HQ not stated on
     company site.'
+- id: vantran-transformers
+  name: VanTran Transformers
+  website: https://vantran.com
+  careers_url: null
+  hq: Waco, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Custom liquid-filled and dry medium-voltage transformers made in Waco, TX; now part of Forgent Power
+      Solutions.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: No VanTran-only figure. Parent Forgent had
+    about 2,100 employees at its Feb 2026 IPO (Renaissance Capital). Waco plant projected to create 700 jobs over
+    five years (trade press). Stage: Site says VanTran ''is now part of Forgent'' (with MGM Transformers, States
+    Mfg, PwrQ). MGM bought VanTran in 2024. Forgent listed on NYSE (FPS) on 2026-02-05, $1.5B IPO, Neos Partners
+    selling holder. https://vantran.com ; https://www.renaissancecapital.com/Profile/FPS/Forgent-Power-Solutions/IPO
+    Flags: subsidiary of Forgent Power Solutions (NYSE: FPS, listed 2026); parent over 1,000 employees; probable
+    duplicate of VanTran Industries (same company, vantran.com). Evidence: https://vantran.com https://www.forgentpower.com
+    https://www.publicpower.org/periodical/article/mgm-transformers-vantran-announce-opening-texas-transformer-manufacturing-facility
+    https://www.tdlr.texas.gov/TABS/Projects/TABS2025003332 https://www.renaissancecapital.com/Profile/FPS/Forgent-Power-Solutions/IPO
+    Region sources: web-tx-transformers. Confidence: high. Unresolved: Founding year (site says ''over 50 years'');
+    VanTran-only headcount. Joint 430,000 sq ft Waco plant opened 2025-04-24 (TDLR filing says 433,000 sq ft). Markets
+    listed include oil and gas, petrochemical, utility and data centers among nine; none stated as main.'
 - id: vartega
   name: Vartega
   website: https://www.vartega.com
@@ -20608,8 +23473,8 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Drone- and rover-mounted neutron activation systems for exploring clean-energy metals (directory description;
-      not confirmed).
+    reason: Drone-mounted neutron systems that map rock chemistry without drilling, sold as an exploration service
+      for clean-energy metals.
     basis: agent
     approved: false
   startup:
@@ -20721,6 +23586,61 @@ companies:
     https://www.manufacturingdive.com/news/vulcan-elements-benson-north-carolina-magnet-facility-defense-rare-earth/806075/
     https://www.axios.com/pro/climate-deals/2026/03/17/vulcan-elements-washington-harbour-rare-earth-magnet Confidence:
     medium. Unresolved: Current headcount; share of defense customers. Missing facts filled from data/screening/registry-fixes.'
+- id: waaree-energies
+  name: Waaree Energies
+  website: https://waaree.com
+  careers_url: null
+  hq: Mumbai, India
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar PV modules; Texas module factory in Brookshire (per input).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Listed on NSE/BSE in Oct 2024 (prior knowledge; not
+    verified this pass: the about page returned no content). Flags: HQ outside region; main site in TX (Brookshire
+    factory, per input). Evidence: http://www.waaree.com/about-us/ Region sources: e2-texas. Confidence: low. Unresolved:
+    Site page returned empty; HQ, listing, founding year, headcount and Brookshire plant details not verified.'
+- id: wattsto-energy
+  name: WattSto Energy
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vanadium redox flow batteries (hybrid-design long-duration storage) for grid-scale and off-grid microgrid
+      use.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding found. Joined an incubator in Q2 2025 per
+    Energy Capital HTX (2025-07-03). Evidence: https://energycapitalhtx.com/greentown-labs https://energycapitalhtx.com/tag/wattsto-energy
+    https://houston.innovationmap.com/greentown-labs-new-startups-2674856687.html Region sources: gtx-2025h2, gtx-6tx,
+    greentown. Confidence: low. Unresolved: Domain unknown; no Dealroom page (404). Founded, headcount and stage
+    not found.'
 - id: western-magnetics
   name: Western Magnetics
   website: https://www.westernmagnetics.com
@@ -20831,7 +23751,7 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Battery-free wireless sensors for building energy savings.
+    reason: Peel-and-stick sensors that find energy waste in buildings, with the fixes funded through shared savings.
     basis: agent
     approved: false
   startup:
@@ -20878,6 +23798,34 @@ companies:
     https://fourweekmba.com/ai-alphabets-wing-plans-125m-fort-worth-drone-plant-100-jobs/ Confidence: medium. Unresolved:
     Company-stated headcount. Owner ruling A1 (2026-11-24) applied. Missing facts filled from data/screening/registry-fixes.'
   parent: Alphabet
+- id: wise-energie
+  name: Wise Energie
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turnkey microgrids combining vertical-axis wind turbines, solar PV and battery storage in one system.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding found. Joined an incubator in H2 2025 per
+    InnovationMap (2026-01-09). Flags: may be a system integrator of others'' components; unverified. Evidence:
+    https://houston.innovationmap.com/greentown-labs-new-startups-2674856687.html Region sources: gtx-2025h2, greentown.
+    Confidence: low. Unresolved: Domain unknown; no Dealroom page (404). Founded, headcount, stage, and whether
+    it makes its own turbines are not found.'
 - id: wisk-aero
   name: Wisk Aero
   website: https://wisk.aero
@@ -20897,7 +23845,8 @@ companies:
     source: Built In SF (https://www.builtinsf.com/company/wisk)
   climate:
     tier: enabling
-    reason: Autonomous all-electric four-seat air taxi.
+    reason: Autonomous all-electric four-seat air taxi in flight testing; acquired from Boeing by Archer Aviation
+      in 2026.
     basis: agent
     approved: false
   startup:
@@ -20998,6 +23947,32 @@ companies:
       2025-10-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
+- id: wootz
+  name: Wootz
+  website: https://wootznano.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: Carbon nanotube material for antennas, sensors and RF parts; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2018.'
+  notes: 'No job board found on the company''s site. Founded: https://www.prweb.com/releases/kureha_invests_in_us_startup_wootz/prweb18484629.htm.
+    Stage: Seed round led by Kureha Corporation (via Kureha America), amount undisclosed, announced 2022-02-15 (https://www.prweb.com/releases/kureha_invests_in_us_startup_wootz/prweb18484629.htm).
+    PitchBook snippet: total funding USD 2M. Evidence: https://wootznano.com https://www.prweb.com/releases/kureha_invests_in_us_startup_wootz/prweb18484629.htm
+    Region sources: rice-cea-2. Confidence: medium. Unresolved: Headcount. CB Insights snippet gives founded 2020
+    versus 2018 in the Kureha release.'
 - id: xcimer-energy
   name: Xcimer Energy
   website: null
@@ -21055,6 +24030,36 @@ companies:
     (5), not a stated headcount. Stage: Support from NREL and US DOE (site); West Gate cohort 4 (https://www.nlr.gov/west-gate/ian-brownstein-affordable-wind-energy).
     No venture rounds found. Evidence: https://xflowenergy.com https://www.nlr.gov/west-gate/innovators Region sources:
     nlr-westgate-innovators. Confidence: medium. Unresolved: Founded, HQ city, funding.'
+- id: xgs-energy
+  name: XGS Energy
+  website: https://xgsenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: series-a
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular closed-loop solid-state geothermal power systems using thermally conductive materials, independent
+      of water and local geology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: $13M financing closed Mar 2025 (Anzu, Constellation
+    Technology Ventures, H&P, Valo and others; https://www.businesswire.com/news/home/20250326123552/en/); $20M
+    Series A extension May 2024 led by Valo and VoLo Earth (https://www.axios.com/pro/climate-deals/2024/05/21/xgs-geothermal-funding).
+    No Series B found. Evidence: https://www.xgsenergy.com https://www.businesswire.com/news/home/20250326123552/en/
+    https://www.axios.com/pro/climate-deals/2024/05/21/xgs-geothermal-funding Region sources: web-houston-geothermal,
+    arpa-e. Confidence: medium. Unresolved: Founding year and headcount (Built In slug 404). The March 2025 round
+    was not labeled by series in the snippet.'
 - id: xos
   name: Xos
   website: https://xostrucks.com
@@ -21174,6 +24179,38 @@ companies:
     Flags: subsidiary of Yaskawa Electric (Japan). Evidence: https://www.solectria.com https://www.solectria.com/about-us/
     https://www.automation.com/article/yaskawa-acquires-solectria-renewables Region sources: builtin-energy. Confidence:
     high. Unresolved: Founding year; current headcount.'
+- id: yotta-energy
+  name: Yotta Energy
+  website: https://yottaenergy.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: yotta
+  read: auto
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: 2016
+  headcount:
+    value: 43
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/yotta-energy)
+  climate:
+    tier: core
+    reason: Yotta Block 1 kWh batteries that replace ballast blocks in rooftop solar racking, paired with a three-phase
+      microinverter and energy-management software, for commercial buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 43 people (Built In (https://builtin.com/company/yotta-energy), 2026-11-24); growth sign:
+      founded 2016.'
+  notes: 'Board ashby:yotta seen 2026-11-24, token matched by name; board page checked: 4 open roles, 4 US-remote.
+    Headcount note: Built In ''total employees''; undated, date is retrieval date. Founded: https://builtin.com/company/yotta-energy.
+    Stage: No funding information found on site or Built In. Evidence: https://www.yottaenergy.com https://builtin.com/company/yotta-energy
+    Region sources: ati-alumni. Confidence: high. Unresolved: Funding stage unknown.'
 - id: z-polymers
   name: Z-Polymers
   website: https://z-polymers.com
@@ -21295,6 +24332,32 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: data-center battery
     backup is listed first among target uses (not confirmed as main customer). Evidence: https://www.zelos.energy/
     Region sources: cec-eif-showcase, cec-nopa. Confidence: medium. Unresolved: founded, headcount, stage'
+- id: zentra-power-technologies
+  name: Zentra Power Technologies
+  website: https://zentrapower.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state transformers, grid power-conversion equipment; its main customers so far are data centers,
+      but grid equipment stays in (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on site. Flags: main customers
+    are data centers. Evidence: https://www.zentrapower.com Region sources: ati-energy. Confidence: medium. Unresolved:
+    Domain guessed (site says ''Based in Austin, TX''). Founding year, headcount and funding unknown.'
 - id: zero-carbon-systems
   name: Zero Carbon Systems
   website: https://zerocarbonsystems.com
@@ -21323,6 +24386,34 @@ companies:
     capture business continues in Brighton, CO under that name.. Evidence: https://zerocarbonsystems.com/news https://dealroom.co/companies/global-thermostat
     Region sources: search-snippets. Confidence: medium. Unresolved: Whether Brighton, CO facility continues under
     ZCS; ZCS HQ.'
+- id: zero-electric
+  name: Zero Electric
+  website: null
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: zero
+  read: auto
+  sectors:
+  - energy-storage
+  - charging
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Second-life battery energy storage built from used batteries, plus AI-optimized EV charging (uses listed
+      include EV charging, AI data center power, building backup).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:zero seen 2026-11-24, token matched by name; board page checked: 4 open roles, 2 US-remote.
+    Stage: Antler portfolio listing describes it as Pre Seed; no amount or date. Evidence: https://ati.utexas.edu/company/zero-electric-transforming-used-batteries-into-versatile-energy-storage-solutions/
+    https://careers.antler.co/companies/zero-electric Region sources: ati-energy. Confidence: medium. Unresolved:
+    Own domain not found (zeroelectric.com does not resolve). Founding year, headcount and round details unknown.'
 - id: zero-emission-industries
   name: Zero Emission Industries
   website: https://www.zeroemissionindustries.com/
@@ -21445,6 +24536,39 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Evidence: https://www.zerotwelve.com Region sources: oedit-ai.
     Confidence: medium. Unresolved: Founding year, headcount, funding'
+- id: zeta-energy
+  name: Zeta Energy
+  website: https://zetaenergy.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: lever
+    board: zeta
+  read: auto
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2014
+  headcount:
+    value: 37
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/zeta-energy)
+  climate:
+    tier: core
+    reason: Lithium-sulfur batteries with a patented sulfurized-carbon cathode.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 37 people (Dealroom (https://dealroom.co/companies/zeta-energy), 2026-11-24); growth sign:
+      founded 2014.'
+  notes: 'Board lever:zeta seen 2026-11-24, token matched by name; board page checked: 33 open roles, 2 US-remote.
+    Headcount note: Dealroom 37, band <100; undated, as viewed 2026-11-24. Founded: https://zetaenergy.com. Stage:
+    Dealroom shows grants (ARPA-E $4M Jan 2023; DOE $4M Feb 2024) among 5 financing events, and a disclosed equity
+    range of $10-50M; no named equity rounds. https://dealroom.co/companies/zeta-energy Evidence: https://zetaenergy.com
+    https://dealroom.co/companies/zeta-energy Region sources: arpa-e. Confidence: medium. Unresolved: Equity round
+    stage.'
 - id: zgeo-energy
   name: ZGEO Energy
   website: https://zgeoenergy.com

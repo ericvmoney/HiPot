@@ -1,0 +1,388 @@
+# Registry fixes 08: pivot sweep of listed companies, and the M3 spot check's open cases (2026-11-25).
+#
+# Written by workstream A2. 167 listed companies whose public reason touches chips, cooling, power conversion,
+# drones or aviation, smart glass, magnets, sensors, robots, defense or data centers were checked against their
+# own sites (and a news item where needed): 143 still hold. Amber Semiconductor and Boston Materials, already
+# taken out by the supervisor, were not repeated.
+#
+#   fixes with `ruling`        tier changes under an owner decision (applied by tools/apply_screening.py)
+#   fixes with kind reason-only corrected public reasons; the tier is unchanged (no ruling needed)
+#   questions                  mixed cases for the owner, each with the facts on both sides
+#
+# Evidence quotes come from the companies' own pages unless marked otherwise. Sites that refused automated
+# clients were not retried (aemetis.com, fleetrobotics.com, relyionenergy.com, businesswire.com and others).
+
+fixes:
+- id: giga-energy
+  name: Giga Energy
+  was:
+    tier: enabling
+    reason: Transformers, substations and switchboards; much of it for data centers, but grid equipment stays in
+      (decision 13).
+  climate:
+    tier: out
+    reason: Builds electrical and cooling infrastructure for AI data centers and develops and leases its own data-center
+      sites; companies that build or run data centers are out (decision 13).
+  sectors:
+  - grid
+  ruling: decision 13
+  evidence:
+  - 'https://www.gigaenergy.com/: "Build AI data centers faster"; "We manufacture all the infrastructure between
+    the utility and the rack"; "We develop AI-ready data center sites within nine-month timelines"; "We offer colocation
+    data centers on our own powered land"'
+  - 'Same page, news: 10-year, $1B lease on Project Clay, a 60MW AI data center in Hunt County, TX'
+  checked: '2026-11-25'
+- id: nona-technologies
+  name: Nona Technologies
+  was:
+    tier: core
+    reason: Modular ion-concentration-polarization system that recovers cooling-tower water for reuse.
+  climate:
+    tier: out
+    reason: Recovers cooling-tower blowdown water for reuse, sold mainly to data centers; data-center cooling equipment
+      is out (decision 13).
+  sectors:
+  - water
+  ruling: decision 13
+  evidence:
+  - https://nona-technologies.com - page title "Cooling Water Recovery for Data Centers"; "treat the liquid blowdown
+    your cooling tower would send to drain"; deployment example "1.5 MW data center in Ohio"
+  checked: '2026-11-25'
+- id: gradient
+  name: Gradient
+  kind: reason-only
+  was:
+    tier: core
+    reason: Window-mounted heat pump air conditioners (R-32), sold direct to consumers.
+  climate:
+    tier: core
+    reason: All-weather 120V window heat pumps that heat and cool from a standard outlet, for homes and multifamily
+      buildings.
+  evidence:
+  - https://www.gradientcomfort.com/ - "All-Weather 120V Window Heat Pump"; "A cold-climate heat pump that heats
+    and cools, plugs into standard 120V power"; "Deploy room-by-room heating and cooling with plug-in hardware"
+  checked: '2026-11-25'
+- id: infinite-cooling
+  name: Infinite Cooling
+  kind: reason-only
+  was:
+    tier: core
+    reason: Captures and recycles water from cooling-tower plumes at power plants and industrial sites.
+  climate:
+    tier: core
+    reason: TowerPulse wireless sensors and analytics that cut water and energy use in cooling towers at power plants
+      and industrial sites.
+  evidence:
+  - 'https://www.infinite-cooling.com - "The world''s most advanced AI algorithms to ensure your cooling tower operates
+    at max efficiency"; Industries menu: Data Centers, Power Generation, Chiller Plants, Industrial'
+  - https://www.infinite-cooling.com/cooling-analytics - TowerPulse "includes a set of wireless sensors specifically
+    designed for cooling towers"; examples centre on a "250 MW steam turbine" power plant; no plume water capture
+    mentioned
+  checked: '2026-11-25'
+  note: Its main product moved from plume water capture to cooling-tower monitoring. Data centers are listed first
+    among four industries, but its case studies are a power plant and a chiller plant, so it stays in.
+- id: syzygy-plasmonics
+  name: Syzygy Plasmonics
+  kind: reason-only
+  was:
+    tier: core
+    reason: Rigel light-driven photocatalytic reactor cells used to make sustainable aviation fuel (NovaSAF), methanol,
+      hydrogen from ammonia and other chemicals.
+  climate:
+    tier: core
+    reason: Light-driven reactor cells that turn waste biogas and renewable power into sustainable aviation fuel
+      (NovaSAF); first plant in Uruguay targets 2028.
+  evidence:
+  - 'https://plasmonics.tech/ (''converts waste biogas and renewable electricity into affordable, low-carbon aviation
+    fuel''; ''First SAF: Q2 2028'')'
+  checked: '2026-11-25'
+- id: transaera
+  name: Transaera
+  kind: reason-only
+  was:
+    tier: core
+    reason: MOF-based desiccant coatings and devices that dehumidify air before cooling, integrated with standard
+      air conditioners; licenses to AC makers.
+  climate:
+    tier: core
+    reason: Rooftop heat pumps for commercial buildings that use MOF desiccants to dry air before cooling, cutting
+      cooling energy.
+  evidence:
+  - https://www.transaera.com (page text did not render; JavaScript site)
+  - https://techcrunch.com/2026/05/05/amazon-bets-nobel-prize-based-dehumidification-can-cut-its-energy-use/ (Amazon
+    to deploy Transaera ventilation units across its buildings after a Houston trial)
+  - https://www.pv-magazine.com/2026/10/23/transaera-tests-its-heat-pump-with-metal-organic-framework-dehumidification-in-apartment-building/
+    ('heat pump with metal organic framework dehumidification')
+  checked: '2026-11-25'
+- id: vantran-transformers
+  name: VanTran Transformers
+  kind: reason-only
+  was:
+    tier: core
+    reason: Custom liquid-filled and dry medium-voltage transformers (padmount, substation, polemount, submersible,
+      grounding), made in Waco, TX.
+  climate:
+    tier: core
+    reason: Custom liquid-filled and dry medium-voltage transformers made in Waco, TX; now part of Forgent Power
+      Solutions.
+  evidence:
+  - https://vantran.com ('Leading Custom Transformer OEM'; 'VanTran Transformers is now part of Forgent'; Forgent
+    combines MGM Transformers, VanTran, States Manufacturing and PwrQ)
+  checked: '2026-11-25'
+- id: voluna
+  name: VOLUNA
+  kind: reason-only
+  was:
+    tier: enabling
+    reason: Drone- and rover-mounted neutron activation systems for exploring clean-energy metals (directory description;
+      not confirmed).
+  climate:
+    tier: enabling
+    reason: Drone-mounted neutron systems that map rock chemistry without drilling, sold as an exploration service
+      for clean-energy metals.
+  evidence:
+  - https://www.pillar.vc/companies/voluna/ ('uses next-gen neutron technology to explore for clean energy metals';
+    lists voluna.com)
+  - https://www.voluna.com/ ('Condor'; 'aerial solution for rapid geochemical mapping'; 'Exploration as a Service';
+    platform 'collects autonomous and non-invasive geochemical data')
+  checked: '2026-11-25'
+  website: https://www.voluna.com
+- id: whisper-energy
+  name: WHISPER Energy
+  kind: reason-only
+  was:
+    tier: enabling
+    reason: Battery-free wireless sensors for building energy savings.
+  climate:
+    tier: enabling
+    reason: Peel-and-stick sensors that find energy waste in buildings, with the fixes funded through shared savings.
+  evidence:
+  - https://whisperenergy.io ('AI-native sensors find the waste, we fund the fix, and you split the savings'; 'Image,
+    acoustic and environmental sensing on a single node, battery and WiFi, peel-and-stick')
+  checked: '2026-11-25'
+- id: wisk-aero
+  name: Wisk Aero
+  kind: reason-only
+  was:
+    tier: enabling
+    reason: Autonomous all-electric four-seat air taxi.
+  climate:
+    tier: enabling
+    reason: Autonomous all-electric four-seat air taxi in flight testing; acquired from Boeing by Archer Aviation
+      in 2026.
+  evidence:
+  - https://wisk.aero ('the world's first four-passenger autonomous air taxi'; 'We're currently flight testing two
+    Gen 6 aircraft in Hollister, California')
+  - 'https://wisk.aero/news/ (Aug 9, 2026: ''Archer to Shape Physical AI Future of Aerospace and Defense'' acquiring
+    ''Boeing''s Wisk Aero, Insitu and SkyGrid Subsidiaries''; Oct 30, 2026 vertiport opening)'
+  checked: '2026-11-25'
+  note: 'Owner changed from Boeing to Archer (Aug 2026). Startup status stays out: not independent.'
+- id: kratos-industries
+  name: Kratos Industries
+  kind: reason-only
+  was:
+    tier: enabling
+    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers.
+  climate:
+    tier: enabling
+    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers; a Legrand brand since
+      2026.
+  evidence:
+  - https://kratosind.com - "designs and manufactures custom low and medium voltage electrical equipment"; markets
+    "data centers, utilities, healthcare, and industrial facilities"; logo caption "Kratos, a brand of Legrand";
+    footer "A Legrand Company"
+  - https://switchgear-magazine.com/news/business/legrand-acquires-kratos-industries/ (from search result) - Legrand
+    acquisition announced Feb 12, 2026; Kratos makes switchboards and switchgear "for data center gray-space and
+    industrial use"
+  checked: '2026-11-25'
+  note: Acquired by Legrand (announced 2026-02-12) and still sold under its own name. Switchgear is grid equipment,
+    so it stays in under decision 13; startup status out (not independent).
+- id: motiv-power-systems
+  name: Motiv Power Systems
+  kind: reason-only
+  was:
+    tier: enabling
+    reason: Electric medium-duty truck and bus chassis (step vans, box trucks, shuttle and school buses).
+  climate:
+    tier: enabling
+    reason: 'Class 4 to 6 battery-electric trucks and buses; merged with Workhorse Group (Nasdaq: WKHS) in December
+      2025 and operates under the Workhorse name.'
+  evidence:
+  - https://www.sec.gov/Archives/edgar/data/1425287/000162828026022417/wkhs-20251231.htm
+  - https://ir.workhorse.com/news-events/press-releases/detail/322/workhorse-group-and-motiv-electric-trucks-complete-merger
+  - https://finviz.com/news/423486/workhorse-group-reports-third-quarter-2026-results
+  - https://www.workhorse.com/
+  checked: '2026-11-25'
+  startup:
+    status: out
+    reason: 'Now Workhorse Group: 148 full-time employees (10-K, 2025-12-31); founded 2009 (Workhorse lineage 2007),
+      listed on Nasdaq since 2016, with no equity raise in five years found (2026 funding was debt). Independent
+      (Motiv''s investor MGMH holds 68.3 percent). So no growth sign: established.'
+  headcount:
+    value: 148
+    as_of: '2025-12-31'
+    source: Workhorse Group 10-K
+  note: 'Reverse merger: Workhorse was the legal acquirer, Motiv the accounting acquirer; HQ Wixom, MI. Watch item:
+    TerraPod, a modular AI data-center line announced 2026-10-29, is at contract stage; the home page still leads
+    with trucks.'
+questions:
+- id: tynt-technologies
+  name: Tynt Technologies
+  tier_now: core
+  question: Windows or eyewear first? Its site sells the same dimming film for both ('From Wearables to Windows');
+    smart glasses lead its Solutions page while its About page leads with buildings. No customers or revenue split
+    found. No OUT rule covers eyewear, so the question is whether the main product is still a building-efficiency
+    product (core) or a consumer-eyewear one.
+  evidence:
+  - https://tynt.io/
+  - https://tynt.io/solutions
+  - https://tynt.io/about
+  - https://www.kompas.vc/portfolio/tynt-technologies
+- id: mass-magnetics
+  name: Mass Magnetics
+  tier_now: enabling
+  question: Recycled NdFeB magnets (in as recycled material), but its site is pitched almost entirely at DFARS buyers,
+    mainly drone primes, and it is still taking preorders. No customer mix published; no source says defense is
+    its primary business (A3). Keep enabling, or treat as defense-first?
+  evidence:
+  - https://massmagnetics.com/
+  - https://massmagnetics.com/comply
+  - https://huntscreens.com/products/mass-magnetics
+- id: amprius-technologies
+  name: Amprius Technologies
+  tier_now: core
+  question: Silicon-anode cells. Drones (UAS) are its lead market, with defense contracts ($75M Department of War
+    cells, $18.1M DIU) and civil buyers; no filing gives a drone or defense revenue share. The verifier suggests
+    enabling rather than core; A3 does not put it out unless defense is the primary business.
+  evidence:
+  - https://finviz.com/news/420554/amprius-technologies-reports-third-quarter-2026-financial-results-and-recent-business-highlights
+  - https://www.sec.gov/Archives/edgar/data/0001899287/000189928726000056/ampx-2026x08x04x8kex991.htm
+  - https://www.fool.com/earnings/call-transcripts/2026/06/01/amprius-ampx-q1-2026-earnings-transcript/
+  - https://www.fool.com/earnings/call-transcripts/2026/03/05/amprius-ampx-q4-2025-earnings-call-transcript/
+- id: delta-electronics-americas
+  name: Delta Electronics Americas
+  tier_now: core
+  question: Delta's parent now earns more than half its revenue from data-center power and cooling (2Q26 transcript);
+    the Americas unit's own mix was not found. Out under decision 13, or kept for its EV chargers, solar inverters
+    and storage?
+  evidence:
+  - 'https://www.deltaww.com: "a global leader in switching power supplies and thermal management"; homepage banner
+    "AI Data Center Solutions"; featured "Liquid Cooling for Data Centers"'
+  - 'https://filecenter.deltaww.com/IR/download/calendar/2Q26_Transcript.pdf (via search): data center-related business
+    was more than half of consolidated revenue in 1H 2026'
+- id: veir
+  name: VEIR
+  tier_now: core
+  question: Its whole site is now superconducting power delivery for AI data-center campuses; grid transmission
+    is a passing mention. Decision 13 keeps cables in as grid equipment, but this is power distribution built for
+    inside data centers.
+  evidence:
+  - https://www.veir.com/ ('Superconducting Data Centers'; 'VEIR unlocks the next generation of AI computing infrastructure
+    with superconducting power solutions'; 'Successfully Demonstrates 3-Megawatt Superconducting Power Delivery
+    for AI Data Centers')
+  - https://www.veir.com/about ('a platform of superconducting solutions designed to meet the growing power demands
+    of data center campuses'; still names 'data centers, energy producers, and utilities')
+- id: scalvy
+  name: Scalvy
+  tier_now: core
+  question: Power Neurons now drop into server trays and rack power shelves for AI data centers (listed first, and
+    its 2026 raise is framed around AI power delivery); storage and EV power electronics remain.
+  evidence:
+  - https://scalvy.com ('Distributed energy management powering AI data centers, energy storage, and electric mobility';
+    'Power Neurons drop into server trays or replace power shelves to enable 1MW racks with storage'; news 'Scalvy
+    raises $14M to Solve the Power Delivery Bottleneck for AI', March 2026)
+- id: applied-kinetics
+  name: Applied Kinetics
+  tier_now: enabling
+  question: Makes transformers and switchgear (grid equipment, in) and also cooling, racks and containment (data-center
+    equipment, out); data centers are its main customer.
+  evidence:
+  - 'https://appliedkinetics.ai: "Critical equipment for data centers and energy"; "manufacture and supply critical
+    equipment for data center and energy builders"; lines include "Cooling plant", "Liquid cooling", "Racks & containment"'
+- id: conifer
+  name: Conifer
+  tier_now: enabling
+  question: Rare-earth-free motors now for three markets, with robot actuators listed first and data-center motors
+    second (both out categories), and in-wheel powertrains third.
+  evidence:
+  - 'https://conifer.io: "Powertrains & motors for robots, data centers, and mobility"; product lines "High-Torque
+    Robot Actuators", "In-Wheel Geared Powertrains", "Data Center & HVAC Motors"'
+- id: cosmic-robotics
+  name: Cosmic Robotics
+  tier_now: enabling
+  question: 'Its robots are no longer only for solar (A6): ''solar and data centers'' are ''the first frontier''
+    of general autonomous construction.'
+  evidence:
+  - 'https://cosmicrobotics.com: "Robotic equipment for the world''s critical infrastructure"; "solar and data centers"
+    as "The first frontier"; "Autonomous construction on Earth and beyond"'
+- id: faraday-future
+  name: Faraday Future
+  tier_now: enabling
+  question: Its home page now shows only RoboShare, a robot rental platform (general robotics is out); FX Super
+    One deliveries are capped at about 50 units.
+  evidence:
+  - 'https://ff.com and https://www.ff.com/us/: only RoboShare, "A Sharing and Operations Platform for Robots";
+    no FF 91 or FX Super One'
+  - 'https://www.barchart.com/story/news/36939353/... (Jan 2026, via search): FX Super One roadmap and "entry into
+    embodied AI robotics"; phase-one US deliveries capped at 50 units'
+- id: robodock
+  name: RoboDock
+  tier_now: enabling
+  question: Depot robots that plug in and inspect vehicles, now leading with robotaxi depots (A5 customers; robotics
+    out under A6 unless the charging role keeps it in).
+  evidence:
+  - https://www.robodock.tech/ ('The robotics layer powering autonomous EV and AV depots — starting with charging
+    and inspections')
+- id: western-magnetics
+  name: Western Magnetics
+  tier_now: enabling
+  question: 'Now Westmag: motors for Group 1-3 UAS (US military drone classes, NDAA-compliant) and humanoid-robot
+    actuators. Defense drones (A3) and general robotics (A6) both apply; no customers named.'
+  evidence:
+  - https://www.westernmagnetics.com (page text did not render)
+  - https://westmag.com/ ('designs and manufactures drone motors and robot actuators'; 'Group 1, 2, and 3 UAS platforms';
+    'integrated actuators for humanoids and mobile robots'; 'NDAA-compliant by default')
+  - 'https://businesswire.com/news/home/20260602552448/en/Westmag-Emerges-With-11-Million-Seed-Led-By-Andreessen-Horowitz
+    (refused: HTTP 403; title only from search)'
+- id: zeroavia
+  name: ZeroAvia
+  tier_now: core
+  question: Trade press (Aviation Week, June 2026) reports a pivot to defense for its ZA200 fuel-cell system; the
+    company says the civil mission continues and its site still leads with civil. A3 turns on whether defense is
+    now primary.
+  evidence:
+  - https://zeroavia.com/ ('A 200kW fuel cell power generation system'; defense section 'Enhancing Mission Capability';
+    'hydrogen-electric capability for defence platforms')
+  - 'https://aviationweek.com/aerospace/emerging-technologies/zeroavia-keeps-eye-commercial-it-pivots-defense (June
+    15, 2026: ''ZeroAvia Keeps Eye On Commercial As It Pivots To Defense''; ''has not abandoned its civil mission'')'
+  - https://www.ainonline.com/aviation-news/defense/2026-07-12/zeroavia-pushes-defense-focus-za200 ('After scaling
+    back its ambitious plans to convert regional aircraft to hydrogen propulsion'; 'a marked shift of its business
+    model')
+  - 'https://www.ainonline.com/aviation-news/futureflight/2026-11-12/hydrogen-aviation-looks-ground-revenue (closed
+    Everett R&D site, cut workforce by about half; CEO: ''We have now a strong demand and expectation from defense'';
+    ZA200 first deliveries 2027)'
+- id: usa-rare-earth
+  name: USA Rare Earth
+  tier_now: enabling
+  question: After its Serra Verde merger (Sept 2026) it runs an operating rare-earth mine in Brazil as well as its
+    Oklahoma magnet plant. Mine operators are out (A6b); no revenue split found.
+  evidence:
+  - https://usare.com ('from mine to magnet and beyond'; 'intend to mine and process in Texas and Brazil'; combination
+    with Serra Verde Group completed Sep 2026)
+  - 'https://www.metaltechnews.com/story/2026/09/09/tech-metals/usa-rare-earth-serra-verde-merger-complete/2940.html
+    (search snippet: deal about $2.8 billion; mine ramp-up to about 4,000 tpa TREO by end of 2026)'
+- id: prieto-battery
+  name: Prieto Battery
+  tier_now: core
+  question: 'Not verified: both its domains fail with an expired certificate and no 2025-2026 news was found. Possibly
+    lapsed.'
+  evidence:
+  - 'https://www.prietobattery.com - fetch failed: "certificate has expired"'
+  - 'https://prietobattery.com - fetch failed: "certificate has expired"'
+- id: spark-thermionics
+  name: Spark Thermionics
+  tier_now: core
+  question: Its site has not changed since 2022 and no recent news was found; possibly dormant.
+  evidence:
+  - https://www.sparkthermionics.com/ ('A power plant on a chip'; footer 'Copyright © Spark Thermionics 2022')
+  - https://www.sparkthermionics.com/about (404)
