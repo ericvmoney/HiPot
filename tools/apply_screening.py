@@ -363,7 +363,12 @@ def main() -> int:
     registry = load_yaml(REGISTRY)
     original = copy.deepcopy(registry)
     review = {entry["id"]: entry for entry in load_yaml(REVIEW)["companies"]}
-    proposals = [c for path in sorted(SCREENING.glob(PROPOSAL_FILES)) for c in load_yaml(path)["companies"]]
+    # A file whose top level says `status: draft` is work in progress: skipped.
+    proposal_files = [load_yaml(path) for path in sorted(SCREENING.glob(PROPOSAL_FILES))]
+    skipped = sum(1 for data in proposal_files if data.get("status") == "draft")
+    if skipped:
+        print(f"skipped {skipped} proposals file(s) marked status: draft")
+    proposals = [c for data in proposal_files if data.get("status") != "draft" for c in data["companies"]]
     fixes = [f for path in sorted(SCREENING.glob(FIX_FILES)) for f in load_yaml(path)["fixes"]]
     companies = {company["id"]: company for company in registry["companies"]}
     before = {cid: (summary(c), is_listed(c)) for cid, c in companies.items()}
