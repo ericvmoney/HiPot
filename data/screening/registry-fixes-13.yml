@@ -1,0 +1,531 @@
+# Registry fixes 13: websites that careers probe 03 found stale, and careers pages for five sizeable companies
+# (2026-11-25).
+#
+# Written by workstream A2 at the supervisor's request. Each redirect comes from careers-probe-03; each new
+# address was then read once (status and page title) with a generic client. No sign-in, bot check or CAPTCHA.
+#
+#   kind: website        current official website (tools/apply_screening.py new_website); `now: null` keeps the old
+#                        address and adds a note. `failure` says what the redirect meant: same-site (http or www bounce
+#                        the probe counted as leaving), moved, renamed, merged, acquired or parent.
+#   careers entries      careers pages for five sizeable companies; entries with `ats` and `source` replace the
+#                        registry's board (replace_board). Voluna's board was an investor's careers page and is cleared.
+#   questions            Voluna (mining-exploration hardware) under A6b, for the owner.
+#
+# Acquisitions found here (Aclara, Arcadium, Atonometrics, Boviet, Cruz Foam, Igneo, SOLARCYCLE, UnitedSiC) may also
+# change the startup label; this file only fixes websites.
+
+fixes:
+- id: aclara
+  name: Aclara
+  kind: website
+  failure: acquired
+  website:
+    was: https://www.aclara.com
+    now: https://www.hubbell.com/aclara/en
+  note: Aclara is a Hubbell brand; its site now lives on hubbell.com (page title 'Homepage | Aclara').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.hubbell.com/aclara/en (left the site or too many redirects)'
+  - 'https://www.hubbell.com/aclara/en: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: anovion-technologies
+  name: Anovion Technologies
+  kind: website
+  failure: renamed
+  website:
+    was: https://www.anoviontech.com
+    now: https://www.m2graphite.com/
+  note: anoviontech.com redirects to M2Graphite ('Synthetic Graphite Anode Material for Lithium-Ion Batteries'), the same
+    product line.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.m2graphite.com/ (left the site or too many redirects)'
+  - 'https://www.m2graphite.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: arcadium-lithium-formerly-livent
+  name: Arcadium Lithium (formerly Livent)
+  kind: website
+  failure: acquired
+  website:
+    was: https://arcadiumlithium.com
+    now: https://www.riotinto.com
+  note: Bought by Rio Tinto (completed 2025-03-06); arcadiumlithium.com now redirects to riotinto.com.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.riotinto.com (left the site or too many redirects)'
+  - 'https://www.riotinto.com: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: atonometrics
+  name: Atonometrics
+  kind: website
+  failure: acquired
+  website:
+    was: https://atonometrics.com
+    now: https://www.kippzonen.com/about-atonometrics
+  note: atonometrics.com redirects to a Kipp & Zonen page, 'About Atonometrics'; it is now part of Kipp & Zonen.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.kippzonen.com/about-atonometrics (left the site or too many redirects)'
+  - 'https://www.kippzonen.com/about-atonometrics: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: boviet-solar
+  name: Boviet Solar
+  kind: website
+  failure: acquired
+  website:
+    was: https://www.bovietsolarusa.com
+    now: https://inoxsolar.us/
+  note: bovietsolarusa.com and bovietsolar.com redirect to inoxsolar.us (title still 'Boviet Solar'); its US business was
+    bought by Inox Solar Americas in 2026.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://bovietsolar.com (left the site or too many redirects)'
+  - 'https://inoxsolar.us/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: canyon-magnet-energy
+  name: Canyon Magnet Energy
+  kind: website
+  failure: same-site
+  website:
+    was: https://canyonmagnet.energy
+    now: https://www.canyonmagnet.energy/
+  note: Redirects to the www host on the same domain; the site loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.canyonmagnet.energy (left the site or too many redirects)'
+  - 'https://www.canyonmagnet.energy/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: cruz-foam
+  name: Cruz Foam
+  kind: website
+  failure: acquired
+  website:
+    was: https://cruzfoam.com
+    now: https://www.temperpack.com/cruzfoam
+  note: cruzfoam.com redirects to a TemperPack page, 'Cruzfoam | TemperPack'; Cruz Foam is now a TemperPack product.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.temperpack.com/cruzfoam (left the site or too many redirects)'
+  - 'https://www.temperpack.com/cruzfoam: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: cryocellar
+  name: CryoCellar
+  kind: website
+  failure: moved
+  website:
+    was: https://cryocellar.com/
+    now: https://cryocellar.my.canva.site/
+  note: cryocellar.com redirects to a Canva-hosted page; the company is very early stage.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://cryocellar.my.canva.site/ (left the site or too many redirects)'
+  - 'https://cryocellar.my.canva.site/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: deep-anchor-solutions
+  name: Deep Anchor Solutions
+  kind: website
+  failure: same-site
+  website:
+    was: https://deepanchorsolutions.com
+    now: https://www.deepanchorsolutions.com/
+  note: Redirects to the www host on the same domain; the site loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.deepanchorsolutions.com (left the site or too many redirects)'
+  - 'https://www.deepanchorsolutions.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: hexatech
+  name: HexaTech
+  kind: website
+  failure: same-site
+  website:
+    was: https://hexatechinc.com
+    now: https://www.hexatechinc.com/
+  note: Redirects to the www host on the same domain; the site loads. HexaTech is owned by Stanley Electric (since 2020).
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.hexatechinc.com/ (left the site or too many redirects)'
+  - 'https://www.hexatechinc.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: hgenium
+  name: HGenium
+  kind: website
+  failure: renamed
+  website:
+    was: https://hgenium.com/
+    now: https://www.newgenium.com/
+  note: hgenium.com redirects to NewGenium ('Alternate US-Produced Lithium Processing Method'); a rename is likely but not
+    stated.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.newgenium.com/ (left the site or too many redirects)'
+  - 'https://www.newgenium.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: igneo
+  name: Igneo
+  kind: website
+  failure: acquired
+  website:
+    was: https://igneo.com
+    now: https://pedalpoint.co/
+  note: igneo.com redirects to PedalPoint, 'A Korea Zinc Company' (critical-mineral recovery from e-waste).
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://pedalpoint.co (left the site or too many redirects)'
+  - 'https://pedalpoint.co/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: inergy-technologies
+  name: Inergy Technologies
+  kind: website
+  failure: moved
+  website:
+    was: https://www.inergysolar.com
+    now: https://inergytek.com/
+  note: inergysolar.com redirects to inergytek.com; that page is built with scripts, so its content was not read.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://inergytek.com (left the site or too many redirects)'
+  - 'https://inergytek.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: loop
+  name: Loop
+  kind: website
+  failure: moved
+  website:
+    was: https://evloop.io
+    now: https://www.loopglobal.com/
+  note: evloop.io redirects to loopglobal.com ('Loop Global | EV Charging Solutions').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://loopglobal.com/ (left the site or too many redirects)'
+  - 'https://www.loopglobal.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: pomega-energy-storage-technologies-kontrolmatik
+  name: Pomega Energy Storage Technologies (Kontrolmatik)
+  kind: website
+  failure: moved
+  website:
+    was: https://www.pomega.com
+    now: https://tr.pomega.com/en
+  note: pomega.com redirects to the Turkish site's English pages; no separate US site found (us.pomega.com redirected there
+    as well).
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://tr.pomega.com/en (left the site or too many redirects)'
+  - 'https://tr.pomega.com/en: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: project-k-energy
+  name: Project K Energy
+  kind: website
+  failure: same-site
+  website:
+    was: https://projectk.energy
+    now: https://www.projectk.energy/
+  note: Redirects to the www host on the same domain; the site loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.projectk.energy (left the site or too many redirects)'
+  - 'https://www.projectk.energy/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: rcam-technologies
+  name: RCAM Technologies
+  kind: website
+  failure: renamed
+  website:
+    was: https://rcamtechnologies.com/
+    now: https://sperra.com/
+  note: rcamtechnologies.com redirects to Sperra ('Automated 3D Concrete Manufacturing for Offshore Infrastructure'), the
+    same business renamed.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://sperra.com (left the site or too many redirects)'
+  - 'https://sperra.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: skynano
+  name: SkyNano
+  kind: website
+  failure: moved
+  website:
+    was: https://www.skynanotechnologies.com
+    now: https://www.skynano.co/
+  note: skynanotechnologies.com redirects to skynano.co, which loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.skynano.co (left the site or too many redirects)'
+  - 'https://www.skynano.co/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: smartville
+  name: Smartville
+  kind: website
+  failure: moved
+  website:
+    was: https://smartville.io/
+    now: https://smartvilleenergy.com/
+  note: smartville.io redirects to smartvilleenergy.com ('Low-cost, rapidly deployable BESS from repurposed batteries').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://smartvilleenergy.com/ (left the site or too many redirects)'
+  - 'https://smartvilleenergy.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: sol-clarity
+  name: Sol Clarity
+  kind: website
+  failure: moved
+  website:
+    was: https://solclarity.com
+    now: https://www.solclarityeds.com/
+  note: solclarity.com redirects to solclarityeds.com ('Automatic Solar Panel cleaning', Somerville, MA).
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.solclarityeds.com/ (left the site or too many redirects)'
+  - 'https://www.solclarityeds.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: solarcycle
+  name: SOLARCYCLE
+  kind: website
+  failure: merged
+  website:
+    was: https://www.solarcycle.us
+    now: https://www.jupitercorp.com/
+  note: solarcycle.us redirects to Jupiter ('Energy Asset Recycling & ITAD Services'), formed by SOLARCYCLE's merger with
+    Korea Zinc's PedalPoint Recycling.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.jupitercorp.com/ (left the site or too many redirects)'
+  - 'https://www.jupitercorp.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: south-8-technologies
+  name: South 8 Technologies
+  kind: website
+  failure: moved
+  website:
+    was: https://www.south8technologies.com/
+    now: https://south8.com/
+  note: south8technologies.com redirects to south8.com ('South 8 | Re-Imagine Where Lithium-Ion Can Go').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://south8.com/ (left the site or too many redirects)'
+  - 'https://south8.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: texpower
+  name: TexPower
+  kind: website
+  failure: moved
+  website:
+    was: https://texpower.us
+    now: https://texpowerev.com/
+  note: texpower.us redirects to texpowerev.com ('TexPower - Enabling a sustainable, electrified future. Cobalt free.').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://texpowerev.com/ (left the site or too many redirects)'
+  - 'https://texpowerev.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: ugsi-chemical-feed
+  name: UGSI Chemical Feed
+  kind: website
+  failure: parent
+  website:
+    was: https://ugsichemicalfeed.com
+    now: https://cleanwater1.com/
+  note: ugsichemicalfeed.com redirects to its parent, cleanwater1 ('Drinking water, Wastewater and Odor Control Solutions').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://cleanwater1.com/ (left the site or too many redirects)'
+  - 'https://cleanwater1.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: unitedsic-qorvo
+  name: UnitedSiC (Qorvo)
+  kind: website
+  failure: acquired
+  website:
+    was: https://unitedsic.com
+    now: https://www.onsemi.com/
+  note: unitedsic.com redirects to onsemi.com; onsemi bought UnitedSiC from Qorvo (closed 2025-01-15).
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.onsemi.com/ (left the site or too many redirects)'
+  - 'https://www.onsemi.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: upstart-power
+  name: Upstart Power
+  kind: website
+  failure: renamed
+  website:
+    was: https://upstartpower.com
+    now: https://www.reddepower.com/
+  note: upstartpower.com redirects to Redde ('Long-Duration Backup Power'); a rename is likely but not stated.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://reddepower.com (left the site or too many redirects)'
+  - 'https://www.reddepower.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: waaree-energies
+  name: Waaree Energies
+  kind: website
+  failure: same-site
+  website:
+    was: https://waaree.com
+    now: https://www.waaree.com/
+  note: Redirects to the www host on the same domain; the site loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to http://www.waaree.com/ (left the site or too many redirects)'
+  - 'https://www.waaree.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: wildcat-discovery-technologies
+  name: Wildcat Discovery Technologies
+  kind: website
+  failure: renamed
+  website:
+    was: https://www.wildcatdiscovery.com/
+    now: https://www.holyvolt.com/
+  note: wildcatdiscovery.com redirects to HOLYVOLT ('AI Battery Materials Discovery and Development'); whether this is a rename
+    or an acquisition is not stated.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.holyvolt.com/ (left the site or too many redirects)'
+  - 'https://www.holyvolt.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: zila-bioworks
+  name: ZILA BioWorks
+  kind: website
+  failure: moved
+  website:
+    was: https://www.zilaworks.com
+    now: https://www.zilabioworks.com/
+  note: zilaworks.com redirects to zilabioworks.com, which loads.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://zilabioworks.com/ (left the site or too many redirects)'
+  - 'https://www.zilabioworks.com/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: zm-trucks
+  name: ZM Trucks
+  kind: website
+  failure: moved
+  website:
+    was: https://zmtrucks.com/
+    now: https://zmtrucks.us/
+  note: zmtrucks.com redirects to zmtrucks.us ('ZM Trucks - Zero-emission commercial vehicles').
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://zmtrucks.us (left the site or too many redirects)'
+  - 'https://zmtrucks.us/: page loads (HTTP 200), read 2026-11-25 with a generic client'
+  checked: '2026-11-25'
+- id: starplus-energy
+  name: StarPlus Energy
+  kind: website
+  failure: active
+  website:
+    was: https://www.starplusenergy.com/
+    now: null
+  note: No official StarPlus Energy site or careers page found. A web search for its careers site returned only third-party
+    job aggregators (ZipRecruiter, Recruiter.com, career.com and similar), which show it hiring in Kokomo through 2026; these
+    were not used as a source for a board address. Samsung SDI's release only mentions StarPlus in plain text. stellantis.com
+    answered 403, so the Stellantis side was not checked further.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://starplusenergy.com.au/ (left the site or too many redirects)'
+  - 'https://samsungsdi.com/sdi-now/sdi-news/3402.html?idx=3402: Samsung SDI release on second Kokomo StarPlus gigafactory;
+    ''Second StarPlus gigafactory production start planned for early 2027''; no link to any StarPlus website or careers page'
+  - 'https://www.starplusenergy.com/: fetch failed with TLS error (registry reports it redirects to the unrelated starplusenergy.com.au)'
+  - 'https://www.stellantis.com/en/news/press-releases/2023/october/stellantis-samsung-sdi-announce-kokomo-indiana-as-site-for-second-us-starplus-energy-gigafactory:
+    HTTP 403, stopped on stellantis.com'
+  checked: '2026-11-25'
+- id: resilient-power-systems
+  name: Resilient Power Systems
+  kind: website
+  failure: acquired
+  website:
+    was: https://resilientpowersystems.com
+    now: null
+  note: Acquired by Eaton (agreement July 2025, closed August 2025; search summary of Eaton SEC filings gives USD 86M incl.
+    contingent consideration, reported in Electrical Americas segment). No standalone site; resilientpower.com no longer resolves.
+    Search summaries disagree on HQ (Atlanta vs Austin, TX). eaton.com answered 403, so no Eaton product page was found; the
+    SEC-filing details come from search snippets, not a page read.
+  evidence:
+  - 'careers-probe-03: HTTP 301: redirected to https://www.resilientpower.com/ (left the site or too many redirects)'
+  - 'https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-completes-acquisition-of-resilient-power-systems-inc---str.html:
+    search result title ''Eaton completes acquisition of Resilient Power Systems Inc., strengthening power distribution offerings''
+    (page itself answered 403)'
+  - 'https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-signs-agreement-to-acquire-resilient-power-systems-inc-.html:
+    search result title ''Eaton signs agreement to acquire Resilient Power Systems Inc.'''
+  - 'https://mgrid.org/2025/08/15/eaton-closes-acquisition-of-resilient-power-systems-to-bring-medium-voltage-solid-state-transformers-in-house/:
+    ''Eaton Corporation completed its acquisition of Resilient Power Systems Inc. in August 2025'''
+  - 'https://resilientpower.com/: DNS lookup fails (ENOTFOUND)'
+  checked: '2026-11-25'
+- id: voluna
+  name: VOLUNA
+  kind: website
+  failure: active
+  website:
+    was: https://www.pillar.vc/companies/voluna/
+    now: https://www.voluna.com/
+  note: Own site gives no address; HQ Madison, WI is from The Engine profile. Site nav has no careers link (About, Technology,
+    Services, Team, Contact). Mining-exploration hardware rather than a classic climate product; The Engine tags it Climate,
+    Energy, Materials, Space, Natural Resources.
+  evidence:
+  - 'careers-probe-03: the registry''s website for Voluna leads to pillar.vc, a venture firm; these are Pillar''s postings,
+    not Voluna''s. For the scout'
+  - 'https://engine.xyz/resident-companies/voluna: Engine resident profile links website https://www.voluna.com/, location
+    Madison, WI; ''Neutron technology revolutionizing resource exploration'''
+  - 'https://www.voluna.com/: ''Voluna''s platform collects autonomous and non-invasive geochemical data''; Condor product
+    uses drone-deployed neutron generators'
+  - 'https://www.voluna.com/: news items dated 06/18/2026 (Founders Factory) and 06/16/2026 (Fast Company); ''is expanding
+    across the Americas'''
+  checked: '2026-11-25'
+- id: voluna
+  name: VOLUNA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  careers_url: null
+  source: The registry's board, https://www.pillar.vc/careers/, is the careers page of Pillar VC, an investor; careers-probe-03
+    found Pillar's own postings there. voluna.com has no careers link (checked 2026-11-25).
+  note: No public job board found on voluna.com.
+  checked: '2026-11-25'
+- id: holtec-international
+  name: Holtec International
+  careers_url: https://holtec.jobs.hr.cloud.sap/
+  note: Two boards. The homepage Careers link points to an SAP SuccessFactors career site (jobs.hr.cloud.sap), treated as
+    current. The old /careers/ path still 301-redirects to an ADP Workforce Now recruitment board (cid=28ec91d9-a9c6-49f2-8003-6fdcef75d1c5),
+    probably legacy. Neither board was fetched.
+  evidence:
+  - 'https://holtecinternational.com: main and mobile nav link ''Careers'' to https://holtec.jobs.hr.cloud.sap/'
+  - 'https://holtecinternational.com/careers/: 301 redirect to https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=28ec91d9-a9c6-49f2-8003-6fdcef75d1c5&ccId=19000101_000001&type=MP&lang=en_US'
+  checked: '2026-11-25'
+  ats:
+    type: other
+    board: https://holtec.jobs.hr.cloud.sap/
+  read: manual
+  source: The Careers link on the company's own site leads to https://holtec.jobs.hr.cloud.sap/ (SAP SuccessFactors); read
+    2026-11-25.
+- id: malta
+  name: Malta
+  careers_url: https://maltainc.com/malta/
+  note: No dedicated careers page and no job board. The only hiring route is the resume-upload form on the Malta (about) page.
+    Nav and footer have no Careers item.
+  evidence:
+  - 'https://maltainc.com/malta/: ''Join our team!'' section, ''We''re always on the lookout for great talent. Send us your
+    resume.'' with a resume upload form'
+  - 'https://maltainc.com/careers: HTTP 404'
+  - 'https://maltainc.com/contact/: no careers section; general contact info@maltainc.com'
+  checked: '2026-11-25'
+- id: btc-power
+  name: BTC Power
+  careers_url: https://www.indeed.com/cmp/Broadband-Telcom-Power,-Inc.-1/jobs
+  note: The site's Careers link points to the Indeed company page (a job board, not an ATS). No Paycom, ADP, UKG, Workday
+    or iCIMS link on the homepage.
+  evidence:
+  - 'https://www.btcpower.com/: ''Careers'' link goes to https://www.indeed.com/cmp/Broadband-Telcom-Power,-Inc.-1/jobs'
+  - 'https://www.btcpower.com/careers/: HTTP 404'
+  checked: '2026-11-25'
+- id: karma-automotive
+  name: Karma Automotive
+  careers_url: https://secure3.entertimeonline.com/ta/6119018.careers?CareersSearch=&lang=en-US
+  note: entertimeonline.com is the UKG Ready (formerly Kronos Workforce Ready) host; company id 6119018. The board itself
+    was not fetched.
+  evidence:
+  - 'https://www.karmaautomotive.com/careers: 301 redirect to https://secure3.entertimeonline.com/ta/6119018.careers?CareersSearch=&lang=en-US'
+  checked: '2026-11-25'
+  ats:
+    type: other
+    board: https://secure3.entertimeonline.com/ta/6119018.careers?CareersSearch=&lang=en-US
+  read: manual
+  source: The Careers link on the company's own site leads to https://secure3.entertimeonline.com/ta/6119018.careers?CareersSearch=&lang=en-US
+    (UKG Ready); read 2026-11-25.
+- id: manaflex
+  name: Manaflex
+  careers_url: null
+  note: No careers page or job board on the site. The only contact routes are contactus@manaflex.com and the Contact page.
+    The site is live, but its activity level was not checked.
+  evidence:
+  - 'https://www.manaflex.com: nav only Home, About, Solutions, Privacy Policy, Contact (/blank); contactus@manaflex.com'
+  - 'https://www.manaflex.com/careers: HTTP 404'
+  - 'https://www.manaflex.com/about: no careers or jobs section; no address given'
+  checked: '2026-11-25'
+questions:
+- id: voluna
+  name: VOLUNA
+  tier_now: enabling
+  question: 'Mining exploration hardware: is it out under A6b? Voluna makes drone- and rover-mounted neutron tools that read
+    subsurface geochemistry without drilling, sold for mineral exploration. A6b puts mining out; the agreed line is that mine
+    operators and mine projects are out and processors are in. Voluna is neither: it sells survey equipment to the mining
+    industry, which the line does not yet cover.'
+  evidence:
+  - 'https://engine.xyz/resident-companies/voluna: Engine resident profile links website https://www.voluna.com/, location
+    Madison, WI; ''Neutron technology revolutionizing resource exploration'''
+  - 'https://www.voluna.com/: ''Voluna''s platform collects autonomous and non-invasive geochemical data''; Condor product
+    uses drone-deployed neutron generators'
+  - 'https://www.voluna.com/: news items dated 06/18/2026 (Founders Factory) and 06/16/2026 (Fast Company); ''is expanding
+    across the Americas'''
