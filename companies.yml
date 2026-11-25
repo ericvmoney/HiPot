@@ -4020,12 +4020,12 @@ companies:
 - id: array-technologies
   name: Array Technologies
   website: https://arraytechinc.com/
-  careers_url: null
+  careers_url: https://arraytechinc.com/our-story/careers/
   hq: Albuquerque, NM
   ats:
     type: workday
-    board: arraytechinc
-  read: manual
+    board: arraytechinc.wd5/Array_Careers
+  read: auto
   sectors:
   - solar
   - grid
@@ -6909,12 +6909,12 @@ companies:
 - id: canadian-solar-e-storage
   name: Canadian Solar e-STORAGE
   website: https://www.csestorage.com
-  careers_url: null
+  careers_url: https://csestorage.com/careers/
   hq: Shelbyville, KY
   ats:
     type: workday
-    board: canadiansolar
-  read: manual
+    board: canadiansolar.wd5/eStorage
+  read: auto
   sectors:
   - energy-storage
   - grid
@@ -12624,12 +12624,12 @@ companies:
 - id: eos-energy-enterprises
   name: Eos Energy Enterprises
   website: https://www.eose.com
-  careers_url: null
+  careers_url: https://www.eose.com/careers/
   hq: Edison, NJ
   ats:
     type: workday
-    board: eosenergystorage
-  read: manual
+    board: eosenergystorage.wd1/EoS
+  read: auto
   sectors:
   - energy-storage
   stage: public
@@ -18588,12 +18588,12 @@ companies:
 - id: illuminate-usa
   name: Illuminate USA
   website: https://illuminateusa.com/
-  careers_url: null
+  careers_url: https://www.illuminateusa.com/careers/
   hq: Pataskala, OH
   ats:
     type: workday
-    board: illuminateusa
-  read: manual
+    board: illuminateusa.wd503/Illuminate_Careers
+  read: auto
   sectors:
   - solar
   - buildings
@@ -26255,12 +26255,12 @@ companies:
 - id: omco-solar
   name: OMCO Solar
   website: https://omcosolar.com
-  careers_url: null
+  careers_url: https://omcosolar.com/careers/
   hq: Alabama
   ats:
     type: teamtailor
-    board: na
-  read: manual
+    board: omco.na.teamtailor.com
+  read: auto
   sectors:
   - solar
   stage: subsidiary
@@ -28338,12 +28338,12 @@ companies:
 - id: plug-power
   name: Plug Power
   website: https://www.plugpower.com
-  careers_url: null
+  careers_url: https://www.plugpower.com/company-investors/careers/
   hq: Latham, NY
   ats:
     type: workday
-    board: plugpower
-  read: manual
+    board: plugpower.wd5/Plug_Power_Inc
+  read: auto
   sectors:
   - hydrogen
   stage: public
@@ -40755,12 +40755,12 @@ companies:
 - id: wolfspeed
   name: Wolfspeed
   website: https://www.wolfspeed.com
-  careers_url: null
+  careers_url: https://www.wolfspeed.com/careers/
   hq: Research Triangle Park / Durham, NC
   ats:
     type: workday
-    board: cree
-  read: manual
+    board: cree.wd108/EXT
+  read: auto
   sectors:
   - components
   stage: public
