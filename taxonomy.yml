@@ -187,6 +187,11 @@ sectors:
   - {id: carbon-removal, label: Carbon removal and capture}
   - {id: battery-materials, label: Battery materials and recycling}
   - {id: components, label: "Enabling components (motors, power semiconductors, cables)"}
+  # Added 2026-11-24 with the owner's sector rulings (PLAN.md decision 13).
+  - {id: recycling, label: "Recycling and circular materials"}
+  - {id: water, label: "Water treatment and measurement"}
+  - {id: biofuels, label: "Biofuels and renewable fuels"}
+  - {id: methane, label: "Methane monitoring and abatement"}
 
 stages:
   - {id: pre-seed, label: Pre-seed}
