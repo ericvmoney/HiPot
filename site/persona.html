@@ -127,8 +127,8 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       <a href="index.html">Back to the job board</a>
     </div>
     <h1>Build your persona</h1>
-    <p>Turn your resume into a short <code>persona.yml</code>: the kinds of work, disciplines, level, skills and preferences HiPot can use to find roles for you. The page proposes; you check every field and save the file. Later it will rank roles for you.</p>
-    <p class="privacy"><strong>Your resume stays on this page.</strong> It is read by code running in your browser and is never sent anywhere: the page makes no network request that carries your resume, and it stores nothing in your browser. Your name, email, phone number, street address and employer names are removed before anything is kept, and none of them is written to the file. Close the tab and it is gone.</p>
+    <p>Turn your resume into a short <code>persona.yml</code>: the kinds of work, disciplines, level, skills and preferences HiPot can use to find roles for you. The page proposes; you check every field and save the file. Then "See matching roles" ranks the board for you.</p>
+    <p class="privacy"><strong>Your resume stays on this page.</strong> It is read by code running in your browser and is never sent anywhere: the page makes no network request that carries your resume, and it stores nothing in your browser. "See matching roles" passes only the persona's ranking fields to the board in this tab, and the browser forgets them when you close it. Your name, email, phone number, street address and employer names are removed before anything is kept, and none of them is written to the file. Close the tab and it is gone.</p>
   </header>
 
   <!-- Step 1: read the resume -->
@@ -202,7 +202,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
 
     <fieldset class="card">
       <legend class="mono">Skills</legend>
-      <p class="help">Years are counted from the dates of the roles that mention a skill, never guessed. A skill named only in your skills list has no years. The quoted line shows where each was found.</p>
+      <p class="help">Years are counted from the dates of every role that names a skill, never guessed. A skill named only in your skills list takes the years you wrote beside it, or the years of the roles that name a closely related skill (Stateflow from Simulink), and says so; otherwise it has none. The quoted line shows where each was found.</p>
       <div class="skills" id="skills"></div>
       <div class="row">
         <label class="sr-only" for="new-skill">New skill</label>
@@ -227,6 +227,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
         </div>
       </div>
       <div class="chips" id="metros" aria-label="Chosen metro areas"></div>
+      <p class="help" id="metros-help" hidden></p>
       <label class="check"><input type="checkbox" id="remote"><span>Open to remote roles</span></label>
       <div class="field">
         <label for="relocate">Willing to relocate</label>
@@ -276,6 +277,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       <div class="row">
         <button type="button" class="btn btn-primary" id="download">Save persona.yml</button>
         <button type="button" class="btn" id="copy">Copy the text</button>
+        <button type="button" class="btn" id="see-roles">See matching roles</button>
         <span class="status" id="save-status" role="status" aria-live="polite"></span>
       </div>
       <p class="help" id="save-help"></p>
@@ -284,105 +286,15 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
   </section>
 </div>
 
-<script>
-(function () {
+<script id="persona-rules">
+/* Reading a resume with rules: no model, no network. Pure functions over the text and the taxonomy,
+   so the same code runs in the page and in the repository's tests. */
+var PersonaRules = (function () {
   'use strict';
 
-  // ---- Libraries: pinned, from cdnjs, loaded only when a file needs them ----------------------
-  var LIBS = {
-    pdf: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
-    pdfWorker: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
-    mammoth: 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
-    yaml: 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js'
-  };
-  var TAXONOMY_URL = 'data/taxonomy.json';
-  var GENERATED_BY = 'hipot-rules-v0';
-
-  var tax = null;          // the taxonomy file
-  var persona = null;      // the persona being edited
-  var proposals = { disciplines: [] };
-  var showAllDisciplines = false;
-  var loaded = {};
-
-  function $(id) { return document.getElementById(id); }
-
-  function el(tag, props, children) {
-    var node = document.createElement(tag);
-    Object.keys(props || {}).forEach(function (name) {
-      var value = props[name];
-      if (value === null || value === undefined || value === false) return;
-      if (name === 'text') node.textContent = value;
-      else if (name === 'class') node.className = value;
-      else node.setAttribute(name, value === true ? '' : value);
-    });
-    (children || []).forEach(function (child) {
-      if (child === null || child === undefined) return;
-      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
-    });
-    return node;
-  }
-
-  function loadScript(url) {
-    if (loaded[url]) return loaded[url];
-    loaded[url] = new Promise(function (resolve, reject) {
-      var tag = document.createElement('script');
-      tag.src = url;
-      tag.onload = function () { resolve(); };
-      tag.onerror = function () { delete loaded[url]; reject(new Error('could not load ' + url.split('/').pop())); };
-      document.head.appendChild(tag);
-    });
-    return loaded[url];
-  }
-
-  function setStatus(id, text, isError) {
-    $(id).textContent = text;
-    $(id).classList.toggle('error', !!isError);
-  }
-
-  // ---- Reading files -------------------------------------------------------------------------
-
-  function readAsText(file) { return file.text(); }
-
-  // pdf.js: the worker file is loaded as an ordinary script, which gives pdf.js a worker that runs
-  // on the page itself. No separate worker is started, so it works under artifact hosting's rules.
-  function readPdf(file) {
-    return loadScript(LIBS.pdf).then(function () { return loadScript(LIBS.pdfWorker); }).then(function () {
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfWorker;
-      return file.arrayBuffer();
-    }).then(function (buffer) {
-      return window.pdfjsLib.getDocument({ data: new Uint8Array(buffer), isEvalSupported: false }).promise;
-    }).then(function (doc) {
-      var pages = [];
-      for (var n = 1; n <= doc.numPages; n++) pages.push(n);
-      return Promise.all(pages.map(function (n) {
-        return doc.getPage(n).then(function (page) { return page.getTextContent(); }).then(function (content) {
-          var lines = [], line = '', lastY = null;
-          content.items.forEach(function (item) {
-            var y = item.transform ? Math.round(item.transform[5]) : lastY;
-            if (lastY !== null && y !== lastY && Math.abs(y - lastY) > 2) { lines.push(line); line = ''; }
-            line += item.str;
-            if (item.hasEOL) { lines.push(line); line = ''; y = null; }
-            lastY = y;
-          });
-          if (line) lines.push(line);
-          return lines.join('\n');
-        });
-      }));
-    }).then(function (texts) { return texts.join('\n'); });
-  }
-
-  function readDocx(file) {
-    return loadScript(LIBS.mammoth).then(function () { return file.arrayBuffer(); }).then(function (buffer) {
-      return window.mammoth.extractRawText({ arrayBuffer: buffer });
-    }).then(function (result) { return result.value; });
-  }
-
-  function readResumeFile(file) {
-    var name = (file.name || '').toLowerCase();
-    if (name.endsWith('.pdf') || file.type === 'application/pdf') return readPdf(file);
-    if (name.endsWith('.docx')) return readDocx(file);
-    return readAsText(file);
-  }
+  var tax = null;          // the taxonomy, set by extract()
+  var today = null;        // a decimal year, for tests; null means now
+  var GENERATED_BY = 'hipot-rules-v1';
 
   // ---- Extraction: rules only ----------------------------------------------------------------
 
@@ -401,7 +313,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     return Number(year) + month / 12;
   }
 
-  function now() { var d = new Date(); return d.getFullYear() + d.getMonth() / 12; }
+  function now() { if (today !== null) return today; var d = new Date(); return d.getFullYear() + d.getMonth() / 12; }
 
   // Today in the visitor's own time zone, as YYYY-MM-DD.
   function localDate() {
@@ -456,14 +368,45 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     };
   }
 
-  // Split "Staff Controls Engineer, Kestrel Grid Storage, Longmont, CO   2021 - present" into title and employer.
-  function splitRoleLine(line, range) {
-    var head = line.replace(range.text, '').replace(/[\s|,–—-]+$/, '').trim();
-    var parts = head.split(/\s*(?:,|\||\s[–—-]\s|\sat\s|\s@\s)\s*/).filter(Boolean);
+  // A job title ends with a role noun ("Staff Controls Engineer", "Buyer II"); a company name rarely does
+  // ("Kestrel Engineering" does not).
+  var TITLE_END = /\b(engineer|manager|director|technician|scientist|lead|specialist|analyst|designer|intern|co-op|architect|developer|operator|planner|buyer|coordinator|officer|associate|consultant|administrator|electrician|machinist|supervisor|founder|researcher|programmer|assembler|inspector|estimator|president|head of [\w &]+|vp[\w ,&]*|chief [\w ]+)s?(?:\s+(?:i{1,3}|iv|v|\d))?$/i;
+  var PLACE_PART = /^(?!(?:II|IV|VI)$)[A-Z]{2}$/;   // a state code on its own ("CO"), not a roman numeral
+  var WORK_PLACE = /^(?:remote|hybrid|on-?site|united states|usa)$/i;
+  function isPlace(part) { return PLACE_PART.test(part) || WORK_PLACE.test(part); }
+
+  function headParts(text) {
+    return text.split(/\s*(?:,|\||\s[–—-]\s|\sat\s|\s@\s|\t)\s*/).map(function (p) { return p.trim(); })
+      .filter(function (p) { return p && !/^\(.*\)$/.test(p); });
+  }
+
+  // Split a role's header into title and employer, in either order:
+  //   "Staff Controls Engineer, Kestrel Grid Storage, Longmont, CO"   "Kestrel Grid Storage — Staff Controls Engineer"
+  // `head` may join two lines ("Kestrel Grid Storage | Staff Controls Engineer").
+  function splitRoleHead(head) {
+    var parts = headParts(head).filter(function (p) { return !isPlace(p); });
     if (!parts.length) return { title: '', employer: '' };
-    if (TITLE_WORDS.test(parts[0])) return { title: parts[0], employer: parts[1] || '' };
-    if (parts[1] && TITLE_WORDS.test(parts[1])) return { title: parts[1], employer: parts[0] };
-    return { title: parts[0], employer: parts[1] || '' };
+    var at = -1;
+    for (var i = 0; i < parts.length && at === -1; i++) if (TITLE_END.test(parts[i])) at = i;
+    for (var j = 0; j < parts.length && at === -1; j++) if (TITLE_WORDS.test(parts[j])) at = j;
+    if (at === -1) at = 0;
+    var others = parts.filter(function (p, k) { return k !== at; });
+    return { title: parts[at], employer: others[0] || '' };
+  }
+
+  // A name in title case, as an employer line is ("Kestrel Grid Storage (fictional), Longmont, CO"),
+  // not a sentence ("Led the battery team").
+  function namesSomething(text) {
+    var tokens = text.replace(/\(.*?\)/g, ' ').split(/[\s,|]+/).filter(Boolean);
+    return tokens.length > 0 && tokens.every(function (w) { return /^[A-Z0-9&]/.test(w) || /^(of|and|the|for|de|at|&)$/.test(w); });
+  }
+
+  function hasTitle(text) { return headParts(text).some(function (p) { return TITLE_END.test(p); }); }
+
+  // A short line that names an employer or a place, not a sentence of description.
+  function looksLikeHeaderLine(line) {
+    var bare = line.trim();
+    return !!bare && !isBullet(line) && bare.length <= 90 && !/[.;:]$/.test(bare) && bare.split(/\s+/).length <= 12 && !HEADINGS.test(bare);
   }
 
   function parseResume(raw) {
@@ -488,18 +431,37 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     var experience = section(/experience|employment|career/);
     if (!experience.length) experience = lines;   // no heading: look for dated roles anywhere
 
-    // Dated roles.
-    var roles = [], role = null;
-    experience.forEach(function (line) {
-      var range = !isBullet(line) && findRange(line);
-      if (range) {
-        var split = splitRoleLine(line, range);
-        role = { title: split.title, employer: split.employer, start: range.start, end: range.end, present: range.present, dates: range.text, bullets: [] };
-        if (split.employer) identity.employers.push(split.employer.replace(/\s*\(.*?\)\s*/g, ' ').trim(), split.employer);
-        roles.push(role);
-      } else if (role && line.trim()) {
-        role.bullets.push(stripBullet(line));
+    // Dated roles. A role's header is its dated line, plus the title or employer when they sit on their own
+    // line just above it (two-line headers) or, when the dated line names no title, just below it.
+    var ranges = experience.map(function (line) { return !isBullet(line) && findRange(line); });
+    var roles = [], owner = [];   // owner[i]: the role whose header or body holds line i
+    ranges.forEach(function (range, i) {
+      if (!range) return;
+      // "(2019 – 2021)" leaves a bracket behind; a closing bracket that belongs to the text ("(fictional)") stays.
+      var head = experience[i].replace(/[‐-‒]/g, '-').replace(range.text, '').replace(/\(\s*\)/g, '')
+        .replace(/^[\s|,–—)-]+|[\s|,–—(-]+$/g, '').trim();
+      var from = i, to = i;
+      if (!hasTitle(head) || headParts(head).length < 2) {
+        // Up to two header lines directly above, not separated by a blank line.
+        for (var k = i - 1; k >= 0 && k >= i - 2 && !ranges[k] && looksLikeHeaderLine(experience[k]); k--) {
+          if (hasTitle(head) && TITLE_END.test(experience[k].trim())) break;   // that is the previous role's title
+          from = k;
+        }
+        var next = i + 1 < experience.length && !ranges[i + 1] && looksLikeHeaderLine(experience[i + 1]) ? experience[i + 1].trim() : '';
+        if (from === i && next) {
+          if (!hasTitle(head) && hasTitle(next)) to = i + 1;                       // "2019 - 2021" then "Title, Company"
+          else if (hasTitle(head) && !hasTitle(next) && namesSomething(next)) to = i + 1;   // "Title  2019 - 2021" then "Company, City"
+        }
       }
+      var text = experience.slice(from, i).map(function (l) { return l.trim(); }).concat([head], to > i ? [experience[to].trim()] : []).filter(Boolean).join(' | ');
+      var split = splitRoleHead(text);
+      var role = { title: split.title, employer: split.employer, start: range.start, end: range.end, present: range.present, dates: range.text, bullets: [], from: from, to: to };
+      if (split.employer) identity.employers.push(split.employer.replace(/\s*\(.*?\)\s*/g, ' ').trim(), split.employer);
+      roles.push(role);
+    });
+    roles.forEach(function (role, n) {
+      var stop = n + 1 < roles.length ? roles[n + 1].from : experience.length;
+      for (var i = role.to + 1; i < stop; i++) if (experience[i].trim()) role.bullets.push(stripBullet(experience[i]));
     });
     identity.employers = identity.employers.filter(function (e, i, all) { return e.length > 2 && all.indexOf(e) === i; });
     roles.sort(function (a, b) { return b.end - a.end || b.start - a.start; });
@@ -610,7 +572,11 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       var inLabel = new RegExp('\\b' + escapeRe(label));
       if (inLabel.test(recentTitles)) { score += 12; inTitle = true; }
       else if (inLabel.test(allTitles)) score += 5;
-      terms.forEach(function (term) { score += Math.min(countTerm(body, term), 3); });
+      // The experience text counts only when it names two or more of the discipline's terms: one word
+      // ("inverter" in a controls resume) is not a discipline.
+      var distinct = 0, fromBody = 0;
+      terms.forEach(function (term) { var n = countTerm(body, term); if (n) { distinct += 1; fromBody += Math.min(n, 3); } });
+      if (distinct >= 2) score += fromBody;
       return { id: entry.id, score: score, inTitle: inTitle };
     }).sort(function (a, b) { return b.score - a.score; });
     var ticked = scores.filter(function (s) { return s.inTitle; }).map(function (s) { return s.id; });
@@ -663,10 +629,36 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     return Math.round(total * 2) / 2;
   }
 
+  // A skill named only in the skills list borrows its years from the dated roles that name a closely
+  // related skill (Stateflow from Simulink), and the review says which. Never from nothing.
+  var RELATED = {
+    'MATLAB': ['Simulink'], 'Simulink': ['MATLAB'], 'Stateflow': ['Simulink', 'MATLAB'], 'Embedded Coder': ['Simulink', 'TI C2000'],
+    'C': ['TI C2000', 'STM32', 'RTOS', 'AUTOSAR', 'Embedded Linux'], 'C++': ['TI C2000', 'STM32', 'RTOS', 'AUTOSAR', 'Embedded Linux'],
+    'dSPACE': ['Hardware-in-the-loop testing'], 'Speedgoat': ['Hardware-in-the-loop testing'], 'LabVIEW': ['Test automation'],
+    'Git': ['Python', 'C', 'C++', 'Rust', 'Java'], 'Altium': ['PCB design'], 'KiCad': ['PCB design'], 'OrCAD': ['PCB design'],
+    'LTspice': ['Power electronics'], 'PLECS': ['Power electronics'], 'PSIM': ['Power electronics'],
+    'ANSYS': ['FEA', 'CFD'], 'COMSOL': ['FEA', 'CFD'], 'FEA': ['ANSYS'], 'Verilog': ['FPGA'], 'VHDL': ['FPGA'], 'FPGA': ['Verilog', 'VHDL'],
+    'SCADA': ['PLC programming'], 'PLC programming': ['SCADA'], 'Minitab': ['SPC', 'Six Sigma'], 'JMP': ['SPC', 'Six Sigma']
+  };
+  var YEARS_SAID = /(\d{1,2}(?:\.\d)?)\s*\+?\s*(?:years?|yrs?)\b/i;
+
+  // "Python (6 years)" or "Python: 6+ yrs" in the skills list: the candidate's own figure.
+  function yearsSaid(lines, pattern) {
+    for (var i = 0; i < lines.length; i++) {
+      var pieces = lines[i].split(/[,;|•·]/);
+      for (var j = 0; j < pieces.length; j++) {
+        var m = YEARS_SAID.exec(pieces[j]);
+        if (m && pattern.test(pieces[j])) return { years: Number(m[1]), line: lines[i].trim() };
+      }
+    }
+    return null;
+  }
+
   function findSkills(clean) {
-    var out = [];
+    var out = [], byName = {};
     SKILLS.forEach(function (skill) {
       var pattern = skill[1], intervals = [], evidence = null, spans = [];
+      // Every dated role that names the skill counts, not only the first.
       clean.roles.forEach(function (r) {
         var lines = [r.title].concat(r.bullets), hit = null;
         for (var i = 0; i < lines.length; i++) if (pattern.test(lines[i])) { hit = lines[i]; break; }
@@ -676,6 +668,8 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
           if (!evidence) evidence = hit;
         }
       });
+      var said = yearsSaid(clean.skills, pattern);
+      if (!evidence && said) evidence = said.line;
       if (!evidence) {
         var elsewhere = [].concat(clean.skills, clean.summary, clean.certifications);
         for (var j = 0; j < elsewhere.length; j++) if (pattern.test(elsewhere[j])) { evidence = elsewhere[j].trim(); break; }
@@ -683,11 +677,28 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       if (!evidence) return;
       var item = { name: skill[0] };
       var years = yearsFor(intervals);
-      if (years !== null && years > 0) item.years = years;
+      if (said) { item.years = said.years; item.basis = 'said'; }
+      else if (years !== null && years > 0) { item.years = years; item.basis = 'roles'; }
       item.evidence = evidence.slice(0, 300);
       item.from = spans;
+      item.intervals = intervals;
+      byName[skill[0]] = item;
       out.push(item);
     });
+    out.forEach(function (item) {
+      if (item.basis || item.intervals.length) return;
+      var via = (RELATED[item.name] || []).filter(function (name) { return byName[name] && byName[name].intervals.length; });
+      if (!via.length) { item.basis = 'listed'; return; }
+      var intervals = [], spans = [];
+      via.forEach(function (name) {
+        intervals = intervals.concat(byName[name].intervals);
+        byName[name].from.forEach(function (span) { if (spans.indexOf(span) === -1) spans.push(span); });
+      });
+      var years = yearsFor(intervals);
+      if (years) { item.years = years; item.basis = 'related'; item.via = via; item.from = spans; }
+      else item.basis = 'listed';
+    });
+    out.forEach(function (item) { delete item.intervals; });
     return out.slice(0, 60);
   }
 
@@ -752,18 +763,51 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     }).map(function (m) { return m.id; });
   }
 
-  function extract(raw) {
+  var STATES = {
+    alabama: 'AL', alaska: 'AK', arizona: 'AZ', arkansas: 'AR', california: 'CA', colorado: 'CO', connecticut: 'CT', delaware: 'DE',
+    'district of columbia': 'DC', florida: 'FL', georgia: 'GA', hawaii: 'HI', idaho: 'ID', illinois: 'IL', indiana: 'IN', iowa: 'IA',
+    kansas: 'KS', kentucky: 'KY', louisiana: 'LA', maine: 'ME', maryland: 'MD', massachusetts: 'MA', michigan: 'MI', minnesota: 'MN',
+    mississippi: 'MS', missouri: 'MO', montana: 'MT', nebraska: 'NE', nevada: 'NV', 'new hampshire': 'NH', 'new jersey': 'NJ',
+    'new mexico': 'NM', 'new york': 'NY', 'north carolina': 'NC', 'north dakota': 'ND', ohio: 'OH', oklahoma: 'OK', oregon: 'OR',
+    pennsylvania: 'PA', 'rhode island': 'RI', 'south carolina': 'SC', 'south dakota': 'SD', tennessee: 'TN', texas: 'TX', utah: 'UT',
+    vermont: 'VT', virginia: 'VA', washington: 'WA', 'west virginia': 'WV', wisconsin: 'WI', wyoming: 'WY'
+  };
+
+  // The metro area of the city in the resume's header ("Fort Collins, Colorado" or "Austin, TX 78701").
+  function homeMetro(header) {
+    for (var i = 0; i < Math.min(header.length, 10); i++) {
+      var pieces = header[i].split(/\s*[|•·]\s*/);
+      for (var j = 0; j < pieces.length; j++) {
+        var m = /^\s*([A-Z][A-Za-z.'-]+(?:\s[A-Z][A-Za-z.'-]+){0,3}),\s*([A-Za-z]{2}|[A-Za-z]+(?:\s[A-Za-z]+){0,2})(?:\s+\d{5}(?:-\d{4})?)?\s*$/.exec(pieces[j]);
+        if (!m) continue;
+        var code = m[2].length === 2 ? m[2].toUpperCase() : STATES[m[2].toLowerCase()];
+        if (!code) continue;
+        var city = m[1].toLowerCase();
+        var hits = tax.metros.filter(function (metro) {
+          var cut = metro.label.lastIndexOf(', ');
+          if (cut === -1) return false;
+          var cities = metro.label.slice(0, cut).toLowerCase().split('-'), states = metro.label.slice(cut + 2).split('-');
+          return cities.indexOf(city) !== -1 && states.indexOf(code) !== -1;
+        });
+        if (hits.length) return { place: m[1] + ', ' + code, metros: hits.map(function (metro) { return metro.id; }) };
+      }
+    }
+    return null;
+  }
+
+  function extract(raw, taxonomy, options) {
+    tax = taxonomy;
+    today = options && typeof options.today === 'number' ? options.today : null;
     var parsed = parseResume(raw);
     var clean = parsed.clean;
     var everything = clean.all.join(' \n ');
     var prefsText = [].concat(clean.header, clean.wants, clean.summary).join(' \n ');
     var experienceText = [].concat(clean.summary, clean.roles.reduce(function (a, r) { return a.concat([r.title], r.bullets); }, [])).join(' \n ');
     var discipline = proposeDisciplines(clean);
-    proposals.disciplines = discipline.shortList;
 
     var remote = /open to remote|remote (?:roles|work|positions|ok|friendly)|fully remote|remote-first|work remotely/i.test(prefsText) &&
                  !/no remote|not (?:open to|interested in) remote|on-?site only/i.test(prefsText);
-    var relocate = /not (?:looking|willing|able|open) to relocate|no relocation|cannot relocate/i.test(prefsText) ? false
+    var relocate = /not (?:looking|willing|able|open|planning) to relocate|no relocation|(?:cannot|can't|won't|will not|unable to) relocate/i.test(prefsText) ? false
       : /(?:open|willing|happy) to relocat/i.test(prefsText) ? true : null;
     var auth = /\bus citizen|u\.s\. citizen|green card|permanent resident|authori[sz]ed to work in the (?:us|u\.s\.|united states)/i.test(everything) ? 'US'
       : /require[sd]? (?:visa )?sponsorship|need(?:s)? sponsorship/i.test(everything) ? 'needs sponsorship' : null;
@@ -786,7 +830,144 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       exclude: { sectors: [], companies: [] }
     };
     if (relocate !== null) draft.locations.relocate = relocate;
-    return { persona: draft, identity: parsed.identity, roles: clean.roles, levelTitle: mostRecent ? mostRecent.title : '' };
+    // Not moving: propose the home city's metro area, from the resume's header.
+    var home = relocate === false ? homeMetro(clean.header) : null;
+    if (home) home.metros.forEach(function (id) { if (draft.locations.metros.indexOf(id) === -1) draft.locations.metros.push(id); });
+    return { persona: draft, identity: parsed.identity, roles: clean.roles, levelTitle: mostRecent ? mostRecent.title : '', shortList: discipline.shortList, home: home };
+  }
+
+  // The persona as it is saved: fields in schema order, empty optional parts left out.
+  function forSaving(p) {
+    var out = { persona_version: 0, generated: { by: p.generated.by, on_device: p.generated.on_device, date: p.generated.date } };
+    if (p.generated.reviewed) out.generated.reviewed = true;
+    if (p.functions && p.functions.length) out.functions = p.functions.slice();
+    out.disciplines = p.disciplines.slice();
+    out.level = p.level;
+    if (p.domains && p.domains.length) out.domains = p.domains.slice();
+    out.skills = p.skills.map(function (s) {
+      var item = { name: s.name.trim() };
+      if (s.years !== undefined) item.years = s.years;
+      if (s.evidence) item.evidence = s.evidence;
+      return item;
+    });
+    if (p.standards && p.standards.length) out.standards = p.standards.slice();
+    out.locations = { metros: p.locations.metros.slice(), remote: !!p.locations.remote };
+    if (typeof p.locations.relocate === 'boolean') out.locations.relocate = p.locations.relocate;
+    var hard = p.hard_constraints || {}, pref = p.preferences || {}, ex = p.exclude || {};
+    if (hard.work_authorization || hard.clearance) {
+      out.hard_constraints = { work_authorization: hard.work_authorization || null, clearance: hard.clearance || null };
+    }
+    var prefs = {};
+    if ((pref.stage || []).length) prefs.stage = pref.stage.slice();
+    if ((pref.sectors || []).length) prefs.sectors = pref.sectors.slice();
+    if (pref.min_base_usd !== null && pref.min_base_usd !== undefined) prefs.min_base_usd = pref.min_base_usd;
+    if (Object.keys(prefs).length) out.preferences = prefs;
+    if ((ex.sectors || []).length || (ex.companies || []).length) out.exclude = { sectors: (ex.sectors || []).slice(), companies: (ex.companies || []).slice() };
+    if (p.notes) out.notes = p.notes;
+    return out;
+  }
+
+  return { extract: extract, forSaving: forSaving, localDate: localDate, EMAIL: EMAIL, PHONE: PHONE, LINK: LINK };
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---- Libraries: pinned, from cdnjs, loaded only when a file needs them ----------------------
+  var LIBS = {
+    pdf: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+    pdfWorker: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+    mammoth: 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
+    yaml: 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js'
+  };
+  var TAXONOMY_URL = 'data/taxonomy.json';
+
+  var tax = null;          // the taxonomy file
+  var persona = null;      // the persona being edited
+  var proposals = { disciplines: [] };
+  var showAllDisciplines = false;
+  var loaded = {};
+
+  function $(id) { return document.getElementById(id); }
+
+  function el(tag, props, children) {
+    var node = document.createElement(tag);
+    Object.keys(props || {}).forEach(function (name) {
+      var value = props[name];
+      if (value === null || value === undefined || value === false) return;
+      if (name === 'text') node.textContent = value;
+      else if (name === 'class') node.className = value;
+      else node.setAttribute(name, value === true ? '' : value);
+    });
+    (children || []).forEach(function (child) {
+      if (child === null || child === undefined) return;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+
+  function loadScript(url) {
+    if (loaded[url]) return loaded[url];
+    loaded[url] = new Promise(function (resolve, reject) {
+      var tag = document.createElement('script');
+      tag.src = url;
+      tag.onload = function () { resolve(); };
+      tag.onerror = function () { delete loaded[url]; reject(new Error('could not load ' + url.split('/').pop())); };
+      document.head.appendChild(tag);
+    });
+    return loaded[url];
+  }
+
+  function setStatus(id, text, isError) {
+    $(id).textContent = text;
+    $(id).classList.toggle('error', !!isError);
+  }
+
+  // ---- Reading files -------------------------------------------------------------------------
+
+  function readAsText(file) { return file.text(); }
+
+  // pdf.js: the worker file is loaded as an ordinary script, which gives pdf.js a worker that runs
+  // on the page itself. No separate worker is started, so it works under artifact hosting's rules.
+  function readPdf(file) {
+    return loadScript(LIBS.pdf).then(function () { return loadScript(LIBS.pdfWorker); }).then(function () {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfWorker;
+      return file.arrayBuffer();
+    }).then(function (buffer) {
+      return window.pdfjsLib.getDocument({ data: new Uint8Array(buffer), isEvalSupported: false }).promise;
+    }).then(function (doc) {
+      var pages = [];
+      for (var n = 1; n <= doc.numPages; n++) pages.push(n);
+      return Promise.all(pages.map(function (n) {
+        return doc.getPage(n).then(function (page) { return page.getTextContent(); }).then(function (content) {
+          var lines = [], line = '', lastY = null;
+          content.items.forEach(function (item) {
+            var y = item.transform ? Math.round(item.transform[5]) : lastY;
+            if (lastY !== null && y !== lastY && Math.abs(y - lastY) > 2) { lines.push(line); line = ''; }
+            line += item.str;
+            if (item.hasEOL) { lines.push(line); line = ''; y = null; }
+            lastY = y;
+          });
+          if (line) lines.push(line);
+          return lines.join('\n');
+        });
+      }));
+    }).then(function (texts) { return texts.join('\n'); });
+  }
+
+  function readDocx(file) {
+    return loadScript(LIBS.mammoth).then(function () { return file.arrayBuffer(); }).then(function (buffer) {
+      return window.mammoth.extractRawText({ arrayBuffer: buffer });
+    }).then(function (result) { return result.value; });
+  }
+
+  function readResumeFile(file) {
+    var name = (file.name || '').toLowerCase();
+    if (name.endsWith('.pdf') || file.type === 'application/pdf') return readPdf(file);
+    if (name.endsWith('.docx')) return readDocx(file);
+    return readAsText(file);
   }
 
   // ---- Review form -----------------------------------------------------------------------------
@@ -841,7 +1022,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       var remove = el('button', { type: 'button', class: 'btn btn-small remove', text: 'Remove', 'aria-label': 'Remove ' + skill.name });
       remove.addEventListener('click', function () { persona.skills.splice(index, 1); renderSkills(); refreshOutput(); });
       var evidence = skill.evidence
-        ? el('p', { class: 'evidence' }, ['Found in: ', el('q', { text: skill.evidence }), skill.from && skill.from.length ? ' · years from ' + skill.from.join(', ') : ''])
+        ? el('p', { class: 'evidence' }, [skill.basis === 'roles' || !skill.basis ? 'Found in: ' : skill.basis === 'said' ? 'Your own figure, in: ' : 'Listed in your skills: ', el('q', { text: skill.evidence }), yearsNote(skill)])
         : el('p', { class: 'evidence', text: 'Added by you.' });
       host.appendChild(el('div', { class: 'skill' }, [name, years, remove, evidence]));
     });
@@ -856,6 +1037,15 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
       chip.addEventListener('click', function () { toggle(persona.locations.metros, id, false); renderMetros(); refreshOutput(); });
       host.appendChild(chip);
     });
+  }
+
+  // Where a skill's years came from, in words.
+  function yearsNote(skill) {
+    var spans = skill.from && skill.from.length ? ' (' + skill.from.join(', ') + ')' : '';
+    if (skill.basis === 'roles') return ' · years from the roles that name it' + spans;
+    if (skill.basis === 'related') return ' · no dated role names it, so its years are from the roles that name ' + skill.via.join(' or ') + spans + '; check them';
+    if (skill.basis === 'listed') return ' · no dated role names it, so no years; add them if you know';
+    return '';
   }
 
   function fillForm(found) {
@@ -886,6 +1076,8 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     tax.levels.forEach(function (l) { level.appendChild(el('option', { value: l.id, text: l.label })); });
     level.value = persona.level || '';
     $('level-help').textContent = found && found.levelTitle ? 'From your most recent title: "' + found.levelTitle + '".' : '';
+    $('metros-help').hidden = !(found && found.home);
+    $('metros-help').textContent = found && found.home ? 'Proposed from the city at the top of your resume (' + found.home.place + '), because you said you are not looking to relocate.' : '';
     persona.domains = persona.domains || [];
     checkList($('domains'), tax.sectors, persona.domains, function (id, on) { toggle(persona.domains, id, on); refreshOutput(); });
     renderSkills();
@@ -933,7 +1125,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
   // ---- Validation: the persona schema's rules, in plain words --------------------------------
 
   var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-  var IDENTITY = [[EMAIL, 'an email address'], [PHONE, 'a phone number'], [LINK, 'a web link']];
+  var IDENTITY = [[PersonaRules.EMAIL, 'an email address'], [PersonaRules.PHONE, 'a phone number'], [PersonaRules.LINK, 'a web link']];
 
   function validate(p) {
     var errors = [];
@@ -972,39 +1164,9 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
 
   // ---- Output ---------------------------------------------------------------------------------
 
-  // The persona as it is saved: fields in schema order, empty optional parts left out.
-  function forSaving(p) {
-    var out = { persona_version: 0, generated: { by: p.generated.by, on_device: p.generated.on_device, date: p.generated.date } };
-    if (p.generated.reviewed) out.generated.reviewed = true;
-    if (p.functions && p.functions.length) out.functions = p.functions.slice();
-    out.disciplines = p.disciplines.slice();
-    out.level = p.level;
-    if (p.domains && p.domains.length) out.domains = p.domains.slice();
-    out.skills = p.skills.map(function (s) {
-      var item = { name: s.name.trim() };
-      if (s.years !== undefined) item.years = s.years;
-      if (s.evidence) item.evidence = s.evidence;
-      return item;
-    });
-    if (p.standards && p.standards.length) out.standards = p.standards.slice();
-    out.locations = { metros: p.locations.metros.slice(), remote: !!p.locations.remote };
-    if (typeof p.locations.relocate === 'boolean') out.locations.relocate = p.locations.relocate;
-    if (p.hard_constraints.work_authorization || p.hard_constraints.clearance) {
-      out.hard_constraints = { work_authorization: p.hard_constraints.work_authorization || null, clearance: p.hard_constraints.clearance || null };
-    }
-    var prefs = {};
-    if (p.preferences.stage.length) prefs.stage = p.preferences.stage.slice();
-    if (p.preferences.sectors.length) prefs.sectors = p.preferences.sectors.slice();
-    if (p.preferences.min_base_usd !== null && p.preferences.min_base_usd !== undefined) prefs.min_base_usd = p.preferences.min_base_usd;
-    if (Object.keys(prefs).length) out.preferences = prefs;
-    if (p.exclude.sectors.length || p.exclude.companies.length) out.exclude = { sectors: p.exclude.sectors.slice(), companies: p.exclude.companies.slice() };
-    if (p.notes) out.notes = p.notes;
-    return out;
-  }
-
   function toYaml(p) {
     var header = '# HiPot persona. Built in your browser; edit it freely.\n';
-    return header + window.jsyaml.dump(forSaving(p), { lineWidth: -1, noRefs: true, sortKeys: false, flowLevel: -1 });
+    return header + window.jsyaml.dump(PersonaRules.forSaving(p), { lineWidth: -1, noRefs: true, sortKeys: false, flowLevel: -1 });
   }
 
   var currentYaml = '';
@@ -1016,6 +1178,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     list.replaceChildren.apply(list, errors.map(function (e) { return el('li', { text: e }); }));
     $('download').disabled = errors.length > 0;
     $('copy').disabled = errors.length > 0;
+    $('see-roles').disabled = errors.length > 0;
     if (!window.jsyaml) { $('yaml').textContent = 'Loading…'; return; }
     currentYaml = toYaml(persona);
     $('yaml').textContent = currentYaml;
@@ -1042,6 +1205,25 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     setStatus('save-status', 'Saved persona.yml to your downloads.');
   }
 
+  // Hand the persona to the board in this tab. Only the fields the ranking reads go, through sessionStorage,
+  // which the browser clears when the tab closes; nothing goes into the address or any request.
+  var PERSONA_KEY = 'hipot-persona';
+  function seeRoles() {
+    if (!persona) return;
+    refreshOutput();
+    if (validate(persona).length) return;
+    var p = PersonaRules.forSaving(persona);
+    var forBoard = { persona_version: 0, functions: p.functions, disciplines: p.disciplines, level: p.level, domains: p.domains,
+                     locations: p.locations, preferences: p.preferences, exclude: p.exclude };
+    try {
+      sessionStorage.setItem(PERSONA_KEY, JSON.stringify(forBoard));
+    } catch (error) {
+      setStatus('save-status', 'This browser will not let the page pass your persona to the board. Save the file, then use "Use my persona" on the board.', true);
+      return;
+    }
+    window.location.href = 'index.html';
+  }
+
   function copyText() {
     if (!currentYaml) return;
     var done = function () { setStatus('save-status', 'Copied. Paste it into a file named persona.yml.'); };
@@ -1064,7 +1246,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
   function importPersona(text) {
     var data = window.jsyaml.load(text, { schema: window.jsyaml.JSON_SCHEMA });
     if (!data || typeof data !== 'object' || data.persona_version !== 0) throw new Error('this is not a HiPot persona file (persona_version 0)');
-    data.generated = data.generated || { by: 'form', on_device: true, date: localDate() };
+    data.generated = data.generated || { by: 'form', on_device: true, date: PersonaRules.localDate() };
     data.generated.date = String(data.generated.date);
     data.disciplines = data.disciplines || [];
     data.skills = (data.skills || []).map(function (s) { return typeof s === 'string' ? { name: s } : s; });
@@ -1103,8 +1285,9 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
 
   function runExtraction(text) {
     if (!text.trim()) { setStatus('read-status', 'There is no text to read yet.', true); return; }
-    var found = extract(text);
+    var found = PersonaRules.extract(text, tax);
     persona = found.persona;
+    proposals.disciplines = found.shortList;
     lastExperienceText = found.roles.map(function (r) { return r.title + '\n' + r.bullets.join('\n'); }).join('\n\n');
     showAllDisciplines = false;
     fillForm(found);
@@ -1159,6 +1342,7 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     });
     $('download').addEventListener('click', save);
     $('copy').addEventListener('click', copyText);
+    $('see-roles').addEventListener('click', seeRoles);
   }
 
   // Say what the page is doing, so a host that blocks or delays something is

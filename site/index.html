@@ -285,6 +285,18 @@ body::before {
   .role-side { flex-direction: row; flex-wrap: wrap; align-items: baseline; text-align: left; gap: 2px 14px; white-space: normal; }
 }
 
+/* Persona: an invitation, then a "Persona in use" bar */
+.persona { background: var(--surface); border: 1px solid transparent; border-radius: 10px; padding: 12px 14px; }
+.persona.persona-active { background: var(--card); border-color: var(--ink); }
+.persona-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.persona-text { flex: 1 1 320px; min-width: 0; font-size: 14px; color: var(--soft); display: flex; flex-direction: column; gap: 2px; }
+.persona-text strong { color: var(--ink); font-weight: 600; }
+.persona-desc { color: var(--ink); font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+.persona-status { flex-basis: 100%; padding: 0; }
+.persona-status:empty { display: none; }
+.why { font-size: 13.5px; color: var(--ink); overflow-wrap: anywhere; }
+.why-label { color: var(--muted); }
+
 .more { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 4px; }
 .more p { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; }
 .state {
@@ -369,6 +381,23 @@ body::before {
         <input class="input" id="q" type="search" placeholder="battery test, technician, Denver…" autocomplete="off" spellcheck="false" maxlength="80" enterkeyhint="search">
       </div>
 
+      <section class="persona" id="persona" aria-label="Your persona">
+        <div class="persona-row" id="persona-off">
+          <div class="persona-text"><p><strong>Rank roles for you.</strong> Open your persona.yml and the board sorts roles by how well they fit it. It stays in this tab and is never sent anywhere. <a href="persona.html">Build one from your resume</a>.</p></div>
+          <button type="button" class="btn" id="persona-use">Use my persona</button>
+          <input type="file" id="persona-file" class="sr-only" tabindex="-1" aria-hidden="true" accept=".yml,.yaml,.txt,.json,text/yaml,text/plain,application/json">
+          <p class="hint persona-status" id="persona-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="persona-row" id="persona-on" hidden>
+          <div class="persona-text">
+            <p class="mono">Persona in use</p>
+            <p class="persona-desc" id="persona-desc"></p>
+            <p class="hint" id="persona-note"></p>
+          </div>
+          <button type="button" class="btn" id="persona-stop">Stop using it</button>
+        </div>
+      </section>
+
       <div class="bar">
         <button type="button" class="btn filters-btn" id="filters-btn" aria-haspopup="dialog">Filters <span class="facet-n" id="filters-n" hidden></span></button>
         <p class="count" id="count" role="status" aria-live="polite">Loading roles…</p>
@@ -404,6 +433,7 @@ body::before {
         <p><strong>Companies are screened for climate fit before their roles appear,</strong> under a written rubric. <span id="unlisted-functions"></span></p>
         <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
+        <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies and sectors you left out, and roles whose published pay tops out below your minimum, are hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
         <p id="provisional-note"><strong>The company screen is provisional.</strong> The climate tier and reason shown for each company are a first pass. They have not yet been checked against the company's own site or approved.</p>
         <p class="mono" id="run-note"></p>
       </div>
@@ -436,6 +466,219 @@ body::before {
   </div>
 </dialog>
 
+<script id="hipot-rank">
+/* Ranking roles for a candidate's persona (Milestone 2). Plain rules, no model: it ranks roles for a
+   person, never people. Pure functions over a role, its company and the persona, so the same code
+   runs in the page and in the repository's tests. Nothing here reads or writes anything outside
+   its arguments: the persona never leaves the page. */
+var HiPotRank = (function () {
+  'use strict';
+
+  // Points out of 100. Pay never adds points: it only takes off a little (see PAY_*).
+  var WEIGHTS = { fn: 25, disc: 25, level: 20, place: 15, sector: 8, stage: 7 };
+  var PAY_UNPUBLISHED = 3;     // the most a role loses for having no published pay
+  var PAY_STRADDLES = 1;       // range starts below the candidate's minimum but reaches it
+  var NOT_MOVING = -10;        // place points for an on-site role elsewhere when the candidate will not relocate
+  var HOURS_PER_YEAR = 2080;
+  var DEFAULT_FUNCTIONS = ['engineering'];
+  // Level steps. Managers sit beside staff engineers; moving between the IC and management tracks is one more step.
+  var LADDER = { intern: 0, entry: 1, mid: 2, senior: 3, staff: 4, principal: 5, manager: 4, director: 5, executive: 6 };
+  var MANAGEMENT = { manager: true, director: true, executive: true };
+  var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+  function fold(text) { return String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+  function slugs(list) { return Array.isArray(list) ? list.filter(function (x) { return typeof x === 'string' && SLUG.test(x); }) : []; }
+  function strings(list) { return Array.isArray(list) ? list.filter(function (x) { return typeof x === 'string' && x.trim(); }) : []; }
+
+  // A persona file (already parsed from YAML or JSON) in the shape the ranking uses. Throws if it is not one.
+  function normalize(data) {
+    if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('this is not a persona file');
+    if (data.persona_version !== 0) throw new Error('this is not a HiPot persona file (persona_version 0)');
+    var disciplines = slugs(data.disciplines);
+    if (!disciplines.length) throw new Error('the persona names no discipline');
+    var loc = data.locations && typeof data.locations === 'object' ? data.locations : {};
+    var prefs = data.preferences && typeof data.preferences === 'object' ? data.preferences : {};
+    var exclude = data.exclude && typeof data.exclude === 'object' ? data.exclude : {};
+    var functions = slugs(data.functions);
+    var minBase = prefs.min_base_usd;
+    return {
+      functions: functions.length ? functions : DEFAULT_FUNCTIONS.slice(),
+      disciplines: disciplines.slice(0, 6),
+      level: typeof data.level === 'string' && LADDER.hasOwnProperty(data.level) ? data.level : null,
+      domains: slugs(data.domains),
+      metros: slugs(loc.metros),
+      remote: loc.remote === true,
+      relocate: typeof loc.relocate === 'boolean' ? loc.relocate : null,
+      sectors: slugs(prefs.sectors),
+      stages: slugs(prefs.stage),
+      minBase: typeof minBase === 'number' && isFinite(minBase) && minBase > 0 ? minBase : null,
+      excludeSectors: slugs(exclude.sectors),
+      excludeCompanies: strings(exclude.companies).map(fold)
+    };
+  }
+
+  // The persona as stored for the tab: only the fields the ranking reads, never the skills' evidence or notes.
+  function forTab(data) {
+    var p = normalize(data);
+    return {
+      persona_version: 0,
+      functions: p.functions, disciplines: p.disciplines, level: p.level, domains: p.domains,
+      locations: { metros: p.metros, remote: p.remote, relocate: p.relocate === null ? undefined : p.relocate },
+      preferences: { sectors: p.sectors, stage: p.stages, min_base_usd: p.minBase },
+      exclude: { sectors: p.excludeSectors, companies: strings((data.exclude || {}).companies) }
+    };
+  }
+
+  function levelSteps(a, b) {
+    var steps = Math.abs(LADDER[a] - LADDER[b]);
+    if (!!MANAGEMENT[a] !== !!MANAGEMENT[b]) steps += 1;
+    return steps;
+  }
+
+  function shortMetro(label) { return String(label || '').split(/[-,]/)[0].trim(); }
+
+  function compactMoney(amount) {
+    if (amount >= 1000) {
+      var k = amount / 1000;
+      return '$' + (k >= 100 || k === Math.round(k) ? Math.round(k) : Math.round(k * 10) / 10) + 'K';
+    }
+    return '$' + (Math.round(amount * 100) / 100);
+  }
+
+  function payWords(pay) {
+    var range = pay.min === pay.max ? compactMoney(pay.max) : pay.min === 0 ? 'up to ' + compactMoney(pay.max) : compactMoney(pay.min) + '–' + compactMoney(pay.max);
+    return 'pays ' + range + (pay.per === 'hour' ? ' an hour' : '');
+  }
+
+  function perYear(amount, per) { return per === 'hour' ? amount * HOURS_PER_YEAR : amount; }
+
+  function lower(label) { return label && label.charAt(1) !== label.charAt(1).toUpperCase() ? label.charAt(0).toLowerCase() + label.slice(1) : label; }
+
+  /**
+   * How well one role fits the persona.
+   *   role:    a board role (fn, level, disc, metros, wp, pay)
+   *   company: its company (id, name, sectors, stage)
+   *   p:       normalize(persona)
+   *   labels:  taxonomy labels by list, { disciplines: { id: label }, ... }
+   * Returns { score, excluded, why, parts } where `excluded` is a plain reason or null.
+   */
+  function match(role, company, p, labels) {
+    labels = labels || {};
+    function label(list, id) { return (labels[list] && labels[list][id]) || id; }
+    var sectors = company.sectors || [];
+    var out = { score: 0, excluded: null, why: '', parts: {} };
+
+    // Hard exclusions: the candidate said no.
+    var name = fold(company.name);
+    if (p.excludeCompanies.some(function (x) { return x === name || x === fold(company.id); })) out.excluded = 'a company you left out';
+    var badSector = sectors.filter(function (s) { return p.excludeSectors.indexOf(s) !== -1; })[0];
+    if (!out.excluded && badSector) out.excluded = 'a sector you left out (' + lower(label('sectors', badSector)) + ')';
+    var pay = role.pay && role.pay.cur === 'USD' ? role.pay : null;
+    if (!out.excluded && pay && p.minBase && perYear(pay.max, pay.per) < p.minBase) out.excluded = 'published pay below your minimum';
+
+    var why = [], parts = out.parts;
+
+    // Kind of work.
+    var fnOk = p.functions.indexOf(role.fn) !== -1;
+    parts.fn = fnOk ? WEIGHTS.fn : 0;
+
+    // Discipline: the persona's order is its weight (first 1.0, then 0.85, 0.7, ... no lower than 0.4).
+    var disc = role.disc || [], best = 0, hits = [];
+    p.disciplines.forEach(function (id, i) {
+      if (disc.indexOf(id) === -1) return;
+      hits.push(id);
+      best = Math.max(best, Math.max(0.4, 1 - 0.15 * i));
+    });
+    if (hits.length) parts.disc = Math.round(WEIGHTS.disc * Math.min(1, best + (hits.length > 1 ? 0.12 : 0)) * 10) / 10;
+    else parts.disc = disc.length ? 0 : Math.round(WEIGHTS.disc * 0.25 * 10) / 10;   // no discipline on the role: unknown, not a mismatch
+    if (!fnOk) why.push(label('functions', role.fn) + ' role');
+    else if (hits.length) why.push(hits.slice(0, 2).map(function (id) { return label('disciplines', id); }).join(' and '));
+    else if (disc.length) why.push(label('disciplines', disc[0]) + ', not one of your disciplines');
+    else why.push(label('functions', role.fn));
+
+    // Level.
+    if (!p.level) parts.level = WEIGHTS.level / 2;
+    else if (!role.level) { parts.level = 8; why.push('level not stated'); }
+    else {
+      var steps = levelSteps(role.level, p.level);
+      parts.level = [WEIGHTS.level, 12, 4][steps] || 0;
+      var levelLabel = label('levels', role.level);
+      var gap = LADDER[role.level] - LADDER[p.level];
+      if (steps === 0) why.push(levelLabel);
+      else if (gap === 0) why.push(levelLabel + (MANAGEMENT[role.level] ? ' (a management role)' : ' (not management)'));
+      else why.push(levelLabel + ' (' + (Math.abs(gap) === 1 ? 'one level ' : Math.abs(gap) + ' levels ') + (gap > 0 ? 'up' : 'down') + ')');
+    }
+
+    // Place.
+    var metros = role.metros || [];
+    var here = metros.filter(function (id) { return p.metros.indexOf(id) !== -1; });
+    var remote = role.wp === 'remote';
+    var placeNames = here.slice(0, 2).map(function (id) { return shortMetro(label('metros', id)); });
+    if (here.length || (remote && p.remote)) {
+      parts.place = WEIGHTS.place;
+      why.push(placeNames.concat(remote ? ['remote'] : []).join(' or '));
+    } else if (remote) {
+      parts.place = 6; why.push('remote');
+    } else {
+      // The posting's own place name ("Berkeley"), not the metro area's first city ("San Jose").
+      var first = String((role.loc || [])[0] || '').split(',')[0].trim();
+      var there = first && !/remote|multiple|various/i.test(first) ? first : metros.length ? shortMetro(label('metros', metros[0])) : 'outside your areas';
+      if (!p.metros.length && !p.remote && p.relocate === null) { parts.place = 7.5; why.push(there); }
+      else if (p.relocate === true) { parts.place = 8; why.push(there + ', a move'); }
+      else if (p.relocate === false) { parts.place = NOT_MOVING; why.push(there + ', not where you want to work'); }
+      else { parts.place = 4; why.push(there + ', would mean moving'); }
+    }
+
+    // Sector and stage.
+    var liked = sectors.filter(function (s) { return p.sectors.indexOf(s) !== -1; });
+    var known = sectors.filter(function (s) { return p.domains.indexOf(s) !== -1; });
+    if (liked.length) { parts.sector = WEIGHTS.sector; why.push(lower(label('sectors', liked[0]))); }
+    else if (known.length) { parts.sector = p.sectors.length ? 3 : 4; why.push(lower(label('sectors', known[0])) + ', a sector you know'); }
+    else parts.sector = 0;
+    if (!p.stages.length) parts.stage = WEIGHTS.stage / 2;
+    else if (company.stage && p.stages.indexOf(company.stage) !== -1) { parts.stage = WEIGHTS.stage; why.push(label('stages', company.stage)); }
+    else parts.stage = company.stage ? 0 : 3;
+
+    // Pay, only when published, and only ever a small deduction.
+    if (pay) {
+      why.push(payWords(pay));
+      parts.pay = p.minBase && perYear(pay.min, pay.per) < p.minBase ? -PAY_STRADDLES : 0;
+    } else {
+      why.push(role.pay ? 'pay in ' + role.pay.cur : 'pay not published');
+      parts.pay = p.minBase ? -PAY_UNPUBLISHED : 0;
+    }
+
+    var total = 0;
+    Object.keys(parts).forEach(function (key) { total += parts[key]; });
+    out.score = Math.max(0, Math.round(total * 10) / 10);
+    out.why = why.join(' · ');
+    return out;
+  }
+
+  // Roles with a `match` (from match()), best first; ties keep the order they came in. Excluded roles are dropped.
+  function rank(roles) {
+    return roles.filter(function (role) { return role.match && !role.match.excluded; })
+      .map(function (role, i) { return [role, i]; })
+      .sort(function (a, b) { return (b[0].match.score - a[0].match.score) || (a[1] - b[1]); })
+      .map(function (pair) { return pair[0]; });
+  }
+
+  // One line saying what the persona asks for, for the "Persona in use" bar.
+  function describe(p, labels) {
+    function label(list, id) { return (labels[list] && labels[list][id]) || id; }
+    var bits = [p.disciplines.slice(0, 3).map(function (id) { return label('disciplines', id); }).join(', ')];
+    if (p.level) bits.push(label('levels', p.level));
+    var places = p.metros.slice(0, 2).map(function (id) { return shortMetro(label('metros', id)); });
+    if (p.remote) places.push('remote');
+    if (places.length) bits.push(places.join(' or '));
+    if (p.minBase) bits.push(compactMoney(p.minBase) + ' minimum');
+    return bits.join(' · ');
+  }
+
+  return { WEIGHTS: WEIGHTS, PAY_UNPUBLISHED: PAY_UNPUBLISHED, normalize: normalize, forTab: forTab, match: match, rank: rank, describe: describe };
+})();
+</script>
+
 <script>
 (function () {
   'use strict';
@@ -448,7 +691,10 @@ body::before {
   var SEARCH_DELAY_MS = 140;
   var HOURS_PER_YEAR = 2080;   // hourly pay is compared with the minimum-pay filter at this many hours
   var PAY_STEPS = [80000, 100000, 120000, 140000, 160000, 180000, 200000, 225000, 250000, 300000];
-  var SORTS = ['new', 'pay', 'co'];
+  var SORTS = ['new', 'pay', 'co', 'match'];   // 'match' only while a persona is in use
+  var PERSONA_KEY = 'hipot-persona';            // sessionStorage: this tab only, gone when it closes
+  var YAML_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js';
+  var PERSONA_MAX_BYTES = 200000;
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
@@ -471,7 +717,8 @@ body::before {
   var board = null;
   var roles = [];           // every role, newest first, with precomputed search and filter fields
   var labels = {};          // taxonomy key -> { id: label }
-  var persona = null;       // Milestone 2: a candidate's persona file, loaded on their own device
+  var persona = null;       // the candidate's persona, normalized (HiPotRank.normalize); only in this tab
+  var personaLeftOut = 0;   // roles the persona's exclusions hide
   var state = emptyState();
   var results = [];         // roles that pass the filters, in display order
   var shown = 0;            // how many of `results` are in the page
@@ -570,18 +817,99 @@ body::before {
   // ---- Persona ranking hook ---------------------------------------------------------------------
 
   /**
-   * PERSONA RANKING HOOK (Milestone 2). Not implemented in this milestone.
-   *
-   * A later milestone ranks the filtered roles against a candidate's persona file
-   * (schema/persona.schema.json) here. `rolesInOrder` is the filtered list in the order the
-   * visitor chose; return the list in the order to display. The persona stays on the
-   * candidate's device: this function must never send it anywhere.
-   *
-   * With no persona (always the case today) the list is returned unchanged.
+   * PERSONA RANKING HOOK (Milestone 2). `rolesInOrder` is the filtered list in the order the
+   * visitor chose. With a persona and the "Best match" sort, roles are ordered by HiPotRank's
+   * score (ties keep that order). The persona stays in this tab: nothing here sends it anywhere.
    */
   function rankRolesForPersona(rolesInOrder, candidatePersona) {
-    if (!candidatePersona) return rolesInOrder;
-    return rolesInOrder;
+    if (!candidatePersona || state.sort !== 'match') return rolesInOrder;
+    return HiPotRank.rank(rolesInOrder);
+  }
+
+  // Score every role against the persona (about 5,000 roles: a few milliseconds).
+  function scoreRoles() {
+    personaLeftOut = 0;
+    roles.forEach(function (role) {
+      role.match = persona ? HiPotRank.match(role, role.company, persona, labels) : null;
+      if (role.match && role.match.excluded) personaLeftOut += 1;
+    });
+  }
+
+  function storePersona(data) {
+    try { sessionStorage.setItem(PERSONA_KEY, JSON.stringify(HiPotRank.forTab(data))); } catch (error) { /* the persona still works until reload */ }
+  }
+
+  function forgetPersona() {
+    try { sessionStorage.removeItem(PERSONA_KEY); } catch (error) { /* nothing was stored */ }
+  }
+
+  // A persona handed over by the persona page, or opened earlier in this tab.
+  function storedPersona() {
+    try {
+      var text = sessionStorage.getItem(PERSONA_KEY);
+      return text ? HiPotRank.normalize(JSON.parse(text)) : null;
+    } catch (error) {
+      forgetPersona();
+      return null;
+    }
+  }
+
+  function setPersona(next) {
+    persona = next;
+    scoreRoles();
+    var sort = $('sort'), option = sort.querySelector('option[value="match"]');
+    if (persona && !option) sort.insertBefore(el('option', { value: 'match', text: 'Best match' }), sort.firstChild);
+    if (!persona && option) option.remove();
+    if (persona) state.sort = 'match';
+    else if (state.sort === 'match') state.sort = 'new';
+    renderPersona();
+  }
+
+  function renderPersona() {
+    $('persona-off').hidden = !!persona;
+    $('persona-on').hidden = !persona;
+    $('persona').classList.toggle('persona-active', !!persona);
+    if (!persona) return;
+    $('persona-desc').textContent = HiPotRank.describe(persona, labels);
+    var notes = ['Roles are sorted by how well they fit it when the sort is Best match; every filter still applies.'];
+    if (personaLeftOut) notes.push(personaLeftOut.toLocaleString('en-US') + (personaLeftOut === 1 ? ' role is' : ' roles are') + ' left out by your exclusions or minimum pay.');
+    if (persona.minBase) notes.push('A role with no published pay loses ' + HiPotRank.PAY_UNPUBLISHED + ' points of 100 for it, no more, and is never hidden for it.');
+    notes.push('Your persona stays in this tab and is gone when you close it.');
+    $('persona-note').textContent = notes.join(' ');
+  }
+
+  var yamlLoading = null;
+  function loadYaml() {
+    if (window.jsyaml) return Promise.resolve();
+    if (!yamlLoading) {
+      yamlLoading = new Promise(function (resolve, reject) {
+        var tag = document.createElement('script');
+        tag.src = YAML_LIB;
+        tag.onload = function () { resolve(); };
+        tag.onerror = function () { yamlLoading = null; reject(new Error('the YAML reader did not load')); };
+        document.head.appendChild(tag);
+      });
+    }
+    return yamlLoading;
+  }
+
+  function openPersonaFile(file) {
+    var status = $('persona-status');
+    if (file.size > PERSONA_MAX_BYTES) { status.textContent = 'That file is too large to be a persona.'; return; }
+    status.textContent = 'Reading ' + file.name + '…';
+    Promise.all([file.text(), loadYaml()]).then(function (results) {
+      var data = window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA });
+      var next = HiPotRank.normalize(data);
+      storePersona(data);
+      status.textContent = '';
+      setPersona(next);
+      syncControls();
+      update();
+      $('persona-stop').focus();
+    }).catch(function (error) {
+      // js-yaml's `reason` is one line; its `message` quotes lines of the file.
+      status.textContent = 'Could not use that file: ' + (error && (error.reason || error.message) || 'unknown error') + '.';
+    });
   }
 
   // ---- Preparing the data ---------------------------------------------------------------------
@@ -595,6 +923,7 @@ body::before {
       data.taxonomy[key].forEach(function (entry) { labels[key][entry.id] = entry.label; });
     });
 
+    Object.keys(data.companies).forEach(function (id) { data.companies[id].id = id; });
     roles = data.roles.filter(function (role) { return data.companies[role.co]; });
     roles.forEach(function (role) {
       var company = data.companies[role.co];
@@ -748,7 +1077,7 @@ body::before {
       var key = token.slice(0, cut), value = token.slice(cut + 1);
       if (key === 'q') next.q = decodeQuery(value);
       else if (key === 'pay') { if (/^\d{1,7}$/.test(value)) next.pay = Number(value); }
-      else if (key === 'sort') { if (SORTS.indexOf(value) > 0) next.sort = value; }
+      else if (key === 'sort') { if (SORTS.indexOf(value) > 0 && (value !== 'match' || persona)) next.sort = value; }
       else if (key === 'c') { if (SLUG.test(value) && board.companies[value]) next.c = value; }
       else if (key === 'state') { if (/^[a-z]{2}$/.test(value) && facetByKey.m.byId[STATE_PREFIX + value]) next.m.add(STATE_PREFIX + value); }
       else if (facetByKey[key]) {
@@ -785,6 +1114,7 @@ body::before {
     for (var i = 0; i < roles.length; i++) {
       var role = roles[i];
       if (state.c && role.co !== state.c) continue;
+      if (role.match && role.match.excluded) continue;   // the persona's own exclusions
       if (needPay && !role.pay) continue;
       if (state.pay > 0 && !(role.payCompare !== null && role.payCompare >= state.pay)) continue;
       var textOk = true;
@@ -1007,6 +1337,7 @@ body::before {
           company.reason ? el('span', { class: 'reason', text: company.reason }) : null
         ]),
         el('p', { class: 'where', text: whereText(role) }),
+        role.match ? el('p', { class: 'why' }, [el('span', { class: 'why-label', text: 'Why it matches: ' }), role.match.why]) : null,
         tags,
         role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null
       ]),
@@ -1282,6 +1613,19 @@ body::before {
     $('f-pay').addEventListener('change', function () { state.pay = Number($('f-pay').value) || 0; update(); });
     $('f-paid').addEventListener('change', function () { state.paid = $('f-paid').checked; update(); });
     $('more-btn').addEventListener('click', function () { appendPage(true); });
+    $('persona-use').addEventListener('click', function () { $('persona-file').click(); });
+    $('persona-file').addEventListener('change', function () {
+      var file = $('persona-file').files[0];
+      $('persona-file').value = '';
+      if (file) openPersonaFile(file);
+    });
+    $('persona-stop').addEventListener('click', function () {
+      forgetPersona();
+      setPersona(null);
+      syncControls();
+      update();
+      $('persona-use').focus();
+    });
 
     // On a narrow screen the same filter form moves into a sheet and back.
     var sheet = $('sheet'), form = $('filters');
@@ -1335,7 +1679,9 @@ body::before {
       buildFilters();
       renderStatic();
       wireControls();
+      setPersona(storedPersona());   // before reading the address, so "sort-match" is understood
       state = decodeState(location.hash);
+      if (persona && !/(^|--)sort-/.test(location.hash.replace(/^#/, ''))) state.sort = 'match';
       syncControls();
       update();
     }).catch(function (error) {

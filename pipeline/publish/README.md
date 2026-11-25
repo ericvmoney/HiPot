@@ -71,9 +71,24 @@ The owner wants each long filter to become a dropdown holding checkboxes once th
 
 A minimum keeps a role when the top of its published range reaches the figure. It hides roles with no published pay and roles whose pay is not in US dollars. Hourly pay is compared at 2,080 hours a year. Nothing is estimated or shown that the employer did not publish.
 
-## Persona hook
+## Ranking for a persona (Milestone 2)
 
-`rankRolesForPersona(rolesInOrder, candidatePersona)` in `site/index.html` is where Milestone 2 ranks the filtered roles against a persona file. Today it returns the list unchanged and no persona can be loaded.
+The board ranks roles for a candidate's persona with plain rules, no model; it ranks roles for a person, never people. The rules live in `<script id="hipot-rank">` in `site/index.html` (`HiPotRank.normalize`, `match`, `rank`), pure functions that the tests run as they are.
+
+- **Getting a persona.** "Use my persona" opens `persona.yml` or `persona.yml.txt` (js-yaml from cdnjs, loaded only then); "See matching roles" on the persona page hands one over in the same tab. Either way only the ranking fields are kept, in `sessionStorage` under `hipot-persona`, which the browser clears when the tab closes. Nothing goes into the address (it shows only `sort-match`) or any request. "Stop using it" removes it.
+- **Score out of 100.** Kind of work 25, discipline 25 (the persona's order is the weight), level 20 (exact, one step, two), place 15 (−10 for an on-site role elsewhere when the candidate will not relocate), preferred sector 8, preferred stage 7. Pay never adds: with `min_base_usd`, a range starting below it costs 1 and unpublished pay costs 3.
+- **Hidden.** Excluded companies and sectors, and published pay whose maximum is below `min_base_usd`. The persona bar says how many roles that leaves out.
+- **Order.** Best match is the sort while a persona is in use; every filter still applies, and ties keep the newest-first order. Each card says why in one line: "Controls · Staff · Denver or remote · energy storage · Series A · pays $185K–$220K".
+
+`rankRolesForPersona(rolesInOrder, candidatePersona)` is still the hook the list passes through.
+
+### Checking a ranking
+
+```
+uv run python -m pipeline.publish.rankcheck spikes/ollama-persona/resume_synthetic_01.txt:20 tests/publish/fixtures/resume_synthetic_02_technician.txt:10
+```
+
+It reads each resume with the persona page's own rules (or takes a persona `.yml`), checks the persona against the schema, and prints the top roles on `site/data/board.json` with their "why" lines, in Markdown. `pipeline/publish/pagejs.py` runs the pages' script blocks in V8 through the `mini-racer` dev dependency; the tests in `tests/publish/test_ranking.py` and `test_persona_rules.py` use it too. The Milestone 2 check is in `reports/M2-ranking-check.md`.
 
 ## Pay bands (`site/data/pay.json`)
 
@@ -107,7 +122,8 @@ When `data/pay/bls-oews-2025.json` exists (`--wages` to point elsewhere), the pu
 A candidate turns a resume (PDF, Word or text, or pasted) into `persona.yml` in the browser, checks every field, and saves the file; an existing `persona.yml` can be opened, edited and saved again. Rules only, no model. The publish step writes `site/data/taxonomy.json` (ids, labels and each discipline's `covers` text, all metro areas) for it.
 
 - Libraries load from cdnjs only when needed, pinned: pdf.js 3.11.174 (its worker file is loaded as a plain script, so pdf.js runs it on the page and starts no separate worker), mammoth 1.6.0, js-yaml 4.1.0.
-- No request carries resume text and nothing is stored in the browser. Name, email, phone, links, street address and employer names are removed before anything is kept; a file that still holds an email, phone number or link cannot be saved.
+- No request carries resume text. Name, email, phone, links, street address and employer names are removed before anything is kept; a file that still holds an email, phone number or link cannot be saved. Nothing is stored in the browser except, after "See matching roles", the persona's ranking fields for the board in that tab.
+- The rules are in `<script id="persona-rules">` (`PersonaRules.extract`, `forSaving`), apart from the page's interface code. Role headers may be one line or two, title or employer first ("Company — Title", "Title" over "Company | dates"). Years per skill are the union of every dated role that names it; a skill named only in the skills list takes the years written beside it, else those of the roles naming a closely related skill (Stateflow from Simulink), and the review says which. A discipline gets no credit from the experience text unless two or more of its terms appear. When the resume says the candidate will not relocate, the header city's metro area is proposed.
 - Saving on artifact hosting needs the `downloads` capability (`capabilities: {downloads: true}` when publishing). That capability saves only some file types and `.yml` is not one of them, so there the file is saved as `persona.yml.txt`; a "Copy the text" button is the fallback. Elsewhere the page saves `persona.yml` through an ordinary download link.
 - If the browser reports Chrome's built-in model (`LanguageModel`) as available, a button offers on-device suggestions for disciplines only. It is hidden otherwise.
 
