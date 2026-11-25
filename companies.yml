@@ -123,6 +123,33 @@ companies:
     Founding year, headcount, ownership confirmation. STRATOS DAC plant (Ector County TX, up to 500,000 t/yr) is
     under construction; South Texas DAC hub has up to $500M DOE support. Credit buyers are Microsoft, Amazon and
     ANA, not oil and gas. Dealroom and Built In 404.'
+- id: 247solar
+  name: 247Solar
+  website: https://247solar.com
+  careers_url: null
+  hq: Great Falls, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular concentrated-solar plants storing heat in ceramic pellets, with HeatStore and Heat2Power turbines
+      for round-the-clock power and industrial heat.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Own site links an investors page but gives no round
+    details. Evidence: https://www.247solar.com/ Region sources: greentown. Confidence: medium. Unresolved: Founding
+    year, funding stage, headcount.'
 - id: 24m-technologies
   name: 24M Technologies
   website: https://24-m.com
@@ -188,6 +215,35 @@ companies:
     Region sources: halliburton-labs. Confidence: medium. Unresolved: Headcount, funding stage. Site says 50+ MW
     operating, 350+ MW contracted; field operations in Midland, TX. Customers split across AI/HPC, bitcoin miners
     and oil and gas producers; none named.'
+- id: 4earth
+  name: 4Earth
+  website: null
+  careers_url: null
+  hq: Atlanta, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular water-treatment and water-reuse systems for factories and other industrial sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Inaugural cohort of the Cox Cleantech Accelerator (gener8tor),
+    Atlanta, 2025 (Hypepotamus, 2026-02-16); CB Insights lists $100K total raised from accelerator-type investors
+    (search snippet). https://hypepotamus.com/startup-news/4earth-industrial-water-reuse-corporate-innovation/ Flags:
+    data centers are one stated target among factories and plants; website 4earth.tech (domain not given in input).
+    Evidence: https://hypepotamus.com/startup-news/4earth-industrial-water-reuse-corporate-innovation/ https://www.cbinsights.com/company/4earth
+    Region sources: cox-cleantech. Confidence: medium. Unresolved: Founding year (a Dealroom snippet says launch
+    Feb 2020; not verified); headcount; funding beyond accelerator.'
 - id: 4th-state-energies
   name: 4th State Energies
   website: https://www.4thstateenergies.com/
@@ -308,6 +364,73 @@ companies:
     main target market). Flags: main customers are data centers. Decision needed: decisions-needed.md [datacenter].
     Evidence: https://dealroom.co/companies/aalo-atomics Confidence: medium. Unresolved: Round letter and size of
     May 2026 round unknown; may be past Series B.'
+- id: abb
+  name: ABB
+  website: https://new.abb.com
+  careers_url: null
+  hq: Cary, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: public
+  founded: 1988
+  headcount:
+    value: 112000
+    as_of: '2026-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/ABB_Group)
+  climate:
+    tier: core
+    reason: Electrification and automation equipment (switchgear, drives, motors, robotics), incl. EV chargers and
+      e-mobility converters at US plants.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '112,000 people (Wikipedia (https://en.wikipedia.org/wiki/ABB_Group), 2026-01-01): over the 4,000-person
+      line.'
+  notes: 'No job board found on the company''s site. Headcount note: About 112,000 (2026, year only). Founded: https://en.wikipedia.org/wiki/ABB_Group.
+    Stage: Listed on SIX Swiss Exchange (ABBN) and Nasdaq Stockholm (ABB); formed 1988 from ASEA and BBC merger;
+    delisted London/Frankfurt 2005 (Wikipedia). Year of current listing not found. Flags: over 1,000 employees;
+    HQ outside region (Cary, NC; Columbia, SC; Mechanicsville, VA are sites). Evidence: https://en.wikipedia.org/wiki/ABB_Group
+    Region sources: freedm-members, e2-sc, cp-sc-2024, cp-va-2025, arpa-e. Confidence: high. Unresolved: Regional
+    plants not confirmed from a fetched source.'
+- id: accelerate-wind
+  name: Accelerate Wind
+  website: https://acceleratewind.com
+  careers_url: null
+  hq: Birmingham, AL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - wind
+  stage: null
+  founded: 2016
+  headcount:
+    value: 7
+    as_of: '2026-11-24'
+    source: Accelerate Wind website (https://acceleratewind.com/company)
+  climate:
+    tier: core
+    reason: Wind turbines for the edges of commercial rooftops, paired with rooftop solar (airfoils developed with
+      Argonne National Lab).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 7 people (Accelerate Wind website (https://acceleratewind.com/company), 2026-11-24); growth
+      sign: founded 2016.'
+  notes: 'No job board found on the company''s site. Headcount note: ''7 full-time members'' on company page; undated.
+    Founded: https://acceleratewind.com/company. Stage: No funding information on own site. Flags: development stage
+    (testing, seeking partners). Evidence: https://acceleratewind.com/ https://acceleratewind.com/company Region
+    sources: third-derivative, cri. Confidence: medium. Unresolved: HQ city (input says Birmingham, AL; site does
+    not state); funding stage.'
 - id: acceleron-fusion
   name: Acceleron Fusion
   website: https://acceleronfusion.com
@@ -755,6 +878,60 @@ companies:
     found; Dealroom slug adiabatic-materials 404. Evidence: https://adiabatic.co Region sources: voyager, greentown.
     Confidence: low. Unresolved: Site has only a tagline; HQ (input Somerville, MA), founding, headcount and funding
     not found.'
+- id: adion-solar
+  name: Adion Solar
+  website: https://adionsolar.com
+  careers_url: null
+  hq: Madison, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar panels (ADiON PV540 G1 540 W module), plus inverters and LiFePO4 batteries; planned 500 MW module
+      assembly plant in Madison, GA.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Spin-off of B.I. Production Works (film equipment leasing
+    firm, Madison GA); no outside funding round found Flags: Plant status not established (not confirmed running,
+    built or cancelled): own site does not say whether the Madison factory produces or where panels are made. Also
+    does commercial installations, so it is partly a distributor/installer.. Evidence: s o l a r p Region sources:
+    cp-ga-2025. Confidence: low.'
+- id: adroit-materials
+  name: Adroit Materials
+  website: null
+  careers_url: null
+  hq: Raleigh, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: GaN power semiconductor materials and devices (per input).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Flags: site adroitmaterials.com has a broken TLS certificate
+    (Squarespace); may be inactive. Region sources: arpa-e. Confidence: low. Unresolved: Everything beyond the input;
+    website unreachable over HTTPS.'
 - id: adsorptech
   name: Adsorptech
   website: https://adsorptech.com
@@ -1424,6 +1601,41 @@ companies:
     reason: 'Independent; 73 people (Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/albedo),
       2026-11-24); growth sign: founded 2020.'
   notes: Missing facts filled from data/screening/registry-fixes.
+- id: albemarle
+  name: Albemarle
+  website: https://www.albemarle.com
+  careers_url: null
+  hq: Charlotte, NC
+  ats:
+    type: workday
+    board: albemarle
+  read: manual
+  sectors:
+  - battery-materials
+  stage: public
+  founded: 1887
+  headcount:
+    value: 7800
+    as_of: '2025-01-01'
+    source: Wikipedia / Albemarle (https://en.wikipedia.org/wiki/Albemarle_Corporation)
+  climate:
+    tier: core
+    reason: Refines and converts lithium into battery-grade hydroxide and carbonate; mainly a processor, so in even
+      though it also runs mines and brine operations (owner ruling A6b line).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '7,800 people (Wikipedia / Albemarle (https://en.wikipedia.org/wiki/Albemarle_Corporation), 2025-01-01):
+      over the 4,000-person line.'
+  notes: 'Board workday:albemarle.wd5.myworkdayjobs.com/External seen 2026-11-25, linked from the company''s own
+    site: role count not read (no public feed). Headcount note: About 7,800 (2025, incl. consolidated JVs); own
+    site also says about 7,800. Founded: https://en.wikipedia.org/wiki/Albemarle_Corporation. Stage: NYSE: ALB;
+    independent since the 1994 spin-off from Ethyl Corporation; listing year not stated. https://en.wikipedia.org/wiki/Albemarle_Corporation
+    Flags: over 1,000 employees; public company; mining operator (Kings Mountain lithium mine reopening, permits
+    sought). Evidence: https://www.albemarle.com/about https://en.wikipedia.org/wiki/Albemarle_Corporation Region
+    sources: e2-nc, cp-nc-2025, e2-sc, cp-sc-2024, c2es-se. Confidence: high. Unresolved: Status of the Chester
+    County SC mega-flex plant and the Charlotte technology park (no fetched source).'
 - id: alef-aeronautics
   name: Alef Aeronautics
   website: https://alef.aero
@@ -1483,6 +1695,33 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/alga-biosciences.
     Stage: YC W22; no priced round found. Flags: agriculture feed additive, not electrification. Evidence: https://www.ycombinator.com/companies/alga-biosciences
     Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
+- id: algenovas
+  name: ALGENOVAS
+  website: null
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Biodegradable biocomposites from wastewater-grown algae and agricultural waste, first for cosmetics
+      packaging, later furniture and insulation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2025 https://innovationcrossroads.ornl.gov/cohorts/cohort-9/
+    Evidence: https://innovationcrossroads.ornl.gov/people/p43243/ Region sources: ornl-ic. Confidence: low. Unresolved:
+    No website found; HQ, funding, headcount.'
 - id: alithic
   name: Alithic
   website: null
@@ -1776,6 +2015,40 @@ companies:
     no equity round found. Flags: nuclear (molten-salt reactor) instrumentation. Evidence: https://business.utah.gov/innovation/utah-companies-receive-awards-for-energy-technology-development/
     Region sources: ut-goeo-energy-awards. Confidence: low. Unresolved: Website, city, founding year, headcount,
     current activity.'
+- id: alpitronic-americas
+  name: alpitronic Americas
+  website: https://www.alpitronic.it
+  careers_url: null
+  hq: Charlotte, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: subsidiary
+  founded: 2009
+  headcount:
+    value: 1100
+    as_of: '2025-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Alpitronic)
+  climate:
+    tier: core
+    reason: DC fast EV chargers (hypercharger).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 1,100 people (Wikipedia (https://en.wikipedia.org/wiki/Alpitronic), 2025-01-01);
+      founded 2009, with no equity raise in 5 years or recent listing found.
+  notes: 'No job board found on the company''s site. Headcount note: Parent alpitronic global headcount, 2025 (year
+    only, first day used). Founded: https://en.wikipedia.org/wiki/Alpitronic. Stage: US subsidiary of alpitronic
+    (Bolzano, Italy; private, owners not stated). https://en.wikipedia.org/wiki/Alpitronic Flags: subsidiary of
+    alpitronic (Italy); HQ outside region (Italy); over 1,000 employees (parent). Evidence: https://www.alpitronic.it/en/
+    https://en.wikipedia.org/wiki/Alpitronic Region sources: e2-nc, cp-nc-2025. Confidence: medium. Unresolved:
+    Charlotte US HQ and repair facility not confirmed in fetched sources (alpitronic.us redirects to the Italian
+    site).'
 - id: also
   name: ALSO
   website: null
@@ -1921,6 +2194,34 @@ companies:
     Evidence: https://aluminaenergy.com/ https://aluminaenergy.com/team Region sources: laci-portfolio, shell-gamechanger,
     laci. Confidence: medium. Unresolved: Headcount and funding not found. Dealroom slug alumina_energy and builtinla.com/company/alumina-energy
     404.'
+- id: aluminairy
+  name: AluminAiry
+  website: https://aluminairy.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Mechanically refuelled aluminum-air generators for standby and primary power, plus gas diffusion electrodes,
+      membranes and catalysts.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Supporters: UT Research Foundation, DEVCOM ARL, TVA,
+    Spark Cleantech Accelerator, DOE, ORNL, Vertx Partners; 2025 Chancellor''s Innovation Fund and 2024 TVA x Spark
+    award; no rounds. https://aluminairy.com/ Flags: target markets include data centers and military forward bases
+    (not stated as main). Evidence: https://aluminairy.com/ https://innovationcrossroads.ornl.gov/people/p41672/
+    Region sources: ornl-ic, ic. Confidence: medium. Unresolved: Founded year, funding amounts, headcount.'
 - id: alva-energy
   name: Alva Energy
   website: https://alvaenergy.com
@@ -2732,6 +3033,35 @@ companies:
     a stated headcount. Evidence: https://anode.tech Region sources: eclipse. Confidence: medium. Unresolved: HQ
     (directory says San Francisco, CA; not on site), founded year, funding stage; no Dealroom or Built In SF profile
     found. Site names EVs, data centers and businesses as markets, not main customers.'
+- id: anovion-technologies
+  name: Anovion Technologies
+  website: https://www.anoviontech.com
+  careers_url: null
+  hq: Bainbridge, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Synthetic graphite anode material for lithium-ion batteries (now operating as M2Graphite).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Not found. Current site says ''US-owned and operated'',
+    no parent named. Flags: renamed/rebranded: anoviontech.com redirects to m2graphite.com; HQ outside region; Bainbridge
+    GA plant not mentioned on current site (may be shelved). Evidence: https://anoviontech.com https://www.m2graphite.com/
+    Region sources: e2-ga, cp-ga-2025, c2es-se. Confidence: medium. Unresolved: Whether M2Graphite is a rename of
+    Anovion or a successor company; Bainbridge GA plant status (site targets 40,000 tpa by 2029 without naming a
+    location); founding year, headcount, ownership.'
 - id: antares
   name: Antares
   website: https://antaresindustries.com
@@ -2889,6 +3219,31 @@ companies:
     (LOIs, with industrial buyers); nuclear fission. Evidence: https://apolloatomics.com https://dealroom.co/companies/apollo-atomics
     Region sources: yc. Confidence: medium. Unresolved: Seed amount differs ($31M table vs $26M description); site
     does not state HQ.'
+- id: applied-2d-materials
+  name: Applied 2D Materials
+  website: https://applied2d.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Hexagonal boron nitride thin-film coatings for electronics and energy devices.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2025 https://innovationcrossroads.ornl.gov/cohorts/cohort-9/
+    Evidence: https://www.applied2d.com/ https://innovationcrossroads.ornl.gov/people/p13584/ Region sources: ornl-ic.
+    Confidence: medium. Unresolved: HQ, founded year, funding, headcount not on site.'
 - id: applied-bioplastics
   name: Applied Bioplastics
   website: https://appliedbioplastics.com
@@ -3038,6 +3393,30 @@ companies:
     markets listed: railway, research labs and the drilling industry. Evidence: https://www.appliedps.com Region
     sources: inven-ny-power-electronics. Confidence: medium. Unresolved: Whether still operating; founding; headcount;
     ownership.'
+- id: apt-technologies
+  name: APT Technologies
+  website: https://apt-tech.org
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Microfluidic connectors and laboratory fittings; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2019 https://innovationcrossroads.ornl.gov/cohorts/cohort-3/
+    Flags: not clean tech (lab instrumentation); website looks unmaintained. Evidence: https://apt-tech.org/ https://innovationcrossroads.ornl.gov/people/p33797/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ, founded year, funding, headcount; activity level.'
 - id: aptera
   name: Aptera
   website: null
@@ -3122,6 +3501,57 @@ companies:
     (still San Diego County); also offers treatment as a service. Evidence: https://www.aquacycl.com/ Region sources:
     sdedc-cleantech. Confidence: medium. Unresolved: Founded year, headcount and funding stage not found; Dealroom
     404; /about 404.'
+- id: aquafer-technologies
+  name: Aquafer Technologies
+  website: https://aquafertech.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: NSF 61-certified drop-in adsorbent media that removes PFAS from water, sold in pails to supersacks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2026 https://innovationcrossroads.ornl.gov/cohorts/cohort-10/
+    Evidence: https://aquafertech.com/ https://innovationcrossroads.ornl.gov/people/p12561/ Region sources: ornl-ic.
+    Confidence: medium. Unresolved: City inferred from UT Research Park (site names no city); founded year, funding,
+    headcount.'
+- id: aquaquant-laboratories
+  name: AquaQuant Laboratories
+  website: null
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Coatings for direct water-immersion cooling of data-center electronics; data-center equipment is out
+      (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2020 https://innovationcrossroads.ornl.gov/cohorts/cohort-4/
+    Flags: main customers are data centers. Evidence: https://innovationcrossroads.ornl.gov/people/p20719/ Region
+    sources: ornl-ic. Confidence: low. Unresolved: No website found; HQ, status, funding, headcount.'
 - id: aquatherm-industries
   name: Aquatherm Industries
   website: https://aquathermsolar.com
@@ -3382,6 +3812,36 @@ companies:
     https://canarymedia.com/articles/sea-transport/electric-boat-builder-arc-raises-70m-for-cleaner-quieter-vessels
     Region sources: lc. Confidence: medium. Unresolved: arcboats.com returned 429 (did not retry). Whether a later
     round (Series C) exists.'
+- id: arcadium-lithium-formerly-livent
+  name: Arcadium Lithium (formerly Livent)
+  website: https://arcadiumlithium.com
+  careers_url: null
+  hq: Bessemer City, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: subsidiary
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery-grade lithium hydroxide and carbonate; mainly a processor, so in even though it also runs brine
+      and ore operations (owner ruling A6b line).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2024.'
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/Arcadium_Lithium. Stage:
+    Formed January 2024 by merger of Livent and Allkem; was listed on NYSE (ALTM) and ASX (LTM) from 2024; Rio Tinto
+    agreed acquisition 2024-10-09 for US$6.7B, completed 2025-03-06, now Rio Tinto''s lithium unit (Wikipedia).
+    Flags: subsidiary of Rio Tinto; over 1,000 employees (parent); mining operator (group). Evidence: https://en.wikipedia.org/wiki/Arcadium_Lithium
+    Region sources: cp-nc-2025. Confidence: high. Unresolved: arcadiumlithium.com returned HTTP 521. Headquarters
+    city not stated on the page (Wikipedia says only ''United States''). Bessemer City facility not confirmed from
+    a fetched source. Headcount not found.'
 - id: archer
   name: Archer
   website: null
@@ -3450,6 +3910,33 @@ companies:
     (48 Wall Street); the page itself returned 403. Founded year, headcount and funding not found. Newest evidence
     is from 2023, so current status is unknown. The search results did not confirm that heavy-duty transport is
     a main market; the products found are marine (yacht) and electrolyzer products.'
+- id: aries-clean-technologies
+  name: Aries Clean Technologies
+  website: https://ariescleantech.com
+  careers_url: null
+  hq: Franklin, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Gasification systems that turn biosolids into clean energy and Bio-Fly-Ash; designs, builds, owns and
+      operates facilities (Linden, NJ plant in integrated operation since Oct 2024).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Investor Spring Lane Capital (further investment, per
+    own site); bond financing for Linden, NJ facility (Series 2019 and 2021 bonds). No venture round stage found.
+    Flags: main operating plant in Linden, NJ (outside region). Evidence: https://ariescleantech.com/ Region sources:
+    slc. Confidence: medium. Unresolved: Founding year, headcount, round stage.'
 - id: aris-hydronics
   name: Aris Hydronics
   website: https://www.arishydronics.com
@@ -4027,6 +4514,44 @@ companies:
     reason: 'Independent; 28 people (Dealroom profile (third-party) (undated; read 2026-11-24) https://dealroom.co/companies/atmoszero/,
       2026-11-24); growth sign: founded 2021.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+- id: atom-power
+  name: Atom Power
+  website: https://www.atompower.com
+  careers_url: null
+  hq: Huntersville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - charging
+  stage: series-b
+  founded: null
+  headcount:
+    value: 34
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/atom-power)
+  climate:
+    tier: enabling
+    reason: Solid-state digital circuit breakers and EV-charging power panels.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 34 people (Built In (https://builtin.com/company/atom-power), 2026-11-24); founding year
+      not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Built In profile ''34 total employees'', undated
+    (as_of is the fetch date). NC announced 205 new jobs in May 2023; WSOC later reported the state pulled a $4M
+    job-creation grant. Stage: Series B $17.75M (Crunchbase News, with ABB Technology Ventures); SK Group invested
+    $100M in Aug 2022 (WUNC 2022-08-18; round label not stated). https://www.wunc.org/2022-08-18/korean-company-invests-100m-in-huntersville-ev-charging-startup
+    Flags: reported pivot to data centers; state job-creation incentives rescinded (WSOC, undated); own site copyright
+    2024; SK Group strategic investor. Evidence: https://www.atompower.com https://builtin.com/company/atom-power
+    https://www.wunc.org/2022-08-18/korean-company-invests-100m-in-huntersville-ev-charging-startup https://news.crunchbase.com/startups/atom-powers-expansion-plan-is-electrified-by-17-75m-series-b/
+    https://www.wsoctv.com/news/local/4m-grant-pulled-atom-power-loses-jobcreation-incentives/S47WRJPXMFC6NJSF2TYGILGIQI/
+    Region sources: e2-nc, cp-nc-2025. Confidence: medium. Unresolved: Founding year; whether the 2022 SK round
+    is a later series; current health (Built In 34 vs 205 planned jobs). Funding totals disagree (CB Insights $171M
+    vs Craft $24.5M). Pivot article (Charlotte Observer via AOL) is undated and its page returned 404.'
 - id: atomarine
   name: Atomarine
   website: https://atomarine.co
@@ -4802,6 +5327,39 @@ companies:
     as a financing partner, not a parent. Evidence: https://www.biofermenergy.com/ Region sources: builtin-states.
     Confidence: medium. Unresolved: Founding year, ownership/parent and headcount not found (no Dealroom profile;
     /about-us 404). Address 2537 Daniels Street, Madison is on the site but not labelled HQ.'
+- id: biomason
+  name: Biomason
+  website: https://biomason.com
+  careers_url: null
+  hq: Research Triangle Park / Durham, NC
+  ats:
+    type: adp
+    board: 26dd041f-55ce-4c2f-99d4-134d3bbf4a21
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: series-c
+  founded: 2012
+  headcount:
+    value: 59
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/biomason)
+  climate:
+    tier: core
+    reason: Biocement (bacteria-grown binder replacing Portland cement) and zero-Portland-cement concrete products,
+      made at its Biobeton factory in Denmark.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 59 people (Dealroom (https://dealroom.co/companies/biomason), 2026-11-24); growth sign:
+      founded 2012.'
+  notes: 'Board adp:26dd041f-55ce-4c2f-99d4-134d3bbf4a21 seen 2026-11-24, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Dealroom figure, undated. Founded: https://www.biomason.com/about.
+    Stage: Series C $65M, Feb 2022 (Novo Holdings, Celesta Capital, Martin Marietta, 2150) per Dealroom: https://dealroom.co/companies/biomason
+    Flags: main factory outside the US (Denmark). Evidence: https://www.biomason.com/ https://www.biomason.com/about
+    https://dealroom.co/companies/biomason Region sources: arpa-e. Confidence: high. Unresolved: Rounds after 2022,
+    if any.'
 - id: biopipe
   name: Biopipe
   website: https://biopipe.co
@@ -5154,6 +5712,37 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Nothing found. Evidence: https://blucoreminerals.com/
     Region sources: ucr-otp-portfolio. Confidence: medium. Unresolved: HQ (input says Riverside), founding, headcount,
     funding.'
+- id: blue-bird-corporation
+  name: Blue Bird Corporation
+  website: https://www.blue-bird.com
+  careers_url: null
+  hq: Fort Valley, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: public
+  founded: 1932
+  headcount:
+    value: 1830
+    as_of: '2023-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Blue_Bird_Corporation)
+  climate:
+    tier: out
+    reason: School buses, mostly diesel, propane and gasoline; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 1,830 people (Wikipedia (https://en.wikipedia.org/wiki/Blue_Bird_Corporation), 2023-01-01);
+      founded 1932, with no equity raise in 5 years or recent listing found.
+  notes: 'No board found: home page not readable (202). Headcount note: 2023 figure (year only, first day used).
+    Founded: https://en.wikipedia.org/wiki/Blue_Bird_Corporation. Stage: Nasdaq: BLBD, publicly traded since February
+    2015. https://en.wikipedia.org/wiki/Blue_Bird_Corporation Flags: over 1,000 employees; public company. Evidence:
+    https://www.blue-bird.com https://en.wikipedia.org/wiki/Blue_Bird_Corporation Region sources: cp-ga-2025. Confidence:
+    high. Unresolved: EV assembly plant conversion details not confirmed.'
 - id: blue-current
   name: Blue Current
   website: https://bluecurrent.com
@@ -5367,6 +5956,39 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: target markets
     are aerospace, space and electronics, plus thermal battery protection. Evidence: https://www.blueshiftmaterials.com/
     Region sources: masscec-investments. Confidence: medium. Unresolved: Founded, headcount, funding.'
+- id: bmw-manufacturing
+  name: BMW Manufacturing
+  website: https://www.bmwusfactory.com
+  careers_url: null
+  hq: Greer, SC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: 1994
+  headcount:
+    value: 11000
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/BMW_US_Manufacturing_Company)
+  climate:
+    tier: out
+    reason: Vehicle assembly plant, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '11,000 people (Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/BMW_US_Manufacturing_Company),
+      2026-11-24): over the 4,000-person line.'
+  notes: 'No board found: home page not readable (error: ConnectError: [WinError 10054] An existing connection was
+    forcibly closed by the remote host). Headcount note: 11,000; undated. Founded: https://en.wikipedia.org/wiki/BMW_US_Manufacturing_Company.
+    Stage: Parent is BMW Group (Wikipedia); plant announced 1992, opened 1994. Flags: subsidiary of BMW; over 1,000
+    employees. Evidence: https://en.wikipedia.org/wiki/BMW_US_Manufacturing_Company Region sources: e2-sc, cp-sc-2024,
+    c2es-se, c2es-sc. Confidence: high. Unresolved: Woodruff battery assembly plant not confirmed from a fetched
+    source.'
 - id: bolder-industries
   name: Bolder Industries
   website: https://bolderindustries.com
@@ -5547,6 +6169,40 @@ companies:
     100-500M. Flags: wholly owned subsidiary in Brazil. Evidence: https://dealroom.co/companies/boston-metal Region
     sources: engine-ventures, mit-news-startups, bev, prelude, eip, engine, arpa-e. Confidence: high. Unresolved:
     Own site not fetched.'
+- id: boviet-solar
+  name: Boviet Solar
+  website: https://www.bovietsolarusa.com
+  careers_url: null
+  hq: Greenville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 1300
+    as_of: '2026-11-24'
+    source: Inox Solar Americas (https://inoxsolar.us/)
+  climate:
+    tier: core
+    reason: Monocrystalline PV cells and modules (Greenville, NC module plant 3 GW, commissioned 2025; 3 GW cell
+      plant due Q2 2027).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; 1,300 people (Inox Solar Americas (https://inoxsolar.us/), 2026-11-24); founding
+      year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: ''1,300+ local U.S. manufacturing jobs'' on
+    own site, undated (as_of is the fetch date). Stage: Now part of Inox Clean Energy / INOXGFL Group (India) after
+    a 2026 acquisition valued at about $750M; site rebranding to Inox Solar Americas. Cell plant on schedule for
+    Q2 2027 per 2026-11-02 release. https://inoxsolar.us/ Flags: acquired by INOXGFL Group (Inox Solar Americas),
+    2026; over 1,000 employees; parent HQ outside region (India); bovietsolarusa.com redirects to inoxsolar.us.
+    Evidence: https://www.bovietsolarusa.com https://inoxsolar.us/ Region sources: cp-nc-2025. Confidence: high.
+    Unresolved: Exact acquisition date; Boviet''s original founding year and former parent.'
 - id: branch-energy
   name: Branch Energy
   website: https://branchenergy.com
@@ -6250,6 +6906,36 @@ companies:
       over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
   ipo_year: 2006
+- id: canadian-solar-e-storage
+  name: Canadian Solar e-STORAGE
+  website: https://www.csestorage.com
+  careers_url: null
+  hq: Shelbyville, KY
+  ats:
+    type: workday
+    board: canadiansolar
+  read: manual
+  sectors:
+  - energy-storage
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Utility-scale battery energy storage systems (SolBank, FlexBank and others) with optional turnkey EPC
+      services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board workday:canadiansolar.wd5.myworkdayjobs.com/eStorage seen 2026-11-25, linked from the company''s
+    own site: role count not read (no public feed). Stage: Energy storage business of Canadian Solar Inc. (NASDAQ:
+    CSIQ; listing year not verified this pass): https://www.csestorage.com/ Flags: subsidiary of Canadian Solar
+    Inc. (public); HQ outside region (Canada); Shelbyville, KY site not mentioned on own site. Evidence: https://www.csestorage.com/
+    Region sources: siteselection-ky. Confidence: medium. Unresolved: Whether a Shelbyville, KY plant exists, is
+    operating or was cancelled; headcount; CSIQ listing year.'
 - id: canyon-magnet-energy
   name: Canyon Magnet Energy
   website: https://canyonmagnet.energy
@@ -6306,6 +6992,33 @@ companies:
     R&D funding'' and accelerators; names Volta Energy Technologies, DOE and NSF. No round or amount. Evidence:
     https://caporus.com Region sources: cri. Confidence: medium. Unresolved: Site names only an R&D and pilot facility
     in Bolingbrook, IL (no stated HQ); founding year (first US patent 2020), headcount; Dealroom 404.'
+- id: captis-aire
+  name: Captis Aire
+  website: https://captisaire.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Captures volatile organic compounds from industrial exhaust; air-pollution control, no climate case
+      under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: DOE demonstration award $2M (about text) or $2.5M (2025,
+    with Boeing; awards list); EPA Green Chemistry award 2023; Launch Tennessee award 2023. No equity rounds named.
+    https://www.captisaire.com/about Evidence: https://www.captisaire.com/ https://www.captisaire.com/about https://innovationcrossroads.ornl.gov/people/p7906/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ not stated (phone uses Atlanta 404 area code); founded
+    year; headcount.'
 - id: captura
   name: Captura
   website: https://capturacorp.com
@@ -6863,6 +7576,35 @@ companies:
     Region sources: third-derivative, greentown, cri, arpa-e. Confidence: medium. Unresolved: Own site failed TLS
     handshake for the fetcher; input says Chicago, Built In says Lemont, IL; founding year and funding not found;
     Dealroom 404.'
+- id: celgard
+  name: Celgard
+  website: https://www.celgard.com
+  careers_url: null
+  hq: Charlotte, NC
+  ats:
+    type: workday
+    board: akamerica
+  read: manual
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Microporous membranes, mainly battery separators for lithium-ion and lithium primary batteries; also
+      specialty membranes for textiles and medical products.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board workday:akamerica.wd501.myworkdayjobs.com/aka seen 2026-11-25, linked from the company''s own site:
+    role count not read (no public feed). Stage: Careers page: ''part of the Asahi Kasei Group'' (celgard.com).
+    Flags: subsidiary of Asahi Kasei; over 1,000 employees (parent). Evidence: https://www.celgard.com Region sources:
+    cp-nc-2025. Confidence: medium. Unresolved: HQ (input says Charlotte, NC), founded year and headcount not stated
+    on the fetched page; Wikipedia has no Celgard page.'
 - id: cellink
   name: Cellink
   website: https://www.cellinkcircuits.com
@@ -7356,6 +8098,42 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Site cites ARPA-E REFUEL and OPEN 2018 participation,
     no amounts; no equity round found Flags: Latest dated sign of activity is the 2024 copyright; /about returned
     404.. Evidence: c h e m t r Region sources: arpa-e. Confidence: low.'
+- id: cirba-solutions
+  name: Cirba Solutions
+  website: https://www.cirbasolutions.com
+  careers_url: null
+  hq: Charlotte, NC
+  ats:
+    type: adp
+    board: d68261e8-6b94-47f8-b413-9db804c98a4d
+  read: manual
+  sectors:
+  - recycling
+  - battery-materials
+  stage: null
+  founded: 1991
+  headcount:
+    value: 100
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/cirba-solutions)
+  climate:
+    tier: core
+    reason: 'Battery recycling and materials management: recovers critical minerals from end-of-life batteries of
+      all chemistries and returns battery-grade salts.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 100 people (Dealroom (https://dealroom.co/companies/cirba-solutions), 2026-11-24); founded
+      1991, with no equity raise in 5 years or recent listing found.
+  notes: 'Board adp:d68261e8-6b94-47f8-b413-9db804c98a4d seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Dealroom band 100-500; undated (as_of is retrieval date). Founded:
+    https://dealroom.co/companies/cirba-solutions. Stage: Dealroom: total equity funding $100-500M, a $245M investment,
+    investors EGEQT Group and Marubeni Ventures (Series B or later); company site: ~$300M capital raise and three
+    DOE grants totaling over $282M. Rebranded after mergers in June 2022. Round labels not found. Evidence: https://www.cirbasolutions.com/about-us/
+    https://dealroom.co/companies/cirba-solutions Region sources: e2-sc, cp-sc-2024, c2es-sc. Confidence: medium.
+    Unresolved: Columbia, SC facility status not found. Founded 1991 is Dealroom''s (site says ''nearly 35 years
+    of experience'').'
 - id: circe-bioscience
   name: Circe Bioscience
   website: https://circebioscience.com
@@ -7385,6 +8163,31 @@ companies:
     https://agfundernews.com/?p=40585 Region sources: masstech-m2i2-10m. Confidence: medium. Unresolved: Own site
     refused automated client (403); founded year (one source says spun out 2023); headcount; HQ taken from Waltham
     pilot plant.'
+- id: circular-biosciences
+  name: Circular Biosciences
+  website: https://circularbiosciences.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Enzyme additives that make PLA bioplastic biodegradable, PLA products, and assays for plastic biodegradability.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2024 https://innovationcrossroads.ornl.gov/cohorts/cohort-8/
+    Evidence: https://www.circularbiosciences.com/ https://innovationcrossroads.ornl.gov/people/p10664/ Region sources:
+    ornl-ic. Confidence: medium. Unresolved: Founded year, funding, headcount.'
 - id: circularity-fuels
   name: Circularity Fuels
   website: https://circularityfuels.com
@@ -8712,6 +9515,38 @@ companies:
     a Solar Impulse PDF (the file returned 403). The directory says Cambridge, MA, but no usable third-party source
     confirms the HQ; the only other hits were Greentown pages, which were excluded. Founded year, headcount and
     funding not found. Built In Boston returned 404.'
+- id: daejin-advanced-manufacturing
+  name: Daejin Advanced Manufacturing
+  website: null
+  careers_url: null
+  hq: Cumberland City, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Polymer and tray components for EV batteries (plastic injection, extrusion, vacuum forming, assembly)
+      at a planned Cumberland City plant; a 2025 report says the plant will make carbon nanotube conductive materials.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Plant announced with 80+ (83) jobs; not a headcount.
+    Stage: Announced as Daejin Advanced Materials USA Inc., US unit of South Korea-based Daejin Advanced Materials;
+    tn.gov release Sept 2022 (page returned 403 to fetch; seen in search results). Flags: subsidiary of Daejin Advanced
+    Materials (South Korea); HQ outside US; name in input differs: announced as Daejin Advanced Materials USA Inc..
+    Evidence: https://www.tn.gov/ecd/news/2022/9/27/governor-lee--commissioner-mcwhorter-announce-daejin-advanced-materials-usa-inc--to-establish-operations-in-cumberland-city.html
+    https://www.asiae.co.kr/en/article/2025072309255230781 https://clarksvillenow.com/?p=410229 Region sources:
+    e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Whether the plant is operating; parent HQ city; sources conflict
+    on product (battery trays/polymers in 2022 vs carbon nanotube conductive material in 2025).'
 - id: daikin
   name: Daikin
   website: https://www.daikin.com/
@@ -9087,6 +9922,32 @@ companies:
     https://dealroom.co/companies/deep-isolation https://www.builtinsf.com/company/deep-isolation Region sources:
     arpae-projects. Confidence: high. Unresolved: Series letter of the July 2025 round; customers are government
     agencies and nuclear plants.'
+- id: dehn
+  name: DEHN
+  website: https://www.dehn-usa.com
+  careers_url: null
+  hq: Mooresville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1910
+  headcount: null
+  climate:
+    tier: out
+    reason: Surge and lightning protection devices for buildings and industry; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1910, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.dehn.us/. Stage: US subsidiary of DEHN
+    SE (copyright holder named in site footer). https://www.dehn.us/ Flags: subsidiary of DEHN SE; parent HQ outside
+    region. Evidence: https://www.dehn-usa.com https://www.dehn.us/ Region sources: cp-nc-2025. Confidence: medium.
+    Unresolved: Parent HQ city, headcount, date of Mooresville US HQ.'
 - id: delphire
   name: Delphire
   website: https://delphiretech.com/
@@ -9141,6 +10002,33 @@ companies:
     over 1,000 employees; data-center power is a major Delta business line (share not checked). Region sources:
     kb-ba-hardware. Confidence: low. Unresolved: Delta pages fetched returned 404; Fremont address, founding year
     and headcount not confirmed.'
+- id: delta-star
+  name: Delta Star
+  website: https://www.deltastar.com
+  careers_url: null
+  hq: Lynchburg, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Power transformers, mobile transformers, unitized substations and control cabinets, plus field service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: ''A MacLean Power Systems company''; home page headline
+    ''MacLean Power Systems Completes Acquisition of Delta Star'' (date not shown): https://www.deltastar.com/ Flags:
+    subsidiary of MacLean Power Systems (acquired; date not found). Evidence: https://www.deltastar.com/ Region
+    sources: cp-va-2025. Confidence: medium. Unresolved: Acquisition date; founding year (site says ''more than
+    100 years''); headcount; plant list.'
 - id: designs-by-natural-processes
   name: Designs by Natural Processes
   website: null
@@ -9291,6 +10179,31 @@ companies:
     df.com; new fab in Spain; AI-chip market a main focus of current site. Evidence: https://www.df.com/ https://dealroom.co/companies/diamond-foundry
     https://www.builtinsf.com/company/diamond-foundry Region sources: obvious-portfolio. Confidence: medium. Unresolved:
     latest round label; whether data centers / AI chips are the main customers'
+- id: dineu-technologies
+  name: DiNeu Technologies
+  website: null
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Alpha spectrometers for nuclear-materials accounting; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2026 https://innovationcrossroads.ornl.gov/cohorts/cohort-10/
+    Flags: nuclear materials accountancy / nonproliferation instrument. Evidence: https://innovationcrossroads.ornl.gov/people/p63868/
+    Region sources: ornl-ic. Confidence: low. Unresolved: Only web link is an F6S profile, which showed a bot challenge
+    (not used further); HQ, funding, headcount.'
 - id: divert-inc
   name: Divert Inc.
   website: https://www.divertinc.com
@@ -9324,6 +10237,70 @@ companies:
     operates anaerobic-digestion / RNG facilities (e.g. new North Carolina facility). Evidence: https://divertinc.com
     https://www.builtinboston.com/company/divert-inc Region sources: builtin-boston-energy. Confidence: medium.
     Unresolved: Funding and stage (Dealroom 404).'
+- id: dongwha-electrolyte-usa
+  name: Dongwha Electrolyte USA
+  website: null
+  careers_url: null
+  hq: Clarksville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrolytes for lithium-ion batteries (EV, and from 2026 also ESS-grade).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Clarksville plant announced with 68 jobs (2023);
+    not a current headcount. Stage: US unit of Korea-based Dongwha Electrolyte; $70M+ Clarksville (Montgomery County)
+    plant, the company''s first in North America (TNECD, Industry Today; search snippets). Flags: subsidiary of
+    Dongwha Electrolyte (Korea); HQ outside region. Evidence: https://tnecd.com/news/governor-lee-commissioner-mcwhorter-announce-dongwha-electrolyte-usa-inc-to-establish-first-us-manufacturing-operations-in-montgomery-county/
+    https://www.koreatimes.co.kr/business/companies/20260707/dongwha-electrolyte-clinches-supply-deal-with-global-battery-maker
+    Region sources: e2-tn, cp-tn-2024, livability-tn. Confidence: medium. Unresolved: Search snippets only. Capacity
+    reported as 80,000 t (Korea Times 2023) and 90,000 t (Clarksville Now). July 2026 Korea Times: supply deal adds
+    ESS electrolyte at the Clarksville plant. Domain and founded year not found.'
+- id: doowon-climate-control-america
+  name: DooWon Climate Control America
+  website: null
+  careers_url: null
+  hq: Metter, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1974
+  headcount:
+    value: 3125
+    as_of: '2024-02-06'
+    source: Georgia Governor's Office (https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county)
+  climate:
+    tier: out
+    reason: Vehicle air-conditioning systems for all vehicles; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 3,125 people (Georgia Governor's Office (https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county),
+      2024-02-06); founded 1974, with no equity raise in 5 years or recent listing found.
+  notes: 'No job board found on the company''s site. Headcount note: Doowon Group workforce ''over 3,125''; US unit
+    planned 200 jobs. Founded: https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county.
+    Stage: Subsidiary of Doowon Group (South Korea, founded 1974). $30M+ Metter plant announced 2024-02-06, operations
+    projected 2026. https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county
+    Flags: subsidiary of Doowon Group; HQ outside region (South Korea); over 1,000 employees (group); auto parts
+    supplier, not EV-only. Evidence: https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county
+    Region sources: cp-ga-2025. Confidence: medium. Unresolved: Whether the Metter plant started operating in 2026;
+    company website.'
 - id: dottir-labs
   name: Dottir Labs
   website: https://dottirlabs.com
@@ -9549,6 +10526,34 @@ companies:
     contractor; unclear whether it manufactures the systems. Evidence: https://www.dynatecsystems.com/ Region sources:
     inven-nj-water. Confidence: medium. Unresolved: Whether it makes the membranes/systems in-house; headcount;
     ownership.'
+- id: e-vac-magnetics-vacuumschmelze
+  name: e-VAC Magnetics (Vacuumschmelze)
+  website: https://vacuumschmelze.com
+  careers_url: null
+  hq: Sumter, SC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - components
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Rare-earth permanent magnets for EV motors (Sumter, SC plant).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: eVAC Magnetics is VAC''s US unit (vacuumschmelze.com
+    news); VAC ownership not confirmed this session. Flags: subsidiary of VAC (Vacuumschmelze); HQ outside region.
+    Evidence: https://vacuumschmelze.com/ Region sources: cp-sc-2024. Confidence: medium. Unresolved: VAC HQ (commonly
+    Hanau, Germany; not confirmed this session), founded year, owner and headcount not found; Wikipedia and /about-us
+    404.'
 - id: earth-ai
   name: EARTH AI
   website: https://www.earth-ai.com
@@ -10023,6 +11028,31 @@ companies:
     https://inquirer.com/news/atlantic-ocean-wind-energy-new-jersey-monopile-whales-20230622.html Region sources:
     njeda-osw-assessment. Confidence: medium. Unresolved: 2026 plant status not found (parent''s site does not list
     the Paulsboro plant); status of the Atlantic Shores monopile order; founded year.'
+- id: effusio
+  name: Effusio
+  website: null
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: IOCOOL two-phase liquid cooling combining vapor-compression and absorption refrigeration for data centers
+      and high-density servers. Data-center equipment and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2025 https://innovationcrossroads.ornl.gov/cohorts/cohort-9/
+    Flags: main customers are data centers. Evidence: https://innovationcrossroads.ornl.gov/people/p48916/ Region
+    sources: ornl-ic. Confidence: low. Unresolved: No website found; one search found nothing; HQ, funding, headcount.'
 - id: egauge-systems
   name: eGauge Systems
   website: https://www.egauge.net
@@ -10419,6 +11449,31 @@ companies:
     https://mergr.com/company/hubbell-power-systems/ma Region sources: inven-ny-smart-grid. Confidence: high. Unresolved:
     Founding year (first digital meter 1975, ''over 45 years''); headcount; exact close date (sources differ: Q2
     vs July 2023).'
+- id: electro-mechanical
+  name: Electro-Mechanical
+  website: https://www.electro-mechanical.com
+  careers_url: null
+  hq: Bristol, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Switchgear and electrical apparatus for utilities and industry.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (202). Region sources: cp-va-2025. Confidence: low. Unresolved:
+    electro-mechanical.com fetch was blocked by a rate-limited safety check (twice); stopped on that site. Everything
+    beyond the input unverified.'
 - id: electroflow
   name: Electroflow
   website: https://eflowtech.com
@@ -10754,6 +11809,37 @@ companies:
     https://builtin.com/company/emporia-energy https://www.cbinsights.com/company/emporia/financials https://www.endeavorcolorado.org/companies/emporia-energy
     Confidence: medium. Unresolved: Stage (no named round); headcount sources disagree. Missing facts filled from
     data/screening/registry-fixes.'
+- id: emrgy
+  name: Emrgy
+  website: https://emrgy.com
+  careers_url: null
+  hq: Atlanta, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: series-a
+  founded: 2014
+  headcount:
+    value: 27
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/emrgy)
+  climate:
+    tier: core
+    reason: Modular hydrokinetic turbines that generate power in canals and other water channels.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 27 people (Dealroom (https://dealroom.co/companies/emrgy), 2026-11-24); growth sign: founded
+      2014.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated. Founded: https://dealroom.co/companies/emrgy.
+    Stage: Dealroom: Series A $18M, Apr 2023 (Fifth Wall, Oval Park Capital, Veriten, Blitzscaling Ventures). Own
+    news page has a headline ''Mini Hydro Company Raises $18M...'' dated 2024-10-09; dates disagree. https://dealroom.co/companies/emrgy
+    Evidence: https://emrgy.com/ https://dealroom.co/companies/emrgy Region sources: arpa-e. Confidence: medium.
+    Unresolved: Date of the $18M round (2023 vs 2024).'
 - id: emvolon
   name: Emvolon
   website: https://www.emvolon.com
@@ -10788,6 +11874,34 @@ companies:
     methane (natural gas). Evidence: https://dealroom.co/companies/emvolon Region sources: masstech-m2i2-7-3m, engine-ventures,
     mit-news-startups, mit-tlo-startups, massventures, engine, arpa-e. Confidence: medium. Unresolved: Round label
     of the USD 11M raise (seed vs series A).'
+- id: enchem-america
+  name: Enchem America
+  website: https://www.enchem.net
+  careers_url: null
+  hq: Brownsville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrolytes for lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: US unit of Enchem (Korea); site has IR/stock section
+    but exchange not named. Site lists a Tennessee plant (250,000 t expected 2027) plus Georgia and Indiana plants.
+    Flags: subsidiary of Enchem (Korea); HQ outside region. Evidence: https://www.enchem.net/eng/ Region sources:
+    e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Brownsville, TN not named on the site (only ''Tennessee'').
+    Founded year, listing and headcount not found.'
 - id: encorp
   name: Encorp
   website: https://encorp.com
@@ -10821,6 +11935,32 @@ companies:
     platform plus some hardware; software may be the core; possibly acquired (Primary Integration, early 2010s,
     per Dealroom). Evidence: https://www.encorp.com https://dealroom.co/companies/encorp Region sources: inven-co-smartgrid.
     Confidence: medium. Unresolved: Current owner; whether hardware or software is the main revenue.'
+- id: endeavor-composites
+  name: Endeavor Composites
+  website: https://endeavorcomposites.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Zero-waste composite materials (nonwovens) made from repurposed carbon fiber, using a hydroentanglement
+      fiber-dispersion mixer.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site lists partners (IACMI, NSF, UT Research Foundation,
+    DOE, Innovation Crossroads) but no rounds. Cohort 2019. Evidence: https://endeavorcomposites.com/ https://innovationcrossroads.ornl.gov/people/p39738/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ, founded year, funding, headcount not on site.'
 - id: endolith
   name: Endolith
   website: null
@@ -11152,6 +12292,33 @@ companies:
     Potential Technologies) per Dealroom. Flags: licenses technology rather than selling cells. Evidence: https://www.enevate.com/
     https://dealroom.co/companies/enevate Region sources: cec-zev-mfg-table, laedc-ev-report. Confidence: medium.
     Unresolved: Physical is borderline: business model is technology licensing of battery cells.'
+- id: enexor-bioenergy
+  name: Enexor BioEnergy
+  website: https://enexor.com
+  careers_url: null
+  hq: Franklin, TN
+  ats:
+    type: workable
+    board: enexor
+  read: manual
+  sectors:
+  - distributed-generation
+  - biofuels
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: On-site combined heat and power and high-purity biogenic CO2 produced from organic and plastic waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board workable:enexor seen 2026-11-24, linked from the company''s own site: 0 open roles. Stage: DOE award
+    (Jun 2024) and LaunchTN SBIR/STTR matching funds (Sep 2024) per own site; no equity round details. Evidence:
+    https://enexor.com/ Region sources: halliburton-labs. Confidence: medium. Unresolved: HQ confirmation, founding
+    year, funding stage, headcount.'
 - id: enkoat
   name: EnKoat
   website: https://enkoat.com
@@ -11425,6 +12592,35 @@ companies:
     American Century Investments); total $10-50M; no dates. Evidence: https://enzinc.com/ https://dealroom.co/companies/enzinc
     Region sources: caltestbed-directory, cec-eif-showcase, cec-nopa, calseed-awardees, third-derivative, arpae-projects.
     Confidence: medium. Unresolved: Round amounts and dates not shown.'
+- id: eonix
+  name: Eonix
+  website: https://eonixenergy.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Custom drop-in Li-ion battery electrolytes and materials (originally ultracapacitor electrolytes), produced
+      with partner battery makers for automotive, grid, defense and electronics.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site cites a $1.7M AFWERX contract and an Air Force
+    Phase II STTR award; no equity rounds named. Innovation Crossroads cohort 2018. Flags: defense among stated
+    markets. Evidence: http://www.eonixenergy.com/ https://innovationcrossroads.ornl.gov/people/p63196/ Region sources:
+    ornl-ic. Confidence: medium. Unresolved: HQ (no address on site or contact page), founded year, headcount; newest
+    site article dated October 2024.'
 - id: eos-energy-enterprises
   name: Eos Energy Enterprises
   website: https://www.eose.com
@@ -12546,6 +13742,35 @@ companies:
     in Connecticut''). Evidence: https://fastmetalsinc.com Region sources: activate-ny, azolla, activate, greentown.
     Confidence: medium. Unresolved: HQ city (input says New York, city not stated; site hints Connecticut); founded
     year; headcount; round type. Technology from CEO''s PhD work at WPI.'
+- id: fc-renew
+  name: FC Renew
+  website: https://fcrenew.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Processes that renew hydrogen fuel cells in place, plus recycling of fuel cells and electrolyzers to
+      recover precious metals; developing catalyst refurbishment.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site lists awards/partners (DOE, NSF SEED Fund, SBIR,
+    Army DEVCOM, Raytheon Technologies); no equity rounds stated. Innovation Crossroads cohort 2021. Flags: refurbishment
+    and recycling services; may not be product hardware. Evidence: https://fcrenew.com/index.html https://innovationcrossroads.ornl.gov/people/p7836/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ city (not on site), founded year (site copyright
+    from 2020), funding, headcount.'
 - id: fenix-international
   name: Fenix International
   website: https://www.fenixintl.com
@@ -13583,6 +14808,32 @@ companies:
     Confidence: medium. Unresolved: Headcount. Founding year conflicts (one source says 2021; TechCrunch Dec 2023
     says founded ''last year'', i.e. 2022). HQ given as Bedford MA (Boston Globe 2026) but earlier coverage says
     Cambridge or Boston MA. Missing facts filled from data/screening/registry-fixes.'
+- id: framatome
+  name: Framatome
+  website: https://www.framatome.com
+  careers_url: null
+  hq: Lynchburg, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Nuclear fuel, reactor components and nuclear services; Lynchburg, VA site.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Majority-owned by EDF (not verified this pass). Flags:
+    subsidiary of EDF (not verified); HQ outside region (France, not verified); over 1,000 employees likely (not
+    verified). Region sources: cp-va-2025. Confidence: low. Unresolved: framatome.com fetch was blocked by a rate-limited
+    safety check (twice); stopped on that site. HQ, ownership, US HQ location, headcount not verified.'
 - id: freestar-power
   name: FreeStar Power
   website: https://freestarpower.com
@@ -13698,6 +14949,43 @@ companies:
     stated. Evidence: https://americas.fujielectric.com https://americas.fujielectric.com/about-us/ Region sources:
     inven-nj-power-electronics. Confidence: medium. Unresolved: Founding year of the US company; US headcount; any
     US plant.'
+- id: fujihatsu-tech-america-toyota-tsusho-america-battery-components
+  name: Fujihatsu Tech America / Toyota Tsusho America (battery components)
+  website: https://www.taiamerica.com
+  careers_url: null
+  hq: Liberty, NC
+  ats:
+    type: workday
+    board: kaishaservice
+  read: manual
+  sectors:
+  - recycling
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 9000
+    as_of: '2026-11-24'
+    source: Toyota Tsusho America (https://www.taiamerica.com)
+  climate:
+    tier: core
+    reason: Lithium-ion battery components and supply-chain support for Toyota Battery Manufacturing North Carolina
+      (Toyota Tsusho America is a procurement, processing, recycling and supply-chain company).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '9,000 people (Toyota Tsusho America (https://www.taiamerica.com), 2026-11-24): over the 4,000-person
+      line.'
+  notes: 'Board workday:kaishaservice.wd1.myworkdayjobs.com/ToyotaTsushoAmerica seen 2026-11-25, linked from the
+    company''s own site: role count not read (no public feed). Headcount note: Toyota Tsusho America ''team of over
+    9,000'', undated (as_of is the fetch date); Fujihatsu Tech America headcount not found. Stage: Toyota Tsusho
+    group company (implied by links to Toyota Tsusho Global); Toyota Tsusho America also holds 10% of Toyota Battery
+    Manufacturing North Carolina per Wikipedia. https://www.taiamerica.com Flags: subsidiary of Toyota Tsusho (Toyota
+    group); over 1,000 employees; parent HQ outside region (Japan); trading/supply-chain company; manufacturing
+    role of Fujihatsu unit unconfirmed. Evidence: https://www.taiamerica.com https://en.wikipedia.org/wiki/Toyota_Battery_Manufacturing_North_Carolina
+    Region sources: cp-nc-2025. Confidence: low. Unresolved: Fujihatsu Tech America''s products, ownership, Liberty
+    NC facility details and dates (only a news URL slug mentions a North Carolina expansion).'
 - id: fundamental-carbon
   name: Fundamental Carbon
   website: https://ourosmaterials.com
@@ -14895,6 +16183,66 @@ companies:
     https://waste360.com/waste-recycling/green-giant-energy-texas-and-ace-green-recycling-plan-to-develop-lithium-ion-recycling-facility-in-texas
     Region sources: e2-texas, web-tx-battery-mfg. Confidence: medium. Unresolved: Whether the JV was finalized or
     the plant built; no news after 2023 found.'
+- id: green-metals-toyota-tsusho
+  name: Green Metals (Toyota Tsusho)
+  website: null
+  careers_url: null
+  hq: Liberty, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: subsidiary
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Battery recycling pre-processing: dismantles and shreds EV battery production scrap into black mass
+      (nickel, cobalt, lithium).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2025.'
+  notes: 'No job board found on the company''s site. Founded: https://www.electrive.com/2025/06/19/lg-energy-solution-toyota-team-up-on-battery-recycling-in-the-usa/.
+    Stage: Green Metals Battery Innovations, LLC is a 2025 joint venture of LG Energy Solution and Toyota Tsusho
+    (search snippets of electrive, Automotive World, June 2025). Flags: subsidiary of LG Energy Solution / Toyota
+    Tsusho JV; HQ unknown; plant location conflict. Evidence: https://www.electrive.com/2025/06/19/lg-energy-solution-toyota-team-up-on-battery-recycling-in-the-usa/
+    https://www.automotiveworld.com/news/lg-energy-solution-and-toyota-tsusho-establish-a-battery-recycling-joint-venture-in-the-u-s/
+    Region sources: cp-nc-2025. Confidence: medium. Unresolved: Search snippets place the pre-processing plant in
+    Winston-Salem, NC (13,500 t/yr scrap, start planned 2026); the input says Liberty, NC. Whether the plant has
+    opened, and JV headquarters, not found. Pages themselves not fetched, only search snippets.'
+- id: green-new-energy-materials
+  name: Green New Energy Materials
+  website: null
+  careers_url: null
+  hq: Denver, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: subsidiary
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery separators (dry, wet and coated).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Stage: Volta Foundation interview 2026-05-26 names the parent
+    as Senior (Shenzhen Senior Technology Material, Chinese separator maker); Manufacturing Dive calls GNEM China-based
+    Flags: Plant status not established: the May 2026 interview describes it as scaling with demand but gives no
+    production start date. No company website found. Parent identity is from the Volta interview; the expansion
+    of Senior as ''Shenzhen Senior Technology Material'' is not confirmed by a fetched page.. Evidence: E D P N
+    C   Region sources: cp-nc-2025. Confidence: low.'
 - id: green-steel-environmental
   name: Green Steel Environmental
   website: https://www.greensteelenvironmental.com
@@ -15467,6 +16815,71 @@ companies:
     Region sources: nm-aea, unm-rainforest. Confidence: low. Unresolved: Dealroom page itself returned 404 on dealroom.co;
     details only from a search snippet; no company site found. The main news coverage is on an off-limits site and
     was not used.'
+- id: hanon-systems
+  name: Hanon Systems
+  website: https://www.hanonsystems.com
+  careers_url: null
+  hq: Statesboro, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1986
+  headcount:
+    value: 20000
+    as_of: '2026-11-24'
+    source: Hanon Systems (https://www.hanonsystems.com)
+  climate:
+    tier: out
+    reason: Thermal-management systems for all vehicles; electric-vehicle share not stated, so no climate case under
+      the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '20,000 people (Hanon Systems (https://www.hanonsystems.com), 2026-11-24): over the 4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: ''20,000+ global employees'' on own site, undated
+    (as_of is the fetch date). Founded: https://en.wikipedia.org/wiki/Hanon_Systems. Stage: Korea Exchange (KRX:
+    018880); Hankook completed acquisition of a majority stake on 2025-01-06. Listing year not found. https://en.wikipedia.org/wiki/Hanon_Systems
+    Flags: majority-owned by Hankook & Company (since Jan 2025); over 1,000 employees; HQ outside region (South
+    Korea). Evidence: https://www.hanonsystems.com https://en.wikipedia.org/wiki/Hanon_Systems Region sources: e2-ga,
+    cp-ga-2025, e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Statesboro GA and Loudon TN plants not confirmed
+    in fetched sources; listing year.'
+- id: hanwha-advanced-materials-georgia
+  name: Hanwha Advanced Materials Georgia
+  website: https://www.hanwhaadvancedmaterials.com
+  careers_url: null
+  hq: Cartersville / White, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar encapsulant film (EVA) for solar modules, supplying the nearby Qcells Cartersville module plant.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Headcount
+    note: 2023 announcement: more than 160 planned jobs (Georgia governor release); not a headcount. Stage: Subsidiary
+    of Hanwha Group (Hanwha Advanced Materials Georgia, ''HAGA''); $147M Cartersville plant announced 2023-03-23,
+    production targeted mid-2024; a May 2024 Hanwha release says Qcells will receive EVA film from the HAGA facility
+    ''being built''. https://gov.georgia.gov/press-releases/2023-03-23/gov-kemp-qcells-supplier-invest-147-million-cartersville-manufacturing
+    Flags: subsidiary of Hanwha Group; HQ outside region (South Korea). Evidence: https://gov.georgia.gov/press-releases/2023-03-23/gov-kemp-qcells-supplier-invest-147-million-cartersville-manufacturing
+    https://www.pv-tech.org/hanwha-qcells-to-deepen-manufacturing-presence-in-georgia-with-solar-encapsulant-plant/
+    https://www.hanwha.com/en/news_and_media/press_release/hanwha-qcells-new-cartersville-factory-set-for-3-dot-3-gw-of-solar-module-production-per-year.html
+    Region sources: e2-ga, cp-ga-2025. Confidence: medium. Unresolved: Domain hanwhaadvancedmaterials.com does not
+    resolve (DNS failure). Whether the Cartersville plant is running now not confirmed. No source found tying the
+    company to White, GA. Founding year of the US entity not found.'
 - id: harbinger
   name: Harbinger
   website: https://harbingermotors.com
@@ -16047,6 +17460,33 @@ companies:
     semiconductor packaging material; site does not name data centers as customers. Evidence: https://www.hexaspec.com
     Region sources: rice-mag-lab-launch. Confidence: medium. Unresolved: Domain guessed (Houston 77004 address).
     Founding year, headcount and funding unknown.'
+- id: hexatech
+  name: HexaTech
+  website: https://hexatechinc.com
+  careers_url: null
+  hq: Morrisville, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: 2001
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Single-crystal aluminum nitride substrates for UV-C LEDs and power electronics.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 2001, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.hexatechinc.com/. Stage: Acquired by Stanley
+    Electric Co., Ltd. (Japan) in March 2020; now a Stanley Electric Group company: https://www.hexatechinc.com/
+    Flags: subsidiary of Stanley Electric Co., Ltd.. Evidence: https://www.hexatechinc.com/ Region sources: arpa-e.
+    Confidence: high. Unresolved: Headcount.'
 - id: hgen
   name: Hgen
   website: https://hgen.com
@@ -16280,6 +17720,32 @@ companies:
     Region sources: njeda-csit-demo-r1, njeda-csit-seed-r3, njeda-csit-seed-45, njeda-csit-rd-vouchers, activate.
     Confidence: medium. Unresolved: Own site returned only its title to the fetcher; no Dealroom page (404). Founded,
     headcount and funding rounds not found. HQ from input (NJEDA says Burlington County).'
+- id: hitachi-astemo-americas
+  name: Hitachi Astemo Americas
+  website: https://www.hitachiastemo.com
+  careers_url: null
+  hq: Berea, KY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automotive components for all vehicles; electric-powertrain parts are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Americas arm of Hitachi Astemo, Ltd. (Japan). Ownership of the parent not verified this pass. Flags: subsidiary
+    of Hitachi Astemo, Ltd. (Japan); over 1,000 employees likely (global parent); not verified. Region sources:
+    e2-ky. Confidence: low. Unresolved: hitachiastemo.com fetch was blocked by a rate-limited safety check (twice);
+    stopped on that site. Americas HQ, Berea plant details, headcount, parent ownership not verified.'
 - id: hive-lighting
   name: Hive Lighting
   website: https://www.hivelighting.com/
@@ -16329,6 +17795,35 @@ companies:
   notes: 'No job board found on the company''s site. Evidence: https://hkgenergy.com Region sources: masscec-pr-9-8m,
     masscec-catalyst. Confidence: medium. Unresolved: HQ (input Somerville), founded, headcount, funding; /about
     404; Dealroom slug 404; defense is one of six listed customer markets'
+- id: hl-ga-battery-company-hyundai-and-lg-energy-solution-jv
+  name: HL-GA Battery Company (Hyundai and LG Energy Solution JV)
+  website: https://www.lgensol.com
+  careers_url: null
+  hq: Ellabell, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: EV battery cells for the Hyundai Metaplant ($4.3B joint-venture plant on the Metaplant site).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Joint venture of Hyundai Motor Group and LG Energy Solution.
+    Under construction per Wikipedia; a 2025-09-04 immigration raid detained about 450 workers building the plant
+    and delayed it two to three months. https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America Flags:
+    joint venture of Hyundai Motor Group and LG Energy Solution; HQ of parents outside region. Evidence: https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America
+    Region sources: e2-ga, cp-ga-2025, c2es-se. Confidence: medium. Unresolved: Whether cell production has started
+    by 2026-11 not confirmed; lgensol.com not fetched; founding year and headcount not found.'
 - id: holcim-us
   name: Holcim US
   website: https://www.holcim.us/
@@ -16357,6 +17852,34 @@ companies:
     Evidence: https://amrize.com/us/en/amrize-homepage.html Region sources: e2-announcements. Confidence: medium.
     Unresolved: Amrize HQ, headcount, listing details and Alpena, MI plant not confirmed. Name kept as input; current
     name is Amrize.'
+- id: holocene-climate-corporation
+  name: Holocene Climate Corporation
+  website: https://theholocene.co
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Direct air capture of CO2 using an amino-acid, low-temperature process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Acquired by Occidental Petroleum via Oxy Low Carbon
+    Ventures, April 2025, undisclosed price https://techcrunch.com/2025/04/17/carbon-removal-startup-holocene-bought-by-oil-and-gas-giant-occidental
+    ; theholocene.co now redirects to carbonengineering.com. Flags: subsidiary of Occidental Petroleum; parent is
+    oil and gas. Evidence: https://innovationcrossroads.ornl.gov/people/p2308/ https://techcrunch.com/2025/04/17/carbon-removal-startup-holocene-bought-by-oil-and-gas-giant-occidental
+    https://www.ogj.com/energy-transition/article/55284078/occidental-acquires-dac-technology-company-holocene https://innovationcrossroads.ornl.gov/?p=1288
+    Region sources: ornl-ic, ic. Confidence: high. Unresolved: founded year; headcount'
 - id: holtec-international
   name: Holtec International
   website: https://holtecinternational.com
@@ -16819,6 +18342,72 @@ companies:
     as of Apr 2024). Evidence: https://hyperion.inc/ https://en.wikipedia.org/wiki/Hyperion_XP-1 Region sources:
     laedc-ev-report. Confidence: low. Unresolved: HQ not stated on site (Orange is input guess); founded year, headcount,
     funding, and the gensets'' main fuel and customers not found.'
+- id: hyundai-motor-group-metaplant-america
+  name: Hyundai Motor Group Metaplant America
+  website: https://www.hmgma.com
+  careers_url: null
+  hq: Ellabell, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - buildings
+  stage: subsidiary
+  founded: 2024
+  headcount:
+    value: 3200
+    as_of: '2025-10-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America)
+  climate:
+    tier: enabling
+    reason: EV assembly plant building the Hyundai Ioniq 5 and Ioniq 9 (also Kia Sportage Hybrid from 2026); designed
+      for 500,000+ vehicles a year.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 3,200 people (Wikipedia (https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America),
+      2025-10-01); growth sign: founded 2024.'
+  notes: 'No job board found on the company''s site. Headcount note: ''More than 3,200'' as of October 2025 (month
+    only, first day used). Founded: https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America. Stage:
+    Owned by Hyundai Motor Group; full production began October 2024. https://hmgma.com Flags: subsidiary of Hyundai
+    Motor Group; over 1,000 employees; HQ of parent outside region. Evidence: https://hmgma.com https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America
+    Region sources: cp-ga-2025, c2es-se. Confidence: high.'
+- id: hyundai-motor-manufacturing-alabama
+  name: Hyundai Motor Manufacturing Alabama
+  website: https://www.hmmausa.com
+  careers_url: null
+  hq: Montgomery, AL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - buildings
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 4200
+    as_of: '2026-11-24'
+    source: HMMA website (https://www.hmmausa.com/our-company/)
+  climate:
+    tier: out
+    reason: Vehicle assembly plant, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; 4,200 people (HMMA website (https://www.hmmausa.com/our-company/), 2026-11-24);
+      founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: ''Approximately 4,200'' on own site; undated,
+    retrieved 2026-11-24. Stage: Hyundai''s first U.S. assembly plant; parent Hyundai Motor Company (Korea Exchange-listed;
+    listing year not verified this pass). Flags: subsidiary of Hyundai Motor Company; over 1,000 employees; mostly
+    internal-combustion vehicles; hybrids/EV a share of output. Evidence: https://www.hmmausa.com/our-company/ Region
+    sources: madeinalabama-battery. Confidence: high. Unresolved: Founding year; whether GV70 electrified is still
+    built there (own site lists only Santa Fe Hybrid as electrified).'
 - id: ibeam-materials
   name: iBeam Materials
   website: https://ibeammaterials.com
@@ -17906,6 +19495,35 @@ companies:
     verify failed: Hostname mismatch, certificate is not valid for ''ionicliquidsolutions.com''. (_ssl.c:1035)).
     Flags: Site copyright is 2018 and shows no dated news; the third-derivative listing is the only later sign of
     activity. Treat ''active'' as weak.. Evidence: O w n   s i Region sources: third-derivative. Confidence: low.'
+- id: ionna
+  name: IONNA
+  website: https://www.ionna.com
+  careers_url: null
+  hq: Durham, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: subsidiary
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Nationwide EV fast-charging network (up to 400 kW 'Rechargery' sites) that it builds and operates.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2024.'
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/Ionna. Stage: Joint
+    venture of BMW, General Motors, Honda, Hyundai, Kia, Mercedes-Benz, Stellantis and Toyota (Toyota joined July
+    2024). Wikipedia infobox gives founding 2024-02-09; history says JV formed July 2023. https://en.wikipedia.org/wiki/Ionna
+    Flags: joint venture of eight automakers; charging network operator (builds and runs sites); founding date sources
+    disagree (2023 vs 2024). Evidence: https://www.ionna.com https://en.wikipedia.org/wiki/Ionna Region sources:
+    cp-nc-2025. Confidence: high. Unresolved: Headcount; Durham County charger facility not confirmed.'
 - id: iontra
   name: Iontra
   website: https://iontra.com
@@ -18413,6 +20031,36 @@ companies:
     Elemental Excelerator, Oct 2023. Flags: formerly Radiator Labs. Evidence: https://kel.vin https://dealroom.co/companies/kelvin
     Region sources: elemental. Confidence: high. Unresolved: Founding year conflicts within Dealroom: 2011 in header,
     2013 in About section.'
+- id: kempower
+  name: Kempower
+  website: https://kempower.com
+  careers_url: null
+  hq: Durham, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: DC fast EV chargers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Durham plant planned about 300 jobs ($41M,
+    announced 2023-02-07). Stage: Kempower Oyj, ticker KEMPOWR; investor site references IPO 2021 and a 2024 listing
+    step (exchange not stated on the fetched page). https://investors.kempower.com/ Flags: public company; HQ outside
+    region (Finland). Evidence: https://investors.kempower.com/ https://www.commerce.nc.gov/news/press-releases/2023/02/07/manufacturer-electric-vehicle-charging-stations-selects-durham-county-new-production-facility
+    https://abc11.com/kempower-opens-durham-ev-charger-facility-ceremony-included/14910466/ Region sources: e2-nc,
+    cp-nc-2025, freedm-members. Confidence: medium. Unresolved: Founding year, headcount, exchange name; current
+    Durham output. kempower.com/about-us gave no details.'
 - id: kemvera
   name: Kemvera
   website: https://www.kemvera.com/
@@ -18466,6 +20114,40 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding stated. Evidence: https://www.khemiametals.com
     Region sources: arpae-projects. Confidence: medium. Unresolved: Domain guessed but content matches; founding,
     headcount, funding. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
+- id: kia-georgia
+  name: Kia Georgia
+  website: https://www.kiageorgia.com
+  careers_url: null
+  hq: West Point, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - buildings
+  stage: subsidiary
+  founded: 2009
+  headcount:
+    value: 3000
+    as_of: '2026-11-24'
+    source: Kia Georgia (https://www.kiageorgia.com)
+  climate:
+    tier: out
+    reason: Vehicle assembly plant, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 3,000 people (Kia Georgia (https://www.kiageorgia.com), 2026-11-24); founded
+      2009, with no equity raise in 5 years or recent listing found.
+  notes: 'No board found: home page not readable (error: ConnectTimeout: [WinError 10060] A connection attempt failed
+    because the connected party did not properly respond after a period of time, or established connection failed
+    because connected host). Headcount note: ''More than 3,000 Team Members'' on own site, undated (date is the
+    fetch date). Founded: https://www.kiageorgia.com. Stage: Kia''s US plant (Kia Corporation, Hyundai Motor Group);
+    production started November 2009. https://www.kiageorgia.com Flags: subsidiary of Kia Corporation; over 1,000
+    employees; mainly builds combustion vehicles; EVs are part of output. Evidence: https://www.kiageorgia.com Region
+    sources: e2-ga, cp-ga-2025, c2es-se. Confidence: high.'
 - id: kineticcore-solutions
   name: KineticCore Solutions
   website: https://kineticcore.com
@@ -18734,6 +20416,60 @@ companies:
     9 events. https://dealroom.co/companies/kula-bio Evidence: https://kulabio.com https://dealroom.co/companies/kula-bio
     Region sources: pillar-vc. Confidence: medium. Unresolved: Site lists only a Technology and Development Center
     in Natick, MA; input guess Watertown, MA. Exact Series A amount not shown.'
+- id: kunin-technologies
+  name: Kunin Technologies
+  website: https://kunin.com
+  careers_url: null
+  hq: Chattanooga, TN
+  ats:
+    type: ashby
+    board: kunin
+  read: auto
+  sectors:
+  - water
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Polymer nanofiber ion-exchange membranes and modules that recover critical metals (copper, nickel, cobalt,
+      uranium) from mining by-products.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:kunin seen 2026-11-25, token matched by name; board page checked: 27 open roles, 1 US-remote.
+    Stage: Innovation Crossroads cohort 2026 (listed as ''Kunin'') https://innovationcrossroads.ornl.gov/cohorts/cohort-10/
+    Flags: by-product critical metals recovery (mining-adjacent). Evidence: https://innovationcrossroads.ornl.gov/people/p31945/
+    https://kunin.com/ Region sources: ornl-ic. Confidence: medium. Unresolved: HQ from ORNL profile (relocated
+    to Chattanooga); founded year, funding, headcount.'
+- id: kyma-technologies
+  name: Kyma Technologies
+  website: https://kymatech.com
+  careers_url: null
+  hq: Raleigh, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: GaN substrates/materials and related power electronics (per input).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Region sources: arpa-e. Confidence: low. Unresolved: kymatech.com
+    fetch blocked by rate-limited safety check (twice); stopped on that site. Dealroom slug 404. Everything beyond
+    the input unverified.'
 - id: l-charge
   name: L-Charge
   website: https://www.l-charge.net
@@ -19442,6 +21178,35 @@ companies:
     subscription; offices in Boulder, CO and the Netherlands. Evidence: https://linevisioninc.com https://www.builtinboston.com/company/linevision
     Region sources: builtin-boston-energy, cev, builtin-energy. Confidence: medium. Unresolved: Funding and stage
     (Dealroom 404).'
+- id: liochem-e-materials-toyo-ink
+  name: LioChem e-Materials (Toyo Ink)
+  website: https://www.toyoinkgroup.com
+  careers_url: null
+  hq: Franklin / Simpson County, KY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon nanotube liquid dispersions (conductive pastes) for EV battery electrodes, made at a plant in
+      Franklin, KY (per input; not verified).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Input names it as part of the Toyo Ink group (Japan); parent listing year not verified. Flags: subsidiary of
+    Toyo Ink group (Japan), per input; not verified; HQ outside region (Japan parent). Evidence: https://www.toyoinkgroup.com/en/
+    Region sources: tid-ky, e2-ky. Confidence: low. Unresolved: toyoinkgroup.com returned an expired TLS certificate;
+    no other source fetched. Plant status, parent ownership and listing, headcount all unverified.'
 - id: lion-energy
   name: Lion Energy
   website: https://lionenergy.com/
@@ -19951,6 +21716,72 @@ companies:
     MassCEC/MassVentures grants 2023 and 2025, SBIR/STTR Phase I 2022; no equity rounds found. https://loopco2.com
     Evidence: https://loopco2.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount,
     equity funding.'
+- id: lotte-aluminum-materials-usa
+  name: LOTTE Aluminum Materials USA
+  website: null
+  careers_url: null
+  hq: Elizabethtown, KY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ultra-thin aluminum cathode foil for EV batteries (planned 36,000 t/yr) at a plant in Elizabethtown,
+      KY.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: 122 jobs announced for the plant (Aug 2022);
+    not a current headcount. Stage: LOTTE Aluminium Materials USA LLC, a joint venture of LOTTE Chemical and LOTTE
+    Aluminium (LOTTE Group); $238.7M plant announced Aug 2022: https://ced.ky.gov/Newsroom/NewsPage/20220804_LOTTE
+    Flags: subsidiary of LOTTE Group (JV of LOTTE Chemical and LOTTE Aluminium); HQ outside region (parent in South
+    Korea). Evidence: https://ced.ky.gov/Newsroom/NewsPage/20220804_LOTTE https://www.alcircle.com/news/lotte-aluminum-bags-a-revised-us450-million-incentive-package-from-elizabethtown-city-council-103028
+    https://www.alcircle.com/news/lotte-aluminium-awards-fac-to-amova-for-new-high-bay-warehouse-for-aluminum-coils-in-elizabethtown-116526
+    https://www.sundt.com/2026/innovative-3d-modeling-and-80-self-perform-mep-keeps-lottes-aluminum-facility-rolling/
+    Region sources: tid-ky. Confidence: medium. Unresolved: Whether the plant is in full production; plant headcount;
+    no company web domain found. Spelling varies (Aluminum / Aluminium).'
+- id: ls-greenlink
+  name: LS GreenLink
+  website: https://www.lsgreenlink.com
+  careers_url: null
+  hq: Chesapeake, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: HVDC subsea power cables (for offshore wind and transmission), from a ~$680-700M plant under construction
+      in Chesapeake, VA.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (202). Stage: U.S. unit of LS Cable & System (South Korea); groundbreaking
+    Apr 2025, completion targeted 2H 2027, commercial production 2028: https://www.offshorewind.biz/2025/04/29/largest-us-subsea-cable-factory-breaks-ground/
+    Flags: subsidiary of LS Cable & System; HQ outside region (parent in South Korea); pre-production (plant under
+    construction). Evidence: https://www.offshorewind.biz/2025/04/29/largest-us-subsea-cable-factory-breaks-ground/
+    https://offshorewind.biz/2026/07/02/worlds-largest-vertical-continuous-vulcanization-tower-under-construction-in-us
+    https://www.koreatimes.co.kr/business/companies/20260625/ls-cable-breaks-ground-for-undersea-cable-facility-in-us
+    https://www.whro.org/local-government/2026-05-27/chesapeake-city-council-approves-federal-grant-application-for-undersea-cable-plant
+    Region sources: cp-va-2025. Confidence: medium. Unresolved: Own site returned empty content. Headcount, founding
+    year. Production start given as 1Q 2028 in one source and 1H 2028 in another.'
 - id: lucid-motors
   name: Lucid Motors
   website: null
@@ -20020,6 +21851,31 @@ companies:
     https://www.therobotreport.com/luminous-gets-funding-to-bring-lumi-solar-construction-robot-to-australia/ Region
     sources: masscec-investments, masscec-pr-tax-incentives, masscec-pr-criticalmass-3-9m. Confidence: medium. Unresolved:
     venture round type and amounts'
+- id: lumios-materials
+  name: Lumios Materials
+  website: https://lumiosmaterials.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Low-cost carbon-fiber precursor for lightweight composites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2025; pilot-scale reactor
+    in development per profile. Evidence: https://lumiosmaterials.com/ https://innovationcrossroads.ornl.gov/people/p23381/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ, founded year, funding, headcount not on site.'
 - id: lummus-technology
   name: Lummus Technology
   website: https://www.lummustechnology.com/
@@ -20302,6 +22158,34 @@ companies:
     (page updated 2025-12-05, https://www.colorado.edu/venturepartners/startup-portfolio/mach-electric-inc). Evidence:
     https://www.colorado.edu/venturepartners/startup-portfolio/mach-electric-inc Region sources: cu-lvc, cu-ascent.
     Confidence: medium. Unresolved: No website listed (LinkedIn only). Co-founder Spencer Dansereau. Founded, headcount.'
+- id: mack-trucks
+  name: Mack Trucks
+  website: https://www.macktrucks.com
+  careers_url: null
+  hq: Salem, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: 1900
+  headcount: null
+  climate:
+    tier: out
+    reason: Heavy and medium trucks, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1900, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.macktrucks.com/about-mack/. Stage: ''Part
+    of the Volvo Group'' per own about page: https://www.macktrucks.com/about-mack/ Flags: subsidiary of Volvo Group;
+    over 1,000 employees likely (not verified); mostly diesel trucks; EV a minority. Evidence: https://www.macktrucks.com/about-mack/
+    Region sources: cp-va-2025. Confidence: medium. Unresolved: HQ not stated on about page; Salem, VA operation
+    and electric-truck output not mentioned there; headcount.'
 - id: macrocycle-technologies
   name: MacroCycle Technologies
   website: https://www.macrocycle.tech
@@ -20652,6 +22536,31 @@ companies:
     Stage: Not found; Dealroom 404. Own site news dated Sept 10 2026 (UC Davis partnership) shows activity. Evidence:
     https://www.mangomaterials.com https://www.builtinsf.com/company/mango-materials Region sources: builtin-sf-greentech,
     collab-fund. Confidence: medium. Unresolved: stage Tier set under owner decision 13.'
+- id: mantapoole-technologies
+  name: MantaPoole Technologies
+  website: https://mantapooletechnologies.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Roll-to-roll multispectral light filters; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2019 https://innovationcrossroads.ornl.gov/cohorts/cohort-3/
+    Flags: not clearly clean tech (optics); website has no content. Evidence: https://innovationcrossroads.ornl.gov/people/p46433/
+    Region sources: ornl-ic. Confidence: low. Unresolved: Company site returns an empty page; HQ, status, funding,
+    headcount.'
 - id: mantel
   name: Mantel
   website: https://www.mantel.com
@@ -21490,6 +23399,36 @@ companies:
     Flags: federal/space and UAV markets; defense share not stated; wireless RF epitaxy is core business. Evidence:
     https://www.mldevices.com https://www.mldevices.com/about Region sources: e2-announcements, arpa-e. Confidence:
     medium. Unresolved: Headcount, ownership/funding, whether defense is the main customer.'
+- id: microporous
+  name: Microporous
+  website: https://microporous.com
+  careers_url: null
+  hq: Piney Flats, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: late
+  founded: 1991
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Battery separators: lithium-ion separators for EVs and storage, plus lead-acid separators; Pittsylvania
+      County (Danville), VA lithium-ion separator plant announced, construction pending.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founded 1991 but venture-backed (late); latest round not yet
+      checked, so included.
+  notes: 'No board found: robots.txt asks automated clients to stay out; site not read. Stage: Private-equity owned:
+    Trent Capital Partners acquired full ownership of Microporous LLC in 2024 (company history page); DOE grant
+    and final project funding announced 2026-04-30. Flags: Microporous name dates to 1991; separator lineage back
+    to American Rubber Co., 1934. Formerly MP Assets Corp. at the Dec 2023 DOE grant. Also has a plant in Feistritz
+    im Rosental, Austria. Sources: https://www.microporous.net/company-history ; https://www.constructiondive.com/news/microporous-buildi.
+    Evidence: O w n   s i Region sources: cp-va-2025. Confidence: low.'
 - id: microvi-biotech
   name: Microvi Biotech
   website: https://www.microvi.com/
@@ -22213,6 +24152,37 @@ companies:
     #1 (amount not stated); no venture rounds found. Flags: second head office in Toronto, ON; CO2 storage claim
     from the directory not confirmed on the home page. Evidence: https://moxyoid.com/ Region sources: third-derivative.
     Confidence: medium. Unresolved: Founding year, headcount, factory location.'
+- id: mss-steel-tubes-usa
+  name: MSS Steel Tubes USA
+  website: null
+  careers_url: null
+  hq: Memphis, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: 2023
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Steel torque tubes for single-axis solar trackers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Headcount note: One source cites 129 jobs at the Memphis plant;
+    not dated as a headcount. Founded: https://www.pv-tech.org/this-is-what-energy-security-looks-like-nextracker-opens-fourth-us-steel-manufacturing-plant.
+    Stage: Joint venture of Metalogalva Group (Portugal) and Soufer Group (Brazil); Memphis plant commissioned 2023;
+    Nextpower later added a line doubling Memphis capacity (search snippets). Flags: JV of Metalogalva and Soufer.
+    Evidence: https://www.pv-tech.org/this-is-what-energy-security-looks-like-nextracker-opens-fourth-us-steel-manufacturing-plant
+    https://www.thefabricator.com/tubepipejournal/news/tubepipeproduction/manufacturing-line-at-new-mss-steel-tubes-factory-to-produce-nextracker-solar-tracker-components
+    https://www.pv-tech.org/nextpower-to-double-steel-tracker-manufacturing-capacity-in-tennessee/ Region sources:
+    e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Search snippets only. HQ given as the Memphis plant (US entity);
+    parents are in Portugal and Brazil. Domain not found. Founded year = plant opening year.'
 - id: mujielectric
   name: MujiElectric
   website: null
@@ -23082,6 +25052,39 @@ companies:
     https://www.cbinsights.com/company/niron-magnetics/financials https://www.mprnews.org/story/2026/08/10/niron-magnetics-receives-federal-loan-streamline-sartell-facility-construction
     https://mprnews.org/story/2026/08/18/niron-magnetics-150-million-tribal-loan-advances-plan https://www.businesswire.com/news/home/20251020598039/en/Niron-Magnetics-Receives-Minnesota-Forward-Fund-Award-to-Advance-Sartell-Manufacturing-Facility
     Confidence: medium. Unresolved: Official round labels; the federal OSC loan amount is reported inconsistently.'
+- id: nissan
+  name: Nissan
+  website: https://www.nissanusa.com
+  careers_url: null
+  hq: Franklin, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - components
+  stage: subsidiary
+  founded: 1960
+  headcount:
+    value: 21000
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Nissan_North_America)
+  climate:
+    tier: out
+    reason: Vehicle assembly, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '21,000 people (Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Nissan_North_America),
+      2026-11-24): over the 4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: About 21,000 incl. 16,000 in manufacturing;
+    undated. Figure is for Nissan North America. Founded: https://en.wikipedia.org/wiki/Nissan_North_America. Stage:
+    Nissan North America is a wholly owned subsidiary of Nissan Motor Corporation (Wikipedia); HQ moved from Gardena,
+    CA to Franklin, TN in 2005. Flags: subsidiary of Nissan Motor; over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/Nissan_North_America
+    Region sources: livability-tn, e2-tn, c2es-se. Confidence: high. Unresolved: Leaf production at Smyrna and e-motors
+    at Decherd not confirmed from the page.'
 - id: nitricity
   name: Nitricity
   website: https://nitricity.co
@@ -23367,6 +25370,35 @@ companies:
     https://dealroom.co/companies/novoloop. Stage: Series B $21M June 2025 (Valo Ventures, Taranis); Series A $10M
     June 2022 per Dealroom. Evidence: https://dealroom.co/companies/novoloop Region sources: elemental-portfolio,
     startx. Confidence: high. Tier set under owner decision 13.'
+- id: novonix
+  name: NOVONIX
+  website: https://www.novonixgroup.com
+  careers_url: null
+  hq: Chattanooga, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Synthetic graphite anode material for lithium-ion batteries (Riverside facility, Chattanooga; 20,000
+      tpa allocated to Panasonic Energy and PowerCo).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site links ASX announcements (ASX-listed); Nasdaq listing
+    and listing years not confirmed this session. Sold NOVONIX Battery Technology Solutions (Canada), closing 2026-04-30,
+    to focus on synthetic graphite (novonixgroup.com). Evidence: https://www.novonixgroup.com https://www.novonixgroup.com/about/
+    Region sources: cp-tn-2024, epb-ev, c2es-se. Confidence: medium. Unresolved: Founded year, listing years, headcount
+    and Riverside plant operating status not found (Wikipedia and Dealroom 404).'
 - id: novtech
   name: Novtech
   website: null
@@ -23434,6 +25466,34 @@ companies:
     Evidence: https://www.nthcycle.com/ https://dealroom.co/companies/nth-cycle Region sources: masscec-t2m, mit-news-startups,
     cev, elemental, greentown, ic. Confidence: high. Unresolved: Dealroom HQ Burlington vs input Beverly; later
     rounds after 2023 not visible.'
+- id: nucor
+  name: Nucor
+  website: https://nucor.com
+  careers_url: null
+  hq: Charlotte, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount:
+    value: 33000
+    as_of: '2026-11-24'
+    source: Nucor website (https://nucor.com/)
+  climate:
+    tier: out
+    reason: Steel and steel products for general markets; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '33,000 people (Nucor website (https://nucor.com/), 2026-11-24): over the 4,000-person line.'
+  notes: 'No job board found on the company''s site. Headcount note: ''33,000 teammates'' on own home page; undated,
+    retrieved 2026-11-24. Stage: NYSE: NUE (per own site); listing year not verified this pass. Flags: over 1,000
+    employees; public company; steelmaker (EAF). Evidence: https://nucor.com/ Region sources: e2-al. Confidence:
+    high. Unresolved: Founding year source; Decatur facility not described on the home page.'
 - id: nucube-energy
   name: NuCube Energy
   website: https://nucube.energy
@@ -24110,6 +26170,33 @@ companies:
     Region sources: startx. Confidence: medium. Unresolved: HQ: article places it at Lawrence Berkeley National
     Lab; directory says San Carlos, CA; CB Insights says San Diego (possibly a different Oleo). Own site returned
     no readable text. Pre-seed vs seed. Tier set under owner decision 13.'
+- id: olokun-minerals
+  name: Olokun Minerals
+  website: https://olokunminerals.com
+  careers_url: null
+  hq: Richmond, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Continuous multi-mineral extraction process to recover minerals (lithium, magnesium and others) from
+      desalination brine (in development).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information on own site. Flags: development
+    stage. Evidence: https://olokunminerals.com/ Region sources: west-gate, laci. Confidence: medium. Unresolved:
+    Founding year, funding, headcount.'
 - id: olympian-motors
   name: Olympian Motors
   website: https://olympus.auto
@@ -24165,6 +26252,33 @@ companies:
     a 2023 DOE competition; Third Derivative cohort 22-2. Flags: CU Boulder spinout. Evidence: https://www.omcthermo.com/
     https://www.colorado.edu/venturepartners/omc-hydrogen https://third-derivative.org/portfolio/omc-h2 Region sources:
     oedit-ai. Confidence: medium. Unresolved: Founding year, headcount, funding; HQ conflict'
+- id: omco-solar
+  name: OMCO Solar
+  website: https://omcosolar.com
+  careers_url: null
+  hq: Alabama
+  ats:
+    type: teamtailor
+    board: na
+  read: manual
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar racking and single-axis trackers, made in U.S. roll-forming plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board teamtailor:na seen 2026-11-25, linked from the company''s own site: role count not read (no public
+    feed). Stage: ''A MacLean-Fogg Company'' per own site: https://omcosolar.com/ Flags: subsidiary of MacLean-Fogg;
+    own site lists 5 U.S. plants without naming them; Alabama (sixth) factory not confirmed. Evidence: https://omcosolar.com/
+    Region sources: e2-al. Confidence: medium. Unresolved: HQ, founding year, headcount, location and status of
+    the Alabama factory.'
 - id: on-energy
   name: ON.energy
   website: null
@@ -24254,6 +26368,33 @@ companies:
     https://onedsinanode.com/ https://dealroom.co/companies/oned-battery-sciences Region sources: kb-ba-hardware.
     Confidence: medium. Unresolved: onedbattery.com now redirects to onedsinanode.com; site gives no HQ; status
     of its Moses Lake, WA plant not checked.'
+- id: oneh2
+  name: OneH2
+  website: https://www.oneh2.com
+  careers_url: null
+  hq: Longview, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2015
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Hydrogen fuel production and delivery equipment and services: storage, trailers, mobile fuelers, dispensers,
+      generators and compressors.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2015.'
+  notes: 'No job board found on the company''s site. Founded: https://www.oneh2.com/about. Stage: No funding information
+    found. Flags: hydrogen production feedstock not stated. Evidence: https://www.oneh2.com https://www.oneh2.com/about
+    Region sources: e2-sc, cp-sc-2024. Confidence: medium. Unresolved: Clover, SC listed only as a location; its
+    role not described. Headcount and funding not found (Dealroom slug oneh2 404).'
 - id: onto-technology
   name: OnTo Technology
   website: null
@@ -24871,6 +27012,33 @@ companies:
   notes: 'No job board found on the company''s site. Flags: now focused on space/lunar applications, not terrestrial
     clean energy. Evidence: https://outward.tech/ Region sources: oedit-ai. Confidence: medium. Unresolved: Founding
     year, headcount, funding'
+- id: overview-energy
+  name: Overview Energy
+  website: https://overviewenergy.com
+  careers_url: null
+  hq: Northern Virginia
+  ats:
+    type: ashby
+    board: overviewenergy
+  read: auto
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Satellites that beam solar energy as near-infrared light to existing ground solar farms (in development;
+      LEO transfer in progress). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:overviewenergy seen 2026-11-25, linked from the company''s own site: 5 open roles. Stage:
+    Own site shows partner/investor logos incl. Engine Ventures, Lowercarbon and EQT Foundation; no round amounts.
+    Flags: pre-revenue / development stage. Evidence: https://overviewenergy.com/ Region sources: lc, engine. Confidence:
+    medium. Unresolved: Founding year, round stage and size, headcount, exact HQ city.'
 - id: oxeon-energy
   name: OxEon Energy
   website: https://www.oxeonenergy.com/
@@ -26037,6 +28205,31 @@ companies:
     https://pivotal.aero/newsroom/pivotal-signs-us-air-force-contract-and-expands-partnership-with-agility-prime-group
     https://www.cbinsights.com/company/pivotal-9 https://evtol.news/skykar-rebel https://www.aol.com/news/dream-owning-flying-car-california-110000749.html
     Confidence: medium. Unresolved: Funding stage; dated headcount.'
+- id: pixelexx-systems
+  name: PixelEXX Systems
+  website: https://pixelexx.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nano-pixel image sensors and cameras; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2020 https://innovationcrossroads.ornl.gov/cohorts/cohort-4/
+    Flags: not clean tech (image sensors); website is a placeholder. Evidence: https://pixelexx.com/ https://innovationcrossroads.ornl.gov/people/p40922/
+    Region sources: ornl-ic. Confidence: low. Unresolved: Site shows only name and copyright 2026; HQ, funding,
+    headcount.'
 - id: pixelframe
   name: Pixelframe
   website: null
@@ -26372,6 +28565,36 @@ companies:
     DOE and DoD program funding and says it seeks strategic investors. Flags: some defense work (DoD-funded programs,
     lithium-seawater batteries). Evidence: https://polyplus.com/ Region sources: lbnl-ipo-startups, kb-ba-hardware,
     arpae-projects. Confidence: medium. Unresolved: Headcount and ownership not found; Dealroom 404.'
+- id: pomega-energy-storage-technologies-kontrolmatik
+  name: Pomega Energy Storage Technologies (Kontrolmatik)
+  website: https://www.pomega.com
+  careers_url: null
+  hq: Colleton County / Walterboro, SC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Lithium-ion cells and battery energy storage systems (input: 3 GWh gigafactory in Colleton County,
+      SC).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Parent Kontrolmatik states over 1,400 staff
+    (kontrolmatik.com, undated). Stage: Kontrolmatik site news names Pomega Energy Storage Technologies; subsidiary
+    list not shown; Kontrolmatik has an investor-relations share page (exchange not named). Flags: subsidiary of
+    Kontrolmatik; over 1,000 employees (parent); HQ outside region; US site status unknown. Evidence: https://www.kontrolmatik.com/en
+    Region sources: e2-sc, cp-sc-2024, c2es-se. Confidence: low. Unresolved: pomega.com redirects to us.pomega.com,
+    which now 301-redirects to tr.pomega.com/en (HTTP 525). Whether the Colleton County, SC plant is operating not
+    confirmed; the US site''s redirect to the Turkish site may signal a change but is not evidence of closure.'
 - id: popwheels
   name: PopWheels
   website: https://popwheels.com
@@ -26612,6 +28835,34 @@ companies:
     found: https://powernapenergy.com/about Flags: early stage; site has placeholder text. Evidence: https://powernapenergy.com
     https://powernapenergy.com/about Region sources: cri. Confidence: medium. Unresolved: Founded year (site timeline
     starts 2024), headcount, venture funding. Dealroom profile 404.'
+- id: powersecure
+  name: PowerSecure
+  website: https://powersecure.com
+  careers_url: null
+  hq: Wake Forest, NC
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/POW1009POWS/JobBoard/42398959-f1c7-48da-a3e2-94e525e29808
+  read: manual
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Microgrids, distributed generation and utility infrastructure equipment and services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board ukg:recruiting.ultipro.com/POW1009POWS/JobBoard/42398959-f1c7-48da-a3e2-94e525e29808 seen 2026-11-24,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Parent Southern Company
+    had 28,600 employees (2024). Stage: Acquired by Southern Company in 2016 (Wikipedia, Southern Company article).
+    Flags: subsidiary of Southern Company; mix of equipment and services; distributed generation often gas-fired
+    (not verified). Evidence: https://en.wikipedia.org/wiki/PowerSecure Region sources: freedm-members. Confidence:
+    medium. Unresolved: Founded year, own headcount and main customer segments not found; powersecure.com not fetched.'
 - id: praio
   name: Praio
   website: https://praio.co
@@ -27188,6 +29439,31 @@ companies:
     to a domain-for-sale page). Facts from search snippets only; Dealroom public slug purenanotech returned 404.
     Founding year, headcount and funding not found. Partner in organizing NJIT''s Nanobubble 2026 conference (Aug
     2026), so likely active.'
+- id: purist
+  name: Purist
+  website: null
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: Technology for producing medical isotopes in existing reactors; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2017.'
+  notes: 'No job board found on the company''s site. Founded: https://innovationcrossroads.ornl.gov/people/p12805/.
+    Stage: Innovation Crossroads cohort 2019 (as Purist, Inc.) Flags: medical isotopes, not clean tech. Evidence:
+    https://innovationcrossroads.ornl.gov/people/p12805/ Region sources: ornl-ic. Confidence: low. Unresolved: No
+    website found; HQ, status, funding, headcount.'
 - id: purity-resource
   name: Purity ReSource
   website: https://purityresource.com/
@@ -27594,6 +29870,34 @@ companies:
     Flags: mainly natural-gas (CNG/RNG) storage, also hydrogen. Evidence: https://www.qtww.com/ Region sources:
     laedc-ev-report. Confidence: medium. Unresolved: Founded year, headcount, ownership (post-2016 history) not
     found. Site news runs to November 2026.'
+- id: quantum-power
+  name: Quantum Power
+  website: null
+  careers_url: null
+  hq: Mooresville, NC
+  ats:
+    type: ashby
+    board: quantum
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Engineered combustion fuel made from non-hazardous waste; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:quantum seen 2026-11-25, token matched by name; board page checked: 22 open roles. Headcount
+    note: December 2023 announcement: $19M investment, 34 jobs in Cleveland County (Lawndale); not a company headcount.
+    Stage: No funding information found. Flags: product is a combustion fuel from waste; identity uncertain. Evidence:
+    https://charlotteregion.com/news/renewable-energy-company-to-invest-19-million-create-new-jobs-in-cleveland-county/
+    https://www.yahoo.com/news/nc-renewable-energy-company-making-163849173.html Region sources: cp-nc-2025. Confidence:
+    low. Unresolved: Search snippets only. Domain, founded year and current status not found. A DEQ Title V air
+    permit was issued to ''Lawndale Recycling'' (June 2024) but the link to this site is not confirmed.'
 - id: quantumscape
   name: QuantumScape
   website: https://www.quantumscape.com/
@@ -28143,6 +30447,33 @@ companies:
     laci-portfolio. Confidence: medium. Unresolved: HQ sources disagree: CB Insights and Caplight give San Pedro,
     CA (2451 Signal Street); an older Dealroom listing gives Irvine; a 2022-era grant story said Boulder, CO. Operates
     a 3D printing center in Aqaba, Jordan. Headcount not found. Dealroom slug rcam_technologies 404 on dealroom.co.'
+- id: re-du
+  name: Re-Du
+  website: https://reduplastic.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Chemical recycling of PET and mixed plastic waste into W2V BHET monomer and W2V PET.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: About $1.1M non-dilutive support from DOE and State
+    of Tennessee; ORNL-licensed catalyst; no equity investors named. https://www.reduplastic.com/ Evidence: https://www.reduplastic.com/
+    https://innovationcrossroads.ornl.gov/people/p13178/ Region sources: ornl-ic. Confidence: medium. Unresolved:
+    Founded year, headcount, equity stage.'
 - id: reach-labs
   name: Reach Labs
   website: https://reachpower.com
@@ -30612,6 +32943,35 @@ companies:
     Austin manufacturing. Stage: No funding information on site. Evidence: https://sheetak.com https://www.sheetak.com/about
     Region sources: gtx-2026h1, greentown. Confidence: medium. Unresolved: Founded, headcount, stage. Built In returned
     429 (stopped on that site).'
+- id: shift-thermal
+  name: Shift Thermal
+  website: https://shiftthermal.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: Phase-change thermal storage sold mainly for data-center cooling; data-center equipment is out (decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2017.'
+  notes: 'No job board found on the company''s site. Founded: https://shiftthermal.com/. Stage: About page links
+    a 2022 news item whose URL refers to a ''1 million seed round'' (text not confirmed); supporters include Clean
+    Energy Venture Group, Queen City Angels, Three Roots Capital, TennesSeed, Market Square Ventures, E8, Avesta
+    Fund. https://shiftthermal.com/about/ Flags: main customers are data centers. Evidence: https://shiftthermal.com/
+    https://shiftthermal.com/about/ https://innovationcrossroads.ornl.gov/people/p33705/ Region sources: ornl-ic.
+    Confidence: medium. Unresolved: HQ city not stated (about page mentions a 2025 City of Oak Ridge ribbon cutting,
+    suggesting Oak Ridge, TN); headcount; seed amount unconfirmed.'
 - id: shine-technologies
   name: SHINE Technologies
   website: https://www.shinefusion.com/
@@ -30647,6 +33007,64 @@ companies:
     Flags: aerospace and defense demand for neutron testing noted on site (not stated as main customers). Evidence:
     https://shinefusion.com/ https://dealroom.co/companies/shine-medical-technologies Region sources: uw-spinoffs,
     arpa-e, doe-edf. Confidence: medium. Unresolved: Latest round letter; exact headcount.'
+- id: shinsung-petrochemical
+  name: Shinsung Petrochemical
+  website: null
+  careers_url: null
+  hq: Lyons, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1974
+  headcount: null
+  climate:
+    tier: out
+    reason: Automotive adhesives and sealants; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1974, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Headcount note: 2024 announcement: 30+ new jobs; not a headcount.
+    Founded: https://georgia.org/press-releases/2024/automotive-supplier-invests-112-million-toombs-county. Stage:
+    Ownership not found. $11.2M Lyons plant announced 2024-09-25, construction expected to finish 2025. https://georgia.org/press-releases/2024/automotive-supplier-invests-112-million-toombs-county
+    Flags: automotive sealant supplier; no clean-tech product stated; HQ outside region (South Korea, per press).
+    Evidence: https://georgia.org/press-releases/2024/automotive-supplier-invests-112-million-toombs-county https://www.ajc.com/news/business/11m-georgia-plant-to-join-facilities-supplying-hyundais-ev-factory/RMS7UYMLKNBR7KOG3BFSKTZ33E
+    Region sources: cp-ga-2025. Confidence: medium. Unresolved: Whether the Lyons plant is running; HQ city; website;
+    headcount.'
+- id: shoals-technologies-group
+  name: Shoals Technologies Group
+  website: https://www.shoals.com
+  careers_url: null
+  hq: Portland, TN
+  ats:
+    type: paycom
+    board: BBC98E01F1F27C80A5FDE6ABEECA4271
+  read: manual
+  sectors:
+  - energy-storage
+  - solar
+  stage: public
+  founded: 1996
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Electrical balance-of-system (EBOS) products for solar, battery energy storage and data centers: big
+      lead assemblies, combiners, homeruns, disconnects, cable management.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1996, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'Board paycom:BBC98E01F1F27C80A5FDE6ABEECA4271 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://www.shoals.com/about. Stage: IPO 2021-01-27 (Nasdaq: SHLS)
+    per https://www.shoals.com/about Evidence: https://www.shoals.com/about Region sources: cp-tn-2024. Confidence:
+    high. Unresolved: headcount'
 - id: shutterbug-exchange
   name: Shutterbug Exchange
   website: https://shutterbugexchange.com
@@ -30863,6 +33281,35 @@ companies:
     https://businesswire.com/news/home/20180531005031/en/Hitachi-Chemical-Licenses-Rights-Silatronix%C2%AE-Organosilicon-Materials
     Region sources: wedc-battery. Confidence: medium. Unresolved: Acquisition source page not fetched (search summary
     only); current operation in Madison not confirmed.'
+- id: silfab-solar
+  name: Silfab Solar
+  website: https://silfabsolar.com
+  careers_url: null
+  hq: Fort Mill, SC
+  ats:
+    type: smartrecruiters
+    board: SilfabSolar
+  read: manual
+  sectors:
+  - solar
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar panels (residential back-contact, commercial and bifacial utility modules); input says cells and
+      modules at Fort Mill, SC.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board smartrecruiters:SilfabSolar seen 2026-11-25, linked from the company''s own site: 39 open roles.
+    Stage: Ownership and funding not stated on the site. Flags: HQ outside region (Canada); US sites Fort Mill,
+    SC and Burlington, WA. Evidence: https://www.silfabsolar.com Region sources: e2-sc, cp-sc-2024. Confidence:
+    medium. Unresolved: Founded year, ownership, headcount and Fort Mill cell-plant status not found (Wikipedia
+    and Dealroom 404).'
 - id: sili-ion
   name: SiLi-ion
   website: https://siliion.com/
@@ -31266,6 +33713,36 @@ companies:
     mit-news-startups, mit-tlo-startups, azolla, activate, greentown, halliburton-labs, arpa-e. Confidence: medium.
     Unresolved: HQ: Dealroom says Cambridge, a Boston Business Journal headline on the site calls it a Watertown
     company.'
+- id: sk-on-sk-battery-america
+  name: SK On / SK Battery America
+  website: https://www.skbatteryamerica.com
+  careers_url: null
+  hq: Commerce, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion EV battery cells; Commerce, GA plants supply Volkswagen and Hyundai.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; no headcount figure found; growth sign: founded 2021.'
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/SK_On. Stage: SK On
+    spun off from SK Innovation (SK Group) in October 2021; SK Battery America''s Commerce plant built 2019-2021
+    (~$2.6B). https://en.wikipedia.org/wiki/SK_On Flags: subsidiary of SK Innovation (SK Group); HQ outside region
+    (South Korea). Evidence: https://skbatteryamerica.com https://en.wikipedia.org/wiki/SK_On Region sources: e2-ga,
+    cp-ga-2025, c2es-se, siteselection-ky, tid-ky. Confidence: high. Unresolved: Hyundai JV Cartersville/Bartow
+    GA plant (announced Dec 2022) current status not found. Per Wikipedia, SK On and Ford announced dissolving BlueOval
+    SK in Dec 2025 with SK On taking the Tennessee plant; Kentucky disposition not stated. Headcount not found.'
 - id: sk-signet
   name: SK Signet
   website: https://sksignet.com
@@ -31406,6 +33883,36 @@ companies:
   notes: 'No job board found on the company''s site. Flags: HQ now Grand Junction per site footer, not Aspen. Evidence:
     https://skyhooksolar.com Region sources: inven-co-storage. Confidence: medium. Unresolved: Founding year (site
     says ''5 Years of Experience''), headcount and funding not found; Dealroom slug 404.'
+- id: skynano
+  name: SkyNano
+  website: https://www.skynanotechnologies.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon nanotubes made from CO2 by an electrochemical process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2017.'
+  notes: 'No job board found on the company''s site. Founded: https://innovationcrossroads.ornl.gov/cohorts/cohort-1/.
+    Stage: Mostly non-dilutive: CB Insights lists about $7.92M raised, last round $1M (undated) https://www.cbinsights.com/company/skynano-technologies;
+    DOE Phase II $1.6M contract https://innovationcrossroads.ornl.gov/news/skynano-awarded-1-6m-doe-phase-ii-contract-to-scale-carbon-nanotube-production/;
+    2023 interview: $10M raised mostly federal. Evidence: https://innovationcrossroads.ornl.gov/cohorts/cohort-1/
+    https://www.ornl.gov/news/unique-regional-partnerships-key-theme-skynanos-story https://www.cbinsights.com/company/skynano-technologies
+    https://www.aol.com/skynano-turned-trash-treasure-technology-090910403.html Region sources: ornl-ic, ic, arpa-e.
+    Confidence: medium. Unresolved: Domain now redirects to skynano.co, which returned an empty page; founded year
+    is the Innovation Crossroads cohort-1 year (2017), not a stated founding date; headcount; equity stage.'
 - id: skyraptor
   name: Skyraptor
   website: https://skyraptor.net
@@ -31655,6 +34162,68 @@ companies:
     support, no amounts. Flags: listed target markets include defense and data centers among others; HQ may be Champaign,
     IL. Evidence: https://solarmantle.com Region sources: greentown. Confidence: medium. Unresolved: Which site
     is HQ; founding, headcount, funding.'
+- id: solarcycle
+  name: SOLARCYCLE
+  website: https://www.solarcycle.us
+  careers_url: null
+  hq: Cedartown, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - solar
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar panel recycling and solar glass from retired panels; now part of Jupiter (merged with PedalPoint
+      Recycling, Korea Zinc's US recycling platform).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2022.'
+  notes: 'No job board found on the company''s site. Founded: https://www.jupitercorp.com/about. Stage: Merged with
+    PedalPoint Recycling (Korea Zinc) to form Jupiter; investors named include Microsoft, Fifth Wall, HG Ventures,
+    Prologis, Closed Loop Partners, UIF, Korea Zinc. https://www.jupitercorp.com/about Flags: merged into Jupiter
+    (Korea Zinc involvement); solarcycle.us redirects to jupitercorp.com; Cedartown GA described as a recycling
+    center, not a glass factory; status not stated. Evidence: https://www.solarcycle.us/about https://www.jupitercorp.com/about
+    Region sources: cp-ga-2025. Confidence: medium. Unresolved: Merger date; Jupiter HQ; whether the Cedartown solar
+    glass factory was built or shelved; headcount; ownership split with Korea Zinc.'
+- id: solarix
+  name: Solarix
+  website: null
+  careers_url: null
+  hq: Forest, VA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules (HJT panels per Solar Power World), 1 GW/yr initial capacity planned in the former Teva
+      building in Forest, VA; later a module recycling line.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: 104 jobs announced (Aug 2024); planned. Stage:
+    Describes itself as 100% American-owned, SBA-certified disabled-veteran-owned; $63M plant announced Aug 2024;
+    production start variously given as July 2025 and March 2026: https://lynchburgbusinessmag.com/solarix-renewable-energy-with-a-mission/
+    Flags: pre-production; production start unconfirmed. Evidence: https://www.wsls.com/news/local/2024/08/01/solarix-acquires-forest-facility/
+    https://www.solarpowerworldonline.com/2024/11/new-name-ready-to-make-hjt-solar-panels-in-virginia/ https://lynchburgbusinessmag.com/solarix-renewable-energy-with-a-mission/
+    Region sources: cp-va-2025. Confidence: medium. Unresolved: Company domain, founding year, funding, whether
+    production has begun.'
 - id: solarx-works
   name: SolarX Works
   website: https://www.solarxworks.com
@@ -32901,6 +35470,35 @@ companies:
     Customers: Mining companies (feedstock testing and project evaluation). Flags: main customers are mining companies.
     Evidence: https://stillbright.co https://stillbright.co/about https://techcrunch.com/2025/07/30/how-a-new-jersey-startup-found-an-electrifying-way-to-slash-copper-costs/
     https://dealroom.co/companies/still-bright/ Confidence: medium.'
+- id: stone-mountain-technologies
+  name: Stone Mountain Technologies
+  website: https://anesicomfort.com
+  careers_url: null
+  hq: Johnson City, TN area
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Anesi gas absorption heat pumps (ammonia-water cycle) for space heating and hot water; first product
+      an 80,000 Btu residential/light-commercial unit. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Not found. Site footer copyright names ''Beckett Commercial
+    Solutions''; relationship to Anesi not explained (possible ownership by Beckett, unconfirmed). Flags: runs on
+    natural gas (gas-fired heat pump); possibly owned by Beckett (footer copyright); unconfirmed; Stone Mountain
+    Technologies name not on current site. Evidence: https://anesicomfort.com/about/ Region sources: eip. Confidence:
+    medium. Unresolved: Ownership, founding year, headcount, funding.'
 - id: stonehouse-water-technologies
   name: Stonehouse Water Technologies
   website: null
@@ -33025,6 +35623,35 @@ companies:
     snippet (2025-10-23): next-gen inverter startup raising up to 8M USD seed; close not confirmed. Not read. Evidence:
     https://www.stormentum.com/ https://www.stormentum.com/careers https://www.axios.com/pro/climate-deals/2025/10/23/inverter-seed-stormentum
     Confidence: medium.'
+- id: stryten-energy
+  name: Stryten Energy
+  website: https://www.stryten.com
+  careers_url: null
+  hq: Alpharetta, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lead, lithium and vanadium redox flow batteries, chargers and battery energy storage systems for motive
+      power, transportation, military and essential power.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Ownership not stated on own site. Completed acquisition
+    of C&D Trojan on 2026-10-01, giving 15 US manufacturing plants plus Mexico and China. https://www.stryten.com/
+    Flags: military/government is one of several markets; 15 US manufacturing plants after C&D Trojan acquisition.
+    Evidence: https://www.stryten.com/about-us/ https://www.stryten.com/ Region sources: gt-sei. Confidence: medium.
+    Unresolved: Founding year, owner (not confirmed), headcount.'
 - id: sturman-industries
   name: Sturman Industries
   website: null
@@ -33148,6 +35775,123 @@ companies:
     no rounds disclosed. Flags: Halliburton Labs member (oil-services accelerator; not a stated customer). Evidence:
     https://sunchem.io Region sources: collab-fund, arpae-projects. Confidence: medium. Unresolved: Founded year,
     headcount, funding stage; no Dealroom profile.'
+- id: sungeel-hitech-sungeel-recycling-park-georgia
+  name: SungEel HiTech (SungEel Recycling Park Georgia)
+  website: https://www.sungeel.com
+  careers_url: null
+  hq: Toccoa, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery and battery-scrap recycling (recovers nickel, cobalt, lithium).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Aug 2022 announcement: 104 planned jobs ($37M
+    project). Stage: SungEel HiTech is a South Korean company; listing/ownership not confirmed. Georgia plant announced
+    2022-08-18, expected online 2024. https://gov.georgia.gov/press-releases/2022-08-18/gov-kemp-korean-lithium-ion-battery-recycler-sungeel-hitech-build-first
+    Flags: HQ outside region (South Korea); Georgia plant status unconfirmed. Evidence: https://gov.georgia.gov/press-releases/2022-08-18/gov-kemp-korean-lithium-ion-battery-recycler-sungeel-hitech-build-first
+    https://www.recyclingtoday.com/news/sungeel-hi-tech-builds-facility-in-georgia Region sources: cp-ga-2025. Confidence:
+    low. Unresolved: sungeel.com returned no readable content. No 2025-2026 report on whether the Toccoa plant was
+    built or opened. Founding year, headcount, listing not found.'
+- id: suniva
+  name: Suniva
+  website: https://www.suniva.com
+  careers_url: null
+  hq: Norcross, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2007
+  headcount: null
+  climate:
+    tier: core
+    reason: Monocrystalline silicon solar cells (and modules).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 2007, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Founded: https://en.wikipedia.org/wiki/Suniva.
+    Stage: Owned by Lion Point Capital LP after bankruptcy (filed April 2017, exited 2019); not a venture round.
+    Wikipedia infobox gives founded 2006 and 2008 too; spun out of Georgia Tech in 2007. https://en.wikipedia.org/wiki/Suniva
+    Flags: owned by investment firm Lion Point Capital; founding year sources disagree (2006/2007/2008). Evidence:
+    https://en.wikipedia.org/wiki/Suniva Region sources: e2-ga, cp-ga-2025. Confidence: medium. Unresolved: suniva.com
+    returned 403 to automated client (stopped). Current production status and headcount not found.'
+- id: sunlight-batteries-usa
+  name: Sunlight Batteries USA
+  website: https://www.sunlightgroup.com
+  careers_url: null
+  hq: Greensboro, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 2019
+  headcount:
+    value: 130
+    as_of: '2026-11-25'
+    source: Sunlight Group North America contact page ('more than 130 employees'; page undated, date is fetch date)
+      (https://www.sunlight-group.com/en/north-america/contact)
+  climate:
+    tier: core
+    reason: Lead-acid and lithium-ion motive power batteries and power systems for forklifts and material handling.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 130 people (Sunlight Group North America contact page (''more than 130 employees'';
+      page undated, date is fetch date) (https://www.sunlight-group.com/en/north-america/contact), 2026-11-25);
+      growth sign: founded 2019.'
+  notes: 'No job board found on the company''s site. Stage: US arm of Greek Sunlight Group (Systems Sunlight S.A.,
+    in industrial batteries since 1991) Flags: The correct domain is sunlight-group.com (hyphen); sunlightgroup.com
+    is the unrelated Singapore switchgear firm. Mebane plant: built and running (listed with ISO certificates).
+    Founded year is for the US entity''s first NC operation.. Evidence: N C   G o v Region sources: e2-nc, cp-nc-2025.
+    Confidence: low.'
+- id: sunmaxtech-solar
+  name: SunMaxTech Solar
+  website: https://www.sunmaxtech.com
+  careers_url: null
+  hq: Dalton, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: 'Solar-module components: junction boxes, cables, connectors and frames.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding round or parent found Flags: Adairsville
+    plant status not established (not confirmed running, built or cancelled); own site does not mention it. Parent
+    and country of origin not stated.. Evidence: W B H F   R Region sources: cp-ga-2025. Confidence: low.'
 - id: sunpath
   name: SunPath
   website: https://sunpathtech.com
@@ -33397,6 +36141,37 @@ companies:
     award (press release 2024-07-30) to test its hybrid solar EV charger and battery; no equity round found Flags:
     Site trades as Suryatech Power; site assets dated 2024, no address on the page.. Evidence: M a s s C E Region
     sources: masscec-pr-4m. Confidence: low.'
+- id: sustaera
+  name: Sustaera
+  website: https://sustaera.com
+  careers_url: null
+  hq: Durham, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2021
+  headcount:
+    value: 5
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/sustaera)
+  climate:
+    tier: core
+    reason: Direct air capture systems powered by renewable energy (third-generation DAC system).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 5 people (Dealroom (https://dealroom.co/companies/sustaera), 2026-11-24); growth sign:
+      founded 2021.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; looks low. Dealroom
+    lists HQ as Cary, NC; own site says Durham, NC 27709. Founded: https://dealroom.co/companies/sustaera. Stage:
+    $10M Series A, Dec 2021, Breakthrough Energy and Grantham listed (own site news); Dealroom also lists a $750K
+    debt deal Jul 2023: https://www.sustaera.com/ Evidence: https://www.sustaera.com/ https://dealroom.co/companies/sustaera
+    Region sources: bev, third-derivative. Confidence: medium. Unresolved: Later rounds, if any; reliable headcount.'
 - id: sustainable-chemicals
   name: Sustainable Chemicals
   website: null
@@ -33424,6 +36199,31 @@ companies:
     Evidence: https://www.ptonline.com/articles/from-sugar-to-plastic-without-the-bug Region sources: oedit-ai.
     Confidence: low. Unresolved: Domain, city, shrink-film application, headcount, funding Tier set under owner
     decision 13.'
+- id: susteon
+  name: Susteon
+  website: https://susteon.com
+  careers_url: null
+  hq: Cary, NC
+  ats:
+    type: ashby
+    board: susteon
+  read: auto
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon capture and electrified CO2-to-fuels process technology (per input).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board ashby:susteon seen 2026-11-24, linked from the company''s own site: 1 open roles. Region sources:
+    arpa-e. Confidence: low. Unresolved: susteon.com fetch blocked by rate-limited safety check (twice); stopped
+    on that site. Dealroom slug 404. Everything beyond the input unverified.'
 - id: swerv
   name: SWERV
   website: https://swervair.com
@@ -33783,6 +36583,36 @@ companies:
     year-end subject to approvals (https://tae.com/). Flags: pending merger with Trump Media & Technology Group
     (public); fusion pre-commercial; power-solutions unit targets AI data centers. Evidence: https://tae.com/ https://dealroom.co/companies/tae-technologies
     Region sources: uci-startups. Confidence: high. Unresolved: Exact current headcount.'
+- id: tai-yang-research-company
+  name: Tai-Yang Research Company
+  website: null
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2001
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-temperature superconducting magnets, current leads, cable connectors and superconducting power
+      cable components.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 2001, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://gust.com/companies/tai_yang_research_company_1.
+    Stage: Not found. Flags: HQ uncertain: Gust profile says Tallahassee, FL (would be outside region); 2008 NASA
+    Spinoff says Knoxville, TN; NASA Spinoff says it is now known as Energy to Power Solutions; identity/rename
+    unconfirmed; military/space applications mentioned; main customers not established. Evidence: https://gust.com/companies/tai_yang_research_company_1
+    https://spinoff.nasa.gov/node/10869 Region sources: arpa-e. Confidence: low. Unresolved: Current HQ (Tallahassee,
+    FL vs Knoxville, TN), current name and status; tai-yang.com certificate belongs to an unrelated site.'
 - id: takachar
   name: Takachar
   website: https://www.takachar.com/
@@ -33895,6 +36725,32 @@ companies:
     product award. Evidence: https://tbm-designs.com/ https://tbm-designs.com/team Region sources: laci-portfolio.
     Confidence: medium. Unresolved: HQ, founding year, headcount and funding not on site (installations at LACI
     and Brooks+Scarpa). Not searched (budget).'
+- id: tcpoly
+  name: TCPoly
+  website: https://www.tcpoly.com
+  careers_url: null
+  hq: Atlanta, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: pre-seed
+  founded: 2017
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Thermally conductive polymers and parts for battery and electronics cooling.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2017.'
+  notes: 'No job board found on the company''s site. Founded: https://www.tcpoly.com/about. Stage: Pre-seed investment
+    from Engage Ventures (date not stated) plus over $3M non-dilutive (NSF SBIR, DOE STTR, Georgia Research Alliance).
+    https://www.tcpoly.com/about Flags: Georgia Tech origin. Evidence: https://www.tcpoly.com https://www.tcpoly.com/about
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ city not confirmed by a source; headcount.'
 - id: tellus-power-green
   name: Tellus Power Green
   website: https://telluspowergreen.com/
@@ -34295,6 +37151,36 @@ companies:
       2025-12-31): over the 4,000-person line.'
   notes: Missing facts filled from data/screening/registry-fixes.
   ipo_year: 2010
+- id: tetramer-technologies
+  name: Tetramer Technologies
+  website: null
+  careers_url: null
+  hq: Pendleton, SC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2001
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Non-PFSA ion-exchange membranes and other materials for fuel cells and electrolyzers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 2001, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://www.upstatescalliance.com/?p=8769. Stage:
+    Private; DOE SBIR/STTR-funded (2023 DOE SBIR/STTR Small Business of the Year); no venture rounds found. Flags:
+    membranes are mainly proton-exchange (non-PFSA); no anion-exchange evidence found. Evidence: https://tetramer.com/
+    https://www.upstatescalliance.com/?p=8769 https://www.andersoncountysc.org/tetramer-technologies-awarded-2023-doe-sbir-sttr-small-business-of-the-year/
+    Region sources: arpa-e. Confidence: medium. Unresolved: Headcount. Company site is tetramer.com (input had no
+    domain; tetramertech.com does not resolve). Founded 2001 comes from a search-result summary; the source page
+    was not opened.'
 - id: texpower
   name: TexPower
   website: https://texpower.us
@@ -34479,6 +37365,32 @@ companies:
     Stage: Series B, $100M, May 2026 (Dealroom); Series A $20M, February 2024. Spun out of Princeton University
     / PPPL, formerly Princeton Stellarators. Evidence: https://dealroom.co/companies/thea-energy Confidence: medium.
     Unresolved: Dealroom header says Princeton, NJ, while its About text says headquartered in Kearny, NJ.'
+- id: thermamatrix
+  name: ThermaMatrix
+  website: null
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Optical non-destructive inspection technology; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Innovation Crossroads cohort 2023 (entered Aug 2023);
+    UT-licensed patent. Flags: inspection technology, unclear if hardware or service. Evidence: https://innovationcrossroads.ornl.gov/?p=1159
+    https://utrf.tennessee.edu/knoxville-startup-thermamatrix/ https://innovationcrossroads.ornl.gov/people/p34995/
+    Region sources: ornl-ic. Confidence: low. Unresolved: No company website found (theramatrix.com on profile is
+    an unrelated physical therapy network); funding, headcount.'
 - id: thermobionics
   name: ThermoBionics
   website: https://thermobionics.com
@@ -34813,6 +37725,36 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: legal name
     Titan Advanced Energy Solutions. Evidence: https://www.titanaes.com/ Region sources: masscec-investments. Confidence:
     medium. Unresolved: Founded, headcount, funding.'
+- id: tmc-transformers
+  name: TMC Transformers
+  website: https://www.tmctransformers.com
+  careers_url: null
+  hq: Waynesboro, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Medium- and low-voltage dry-type transformers and reactors (cast resin and VPI).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Oct 2024: at least 110 new jobs planned in
+    Burke County; not a headcount. Stage: Ownership not stated (TMC Transformers S.p.A.; JV with QTC Energy for
+    East Asia). First US plant in Burke County from beginning of 2023; new $15.3M Waynesboro plant expected operational
+    early 2026. https://gov.georgia.gov/press-releases/2024-10-24/gov-kemp-tmc-transformers-bring-110-jobs-new-manufacturing-facility-burke
+    Flags: HQ outside region (Italy). Evidence: https://www.tmctransformers.com https://gov.georgia.gov/press-releases/2024-10-24/gov-kemp-tmc-transformers-bring-110-jobs-new-manufacturing-facility-burke
+    Region sources: cp-ga-2025. Confidence: medium. Unresolved: Founding year (site says ''over thirty years'');
+    headcount; whether the new plant opened in 2026.'
 - id: tmeic-corporation-americas
   name: TMEIC Corporation Americas
   website: https://tmeic.com
@@ -35701,6 +38643,37 @@ companies:
     Zetwerk (per site footer). Evidence: https://unimacts.com/ Region sources: house-unimacts. Confidence: low.
     Unresolved: HQ and Las Vegas, NV site not stated on home page; Spain wind plant not confirmed; headcount and
     founding year not found.'
+- id: unitech-north-america
+  name: Unitech North America
+  website: null
+  careers_url: null
+  hq: Morrison, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Thermal adhesives and EV battery compression pads, plus industrial adhesives and sealers for automotive
+      customers, at its first US plant.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Plant announced with 75 phase-one jobs and
+    $30M investment; not a headcount. Stage: Unitech North America, LLC is a subsidiary of Unitech Co., Ltd. (Ansan,
+    South Korea), per Tennessee ECD release Jan 2024 https://tn.gov/ecd/news/2024/1/12/-governor-lee--commissioner-mcwhorter-announce-unitech-north-america--llc-to-establish-first-us-manufacturing-operations-in-warren-county.html
+    (seen in search results). Flags: subsidiary of Unitech Co., Ltd. (South Korea); HQ outside US. Evidence: https://tn.gov/ecd/news/2024/1/12/-governor-lee--commissioner-mcwhorter-announce-unitech-north-america--llc-to-establish-first-us-manufacturing-operations-in-warren-county.html
+    https://www.adhesivesmag.com/articles/100768-government-officials-announce-unitech-north-america-llc-to-establish-its-first-us-manufacturing-site-in-tennessee
+    https://newstalk941.com/south-korean-firm-coming-to-morrison-30m-investment-in-plant/ Region sources: cp-tn-2024.
+    Confidence: medium. Unresolved: Whether the Morrison plant is operating; parent founded year; headcount.'
 - id: unitedsic-qorvo
   name: UnitedSiC (Qorvo)
   website: https://unitedsic.com
@@ -36094,6 +39067,33 @@ companies:
     1999-2025. Stage: Private, no venture rounds found; ownership not stated. Flags: includes gasoline models. Evidence:
     https://www.vantagevehicle.com/ Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: Founded year
     (about 1999?), headcount, and MPAK Motor Co relation not confirmed.'
+- id: vantem
+  name: Vantem
+  website: https://vantem.com
+  careers_url: null
+  hq: Durham, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Offsite-built modular multifamily buildings (multifamily, student housing, hospitality, senior living).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Investor-backed (TEM Capital, Breakthrough Energy Ventures,
+    Quadrant Management, others per own site); acquired Arris in 2026. Round stage not found. Flags: factories in
+    Lakeland, GA (Affinity Modular) and Clio, SC. Evidence: https://www.vantem.com/about-us/ https://www.vantem.com/locations/
+    Region sources: bev. Confidence: medium. Unresolved: Founding year, headcount, funding stage. Input HQ guess
+    Kennesaw, GA differs from own site (Durham, NC).'
 - id: vantran-transformers
   name: VanTran Transformers
   website: https://vantran.com
@@ -36653,6 +39653,33 @@ companies:
     funding for domestic facility (not main customer confirmed). Evidence: https://www.visolisbio.com/ Region sources:
     activate-companies, cyclotron-road-fellows, dcvc, kb-ba-hardware. Confidence: medium. Unresolved: Founded, headcount
     and round label not found; Dealroom 404. Tier set under owner decision 13.'
+- id: vitriform3d
+  name: Vitriform3D
+  website: https://vitriform3d.com
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Architectural surfaces made from recycled glass: 3D-printed tiles, hand-cast signs and pressed wall
+      panels.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site cites DOE support and UT/ORNL collaboration; no
+    rounds. Innovation Crossroads cohort 2022. Evidence: https://vitriform3d.com/ https://innovationcrossroads.ornl.gov/cohorts/cohort-6/
+    Region sources: ornl-ic. Confidence: medium. Unresolved: HQ, founded year, funding, headcount; site last dated
+    2025.'
 - id: volexion
   name: Volexion
   website: https://volexion.com
@@ -36682,6 +39709,38 @@ companies:
     cri. Confidence: medium. Unresolved: volexion.com is a Squarespace ''coming soon'' page; the working site is
     volexion-inc.com. HQ inferred from its listing as a graduate resident of Northwestern''s Querrey InQbation Lab
     (Evanston), not stated on its site. Founding year, headcount and funding not found; no Dealroom profile.'
+- id: volkswagen-chattanooga
+  name: Volkswagen Chattanooga
+  website: https://www.vw.com
+  careers_url: null
+  hq: Chattanooga, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: 2011
+  headcount:
+    value: 4500
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Volkswagen_Chattanooga_Assembly_Plant)
+  climate:
+    tier: out
+    reason: Vehicle assembly; ID.4 electric production ended in April 2026, so still mostly combustion; electric
+      models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 4,500 people (Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Volkswagen_Chattanooga_Assembly_Plant),
+      2026-11-24); growth sign: founded 2011.'
+  notes: 'No job board found on the company''s site. Headcount note: About 4,500 (infobox, undated). Founded: https://en.wikipedia.org/wiki/Volkswagen_Chattanooga_Assembly_Plant.
+    Stage: Owned by Volkswagen Group of America (Wikipedia). Flags: subsidiary of Volkswagen Group; over 1,000 employees;
+    EV production ended. Evidence: https://en.wikipedia.org/wiki/Volkswagen_Chattanooga_Assembly_Plant Region sources:
+    livability-tn, c2es-se, epb-ev. Confidence: high. Unresolved: Battery pack assembly and battery engineering
+    lab not mentioned in the part of the page read. Founded = production start year.'
 - id: volt-harbor
   name: Volt Harbor
   website: https://voltharbor.com/
@@ -37302,6 +40361,33 @@ companies:
     https://www.tectonicdefense.com/motor-maker-westmag-emerges-from-stealth/ Region sources: root-ventures. Confidence:
     medium. Unresolved: Headcount; Built In SF lists an office in Richmond, CA while press gives South San Francisco
     as HQ; share of defense customers.'
+- id: westwater-resources
+  name: Westwater Resources
+  website: https://www.westwaterresources.net
+  careers_url: null
+  hq: Kellyton / Coosa County, AL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Building a battery-grade graphite anode-material plant in Kellyton, AL; mainly a processor, so in even
+      though it also develops a graphite deposit (owner ruling A6b line).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Publicly traded (ticker WWR); exchange and listing year
+    not verified this pass. Flags: mining operator (graphite); public company. Region sources: c2es-se. Confidence:
+    low. Unresolved: westwaterresources.net returned HTTP 403 (stopped on that site); Dealroom slug 404. HQ, Kellyton
+    plant status, headcount, listing year not verified.'
 - id: westwood-aerogel
   name: Westwood Aerogel
   website: https://westwoodaerogel.com/
@@ -37578,6 +40664,32 @@ companies:
     Stage: Own site: ''Boeing-owned eVTOL company'' (Built In still lists Boeing-Kitty Hawk joint venture). Flags:
     subsidiary of Boeing; autonomous aircraft. Evidence: https://wisk.aero/about https://www.builtinsf.com/company/wisk
     Region sources: kb-ba-hardware. Confidence: high. Unresolved: Current headcount.'
+- id: witching-hour
+  name: Witching Hour
+  website: https://witchinghour.io
+  careers_url: null
+  hq: Oak Ridge, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Autonomous robots that crawl energized bare power lines and insulate them to cut wildfire ignition risk.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Backers listed: Refactor Capital, Garage Capital, Schox,
+    Climate Capital, Knollwood, Techstars; no round or amount stated. https://www.witchinghour.io/ Evidence: https://www.witchinghour.io/
+    https://innovationcrossroads.ornl.gov/people/p22176/ Region sources: ornl-ic. Confidence: medium. Unresolved:
+    HQ not stated (founder based in Knoxville, TN per ORNL profile); founded year; round; headcount.'
 - id: witricity
   name: WiTricity
   website: https://witricity.com
@@ -37640,6 +40752,40 @@ companies:
     no later round found Flags: Activity is thinly evidenced: site footer is 2022 and no news of progress after
     2020 funding apart from a 2025 interview listing. Legal name WoHo Systems, Inc. woho.com is an unrelated for-sale
     domain.. Evidence: E n g i n e Region sources: engine-ventures. Confidence: low.'
+- id: wolfspeed
+  name: Wolfspeed
+  website: https://www.wolfspeed.com
+  careers_url: null
+  hq: Research Triangle Park / Durham, NC
+  ats:
+    type: workday
+    board: cree
+  read: manual
+  sectors:
+  - components
+  stage: public
+  founded: 1987
+  headcount:
+    value: 5013
+    as_of: '2024-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Wolfspeed)
+  climate:
+    tier: enabling
+    reason: Silicon carbide materials (substrates) and power semiconductors (MOSFETs, diodes, modules).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '5,013 people (Wikipedia (https://en.wikipedia.org/wiki/Wolfspeed), 2024-01-01): over the 4,000-person
+      line.'
+  notes: 'Board workday:cree.wd108.myworkdayjobs.com/EXT seen 2026-11-24, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: 2024 (year only, first day used). Founded: https://en.wikipedia.org/wiki/Wolfspeed.
+    Stage: Public since 1993 IPO (Nasdaq as CREE 1993-2021, now NYSE: WOLF). Filed Chapter 11 on 2025-06-30, exited
+    2025-09-29. Oct 2026: conditional $1.5B DoD loan commitment for a 7.5% equity stake. https://en.wikipedia.org/wiki/Wolfspeed
+    Flags: over 1,000 employees; public company; emerged from Chapter 11 (Sept 2025); US Department of Defense loan
+    and equity stake (conditional, Oct 2026). Evidence: https://www.wolfspeed.com/ https://en.wikipedia.org/wiki/Wolfspeed
+    Region sources: e2-nc, cp-nc-2025, arpa-e. Confidence: high. Unresolved: Siler City campus status not confirmed
+    in fetched sources.'
 - id: woodward
   name: Woodward
   website: null
@@ -37667,6 +40813,37 @@ companies:
       2025-10-31): over the 4,000-person line.'
   notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes.
+- id: woory-industrial
+  name: Woory Industrial
+  website: null
+  careers_url: null
+  hq: Dublin, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1989
+  headcount:
+    value: 1300
+    as_of: '2023-06-07'
+    source: Georgia Governor's Office (https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county)
+  climate:
+    tier: out
+    reason: HVAC components for all vehicles; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 1,300 people (Georgia Governor's Office (https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county),
+      2023-06-07); founded 1989, with no equity raise in 5 years or recent listing found.
+  notes: 'No job board found on the company''s site. Headcount note: ''More than 1,300 worldwide''. Founded: https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county.
+    Stage: Ownership/listing not found. $18M Dublin GA plant announced 2023-06-07, operations expected November
+    2023, 130+ jobs; supplier to Tesla, Rivian, Lucid, Canoo. https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county
+    Flags: HQ outside region (South Korea); over 1,000 employees. Evidence: https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county
+    Region sources: e2-ga, cp-ga-2025. Confidence: medium. Unresolved: Whether the Dublin plant opened as planned;
+    listing status; website.'
 - id: wootz
   name: Wootz
   website: https://wootznano.com
