@@ -12,6 +12,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "mini-racer>=0.14.1",
     "openpyxl>=3.1.5",
     "pytest>=8",
 ]
