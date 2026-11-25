@@ -300,7 +300,7 @@ companies:
     board: null
   read: none
   sectors:
-  - electric-aviation
+  - biofuels
   stage: public
   founded: null
   headcount:
@@ -308,9 +308,8 @@ companies:
     as_of: '2025-12-31'
     source: StockAnalysis (annual filing figure) (https://stockanalysis.com/stocks/amtx/employees/)
   climate:
-    tier: out
-    reason: Dairy renewable natural gas and fuel ethanol, with sustainable aviation fuel planned; mainly fuel-burning
-      products.
+    tier: core
+    reason: Fuel ethanol, dairy renewable natural gas and planned sustainable aviation fuel.
     basis: agent
     approved: false
   startup:
@@ -319,7 +318,8 @@ companies:
       2025-12-31); founding year not found, so included.
   notes: 'No board found: home page not readable (202). Stage: US-listed, ticker AMTX (StockAnalysis). Flags: fuels
     producer (ethanol and RNG). Evidence: https://stockanalysis.com/stocks/amtx/employees/ Region sources: cec-eif-showcase,
-    kb-ba-hardware. Confidence: medium. Unresolved: Own site refused automated fetch (403); founded year not found.'
+    kb-ba-hardware. Confidence: medium. Unresolved: Own site refused automated fetch (403); founded year not found.
+    Tier set under owner decision 13.'
 - id: aepnus-technology
   name: Aepnus Technology
   website: https://aepnus.com
@@ -364,8 +364,8 @@ companies:
     board: null
   read: none
   sectors:
+  - biofuels
   - hydrogen
-  - industrial-heat
   stage: null
   founded: 2026
   headcount:
@@ -383,7 +383,7 @@ companies:
       growth sign: founded 2026.'
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/aernata.
     Stage: YC Spring 2026; no priced round found. Flags: very early (founded 2026, 2 people). Evidence: https://www.ycombinator.com/companies/aernata
-    Region sources: yc-directory. Confidence: medium. Unresolved: Funding.'
+    Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
 - id: aerovect
   name: AeroVect
   website: null
@@ -544,6 +544,7 @@ companies:
   read: auto
   sectors:
   - hydrogen
+  - biofuels
   stage: series-b
   founded: 2017
   headcount:
@@ -568,7 +569,8 @@ companies:
     Air Force); product is synthetic fuel, not electrification hardware; renamed AIRCO in 2025; Defense customers
     buy its fuel; the product is not a weapon.. Evidence: https://www.aircompany.com/ https://builtin.com/company/air-company
     https://www.axios.com/pro/climate-deals/2023/02/28/exclusive-air-company-inks-65m-fuel-deal-with-us-air-force
-    https://aircompany.com/defense Confidence: medium. Unresolved: Series B lead investors not confirmed.'
+    https://aircompany.com/defense Confidence: medium. Unresolved: Series B lead investors not confirmed. Tier set
+    under owner decision 13.'
 - id: aircapture
   name: Aircapture
   website: https://aircapture.com
@@ -699,7 +701,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - methane
   stage: null
   founded: 2021
   headcount:
@@ -707,8 +710,8 @@ companies:
     as_of: '2026-11-24'
     source: Y Combinator profile (https://www.ycombinator.com/companies/alga-biosciences)
   climate:
-    tier: out
-    reason: Cattle feed additive that cuts enteric methane; agriculture, not energy or electrification hardware.
+    tier: core
+    reason: Cattle feed additive that cuts enteric methane emissions.
     basis: agent
     approved: false
   startup:
@@ -717,7 +720,7 @@ companies:
       2026-11-24); growth sign: founded 2021.'
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/alga-biosciences.
     Stage: YC W22; no priced round found. Flags: agriculture feed additive, not electrification. Evidence: https://www.ycombinator.com/companies/alga-biosciences
-    Region sources: yc-directory. Confidence: medium. Unresolved: Funding.'
+    Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
 - id: alkali-labs
   name: AlkaLi Labs
   website: https://alkalilabs.com
@@ -1029,7 +1032,8 @@ companies:
     type: greenhouse
     board: ampsortation
   read: auto
-  sectors: []
+  sectors:
+  - recycling
   stage: late
   founded: 2015
   headcount:
@@ -1037,10 +1041,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/amp-robotics)
   climate:
-    tier: out
-    reason: AI-guided waste-sorting equipment and recycling plants. Recycled or bio-based materials; the climate
-      case is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending
-      the owner's call on materials (see the region report).
+    tier: core
+    reason: AI-guided waste-sorting equipment and recycling plants.
     basis: agent
     approved: false
   startup:
@@ -1052,7 +1054,7 @@ companies:
     Stage: Dealroom: Series D, December 2024, $91M (Blue Earth Capital, Range Ventures, XN, Liberty Mutual Investments);
     total equity $100-500M. Evidence: https://ampsortation.com https://dealroom.co/companies/amp-robotics Region
     sources: ccia-members, builtin-co-sustain, builtin-co-greentech, prelude-portfolio, congruent-portfolio. Confidence:
-    high.'
+    high. Tier set under owner decision 13.'
 - id: amperesand
   name: Amperesand
   website: null
@@ -2339,6 +2341,7 @@ companies:
     board: null
   read: none
   sectors:
+  - methane
   - solar
   stage: null
   founded: null
@@ -2355,7 +2358,7 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Own site mentions only a U.S. DOE methane-reduction
     grant (no amount); no venture rounds found. Flags: main customers are oil and gas; HQ unconfirmed; phone number
     has a 307 (Wyoming) area code. Evidence: https://bluemountainops.com Region sources: ccia-members. Confidence:
-    medium. Unresolved: HQ city/state, founding year, headcount, funding'
+    medium. Unresolved: HQ city/state, founding year, headcount, funding Tier set under owner decision 13.'
 - id: blue-planet-systems
   name: Blue Planet Systems
   website: https://www.blueplanetsystems.com/
@@ -2399,15 +2402,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2010
   headcount: null
   climate:
-    tier: out
-    reason: Recovered carbon black and oil from scrap tyres. Recycled or bio-based materials; the climate case is
-      lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's
-      call on materials (see the region report).
+    tier: core
+    reason: Recovered carbon black and oil from scrap tyres.
     basis: agent
     approved: false
   startup:
@@ -2419,7 +2421,7 @@ companies:
     Aravaipa Venture, Tauber Oil, Tiger Infrastructure Partners) entered at Series B or later; exact series not
     shown. Flags: plants outside region (Maryville MO, Terre Haute IN, Antwerp Belgium). Evidence: https://bolderindustries.com
     https://dealroom.co/companies/bolder-industries Region sources: bs-co-cleanenergy, siteselection-clean, fundraise-insider-co.
-    Confidence: medium. Unresolved: Latest series; headcount figure.'
+    Confidence: medium. Unresolved: Latest series; headcount figure. Tier set under owner decision 13.'
 - id: boom-supersonic
   name: Boom Supersonic
   website: null
@@ -2780,15 +2782,15 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2012
   headcount: null
   climate:
-    tier: out
-    reason: Protein feed made by fermenting methane, produced mainly in China. Recycled or bio-based materials;
-      the climate case is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held
-      out pending the owner's call on materials (raised with the Colorado list).
+    tier: core
+    reason: Protein feed made by fermenting methane, a bio-based replacement for fishmeal and soy; main production
+      in China.
     basis: agent
     approved: false
   startup:
@@ -2799,7 +2801,7 @@ companies:
     series letters not confirmed. Flags: main production plant in Chongqing, China (Calysseo JV); methane feedstock
     (natural gas). Evidence: https://calysta.com https://en.wikipedia.org/wiki/Calysta Region sources: arpae-projects.
     Confidence: medium. Unresolved: Headcount, recent funding and current HQ (site gives no address). Dealroom and
-    Built In SF had no profile.'
+    Built In SF had no profile. Tier set under owner decision 13.'
 - id: canadian-solar
   name: Canadian Solar
   website: null
@@ -3182,7 +3184,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - biofuels
   stage: seed
   founded: null
   headcount: null
@@ -3198,7 +3201,7 @@ companies:
     2026 (some outlets say $8M; about $7M more in grants from ARPA-E, NSF, CEC). https://www.feedstuffs.com/agribusiness-news/circularity-closes-7m-seed-round-to-scale-jet-fuel-made-from-dairy-biogas
     ; https://www.businesswire.com/news/home/20260615483254/en/ Evidence: https://circularityfuels.com https://www.feedstuffs.com/agribusiness-news/circularity-closes-7m-seed-round-to-scale-jet-fuel-made-from-dairy-biogas
     Region sources: dcvc, arpae-projects. Confidence: medium. Unresolved: founded year, headcount; HQ city from
-    press, not own site'
+    press, not own site Tier set under owner decision 13.'
 - id: clearway-energy-group
   name: Clearway Energy Group
   website: null
@@ -3687,7 +3690,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: series-a
   founded: 2017
   headcount:
@@ -3695,10 +3699,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/cruz-foam)
   climate:
-    tier: out
-    reason: Compostable foam packaging from shrimp-shell chitin. Recycled or bio-based materials; the climate case
-      is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the
-      owner's call on materials (raised with the Colorado list).
+    tier: core
+    reason: Compostable foam packaging from shrimp-shell chitin.
     basis: agent
     approved: false
   startup:
@@ -3710,7 +3712,8 @@ companies:
     2022 (At One Ventures et al.), per Dealroom. Flags: assets acquired by TemperPack; cruzfoam.com redirects to
     temperpack.com/cruzfoam; may no longer operate as an independent company. Evidence: https://dealroom.co/companies/cruz-foam
     https://www.temperpack.com/cruzfoam https://www.temperpack.com/media Region sources: at-one. Confidence: medium.
-    Unresolved: Date of the TemperPack IP acquisition; whether the Cruz Foam entity was wound down or acquired whole.'
+    Unresolved: Date of the TemperPack IP acquisition; whether the Cruz Foam entity was wound down or acquired whole.
+    Tier set under owner decision 13.'
 - id: cs-wind-america
   name: CS Wind America
   website: https://www.cswind.com
@@ -3802,15 +3805,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Bio-renewable polymers. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Bio-renewable polymers.
     basis: agent
     approved: false
   startup:
@@ -3819,7 +3821,8 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Site profiles four leaders (incl. Berkeley
     Lab scientists Brett Helms and Jay Keasling). Flags: HQ unverified (site gives no location; Berkeley Lab founders
     suggest Berkeley). Evidence: https://www.cyklosmaterials.com/ Region sources: lbnl-ipo-startups. Confidence:
-    medium. Unresolved: Location, founded, headcount and funding not found; Dealroom 404.'
+    medium. Unresolved: Location, founded, headcount and funding not found; Dealroom 404. Tier set under owner decision
+    13.'
 - id: dandelion-energy
   name: Dandelion Energy
   website: https://dandelionenergy.com
@@ -4143,7 +4146,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - methane
   stage: seed
   founded: 2019
   headcount:
@@ -4164,7 +4168,7 @@ companies:
     Stage: Built In: had funded most of a seed round and planned a Series A in late 2022; no confirmation it closed
     Flags: oil and gas is first listed market. Evidence: https://www.builtincolorado.com/company/earthview Region
     sources: builtin-co-greentech, builtin-co-energy. Confidence: low. Unresolved: earthview.io returned an empty
-    page; current status unknown.'
+    page; current status unknown. Tier set under owner decision 13.'
 - id: eaton
   name: Eaton
   website: null
@@ -4237,15 +4241,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: pre-seed
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Electrochemical bio-based solvent production. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (see the region report).
+    tier: core
+    reason: Electrochemical bio-based solvent production.
     basis: agent
     approved: false
   startup:
@@ -4255,7 +4258,7 @@ companies:
     2024 Lab Venture Challenge winner (https://www.colorado.edu/engineering/record-cuengineering-startups). Pre-seed
     inferred. Flags: chemicals. Evidence: https://ecovaleric.com https://www.colorado.edu/venturepartners/2024/09/13/internal-news/2024-cohort-cu-boulders-embark-deep-tech-startup-creator-launches-new-startups
     https://www.colorado.edu/mse/startup-and-spinoff-companies Region sources: cu-lvc. Confidence: medium. Unresolved:
-    Founded (likely 2024), headcount. Founder Roberta Leão; PI Adam Holewinski.'
+    Founded (likely 2024), headcount. Founder Roberta Leão; PI Adam Holewinski. Tier set under owner decision 13.'
 - id: eeli
   name: EELI
   website: https://eeli.tech
@@ -4765,7 +4768,7 @@ companies:
     board: energyrecovery
   read: auto
   sectors:
-  - charging
+  - water
   stage: public
   founded: 1992
   headcount:
@@ -4773,9 +4776,8 @@ companies:
     as_of: '2025-12-31'
     source: StockAnalysis (S&P Global) (https://stockanalysis.com/stocks/erii/employees/)
   climate:
-    tier: out
-    reason: Pressure exchangers and pumps, mainly for desalination. Water-treatment or desalination equipment; no
-      direct emissions or electrification case.
+    tier: core
+    reason: Pressure exchangers and pumps that cut the energy used in desalination and wastewater treatment.
     basis: agent
     approved: false
   startup:
@@ -4785,7 +4787,7 @@ companies:
   notes: 'Board lever:energyrecovery seen 2026-11-24, linked from the company''s own site: 4 open roles. Headcount
     note: Down 24 from prior year. Founded: https://stockanalysis.com/stocks/erii/company/. Stage: Nasdaq ERII.
     Evidence: https://stockanalysis.com/stocks/erii/company/ https://stockanalysis.com/stocks/erii/employees/ Region
-    sources: kb-ba-hardware. Confidence: high.'
+    sources: kb-ba-hardware. Confidence: high. Tier set under owner decision 13.'
 - id: energy-vault
   name: Energy Vault
   website: null
@@ -4954,6 +4956,7 @@ companies:
     board: null
   read: none
   sectors:
+  - biofuels
   - carbon-removal
   stage: null
   founded: null
@@ -4968,7 +4971,7 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: HQ unverified (site gives no location). Evidence: https://enventixinc.com/
     https://enventixinc.com/about Region sources: caltestbed-directory. Confidence: low. Unresolved: Location, founded,
-    headcount and funding not found; Dealroom 404.'
+    headcount and funding not found; Dealroom 404. Tier set under owner decision 13.'
 - id: envirofit
   name: Envirofit
   website: https://envirofit.org
@@ -5035,7 +5038,7 @@ companies:
     board: null
   read: none
   sectors:
-  - buildings
+  - water
   stage: series-b
   founded: 2015
   headcount:
@@ -5043,9 +5046,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/epic-cleantec)
   climate:
-    tier: out
-    reason: Onsite wastewater reuse for buildings. Water-treatment or desalination equipment; no direct emissions
-      or electrification case.
+    tier: core
+    reason: Onsite wastewater reuse for buildings.
     basis: agent
     approved: false
   startup:
@@ -5054,7 +5056,8 @@ companies:
       sign: founded 2015.'
   notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band <100. Founded:
     https://dealroom.co/companies/epic-cleantec. Stage: Series B $12M Nov 2024 (J-Ventures, Echo River) per Dealroom.
-    Evidence: https://dealroom.co/companies/epic-cleantec Region sources: builtin-sf-greentech. Confidence: high.'
+    Evidence: https://dealroom.co/companies/epic-cleantec Region sources: builtin-sf-greentech. Confidence: high.
+    Tier set under owner decision 13.'
 - id: erg-bio
   name: Erg Bio
   website: https://ergbio.com
@@ -5064,7 +5067,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - biofuels
   stage: seed
   founded: 2023
   headcount:
@@ -5083,7 +5087,7 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated. Founded: https://dealroom.co/companies/erg-bio.
     Stage: $6.5M seed Nov 2025 (Azolla Ventures, Chevron Technology Ventures, Freeflow, Plug and Play); Berkeley
     Lab JBEI spinout Jan 2025 (Dealroom). Evidence: https://ergbio.com/ https://dealroom.co/companies/erg-bio Region
-    sources: lbnl-ipo-startups. Confidence: high.'
+    sources: lbnl-ipo-startups. Confidence: high. Tier set under owner decision 13.'
 - id: estercycle
   name: EsterCycle
   website: https://estercycle.co
@@ -5093,15 +5097,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2024
   headcount: null
   climate:
-    tier: out
-    reason: Chemical recycling of polyester plastics. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (see the region report).
+    tier: core
+    reason: Chemical recycling of polyester plastics.
     basis: agent
     approved: false
   startup:
@@ -5112,7 +5115,8 @@ companies:
     Industries Accelerator, NYSERDA, Venture For ClimateTech, Colorado Venture Capital Authority (PitchBook). Flags:
     NREL (West Gate) spinout, Aug 2024. Evidence: https://estercycle.co https://www.nrel.gov/west-gate/julia-curley-enabling-circular-bioplastics
     https://pitchbook.com/profiles/company/771764-59 https://www.vcbacked.co/company/estercycle Region sources:
-    oedit-ai, nlr-annual-2025, nlr-westgate-alumni. Confidence: medium. Unresolved: Headcount; any equity round'
+    oedit-ai, nlr-annual-2025, nlr-westgate-alumni. Confidence: medium. Unresolved: Headcount; any equity round
+    Tier set under owner decision 13.'
 - id: estes-energy
   name: Estes Energy
   website: https://www.estes.energy
@@ -5492,8 +5496,8 @@ companies:
     as_of: '2026-11-24'
     source: Y Combinator profile (https://www.ycombinator.com/companies/ferveret-inc)
   climate:
-    tier: enabling
-    reason: Rack-integrated phase-change cooling for AI data centers.
+    tier: out
+    reason: Rack-integrated phase-change cooling for AI data centers; data-center equipment is out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -5502,7 +5506,7 @@ companies:
       2026-11-24); growth sign: founded 2021.'
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/ferveret-inc.
     Stage: YC S21; no priced round found. Flags: main customers are data centers. Evidence: https://www.ycombinator.com/companies/ferveret-inc
-    Region sources: yc-directory. Confidence: medium. Unresolved: Funding.'
+    Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
 - id: fervo-energy
   name: Fervo Energy
   website: null
@@ -6149,7 +6153,8 @@ companies:
     type: rippling
     board: gevo-careers
   read: auto
-  sectors: []
+  sectors:
+  - biofuels
   stage: public
   founded: 2005
   headcount:
@@ -6169,7 +6174,7 @@ companies:
     note: Old figure (FY2021); likely higher after adding the North Dakota (Richardton) ethanol site. Founded: https://en.wikipedia.org/wiki/Gevo.
     Stage: Nasdaq: GEVO. Flags: operating sites outside Colorado (Iowa RNG, Richardton ND, Luverne MN). Evidence:
     https://gevo.com https://en.wikipedia.org/wiki/Gevo Region sources: builtin-co-energy. Confidence: high. Unresolved:
-    Current headcount.'
+    Current headcount. Tier set under owner decision 13.'
 - id: gillig
   name: Gillig
   website: https://www.gillig.com/
@@ -6215,7 +6220,7 @@ companies:
     board: glacier
   read: auto
   sectors:
-  - industrial-heat
+  - recycling
   stage: series-a
   founded: 2019
   headcount:
@@ -6223,10 +6228,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/glacier)
   climate:
-    tier: out
-    reason: AI-vision recycling robots. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: AI-vision recycling robots.
     basis: agent
     approved: false
   startup:
@@ -6237,7 +6240,8 @@ companies:
     Headcount note: Dealroom 108 (band 100-500), undated; Built In SF 93. Founded: https://dealroom.co/companies/glacier.
     Stage: Series A $16M April 2025 (NEA, AlleyCorp, Climate Pledge Fund, Elysium); seed $7.7M March 2024 per Dealroom.
     Flags: glacier.tech does not resolve; company site is endwaste.io. Evidence: https://www.endwaste.io/ https://dealroom.co/companies/glacier
-    https://www.builtinsf.com/company/glacier Region sources: elemental-portfolio, eif. Confidence: high.'
+    https://www.builtinsf.com/company/glacier Region sources: elemental-portfolio, eif. Confidence: high. Tier set
+    under owner decision 13.'
 - id: glydways
   name: Glydways
   website: null
@@ -6414,7 +6418,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - methane
   stage: null
   founded: null
   headcount: null
@@ -6429,7 +6434,8 @@ companies:
   notes: 'No job board found on the company''s site. Evidence: https://www.wastetodaymagazine.com/news/grand-valley-instrumentation-mesa-county-landfill-meerkat-monitoring-system
     https://www.environmental-expert.com/companies/grand-valley-instrumentation-158588/products Region sources:
     ceo-cap-2026oct. Confidence: medium. Unresolved: Facts from search snippets (Waste Today page returned empty).
-    Pilot at Mesa County Landfill planned Oct 2025-Jan 2026. Domain, founded, headcount, stage not found.'
+    Pilot at Mesa County Landfill planned Oct 2025-Jan 2026. Domain, founded, headcount, stage not found. Tier set
+    under owner decision 13.'
 - id: gravity-renewables
   name: Gravity Renewables
   website: https://gravityrenewables.com
@@ -6474,13 +6480,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    tier: core
+    reason: Wastewater treatment media made from upcycled steel slag.
     basis: agent
     approved: false
   startup:
@@ -6491,7 +6498,8 @@ companies:
     (Embark Deep Tech Startup Creator). Evidence: https://www.colorado.edu/venturepartners/startup-portfolio/green-steel-environmental-llc
     https://aim2flourish.com/innovations/turning-industrial-waste-into-cleaner-water Region sources: ccia-members,
     cu-vp-portfolio, cu-lvc, cu-ascent. Confidence: medium. Unresolved: Own site returned no content; HQ (Boulder
-    per input, CU page only shows the university address), founding year, headcount, funding amounts'
+    per input, CU page only shows the university address), founding year, headcount, funding amounts Tier set under
+    owner decision 13.'
 - id: greenfire-energy
   name: GreenFire Energy
   website: https://www.greenfireenergy.com/
@@ -7394,15 +7402,13 @@ companies:
     board: null
   read: none
   sectors:
-  - industrial-heat
+  - recycling
   stage: seed
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Microbial chemicals from ethanol and methane. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: Microbial chemicals from ethanol and methane.
     basis: agent
     approved: false
   startup:
@@ -7411,7 +7417,7 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Seed first close announced 19 Nov 2024, led by First
     Bight Ventures with UMI; total investment over $10M (https://imicrobes.com/blog/seed). Evidence: https://www.imicrobes.com/
     https://imicrobes.com/blog/seed Region sources: yc-directory, kb-ba-hardware. Confidence: high. Unresolved:
-    Founding year (site cites 9 years of development); headcount.'
+    Founding year (site cites 9 years of development); headcount. Tier set under owner decision 13.'
 - id: inertia-enterprises
   name: Inertia Enterprises
   website: https://inertia.energy
@@ -7734,13 +7740,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    tier: core
+    reason: On-site industrial wastewater treatment machines.
     basis: agent
     approved: false
   startup:
@@ -7748,7 +7755,7 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: oil and gas produced water is one of several markets.
     Evidence: https://ixwater.com Region sources: bs-co-cleantech. Confidence: medium. Unresolved: Founding (footer
-    ''Copyright 2014-2026''), headcount, funding.'
+    ''Copyright 2014-2026''), headcount, funding. Tier set under owner decision 13.'
 - id: ixp
   name: IXP
   website: null
@@ -8032,15 +8039,14 @@ companies:
     type: bamboohr
     board: kiverdi
   read: manual
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Microbial conversion of CO2 into proteins, oils and feed. Recycled or bio-based materials; the climate
-      case is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending
-      the owner's call on materials (raised with the Colorado list).
+    tier: core
+    reason: Microbes that turn CO2 into proteins, oils and soil and feed products.
     basis: agent
     approved: false
   startup:
@@ -8050,7 +8056,7 @@ companies:
     feed). Stage: No round found; Air Protein is listed as its subsidiary Flags: Site is live but shows a 2019 copyright
     and undated news, so activity is weak. Footer address is San Leandro, not Pleasanton. Most operating activity
     appears to sit in the Air Protein spinout. Status is borderline.. Evidence: https://www.kiverdi.com Region sources:
-    builtin-sf-greentech. Confidence: low.'
+    builtin-sf-greentech. Confidence: low. Tier set under owner decision 13.'
 - id: kobold-metals
   name: KoBold Metals
   website: https://koboldmetals.com
@@ -8557,7 +8563,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2013
   headcount:
@@ -8565,10 +8572,8 @@ companies:
     as_of: '2024-09-01'
     source: Dynamic Tech Media (https://dynamictechmedia.com/living-ink/)
   climate:
-    tier: out
-    reason: Algae-based black pigment. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (see the region report).
+    tier: core
+    reason: Algae-based black pigment.
     basis: agent
     approved: false
   startup:
@@ -8582,7 +8587,8 @@ companies:
     https://www.livingink.co/ https://coloradobiz.com/tech-startup-living-ink-technologies/ https://dynamictechmedia.com/living-ink/
     https://www.packworld.com/sustainable-packaging/bio-based/news/22938707/living-ink-technologies-living-ink-secures-funding-for-pigment-made-from-biomass-waste
     Region sources: nlr-annual-2026. Confidence: medium. Unresolved: Stage (likely seed). Founded 2013 by two CSU
-    PhD students (search snippet). Algae Black named a TIME Best Invention of 2026 (site).'
+    PhD students (search snippet). Algae Black named a TIME Best Invention of 2026 (site). Tier set under owner
+    decision 13.'
 - id: longpath-technologies
   name: LongPath Technologies
   website: https://www.longpathtech.com
@@ -8592,7 +8598,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - methane
   stage: null
   founded: 2018
   headcount:
@@ -8614,7 +8621,7 @@ companies:
     first disbursement of a $162 million US DOE loan; no venture round found in this pass (Dealroom slugs 404).
     Flags: main customers are oil and gas operators. Evidence: https://longpathtech.com https://www.builtincolorado.com/company/longpath-technologies
     Region sources: oedit-ai, cu-vp-portfolio, cu-vp-climate, builtin-co-greentech. Confidence: medium. Unresolved:
-    Venture stage and rounds not found.'
+    Venture stage and rounds not found. Tier set under owner decision 13.'
 - id: longview-fusion
   name: Longview Fusion
   website: https://www.longviewfusion.com
@@ -8739,6 +8746,7 @@ companies:
   read: auto
   sectors:
   - hydrogen
+  - biofuels
   stage: series-a
   founded: 2022
   headcount:
@@ -8760,7 +8768,7 @@ companies:
     A, $43M, July 2026 (Dealroom; Galvanize, Union Square Ventures, Breakthrough Energy Ventures). https://dealroom.co/companies/lydian-labs
     Customers: Airlines, fuel buyers and corporate offtakers; synthetic fuel plant operators. Evidence: https://www.lydianlabs.com/
     https://dealroom.co/companies/lydian-labs Confidence: medium. Unresolved: Founding year conflict: Dealroom header
-    2022 vs Dealroom About text 2021.'
+    2022 vs Dealroom About text 2021. Tier set under owner decision 13.'
 - id: lyten
   name: Lyten
   website: https://lyten.com
@@ -8840,8 +8848,8 @@ companies:
     as_of: '2026-11-24'
     source: Y Combinator profile (https://www.ycombinator.com/companies/madrone)
   climate:
-    tier: enabling
-    reason: Dew-point evaporative cooling systems for data centers.
+    tier: out
+    reason: Dew-point evaporative cooling systems for data centers; data-center equipment is out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -8851,7 +8859,7 @@ companies:
   notes: 'Board ashby:madrone seen 2026-11-24, token matched by name; board page checked: 3 open roles. Headcount
     note: YC team size, undated. Founded: https://www.ycombinator.com/companies/madrone. Stage: YC Spring 2026;
     no priced round found. Flags: main customers are data centers. Evidence: https://www.ycombinator.com/companies/madrone
-    Region sources: yc-directory. Confidence: medium. Unresolved: Funding.'
+    Region sources: yc-directory. Confidence: medium. Unresolved: Funding. Tier set under owner decision 13.'
 - id: magrathea
   name: Magrathea
   website: https://magratheametals.com
@@ -8962,7 +8970,8 @@ companies:
     type: bamboohr
     board: mangomaterials
   read: manual
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2010
   headcount:
@@ -8970,10 +8979,8 @@ companies:
     as_of: '2026-11-24'
     source: Built In SF (https://www.builtinsf.com/company/mango-materials)
   climate:
-    tier: out
-    reason: PHA biopolymer from waste methane. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: PHA biopolymer from waste methane.
     basis: agent
     approved: false
   startup:
@@ -8984,7 +8991,7 @@ companies:
     note: Built In figure, undated; Built In gives ''Redwood, California''. Founded: https://www.builtinsf.com/company/mango-materials.
     Stage: Not found; Dealroom 404. Own site news dated Sept 10 2026 (UC Davis partnership) shows activity. Evidence:
     https://www.mangomaterials.com https://www.builtinsf.com/company/mango-materials Region sources: builtin-sf-greentech,
-    collab-fund. Confidence: medium. Unresolved: stage'
+    collab-fund. Confidence: medium. Unresolved: stage Tier set under owner decision 13.'
 - id: maple-materials
   name: Maple Materials
   website: https://maplematerials.com
@@ -9373,7 +9380,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: 2004
   headcount:
@@ -9381,9 +9389,8 @@ companies:
     as_of: '2026-11-24'
     source: naicslist directory (search snippet) (https://naicslist.com/company-profile/microvi-biotech-inc-hayward-ca-94545)
   climate:
-    tier: out
-    reason: Biocatalytic wastewater treatment. Water-treatment or desalination equipment; no direct emissions or
-      electrification case.
+    tier: core
+    reason: Biocatalytic wastewater treatment.
     basis: agent
     approved: false
   startup:
@@ -9396,7 +9403,7 @@ companies:
     a Series B mentioned; $1M convertible note Aug 2025 per CB Insights snippet; totals $6M-$13.5M disagree. Evidence:
     https://microvi.com/ https://www.watertechonline.com/skion-acquires-minority-stake-in-microvi/ https://www.cbinsights.com/company/microvi-biotech
     Region sources: cec-nopa, elemental-portfolio. Confidence: medium. Unresolved: Founding year conflicts (2004
-    vs 2008); latest labelled round unclear.'
+    vs 2008); latest labelled round unclear. Tier set under owner decision 13.'
 - id: mightyfly
   name: MightyFly
   website: https://mightyfly.com
@@ -9441,7 +9448,7 @@ companies:
     board: Mill
   read: auto
   sectors:
-  - buildings
+  - recycling
   stage: series-c
   founded: 2020
   headcount:
@@ -9449,10 +9456,8 @@ companies:
     as_of: '2026-11-24'
     source: Built In SF (https://www.builtinsf.com/company/mill)
   climate:
-    tier: out
-    reason: Home and commercial food recyclers. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: Home and commercial food recyclers.
     basis: agent
     approved: false
   startup:
@@ -9466,7 +9471,7 @@ companies:
     Evidence: https://mill.com/about https://www.builtinsf.com/company/mill https://www.axios.com/pro/retail-deals/2023/09/06/food-recycling-startup-mill-industries-series-c
     https://www.geekwire.com/2023/nest-co-founder-launches-service-to-turn-household-food-scraps-into-chicken-feed-for-33-month/
     Region sources: lowercarbon, bev, prelude, lowercarbon-portfolio. Confidence: medium. Unresolved: HQ San Bruno
-    from search snippets, not own site.'
+    from search snippets, not own site. Tier set under owner decision 13.'
 - id: minus-materials
   name: Minus Materials
   website: null
@@ -9689,7 +9694,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: subsidiary
   founded: 2013
   headcount:
@@ -9697,10 +9703,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/mycoworks)
   climate:
-    tier: out
-    reason: Mycelium leather alternative. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Mycelium leather alternative.
     basis: agent
     approved: false
   startup:
@@ -9715,7 +9719,8 @@ companies:
     ; https://www.pr.com/press-release/972157 Flags: acquired by DFX Corp in 2026 (asset sale / restructuring);
     has a 136,000 sq ft plant in South Carolina. Evidence: https://dealroom.co/companies/mycoworks https://www.builtinsf.com/company/mycoworks
     https://biofuelsdigest.com/fungi-funds-dfx-corp-acquires-mycelium-leather-maker-mycoworks/ Region sources: dcvc,
-    wireframe. Confidence: high. Unresolved: current headcount; own site refused automated fetch (403)'
+    wireframe. Confidence: high. Unresolved: current headcount; own site refused automated fetch (403) Tier set
+    under owner decision 13.'
 - id: mytra
   name: Mytra
   website: null
@@ -10026,15 +10031,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Recyclable thermoset resins. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Recyclable thermoset resins.
     basis: agent
     approved: false
   startup:
@@ -10043,7 +10047,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Not found. Flags: identity uncertain as to location:
     no own website found (nextsetmaterials.com does not resolve); Activate Berkeley 2025 cohort; founder''s contact
     is an MIT address. Evidence: https://activate.org/nextset-materials https://activate.org/meet-the-cohort-2025-activate-berkeley-fellows
-    Region sources: activate-2025. Confidence: low. Unresolved: website, HQ, founded, headcount, stage'
+    Region sources: activate-2025. Confidence: low. Unresolved: website, HQ, founded, headcount, stage Tier set
+    under owner decision 13.'
 - id: niocorp-developments
   name: NioCorp Developments
   website: https://www.niocorp.com
@@ -10257,7 +10262,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: series-b
   founded: 2015
   headcount:
@@ -10265,10 +10271,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/novoloop)
   climate:
-    tier: out
-    reason: Upcycled polyethylene. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Upcycled polyethylene.
     basis: agent
     approved: false
   startup:
@@ -10278,7 +10282,7 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band <100. Founded:
     https://dealroom.co/companies/novoloop. Stage: Series B $21M June 2025 (Valo Ventures, Taranis); Series A $10M
     June 2022 per Dealroom. Evidence: https://dealroom.co/companies/novoloop Region sources: elemental-portfolio,
-    startx. Confidence: high.'
+    startx. Confidence: high. Tier set under owner decision 13.'
 - id: nuro
   name: Nuro
   website: null
@@ -10479,7 +10483,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - biofuels
   stage: pre-seed
   founded: 2021
   headcount:
@@ -10500,7 +10505,7 @@ companies:
     (no amount). Evidence: https://tomkat.stanford.edu/news/full-circle-fuels https://www.caplight.com/company/oleospos
     Region sources: startx. Confidence: medium. Unresolved: HQ: article places it at Lawrence Berkeley National
     Lab; directory says San Carlos, CA; CB Insights says San Diego (possibly a different Oleo). Own site returned
-    no readable text. Pre-seed vs seed.'
+    no readable text. Pre-seed vs seed. Tier set under owner decision 13.'
 - id: olympian-motors
   name: Olympian Motors
   website: https://olympianmotors.com
@@ -10823,13 +10828,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    tier: core
+    reason: Membranes for water purification and distillation.
     basis: agent
     approved: false
   startup:
@@ -10838,7 +10844,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Partner logos include NASA, DOE, NSF, NRL, Activate
     and West Gate; no funding figures. Flags: site copyright 2024 only. Evidence: https://osmopuretechnologies.com
     Region sources: oedit-ai, cu-vp-ai, nlr-annual-2025, nlr-annual-2026, nlr-westgate-innovators, cu-lvc, cu-ascent,
-    cu-oedit-2025. Confidence: medium. Unresolved: HQ (Boulder per input), founding year, headcount, funding'
+    cu-oedit-2025. Confidence: medium. Unresolved: HQ (Boulder per input), founding year, headcount, funding Tier
+    set under owner decision 13.'
 - id: otoro-energy
   name: OTORO Energy
   website: https://www.otoroenergy.com
@@ -10955,13 +10962,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    tier: core
+    reason: Field-deployable water and soil chemistry analyzers.
     basis: agent
     approved: false
   startup:
@@ -10969,7 +10977,7 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: pre-commercial (field testing, early access). Evidence:
     https://pagetechnologies.io Region sources: ccia-members, cu-mse-spinoffs. Confidence: medium. Unresolved: HQ
-    (Boulder per input, not on site), founding year, headcount, funding'
+    (Boulder per input, not on site), founding year, headcount, funding Tier set under owner decision 13.'
 - id: paired-power
   name: Paired Power
   website: https://pairedpower.com/
@@ -11013,8 +11021,8 @@ companies:
   founded: null
   headcount: null
   climate:
-    tier: enabling
-    reason: Rack-level power conversion hardware, first for data centers (owner ruling A2).
+    tier: out
+    reason: Rack-level power conversion hardware for data centers; data-center equipment is out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -11023,7 +11031,7 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Grants only: Colorado Advanced Industries grant, NSF
     SBIR Phase I; UT Austin spinout supported by NREL. Flags: main customers are data centers; pre-commercial. Evidence:
     https://palanquinpower.com Region sources: oedit-ai, nlr-annual-2025, nlr-westgate-alumni. Confidence: medium.
-    Unresolved: Founding year, headcount, equity funding'
+    Unresolved: Founding year, headcount, equity funding Tier set under owner decision 13.'
 - id: panthalassa
   name: Panthalassa
   website: https://panthalassa.com
@@ -11483,14 +11491,13 @@ companies:
     board: null
   read: none
   sectors:
-  - buildings
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Forward-osmosis membranes, now for beverage concentration. Water-treatment or desalination equipment;
-      no direct emissions or electrification case.
+    tier: core
+    reason: Forward-osmosis membranes, now for beverage concentration.
     basis: agent
     approved: false
   startup:
@@ -11498,7 +11505,8 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: No information found. Flags: focus appears to have shifted
     to food and beverage concentration. Evidence: https://porifera.com Region sources: cec-eif-showcase, cec-nopa,
-    arpae-projects. Confidence: low. Unresolved: Site returned only a title; HQ, founded, headcount, stage'
+    arpae-projects. Confidence: low. Unresolved: Site returned only a title; HQ, founded, headcount, stage Tier
+    set under owner decision 13.'
 - id: posh-robotics-posh-energy
   name: Posh Robotics (Posh Energy)
   website: https://poshenergy.com
@@ -11573,16 +11581,13 @@ companies:
     board: null
   read: none
   sectors:
-  - electric-aviation
-  - industrial-heat
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Protocell biocatalysis for chemicals. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: Protocell biocatalysis for chemicals.
     basis: agent
     approved: false
   startup:
@@ -11592,7 +11597,7 @@ companies:
     advisor. Stage: Not found; supporters shown: UCLA, Berkeley Lab, DOE, NSF I-Corps. Flags: Activate Berkeley
     2024 cohort; Bay Area location not stated on own site; early-stage enabling technology. Evidence: https://praio.co/
     https://activate.org/praio Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount,
-    stage'
+    stage Tier set under owner decision 13.'
 - id: prieto-battery
   name: Prieto Battery
   website: https://www.prietobattery.com
@@ -11665,7 +11670,8 @@ companies:
     type: pinpoint
     board: projectcanary
   read: manual
-  sectors: []
+  sectors:
+  - methane
   stage: series-b
   founded: 2019
   headcount:
@@ -11688,7 +11694,8 @@ companies:
     (laser gas analyzers, Hayward CA) Mar 2022 (https://en.wikipedia.org/wiki/Project_Canary, https://prnewswire.com/news-releases/project-canary-announces-acquisition-of-aeris-technologies-expanding-services-beyond-oil-and-gas-301509618.html)
     Flags: main customers are oil and gas operators; hardware plus data/software. Evidence: https://www.projectcanary.com
     https://en.wikipedia.org/wiki/Project_Canary https://dealroom.co/companies/project-canary Region sources: builtin-co-greentech.
-    Confidence: high. Unresolved: Founding year conflict: Wikipedia 2019, Dealroom 2018.'
+    Confidence: high. Unresolved: Founding year conflict: Wikipedia 2019, Dealroom 2018. Tier set under owner decision
+    13.'
 - id: prometheus-fuels
   name: Prometheus Fuels
   website: https://www.prometheusfuels.com
@@ -12497,15 +12504,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: pre-seed
   founded: 2021
   headcount: null
   climate:
-    tier: out
-    reason: PVC-free coated fabrics and tarps. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (see the region report).
+    tier: core
+    reason: PVC-free coated fabrics and tarps.
     basis: agent
     approved: false
   startup:
@@ -12517,7 +12523,7 @@ companies:
     https://renegadeplastics.com https://prnewswire.com/news-releases/renegade-plastics-closes-pre-seed-investment-led-by-schneider-resources-holding-302139339.html
     https://www.wastedive.com/news/recycled-plastic-textile-maker-gets-loan-boost-from-closed-loop-partners/873005/
     https://www.plasticstoday.com/sustainability/closed-loop-partners-backs-startup-s-pp-fabric Region sources:
-    ccia-members. Confidence: medium. Unresolved: Headcount, round amounts'
+    ccia-members. Confidence: medium. Unresolved: Headcount, round amounts Tier set under owner decision 13.'
 - id: renesas
   name: Renesas
   website: null
@@ -12612,15 +12618,13 @@ companies:
     board: null
   read: none
   sectors:
-  - industrial-heat
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Bio-based FDCA platform chemical. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: Bio-based FDCA platform chemical.
     basis: agent
     approved: false
   startup:
@@ -12630,7 +12634,8 @@ companies:
     Raises $15M'' news item, March 6, 2025 (round type not stated); $5.4M DOE IEDO grant Jan 2024; investors include
     Khosla (own site). Flags: HQ unverified (site says United States only; directory says Berkeley, CA). Evidence:
     https://resourcechemicalcorp.com/ Region sources: activate-companies, cyclotron-road-fellows. Confidence: medium.
-    Unresolved: City, founded year, round label and headcount not found; Dealroom 404.'
+    Unresolved: City, founded year, round label and headcount not found; Dealroom 404. Tier set under owner decision
+    13.'
 - id: revo-powertrains-wrightspeed
   name: REVO Powertrains (Wrightspeed)
   website: https://www.wrightspeed.com/
@@ -12701,15 +12706,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: pre-seed
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Enzymes that break down plastic and textile waste. Recycled or bio-based materials; the climate case
-      is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the
-      owner's call on materials (see the region report).
+    tier: core
+    reason: Enzymes that break down plastic and textile waste.
     basis: agent
     approved: false
   startup:
@@ -12720,7 +12724,7 @@ companies:
     Supporters listed on site: Berkeley SkyDeck, H&M Foundation Global Change Award 2026 winner, Clean Tech Open.
     Pre-seed inferred. Evidence: https://rheasfactory.com https://www.nlr.gov/west-gate/innovators Region sources:
     nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators. Confidence: medium. Unresolved: HQ (Berkeley SkyDeck
-    link suggests California origin), founded, headcount. CEO Arzu Sandıkçı.'
+    link suggests California origin), founded, headcount. CEO Arzu Sandıkçı. Tier set under owner decision 13.'
 - id: rhoic
   name: Rhoic
   website: https://rhoic.co
@@ -12731,16 +12735,13 @@ companies:
     board: null
   read: none
   sectors:
-  - fission
-  - hydrogen
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Nanofiber electrospinning reactors. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (raised with the Colorado list).
+    tier: core
+    reason: Nanofiber electrospinning reactors.
     basis: agent
     approved: false
   startup:
@@ -12750,7 +12751,8 @@ companies:
     two advisors. Stage: Not found; site lists support from Activate, Cyclotron Road, Crucible Accelerator X, Black
     & Veatch and others. Flags: Bay Area location not confirmed (no city on own site or Activate profile); site
     mentions defense energetics among applications. Evidence: https://www.rhoic.co/ https://activate.org/rhoic Region
-    sources: builtin-sf-greentech, activate-2024. Confidence: low. Unresolved: HQ, founded, headcount, stage'
+    sources: builtin-sf-greentech, activate-2024. Confidence: low. Unresolved: HQ, founded, headcount, stage Tier
+    set under owner decision 13.'
 - id: rincell
   name: Rincell
   website: null
@@ -12902,14 +12904,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Recovers resources from wastewater. Water-treatment or desalination equipment; no direct emissions or
-      electrification case.
+    tier: core
+    reason: Recovers resources from wastewater.
     basis: agent
     approved: false
   startup:
@@ -12918,7 +12920,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Site lists supporters/investors NSF, Collab Fund, Safar
     Partners, Gigascale Capital, Cheng Wu Foundation, Impact Science Ventures, Activate; no round or amount disclosed.
     Evidence: https://www.rocawater.com Region sources: collab-fund, arpae-projects. Confidence: medium. Unresolved:
-    Domain guessed (matches Alameda and wastewater description). Founding year, headcount, round stage.'
+    Domain guessed (matches Alameda and wastewater description). Founding year, headcount, round stage. Tier set
+    under owner decision 13.'
 - id: rondo-energy
   name: Rondo Energy
   website: null
@@ -12956,7 +12959,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: series-a
   founded: 2020
   headcount:
@@ -12964,10 +12968,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/rubi-laboratories)
   climate:
-    tier: out
-    reason: Enzymatic CO2-to-cellulose pulp. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Enzymatic CO2-to-cellulose pulp.
     basis: agent
     approved: false
   startup:
@@ -12978,7 +12980,8 @@ companies:
     https://dealroom.co/companies/rubi-laboratories. Stage: Dealroom text: Series A $30M May 2024 at $100M valuation;
     table also shows early VC $7.5M March 2026 (AP Ventures, H&M, CMPC) at $44M valuation; the two conflict. Evidence:
     https://dealroom.co/companies/rubi-laboratories Region sources: builtin-sf-greentech, collab-fund, climactic,
-    third-derivative. Confidence: medium. Unresolved: nature of the March 2026 round'
+    third-derivative. Confidence: medium. Unresolved: nature of the March 2026 round Tier set under owner decision
+    13.'
 - id: rune-energy
   name: Rune Energy
   website: https://www.rune.energy
@@ -13505,15 +13508,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2020
   headcount: null
   climate:
-    tier: out
-    reason: Bio-based polymer binder. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (see the region report).
+    tier: core
+    reason: Bio-based polymer binder.
     basis: agent
     approved: false
   startup:
@@ -13523,7 +13525,7 @@ companies:
     I $400K (2022) and Phase II $1M (2023); OEDIT and LaunchTN support; investors/accelerators thanked include Techstars,
     GFI Partners, MIT E14 Fund; no priced round found. Flags: pre-commercial (pilots in 2026). Evidence: https://silvismaterials.com
     Region sources: oedit-ai, bs-co-cleantech, fundraise-insider-co. Confidence: medium. Unresolved: Headcount,
-    equity round'
+    equity round Tier set under owner decision 13.'
 - id: simplesub-water
   name: SimpleSUB Water
   website: https://simplesubwater.com
@@ -13533,20 +13535,21 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - water
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Water-treatment or water-measurement product; no direct emissions or electrification case.
+    tier: core
+    reason: Clamp-on ultrasonic water submeters with remote monitoring.
     basis: agent
     approved: false
   startup:
     status: in
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Evidence: https://www.simplesubwater.com Region sources: oedit-ai-2023nov.
-    Confidence: medium. Unresolved: Founding year, headcount, funding'
+    Confidence: medium. Unresolved: Founding year, headcount, funding Tier set under owner decision 13.'
 - id: sionic-energy
   name: Sionic Energy
   website: https://sionicenergy.com
@@ -14493,15 +14496,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Biodegradable textile fibers. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (raised with the Colorado list).
+    tier: core
+    reason: Biodegradable textile fibers.
     basis: agent
     approved: false
   startup:
@@ -14510,7 +14512,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Not found; Kickstarter for first tee passed $10K goal
     (Activate news, July 2026). Flags: Activate Berkeley 2024 cohort; Bay Area location not stated on own site.
     Evidence: https://www.supercarb.tech/ https://activate.org/supercarb https://activate.org/news/activate-fellow-news-july-2026
-    Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount, stage'
+    Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount, stage Tier set under
+    owner decision 13.'
 - id: sustainable-chemicals
   name: Sustainable Chemicals
   website: null
@@ -14520,15 +14523,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2022
   headcount: null
   climate:
-    tier: out
-    reason: Plant-based biopolymer for films. Recycled or bio-based materials; the climate case is lower-carbon
-      feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's call on
-      materials (see the region report).
+    tier: core
+    reason: Plant-based biopolymer for films.
     basis: agent
     approved: false
   startup:
@@ -14537,7 +14539,8 @@ companies:
   notes: 'No job board found on the company''s site. Founded: https://www.ptonline.com/articles/from-sugar-to-plastic-without-the-bug.
     Flags: identity matched by name and product only (Plastics Technology article; page refuses automated fetch).
     Evidence: https://www.ptonline.com/articles/from-sugar-to-plastic-without-the-bug Region sources: oedit-ai.
-    Confidence: low. Unresolved: Domain, city, shrink-film application, headcount, funding'
+    Confidence: low. Unresolved: Domain, city, shrink-film application, headcount, funding Tier set under owner
+    decision 13.'
 - id: swift-solar
   name: Swift Solar
   website: https://swiftsolar.com
@@ -14579,7 +14582,6 @@ companies:
     board: null
   read: none
   sectors:
-  - hydrogen
   - industrial-heat
   stage: seed
   founded: 2022
@@ -14588,10 +14590,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/switch-bioworks)
   climate:
-    tier: out
-    reason: Engineered microbes for agriculture and chemicals. Recycled or bio-based materials; the climate case
-      is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the
-      owner's call on materials (raised with the Colorado list).
+    tier: core
+    reason: Engineered soil microbes that make ammonia on plant roots, replacing synthetic nitrogen fertilizer.
     basis: agent
     approved: false
   startup:
@@ -14601,7 +14601,8 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Dealroom 28 (undated; band under 100). Founded:
     https://dealroom.co/companies/switch-bioworks. Stage: Dealroom: $17M seed Sept 2024 (Thia Ventures, Acre VP,
     Ag Ventures Alliance, Grantham Foundation); $1.5M King Philanthropies grant Jan 2023. Evidence: https://www.switchbioworks.com
-    https://dealroom.co/companies/switch-bioworks Region sources: arpae-projects. Confidence: high.'
+    https://dealroom.co/companies/switch-bioworks Region sources: arpae-projects. Confidence: high. Tier set under
+    owner decision 13.'
 - id: sylvatex
   name: Sylvatex
   website: https://www.sylvatex.com
@@ -14909,15 +14910,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: pre-seed
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Recycles textile waste into nylon and polyester. Recycled or bio-based materials; the climate case is
-      lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the owner's
-      call on materials (see the region report).
+    tier: core
+    reason: Recycles textile waste into nylon and polyester.
     basis: agent
     approved: false
   startup:
@@ -14926,7 +14926,7 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Own news: ''$1.25M Investment from AccelR8 and Toyota
     Ventures'' (date not shown); also H&M Global Change Award and OEDIT proof-of-concept grant. Round name not stated;
     mapped to pre-seed by size. Evidence: https://tereform.com Region sources: oedit-ai, nlr-westgate-alumni. Confidence:
-    medium. Unresolved: Founding year, headcount, round name/date'
+    medium. Unresolved: Founding year, headcount, round name/date Tier set under owner decision 13.'
 - id: terra-co2-technologies
   name: Terra CO2 Technologies
   website: https://www.terraco2.com
@@ -15127,7 +15127,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: null
   founded: 2018
   headcount:
@@ -15135,10 +15136,8 @@ companies:
     as_of: '2026-11-24'
     source: aggregator listings (Datanyze/ZoomInfo); undated, so as_of is the day it was read (https://www.datanyze.com/companies/the-hemp-plastic/346744101)
   climate:
-    tier: out
-    reason: Hemp-filled plastic resins. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (see the region report).
+    tier: core
+    reason: Hemp-filled plastic resins.
     basis: agent
     approved: false
   startup:
@@ -15150,7 +15149,7 @@ companies:
     $1.63M; no round label. Flags: one directory says established 2017. Evidence: https://www.builtincolorado.com/company/hemp-plastic-company
     https://www.cbinsights.com/company/hemp-plastic https://www.plasticsmachinerymanufacturing.com/compounding/article/21151224/injection-molding
     Region sources: builtin-co-greentech. Confidence: low. Unresolved: Own site (hempplastic.com) not checked; current
-    activity.'
+    activity. Tier set under owner decision 13.'
 - id: the-nuclear-company
   name: The Nuclear Company
   website: https://thenuclearcompany.com
@@ -15351,7 +15350,8 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - methane
   stage: null
   founded: null
   headcount: null
@@ -15366,7 +15366,7 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: oil and gas listed first among target sectors (with
     agriculture and landfills). Evidence: https://www.trellisense.com Region sources: oedit-ai, ceo-cap-2026feb.
-    Confidence: medium. Unresolved: Founding year, headcount, funding'
+    Confidence: medium. Unresolved: Founding year, headcount, funding Tier set under owner decision 13.'
 - id: turnongreen
   name: TurnOnGreen
   website: https://www.turnongreen.com
@@ -15406,6 +15406,7 @@ companies:
   read: auto
   sectors:
   - hydrogen
+  - biofuels
   stage: late
   founded: 2015
   headcount:
@@ -15433,7 +15434,8 @@ companies:
     https://dealroom.co/news/143884-japanese-backers-pile-into-twelves-push-to-make-jet-fuel-from-co2/ https://builtin.com/company/twelve
     https://www.aviationpros.com/aircraft/defense/press-release/21242818/twelve-twelve-produces-first-batch-of-ejet-fuel-from-carbon-dioxide-through-partnership-with-the-us-air-force
     Confidence: medium. Unresolved: Stage label after Series C not confirmed (2026 round type unspecified, so ''late''
-    is tentative; could be series-c). Founding year from Techstars only (company formerly Opus 12).'
+    is tentative; could be series-c). Founding year from Techstars only (company formerly Opus 12). Tier set under
+    owner decision 13.'
 - id: tynt-technologies
   name: Tynt Technologies
   website: https://www.tynt.io
@@ -15716,15 +15718,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - recycling
   stage: series-a
   founded: 2014
   headcount: null
   climate:
-    tier: out
-    reason: Carbon-fiber recycling. Recycled or bio-based materials; the climate case is lower-carbon feedstock,
-      not emissions cuts or electrification as the main product. Held out pending the owner's call on materials
-      (see the region report).
+    tier: core
+    reason: Carbon-fiber recycling.
     basis: agent
     approved: false
   startup:
@@ -15737,7 +15738,7 @@ companies:
     Innovation Fund); Feb 2026 exempt offering filing for a planned $6M raise. Flags: company site has a misconfigured
     certificate (possible lapse). Evidence: https://dealroom.co/companies/vartega Region sources: builtin-co-greentech,
     fundraise-insider-co. Confidence: medium. Unresolved: Headcount; Dealroom header says Denver, About says Golden;
-    current site status.'
+    current site status. Tier set under owner decision 13.'
 - id: vaulted-deep
   name: Vaulted Deep
   website: https://vaulteddeep.com
@@ -15887,8 +15888,9 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/verdigris-technologies)
   climate:
-    tier: enabling
-    reason: High-frequency electrical power meters and analytics, mainly for data centers.
+    tier: out
+    reason: High-frequency power meters and analytics sold mainly to data centers; data-center equipment is out
+      (decision 13).
     basis: agent
     approved: false
   startup:
@@ -15901,7 +15903,7 @@ companies:
     investment from Southwire Mar 2026; 10 events, 2 visible. Flags: main customers are data centers (AI factories,
     colocation; named Google, AWS, NVIDIA, Digital Realty); hardware meters plus software subscription. Evidence:
     https://verdigris.co https://dealroom.co/companies/verdigris-technologies Region sources: dcvc, kb-ba-hardware,
-    startx. Confidence: medium. Unresolved: latest round label'
+    startx. Confidence: medium. Unresolved: latest round label Tier set under owner decision 13.'
 - id: verne
   name: Verne
   website: https://www.verneh2.com/
@@ -16063,7 +16065,8 @@ companies:
     type: breezy
     board: visolis
   read: manual
-  sectors: []
+  sectors:
+  - biofuels
   stage: null
   founded: null
   headcount: null
@@ -16079,7 +16082,7 @@ companies:
     seed investment 2022; Forbes link references $8M raised in 2023; $2.25M DOD award (own site). Flags: defense
     funding for domestic facility (not main customer confirmed). Evidence: https://www.visolisbio.com/ Region sources:
     activate-companies, cyclotron-road-fellows, dcvc, kb-ba-hardware. Confidence: medium. Unresolved: Founded, headcount
-    and round label not found; Dealroom 404.'
+    and round label not found; Dealroom 404. Tier set under owner decision 13.'
 - id: voltair
   name: Voltair
   website: https://voltairlabs.com/
@@ -16958,7 +16961,7 @@ companies:
     board: zymochem
   read: manual
   sectors:
-  - buildings
+  - recycling
   stage: series-a
   founded: 2013
   headcount:
@@ -16966,10 +16969,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/zymochem)
   climate:
-    tier: out
-    reason: Bio-based chemicals and materials by fermentation. Recycled or bio-based materials; the climate case
-      is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending the
-      owner's call on materials (raised with the Colorado list).
+    tier: core
+    reason: Bio-based chemicals and materials by fermentation.
     basis: agent
     approved: false
   startup:
@@ -16981,4 +16982,4 @@ companies:
     Burlington, VT. Founded: https://dealroom.co/companies/zymochem. Stage: Site: $21M Series A Jan 2024 led by
     Breakout Ventures (lululemon, Toyota Ventures, GS Futures, KdT, Cavallo); DOE $4M grant Sept 2026. Evidence:
     https://zymochem.com https://dealroom.co/companies/zymochem https://www.builtinsf.com/company/zymochem Region
-    sources: startx, arpae-projects. Confidence: high.'
+    sources: startx, arpae-projects. Confidence: high. Tier set under owner decision 13.'
