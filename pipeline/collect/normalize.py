@@ -6,6 +6,8 @@ workplace, clipping, first and last seen).
 """
 from __future__ import annotations
 
+from dataclasses import dataclass, field
+
 import re
 from datetime import datetime, timezone
 
@@ -13,6 +15,21 @@ DRAFT_KEYS = (
     "posting_id", "title", "url", "locations", "workplace", "employment",
     "pay", "posted_date", "department", "description_text",
 )
+
+
+@dataclass
+class ReadResult:
+    """What a reader found when a plain list of drafts does not say enough.
+
+    status is a run status from schema/raw-jobs-file.schema.json ('ok',
+    'none-open', 'partial', 'unreadable', 'no-careers-page', 'ats-found',
+    'blocked', 'skipped'); note goes into the run entry's 'error' field.
+    seen_at, when given, is when the drafts were really read (postings carried
+    from an earlier read keep that time as their last_seen)."""
+    drafts: list = field(default_factory=list)
+    status: str = "ok"
+    note: str | None = None
+    seen_at: str | None = None
 
 
 def draft(**values) -> dict:

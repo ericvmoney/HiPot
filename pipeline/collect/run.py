@@ -3,9 +3,11 @@
     uv run python -m pipeline.collect [--company <id>] [--out data/jobs.raw.json]
 
 Writes a raw jobs file (schema/raw-jobs-file.schema.json). A company is
-collected when its climate tier is core or enabling, its startup status is in
-or review, and its ATS has a reader and a board token. Every other company gets
-a `skipped` entry with the reason. One company failing does not stop the run.
+collected when its climate tier is core or enabling and its ATS has a reader
+and a board token, whatever its startup status: established companies are
+collected too (PLAN.md decision 14), and the board decides what it shows.
+Every other company gets a `skipped` entry with the reason. One company
+failing does not stop the run.
 """
 from __future__ import annotations
 
@@ -14,9 +16,11 @@ import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 from typing import Callable
 
-from pipeline.collect import ashby, bamboohr, breezy, gem, greenhouse, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable
+from pipeline.collect import normalize
+from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_STATE, SeenState, write_json_atomic
@@ -42,6 +46,10 @@ READERS: dict[str, Callable] = {
     "bamboohr": bamboohr.read,                 # Terms of Service section 4.2
     "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
     "breezy": breezy.read,                     # Terms of Service section 5(ix)
+    # Companies' own careers pages; the board is the careers page address.
+    # Follows a company's LinkedIn jobs where its page sends candidates there
+    # (LinkedIn User Agreement 8.2 restricts automated access; decision 12).
+    "other": careers.read,
 }
 HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ashby": "api.ashbyhq.com",
          "rippling": "api.rippling.com", "workable": "apply.workable.com",
@@ -55,7 +63,6 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
          "paylocity": "recruiting.paylocity.com"}
 COLLECT_TIERS = ("core", "enabling")
-COLLECT_STARTUP = ("in", "review")
 
 
 def utc_now() -> str:
@@ -64,11 +71,9 @@ def utc_now() -> str:
 
 def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | None:
     """Why a company is not collected, or None when it is."""
-    tier, status = company["climate"]["tier"], company["startup"]["status"]
+    tier = company["climate"]["tier"]
     if tier not in COLLECT_TIERS:
         return f"not collected: climate tier is '{tier}'"
-    if status not in COLLECT_STARTUP:
-        return f"not collected: startup status is '{status}'"
     if company.get("read") == "none":
         return "not collected: the registry says read: none"
     # 'read: manual' does not stop a company being collected: the field says
@@ -151,14 +156,21 @@ def collect(
             entries.append(_entry(company, "skipped", error=reason))
             continue
         ats, board = company["ats"]["type"], company["ats"]["board"]
-        host = HOSTS.get(ats, ats)
+        # A careers page is on the company's own host; one site's 429 says
+        # nothing about the others.
+        host = urlsplit(board).netloc.lower() if ats == "other" else HOSTS.get(ats, ats)
         if host in limited_hosts:
             entries.append(_entry(company, "blocked", error=f"not requested: {host} answered HTTP 429 earlier in this run"))
             log(f"blocked  {company['id']}: {host} is rate limiting")
             continue
         try:
-            drafts = readers[ats](board, fetcher)
-            stamp = now()
+            result = readers[ats](board, fetcher)
+            if isinstance(result, normalize.ReadResult):
+                drafts, status, note_from_reader = result.drafts, result.status, result.note
+                stamp = result.seen_at or now()
+            else:
+                drafts, status, note_from_reader = result, "ok", None
+                stamp = now()
             kept, dropped = [], Counter()
             for made in drafts:
                 try:
@@ -182,9 +194,10 @@ def collect(
             log(f"error    {company['id']}: {type(error).__name__}: {error}")
             continue
         jobs += kept
-        entries.append(_entry(company, "ok", postings=len(kept)))
+        entries.append(_entry(company, status, postings=len(kept), error=note_from_reader))
         note = "".join(f"; dropped {n} ({why})" for why, n in dropped.items())
-        log(f"ok       {company['id']}: {len(kept)} postings from {ats}{note}")
+        extra = f" [{note_from_reader}]" if note_from_reader else ""
+        log(f"{status:<8} {company['id']}: {len(kept)} postings from {ats}{note}{extra}")
 
     finished = now()
     jobs.sort(key=lambda job: (job["company_id"], job["title"].lower(), job["id"]))
@@ -237,6 +250,8 @@ def main(argv: list[str] | None = None) -> int:
         companies = [company for company in companies if company["id"] in args.company]
 
     readers = dict(READERS)
+    careers_context = careers.Context.load()
+    readers["other"] = lambda board, fetcher: careers.read(board, fetcher, careers_context)
     for name in args.disable_reader:
         readers.pop(name, None)
     if args.greenhouse_pay:
@@ -255,6 +270,7 @@ def main(argv: list[str] | None = None) -> int:
         raw = collect(companies, fetcher, state, readers=readers, log=print, disabled=set(args.disable_reader))
     finally:
         fetcher.close()
+    careers_context.save()
     state.forget_old(raw["generated_at"])
     write_json_atomic(raw, args.out)
     state.save(args.state)

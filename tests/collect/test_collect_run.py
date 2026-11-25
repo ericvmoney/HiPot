@@ -45,8 +45,9 @@ def run(companies=COMPANIES, fetcher=None, state=None, **kwargs) -> dict:
     (company("a", "lever", "a", tier="enabling", status="review"), None),
     (company("a", "greenhouse", "a", tier="out"), "not collected: climate tier is 'out'"),
     (company("a", "greenhouse", "a", tier="unscreened", status="unscreened"), "not collected: climate tier is 'unscreened'"),
-    (company("a", "ashby", "a", status="out"), "not collected: startup status is 'out'"),
-    (company("a", "ashby", "a", status="unscreened"), "not collected: startup status is 'unscreened'"),
+    # Established companies are collected too (PLAN.md decision 14).
+    (company("a", "ashby", "a", status="out"), None),
+    (company("a", "ashby", "a", status="unscreened"), None),
     (company("a", "adp", None), "no reader for adp"),
     (company("a", "workday", "a"), "no reader for workday"),
     (company("a", "unknown", None), "no reader for unknown"),

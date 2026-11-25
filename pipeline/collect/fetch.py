@@ -34,7 +34,13 @@ MIN_INTERVAL = 1.0
 # Breezy and Paylocity publish nothing; their hosts get 2 s. A key starting with "."
 # matches every host ending in it.
 HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecruiters.com": 6.0,
-                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0}
+                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0,
+                  # LinkedIn job pages, read only where a company's careers page points
+                  # to them (PLAN.md decision 12): at least 10 s apart.
+                  "www.linkedin.com": 10.0, ".linkedin.com": 10.0}
+# Companies' own web pages (careers pages, posting pages) are asked at most
+# every PAGE_INTERVAL seconds per host.
+PAGE_INTERVAL = 3.0
 TIMEOUT = 30.0
 MAX_PAGE_BYTES = 1_000_000
 PAGE_HEADERS = {"Accept": "text/html, application/xhtml+xml;q=0.9, text/plain;q=0.5"}
@@ -82,6 +88,13 @@ class Fetcher:
         return max((seconds for key, seconds in self._host_intervals.items()
                     if key.startswith(".") and host.endswith(key)), default=0.0)
 
+    def _wait_at_least(self, host: str, seconds: float) -> None:
+        last = self._last.get(host)
+        if last is not None:
+            remaining = seconds - (self._clock() - last)
+            if remaining > 0:
+                self._sleep(remaining)
+
     def _wait_for(self, host: str) -> None:
         last = self._last.get(host)
         if last is not None:
@@ -122,6 +135,7 @@ class Fetcher:
         request under the same spacing and block rules. A page is cut at
         `max_bytes`."""
         for hop in range(max_redirects + 1):
+            self._wait_at_least(urlsplit(url).netloc.lower(), PAGE_INTERVAL)
             response = self._answer(url, None, PAGE_HEADERS, redirects=True)
             if 300 <= response.status_code < 400:
                 target = urljoin(url, response.headers.get("location", ""))
