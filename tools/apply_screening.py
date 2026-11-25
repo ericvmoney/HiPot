@@ -95,6 +95,18 @@ OWNER_RULINGS: dict[str, dict] = {
                     "reason": "Wave-powered ocean nodes whose stated product is on-board computing; computing is out."},
     "on-energy": {"q": "A2", "tier": "enabling", "sectors": ["energy-storage"], "basis": "provisional",
                   "reason": "Battery storage and power systems for data centers and industrial sites."},
+    # Methane monitoring (owner, 2026-11-25: "Methane monitoring should be excluded").
+    # Leak detection and measurement sold to oil and gas is out; companies that
+    # capture, destroy or prevent methane (landfill gas, oxidizers, compressors,
+    # cattle feed) are not monitoring and stay in.
+    "earthview": {"q": "A9", "tier": "out",
+                  "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "longpath-technologies": {"q": "A9", "tier": "out",
+                              "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "project-canary": {"q": "A9", "tier": "out",
+                       "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "trellisense": {"q": "A9", "tier": "out",
+                    "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
     # A3: defense as a side business is fine; as the main business it is out.
     "antares": {"q": "A3", "tier": "out",
                 "reason": "Factory-built nuclear microreactors whose main customers so far are the US military; defense as the main business is out."},

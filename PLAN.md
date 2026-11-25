@@ -280,4 +280,7 @@ Decided by Eric on 2026-11-24:
 14. **Established companies** (Eric, 2026-11-24): older and larger companies are accepted once the board can filter by company type. The listing rule becomes the climate tier alone, and the startup test becomes a label (startup or established) with a filter on the board; the registry then expands to include more established climate companies. Until the filter ships, the published board keeps the startup-only rule.
 15. **New roles** (Eric, 2026-11-24): a "New" flag and filter for roles first seen in the last 3 business days.
 
+16. **Methane monitoring** (Eric, 2026-11-25): excluded. Leak detection and measurement sold to oil and gas (Earthview, LongPath, Project Canary, TrelliSense) is out; companies that capture, destroy or prevent methane (landfill gas, oxidizers, Blue Mountain's compressors, Alga's cattle feed) stay in.
+17. **Discovery sources and robots.txt:** the scout removed sources read against their robots.txt (the CEC Energize Innovation database, which bars AI agents by name, and Built In's paged lists) from the reference lists. About 40 registry companies first found only through them stay in the registry, since their facts come from other sources; the owner may decide otherwise. From now on discovery sources follow robots.txt unless the owner extends decision 12b to them.
+
 Next after the current coverage run (Eric, 2026-11-24): a draft of the in-browser resume parser, and artifact hosting prepared for first testing.
