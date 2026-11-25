@@ -27,8 +27,8 @@
               "company_id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
               "ats": {"type": "string"},
               "status": {
-                "description": "ok: feed read. error: the request or parse failed. blocked: the host refused us; do not retry or work around it. skipped: no reader for this ATS, or the company is not collected.",
-                "enum": ["ok", "error", "blocked", "skipped"]
+                "description": "ok: feed or careers page read, every posting found. error: the request or parse failed. blocked: the host refused us (HTTP 403 or 429, a sign-in page or a bot check); do not retry or work around it. skipped: no reader for this ATS, the company is not collected, or robots.txt disallows its careers page. The rest are for companies read from their own careers page (ats.type 'other'): none-open: the careers page was read and lists no openings. partial: some postings were read but not all (a request cap was hit or posting pages failed); 'error' says what is missing. unreadable: the page lists its postings in a way the reader cannot read (built by JavaScript, PDF only). no-careers-page: no careers page was found on the company's site. ats-found: the careers page links to a job-board system; 'error' names the system and board token so the registry can be updated.",
+                "enum": ["ok", "error", "blocked", "skipped", "none-open", "partial", "unreadable", "no-careers-page", "ats-found"]
               },
               "postings": {"type": "integer", "minimum": 0},
               "error": {"type": ["string", "null"], "maxLength": 500}

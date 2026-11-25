@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import time
 from typing import Any, Callable
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 
 import httpx
 
@@ -36,6 +36,8 @@ MIN_INTERVAL = 1.0
 HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecruiters.com": 6.0,
                   ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0}
 TIMEOUT = 30.0
+MAX_PAGE_BYTES = 1_000_000
+PAGE_HEADERS = {"Accept": "text/html, application/xhtml+xml;q=0.9, text/plain;q=0.5"}
 RETRY_WAIT = 5.0
 BLOCK_STATUSES = (403, 429)
 
@@ -111,9 +113,30 @@ class Fetcher:
         """GET a URL and return its body as text (an XML feed, a posting page)."""
         return self._answer(url, params, {"Accept": "application/xml, text/xml, text/html;q=0.9, */*;q=0.5"}).text
 
-    def _answer(self, url: str, params: dict | None, headers: dict | None = None) -> httpx.Response:
+    def get_page(self, url: str, stay_within: Callable[[str], bool], max_redirects: int = 2,
+                 max_bytes: int = MAX_PAGE_BYTES) -> tuple[str, str]:
+        """GET a web page on a company's own site; return (final address, text).
+
+        Redirects are followed only while `stay_within(address)` holds (the
+        company's own domain), at most `max_redirects` times. Each hop is a
+        request under the same spacing and block rules. A page is cut at
+        `max_bytes`."""
+        for hop in range(max_redirects + 1):
+            response = self._answer(url, None, PAGE_HEADERS, redirects=True)
+            if 300 <= response.status_code < 400:
+                target = urljoin(url, response.headers.get("location", ""))
+                if hop == max_redirects or not target.startswith("https://") or not stay_within(target):
+                    raise FetchError(f"HTTP {response.status_code}: redirected to {target[:120]} (left the site or too many redirects)")
+                url = target
+                continue
+            return url, response.text[:max_bytes]
+        raise FetchError("too many redirects")
+
+    def _answer(self, url: str, params: dict | None, headers: dict | None = None,
+                redirects: bool = False) -> httpx.Response:
         """One GET with the rules applied: a block raises, one retry on 5xx or a
-        transport failure, and anything but 200 is an error."""
+        transport failure, and anything but 200 is an error (a redirect is
+        returned when `redirects` is true)."""
         response = None
         for attempt in (1, 2):
             try:
@@ -134,6 +157,8 @@ class Fetcher:
 
         if response.status_code == 404:
             raise FetchError("HTTP 404: no board at this address (wrong or retired board token)")
+        if 300 <= response.status_code < 400 and redirects:
+            return response
         if 300 <= response.status_code < 400:
             # Redirects are not followed. Some systems send a retired board to
             # their own home page instead of answering 404.
@@ -174,11 +199,21 @@ class RecordingFetcher(Fetcher):
             json.dump(data, handle, ensure_ascii=False)
         return data
 
+    def get_page(self, url: str, stay_within, max_redirects: int = 2, max_bytes: int = MAX_PAGE_BYTES):
+        final, text = super().get_page(url, stay_within, max_redirects, max_bytes)
+        with open(self._directory / page_record_name(url), "w", encoding="utf-8", newline="\n") as handle:
+            json.dump({"url": url, "final_url": final, "text": text}, handle, ensure_ascii=False)
+        return final, text
+
     def get_text(self, url: str, params: dict | None = None) -> str:
         text = super().get_text(url, params)
         with open(self._directory / text_record_name(url), "w", encoding="utf-8", newline="") as handle:
             handle.write(text)
         return text
+
+
+def page_record_name(url: str) -> str:
+    return record_name(url)[: -len(".json")] + ".page.json"
 
 
 def text_record_name(url: str) -> str:
@@ -210,3 +245,12 @@ class ReplayFetcher:
         self.requests += 1
         with open(path, encoding="utf-8", newline="") as handle:
             return handle.read()
+
+    def get_page(self, url: str, stay_within=None, max_redirects: int = 2, max_bytes: int = MAX_PAGE_BYTES):
+        path = self._directory / page_record_name(url)
+        if not path.exists():
+            raise FetchError(f"no saved answer for {url}")
+        self.requests += 1
+        with open(path, encoding="utf-8") as handle:
+            saved = json.load(handle)
+        return saved["final_url"], saved["text"]

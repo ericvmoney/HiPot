@@ -1,0 +1,604 @@
+probe: careers-probe-01
+made_by: A1 collector, python -m pipeline.collect.probe_careers
+started_at: '2026-11-25T01:22:45Z'
+rules: robots.txt obeyed for '*'; at most 4 page requests and 6 requests with redirects per company; 3 s between
+  requests to a host; GET only; no JavaScript, no forms; stop on 403, 429, sign-in or bot check
+passes: 'First pass 2026-11-25: 211 requests. Nine sites were wrongly stopped as ''bot check'' (the check matched
+  reCAPTCHA and site-builder settings on ordinary pages); the check was fixed and those nine were finished from
+  their saved robots.txt and home pages with 17 more requests, never more than 4 page requests per company. The
+  other companies were re-classified from saved pages with no new requests. 228 requests in all.'
+outcomes:
+  ok: postings found on the careers page (JobPosting blocks, or links to posting pages on the site)
+  ats-found: the site links to a job-board system; see ats
+  none-open: a careers page was read and says there are no openings
+  unclear: a careers page was read but shows neither postings nor a no-openings notice
+  unreadable: the careers page builds its list with JavaScript, or gives postings only as PDFs
+  no-careers-page: no careers page was found on the site
+  robots-disallowed: robots.txt disallows the page the probe needed
+  blocked: the site refused the probe (403 or 429, a sign-in page or a bot check)
+  error: the site could not be reached
+summary:
+  companies: 53
+  requests: 228
+  outcomes:
+    no-careers-page: 29
+    unclear: 10
+    unreadable: 4
+    ok: 3
+    error: 3
+    none-open: 2
+    ats-found: 1
+    blocked: 1
+  ok_by_method:
+    plain-listing: 3
+  postings_seen:
+    plain-listing: 12
+  ats_found:
+    paylocity: 1
+  requests_note: network requests over both passes; each company's 'requests' counts the pages charged to its cap,
+    including pages replayed from the first pass
+companies:
+- company_id: agami-zero
+  name: Agami Zero
+  website: https://www.agamizero.com
+  careers_url: null
+  outcome: unreadable
+  method: javascript
+  postings: 0
+  ats: null
+  requests: 4
+  note: home page has almost no text or links (181 characters); built by JavaScript or empty
+- company_id: ampt
+  name: Ampt
+  website: https://www.ampt.com
+  careers_url: https://www.ampt.com/careers/
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (2900 characters of text); no postings, links or notice found
+  review: 'read by A1: says openings appear below if any; none listed, interest form only'
+- company_id: armada-power
+  name: Armada Power
+  website: https://armadapower.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: big-blue-technologies
+  name: Big Blue Technologies
+  website: https://bigbluetech.com
+  careers_url: https://bigbluetech.com/careers/
+  outcome: ok
+  method: plain-listing
+  postings: 3
+  ats: null
+  requests: 3
+  note: null
+  examples:
+  - https://bigbluetech.com/jobs/foundry-operator/
+  - https://bigbluetech.com/jobs/any-position/
+  - https://bigbluetech.com/jobs/magnesium-foundry-metallurgist/
+  review: 'read by A1: one of the three links is a general application (''any position'')'
+- company_id: birch-geothermal
+  name: Birch Geothermal
+  website: https://www.birchgeothermal.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: blue-mountain-operations
+  name: Blue Mountain Operations
+  website: https://www.bluemountainops.com/
+  careers_url: https://www.bluemountainops.com/careers
+  outcome: unreadable
+  method: javascript
+  postings: 0
+  ats: null
+  requests: 3
+  note: page text is built by JavaScript
+- company_id: brightspot-automation
+  name: Brightspot Automation
+  website: https://brightspotautomation.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: brint-tech
+  name: Brint Tech
+  website: https://brint.tech
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: carbon-america
+  name: Carbon America
+  website: https://carbonamerica.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: colorado-earth
+  name: Colorado Earth
+  website: https://coloradoearth.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: egauge-systems
+  name: eGauge Systems
+  website: https://www.egauge.net
+  careers_url: https://www.egauge.net/company/careers/
+  outcome: none-open
+  method: notice
+  postings: 0
+  ats: null
+  requests: 3
+  note: no openings
+- company_id: etuk-usa
+  name: eTuk USA
+  website: https://www.etukusa.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: exopower
+  name: ExoPower
+  website: https://exopower.tech
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: geokiln
+  name: GeoKiln
+  website: https://geokiln.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: gradient-geothermal
+  name: Gradient Geothermal
+  website: https://www.gradientgeothermal.com
+  careers_url: https://www.gradientgeothermal.com/
+  outcome: unreadable
+  method: pdf
+  postings: 1
+  ats: null
+  requests: 2
+  note: postings given as PDFs
+- company_id: gridvisibility
+  name: GridVisibility
+  website: https://gridvisibility.com
+  careers_url: https://www.gridvisibility.com/careers/
+  outcome: ok
+  method: plain-listing
+  postings: 7
+  ats: null
+  requests: 3
+  note: no careers link on the home page; tried /careers and /jobs
+  examples:
+  - https://www.gridvisibility.com/careers/asp-net-software-developer
+  - https://www.gridvisibility.com/careers/digital-marketing-media-manager
+  - https://www.gridvisibility.com/careers/people-program-management-leader
+- company_id: horne-technologies
+  name: Horne Technologies
+  website: https://www.hornetechnologies.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: hygge-power
+  name: Hygge Power
+  website: https://hyggepower.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: ion-clean-energy
+  name: ION Clean Energy
+  website: https://ioncleanenergy.com
+  careers_url: https://www.ioncleanenergy.com/careers
+  outcome: none-open
+  method: notice
+  postings: 0
+  ats: null
+  requests: 3
+  note: No Open Positions
+- company_id: iontra
+  name: Iontra
+  website: https://iontra.com
+  careers_url: https://iontra.com/careers/
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (6333 characters of text); no postings, links or notice found
+  review: 'read by A1: ''Currently, our team is complete''; no openings'
+- company_id: kineticcore-solutions
+  name: KineticCore Solutions
+  website: https://kineticcore.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: koloma
+  name: Koloma
+  website: https://koloma.com
+  careers_url: https://www.koloma.com/resources/careers/
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: careers page read (4674 characters of text); no postings, links or notice found
+  review: 'read by A1: culture text, no openings listed'
+- company_id: kratos-industries
+  name: Kratos Industries
+  website: https://kratosind.com
+  careers_url: https://kratosind.com/kratos-culture/
+  outcome: ats-found
+  method: ats-link
+  postings: 0
+  ats:
+  - type: paylocity
+    board: dfb968b7-8b94-4cef-bc3c-25cf9c292997
+    readable: true
+  requests: 3
+  note: null
+  review: 'read by A1: Paylocity board linked from the culture page; the Paylocity reader can read it once the registry
+    has the token'
+- company_id: last-wave-energy
+  name: Last Wave Energy
+  website: https://lastwaveenergy.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: longpath-technologies
+  name: LongPath Technologies
+  website: https://www.longpathtech.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: mana-battery
+  name: Mana Battery
+  website: https://www.manabattery.us
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: new-day-hydrogen
+  name: New Day Hydrogen
+  website: https://newdayhydrogen.com/
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: nova-terra
+  name: Nova Terra
+  website: https://novaterrausa.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: omc-hydrogen
+  name: OMC Hydrogen
+  website: https://omcthermo.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: optibike
+  name: Optibike
+  website: https://www.optibike.com
+  careers_url: null
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+  review: 'read by A1: no careers page found at /careers or /jobs within the cap'
+- company_id: orva-energy
+  name: Orva Energy
+  website: https://orvaenergy.com
+  careers_url: null
+  outcome: error
+  method: null
+  postings: 0
+  ats: null
+  requests: 2
+  note: 'robots.txt could not be read: request failed (ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname m'
+  review: the site's TLS certificate failed verification (wrong host name); not read
+- company_id: otoro-energy
+  name: OTORO Energy
+  website: https://www.otoroenergy.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: palanquin-power
+  name: Palanquin Power
+  website: https://palanquinpower.com
+  careers_url: null
+  outcome: error
+  method: null
+  postings: 0
+  ats: null
+  requests: 2
+  note: 'robots.txt could not be read: HTTP 500'
+  review: robots.txt answered HTTP 500, so its rules are unknown; not read
+- company_id: prieto-battery
+  name: Prieto Battery
+  website: https://www.prietobattery.com
+  careers_url: null
+  outcome: error
+  method: null
+  postings: 0
+  ats: null
+  requests: 2
+  note: 'robots.txt could not be read: request failed (ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to '
+  review: the site's TLS certificate failed verification; not read
+- company_id: prometheus-materials
+  name: Prometheus Materials
+  website: https://prometheusmaterials.com
+  careers_url: https://prometheusmaterials.com/careers/
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (1075 characters of text); no postings, links or notice found
+  review: 'read by A1: one posting written inline on the page (accounting and administration), no posting link'
+- company_id: rindev
+  name: RINDEV
+  website: https://rindev.com
+  careers_url: https://rindev.com/jobs/
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (578 characters of text); no postings, links or notice found
+  review: 'read by A1: general application form only; no openings'
+- company_id: rushnu
+  name: Rushnu
+  website: https://www.rushnu.com
+  careers_url: null
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+  review: 'read by A1: no careers page found at /careers or /jobs within the cap'
+- company_id: sionic-energy
+  name: Sionic Energy
+  website: https://sionicenergy.com
+  careers_url: https://sionicenergy.com/about/careers
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (769 characters of text); no postings, links or notice found
+  review: 'read by A1: heading ''Our Current Openings'' with nothing under it in the HTML (empty, or loaded by JavaScript)'
+- company_id: skyhook-solar
+  name: Skyhook Solar
+  website: https://skyhooksolar.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: spark-ionx
+  name: Spark Ionx
+  website: https://sparkionx.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: sphere-renewables
+  name: Sphere Renewables
+  website: https://sphere-renewables.com
+  careers_url: https://www.sphere-renewables.com/careers
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (1255 characters of text); no postings, links or notice found
+  review: 'read by A1: one posting written inline (Technical Sales Manager, close date 04/30/26, likely expired),
+    no posting link'
+- company_id: stalagmite
+  name: Stalagmite
+  website: https://stalagmite.io
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: starfire-energy
+  name: Starfire Energy
+  website: https://www.starfireenergy.com
+  careers_url: null
+  outcome: unreadable
+  method: javascript
+  postings: 0
+  ats: null
+  requests: 4
+  note: home page has almost no text or links (57 characters); built by JavaScript or empty
+- company_id: steelhead-composites
+  name: Steelhead Composites
+  website: https://steelheadcomposites.com
+  careers_url: https://steelheadcomposites.com/careers
+  outcome: ok
+  method: plain-listing
+  postings: 2
+  ats: null
+  requests: 3
+  note: null
+  examples:
+  - https://steelheadcomposites.com/careers/general-production-technician
+  - https://steelheadcomposites.com/careers/production-technician
+- company_id: sunpath
+  name: SunPath
+  website: https://sunpathtech.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: terra-co2-technologies
+  name: Terra CO2 Technologies
+  website: https://www.terraco2.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: trellisense
+  name: TrelliSense
+  website: https://trellisense.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: tynt-technologies
+  name: Tynt Technologies
+  website: https://www.tynt.io
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: veolia-nuclear-solutions
+  name: Veolia Nuclear Solutions
+  website: https://nuclearsolutions.veolia.com
+  careers_url: https://www.nuclearsolutions.veolia.com/en/careers
+  outcome: unclear
+  method: null
+  postings: 0
+  ats: null
+  requests: 3
+  note: careers page read (4039 characters of text); no postings, links or notice found
+  review: 'read by A1: part of Veolia''s group careers site; roles are on the group''s own system'
+- company_id: whisper-energy
+  name: WHISPER Energy
+  website: https://whisperenergy.io
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: not saved in the earlier pass (it failed then)'
+- company_id: xflow-energy
+  name: XFlow Energy
+  website: https://xflowenergy.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: zerotwelve
+  name: ZeroTwelve
+  website: https://zerotwelve.com
+  careers_url: null
+  outcome: no-careers-page
+  method: null
+  postings: 0
+  ats: null
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+- company_id: zgeo-energy
+  name: ZGEO Energy
+  website: https://zgeoenergy.com
+  careers_url: null
+  outcome: blocked
+  method: null
+  postings: 0
+  ats: null
+  requests: 2
+  note: HTTP 429 from zgeoenergy.com
+  review: HTTP 429 on robots.txt; stopped as the rules require
