@@ -1,0 +1,4693 @@
+# Reference list for the San Francisco Bay Area: companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: bay-area
+built: '2026-11-25'
+sources:
+- id: activate-companies
+  name: Activate companies index (Berkeley and 'Anywhere' communities)
+  url: https://activate-companies-index.softr.app/
+  note: All 263 listed companies read; kept Berkeley-community (Cyclotron Road) and Bay Area 'Anywhere' companies
+- id: cyclotron-road-fellows
+  name: Cyclotron Road (Berkeley Lab) fellows by year
+  url: https://cyclotronroad.lbl.gov/fellows/fellows-by-year/
+  note: 2015-2026 Berkeley cohorts; overlaps heavily with Activate index
+- id: calseed-awardees
+  name: CalSEED entrepreneur directory (cohorts 1-7)
+  url: https://calseed.fund/awardees/
+  note: 25 pages, 147 awardee pages; location from company sites or prior knowledge
+- id: caltestbed-directory
+  name: CalTestBed entrepreneur directory (Airtable, cohorts 1-4+)
+  url: https://airtable.com/appOcDCojowj1q5kf/shrZ0o8t2GC22sEM9
+  note: 66 companies with region field; kept 'San Francisco Bay Area'
+- id: cec-eif-showcase
+  name: CEC Energize Innovation project showcase export (EPIC, gas R&D, FPIP)
+  url: https://www.energizeinnovation.fund/projects/export/fast-xlsx
+  note: 905 projects, 414 recipients; filtered by recipient ZIP in region
+- id: cec-nopa
+  name: 'CEC EPIC Notices of Proposed Award: RAMP GFO-21-304, BRIDGE GFO-23-318, CID GFO-22-301, LDES GFO-22-307,
+    HVAC GFO-22-308, GFO-23-301/302/304/308/313/315/317/502, DAC GFO-24-303/25-307, GFO-24-304/305/310/312, GFO-25-306;
+    cost-share GFO-21-901 and GFO-22-901; offshore wind GFO-22-402'
+  url: https://www.energy.ca.gov/funding-opportunities/awards
+  note: Awardees, finalists and passed applicants; NOPAs give no locations, so region from other sources or prior
+    knowledge
+- id: cec-nopa-ztm
+  name: CEC GFO-21-605 Zero-Emission Transportation Manufacturing NOPA (Clean Transportation Program, not EPIC)
+  url: https://www.energy.ca.gov/solicitations/2022-03/gfo-21-605-zero-emission-transportation-manufacturing
+  note: Awardees and applicants
+- id: lbnl-ipo-startups
+  name: Berkeley Lab IPO startups by technology
+  url: https://ipo.lbl.gov/about-us/startups-by-technology/
+  note: Clean-energy, carbon, materials and water categories
+- id: yc-directory
+  name: Y Combinator company directory, read through the yc-oss public JSON mirror of YC's directory (companies/all.json,
+    6,408 launched companies, mirror updated 2026-11-24)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: The ycombinator.com/companies directory is rendered by JavaScript, so the mirror was used. Pool = every
+    company whose industries include Climate or Energy (YC now files both under Industrials), or that carries a
+    climate tag (Climate, ClimateTech, Energy, Electric Vehicles, Solar Power, Renewable Energy, Energy Storage,
+    Carbon Capture and Removal, Hydrogen Energy, Fusion Energy, Alternative Fuels, Small Modular Reactors, Alternative
+    Battery Tech, Smart Grid, Sustainability), plus Industrials/hardware/aviation/manufacturing/automotive companies
+    whose description matches clean-tech keywords. Also swept every Bay Area company for clean-tech keywords. Filtered
+    by the all_locations field for Bay Area cities. Active and Public only. Two individual ycombinator.com/companies
+    pages (valo, phykos) were fetched to fill in missing websites.
+- id: lowercarbon
+  name: Lowercarbon Capital portfolio
+  url: https://lowercarbon.com/companies/
+  note: 102 companies on one page, no locations shown; locations from company sites and searches
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: 103 companies read from the page's embedded data (names, URLs, descriptions); the rendered page shows only
+    sector counts
+- id: khosla-sustainability
+  name: Khosla Ventures portfolio, Sustainability category
+  url: https://www.khoslaventures.com/category/sustainability
+  note: only 14 sustainability companies listed; no older or exited climate companies on the current site
+- id: dcvc
+  name: DCVC portfolio (all sectors, including climate and deep tech)
+  url: https://www.dcvc.com/companies
+  note: 301 companies, all sectors mixed; no separate climate page (dcvc.com/climate gives 404)
+- id: congruent
+  name: Congruent Ventures portfolio
+  url: https://congruentvc.com/portfolio/
+  note: 62 companies
+- id: prelude
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: 63 companies
+- id: elemental-portfolio
+  name: Elemental Impact (Elemental Excelerator) portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 144 companies listed with city; Bay Area hardware kept
+- id: piva-portfolio
+  name: Piva Capital portfolio
+  url: https://piva.vc/portfolio
+  note: 19 companies, no locations; region from knowledge
+- id: overture-portfolio
+  name: Overture portfolio (mcj.vc redirects here)
+  url: https://ovr.vc/portfolio/
+  note: 25 companies incl. Origin investments; MCJ Collective URL 301-redirects to ovr.vc
+- id: overture-jobs
+  name: Overture portfolio job board company list
+  url: https://jobs.overture.vc/companies
+  note: only 12 of 42 shown (load-more)
+- id: obvious-portfolio
+  name: Obvious Ventures portfolio
+  url: https://www.obvious.com/portfolio
+  note: only first 36 entries (A to Grid) readable; rest behind Load More
+- id: cev-portfolio
+  name: Clean Energy Ventures portfolio
+  url: https://www.cleanenergyventures.com/portfolio
+  note: 32 active + legacy; only Noon Energy is Bay Area
+- id: fifthwall-portfolio
+  name: Fifth Wall portfolio page
+  url: https://fifthwall.com/portfolio
+  note: page 1 of 4 only; mostly proptech
+- id: fifthwall-climate-press
+  name: Fifth Wall Climate Fund close press release (names climate holdings)
+  url: https://businesswire.com/news/home/20220721005373/en/Fifth-Wall-Closes-500-Million-for-its-First-Climate-Fund
+  note: names read from search-result snippet of the release, 2022
+- id: construct-portfolio
+  name: Construct Capital homepage portfolio
+  url: https://www.constructcap.com/
+  note: 51 companies, mostly logos
+- id: lowercarbon-portfolio
+  name: Lowercarbon Capital portfolio
+  url: https://lowercarbon.com/companies/
+  note: 102 companies, no locations; region from knowledge
+- id: builtin-sf-greentech
+  name: Built In SF greentech companies directory
+  url: https://builtinsf.com/companies/type/greentech-companies
+  note: pages 1-7, 127 listings
+- id: builtin-sf-cleantech-article
+  name: Built In SF article, 15 San Francisco cleantech companies (2023)
+  url: https://www.builtinsf.com/articles/san-francisco-bay-area-cleantech-companies
+- id: yc-climate
+  name: Y Combinator climate companies
+  url: https://www.ycombinator.com/companies/industry/Climate
+  note: 49 shown
+- id: yc-hardtech-ba
+  name: Y Combinator hard-tech companies, SF Bay Area
+  url: https://www.ycombinator.com/companies/industry/hard-tech/san-francisco-bay-area
+  note: 50 of 68 shown
+- id: activate-2024
+  name: Activate Cohort 2024 (Berkeley community)
+  url: https://activate.org/news/introducing-cohort-2024
+  note: Berkeley community only
+- id: activate-2025
+  name: Activate Cohort 2025 (Berkeley community)
+  url: https://activate.org/news/introducing-cohort-2025
+  note: Berkeley community only
+- id: kalw-otherlab
+  name: KALW article on Otherlab spinouts (2025)
+  url: https://www.kalw.org/2025-04-21/sfs-otherlab-spawns-start-ups-with-green-tech-to-fight-climate-change
+- id: kb-ba-hardware
+  name: Bay Area hardware makers named from a harvesting agent's own knowledge, with no source page
+  url: null
+  note: Not a published list. Each company was then confirmed by the fact step against its own site or Dealroom.
+    Kept so that well-known makers are in the denominator; 49 entries rest on this alone.
+- id: eclipse
+  name: Eclipse Ventures portfolio (eclipse.capital company pages via sitemap)
+  url: https://eclipse.capital/portfolio
+  note: portfolio page renders client-side; company list read from sitemap.xml company pages
+- id: root-ventures
+  name: Root Ventures portfolio
+  url: https://root.vc/portfolio
+  note: page gives no locations
+- id: playground-global
+  name: Playground Global portfolio
+  url: https://www.playground.vc/portfolio
+  note: most energy-transition holdings are outside the region
+- id: at-one
+  name: At One Ventures portfolio
+  url: https://www.atoneventures.com/portfolio
+- id: eif
+  name: Ecosystem Integrity Fund portfolio
+  url: https://www.eif.vc/portfolio
+- id: fifty-years
+  name: Fifty Years companies
+  url: https://www.fiftyyears.com/companies
+- id: usv
+  name: Union Square Ventures portfolio
+  url: https://www.usv.com/portfolio/
+  note: names only, no sector tags or locations
+- id: collab-fund
+  name: Collaborative Fund portfolio
+  url: https://collabfund.com/portfolio/
+  note: Energy section plus unlabeled list; locations checked on company sites
+- id: wireframe
+  name: Wireframe Ventures portfolio
+  url: https://www.wireframevc.com/portfolio
+- id: climactic
+  name: Climactic portfolio
+  url: https://climactic.vc/portfolio
+- id: pale-blue-dot
+  name: Pale Blue Dot portfolio (llms.txt)
+  url: https://paleblue.vc/llms.txt
+  note: mostly European
+- id: blue-bear
+  name: Blue Bear Capital portfolio
+  url: https://www.bluebearcap.com/portfolio
+  note: FreeWire (San Leandro) listed as exited and since shut down; not kept
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 company profile pages read; HQ field on each profile
+- id: be-fellows
+  name: Breakthrough Energy Fellows (press mentions)
+  url: https://breakthroughenergy.org/news/cohort-3-fellows
+  note: BE site redesigned; fellows listing pages redirect to the home page; names from search snippets of BE and
+    Business Wire pages only, incomplete
+- id: skydeck
+  name: Berkeley SkyDeck portfolio (GreenTech and Hardware filters)
+  url: https://skydeck.berkeley.edu/portfolio/
+  note: data from the page's own company filter request
+- id: startx
+  name: StartX alumni companies
+  url: https://startx.com/pages/companies
+  note: logo wall of 689 links with no sector tags; energy companies picked by name and checked
+- id: arpae-projects
+  name: ARPA-E project index (all CA projects, filtered to Bay Area private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project?filter[administrative_area]=CA
+  note: 324 CA projects (7 pages of 50) read via the site's own JSON index; awardee city from project location
+- id: in2-portfolio
+  name: Wells Fargo Innovation Incubator (IN2) portfolio
+  url: https://in2ecosystem.com/portfolio/
+  note: 70 companies listed, no locations; region judged from company sites/knowledge
+- id: carb-hvip
+  name: California HVIP vehicle catalog OEM list
+  url: https://californiahvip.org/wp-json/wp/v2/vehicle-oem
+  note: 55 OEMs
+- id: carb-core
+  name: California CORE off-road equipment catalog OEM list
+  url: https://californiacore.org/wp-json/wp/v2/vehicle-oem
+  note: 69 OEMs; most locations unknown, checked a few company sites
+- id: oced-award-wednesdays
+  name: DOE OCED news and Award Wednesday announcements
+  url: https://www.energy.gov/cmei/oced/listings/oced-news
+  note: 59 articles read; OCED project list pages now removed (404)
+- id: ornl-innovation-crossroads
+  name: Innovation Crossroads (ORNL) innovators
+  url: https://innovationcrossroads.ornl.gov/wp-json/wp/v2/people
+  note: 58 innovators across cohorts
+- id: doe-ott-climr
+  name: DOE OTT Technology Commercialization Fund CLIMR FY2025/FY2026 projects
+  url: https://www.energy.gov/technologycommercialization/fiscal-year-2025-climr-projects-commercializing-energy-technologies
+  note: lab-led projects; few named company partners
+companies:
+- name: 1849 bio
+  website: https://www.1849.bio
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: 1849-bio
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: 1st Avenue Power (1AP)
+  website: https://1ap.com
+  hq: Mountain View, CA
+  sources:
+  - lowercarbon
+  registry_id: 1-arc-power
+  decision: registry
+  reason: Registry entry '1-arc-power' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: 1stavenuepower
+  open_roles: null
+- name: Acellent Technologies
+  website: https://www.acellent.com/
+  hq: Sunnyvale, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: not-in-scope
+  reason: Structural health monitoring for aerospace and industry; no climate product.
+  ats: null
+  open_roles: null
+- name: Aclima
+  website: https://aclima.io
+  hq: San Francisco, CA
+  sources:
+  - dcvc
+  registry_id: null
+  decision: not-in-scope
+  reason: Air-quality and greenhouse-gas data sold as a service from its own sensors.
+  ats:
+    type: ashby
+    token: aclima
+  open_roles: 1
+- name: Actuate
+  website: https://actuateiot.com
+  hq: San Mateo, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: actuate
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Aemetis
+  website: https://www.aemetis.com/
+  hq: Cupertino, CA
+  sources:
+  - cec-eif-showcase
+  - kb-ba-hardware
+  registry_id: aemetis
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aepnus Technology
+  website: https://aepnus.com
+  hq: Oakland, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - calseed-awardees
+  - lowercarbon
+  - collab-fund
+  - third-derivative
+  registry_id: aepnus-technology
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: aepnus-technology
+  open_roles: null
+- name: Aeris Technologies
+  website: https://www.aerissensors.com
+  hq: Hayward, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: duplicate
+  reason: Its careers link goes to Project Canary's board; operates as part of Project Canary (in the registry).
+  ats:
+    type: pinpoint
+    token: projectcanary
+  open_roles: 4
+- name: Aernata
+  website: https://aernata.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: aernata
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Aetherflux (Cowboy Space Corporation)
+  website: https://aetherflux.com
+  hq: San Carlos, CA
+  sources:
+  - bev
+  - construct-portfolio
+  registry_id: aetherflux-cowboy-space-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: cowboyspace
+  open_roles: 61
+- name: Aikido Technologies
+  website: https://www.aikidotechnologies.com/
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa
+  - yc-directory
+  - kb-ba-hardware
+  - be-fellows
+  registry_id: aikido-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ailit
+  website: https://ailitrail.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: ailit
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: AirCapture
+  website: https://aircapture.com
+  hq: Berkeley, CA
+  sources:
+  - cec-nopa
+  registry_id: aircapture
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: aircapture
+  open_roles: null
+- name: AirMyne
+  website: https://www.airmyne.com/
+  hq: Berkeley, CA
+  sources:
+  - cec-nopa
+  - yc-directory
+  - yc-climate
+  - collab-fund
+  registry_id: airmyne
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Alef Aeronautics
+  website: https://alef.aero
+  hq: San Mateo, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: alef-aeronautics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Alga Biosciences
+  website: https://www.alga.bio/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: alga-biosciences
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: AlkaLi Labs
+  website: https://alkalilabs.com
+  hq: Berkeley, CA
+  sources:
+  - activate-2025
+  registry_id: alkali-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: ALKEMIO
+  website: https://alkemio.tech
+  hq: Berkeley, CA
+  sources:
+  - skydeck
+  registry_id: null
+  decision: null
+  reason: Rare-earth separation systems; its location could not be established (possibly UK).
+  ats: null
+  open_roles: null
+- name: All Power Labs
+  website: https://www.allpowerlabs.com/
+  hq: Berkeley, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: all-power-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Alphabet Energy
+  website: https://alphabetenergy.com
+  hq: Hayward, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed 2018 main customers were oil and gas'
+  ats: null
+  open_roles: null
+- name: ALSO
+  website: https://also.com
+  hq: Palo Alto, CA
+  sources:
+  - eclipse
+  registry_id: also
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: Ridealso
+  open_roles: null
+- name: Altex Technologies
+  website: https://www.altextech.com/
+  hq: San Jose, CA
+  sources:
+  - cec-eif-showcase
+  - arpae-projects
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract research and development, not a product company.
+  ats: null
+  open_roles: null
+- name: Alva Energy
+  website: https://alvaenergy.com
+  hq: Cambridge, MA
+  sources:
+  - playground-global
+  registry_id: alva-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: alva-energy
+  open_roles: null
+- name: Amber Kinetics
+  website: https://amberkinetics.com/
+  hq: Union City, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: amber-kinetics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats:
+    type: bamboohr
+    token: amberkinetics
+  open_roles: null
+- name: Amber Semiconductor
+  website: https://www.ambersemi.com
+  hq: Dublin, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Ambient Photonics
+  website: https://www.ambientphotonics.com
+  hq: Mill Valley, CA
+  sources:
+  - kb-ba-hardware
+  - at-one
+  - eif
+  registry_id: ambient-photonics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Ammobia
+  website: https://ammobia.co
+  hq: San Francisco, CA
+  sources:
+  - collab-fund
+  - third-derivative
+  registry_id: ammobia
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: ammobia
+  open_roles: null
+- name: Ample
+  website: https://ample.com/
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  registry_id: null
+  decision: closed
+  reason: 'Closed: filed for bankruptcy Dec 2025 ample.com now redirects to faradai.co, a battery-swap company describing
+    the same technology and Bay Area/Japan/Spain pilots (possible successor, unconfirmed)'
+  ats: null
+  open_roles: null
+- name: Amply Power
+  website: https://amplypower.com
+  hq: Mountain View, CA
+  sources:
+  - congruent
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Charging-as-a-service for electric fleets: depot charging, Omega charge-management
+    software, portable chargers and maintenance.'
+  ats: null
+  open_roles: null
+- name: Amprius Technologies
+  website: https://amprius.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: amprius-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: workable
+    token: amprius
+  open_roles: 17
+- name: AmpUp
+  website: https://ampup.io
+  hq: Santa Clara, CA
+  sources:
+  - yc-directory
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Hardware-agnostic EV charging management software, driver app, managed charging
+    and O&M services; does not make chargers.'
+  ats: null
+  open_roles: null
+- name: And Battery Aero
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Anode Technology Company
+  website: https://anode.tech
+  hq: San Francisco, CA
+  sources:
+  - eclipse
+  registry_id: anode-technology-company
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Anthro Energy
+  website: https://www.anthroenergy.com/
+  hq: Alameda, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-nopa
+  - kb-ba-hardware
+  - usv
+  - collab-fund
+  registry_id: anthro-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: workable
+    token: anthro
+  open_roles: 9
+- name: Antora Energy
+  website: https://www.antoraenergy.com/
+  hq: Sunnyvale, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - calseed-awardees
+  - lowercarbon
+  - bev
+  - overture-jobs
+  - lowercarbon-portfolio
+  - fifty-years
+  - third-derivative
+  - arpae-projects
+  registry_id: antora-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: antora
+  open_roles: null
+- name: Applied Kinetics
+  website: https://appliedkinetics.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: applied-kinetics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Applied Materials
+  website: https://www.appliedmaterials.com
+  hq: Santa Clara, CA
+  sources:
+  - arpae-projects
+  registry_id: applied-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Archer Aviation
+  website: https://www.archer.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: archer
+  decision: registry
+  reason: Registry entry 'archer' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: archer56
+  open_roles: null
+- name: Artyc
+  website: https://www.artyc.com
+  hq: Fremont, CA
+  sources:
+  - elemental-portfolio
+  - lowercarbon-portfolio
+  registry_id: artyc
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aseon Labs
+  website: https://www.aseonlabs.com/
+  hq: Redwood City, CA
+  sources:
+  - yc-directory
+  registry_id: aseon-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Asetek USA
+  website: https://www.asetek.com/
+  hq: Aalborg, Denmark
+  sources:
+  - cec-eif-showcase
+  registry_id: asetek-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: ASKA
+  website: https://www.askafly.com
+  hq: Firebaugh, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: aska
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Astro Mechanica
+  website: https://astromecha.co
+  hq: San Francisco, CA
+  sources:
+  - lowercarbon
+  registry_id: astro-mechanica
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: Astro-Mechanica
+  open_roles: 41
+- name: Atomarine
+  website: https://atomarine.co
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - yc-hardtech-ba
+  registry_id: atomarine
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Automat Solutions
+  website: https://www.automatsoln.com/
+  hq: San Leandro, CA
+  sources:
+  - caltestbed-directory
+  - cec-nopa
+  - third-derivative
+  registry_id: automat-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Avogy
+  website: null
+  hq: San Jose, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Listed as dead by CB Insights; its domain is for sale.
+  ats: null
+  open_roles: null
+- name: Bellwether Coffee
+  website: https://bellwethercoffee.com
+  hq: Berkeley, CA
+  sources:
+  - congruent
+  registry_id: bellwether-coffee
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: bamboohr
+    token: bellwether
+  open_roles: 5
+- name: Bidirectional Energy
+  website: https://bidirectional.energy
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Bidirectional EV charging program: customer picks a bidirectional charger and
+    the company handles installation, permitting and setup, enabling home ba'
+  ats: null
+  open_roles: null
+- name: Bio Architecture Lab
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Listed as closed by Dealroom.
+  ats: null
+  open_roles: null
+- name: Blackpak
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Bloom Energy
+  website: https://www.bloomenergy.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: bloom-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats:
+    type: workday
+    token: bloomenergy.wd1.myworkdayjobs.com/BloomEnergyCareers
+  open_roles: null
+- name: Blue Current
+  website: https://bluecurrent.com
+  hq: Hayward, CA
+  sources:
+  - lbnl-ipo-startups
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: blue-current
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: bluecurrent
+  open_roles: null
+- name: Blue Planet Systems
+  website: https://www.blueplanetsystems.com/
+  hq: Los Gatos, CA
+  sources:
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: blue-planet-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Bridgelux
+  website: https://www.bridgelux.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: bridgelux
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Brimstone
+  website: https://brimstone.com
+  hq: Oakland, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - dcvc
+  - bev
+  - fifthwall-portfolio
+  - fifthwall-climate-press
+  - collab-fund
+  - third-derivative
+  - arpae-projects
+  - oced-award-wednesdays
+  registry_id: brimstone
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: brimstone
+  open_roles: null
+- name: Built Robotics
+  website: https://builtrobotics.com
+  hq: San Francisco, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: built-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: built-robotics
+  open_roles: null
+- name: BurnBot
+  website: https://www.burnbot.com
+  hq: South San Francisco, CA
+  sources:
+  - elemental-portfolio
+  - overture-jobs
+  - lowercarbon-portfolio
+  - eif
+  registry_id: burnbot
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: C-Crete Technologies
+  website: https://www.c-crete.com/
+  hq: San Leandro, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Calectra
+  website: https://calectra.com
+  hq: Oakland, CA
+  sources:
+  - activate-2024
+  registry_id: calectra
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Calion Technologies
+  website: https://www.calion.tech/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lbnl-ipo-startups
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - arpae-projects
+  registry_id: calion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CalWave Power Technologies
+  website: https://calwave.energy/
+  hq: California
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - kb-ba-hardware
+  - third-derivative
+  registry_id: calwave-power-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Calysta
+  website: https://calysta.com
+  hq: Menlo Park, CA
+  sources:
+  - arpae-projects
+  registry_id: calysta
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Capture6
+  website: https://capture6.org/
+  hq: Berkeley, CA
+  sources:
+  - cec-nopa
+  - elemental-portfolio
+  - builtin-sf-greentech
+  - third-derivative
+  registry_id: capture6
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: capture6
+  open_roles: 1
+- name: Carbic
+  website: https://carbic.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: carbic
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Carnot Compression
+  website: https://www.carnotcompression.com/
+  hq: Scotts Valley, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: carnot-compression
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Cellink
+  website: https://www.cellinkcircuits.com
+  hq: San Carlos, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: cellink
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats:
+    type: greenhouse
+    token: cellink
+  open_roles: 23
+- name: Channing Street Copper Company
+  website: https://copperhome.com
+  hq: Berkeley, CA
+  sources:
+  - cec-nopa
+  registry_id: copper
+  decision: registry
+  reason: Registry entry 'copper' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: copperhome
+  open_roles: null
+- name: Charge Robotics
+  website: https://chargerobotics.com
+  hq: San Leandro, CA
+  sources:
+  - yc-directory
+  - kb-ba-hardware
+  - collab-fund
+  registry_id: charge-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: charge-robotics
+  open_roles: null
+- name: ChargePoint
+  website: https://www.chargepoint.com/
+  hq: Campbell, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  registry_id: chargepoint
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: chargepoint
+  open_roles: null
+- name: ChargeWheel
+  website: https://chargewheel.com
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-cleantech-article
+  registry_id: chargewheel
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Chariot Defense
+  website: https://chariotdefense.com
+  hq: San Bruno, CA
+  sources:
+  - dcvc
+  registry_id: chariot-defense
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: chariotdefense
+  open_roles: 11
+- name: Charm Industrial
+  website: https://charmindustrial.com
+  hq: San Francisco, CA
+  sources:
+  - lowercarbon
+  - overture-portfolio
+  - lowercarbon-portfolio
+  - collab-fund
+  registry_id: charm-industrial
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: charmindustrial
+  open_roles: null
+- name: Chemix
+  website: https://www.chemix.ai
+  hq: Sunnyvale, CA
+  sources:
+  - skydeck
+  registry_id: null
+  decision: not-in-scope
+  reason: AI software for designing battery cells.
+  ats: null
+  open_roles: null
+- name: Chromasun
+  website: null
+  hq: San Jose, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: 'Closed: company site gone (chromasun.com redirects to an unrelated site, fasilitassun.com, on 2026-11-24)
+    identity uncertain'
+  ats: null
+  open_roles: null
+- name: Circularity Fuels
+  website: https://circularityfuels.com
+  hq: Redwood City, CA
+  sources:
+  - dcvc
+  - arpae-projects
+  registry_id: circularity-fuels
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Clippership
+  website: https://www.clippership.co
+  hq: South San Francisco, CA
+  sources:
+  - fifty-years
+  registry_id: clippership
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cogenra Solar
+  website: null
+  hq: Mountain View, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Acquired by SunPower (2015) and absorbed.
+  ats: null
+  open_roles: null
+- name: Copper
+  website: https://copperhome.com
+  hq: Berkeley, CA
+  sources:
+  - prelude
+  - kalw-otherlab
+  - climactic
+  - collab-fund
+  registry_id: copper
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: copperhome
+  open_roles: null
+- name: Coreshell Technologies
+  website: https://www.coreshelltech.com/
+  hq: San Leandro, CA
+  sources:
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - kb-ba-hardware
+  - skydeck
+  registry_id: coreshell-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: jazzhr
+    token: coreshelltech
+  open_roles: null
+- name: Cosmic Robotics
+  website: https://cosmicrobotics.com
+  hq: San Francisco, CA
+  sources:
+  - yc-hardtech-ba
+  registry_id: cosmic-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: cosmic-robotics
+  open_roles: null
+- name: Coulomb Solutions
+  website: https://coulombsolutions.com
+  hq: Livermore, CA
+  sources:
+  - carb-core
+  registry_id: coulomb-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Cruz Foam
+  website: https://cruzfoam.com
+  hq: Santa Cruz, CA
+  sources:
+  - at-one
+  registry_id: cruz-foam
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cuberg
+  website: https://www.cuberg.net/
+  hq: San Leandro, CA
+  sources:
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  registry_id: null
+  decision: closed
+  reason: Acquired by Northvolt (2021); its technology moved to Sweden and Northvolt later failed.
+  ats: null
+  open_roles: null
+- name: Cyber Switching
+  website: https://www.cyberswitching.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: cyber-switching
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Cyklos Materials
+  website: https://cyklosmaterials.com
+  hq: Berkeley, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: cyklos-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cypris Materials
+  website: https://www.cyprismaterials.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - calseed-awardees
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: DarmokTech
+  website: https://darmoktech.com
+  hq: Livermore, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  registry_id: darmoktech
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Deep Fission
+  website: https://deepfission.com
+  hq: Berkeley, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: deep-fission
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: deepfissioninc
+  open_roles: null
+- name: Deep Isolation
+  website: https://www.deepisolation.com
+  hq: Berkeley, CA
+  sources:
+  - arpae-projects
+  registry_id: deep-isolation
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats:
+    type: bamboohr
+    token: deepisolation
+  open_roles: 1
+- name: Delta Electronics Americas
+  website: https://www.deltaww.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: delta-electronics-americas
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Diamond Foundry
+  website: https://www.diamondfoundry.com
+  hq: San Francisco, CA
+  sources:
+  - obvious-portfolio
+  registry_id: diamond-foundry
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: lever
+    token: diamondfoundry
+  open_roles: 36
+- name: Duranium
+  website: https://www.duranium.co/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: duranium
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: dover
+    token: duranium
+  open_roles: null
+- name: EARTH AI
+  website: https://www.earth-ai.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: earth-ai
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ebb Carbon
+  website: https://ebbcarbon.com
+  hq: South San Francisco, CA
+  sources:
+  - prelude
+  - congruent
+  - elemental-portfolio
+  registry_id: ebb-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EELI
+  website: https://eeli.tech
+  hq: Berkeley, CA
+  sources:
+  - activate-2024
+  registry_id: eeli
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Efficient Drivetrains
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: Acquired by Cummins (2018) and absorbed.
+  ats: null
+  open_roles: null
+- name: Electric Hydrogen
+  website: https://eh2.com
+  hq: Natick, MA (factory in Devens, MA)
+  sources:
+  - prelude
+  - bev
+  - fifthwall-climate-press
+  registry_id: electric-hydrogen
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: eh2
+  open_roles: null
+- name: ElectricFish Energy
+  website: https://www.electricfish.co/
+  hq: San Carlos, CA area
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - kb-ba-hardware
+  - third-derivative
+  registry_id: electricfish-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Electrochemistry Foundry
+  website: null
+  hq: Hayward, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: Nonprofit shared battery pilot facility; provides services.
+  ats: null
+  open_roles: null
+- name: Element Energy
+  website: https://elementenergy.com
+  hq: Menlo Park, CA
+  sources:
+  - caltestbed-directory
+  - prelude
+  - kb-ba-hardware
+  registry_id: element-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Eleryc
+  website: null
+  hq: San Francisco Bay Area, CA
+  sources:
+  - cec-nopa
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Elmworks
+  website: https://www.elm.works/
+  hq: Berkeley, CA
+  sources:
+  - cyclotron-road-fellows
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Elroy Air
+  website: https://elroyair.com
+  hq: South San Francisco, CA (flight/ops site in Byron, CA)
+  sources:
+  - kb-ba-hardware
+  registry_id: elroy-air
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: elroyair
+  open_roles: null
+- name: Energport
+  website: https://www.energport.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: energport
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Energy Recovery
+  website: https://energyrecovery.com
+  hq: San Leandro, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: energy-recovery
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats:
+    type: lever
+    token: energyrecovery
+  open_roles: 4
+- name: EnerVault
+  website: null
+  hq: Sunnyvale, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed about 2015 (assignment for the benefit of creditors)'
+  ats: null
+  open_roles: null
+- name: EnerVenue
+  website: https://enervenue.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: enervenue
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Enlighted
+  website: https://www.enlightedinc.com
+  hq: Sunnyvale, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: enlighted
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Enovix
+  website: https://www.enovix.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: enovix
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats:
+    type: workday
+    token: enovix.wd12.myworkdayjobs.com/External
+  open_roles: null
+- name: Enphase Energy
+  website: https://enphase.com
+  hq: Fremont, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: enphase
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Enventix
+  website: https://enventixinc.com/
+  hq: San Francisco Bay Area, CA
+  sources:
+  - caltestbed-directory
+  registry_id: enventix
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Envia Systems
+  website: null
+  hq: Newark, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Listed as closed by Dealroom and CB Insights.
+  ats: null
+  open_roles: null
+- name: EnZinc
+  website: https://enzinc.com/
+  hq: Richmond, CA
+  sources:
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - third-derivative
+  - arpae-projects
+  registry_id: enzinc
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Epic Cleantec
+  website: https://www.epiccleantec.com
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: epic-cleantec
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Erg Bio
+  website: https://ergbio.com
+  hq: Dublin, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: erg-bio
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ergSol
+  website: null
+  hq: Fairfield, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Estes Energy
+  website: https://www.estes.energy
+  hq: San Francisco, CA
+  sources:
+  - dcvc
+  registry_id: estes-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: jazzhr
+    token: estesenergy
+  open_roles: null
+- name: Everactive
+  website: https://everactive.com
+  hq: Santa Clara, CA
+  sources:
+  - blue-bear
+  registry_id: everactive
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: EvolOH
+  website: https://www.origen.energy
+  hq: Santa Clara, CA
+  sources:
+  - caltestbed-directory
+  - cec-nopa
+  - collab-fund
+  registry_id: evoloh
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Expand Power Tech
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - activate-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Farasis Energy USA
+  website: https://www.farasis.com
+  hq: Hayward, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: farasis-energy-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Feasible
+  website: https://www.feasible.io/
+  hq: Emeryville, CA
+  sources:
+  - cec-eif-showcase
+  - arpae-projects
+  registry_id: null
+  decision: duplicate
+  reason: Renamed Liminal Insights; listed under that name.
+  ats: null
+  open_roles: null
+- name: Fenix International
+  website: https://www.fenixintl.com
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: fenix-international
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Ferveret
+  website: https://www.ferveret.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: ferveret
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Flair
+  website: https://flair.co
+  hq: San Francisco, CA
+  sources:
+  - lowercarbon
+  - third-derivative
+  registry_id: flair
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Fleetzero
+  website: https://fleetzero.com
+  hq: Houston, TX
+  sources:
+  - bev
+  - obvious-portfolio
+  registry_id: fleetzero
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: fleetzero
+  open_roles: null
+- name: Float
+  website: https://floatcargo.com
+  hq: San Francisco, CA
+  sources:
+  - fifty-years
+  registry_id: float
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Flux Technology
+  website: https://www.fluxtech.io
+  hq: Berkeley, CA
+  sources:
+  - caltestbed-directory
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Form Energy
+  website: https://formenergy.com
+  hq: Somerville, MA
+  sources:
+  - builtin-sf-greentech
+  registry_id: form-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: formenergy
+  open_roles: null
+- name: Fortera
+  website: https://forterausa.com
+  hq: San Jose, CA
+  sources:
+  - khosla-sustainability
+  - kb-ba-hardware
+  registry_id: fortera
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: forteracorporation
+  open_roles: null
+- name: Forum Mobility
+  website: https://www.forummobility.com
+  hq: Oakland, CA
+  sources:
+  - elemental-portfolio
+  - obvious-portfolio
+  registry_id: forum-mobility
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: FreeWire Technologies
+  website: null
+  hq: Newark, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed 2024 IP and some engineers taken on by OptiGrid; OptiGrid did not take on hardware or
+    warranties'
+  ats: null
+  open_roles: null
+- name: Full Cycle Bioplastics
+  website: https://www.fullcyclebioplastics.com
+  hq: Bay Area, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Galvanized Energy
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: GigaCrop
+  website: https://www.gigacrop.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Genetic crop trait (engineered photosynthesis pathway) to raise crop yields,
+    per its own site.'
+  ats: null
+  open_roles: null
+- name: Gillig
+  website: https://www.gillig.com/
+  hq: Livermore, CA
+  sources:
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  - carb-hvip
+  registry_id: gillig
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: gillig
+  open_roles: 0
+- name: Glacier
+  website: https://www.glacier.tech
+  hq: San Francisco, CA
+  sources:
+  - elemental-portfolio
+  - eif
+  registry_id: glacier
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: glacier
+  open_roles: 3
+- name: Glint Photonics
+  website: https://www.glintphotonics.com/
+  hq: Burlingame, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Its lighting business was sold to Luminii (2024); company site is private.
+  ats: null
+  open_roles: null
+- name: Glydways
+  website: https://glydways.com
+  hq: South San Francisco, CA
+  sources:
+  - khosla-sustainability
+  - builtin-sf-greentech
+  registry_id: glydways
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: glydways
+  open_roles: null
+- name: GoPowerEV
+  website: https://gopowerev.com/
+  hq: Palo Alto, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: gopowerev
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gotion Inc.
+  website: https://www.gotion.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: gotion-inc
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats:
+    type: greenhouse
+    token: gotion
+  open_roles: 129
+- name: Gradient
+  website: https://www.gradientcomfort.com/
+  hq: San Francisco, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - elemental-portfolio
+  - kalw-otherlab
+  - at-one
+  - collab-fund
+  registry_id: gradient
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: GreenFire Energy
+  website: https://www.greenfireenergy.com/
+  hq: Emeryville, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: greenfire-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gridscape Solutions
+  website: https://www.grid-scape.com/
+  hq: Fremont, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: gridscape-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gridtential Energy
+  website: https://www.gridtential.com
+  hq: Santa Clara, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: gridtential-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gridware Technologies
+  website: https://gridware.io
+  hq: San Francisco, CA
+  sources:
+  - caltestbed-directory
+  - calseed-awardees
+  - yc-directory
+  - lowercarbon
+  - lowercarbon-portfolio
+  - fifty-years
+  - wireframe
+  registry_id: gridware
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: gridware
+  open_roles: null
+- name: Gritt Robotics
+  website: https://gritt.ai
+  hq: Belmont, CA
+  sources:
+  - congruent
+  - climactic
+  registry_id: gritt-robotics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: gritt
+  open_roles: 18
+- name: Halio
+  website: https://www.halioinc.com
+  hq: Hayward, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Halo Industries
+  website: https://www.halo-industries.com/
+  hq: Santa Clara, CA
+  sources:
+  - cec-eif-showcase
+  - calseed-awardees
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Halotechnics
+  website: null
+  hq: Emeryville, CA
+  sources:
+  - cec-eif-showcase
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: 'Closed: company site gone (halotechnics.com redirects to an unrelated site on 2026-11-24) closure inferred
+    from repurposed domain only'
+  ats: null
+  open_roles: null
+- name: Harvest Thermal
+  website: https://www.harvest-thermal.com/
+  hq: Kensington, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: harvest-thermal
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Heirloom Carbon Technologies
+  website: https://heirloomcarbon.com
+  hq: Brisbane, CA
+  sources:
+  - cec-nopa
+  - lowercarbon
+  - bev
+  - prelude
+  - lowercarbon-portfolio
+  - builtin-sf-greentech
+  - collab-fund
+  - arpae-projects
+  - oced-award-wednesdays
+  registry_id: heirloom
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: heirloomcarbon
+  open_roles: null
+- name: Heliotrope Technologies
+  website: https://www.heliotropetech.com
+  hq: Alameda, CA
+  sources:
+  - cec-eif-showcase
+  - kb-ba-hardware
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed 2021 company site refused connection'
+  ats: null
+  open_roles: null
+- name: Heron Power
+  website: https://heronpower.com
+  hq: Scotts Valley, CA
+  sources:
+  - bev
+  registry_id: heron-power
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: heron-power
+  open_roles: null
+- name: Huminly
+  website: https://huminly.com
+  hq: Berkeley, CA
+  sources:
+  - activate-2024
+  registry_id: huminly
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: HydroHaul
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: iMetalx Group
+  website: https://imetalx.com
+  hq: Sausalito, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: imetalx.com now presents iMETALX Space Systems: space object characterization,
+    perception and autonomy software; input described scaled-up titanium me'
+  ats: null
+  open_roles: null
+- name: Impossible Metals
+  website: https://impossiblemetals.com
+  hq: San Jose, CA
+  sources:
+  - collab-fund
+  registry_id: impossible-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Imprint Energy
+  website: https://www.imprintenergy.com
+  hq: Alameda, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Impulse Labs
+  website: https://impulselabs.com
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-greentech
+  - third-derivative
+  registry_id: impulse-labs
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: impulse
+  open_roles: null
+- name: Industrial Microbes
+  website: https://imicrobes.com
+  hq: Alameda, CA
+  sources:
+  - yc-directory
+  - kb-ba-hardware
+  registry_id: industrial-microbes
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Inertia Enterprises
+  website: https://inertia.energy
+  hq: Livermore, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: inertia-enterprises
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: inertia
+  open_roles: null
+- name: infiniRel
+  website: https://www.infinirel.com/
+  hq: San Jose, CA
+  sources:
+  - calseed-awardees
+  registry_id: null
+  decision: not-in-scope
+  reason: Reliability monitoring sold as a service for renewable plants.
+  ats: null
+  open_roles: null
+- name: Inlyte Energy
+  website: https://inlyteenergy.com
+  hq: San Leandro, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - cec-nopa
+  - at-one
+  - collab-fund
+  - arpae-projects
+  registry_id: inlyte-energy
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: inlyte-energy
+  open_roles: null
+- name: Insight M
+  website: https://insightm.com
+  hq: Mountain View, CA
+  sources:
+  - dcvc
+  registry_id: null
+  decision: not-in-scope
+  reason: Aerial methane-detection data service (acquired by Zeitview, 2026).
+  ats: null
+  open_roles: null
+- name: Intertie
+  website: https://www.intertie.com/
+  hq: Sausalito, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  registry_id: intertie
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ionblox
+  website: https://www.ionblox.com/
+  hq: Fremont, CA
+  sources:
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: ionblox
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: IXP
+  website: null
+  hq: Los Altos, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: JaroFleet
+  website: https://www.jarofleet.com
+  hq: Oakland, CA
+  sources:
+  - pale-blue-dot
+  registry_id: jarofleet
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Joby Aviation
+  website: https://www.jobyaviation.com/
+  hq: Santa Cruz, CA
+  sources:
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  registry_id: joby-aviation
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup out.'
+  ats:
+    type: icims
+    token: jobyaviation
+  open_roles: null
+- name: Jupiter Volta
+  website: https://jupitervolta.com
+  hq: Berkeley, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Kairos Power
+  website: https://kairospower.com
+  hq: Alameda, CA
+  sources:
+  - dcvc
+  - kb-ba-hardware
+  registry_id: kairos-power
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: kairospower
+  open_roles: null
+- name: Kara
+  website: https://karalabs.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: kara
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kfobix
+  website: https://www.kfobix.com/
+  hq: San Francisco Bay Area, CA
+  sources:
+  - caltestbed-directory
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Khemia Metals
+  website: https://khemiametals.com
+  hq: Oakland, CA
+  sources:
+  - arpae-projects
+  registry_id: khemia-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Kiverdi
+  website: https://www.kiverdi.com
+  hq: Pleasanton, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats:
+    type: bamboohr
+    token: kiverdi
+  open_roles: null
+- name: KoBold Metals
+  website: https://koboldmetals.com
+  hq: Berkeley, CA
+  sources:
+  - bev
+  - builtin-sf-greentech
+  - arpae-projects
+  registry_id: kobold-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: koboldmetals
+  open_roles: 28
+- name: Kohana Technologies
+  website: null
+  hq: Richmond, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Laminera
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - cyclotron-road-fellows
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Leeta Materials
+  website: null
+  hq: San Francisco Bay Area, CA
+  sources:
+  - cec-nopa
+  - calseed-awardees
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Libra Robotics
+  website: https://librabots.com
+  hq: Newark, CA
+  sources:
+  - yc-hardtech-ba
+  registry_id: null
+  decision: not-in-scope
+  reason: Software for robots.
+  ats: null
+  open_roles: null
+- name: Lightship
+  website: https://lightshiprv.com
+  hq: Broomfield, CO
+  sources:
+  - prelude
+  - congruent
+  - climactic
+  registry_id: lightship
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: lightship
+  open_roles: null
+- name: Lilac Solutions
+  website: https://lilacsolutions.com
+  hq: East Bay, CA (city not stated; job board lists Berkeley, CA)
+  sources:
+  - lowercarbon
+  - bev
+  - lowercarbon-portfolio
+  - builtin-sf-greentech
+  registry_id: lilac-solutions
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: lilac-solutions
+  open_roles: null
+- name: Lime
+  website: https://li.me
+  hq: San Francisco, CA
+  sources:
+  - prelude
+  - kb-ba-hardware
+  - startx
+  registry_id: lime
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Limelight Steel
+  website: https://limelightsteel.com
+  hq: Oakland, CA
+  sources:
+  - activate-companies
+  - kb-ba-hardware
+  - collab-fund
+  - arpae-projects
+  registry_id: limelight-steel
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: limelight-steel
+  open_roles: null
+- name: Liminal Insights
+  website: https://www.liminalinsights.com/
+  hq: Emeryville, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - lbnl-ipo-startups
+  - elemental-portfolio
+  - eif
+  registry_id: liminal-insights
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Lit Motors
+  website: https://www.litmotors.com
+  hq: San Francisco, CA
+  sources:
+  - collab-fund
+  registry_id: lit-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Lithos Carbon
+  website: https://www.lithoscarbon.com
+  hq: San Francisco, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: not-in-scope
+  reason: Carbon removal by spreading basalt on farmland; a removal-credit service, not a product.
+  ats:
+    type: workable
+    token: lithos
+  open_roles: 3
+- name: Living Carbon
+  website: https://www.livingcarbon.com
+  hq: Hayward, CA
+  sources:
+  - yc-directory
+  - lowercarbon
+  - prelude
+  - arpae-projects
+  registry_id: null
+  decision: not-in-scope
+  reason: Reforestation for carbon removal; no hardware.
+  ats: null
+  open_roles: null
+- name: Longview Fusion
+  website: https://www.longviewfusion.com
+  hq: Livermore, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: longview-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Lucid Group
+  website: https://www.lucidmotors.com/
+  hq: Newark, CA
+  sources:
+  - cec-eif-showcase
+  - builtin-sf-greentech
+  registry_id: lucid-motors
+  decision: registry
+  reason: Registry entry 'lucid-motors' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: Lunar Energy
+  website: https://lunarenergy.com
+  hq: Mountain View, CA
+  sources:
+  - dcvc
+  - prelude
+  - piva-portfolio
+  - builtin-sf-greentech
+  registry_id: lunar-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: lunarenergy
+  open_roles: null
+- name: Lygos
+  website: https://lygos.com/
+  hq: Emeryville, CA
+  sources:
+  - lbnl-ipo-startups
+  - yc-directory
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Lyten
+  website: https://lyten.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: lyten
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: workday
+    token: lyten.wd503.myworkdayjobs.com/Lyten_External_Career_Site
+  open_roles: null
+- name: Madrone
+  website: https://madrone.cool/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: madrone
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats:
+    type: ashby
+    token: madrone
+  open_roles: 3
+- name: Magrathea Metals
+  website: https://magratheametals.com
+  hq: Oakland, CA (Dealroom) / San Francisco, CA (company footer)
+  sources:
+  - kb-ba-hardware
+  registry_id: magrathea
+  decision: registry
+  reason: Registry entry 'magrathea' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: magrathea
+  open_roles: null
+- name: Mainspring Energy
+  website: https://www.mainspringenergy.com/
+  hq: Menlo Park, CA
+  sources:
+  - cec-eif-showcase
+  - dcvc
+  - khosla-sustainability
+  - kb-ba-hardware
+  registry_id: mainspring-energy
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: mainspringenergy
+  open_roles: null
+- name: Makani Power
+  website: null
+  hq: Alameda, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Shut down by Alphabet in February 2020.
+  ats: null
+  open_roles: null
+- name: Mango Materials
+  website: https://www.mangomaterials.com
+  hq: Redwood City, CA
+  sources:
+  - builtin-sf-greentech
+  - collab-fund
+  registry_id: mango-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats:
+    type: bamboohr
+    token: mangomaterials
+  open_roles: 1
+- name: Maple Materials
+  website: https://maplematerials.com
+  hq: Richmond, CA
+  sources:
+  - yc-directory
+  - yc-climate
+  registry_id: maple-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Marathon Fusion
+  website: https://www.marathonfusion.com
+  hq: San Francisco, CA
+  sources:
+  - kb-ba-hardware
+  - collab-fund
+  - arpae-projects
+  registry_id: marathon-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mariana Minerals
+  website: https://marianaminerals.com
+  hq: San Francisco, CA
+  sources:
+  - khosla-sustainability
+  - bev
+  registry_id: mariana-minerals
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: marianaminerals
+  open_roles: null
+- name: Maritime Fusion
+  website: https://maritimefusion.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - yc-hardtech-ba
+  registry_id: maritime-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mars Materials
+  website: https://www.marsmaterials.com
+  hq: Oakland, CA
+  sources:
+  - be-fellows
+  registry_id: mars-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Materials Research LLC
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: Grant-funded research contractor; no website or product.
+  ats: null
+  open_roles: null
+- name: Maxout Renewables
+  website: https://www.maxoutrenewables.com/
+  hq: Livermore, CA
+  sources:
+  - calseed-awardees
+  registry_id: maxout-renewables
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: McEachern Laboratories
+  website: https://mcelabs.com/
+  hq: San Francisco Bay Area, CA
+  sources:
+  - caltestbed-directory
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Advisory, consulting and training on power-metrology instruments (power quality,
+    synchrophasors, grid probing).'
+  ats: null
+  open_roles: null
+- name: Membravo
+  website: https://membravo.com
+  hq: Menlo Park, CA
+  sources:
+  - activate-2025
+  - third-derivative
+  registry_id: membravo
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Meteoric
+  website: https://meteoric.earth/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: meteoric
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Micora
+  website: https://micora.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: micora
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Microvi Biotech
+  website: https://www.microvi.com/
+  hq: Hayward, CA
+  sources:
+  - cec-nopa
+  - elemental-portfolio
+  registry_id: microvi-biotech
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: MightyFly
+  website: https://mightyfly.com
+  hq: San Francisco, CA
+  sources:
+  - at-one
+  registry_id: mightyfly
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Mill
+  website: https://mill.com
+  hq: San Bruno, CA
+  sources:
+  - lowercarbon
+  - bev
+  - prelude
+  - lowercarbon-portfolio
+  registry_id: mill
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: Mill
+  open_roles: 21
+- name: Mitra Chem
+  website: https://www.mitrachem.com
+  hq: Mountain View, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: mitra-chem
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MMCI Solar
+  website: https://www.mmcisolar.com/
+  hq: Oakland, CA
+  sources:
+  - calseed-awardees
+  registry_id: mmci-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Molten Industries
+  website: https://moltenindustries.com
+  hq: Oakland, CA
+  sources:
+  - bev
+  - fifty-years
+  - be-fellows
+  - arpae-projects
+  registry_id: molten-industries
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: moltenindustries
+  open_roles: null
+- name: Monarch Tractor (Zimeno)
+  website: https://www.monarchtractor.com/
+  hq: Livermore, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  - at-one
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed assets acquired by Caterpillar autonomous vehicle (farm) domain no longer resolves'
+  ats: null
+  open_roles: null
+- name: Mosaic Materials
+  website: https://mosaicmaterials.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Acquired by Baker Hughes (2022); its own site is gone.
+  ats: null
+  open_roles: null
+- name: Motiv Power Systems
+  website: https://www.motivps.com/
+  hq: Foster City, CA
+  sources:
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  - carb-hvip
+  registry_id: motiv-power-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Moxion Power
+  website: null
+  hq: Richmond, CA
+  sources:
+  - cec-nopa-ztm
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed: Chapter 7 bankruptcy Aug 2024 Richmond plant and IP bought by Viridi Parente'
+  ats: null
+  open_roles: null
+- name: MycoWorks
+  website: https://mycoworks.com
+  hq: Emeryville, CA
+  sources:
+  - dcvc
+  - wireframe
+  registry_id: mycoworks
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: NanOasis Technologies
+  website: null
+  hq: Richmond, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: NanoConversion Technologies
+  website: null
+  hq: San Jose, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Nanomix
+  website: https://nanomix.com/
+  hq: Emeryville or San Leandro, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: not-in-scope
+  reason: Medical diagnostics.
+  ats: null
+  open_roles: null
+- name: Natel Energy
+  website: https://www.natelenergy.com/
+  hq: Alameda, CA
+  sources:
+  - cec-eif-showcase
+  - bev
+  - kb-ba-hardware
+  registry_id: natel-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Natron Energy
+  website: https://natron.energy
+  hq: Santa Clara, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Ceased operations on 2025-09-03.
+  ats: null
+  open_roles: null
+- name: Navier
+  website: https://www.navierboat.com
+  hq: Alameda, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: navier
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Nelumbo
+  website: https://www.nelumbo.io/
+  hq: Hayward, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: nelumbo
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: NetworkOcean
+  website: https://networkocean.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: networkocean
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nevados Engineering
+  website: https://www.nevados.solar/
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: nevados-engineering
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: New Sun Road
+  website: https://www.newsunroad.com/
+  hq: Richmond, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Stellar platform: microgrid operating system and AI software plus a proprietary
+    Stellar Edge IoT controller for remote monitoring of solar-plus-storag'
+  ats:
+    type: bamboohr
+    token: newsunroad
+  open_roles: 1
+- name: Nextracker
+  website: https://www.nextracker.com
+  hq: Fremont, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: nextracker
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NextSet Materials
+  website: null
+  hq: Berkeley, CA
+  sources:
+  - activate-2025
+  registry_id: nextset-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nitricity
+  website: https://nitricity.co
+  hq: Fremont, CA (San Francisco Bay Area)
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lowercarbon
+  - elemental-portfolio
+  - overture-portfolio
+  - lowercarbon-portfolio
+  - builtin-sf-greentech
+  - arpae-projects
+  registry_id: nitricity
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: nitricity
+  open_roles: null
+- name: Noble Thermodynamic Systems
+  website: https://www.noblethermo.com/
+  hq: Richmond, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - calseed-awardees
+  registry_id: noble-thermodynamic-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Noon Energy
+  website: https://www.noon.energy/
+  hq: Palo Alto, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - elemental-portfolio
+  - cev-portfolio
+  - at-one
+  - collab-fund
+  - arpae-projects
+  registry_id: noon-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: noonenergy
+  open_roles: null
+- name: Novoloop
+  website: https://www.novoloop.com
+  hq: Menlo Park, CA
+  sources:
+  - elemental-portfolio
+  - startx
+  registry_id: novoloop
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Noya
+  website: https://noya.co
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa
+  - lowercarbon
+  - lowercarbon-portfolio
+  registry_id: null
+  decision: closed
+  reason: Y Combinator lists the company as inactive.
+  ats: null
+  open_roles: null
+- name: Nuro
+  website: https://www.nuro.ai
+  hq: Mountain View, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: nuro
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: Nuvation Energy
+  website: https://www.nuvationenergy.com
+  hq: Sunnyvale, CA and Waterloo, Ontario, Canada
+  sources:
+  - kb-ba-hardware
+  registry_id: nuvation-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ocergy
+  website: https://www.ocergy.com/
+  hq: Oakland, CA
+  sources:
+  - cec-nopa
+  registry_id: ocergy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ojjo
+  website: https://www.ojjo.com
+  hq: San Rafael, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: ojjo
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Oklo
+  website: https://oklo.com
+  hq: Santa Clara, CA
+  sources:
+  - yc-directory
+  - dcvc
+  - kb-ba-hardware
+  - arpae-projects
+  registry_id: oklo
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: oklo
+  open_roles: null
+- name: Oleo
+  website: https://oleo.earth
+  hq: San Carlos, CA
+  sources:
+  - startx
+  registry_id: oleo
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Olympian Motors
+  website: https://olympianmotors.com
+  hq: null
+  sources:
+  - collab-fund
+  registry_id: olympian-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: OneD Battery Sciences
+  website: https://onedbattery.com
+  hq: Palo Alto, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: oned-battery-sciences
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Opcondys
+  website: https://opcondys.com/
+  hq: Manteca, CA
+  sources:
+  - calseed-awardees
+  - arpae-projects
+  registry_id: opcondys
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: OpenRoad Technologies
+  website: https://openroad.eco/
+  hq: Santa Cruz, CA
+  sources:
+  - calseed-awardees
+  registry_id: openroad-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Orange Charger
+  website: https://www.orangecharger.com
+  hq: North Fair Oaks
+  sources:
+  - builtin-sf-greentech
+  - climactic
+  registry_id: orange-charger
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Origen Hydrogen
+  website: null
+  hq: San Carlos, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Otherlab
+  website: https://otherlab.com
+  hq: San Francisco, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: not-in-scope
+  reason: Independent research and design lab; spins out companies rather than selling products.
+  ats: null
+  open_roles: null
+- name: OurEnergy
+  website: null
+  hq: Santa Cruz, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Consulting, engineering and project development for community and tribal long-duration
+    energy storage and microgrid projects.'
+  ats: null
+  open_roles: null
+- name: Pacific Fusion
+  website: https://pacificfusion.com
+  hq: Fremont / San Leandro, CA (Bay Area); New Mexico campus
+  sources:
+  - lowercarbon
+  - dcvc
+  - lowercarbon-portfolio
+  registry_id: pacific-fusion
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: pacificfusion
+  open_roles: null
+- name: Paired Power
+  website: https://pairedpower.com/
+  hq: Campbell, CA
+  sources:
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: paired-power
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Pattern Energy
+  website: https://patternenergy.com/
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops, builds and operates wind, solar, storage and transmission projects
+    (e.g. SunZia).'
+  ats:
+    type: icims
+    token: patternenergy
+  open_roles: null
+- name: Peak Energy
+  website: https://www.peakenergy.com
+  hq: Burlingame, CA
+  sources:
+  - kb-ba-hardware
+  - eclipse
+  registry_id: peak-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: peakenergy
+  open_roles: null
+- name: Pegasus Solar
+  website: https://pegasussolar.com
+  hq: Richmond, CA
+  sources:
+  - eif
+  registry_id: pegasus-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Peregrine Hydrogen
+  website: https://www.peregrinehydrogen.com
+  hq: Santa Cruz, CA
+  sources:
+  - arpae-projects
+  registry_id: peregrine-hydrogen
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Perlumi Chemicals
+  website: https://perlumi.com
+  hq: Berkeley, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Perseus Materials
+  website: https://perseusmaterials.com
+  hq: Mountain View, CA
+  sources:
+  - arpae-projects
+  - ornl-innovation-crossroads
+  registry_id: perseus-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Phoenix Boring
+  website: https://phoenixboring.com
+  hq: San Francisco, CA
+  sources:
+  - arpae-projects
+  registry_id: phoenix-boring
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Photara
+  website: https://photara.com
+  hq: San Carlos, CA
+  sources:
+  - prelude
+  registry_id: photara
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Phykos
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - yc-climate
+  registry_id: phykos
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Pinnacle Engines
+  website: https://pinnacle-engines.com
+  hq: San Carlos, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: PLANT PV
+  website: https://plantpv.com
+  hq: Alameda, CA
+  sources:
+  - prelude
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Planted Solar
+  website: https://www.plantedsolar.com/
+  hq: Oakland, CA
+  sources:
+  - cec-nopa
+  - bev
+  - piva-portfolio
+  - builtin-sf-greentech
+  registry_id: planted
+  decision: registry
+  reason: Registry entry 'planted' is the same company under its current name.
+  ats:
+    type: ashby
+    token: planted
+  open_roles: null
+- name: Polymath Research
+  website: null
+  hq: Pleasanton, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Scientific consulting and software for wave propagation in nonlinear media (per
+    Fusion Energy Base); input described longer-wavelength lasers for iner'
+  ats: null
+  open_roles: null
+- name: PolyPlus Battery Company
+  website: https://polyplus.com/
+  hq: Berkeley, CA
+  sources:
+  - lbnl-ipo-startups
+  - kb-ba-hardware
+  - arpae-projects
+  registry_id: polyplus-battery-company
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Porifera
+  website: https://www.porifera.com/
+  hq: Hayward, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - arpae-projects
+  registry_id: porifera
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Posh Robotics (Posh Energy)
+  website: https://poshenergy.com
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa
+  registry_id: posh-robotics-posh-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Power Integrations
+  website: https://www.power.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: power-integrations
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup out.'
+  ats:
+    type: jobvite
+    token: __assets__
+  open_roles: null
+- name: PowerFlex
+  website: https://www.powerflex.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - kb-ba-hardware
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops and installs solar, storage and adaptive EV charging systems for commercial
+    sites, with its PowerFlex X energy management software.'
+  ats:
+    type: jazzhr
+    token: powerflex
+  open_roles: null
+- name: Praio
+  website: https://praio.co
+  hq: Berkeley, CA
+  sources:
+  - activate-2024
+  registry_id: praio
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Primus Power
+  website: https://www.primuspower.com
+  hq: Hayward, CA
+  sources:
+  - kb-ba-hardware
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Principle Power
+  website: https://www.principlepower.com
+  hq: Emeryville, CA
+  sources:
+  - kb-ba-hardware
+  - arpae-projects
+  registry_id: principle-power
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Prologis Mobility
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Fleet EV charging-as-a-service (depot and hub charging, energy supply, installation,
+    operations) offered by Prologis.'
+  ats: null
+  open_roles: null
+- name: Prometheus Fuels
+  website: https://www.prometheusfuels.com
+  hq: Santa Cruz, CA
+  sources:
+  - yc-directory
+  - kb-ba-hardware
+  registry_id: prometheus-fuels
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Pyka
+  website: https://flypyka.com
+  hq: Alameda, CA
+  sources:
+  - yc-directory
+  - dcvc
+  - prelude
+  - piva-portfolio
+  - obvious-portfolio
+  registry_id: pyka
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: pyka
+  open_roles: null
+- name: Qromis
+  website: https://www.qromis.com
+  hq: Santa Clara, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: QuantumScape
+  website: https://www.quantumscape.com/
+  hq: San Jose, CA
+  sources:
+  - cec-nopa-ztm
+  - khosla-sustainability
+  - bev
+  - prelude
+  - kb-ba-hardware
+  registry_id: quantumscape
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Quilt
+  website: https://quilt.com
+  hq: Redwood City, CA
+  sources:
+  - lowercarbon
+  - lowercarbon-portfolio
+  registry_id: quilt
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: quilt
+  open_roles: null
+- name: Quino Energy
+  website: https://www.quinoenergy.com/
+  hq: San Leandro, CA
+  sources:
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: quino-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Range Energy
+  website: https://range.energy
+  hq: Mountain View, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: range-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: range.energy
+  open_roles: null
+- name: RareTerra
+  website: https://www.rare-terra.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  registry_id: rareterra
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Reach Labs
+  website: https://reachpower.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: reach-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: lever
+    token: reachpower
+  open_roles: 3
+- name: Recapping
+  website: null
+  hq: Menlo Park, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Redwood Materials
+  website: https://redwoodmaterials.com
+  hq: Carson City, NV
+  sources:
+  - bev
+  - eclipse
+  - collab-fund
+  registry_id: redwood-materials
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: redwoodmaterials
+  open_roles: null
+- name: Relyion Energy
+  website: https://www.relyionenergy.com/
+  hq: Fremont, CA
+  sources:
+  - caltestbed-directory
+  - third-derivative
+  registry_id: relyion-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: RePurpose Energy
+  website: https://www.repurpose.energy/
+  hq: Fairfield, CA
+  sources:
+  - cec-eif-showcase
+  - calseed-awardees
+  registry_id: repurpose-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ReSource Chemical
+  website: https://www.resourcechemicalcorp.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  registry_id: resource-chemical
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: REVO Powertrains (Wrightspeed)
+  website: https://www.wrightspeed.com/
+  hq: Alameda, CA
+  sources:
+  - cec-nopa
+  registry_id: revo-powertrains-wrightspeed
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Revoy
+  website: https://www.revoy.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - overture-portfolio
+  - root-ventures
+  registry_id: revoy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Rhoic
+  website: https://rhoic.co
+  hq: Emeryville / Berkeley, CA
+  sources:
+  - builtin-sf-greentech
+  - activate-2024
+  registry_id: rhoic
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rincell
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: rincell
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Rivian
+  website: https://rivian.com
+  hq: Irvine, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: rivian
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: RoboDock
+  website: https://www.robodock.tech/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: robodock
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Roca Water
+  website: https://www.rocawater.com
+  hq: Alameda, CA
+  sources:
+  - collab-fund
+  - arpae-projects
+  registry_id: roca-water
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rondo Energy
+  website: https://rondo.com/
+  hq: Alameda, CA
+  sources:
+  - cec-nopa
+  - bev
+  - kb-ba-hardware
+  - oced-award-wednesdays
+  registry_id: rondo-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: rondoenergy
+  open_roles: null
+- name: Rubi Laboratories
+  website: https://www.rubi.earth
+  hq: Alameda, CA
+  sources:
+  - builtin-sf-greentech
+  - collab-fund
+  - climactic
+  - third-derivative
+  registry_id: rubi-laboratories
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rune Energy
+  website: https://www.rune.energy
+  hq: Mountain View, CA
+  sources:
+  - lowercarbon
+  registry_id: rune-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sakuu
+  website: https://www.sakuu.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: sakuu
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Seeo
+  website: https://seeo.com
+  hq: Hayward, CA
+  sources:
+  - lbnl-ipo-startups
+  registry_id: null
+  decision: closed
+  reason: Acquired by Bosch in 2015; no later activity found.
+  ats: null
+  open_roles: null
+- name: Sepion Technologies
+  website: https://www.sepiontechnologies.com/
+  hq: Emeryville, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lbnl-ipo-startups
+  - cec-eif-showcase
+  - calseed-awardees
+  - kb-ba-hardware
+  registry_id: sepion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: pinpoint
+    token: sepiontechnologies
+  open_roles: 1
+- name: Serinus Labs
+  website: https://www.serinuslabs.com
+  hq: Berkeley, CA
+  sources:
+  - arpae-projects
+  registry_id: serinus-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Signetron
+  website: https://signetron.com
+  hq: Silicon Valley, CA
+  sources:
+  - arpae-projects
+  registry_id: signetron
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Sila Nanotechnologies
+  website: https://silanano.com
+  hq: Alameda, CA
+  sources:
+  - kb-ba-hardware
+  - arpae-projects
+  registry_id: sila-nanotechnologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: silananotechnologies
+  open_roles: null
+- name: SirenOpt
+  website: https://www.sirenopt.com/
+  hq: San Leandro, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - cec-nopa
+  - at-one
+  - wireframe
+  - skydeck
+  registry_id: sirenopt
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: sirenopt
+  open_roles: 2
+- name: SkyCool Systems
+  website: https://www.skycoolsystems.com/
+  hq: Mountain View, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - kb-ba-hardware
+  - startx
+  - arpae-projects
+  - in2-portfolio
+  registry_id: skycool-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Soliculture
+  website: https://www.soliculture.com
+  hq: Scotts Valley, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Sonocharge Energy
+  website: https://www.sonocharge.com/
+  hq: Mountain View, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  registry_id: sonocharge-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Soraa
+  website: null
+  hq: Fremont, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: soraa.com now redirects to Ecosense Lighting, which sells Soraa-branded lamps.
+  ats: null
+  open_roles: null
+- name: Space Orbital Services
+  website: null
+  hq: Morgan Hill, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Span
+  website: https://span.io
+  hq: San Francisco, CA
+  sources:
+  - congruent
+  - elemental-portfolio
+  - overture-portfolio
+  - fifthwall-climate-press
+  - builtin-sf-greentech
+  - wireframe
+  - collab-fund
+  - in2-portfolio
+  registry_id: span
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: span
+  open_roles: null
+- name: Spark Thermionics
+  website: https://www.sparkthermionics.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  registry_id: spark-thermionics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: workable
+    token: spark-thermionics-inc
+  open_roles: 0
+- name: Sparkz
+  website: https://www.sparkz.energy/
+  hq: Livermore, CA
+  sources:
+  - cec-nopa
+  - cec-nopa-ztm
+  - kb-ba-hardware
+  registry_id: sparkz
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Specialized Bicycle Components
+  website: https://www.specialized.com
+  hq: Morgan Hill, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: specialized-bicycle-components
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: workday
+    token: specialized.wd5.myworkdayjobs.com/Specialized_External_Career_Site
+  open_roles: null
+- name: Steinmetz
+  website: https://steinmetzmotors.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: steinmetz
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Stem
+  website: https://www.stem.com
+  hq: Houston, TX
+  sources:
+  - elemental-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: PowerTrack software (monitoring, energy management and plant controls for storage
+    and solar assets) with bundled edge hardware, plus AI and project-de'
+  ats:
+    type: rippling
+    token: stem-inc
+  open_roles: 4
+- name: SunChem
+  website: https://www.sunchem.io
+  hq: Berkeley, CA
+  sources:
+  - collab-fund
+  - arpae-projects
+  registry_id: sunchem
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Sunfolding
+  website: https://sunfolding.com/
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed (Dealroom says winding down late 2023; sunfolding.com now redirects to an unrelated agency)'
+  ats: null
+  open_roles: null
+- name: SunPower (formerly Complete Solaria)
+  website: https://us.sunpower.com
+  hq: Orem, UT
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Residential solar and battery systems sold and installed through partners, with
+    financing; mainly third-party panels and batteries (e.g. Enphase).'
+  ats:
+    type: breezy
+    token: sunpower
+  open_roles: 7
+- name: Sunpreme
+  website: null
+  hq: Sunnyvale, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed about 2021'
+  ats: null
+  open_roles: null
+- name: Sunspan
+  website: null
+  hq: Mountain View, CA
+  sources:
+  - third-derivative
+  registry_id: sunspan
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Supercarb
+  website: https://supercarb.tech
+  hq: Berkeley, CA
+  sources:
+  - activate-2024
+  registry_id: supercarb
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Swift Solar
+  website: https://swiftsolar.com
+  hq: San Carlos, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  - kb-ba-hardware
+  registry_id: swift-solar
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: swiftsolar
+  open_roles: null
+- name: Switch Bioworks
+  website: https://switchbioworks.com
+  hq: San Carlos, CA
+  sources:
+  - arpae-projects
+  registry_id: switch-bioworks
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sylvatex
+  website: https://www.sylvatex.com
+  hq: San Francisco Bay Area, CA
+  sources:
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - builtin-sf-greentech
+  - builtin-sf-cleantech-article
+  - third-derivative
+  - arpae-projects
+  registry_id: sylvatex
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Taka Solar
+  website: https://takasolar.com/
+  hq: San Francisco, CA
+  sources:
+  - calseed-awardees
+  registry_id: null
+  decision: null
+  reason: Named by an award list, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Takachar
+  website: https://www.takachar.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - calseed-awardees
+  registry_id: takachar
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Tandem PV
+  website: https://tandempv.com
+  hq: Fremont, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - cec-eif-showcase
+  - cec-nopa
+  - kb-ba-hardware
+  - eclipse
+  - arpae-projects
+  registry_id: tandem-pv
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: tandempv
+  open_roles: null
+- name: Terabase Energy
+  website: https://terabase.energy
+  hq: Berkeley, CA
+  sources:
+  - prelude
+  - bev
+  registry_id: terabase-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: workable
+    token: terabase-energy
+  open_roles: 56
+- name: TeraWatt Technology
+  website: null
+  hq: Milpitas, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: terawatt-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Terradot
+  website: https://terradot.earth
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: terradot
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: terradot-careers
+  open_roles: null
+- name: Terranox AI
+  website: https://terranox.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: terranox-ai
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tesla
+  website: https://www.tesla.com
+  hq: Austin, TX
+  sources:
+  - kb-ba-hardware
+  - carb-hvip
+  registry_id: tesla
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Tigo Energy
+  website: https://www.tigoenergy.com
+  hq: Los Gatos, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: tigo-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Treau
+  website: https://gradientcomfort.com
+  hq: San Francisco, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: duplicate
+  reason: Former name of Gradient (window heat pumps); listed as Gradient.
+  ats: null
+  open_roles: null
+- name: Tula Technology
+  website: https://www.tulatech.com
+  hq: San Jose, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: null
+  decision: not-in-scope
+  reason: Engine and motor control software licensed to automakers.
+  ats: null
+  open_roles: null
+- name: TurnOnGreen
+  website: https://www.turnongreen.com
+  hq: San Jose, CA
+  sources:
+  - builtin-sf-greentech
+  registry_id: turnongreen
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Twelve
+  website: https://twelve.co
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - caltestbed-directory
+  - cec-eif-showcase
+  - cec-nopa
+  - calseed-awardees
+  - lowercarbon
+  - dcvc
+  - elemental-portfolio
+  - lowercarbon-portfolio
+  - startx
+  - arpae-projects
+  registry_id: twelve
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: twelve
+  open_roles: null
+- name: Ubiquitous Energy
+  website: https://ubiquitous.energy/
+  hq: Redwood City, CA
+  sources:
+  - cec-eif-showcase
+  - kb-ba-hardware
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Unemit
+  website: https://www.unemit.com
+  hq: Berkeley, CA
+  sources:
+  - be-fellows
+  registry_id: unemit
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Unspun
+  website: https://unspun.io
+  hq: San Francisco, CA
+  sources:
+  - lowercarbon
+  - dcvc
+  - prelude
+  registry_id: unspun
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: unspun
+  open_roles: 1
+- name: Valo
+  website: https://ridevalo.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - yc-climate
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Varentec
+  website: null
+  hq: Santa Clara, CA
+  sources:
+  - arpae-projects
+  registry_id: null
+  decision: closed
+  reason: Key assets bought by Sentient Energy; closed 2021-02-10.
+  ats: null
+  open_roles: null
+- name: Verdigris Technologies
+  website: https://verdigris.co
+  hq: Los Altos, CA
+  sources:
+  - dcvc
+  - kb-ba-hardware
+  - startx
+  registry_id: verdigris-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats:
+    type: lever
+    token: verdigris
+  open_roles: 2
+- name: Verne
+  website: https://www.verneh2.com/
+  hq: San Francisco, CA
+  sources:
+  - cec-nopa
+  - arpae-projects
+  registry_id: verne
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Vesta
+  website: https://www.vesta.earth
+  hq: San Francisco, CA
+  sources:
+  - elemental-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: Coastal olivine spreading for carbon removal; a removal-credit service, not a product.
+  ats: null
+  open_roles: null
+- name: View
+  website: https://view.com/
+  hq: Milpitas, CA
+  sources:
+  - cec-eif-showcase
+  - builtin-sf-greentech
+  registry_id: view
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup out.'
+  ats:
+    type: jobvite
+    token: view
+  open_roles: null
+- name: Visibl Semiconductors
+  website: https://visiblsemi.com
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  - yc-hardtech-ba
+  registry_id: null
+  decision: not-in-scope
+  reason: Chip design service.
+  ats: null
+  open_roles: null
+- name: Visolis
+  website: https://www.visolisbio.com/
+  hq: San Leandro, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - dcvc
+  - kb-ba-hardware
+  registry_id: visolis
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: visolis
+  open_roles: 1
+- name: Volta Charging
+  website: https://voltacharging.com
+  hq: San Francisco, CA
+  sources:
+  - builtin-sf-greentech
+  - builtin-sf-cleantech-article
+  registry_id: null
+  decision: closed
+  reason: Acquired by Shell (2023); brand shut August 2025 and network sold to JOLT.
+  ats:
+    type: lever
+    token: joltcharge
+  open_roles: 2
+- name: Voltair
+  website: https://voltairlabs.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-directory
+  registry_id: voltair
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Western Magnetics
+  website: https://www.westernmagnetics.com
+  hq: South San Francisco, CA
+  sources:
+  - root-ventures
+  registry_id: western-magnetics
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Westwood Aerogel
+  website: https://westwoodaerogel.com/
+  hq: Berkeley, CA
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - calseed-awardees
+  - collab-fund
+  registry_id: westwood-aerogel
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wisk Aero
+  website: https://wisk.aero
+  hq: Mountain View, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: wisk-aero
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup out.'
+  ats:
+    type: workday
+    token: wisk.wd108.myworkdayjobs.com/Wisk_Careers
+  open_roles: null
+- name: Xponent Power
+  website: https://xponentpower.com/
+  hq: San Francisco Bay Area, CA
+  sources:
+  - caltestbed-directory
+  registry_id: xponent-power
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zelos Energy
+  website: https://zelos.energy
+  hq: San Leandro, CA
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  registry_id: zelos-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ZenLabs Energy
+  website: null
+  hq: Fremont, CA
+  sources:
+  - cec-nopa
+  registry_id: null
+  decision: duplicate
+  reason: Former name of Ionblox; listed under that name.
+  ats: null
+  open_roles: null
+- name: ZERE Energy and Biofuels
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: null
+  decision: closed
+  reason: No activity found since 2014.
+  ats: null
+  open_roles: null
+- name: Zero Emission Industries
+  website: https://www.zeroemissionindustries.com/
+  hq: South San Francisco, CA
+  sources:
+  - cec-eif-showcase
+  registry_id: zero-emission-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zero Motorcycles
+  website: https://www.zeromotorcycles.com
+  hq: Scotts Valley, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: zero-motorcycles
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: ZeroAvia
+  website: https://zeroavia.com/
+  hq: Everett, WA
+  sources:
+  - cec-eif-showcase
+  - bev
+  - elemental-portfolio
+  registry_id: zeroavia
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zimeno
+  website: https://www.zimeno.com
+  hq: Livermore, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: zimeno
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Zoox
+  website: https://zoox.com
+  hq: Foster City, CA
+  sources:
+  - kb-ba-hardware
+  registry_id: zoox
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: zoox
+  open_roles: null
+- name: Zum Services
+  website: https://ridezum.com/
+  hq: Redwood City, CA
+  sources:
+  - cec-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Managed K-12 student transportation (drivers, operations) with its own software
+    platform (Zum CMX) and school-bus fleet electrification.'
+  ats:
+    type: lever
+    token: ridezum
+  open_roles: 31
+- name: ZymoChem
+  website: https://zymochem.com
+  hq: San Leandro, CA
+  sources:
+  - startx
+  - arpae-projects
+  registry_id: zymochem
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
+  ats:
+    type: jazzhr
+    token: zymochem
+  open_roles: null
+excluded:
+- name: 4th State Energies
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lbnl-ipo-startups
+  - calseed-awardees
+  - cec-nopa
+  - activate-2025
+  reason: Headquartered in Riverside, CA, outside the region; no main site in the region found.
+- name: Airform
+  sources:
+  - third-derivative
+  reason: Its site says the heat pump is designed in Hawaii; no Bay Area location confirmed.
+- name: BANIQL
+  sources:
+  - third-derivative
+  reason: Main operations are in Indonesia; no Bay Area site confirmed.
+- name: Biogas Energy
+  sources:
+  - cec-eif-showcase
+  reason: Headquartered in Sebastopol, CA, outside the region; no main site in the region found.
+- name: Blue Laser Fusion
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Goleta, CA, outside the region; no main site in the region found.
+- name: Caban Systems
+  sources:
+  - cec-eif-showcase
+  reason: Headquartered in Plano, TX, outside the region; no main site in the region found.
+- name: Carbo Culture
+  sources:
+  - startx
+  reason: Headquartered in Helsinki, Finland; main project in the Netherlands.
+- name: Dioxycle
+  sources:
+  - lowercarbon
+  - bev
+  reason: Headquartered in Saint-Ouen-sur-Seine, France; a Bay Area site was not verified.
+- name: EarthEn
+  sources:
+  - calseed-awardees
+  reason: Sources place it in Phoenix, AZ.
+- name: Electro-Active Technologies
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  reason: Headquartered in Knoxville, TN, outside the region; no main site in the region found.
+- name: Enerjazz
+  sources:
+  - yc-directory
+  reason: Headquartered in Noida, India.
+- name: Enersion
+  sources:
+  - cec-eif-showcase
+  - cec-nopa
+  reason: Its own site lists San Diego, CA and Toronto, ON.
+- name: Evoly
+  sources:
+  - yc-directory
+  reason: Y Combinator lists it as remote (Oregon); no Bay Area site found.
+- name: FLO Materials
+  sources:
+  - activate-companies
+  - cyclotron-road-fellows
+  - lbnl-ipo-startups
+  reason: Headquartered in Santa Barbara, CA.
+- name: Flux XII
+  sources:
+  - activate-companies
+  reason: Headquartered in Madison, WI.
+- name: Frost Methane Labs
+  sources:
+  - lowercarbon
+  - third-derivative
+  - collab-fund
+  - arpae-projects
+  reason: Its own site lists Juneau, AK and Tulsa, OK.
+- name: Heimdal
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Denver, CO, outside the region; no main site in the region found.
+- name: Hexium
+  sources:
+  - doe-ott-climr
+  reason: Headquartered in Austin, TX (Built In); its open roles are in Austin.
+- name: Jackery
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Shenzhen, China; the Fremont address is a sales office.
+- name: Lumileds
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered outside the US (Netherlands (Lumileds Holding B.V.; Eind); no main site in the region found.
+- name: Maxeon Solar Technologies
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered outside the US (Singapore; US site San Jose, CA (per inp); no main site in the region found.
+- name: OnTo Technology
+  sources:
+  - caltestbed-directory
+  reason: Headquartered in Bend, OR, outside the region; no main site in the region found.
+- name: Portable Solar
+  sources:
+  - caltestbed-directory
+  - calseed-awardees
+  reason: Headquartered in Clifton Park, NY, outside the region; no main site in the region found.
+- name: Renewell Energy
+  sources:
+  - cec-nopa
+  reason: Headquartered in Bakersfield, CA, outside the region; no main site in the region found.
+- name: Safi Organics
+  sources:
+  - caltestbed-directory
+  reason: Headquartered in Kenya.
+- name: Smart Wires
+  sources:
+  - arpae-projects
+  reason: Headquartered in Durham, NC.
+- name: SolarEdge Technologies
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered outside the US (Herzliya, Israel; US HQ Milpitas, CA (pe); no main site in the region found.
+- name: Solectrac
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Santa Rosa, CA, outside the region; no main site in the region found.
+- name: SolidSky
+  sources:
+  - lbnl-ipo-startups
+  - cec-nopa
+  reason: Headquartered in Martin, MI, outside the region; no main site in the region found.
+- name: Sunvapor
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Pasadena, CA, outside the region; no main site in the region found.
+- name: Trevi Systems
+  sources:
+  - cec-eif-showcase
+  reason: Headquartered in Rohnert Park, CA, outside the region; no main site in the region found.
+- name: Turntide Technologies
+  sources:
+  - bev
+  - fifthwall-climate-press
+  - in2-portfolio
+  reason: Its own site lists offices in Alpharetta, GA, the UK and India only.
+- name: Verdagy
+  sources:
+  - kb-ba-hardware
+  reason: Headquartered in Moss Landing, CA, outside the region; no main site in the region found.
+- name: West Biofuels
+  sources:
+  - caltestbed-directory
+  - cec-eif-showcase
+  reason: Headquartered in Woodland, CA, outside the region; no main site in the region found.
+- name: Zeno
+  sources:
+  - lowercarbon
+  - congruent
+  reason: Headquartered outside the US (Nanyuki, Kenya); no main site in the region found.
