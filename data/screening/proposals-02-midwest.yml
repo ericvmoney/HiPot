@@ -1,0 +1,3951 @@
+# Proposals 02 (the Midwest (Illinois, Michigan, Ohio, Minnesota, Indiana, Wisconsin)): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+status: final
+companies:
+- id: 75f
+  name: 75F
+  website: https://www.75f.io/
+  careers_url: null
+  hq: Burnsville, MN
+  ats:
+    type: breezy
+    board: 75f-apac
+  read: manual
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Wireless sensors, controllers and software that automate building heating, cooling and lighting.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board breezy:75f-apac seen 2026-11-25, linked from the company''s own site: 6 open roles. Region sources:
+    evergreen-portfolio, bev. Confidence: low. Unresolved: 75f.io home and /about-us returned truncated pages with
+    no content; Dealroom (75f, 75f-inc) and Built In (75f) returned 404. Nothing verified.'
+- id: adena-power
+  name: Adena Power
+  website: https://adenapower.com
+  careers_url: null
+  hq: Lewis Center, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-based battery cells and energy storage systems (solid-state sodium battery in development) for
+      utilities, healthcare and fleet electrification.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site cites a $200,000 DOE Wind Energy Technologies
+    Office grant, a Halliburton Labs partnership and New Energy Challenge finalist status; no equity round found.
+    Flags: shares address (404 Enterprise Dr, Lewis Center) with Nexceris. Evidence: https://adenapower.com https://www.nexceris.com/contact/
+    Region sources: third-derivative, halliburton-labs. Confidence: medium. Unresolved: Founding year, headcount,
+    funding; Dealroom 404.'
+- id: advanced-ionics
+  name: Advanced Ionics
+  website: https://advancedionics.com
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 34
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/advanced-ionics)
+  climate:
+    tier: core
+    reason: Symbion water-vapor electrolyzers that make hydrogen at intermediate temperatures using industrial waste
+      heat, built from steel without platinum-group metals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 34 people (Dealroom, 2026-11-25); founded 2017, funding round reported in 2025.
+  notes: 'No board found: home page not readable (202). Headcount note: Dealroom figure undated. Founded: https://dealroom.co/companies/advanced-ionics.
+    Stage: Dealroom narrative: $12.5M Series A in 2023 led by bp ventures; $6.7M in early 2025 with JERA and Lummus
+    Technology; total $31.3M. Dealroom table instead shows Series A Nov 2024 $4.5M and early VC Jan 2025 $2.2M.
+    Sources disagree. Evidence: https://dealroom.co/companies/advanced-ionics Region sources: cev, shell-gamechanger,
+    arpa-e. Confidence: medium. Unresolved: advancedionics.com redirects to advanced-ionics.com, which returned
+    an empty page to the fetcher.'
+- id: aeroseal
+  name: Aeroseal
+  website: https://aeroseal.com/
+  careers_url: null
+  hq: Miamisburg, OH
+  ats:
+    type: breezy
+    board: aeroseal
+  read: manual
+  sectors:
+  - buildings
+  stage: series-b
+  founded: 2010
+  headcount:
+    value: 244
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/aeroseal)
+  climate:
+    tier: core
+    reason: Aerosol-based equipment and service that seals air ducts and building envelopes from the inside to cut
+      energy loss.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 244 people (Dealroom, 2026-11-24); funding round reported in 2023.
+  notes: 'Board breezy:aeroseal seen 2026-11-25, linked from the company''s own site: 8 open roles. Headcount note:
+    Dealroom figure, undated; band 100-500. Founded: https://dealroom.co/companies/aeroseal. Stage: Dealroom: Series
+    B $67M, Jul 2023 (Breakthrough Energy Ventures, 2150, Building Ventures, Beazer Homes); Series B first close
+    $30M, Feb 2023 (Climate Investment). Evidence: https://dealroom.co/companies/aeroseal https://achrnews.com/articles/86578-carrier-acquires-aeroseal-inc
+    Region sources: builtin-states, bev, eip. Confidence: medium. Unresolved: Dealroom marks status ''Acquired''
+    but names no acquirer; the only ownership change found is Carrier''s 2001 purchase and a 2010 buyout from Carrier
+    that formed the current company. aeroseal.com returned 403 to automated fetch.'
+- id: aeternal-upcycling
+  name: Aeternal Upcycling
+  website: https://www.aeternalupcycling.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Synthetic base oils for industrial lubricants made by converting end-of-life plastic waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site lists backers (mHUB, Chain Reaction Innovations,
+    US DOE, Evergreen Climate Innovations, Nicor Gas, Polsky, Plug and Play and others) without amounts or round
+    types. Evidence: https://aeternalupcycling.com Region sources: mhub-energytech. Confidence: medium. Unresolved:
+    HQ not stated (Chicago backers mHUB and Polsky suggest Chicago, IL, unverified); founded year (site (c) 2023-2026),
+    headcount and funding not found.'
+- id: agc-carbon
+  name: AGC Carbon
+  website: https://agccarbon.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Early-stage syngas process that turns methane and CO2 into low-carbon fuels and chemicals; whether its
+      methane is biogas or natural gas is not stated.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: agccarbon.com (fetched 2026-11-25): raising a $3MM Series
+    Seed round; TRL-2 current state Flags: Site does not give HQ; Chicago from polsky-resurgence. Methane feedstock
+    (biogas vs natural gas) still not stated on the site.. Evidence: O w n   s i Region sources: polsky-resurgence.
+    Confidence: low.'
+- id: alithic
+  name: Alithic
+  website: null
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  - buildings
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Cement substitute made by capturing CO2 from air and mineralizing it with coal ash and other industrial
+      wastes; demonstration plant in Madison.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'No job board found on the company''s site. Founded: https://innovate.wisc.edu/this-uw-madison-spinoff-is-making-environmentally-friendly-cement-the-secret-ingredient-is-pollution/.
+    Stage: Funding from WARF Ventures and lead investments from Counteract and Kiko Ventures; round name and amount
+    not found. Raising for a larger pilot plant in Alabama. Flags: formerly the Earth RepAIR UW-Madison team (same
+    company as Earth RepAIR entry). Evidence: https://innovate.wisc.edu/this-uw-madison-spinoff-is-making-environmentally-friendly-cement-the-secret-ingredient-is-pollution/
+    https://energy.wisc.edu/industry/uw-madison-spinoffs/alithic https://innovate.wisc.edu/uw-madison-team-looks-to-bring-carbon-capture-to-market/
+    Region sources: uw-spinoffs. Confidence: medium. Unresolved: CB Insights (per search summary) lists Brooklyn,
+    NY as HQ while UW coverage places the team and demo plant in Madison (Robertson Road). Domain and headcount
+    not found.'
+- id: alpha-nur
+  name: Alpha Nur
+  website: https://www.alphanur.com
+  careers_url: null
+  hq: Downers Grove, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: pre-seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Recycles legacy government nuclear material into HALEU fuel feedstock for advanced reactors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Search-result business profile lists a $30K pre-seed
+    round from the University of Chicago, Aug 2023 (unverified); own site mentions equity financing without amounts
+    and DOE grant selection in 2026 Flags: Nuclear fuel recycling, not storage or hydrogen. Founded 2021 per founder
+    bio on own site; started in Booth College New Venture Challenge.. Evidence: O w n   s i Region sources: polsky-resurgence.
+    Confidence: low.'
+- id: american-battery-solutions
+  name: American Battery Solutions
+  website: https://www.americanbatterysolutions.com/
+  careers_url: null
+  hq: Lake Orion, MI
+  ats:
+    type: adp
+    board: b850b09a-85f3-45a3-9072-51b8e5da9e81
+  read: manual
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: 2018
+  headcount:
+    value: 147
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/american-battery-solutions)
+  climate:
+    tier: core
+    reason: Lithium-ion battery packs (low- and high-voltage) for commercial vehicles, buses, fleets and industrial
+      equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 147 people (Built In; undated, so as_of is the day it was read, 2026-11-24). Owned by Komatsu; not independent.
+  notes: 'Board adp:b850b09a-85f3-45a3-9072-51b8e5da9e81 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Built In total employees 147; undated. Founded: https://builtin.com/company/american-battery-solutions.
+    Stage: Company site headline ''Komatsu Completes Acquisition Of American Battery Solutions'' (date not shown
+    on fetched page). Flags: subsidiary of Komatsu. Evidence: https://americanbatterysolutions.com/ https://builtin.com/company/american-battery-solutions
+    Region sources: medc-battery-show-2025. Confidence: medium. Unresolved: Acquisition date not shown. Sites: Lake
+    Orion, MI and Springboro, OH; Built In lists HQ as Detroit.'
+- id: amhytech
+  name: AmHyTech
+  website: https://amhytech.com
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Ammonia technologies: ambient-condition liquid ammonia storage and transfer, and ammonia electrolysis
+      for hydrogen.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site profiles four leaders; no total. Stage:
+    Site lists supporters NSF, ID Ventures, Newlab, TechTown Detroit and USDA; no round or amount. Evidence: https://amhytech.com
+    https://amhytech.com/contact https://amhytech.com/about Region sources: greentown. Confidence: medium. Unresolved:
+    Founding year, headcount, funding; Dealroom 404.'
+- id: arbor-batteries
+  name: Arbor Batteries
+  website: https://arborbi.com
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery technology (licensed from U-M) for cells that charge in under 10 minutes with about
+      15% higher energy storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site says ''Funded in part by DOE, DOD, and State of
+    Michigan'' (https://arborbi.com/). VCBacked lists about $1.8M raised, latest a grant in Sept 2024 (https://www.vcbacked.co/company/arbor-battery-innovations).
+    No equity round found. Flags: U-M spinout (Arbor Battery Innovations). Evidence: https://arborbi.com/ https://www.vcbacked.co/company/arbor-battery-innovations
+    Region sources: search-umich, search-annarbor-battery. Confidence: medium. Unresolved: Legal name Arbor Battery
+    Innovations (footer ''Arbor Batteries Inc.''); arborbatteries.com redirects to arborbi.com. A U-M story reportedly
+    gives co-founding in 2023 but that page is off limits, so founded left null. Headcount not found; HQ city from
+    search results, not the site.'
+- id: arborwind
+  name: ArborWind
+  website: https://www.arborwind.com
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vertical-axis wind turbines (PT180) for farms, C&I sites, schools and communities.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: No dated activity after December 2019 found; site still
+    up. Status after 2019 is unconfirmed.. Evidence: O w n   s i Region sources: builtin-states. Confidence: low.'
+- id: arisdyne-systems
+  name: Arisdyne Systems
+  website: https://www.arisdyne.com
+  careers_url: null
+  hq: Middleburg Heights, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Controlled flow cavitation (CFC) and resonance reactor equipment for oil processing (e.g. ethanol/biodiesel
+      plant retrofits); also silver electrode paste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Evidence: https://arisdyne.com/
+    Region sources: beststartup-ohio. Confidence: medium. Unresolved: Founding year, headcount, funding not found
+    (no Dealroom profile). HQ is in the Cleveland area (17830 Englewood Dr., Middleburg Heights).'
+- id: atlas-materials
+  name: Atlas Materials
+  website: https://atlasmaterials.com
+  careers_url: null
+  hq: Mount Prospect, IL
+  ats:
+    type: ashby
+    board: atlas
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: series-a
+  founded: 2021
+  headcount:
+    value: 6
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/atlas-materials)
+  climate:
+    tier: core
+    reason: The Atlas Process for producing high-purity magnesium metal, nickel and cobalt.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 6 people (Dealroom, 2026-11-25); founded 2021, funding round reported in 2026.
+  notes: 'Board ashby:atlas seen 2026-11-24, token matched by name; board page checked: 8 open roles, 1 US-remote.
+    Headcount note: Dealroom figure undated; its workforce split shows Canada and South Africa only. Founded: https://dealroom.co/companies/atlas-materials.
+    Stage: Dealroom: Series A Sep 2023, $27M (Voyager VC, Grantham Foundation). Own site news item dated 11 Nov
+    2026: ''SMGM Makes Strategic Investment in Atlas Materials'' (no terms). Flags: HQ uncertain: Dealroom header
+    says Mount Prospect, IL but its About text says London-based; press releases datelined Delaware. Evidence: https://atlasmaterials.com
+    https://dealroom.co/companies/atlas-materials Region sources: voyager. Confidence: medium. Unresolved: Real
+    operating HQ; whether a US site exists in Illinois.'
+- id: autokiniton
+  name: Autokiniton
+  website: https://www.autokiniton.com/
+  careers_url: null
+  hq: New Boston, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Stamped structural components for vehicles in general, not specific to electric vehicles; no climate
+      case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Private-equity owned: portfolio company of KPS Capital
+    Partners (https://www.autokiniton.com); acquired Tower International via a subsidiary. Flags: private-equity
+    owned (KPS Capital Partners); not EV-specific: propulsion-agnostic structural parts. Evidence: https://www.autokiniton.com
+    Region sources: e2-announcements. Confidence: medium. Unresolved: Founded year, headcount (likely large but
+    no figure found), Bellevue plant details.'
+- id: bila-solar
+  name: Bila Solar
+  website: https://bilasolar.com/
+  careers_url: null
+  hq: Indianapolis, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules (e.g. 550 W dual-glass) made in Indianapolis with US-made components, among the first
+      to offer US-made solar cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Ownership not stated on site. Evidence: https://bilasolar.com
+    https://bilasolar.com/about Region sources: e2-announcements. Confidence: medium. Unresolved: Founded year,
+    headcount, parent/ownership, plant capacity.'
+- id: bioferm-energy-systems
+  name: BIOFerm Energy Systems
+  website: https://biofermenergy.com
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turnkey anaerobic digestion and biogas upgrading systems; also exclusive North American supplier of
+      German activated carbons for gas cleanup.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found; site names Isthmus Renewables
+    as a financing partner, not a parent. Evidence: https://www.biofermenergy.com/ Region sources: builtin-states.
+    Confidence: medium. Unresolved: Founding year, ownership/parent and headcount not found (no Dealroom profile;
+    /about-us 404). Address 2537 Daniels Street, Madison is on the site but not labelled HQ.'
+- id: biosynthetic-technologies
+  name: Biosynthetic Technologies
+  website: https://biosynthetic.com
+  careers_url: null
+  hq: Indianapolis, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - industrial-heat
+  stage: series-a
+  founded: 2006
+  headcount:
+    value: 11
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/biosynthetic-technologies)
+  climate:
+    tier: core
+    reason: Biobased synthetic base oils (estolides) from fatty acids for industrial lubricants, metalworking fluids,
+      grease, food-grade and personal care uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 11 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); funding round reported in
+      2022.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 11, band <100; undated. Founded: https://dealroom.co/companies/biosynthetic-technologies.
+    Stage: Dealroom: Series A May 2019 $9.5M and Series A Feb 2022 $7.5M, both HG Ventures; total equity $10-50M.
+    Dealroom also marks status ''Acquired'' without naming an acquirer. Flags: Dealroom lists as acquired (acquirer
+    not named). Evidence: http://biosynthetic.com/ https://dealroom.co/companies/biosynthetic-technologies Region
+    sources: builtin-states. Confidence: medium. Unresolved: Sources disagree: Dealroom gives HQ Irvine, CA and
+    status Acquired; company site lists only an Indianapolis, IN address (5742 W 79th St) and names Innoleo as an
+    affiliate. Acquirer, if any, not found.'
+- id: blip-energy
+  name: blip energy
+  website: https://www.blipenergy.com/
+  careers_url: null
+  hq: Evanston, IL
+  ats:
+    type: greenhouse
+    board: blip
+  read: auto
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Compact, portable home battery for houses and apartments (input: built from second-life batteries).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board greenhouse:blip seen 2026-11-25, token matched by name; board page checked: 2 open roles, 1 US-remote.
+    Evidence: https://blipenergy.com Region sources: mhub-energytech, grid-catalyst, laci. Confidence: low. Unresolved:
+    HQ (input Evanston, IL), founded year, headcount and funding not found; /pages/about and dealroom.co/companies/blip-energy
+    returned 404. Second-life cell claim not confirmed.'
+- id: blue-line-battery
+  name: Blue Line Battery
+  website: https://bluelinebattery.com
+  careers_url: null
+  hq: Beloit, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion batteries for forklifts, AGVs and AMRs, plus portable power packs and stationary storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding or parent information found. Evidence: https://bluelinebattery.com/
+    Region sources: wedc-battery, greentown. Confidence: medium. Unresolved: Founding year, headcount, ownership
+    not found.'
+- id: borgwarner
+  name: BorgWarner
+  website: https://www.borgwarner.com/
+  careers_url: null
+  hq: Auburn Hills, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - components
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Vehicle propulsion parts, including electric motors, inverters and battery packs alongside combustion-engine
+      parts.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 'Public company (NYSE: BWA) with tens of thousands of employees; established.'
+  notes: 'No job board found on the company''s site. Stage: Publicly listed (general knowledge; site links SEC filings;
+    exchange and year not verified this session). Flags: over 1,000 employees. Evidence: https://www.borgwarner.com
+    https://www.borgwarner.com/company Region sources: e2-announcements. Confidence: medium. Unresolved: Founded,
+    headcount (number missing from extracted page), listing year; battery packs not mentioned on pages fetched.'
+- id: c-motive-technologies
+  name: C-Motive Technologies
+  website: https://www.c-motive.com/
+  careers_url: null
+  hq: Middleton, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2012
+  headcount:
+    value: 34
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/c-motive-technologies)
+  climate:
+    tier: enabling
+    reason: ZeroMag electrostatic motor-drive systems (1-4 hp, under 400 rpm) replacing gearmotors in industrial
+      fans, conveyors, pumps and mixers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 34 people (Dealroom, 2026-11-24); founded 2012.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100. Founded:
+    https://dealroom.co/companies/c-motive-technologies. Stage: Dealroom: $14M late-stage VC round led by MAK Capital
+    (Jul 2025) and $1.5M (Feb 2025), $54M valuation; total disclosed equity $10-50M; 10 funding events, series letters
+    not visible. Evidence: https://c-motive.com https://dealroom.co/companies/c-motive-technologies Region sources:
+    evergreen-portfolio, grid-catalyst, azolla, evergreen. Confidence: high. Unresolved: Series letter of the Jul
+    2025 $14M round not visible (Dealroom labels it late-stage VC).'
+- id: cache-energy
+  name: Cache Energy
+  website: https://cache-energy.com/
+  careers_url: null
+  hq: Champaign, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state thermo-chemical thermal battery (1,000 F core) charged from the grid or renewables that
+      delivers process heat, offered by lease.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round stated on own site; dealroom.co/companies/cache-energy
+    returned 404. Evidence: https://cache-energy.com Region sources: evergreen-portfolio, grid-catalyst, voyager,
+    third-derivative, halliburton-labs, evergreen. Confidence: medium. Unresolved: Founded year, headcount and funding
+    stage not found.'
+- id: caporus-technologies
+  name: Caporus Technologies
+  website: https://caporus.com
+  careers_url: null
+  hq: Bolingbrook, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Engineered porous materials: NLP flexible ceramic dielectric coatings for film-foil and metallized-film
+      capacitors in power electronics, and LMS laser-modified semiconductor substrates for RF.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site: ''supported by venture investment, U.S. government
+    R&D funding'' and accelerators; names Volta Energy Technologies, DOE and NSF. No round or amount. Evidence:
+    https://caporus.com Region sources: cri. Confidence: medium. Unresolved: Site names only an R&D and pilot facility
+    in Bolingbrook, IL (no stated HQ); founding year (first US patent 2020), headcount; Dealroom 404.'
+- id: carba
+  name: Carba
+  website: https://carba.com/
+  careers_url: null
+  hq: Minneapolis, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular Carba Reactor units that turn waste biomass into solid biocarbon, sold as an industrial input
+      (rubber, steel, asphalt, filtration) and as permanent carbon removal credits.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: $6M round led by Rusheen Capital and Canopy Generations
+    Fund, announced 2025-12-03 on carba.com; round type not stated (stage is a judgement from the amount). Flags:
+    sells carbon removal credits (Microsoft 5-year offtake, 2025-04-24). Evidence: https://carba.com Region sources:
+    evergreen-portfolio, grid-catalyst, evergreen. Confidence: medium. Unresolved: HQ not stated on own site (input
+    says Minneapolis, MN); founded year and headcount not found; dealroom.co/companies/carba returned 404.'
+- id: celadyne-technologies
+  name: Celadyne Technologies
+  website: https://celadynetech.com
+  careers_url: null
+  hq: Lemont, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount:
+    value: 9
+    as_of: '2026-11-25'
+    source: Built In (https://builtin.com/company/celadyne)
+  climate:
+    tier: core
+    reason: Membranes, ionomers and catalysts for fuel cells and electrolyzers, including nanocomposite membranes
+      for low-humidity, high-temperature operation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 9 people (Built In, 2026-11-25); founding year and funding not found, so included as a missing figure
+      (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Built In figure undated. Evidence: https://builtin.com/company/celadyne
+    Region sources: third-derivative, greentown, cri, arpa-e. Confidence: medium. Unresolved: Own site failed TLS
+    handshake for the fetcher; input says Chicago, Built In says Lemont, IL; founding year and funding not found;
+    Dealroom 404.'
+- id: chement
+  name: Chement
+  website: null
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: pre-seed
+  founded: 2020
+  headcount:
+    value: 1
+    as_of: '2026-11-25'
+    source: Breakthrough Energy Fellows job board (search snippet) (https://befjobs.breakthroughenergy.org/companies/chement)
+  climate:
+    tier: core
+    reason: Room-temperature electrochemical process for making Portland cement from the usual raw materials, run
+      on renewable electricity.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (Breakthrough Energy Fellows job board (search snippet), 2026-11-25); founded 2020, funding
+      round reported in 2021.
+  notes: 'No job board found on the company''s site. Headcount note: Band 1-10; undated. Founding year from a CB
+    Insights search snippet only. Founded: https://www.cbinsights.com/company/chement. Stage: Caplight lists a grant
+    in late 2020 and a pre-seed round in October 2021, amounts not shown (search snippet, https://www.caplight.com/company/chement);
+    Breakthrough Energy Fellows company. Evidence: https://www.breakthroughenergy.org/portfolio-item/chement https://www.cmu.edu/engage/alumni/get-involved/tartansontherise/2025/houchins.html
+    https://www.caplight.com/company/chement https://www.cbinsights.com/company/chement Region sources: search-nu.
+    Confidence: medium. Unresolved: chement.com is a parked domain (HugeDomains); own site not found. All facts
+    from search snippets.'
+- id: cleanlife-led
+  name: CleanLife LED
+  website: https://www.cleanlifeled.com/
+  careers_url: null
+  hq: Cleveland, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2011
+  headcount: null
+  climate:
+    tier: out
+    reason: LED lighting and controls; general lighting, no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2011.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to get local issuer certificate (_ssl.c:1035)). Founded: https://cleanlife.com/. Stage:
+    No funding information found. Flags: store moved to cleanlife.com; cleanlifeled.com certificate expired. Evidence:
+    https://www.cleanlifeled.com/ https://cleanlife.com/ Region sources: beststartup-ohio. Confidence: medium. Unresolved:
+    Site says founded in Cleveland, Ohio but gives no current address; headcount not found.'
+- id: clearflame-engines
+  name: ClearFlame Engines
+  website: null
+  careers_url: null
+  hq: Geneva, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: 2016
+  headcount:
+    value: 34
+    as_of: '2026-11-25'
+    source: Built In (https://builtin.com/company/clearflame-engine-technologies)
+  climate:
+    tier: core
+    reason: Engine modification that lets diesel engines run on clean, sootless renewable and low-carbon fuels instead
+      of petroleum diesel.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 34 people (Built In, 2026-11-25); founded 2016.
+  notes: 'No job board found on the company''s site. Headcount note: Built In figure undated; Built In description
+    also says Chicago-based. Founded: https://builtin.com/company/clearflame-engine-technologies. Evidence: https://builtin.com/company/clearflame-engine-technologies
+    Region sources: cri. Confidence: medium. Unresolved: Funding stage not found; clearflameengines.com returned
+    HTTP 522; Dealroom 404.'
+- id: cobra-moto
+  name: Cobra MOTO
+  website: null
+  careers_url: null
+  hq: Hillsdale, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Electrified military motorcycle (prototype). Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient (announced 2025-09-24); no venture round found. Flags: defense is main business. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found;
+    prototype stage.'
+- id: conovate
+  name: COnovate
+  website: null
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: seed
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: COphite / eCOphite graphene-monoxide carbon anode material for fast-charging lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2016.
+  notes: 'No job board found on the company''s site. Founded: https://uwm.edu/lubar-entrepreneurship-center/?p=10079.
+    Stage: $1M SAFE financing (BizTimes, https://biztimes.com/milwaukee-based-conovate-secures-1-million-in-safe-financing/);
+    DOE development contract; status of a ~$1M federal grant reported unclear. Flags: formerly SafeLi. Evidence:
+    https://biztimes.com/milwaukee-based-conovate-secures-1-million-in-safe-financing/ https://biztimes.com/milwaukee-based-startup-conovate-hoping-to-scale-as-status-of-federal-grant-remains-unclear/
+    https://uwm.edu/lubar-entrepreneurship-center/?p=10079 Region sources: wedc-battery. Confidence: medium. Unresolved:
+    Founded Dec 2016 as SafeLi (UW-Milwaukee spinout), per search summary of the UWM page; domain and headcount
+    not found.'
+- id: crown-equipment
+  name: Crown Equipment
+  website: https://www.crown.com/
+  careers_url: null
+  hq: New Bremen, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: 1945
+  headcount:
+    value: 6767
+    as_of: '2026-11-25'
+    source: Built In (https://builtin.com/company/crown-equipment-corporation)
+  climate:
+    tier: enabling
+    reason: Lift trucks, mostly battery-electric, and other material-handling equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '6,767 people (Built In, 2026-11-25): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Built In figure, undated; own site gives no
+    global headcount. Founded: https://www.crown.com/en-us/about-us.html. Stage: private, no venture rounds; family-led
+    (fourth generation of the founding family leads it, per own site). Flags: over 1,000 employees; established
+    manufacturer (founded 1945). Evidence: https://www.crown.com/en-us/about-us.html https://builtin.com/company/crown-equipment-corporation
+    Region sources: search-ohio-third-frontier. Confidence: high. Unresolved: Fuel-cell forklift work not checked
+    on site.'
+- id: crucible-energy
+  name: Crucible Energy
+  website: https://crucible.energy
+  careers_url: null
+  hq: Chanhassen, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Self-healing superconducting mesh power networks with integrated storage, planned with AI grid simulation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Site gives no address; Chanhassen from cleantech-open-2025.
+    Appears pre-product (claims only, no pilot named). No news after June 2025.. Evidence: O w n   s i Region sources:
+    cleantech-open-2025. Confidence: low.'
+- id: cryocellar
+  name: CryoCellar
+  website: https://cryocellar.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Mobile mineralization reactor for farms that turns CO2 and magnesium chloride brine into nesquehonite
+      rock spread on fields as a soil amendment; also sells carbon removal credits.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: website is a Canva page (very early stage). Evidence:
+    https://cryocellar.my.canva.site/ Region sources: mhub-energytech. Confidence: low. Unresolved: HQ (input Chicago,
+    unverified), founded year, headcount and funding not found.'
+- id: darcy-solutions
+  name: Darcy Solutions
+  website: https://darcysolutions.com/
+  careers_url: null
+  hq: New Brighton, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  - buildings
+  stage: series-b
+  founded: 2018
+  headcount:
+    value: 53
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/darcy-solutions)
+  climate:
+    tier: core
+    reason: Groundwater geothermal systems (dipole wells, pump-and-reinject systems, thermal energy networks) designed
+      and built for commercial buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 53 people (Dealroom, 2026-11-24); founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100. Founded:
+    https://dealroom.co/companies/darcy-solutions. Stage: Own site news headline announces a $15M Series B (date
+    not shown); Dealroom total disclosed equity $10-50M. Evidence: https://www.darcysolutions.com/about https://dealroom.co/companies/darcy-solutions
+    Region sources: evergreen-portfolio, grid-catalyst, third-derivative, evergreen. Confidence: high. Unresolved:
+    Date of the Series B not found. Input said Minnetonka, MN; own site says New Brighton, MN.'
+- id: designs-by-natural-processes
+  name: Designs by Natural Processes
+  website: null
+  careers_url: null
+  hq: Winona, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proposed CO2-absorbing cement made without high-temperature heating from Minnesota wastes (coal ash,
+      incinerator ash, water-treatment residues).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Named organization on a 2021 Minnesota LCCMR grant proposal
+    (2021-392); no funding found. Flags: may be an R&D-only entity. Evidence: https://www.lccmr.mn.gov/proposals/2021/originals/proposal_2021-392_and_map.pdf
+    Region sources: arpa-e. Confidence: low. Unresolved: Winona location not confirmed (proposal gives a southern
+    Minnesota phone area code); no website; current status unknown.'
+- id: dow
+  name: Dow
+  website: https://www.dow.com/
+  careers_url: null
+  hq: Midland, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1897
+  headcount:
+    value: 34600
+    as_of: '2025-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Dow_Chemical_Company)
+  climate:
+    tier: out
+    reason: Diversified chemicals and materials; battery and EV materials are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '34,600 people (Wikipedia infobox, 2025-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2025); first day of year used. Founded:
+    https://en.wikipedia.org/wiki/Dow_Chemical_Company. Stage: Parent Dow Inc. became publicly traded on completion
+    of the DowDuPont spin-off, 2019-04-01 (Wikipedia). Flags: over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/Dow_Chemical_Company
+    Region sources: medc-battery-show-2025. Confidence: high.'
+- id: echogen-power-systems
+  name: Echogen Power Systems
+  website: https://echogen.com
+  careers_url: null
+  hq: Akron, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  - energy-storage
+  stage: null
+  founded: null
+  headcount:
+    value: 21
+    as_of: '2026-11-25'
+    source: PitchBook (search snippet) (https://pitchbook.com/profiles/company/44067-07)
+  climate:
+    tier: core
+    reason: Supercritical CO2 power systems for heat-to-power, energy storage (pumped thermal), nuclear power cycles
+      and industrial decarbonization.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 21 people (PitchBook (search snippet), 2026-11-25); founding year and funding not found, so included
+      as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Undated. Other aggregators: Enterprise League
+    20-30 (Jan 2026), JumpStart 11-50, Gust 16. Stage: Equity and grants: a 2011 White House blog said over $22M
+    in equity and grants since founding; ZoomInfo $11.1M over 3 rounds (latest $1M, 2017); CB Insights $500K over
+    4 rounds, latest a $0.2M grant June 2022. Round stage not determinable; sources disagree. Evidence: https://echogen.com
+    https://echogen.com/about https://pitchbook.com/profiles/company/44067-07 https://obamawhitehouse.archives.gov/blog/2011/07/19/ohios-help-creating-clean-electricity-and-jobs
+    https://www.downtownakron.com/go/echogen Region sources: arpa-e, doe-oced. Confidence: medium. Unresolved: Founding
+    year (site: ''almost two decades'' of sCO2 work); HQ Akron from input and an Akron directory listing, not stated
+    on own site. Site quotes a strategic partnership with Westinghouse (2025 press release).'
+- id: ecosphere-organics
+  name: Ecosphere Organics
+  website: https://ecosphereorganics.com/
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Circular materials platform turning organic by-products (e.g. food waste) into engineered base materials
+      for manufacturing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Evidence: https://ecosphereorganics.com/
+    Region sources: cleantech-open-2025. Confidence: low. Unresolved: Site gives no location (Detroit, MI from input
+    not confirmed), founding year, headcount or funding.'
+- id: edgeenergy
+  name: EdgeEnergy
+  website: https://edgeenergyev.com/
+  careers_url: null
+  hq: Cincinnati, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - grid
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: EdgeEV single-phase-to-three-phase power systems (70-100 kW) enabling DC fast chargers at edge-of-grid
+      sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No board found: home page not readable (404). Stage: Pre-A round led by C2 Ventures (2022, https://prnewswire.com/news-releases/c2-ventures-leads-pre-a-round-in-edgeenergy-to-solve-critical-power-grid-and-supply-chain-problems-and-accelerate-ev-fast-charger-deployment-301645697.html);
+    $3.5M investment led by PRETTL Mechatronics & Actuators GmbH (Oct 2025, https://www.businesswire.com/news/home/20251021261266/en).
+    Flags: formerly a subsidiary of Single Phase Power Solutions (2021 coverage). Evidence: https://www.businesswire.com/news/home/20251021261266/en
+    https://theevreport.com/edgeenergy-boosts-operations-relocates-hq https://theevreport.com/edgeenergy-to-invest-150-million-in-ohio-to-expand-manufacturing-and-create-jobs-in-growing-ev-charging-infrastructure-industry
+    Region sources: beststartup-ohio. Confidence: medium. Unresolved: Own site edgeenergyev.com returned 404 at
+    root; founding year and headcount not found. Relocated HQ to downtown Cincinnati; announced $150M Ohio manufacturing
+    investment plan.'
+- id: egi-battery
+  name: EGI Battery
+  website: https://egibattery.com
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: seed
+  founded: 2012
+  headcount:
+    value: 19
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/egi-battery)
+  climate:
+    tier: core
+    reason: Lithium-ion (pouch, semi-solid-state, silicon-rich) battery cells, to be made at its Zeeb Manufacturing
+      Center in Ann Arbor (production begins 2027).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 19 people (Dealroom, 2026-11-25); founded 2012, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 19 (band under 100); undated
+    Founded: https://dealroom.co/companies/egi-battery. Stage: Dealroom: $10M seed round closed March 2026, led
+    by TSV Capital (https://dealroom.co/companies/egi-battery); also reported by DBusiness (https://www.dbusiness.com/daily-news/egi-battery-in-ann-arbor-closes-10m-seed-financing-round/).
+    Flags: dual-use / defense among target applications (drones, aviation). Evidence: https://egibattery.com https://dealroom.co/companies/egi-battery
+    Region sources: search-annarbor-battery. Confidence: high.'
+- id: enspired-solutions
+  name: Enspired Solutions
+  website: https://www.enspiredsolutions.com/
+  careers_url: null
+  hq: East Lansing, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: seed
+  founded: 2021
+  headcount:
+    value: 10
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/enspired-solutions)
+  climate:
+    tier: core
+    reason: PFASigator, a compact skid-mounted system that destroys PFAS in water on site by photo-activated reductive
+      defluorination, for sale or lease.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 10 people (Dealroom, 2026-11-24); founded 2021, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100. Founded:
+    https://dealroom.co/companies/enspired-solutions. Stage: Dealroom: $1.8M Seed, Mar 2024 (Michigan Rise, Pointe
+    Angels, Red Cedar Ventures, Talon Group); SBIR support from NIEHS per own site. Flags: has contract awards from
+    the US Department of War and Bureau of Reclamation (not main business). Evidence: https://enspiredsolutions.com
+    https://dealroom.co/companies/enspired-solutions Region sources: evergreen-portfolio. Confidence: high. Unresolved:
+    Dealroom gives Lansing; own site address is East Lansing, MI.'
+- id: esspi
+  name: ESSPI
+  website: https://esspi.com
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Energy Safety Storage Products International: Li-Ion Locker cabinets that monitor and mitigate fire,
+      explosion and thermal runaway risk when storing and transporting lithium-ion batteries, plus compliance consulting
+      and training.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No company funding disclosed; site says the BLISS safety
+    ecosystem behind its products is funded by the Department of Transportation. Evidence: https://esspi.com Region
+    sources: search-annarbor-battery. Confidence: medium. Unresolved: Founded year, headcount, funding. Only address
+    given is Newlab @ Michigan Central, Detroit (input said Ann Arbor area); domain esspi.com inferred, confirmed
+    by the footer name.'
+- id: eve-energy-north-america
+  name: EVE Energy North America
+  website: null
+  careers_url: null
+  hq: Lewis Center, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 2014
+  headcount: null
+  climate:
+    tier: core
+    reason: Licenses and distributes EVE Energy lithium-ion battery products; runs a battery R&D center (design,
+      testing, storage) in Lewis Center, OH.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by EVE Energy; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: 2023 R&D expansion: about $5.7M investment
+    adding 12 jobs and ''more than doubling'' Lewis Center associates (https://www.jobsohio.com/news-press/eve-energy-north-america-chooses-ohio-for-rd-center-expansion);
+    implies a small local team, no figure. Founded: https://energytech.com/energy-storage/article/21257360/eve-energy-chooses-ohio-for-li-ion-battery-rd-facility.
+    Stage: Subsidiary of Chinese battery maker EVE Energy (https://energytech.com/energy-storage/article/21257360/eve-energy-chooses-ohio-for-li-ion-battery-rd-facility).
+    Flags: subsidiary of EVE Energy (China); R&D and distribution, not manufacturing, in region. Evidence: https://www.jobsohio.com/news-press/eve-energy-north-america-chooses-ohio-for-rd-center-expansion
+    https://energytech.com/energy-storage/article/21257360/eve-energy-chooses-ohio-for-li-ion-battery-rd-facility
+    https://www.areadevelopment.com/newsitems/1-3-2023/eve-energy-north-america-lewis-center-ohio.shtml Region sources:
+    e2-announcements. Confidence: medium. Unresolved: No 2024-2026 status for the Lewis Center expansion found;
+    company website not identified. Founded 2014 from search-result summary of the cited article.'
+- id: flow-environmental-systems
+  name: Flow Environmental Systems
+  website: https://www.flowenvirosys.com
+  careers_url: null
+  hq: Rogers, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Commercial CO2 heat pumps replacing chillers and boilers in multifamily, office, school and public buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Founded year and funding not stated on either page..
+    Evidence: O w n   s i Region sources: grid-catalyst. Confidence: low.'
+- id: flux-xii
+  name: Flux XII
+  website: https://www.flux12.com/
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: seed
+  founded: 2021
+  headcount:
+    value: 6
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/flux-xii)
+  climate:
+    tier: core
+    reason: Organic flow batteries (devices, membranes, electrolytes) for long-duration energy storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 6 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2021, funding round
+      reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 6, band <100; undated. Founded: https://dealroom.co/companies/flux-xii.
+    Stage: Dealroom: Seed Nov 2025, $3.95M (Desai Ventures, gener8tor, WARF Ventures, Grantham Foundation); reported
+    valuation $16M. https://dealroom.co/companies/flux-xii Evidence: https://flux12.com/ https://dealroom.co/companies/flux-xii
+    Region sources: uw-spinoffs, activate, third-derivative. Confidence: high. Unresolved: Site lists data centers
+    among several applications (not main customer).'
+- id: ford-motor-company
+  name: Ford Motor Company
+  website: https://www.ford.com/
+  careers_url: null
+  hq: Dearborn, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: public
+  founded: 1903
+  headcount:
+    value: 169000
+    as_of: '2025-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Ford_Motor_Company)
+  climate:
+    tier: out
+    reason: Cars and trucks, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '169,000 people (Wikipedia infobox, 2025-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2025); first day of year used. Founded:
+    https://en.wikipedia.org/wiki/Ford_Motor_Company. Stage: NYSE: F; IPO 1956 (Wikipedia). Flags: over 1,000 employees.
+    Evidence: https://en.wikipedia.org/wiki/Ford_Motor_Company Region sources: medc-clean-energy-race, e2-announcements,
+    arpa-e. Confidence: high. Unresolved: Status of BlueOval Battery Park Michigan (Marshall) not covered in fetched
+    content.'
+- id: fronius-usa
+  name: Fronius USA
+  website: https://www.fronius.com/en-us/usa
+  careers_url: null
+  hq: Portage, IN
+  ats:
+    type: workday
+    board: fronius
+  read: manual
+  sectors:
+  - energy-storage
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar inverters, battery chargers (Perfect Charging) and welding equipment; US subsidiary based in Portage,
+      IN.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Fronius International; not independent.
+  notes: 'Board workday:fronius.wd3.myworkdayjobs.com/de-DE/Job_Board seen 2026-11-25, linked from the company''s
+    own site: role count not read (no public feed). Stage: US subsidiary of Fronius International GmbH (Austria)
+    (https://www.fronius.com/en-us/usa/about-fronius); parent ownership not stated. Flags: subsidiary of Fronius
+    International (Austria); HQ outside region (parent). Evidence: https://www.fronius.com/en-us/usa/about-fronius
+    Region sources: e2-announcements. Confidence: medium. Unresolved: Founded year (site promotes ''80 Years Fronius''),
+    headcount, parent ownership. Input name ''Fronius USA'' kept; input listed name as Fronius USA.'
+- id: genalpha-nuclear-technologies
+  name: GenAlpha Nuclear Technologies
+  website: null
+  careers_url: null
+  hq: Traverse City, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  - industrial-heat
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: Direct energy conversion nuclear power sources (SPACE-TEC plasma thermionic conversion with metal-foam
+      fuels); also radiation detection. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Founded: https://craft.co/genalpha-nuclear-technologies. Stage:
+    Grants: ARPA-E project ''High-Efficiency Direct Energy Conversion Nuclear Power with Metal Foam Fuels'' (DOE
+    categorical exclusion, 2025); NSF $275,000 award Sep 2024. No equity round found. Evidence: https://www.energy.gov/sites/default/files/2025-08/CX-270807.pdf
+    https://www.highergov.com/grant/2404863 https://craft.co/genalpha-nuclear-technologies Region sources: arpa-e.
+    Confidence: medium. Unresolved: Website, headcount; founding year from a craft.co search snippet only.'
+- id: general-motors
+  name: General Motors
+  website: https://www.gm.com/
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: greenhouse
+    board: general
+  read: auto
+  sectors:
+  - ev
+  stage: public
+  founded: 1908
+  headcount:
+    value: 156000
+    as_of: '2025-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/General_Motors)
+  climate:
+    tier: out
+    reason: Cars and trucks, still mostly combustion; electric models are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '156,000 people (Wikipedia infobox, 2025-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'Board greenhouse:general seen 2026-11-24, token matched by name; board page checked: 1 open roles. Headcount
+    note: Year only (2025); first day of year used. Founded: https://en.wikipedia.org/wiki/General_Motors. Stage:
+    NYSE: GM, S&P 500. Present company formed 2009-07-10 (original 1908); relisting year (2010 IPO) not in fetched
+    content. Flags: over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/General_Motors Region sources:
+    medc-clean-energy-race, e2-announcements, arpa-e. Confidence: high. Unresolved: Listing year of the present
+    company not confirmed from a fetched source.'
+- id: go-electric
+  name: Go Electric
+  website: https://goelectricinc.com/
+  careers_url: null
+  hq: Anderson, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Microgrid and energy-resiliency power systems (battery-backed microgrids, initially for military bases).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Saft; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Acquired by Saft (Total) in 2019 to serve as its Microgrid Center of Excellence (microgridknowledge.com; insideindianabusiness.com).
+    Earlier: $4M growth funding from WindSail Capital, Jul 2018. Flags: subsidiary of Saft (TotalEnergies); military
+    microgrid projects were an early focus (Army contracts); own domain no longer resolves. Evidence: https://microgridknowledge.com/total-saft-acquires-go-electric/
+    https://www.insideindianabusiness.com/articles/international-company-acquires-go-electric https://www.utilitydive.com/press-release/20180724-go-electric-secures-4-million-growth-funding-from-windsail-capital/
+    Region sources: evergreen-portfolio. Confidence: medium. Unresolved: goelectricinc.com does not resolve; whether
+    the Anderson operation still runs under Saft in 2026 unknown (an Oct 2025 patent still lists Go Electric Inc.,
+    Anderson, IN as assignee). Exact acquisition month not confirmed. Facts from search snippets.'
+- id: gosun
+  name: GoSun
+  website: https://www.gosun.co/
+  careers_url: null
+  hq: Cincinnati, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar cookers and ovens, coolers, portable power, water purifiers, solar EV chargers and carports, campers,
+      electric boats and small solar vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Reg CF equity crowdfunding via StartEngine (own site
+    cites 5K+ investors and $26M+ total sales); no venture round found. Evidence: https://gosun.co/pages/about-us
+    Region sources: builtin-states, beststartup-ohio. Confidence: medium. Unresolved: Founded year, headcount and
+    amount raised not found.'
+- id: great-lakes-crystal-technologies
+  name: Great Lakes Crystal Technologies
+  website: null
+  careers_url: null
+  hq: East Lansing, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2019
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Single-crystal, semiconductor-grade CVD diamond substrates, plates and epitaxial wafers for electronics,
+      quantum and other uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Founded: https://innovationcenter.msu.edu/advancing-diamond-tech-for-electronics/.
+    Stage: Awarded $2.7M to advance single-crystal diamond substrates (DBusiness; Business Wire Jan 2025); funder
+    not seen. MSU spinout. No equity round found. Evidence: https://innovationcenter.msu.edu/advancing-diamond-tech-for-electronics/
+    https://www.dbusiness.com/hustle-and-muscle-articles/east-lansing-startup-awarded-2-7m-to-advance-single-crystal-diamond-substrate/
+    https://www.businesswire.com/news/home/20250117887608/en/ Region sources: arpa-e. Confidence: medium. Unresolved:
+    Website (greatlakescrystal.com does not resolve), headcount, funder of the $2.7M award; directory claim of power
+    transistors not confirmed.'
+- id: h2o-now
+  name: H2O Now
+  website: https://www.H20Now.com
+  careers_url: null
+  hq: Wrenshall, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery- and solar-powered devices that pull water from the air; four devices in development, market
+      launch planned 2027.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site says two full-time engineers work on the
+    project. Stage: No funding information found. Flags: pre-revenue (market entry planned 2027); domain in input
+    h20now.com redirects to h2onow.com. Evidence: https://h2onow.com/ Region sources: cleantech-open-2025. Confidence:
+    medium. Unresolved: Only a PO Box in Wrenshall, MN is listed. Founding year and funding not found.'
+- id: heliene
+  name: Heliene
+  website: https://heliene.com/
+  careers_url: null
+  hq: Mountain Iron, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar modules; US plants in Minnesota (Mountain Iron / Iron Range and Twin Cities) per input.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (202). Flags: HQ likely outside region (Canada; not verified).
+    Region sources: e2-announcements. Confidence: low. Unresolved: heliene.com home, /about and /company returned
+    empty content; no facts verified.'
+- id: hemlock-semiconductor
+  name: Hemlock Semiconductor
+  website: https://www.hscpoly.com/
+  careers_url: null
+  hq: Hemlock, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Hyper-pure polysilicon and silicon-based products for electronics and solar panels.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Majority-owned by Corning; not independent.
+  notes: 'No job board found on the company''s site. Stage: Ownership (Corning / Shin-Etsu per general knowledge)
+    not stated on site; not verified. Flags: over 1,000 employees (likely; no figure found); semiconductor-grade
+    polysilicon is a large share of output (not verified). Evidence: https://www.hscpoly.com Region sources: e2-announcements.
+    Confidence: medium. Unresolved: Site says it ''celebrates 65 years'' (implies about 1961) but gives no founding
+    year; headcount and ownership not found.'
+- id: hinetics
+  name: Hinetics
+  website: https://hinetics.com
+  careers_url: null
+  hq: Champaign, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Ultra-high-efficiency, high-torque-density electric machines, including cryogen-free superconducting
+      machines, for aviation, marine and naval propulsion, power generation and industry.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site cites backing from NASA, US Air Force, NSF and
+    DOE; no equity round found. Flags: naval propulsion and USAF among stated markets/funders. Evidence: https://hinetics.com
+    Region sources: arpa-e. Confidence: medium. Unresolved: Founding year, headcount; /about 404; Dealroom 404.'
+- id: holcim-us
+  name: Holcim US
+  website: https://www.holcim.us/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Cement and building materials; lower-carbon lines are a small share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Part of Amrize, Holcim's North American building-materials company; well over 5,000 employees.
+  notes: 'No job board found on the company''s site. Stage: holcim.us 301-redirects to amrize.com; Holcim''s North
+    American business now operates as Amrize (site cites 1,000+ North American sites and a $1B share repurchase
+    completed Oct 2026, implying a listed company). Spin-off date and listing year not verified this session. Flags:
+    over 1,000 employees (likely; no figure found); renamed / spun off as Amrize; cement: high-emitting process.
+    Evidence: https://amrize.com/us/en/amrize-homepage.html Region sources: e2-announcements. Confidence: medium.
+    Unresolved: Amrize HQ, headcount, listing details and Alpena, MI plant not confirmed. Name kept as input; current
+    name is Amrize.'
+- id: hyper-tech-research
+  name: Hyper Tech Research
+  website: https://hypertechresearch.com
+  careers_url: null
+  hq: Columbus, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: MgB2 and Nb3Sn superconducting wire, superconducting coils, high-power-density motors and related systems
+      (fault current limiters, SMES, generators, hydrogen liquefaction).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://hypertechresearch.com https://www.hypertechresearch.com/about-us/
+    Region sources: arpa-e. Confidence: medium. Unresolved: Founding year, headcount, ownership/funding.'
+- id: ideal-electric-company
+  name: Ideal Electric Company
+  website: null
+  careers_url: null
+  hq: Mansfield, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 1903
+  headcount:
+    value: 65
+    as_of: '2023-01-01'
+    source: Richland Source (search snippet) (https://www.richlandsource.com/2023/07/08/ideal-electric-acquires-motor-generator-portfolios-to-expand-opportunities-in-mansfield-beyond/)
+  climate:
+    tier: enabling
+    reason: Large electric motors and generators for power generation and industry.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 65 people (Richland Source (search snippet), 2023-01-01); founded 1903 and no equity raise in the last
+      5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: About 65 at the Mansfield plant in 2023 (year
+    only); a Business Wire profile gives 150. Founded: https://www.richlandsource.com/2023/07/08/ideal-electric-acquires-motor-generator-portfolios-to-expand-opportunities-in-mansfield-beyond/.
+    Stage: private, no venture rounds. Formerly Hyundai Ideal Electric (Hyundai Heavy Industries for about 10 years);
+    2017 sale described by Business Wire as to a private affiliate of Gulf Electroquip (Houston) and by Richland
+    Source as to a private owner. In 2023 it acquired the Louis Allis, Beloit Power Systems, Colt Industries and
+    Fairbanks Morse large motor and generator portfolios (Business Wire). Flags: established manufacturer (founded
+    1903). Evidence: https://www.businesswire.com/news/home/20230625292119/en/IDEAL-ELECTRIC-COMPANY-Acquires-Louis-Allis-Company-Beloit-Power-Systems-Colt-Industries-Fairbanks-Morse-Large-Motor-and-Generator-Portfolio
+    https://www.businesswire.com/news/home/20170913006412/en/Hyundai-Ideal-Electric-Company-Acquired-Affiliate-Gulf
+    https://www.richlandsource.com/2023/07/08/ideal-electric-acquires-motor-generator-portfolios-to-expand-opportunities-in-mansfield-beyond/
+    Region sources: remotefirstjobs. Confidence: medium. Unresolved: Own website not found (idealelectricco.com
+    is for sale); all facts from search snippets.'
+- id: illuminate-usa
+  name: Illuminate USA
+  website: https://illuminateusa.com/
+  careers_url: null
+  hq: Pataskala, OH
+  ats:
+    type: workday
+    board: illuminateusa
+  read: manual
+  sectors:
+  - solar
+  - buildings
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Bifacial solar panels for rooftop/residential and utility-scale markets, assembled at what it calls
+      the largest single-site solar panel factory, in Pataskala, OH.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'Board workday:illuminateusa.wd503.myworkdayjobs.com/en-US/Illuminate_Careers seen 2026-11-25, linked from
+    the company''s own site: role count not read (no public feed). Stage: Site says it is ''an affiliate of Invenergy''
+    (https://illuminateusa.com); LONGi JV partnership from input, not confirmed on the page. Flags: affiliate of
+    Invenergy (JV); foreign JV partner (LONGi) per input, unverified. Evidence: https://illuminateusa.com Region
+    sources: e2-announcements. Confidence: medium. Unresolved: Founded/opened year, headcount, JV ownership split.
+    Site reports 10 GW cumulative built as of 2026-10-29.'
+- id: imagen-energy
+  name: Imagen Energy
+  website: null
+  careers_url: null
+  hq: New Berlin, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: High-power EV charging (50 kW to megawatt class) for buses and fleets, inverter-and-storage integration
+      and grid-support power electronics.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by ABB E-mobility; not independent.
+  notes: 'No job board found on the company''s site. Stage: Own site: ''Part of ABB E-mobility''. Flags: subsidiary
+    of ABB E-mobility. Evidence: https://imagenenergy.com https://imagenenergy.com/about Region sources: arpa-e.
+    Confidence: medium. Unresolved: HQ (input New Berlin, WI unverified), founding year, acquisition date, headcount.'
+- id: inertial
+  name: Inertial
+  website: https://www.inertial.xyz/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Systems that capture carbon dioxide and water vapor from industrial exhaust (directory: turbomachinery
+      for power-plant flue gas).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ not confirmed (input guess Chicago, IL). Evidence:
+    https://inertial.xyz Region sources: polsky-resurgence. Confidence: low. Unresolved: HQ, founding year, headcount
+    and funding not on the home page; /team returned 404; no Dealroom or Built In profile found.'
+- id: influit-energy
+  name: Influit Energy
+  website: null
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Nano-Electro Fuel (NEF), a liquid (flow-type) rechargeable energy storage technology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site names funders/partners DARPA, Argonne, NSF, ARPA-E,
+    DOE, NASA, AFRL, OECIF and Army Futures Command; no amounts and no equity round found. Flags: defense agencies
+    among funders (DARPA, AFRL, Army Futures Command); main customers not stated. Evidence: https://influitenergy.com
+    Region sources: search-nu. Confidence: medium. Unresolved: Founding year, headcount, equity funding; Dealroom
+    and Built In profiles 404.'
+- id: ingeteam
+  name: Ingeteam
+  website: https://www.ingeteam.com/
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount:
+    value: 4000
+    as_of: '2026-11-25'
+    source: Ingeteam (company site) (https://www.ingeteam.com/en-us/about-us)
+  climate:
+    tier: core
+    reason: 'Power electronics and electrical equipment: EV chargers, inverters, power converters, rectifiers, generators,
+      motors, control systems; US operation Ingeteam Inc. in Milwaukee, WI.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 4,000 people (Ingeteam (company site), 2026-11-25); founding year and funding not found, so included
+      as a missing figure (owner rule B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Headcount
+    note: ''more than 4,000 people across 15 countries''; undated, group-wide Stage: Describes itself as preserving
+    ''the spirit of a family-owned company''; ownership not stated; no venture rounds. Flags: over 1,000 employees;
+    HQ outside region. Evidence: https://www.ingeteam.com/us https://www.ingeteam.com/en-us/about-us Region sources:
+    e2-announcements. Confidence: medium. Unresolved: Parent HQ city, founded (site: ''over 85 years of experience''),
+    Milwaukee plant products and size.'
+- id: innio
+  name: INNIO
+  website: https://www.innio.com/
+  careers_url: null
+  hq: Waukesha, WI
+  ats:
+    type: jobvite
+    board: innio
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: Jenbacher and Waukesha gas engines for power generation, CHP and gas compression, plus service and myplant
+      digital platform. Runs mainly on natural gas (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2018.
+  notes: 'Board jobvite:innio seen 2026-11-25, linked from the company''s own site: role count not read (no public
+    feed). Headcount note: Wikipedia: Jenbach facility alone employs over 1,400 (undated). Founded: https://en.wikipedia.org/wiki/Jenbacher.
+    Stage: Private, private-equity owned: created 2018 when GE sold Jenbacher and Waukesha to Advent International.
+    Later ownership changes not verified (investors.innio.com returned 403). Flags: HQ outside region; runs mainly
+    on natural gas; Waukesha engines serve gas compression (oil and gas); over 1,000 employees. Evidence: https://www.innio.com/en/company/about-us
+    https://www.innio.com/en/company/locations-contact https://en.wikipedia.org/wiki/Jenbacher Region sources: wedc-battery.
+    Confidence: medium. Unresolved: Total headcount, current owners and the Waukesha, WI site details not confirmed
+    on fetched pages.'
+- id: intellihot
+  name: Intellihot
+  website: https://intellihot.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2009
+  headcount: null
+  climate:
+    tier: out
+    reason: Tankless water heaters and boilers, mostly gas-fired; runs mainly on natural gas (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2009 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://builtin.com/company/intellihot. Stage: No
+    funding found; own site returned 403 to automated fetch. Evidence: https://builtin.com/company/intellihot Region
+    sources: evergreen-portfolio, evergreen. Confidence: medium. Unresolved: intellihot.com refused the automated
+    client (403). Built In gives Chicago HQ with offices in Galesburg and Vernon Hills, IL; input said Galesburg.
+    Headcount and funding not found.'
+- id: inventev
+  name: Inventev
+  website: null
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: Subsystems that convert hybrid, battery-electric and fuel-cell truck energy into exportable power for
+      commercial fleets, supplied to truck OEMs.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2010 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://inventev.com. Evidence: https://inventev.com
+    Region sources: arpa-e. Confidence: medium. Unresolved: Site says founded ''2010/2011''; headcount and funding
+    not found; Dealroom 404.'
+- id: ionic-liquid-solutions
+  name: Ionic Liquid Solutions
+  website: https://ionicliquidsolutions.com
+  careers_url: null
+  hq: South Bend, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proprietary ionic-liquid chemistry, including additives enabling next-generation battery electrolytes.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''ionicliquidsolutions.com''. (_ssl.c:1035)).
+    Flags: Site copyright is 2018 and shows no dated news; the third-derivative listing is the only later sign of
+    activity. Treat ''active'' as weak.. Evidence: O w n   s i Region sources: third-derivative. Confidence: low.'
+- id: jua-technologies-international
+  name: JUA Technologies International
+  website: null
+  careers_url: null
+  hq: West Lafayette, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar-powered crop dryers and dehydrators (Dehymeleon multipurpose solar dryer; Dehytray).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2016.
+  notes: 'No job board found on the company''s site. Founded: https://www.purdue.edu/newsroom/releases/2016/Q4/purdue-affiliated-startup-developing-solar-powered-crop-drying-device-to-prevent-post-harvest-losses-for-smallholders,-small-medium-agro-processors.html.
+    Stage: Grants only: USDA SBIR Phase I $100,000 plus $50,000 match (2019); USDA SBIR Phase II $600,000 (2022).
+    Purdue-affiliated startup. Evidence: https://www.purdue.edu/newsroom/2022/Q4/jua-technologies-international-receives-600,000-usda-grant-to-develop-solar-powered-crop-dehydrator/
+    https://portal.nifa.usda.gov/web/crisprojectpages/1019560-smart-multipurpose-solar-dehydration-device-for-value-addition-to-specialty-crops.html
+    Region sources: search-purdue. Confidence: medium. Unresolved: Latest news found is 2022, so current status
+    unknown; juatechnologies.com is a domain for sale. A USDA NIFA record lists a Carmel, IN address while Purdue
+    places HQ in West Lafayette.'
+- id: kazadi-enterprises
+  name: Kazadi Enterprises
+  website: https://www.kazadienterprises.com/
+  careers_url: null
+  hq: Batavia, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Absorption-based cooling and dehumidification driven by ambient heat, cutting electricity use of commercial
+      refrigeration.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ from the source, not confirmed on a fetched page.
+    A CB Insights snippet implies founding about 2020 (unverified). f4.fund profile answered 403 and was not pursued;
+    Argonne pages excluded by rule.. Evidence: m H U B   E Region sources: mhub-energytech. Confidence: low.'
+- id: kb-powertrain
+  name: KB Powertrain
+  website: null
+  careers_url: null
+  hq: Kalamazoo, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: eRHINO electrified axle for commercial vehicles (prototype).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient (as KB Powertrain Inc.); no venture round found. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.'
+- id: kemvera
+  name: Kemvera
+  website: https://www.kemvera.com/
+  careers_url: null
+  hq: Midwest
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Bio-acetic acid and bio-ethyl acetate made from corn ethanol as drop-in chemicals (input describes photocatalysis).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found; dealroom.co/companies/kemvera returned
+    404. Evidence: https://kemvera.com https://kemvera.com/about-us Region sources: evergreen-portfolio. Confidence:
+    low. Unresolved: HQ city not found (own site says only ''based in the American Midwest''); founded year, headcount
+    and funding not found. Own site mentions a ''50 KTA Plant Tour'' without location.'
+- id: l-h-battery-company
+  name: L-H Battery Company
+  website: null
+  careers_url: null
+  hq: Jeffersonville, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion (LFP) cells for energy storage systems, supplied to LG Energy Solution Vertech, plus hybrid-vehicle
+      batteries; plant in Jeffersonville (Fayette County), OH originally planned for EV cells.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Joint venture of LG Energy Solution and Honda; began
+    mass production of ESS cells in early July 2026 (https://www.energy-storage.news/honda-lg-es-begin-ess-cell-production-at-retooled-ohio-ev-cell-facility/,
+    https://www.wgyates.com/news/l-h-battery-company-begins-mass-production-of-ess-battery-cells-in-fayette-county-ohio/).
+    Flags: JV of LG Energy Solution and Honda; pivoted from EV cells to grid storage cells. Evidence: https://www.energy-storage.news/honda-lg-es-begin-ess-cell-production-at-retooled-ohio-ev-cell-facility/
+    https://www.wgyates.com/news/l-h-battery-company-begins-mass-production-of-ess-battery-cells-in-fayette-county-ohio/
+    https://autotechinsight.spglobal.com/news/5289391/lg-energy-solution-honda-jv-begins-lfp-ess-battery-production-in-ohio
+    Region sources: e2-announcements. Confidence: medium. Unresolved: Unconfirmed reports (LinkedIn post; Korean
+    press snippet) that LG Energy Solution will sell the Ohio facility to Honda (4.22 trillion won); not verified.
+    Headcount and company website not found.'
+- id: lakril-technologies
+  name: Lakril Technologies
+  website: https://www.lakril.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Bio-based acrylic acid and acrylates made from sugar-derived lactic acid (Lakril Amber Process), scaling
+      toward about 50,000 t/yr.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No job board found on the company''s site. Founded: https://lakril.com. Stage: No funding stated on own
+    site; dealroom.co/companies/lakril-technologies returned 404. Evidence: https://lakril.com Region sources: evergreen-portfolio,
+    cri, evergreen. Confidence: medium. Unresolved: Headcount and funding stage not found.'
+- id: lanzatech
+  name: LanzaTech
+  website: https://lanzatech.com/
+  careers_url: null
+  hq: Skokie, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - electric-aviation
+  stage: public
+  founded: 2005
+  headcount:
+    value: 242
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/lanzatech)
+  climate:
+    tier: core
+    reason: Gas-fermentation technology that converts industrial emissions, CO2 and gasified waste into ethanol
+      for sustainable aviation fuel and chemicals; six commercial facilities in operation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 242 people (Dealroom, 2026-11-24); public, with a listing or offering reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''employees mapped'' figure, undated;
+    may undercount. Founded: https://dealroom.co/companies/lanzatech. Stage: Nasdaq: LNZA, listed via SPAC in 2023
+    (Dealroom). Nasdaq minimum-bid notice Mar 2025; 1-for-100 reverse split effective 2025-08-18 to regain compliance;
+    restructuring costs in Q2 2025 (globenewswire 2025-08-15 and 2025-08-19). Flags: licenses technology and engineering;
+    most plants are owned by partners; Nasdaq listing compliance issues in 2025. Evidence: https://lanzatech.com
+    https://dealroom.co/companies/lanzatech https://www.globenewswire.com/news-release/2025/08/15/3134166/0/en/LanzaTech-Announces-Reverse-Stock-Split-as-Part-of-Nasdaq-Compliance-Plan.html
+    https://www.sec.gov/Archives/edgar/data/0001843724/000162828025021129/lnza-20241231.htm Region sources: builtin-chicago,
+    khosla, arpa-e, doe-oced. Confidence: medium. Unresolved: HQ from FY2024 10-K/A (8045 Lamon Ave, Skokie); a
+    later press release used a Chicago dateline. 2026 listing status not checked.'
+- id: lear-corporation
+  name: Lear Corporation
+  website: https://www.lear.com/
+  careers_url: null
+  hq: Southfield, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automotive seating and electrical distribution for all vehicles; electric-vehicle parts are a small
+      share.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 'Public company (NYSE: LEA) with over 100,000 employees; established.'
+  notes: 'No job board found on the company''s site. Stage: Publicly listed (general knowledge; site links ir.lear.com;
+    exchange and year not verified this session). Site: ''largest U.S.-based automotive supplier'', ''more than
+    100 years of heritage''. Flags: over 1,000 employees. Evidence: https://www.lear.com Region sources: e2-announcements.
+    Confidence: medium. Unresolved: Founded year, headcount, listing year; EV-specific power electronics not described
+    on page.'
+- id: lg-energy-solution-michigan
+  name: LG Energy Solution Michigan
+  website: https://www.lgensol.com/
+  careers_url: null
+  hq: Holland, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery cells and packs.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by LG Energy Solution HQ outside region; not independent.
+  notes: 'No job board found on the company''s site. Stage: Subsidiary of LG Energy Solution (Seoul; KRX: 373220,
+    listed on the Korea Exchange Jan 2022; LG Chem owns 81%). https://en.wikipedia.org/wiki/LG_Energy_Solution Flags:
+    subsidiary of LG Energy Solution; HQ outside region. Evidence: https://en.wikipedia.org/wiki/LG_Energy_Solution
+    https://www.lgensol.com/en/index Region sources: medc-clean-energy-race, e2-announcements. Confidence: medium.
+    Unresolved: Holland, MI plant details, founding year of the Michigan entity and headcount not found (lgensol
+    company-overview page 404).'
+- id: liquidcool-solutions
+  name: LiquidCool Solutions
+  website: https://liquidcoolsolutions.com
+  careers_url: null
+  hq: Rochester, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: High-density, liquid-cooled rack servers for data centers, edge computing and harsh environments. Data-center
+      equipment and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: main customers
+    are data centers; website shows ''free trial has expired'' banner (possible low activity). Evidence: https://www.liquidcoolsolutions.com
+    Region sources: grid-catalyst. Confidence: medium. Unresolved: Founded, headcount, funding, current activity;
+    domain inferred, confirmed by Rochester, MN address.'
+- id: livaq
+  name: LIVAQ
+  website: null
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular structural battery packs for electric ATVs (prototype).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient; no venture round found. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.'
+- id: luxwall
+  name: LuxWall
+  website: https://luxwall.com
+  careers_url: null
+  hq: Ypsilanti Township, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 101
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/luxwall)
+  climate:
+    tier: core
+    reason: Vacuum-insulating glass (Enthermal and Enthermal Plus 'transparent insulation') for window and glass-wall
+      retrofits and new construction.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 101 people (Dealroom, 2026-11-25); founded 2020, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure undated; band 100-500. Own
+    site mentions a Detroit factory. Founded: https://dealroom.co/companies/luxwall. Stage: Dealroom: Series A Feb
+    2023, $33M (Khosla, 2150, Prelude, Breakthrough Energy Ventures; its source link looked wrong); Dealroom text
+    says LuxWall ''has secured Series B funding'' but the round is not in its table; venture debt Aug 2026 (Trinity
+    Capital, Principle Capital). Total equity band $50-100M. Sources disagree; Series B not independently confirmed.
+    Evidence: https://luxwall.com https://dealroom.co/companies/luxwall Region sources: bev, prelude, third-derivative.
+    Confidence: medium. Unresolved: Series B amount and date; input says Ann Arbor, Dealroom says Ypsilanti Township.'
+- id: marel-power-solutions
+  name: MAREL Power Solutions
+  website: https://marel-power.com/
+  careers_url: null
+  hq: Plymouth, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  - components
+  stage: null
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: Packaged and cooled power-semiconductor power stacks (100 kW to 1.6 MW) for inverters and converters,
+      sold as modules or licensed.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/marel-power-solutions.
+    Stage: $1.9M Michigan Supplier Conversion Grant (state grant) for a pilot line in Plymouth; aggregator totals
+    conflict (CB Insights $460K, PitchBook $8.58M, VCBacked $50K); no round type found. Flags: own site lists data
+    centers, defense and automotive/mobility as target markets (first application EVs). Evidence: https://marel-power.com
+    https://www.citybiz.co/?p=906004 https://www.cbinsights.com/company/marel-power-solutions Region sources: evergreen-portfolio,
+    halliburton-labs, evergreen. Confidence: medium. Unresolved: HQ and founded year come from search snippets (CB
+    Insights), not opened pages; headcount not found; dealroom slug returned 404.'
+- id: metasorbex
+  name: Metasorbex
+  website: https://www.metasorbex.com/
+  careers_url: null
+  hq: Loveland, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Programmable sorbent materials platform (nanocarbons) for lower-energy carbon capture/utilization and
+      rare-earth separation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Flags:
+    Site gives no address; Loveland, OH from the source. Scope has widened from carbon capture to rare-earth separation..
+    Evidence: O w n   d o Region sources: mhub-energytech. Confidence: low.'
+- id: mettle-ops
+  name: Mettle Ops
+  website: null
+  careers_url: null
+  hq: Madison Heights, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Automated stator-winding systems for drone (UAS) electric motors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient as Bigelow Family Holdings, LLC (dba Mettle Ops); no venture round found. Flags: legal name Bigelow
+    Family Holdings, LLC; UAS motor tooling (possible defense market). Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount, main customers
+    not found.'
+- id: microlink-devices
+  name: Microlink Devices
+  website: https://mldevices.com/
+  careers_url: null
+  hq: Niles, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - electric-aviation
+  stage: null
+  founded: 2000
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-efficiency thin-film solar cells for drones, high-altitude aircraft and satellites.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2000 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.mldevices.com/about. Stage: Ownership
+    not stated; prime federal contractor on more than thirty programs since 2003 (https://www.mldevices.com/about).
+    Flags: federal/space and UAV markets; defense share not stated; wireless RF epitaxy is core business. Evidence:
+    https://www.mldevices.com https://www.mldevices.com/about Region sources: e2-announcements, arpa-e. Confidence:
+    medium. Unresolved: Headcount, ownership/funding, whether defense is the main customer.'
+- id: milton-manufacturing
+  name: Milton Manufacturing
+  website: null
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Transportable hybrid microgrid with integrated energy systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient; no venture round found. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found;
+    whether defense is a main market (per input ''commercial and defense'') not confirmed.'
+- id: mito-material-solutions
+  name: MITO Material Solutions
+  website: https://mitomaterials.com/
+  careers_url: null
+  hq: Indianapolis, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Graphene-based hybrid additives (MITO E-GO, ACRE and others) that strengthen fibre-reinforced composites
+      and thermoplastics.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by First Graphene Ltd; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom: fewer than 100. Stage: Own site says
+    it is now part of First Graphene (ASX: FGR); acquisition announced 2026-06-03 (prnewswire). Before that: Seed-stage
+    investors per Dealroom (NSF, Elevate Ventures, Cortado Ventures, others); own site mentions a $4.6M raise. Flags:
+    subsidiary of First Graphene Ltd (Australia); acquirer cites US defence and aerospace exposure. Evidence: https://mitomaterials.com
+    https://dealroom.co/companies/mito-material-solutions https://www.prnewswire.com/apac/news-releases/fgr-accelerates-usa-expansion--defence-sector-exposure-with-strategic-acquisition-of-mito-material-solutions-302790896.html
+    Region sources: evergreen-portfolio. Confidence: high. Unresolved: Founded year: Dealroom gives 2016 in its
+    header and 2018 in its About text. Exact closing date of the acquisition not confirmed (a Cortado Ventures notice
+    of 2026-07-15 says acquired). The deal was for product lines, equipment and IP; whether the Indianapolis entity
+    continues is unclear.'
+- id: mobis-north-america
+  name: Mobis North America
+  website: https://www.mobis.com/
+  careers_url: null
+  hq: Toledo, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 1000
+    as_of: '2023-12-01'
+    source: Company statement reported by Toledo Blade (https://toledoblade.com/business/development/2024/07/11/32-million-federal-grant-helps-grow-ev-operations-in-toledo/stories/20240710125)
+  climate:
+    tier: core
+    reason: Assembles EV and plug-in hybrid battery systems (battery base plates and installed packs) at a Toledo,
+      OH plant for just-in-time supply to Stellantis Jeep assembly.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 1,000 people (Company statement reported by Toledo Blade, 2023-12-01). Owned by Hyundai Mobis HQ outside
+      region; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Headcount
+    note: About 1,000 total North American workforce after the Toledo plant (company said December 2023); month
+    only, first day used. Toledo plant itself planned 185 jobs. Stage: Subsidiary of Hyundai Mobis. Toledo plant:
+    $13.8M investment, 185 jobs, production scheduled Aug 2024 (https://jobsohio.com/news-press/mobis-north-america-chooses-toledo-for-electric-battery-assembly-plant);
+    DOE grant $32.6M (https://www.bricker.com/DevelopOhio/doe-awards-32m-to-toledo-ev-battery-plant-project). Flags:
+    subsidiary of Hyundai Mobis; HQ outside region (parent); over 1,000 employees (parent). Evidence: https://toledo.oh.gov/news/2023/12/11/mobis-north-america-creates-185-jobs-in-toledo-ohio
+    https://jobsohio.com/news-press/mobis-north-america-chooses-toledo-for-electric-battery-assembly-plant https://www.bricker.com/DevelopOhio/doe-awards-32m-to-toledo-ev-battery-plant-project
+    Region sources: e2-announcements. Confidence: medium. Unresolved: Whether Toledo battery production started
+    on schedule (Aug 2024) not confirmed. Mobis North America''s US headquarters city not found. A separate Hyundai
+    Mobis electrification subsidiary in Ohio exists (2024) and is a different entity.'
+- id: modal-motors
+  name: Modal Motors
+  website: null
+  careers_url: null
+  hq: Farmington Hills, MI
+  ats:
+    type: ashby
+    board: modal
+  read: auto
+  sectors:
+  - electric-aviation
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Drone (UAS) motors and ESCs using US-made non-rare-earth magnets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:modal seen 2026-11-25, token matched by name; board page checked: 52 open roles, 2 US-remote.
+    Stage: 2025 Make It in Michigan mobility prototyping grant recipient; no venture round found. Flags: drone components
+    (possible defense market). Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount, main customers
+    not found.'
+- id: motibera
+  name: Motibera
+  website: https://motibera.com
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Bearing-assist (bearingless) electric motors and generators for high-speed machinery.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ not confirmed (input says Madison, WI). Evidence:
+    https://motibera.com https://motibera.com/about Region sources: activate, arpa-e. Confidence: medium. Unresolved:
+    HQ, founding year, headcount and funding not on site; Dealroom 404.'
+- id: nanograf-technologies
+  name: NanoGraf Technologies
+  website: https://www.nanograf.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Silicon-based anode material for lithium-ion batteries, replacing graphite, for uses from military to
+      consumer.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site shows a $60M federal (DOE) award for a Michigan
+    battery-materials plant (Oct 2024); no equity round stated on the page read. Flags: military is one named market;
+    planned factory in Flint, MI. Evidence: https://www.nanograf.com Region sources: evergreen-portfolio, e2-announcements,
+    evergreen. Confidence: low. Unresolved: HQ from input only (own home page does not state it); founded year,
+    headcount and equity rounds not found; Dealroom and Built In slugs returned 404.'
+- id: natureworks
+  name: NatureWorks
+  website: https://www.natureworksllc.com/
+  careers_url: null
+  hq: Minnetonka, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: subsidiary
+  founded: 1997
+  headcount:
+    value: 203
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/natureworks)
+  climate:
+    tier: core
+    reason: Ingeo PLA biopolymers made from renewable feedstocks for packaging, food serviceware, durable goods
+      and 3D-printing filament.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 203 people (Dealroom, 2026-11-24). Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band 100-500. Founded:
+    https://dealroom.co/companies/natureworks. Stage: Jointly owned by Cargill and PTT Global Chemical (own about
+    page); began as a Cargill research project in 1989. Flags: joint venture of Cargill and PTT Global Chemical
+    (Thailand); main plant outside region: Blair, NE (150,000 t/yr); building a 75 kt/yr PLA complex in Thailand.
+    Evidence: https://www.natureworksllc.com/about-natureworks https://dealroom.co/companies/natureworks Region
+    sources: builtin-states. Confidence: high. Unresolved: Input said Plymouth, MN; Dealroom says Minnetonka, MN;
+    own page does not state HQ.'
+- id: netenergy
+  name: NETenergy
+  website: https://www.netenergytes.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Liquid cooling with thermal storage for AI data centers; data-center equipment is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Product focus has moved from commercial air conditioning
+    to data-center cooling with integrated thermal storage. Funding rounds not stated.. Evidence: O w n   s i Region
+    sources: evergreen-portfolio, evergreen. Confidence: low.'
+- id: nexceris-formerly-nextech-materials
+  name: Nexceris (formerly NexTech Materials)
+  website: https://nexceris.com/
+  careers_url: null
+  hq: Lewis Center, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Catalysts, coatings, solid-oxide fuel cell and electrochemical materials, plus product lines Li-ion
+      Tamer (battery off-gas sensing) and HeatPath; also contract development and pilot manufacturing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding rounds found; site cites government-sponsored
+    projects (e.g. a $4 million DOE project in 2021). Banner says fuelcellmaterials.com and Nexceris are now one.
+    Evidence: https://www.nexceris.com/about/ https://www.nexceris.com/contact/ Region sources: search-ohio-third-frontier,
+    arpa-e. Confidence: medium. Unresolved: Founding year (site says 30+ years; timeline starts 1998), headcount,
+    ownership.'
+- id: numat-technologies
+  name: NuMat Technologies
+  website: https://www.numat.tech/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: greenhouse
+    board: numattechnologies
+  read: auto
+  sectors:
+  - industrial-heat
+  - components
+  stage: series-c
+  founded: 2013
+  headcount:
+    value: 65
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/numat-technologies)
+  climate:
+    tier: core
+    reason: Metal-organic-framework (MOF) chemical products, e.g. SENTINEL filtration/decontamination media and
+      ION-X chemical delivery for semiconductor gases.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 65 people (Dealroom, 2026-11-24); founded 2013, funding round reported in 2025.
+  notes: 'Board greenhouse:numattechnologies seen 2026-11-24, token matched by name; board page checked: 1 open
+    roles. Headcount note: Dealroom 65 (undated, band under 100); Built In profile lists 60 total employees (https://builtin.com/company/numat).
+    Founded: https://dealroom.co/companies/numat-technologies. Stage: Dealroom: $40M Series C, May 2025, $160M reported
+    valuation (TEL Venture Capital, Aramco Ventures, SK Square, TGC Square); total disclosed equity $50-100M. Flags:
+    target markets include semiconductor and protection of war fighters (defense/extreme environments) alongside
+    industrial decarbonization; domain numat.tech does not resolve; company site is numat.com. Evidence: https://www.numat.com
+    https://dealroom.co/companies/numat-technologies https://builtin.com/company/numat Region sources: evergreen-portfolio,
+    evergreen. Confidence: high. Unresolved: Input HQ Skokie, IL; Dealroom and Built In say Chicago. Share of defense
+    revenue unknown.'
+- id: nylanova
+  name: NylaNova
+  website: https://www.nylanova.com/
+  careers_url: null
+  hq: Evanston, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - industrial-heat
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Chemical recycling of post-consumer and post-industrial nylon-6 waste back into virgin-grade caprolactam
+      monomer.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Site profiles 12 leaders and contributors;
+    no total headcount. Founded: https://nylanova.com. Stage: No equity round found. Site says the Apparel Impact
+    Institute selected it as a funded climate solution; supporters include Northwestern''s InQbation Lab and the
+    Illinois Innovation Voucher program. Evidence: https://nylanova.com https://inqbationlab.northwestern.edu/about-us/resident-startups/
+    Region sources: nu-trienens-q. Confidence: high. Unresolved: Headcount and funding amounts; no Dealroom profile.'
+- id: orb-aerospace
+  name: Orb Aerospace
+  website: null
+  careers_url: null
+  hq: Lowell, MI
+  ats:
+    type: lever
+    board: orbaerospace
+  read: auto
+  sectors:
+  - electric-aviation
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: US-made electric motors for drones; earlier described as developing hybrid-electric drone aircraft.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board lever:orbaerospace seen 2026-11-25, token matched by name; board page checked: 5 open roles. Stage:
+    Make It in Michigan mobility prototyping grant recipient in 2024 and 2025; no venture round found. Flags: drone
+    maker (possible defense market). Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount, main customers
+    not found.'
+- id: orion-energy-systems
+  name: Orion Energy Systems
+  website: https://www.orionlighting.com/
+  careers_url: null
+  hq: Manitowoc, WI
+  ats:
+    type: adp
+    board: 4db2244f-622f-4f08-834a-7fa64c20717b
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1996
+  headcount: null
+  climate:
+    tier: out
+    reason: LED lighting retrofits and maintenance services; general lighting, no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1996 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board adp:4db2244f-622f-4f08-834a-7fa64c20717b seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://en.wikipedia.org/wiki/Orion_Energy_Systems. Stage: Nasdaq:
+    OESX; IPO 2007-12-18 (Wikipedia). Flags: second address in Jacksonville, FL. Evidence: https://www.orionlighting.com
+    https://en.wikipedia.org/wiki/Orion_Energy_Systems Region sources: builtin-states. Confidence: medium. Unresolved:
+    Headcount not found.'
+- id: our-next-energy
+  name: Our Next Energy
+  website: https://one.ai/
+  careers_url: null
+  hq: Novi, MI
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/OUR1002ONXE/JobBoard/5c7eeefc-e61c-417a-8468-f976a704a34d
+  read: manual
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2020
+  headcount:
+    value: 223
+    as_of: '2026-11-24'
+    source: Built In; undated, so as_of is the day it was read (https://builtin.com/company/our-next-energy)
+  climate:
+    tier: core
+    reason: LFP lithium-ion cells, packs and grid storage (Aries) for grid, rail and defense; ONE Circle gigafactory.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 223 people (Built In; undated, so as_of is the day it was read, 2026-11-24); founded 2020.
+  notes: 'Board ukg:recruiting.ultipro.com/OUR1002ONXE/JobBoard/5c7eeefc-e61c-417a-8468-f976a704a34d seen 2026-11-25,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Built In total employees
+    223; undated. Founded: https://builtin.com/company/our-next-energy. Stage: Venture backed (site lists Breakthrough
+    Energy, Temasek, BMW i Ventures); site says ONE has agreed to a business combination to list on Nasdaq. Round
+    letters and amounts not confirmed this run. Flags: pending Nasdaq listing via business combination; defense
+    listed among markets. Evidence: https://one.ai/ https://builtin.com/company/our-next-energy Region sources:
+    medc-clean-energy-race, e2-announcements, bev. Confidence: medium. Unresolved: Latest round, gigafactory (Van
+    Buren Township) operating status, and business-combination closing not verified.'
+- id: parker-hannifin
+  name: Parker Hannifin
+  website: https://www.parker.com/
+  careers_url: null
+  hq: Cleveland, OH
+  ats:
+    type: ashby
+    board: parker
+  read: auto
+  sectors: []
+  stage: public
+  founded: 1917
+  headcount:
+    value: 32604
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/parker-hannifin)
+  climate:
+    tier: out
+    reason: Motion-control, hydraulic and filtration products for many industries; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '32,604 people (Dealroom, 2026-11-24): over the 4,000 cap and its tolerance.'
+  notes: 'Board ashby:parker seen 2026-11-25, token matched by name; board page checked: 13 open roles, 3 US-remote.
+    Headcount note: Dealroom figure, undated; may not reflect the full global workforce. Founded: https://dealroom.co/companies/parker-hannifin.
+    Stage: NYSE: PH; Dealroom gives IPO year as 1978 in one section and 1964 in its history; market cap $114B (2026).
+    Flags: over 1,000 employees; aerospace is one of its main markets (share of defense not checked). Evidence:
+    https://dealroom.co/companies/parker-hannifin Region sources: builtin-chicago. Confidence: medium. Unresolved:
+    parker.com returned 403 to automated fetch. Listing year conflicts (1964 vs 1978). Defense share of revenue
+    not checked.'
+- id: perma-pipe-international-holdings
+  name: PERMA-PIPE International Holdings
+  website: https://www.permapipe.com/
+  careers_url: null
+  hq: The Woodlands, TX
+  ats:
+    type: paycom
+    board: 4279AFC1B4E24987CF55E7836C668C06
+  read: manual
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Pre-insulated piping, containment and leak-detection systems, anti-corrosion coatings and custom fabrication
+      for district energy, industrial and mining uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board paycom:4279AFC1B4E24987CF55E7836C668C06 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Stage: Nasdaq: PPIH (own site); listing year not found. Flags: HQ outside region
+    (own site gives The Woodlands, TX; input said Niles, IL); markets include energy/industrial and mining. Evidence:
+    https://www.permapipe.com Region sources: builtin-chicago. Confidence: medium. Unresolved: Whether a Niles,
+    IL site remains was not checked; founded year, headcount and listing year not found.'
+- id: ph-matter
+  name: pH Matter
+  website: https://phmatter.com
+  careers_url: null
+  hq: Columbus, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Carbon-based and nano materials for electrochemistry: COR-Cat PEM fuel-cell catalysts, Si-pHera silicon-carbon
+      battery anodes, electrolysis materials and BN nanomaterials, produced in Columbus, OH.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site news (19 Mar 2024): ''pH Matter Awarded Funding
+    to Manufacture Critical Fuel Cell Materials''; no equity round found. Evidence: https://phmatter.com Region
+    sources: greentown, arpa-e. Confidence: medium. Unresolved: Founding year, headcount, ownership; Dealroom 404.'
+- id: phenolvation
+  name: Phenolvation
+  website: null
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Chemicals from lignin and biomass to replace petroleum-based ones, e.g. para-aminophenol and acetaminophen,
+      for inks, dyes, adhesives, polymers and drugs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://www.glbrc.org/news/three-scientists-share-industry-and-entrepreneurship-award-startup-efforts.
+    Stage: No funding found. Evidence: https://www.glbrc.org/news/three-scientists-share-industry-and-entrepreneurship-award-startup-efforts
+    https://energy.wisc.edu/node/4513 Region sources: uw-spinoffs. Confidence: low. Unresolved: UW-Madison / GLBRC
+    spinout; Madison HQ inferred from that, no address found. Domain, funding and headcount not found.'
+- id: power-to-hydrogen-p2h2
+  name: Power to Hydrogen (P2H2)
+  website: https://www.p2h2.com/
+  careers_url: null
+  hq: Columbus, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: series-a
+  founded: 2019
+  headcount:
+    value: 27
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/power-to-hydrogen)
+  climate:
+    tier: core
+    reason: Anion exchange membrane (AEM) electrolyzers for hydrogen production (MW-class and demo-class systems).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 27 people (Dealroom, 2026-11-25); founded 2019, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 27; undated Founded: https://dealroom.co/companies/power-to-hydrogen.
+    Stage: Series A over $18M incl. grants, led by Rev1 Ventures, Aug 2024 (https://h2-tech.com/news/2024/08-2024/p2h2-closes-series-a-investment-round/);
+    Dealroom shows Series A $20M May 2025 (Karpowership, Mitsui O.S.K. Lines, Kinetics Group) and EC grant Oct 2025
+    (https://dealroom.co/companies/power-to-hydrogen). Sources differ on Series A date/amount. Flags: input domain
+    p2h2.com is a different company (NJ web design firm). Evidence: https://www.power-h2.com https://dealroom.co/companies/power-to-hydrogen
+    https://h2-tech.com/news/2024/08-2024/p2h2-closes-series-a-investment-round/ https://p2h2.com Region sources:
+    grid-catalyst, third-derivative, shell-gamechanger. Confidence: high. Unresolved: Whether Dealroom''s May 2025
+    $20M is a second Series A tranche or the same round.'
+- id: pyran
+  name: Pyran
+  website: https://pyranco.com/
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 100% biobased 1,5-pentanediol (1,5-PDO) from crop and wood waste for paints, coatings and plastics.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No round disclosed; site lists investors/supporters
+    Arosa Capital Management, WARF, Kowa, NSF SBIR, WEDC. Evidence: https://pyranco.com/ Region sources: uw-spinoffs.
+    Confidence: medium. Unresolved: Founding year, headcount and round not found (no Dealroom profile at /pyran
+    or /pyranco).'
+- id: realta-fusion
+  name: Realta Fusion
+  website: https://realtafusion.com/
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  - industrial-heat
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 62
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/realta-fusion)
+  climate:
+    tier: core
+    reason: Compact modular fusion energy systems (CoSMo fusion) for industrial heat and power.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 62 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 62, band <100; undated; team grew
+    67.6% in a year. Founded: https://dealroom.co/companies/realta-fusion. Stage: Dealroom: Series A May 2025 $36M
+    (WARF Ventures, SiteGround Capital, Avila, GSBackers), valuation $144M; debt Feb 2026 $9.5M from Silicon Valley
+    Bank. https://dealroom.co/companies/realta-fusion Evidence: https://realtafusion.com/ https://dealroom.co/companies/realta-fusion
+    Region sources: uw-spinoffs, khosla. Confidence: high.'
+- id: regal-rexnord
+  name: Regal Rexnord
+  website: https://www.regalrexnord.com/
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1955
+  headcount:
+    value: 32100
+    as_of: '2023-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Regal_Rexnord)
+  climate:
+    tier: out
+    reason: Industrial motors, drives and power-transmission parts for many industries; no climate case under the
+      rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '32,100 people (Wikipedia infobox, 2023-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2023), set to first day; article
+    intro gives about 29,000 undated. Founded: https://en.wikipedia.org/wiki/Regal_Rexnord. Stage: NYSE: RRX (Wikipedia);
+    listing year not found. Formed by Regal Beloit''s merger with Rexnord in Oct 2021; acquired Altra Industrial
+    Motion Mar 2023 (~$5B); sold industrial motors and generators businesses to WEG Sep 2023 ($400M). Flags: over
+    1,000 employees. Evidence: https://en.wikipedia.org/wiki/Regal_Rexnord Region sources: builtin-chicago. Confidence:
+    medium. Unresolved: regalrexnord.com returned 403 to automated fetch; listing year not found.'
+- id: reverse-energy-solutions
+  name: Reverse Energy Solutions
+  website: https://res-us.com
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'PV module recycling and data-center asset recycling (directory: mobile machinery that dismantles solar
+      panels on site).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: recycling service; also recycles data-center assets.
+    Evidence: https://res-us.com Region sources: greentown, laci. Confidence: medium. Unresolved: Whether it sells
+    machinery or only recycling services; founding year, headcount, funding.'
+- id: revex-technologies
+  name: Revex Technologies
+  website: https://revextech.com
+  careers_url: null
+  hq: Houghton, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Recovers nickel and other battery minerals from mine waste.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Project expected to add 115 jobs (search snippet,
+    battery-tech.net / miningjournal.net); not a headcount. Stage: Grant-funded: DOE selected the REV Nickel Project
+    for award negotiation up to $145M (Sept 2024, https://www.eaglemine.com/post/rev-nickel-project-selected-for-award-negotiation-up-to-145-million-from-the-united-states-departme);
+    State of Michigan $50M award (headline on https://revextech.com). No equity rounds found. Flags: mine-waste
+    reprocessing partnered with Eagle Mine (Lundin Mining); pre-commercial: first commercial operations planned
+    2027. Evidence: https://revextech.com https://www.eaglemine.com/post/rev-nickel-project-selected-for-award-negotiation-up-to-145-million-from-the-united-states-departme
+    https://metals-wire.net/news/revex-technologies-secures-145-million-doe-grant-for-rev-nickel-project Region
+    sources: michiganpublic-doe-grants. Confidence: medium. Unresolved: Founded year, headcount, equity funding.
+    Domain revextech.com inferred and confirmed by Houghton, MI datelines on the site.'
+- id: sandbox-carbon
+  name: Sandbox Carbon
+  website: https://www.sandboxcarbon.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Now Sandbox Environmental Systems: air-pollution monitoring and control equipment; no climate case
+      under the rubric.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: pivoted from direct air capture to air-pollution control.
+    Evidence: https://sandboxenviro.com/index.html Region sources: mhub-energytech. Confidence: medium. Unresolved:
+    Site says ''manufacturing in Chicago, IL'' but does not label HQ; founded year, headcount and funding not found.'
+- id: searen
+  name: Searen
+  website: https://www.searen.com
+  careers_url: null
+  hq: Cincinnati, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vacuum AirLift (VAL) water treatment for aquaculture and industrial/municipal water (PFAS, dissolved
+      gases, reuse).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Source said Norwood, OH; the site address is Cincinnati
+    (Norwood is an enclave of Cincinnati). Latest dated item on site is 2023, so activity after 2023 not confirmed..
+    Evidence: O w n   s i Region sources: builtin-states. Confidence: low.'
+- id: sesame-solar
+  name: Sesame Solar
+  website: https://sesame.solar
+  careers_url: null
+  hq: Jackson, MI
+  ats:
+    type: ashby
+    board: sesame
+  read: auto
+  sectors:
+  - hydrogen
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Mobile nanogrids combining solar, hydrogen and battery storage, made in the USA.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:sesame seen 2026-11-25, token matched by name; board page checked: 17 open roles. Flags: HQ
+    not confirmed (input says Jackson, MI). Evidence: https://sesame.solar Region sources: third-derivative. Confidence:
+    medium. Unresolved: HQ, founding year, headcount and funding not on home page; /about 404; Dealroom and Built
+    In 404.'
+- id: shine-technologies
+  name: SHINE Technologies
+  website: https://www.shinefusion.com/
+  careers_url: null
+  hq: Janesville, WI
+  ats:
+    type: paylocity
+    board: 2b42e142-6094-4a5e-a72b-be90060459fe
+  read: manual
+  sectors:
+  - fusion
+  stage: null
+  founded: 2005
+  headcount:
+    value: 100
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/shine-medical-technologies)
+  climate:
+    tier: enabling
+    reason: Fusion-based neutron sources for materials testing and medical isotopes, with nuclear-waste recycling
+      as a later goal.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 100 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2005 and no equity
+      raise in the last 5 years found, so no growth sign.
+  notes: 'Board paylocity:2b42e142-6094-4a5e-a72b-be90060459fe seen 2026-11-25, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Dealroom band 100-500 (''current team size''); undated.
+    Founded: https://dealroom.co/companies/shine-medical-technologies. Stage: Private, venture backed; Dealroom
+    total disclosed equity $1-2.5B, last valuation $1-2.5B (2026); Series B+ investors include Fidelity, Baillie
+    Gifford, Sumitomo Corporation of Americas. Round letters not shown. Site mentions a DOE conditional loan commitment.
+    Flags: aerospace and defense demand for neutron testing noted on site (not stated as main customers). Evidence:
+    https://shinefusion.com/ https://dealroom.co/companies/shine-medical-technologies Region sources: uw-spinoffs,
+    arpa-e, doe-edf. Confidence: medium. Unresolved: Latest round letter; exact headcount.'
+- id: sigma-powertrain
+  name: Sigma Powertrain
+  website: null
+  careers_url: null
+  hq: Wayne, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Multi-speed all-electric powertrain for heavy haul trucks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient; no venture round found. Flags: product for mining haul trucks. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.'
+- id: silatronix
+  name: Silatronix
+  website: https://silatronix.com/
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: 2007
+  headcount: null
+  climate:
+    tier: core
+    reason: Organosilicon electrolyte materials (OS3) for lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Koura / Orbia own site has a hosting certificate error; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''silatronix.com''. (_ssl.c:1035)). Headcount
+    note: A 2014 report (per search summary) said 16 employees. Founded: https://news.wisc.edu/uw-madison-spinoff-highlighted-as-innovation-success-story-in-national-report.
+    Stage: Koura (Orbia group) signed a definitive agreement to acquire Silatronix, Nov 2021 (per search summary);
+    earlier licensing to Hitachi Chemical 2018 (https://businesswire.com/news/home/20180531005031/en/). Flags: subsidiary
+    of Koura / Orbia; own site has a hosting certificate error (may be inactive). Evidence: https://news.wisc.edu/madison-made-electrolyte-going-big-at-global-battery-manufacturer
+    https://businesswire.com/news/home/20180531005031/en/Hitachi-Chemical-Licenses-Rights-Silatronix%C2%AE-Organosilicon-Materials
+    Region sources: wedc-battery. Confidence: medium. Unresolved: Acquisition source page not fetched (search summary
+    only); current operation in Madison not confirmed.'
+- id: sortera-technologies
+  name: Sortera Technologies
+  website: https://www.sorteratechnologies.com/
+  careers_url: null
+  hq: Markle, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: 2020
+  headcount:
+    value: 67
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/sortera-technologies)
+  climate:
+    tier: core
+    reason: Automated AI sorters that sort scrap metal (aluminum) into high-purity alloy feedstock; operates its
+      own sorting facilities.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 67 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''at a glance'' 67, band <100; undated.
+    Founded: https://dealroom.co/companies/sortera-technologies. Stage: Dealroom: Nov 2025 $20M growth equity/VC
+    (T. Rowe Price, VXI, Yamaha Motor Ventures, Overlay; reported valuation $153M) plus $25M debt; investors listed
+    at seed (Chrysalix, ARPA-E), Series A (Breakthrough Energy Ventures, Assembly Ventures, Novelis) and Series
+    B+ stages; total equity $50-100M. Round letter of latest round not shown, so likely series-b or later. Evidence:
+    https://sorteratechnologies.com/ https://dealroom.co/companies/sortera-technologies Region sources: builtin-states,
+    bev. Confidence: high. Unresolved: Exact latest round letter. Site news: new aluminum scrap sorting facility
+    launched in Tennessee (2026-08-17).'
+- id: soulbrain-mi
+  name: Soulbrain MI
+  website: null
+  careers_url: null
+  hq: Michigan
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: subsidiary
+  founded: 2010
+  headcount: null
+  climate:
+    tier: core
+    reason: High-purity lithium-ion battery electrolyte; $75M, 30,000 sq ft plant in Kokomo, IN to supply the Stellantis-Samsung
+      SDI battery plant.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Soulbrain; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Kokomo plant planned 75 jobs by 2025 (https://www.ibj.com/articles/michigan-companys-75m-plant-in-kokomo-will-be-supplier-for-new-ev-battery-plant).
+    Founded: https://battery-tech.net/soulbrain-mi. Stage: Subsidiary of South Korea''s Soulbrain (Soulbrain Holdings)
+    (https://www.areadevelopment.com/newsItems/12-15-2022/soulbrain-mi-kokomo-indiana.shtml). Flags: subsidiary
+    of Soulbrain (South Korea); depends on StarPlus Energy demand. Evidence: https://www.areadevelopment.com/newsItems/12-15-2022/soulbrain-mi-kokomo-indiana.shtml
+    https://www.ibj.com/articles/michigan-companys-75m-plant-in-kokomo-will-be-supplier-for-new-ev-battery-plant
+    https://battery-tech.net/soulbrain-mi Region sources: e2-announcements. Confidence: medium. Unresolved: Kokomo
+    plant operating status not confirmed; Michigan HQ city and website not found. Founded 2010 = Michigan incorporation
+    per search snippet.'
+- id: starplus-energy
+  name: StarPlus Energy
+  website: https://www.starplusenergy.com/
+  careers_url: null
+  hq: Kokomo, IN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: EV battery cells and modules at two gigafactories in Kokomo, IN (second plant targeted early 2027, 34
+      GWh).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Second plant expected to create about 1,400
+    jobs (https://www.ibj.com/articles/stellantis-samsung-sdi-to-spend-3-2b-on-second-ev-battery-plant-in-indiana-hire-1400);
+    no current headcount. Stage: Joint venture of Stellantis and Samsung SDI; DOE LPO closed a $7.54B loan Dec 2024
+    (https://www.energy.gov/lpo/starplus). Flags: JV of Stellantis and Samsung SDI; second Kokomo plant timing unconfirmed;
+    reports Stellantis may exit the JV (unconfirmed). Evidence: https://www.energy.gov/lpo/starplus https://indianacapitalchronicle.com/2023/10/11/second-stellantis-samsung-ev-battery-plant-announced-for-kokomo/
+    https://www.ibj.com/articles/stellantis-samsung-sdi-to-spend-3-2b-on-second-ev-battery-plant-in-indiana-hire-1400
+    Region sources: e2-announcements. Confidence: medium. Unresolved: starplusenergy.com failed with a TLS error.
+    No 2026 status found for plant 1 output or plant 2 schedule; a search snippet mentions reports that Stellantis
+    might exit the venture. Founded year not found.'
+- id: stonehouse-water-technologies
+  name: Stonehouse Water Technologies
+  website: null
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Water purification systems (Water POD / WaterPOD2 whole-home and portable purification units).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: A directory listing seen in a search summary
+    said 8 employees and founded 2012 (source not confirmed, undated). Stage: Completed a $1.55M first funding round
+    in 2017 (round name not stated). https://urbanmilwaukee.com/pressrelease/stonehouse-water-technologies-llc-completes-1-55m-funding-round
+    Flags: no news found after 2020. Evidence: https://urbanmilwaukee.com/pressrelease/stonehouse-water-technologies-llc-completes-1-55m-funding-round
+    https://biztimes.com/stonehouse-water-technologies-gears-up-for-first-production-run/ https://biztimes.com/mother-or-father-of-invention-stonehouse-innovations-llc
+    Region sources: builtin-states. Confidence: low. Unresolved: Domain, current status, founding year and headcount
+    not confirmed; latest coverage found is 2020 (launch of Stonehouse Innovations research arm).'
+- id: sun-metalon
+  name: SUN METALON
+  website: https://sunmetalon.com
+  careers_url: null
+  hq: Wood Dale, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - industrial-heat
+  stage: series-a
+  founded: 2021
+  headcount:
+    value: 37
+    as_of: '2026-11-25'
+    source: Dealroom (https://dealroom.co/companies/sun-metalon)
+  climate:
+    tier: core
+    reason: Electric-heating systems (modular oven-like units such as Venus-L) that clean and consolidate metal
+      machining chips, swarf and sludge into dense recyclable metal pucks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 37 people (Dealroom, 2026-11-25); founded 2021, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure undated; band under 100. Founded:
+    https://dealroom.co/companies/sun-metalon. Stage: Dealroom: Series A May 2025, $28M and $9.1M tranches (Airbus
+    Ventures, JBIC, Shimadzu Future Innovation Fund, Nippon Steel); its text instead says $30.7M total as of a late-2024
+    Series A. 8 funding events, only 2 shown. Evidence: https://dealroom.co/companies/sun-metalon Region sources:
+    third-derivative. Confidence: medium. Unresolved: Own site not read (fetch safety check rate-limited). Input
+    says Chicago, Dealroom says Wood Dale, IL.'
+- id: syncris
+  name: SYNCRIS
+  website: https://syncris.com
+  careers_url: null
+  hq: Minneapolis, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Patented stackable microgrid inverters producing single-, two-, three- and poly-phase output; US-manufactured.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ not confirmed (input says Minneapolis, MN). Evidence:
+    https://syncris.com https://syncris.com/about Region sources: halliburton-labs. Confidence: medium. Unresolved:
+    HQ, founding year, headcount, funding; site names no customer segments (no data-center or military claim seen).
+    Dealroom 404.'
+- id: the-shyft-group
+  name: The Shyft Group
+  website: https://theshyftgroup.com/
+  careers_url: null
+  hq: Novi, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Specialty vehicles (walk-in vans, truck bodies) incl. Blue Arc EV electric delivery vans.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Aebi Schmidt Group over 1; not independent.
+  notes: 'No job board found on the company''s site. Stage: Site: ''The Shyft Group, Inc. is now a part of the Aebi
+    Schmidt Group'' (merger); page title still shows NASDAQ: SHYF (https://www.theshyftgroup.com). Flags: subsidiary
+    of Aebi Schmidt Group; over 1,000 employees (likely; no figure found). Evidence: https://www.theshyftgroup.com
+    Region sources: e2-announcements. Confidence: medium. Unresolved: Merger closing date, current listing (Aebi
+    Schmidt), Blue Arc production status, headcount.'
+- id: thermoverse
+  name: ThermoVerse
+  website: https://thermoverse.com
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: LATCHES thermal batteries that turn drop-ceiling cavities into active thermal storage, plus energy assessments.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Founded: https://thermoverse.com/about. Stage: Only a 2022
+    Aurora RISE patent award found; logos for DOE, RISE, IMPEL, NSF I-Corps. Evidence: https://thermoverse.com https://thermoverse.com/about
+    Region sources: ic. Confidence: medium. Unresolved: Headcount and funding; Dealroom 404.'
+- id: tikal-industries
+  name: Tikal Industries
+  website: https://www.tikalindustries.com/
+  careers_url: null
+  hq: Chicago, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Construction materials from local waste and byproducts, mainly BlueSCM, a supplementary cementitious
+      material replacing 40-60% of cement in ready-mix (BlueCem and BlueSand planned).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: product differs from input (input: IoT smart-water hardware;
+    site now: low-carbon cement materials). Evidence: https://tikalindustries.com Region sources: mhub-energytech.
+    Confidence: medium. Unresolved: Founded year, headcount and funding not found.'
+- id: trachte
+  name: Trachte
+  website: https://trachteusa.com
+  careers_url: null
+  hq: Oregon, WI
+  ats:
+    type: workday
+    board: nvent
+  read: manual
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: 1901
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Prefabricated steel control buildings and enclosures for electrical substations and utilities.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by nVent products include modular data centers; not independent.
+  notes: 'Board workday:nvent.wd5.myworkdayjobs.com/en-US/nVent seen 2026-11-24, linked from the company''s own
+    site: role count not read (no public feed). Founded: https://www.nvent.com/en-us/trachte/about-us. Stage: Subsidiary
+    of nVent (NYSE: NVT); nVent''s page says ''nVent acquired legacy Trachte and Parkline brands in 2024''. Flags:
+    subsidiary of nVent; products include modular data centers. Evidence: https://www.nvent.com/en-us/trachte https://www.nvent.com/en-us/trachte/about-us
+    https://www.nvent.com/en-us/trachte/trachte-locations Region sources: eip. Confidence: medium. Unresolved: trachteusa.com
+    redirects to nVent. HQ given as Oregon, WI from its two Oregon, WI plants (locations page names no HQ); other
+    plants in GA, TX, WV, TN, MD, KS, AZ (coming). Headcount not found; listing year of nVent not checked.'
+- id: ultium-cells
+  name: Ultium Cells
+  website: https://www.ultiumcell.com/
+  careers_url: null
+  hq: Warren, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: EV lithium-ion battery cells (GM and LG Energy Solution joint venture).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by GM / LG Energy Solution JV; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [WinError 10054] An existing connection was
+    forcibly closed by the remote host). Founded: https://en.wikipedia.org/wiki/LG_Energy_Solution. Stage: Joint
+    venture of General Motors and LG Energy Solution (50% each), established Dec 2019 with $2.3B initial investment
+    (Wikipedia, LG Energy Solution page). April 2025 headline cited there: LG agreed to buy GM''s stake in a Michigan
+    battery plant for $2B. Flags: subsidiary of GM / LG Energy Solution JV. Evidence: https://en.wikipedia.org/wiki/LG_Energy_Solution
+    Region sources: medc-clean-energy-race. Confidence: medium. Unresolved: ultiumcell.com returned 403 (site refuses
+    automated clients; not retried). Headcount, current status of Lordstown OH and Lansing MI plants (Lansing likely
+    transferred to LGES per April 2025 deal), and 2025-2026 layoffs/idling not verified.'
+- id: v-glass
+  name: V-Glass
+  website: null
+  careers_url: null
+  hq: Waukesha, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Vacuum insulated glass for windows (over 3x the thermal performance of conventional windows).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site: March 2026 ''$3M Investment to Initiate Move
+    from Lab Scale Production into a Pilot Plant''; DOE grants $1M (Sep 2018) and $1.15M (Sep 2020); Feb 2026 headline
+    on $5M DOE VIG research funding. Round type not stated. Evidence: https://v-glass.com Region sources: third-derivative,
+    arpa-e. Confidence: medium. Unresolved: Founding year (news back to April 2018), headcount, round type.'
+- id: vessyll
+  name: Vessyll
+  website: https://vessyll.com
+  careers_url: null
+  hq: St. Paul, MN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular lithium-ion battery and inverter systems with an energy management system, plus energy consulting
+      and lifecycle services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Evidence: https://vessyll.com
+    Region sources: grid-catalyst. Confidence: medium. Unresolved: Founded, headcount, funding. Domain inferred,
+    confirmed by St. Paul, MN address; blog active to Feb 2026.'
+- id: volexion
+  name: Volexion
+  website: https://volexion.com
+  careers_url: null
+  hq: Evanston, IL
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Graphene-encapsulated cathode active materials for lithium-ion batteries (drop-in graphene-composite
+      materials).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: robots.txt asks automated clients to stay out; site not read. Evidence: https://www.volexion-inc.com/
+    https://inqbationlab.northwestern.edu/about-us/resident-startups/ Region sources: search-nu, cev, third-derivative,
+    cri. Confidence: medium. Unresolved: volexion.com is a Squarespace ''coming soon'' page; the working site is
+    volexion-inc.com. HQ inferred from its listing as a graduate resident of Northwestern''s Querrey InQbation Lab
+    (Evanston), not stated on its site. Founding year, headcount and funding not found; no Dealroom profile.'
+- id: volt-harbor
+  name: Volt Harbor
+  website: https://voltharbor.com/
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Software-defined battery energy storage platform combining power electronics, storage and controls (MAC-BESS
+      utility-scale product).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://voltharbor.com/. Stage: No round or amount
+    disclosed; site lists investors MFV Partners, Spark Capital, Accelerate Blue Fund, ID Ventures, Michigan University
+    Innovation Capital Fund and others. Evidence: https://voltharbor.com/ Region sources: cleantech-open-2025. Confidence:
+    medium. Unresolved: Round and headcount not found (no Dealroom profile).'
+- id: voltaic-marine
+  name: Voltaic Marine
+  website: null
+  careers_url: null
+  hq: Southfield, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric unmanned surface vessels for at-sea operations.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
+    recipient; no venture round found. Flags: autonomous unmanned vessel (possible defense market). Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount, main customers
+    not found.'
+- id: wellntel
+  name: Wellntel
+  website: https://wellntel.com/
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Groundwater well sensors and telemetry for water-supply monitoring.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated on own site; dealroom.co/companies/wellntel
+    returned 404. Flags: sensor hardware bundled with analytics software. Evidence: https://wellntel.com Region
+    sources: evergreen-portfolio. Confidence: medium. Unresolved: Founded year, headcount and funding not found;
+    site footer (c) 2025 is the only activity signal.'
+- id: xylome
+  name: Xylome
+  website: https://xylome.com
+  careers_url: null
+  hq: Madison, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: 2013
+  headcount:
+    value: 5
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/xylome)
+  climate:
+    tier: core
+    reason: Engineered yeasts that produce sustainable oils and oil replacements.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 5 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2013.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 5, band <100; undated. Founded: https://dealroom.co/companies/xylome.
+    Stage: Dealroom shows grants only: NSF $750K (Sep 2016), DOE $1M (Jul 2018); total equity $0-10M; 4 events recorded,
+    2 visible. Evidence: https://dealroom.co/companies/xylome Region sources: uw-spinoffs. Confidence: medium. Unresolved:
+    Founding year conflicts on Dealroom (header 2007, About section 2013). Own site returned no content. Whether
+    it sells oils or licenses strains not confirmed; status from Dealroom ''Operational''.'
+- id: zakuro
+  name: Zakuro
+  website: null
+  careers_url: null
+  hq: Ann Arbor, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: seed
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid-state separator paired with a lithium-metal anode for higher-energy batteries, designed to use
+      existing lithium-ion manufacturing lines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/zakuro. Stage:
+    CB Insights lists a seed round with Red Cedar Ventures (MSU Foundation) as investor (https://www.cbinsights.com/company/zakuro,
+    https://msufoundation.org/portfolio-content/zakuro); DOE record for Zakuro, LLC solid-state battery manufacturing
+    scale-up (https://www.energy.gov/node/4677960). Amount and date not found. Flags: U-M spinout. Evidence: https://www.cbinsights.com/company/zakuro
+    https://msufoundation.org/portfolio-content/zakuro https://www.energy.gov/node/4677960 https://jobs.annarborusa.org/companies/zakuro
+    Region sources: search-umich, search-annarbor-battery, arpa-e. Confidence: medium. Unresolved: Founded 2020
+    (CB Insights) vs 2017 (Ann Arbor SPARK jobs page). Company website not found (zakuro.com certificate expired;
+    ownership of that domain unconfirmed). Headcount not found. Named both Zakuro, Inc. and Zakuro, LLC.'

@@ -1,0 +1,1351 @@
+# Reference list for the New York metro area and New Jersey: companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: new-york-new-jersey
+built: '2026-11-25'
+sources:
+- id: builtin-nyc-greentech
+  name: Built In NYC greentech companies (page 1)
+  url: https://www.builtinnyc.com/companies/type/greentech-companies
+  note: page 1 only (20 of 105); robots.txt disallows pagination
+- id: builtin-nyc-energy
+  name: Built In NYC energy companies (page 1)
+  url: https://www.builtinnyc.com/companies/type/energy-companies
+  note: page 1 only (20 of 254)
+- id: newlab-resilient-energy
+  name: Newlab / NYCEDC Resilient Energy cohort and showcase
+  url: https://www.newlab.com/post/nycedc-and-newlab-announce-new-resilient-energy-cohort-advancing-urban-energy-storage
+  note: also resilient-energy-showcase post; other cohort members outside region
+- id: ufl-acre
+  name: NYU Tandon Urban Future Lab / ACRE news (portfolio graduates and prize winners)
+  url: https://engineering.nyu.edu/news/three-grads-urban-future-lab-nyu-tandon-get-major-funding
+  note: urbanfuturelab.org now redirects to an unrelated domain; used engineering.nyu.edu news pages
+- id: njeda-csit-seed-r1
+  name: NJEDA CSIT Clean Tech Seed Grant round 1 (2021)
+  url: https://www.njeda.gov/csit-awards-nearly-750000-through-clean-tech-seed-grant-program/
+- id: njeda-csit-demo-r1
+  name: NJEDA CSIT Pilot Clean Tech Demonstration Grant round 1 (14 awardees, 2023)
+  url: https://www.njeda.gov/?p=22507
+- id: njeda-csit-seed-r3
+  name: NJEDA CSIT Round 3 Catalyst and Clean Tech Seed Grant awards
+  url: https://www.njeda.gov/csit-awards-3m-to-41-new-jersey-based-start-ups-through-round-3-catalyst-and-clean-tech-seed-grant-programs/
+- id: njeda-csit-seed-45
+  name: NJEDA CSIT Catalyst and Clean Tech Seed Grant awards (45 startups)
+  url: https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/
+  note: names only, no descriptions
+- id: njeda-csit-seed-r4
+  name: NJEDA CSIT Round 4 Clean Tech R&D Seed Grant awards
+  url: https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+  note: names and towns only
+- id: njeda-csit-demo-r2
+  name: NJEDA CSIT Clean Tech Demonstration Grant round 2 (11 awardees, 2025)
+  url: https://www.njeda.gov/?p=33120
+- id: newlab-posts
+  name: Newlab site posts and case studies (member/founder features listed in sitemap)
+  url: https://www.newlab.com/sitemap.xml
+  note: no member directory page (/members 404); names from post titles, key posts fetched
+- id: aertc-incubator
+  name: Stony Brook AERTC incubator tenants (current and graduated)
+  url: https://aertc.org/work-with-us/incubators.html
+- id: activate-ny
+  name: Activate New York hub, Cohorts 2025 and 2026
+  url: https://activate.org/news/activate-welcomes-50-new-fellows-to-cohort-2026
+  note: also https://www.activate.org/news/introducing-cohort-2025; NY hub is statewide, cities not given
+- id: njeda-osw-assessment
+  name: NJEDA Offshore Wind Supply Chain Assessment (Green Ducklings, 2025)
+  url: https://njeda.gov/wp-content/uploads/2025/01/NJEDA-OSW-Supply-Chain-Assessment-1.pdf
+  note: mostly steel, marine and service firms; only OSW component makers taken
+- id: princeton-acee
+  name: 'Princeton Andlinger Center: IP Accelerator Fund 10-year article'
+  url: https://acee.princeton.edu/acee-news/princetons-technology-accelerator-fund-celebrates-10-years-of-fueling-innovations
+  note: names only 2 of 22 startups
+- id: governor-empire-prize
+  name: 'NY Governor press releases: Empire Technology Prize finalists and winner (Clean Fight / NYSERDA)'
+  url: https://www.governor.ny.gov/news/governor-hochul-announces-selection-finalists-empire-technology-prize-competition
+  note: also winner release; most finalists outside region
+- id: governor-ny-osw
+  name: 'NY Governor press release: $86M Sunrise Wind supply chain award (Port of Coeymans)'
+  url: https://www.governor.ny.gov/news/governor-hochul-announces-largest-single-new-york-state-offshore-wind-supply-chain-award-86
+- id: njeda-csit-rd-vouchers
+  name: NJEDA CSIT initial Clean Tech R&D voucher awardees (2021)
+  url: https://www.njeda.gov/csit-announces-initial-clean-tech-rd-program-awardees/
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: cev
+  name: Clean Energy Ventures portfolio
+  url: https://cleanenergyventures.com/portfolio
+  note: 32 current plus 16 legacy/pre-fund companies.
+- id: dcvc
+  name: DCVC companies (energy-climate and industrial-transformation sectors)
+  url: https://www.dcvc.com/companies
+  note: 60 of 301 companies are tagged energy-climate or industrial-transformation; only those were reviewed.
+- id: doe-edf
+  name: DOE Energy Dominance Financing (LPO) project list
+  url: https://lpoapps.loanprograms.energy.gov/
+  note: Project map embedded in energy.gov/lpo/portfolio-projects; it lists 19 active or conditional projects, mostly
+    utilities. Kept only the clean-tech hardware makers.
+- id: doe-oced
+  name: DOE Office of Clean Energy Demonstrations award posts
+  url: https://www.energy.gov/cmei/oced/listings/oced-news
+  note: Award Wednesday posts and other OCED news (59 articles). Most awards went to utilities, co-ops, tribes and
+    large incumbents, which were skipped. The OCED selections pages now return 404.
+- id: elemental
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 141 companies with HQ city (113 US).
+- id: evergreen
+  name: Evergreen Climate Innovations (formerly Clean Energy Trust) portfolio
+  url: https://evergreeninno.org/portfolio
+  note: ~45 companies; names inferred from logos and links; no HQ field.
+- id: fifthwall
+  name: Fifth Wall portfolio
+  url: https://www.fifthwall.com/portfolio
+  note: No separate climate list on the site; reviewed the full portfolio (4 pages, about 54 companies).
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: halliburton-labs
+  name: Halliburton Labs portfolio
+  url: https://halliburtonlabs.com/companies
+  note: 49 companies with HQ city.
+- id: laci
+  name: LACI (Los Angeles Cleantech Incubator) portfolio
+  url: https://laincubator.org/portfolio/
+  note: 140 startups from the page's own JSON endpoint (/wp-json/endpoints/startups/); no HQ field.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: prelude
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: 61 companies including exits.
+- id: shell-gamechanger
+  name: Shell GameChanger start-ups (graduates since 2021 and current projects)
+  url: https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/shell-gamechanger/portfolio.html
+  note: ~110 names, client-rendered (read in a browser after rejecting optional cookies). No HQ shown; many non-US.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: yc
+  name: Y Combinator company directory (yc-oss public JSON mirror)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
+    climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
+companies:
+- name: Air Company
+  website: https://aircompany.com
+  hq: Brooklyn, NY
+  sources:
+  - lc
+  - greentown
+  - shell-gamechanger
+  - evergreen
+  registry_id: air-company
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: aircompany
+  open_roles: null
+- name: AIVacua
+  website: https://aivacua.com
+  hq: Somerset County, NJ
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: null
+  decision: null
+  reason: Its site is a placeholder; product and status not established.
+  ats: null
+  open_roles: null
+- name: Amatec
+  website: https://amatec-corp.com
+  hq: Essex County, NJ
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: amatec
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ambient Enterprises
+  website: null
+  hq: New York, NY
+  sources:
+  - governor-empire-prize
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Parent of Gil-Bar Industries, a New York City manufacturers'' rep that designs,
+    installs and services building HVAC systems; team lead with Flow Enviro'
+  ats: null
+  open_roles: null
+- name: Amogy
+  website: https://amogy.co
+  hq: New York, NY
+  sources:
+  - newlab-posts
+  - dcvc
+  - greentown
+  registry_id: amogy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Andluca Technologies
+  website: https://www.andluca.com
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - princeton-acee
+  registry_id: andluca-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Arbela Laboratories
+  website: null
+  hq: Randolph, NJ
+  sources:
+  - njeda-csit-seed-r1
+  registry_id: arbela-laboratories
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Arbon
+  website: https://arboncorp.com
+  hq: Brooklyn, NY
+  sources:
+  - activate
+  - greentown
+  registry_id: arbon
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Bettergy
+  website: https://bettergy.com
+  hq: Peekskill, NY
+  sources:
+  - arpa-e
+  registry_id: bettergy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: BlocPower
+  website: https://www.blocpower.io
+  hq: Brooklyn, NY
+  sources:
+  - builtin-nyc-energy
+  - ufl-acre
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Building electrification and efficiency retrofits (heat pumps, solar) for urban
+    buildings, per input and Dealroom; own site could not be reached.'
+  ats: null
+  open_roles: null
+- name: Blue Rock Solutions
+  website: null
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: BRISEA Group
+  website: null
+  hq: Parsippany, NJ
+  sources:
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-45
+  - njeda-csit-rd-vouchers
+  registry_id: null
+  decision: null
+  reason: No site found; the source's description suggests technology-transfer services. Identity not established.
+  ats: null
+  open_roles: null
+- name: Brookhaven Technology Group
+  website: https://www.brookhaventech.com
+  hq: Stony Brook, NY
+  sources:
+  - aertc-incubator
+  registry_id: brookhaven-technology-group
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Buoyant Aero
+  website: https://buoyant.aero
+  hq: New York, NY
+  sources:
+  - yc
+  registry_id: buoyant-aero
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Canyon Magnet Energy
+  website: https://canyonmagnet.energy
+  hq: Newark, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: canyon-magnet-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Carbion
+  website: https://carbion.webflow.io
+  hq: Cambridge, MA
+  sources:
+  - activate
+  - greentown
+  registry_id: carbion
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Carbon Infuse
+  website: https://carboninfuse.com
+  hq: New York, NY
+  sources:
+  - activate
+  registry_id: carbon-infuse
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CarbonDots
+  website: https://carbondots.co
+  hq: Lawrence Township, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: carbondots
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CarbonQuest
+  website: https://carbonquest.com
+  hq: Spokane Valley, WA
+  sources:
+  - greentown
+  registry_id: carbonquest
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Cecilia Energy
+  website: https://ceciliamaterials.com
+  hq: Newark, NJ
+  sources:
+  - njeda-csit-seed-r4
+  - njeda-csit-demo-r2
+  registry_id: cecilia-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Cero NJ
+  website: https://cero-global.com
+  hq: Edgewater, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: ChemFinity Technologies
+  website: https://chemfinitytech.com
+  hq: Brooklyn, NY
+  sources:
+  - third-derivative
+  registry_id: chemfinity-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Clip
+  website: https://clip.bike
+  hq: Brooklyn, NY
+  sources:
+  - newlab-posts
+  registry_id: clip
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Coherent Photonics
+  website: https://coherentphotonics.com
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: coherent-photonics
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Consolidated Energy Design
+  website: null
+  hq: Eatontown, NJ
+  sources:
+  - njeda-csit-demo-r1
+  registry_id: null
+  decision: not-in-scope
+  reason: Building inspection, commissioning and energy-management services.
+  ats: null
+  open_roles: null
+- name: Convergent Energy + Power
+  website: https://www.convergentep.com
+  hq: New York, NY
+  sources:
+  - builtin-nyc-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Finances, develops, owns and operates solar and storage projects; a project developer, not a maker.
+  ats:
+    type: workable
+    token: convergent-careers
+  open_roles: 5
+- name: Coulomb Technology
+  website: https://coulombtechnology.com
+  hq: Meridian, ID
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: coulomb-technology
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: CURBON
+  website: https://curbon.ai
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Software for fashion and apparel brands to map supply chains and compare materials,
+    sourcing, cost and carbon emissions.'
+  ats: null
+  open_roles: null
+- name: Cycle Retrotech
+  website: null
+  hq: Long Island City, NY
+  sources:
+  - governor-empire-prize
+  registry_id: null
+  decision: null
+  reason: Named as a retrofit partner of Hydronic Shell; whether it makes a product or is a contractor is not established.
+  ats: null
+  open_roles: null
+- name: Dandelion Energy
+  website: https://dandelionenergy.com
+  hq: Arlington, VA
+  sources:
+  - ufl-acre
+  registry_id: dandelion-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: dandelion
+  open_roles: null
+- name: EEW American Offshore Structures
+  website: https://eew-group.com
+  hq: Paulsboro, NJ
+  sources:
+  - njeda-osw-assessment
+  registry_id: eew-american-offshore-structures
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Eion
+  website: https://www.eion.team
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-rd-vouchers
+  registry_id: eion
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Energy Research Company
+  website: https://er-co.com
+  hq: Plainfield, NJ
+  sources:
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-r3
+  - njeda-csit-seed-45
+  registry_id: energy-research-company
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: EV Buddy
+  website: https://evbuddy.net
+  hq: Edison, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: ev-buddy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EV Edison
+  website: https://ev-edison.com
+  hq: Kearny, NJ
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops and operates EV charging and fleet-services hubs for trucks and passenger
+    cars; flagship hub in Kearny, NJ (15 Zerova 180 kW DC fast chargers'
+  ats: null
+  open_roles: null
+- name: Every Electric
+  website: https://everyelectric.com
+  hq: Brooklyn, NY
+  sources:
+  - activate
+  registry_id: every-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Evolve Hydrogen
+  website: https://www.evolvehydrogen.com
+  hq: Stony Brook, NY
+  sources:
+  - aertc-incubator
+  registry_id: evolve-hydrogen
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ExoCell Power Corporation
+  website: null
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Exodys Energy
+  website: https://exodysenergy.com
+  hq: New York, NY
+  sources:
+  - arpa-e
+  registry_id: exodys-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Exovolar Industries
+  website: https://exovolar.com
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: exovolar-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Farm to Flame Energy
+  website: null
+  hq: West Orange, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-demo-r1
+  registry_id: farm-to-flame-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: FAST Metals
+  website: https://fastmetalsinc.com
+  hq: New York
+  sources:
+  - activate-ny
+  - azolla
+  - activate
+  - greentown
+  registry_id: fast-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: FPG PowerPLUS
+  website: https://1fpg.com
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Fundamental Carbon
+  website: https://ourosmaterials.com
+  hq: Piscataway, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: fundamental-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gendell Associates
+  website: null
+  hq: Hudson County, NJ
+  sources:
+  - njeda-csit-seed-r3
+  registry_id: null
+  decision: null
+  reason: No site found; the name suggests a professional practice. Identity not established.
+  ats: null
+  open_roles: null
+- name: Green Blu
+  website: null
+  hq: Hamilton, NJ
+  sources:
+  - njeda-csit-seed-r1
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Tidal Metals, which was formerly GreenBlu, Inc.
+  ats: null
+  open_roles: null
+- name: Gridless Power Corporation
+  website: https://gridlesspower.com
+  hq: Pennsauken, NJ
+  sources:
+  - njeda-csit-demo-r1
+  registry_id: gridless-power-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: HiT Nano
+  website: https://hitnanoinc.com
+  hq: Bordentown, NJ
+  sources:
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-r3
+  - njeda-csit-seed-45
+  - njeda-csit-rd-vouchers
+  - activate
+  registry_id: hit-nano
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Holtec International
+  website: https://holtecinternational.com
+  hq: Camden, NJ
+  sources:
+  - doe-edf
+  registry_id: holtec-international
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Hydronic Shell Technologies
+  website: https://hydronicshell.com
+  hq: Long Island City, NY
+  sources:
+  - governor-empire-prize
+  registry_id: hydronic-shell-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: iCheck Energy
+  website: https://icheckenergy.weebly.com
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Energy management services for energy users: usage analysis, bill auditing and
+    bill storage.'
+  ats: null
+  open_roles: null
+- name: Innate Energy
+  website: null
+  hq: New York, NY
+  sources:
+  - activate
+  registry_id: null
+  decision: null
+  reason: innate.energy belongs to an unrelated business; the company's own site was not found.
+  ats:
+    type: ashby
+    token: innate
+  open_roles: 3
+- name: InnoSepra
+  website: https://innosepra.com
+  hq: Middlesex, NJ
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: innosepra
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: It's Electric
+  website: https://itselectric.us
+  hq: Brooklyn, NY
+  sources:
+  - third-derivative
+  - greentown
+  - laci
+  registry_id: it-s-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: workable
+    token: itselectric
+  open_roles: 2
+- name: Kelvin
+  website: https://kel.vin
+  hq: Brooklyn, NY
+  sources:
+  - elemental
+  registry_id: kelvin
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Materium Technologies
+  website: https://materiumtech.com
+  hq: Union County, NJ
+  sources:
+  - njeda-csit-seed-r3
+  registry_id: materium-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Metal Light
+  website: https://metallight.io
+  hq: Newark, NJ
+  sources:
+  - njeda-csit-seed-r4
+  - third-derivative
+  registry_id: metal-light
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Michrinik Technologies
+  website: null
+  hq: Cedar Knolls, NJ
+  sources:
+  - njeda-csit-rd-vouchers
+  registry_id: null
+  decision: null
+  reason: No site found; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: Miller Proctor Nickolas (MPN)
+  website: null
+  hq: Sleepy Hollow, NY
+  sources:
+  - governor-empire-prize
+  registry_id: miller-proctor-nickolas-mpn
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MIMiC Systems
+  website: https://mimic.systems
+  hq: Brooklyn, NY
+  sources:
+  - third-derivative
+  registry_id: mimic-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: lever
+    token: mimic
+  open_roles: 1
+- name: NanoSepex
+  website: null
+  hq: Bridgewater, NJ
+  sources:
+  - njeda-csit-seed-r4
+  - njeda-csit-demo-r2
+  - njeda-csit-rd-vouchers
+  registry_id: null
+  decision: null
+  reason: No site found; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: Neutroelectric (BECQ)
+  website: https://becqtech.com
+  hq: Camden, NJ
+  sources:
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-45
+  registry_id: neutroelectric-becq
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Ninedot Energy
+  website: https://ninedotenergy.com
+  hq: Brooklyn, NY
+  sources:
+  - ufl-acre
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops and operates community battery-storage projects; a project developer, not a maker.
+  ats: null
+  open_roles: null
+- name: Noble Geofurnace
+  website: null
+  hq: Keyport, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Novtech
+  website: null
+  hq: Bridgewater, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Olympian Motors
+  website: https://olympianmotors.com
+  hq: New York, NY
+  sources:
+  - yc
+  registry_id: olympian-motors
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: One-D Nano
+  website: null
+  hq: New York, NY
+  sources:
+  - activate
+  registry_id: null
+  decision: null
+  reason: onednano.com refused connections; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: Pave Motors
+  website: https://www.pavemotors.com
+  hq: Brooklyn, NY
+  sources:
+  - newlab-posts
+  registry_id: pave-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: PFASolve
+  website: https://pfasolve.com
+  hq: Jersey City, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: pfasolve
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Phoresis
+  website: null
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Pliant Energy Systems
+  website: https://www.pliantenergy.com
+  hq: Brooklyn, NY
+  sources:
+  - newlab-posts
+  registry_id: pliant-energy-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Pollux Technologies
+  website: null
+  hq: Middlesex County, NJ
+  sources:
+  - njeda-csit-seed-45
+  - njeda-csit-demo-r2
+  registry_id: null
+  decision: null
+  reason: No site found; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: PolyGone Systems
+  website: https://polygonesystems.com
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-demo-r1
+  registry_id: polygone-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: PopWheels
+  website: https://popwheels.com
+  hq: New York, NY
+  sources:
+  - ufl-acre
+  registry_id: popwheels
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Princeton Critical Minerals (PureLi)
+  website: https://pcmtech.com
+  hq: Somerset County, NJ
+  sources:
+  - njeda-csit-seed-r3
+  - njeda-csit-demo-r2
+  - arpa-e
+  registry_id: princeton-critical-minerals-pureli
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Princeton Fusion Systems
+  website: https://princetonfusionsystems.com
+  hq: Plainsboro, NJ
+  sources:
+  - arpa-e
+  registry_id: princeton-fusion-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Princeton NuEnergy
+  website: https://www.pnecycle.com
+  hq: Monmouth Junction
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-demo-r1
+  - princeton-acee
+  registry_id: princeton-nuenergy
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: bamboohr
+    token: pnecycle
+  open_roles: 6
+- name: Project Plastic
+  website: https://projectplastic.site
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: duplicate
+  reason: 'Same company as PolyGone Systems: projectplastic.site permanently redirects to polygonesystems.com.'
+  ats: null
+  open_roles: null
+- name: PureNanoTech
+  website: null
+  hq: Parsippany-Troy Hills, NJ
+  sources:
+  - njeda-csit-demo-r2
+  registry_id: purenanotech
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: PwrCor
+  website: https://pwrcor.com
+  hq: New York, NY
+  sources:
+  - third-derivative
+  registry_id: pwrcor
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Queens Carbon
+  website: https://queenscarbon.com
+  hq: Cedar Grove, NJ
+  sources:
+  - njeda-csit-seed-r4
+  - cev
+  - arpa-e
+  registry_id: queens-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: queens-carbon
+  open_roles: 5
+- name: Redox Metals
+  website: null
+  hq: New York
+  sources:
+  - activate-ny
+  - activate
+  registry_id: redox-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: RenewCO2
+  website: https://www.renewco2.com
+  hq: Cranford, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-seed-r3
+  registry_id: renewco2
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: renewco2
+  open_roles: 9
+- name: Riggs Distler & Company
+  website: https://www.riggsdistler.com
+  hq: Cherry Hill, NJ
+  sources:
+  - governor-ny-osw
+  - njeda-osw-assessment
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Union multi-trade contractor (mechanical, electrical, utility, civil) for energy
+    and industrial infrastructure; also does serial assembly of advanced '
+  ats: null
+  open_roles: null
+- name: RRTC
+  website: null
+  hq: Belle Mead, NJ
+  sources:
+  - njeda-csit-rd-vouchers
+  registry_id: null
+  decision: null
+  reason: No site found; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: Runwise
+  website: https://runwise.com
+  hq: New York, NY
+  sources:
+  - builtin-nyc-greentech
+  - builtin-nyc-energy
+  - fifthwall
+  registry_id: runwise
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: runwise
+  open_roles: null
+- name: Shutterbug Exchange
+  website: https://shutterbugexchange.com
+  hq: Hudson County, NJ
+  sources:
+  - njeda-csit-seed-r3
+  registry_id: shutterbug-exchange
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sinkco Labs
+  website: https://sinkcolabs.com
+  hq: New York, NY
+  sources:
+  - activate
+  - shell-gamechanger
+  registry_id: sinkco-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Skyraptor
+  website: https://skyraptor.net
+  hq: Moorestown, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: skyraptor
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Still Bright
+  website: https://stillbright.co
+  hq: Kenilworth, NJ
+  sources:
+  - bev
+  - azolla
+  - activate
+  - third-derivative
+  registry_id: still-bright
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: stillbright
+  open_roles: null
+- name: Sunowner
+  website: null
+  hq: New Jersey
+  sources:
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: SunRay Scientific
+  website: https://www.sunrayscientific.com
+  hq: Wall Township, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-r3
+  registry_id: sunray-scientific
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sunthetics
+  website: null
+  hq: New York, NY
+  sources:
+  - ufl-acre
+  registry_id: null
+  decision: null
+  reason: Its domain is for sale; current status not established.
+  ats: null
+  open_roles: null
+- name: SuperClean Glass
+  website: https://supercleanglass.com
+  hq: Stony Brook, NY
+  sources:
+  - aertc-incubator
+  registry_id: superclean-glass
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Swind Power
+  website: null
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-demo-r1
+  - njeda-csit-seed-45
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Thea Energy
+  website: https://thea.energy
+  hq: Kearny, NJ
+  sources:
+  - lc
+  - prelude
+  - arpa-e
+  registry_id: thea-energy
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: thea.energy
+  open_roles: null
+- name: ThermoLift
+  website: https://thermoliftsolutions.com
+  hq: Stony Brook
+  sources:
+  - aertc-incubator
+  registry_id: thermolift
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Tidal Metals
+  website: https://tidalmetals.com
+  hq: Hamilton, NJ
+  sources:
+  - dcvc
+  - halliburton-labs
+  registry_id: tidal-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Turnover Labs
+  website: https://turnoverlabs.com
+  hq: Brooklyn, NY
+  sources:
+  - activate
+  - greentown
+  registry_id: turnover-labs
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Urban Electric Power
+  website: https://urbanelectricpower.com
+  hq: Pearl River
+  sources:
+  - newlab-resilient-energy
+  - doe-oced
+  registry_id: urban-electric-power
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Urban Mining Industries
+  website: https://pozzotive.com
+  hq: New Rochelle, NY
+  sources:
+  - third-derivative
+  registry_id: urban-mining-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Voltaic Systems
+  website: https://voltaicsystems.com
+  hq: Brooklyn, NY
+  sources:
+  - newlab-posts
+  registry_id: voltaic-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Vycarb
+  website: https://www.vycarb.com
+  hq: Brooklyn, NY
+  sources:
+  - newlab-posts
+  - activate
+  - third-derivative
+  registry_id: vycarb
+  decision: registry
+  reason: 'Proposed in proposals-02-new-york-new-jersey.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: WeSolar CSP
+  website: null
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r1
+  - njeda-csit-demo-r1
+  registry_id: null
+  decision: null
+  reason: No site found; product known only from the grant source.
+  ats: null
+  open_roles: null
+- name: Zaic Design
+  website: https://zaicdesign.com
+  hq: Princeton, NJ
+  sources:
+  - njeda-csit-seed-r4
+  registry_id: null
+  decision: not-in-scope
+  reason: Engineering, prototyping and automation services firm; no product of its own.
+  ats: null
+  open_roles: null
+excluded:
+- name: 13 Mari NJ
+  sources:
+  - njeda-csit-seed-45
+  reason: Its site lists only a Dubai office; no main site in the region found.
+- name: Alithic
+  sources:
+  - third-derivative
+  reason: Headquartered in Madison, WI, outside the region; no main site in the region found.
+- name: Cella Mineral Storage
+  sources:
+  - activate
+  - third-derivative
+  - greentown
+  - halliburton-labs
+  reason: Headquartered in Houston, TX, outside the region; no main site in the region found.
+- name: Civilized Cycles
+  sources:
+  - newlab-posts
+  reason: Headquartered in Detroit, MI, outside the region; no main site in the region found.
+- name: Fermi Energy
+  sources:
+  - activate-ny
+  reason: Headquartered in Blacksburg, VA, outside the region; no main site in the region found.
+- name: Flow Environmental Systems
+  sources:
+  - governor-empire-prize
+  reason: Headquartered in Minnesota; no main site in the region found.
+- name: LS Cable & System America
+  sources:
+  - njeda-osw-assessment
+  reason: Subsidiary of LS Cable & System (South Korea) with its US base outside the region; no main site in the
+    region found.
+- name: NextGen Battery Technologies
+  sources:
+  - njeda-csit-seed-r1
+  reason: Headquartered in Arlington, VA, outside the region; no main site in the region found.
+- name: Solargik
+  sources:
+  - builtin-nyc-greentech
+  reason: Headquartered outside the US (Jerusalem, Israel); no main site in the region found.
+- name: Southwire
+  sources:
+  - njeda-osw-assessment
+  reason: Headquartered in Carrollton, GA; no main site in the region found.
+- name: Voltic
+  sources:
+  - yc
+  reason: Headquartered in Cambridge, MA, outside the region; no main site in the region found.
+- name: XL Batteries
+  sources:
+  - third-derivative
+  reason: Headquartered in Marlborough, MA, outside the region; no main site in the region found.
+- name: Zinc8 Energy Solutions
+  sources:
+  - ufl-acre
+  reason: Headquartered in Richmond, BC, outside the region; no main site in the region found.

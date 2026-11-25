@@ -1,0 +1,1394 @@
+# Reference list for the Mountain West beyond Colorado (Arizona, Nevada, Utah, New Mexico): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: mountain-west
+built: '2026-11-25'
+sources:
+- id: nv-goed-lithium-loop
+  name: Nevada GOED Lithium Loop page and its Lithium Cycle graphic (PDF, as of Dec 2025)
+  url: https://goed.nv.gov/lithium-loop/
+  note: stage list plus 'Nevada based lithium companies' logo wall; 9 exploration-only juniors skipped
+- id: nv-battery-coalition
+  name: Nevada Battery Coalition members
+  url: https://nevadabatterycoalition.com/
+  note: 15 members on home page; NV Energy (utility) and Tonopah Lithium (exploration) skipped
+- id: unr-tech-hub
+  name: Nevada Tech Hub (UNR) current initiatives
+  url: https://www.unr.edu/tech-hub/current-initiatives
+- id: nv-search
+  name: Web search results on Northern Nevada battery relocations (Area Development, NNBW, EDAWN 2025 assisted-companies
+    list)
+  url: https://www.areadevelopment.com/newsItems/2-5-2025/octillion-power-systems-reno-nevada.shtml
+  note: EDAWN 2025 assisted-companies PDF fetched but its text could not be decoded; Comstock Metals taken from
+    the search summary of it
+- id: house-unimacts
+  name: 'Rep. Susie Lee newsroom: Las Vegas solar manufacturing facility'
+  url: https://susielee.house.gov/media/in-the-news/nevadan-las-vegas-solar-manufacturing-facility-triple-operations-after-federal
+- id: builtin-nv-energy
+  name: 'Built In: Nevada energy startups (page 1)'
+  url: https://builtin.com/companies/location/na/usa/nv/type/energy-startups
+  note: 10 listed; most utilities, installers or non-energy
+- id: builtin-nv-greentech
+  name: 'Built In: Nevada greentech companies (page 1)'
+  url: https://builtin.com/companies/location/na/usa/nv/type/greentech-companies
+  note: 20 of 22 shown; page 2 not read (robots disallows ?page=)
+- id: az-tech-council-battery
+  name: 'Arizona Tech Council op-ed: battery industry in Arizona'
+  url: https://aztechcouncil.org/?p=17025
+- id: gpec-av-ev
+  name: 'Greater Phoenix Economic Council: Autonomous and Electric Vehicles'
+  url: https://www.gpec.org/?p=17793
+  note: manufacturer and supplier logos had no alt text; only named companies taken
+- id: gpec-nucube
+  name: 'GPEC press release: NuCube Energy raises $13 million'
+  url: https://www.gpec.org/news/press-releases/nucube-energy-raises-13-million/
+  note: from search result summary
+- id: az-search
+  name: Web search results on Arizona EV and battery makers (Mesa, Axios, Wikipedia)
+  url: https://www.wikipedia.org/wiki/Plug-in_electric_vehicles_in_Arizona
+  note: search summary only
+- id: az-search2
+  name: Web search results on Arizona clean-energy factories (energy-storage.news, Solar Power World, Climate Power)
+  url: https://www.energy-storage.news/fluence-grows-us-manufacturing-footprint-with-arizona-factory-opening/
+  note: Climate Power Arizona PDF fetched but text could not be decoded
+- id: builtin-az-energy
+  name: 'Built In: Arizona energy startups (page 1)'
+  url: https://builtin.com/companies/location/na/usa/az/type/energy-startups
+  note: 20 of 30 shown
+- id: builtin-az-greentech
+  name: 'Built In: Arizona greentech companies (page 1)'
+  url: https://builtin.com/companies/location/na/usa/az/type/greentech-companies
+  note: 20 of 39 shown
+- id: ua-tla-portfolio
+  name: Tech Launch Arizona (University of Arizona) startup portfolio
+  url: https://techlaunch.arizona.edu/startups/startup-portfolio
+  note: 169 startups on one page; energy ones taken
+- id: asu-search
+  name: Web search results on ASU / Skysong Innovations energy spinouts
+  url: https://news.asu.edu/colleges-and-units/skysong-innovations
+  note: Skysong startup list (skysonginnovations.com/startups/list/) is script-rendered and showed no rows
+- id: sw-futures-engine-2025
+  name: 'ASU news: NSF Futures Engine in the Southwest funds 8 startups (Mar 2025)'
+  url: https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+  note: covers AZ, NV, UT
+- id: builtin-ut-energy
+  name: 'Built In: Utah energy startups (page 1)'
+  url: https://builtin.com/companies/location/na/usa/ut/type/energy-startups
+  note: 20 of 28 shown
+- id: builtin-ut-greentech
+  name: 'Built In: Utah greentech companies (page 1)'
+  url: https://builtin.com/companies/location/na/usa/ut/type/greentech-companies
+  note: 20 of 25 shown
+- id: ut-goeo-energy-awards
+  name: 'Utah GOEO: Utah companies receive DOE energy technology awards (two posts)'
+  url: https://business.utah.gov/?p=80868
+  note: also https://business.utah.gov/innovation-center/utah-companies-receive-awards-for-energy-technology-development/
+- id: ut-goeo-oxeon
+  name: 'Utah GOEO: OxEon Energy expansion'
+  url: https://business.utah.gov/?p=85456
+- id: ut-goeo-mfg-grant
+  name: 'Utah GOEO: manufacturing modernization grant recipients'
+  url: https://business.utah.gov/?p=83598
+  note: 21 recipients, county only; products partly from company knowledge
+- id: ut-search
+  name: Web search results on Utah energy manufacturers and GOEO incentives (Deseret, KSL, Solar Power World, GOEO
+    agendas, Utah FORGE)
+  url: https://www.solarpowerworldonline.com/2025/06/solaredge-now-assembling-residential-batteries-in-utah/
+  note: search summary only
+- id: uofu-tlo-portfolio
+  name: University of Utah Technology Licensing Office startup portfolio
+  url: https://technologylicensing.utah.edu/startup-portfolio
+  note: 15 pages (?start=0..280) read; most entries lack descriptions
+- id: nm-aea
+  name: 'New Mexico EDD: New Mexico Advanced Energy Award past awardees (2024-2026)'
+  url: https://edd.newmexico.gov/tio/nmaea/
+- id: unm-rainforest
+  name: 'UNM Rainforest Innovations: state grant recipients by sector'
+  url: https://innovations.unm.edu/?p=17602
+  note: advanced-energy sector entries only
+- id: nm-search
+  name: Web search results on New Mexico clean-energy startups (LANL, Sandia, EDD)
+  url: https://lanl.gov/projects/feynman-center/about/news/2017-4-28-trio-of-nm-startups-working-with-national-labs-to-advance-next-generation-technologies.php
+  note: search summary only
+- id: lanl-fci-2025
+  name: LANL Feynman Center for Innovation 2025 annual report (PDF)
+  url: https://cdn.lanl.gov/files/fci-2025-annual-report_cf645.pdf
+  note: text partly decoded locally; only a few company names readable
+- id: heinrich-abqj-2026
+  name: 'Albuquerque Journal (via Sen. Heinrich newsroom): clean energy finds a foothold in NM'
+  url: https://www.heinrich.senate.gov/newsroom/in-the-news/albuquerque-journal-clean-energy-finds-a-foothold-in-new-mexico-despite-federal-pullback
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: cyclotron-road
+  name: Cyclotron Road (Berkeley Lab) fellows by year, 2015-2026
+  url: https://cyclotronroad.lbl.gov/fellows/fellows-by-year/
+  note: ~100 companies; almost all overlap the Activate Berkeley community; Cuberg (closed) and Mosaic Materials
+    (acquired) skipped.
+- id: eip
+  name: Energy Impact Partners portfolio
+  url: https://www.energyimpactpartners.com/_portfolio/
+  note: 151 cards (current and exits); cards give description and site URL but no names, so names come from descriptions
+    and domains.
+- id: elemental
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 141 companies with HQ city (113 US).
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: slc
+  name: Spring Lane Capital investments
+  url: https://www.springlanecapital.com/investments
+  note: 13 companies listed by name only.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+companies:
+- name: Acomni
+  website: null
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: null
+  decision: null
+  reason: University licence from 2014 and no recent activity found; status not established.
+  ats: null
+  open_roles: null
+- name: Aeonix
+  website: null
+  hq: Salt Lake City, UT
+  sources:
+  - sw-futures-engine-2025
+  registry_id: aeonix
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Alpha Tech Research Corp
+  website: null
+  hq: Utah
+  sources:
+  - ut-goeo-energy-awards
+  registry_id: alpha-tech-research-corp
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Altairnano
+  website: https://altairnano.com/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: altairnano
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: American Battery Factory
+  website: https://americanbatteryfactory.com/
+  hq: American Fork, UT
+  sources:
+  - az-tech-council-battery
+  - az-search
+  - az-search2
+  registry_id: american-battery-factory
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: American Battery Technology Company
+  website: https://americanbatterytechnology.com/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - unr-tech-hub
+  - builtin-nv-energy
+  - builtin-nv-greentech
+  - greentown
+  registry_id: american-battery-technology-company
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ampcera
+  website: https://www.ampcera.com/
+  hq: Tucson, AZ
+  sources:
+  - az-search
+  - arpa-e
+  registry_id: ampcera
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Amperesand
+  website: https://www.amperesand.com/
+  hq: Singapore
+  sources:
+  - nv-search
+  registry_id: amperesand
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: amperesand
+  open_roles: null
+- name: Aqua Metals
+  website: https://www.aquametals.com/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: aqua-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Array Technologies
+  website: https://arraytechinc.com/
+  hq: Albuquerque, NM
+  sources:
+  - builtin-az-greentech
+  registry_id: array-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats:
+    type: workday
+    token: arraytechinc.wd5.myworkdayjobs.com/Array_Careers
+  open_roles: null
+- name: Atlis Motor Vehicles (now Nxu)
+  website: null
+  hq: Mesa, AZ
+  sources:
+  - az-search
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed / winding down 2025 delisted from Nasdaq 2025'
+  ats: null
+  open_roles: null
+- name: Beyond Silicon
+  website: https://beyondsilicon.com/
+  hq: Tempe, AZ
+  sources:
+  - asu-search
+  - sw-futures-engine-2025
+  registry_id: beyond-silicon
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CarbeniumTec
+  website: https://www.carbeniumtec.com/
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: carbeniumtec
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Carbogenics USA
+  website: null
+  hq: Santa Fe, NM
+  sources:
+  - nm-aea
+  registry_id: carbogenics-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Carbon Utility
+  website: https://carbonutility.com/
+  hq: Holbrook, AZ
+  sources:
+  - sw-futures-engine-2025
+  registry_id: carbon-utility
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ceramatec
+  website: https://www.ceramatec.com/
+  hq: Salt Lake City, UT
+  sources:
+  - uofu-tlo-portfolio
+  registry_id: null
+  decision: null
+  reason: Its site certificate has expired and its sodium work moved to Enlighten Innovations; status not established.
+  ats: null
+  open_roles: null
+- name: Chemtronergy
+  website: null
+  hq: Salt Lake City, UT
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Circularity Fuels
+  website: https://circularityfuels.com
+  hq: Redwood City, CA
+  sources:
+  - nm-aea
+  registry_id: circularity-fuels
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Comstock Metals
+  website: https://comstock.inc/
+  hq: Silver Springs, NV
+  sources:
+  - nv-search
+  registry_id: comstock-metals
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats:
+    type: greenhouse
+    token: comstock
+  open_roles: 79
+- name: Crystal Sonic
+  website: https://xtalsonic.com/
+  hq: Arizona
+  sources:
+  - sw-futures-engine-2025
+  registry_id: crystal-sonic
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Dragonfly Energy
+  website: https://dragonflyenergy.com/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - unr-tech-hub
+  - eip
+  registry_id: dragonfly-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Echo Elements
+  website: https://echo-elements.com/
+  hq: Reno, NV
+  sources:
+  - unr-tech-hub
+  registry_id: echo-elements
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ElectraFly
+  website: null
+  hq: Utah
+  sources:
+  - ut-goeo-mfg-grant
+  registry_id: null
+  decision: null
+  reason: Its domain was guessed; identity not established.
+  ats: null
+  open_roles: null
+- name: ElectraMeccanica
+  website: https://electrameccanica.com/
+  hq: Mesa, AZ
+  sources:
+  - az-search
+  - builtin-az-energy
+  registry_id: null
+  decision: closed
+  reason: Acquired by Xos in March 2024; the SOLO vehicle was discontinued.
+  ats: null
+  open_roles: null
+- name: Electric Power Systems (EP Systems)
+  website: https://www.epsenergy.com/
+  hq: North Logan, UT
+  sources:
+  - builtin-ut-energy
+  - ut-search
+  registry_id: electric-power-systems-ep-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EnKoat
+  website: https://enkoat.com
+  hq: Chandler, AZ
+  sources:
+  - third-derivative
+  registry_id: enkoat
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Exro Technologies
+  website: https://www.exro.com/
+  hq: Calgary, AB
+  sources:
+  - gpec-av-ev
+  - az-search
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed (receivership Nov 2025, bankruptcy 2026) HQ outside region; regional site Mesa, AZ exro.com
+    now redirects to an unrelated gambling site'
+  ats: null
+  open_roles: null
+- name: Fervo Energy
+  website: https://fervoenergy.com/
+  hq: Houston, TX
+  sources:
+  - ut-search
+  registry_id: fervo-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: fervoenergy
+  open_roles: null
+- name: Flow Aluminum
+  website: https://www.flowaluminum.com/
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Zenthos Energy (renamed; flowaluminum.com redirects to zenthosenergy.com).
+  ats: null
+  open_roles: null
+- name: Fluence Energy
+  website: https://fluenceenergy.com
+  hq: Arlington, VA
+  sources:
+  - az-search2
+  registry_id: fluence-energy
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: fluenceenergy.wd12/fluenceenergy-jobs
+  open_roles: null
+- name: Fly Right Systems
+  website: https://builtin.com/company/fly-right-systems
+  hq: Las Vegas, NV
+  sources:
+  - builtin-nv-greentech
+  - builtin-nv-energy
+  - builtin-az-energy
+  - builtin-ut-energy
+  - sw-futures-engine-2025
+  - builtin-ut-greentech
+  registry_id: null
+  decision: null
+  reason: Product described only vaguely; identity not established.
+  ats:
+    type: greenhouse
+    token: builtin
+  open_roles: 5
+- name: Fontana Systems
+  website: https://www.fontanasystems.com/
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: null
+  decision: null
+  reason: Its site certificate has expired; status not established.
+  ats: null
+  open_roles: null
+- name: Footprint
+  website: https://www.footprintus.com/
+  hq: Gilbert, AZ
+  sources:
+  - builtin-az-greentech
+  registry_id: footprint
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats:
+    type: workable
+    token: footprint
+  open_roles: 16
+- name: Gemini Energy
+  website: null
+  hq: null
+  sources:
+  - lanl-fci-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats:
+    type: greenhouse
+    token: gemini
+  open_roles: 24
+- name: GlycoSurf
+  website: https://glycosurf.com/
+  hq: Salt Lake City, UT
+  sources:
+  - sw-futures-engine-2025
+  - ut-goeo-energy-awards
+  registry_id: glycosurf
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Grafite Logic
+  website: null
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: null
+  decision: null
+  reason: Its domain does not resolve; status not established.
+  ats: null
+  open_roles: null
+- name: GridFlow
+  website: null
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  - unm-rainforest
+  - nm-search
+  registry_id: gridflow
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Halo Materials
+  website: null
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  - unm-rainforest
+  registry_id: halo-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: HiFunda
+  website: null
+  hq: Salt Lake City, UT
+  sources:
+  - ut-goeo-mfg-grant
+  registry_id: hifunda
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Hydrosonics
+  website: null
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  registry_id: hydrosonics
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: HyPerComp Engineering
+  website: null
+  hq: Brigham City, UT
+  sources:
+  - ut-goeo-mfg-grant
+  registry_id: hypercomp-engineering
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: iBeam Materials
+  website: https://ibeammaterials.com
+  hq: Santa Fe, NM
+  sources:
+  - nm-search
+  - third-derivative
+  registry_id: ibeam-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: K2 Energy Solutions
+  website: https://k2batterystore.com/
+  hq: Henderson, NV
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: LG Energy Solution Arizona
+  website: https://www.lgensol.com/
+  hq: Seoul, South Korea
+  sources:
+  - az-tech-council-battery
+  - gpec-av-ev
+  registry_id: lg-energy-solution-arizona
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Liberty Fusion
+  website: null
+  hq: New Mexico
+  sources:
+  - nm-aea
+  - nm-search
+  registry_id: null
+  decision: null
+  reason: Early R&D with no product; identity not established.
+  ats: null
+  open_roles: null
+- name: Lilac Solutions (Western Ceramics Company 1 LLC)
+  website: https://lilacsolutions.com
+  hq: East Bay, CA (city not stated; job board lists Berkeley, CA)
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: lilac-solutions
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: lilac-solutions
+  open_roles: null
+- name: LiNiCO Corporation
+  website: https://linicoenergy.in/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: null
+  decision: null
+  reason: The domain found belongs to an Indian company; identity not established.
+  ats: null
+  open_roles: null
+- name: Lion Energy
+  website: https://lionenergy.com/
+  hq: American Fork, UT
+  sources:
+  - ut-goeo-mfg-grant
+  - ut-search
+  registry_id: lion-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats:
+    type: adp
+    token: 0e788c70-47f0-4896-82d6-96fcb3e8e079
+  open_roles: null
+- name: Lithion Battery
+  website: https://www.lithionbattery.com/
+  hq: Henderson, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  registry_id: lithion-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats:
+    type: adp
+    token: c8842c22-2743-4df9-af35-f08182629130
+  open_roles: null
+- name: Lithium Americas (Thacker Pass)
+  website: https://www.lithiumamericas.com/
+  hq: Reno, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - unr-tech-hub
+  registry_id: lithium-americas-thacker-pass
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: out, startup in.'
+  ats:
+    type: workday
+    token: lithiumamericas.wd108.myworkdayjobs.com/External_Careers_SG
+  open_roles: null
+- name: LiveWire Innovation
+  website: https://www.livewireinnovation.com/
+  hq: Salt Lake City, UT
+  sources:
+  - uofu-tlo-portfolio
+  registry_id: livewire-innovation
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Lyten
+  website: https://lyten.com
+  hq: San Jose, CA
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - nv-search
+  registry_id: lyten
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: lyten.wd503/Lyten_External_Career_Site
+  open_roles: null
+- name: Meyer Burger
+  website: https://www.meyerburger.com/
+  hq: Thun, Switzerland
+  sources:
+  - az-search2
+  registry_id: null
+  decision: closed
+  reason: 'Closed: HQ outside region (Switzerland) Arizona plant closed May 2025 parent in insolvency'
+  ats: null
+  open_roles: null
+- name: Molten Salt Solutions
+  website: null
+  hq: New Mexico
+  sources:
+  - nm-aea
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: MOXY
+  website: https://moxyoid.com
+  hq: Las Vegas, NV
+  sources:
+  - third-derivative
+  registry_id: moxy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NAVITASMAX
+  website: null
+  hq: Chandler, AZ
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: NexTech Batteries
+  website: https://www.nextechbatteries.com/
+  hq: Carson City, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  registry_id: nextech-batteries
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Nikola
+  website: https://www.nikolamotor.com/
+  hq: Phoenix, AZ
+  sources:
+  - gpec-av-ev
+  - az-search
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed (bankruptcy)'
+  ats: null
+  open_roles: null
+- name: NuCube Energy
+  website: https://nucube.energy
+  hq: Idaho Falls, ID
+  sources:
+  - gpec-nucube
+  registry_id: nucube-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Nuro
+  website: https://www.nuro.ai/
+  hq: Mountain View, CA
+  sources:
+  - nv-goed-lithium-loop
+  - gpec-av-ev
+  registry_id: nuro
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: Osazda Energy
+  website: null
+  hq: Albuquerque, NM
+  sources:
+  - nm-search
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: OxEon Energy
+  website: https://www.oxeonenergy.com/
+  hq: North Salt Lake, UT
+  sources:
+  - ut-goeo-oxeon
+  registry_id: oxeon-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: oxeon
+  open_roles: 2
+- name: Pacific Fusion
+  website: https://www.pacificfusion.com/
+  hq: Fremont / San Leandro, CA (Bay Area); New Mexico campus
+  sources:
+  - lanl-fci-2025
+  registry_id: pacific-fusion
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: pacificfusion
+  open_roles: null
+- name: Pajarito Powder
+  website: https://www.pajaritopowder.com/
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  - nm-search
+  - arpa-e
+  registry_id: pajarito-powder
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Palladias
+  website: null
+  hq: Los Alamos, NM
+  sources:
+  - nm-search
+  registry_id: palladias
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Power Energy
+  website: https://www.powerenergyusa.com/
+  hq: Nevada
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: The domain''s site is a non-captive retail electricity broker in Texas, not a
+    battery maker.'
+  ats: null
+  open_roles: null
+- name: Purity ReSource
+  website: https://purityresource.com/
+  hq: Arizona
+  sources:
+  - sw-futures-engine-2025
+  registry_id: purity-resource
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Qnergy
+  website: https://www.qnergy.com/
+  hq: Ogden, UT
+  sources:
+  - builtin-ut-energy
+  registry_id: qnergy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: c507f3f1-5e6c-45ce-8c56-1db72ce8c505
+  open_roles: null
+- name: Quantum Copper
+  website: https://www.quantumpowerinc.com/
+  hq: Nevada
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Reaction Engineering International
+  website: https://www.reaction-eng.com/
+  hq: Midvale, UT
+  sources:
+  - ut-goeo-energy-awards
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: R&D consulting firm offering CFD, process and kinetic modeling, emissions control
+    and testing services plus software; DOE-funded projects on a rotary-'
+  ats: null
+  open_roles: null
+- name: Redwood Materials
+  website: https://www.redwoodmaterials.com/
+  hq: Carson City, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - unr-tech-hub
+  - bev
+  registry_id: redwood-materials
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: redwoodmaterials
+  open_roles: null
+- name: Rivixl
+  website: null
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: rivixl
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Safe-Li
+  website: null
+  hq: Tempe, AZ
+  sources:
+  - asu-search
+  registry_id: safe-li
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sigma Advanced Technologies
+  website: null
+  hq: New Mexico
+  sources:
+  - nm-aea
+  registry_id: sigma-advanced-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SinglePoint
+  website: https://www.singlepoint.com/
+  hq: Phoenix, AZ
+  sources:
+  - builtin-az-energy
+  - builtin-az-greentech
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Holding company that acquires renewable-energy firms: solar installer Boston
+    Solar, Energy Wyze, BPA Solutions (safety/security) and Box Pure Air (air'
+  ats: null
+  open_roles: null
+- name: Sion Power
+  website: https://sionpower.com/
+  hq: Tucson, AZ
+  sources:
+  - az-tech-council-battery
+  - az-search
+  - builtin-az-energy
+  - arpa-e
+  registry_id: sion-power
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: SLB / NeoLith Energy
+  website: https://www.slb.com/
+  hq: Houston, TX
+  sources:
+  - nv-goed-lithium-loop
+  registry_id: slb
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: SolarSpace
+  website: https://solarspace.io/
+  hq: Tucson, AZ
+  sources:
+  - ua-tla-portfolio
+  registry_id: null
+  decision: null
+  reason: Its site gives only a tagline; product and status not established.
+  ats: null
+  open_roles: null
+- name: Solestial
+  website: https://solestial.com/
+  hq: Tempe, AZ
+  sources:
+  - asu-search
+  registry_id: solestial
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: out, startup out.'
+  ats:
+    type: lever
+    token: solestial
+  open_roles: 8
+- name: Solid Carbon
+  website: https://solid-carbon.com
+  hq: McMinnville, OR
+  sources:
+  - sw-futures-engine-2025
+  registry_id: solid-carbon
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: SOURCE Global (formerly Zero Mass Water)
+  website: https://www.source.co/
+  hq: Scottsdale, AZ
+  sources:
+  - asu-search
+  - bev
+  - elemental
+  registry_id: source-global-formerly-zero-mass-water
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats:
+    type: rippling
+    token: source
+  open_roles: 8
+- name: Spiritus Technologies
+  website: null
+  hq: Los Alamos, NM
+  sources:
+  - nm-aea
+  registry_id: spiritus-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Stadler US
+  website: https://www.stadlerrail.com/
+  hq: Bussnang, Switzerland
+  sources:
+  - ut-goeo-mfg-grant
+  registry_id: stadler-us
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Surface Transfer (HeatFlow)
+  website: null
+  hq: New Mexico
+  sources:
+  - nm-aea
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Tesla (Gigafactory Nevada)
+  website: https://www.tesla.com/
+  hq: Austin, TX
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  registry_id: tesla
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Tibbar Technologies
+  website: null
+  hq: Los Alamos, NM
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Torus
+  website: https://www.torus.co/
+  hq: Salt Lake City, UT
+  sources:
+  - builtin-ut-energy
+  - ut-search
+  registry_id: torus
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: torus
+  open_roles: null
+- name: TPI Composites
+  website: https://www.tpicomposites.com/
+  hq: Scottsdale, AZ
+  sources:
+  - builtin-az-greentech
+  registry_id: tpi-composites
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: TS-Nano
+  website: https://ts-nano.com/
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  - unm-rainforest
+  - nm-search
+  registry_id: ts-nano
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: UbiQD
+  website: https://www.ubiqd.com/
+  hq: Los Alamos, NM
+  sources:
+  - nm-aea
+  - nm-search
+  registry_id: ubiqd
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ultion Technologies
+  website: https://www.ultiontech.com/
+  hq: Las Vegas, NV
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  registry_id: ultion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Unimacts
+  website: https://www.unimacts.com/
+  hq: Las Vegas, NV
+  sources:
+  - house-unimacts
+  registry_id: unimacts
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Valar Atomics
+  website: https://valaratomics.com
+  hq: El Segundo, CA (jobs listed in Torrance, CA and Orangeville, UT)
+  sources:
+  - builtin-ut-energy
+  - builtin-ut-greentech
+  - ut-search
+  registry_id: valar-atomics
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: valaratomics
+  open_roles: null
+- name: VastVision Technologies
+  website: null
+  hq: Albuquerque, NM
+  sources:
+  - nm-aea
+  - lanl-fci-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Visionary Products
+  website: null
+  hq: Utah
+  sources:
+  - ut-goeo-energy-awards
+  registry_id: visionary-products
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wasatch Ionics
+  website: null
+  hq: Salt Lake City, UT
+  sources:
+  - ut-goeo-energy-awards
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Contract R&D and consulting on battery chemistries and electrochemical devices
+    (prototyping, battery assembly and testing, scale-up).'
+  ats: null
+  open_roles: null
+- name: WAVR Technologies
+  website: https://wavrtechnologies.com/
+  hq: Las Vegas, NV
+  sources:
+  - sw-futures-engine-2025
+  registry_id: wavr-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zanskar Geothermal & Minerals
+  website: https://zanskar.com
+  hq: Salt Lake City, UT
+  sources:
+  - ut-goeo-energy-awards
+  - builtin-ut-greentech
+  - lc
+  - azolla
+  - slc
+  - activate
+  - cyclotron-road
+  - remotefirstjobs
+  registry_id: zanskar
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: Zanskar
+  open_roles: null
+- name: Zenthos Energy
+  website: https://www.zenthosenergy.com/
+  hq: Albuquerque, NM
+  sources:
+  - unm-rainforest
+  - nm-search
+  registry_id: zenthos-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
+  ats: null
+  open_roles: null
+excluded:
+- name: Airloom Energy
+  sources:
+  - nm-aea
+  reason: Headquartered in Laramie, WY, outside the region; no main site in the region found.
+- name: Albemarle
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  - unr-tech-hub
+  reason: Headquartered in Charlotte, NC (listed in the Southeast); Silver Peak, NV is one site.
+- name: Century Lithium (formerly Cypress Development)
+  sources:
+  - nv-goed-lithium-loop
+  reason: Headquartered in Vancouver, BC; its Nevada project is a pre-production lithium mine with planned on-site
+    processing, and mine operators and pre-production mine projects are out even with an on-site chemical plant
+    planned (owner ruling A6b line).
+- name: Desert Mountain Energy
+  sources:
+  - heinrich-abqj-2026
+  reason: Headquartered in Vancouver, BC; mainly a helium and natural-gas producer, and its battery plant is only
+    a letter of intent.
+- name: Ebon Solar
+  sources:
+  - heinrich-abqj-2026
+  reason: Subsidiary of Ebang International (Singapore); whether its New Mexico plant will be built is not established.
+- name: Ecobat
+  sources:
+  - az-tech-council-battery
+  - gpec-av-ev
+  reason: Headquartered in Dallas, TX, outside the region; no main site in the region found.
+- name: Entek
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  reason: Headquartered in Lebanon, OR, outside the region; no main site in the region found.
+- name: GELF Energy
+  sources:
+  - asu-search
+  reason: Headquartered in Princeville, HI, outside the region; no main site in the region found.
+- name: Greenore
+  sources:
+  - third-derivative
+  reason: Its site gives a Wilmington, DE address.
+- name: Halo Battery Recycling
+  sources:
+  - nv-goed-lithium-loop
+  reason: Headquartered in Tipton, UK, outside the region; no main site in the region found.
+- name: Infineon Technologies
+  sources:
+  - gpec-av-ev
+  reason: Headquartered in Neubiberg, Germany; Mesa, AZ is one site.
+- name: ioneer
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  reason: Headquartered in Sydney, Australia; its Nevada project is a pre-production lithium-boron mine with planned
+    on-site processing, and mine operators and pre-production mine projects are out even with an on-site chemical
+    plant planned (owner ruling A6b line).
+- name: Jabil
+  sources:
+  - ut-search
+  reason: Headquartered in St. Petersburg, FL; Salt Lake City is one office.
+- name: KORE Power
+  sources:
+  - az-tech-council-battery
+  - az-search
+  reason: Headquartered in Coeur d'Alene, ID, outside the region; no main site in the region found.
+- name: Li-Cycle
+  sources:
+  - az-tech-council-battery
+  - gpec-av-ev
+  - az-search
+  reason: Headquartered in Toronto, ON, outside the region; no main site in the region found.
+- name: LS Electric
+  sources:
+  - ut-search
+  reason: Headquartered in Anyang, South Korea; its Utah switchgear plant is one site.
+- name: Lucid Group
+  sources:
+  - gpec-av-ev
+  - az-search
+  reason: Headquartered in Newark, CA, outside the region; no main site in the region found.
+- name: Magna International
+  sources:
+  - gpec-av-ev
+  reason: Headquartered in Aurora, ON, Canada.
+- name: MetOxs Electrochemicals
+  sources:
+  - ua-tla-portfolio
+  reason: Headquartered outside the US (Singapore (MetOxs Electrochemicals Pte. ); no main site in the region found.
+- name: Nanotech Energy
+  sources:
+  - nv-search
+  reason: Headquartered in Sunny Isles Beach, FL, outside the region; no main site in the region found.
+- name: New East Solar
+  sources:
+  - az-search2
+  reason: Headquartered outside the US (China (parent, city not confirmed); site); no main site in the region found.
+- name: Octillion Power Systems
+  sources:
+  - nv-search
+  reason: Headquartered in Richmond, CA; Reno is a plant.
+- name: Panasonic Energy of North America
+  sources:
+  - nv-goed-lithium-loop
+  - nv-battery-coalition
+  reason: Headquartered in Newark, NJ, outside the region; no main site in the region found.
+- name: SolarEdge Technologies
+  sources:
+  - ut-search
+  reason: Headquartered in Herzliya, Israel; Salt Lake City is one site.

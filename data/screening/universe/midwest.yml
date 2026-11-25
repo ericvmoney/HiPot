@@ -1,0 +1,2248 @@
+# Reference list for the Midwest (Illinois, Michigan, Ohio, Minnesota, Indiana, Wisconsin): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: midwest
+built: '2026-11-25'
+sources:
+- id: evergreen-portfolio
+  name: Evergreen Climate Innovations portfolio (active and exited)
+  url: https://evergreeninno.org/portfolio
+  note: single page; robots disallows only ?-URLs
+- id: mhub-energytech
+  name: mHUB Energy Tech Accelerator (accelerator page, 2022 and 2024 cohort posts)
+  url: https://mhub.org/energy-tech-accelerator
+  note: https://mhub.org/blog/meet-10-startups-in-the-mhub-2024-energytech-accelerator and /blog/mhub-announces-energytech-accelerator-teams-2022;
+    /portfolio 404; medtech logos ignored
+- id: medc-ev-ecosystem
+  name: MEDC Michigan's EV Ecosystem page
+  url: https://www.michiganbusiness.org/evecosystem
+- id: medc-clean-energy-race
+  name: 'MEDC press release: Michigan winning clean energy race (Apr 2023)'
+  url: https://www.michiganbusiness.org/press-releases/2023/04/michigan-winning-clean-energy-race
+- id: medc-mobility-grants
+  name: MEDC Make It in Michigan Mobility Prototyping Grant winners (Sep 2025)
+  url: https://www.michiganbusiness.org/press-releases/2025/09/mobility-prototyping-grant-winners/
+  note: most winners are drones/robotics, skipped
+- id: medc-battery-show-2025
+  name: 'MEDC news: Michigan at The Battery Show (Oct 2025)'
+  url: https://www.michiganbusiness.org/news/2025/10/battery-show/
+- id: search-umich
+  name: Web search results on U-M battery spinouts
+  url: web search
+- id: search-annarbor-battery
+  name: Web search results on Ann Arbor battery startups
+  url: web search
+- id: annarbor-spark-2025
+  name: 'Ann Arbor SPARK: regional startups at The Battery Show 2025'
+  url: https://annarborusa.org/news/innovation-in-motion-ann-arbor-spark-amplifies-regional-startups-at-the-battery-show/
+- id: michiganpublic-doe-grants
+  name: 'Michigan Public: four Michigan companies get federal battery grants (Sep 2024)'
+  url: https://www.michiganpublic.org/economy/2024-09-20/four-michigan-companies-get-federal-grants-to-boost-domestic-supply-chain-for-advanced-batteries
+- id: newlab-detroit
+  name: Newlab Detroit posts (Ford Mobility Studio cohort, Bloom reshoring, Founder Fellowship)
+  url: https://www.newlab.com/locations/detroit
+  note: no member directory published; /membership 404
+- id: grid-catalyst
+  name: Grid Catalyst (Minnesota) portfolio
+  url: https://gridcatalyst.org/portfolio/
+  note: 39 listed; profiles give no locations; kept only those known in region
+- id: builtin-chicago
+  name: Built In Chicago greentech and energy company directories, page 1 each
+  url: https://www.builtinchicago.org/companies/type/greentech-companies
+  note: also /companies/type/energy-companies; page 1 only per robots
+- id: builtin-states
+  name: Built In greentech-startups directories for OH, MI, MN, WI, IN (page 1)
+  url: https://builtin.com/companies/location/na/usa/oh/type/greentech-startups
+- id: beststartup-ohio
+  name: 'BestStartup: 15 best Ohio cleantech companies'
+  url: https://beststartup.us/15-best-ohio-cleantech-companies-and-startups/
+- id: cleantech-open-2025
+  name: Cleantech Open 2025 all companies (Midwest region entries)
+  url: https://sites.google.com/cleantechopen.org/2025-cto-global-forum/all-2025-companies
+- id: polsky-resurgence
+  name: UChicago Polsky Resurgence cleantech accelerator cohorts 1-2
+  url: https://polsky.uchicago.edu/2024/11/01/uchicago-cleantech-accelerator-resurgence-accepts-5-startups-into-its-second-cohort/
+  note: locations not stated
+- id: nu-trienens-q
+  name: Northwestern Trienens-Q Accelerator
+  url: https://trienens-institute.northwestern.edu/research/q-accelerator/
+- id: search-nu
+  name: Web search results on Northwestern / Chicago university spinouts
+  url: web search
+- id: search-umn
+  name: Web search results on University of Minnesota startups
+  url: web search
+- id: search-purdue
+  name: Web search results on Purdue-affiliated startups
+  url: web search
+- id: uw-spinoffs
+  name: UW-Madison Energy Institute spinoffs list and UW News five climate startups
+  url: https://energy.wisc.edu/node/312
+  note: also https://news.wisc.edu/five-startups-from-uw-with-great-ideas-to-protect-the-earth/
+- id: wedc-battery
+  name: 'WEDC: Wisconsin leads the charge on battery technology'
+  url: https://wedc.org/wisconsin-leads-the-charge-on-battery-technology-in-an-electric-age
+- id: e2-announcements
+  name: E2 clean economy announcements by state (OH, IN, MI, IL, MN, WI)
+  url: https://e2.org/announcements/states/ohio/
+  note: utilities and developers skipped
+- id: ohio-third-frontier
+  name: Ohio Third Frontier TVSF award bulletins (govdelivery)
+  url: https://content.govdelivery.com/accounts/OHDOD/bulletins/32300a4
+  note: also bulletins 364a47a, 35595b6; almost all medical
+- id: search-ohio-third-frontier
+  name: Web search results on Ohio Third Frontier fuel cell and battery awards
+  url: web search
+- id: search-bic
+  name: Web search results on Indiana Battery Innovation Center members
+  url: web search
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: cev
+  name: Clean Energy Ventures portfolio
+  url: https://cleanenergyventures.com/portfolio
+  note: 32 current plus 16 legacy/pre-fund companies.
+- id: cri
+  name: Chain Reaction Innovations (Argonne) cohorts 2017-2026
+  url: https://chainreaction.anl.gov/innovators/
+  note: 10 cohort pages, ~50 companies; quantum, bio and medical companies skipped.
+- id: doe-edf
+  name: DOE Energy Dominance Financing (LPO) project list
+  url: https://lpoapps.loanprograms.energy.gov/
+  note: Project map embedded in energy.gov/lpo/portfolio-projects; it lists 19 active or conditional projects, mostly
+    utilities. Kept only the clean-tech hardware makers.
+- id: doe-oced
+  name: DOE Office of Clean Energy Demonstrations award posts
+  url: https://www.energy.gov/cmei/oced/listings/oced-news
+  note: Award Wednesday posts and other OCED news (59 articles). Most awards went to utilities, co-ops, tribes and
+    large incumbents, which were skipped. The OCED selections pages now return 404.
+- id: eip
+  name: Energy Impact Partners portfolio
+  url: https://www.energyimpactpartners.com/_portfolio/
+  note: 151 cards (current and exits); cards give description and site URL but no names, so names come from descriptions
+    and domains.
+- id: evergreen
+  name: Evergreen Climate Innovations (formerly Clean Energy Trust) portfolio
+  url: https://evergreeninno.org/portfolio
+  note: ~45 companies; names inferred from logos and links; no HQ field.
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: halliburton-labs
+  name: Halliburton Labs portfolio
+  url: https://halliburtonlabs.com/companies
+  note: 49 companies with HQ city.
+- id: ic
+  name: Innovation Crossroads (Oak Ridge) cohorts 2017-2026 and alumni
+  url: https://innovationcrossroads.ornl.gov/people/?alumni=true
+  note: 58 innovator profiles read.
+- id: khosla
+  name: Khosla Ventures sustainability companies
+  url: https://www.khoslaventures.com/category/sustainability
+  note: 14 companies in the sustainability category.
+- id: laci
+  name: LACI (Los Angeles Cleantech Incubator) portfolio
+  url: https://laincubator.org/portfolio/
+  note: 140 startups from the page's own JSON endpoint (/wp-json/endpoints/startups/); no HQ field.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: prelude
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: 61 companies including exits.
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: shell-gamechanger
+  name: Shell GameChanger start-ups (graduates since 2021 and current projects)
+  url: https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/shell-gamechanger/portfolio.html
+  note: ~110 names, client-rendered (read in a browser after rejecting optional cookies). No HQ shown; many non-US.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: voyager
+  name: Voyager Ventures portfolio
+  url: https://www.voyagervc.com/portfolio
+  note: 41 companies over 5 pages.
+- id: yc
+  name: Y Combinator company directory (yc-oss public JSON mirror)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
+    climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
+companies:
+- name: 75F
+  website: https://www.75f.io/
+  hq: Burnsville, MN
+  sources:
+  - evergreen-portfolio
+  - bev
+  registry_id: 75f
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats:
+    type: breezy
+    token: 75f-apac
+  open_roles: 6
+- name: Adena Power
+  website: https://adenapower.com
+  hq: Lewis Center, OH
+  sources:
+  - third-derivative
+  - halliburton-labs
+  registry_id: adena-power
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Advanced Ionics
+  website: https://advancedionics.com
+  hq: Milwaukee, WI
+  sources:
+  - cev
+  - shell-gamechanger
+  - arpa-e
+  registry_id: advanced-ionics
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Advanced Renewable Power
+  website: null
+  hq: West Lafayette, IN
+  sources:
+  - search-purdue
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Generic name; a Purdue Foundry or Purdue Research Foundation
+    page would be the next check.
+  ats: null
+  open_roles: null
+- name: Aeroseal
+  website: https://aeroseal.com/
+  hq: Miamisburg, OH
+  sources:
+  - builtin-states
+  - bev
+  - eip
+  registry_id: aeroseal
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: breezy
+    token: aeroseal
+  open_roles: 8
+- name: Aeternal Upcycling
+  website: https://www.aeternalupcycling.com/
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: aeternal-upcycling
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: AGC Carbon
+  website: https://agccarbon.com/
+  hq: Chicago, IL
+  sources:
+  - polsky-resurgence
+  registry_id: agc-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Air Energy
+  website: https://aircompany.com
+  hq: Brooklyn, NY
+  sources:
+  - evergreen-portfolio
+  - polsky-resurgence
+  registry_id: air-company
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: aircompany
+  open_roles: null
+- name: Alithic
+  website: null
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: alithic
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Alpha Nur
+  website: https://www.alphanur.com
+  hq: Downers Grove, IL
+  sources:
+  - polsky-resurgence
+  registry_id: alpha-nur
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: American Battery Solutions
+  website: https://www.americanbatterysolutions.com/
+  hq: Lake Orion, MI
+  sources:
+  - medc-battery-show-2025
+  registry_id: american-battery-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats:
+    type: adp
+    token: b850b09a-85f3-45a3-9072-51b8e5da9e81
+  open_roles: null
+- name: AmHyTech
+  website: https://amhytech.com
+  hq: Detroit, MI
+  sources:
+  - greentown
+  registry_id: amhytech
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: APT Solar Solutions
+  website: https://aptss.com/
+  hq: Ann Arbor area, MI
+  sources:
+  - medc-battery-show-2025
+  - annarbor-spark-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not searched (search budget spent). Domain is live, so the company
+    likely still exists.
+  ats: null
+  open_roles: null
+- name: Aquarry
+  website: https://www.aquarry.earth/
+  hq: Midwest
+  sources:
+  - evergreen-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: A service that turns pit lakes at closed mines into thermal or water resources; no product sold.
+  ats: null
+  open_roles: null
+- name: Arbor Batteries
+  website: https://arborbi.com
+  hq: Ann Arbor, MI
+  sources:
+  - search-umich
+  - search-annarbor-battery
+  registry_id: arbor-batteries
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ArborWind
+  website: https://www.arborwind.com
+  hq: Ann Arbor, MI
+  sources:
+  - builtin-states
+  registry_id: arborwind
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Arisdyne Systems
+  website: https://www.arisdyne.com
+  hq: Middleburg Heights, OH
+  sources:
+  - beststartup-ohio
+  registry_id: arisdyne-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ateios Systems
+  website: https://ateios.com
+  hq: San Diego, CA
+  sources:
+  - search-bic
+  - ic
+  registry_id: ateios-systems
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Atlas Materials
+  website: https://atlasmaterials.com
+  hq: Mount Prospect, IL
+  sources:
+  - voyager
+  registry_id: atlas-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: atlas
+  open_roles: 8
+- name: Autokiniton
+  website: https://www.autokiniton.com/
+  hq: New Boston, MI
+  sources:
+  - e2-announcements
+  registry_id: autokiniton
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Battery Nano Technology
+  website: null
+  hq: Michigan
+  sources:
+  - search-umich
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Generic name; the University of Michigan startup list is excluded
+    by rule (innovationpartnerships.umich.edu).
+  ats: null
+  open_roles: null
+- name: BeoBatt
+  website: null
+  hq: Evanston, IL
+  sources:
+  - nu-trienens-q
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Domain is registered, which suggests an early venture, but nothing
+    ties it to the source's description. The closest lead is a Northwestern-licensed thermal-runaway separator membrane
+    (inventions.invo
+  ats: null
+  open_roles: null
+- name: Bila Solar
+  website: https://bilasolar.com/
+  hq: Indianapolis, IN
+  sources:
+  - e2-announcements
+  registry_id: bila-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BIOFerm Energy Systems
+  website: https://biofermenergy.com
+  hq: Madison, WI
+  sources:
+  - builtin-states
+  registry_id: bioferm-energy-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Biosynthetic Technologies
+  website: https://biosynthetic.com
+  hq: Indianapolis, IN
+  sources:
+  - builtin-states
+  registry_id: biosynthetic-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: blip energy
+  website: https://www.blipenergy.com/
+  hq: Evanston, IL
+  sources:
+  - mhub-energytech
+  - grid-catalyst
+  - laci
+  registry_id: blip-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: blip
+  open_roles: 2
+- name: Blue Line Battery
+  website: https://bluelinebattery.com
+  hq: Beloit, WI
+  sources:
+  - wedc-battery
+  - greentown
+  registry_id: blue-line-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Bollinger Motors
+  website: https://www.bollingermotors.com/
+  hq: Oak Park, MI
+  sources:
+  - e2-announcements
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed Nov 2025 assets repurchased by founder Aug 2026; revival not confirmed'
+  ats: null
+  open_roles: null
+- name: BorgWarner
+  website: https://www.borgwarner.com/
+  hq: Auburn Hills, MI
+  sources:
+  - e2-announcements
+  registry_id: borgwarner
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: C-Motive Technologies
+  website: https://www.c-motive.com/
+  hq: Middleton, WI
+  sources:
+  - evergreen-portfolio
+  - grid-catalyst
+  - azolla
+  - evergreen
+  registry_id: c-motive-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Cache Energy
+  website: https://cache-energy.com/
+  hq: Champaign, IL
+  sources:
+  - evergreen-portfolio
+  - grid-catalyst
+  - voyager
+  - third-derivative
+  - halliburton-labs
+  - evergreen
+  registry_id: cache-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Canadian Solar
+  website: https://www.canadiansolar.com/
+  hq: Kitchener, ON, Canada
+  sources:
+  - e2-announcements
+  registry_id: canadian-solar
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: canadiansolar.wd5/CanadianSolar
+  open_roles: null
+- name: Caporus Technologies
+  website: https://caporus.com
+  hq: Bolingbrook, IL
+  sources:
+  - cri
+  registry_id: caporus-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Carba
+  website: https://carba.com/
+  hq: Minneapolis, MN
+  sources:
+  - evergreen-portfolio
+  - grid-catalyst
+  - evergreen
+  registry_id: carba
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Carbon SeaQuest
+  website: https://carbonseaquest.com/
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: null
+  decision: closed
+  reason: 'Inferred from the identity pass; no shutdown notice unless stated. Weak closure: the mHUB Energy Tech
+    Accelerator page still shows a ''Sea Quest'' logo in its portfolio, so a rename to ''Sea Quest'' cannot be ruled
+    out. HQ is from the source.'
+  ats: null
+  open_roles: null
+- name: Celadyne Technologies
+  website: https://celadynetech.com
+  hq: Lemont, IL
+  sources:
+  - third-derivative
+  - greentown
+  - cri
+  - arpa-e
+  registry_id: celadyne-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Chement
+  website: null
+  hq: Chicago, IL
+  sources:
+  - search-nu
+  registry_id: chement
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ChloBis Water
+  website: https://www.chlobis.com/
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed: no longer operating per PitchBook as of 2023-10-01 (cited by UW-Madison Energy Institute)'
+  ats: null
+  open_roles: null
+- name: Cirque Energy
+  website: null
+  hq: Detroit, MI
+  sources:
+  - builtin-states
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops combined-heat-and-power, biomass gasification and waste-to-energy projects
+    (200-2,500 kW) for industrial, commercial and institutional custom'
+  ats: null
+  open_roles: null
+- name: CleanLife LED
+  website: https://www.cleanlifeled.com/
+  hq: Cleveland, OH
+  sources:
+  - beststartup-ohio
+  registry_id: cleanlife-led
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ClearFlame Engines
+  website: null
+  hq: Geneva, IL
+  sources:
+  - cri
+  registry_id: clearflame-engines
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Cobra MOTO
+  website: null
+  hq: Hillsdale, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: cobra-moto
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: COnovate
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - wedc-battery
+  registry_id: conovate
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Crown Equipment
+  website: https://www.crown.com/
+  hq: New Bremen, OH
+  sources:
+  - search-ohio-third-frontier
+  registry_id: crown-equipment
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Crucible Energy
+  website: https://crucible.energy
+  hq: Chanhassen, MN
+  sources:
+  - cleantech-open-2025
+  registry_id: crucible-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: CryoCellar
+  website: https://cryocellar.com/
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: cryocellar
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Cummins
+  website: https://www.cummins.com/
+  hq: Columbus, IN
+  sources:
+  - e2-announcements
+  - arpa-e
+  registry_id: cummins
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Darcy Solutions
+  website: https://darcysolutions.com/
+  hq: New Brighton, MN
+  sources:
+  - evergreen-portfolio
+  - grid-catalyst
+  - third-derivative
+  - evergreen
+  registry_id: darcy-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Designs by Natural Processes
+  website: null
+  hq: Winona, MN
+  sources:
+  - arpa-e
+  registry_id: designs-by-natural-processes
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Dow
+  website: https://www.dow.com/
+  hq: Midland, MI
+  sources:
+  - medc-battery-show-2025
+  registry_id: dow
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Earth RepAIR
+  website: null
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Alithic (renamed; formerly the Earth RepAIR UW-Madison team).
+  ats: null
+  open_roles: null
+- name: Eaton
+  website: https://www.eaton.com/
+  hq: Dublin, Ireland
+  sources:
+  - e2-announcements
+  - search-bic
+  - arpa-e
+  registry_id: eaton
+  decision: registry
+  reason: null
+  ats:
+    type: eightfold
+    token: eaton
+  open_roles: null
+- name: Echogen Power Systems
+  website: https://echogen.com
+  hq: Akron, OH
+  sources:
+  - arpa-e
+  - doe-oced
+  registry_id: echogen-power-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ecosphere Organics
+  website: https://ecosphereorganics.com/
+  hq: Detroit, MI
+  sources:
+  - cleantech-open-2025
+  registry_id: ecosphere-organics
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EdgeEnergy
+  website: https://edgeenergyev.com/
+  hq: Cincinnati, OH
+  sources:
+  - beststartup-ohio
+  registry_id: edgeenergy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EGI Battery
+  website: https://egibattery.com
+  hq: Ann Arbor, MI
+  sources:
+  - search-annarbor-battery
+  registry_id: egi-battery
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Elegus Technologies
+  website: https://elegustech.com
+  hq: Ann Arbor, MI
+  sources:
+  - search-umich
+  registry_id: null
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure is inferred (IP sold, dead
+    certificate, no news since 2021), not documented by a filing or announcement. Wellfound profile fetch was refused
+    by this session's permis
+  ats: null
+  open_roles: null
+- name: Ensor
+  website: null
+  hq: Minneapolis, MN
+  sources:
+  - search-umn
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Product matches the source but location and activity are unconfirmed.
+    Crunchbase page not fetched.
+  ats: null
+  open_roles: null
+- name: Enspired Solutions
+  website: https://www.enspiredsolutions.com/
+  hq: East Lansing, MI
+  sources:
+  - evergreen-portfolio
+  registry_id: enspired-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EP Purification
+  website: null
+  hq: Champaign, IL
+  sources:
+  - evergreen-portfolio
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Input notes no activity after 2016; closure plausible but not
+    evidenced.
+  ats: null
+  open_roles: null
+- name: ESSPI
+  website: https://esspi.com
+  hq: Detroit, MI
+  sources:
+  - search-annarbor-battery
+  registry_id: esspi
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EVE Energy North America
+  website: null
+  hq: Lewis Center, OH
+  sources:
+  - e2-announcements
+  registry_id: eve-energy-north-america
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: ExPost Technology
+  website: https://www.exposttechnology.com/
+  hq: San Diego, CA
+  sources:
+  - polsky-resurgence
+  registry_id: expost-technology
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Farm Vision Technologies
+  website: null
+  hq: St. Paul, MN
+  sources:
+  - search-umn
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. May be a UMN licensee shell for CPG technology; nothing confirms
+    it.
+  ats: null
+  open_roles: null
+- name: Flow Environmental Systems
+  website: https://www.flowenvirosys.com
+  hq: Rogers, MN
+  sources:
+  - grid-catalyst
+  registry_id: flow-environmental-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Flux XII
+  website: https://www.flux12.com/
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  - activate
+  - third-derivative
+  registry_id: flux-xii
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ford Motor Company
+  website: https://www.ford.com/
+  hq: Dearborn, MI
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  - arpa-e
+  registry_id: ford-motor-company
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Form Energy
+  website: https://formenergy.com/
+  hq: Somerville, MA
+  sources:
+  - e2-announcements
+  registry_id: form-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: formenergy
+  open_roles: null
+- name: Fortescue
+  website: https://fortescue.com
+  hq: Perth, Australia
+  sources:
+  - e2-announcements
+  registry_id: fortescue-fortescue-zero-future-industries
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Fronius USA
+  website: https://www.fronius.com/en-us/usa
+  hq: Portage, IN
+  sources:
+  - e2-announcements
+  registry_id: fronius-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats:
+    type: workday
+    token: fronius.wd3.myworkdayjobs.com/de-DE/Job_Board
+  open_roles: null
+- name: FurnaQuantum
+  website: https://onurergen.com/spinoffs
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. No company domain, address or activity after 2024 found. HQ is
+    from the source.
+  ats: null
+  open_roles: null
+- name: GenAlpha Nuclear Technologies
+  website: null
+  hq: Traverse City, MI
+  sources:
+  - arpa-e
+  registry_id: genalpha-nuclear-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: General Motors
+  website: https://www.gm.com/
+  hq: Detroit, MI
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  - arpa-e
+  registry_id: general-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: general
+  open_roles: 1
+- name: Go Electric
+  website: https://goelectricinc.com/
+  hq: Anderson, IN
+  sources:
+  - evergreen-portfolio
+  registry_id: go-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: GoSun
+  website: https://www.gosun.co/
+  hq: Cincinnati, OH
+  sources:
+  - builtin-states
+  - beststartup-ohio
+  registry_id: gosun
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Gotion
+  website: https://www.gotion.com
+  hq: Fremont, CA
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  registry_id: gotion-inc
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: gotion
+  open_roles: null
+- name: Great Lakes Crystal Technologies
+  website: null
+  hq: East Lansing, MI
+  sources:
+  - arpa-e
+  registry_id: great-lakes-crystal-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: H2O Now
+  website: https://www.H20Now.com
+  hq: Wrenshall, MN
+  sources:
+  - cleantech-open-2025
+  registry_id: h2o-now
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Heliene
+  website: https://heliene.com/
+  hq: Mountain Iron, MN
+  sources:
+  - e2-announcements
+  registry_id: heliene
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Hemlock Semiconductor
+  website: https://www.hscpoly.com/
+  hq: Hemlock, MI
+  sources:
+  - e2-announcements
+  registry_id: hemlock-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Hinetics
+  website: https://hinetics.com
+  hq: Champaign, IL
+  sources:
+  - arpa-e
+  registry_id: hinetics
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Holcim US
+  website: https://www.holcim.us/
+  hq: Chicago, IL
+  sources:
+  - e2-announcements
+  registry_id: holcim-us
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hyper Tech Research
+  website: https://hypertechresearch.com
+  hq: Columbus, OH
+  sources:
+  - arpa-e
+  registry_id: hyper-tech-research
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ideal Electric Company
+  website: null
+  hq: Mansfield, OH
+  sources:
+  - remotefirstjobs
+  registry_id: ideal-electric-company
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Illuminate USA
+  website: https://illuminateusa.com/
+  hq: Pataskala, OH
+  sources:
+  - e2-announcements
+  registry_id: illuminate-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats:
+    type: workday
+    token: illuminateusa.wd503.myworkdayjobs.com/en-US/Illuminate_Careers
+  open_roles: null
+- name: Imagen Energy
+  website: null
+  hq: New Berlin, WI
+  sources:
+  - arpa-e
+  registry_id: imagen-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Inertial
+  website: https://www.inertial.xyz/
+  hq: Chicago, IL
+  sources:
+  - polsky-resurgence
+  registry_id: inertial
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Influit Energy
+  website: null
+  hq: Chicago, IL
+  sources:
+  - search-nu
+  registry_id: influit-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ingeteam
+  website: https://www.ingeteam.com/
+  hq: Milwaukee, WI
+  sources:
+  - e2-announcements
+  registry_id: ingeteam
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: INNIO
+  website: https://www.innio.com/
+  hq: Waukesha, WI
+  sources:
+  - wedc-battery
+  registry_id: innio
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats:
+    type: jobvite
+    token: innio
+  open_roles: null
+- name: Intellihot
+  website: https://intellihot.com/
+  hq: Chicago, IL
+  sources:
+  - evergreen-portfolio
+  - evergreen
+  registry_id: intellihot
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Invenergy
+  website: https://invenergy.com/
+  hq: Chicago, IL
+  sources:
+  - builtin-chicago
+  - e2-announcements
+  registry_id: invenergy
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: invenergyllc.wd1/invenergycareers
+  open_roles: null
+- name: Inventev
+  website: null
+  hq: Detroit, MI
+  sources:
+  - arpa-e
+  registry_id: inventev
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Ionic Liquid Solutions
+  website: https://ionicliquidsolutions.com
+  hq: South Bend, IN
+  sources:
+  - third-derivative
+  registry_id: ionic-liquid-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: IROC
+  website: null
+  hq: Evanston, IL
+  sources:
+  - search-nu
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Acronym name; may be a research project rather than a company.
+  ats: null
+  open_roles: null
+- name: JUA Technologies International
+  website: null
+  hq: West Lafayette, IN
+  sources:
+  - search-purdue
+  registry_id: jua-technologies-international
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Kazadi Enterprises
+  website: https://www.kazadienterprises.com/
+  hq: Batavia, IL
+  sources:
+  - mhub-energytech
+  registry_id: kazadi-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: KB Powertrain
+  website: null
+  hq: Kalamazoo, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: kb-powertrain
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Kemvera
+  website: https://www.kemvera.com/
+  hq: Midwest
+  sources:
+  - evergreen-portfolio
+  registry_id: kemvera
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Kylix
+  website: null
+  hq: Evanston, IL
+  sources:
+  - search-nu
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Possibly a spinout of the Northwestern low-temperature PFAS destruction
+    work; unconfirmed.
+  ats: null
+  open_roles: null
+- name: L-H Battery Company
+  website: null
+  hq: Jeffersonville, OH
+  sources:
+  - e2-announcements
+  registry_id: l-h-battery-company
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Lakril Technologies
+  website: https://www.lakril.com/
+  hq: Chicago, IL
+  sources:
+  - evergreen-portfolio
+  - cri
+  - evergreen
+  registry_id: lakril-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: LanzaTech
+  website: https://lanzatech.com/
+  hq: Skokie, IL
+  sources:
+  - builtin-chicago
+  - khosla
+  - arpa-e
+  - doe-oced
+  registry_id: lanzatech
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Lear Corporation
+  website: https://www.lear.com/
+  hq: Southfield, MI
+  sources:
+  - e2-announcements
+  registry_id: lear-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: LG Energy Solution Michigan
+  website: https://www.lgensol.com/
+  hq: Holland, MI
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  registry_id: lg-energy-solution-michigan
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: LiquidCool Solutions
+  website: https://liquidcoolsolutions.com
+  hq: Rochester, MN
+  sources:
+  - grid-catalyst
+  registry_id: liquidcool-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LIVAQ
+  website: null
+  hq: Detroit, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: livaq
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: LuxWall
+  website: https://luxwall.com
+  hq: Ypsilanti Township, MI
+  sources:
+  - bev
+  - prelude
+  - third-derivative
+  registry_id: luxwall
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MAREL Power Solutions
+  website: https://marel-power.com/
+  hq: Plymouth, MI
+  sources:
+  - evergreen-portfolio
+  - halliburton-labs
+  - evergreen
+  registry_id: marel-power-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Metasorbex
+  website: https://www.metasorbex.com/
+  hq: Loveland, OH
+  sources:
+  - mhub-energytech
+  registry_id: metasorbex
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mettle Ops
+  website: null
+  hq: Madison Heights, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: mettle-ops
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Microlink Devices
+  website: https://mldevices.com/
+  hq: Niles, IL
+  sources:
+  - e2-announcements
+  - arpa-e
+  registry_id: microlink-devices
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Milton Manufacturing
+  website: null
+  hq: Detroit, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: milton-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: MITO Material Solutions
+  website: https://mitomaterials.com/
+  hq: Indianapolis, IN
+  sources:
+  - evergreen-portfolio
+  registry_id: mito-material-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Mitra Chem
+  website: https://www.mitrachem.com
+  hq: Mountain View, CA
+  sources:
+  - michiganpublic-doe-grants
+  registry_id: mitra-chem
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Mobis North America
+  website: https://www.mobis.com/
+  hq: Toledo, OH
+  sources:
+  - e2-announcements
+  registry_id: mobis-north-america
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Modal Motors
+  website: null
+  hq: Farmington Hills, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: modal-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats:
+    type: ashby
+    token: modal
+  open_roles: 52
+- name: Motibera
+  website: https://motibera.com
+  hq: Madison, WI
+  sources:
+  - activate
+  - arpa-e
+  registry_id: motibera
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: NanoGraf Technologies
+  website: https://www.nanograf.com/
+  hq: Chicago, IL
+  sources:
+  - evergreen-portfolio
+  - e2-announcements
+  - evergreen
+  registry_id: nanograf-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NatureWorks
+  website: https://www.natureworksllc.com/
+  hq: Minnetonka, MN
+  sources:
+  - builtin-states
+  registry_id: natureworks
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: NETenergy
+  website: https://www.netenergytes.com/
+  hq: Chicago, IL
+  sources:
+  - evergreen-portfolio
+  - evergreen
+  registry_id: netenergy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nexceris (formerly NexTech Materials)
+  website: https://nexceris.com/
+  hq: Lewis Center, OH
+  sources:
+  - search-ohio-third-frontier
+  - arpa-e
+  registry_id: nexceris-formerly-nextech-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NIFT
+  website: https://www.niftgo.com/
+  hq: Canton, MI
+  sources:
+  - medc-battery-show-2025
+  - annarbor-spark-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Engineering services for EV and vehicle programmes.
+  ats:
+    type: greenhouse
+    token: nift
+  open_roles: 9
+- name: Niron Magnetics
+  website: https://nironmagnetics.com
+  hq: Minneapolis, MN
+  sources:
+  - search-umn
+  - arpa-e
+  registry_id: niron-magnetics
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: niron
+  open_roles: null
+- name: NovoMoto
+  website: null
+  hq: Madison, WI
+  sources:
+  - evergreen-portfolio
+  - uw-spinoffs
+  registry_id: null
+  decision: not-in-scope
+  reason: Distributes pay-as-you-go solar kits in DR Congo; a distributor, not a maker.
+  ats: null
+  open_roles: null
+- name: NuMat Technologies
+  website: https://www.numat.tech/
+  hq: Chicago, IL
+  sources:
+  - evergreen-portfolio
+  - evergreen
+  registry_id: numat-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: numattechnologies
+  open_roles: 1
+- name: NylaNova
+  website: https://www.nylanova.com/
+  hq: Evanston, IL
+  sources:
+  - nu-trienens-q
+  registry_id: nylanova
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Omnion Power Engineering
+  website: https://www.omnionpower.com
+  hq: East Troy, WI
+  sources:
+  - remotefirstjobs
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. The source (remotefirstjobs) may conflate OmniOn Power with an
+    older East Troy inverter maker of a similar name; not confirmed. Not a match for omnionpower.com.
+  ats:
+    type: workday
+    token: omnionpower.wd5.myworkdayjobs.com/External
+  open_roles: null
+- name: Orb Aerospace
+  website: null
+  hq: Lowell, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: orb-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats:
+    type: lever
+    token: orbaerospace
+  open_roles: 5
+- name: Orion Energy Systems
+  website: https://www.orionlighting.com/
+  hq: Manitowoc, WI
+  sources:
+  - builtin-states
+  registry_id: orion-energy-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 4db2244f-622f-4f08-834a-7fa64c20717b
+  open_roles: null
+- name: Our Next Energy
+  website: https://one.ai/
+  hq: Novi, MI
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  - bev
+  registry_id: our-next-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/OUR1002ONXE/JobBoard/5c7eeefc-e61c-417a-8468-f976a704a34d
+  open_roles: null
+- name: Parker Hannifin
+  website: https://www.parker.com/
+  hq: Cleveland, OH
+  sources:
+  - builtin-chicago
+  registry_id: parker-hannifin
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats:
+    type: ashby
+    token: parker
+  open_roles: 13
+- name: PERMA-PIPE International Holdings
+  website: https://www.permapipe.com/
+  hq: The Woodlands, TX
+  sources:
+  - builtin-chicago
+  registry_id: perma-pipe-international-holdings
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: paycom
+    token: 4279AFC1B4E24987CF55E7836C668C06
+  open_roles: null
+- name: pH Matter
+  website: https://phmatter.com
+  hq: Columbus, OH
+  sources:
+  - greentown
+  - arpa-e
+  registry_id: ph-matter
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Phenolvation
+  website: null
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: phenolvation
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Plasma Tech Holdings
+  website: null
+  hq: Minnesota
+  sources:
+  - search-umn
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Biofuel process, arguably outside clean-energy hardware scope.
+  ats: null
+  open_roles: null
+- name: Power to Hydrogen (P2H2)
+  website: https://www.p2h2.com/
+  hq: Columbus, OH
+  sources:
+  - grid-catalyst
+  - third-derivative
+  - shell-gamechanger
+  registry_id: power-to-hydrogen-p2h2
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: PRC Wind
+  website: https://www.prcwind.com
+  hq: Minneapolis, MN
+  sources:
+  - builtin-states
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops utility-scale wind, solar and storage projects; a project developer, not a maker.
+  ats: null
+  open_roles: null
+- name: Pyran
+  website: https://pyranco.com/
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: pyran
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Realta Fusion
+  website: https://realtafusion.com/
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  - khosla
+  registry_id: realta-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Regal Rexnord
+  website: https://www.regalrexnord.com/
+  hq: Milwaukee, WI
+  sources:
+  - builtin-chicago
+  registry_id: regal-rexnord
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Remora
+  website: https://remoracarbon.com
+  hq: Wixom, MI
+  sources:
+  - builtin-states
+  - lc
+  - voyager
+  - yc
+  registry_id: remora
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: remoracarbon
+  open_roles: null
+- name: Renewance
+  website: https://batterystewardship.com/
+  hq: Elmhurst, IL
+  sources:
+  - evergreen-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Battery lifecycle services for industrial and EV batteries (installation, commissioning,
+    maintenance, repurposing, end-of-life with partner recyclers)'
+  ats:
+    type: breezy
+    token: renewance-inc
+  open_roles: 9
+- name: Reverse Energy Solutions
+  website: https://res-us.com
+  hq: Chicago, IL
+  sources:
+  - greentown
+  - laci
+  registry_id: reverse-energy-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Revex Technologies
+  website: https://revextech.com
+  hq: Houghton, MI
+  sources:
+  - michiganpublic-doe-grants
+  registry_id: revex-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Rushnu
+  website: https://www.rushnu.com
+  hq: Livermore, CA
+  sources:
+  - mhub-energytech
+  registry_id: rushnu
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Sandbox Carbon
+  website: https://www.sandboxcarbon.com/
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: sandbox-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Scout Motors
+  website: https://www.scoutmotors.com/
+  hq: Charlotte, NC
+  sources:
+  - e2-announcements
+  registry_id: scout-motors
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: scoutmotors
+  open_roles: null
+- name: Searen
+  website: https://www.searen.com
+  hq: Cincinnati, OH
+  sources:
+  - builtin-states
+  registry_id: searen
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sesame Solar
+  website: https://sesame.solar
+  hq: Jackson, MI
+  sources:
+  - third-derivative
+  registry_id: sesame-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: sesame
+  open_roles: 17
+- name: SHINE Technologies
+  website: https://www.shinefusion.com/
+  hq: Janesville, WI
+  sources:
+  - uw-spinoffs
+  - arpa-e
+  - doe-edf
+  registry_id: shine-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats:
+    type: paylocity
+    token: 2b42e142-6094-4a5e-a72b-be90060459fe
+  open_roles: null
+- name: Siemens
+  website: https://www.siemens.com/
+  hq: Germany
+  sources:
+  - e2-announcements
+  registry_id: siemens
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Sigma Powertrain
+  website: null
+  hq: Wayne, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: sigma-powertrain
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Silatronix
+  website: https://silatronix.com/
+  hq: Madison, WI
+  sources:
+  - wedc-battery
+  registry_id: silatronix
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Single Phase Power Solutions
+  website: https://singlephasepowersolutions.com
+  hq: Cincinnati, OH
+  sources:
+  - beststartup-ohio
+  registry_id: null
+  decision: duplicate
+  reason: Renamed EdgeEnergy, which is listed separately. Rename not independently confirmed this session (edgeenergy.com
+    returned 404 and appears unrelated). Treat as a duplicate of the separate EdgeEnergy entry.
+  ats: null
+  open_roles: null
+- name: SkySpecs
+  website: https://skyspecs.com/
+  hq: Ann Arbor, MI
+  sources:
+  - builtin-states
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: FleetOS software and services for renewable assets: autonomous drone blade inspections,
+    Horizon condition monitoring and asset-management software.'
+  ats:
+    type: breezy
+    token: skyspecs
+  open_roles: 13
+- name: Sortera Technologies
+  website: https://www.sorteratechnologies.com/
+  hq: Markle, IN
+  sources:
+  - builtin-states
+  - bev
+  registry_id: sortera-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Soulbrain MI
+  website: null
+  hq: Michigan
+  sources:
+  - e2-announcements
+  registry_id: soulbrain-mi
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: StarPlus Energy
+  website: https://www.starplusenergy.com/
+  hq: Kokomo, IN
+  sources:
+  - e2-announcements
+  registry_id: starplus-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Stonehouse Water Technologies
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - builtin-states
+  registry_id: stonehouse-water-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SUN METALON
+  website: https://sunmetalon.com
+  hq: Wood Dale, IL
+  sources:
+  - third-derivative
+  registry_id: sun-metalon
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SYNCRIS
+  website: https://syncris.com
+  hq: Minneapolis, MN
+  sources:
+  - halliburton-labs
+  registry_id: syncris
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: The Shyft Group
+  website: https://theshyftgroup.com/
+  hq: Novi, MI
+  sources:
+  - e2-announcements
+  registry_id: the-shyft-group
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: ThermoVerse
+  website: https://thermoverse.com
+  hq: Detroit, MI
+  sources:
+  - ic
+  registry_id: thermoverse
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Thought Labs
+  website: https://www.alset.life/
+  hq: Ann Arbor area, MI
+  sources:
+  - medc-battery-show-2025
+  - annarbor-spark-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. alset.life should not be used for this entry. Possibly the same
+    team as ALSET (similar product), unconfirmed.
+  ats: null
+  open_roles: null
+- name: Tikal Industries
+  website: https://www.tikalindustries.com/
+  hq: Chicago, IL
+  sources:
+  - mhub-energytech
+  registry_id: tikal-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Trachte
+  website: https://trachteusa.com
+  hq: Oregon, WI
+  sources:
+  - eip
+  registry_id: trachte
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup out.'
+  ats:
+    type: workday
+    token: nvent.wd5.myworkdayjobs.com/en-US/nVent
+  open_roles: null
+- name: Type One Energy
+  website: https://typeoneenergy.com
+  hq: Knoxville, TN
+  sources:
+  - uw-spinoffs
+  registry_id: type-one-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Ultium Cells
+  website: https://www.ultiumcell.com/
+  hq: Warren, OH
+  sources:
+  - medc-clean-energy-race
+  registry_id: ultium-cells
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: V-Glass
+  website: null
+  hq: Waukesha, WI
+  sources:
+  - third-derivative
+  - arpa-e
+  registry_id: v-glass
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Vessyll
+  website: https://vessyll.com
+  hq: St. Paul, MN
+  sources:
+  - grid-catalyst
+  registry_id: vessyll
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: VisGate Technologies
+  website: null
+  hq: Columbus, OH
+  sources:
+  - ohio-third-frontier
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Possibly an OSU CHPPE spinout; unconfirmed.
+  ats: null
+  open_roles: null
+- name: Volexion
+  website: https://volexion.com
+  hq: Evanston, IL
+  sources:
+  - search-nu
+  - cev
+  - third-derivative
+  - cri
+  registry_id: volexion
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Volt Harbor
+  website: https://voltharbor.com/
+  hq: Ann Arbor, MI
+  sources:
+  - cleantech-open-2025
+  registry_id: volt-harbor
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Voltaic Marine
+  website: null
+  hq: Southfield, MI
+  sources:
+  - medc-mobility-grants
+  registry_id: voltaic-marine
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Wellntel
+  website: https://wellntel.com/
+  hq: Milwaukee, WI
+  sources:
+  - evergreen-portfolio
+  registry_id: wellntel
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Xylome
+  website: https://xylome.com
+  hq: Madison, WI
+  sources:
+  - uw-spinoffs
+  registry_id: xylome
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Zakuro
+  website: null
+  hq: Ann Arbor, MI
+  sources:
+  - search-umich
+  - search-annarbor-battery
+  - arpa-e
+  registry_id: zakuro
+  decision: registry
+  reason: 'Proposed in proposals-02-midwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+excluded:
+- name: AllCell Technologies
+  sources:
+  - evergreen-portfolio
+  reason: Headquartered in San Diego, CA, outside the region; no main site in the region found.
+- name: Cabot Corporation
+  sources:
+  - michiganpublic-doe-grants
+  reason: Headquartered in Boston, MA, outside the region; no main site in the region found.
+- name: Cirba Solutions
+  sources:
+  - e2-announcements
+  reason: Headquartered in Charlotte, NC, outside the region; no main site in the region found.
+- name: CorePower Magnetics
+  sources:
+  - evergreen-portfolio
+  reason: Headquartered in Pittsburgh, PA, outside the region; no main site in the region found.
+- name: DENSO
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Japan (parent DENSO Corporation; not ver); no main site in the region found.
+- name: ElectraMet
+  sources:
+  - evergreen-portfolio
+  reason: Its own site gives Lexington, KY as headquarters (a Southeast state).
+- name: Electreon
+  sources:
+  - medc-ev-ecosystem
+  - newlab-detroit
+  reason: 'Headquartered outside the US (Beit Yanai, Israel; site: Detroit, MI); no main site in the region found.'
+- name: Entek
+  sources:
+  - e2-announcements
+  reason: Headquartered in Lebanon, OR, outside the region; no main site in the region found.
+- name: Feynman Energy USA
+  sources:
+  - polsky-resurgence
+  reason: Headquartered in Mansfield, MA, outside the region; no main site in the region found.
+- name: First Solar
+  sources:
+  - e2-announcements
+  reason: Headquartered in Phoenix, AZ, outside the region; no main site in the region found.
+- name: Flender Corporation
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Germany (parent Flender; city not stated); no main site in the region found.
+- name: FLO
+  sources:
+  - medc-clean-energy-race
+  reason: 'Headquartered outside the US (Quebec, Canada; site: Auburn Hills, MI); no main site in the region found.'
+- name: Honda
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Tokyo, Japan (not verified this session)); no main site in the region found.
+- name: Lithos Carbon
+  sources:
+  - remotefirstjobs
+  reason: Headquartered in San Francisco, CA, outside the region; no main site in the region found.
+- name: Magna
+  sources:
+  - medc-clean-energy-race
+  - e2-announcements
+  reason: 'Headquartered outside the US (Aurora, Ontario, Canada; site: Auburn Hi); no main site in the region found.'
+- name: Manner Polymers
+  sources:
+  - e2-announcements
+  reason: Headquartered in McKinney, TX, outside the region; no main site in the region found.
+- name: MoonBikes
+  sources:
+  - newlab-detroit
+  reason: Acquired by ENVO Drive Systems; its Detroit site is logistics only, not a main site.
+- name: Nel Hydrogen
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Norway (Nel ASA; city not verified this ); no main site in the region found.
+- name: NSG Group (Pilkington North America)
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Japan (parent Nippon Sheet Glass Co., Lt); no main site in the region found.
+- name: Nucor
+  sources:
+  - e2-announcements
+  reason: Headquartered in Charlotte, NC, outside the region; no main site in the region found.
+- name: Rhombus Energy Solutions
+  sources:
+  - newlab-detroit
+  reason: Headquartered in San Diego, CA, outside the region; no main site in the region found.
+- name: Star Charge
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (China (parent Star Charge; city not veri); no main site in the region found.
+- name: Stellantis
+  sources:
+  - e2-announcements
+  reason: Headquartered outside the US (Amsterdam, Netherlands (not verified thi); no main site in the region found.
+- name: Toyota
+  sources:
+  - e2-announcements
+  reason: Headquartered in Japan (North American head office in Plano, TX); the Michigan site is an R&D centre.
+- name: WATTMORE
+  sources:
+  - evergreen-portfolio
+  reason: Headquartered in Denver, CO, outside the region; no main site in the region found.
