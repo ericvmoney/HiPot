@@ -221,3 +221,18 @@ def test_companies_to_probe_are_listed_unknown_and_have_a_website():
     assert probe_module.companies_to_probe([listed]) == [listed]
     assert probe_module.companies_to_probe([{**listed, "website": None}]) == []
     assert probe_module.companies_to_probe([{**listed, "ats": {"type": "greenhouse", "board": "a"}}]) == []
+
+
+def test_decision_12b_reads_what_robots_disallows_and_says_so():
+    site = FakeSite({"https://acme.example.com/robots.txt": "User-agent: *\nDisallow: /\n",
+                     "https://acme.example.com/": HOME,
+                     "https://acme.example.com/careers": '<a href="/careers/controls-engineer">Controls Engineer</a>'})
+    result = probe(entry(), site, obey_robots=False)
+    assert result["outcome"] == "ok" and "decision 12b" in result["robots"]
+    assert probe(entry(), FakeSite(site.pages))["outcome"] == "robots-disallowed"
+
+
+def test_established_companies_are_probed_with_the_flag():
+    established = {**company("b", "unknown", None, status="out"), "website": "https://b.example.com"}
+    assert probe_module.companies_to_probe([established]) == []
+    assert probe_module.companies_to_probe([established], established=True) == [established]

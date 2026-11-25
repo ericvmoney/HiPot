@@ -14,6 +14,7 @@ only retry there is.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import time
 from typing import Any, Callable
@@ -34,7 +35,15 @@ MIN_INTERVAL = 1.0
 # Breezy and Paylocity publish nothing; their hosts get 2 s. A key starting with "."
 # matches every host ending in it.
 HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecruiters.com": 6.0,
-                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0}
+                  ".bamboohr.com": 6.0, ".breezy.hr": 2.0, "recruiting.paylocity.com": 2.0,
+                  # LinkedIn job pages, read only where a company's careers page points
+                  # to them (PLAN.md decision 12): at least 10 s apart.
+                  "www.linkedin.com": 10.0, ".linkedin.com": 10.0,
+                  # Workday publishes no limit for its careers sites.
+                  ".myworkdayjobs.com": 2.0, ".icims.com": 2.0}
+# Companies' own web pages (careers pages, posting pages) are asked at most
+# every PAGE_INTERVAL seconds per host.
+PAGE_INTERVAL = 3.0
 TIMEOUT = 30.0
 MAX_PAGE_BYTES = 1_000_000
 PAGE_HEADERS = {"Accept": "text/html, application/xhtml+xml;q=0.9, text/plain;q=0.5"}
@@ -82,6 +91,13 @@ class Fetcher:
         return max((seconds for key, seconds in self._host_intervals.items()
                     if key.startswith(".") and host.endswith(key)), default=0.0)
 
+    def _wait_at_least(self, host: str, seconds: float) -> None:
+        last = self._last.get(host)
+        if last is not None:
+            remaining = seconds - (self._clock() - last)
+            if remaining > 0:
+                self._sleep(remaining)
+
     def _wait_for(self, host: str) -> None:
         last = self._last.get(host)
         if last is not None:
@@ -90,10 +106,12 @@ class Fetcher:
             if remaining > 0:
                 self._sleep(remaining)
 
-    def _get(self, url: str, params: dict | None, headers: dict | None = None) -> httpx.Response:
+    def _get(self, url: str, params: dict | None, headers: dict | None = None, payload=None) -> httpx.Response:
         host = urlsplit(url).netloc.lower()
         self._wait_for(host)
         try:
+            if payload is not None:
+                return self._client.post(url, params=params, headers=headers, json=payload)
             return self._client.get(url, params=params, headers=headers)
         finally:
             # Counted from the end of the request, so a slow answer still
@@ -104,6 +122,16 @@ class Fetcher:
     def get_json(self, url: str, params: dict | None = None) -> Any:
         """GET a URL and return its parsed JSON body."""
         response = self._answer(url, params)
+        try:
+            return response.json()
+        except ValueError as error:
+            raise FetchError(f"answer was not JSON ({error})") from error
+
+    def post_json(self, url: str, payload: dict) -> Any:
+        """POST a JSON query and return the parsed JSON answer. Only for feeds
+        that are read this way (Workday's careers sites search with a POST);
+        the request reads, it changes nothing."""
+        response = self._answer(url, None, None, payload=payload)
         try:
             return response.json()
         except ValueError as error:
@@ -122,6 +150,7 @@ class Fetcher:
         request under the same spacing and block rules. A page is cut at
         `max_bytes`."""
         for hop in range(max_redirects + 1):
+            self._wait_at_least(urlsplit(url).netloc.lower(), PAGE_INTERVAL)
             response = self._answer(url, None, PAGE_HEADERS, redirects=True)
             if 300 <= response.status_code < 400:
                 target = urljoin(url, response.headers.get("location", ""))
@@ -133,14 +162,14 @@ class Fetcher:
         raise FetchError("too many redirects")
 
     def _answer(self, url: str, params: dict | None, headers: dict | None = None,
-                redirects: bool = False) -> httpx.Response:
+                redirects: bool = False, payload=None) -> httpx.Response:
         """One GET with the rules applied: a block raises, one retry on 5xx or a
         transport failure, and anything but 200 is an error (a redirect is
         returned when `redirects` is true)."""
         response = None
         for attempt in (1, 2):
             try:
-                response = self._get(url, params, headers)
+                response = self._get(url, params, headers, payload)
             except httpx.TimeoutException as error:
                 failure = f"timed out after {TIMEOUT:g}s ({type(error).__name__})"
             except httpx.HTTPError as error:
@@ -199,6 +228,12 @@ class RecordingFetcher(Fetcher):
             json.dump(data, handle, ensure_ascii=False)
         return data
 
+    def post_json(self, url: str, payload: dict) -> Any:
+        data = super().post_json(url, payload)
+        with open(self._directory / post_record_name(url, payload), "w", encoding="utf-8", newline="\n") as handle:
+            json.dump(data, handle, ensure_ascii=False)
+        return data
+
     def get_page(self, url: str, stay_within, max_redirects: int = 2, max_bytes: int = MAX_PAGE_BYTES):
         final, text = super().get_page(url, stay_within, max_redirects, max_bytes)
         with open(self._directory / page_record_name(url), "w", encoding="utf-8", newline="\n") as handle:
@@ -210,6 +245,11 @@ class RecordingFetcher(Fetcher):
         with open(self._directory / text_record_name(url), "w", encoding="utf-8", newline="") as handle:
             handle.write(text)
         return text
+
+
+def post_record_name(url: str, payload) -> str:
+    digest = hashlib.sha1(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()[:10]
+    return record_name(url)[: -len(".json")] + f"_post_{digest}.json"
 
 
 def page_record_name(url: str) -> str:
@@ -254,3 +294,11 @@ class ReplayFetcher:
         with open(path, encoding="utf-8") as handle:
             saved = json.load(handle)
         return saved["final_url"], saved["text"]
+
+    def post_json(self, url: str, payload: dict) -> Any:
+        path = self._directory / post_record_name(url, payload)
+        if not path.exists():
+            raise FetchError(f"no saved answer for POST {url}")
+        self.requests += 1
+        with open(path, encoding="utf-8") as handle:
+            return json.load(handle)

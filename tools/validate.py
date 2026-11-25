@@ -124,7 +124,16 @@ def check_persona(persona: dict, taxonomy: dict) -> list[str]:
 
 
 def is_listed(company: dict) -> bool:
-    return company["climate"]["tier"] in ("core", "enabling") and company["startup"]["status"] == "in"
+    """A company's roles reach the board when its climate tier is core or enabling (decision 14).
+
+    The startup test no longer decides listing; it labels the company (see company_type).
+    """
+    return company["climate"]["tier"] in ("core", "enabling")
+
+
+def company_type(company: dict) -> str:
+    """'startup' when the startup test says in, 'established' when it says out, else 'unchecked'."""
+    return {"in": "startup", "out": "established"}.get(company["startup"]["status"], "unchecked")
 
 
 def report(name: str, problems: list[str]) -> bool:
@@ -182,12 +191,14 @@ def main() -> int:
     if ok:
         companies = registry_file["companies"]
         listed = {company["id"] for company in companies if is_listed(company)}
+        by_type = Counter(company_type(c) for c in companies if is_listed(c))
         review = {c["id"] for c in companies if c["climate"]["tier"] in ("core", "enabling") and c["startup"]["status"] == "review"}
         tiers = Counter(company["climate"]["tier"] for company in companies)
         jobs = jobs_file["jobs"]
         print()
         print("Registry: " + ", ".join(f"{tier} {n}" for tier, n in sorted(tiers.items())))
-        print(f"Listed now (core or enabling, and startup 'in'): {len(listed)} companies, "
+        print(f"Listed now (core or enabling): {len(listed)} companies "
+              f"({', '.join(f'{kind} {n}' for kind, n in sorted(by_type.items()))}), "
               f"{sum(job['company_id'] in listed for job in jobs)} of {len(jobs)} jobs")
         print(f"Waiting on the startup test (status 'review'): {len(review)} companies, "
               f"{sum(job['company_id'] in review for job in jobs)} jobs")

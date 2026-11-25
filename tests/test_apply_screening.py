@@ -131,3 +131,12 @@ def test_retier_needs_a_named_ruling():
                      "ruling": "decision 13"})
     assert company["climate"]["tier"] == "enabling" and company["sectors"] == ["recycling"]
     assert "decision 13" in company["notes"]
+
+
+def test_probe_sends_a_readable_careers_page_to_the_careers_reader():
+    company = {"id": "x", "careers_url": None, "ats": {"type": "unknown", "board": None}, "read": "none", "notes": None}
+    apply_probe(company, {"company_id": "x", "careers_url": "https://example.com/careers", "outcome": "ok", "ats": []})
+    assert company["ats"] == {"type": "other", "board": "https://example.com/careers"} and company["read"] == "auto"
+    dead = {"id": "y", "careers_url": None, "ats": {"type": "unknown", "board": None}, "read": "none", "notes": None}
+    apply_probe(dead, {"company_id": "y", "careers_url": None, "outcome": "no-careers-page", "ats": []})
+    assert dead["ats"]["type"] == "unknown" and dead["read"] == "none"

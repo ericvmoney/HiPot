@@ -90,6 +90,7 @@ dependencies = [
     { name = "httpx" },
     { name = "jsonschema", extra = ["format-nongpl"] },
     { name = "pyyaml" },
+    { name = "tzdata" },
 ]
 
 [package.dev-dependencies]
@@ -103,6 +104,7 @@ requires-dist = [
     { name = "httpx", specifier = ">=0.27" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.23" },
     { name = "pyyaml", specifier = ">=6" },
+    { name = "tzdata", specifier = ">=2026.6" },
 ]
 
 [package.metadata.requires-dev]

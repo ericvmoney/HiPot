@@ -510,3 +510,114 @@ def test_paylocity_board_page_problems_are_errors():
 def test_paylocity_ids_are_stable():
     raw = collect([company("pa-transformer", "paylocity", PTT)], FakeFetcher(), SeenState(), now=lambda: "2026-11-24T16:00:00Z")
     assert f"paylocity:{PTT}:4692187" in {job["id"] for job in raw["jobs"]}
+
+
+# ------------------------------------------------------------------ Workday
+
+from pipeline.collect import workday  # noqa: E402
+
+SOLV = "solvenergy.wd1/SOLV_External_Career"
+SOLV_SEARCH = "https://solvenergy.wd1.myworkdayjobs.com/wday/cxs/solvenergy/SOLV_External_Career/jobs"
+
+
+def test_workday_board_format():
+    assert workday.addresses(SOLV) == (
+        SOLV_SEARCH,
+        "https://solvenergy.wd1.myworkdayjobs.com/wday/cxs/solvenergy/SOLV_External_Career",
+        "https://solvenergy.wd1.myworkdayjobs.com/SOLV_External_Career")
+    with pytest.raises(FetchError, match="must be"):
+        workday.addresses("solvenergy")
+
+
+def test_workday_searches_with_a_post_then_asks_each_posting():
+    fetcher = FakeFetcher()
+    drafts = workday.read(SOLV, fetcher)
+    assert fetcher.calls[0] == (SOLV_SEARCH, {"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": ""})
+    assert len(fetcher.calls) == 1 + len(drafts) == 4
+
+
+def test_workday_fields():
+    drafts = {d["posting_id"]: d for d in workday.read(SOLV, FakeFetcher())}
+    assert len(drafts) == 3
+    onsite = next(d for d in drafts.values() if d["title"].startswith("Energy Storage Project Manager"))
+    assert onsite["posting_id"].startswith("J") and onsite["url"].startswith("https://solvenergy.wd1.myworkdayjobs.com/SOLV_External_Career/job/")
+    assert onsite["workplace"] == "onsite" and onsite["employment"] == "full-time"
+    assert onsite["locations"][0]["text"] == "Lost Hills, CA" and onsite["locations"][0]["state"] == "CA"
+    assert onsite["posted_date"] and onsite["description_text"]
+    remote = next(d for d in drafts.values() if "(Remote)" in d["title"])
+    assert remote["workplace"] == "remote"
+    hybrid = next(d for d in drafts.values() if d["title"] == "Senior Brand Coordinator")
+    assert hybrid["workplace"] == "hybrid"
+
+
+def test_workday_pages_and_keeps_the_first_total():
+    page = lambda numbers, total: {"total": total, "jobPostings": [
+        {"title": f"Role {n}", "externalPath": f"/job/Austin-TX/Role-{n}_R{n}", "locationsText": "Austin, TX"} for n in numbers]}
+    search = "https://acme.wd5.myworkdayjobs.com/wday/cxs/acme/Careers/jobs"
+    # Later pages answer total 0, as Workday's do.
+    fetcher = FakeFetcher(extra={(search, 0): page(range(20), 25), (search, 20): page(range(20, 25), 0)})
+    drafts = workday.read("acme.wd5/Careers", fetcher)
+    assert len(drafts) == 25 and sum(1 for url, _ in fetcher.calls if url == search) == 2
+    # The posting answers were 404s: kept from the list, the id from the address.
+    assert drafts[0]["posting_id"] == "R0" and drafts[0]["locations"][0]["city"] == "Austin"
+
+
+def test_workday_ids_are_stable():
+    raw = collect([company("solv-energy", "workday", SOLV)], FakeFetcher(), SeenState(), now=lambda: "2026-11-25T16:00:00Z")
+    assert all(job["id"].startswith("workday:solvenergy.wd1-SOLV_External_Career:J") for job in raw["jobs"])
+
+
+# -------------------------------------------------------------------- iCIMS
+
+from pipeline.collect import icims  # noqa: E402
+from collect_helpers import FIXTURES  # noqa: E402
+from test_collect_probe import FakeSite  # noqa: E402
+
+JOBY = "https://careers-jobyaviation.icims.com"
+
+
+def joby_site():
+    page0 = (FIXTURES / "icims_joby_search_0.html").read_text(encoding="utf-8")
+    return FakeSite({
+        f"{JOBY}/jobs/search?ss=1&in_iframe=1&pr=0": page0,
+        f"{JOBY}/jobs/search?ss=1&in_iframe=1&pr=1": page0,      # nothing new: the list ends
+        f"{JOBY}/jobs/5248/aircraft-integration-assembly-technician/job?in_iframe=1":
+            (FIXTURES / "icims_joby_5248.html").read_text(encoding="utf-8"),
+    })
+
+
+def test_icims_board_and_places():
+    assert icims.host_for("jobyaviation") == "careers-jobyaviation.icims.com"
+    assert icims.host_for("jobs.example.icims.com") == "jobs.example.icims.com"
+    assert icims.place("US-CA-San Carlos") == {"text": "US-CA-San Carlos", "city": "San Carlos", "state": "CA", "country": "US"}
+    assert icims.place("US-Remote")["country"] == "US"
+
+
+def test_icims_cards_from_a_real_search_page():
+    cards = icims.cards((FIXTURES / "icims_joby_search_0.html").read_text(encoding="utf-8"))
+    assert len(cards) == 20
+    assert cards[0] == {"id": "5248", "url": f"{JOBY}/jobs/5248/aircraft-integration-assembly-technician/job",
+                        "title": "Aircraft Integration Assembly Technician", "location": "US-CA-Marina",
+                        "category": "Manufacturing & Production"}
+
+
+def test_icims_reads_the_search_then_each_posting():
+    site = joby_site()
+    drafts = {d["posting_id"]: d for d in icims.read("jobyaviation", site)}
+    assert site.asked[:2] == [f"{JOBY}/jobs/search?ss=1&in_iframe=1&pr=0", f"{JOBY}/jobs/search?ss=1&in_iframe=1&pr=1"]
+    assert len(drafts) == 20
+    technician = drafts["5248"]
+    assert technician["url"] == f"{JOBY}/jobs/5248/aircraft-integration-assembly-technician/job"
+    assert technician["title"] == "Aircraft Integration Assembly Technician"
+    assert technician["locations"][0]["city"] == "Marina" and technician["locations"][0]["state"] == "CA"
+    assert technician["posted_date"] and technician["description_text"].startswith("Company Overview")
+    assert technician["department"] == "Manufacturing & Production"
+    # A posting page that failed: kept from its card.
+    other = drafts["5894"]
+    assert other["title"] == "Aircraft Maintenance Instructor (Contract)" and other["employment"] == "contract"
+    assert other["description_text"] == ""
+
+
+def test_icims_ids_are_stable():
+    raw = collect([company("joby-aviation", "icims", "jobyaviation")], joby_site(), SeenState(), now=lambda: "2026-11-25T16:00:00Z")
+    assert "icims:jobyaviation:5248" in {job["id"] for job in raw["jobs"]}
