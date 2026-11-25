@@ -1115,13 +1115,14 @@ companies:
     type: unknown
     board: null
   read: none
-  sectors: []
+  sectors:
+  - fission
   stage: null
   founded: null
   headcount: null
   climate:
-    tier: out
-    reason: Radiation-shielding materials; no climate case under the rubric.
+    tier: enabling
+    reason: Lightweight high-temperature neutron-radiation shielding for nuclear reactor containment.
     basis: agent
     approved: false
   startup:

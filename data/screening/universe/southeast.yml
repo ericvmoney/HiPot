@@ -1,0 +1,2213 @@
+# Reference list for the Southeast (Georgia, the Carolinas, Tennessee, Kentucky, Alabama, Virginia): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: southeast
+built: '2026-11-25'
+sources:
+- id: ornl-ic
+  name: ORNL Innovation Crossroads cohorts 2025-2026, alumni list, and ORNL news (cohort-2026 announcement, LEEP
+    demo day, M2IND pitch)
+  url: https://innovationcrossroads.ornl.gov/people/?alumni=true
+  note: Also cohorts/cohort-9, cohorts/cohort-10, ornl.gov/news/new-innovation-crossroads-cohort-tackles-does-toughest-technology-challenges,
+    /innovation-crossroads-celebrates-10-years-entrepreneurship-leep-demo-day/, /9-innovation-crossroads-companies-pitch-hard-tech-solutions-ornls-m2ind/.
+    Pages give no company HQ; fellows are embedded at ORNL (Oak Ridge, TN), and ORNL says more than half its startups
+    stayed in the region.
+- id: e2-ga
+  name: E2 clean energy announcements, Georgia
+  url: https://e2.org/announcements/states/georgia/
+  note: 25 entries (Nov 2022 to Nov 2023), single page
+- id: e2-nc
+  name: E2 clean energy announcements, North Carolina
+  url: https://e2.org/announcements/states/north-carolina/
+  note: 15 entries, single page
+- id: e2-sc
+  name: E2 clean energy announcements, South Carolina
+  url: https://e2.org/announcements/states/south-carolina/
+  note: 23 entries, single page
+- id: e2-tn
+  name: E2 clean energy announcements, Tennessee
+  url: https://e2.org/announcements/states/tennessee/
+  note: 13 entries, single page
+- id: e2-ky
+  name: E2 clean energy announcements, Kentucky
+  url: https://e2.org/announcements/states/kentucky/
+  note: 7 entries
+- id: e2-al
+  name: E2 clean energy announcements, Alabama
+  url: https://e2.org/announcements/states/alabama/
+  note: 6 entries
+- id: e2-va
+  name: E2 clean energy announcements, Virginia
+  url: https://e2.org/announcements/states/virginia/
+  note: 3 companies
+- id: cp-ga-2025
+  name: Climate Power, Clean Energy Boom, Georgia (January 2025)
+  url: https://climatepower.us/wp-content/uploads/2025/01/Clean-Energy-Boom-Jan-2025_Georgia.pdf
+  note: 50-project table
+- id: cp-nc-2025
+  name: Climate Power, Clean Energy Boom, North Carolina (January 2025)
+  url: https://climatepower.us/wp-content/uploads/2025/01/Clean-Energy-Boom-Jan-2025_North-Carolina.pdf
+  note: 32-project table
+- id: cp-va-2025
+  name: Climate Power, Clean Energy Boom, Virginia (January 2025)
+  url: https://climatepower.us/wp-content/uploads/2025/01/Clean-Energy-Boom-Jan-2025_Virginia.pdf
+  note: 16-project table
+- id: cp-sc-2024
+  name: Climate Power, State of the Clean Energy Boom, South Carolina (March 2024)
+  url: https://climatepower.us/wp-content/uploads/2024/03/State-of-the-Clean-Energy-Boom_South-Carolina.pdf
+  note: Jan-2025 SC edition not found (404)
+- id: cp-tn-2024
+  name: Climate Power, State of the Clean Energy Boom, Tennessee (March 2024)
+  url: https://climatepower.us/wp-content/uploads/2024/03/State-of-the-Clean-Energy-Boom_Tennessee.pdf
+  note: Jan-2025 TN edition not found (404)
+- id: c2es-se
+  name: C2ES, Securing the critical battery materials supply chain in the Southeast United States
+  url: https://www.c2es.org/document/securing-the-critical-battery-materials-supply-chain-in-the-southeast-united-states/
+- id: c2es-sc
+  name: 'C2ES, Driving growth: South Carolina''s battery and EV supply chain (PDF)'
+  url: https://www.c2es.org/wp-content/uploads/2025/04/driving-growth-south-carolinas-battery-and-ev-supply-chain.pdf
+  note: Narrative report; recycling paragraph and OEM mentions
+- id: tid-ky
+  name: Trade and Industry Development, Kentucky's EV industry leading the way
+  url: https://tradeandindustrydev.com/region/kentucky/kentuckys-ev-industry-leading-way-states-high-tech-32267
+  note: Used in place of the Kentucky Cabinet for Economic Development EV page, which redirected to an error page
+- id: siteselection-ky
+  name: 'Site Selection, Energy storage and EV: Kentucky''s plugged in'
+  url: https://siteselection.com/energy-storage-ev-kentuckys-plugged-in/
+- id: livability-tn
+  name: Livability, Electric vehicles charging forward in Tennessee
+  url: https://livability.com/tn/education-careers-opportunity/electric-vehicles-charging-forward-in-tennessee/
+  note: Tier-1 suppliers listed without products were skipped
+- id: epb-ev
+  name: EPB press release, battery manufacturers, recyclers and entrepreneurs showcase EV supply chain solutions
+    (Chattanooga)
+  url: https://epb.com/newsroom/press-releases/battery-manufacturers-recyclers-and-entrepreneurs-showcase-electric-vehicle-supply-chain-solutions/
+- id: freedm-members
+  name: NC State FREEDM Systems Center industry partners
+  url: https://www.freedm.ncsu.edu/industry/
+  note: Logo list only; no startups page found
+- id: madeinalabama-battery
+  name: 'Made in Alabama, Powering the future: Alabama charges ahead in the South''s growing battery belt'
+  url: https://www.madeinalabama.com/2025/04/powering-the-future-alabama-charges-ahead-in-the-souths-growing-battery-belt/
+- id: sace-onepagers
+  name: Atlas Public Policy / SACE Electric Transportation Indicators one-pagers (AL, TN, SC), through Dec 2024
+  url: https://atlaspolicy.com/wp-content/uploads/2025/04/SACE-One-Pager-Alabama-2024-EOY.pdf
+  note: Mostly aggregate figures; named only Urbix (AL) and AESC (SC). KY one-pager 404.
+- id: gt-sei
+  name: Georgia Tech Strategic Energy Institute, Energy Ecosystem page
+  url: https://energy.gatech.edu/node/39
+- id: cox-cleantech
+  name: Cox Cleantech Accelerator (Georgia Cleantech Innovation Hub) cohort announcements
+  url: https://gener8tor.com/news/atlantas-new-cox-cleantech-accelerator-welcomes-five-trailblazing-startups-on-a-mission-to-help-build-a-world-class-innovation-ecosystem
+  note: Cohort 1 (gener8tor) and 2026 cohort (metroatlantaceo.com); most were software or out of region
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: cev
+  name: Clean Energy Ventures portfolio
+  url: https://cleanenergyventures.com/portfolio
+  note: 32 current plus 16 legacy/pre-fund companies.
+- id: cri
+  name: Chain Reaction Innovations (Argonne) cohorts 2017-2026
+  url: https://chainreaction.anl.gov/innovators/
+  note: 10 cohort pages, ~50 companies; quantum, bio and medical companies skipped.
+- id: eip
+  name: Energy Impact Partners portfolio
+  url: https://www.energyimpactpartners.com/_portfolio/
+  note: 151 cards (current and exits); cards give description and site URL but no names, so names come from descriptions
+    and domains.
+- id: engine
+  name: Engine Ventures companies
+  url: https://engineventures.com/companies
+  note: 61 companies.
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: halliburton-labs
+  name: Halliburton Labs portfolio
+  url: https://halliburtonlabs.com/companies
+  note: 49 companies with HQ city.
+- id: ic
+  name: Innovation Crossroads (Oak Ridge) cohorts 2017-2026 and alumni
+  url: https://innovationcrossroads.ornl.gov/people/?alumni=true
+  note: 58 innovator profiles read.
+- id: laci
+  name: LACI (Los Angeles Cleantech Incubator) portfolio
+  url: https://laincubator.org/portfolio/
+  note: 140 startups from the page's own JSON endpoint (/wp-json/endpoints/startups/); no HQ field.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: own-careers
+  name: Companies' own careers pages, read directly
+  url: null
+  note: About 223 sites checked with a remote-wording scan (plus a few by hand); 12 refused (401/403/429), 1 timed
+    out; quote in each company's note
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: slc
+  name: Spring Lane Capital investments
+  url: https://www.springlanecapital.com/investments
+  note: 13 companies listed by name only.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: west-gate
+  name: NLR (formerly NREL) West Gate lab-embedded entrepreneurship, cohorts 1-5
+  url: https://www.nlr.gov/west-gate/alumni
+  note: Alumni page names companies; current-innovator company names and HQs reused from this session's Colorado
+    harvest of the innovator detail pages (https://www.nlr.gov/west-gate/innovators).
+companies:
+- name: 247Solar
+  website: https://247solar.com
+  hq: Great Falls, VA
+  sources:
+  - greentown
+  registry_id: 247solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: 4Earth
+  website: null
+  hq: Atlanta, GA
+  sources:
+  - cox-cleantech
+  registry_id: 4earth
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: 6K Energy
+  website: https://www.6kinc.com
+  hq: North Andover, MA
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  - livability-tn
+  registry_id: 6k
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: 8 Rivers
+  website: https://8rivers.com
+  hq: Durham, NC
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops and licenses low-carbon technologies and develops projects; no product it makes.
+  ats:
+    type: bamboohr
+    token: 8rivers
+  open_roles: 1
+- name: ABB
+  website: https://new.abb.com
+  hq: Cary, NC
+  sources:
+  - freedm-members
+  - e2-sc
+  - cp-sc-2024
+  - cp-va-2025
+  - arpa-e
+  registry_id: abb
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Accelerate Wind
+  website: https://acceleratewind.com
+  hq: Birmingham, AL
+  sources:
+  - third-derivative
+  - cri
+  registry_id: accelerate-wind
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Actinic
+  website: https://actinic3d.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its domain no longer resolves; status not established.
+  ats: null
+  open_roles: null
+- name: Adion Solar
+  website: null
+  hq: Madison, GA
+  sources:
+  - cp-ga-2025
+  registry_id: null
+  decision: null
+  reason: May be a distributor or installer rather than a maker; not established.
+  ats: null
+  open_roles: null
+- name: Adroit Materials
+  website: null
+  hq: Raleigh, NC
+  sources:
+  - arpa-e
+  registry_id: adroit-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Advanced Nano Projects
+  website: null
+  hq: South Korea
+  sources:
+  - e2-ky
+  registry_id: null
+  decision: null
+  reason: Sources name it Advanced Nano Products; identity not established.
+  ats: null
+  open_roles: null
+- name: Agriwater
+  website: https://agriwater.tech
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its domain now redirects to an unrelated site; status not established.
+  ats: null
+  open_roles: null
+- name: Albemarle
+  website: https://www.albemarle.com
+  hq: Charlotte, NC
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  registry_id: albemarle
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: workday
+    token: albemarle.wd5.myworkdayjobs.com/External
+  open_roles: null
+- name: Algaeo
+  website: https://algaeo.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Software that produces fertilizer blend recommendations from soil, crop and field
+    data; co-ops do the physical blending.'
+  ats: null
+  open_roles: null
+- name: ALGENOVAS
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: algenovas
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: alpitronic Americas
+  website: https://www.alpitronic.it
+  hq: Charlotte, NC
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  registry_id: alpitronic-americas
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: AluminAiry
+  website: https://aluminairy.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  - ic
+  registry_id: aluminairy
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: American Nanotechnologies
+  website: https://americannano.tech
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its site returns 404; status not established.
+  ats: null
+  open_roles: null
+- name: Anovion Technologies
+  website: https://www.anoviontech.com
+  hq: Bainbridge, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - c2es-se
+  registry_id: anovion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Applied 2D Materials
+  website: https://applied2d.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: applied-2d-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: APT Technologies
+  website: https://apt-tech.org
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: apt-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aquafer Technologies
+  website: https://aquafertech.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  registry_id: aquafer-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: AquaQuant Laboratories
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: aquaquant-laboratories
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Arcadium Lithium (formerly Livent)
+  website: https://arcadiumlithium.com
+  hq: Bessemer City, NC
+  sources:
+  - cp-nc-2025
+  registry_id: arcadium-lithium-formerly-livent
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Aries Clean Technologies
+  website: https://ariescleantech.com
+  hq: Franklin, TN
+  sources:
+  - slc
+  registry_id: aries-clean-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ascend Elements
+  website: https://ascendelements.com
+  hq: Westborough, MA
+  sources:
+  - tid-ky
+  - e2-ky
+  registry_id: ascend-elements
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Aspen Aerogels
+  website: https://aerogel.com
+  hq: Northborough, MA
+  sources:
+  - cp-ga-2025
+  registry_id: aspen-aerogels
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Ateios Systems
+  website: https://ateios.com
+  hq: San Diego, CA
+  sources:
+  - ornl-ic
+  registry_id: ateios-systems
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Atom Power
+  website: https://www.atompower.com
+  hq: Huntersville, NC
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  registry_id: atom-power
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Biomason
+  website: https://biomason.com
+  hq: Research Triangle Park / Durham, NC
+  sources:
+  - arpa-e
+  registry_id: biomason
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: adp
+    token: 26dd041f-55ce-4c2f-99d4-134d3bbf4a21
+  open_roles: null
+- name: Blue Bird Corporation
+  website: https://www.blue-bird.com
+  hq: Fort Valley, GA
+  sources:
+  - cp-ga-2025
+  registry_id: blue-bird-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: BlueOval SK
+  website: https://www.blueovalsk.com
+  hq: Glendale, KY
+  sources:
+  - tid-ky
+  - siteselection-ky
+  - c2es-se
+  registry_id: null
+  decision: closed
+  reason: 'Closed: JV of Ford and SK On JV dissolved over 1,000 employees'
+  ats: null
+  open_roles: null
+- name: BMW Manufacturing
+  website: https://www.bmwusfactory.com
+  hq: Greer, SC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  registry_id: bmw-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Boviet Solar
+  website: https://www.bovietsolarusa.com
+  hq: Greenville, NC
+  sources:
+  - cp-nc-2025
+  registry_id: boviet-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: C-Crete Technologies
+  website: https://www.c-crete.com/
+  hq: San Leandro, CA
+  sources:
+  - arpa-e
+  registry_id: c-crete-technologies
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Canadian Solar e-STORAGE
+  website: https://www.csestorage.com
+  hq: Shelbyville, KY
+  sources:
+  - siteselection-ky
+  registry_id: canadian-solar-e-storage
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: workday
+    token: canadiansolar.wd5.myworkdayjobs.com/eStorage
+  open_roles: null
+- name: Captis Aire
+  website: https://captisaire.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: captis-aire
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Celgard
+  website: https://www.celgard.com
+  hq: Charlotte, NC
+  sources:
+  - cp-nc-2025
+  registry_id: celgard
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: workday
+    token: akamerica.wd501.myworkdayjobs.com/aka
+  open_roles: null
+- name: Cirba Solutions
+  website: https://www.cirbasolutions.com
+  hq: Charlotte, NC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-sc
+  registry_id: cirba-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: adp
+    token: d68261e8-6b94-47f8-b413-9db804c98a4d
+  open_roles: null
+- name: Circular Biosciences
+  website: https://circularbiosciences.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  registry_id: circular-biosciences
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Coulomb Technology
+  website: https://coulombtechnology.com
+  hq: Meridian, ID
+  sources:
+  - ornl-ic
+  registry_id: coulomb-technology
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Cox Automotive (EV Battery Solutions)
+  website: https://www.coxautoinc.com
+  hq: Atlanta, GA
+  sources:
+  - cp-ga-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: EV battery lifecycle services: diagnostics, repair, refurbishment, remanufacturing,
+    recycling, storage and logistics (Atlanta-area facility in Conyers'
+  ats: null
+  open_roles: null
+- name: Daejin Advanced Manufacturing
+  website: null
+  hq: Cumberland City, TN
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  registry_id: daejin-advanced-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Dandelion Energy
+  website: https://dandelionenergy.com
+  hq: Arlington, VA
+  sources:
+  - bev
+  - greentown
+  - remotefirstjobs
+  registry_id: dandelion-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: dandelion
+  open_roles: null
+- name: DayLyte Batteries
+  website: https://daylytebatteries.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its site shows a 2021 copyright and nothing newer; status not established.
+  ats: null
+  open_roles: null
+- name: DEHN
+  website: https://www.dehn-usa.com
+  hq: Mooresville, NC
+  sources:
+  - cp-nc-2025
+  registry_id: dehn
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Delta Electronics Americas
+  website: https://www.deltaww.com
+  hq: Fremont, CA
+  sources:
+  - freedm-members
+  registry_id: delta-electronics-americas
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.deltaww.com/en-US/careers
+  open_roles: null
+- name: Delta Star
+  website: https://www.deltastar.com
+  hq: Lynchburg, VA
+  sources:
+  - cp-va-2025
+  registry_id: delta-star
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: DG Matrix
+  website: https://dgmatrix.com
+  hq: Morrisville, NC
+  sources:
+  - cev
+  - engine
+  - third-derivative
+  registry_id: dg-matrix
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: DiNeu Technologies
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: dineu-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Dongwha Electrolyte USA
+  website: null
+  hq: Clarksville, TN
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  - livability-tn
+  registry_id: dongwha-electrolyte-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: DooWon Climate Control America
+  website: null
+  hq: Metter, GA
+  sources:
+  - cp-ga-2025
+  registry_id: doowon-climate-control-america
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: e-VAC Magnetics (Vacuumschmelze)
+  website: https://vacuumschmelze.com
+  hq: Sumter, SC
+  sources:
+  - cp-sc-2024
+  registry_id: e-vac-magnetics-vacuumschmelze
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Effusio
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: effusio
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Electro-Active Technologies
+  website: https://www.electroactivetech.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  - greentown
+  - ic
+  registry_id: null
+  decision: null
+  reason: Its domain no longer resolves; status not established.
+  ats: null
+  open_roles: null
+- name: Electro-Mechanical
+  website: https://www.electro-mechanical.com
+  hq: Bristol, VA
+  sources:
+  - cp-va-2025
+  registry_id: electro-mechanical
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Elemental Composites
+  website: https://theelementalcomposites.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its site is a placeholder; status not established.
+  ats: null
+  open_roles: null
+- name: Emrgy
+  website: https://emrgy.com
+  hq: Atlanta, GA
+  sources:
+  - arpa-e
+  registry_id: emrgy
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Enchem America
+  website: https://www.enchem.net
+  hq: Brownsville, TN
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  registry_id: enchem-america
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Endeavor Composites
+  website: https://endeavorcomposites.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: endeavor-composites
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EnerVenue
+  website: https://enervenue.com
+  hq: Fremont, CA
+  sources:
+  - e2-ky
+  registry_id: enervenue
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.enervenue.com/careers
+  open_roles: null
+- name: Enexor BioEnergy
+  website: https://enexor.com
+  hq: Franklin, TN
+  sources:
+  - halliburton-labs
+  registry_id: enexor-bioenergy
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: workable
+    token: enexor
+  open_roles: 0
+- name: Enphase Energy
+  website: https://enphase.com
+  hq: Fremont, CA
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  registry_id: enphase
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Eonix
+  website: https://eonixenergy.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: eonix
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EPC Power
+  website: https://epcpower.com
+  hq: Poway, CA
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  registry_id: epc-power
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: FC Renew
+  website: https://fcrenew.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: fc-renew
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Fermata Energy
+  website: https://fermataenergy.com
+  hq: Charlottesville, VA
+  sources:
+  - remotefirstjobs
+  registry_id: null
+  decision: closed
+  reason: Its assets were bought by Nuvve in April 2025; fermataenergy.com now redirects to nuvve.com.
+  ats: null
+  open_roles: null
+- name: FlexGen
+  website: https://flexgen.com
+  hq: Durham, NC
+  sources:
+  - freedm-members
+  registry_id: flexgen
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: external-job-board
+  open_roles: null
+- name: Fluence Energy
+  website: https://fluenceenergy.com
+  hq: Arlington, VA
+  sources:
+  - own-careers
+  - remotefirstjobs
+  registry_id: fluence-energy
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: fluenceenergy.wd12/fluenceenergy-jobs
+  open_roles: null
+- name: Flux Hybrids
+  website: null
+  hq: Not stated on own site
+  sources:
+  - cox-cleantech
+  registry_id: null
+  decision: null
+  reason: Its site may be stale and gives no location; status not established.
+  ats: null
+  open_roles: null
+- name: Framatome
+  website: https://www.framatome.com
+  hq: Lynchburg, VA
+  sources:
+  - cp-va-2025
+  registry_id: framatome
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: FREYR Battery (now T1 Energy)
+  website: https://t1energy.com
+  hq: Austin, TX
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  registry_id: t1-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: t1energy
+  open_roles: null
+- name: Fujihatsu Tech America / Toyota Tsusho America (battery components)
+  website: https://www.taiamerica.com
+  hq: Liberty, NC
+  sources:
+  - cp-nc-2025
+  registry_id: fujihatsu-tech-america-toyota-tsusho-america-battery-components
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: workday
+    token: kaishaservice.wd1.myworkdayjobs.com/ToyotaTsushoAmerica
+  open_roles: null
+- name: Green Metals (Toyota Tsusho)
+  website: null
+  hq: Liberty, NC
+  sources:
+  - cp-nc-2025
+  registry_id: green-metals-toyota-tsusho
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Green New Energy Materials
+  website: null
+  hq: Denver, NC
+  sources:
+  - cp-nc-2025
+  registry_id: null
+  decision: null
+  reason: Parent and identity not established.
+  ats: null
+  open_roles: null
+- name: Hanon Systems
+  website: https://www.hanonsystems.com
+  hq: Statesboro, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - e2-tn
+  - cp-tn-2024
+  registry_id: hanon-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hanwha Advanced Materials Georgia
+  website: https://www.hanwhaadvancedmaterials.com
+  hq: Cartersville / White, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  registry_id: hanwha-advanced-materials-georgia
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: HexaTech
+  website: https://hexatechinc.com
+  hq: Morrisville, NC
+  sources:
+  - arpa-e
+  registry_id: hexatech
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Hitachi Astemo Americas
+  website: https://www.hitachiastemo.com
+  hq: Berea, KY
+  sources:
+  - e2-ky
+  registry_id: hitachi-astemo-americas
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: HL-GA Battery Company (Hyundai and LG Energy Solution JV)
+  website: https://www.lgensol.com
+  hq: Ellabell, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - c2es-se
+  registry_id: hl-ga-battery-company-hyundai-and-lg-energy-solution-jv
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Holocene Climate Corporation
+  website: https://theholocene.co
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  - ic
+  registry_id: holocene-climate-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: HolosGen
+  website: https://holosgen.com
+  hq: Manassas Park, VA
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Its site's newest items date from about 2017; status not established.
+  ats: null
+  open_roles: null
+- name: HyperJet Fusion
+  website: null
+  hq: Chantilly, VA
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: No activity found after 2021; status not established.
+  ats: null
+  open_roles: null
+- name: Hyundai Motor Group Metaplant America
+  website: https://www.hmgma.com
+  hq: Ellabell, GA
+  sources:
+  - cp-ga-2025
+  - c2es-se
+  registry_id: hyundai-motor-group-metaplant-america
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Hyundai Motor Manufacturing Alabama
+  website: https://www.hmmausa.com
+  hq: Montgomery, AL
+  sources:
+  - madeinalabama-battery
+  registry_id: hyundai-motor-manufacturing-alabama
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: IONNA
+  website: https://www.ionna.com
+  hq: Durham, NC
+  sources:
+  - cp-nc-2025
+  registry_id: ionna
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Kempower
+  website: https://kempower.com
+  hq: Durham, NC
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  - freedm-members
+  registry_id: kempower
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Kia Georgia
+  website: https://www.kiageorgia.com
+  hq: West Point, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - c2es-se
+  registry_id: kia-georgia
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Kunin Technologies
+  website: https://kunin.com
+  hq: Chattanooga, TN
+  sources:
+  - ornl-ic
+  registry_id: kunin-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: kunin
+  open_roles: 27
+- name: Kyma Technologies
+  website: https://kymatech.com
+  hq: Raleigh, NC
+  sources:
+  - arpa-e
+  registry_id: kyma-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: LioChem e-Materials (Toyo Ink)
+  website: https://www.toyoinkgroup.com
+  hq: Franklin / Simpson County, KY
+  sources:
+  - tid-ky
+  - e2-ky
+  registry_id: liochem-e-materials-toyo-ink
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: LOTTE Aluminum Materials USA
+  website: null
+  hq: Elizabethtown, KY
+  sources:
+  - tid-ky
+  registry_id: lotte-aluminum-materials-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: LS GreenLink
+  website: https://www.lsgreenlink.com
+  hq: Chesapeake, VA
+  sources:
+  - cp-va-2025
+  registry_id: ls-greenlink
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Lumios Materials
+  website: https://lumiosmaterials.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: lumios-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Mack Trucks
+  website: https://www.macktrucks.com
+  hq: Salem, VA
+  sources:
+  - cp-va-2025
+  registry_id: mack-trucks
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: MantaPoole Technologies
+  website: https://mantapooletechnologies.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: mantapoole-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mateis Solar
+  website: null
+  hq: Greenville County, SC
+  sources:
+  - cp-sc-2024
+  registry_id: null
+  decision: null
+  reason: Known only from a reshoring database entry; identity not established.
+  ats: null
+  open_roles: null
+- name: Microporous
+  website: https://microporous.com
+  hq: Piney Flats, TN
+  sources:
+  - cp-va-2025
+  registry_id: null
+  decision: null
+  reason: Its domain shows a 'domain for sale' page; status not established.
+  ats: null
+  open_roles: null
+- name: Mojave Energy Systems
+  website: https://mojavehvac.com
+  hq: Sunnyvale, CA (manufacturing roles in Anderson, SC)
+  sources:
+  - cp-sc-2024
+  registry_id: mojave-energy-systems
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: mojave-energy-systems
+  open_roles: null
+- name: MSS Steel Tubes USA
+  website: null
+  hq: Memphis, TN
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  registry_id: mss-steel-tubes-usa
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Natron Energy
+  website: https://natron.energy
+  hq: Santa Clara, CA
+  sources:
+  - cp-nc-2025
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed HQ outside region NC gigafactory abandoned'
+  ats: null
+  open_roles: null
+- name: Neo Industries
+  website: null
+  hq: Beaver Dam, KY
+  sources:
+  - e2-ky
+  registry_id: null
+  decision: not-in-scope
+  reason: Surface-treatment service for steel-mill work rolls.
+  ats:
+    type: rippling
+    token: neo
+  open_roles: 1
+- name: Nextracker
+  website: https://www.nextracker.com
+  hq: Fremont, CA
+  sources:
+  - e2-tn
+  registry_id: nextracker
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Niron Magnetics
+  website: https://nironmagnetics.com
+  hq: Minneapolis, MN
+  sources:
+  - madeinalabama-battery
+  registry_id: niron-magnetics
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: niron
+  open_roles: null
+- name: Nissan
+  website: https://www.nissanusa.com
+  hq: Franklin, TN
+  sources:
+  - livability-tn
+  - e2-tn
+  - c2es-se
+  registry_id: nissan
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: NOVONIX
+  website: https://www.novonixgroup.com
+  hq: Chattanooga, TN
+  sources:
+  - cp-tn-2024
+  - epb-ev
+  - c2es-se
+  registry_id: novonix
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Nucor
+  website: https://nucor.com
+  hq: Charlotte, NC
+  sources:
+  - e2-al
+  registry_id: nucor
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Olokun Minerals
+  website: https://olokunminerals.com
+  hq: Richmond, VA
+  sources:
+  - west-gate
+  - laci
+  registry_id: olokun-minerals
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: OMCO Solar
+  website: https://omcosolar.com
+  hq: Alabama
+  sources:
+  - e2-al
+  registry_id: omco-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats:
+    type: teamtailor
+    token: na
+  open_roles: null
+- name: OneH2
+  website: https://www.oneh2.com
+  hq: Longview, NC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  registry_id: oneh2
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Overview Energy
+  website: https://overviewenergy.com
+  hq: Northern Virginia
+  sources:
+  - lc
+  - engine
+  registry_id: overview-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: overviewenergy
+  open_roles: 5
+- name: Perseus Materials
+  website: https://perseusmaterials.com
+  hq: Mountain View, CA
+  sources:
+  - ornl-ic
+  registry_id: perseus-materials
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://perseusmaterials.com/index.html%3Fp=33.html
+  open_roles: null
+- name: PixelEXX Systems
+  website: https://pixelexx.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: pixelexx-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pomega Energy Storage Technologies (Kontrolmatik)
+  website: https://www.pomega.com
+  hq: Colleton County / Walterboro, SC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  registry_id: pomega-energy-storage-technologies-kontrolmatik
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: PowerBox
+  website: null
+  hq: Alabama
+  sources:
+  - madeinalabama-battery
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: PowerSecure
+  website: https://powersecure.com
+  hq: Wake Forest, NC
+  sources:
+  - freedm-members
+  registry_id: powersecure
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/POW1009POWS/JobBoard/42398959-f1c7-48da-a3e2-94e525e29808
+  open_roles: null
+- name: Purist
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: purist
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Qcells (Hanwha Qcells)
+  website: https://us.qcells.com
+  hq: Seoul, South Korea
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  registry_id: qcells
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Quantum Power
+  website: null
+  hq: Mooresville, NC
+  sources:
+  - cp-nc-2025
+  registry_id: quantum-power
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: quantum
+  open_roles: 22
+- name: Re-Du
+  website: https://reduplastic.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  registry_id: re-du
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Redwood Materials
+  website: https://www.redwoodmaterials.com
+  hq: Carson City, NV
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  registry_id: redwood-materials
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: redwoodmaterials
+  open_roles: null
+- name: Rivian
+  website: https://rivian.com
+  hq: Irvine, CA
+  sources:
+  - cp-ga-2025
+  - c2es-se
+  - e2-ky
+  registry_id: rivian
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Schneider Electric
+  website: https://www.se.com
+  hq: Rueil-Malmaison, France
+  sources:
+  - freedm-members
+  registry_id: schneider-electric
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Scout Motors
+  website: https://www.scoutmotors.com
+  hq: Charlotte, NC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  - remotefirstjobs
+  registry_id: scout-motors
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: scoutmotors
+  open_roles: null
+- name: Shift Thermal
+  website: https://shiftthermal.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: shift-thermal
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Shinsung Petrochemical
+  website: null
+  hq: Lyons, GA
+  sources:
+  - cp-ga-2025
+  registry_id: shinsung-petrochemical
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Shoals Technologies Group
+  website: https://www.shoals.com
+  hq: Portland, TN
+  sources:
+  - cp-tn-2024
+  registry_id: shoals-technologies-group
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: paycom
+    token: BBC98E01F1F27C80A5FDE6ABEECA4271
+  open_roles: null
+- name: Siemens Energy
+  website: https://www.siemens.com/
+  hq: Germany
+  sources:
+  - cp-nc-2025
+  registry_id: siemens
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Silfab Solar
+  website: https://silfabsolar.com
+  hq: Fort Mill, SC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  registry_id: silfab-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: smartrecruiters
+    token: SilfabSolar
+  open_roles: 39
+- name: SK On / SK Battery America
+  website: https://www.skbatteryamerica.com
+  hq: Commerce, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - c2es-se
+  - siteselection-ky
+  - tid-ky
+  registry_id: sk-on-sk-battery-america
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: SkyNano
+  website: https://www.skynanotechnologies.com
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  - ic
+  - arpa-e
+  registry_id: skynano
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Smart Wires
+  website: https://www.smartwires.com
+  hq: Durham, NC (Research Triangle Park)
+  sources:
+  - arpa-e
+  - own-careers
+  registry_id: smart-wires
+  decision: registry
+  reason: null
+  ats:
+    type: paylocity
+    token: 8f488a31-5cd0-45aa-8731-aee8fbf85852
+  open_roles: null
+- name: Solar4America / SEM Wafertech
+  website: https://solar4america.com
+  hq: Sumter, SC
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  registry_id: null
+  decision: closed
+  reason: 'Closed: subsidiary of SPI Energy Sumter, SC plant never built possibly closed'
+  ats: null
+  open_roles: null
+- name: SOLARCYCLE
+  website: https://www.solarcycle.us
+  hq: Cedartown, GA
+  sources:
+  - cp-ga-2025
+  registry_id: solarcycle
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Solarix
+  website: null
+  hq: Forest, VA
+  sources:
+  - cp-va-2025
+  registry_id: solarix
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Spire Power Solutions
+  website: https://spirepowersolutions.com
+  hq: Dyersburg, TN
+  sources:
+  - eip
+  registry_id: null
+  decision: closed
+  reason: Its domain now redirects to ERMCO; it appears to have been absorbed as an ERMCO unit.
+  ats:
+    type: icims
+    token: ermcoeci
+  open_roles: null
+- name: Standard Nuclear
+  website: https://standardnuclear.com
+  hq: Oak Ridge, TN
+  sources:
+  - arpa-e
+  registry_id: standard-nuclear
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: standardnuclearinc
+  open_roles: null
+- name: Stone Mountain Technologies
+  website: https://anesicomfort.com
+  hq: Johnson City, TN area
+  sources:
+  - eip
+  registry_id: stone-mountain-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Stryten Energy
+  website: https://www.stryten.com
+  hq: Alpharetta, GA
+  sources:
+  - gt-sei
+  registry_id: stryten-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SungEel HiTech (SungEel Recycling Park Georgia)
+  website: https://www.sungeel.com
+  hq: Toccoa, GA
+  sources:
+  - cp-ga-2025
+  registry_id: sungeel-hitech-sungeel-recycling-park-georgia
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Suniva
+  website: https://www.suniva.com
+  hq: Norcross, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  registry_id: suniva
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Sunlight Batteries USA
+  website: https://www.sunlightgroup.com
+  hq: Not confirmed
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  registry_id: null
+  decision: null
+  reason: The domain found belongs to a Singapore switchgear company; identity not established.
+  ats: null
+  open_roles: null
+- name: SunMaxTech Solar
+  website: null
+  hq: Not found
+  sources:
+  - cp-ga-2025
+  registry_id: null
+  decision: null
+  reason: No site found; identity and plant status not established.
+  ats: null
+  open_roles: null
+- name: Sustaera
+  website: https://sustaera.com
+  hq: Durham, NC
+  sources:
+  - bev
+  - third-derivative
+  registry_id: sustaera
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Susteon
+  website: https://susteon.com
+  hq: Cary, NC
+  sources:
+  - arpa-e
+  registry_id: susteon
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: susteon
+  open_roles: 1
+- name: Tai-Yang Research Company
+  website: null
+  hq: Knoxville, TN
+  sources:
+  - arpa-e
+  registry_id: tai-yang-research-company
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: TCPoly
+  website: https://www.tcpoly.com
+  hq: Atlanta, GA
+  sources:
+  - ornl-ic
+  registry_id: tcpoly
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: TerrePower
+  website: https://www.terrepower.com
+  hq: Sparta, TN
+  sources:
+  - cp-tn-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Tetramer Technologies
+  website: null
+  hq: Pendleton, SC
+  sources:
+  - arpa-e
+  registry_id: tetramer-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: ThermaMatrix
+  website: null
+  hq: Knoxville, TN
+  sources:
+  - ornl-ic
+  registry_id: thermamatrix
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TMC Transformers
+  website: https://www.tmctransformers.com
+  hq: Waynesboro, GA
+  sources:
+  - cp-ga-2025
+  registry_id: tmc-transformers
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Type One Energy
+  website: https://typeoneenergy.com
+  hq: Knoxville, TN
+  sources:
+  - bev
+  - greentown
+  - arpa-e
+  - own-careers
+  registry_id: type-one-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Unbound Water Technologies
+  website: https://unboundwatertech.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: null
+  decision: null
+  reason: Its site returns 404; status not established.
+  ats: null
+  open_roles: null
+- name: Unitech North America
+  website: null
+  hq: Morrison, TN
+  sources:
+  - cp-tn-2024
+  registry_id: unitech-north-america
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Urbix
+  website: https://www.urbix.com
+  hq: Alabama
+  sources:
+  - sace-onepagers
+  registry_id: null
+  decision: null
+  reason: Its domain now shows unrelated real-estate text; status not established.
+  ats: null
+  open_roles: null
+- name: Vantem
+  website: https://vantem.com
+  hq: Durham, NC
+  sources:
+  - bev
+  registry_id: vantem
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Vitriform3D
+  website: https://vitriform3d.com
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: vitriform3d
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Volkswagen Chattanooga
+  website: https://www.vw.com
+  hq: Chattanooga, TN
+  sources:
+  - livability-tn
+  - c2es-se
+  - epb-ev
+  registry_id: volkswagen-chattanooga
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Westwater Resources
+  website: https://www.westwaterresources.net
+  hq: Kellyton / Coosa County, AL
+  sources:
+  - c2es-se
+  registry_id: westwater-resources
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Witching Hour
+  website: https://witchinghour.io
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  registry_id: witching-hour
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wolfspeed
+  website: https://www.wolfspeed.com
+  hq: Research Triangle Park / Durham, NC
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  - arpa-e
+  registry_id: wolfspeed
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: enabling, startup out.'
+  ats:
+    type: workday
+    token: cree.wd108.myworkdayjobs.com/EXT
+  open_roles: null
+- name: Woory Industrial
+  website: null
+  hq: Dublin, GA
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  registry_id: woory-industrial
+  decision: registry
+  reason: 'Proposed in proposals-02-southeast.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Yellowstone Energy
+  website: null
+  hq: Oak Ridge, TN
+  sources:
+  - ornl-ic
+  - ic
+  - arpa-e
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed'
+  ats: null
+  open_roles: null
+excluded:
+- name: AESC (Envision AESC)
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  - tid-ky
+  - siteselection-ky
+  - sace-onepagers
+  reason: Headquartered outside the US (Yokohama, Japan); no main site in the region found.
+- name: Archer Aviation
+  sources:
+  - cp-ga-2025
+  reason: Headquartered in San Jose, CA, outside the region; no main site in the region found.
+- name: Autel Energy
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  reason: Headquartered outside the US (Not stated on own site (Autel group is i); no main site in the region found.
+- name: Baltimore Aircoil Company
+  sources:
+  - cp-tn-2024
+  reason: Headquartered in Jessup, MD; Dayton, TN is one plant.
+- name: Bard Manufacturing
+  sources:
+  - cp-ga-2025
+  reason: Headquartered in Bryan, OH, outside the region; no main site in the region found.
+- name: Becq
+  sources:
+  - ornl-ic
+  reason: Same company as Neutroelectric (BECQ), listed in New York and New Jersey (Camden, NJ); Oak Ridge is its
+    Innovation Crossroads placement.
+- name: BorgWarner
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  reason: Headquartered in Auburn Hills, MI, outside the region; no main site in the region found.
+- name: Bosch
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  reason: Headquartered outside the US (Gerlingen, Germany); no main site in the region found.
+- name: Clarios Circular Solutions
+  sources:
+  - c2es-sc
+  reason: Headquartered in Glendale, WI, outside the region; no main site in the region found.
+- name: Cummins Meritor
+  sources:
+  - cp-nc-2025
+  reason: Headquartered in Troy, MI, outside the region; no main site in the region found.
+- name: Dai Nippon Printing (DNP)
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  reason: 'Headquartered outside the US (Shinjuku, Tokyo, Japan; site: Linwood, N); no main site in the region found.'
+- name: EarthEn
+  sources:
+  - ornl-ic
+  reason: Headquartered in San Francisco, CA, outside the region; no main site in the region found.
+- name: Elevra Lithium (formerly Piedmont Lithium)
+  sources:
+  - c2es-se
+  - cp-tn-2024
+  reason: Headquartered outside the US (Brisbane, Australia); no main site in the region found.
+- name: EnerSys
+  sources:
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  reason: Headquartered in Reading, PA, outside the region; no main site in the region found.
+- name: Epsilon Advanced Materials
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  reason: 'Headquartered outside the US (Mumbai, India; site: Brunswick County (M); no main site in the region found.'
+- name: Fenecon
+  sources:
+  - c2es-se
+  reason: Headquartered outside the US (Germany); no main site in the region found.
+- name: Fermi Energy
+  sources:
+  - activate
+  - third-derivative
+  reason: Headquartered in Binghamton, NY; Blacksburg, VA is its R&D site.
+- name: First Solar
+  sources:
+  - e2-al
+  reason: Headquartered in Phoenix, AZ, outside the region; no main site in the region found.
+- name: Ford Motor Company (BlueOval City)
+  sources:
+  - livability-tn
+  - c2es-se
+  - siteselection-ky
+  - tid-ky
+  reason: Headquartered in Dearborn, MI, outside the region; no main site in the region found.
+- name: Forge Nano / Forge Battery
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  reason: Headquartered in Thornton, CO, outside the region; no main site in the region found.
+- name: General Motors (Spring Hill)
+  sources:
+  - livability-tn
+  - c2es-se
+  reason: Headquartered in Detroit, MI, outside the region; no main site in the region found.
+- name: Hitachi Energy
+  sources:
+  - e2-va
+  - cp-va-2025
+  reason: Headquartered outside the US (Zurich, Switzerland (not verified this p); no main site in the region found.
+- name: Hounen Solar
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  reason: Headquartered outside the US (Zhejiang, China); no main site in the region found.
+- name: Hyundai Mobis
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  - e2-al
+  reason: Headquartered in Seoul; its Georgia EV-parts plants belong to US subsidiaries.
+- name: Itron
+  sources:
+  - cp-sc-2024
+  reason: Headquartered in Liberty Lake, WA, outside the region; no main site in the region found.
+- name: John Deere Electric Powertrain
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  reason: Headquartered in Moline, IL, outside the region; no main site in the region found.
+- name: Kanadevia Inova (Hitachi Zosen Inova USA)
+  sources:
+  - cp-tn-2024
+  reason: Headquartered outside the US (Zurich, Switzerland (group); North Ameri); no main site in the region found.
+- name: LG Chem
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  - livability-tn
+  - c2es-se
+  reason: Headquartered in Seoul; its Clarksville, TN cathode plant is one site.
+- name: Lux Semiconductors
+  sources:
+  - ornl-ic
+  reason: Headquartered in Albany, NY, outside the region; no main site in the region found.
+- name: Magna
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  reason: 'Headquartered outside the US (Aurora, Ontario, Canada; site: Stanton, ); no main site in the region found.'
+- name: Mercedes-Benz
+  sources:
+  - c2es-se
+  - madeinalabama-battery
+  reason: Headquartered outside the US (Stuttgart, Germany); no main site in the region found.
+- name: MetOx International
+  sources:
+  - cp-nc-2025
+  reason: Headquartered in Houston, TX, outside the region; no main site in the region found.
+- name: Microvast
+  sources:
+  - cp-tn-2024
+  reason: Headquartered in Stafford, TX, outside the region; no main site in the region found.
+- name: Oshkosh Defense
+  sources:
+  - c2es-se
+  reason: Headquartered in Oshkosh, WI, outside the region; no main site in the region found.
+- name: Pallidus
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  reason: Its site gives Albany, NY as headquarters.
+- name: Phenogy
+  sources:
+  - c2es-se
+  reason: 'Headquartered outside the US (Switzerland (US HQ: Columbia, SC)); no main site in the region found.'
+- name: Princeton NuEnergy
+  sources:
+  - c2es-sc
+  reason: Headquartered in South Brunswick, NJ, outside the region; no main site in the region found.
+- name: Rayzon Solar
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  reason: Headquartered outside the US (Surat, Gujarat, India (not stated on own); no main site in the region found.
+- name: RBW Sports and Classics
+  sources:
+  - cp-va-2025
+  reason: Headquartered outside the US (United Kingdom (parent RBW EV Cars); sit); no main site in the region found.
+- name: Ritz Instrument Transformers
+  sources:
+  - cp-ga-2025
+  reason: 'Headquartered outside the US (Hamburg, Germany; sites: Waynesboro, GA ); no main site in the region found.'
+- name: Syensqo
+  sources:
+  - cp-ga-2025
+  reason: Headquartered in Brussels; its Augusta, GA plant is one site.
+- name: ThermoVerse
+  sources:
+  - ornl-ic
+  reason: Headquartered in Ann Arbor, MI, outside the region; no main site in the region found.
+- name: Topsoe
+  sources:
+  - cp-va-2025
+  reason: 'Headquartered outside the US (Kgs. Lyngby, Denmark; site: Chesterfield); no main site in the region found.'
+- name: Toyota
+  sources:
+  - e2-nc
+  - cp-nc-2025
+  - c2es-se
+  - tid-ky
+  - siteselection-ky
+  reason: 'Headquartered outside the US (Toyota City, Aichi, Japan; sites: Libert); no main site in the region found.'
+- name: Toyota Industries Electric Systems North America (TIESNA)
+  sources:
+  - e2-ga
+  - cp-ga-2025
+  reason: Headquartered outside the US (Kariya, Aichi, Japan (Toyota Industries)); no main site in the region found.
+- name: Tritium
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  - livability-tn
+  - epb-ev
+  reason: Headquartered outside the US (Brisbane, Australia); no main site in the region found.
+- name: Turntide Technologies
+  sources:
+  - bev
+  reason: Headquartered in Sunnyvale, CA.
+- name: Ultium Cells
+  sources:
+  - e2-tn
+  - cp-tn-2024
+  - livability-tn
+  - c2es-se
+  reason: Headquartered in Warren, OH (listed in the Midwest); Spring Hill, TN is one of its plants.
+- name: Volvo Cars
+  sources:
+  - cp-sc-2024
+  - c2es-se
+  - c2es-sc
+  reason: Headquartered outside the US (Gothenburg, Sweden); no main site in the region found.
+- name: Windrose Technology
+  sources:
+  - cp-ga-2025
+  reason: Headquartered in Antwerp, Belgium; a Georgia plant is not confirmed (later reports point to Rincon, GA
+    assembly by a partner or to California).
+- name: ZF Group
+  sources:
+  - e2-sc
+  - cp-sc-2024
+  reason: Headquartered outside the US (Friedrichshafen, Germany); no main site in the region found.
