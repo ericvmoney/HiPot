@@ -288,6 +288,15 @@ def apply_probe(company: dict, entry: dict) -> None:
         note = "Job board found by the collector's careers-page probe (data/screening/careers-probe-*.yml)."
         if note not in (company.get("notes") or ""):
             company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+    # A careers page the probe could read (or nearly) and no job board: the
+    # careers-page reader (ats type 'other', the page as board) takes it.
+    elif (entry.get("outcome") in CAREERS_READABLE and company["ats"]["type"] == "unknown"
+          and company.get("careers_url")):
+        company["ats"] = {"type": "other", "board": company["careers_url"]}
+        company["read"] = "auto"
+
+
+CAREERS_READABLE = {"ok", "partial", "none-open", "unclear"}
 
 
 def apply_ruling(company: dict, ruling: dict) -> None:
