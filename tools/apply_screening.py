@@ -95,6 +95,24 @@ OWNER_RULINGS: dict[str, dict] = {
                     "reason": "Wave-powered ocean nodes whose stated product is on-board computing; computing is out."},
     "on-energy": {"q": "A2", "tier": "enabling", "sectors": ["energy-storage"], "basis": "provisional",
                   "reason": "Battery storage and power systems for data centers and industrial sites."},
+    # Data-center equipment, found by the Milestone 3 spot check (2026-11-25): both
+    # companies moved into data-center products after their records were written.
+    "amber-semiconductor": {"q": "A2", "tier": "out",
+                            "reason": "Power-management chips mounted on AI server boards for data centers; data-center equipment is out."},
+    "boston-materials": {"q": "A2", "tier": "out",
+                         "reason": "Thermal interface material for AI and data-center chips; data-center equipment is out."},
+    # Methane monitoring (owner, 2026-11-25: "Methane monitoring should be excluded").
+    # Leak detection and measurement sold to oil and gas is out; companies that
+    # capture, destroy or prevent methane (landfill gas, oxidizers, compressors,
+    # cattle feed) are not monitoring and stay in.
+    "earthview": {"q": "A9", "tier": "out",
+                  "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "longpath-technologies": {"q": "A9", "tier": "out",
+                              "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "project-canary": {"q": "A9", "tier": "out",
+                       "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
+    "trellisense": {"q": "A9", "tier": "out",
+                    "reason": "Methane leak detection and measurement, mainly for oil and gas; methane monitoring is out."},
     # A3: defense as a side business is fine; as the main business it is out.
     "antares": {"q": "A3", "tier": "out",
                 "reason": "Factory-built nuclear microreactors whose main customers so far are the US military; defense as the main business is out."},
@@ -259,11 +277,28 @@ def listing_year(reason: str | None) -> int | None:
     return int(found.group(1)) if found else None
 
 
+def replace_board(company: dict, fix: dict) -> None:
+    """A job board the scout checked, with its source: it replaces the registry's
+    board (boards move and retire). Reading is automatic when the collector has
+    a reader for that system, otherwise as the fix says."""
+    ats = fix.get("ats")
+    if not (isinstance(ats, dict) and ats.get("type") and fix.get("source")):
+        return
+    company["ats"] = {"type": ats["type"], "board": ats.get("board")}
+    company["read"] = "auto" if ats["type"] in READABLE and ats.get("board") else (fix.get("read") or "none")
+    if fix.get("careers_url") and not company.get("careers_url"):
+        company["careers_url"] = fix["careers_url"]
+
+
 def retier(company: dict, fix: dict) -> None:
     """A tier change the scout proposes under an owner decision. Allowed only
     when the fix names the decision (`ruling`), so the scout cannot re-tier a
     company on its own judgement."""
     climate = fix.get("climate") or {}
+    # A reason correction that leaves the tier alone needs no ruling.
+    if fix.get("kind") == "reason-only" and climate.get("reason"):
+        company["climate"]["reason"] = climate["reason"]
+        return
     if not (climate.get("tier") and fix.get("ruling")):
         return
     company["climate"].update(tier=climate["tier"], basis="agent")
@@ -288,6 +323,15 @@ def apply_probe(company: dict, entry: dict) -> None:
         note = "Job board found by the collector's careers-page probe (data/screening/careers-probe-*.yml)."
         if note not in (company.get("notes") or ""):
             company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+    # A careers page the probe could read (or nearly) and no job board: the
+    # careers-page reader (ats type 'other', the page as board) takes it.
+    elif (entry.get("outcome") in CAREERS_READABLE and company["ats"]["type"] == "unknown"
+          and company.get("careers_url")):
+        company["ats"] = {"type": "other", "board": company["careers_url"]}
+        company["read"] = "auto"
+
+
+CAREERS_READABLE = {"ok", "partial", "none-open", "unclear"}
 
 
 def apply_ruling(company: dict, ruling: dict) -> None:
@@ -323,7 +367,12 @@ def main() -> int:
     registry = load_yaml(REGISTRY)
     original = copy.deepcopy(registry)
     review = {entry["id"]: entry for entry in load_yaml(REVIEW)["companies"]}
-    proposals = [c for path in sorted(SCREENING.glob(PROPOSAL_FILES)) for c in load_yaml(path)["companies"]]
+    # A file whose top level says `status: draft` is work in progress: skipped.
+    proposal_files = [load_yaml(path) for path in sorted(SCREENING.glob(PROPOSAL_FILES))]
+    skipped = sum(1 for data in proposal_files if data.get("status") == "draft")
+    if skipped:
+        print(f"skipped {skipped} proposals file(s) marked status: draft")
+    proposals = [c for data in proposal_files if data.get("status") != "draft" for c in data["companies"]]
     fixes = [f for path in sorted(SCREENING.glob(FIX_FILES)) for f in load_yaml(path)["fixes"]]
     companies = {company["id"]: company for company in registry["companies"]}
     before = {cid: (summary(c), is_listed(c)) for cid, c in companies.items()}
@@ -349,6 +398,7 @@ def main() -> int:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
             retier(companies[fix["id"]], fix)
+            replace_board(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
     for entry in probes:

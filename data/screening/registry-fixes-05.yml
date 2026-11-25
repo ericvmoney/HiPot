@@ -1,0 +1,770 @@
+# Registry fixes 05: re-tiers under owner decision 13 (2026-11-24, PLAN.md section 9).
+#
+# Written by workstream A2. Each entry names the ruling, so tools/apply_screening.py may change the tier.
+#   - In: recycled and bio-based materials (sector 'recycling'), water treatment and measurement ('water').
+#   - Out: data-center equipment, cooling and computing; energy-sector companies that sell to data
+#     centers stay in.
+#   - New sectors also given to methane-monitoring companies ('methane'; their tier question is still open)
+#     and to biofuel and e-fuel makers ('biofuels'). Entries marked "Sector only" keep their tier.
+# 'was' is the registry's value before this file. 'flags' at the end lists companies the scout thinks sit
+# near the data-center line but leaves unchanged.
+#
+# One company proposed out on the materials ground stays out: Unspun makes apparel on its own weaving
+# machines, which is neither a recycled nor a bio-based material.
+
+fixes:
+- id: amp
+  name: AMP
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: AI-guided waste-sorting equipment and recycling plants.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: bolder-industries
+  name: Bolder Industries
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Recovered carbon black and oil from scrap tyres.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: estercycle
+  name: EsterCycle
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Chemical recycling of polyester plastics.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: glacier
+  name: Glacier
+  was:
+    tier: out
+    sectors:
+    - industrial-heat
+  climate:
+    tier: core
+    reason: AI-vision recycling robots.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: mill
+  name: Mill
+  was:
+    tier: out
+    sectors:
+    - buildings
+  climate:
+    tier: core
+    reason: Home and commercial food recyclers.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: novoloop
+  name: Novoloop
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Upcycled polyethylene.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: rhea-s-factory
+  name: Rhea's Factory
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Enzymes that break down plastic and textile waste.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: tereform
+  name: Tereform
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Recycles textile waste into nylon and polyester.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: vartega
+  name: Vartega
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Carbon-fiber recycling.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: nextset-materials
+  name: NextSet Materials
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Recyclable thermoset resins.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: renegade-plastics
+  name: Renegade Plastics
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: PVC-free coated fabrics and tarps.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: cruz-foam
+  name: Cruz Foam
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Compostable foam packaging from shrimp-shell chitin.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: mycoworks
+  name: MycoWorks
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Mycelium leather alternative.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: cyklos-materials
+  name: Cyklos Materials
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Bio-renewable polymers.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: ecovaleric-innovations
+  name: EcoValeric Innovations
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Electrochemical bio-based solvent production.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: industrial-microbes
+  name: Industrial Microbes
+  was:
+    tier: out
+    sectors:
+    - industrial-heat
+  climate:
+    tier: core
+    reason: Microbial chemicals from ethanol and methane.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: living-ink-technologies
+  name: Living Ink Technologies
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Algae-based black pigment.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: mango-materials
+  name: Mango Materials
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: PHA biopolymer from waste methane.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: praio
+  name: Praio
+  was:
+    tier: out
+    sectors:
+    - electric-aviation
+    - industrial-heat
+  climate:
+    tier: core
+    reason: Protocell biocatalysis for chemicals.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: resource-chemical
+  name: ReSource Chemical
+  was:
+    tier: out
+    sectors:
+    - industrial-heat
+  climate:
+    tier: core
+    reason: Bio-based FDCA platform chemical.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: rubi-laboratories
+  name: Rubi Laboratories
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Enzymatic CO2-to-cellulose pulp.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: silvis-materials
+  name: Silvis Materials
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Bio-based polymer binder.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: supercarb
+  name: Supercarb
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Biodegradable textile fibers.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: sustainable-chemicals
+  name: Sustainable Chemicals
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Plant-based biopolymer for films.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: the-hemp-plastic-company
+  name: The Hemp Plastic Company
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Hemp-filled plastic resins.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: zymochem
+  name: ZymoChem
+  was:
+    tier: out
+    sectors:
+    - buildings
+  climate:
+    tier: core
+    reason: Bio-based chemicals and materials by fermentation.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: rhoic
+  name: Rhoic
+  was:
+    tier: out
+    sectors:
+    - fission
+    - hydrogen
+  climate:
+    tier: core
+    reason: Nanofiber electrospinning reactors.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: calysta
+  name: Calysta
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Protein feed made by fermenting methane, a bio-based replacement for fishmeal and soy; main production
+      in China.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: kiverdi
+  name: Kiverdi
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Microbes that turn CO2 into proteins, oils and soil and feed products.
+  sectors:
+  - recycling
+  ruling: decision 13
+- id: switch-bioworks
+  name: Switch Bioworks
+  was:
+    tier: out
+    sectors:
+    - hydrogen
+    - industrial-heat
+  climate:
+    tier: core
+    reason: Engineered soil microbes that make ammonia on plant roots, replacing synthetic nitrogen fertilizer.
+  sectors:
+  - industrial-heat
+  ruling: decision 13
+- id: energy-recovery
+  name: Energy Recovery
+  was:
+    tier: out
+    sectors:
+    - charging
+  climate:
+    tier: core
+    reason: Pressure exchangers and pumps that cut the energy used in desalination and wastewater treatment.
+  sectors:
+  - water
+  ruling: decision 13
+- id: epic-cleantec
+  name: Epic Cleantec
+  was:
+    tier: out
+    sectors:
+    - buildings
+  climate:
+    tier: core
+    reason: Onsite wastewater reuse for buildings.
+  sectors:
+  - water
+  ruling: decision 13
+- id: green-steel-environmental
+  name: Green Steel Environmental
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Wastewater treatment media made from upcycled steel slag.
+  sectors:
+  - water
+  ruling: decision 13
+- id: ix-power-clean-water
+  name: IX Power Clean Water
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: On-site industrial wastewater treatment machines.
+  sectors:
+  - water
+  ruling: decision 13
+- id: microvi-biotech
+  name: Microvi Biotech
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Biocatalytic wastewater treatment.
+  sectors:
+  - water
+  ruling: decision 13
+- id: osmopure-technologies
+  name: Osmopure Technologies
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Membranes for water purification and distillation.
+  sectors:
+  - water
+  ruling: decision 13
+- id: page-technologies
+  name: PAGE Technologies
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Field-deployable water and soil chemistry analyzers.
+  sectors:
+  - water
+  ruling: decision 13
+- id: porifera
+  name: Porifera
+  was:
+    tier: out
+    sectors:
+    - buildings
+  climate:
+    tier: core
+    reason: Forward-osmosis membranes, now for beverage concentration.
+  sectors:
+  - water
+  ruling: decision 13
+  note: Porifera's membranes are now sold mainly for beverage concentration.
+- id: roca-water
+  name: Roca Water
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Recovers resources from wastewater.
+  sectors:
+  - water
+  ruling: decision 13
+- id: simplesub-water
+  name: SimpleSUB Water
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Clamp-on ultrasonic water submeters with remote monitoring.
+  sectors:
+  - water
+  ruling: decision 13
+- id: longpath-technologies
+  name: LongPath Technologies
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+  sectors:
+  - methane
+  ruling: decision 13
+  note: Sector only; the tier question for methane monitoring sold to oil and gas is still open.
+- id: project-canary
+  name: Project Canary
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+  sectors:
+  - methane
+  ruling: decision 13
+  note: Sector only; the tier question for methane monitoring sold to oil and gas is still open.
+- id: trellisense
+  name: TrelliSense
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+  sectors:
+  - methane
+  ruling: decision 13
+  note: Sector only; the tier question for methane monitoring sold to oil and gas is still open.
+- id: earthview
+  name: Earthview
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Detects and measures methane leaks so they can be fixed; main customers are oil and gas operators (owner's
+      call on methane monitoring, see the region report).
+  sectors:
+  - methane
+  ruling: decision 13
+  note: Sector only; the tier question for methane monitoring sold to oil and gas is still open.
+- id: blue-mountain-operations
+  name: Blue Mountain Operations
+  was:
+    tier: core
+    sectors:
+    - solar
+  climate:
+    tier: core
+    reason: Solar-powered instrument-air compressors that replace gas-driven pneumatic devices, which vent methane;
+      customers are oil and gas operators (owner's call on methane, see the region report).
+  sectors:
+  - methane
+  - solar
+  ruling: decision 13
+  note: Sector only; the tier question for methane monitoring sold to oil and gas is still open.
+- id: grand-valley-instrumentation
+  name: Grand Valley Instrumentation
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Autonomous landfill-gas wellhead tuning that raises methane capture at landfills.
+  sectors:
+  - methane
+  ruling: decision 13
+  note: Sector only.
+- id: alga-biosciences
+  name: Alga Biosciences
+  was:
+    tier: out
+    sectors: []
+  climate:
+    tier: core
+    reason: Cattle feed additive that cuts enteric methane emissions.
+  sectors:
+  - methane
+  ruling: decision 13
+- id: gevo
+  name: Gevo
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Sustainable aviation fuel and other low-carbon fuels from renewable feedstocks.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: circularity-fuels
+  name: Circularity Fuels
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Sustainable aviation fuel made from waste gas such as dairy biogas.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: oleo
+  name: Oleo
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Turns waste biomass into oil feedstocks for sustainable aviation fuel.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: visolis
+  name: Visolis
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Bio-based molecule used as feedstock for sustainable aviation fuel and bio-rubber.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: enventix
+  name: Enventix
+  was:
+    tier: core
+    sectors:
+    - carbon-removal
+  climate:
+    tier: core
+    reason: Pyrolysis systems turning dry farm waste and forest residue into biofuels, biochar and wood vinegar.
+  sectors:
+  - biofuels
+  - carbon-removal
+  ruling: decision 13
+  note: Sector only.
+- id: erg-bio
+  name: Erg Bio
+  was:
+    tier: core
+    sectors: []
+  climate:
+    tier: core
+    reason: Turns waste biomass into sugars and intermediates for sustainable fuels and chemicals.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: air-company
+  name: Air Company
+  was:
+    tier: core
+    sectors:
+    - hydrogen
+  climate:
+    tier: core
+    reason: AIRCO fuel systems that turn electricity, CO2 and water into synthetic fuels (JP-8, JP-5, F-76, jet
+      fuel, diesel, methanol, ethanol); rebranded AIRCO in 2025.
+  sectors:
+  - hydrogen
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: twelve
+  name: Twelve
+  was:
+    tier: core
+    sectors:
+    - hydrogen
+  climate:
+    tier: core
+    reason: Electrochemical reactors that turn CO2, water and renewable power into synthetic fuels and chemicals,
+      including E-Jet sustainable aviation fuel; first commercial plant AirPlant One in Moses Lake, WA.
+  sectors:
+  - hydrogen
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: lydian
+  name: Lydian
+  was:
+    tier: core
+    sectors:
+    - hydrogen
+  climate:
+    tier: core
+    reason: Modular turnkey plants (PIVOT system) that turn CO2 and hydrogen into synthetic jet fuel, plus direct
+      sustainable aviation fuel supply.
+  sectors:
+  - hydrogen
+  - biofuels
+  ruling: decision 13
+  note: Sector only.
+- id: aernata
+  name: Aernata
+  was:
+    tier: core
+    sectors:
+    - hydrogen
+    - industrial-heat
+  climate:
+    tier: core
+    reason: Chemicals company converting industrial CO2 emissions into methanol for synthetic fuels.
+  sectors:
+  - biofuels
+  - hydrogen
+  ruling: decision 13
+  note: Sector only.
+- id: aemetis
+  name: Aemetis
+  was:
+    tier: out
+    sectors:
+    - electric-aviation
+  climate:
+    tier: core
+    reason: Fuel ethanol, dairy renewable natural gas and planned sustainable aviation fuel.
+  sectors:
+  - biofuels
+  ruling: decision 13
+  note: Re-tiered in as a Gevo-type biofuels company. Part of its output is renewable natural gas, a methane fuel;
+    Cowboy Clean Fuels stays out on that ground. Owner may want to look.
+- id: madrone
+  name: Madrone
+  was:
+    tier: enabling
+    sectors: &id001
+    - components
+  climate:
+    tier: out
+    reason: Dew-point evaporative cooling systems for data centers; data-center equipment is out (decision 13).
+  sectors: *id001
+  ruling: decision 13
+- id: ferveret
+  name: Ferveret
+  was:
+    tier: enabling
+    sectors: &id002
+    - components
+  climate:
+    tier: out
+    reason: Rack-integrated phase-change cooling for AI data centers; data-center equipment is out (decision 13).
+  sectors: *id002
+  ruling: decision 13
+- id: verdigris-technologies
+  name: Verdigris Technologies
+  was:
+    tier: enabling
+    sectors: &id003
+    - components
+  climate:
+    tier: out
+    reason: High-frequency power meters and analytics sold mainly to data centers; data-center equipment is out
+      (decision 13).
+  sectors: *id003
+  ruling: decision 13
+- id: palanquin-power
+  name: Palanquin Power
+  was:
+    tier: enabling
+    sectors: &id004
+    - components
+  climate:
+    tier: out
+    reason: Rack-level power conversion hardware for data centers; data-center equipment is out (decision 13).
+  sectors: *id004
+  ruling: decision 13
+flags:
+- id: applied-kinetics
+  name: Applied Kinetics
+  note: Builds transformers and switchgear (grid equipment, in) but also cooling systems, to order and first for
+    data centers. Kept enabling; on the line.
+- id: kratos-industries
+  name: Kratos Industries
+  note: Switchboards and switchgear, much of it for data centers. Grid equipment, so kept enabling under the energy-sector
+    exception.
+- id: prieto-battery
+  name: Prieto Battery
+  note: Sodium-ion batteries sold to defense, data-center and infrastructure customers. Storage, so kept in under
+    the exception.
+- id: zelos-energy
+  name: Zelos Energy
+  note: Zinc batteries whose first listed use is data-center backup. Storage, so kept in under the exception.

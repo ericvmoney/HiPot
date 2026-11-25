@@ -1,0 +1,224 @@
+# Proposals 02 (remote): companies with a stated remote policy that were not in the registry. Workstream A2,
+# 2026-11-24. Same shape as companies.yml; basis agent, approved false. Established companies are in scope
+# (owner decision 14); the startup status is the label.
+
+registry_version: 0
+companies:
+- id: blink-charging
+  name: Blink Charging
+  website: https://blinkcharging.com
+  careers_url: null
+  hq: Bowie, MD
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: public
+  founded: 2009
+  headcount:
+    value: 320
+    as_of: '2025-12-31'
+    source: StockAnalysis (from annual filings) (https://stockanalysis.com/stocks/blnk/employees/)
+  climate:
+    tier: core
+    reason: EV chargers and a networked charging service, sold to businesses and run as its own network.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Founded 2009, with no growth sign found; an established company (owner decision 14 keeps it in scope).
+  notes: 'Remote evidence: "a remote-first culture that values flexibility and results"; "We hire for talent and
+    results, not necessarily locality" (https://blinkcharging.com/careers) No job board found on its site. Stage:
+    Nasdaq listing (BLNK) Feb 13, 2018 with $18.5M public offering (https://ir.blinkcharging.com/company-information);
+    earlier OTC-traded, Dealroom gives IPO year 2010. Evidence: https://blinkcharging.com/about-us https://blinkcharging.com/careers
+    https://ir.blinkcharging.com/ https://ir.blinkcharging.com/company-information https://dealroom.co/companies/blink-charging
+    Confidence: high.'
+- id: skyven-technologies
+  name: Skyven Technologies
+  website: https://skyven.co
+  careers_url: null
+  hq: Farmers Branch, TX
+  ats:
+    type: workable
+    board: skyven-technologies
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2013
+  headcount:
+    value: 40
+    as_of: '2026-11-24'
+    source: Skyven (company about page) (https://skyven.co/about-us/)
+  climate:
+    tier: core
+    reason: Industrial heat pumps and steam generators that replace gas-fired process heat.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 40 people; founded 2013.
+  notes: 'Remote evidence: Its own job posts on Workable, as quoted in a search result, say ''fully remote; a remote
+    first organization''; its careers page says nothing about remote work. Weaker evidence. Board workable:skyven-technologies
+    seen 2026-11-24: 6 roles. Stage: No dated venture round found. Investors named: Voyager Ventures, Climactic
+    Ventures, VoLo Earth Ventures, Re:Wire Ventures, SWAN Impact Network, Kyotherm; grants from NSF, CEC, NYSERDA;
+    2024 DOE OCED award; $300M capital facility for equipment-as-a-service (https://skyven.co/about-us/). Dealroom
+    lists investors at seed stage and total disclosed equity $100-500M band (https://dealroom.co/companies/skyven-technologies).
+    Evidence: https://www.skyven.co/ https://skyven.co/about-us/ https://skyven.co/careers/ https://dealroom.co/companies/skyven-technologies
+    Confidence: medium.'
+- id: fluence-energy
+  name: Fluence Energy
+  website: https://fluenceenergy.com
+  careers_url: null
+  hq: Arlington, VA
+  ats:
+    type: workday
+    board: fluenceenergy
+  read: manual
+  sectors:
+  - energy-storage
+  stage: public
+  founded: 2018
+  headcount:
+    value: 1670
+    as_of: '2025-09-30'
+    source: StockAnalysis (search snippet, from 10-K) (https://stockanalysis.com/stocks/flnc/employees/)
+  climate:
+    tier: core
+    reason: Grid-scale battery energy storage systems and the software that runs them.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1,670 people; founded 2018.
+  notes: 'Remote evidence: "Flexible hybrid work environment and home office stipend"; "Flexible Remote Work Options";
+    benefits vary by location (https://fluenceenergy.com/energy-storage-careers/) Board workday:fluenceenergy.wd12.myworkdayjobs.com/en-US/fluenceenergy-jobs
+    seen 2026-11-24: None roles. Stage: Nasdaq Global Select (FLNC) IPO 2021 (Dealroom IPO 2021; FY2025 10-K lists
+    Class A on Nasdaq). Launched Jan 2018 by Siemens and AES, which remain major holders. Evidence: https://fluenceenergy.com/
+    https://fluenceenergy.com/about/ https://fluenceenergy.com/energy-storage-careers/ https://dealroom.co/companies/fluence-energy
+    https://stockanalysis.com/stocks/flnc/employees/ Confidence: high.'
+- id: smart-wires
+  name: Smart Wires
+  website: https://www.smartwires.com
+  careers_url: null
+  hq: Durham, NC (Research Triangle Park)
+  ats:
+    type: paylocity
+    board: 8f488a31-5cd0-45aa-8731-aee8fbf85852
+  read: manual
+  sectors:
+  - grid
+  stage: late
+  founded: 2010
+  headcount:
+    value: 100
+    as_of: '2026-11-24'
+    source: Smart Wires (company story page) (https://www.smartwires.com/our-story/)
+  climate:
+    tier: core
+    reason: Modular power-flow control hardware that lets transmission lines carry more renewable power.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Funding round reported in 2025.
+  notes: 'Remote evidence: "Working everywhere"; "Remote-friendly" and "flexible work environments" listed as benefits
+    (https://www.smartwires.com/careers/) Board paylocity:8f488a31-5cd0-45aa-8731-aee8fbf85852 seen 2026-11-24:
+    None roles. Stage: Series E $75M at $300M valuation, Dec 2019 (Lime Rock New Energy); $65M growth equity/VC
+    Jan 2025 (BP Energy Partners); 9 funding events, total $100-500M band (https://dealroom.co/companies/smart-wires).
+    Evidence: https://www.smartwires.com/ https://www.smartwires.com/our-story/ https://www.smartwires.com/careers/
+    https://dealroom.co/companies/smart-wires Confidence: high.'
+- id: sense
+  name: Sense
+  website: https://sense.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: workable
+    board: sense
+  read: manual
+  sectors:
+  - buildings
+  stage: series-c
+  founded: 2013
+  headcount:
+    value: 100
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/sense)
+  climate:
+    tier: enabling
+    reason: Home energy monitors, and sensing built into utility smart meters.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 100 people; founded 2013.
+  notes: 'Remote evidence: "Hybrid and remote work opportunities" plus remote work stipend (https://sense.com/careers)
+    Board workable:sense seen 2026-11-24: 1 roles. Stage: $105M Series C led by Blue Earth Capital, Apr 27, 2022,
+    total $157M (https://techcrunch.com/2022/04/27/home-energy-monitoring-firm-sense-just-raised-105m/). Aggregators
+    report later funding (latest date Jan 27, 2026, totals $174.6M or $213.6M), unverified. Evidence: https://sense.com/about
+    https://sense.com/careers https://builtin.com/company/sense https://techcrunch.com/2022/04/27/home-energy-monitoring-firm-sense-just-raised-105m/
+    Confidence: medium.'
+- id: type-one-energy
+  name: Type One Energy
+  website: https://typeoneenergy.com
+  careers_url: null
+  hq: Knoxville, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  stage: series-a
+  founded: 2019
+  headcount:
+    value: 209
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/type-one-energy)
+  climate:
+    tier: core
+    reason: Stellarator fusion power plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 209 people; founded 2019.
+  notes: 'Remote evidence: "Our hybrid work policies and distributed teams encourage the flexibility that employees
+    need" (https://typeoneenergy.com/careers/) No job board found on its site. Stage: Dealroom: Seed $54M Jul 2024
+    (Centaurus Capital, Anglo American, others); Early VC $87M Feb 2026 at $348M valuation; description also mentions
+    a first Series A tranche of over $29M led by Breakthrough Energy Ventures, TDK Ventures and Doral (undated)
+    (https://dealroom.co/companies/type-one-energy). Round labels inconsistent; series-a inferred. Evidence: https://typeoneenergy.com/careers/
+    https://typeoneenergy.com/about/ https://dealroom.co/companies/type-one-energy Confidence: medium.'
+- id: reframe-systems
+  name: Reframe Systems
+  website: https://reframe.systems
+  careers_url: null
+  hq: Andover, MA
+  ats:
+    type: ashby
+    board: reframesystems
+  read: auto
+  sectors:
+  - buildings
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 72
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/reframe-systems)
+  climate:
+    tier: core
+    reason: Net-zero homes built in robotic microfactories.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 72 people; founded 2022.
+  notes: 'Remote evidence: 4 of 30 roles on its own Ashby board are US-remote (2026-11-24). Board ashby:reframesystems
+    seen 2026-11-24: 30 roles, 4 US-remote. Stage: Series B $40M Aug 2026 at $160M valuation (Global Brain, RA Capital,
+    Counterpart, E12); Series A $20M Aug 2025 (RA Capital, Nor''easter, Saga, Eclipse) (https://dealroom.co/companies/reframe-systems);
+    company site headline on $40M raise (https://reframe.systems/about). Evidence: https://reframe.systems/ https://reframe.systems/about
+    https://dealroom.co/companies/reframe-systems Confidence: medium.'
