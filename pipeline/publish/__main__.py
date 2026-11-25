@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.publish.build import PublishError, build_board, write_board
+from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay
 
 MAX_SHOWN = 15
 
@@ -41,6 +41,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--taxonomy", type=Path, default=ROOT / "taxonomy.yml")
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
+    parser.add_argument("--pay-out", type=Path, default=None,
+                        help="pay bands for the pay page; default pay.json beside --out")
+    parser.add_argument(
+        "--grades", action=argparse.BooleanOptionalAction, default=True,
+        help="grade each role's published pay against comparable roles (default on; --no-grades to leave out)",
+    )
     parser.add_argument(
         "--include-unlisted", action="store_true",
         help="development only: keep roles at unlisted companies and in unlisted functions. Never publish this build.",
@@ -57,10 +63,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     try:
-        board = build_board(
-            load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy),
-            include_unlisted=args.include_unlisted,
-        )
+        inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
+        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades)
+        pay = build_pay(*inputs, include_unlisted=args.include_unlisted)
     except PublishError as error:
         print(f"FAIL  nothing written: {len(error.problems)} problem(s)", file=sys.stderr)
         for line in error.problems[:MAX_SHOWN]:
@@ -78,7 +83,23 @@ def main(argv: list[str] | None = None) -> int:
           f"({counts['left_out_company']} at unlisted companies, {counts['left_out_function']} in unlisted functions)")
     by_function = ", ".join(f"{fid} {n}" for fid, n in counts["functions"].items() if n)
     print(f"  by function: {by_function or 'none'}")
+    if board["grades"]:
+        graded = [role["grade"]["v"] for role in board["roles"] if "grade" in role]
+        with_pay = sum(1 for role in board["roles"] if role.get("pay"))
+        print(f"  pay grades: {len(graded)} of {with_pay} roles with pay "
+              f"(above {graded.count('above')}, at {graded.count('at')}, below {graded.count('below')}); "
+              f"--no-grades leaves them out")
+    else:
+        print("  pay grades: off (--no-grades)")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
+
+    pay_out = args.pay_out or args.out.with_name("pay.json")
+    pay_size = write_pay(pay, pay_out)
+    shown = sum(1 for band in pay["bands"] if "mid" in band)
+    print(f"Wrote {pay_out}")
+    print(f"  pay bands: {len(pay['bands'])} ({shown} with 3+ postings) from {pay['counts']['postings']} postings "
+          f"with published US-dollar pay ({pay['counts']['year']} yearly, {pay['counts']['hour']} hourly)")
+    print(f"  size: {pay_size:,} bytes ({pay_size / 1024:.1f} KB)")
     return 0
 
 

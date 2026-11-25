@@ -163,3 +163,15 @@ def test_filter_state_has_a_set_for_every_filter_group():
 
 def test_page_and_publish_step_agree_on_the_data_version():
     assert f"var BOARD_VERSION = {BOARD_VERSION};" in SCRIPT
+
+
+def test_pay_vs_market_tag_and_filter():
+    # The filter exists only when the data carries grades (publish --grades, the default).
+    assert "{ key: 'g', title: 'Pay vs market', tax: 'grades', none: 'No grade', open: false }" in SCRIPT
+    assert "FACETS = FACETS.filter(function (facet) { return Array.isArray(data.taxonomy[facet.tax]); });" in SCRIPT
+    # The tag says what it compared, for sighted and screen-reader users, and that it is not an estimate.
+    assert "title: said" in SCRIPT and "class: 'sr-only', text: labels.grades[role.grade.v] + '. ' + said" in SCRIPT
+    assert "published ranges, not a salary estimate.';" in SCRIPT
+    # It sits above the card's stretched link so its tooltip can show.
+    assert ".grade { position: relative; z-index: 1;" in STYLE
+    assert '<p id="grade-note" hidden>' in PAGE and "$('grade-note').hidden = !board.grades;" in SCRIPT

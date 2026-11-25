@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pay bands file",
+  "description": "The shape of site/data/pay.json, written by pipeline.publish and read by site/pay.html. Owned by workstream A4. Bands summarise pay that employers published; nothing is estimated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["pay_version", "generated_at", "scope", "min_postings", "counts", "labels", "bands"],
+  "properties": {
+    "pay_version": {"const": 0},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "scope": {"enum": ["listed", "all"]},
+    "min_postings": {"type": "integer", "minimum": 1, "description": "Postings a band needs before it shows figures."},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["postings", "year", "hour", "left_out"],
+      "properties": {
+        "postings": {"type": "integer", "minimum": 0, "description": "Roles whose published US-dollar range entered the bands."},
+        "year": {"type": "integer", "minimum": 0},
+        "hour": {"type": "integer", "minimum": 0},
+        "left_out": {"type": "integer", "minimum": 0, "description": "Roles with published pay that could not enter a band: another currency, no low end, or outside the US."}
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["groups", "levels", "markets"],
+      "patternProperties": {
+        "^[a-z]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label"],
+            "properties": {"id": {"$ref": "#/$defs/slug"}, "label": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "bands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["per", "g", "l", "m", "n"],
+        "properties": {
+          "per": {"enum": ["year", "hour"]},
+          "g": {"type": "string", "pattern": "^[df]-[a-z0-9]+(-[a-z0-9]+)*$", "description": "Role group: d- plus a discipline, or f- plus a function."},
+          "l": {"$ref": "#/$defs/slug", "description": "Level id, or 'none'."},
+          "m": {"$ref": "#/$defs/slug", "description": "Metro id, 'remote' or 'us'."},
+          "n": {"type": "integer", "minimum": 1},
+          "lo": {"type": "number", "minimum": 0, "description": "Median low end. Present only with min_postings or more."},
+          "hi": {"type": "number", "minimum": 0},
+          "mid": {"type": "number", "minimum": 0}
+        },
+        "dependentRequired": {"lo": ["hi", "mid"], "hi": ["lo", "mid"], "mid": ["lo", "hi"]}
+      }
+    }
+  },
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"}
+  }
+}
