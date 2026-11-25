@@ -66,7 +66,9 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
-        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades)
+        seed_file = ROOT / "data" / "seed" / "jobs.json"
+        seed_ids = {job["id"] for job in load_json(seed_file)["jobs"]} if seed_file.is_file() else set()
+        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades, seed_ids=seed_ids)
         wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
         pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
@@ -84,6 +86,10 @@ def main(argv: list[str] | None = None) -> int:
                                            if board["scope"] == "all" else ""))
     print(f"  roles: {counts['roles']} at {counts['companies']} companies; {counts['roles_left_out']} left out "
           f"({counts['left_out_company']} at unlisted companies, {counts['left_out_function']} in unlisted functions)")
+    print(f"  new: {counts['new']} roles first seen since {counts['new_since']} (3 business days, Mountain time)")
+    types = counts["companies_by_type"]
+    print(f"  company type: {types['startup']} startups, {types['established']} established, {types['unchecked']} unchecked "
+          f"({counts['roles_by_type']['startup']} / {counts['roles_by_type']['established']} / {counts['roles_by_type']['unchecked']} roles)")
     by_function = ", ".join(f"{fid} {n}" for fid, n in counts["functions"].items() if n)
     print(f"  by function: {by_function or 'none'}")
     if board["grades"]:

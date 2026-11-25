@@ -5,7 +5,7 @@ Rules, in the order they are applied:
 1. The jobs file and the registry must pass the contract checks in
    `tools/validate.py`. Nothing is written from data that fails them.
 2. A role reaches the file only when its company is listed (climate tier core
-   or enabling AND startup status `in`, `tools.validate.is_listed`) AND its
+   or enabling, `tools.validate.is_listed`; decision 14) AND its
    function is listed (`listed: true` in taxonomy.yml,
    `tools.validate.listed_functions`). `include_unlisted=True` is a
    development switch that keeps every role and marks the file, each unlisted
@@ -27,13 +27,16 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pipeline.publish import fresh
 from pipeline.publish import grades as paygrades
 from pipeline.publish import pay as paybands
 from pipeline.publish import wages as paywages
 from pipeline.publish.states import US_STATES, states_for
-from tools.validate import check_companies, check_jobs, is_listed, listed_functions, schema_errors, schema_registry
+from tools.validate import check_companies, check_jobs, company_type, is_listed, listed_functions, schema_errors, schema_registry
 
 BOARD_VERSION = 0
+COMPANY_TYPES = ("startup", "established", "unchecked")
+COMPANY_TYPE_LABELS = {"startup": "Startup", "established": "Established", "unchecked": "Not yet checked"}
 PAY_VERSION = 0
 
 # Taxonomy lists the page needs labels for, in the order the page shows them.
@@ -80,7 +83,7 @@ def _labels(taxonomy: dict, kept: list[dict]) -> dict[str, list[dict[str, Any]]]
 
 
 def _company_record(company: dict) -> dict[str, Any]:
-    record: dict[str, Any] = {"name": company["name"], "tier": company["climate"]["tier"]}
+    record: dict[str, Any] = {"name": company["name"], "tier": company["climate"]["tier"], "type": company_type(company)}
     if company["climate"].get("reason"):
         record["reason"] = company["climate"]["reason"]
     if not company["climate"]["approved"]:
@@ -159,10 +162,11 @@ def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlist
 
 
 def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
-                grades: bool = True) -> dict:
+                grades: bool = True, seed_ids: set[str] = frozenset()) -> dict:
     """Return the board data as a dict. Raises PublishError on input that fails the contracts.
 
     `grades` adds a pay-vs-market grade to each role with a published range (see grades.py).
+    `seed_ids` are the ids the collector primed from the old hub's seed; they are never new (see fresh.py).
     """
     selected = _select(jobs_file, registry_file, taxonomy, include_unlisted)
     companies, kept = selected["companies"], selected["kept"]
@@ -175,7 +179,16 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
     }
 
     labels = _labels(taxonomy, kept)
+    present = {record["type"] for record in company_records.values()}
+    labels["company_types"] = [{"id": kind, "label": COMPANY_TYPE_LABELS[kind]} for kind in COMPANY_TYPES if kind in present]
     records = [_role_record(job) for job in kept]
+    # New roles: first seen in the last 3 business days, not counting a company's first collection.
+    baselines = fresh.first_collection(jobs_file["jobs"], seed_ids)
+    new_ids = fresh.new_role_ids(kept, jobs_file["generated_at"], baselines, seed_ids)
+    for record in records:
+        if record["id"] in new_ids:
+            record["new"] = True
+    labels["fresh"] = [{"id": "new", "label": "New in the last 3 business days"}]
     if grades:
         found = paygrades.grades(kept)
         for record in records:
@@ -196,6 +209,12 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
             "left_out_company": 0 if include_unlisted else left_out_company,
             "left_out_function": 0 if include_unlisted else left_out_function,
             "companies_provisional": sum(1 for record in company_records.values() if record.get("provisional")),
+            "new": len(new_ids),
+            "new_since": fresh.window_start(jobs_file["generated_at"]).isoformat(),
+            "companies_by_type": {kind: sum(1 for record in company_records.values() if record["type"] == kind)
+                                  for kind in COMPANY_TYPES},
+            "roles_by_type": {kind: sum(1 for job in kept if company_type(companies[job["company_id"]]) == kind)
+                              for kind in COMPANY_TYPES},
             "functions": {entry["id"]: sum(1 for job in kept if job["function"] == entry["id"])
                           for entry in taxonomy["functions"]},
         },

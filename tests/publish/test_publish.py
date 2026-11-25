@@ -84,15 +84,31 @@ def test_seed_default_build_holds_only_listed_companies_and_functions():
 @pytest.mark.parametrize("tier,status", list(itertools.product(
     ["core", "enabling", "out", "unscreened"], ["in", "out", "review", "unscreened"])))
 def test_listing_rule_for_every_tier_and_status(tier, status):
+    # Decision 14: the climate tier alone decides listing; the startup test only labels the company.
     reg = registry([company("alpha", tier, status), company("beta", "core", "in")])
     board = build_board(jobs_file([job("a1", "alpha"), job("b1", "beta")]), reg, TAXONOMY)
-    should_list = tier in ("core", "enabling") and status == "in"
+    should_list = tier in ("core", "enabling")
     assert ("alpha" in board["companies"]) is should_list
     assert ("a1" in {role["id"] for role in board["roles"]}) is should_list
     assert "b1" in {role["id"] for role in board["roles"]}
-    # No trace of an unlisted company anywhere in the serialized file.
-    if not should_list:
+    if should_list:
+        expected = {"in": "startup", "out": "established"}.get(status, "unchecked")
+        assert board["companies"]["alpha"]["type"] == expected
+        assert {entry["id"] for entry in board["taxonomy"]["company_types"]} == {"startup", expected}
+    else:
+        # No trace of an unlisted company anywhere in the serialized file.
         assert "alpha" not in dumps_board(board)
+
+
+def test_an_established_company_is_listed_labelled_and_counted():
+    reg = registry([company("alpha", "core", "in"), company("big", "enabling", "out")])
+    board = build_board(jobs_file([job("a1", "alpha"), job("b1", "big"), job("b2", "big")]), reg, TAXONOMY)
+    assert board["companies"]["big"]["type"] == "established"
+    assert board["companies"]["alpha"]["type"] == "startup"
+    assert board["counts"]["companies_by_type"] == {"startup": 1, "established": 1, "unchecked": 0}
+    assert board["counts"]["roles_by_type"] == {"startup": 1, "established": 2, "unchecked": 0}
+    assert board["taxonomy"]["company_types"] == [{"id": "startup", "label": "Startup"},
+                                                  {"id": "established", "label": "Established"}]
 
 
 def test_include_unlisted_keeps_everything_and_says_so():
@@ -174,6 +190,12 @@ def test_every_role_has_a_company_record_and_every_company_has_a_role(include_un
         "roles_left_out": len(JOBS["jobs"]) - len(board["roles"]),
         "left_out_company": left_company, "left_out_function": left_function,
         "companies_provisional": sum(1 for record in board["companies"].values() if record.get("provisional")),
+        "new": sum(1 for role in board["roles"] if role.get("new")),
+        "new_since": board["counts"]["new_since"],
+        "companies_by_type": {kind: sum(1 for r in board["companies"].values() if r["type"] == kind)
+                              for kind in ("startup", "established", "unchecked")},
+        "roles_by_type": {kind: sum(1 for role in board["roles"] if board["companies"][role["co"]]["type"] == kind)
+                          for kind in ("startup", "established", "unchecked")},
         "functions": {f["id"]: sum(1 for role in board["roles"] if role["fn"] == f["id"]) for f in TAXONOMY["functions"]},
     }
     assert list(board["counts"]["functions"]) == [f["id"] for f in TAXONOMY["functions"]]
@@ -215,7 +237,7 @@ def test_company_and_role_fields_are_carried_over():
     board = build_board(jobs_file([full, product]), reg, TAXONOMY)
     assert board["generated_at"] == "2026-11-23T12:00:00-07:00"
     assert board["companies"]["alpha"] == {
-        "name": "Alpha Motors", "tier": "enabling", "reason": "alpha reason.", "sectors": ["ev", "charging"],
+        "name": "Alpha Motors", "tier": "enabling", "type": "startup", "reason": "alpha reason.", "sectors": ["ev", "charging"],
         "stage": "series-b", "hq": "Denver, CO", "website": "https://alpha.example",
         "careers": "https://alpha.example/careers",
     }
@@ -329,7 +351,9 @@ def test_command_line_writes_the_file(tmp_path, capsys):
     # --jobs is explicit so the test means the same in a checkout that has data/jobs.json.
     out = tmp_path / "data" / "board.json"
     assert main(["--jobs", SEED_PATH, "--out", str(out)]) == 0
-    assert out.read_text(encoding="utf-8") == dumps_board(build_board(JOBS, REGISTRY, TAXONOMY))
+    # The command treats the seed's own roles as primed from the old hub, so none of them is new.
+    seed_ids = {j["id"] for j in JOBS["jobs"]}
+    assert out.read_text(encoding="utf-8") == dumps_board(build_board(JOBS, REGISTRY, TAXONOMY, seed_ids=seed_ids))
     assert load_json(out)["scope"] == "listed"
     assert "DEVELOPMENT BUILD" not in capsys.readouterr().out
 
