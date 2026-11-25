@@ -231,3 +231,14 @@ def test_raw_jobs_check_catches_unknown_metro_and_company():
     bad["jobs"][0]["company_id"] = "no-such-company"
     problems = check_raw_jobs(bad, TAXONOMY, {company["id"] for company in COMPANIES["companies"]})
     assert any("metro" in line for line in problems) and any("registry" in line for line in problems)
+
+
+def test_disciplines_are_optional_only_for_non_technical_personas():
+    persona = copy.deepcopy(PERSONA)
+    persona["functions"], persona["disciplines"] = ["supply-chain"], []
+    assert schema_errors(persona, SCHEMAS["persona.schema.json"], REGISTRY) == []
+    assert check_persona(persona, TAXONOMY) == []
+    persona["functions"] = ["engineering"]
+    assert any("discipline is needed" in line for line in check_persona(persona, TAXONOMY))
+    del persona["functions"]                                   # absent means engineering
+    assert any("discipline is needed" in line for line in check_persona(persona, TAXONOMY))

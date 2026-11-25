@@ -113,6 +113,11 @@ def check_persona(persona: dict, taxonomy: dict) -> list[str]:
     sectors, stages = ids(taxonomy, "sectors"), ids(taxonomy, "stages")
     problems = [f"unknown discipline '{d}'" for d in persona.get("disciplines", []) if d not in disciplines]
     problems += [f"unknown function '{f}'" for f in persona.get("functions", []) if f not in ids(taxonomy, "functions")]
+    # Disciplines are technical fields: required for engineering, science and
+    # technician work (no functions means engineering), optional otherwise.
+    technical = set(persona.get("functions") or ["engineering"]) & {"engineering", "science", "technician"}
+    if technical and not persona.get("disciplines"):
+        problems.append(f"at least one discipline is needed for {', '.join(sorted(technical))} work")
     if persona.get("level") is not None and persona["level"] not in levels:
         problems.append(f"unknown level '{persona['level']}'")
     problems += [f"unknown domain '{s}'" for s in persona.get("domains", []) if s not in sectors]
