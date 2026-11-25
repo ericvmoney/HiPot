@@ -1,0 +1,1613 @@
+# Proposals 02 (the Mountain West beyond Colorado (Arizona, Nevada, Utah, New Mexico)): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+status: draft
+companies:
+- id: aeonix
+  name: Aeonix
+  website: null
+  careers_url: null
+  hq: Salt Lake City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Anode-free lithium-metal batteries for electrified transportation, aimed at aviation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF Futures Engine in the Southwest (SWSIE) Innovation
+    Grant, March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
+    no equity round found. Evidence: https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    https://www.research.utah.edu/research-impact/southwest-sustainability-innovation-engine-funds-tech-startups-including-some-from-utah/
+    Region sources: sw-futures-engine-2025. Confidence: medium. Unresolved: Website, founding year, funding, headcount.'
+- id: alpha-tech-research-corp
+  name: Alpha Tech Research Corp
+  website: null
+  careers_url: null
+  hq: Utah
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Reference electrodes and instrumentation for molten-salt nuclear reactors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: DOE award $198,800 announced 2022-06-27 via Utah Innovation
+    Center (https://business.utah.gov/innovation/utah-companies-receive-awards-for-energy-technology-development/);
+    no equity round found. Flags: nuclear (molten-salt reactor) instrumentation. Evidence: https://business.utah.gov/innovation/utah-companies-receive-awards-for-energy-technology-development/
+    Region sources: ut-goeo-energy-awards. Confidence: low. Unresolved: Website, city, founding year, headcount,
+    current activity.'
+- id: altairnano
+  name: Altairnano
+  website: https://altairnano.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium titanate (LTO) battery cells, modules and grid energy storage systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://altairnano.com/ https://altairnano.com/about-us/
+    Region sources: nv-goed-lithium-loop. Confidence: low. Unresolved: Site gives no HQ, owner, headcount or plant
+    location; calls itself ''a 40 year-old company''. Newest dated media May 2025. Reno, NV per input not confirmed.'
+- id: american-battery-factory
+  name: American Battery Factory
+  website: https://americanbatteryfactory.com/
+  careers_url: null
+  hq: American Fork, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Prismatic lithium iron phosphate (LFP) battery cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Tucson, AZ gigafactory status unknown. Evidence: https://americanbatteryfactory.com/
+    Region sources: az-tech-council-battery, az-search, az-search2. Confidence: low. Unresolved: Site address is
+    American Fork, UT (input says Tucson); Tucson gigafactory not mentioned; newest dated news Sept 2023 plus a
+    2025 statement URL; funding and headcount not found; Dealroom 404.'
+- id: american-battery-technology-company
+  name: American Battery Technology Company
+  website: https://americanbatterytechnology.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery recycling plus a planned Tonopah Flats, NV lithium claystone mine and lithium hydroxide
+      refinery (5,000 tpa design).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; public, with a listing or offering reported in 2026.
+  notes: 'No board found: home page not readable (202). Stage: Public (Nasdaq: ABAT); listing year not verified.
+    June 2026: DOE reinstated a $115M grant for phase 1 of the Tonopah Flats lithium refinery; Sept 2026: BLM accepted
+    the mine and refinery Plan of Operations. Flags: runs a battery recycling plant (in scope); lithium refinery
+    planned, with own mine (mining part out of scope). Evidence: https://www.barchart.com/story/news/2352822/american-battery-technology-company-wins-appeal-and-has-us-department-of-energy-grant-reinstated-for-115-million-project-for-commercial-scale-critical-mineral-lithium-refinery
+    https://resource-recycling.com/e-scrap/2026/06/08/abtc-wins-doe-appeal-for-tonopah-flats-lithium-refinery-project/
+    https://finviz.com/news/389613/american-battery-technology-company-achieves-major-milestone-with-us-blm-acceptance-of-plan-of-operations-for-tonopah-flats-lithium-project
+    https://www.recyclingtoday.com/the-tone-setters-american-battery-technology-company/ Region sources: nv-goed-lithium-loop,
+    nv-battery-coalition, unr-tech-hub, builtin-nv-energy, builtin-nv-greentech, greentown. Confidence: medium.
+    Unresolved: Company site returned empty pages (JS); Dealroom 404. Founded year, headcount and listing year not
+    found. Recycling plant location (TRIC, opened 2023 per search snippet) not confirmed from a primary page.'
+- id: ampcera
+  name: Ampcera
+  website: https://www.ampcera.com/
+  careers_url: null
+  hq: Tucson, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 17
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/ampcera)
+  climate:
+    tier: core
+    reason: Sulfide solid-state electrolyte materials, cathode materials, pilot-line equipment and modular dry rooms
+      for solid-state batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 17 people (Dealroom, 2026-11-24); founded 2017, funding round reported in 2022.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom count undated (date is when read).
+    Founded: https://dealroom.co/companies/ampcera. Stage: Series A $15M at $60M valuation, Dec 2022, led by Hanwha
+    Solutions; DOE grant $1.5M June 2022 (Dealroom). Evidence: https://ampcera.com/ https://dealroom.co/companies/ampcera
+    Region sources: az-search, arpa-e. Confidence: high. Unresolved: Latest site news is Feb 2024.'
+- id: aqua-metals
+  name: Aqua Metals
+  website: https://www.aquametals.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: public
+  founded: 2013
+  headcount: null
+  climate:
+    tier: core
+    reason: AquaRefining, a water-based closed-loop process to recycle lithium-ion batteries and recover lead and
+      other metals; Sierra AquaRefining Campus in Nevada.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2013, public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows no headcount. Founded: https://dealroom.co/companies/aqua-metals.
+    Stage: Public, IPO 2015 (Dealroom); Dealroom market cap $3.6M (2026). Q3 2026 results released 2026-11-16. Flags:
+    very small market cap (about $3.6M per Dealroom). Evidence: https://www.aquametals.com/ https://dealroom.co/companies/aqua-metals
+    Region sources: nv-goed-lithium-loop. Confidence: medium. Unresolved: Dealroom gives HQ Alameda, CA (older);
+    Reno from a May 2024 Recycling Today item quoted on the site. Headcount not found.'
+- id: array-technologies
+  name: Array Technologies
+  website: https://arraytechinc.com/
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: workday
+    board: arraytechinc
+  read: manual
+  sectors:
+  - solar
+  - grid
+  stage: public
+  founded: 1989
+  headcount:
+    value: 480
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/array-technologies)
+  climate:
+    tier: core
+    reason: Single-axis solar trackers (DuraTrack, OmniTrack, STI H250), foundations and SmarTrack control software
+      for utility-scale solar.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 480 people (Built In, 2026-11-24); founded 1989 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'Board workday:arraytechinc.wd5.myworkdayjobs.com/Array_Careers seen 2026-11-24, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Built In figure, undated; may understate the
+    group (not cross-checked). Founded: https://builtin.com/company/array-technologies. Stage: NASDAQ: ARRY (Built
+    In); IPO year not confirmed this session (ir.arraytechinc.com returned 403). Evidence: https://arraytechinc.com/
+    https://builtin.com/company/array-technologies Region sources: builtin-az-greentech. Confidence: medium. Unresolved:
+    Exact headcount; IPO year. Founded year, headcount and ticker come only from a Built In profile read before
+    Built In was put off limits; they could not be cross-checked on the company''s own site or Dealroom (Dealroom
+    slugs array-technologies / array_technologies 404).'
+- id: beyond-silicon
+  name: Beyond Silicon
+  website: https://beyondsilicon.com/
+  careers_url: null
+  hq: Tempe, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: pre-seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Tandem perovskite-silicon solar cells (ASU-originated research).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Site profiles five people; no total given.
+    Founded: https://www.beyondsilicon.com/. Stage: Winner of the DOE Perovskite Startup Countdown Prize; NSF Futures
+    Engine in the Southwest Innovation Grant, March 2025 (share of $1.5M across 8 startups) (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups).
+    No equity round found. Evidence: https://www.beyondsilicon.com/ https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    Region sources: asu-search, sw-futures-engine-2025. Confidence: medium. Unresolved: Equity funding; headcount.
+    Stage is inferred from grant-only funding.'
+- id: carbeniumtec
+  name: CarbeniumTec
+  website: https://www.carbeniumtec.com/
+  careers_url: null
+  hq: Tucson, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Non-aqueous, metal-free organic redox flow batteries for long-duration storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: University of Arizona (Tech Launch Arizona) startup,
+    portfolio year 2022 (https://techlaunch.arizona.edu/startups/startup-portfolio); no funding found. Evidence:
+    https://carbeniumtec.com/ https://techlaunch.arizona.edu/startups/startup-portfolio Region sources: ua-tla-portfolio.
+    Confidence: medium. Unresolved: Founding year (TLA lists 2022), funding, headcount. HQ from input plus 520 area
+    code.'
+- id: carbogenics-usa
+  name: Carbogenics USA
+  website: null
+  careers_url: null
+  hq: Santa Fe, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - carbon-removal
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: CreChar biochar additive that boosts anaerobic digestion / biogas output; also FilaChar for wastewater
+      treatment.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Carbogenics; not independent.
+  notes: 'No job board found on the company''s site. Stage: US division of Carbogenics (University of Edinburgh
+    spinout); parent has venture investors (logos only on site, no amounts). Site news mentions a ''10 year milestone''.
+    Flags: subsidiary of Carbogenics (Edinburgh, Scotland); HQ outside region; site: Raton, NM (first US production
+    facility). Evidence: https://www.carbogenics.com/ Region sources: nm-aea. Confidence: medium. Unresolved: Santa
+    Fe presence not confirmed (site names Raton, NM); founding year, headcount and funding amounts not found.'
+- id: carbon-utility
+  name: Carbon Utility
+  website: https://carbonutility.com/
+  careers_url: null
+  hq: Holbrook, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular electrochemical direct air capture systems that co-produce hydrogen and turn captured CO2 into
+      methanol and sustainable aviation fuel.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF Futures Engine in the Southwest Innovation Grant,
+    March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
+    site refers to a pilot. Evidence: https://www.carbonutility.com/ https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    Region sources: sw-futures-engine-2025. Confidence: medium. Unresolved: Founding year, funding, headcount.'
+- id: comstock-metals
+  name: Comstock Metals
+  website: https://comstock.inc/
+  careers_url: null
+  hq: Silver Springs, NV
+  ats:
+    type: greenhouse
+    board: comstock
+  read: auto
+  sectors:
+  - recycling
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: End-of-life solar panel recycling and materials recovery at Silver Springs, NV (permits completed January
+      2026; running 24/7 and ramping to 100,000 tonnes a year).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Comstock Inc.; not independent.
+  notes: 'Board greenhouse:comstock seen 2026-11-25, token matched by name; board page checked: 79 open roles. Stage:
+    Unit of Comstock Inc. (public, NYSE American); listing year not verified. GOED tax abatement of about $900,000
+    in February 2026. Flags: subsidiary of Comstock Inc.. Evidence: https://www.pv-tech.org/comstock-secures-final-permits-for-nevada-solar-recycling-facility/
+    https://www.pv-tech.org/comstock-starts-24-7-operations-at-nevada-solar-panel-recycling-facility/ https://comstock.inc/
+    Region sources: nv-search. Confidence: medium. Unresolved: comstock.inc home page was truncated and /metals/
+    404; headcount and founding year not found; date of 24/7 start unconfirmed.'
+- id: crystal-sonic
+  name: Crystal Sonic
+  website: https://xtalsonic.com/
+  careers_url: null
+  hq: Arizona
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Sonic Lift-off equipment that uses sound waves to separate thin semiconductor devices from reusable
+      substrates (ASU-developed).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF Futures Engine in the Southwest Innovation Grant,
+    March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
+    no equity round found. Flags: semiconductor manufacturing equipment. Evidence: https://www.xtalsonic.com/ https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    Region sources: sw-futures-engine-2025. Confidence: medium. Unresolved: City, founding year, funding, headcount.'
+- id: dragonfly-energy
+  name: Dragonfly Energy
+  website: https://dragonflyenergy.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: public
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: LiFePO4 battery packs (Battle Born brand), lithium cells made with a dry-electrode process, and integrated
+      power systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2016, public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom headcount hidden. Founded: https://dealroom.co/companies/dragonfly-energy.
+    Stage: Listed via SPAC (Chardan NexTech Acquisition 2) in 2022 (Dealroom); market cap about $3.7M (2026, Dealroom).
+    Q3 2026 results released 2026-11-12. Flags: very small market cap (about $3.7M per Dealroom). Evidence: https://dragonflyenergy.com/
+    https://dealroom.co/companies/dragonfly-energy Region sources: nv-goed-lithium-loop, nv-battery-coalition, unr-tech-hub,
+    eip. Confidence: high. Unresolved: Headcount.'
+- id: echo-elements
+  name: Echo Elements
+  website: https://echo-elements.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: 2026
+  headcount: null
+  climate:
+    tier: core
+    reason: Molten-salt electrochemical refining that recovers lithium, nickel, cobalt, copper and manganese as
+      pure metals from e-waste and batteries, without acid; developed at the University of Nevada, Reno.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2026.
+  notes: 'No job board found on the company''s site. Founded: https://echo-elements.com/. Stage: No rounds or grants
+    listed; site invites investment inquiries. Flags: very early stage (founded 2026). Evidence: https://echo-elements.com/
+    Region sources: unr-tech-hub. Confidence: medium. Unresolved: Funding and headcount.'
+- id: electric-power-systems-ep-systems
+  name: Electric Power Systems (EP Systems)
+  website: https://www.epsenergy.com/
+  careers_url: null
+  hq: North Logan, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: series-a
+  founded: 2016
+  headcount:
+    value: 104
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/electric-power-systems)
+  climate:
+    tier: core
+    reason: Modular battery systems (EPiC propulsion battery), chargers and charging infrastructure for electric
+      aircraft, aerospace and defense.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 104 people (Dealroom, 2026-11-24); founded 2016, funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 104 (band 100-500), undated. Founded:
+    https://dealroom.co/companies/electric-power-systems. Stage: Series A $13M, April 2022 (Hyundai Motor Company,
+    JetBlue Ventures); United Airlines early-VC investment July 2023, amount undisclosed (Dealroom). Flags: defense
+    is a major market (dedicated defense line; NAVSEA S9310 certification). Evidence: https://www.epsenergy.com/
+    https://dealroom.co/companies/electric-power-systems Region sources: builtin-ut-energy, ut-search. Confidence:
+    high. Unresolved: Later rounds after 2023, if any.'
+- id: enkoat
+  name: EnKoat
+  website: https://enkoat.com
+  careers_url: null
+  hq: Chandler, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2018
+  headcount:
+    value: 7
+    as_of: '2026-11-24'
+    source: EnKoat team page (people listed) (https://www.enkoat.com/about)
+  climate:
+    tier: core
+    reason: IntelliKoat two-layer roof coating system (ActivTherm thermal-barrier basecoat plus DuraFlect topcoat)
+      that cuts building heating and cooling load.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 7 people (EnKoat team page (people listed), 2026-11-24); founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Count of people listed on the About page, not
+    a stated headcount. Founded: https://www.enkoat.com/about. Stage: Only NSF I-Corps (2019) and NSF SBIR (2019-2021)
+    grants and competition prizes found; Arizona State University research origin. Evidence: https://www.enkoat.com/
+    https://www.enkoat.com/about Region sources: third-derivative. Confidence: medium. Unresolved: HQ city not on
+    the site (from input); venture funding not found; Dealroom slug 404.'
+- id: footprint
+  name: Footprint
+  website: https://www.footprintus.com/
+  careers_url: null
+  hq: Gilbert, AZ
+  ats:
+    type: workable
+    board: footprint
+  read: manual
+  sectors:
+  - recycling
+  stage: null
+  founded: 2013
+  headcount:
+    value: 311
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/footprint)
+  climate:
+    tier: core
+    reason: Plant/bio-based fiber packaging (cups, lids, supermarket trays) replacing single-use plastic.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 311 people (Built In, 2026-11-24); founded 2013.
+  notes: 'Board workable:footprint seen 2026-11-25, linked from the company''s own site: 16 open roles. Headcount
+    note: Built In figure, undated; as_of is fetch date. Read before Built In answered 429 and was put off limits;
+    no further Built In fetches. Sites: Gilbert AZ, Mexicali (Mexico), Piekary (Poland); Built In also lists Richburg,
+    SC. Founded: https://builtin.com/company/footprint. Stage: Private, venture-backed; latest round not confirmed
+    this session (no Dealroom page found). Flags: packaging materials (plastic replacement), not energy hardware.
+    Evidence: https://www.footprintus.com/ https://www.footprintus.com/locations https://builtin.com/company/footprint
+    Region sources: builtin-az-greentech. Confidence: medium. Unresolved: Funding stage and rounds; dated headcount.'
+- id: glycosurf
+  name: GlycoSurf
+  website: https://glycosurf.com/
+  careers_url: null
+  hq: Salt Lake City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Bio-based sugar glycolipid surfactants (rhamnolipids etc.), including extractants for recovering minerals
+      (e.g. gallium, germanium) from industrial waste streams.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF Futures Engine in the Southwest Innovation Grant,
+    March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
+    no equity round found. Flags: oilfield chemicals among listed applications. Evidence: https://www.glycosurf.com/
+    https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    Region sources: sw-futures-engine-2025, ut-goeo-energy-awards. Confidence: medium. Unresolved: Founding year,
+    funding, headcount.'
+- id: gridflow
+  name: GridFlow
+  website: null
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: PitchBook (search snippet) (https://pitchbook.com/profiles/company/718563-79)
+  climate:
+    tier: core
+    reason: Long-duration energy storage battery (lithium-sulfur flow battery licensed from Sandia National Laboratories);
+      not vanadium as the directory said.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 9 people (PitchBook (search snippet), 2026-11-24); founding year and funding not found, so included
+      as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: PitchBook figure seen only in a search summary,
+    undated, may be stale. Stage: Only grants found: NM EDD Advanced Energy award $300,000 (2024-05-13); DOE Boost
+    (Sandia) partnership 2024. Legal name Integrated OffGrid LLC dba GridFlow. Flags: chemistry is lithium-sulfur
+    flow, not vanadium; Sandia article also describes solar water-from-air ''water boxes''. Evidence: https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514
+    https://www.sandia.gov/ess/2024/06/25/sandia-partnership-speeds-up-development-of-flow-batteries-for-green-grid-water
+    https://pitchbook.com/profiles/company/718563-79 Region sources: nm-aea, unm-rainforest, nm-search. Confidence:
+    medium. Unresolved: Company website not fetched (gridflow.tech mentioned in search summary); founding year;
+    funding beyond grants.'
+- id: halo-materials
+  name: Halo Materials
+  website: null
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Makes battery-grade graphite, with hydrogen as a co-product, from methane by pyrolysis.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Dealroom (search snippet) shows only a $50,000 grant,
+    an AFWERX SBIR Phase I (US Air Force) for battery-grade graphite and an STTR contract; linked to an Albuquerque
+    venture studio. Flags: feedstock is natural gas / methane (pyrolysis); US Air Force SBIR work. Evidence: https://app.dealroom.co/companies/halo_materials
+    Region sources: nm-aea, unm-rainforest. Confidence: low. Unresolved: Dealroom page itself returned 404 on dealroom.co;
+    details only from a search snippet; no company site found. The main news coverage is on an off-limits site and
+    was not used.'
+- id: hifunda
+  name: HiFunda
+  website: null
+  careers_url: null
+  hq: Salt Lake City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Advanced geopolymers, electrochemical processes and sensors, high-temperature electromagnetic coils
+      and electrodes, plus custom engineering and lab testing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found. Flags: markets are space, defense
+    and nuclear; mix of products and engineering/test services; domain hifunda.com found by guessing; content matches
+    input. Evidence: https://www.hifunda.com/ Region sources: ut-goeo-mfg-grant. Confidence: low. Unresolved: HQ
+    city from input only; founding year; headcount; funding.'
+- id: hydrosonics
+  name: Hydrosonics
+  website: null
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Liquid alkaline electrolyzer design that adds acoustic technology to cut the cost of clean hydrogen;
+      small on-site systems paired with renewables.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/hydrosonics (search
+    snippet). Stage: NM EDD Advanced Energy award $350,000 (2024-05-13); described as a Los Alamos National Laboratory
+    spinout; no venture rounds found. Evidence: https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514
+    https://www.cbinsights.com/company/hydrosonics Region sources: nm-aea. Confidence: medium. Unresolved: City
+    and founding year only from search snippets; headcount not found.'
+- id: hypercomp-engineering
+  name: HyPerComp Engineering
+  website: null
+  careers_url: null
+  hq: Brigham City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: 1996
+  headcount:
+    value: 30
+    as_of: '2024-01-01'
+    source: NIST MEP success story (https://www.nist.gov/mep/successstories/2024/quality-system-grows-hypercomp-engineering)
+  climate:
+    tier: enabling
+    reason: Composite pressure vessels for hydrogen and other compressed-gas storage.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 30 people (NIST MEP success story, 2024-01-01); founded 1996 and no equity raise in the last 5 years
+      found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: NIST says about 30 employees; year only (2024,
+    from the story URL), so as_of is the first day of 2024. LinkedIn band 11-50 in a search snippet. Founded: search
+    snippet (inknowvation.com SBIR company profile / LinkedIn); not confirmed on a fetched page. Stage: private,
+    no venture rounds found; NASA SBIR contracts mentioned in search results Flags: sectors include aerospace and
+    military UAVs alongside automotive and industrial gas; no acquisition found. Evidence: https://www.nist.gov/mep/successstories/2024/quality-system-grows-hypercomp-engineering
+    https://inknowvation.com/sbir/companies/hypercomp-engineering-inc Region sources: ut-goeo-mfg-grant. Confidence:
+    medium. Unresolved: No company website found in the input or results; founding year only from a search snippet;
+    CNG tanks not confirmed.'
+- id: ibeam-materials
+  name: iBeam Materials
+  website: https://ibeammaterials.com
+  careers_url: null
+  hq: Santa Fe, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Flexible LEDs and displays grown on metal foil; general lighting and displays, no climate case under
+      the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: no funding information found; site says it was admitted
+    to the EvoNexus incubator Flags: site now focuses on LEDs/displays rather than solar cells. Evidence: https://www.ibeammaterials.com/
+    Region sources: nm-search, third-derivative. Confidence: medium. Unresolved: HQ not stated on the site (from
+    input); EvoNexus is a California incubator, so HQ may have moved; founding year, headcount.'
+- id: lg-energy-solution-arizona
+  name: LG Energy Solution Arizona
+  website: https://www.lgensol.com/
+  careers_url: null
+  hq: Seoul, South Korea
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Queen Creek, AZ battery complex: 36 GWh of 46-series cylindrical EV cells and 17 GWh of LFP cells for
+      energy storage.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by LG Energy Solution over 1; not independent.
+  notes: 'No job board found on the company''s site. Stage: Subsidiary of LG Energy Solution (KRX-listed; listing
+    year not verified here). Flags: subsidiary of LG Energy Solution; over 1,000 employees (parent); HQ outside
+    region; LFP/ESS plant construction halted June 2024; restart date not set. Evidence: https://www.koreajoongangdaily.com/business/lg/12367853
+    https://www.kedglobal.com/newsView/ked202404040005 https://www.abc15.com/news/business/lg-energy-solutions-queen-creek-battery-plant-nears-completion-hiring-ramps-up
+    Region sources: az-tech-council-battery, gpec-av-ev. Confidence: medium. Unresolved: Whether mass production
+    started in 2026 (2025 reports targeted spring/summer 2026); site headcount; lgensol.com company page 404 and
+    Dealroom 404.'
+- id: lion-energy
+  name: Lion Energy
+  website: https://lionenergy.com/
+  careers_url: null
+  hq: American Fork, UT
+  ats:
+    type: adp
+    board: 0e788c70-47f0-4896-82d6-96fcb3e8e079
+  read: manual
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: LFP home battery systems (Sanctuary), portable power stations, RV/marine lithium batteries and solar
+      panels.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board adp:0e788c70-47f0-4896-82d6-96fcb3e8e079 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Stage: No funding or ownership information found. Evidence: https://lionenergy.com/
+    Region sources: ut-goeo-mfg-grant, ut-search. Confidence: medium. Unresolved: Founding year, headcount, funding/ownership;
+    whether products are made in-house or sourced.'
+- id: lithion-battery
+  name: Lithion Battery
+  website: https://www.lithionbattery.com/
+  careers_url: null
+  hq: Henderson, NV
+  ats:
+    type: adp
+    board: c8842c22-2743-4df9-af35-f08182629130
+  read: manual
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery packs, US-made 26650 cells (Lithion Power Sources), commercial and home energy storage
+      systems and Valence industrial modules.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board adp:c8842c22-2743-4df9-af35-f08182629130 seen 2026-11-25, linked from the company''s own site: role
+    count not read (no public feed). Evidence: https://lithionbattery.com/ Region sources: nv-goed-lithium-loop,
+    nv-battery-coalition. Confidence: medium. Unresolved: Site gives no address (Henderson, NV per input not confirmed),
+    founding year, owner or headcount.'
+- id: lithium-americas-thacker-pass
+  name: Lithium Americas (Thacker Pass)
+  website: https://www.lithiumamericas.com/
+  careers_url: null
+  hq: Reno, NV
+  ats:
+    type: workday
+    board: lithiumamericas
+  read: manual
+  sectors:
+  - battery-materials
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Building the Thacker Pass lithium mine with an on-site chemical plant; mining is out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; public, with a listing or offering reported in 2028.
+  notes: 'Board workday:lithiumamericas.wd108.myworkdayjobs.com/External_Careers_SG seen 2026-11-25, linked from
+    the company''s own site: role count not read (no public feed). Stage: Listed on TSX and NYSE (LAC); listing
+    year not stated on fetched pages. Phase 1 targeted for mechanical completion late 2027, ramp-up 2028. Flags:
+    pre-production; under construction; lithium: mine plus lithium carbonate processing plant. Evidence: https://lithiumamericas.com/
+    https://lithiumamericas.com/about-us/ Region sources: nv-goed-lithium-loop, nv-battery-coalition, unr-tech-hub.
+    Confidence: medium. Unresolved: HQ (Reno per input; contact phone has a Vancouver 778 area code), founding year,
+    headcount, listing year and any government or GM stake not found on fetched pages; Dealroom 404.'
+- id: livewire-innovation
+  name: LiveWire Innovation
+  website: https://www.livewireinnovation.com/
+  careers_url: null
+  hq: Salt Lake City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Spread-spectrum time-domain reflectometry (SSTDR) sensors and fault locators (Arc Chaser, Fault Trapper,
+      Mantis) that find faults in live electrical wiring; also OEM sensor engines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: no funding information found Flags: markets: aviation,
+    rail, industrial, utility. Evidence: https://www.livewireinnovation.com/ Region sources: uofu-tlo-portfolio.
+    Confidence: medium. Unresolved: HQ not stated on the site (taken from input); founding year, headcount, funding
+    not found; Dealroom slug 404.'
+- id: moxy
+  name: MOXY
+  website: https://moxyoid.com
+  careers_url: null
+  hq: Las Vegas, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: CERLOS building products (siding, panels) made from mineralized wood fiber.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Running a Reg CF crowdfunding offering for CERLOS Factory
+    #1 (amount not stated); no venture rounds found. Flags: second head office in Toronto, ON; CO2 storage claim
+    from the directory not confirmed on the home page. Evidence: https://moxyoid.com/ Region sources: third-derivative.
+    Confidence: medium. Unresolved: Founding year, headcount, factory location.'
+- id: nextech-batteries
+  name: NexTech Batteries
+  website: https://www.nextechbatteries.com/
+  careers_url: null
+  hq: Carson City, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Patented lithium-sulfur batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://nextechbatteries.com/ Region sources: nv-goed-lithium-loop,
+    nv-battery-coalition. Confidence: medium. Unresolved: Founded, funding, plant and headcount not found; Dealroom
+    404. Footer 2025, no dated news.'
+- id: oxeon-energy
+  name: OxEon Energy
+  website: https://www.oxeonenergy.com/
+  careers_url: null
+  hq: North Salt Lake, UT
+  ats:
+    type: ashby
+    board: oxeon
+  read: auto
+  sectors:
+  - fission
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid oxide electrolysis stacks, plasma reformers and Fischer-Tropsch reactors for on-site hydrogen
+      and sustainable fuel production.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:oxeon seen 2026-11-25, token matched by name; board page checked: 2 open roles, 2 US-remote.
+    Stage: Site cites $100M in technology development funding (largely government R&D: NASA, DOE, NRL, AFRL logos);
+    no venture round found (https://www.oxeonenergy.com/). Flags: government/defense R&D partners (Navy, Air Force
+    labs) among listed partners. Evidence: https://www.oxeonenergy.com/ https://www.oxeonenergy.com/about Region
+    sources: ut-goeo-oxeon. Confidence: medium. Unresolved: Founding year, headcount, ownership, HQ city (from input).'
+- id: pajarito-powder
+  name: Pajarito Powder
+  website: https://www.pajaritopowder.com/
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: series-b
+  founded: 2011
+  headcount: null
+  climate:
+    tier: core
+    reason: Catalysts and engineered catalyst supports for fuel cells and PEM electrolyzers (platinum and iridium
+      oxide catalysts, precious-metal-free catalysts).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2011, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only ''under 100'' (94% US,
+    small teams in Belgium and Germany). Founded: https://dealroom.co/companies/pajarito-powder. Stage: Dealroom:
+    DOE (seed); Hyundai, Kia, Bekaert (Series A); Ecovyst (''Series B and later''); total equity $10-50M; last valuation
+    $25-50M (2024). NM EDD award $766,000 (2024-05-13). Oct 1, 2026: quadrupling production capacity. Flags: main
+    customers are vehicle makers (fuel cell EVs). Evidence: https://pajaritopowder.com/ https://dealroom.co/companies/pajarito-powder
+    https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514 Region sources: nm-aea,
+    nm-search, arpa-e. Confidence: medium. Unresolved: Exact last round letter not confirmed (Dealroom says ''Series
+    B and later''); exact headcount.'
+- id: palladias
+  name: Palladias
+  website: null
+  careers_url: null
+  hq: Los Alamos, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Resins that extract rare earths and other critical minerals from ores and waste streams.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: State SBIR/STTR matching grant (NM EDD, per Los Alamos
+    Daily Post headline); no venture rounds found. Flags: serves mining (supplier of extraction chemicals, not a
+    mine operator). Evidence: https://ladailypost.com/state-awards-sbir-sttr-grants-to-7-innovative-businesses-including-palladias-of-los-alamos
+    Region sources: nm-search. Confidence: low. Unresolved: Details from search summary only; founding year, headcount,
+    website.'
+- id: purity-resource
+  name: Purity ReSource
+  website: https://purityresource.com/
+  careers_url: null
+  hq: Arizona
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Membrane separation and cleaning systems that recover and reuse water and chemicals in semiconductor
+      fabs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF Futures Engine in the Southwest Innovation Grant,
+    March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
+    site says ''backed by industry leaders'' (Taiyo Nippon Sanso logo). Flags: main customers are semiconductor
+    fabs. Evidence: https://purityresource.com/ https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
+    Region sources: sw-futures-engine-2025. Confidence: medium. Unresolved: City, founding year, funding rounds,
+    headcount.'
+- id: qnergy
+  name: Qnergy
+  website: https://www.qnergy.com/
+  careers_url: null
+  hq: Ogden, UT
+  ats:
+    type: paylocity
+    board: c507f3f1-5e6c-45ce-8c56-1db72ce8c505
+  read: manual
+  sectors: []
+  stage: series-c
+  founded: 2009
+  headcount:
+    value: 84
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/qnergy)
+  climate:
+    tier: out
+    reason: Free-piston Stirling engine generators (PowerGen), compressed-air pneumatics for well sites, and TORCH4
+      landfill methane flares. Runs mainly on natural gas (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 84 people (Dealroom, 2026-11-24); funding round reported in 2021.
+  notes: 'Board paylocity:c507f3f1-5e6c-45ce-8c56-1db72ce8c505 seen 2026-11-25, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Dealroom 84 (band under 100), undated; Dealroom says 82%
+    of staff in the US. Founded: https://dealroom.co/companies/qnergy. Stage: Series C, $16M, November 2021, led
+    by OGCI Climate Investments; $46M total over five rounds (Dealroom, https://dealroom.co/companies/qnergy). Flags:
+    main customers are oil and gas; runs mainly on natural gas / waste methane; HQ sources: Dealroom lists Israel;
+    Ogden, UT is main US site. Evidence: https://www.qnergy.com/ https://dealroom.co/companies/qnergy Region sources:
+    builtin-ut-energy. Confidence: high. Unresolved: Whether legal HQ is now Ogden or Israel.'
+- id: rivixl
+  name: Rivixl
+  website: null
+  careers_url: null
+  hq: Tucson, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - battery-materials
+  stage: pre-seed
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Low-cost green hydrogen production using polymer cathodes and neutral water (University of Arizona chemistry
+      spinout).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://cbc.arizona.edu/news/tech-launch-arizona-helps-launch-nine-startups-including-rivixl.
+    Stage: Rivixl LLC launched via Tech Launch Arizona in FY2024; no funding found. Flags: very early stage (university
+    spinout). Evidence: https://cbc.arizona.edu/news/tech-launch-arizona-helps-launch-nine-startups-including-rivixl
+    https://techlaunch.arizona.edu/startups/startup-portfolio Region sources: ua-tla-portfolio. Confidence: medium.
+    Unresolved: Website, funding, headcount. Stage pre-seed is inferred from spinout status only.'
+- id: safe-li
+  name: Safe-Li
+  website: null
+  careers_url: null
+  hq: Tempe, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Fire-safe lithium-ion and lithium-metal battery technology (a coating step added to battery manufacturing),
+      licensed exclusively from ASU via Skysong Innovations.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Stage: $300,000 seed funding from Shell''s GameChanger program,
+    January 2023 (https://news.asu.edu/20230130-asu-startup-receives-funding-advance-firesafe-battery-research).
+    Evidence: https://news.asu.edu/20230130-asu-startup-receives-funding-advance-firesafe-battery-research Region
+    sources: asu-search. Confidence: low. Unresolved: Website (safe-li.com reset the connection), HQ city (input),
+    activity since 2023, headcount.'
+- id: sigma-advanced-technologies
+  name: Sigma Advanced Technologies
+  website: null
+  careers_url: null
+  hq: New Mexico
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ozone-based technologies that remove contaminants from oil and gas produced water and capture/neutralize
+      PFAS (PFAS elements from Sandia).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NM EDD Advanced Energy award $300,500 (2024-05-13);
+    no venture rounds found. Flags: produced-water treatment (oil and gas) is one of its two lines. Evidence: https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514
+    Region sources: nm-aea. Confidence: low. Unresolved: City, site, founding year, headcount; whether it sells
+    equipment or treatment services.'
+- id: sion-power
+  name: Sion Power
+  website: https://sionpower.com/
+  careers_url: null
+  hq: Tucson, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: null
+  founded: 1989
+  headcount:
+    value: 90
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/sion-power)
+  climate:
+    tier: core
+    reason: Licerion lithium-metal rechargeable battery cells, mainly for EVs.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 90 people (Dealroom, 2026-11-24); founded 1989 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom count undated (date is when read);
+    down 7.2% over the past year. Founded: https://dealroom.co/companies/sion-power. Stage: Dealroom: undisclosed
+    financing Nov 2021; late-stage VC round Jan 2024 with LG Energy Solution; total equity funding $50-100M; series
+    letter not given. Investors include BASF and LG Energy Solution. Evidence: https://sionpower.com/ https://dealroom.co/companies/sion-power
+    Region sources: az-tech-council-battery, az-search, builtin-az-energy, arpa-e. Confidence: high. Unresolved:
+    Round series of the Jan 2024 financing.'
+- id: solestial
+  name: Solestial
+  website: https://solestial.com/
+  careers_url: null
+  hq: Tempe, AZ
+  ats:
+    type: lever
+    board: solestial
+  read: auto
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: 2013
+  headcount:
+    value: 50
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/solestial)
+  climate:
+    tier: out
+    reason: Ultrathin silicon solar cells for satellites; space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 50 people (Dealroom, 2026-11-24). Owned by York Space Systems space market; not independent.
+  notes: 'Board lever:solestial seen 2026-11-25, linked from the company''s own site: 8 open roles, 1 US-remote.
+    Headcount note: Dealroom shows 50 and band under 100; undated. Founded: https://dealroom.co/companies/solestial.
+    Stage: Acquired by York Space Systems, closed June 2026 (company newsroom, https://solestial.com/). Before that:
+    $10-50M equity, investors incl. Airbus Ventures, Mitsubishi Electric; $1.2M SpaceWERX grant July 2025 (Dealroom).
+    Flags: subsidiary of York Space Systems; space market (satellites). Evidence: https://solestial.com/ https://dealroom.co/companies/solestial
+    Region sources: asu-search. Confidence: high. Unresolved: Deal terms; post-acquisition headcount.'
+- id: source-global-formerly-zero-mass-water
+  name: SOURCE Global (formerly Zero Mass Water)
+  website: https://www.source.co/
+  careers_url: null
+  hq: Scottsdale, AZ
+  ats:
+    type: rippling
+    board: source
+  read: auto
+  sectors:
+  - water
+  - solar
+  stage: null
+  founded: 2014
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar-powered hydropanels that make drinking water from air.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2014.
+  notes: 'Board rippling:source seen 2026-11-25, token matched by name; board page checked: 8 open roles, 8 US-remote.
+    Headcount note: Dealroom gives only the band ''under 100'' (no lower bound, undated). Founded: https://dealroom.co/companies/source-global.
+    Stage: Dealroom: $100-500M disclosed equity funding, investors grouped under ''Series A1'' and ''Series B and
+    later'', profiled as a unicorn (https://dealroom.co/companies/source-global). Latest round not shown, so Series
+    B vs. Series D+ is unresolved. Flags: HQ sources disagree: Dealroom says Tempe, input says Scottsdale. Evidence:
+    https://dealroom.co/companies/source-global Region sources: asu-search, bev, elemental. Confidence: low. Unresolved:
+    source.co returned HTTP 402 (refused); current status, exact stage and headcount not confirmed. Built In profile
+    could not be read (429, Built In now off limits).'
+- id: spiritus-technologies
+  name: Spiritus Technologies
+  website: null
+  careers_url: null
+  hq: Los Alamos, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 56
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/spiritus)
+  climate:
+    tier: core
+    reason: 'Direct air capture: proprietary sorbent and modular ''Carbon Orchard'' system; sells carbon removal
+      credits.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 56 people (Dealroom, 2026-11-24); founded 2022, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom, undated. Founded: https://dealroom.co/companies/spiritus.
+    Stage: $30M Series A, March 2025, reported $120M valuation (Dealroom); $41M total over four rounds; investors
+    include Khosla Ventures, Mitsubishi Heavy Industries, Aramco Ventures, TDK Ventures. Flags: revenue model is
+    carbon removal credits; Aramco Ventures among investors. Evidence: https://dealroom.co/companies/spiritus Region
+    sources: nm-aea. Confidence: medium. Unresolved: Input says White Rock, NM (in Los Alamos County); Dealroom
+    says Los Alamos. Company site not fetched.'
+- id: stadler-us
+  name: Stadler US
+  website: https://www.stadlerrail.com/
+  careers_url: null
+  hq: Bussnang, Switzerland
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 18000
+    as_of: '2026-11-24'
+    source: Stadler website (group, 'more than 18,000') (https://www.stadlerrail.com/en/)
+  climate:
+    tier: enabling
+    reason: Rail vehicles (mainline, urban, locomotives, tailor-made) plus signalling and services; the US unit
+      builds trains in Salt Lake City.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '18,000 people (Stadler website (group, ''more than 18,000''), 2026-11-24): over the 4,000 cap and its
+      tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Group-wide figure, not the Salt Lake City site.
+    Stage: US unit of Stadler Rail AG (Bussnang, Switzerland), which is publicly listed on the SIX Swiss Exchange;
+    listing year not confirmed this session (Stadler pages render without text). Flags: subsidiary of Stadler Rail
+    AG; HQ outside region; over 1,000 employees; site: Salt Lake City, UT. Evidence: https://www.stadlerrail.com/en/
+    Region sources: ut-goeo-mfg-grant. Confidence: medium. Unresolved: Salt Lake City plant details, US headcount,
+    founding year and listing year not retrieved (site pages are JavaScript-rendered).'
+- id: tpi-composites
+  name: TPI Composites
+  website: https://www.tpicomposites.com/
+  careers_url: null
+  hq: Scottsdale, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Composite wind turbine blades (5,420 blades produced in 2025).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Energy Capital Partners over 1; not independent.
+  notes: 'No job board found on the company''s site. Stage: Company site: ''In July of 2026, Energy Capital Partners
+    (ECP) acquired TPI Composites, Inc.'' (https://www.tpicomposites.com/energy-capital-partners). Previously Nasdaq-listed
+    (TPIC, IPO 2016, from general knowledge); Chapter 11 timeline not confirmed from a fetched source. Flags: subsidiary
+    of Energy Capital Partners; over 1,000 employees likely (not confirmed); manufacturing mainly in Mexico and
+    abroad. Evidence: https://www.tpicomposites.com/ https://www.tpicomposites.com/about https://www.tpicomposites.com/energy-capital-partners
+    Region sources: builtin-az-greentech. Confidence: medium. Unresolved: Founding year (site says blades produced
+    since 2001); headcount; bankruptcy and delisting dates.'
+- id: ts-nano
+  name: TS-Nano
+  website: https://ts-nano.com/
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Nano-modified polymer sealants (TSN-20 well-top sealant, TSN-23 cement modifier, TSN-25 standalone sealant)
+      for sealing oil and gas wells and methane leaks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NM EDD Advanced Energy award $713,000 (2024-05-13);
+    UNM-derived technology; no venture rounds found. Flags: main customers are oil and gas well operators (incl.
+    abandoned/orphaned wells). Evidence: https://www.ts-nano.com/ https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514
+    Region sources: nm-aea, unm-rainforest, nm-search. Confidence: medium. Unresolved: Founding year, headcount;
+    geothermal/hydrogen storage uses from the directory not confirmed on the site.'
+- id: ubiqd
+  name: UbiQD
+  website: https://www.ubiqd.com/
+  careers_url: null
+  hq: Los Alamos, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - buildings
+  stage: series-b
+  founded: 2014
+  headcount:
+    value: 39
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/ubiqd)
+  climate:
+    tier: core
+    reason: Low-hazard quantum dot materials and nanocomposites; UbiGro luminescent greenhouse layer, solar (windows)
+      and security inks.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 39 people (Dealroom, 2026-11-24); founded 2014, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom, undated; band under 100. Founded:
+    https://dealroom.co/companies/ubiqd. Stage: $20M Series B, April 2025, $80M valuation (Dealroom); $6M SVB debt
+    Nov 2025; NM EDD award $617,500 (2024-05-13). Evidence: https://dealroom.co/companies/ubiqd https://ubiqd.com/
+    https://biz.nm.gov/newsroom/state-awards-advanced-energy-grants-to-7-companies-100000514 Region sources: nm-aea,
+    nm-search. Confidence: high.'
+- id: ultion-technologies
+  name: Ultion Technologies
+  website: https://www.ultiontech.com/
+  careers_url: null
+  hq: Las Vegas, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: LFP lithium battery cells (18650 and 26650) and 12V LFP battery packs, custom batteries and battery
+      systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://ultiontech.com/ Region sources: nv-goed-lithium-loop,
+    nv-battery-coalition. Confidence: medium. Unresolved: Founded, funding and headcount not found; whether cells
+    are made in-house not stated; recycling not mentioned on site. Footer 2024, no dated news, so activity is not
+    confirmed.'
+- id: unimacts
+  name: Unimacts
+  website: https://www.unimacts.com/
+  careers_url: null
+  hq: Las Vegas, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - wind
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Contract-manufactured metal components: solar products (piles, tracker parts), wind components, transformers,
+      precision and industrial components.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Zetwerk; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Site lists 20 facilities in 14+ countries.
+    Stage: Site footer reads ''Unimacts Zetwerk Company'', suggesting Zetwerk is the parent. Flags: subsidiary of
+    Zetwerk (per site footer). Evidence: https://unimacts.com/ Region sources: house-unimacts. Confidence: low.
+    Unresolved: HQ and Las Vegas, NV site not stated on home page; Spain wind plant not confirmed; headcount and
+    founding year not found.'
+- id: visionary-products
+  name: Visionary Products
+  website: null
+  careers_url: null
+  hq: Utah
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Low-cost automated inflatable exterior window shades to cut home cooling energy.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Visionary Products Inc. (VPI): DOE award $200,000, ''Inflatable
+    Low-cost Exterior Window Attachments'', announced 2022-06-27 (https://business.utah.gov/innovation/utah-companies-receive-awards-for-energy-technology-development/);
+    another report says VPI received over $1M from DOE. Evidence: https://business.utah.gov/innovation/utah-companies-receive-awards-for-energy-technology-development/
+    Region sources: ut-goeo-energy-awards. Confidence: low. Unresolved: Website, city, founding year, headcount,
+    current activity.'
+- id: wavr-technologies
+  name: WAVR Technologies
+  website: https://wavrtechnologies.com/
+  careers_url: null
+  hq: Las Vegas, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Atmospheric water harvesting systems using a patent-pending liquid-desiccant process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://wavrtechnologies.com/ Region sources: sw-futures-engine-2025.
+    Confidence: medium. Unresolved: Founded, funding, headcount; Dealroom 404.'
+- id: zenthos-energy
+  name: Zenthos Energy
+  website: https://www.zenthosenergy.com/
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery company formerly Flow Aluminum (aluminum-based batteries); site lists products 'Ion', 'CO2'
+      and 'Air' without detail.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: As Flow Aluminum: NM EDD Advanced Energy award $400,000
+    (2024-05-13); no venture rounds found. Flags: same company as Flow Aluminum (renamed); duplicate of the Flow
+    Aluminum entry. Evidence: https://www.zenthosenergy.com/ Region sources: unm-rainforest, nm-search. Confidence:
+    medium. Unresolved: Rename date; HQ city not on site (from input); founding year; headcount.'
