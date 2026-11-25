@@ -237,6 +237,22 @@ def careers_candidates(page: str, base: str, domain: str) -> list[str]:
     return ordered[:2]
 
 
+_LINKEDIN_JOBS = re.compile(r"linkedin\.com/(?:jobs/view/|company/[^/?#\s]+/jobs)", re.I)
+
+
+def linkedin_jobs_links(page: str, base: str) -> list[str]:
+    """Links to LinkedIn job pages, or to a company's LinkedIn jobs, labelled as
+    jobs; a plain LinkedIn icon is not one."""
+    found = []
+    for url, label in links(page, base):
+        if "linkedin.com" not in url.lower():
+            continue
+        if _LINKEDIN_JOBS.search(url) or (re.search(r"linkedin\.com/company/", url, re.I) and _JOB_WORDS.search(label or "")):
+            if url not in found:
+                found.append(url)
+    return found
+
+
 def refusal(page: str) -> str | None:
     head = page[:20000]
     if _CHALLENGE_TITLE.search(head) or (_CHALLENGE.search(head) and len(visible_text(page)) < 1500):
@@ -260,6 +276,11 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
         return {"outcome": "ok", "method": "jobposting-blocks", "postings": blocks, "posting_links": len(postings)}
     if postings:
         return {"outcome": "ok", "method": "plain-listing", "postings": len(postings), "examples": postings[:3]}
+    linkedin = linkedin_jobs_links(page, url)
+    if linkedin:
+        # The careers reader follows these (decision 12a); the probe does not ask LinkedIn.
+        return {"outcome": "unclear", "method": "linkedin", "postings": 0,
+                "note": f"careers page points to LinkedIn for its jobs ({len(linkedin)} links); the careers reader follows them"}
     if pdfs:
         return {"outcome": "unreadable", "method": "pdf", "postings": len(pdfs), "note": "postings given as PDFs"}
     if _NONE_OPEN.search(text):
@@ -465,11 +486,17 @@ def main(argv: list[str] | None = None) -> int:
                         help="probe every core or enabling company, established ones too (decision 14)")
     parser.add_argument("--read-disallowed", action="store_true",
                         help="read pages robots.txt disallows, noting it (decision 12b)")
+    parser.add_argument("--skip-probed", action="store_true",
+                        help="leave out companies already in another data/screening/careers-probe-*.yml")
     args = parser.parse_args(argv)
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(errors="replace")
 
     targets = companies_to_probe(load_yaml(args.companies)["companies"], established=args.established)
+    if args.skip_probed:
+        probed = {entry["company_id"] for path in sorted((ROOT / "data" / "screening").glob("careers-probe-*.yml"))
+                  if path.resolve() != args.out.resolve() for entry in load_yaml(path).get("companies", [])}
+        targets = [company for company in targets if company["id"] not in probed]
     if args.only:
         targets = [company for company in targets if company["id"] in args.only]
     previous = {}
