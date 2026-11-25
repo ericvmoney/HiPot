@@ -38,7 +38,7 @@ import yaml
 
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.io import ROOT, load_yaml
-from tools.validate import is_listed
+from tools.validate import company_type, is_listed
 
 PAGE_INTERVAL = 3.0
 MAX_PAGES = 4          # robots.txt, home page, two careers pages
@@ -418,7 +418,7 @@ def companies_to_probe(registry: list[dict], established: bool = False) -> list[
     def wanted(company):
         if established:
             return company["climate"]["tier"] in ("core", "enabling")
-        return is_listed(company)
+        return is_listed(company) and company_type(company) == "startup"
     return [company for company in registry
             if wanted(company) and company["ats"]["type"] == "unknown" and company.get("website")]
 
