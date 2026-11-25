@@ -138,12 +138,56 @@ def test_probe_stops_on_a_block_or_a_bot_check():
     assert result["outcome"] == "blocked" and result["note"] == "bot check" and len(site.asked) == 2
 
 
+TEXT = "<p>" + "We design and build flywheel storage for the grid. " * 20 + "</p>"
+NAV = "".join(f'<a href="/page-{n}">Page {n}</a>' for n in range(12))
+
+
 def test_probe_tries_the_usual_paths_and_stays_within_four_pages():
-    site = FakeSite({"https://acme.example.com/": "<p>Home</p>"})
+    site = FakeSite({"https://acme.example.com/": TEXT + NAV})
     result = probe(entry(), site)
     assert result["outcome"] == "no-careers-page"
     assert site.asked == ["https://acme.example.com/robots.txt", "https://acme.example.com/",
                           "https://acme.example.com/careers", "https://acme.example.com/jobs"]
+
+
+def test_a_near_empty_home_page_is_unreadable_not_missing():
+    site = FakeSite({"https://acme.example.com/": "<html><body><div>Acme</div></body></html>"})
+    result = probe(entry(), site)
+    assert result["outcome"] == "unreadable" and result["method"] == "javascript"
+
+
+def test_recaptcha_on_an_ordinary_page_is_not_a_bot_check():
+    page = TEXT + '<script src="https://www.google.com/recaptcha/api.js"></script>{"captchaSettings": {}}'
+    assert probe_module.refusal(page) is None
+    assert probe_module.refusal("<html><title>Just a moment...</title></html>") == "bot check"
+    assert probe_module.refusal("<p>Access denied</p>") == "bot check"
+    assert probe_module.refusal(TEXT * 2 + "<p>Access denied for staff areas</p>") is None
+
+
+def test_a_hiring_section_on_the_home_page_is_read_without_another_request():
+    # Seen live: one opening on the home page, as a PDF on the site builder's CDN.
+    home = (TEXT + "<h2>We're hiring</h2><p>Business Manager</p>"
+            '<a href="https://cdn.example-builder.com/files/Business%20Manager%20-%202026.pdf">Apply Here</a>')
+    site = FakeSite({"https://acme.example.com/": home})
+    result = probe(entry(), site)
+    assert result["outcome"] == "unreadable" and result["method"] == "pdf" and result["postings"] == 1
+    assert result["careers_url"] == "https://acme.example.com/" and len(site.asked) == 2
+
+
+def test_saved_pages_replay_and_fill_in_only_what_is_missing(tmp_path):
+    from pipeline.collect.fetch import RecordingFetcher
+    def handler(request):
+        return httpx.Response(200, text=f"<p>{request.url.path}</p>")
+    live = RecordingFetcher(tmp_path, client=httpx.Client(transport=httpx.MockTransport(handler)), sleep=lambda _: None)
+    stay = lambda url: True
+    live.get_page("https://a.example.com/", stay)                 # saved by an earlier pass
+    saved = probe_module.SavedPages(tmp_path)
+    assert saved.get_page("https://a.example.com/", stay) == ("https://a.example.com/", "<p>/</p>")
+    with pytest.raises(FetchError, match="not saved"):
+        saved.get_page("https://a.example.com/careers", stay)
+    filled = probe_module.SavedPages(tmp_path, live=live)
+    assert filled.get_page("https://a.example.com/careers", stay)[1] == "<p>/careers</p>"
+    assert filled.live_requests == 1 and filled.requests == 1
 
 
 def test_probe_follows_redirects_only_on_the_site_and_counts_them():

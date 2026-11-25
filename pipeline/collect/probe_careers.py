@@ -110,9 +110,16 @@ _NONE_OPEN = re.compile(r"no (?:current |open )?(?:openings|open positions|posit
                         r"vacancies|job openings|opportunities (?:available|at this time))|"
                         r"not (?:currently )?hiring|(?:there are|we have) no (?:current |open )?(?:openings|positions|roles)|"
                         r"no (?:current|open) (?:roles|jobs)|check back (?:soon|later)", re.I)
-_CHALLENGE = re.compile(r"just a moment\.\.\.|cf-chl|challenge-platform|attention required!|"
-                        r"captcha|access denied|are you a robot|verify you are human", re.I)
+# A bot check or block page. "captcha" alone is not one: ordinary pages load
+# reCAPTCHA for their contact forms, and site builders name it in their config.
+_CHALLENGE_TITLE = re.compile(r"<title>\s*(?:just a moment|attention required|access denied|"
+                              r"security check|are you a robot|please wait)", re.I)
+_CHALLENGE = re.compile(r"cf-chl|challenge-platform|cf-browser-verification|verify you are human|"
+                        r"are you a robot|access denied", re.I)
 _SIGN_IN = re.compile(r"""<input[^>]+type=["']password["']""", re.I)
+_JOB_WORDS = re.compile(r"job|position|career|opening|description|apply|engineer|technician|manager|"
+                        r"scientist|operator|specialist|intern", re.I)
+_HIRING = re.compile(r"we.re hiring|now hiring|careers?\b|job openings|open positions|join our team|current openings", re.I)
 _JS_APP = re.compile(r"""id=["'](?:root|__next|app|__nuxt)["']|ng-app|data-reactroot|__NEXT_DATA__""", re.I)
 
 
@@ -223,7 +230,7 @@ def careers_candidates(page: str, base: str, domain: str) -> list[str]:
 
 def refusal(page: str) -> str | None:
     head = page[:20000]
-    if _CHALLENGE.search(head):
+    if _CHALLENGE_TITLE.search(head) or (_CHALLENGE.search(head) and len(visible_text(page)) < 1500):
         return "bot check"
     if _SIGN_IN.search(head) and len(visible_text(page)) < 2000:
         return "sign-in page"
@@ -237,8 +244,8 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
         return {"outcome": "ats-found", "method": "ats-link", "ats": systems}
     blocks = job_postings(page)
     postings = posting_links(page, url, domain)
-    pdfs = [link for link, _ in links(page, url) if link.lower().split("?")[0].endswith(".pdf")
-            and re.search(r"job|position|career|opening|description", link, re.I)]
+    pdfs = [link for link, label in links(page, url) if link.lower().split("?")[0].endswith(".pdf")
+            and _JOB_WORDS.search(link + " " + label)]
     text = visible_text(page)
     if blocks:
         return {"outcome": "ok", "method": "jobposting-blocks", "postings": blocks, "posting_links": len(postings)}
@@ -260,6 +267,38 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
 
 class Budget(Exception):
     pass
+
+
+class SavedPages:
+    """Pages saved by an earlier probe (RecordingFetcher.get_page). A page that
+    was not saved failed in that run; it is reported as not found, unless
+    `live` is given, in which case it is fetched now (and saved)."""
+
+    def __init__(self, directory: Path, live=None) -> None:
+        self._replay = ReplayFetcher(directory)
+        self._live = live
+        self.requests = 0
+        self.live_requests = 0
+
+    def get_page(self, url, stay_within, max_redirects=2, max_bytes=1_000_000):
+        try:
+            answer = self._replay.get_page(url)
+            self.requests += 1
+            return answer
+        except FetchError:
+            if self._live is None:
+                self.requests += 1
+                raise FetchError("HTTP 404: not saved in the earlier pass (it failed then)") from None
+        before = self._live.requests
+        try:
+            return self._live.get_page(url, stay_within, max_redirects, max_bytes)
+        finally:
+            self.requests += self._live.requests - before
+            self.live_requests += self._live.requests - before
+
+    def close(self) -> None:
+        if self._live is not None:
+            self._live.close()
 
 
 def probe(company: dict, fetcher) -> dict:
@@ -303,6 +342,13 @@ def probe(company: dict, fetcher) -> dict:
         candidates = careers_candidates(page, final_home, domain)
         if systems and not candidates:
             return _done(entry, start, fetcher, "ats-found", method="ats-link", ats=systems, note="linked from the home page")
+        home_text = visible_text(page)
+        if not candidates and _HIRING.search(home_text):
+            # A hiring section on the home page itself (one opening, a PDF).
+            result = classify_careers_page(page, final_home, domain)
+            if result["outcome"] in ("ok", "ats-found", "none-open", "unreadable"):
+                return _done(entry, start, fetcher, careers_url=final_home,
+                             **{**result, "note": result.get("note") or "postings on the home page"})
         if not candidates:
             root = f"https://{urlsplit(final_home).netloc}"
             candidates = [f"{root}/careers", f"{root}/jobs"]
@@ -336,7 +382,12 @@ def probe(company: dict, fetcher) -> dict:
         if found_page:
             return _done(entry, start, fetcher, "unclear", note=entry["note"])
         disallowed = entry["note"] and entry["note"].startswith("robots.txt disallows")
-        return _done(entry, start, fetcher, "robots-disallowed" if disallowed else "no-careers-page", note=entry["note"])
+        if disallowed:
+            return _done(entry, start, fetcher, "robots-disallowed", note=entry["note"])
+        if len(home_text) < 300 and len(links(page, final_home)) < 10:
+            return _done(entry, start, fetcher, "unreadable", method="javascript",
+                         note=f"home page has almost no text or links ({len(home_text)} characters); built by JavaScript or empty")
+        return _done(entry, start, fetcher, "no-careers-page", note=entry["note"])
     except Blocked as error:
         return _done(entry, start, fetcher, "blocked", note=str(error)[:120])
     except Budget:
@@ -377,7 +428,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, default=ROOT / "data" / "screening" / "careers-probe-01.yml")
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--record", type=Path, metavar="DIR", help="also save every page (data/fixtures-live is ignored by git)")
-    parser.add_argument("--replay", type=Path, metavar="DIR", help="read saved pages instead of the network")
+    parser.add_argument("--replay", type=Path, metavar="DIR",
+                        help="read pages saved by an earlier --record run; a page not saved counts as not found")
+    parser.add_argument("--live-for", action="append", default=[], metavar="ID",
+                        help="with --replay: fetch (and save) this company's pages that were not saved; may be repeated")
+    parser.add_argument("--keep", action="append", default=[], metavar="ID",
+                        help="with --replay: keep this company's entry from the existing --out file unchanged")
     parser.add_argument("--only", action="append", help="probe only this company id (may be repeated)")
     args = parser.parse_args(argv)
     if hasattr(sys.stdout, "reconfigure"):
@@ -386,8 +442,14 @@ def main(argv: list[str] | None = None) -> int:
     targets = companies_to_probe(load_yaml(args.companies)["companies"])
     if args.only:
         targets = [company for company in targets if company["id"] in args.only]
+    previous = {}
+    if args.keep and args.out.exists():
+        previous = {entry["company_id"]: entry for entry in load_yaml(args.out)["companies"]}
+    live = None
     if args.replay:
-        fetcher = ReplayFetcher(args.replay)
+        fetcher = SavedPages(args.replay)
+        if args.live_for:
+            live = SavedPages(args.replay, live=RecordingFetcher(args.replay, min_interval=PAGE_INTERVAL))
     elif args.record:
         fetcher = RecordingFetcher(args.record, min_interval=PAGE_INTERVAL)
     else:
@@ -396,12 +458,18 @@ def main(argv: list[str] | None = None) -> int:
     started = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     try:
         for company in targets:
-            entry = probe(company, fetcher)
+            if company["id"] in previous and company["id"] in args.keep:
+                entry = previous[company["id"]]
+            else:
+                entry = probe(company, live if live is not None and company["id"] in args.live_for else fetcher)
             entries.append(entry)
             print(f"{entry['outcome']:<17} {company['id']}: {entry['note'] or entry['method'] or ''} "
                   f"({entry['postings']} postings, {entry['requests']} requests)")
     finally:
         fetcher.close()
+        if live is not None:
+            live.close()
+            print(f"{live.live_requests} live requests for pages the earlier pass had not saved")
     document = {
         "probe": "careers-probe-01",
         "made_by": "A1 collector, python -m pipeline.collect.probe_careers",
