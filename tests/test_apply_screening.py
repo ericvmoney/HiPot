@@ -140,3 +140,19 @@ def test_probe_sends_a_readable_careers_page_to_the_careers_reader():
     dead = {"id": "y", "careers_url": None, "ats": {"type": "unknown", "board": None}, "read": "none", "notes": None}
     apply_probe(dead, {"company_id": "y", "careers_url": None, "outcome": "no-careers-page", "ats": []})
     assert dead["ats"]["type"] == "unknown" and dead["read"] == "none"
+
+
+from tools.apply_screening import replace_board  # noqa: E402
+
+
+def test_a_sourced_board_replaces_the_registry_board():
+    company = {"ats": {"type": "workday", "board": "fluenceenergy"}, "read": "manual", "careers_url": None}
+    replace_board(company, {"ats": {"type": "workday", "board": "fluenceenergy.wd12/fluenceenergy-jobs"},
+                            "read": "manual", "source": "checked 2026-11-25"})
+    assert company["ats"]["board"] == "fluenceenergy.wd12/fluenceenergy-jobs" and company["read"] == "auto"
+    retired = {"ats": {"type": "bamboohr", "board": "amberkinetics"}, "read": "auto", "careers_url": None}
+    replace_board(retired, {"ats": {"type": "unknown", "board": None}, "read": "none", "source": "redirects"})
+    assert retired["ats"]["type"] == "unknown" and retired["read"] == "none"
+    unsourced = {"ats": {"type": "lever", "board": "x"}, "read": "auto", "careers_url": None}
+    replace_board(unsourced, {"ats": {"type": "unknown", "board": None}})
+    assert unsourced["ats"]["type"] == "lever"

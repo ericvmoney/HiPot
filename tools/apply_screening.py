@@ -271,6 +271,19 @@ def listing_year(reason: str | None) -> int | None:
     return int(found.group(1)) if found else None
 
 
+def replace_board(company: dict, fix: dict) -> None:
+    """A job board the scout checked, with its source: it replaces the registry's
+    board (boards move and retire). Reading is automatic when the collector has
+    a reader for that system, otherwise as the fix says."""
+    ats = fix.get("ats")
+    if not (isinstance(ats, dict) and ats.get("type") and fix.get("source")):
+        return
+    company["ats"] = {"type": ats["type"], "board": ats.get("board")}
+    company["read"] = "auto" if ats["type"] in READABLE and ats.get("board") else (fix.get("read") or "none")
+    if fix.get("careers_url") and not company.get("careers_url"):
+        company["careers_url"] = fix["careers_url"]
+
+
 def retier(company: dict, fix: dict) -> None:
     """A tier change the scout proposes under an owner decision. Allowed only
     when the fix names the decision (`ruling`), so the scout cannot re-tier a
@@ -370,6 +383,7 @@ def main() -> int:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
             retier(companies[fix["id"]], fix)
+            replace_board(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
     for entry in probes:
