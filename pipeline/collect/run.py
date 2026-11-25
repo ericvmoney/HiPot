@@ -20,7 +20,7 @@ from urllib.parse import urlsplit
 from typing import Callable
 
 from pipeline.collect import normalize
-from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable, workday
+from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable, workday
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.state import DEFAULT_RUNS, DEFAULT_STATE, SeenState, record_run, write_json_atomic
@@ -40,6 +40,7 @@ READERS: dict[str, Callable] = {
     "gem": gem.read,
     "paylocity": paylocity.read,
     "workday": workday.read,
+    "icims": icims.read,                       # Terms of Use, Prohibited Uses (robots)
     # These vendors' terms restrict automated reading. They run by the owner's
     # decision of 2026-11-24 (PLAN.md decision 6, recorded as a risk there);
     # each can be turned off for a run with --disable-reader TYPE.
@@ -64,7 +65,7 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
          "paylocity": "recruiting.paylocity.com",
          # Each Workday tenant has its own host; a 429 from one stops them all.
-         "workday": "myworkdayjobs.com"}
+         "workday": "myworkdayjobs.com", "icims": "icims.com"}
 COLLECT_TIERS = ("core", "enabling")
 
 
