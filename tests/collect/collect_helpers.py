@@ -30,6 +30,12 @@ ADDRESSES = {
     "https://api.gem.com/job_board/v0/butcher-power-products/job_posts/": "gem_butcher-power-products.json",
     "https://api.gem.com/job_board/v0/piqenergy/job_posts/": "gem_piqenergy.json",
 }
+# Searches asked with a POST (Workday), and posting answers keyed by address.
+POSTS = {
+    "https://solvenergy.wd1.myworkdayjobs.com/wday/cxs/solvenergy/SOLV_External_Career/jobs": "workday_solvenergy_jobs.json",
+}
+DETAILS_BY_ADDRESS = ["workday_solvenergy_details.json"]
+
 # Feeds that answer in XML or HTML rather than JSON.
 TEXT_ADDRESSES = {
     "https://app.jazz.co/feeds/export/jobs/coreshelltech": "jazzhr_coreshelltech.xml",
@@ -70,6 +76,10 @@ class FakeFetcher:
             return self.extra[url]
         if url in ADDRESSES:
             return load_json(FIXTURES / ADDRESSES[url])
+        for name in DETAILS_BY_ADDRESS:
+            details = load_json(FIXTURES / name)
+            if url in details:
+                return details[url]
         if url.endswith("/detail"):
             base, _, posting = url[: -len("/detail")].rpartition("/")
             if base in BAMBOOHR_DETAILS:
@@ -82,6 +92,19 @@ class FakeFetcher:
             if uuid in details:
                 return details[uuid]
         raise FetchError(f"HTTP 404: no fixture for {url}")
+
+    def post_json(self, url: str, payload: dict):
+        """Workday's search: the fixture answers offset 0; later offsets are empty."""
+        self.calls.append((url, payload))
+        self.requests += 1
+        if url in self.failures:
+            raise self.failures[url]
+        key = (url, payload.get("offset"))
+        if key in self.extra:
+            return self.extra[key]
+        if url in POSTS:
+            return load_json(FIXTURES / POSTS[url]) if payload.get("offset") == 0 else {"total": 0, "jobPostings": []}
+        raise FetchError(f"HTTP 404: no fixture for POST {url}")
 
     def get_text(self, url: str, params: dict | None = None) -> str:
         self.calls.append((url, params))
