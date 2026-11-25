@@ -37,6 +37,28 @@
         }
       }
     },
+    "gov": {
+      "description": "Government wage reference points (BLS OEWS) for metro markets, copied from data/pay/ by the publish step. Never used for grades.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "year", "top_code", "occupations", "rules", "figures"],
+      "properties": {
+        "source": {"type": "string"},
+        "year": {"type": "integer"},
+        "top_code": {"type": "object", "additionalProperties": false, "required": ["year", "hour"],
+                     "properties": {"year": {"type": "number"}, "hour": {"type": "number"}}},
+        "occupations": {"type": "object", "additionalProperties": {"type": "string"}},
+        "rules": {"type": "object", "additionalProperties": {
+          "type": "array", "prefixItems": [{"type": "string"}, {"enum": ["p25", "median", "p75", "p90"]}], "minItems": 2, "maxItems": 2},
+          "description": "'group|level' -> [occupation, statistic]."},
+        "figures": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": {
+          "type": "object", "required": ["area"],
+          "properties": {"area": {"type": "string"}, "top": {"type": "array", "items": {"type": "string"}}},
+          "patternProperties": {"^(year|hour)_(p25|median|p75|p90)$": {"type": ["number", "null"]}},
+          "additionalProperties": false}},
+          "description": "metro -> occupation -> the figures the page uses, and the BLS area they come from."}
+      }
+    },
     "bands": {
       "type": "array",
       "items": {

@@ -29,6 +29,7 @@ from typing import Any
 
 from pipeline.publish import grades as paygrades
 from pipeline.publish import pay as paybands
+from pipeline.publish import wages as paywages
 from pipeline.publish.states import US_STATES, states_for
 from tools.validate import check_companies, check_jobs, is_listed, listed_functions, schema_errors, schema_registry
 
@@ -204,11 +205,16 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
     }
 
 
-def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False) -> dict:
-    """Pay bands for the candidate pay page, from the same roles the board shows."""
+def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
+              wages: dict | None = None) -> dict:
+    """Pay bands for the candidate pay page, from the same roles the board shows.
+
+    `wages` is the government wage reference (data/pay/bls-oews-2025.json); when given, the
+    slice the page needs goes into `gov`.
+    """
     kept = _select(jobs_file, registry_file, taxonomy, include_unlisted)["kept"]
     found = paybands.bands(kept)
-    return {
+    out = {
         "pay_version": PAY_VERSION,
         "generated_at": jobs_file["generated_at"],
         "scope": "all" if include_unlisted else "listed",
@@ -229,6 +235,9 @@ def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unli
         },
         "bands": found,
     }
+    if wages:
+        out["gov"] = paywages.page_wages(wages, found, (paybands.US, paybands.REMOTE))
+    return out
 
 
 def dumps_pay(pay: dict) -> str:
@@ -245,6 +254,29 @@ def write_pay(pay: dict, path: Path | str) -> int:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     data = dumps_pay(pay).encode("utf-8")
+    path.write_bytes(data)
+    return len(data)
+
+
+def build_taxonomy_file(taxonomy: dict) -> dict:
+    """The taxonomy the persona page needs: ids, labels and what each discipline covers."""
+    def pick(key: str, *fields: str) -> list[dict]:
+        return [{field: entry[field] for field in ("id", "label") + fields if field in entry} for entry in taxonomy[key]]
+    return {
+        "taxonomy_version": taxonomy.get("taxonomy_version"),
+        "functions": pick("functions", "covers", "listed"),
+        "disciplines": pick("disciplines", "covers"),
+        "levels": pick("levels"),
+        "sectors": pick("sectors"),
+        "stages": pick("stages"),
+        "metros": pick("metros"),
+    }
+
+
+def write_taxonomy_file(taxonomy: dict, path: Path | str) -> int:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = (_compact(build_taxonomy_file(taxonomy)) + "\n").encode("utf-8")
     path.write_bytes(data)
     return len(data)
 

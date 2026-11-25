@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay
+from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay, write_taxonomy_file
 
 MAX_SHOWN = 15
 
@@ -41,6 +41,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--taxonomy", type=Path, default=ROOT / "taxonomy.yml")
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
+    parser.add_argument("--wages", type=Path, default=ROOT / "data" / "pay" / "bls-oews-2025.json",
+                        help="government wage reference for the pay page; skipped if the file is missing")
     parser.add_argument("--pay-out", type=Path, default=None,
                         help="pay bands for the pay page; default pay.json beside --out")
     parser.add_argument(
@@ -65,7 +67,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
         board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades)
-        pay = build_pay(*inputs, include_unlisted=args.include_unlisted)
+        wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
+        pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
         print(f"FAIL  nothing written: {len(error.problems)} problem(s)", file=sys.stderr)
         for line in error.problems[:MAX_SHOWN]:
@@ -93,12 +96,22 @@ def main(argv: list[str] | None = None) -> int:
         print("  pay grades: off (--no-grades)")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
 
+    taxonomy_out = args.out.with_name("taxonomy.json")
+    taxonomy_size = write_taxonomy_file(inputs[2], taxonomy_out)
+    print(f"Wrote {taxonomy_out} (for the persona page, {taxonomy_size:,} bytes)")
+
     pay_out = args.pay_out or args.out.with_name("pay.json")
     pay_size = write_pay(pay, pay_out)
     shown = sum(1 for band in pay["bands"] if "mid" in band)
     print(f"Wrote {pay_out}")
     print(f"  pay bands: {len(pay['bands'])} ({shown} with 3+ postings) from {pay['counts']['postings']} postings "
           f"with published US-dollar pay ({pay['counts']['year']} yearly, {pay['counts']['hour']} hourly)")
+    if "gov" in pay:
+        gov = pay["gov"]
+        print(f"  gov. wages: {len(gov['occupations'])} occupations in {len(gov['figures'])} metro regions "
+              f"(from {args.wages.name})")
+    else:
+        print(f"  gov. wages: none (no file at {args.wages})")
     print(f"  size: {pay_size:,} bytes ({pay_size / 1024:.1f} KB)")
     return 0
 

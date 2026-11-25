@@ -110,6 +110,9 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .btab td b { display: block; font-weight: 600; white-space: nowrap; }
 .btab td small { display: block; color: var(--muted); font-size: 12.5px; }
 .btab td.na { color: var(--muted); }
+.btab td small.gov { color: var(--soft); }
+.btab td small.gov-na { color: var(--muted); }
+.btab th small { display: block; text-transform: none; letter-spacing: 0; font: 400 11.5px/1.35 var(--sans); color: var(--muted); margin-top: 2px; }
 .btab tbody th {
   font: 500 13.5px/1.4 var(--sans); letter-spacing: 0; text-transform: none; color: var(--ink);
   vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--rule);
@@ -188,12 +191,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
       <div>
         <p><strong>Role</strong> is the first engineering or science discipline for engineers and scientists, and the role type for everyone else: technicians, trades, supply chain and so on. <strong>Level</strong> comes from the job title; "Level not stated" collects titles that give none.</p>
         <p><strong>Market</strong> is a metro area as the Census Bureau draws it. A role listed in two metro areas counts in both. Remote (US) collects remote roles, and All US counts every role in the United States once.</p>
-        <!-- GOVERNMENT WAGE COLUMN (planned, not built). The old hub showed, beside each posted range, what
-             people in the nearest government occupation category are paid in that metro area, from the
-             Bureau of Labor Statistics wage survey (OEWS). It waits for the owner's approval to download
-             that data. When it arrives: add it to pay.json per occupation and market, and fill govWage()
-             in the script below; each cell then gains a second small line. -->
-        <p><strong>Government wage data</strong> (what people in a matching occupation are actually paid, from the Bureau of Labor Statistics) is planned and not yet included.</p>
+        <p id="gov-about"><strong>Gov. wage</strong> is what people in the nearest government occupation category are actually paid in that metro area, from the U.S. Bureau of Labor Statistics wage survey (Occupational Employment and Wage Statistics, <span id="gov-year">May 2025</span>). It uses the median for mid and senior levels, the 75th percentile for staff, the 90th percentile for principal and the 25th percentile for entry; managers and directors of engineering and production roles use the matching manager occupation. It is fixed reference data and an approximation: the survey has no level or job-title split, and each figure comes from the metropolitan area in the region with the most people in that occupation, named above each column. There is no national figure yet, so All US and Remote (US) show n/a. It is not used to grade any role.</p>
         <p class="mono" id="run-note"></p>
       </div>
     </div>
@@ -254,12 +252,37 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 
   function band(per, group, level, market) { return byKey[per + '|' + group + '|' + level + '|' + market] || null; }
 
+  var STATISTICS = { p25: '25th percentile', median: 'Median', p75: '75th percentile', p90: '90th percentile' };
+
   /**
-   * GOVERNMENT WAGE (planned, not built). Return { label, value } for the government wage that
-   * matches this role group, level and market once that data is approved and added to pay.json;
-   * the table shows it as a second small line in each cell. Returns null until then.
+   * Government wage for a role group, level and market, from the BLS slice the publish step put in
+   * pay.json (`gov`). Returns null when the level has no statistic or the area has no figure,
+   * { na: true } for All US and Remote (US), which have no national figure yet, otherwise
+   * { value, top, statistic, occupation, area }. A top-coded value is null with top true.
    */
-  function govWage(group, level, market) { return null; }
+  function govWage(group, level, market, per) {
+    var gov = data.gov;
+    var rule = gov && gov.rules[group + '|' + level];
+    if (!rule) return null;
+    if (market === US || market === REMOTE) return { na: true };
+    var figure = (gov.figures[market] || {})[rule[0]];
+    if (!figure) return null;
+    var field = per + '_' + rule[1];
+    var top = (figure.top || []).indexOf(field) !== -1;
+    if (!top && (figure[field] === null || figure[field] === undefined)) return null;
+    return { value: figure[field], top: top, statistic: rule[1], occupation: gov.occupations[rule[0]], area: figure.area };
+  }
+
+  function govLine(gov, per) {
+    if (!gov) return null;
+    if (gov.na) return el('small', { class: 'gov-na', text: 'Gov. wage n/a' });
+    var amount = gov.top ? 'above ' + money(data.gov.top_code[per], per) : money(gov.value, per);
+    var detail = STATISTICS[gov.statistic] + ' for ' + gov.occupation + ' in ' + gov.area +
+      ' (BLS OEWS, May ' + data.gov.year + ')';
+    return el('small', { class: 'gov', title: detail }, [
+      'Gov. wage ' + amount, el('span', { class: 'sr-only', text: '. ' + detail })
+    ]);
+  }
 
   // ---- Choices -----------------------------------------------------------------------------------
 
@@ -327,18 +350,34 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
   // ---- Table -------------------------------------------------------------------------------------
 
   function cell(b, group, level, market) {
-    var gov = govWage(group, level, market);   // always null for now
+    var gov = govWage(group, level, market, state.per);
     if (b && b.mid !== undefined) {
       return el('td', null, [
         el('b', { text: b.lo === b.hi ? money(b.lo, b.per) : money(b.lo, b.per) + ' – ' + money(b.hi, b.per) }),
         el('small', { text: 'mid ' + money(b.mid, b.per) + ' · ' + plural(b.n, 'posting', 'postings') }),
-        gov ? el('small', { text: gov.label + ' ' + money(gov.value, b.per) }) : null
+        govLine(gov, state.per)
       ]);
     }
     return el('td', { class: 'na' }, [
-      '–',
-      b ? el('small', { text: plural(b.n, 'posting', 'postings') }) : null
+      'Posted –',
+      b ? el('small', { text: plural(b.n, 'posting', 'postings') }) : null,
+      govLine(gov, state.per)
     ]);
+  }
+
+  // The BLS area each metro column draws on: one name when every row agrees, else "several areas".
+  function columnAreas(cols, rowsShown) {
+    var out = {};
+    cols.forEach(function (m) {
+      var areas = {};
+      rowsShown.forEach(function (row) {
+        var gov = govWage(row[0], row[1], m, state.per);
+        if (gov && !gov.na) areas[gov.area] = true;
+      });
+      var names = Object.keys(areas);
+      out[m] = names.length === 1 ? 'Gov. wage: ' + names[0] : names.length ? 'Gov. wage: several BLS areas' : '';
+    });
+    return out;
   }
 
   function render() {
@@ -347,10 +386,8 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
     var levels = Object.keys(levelOrder).sort(function (a, b) { return levelOrder[a] - levelOrder[b]; })
       .filter(function (id) { return !state.level || id === state.level; });
 
-    var head = el('thead', null, [el('tr', null, [el('th', { scope: 'col', text: 'Role and level' })].concat(
-      cols.map(function (m) { return el('th', { scope: 'col', text: labels.markets[m] }); })
-    ))]);
     var body = el('tbody');
+    var rowsShown = [];
     var rows = 0, shown = 0;
     groups.forEach(function (g) {
       // By default a row needs at least one figure (three or more postings) in the columns shown.
@@ -373,9 +410,16 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
           return cell(b, g.id, l, m);
         });
         body.appendChild(el('tr', null, [el('th', { scope: 'row', class: 'row-head', text: labels.levels[l] })].concat(cells)));
+        rowsShown.push([g.id, l]);
         rows += 1;
       });
     });
+    var areas = columnAreas(cols, rowsShown);
+    var head = el('thead', null, [el('tr', null, [el('th', { scope: 'col', text: 'Role and level' })].concat(
+      cols.map(function (m) {
+        return el('th', { scope: 'col' }, [labels.markets[m], areas[m] ? el('small', { text: areas[m] }) : null]);
+      })
+    ))]);
     $('btab').replaceChildren(head, body);
     $('bwrap').hidden = rows === 0;
     $('empty').hidden = rows !== 0;
@@ -440,6 +484,8 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
       $('left-out').textContent = plural(pay.counts.left_out, 'posting', 'postings') +
         ' with published pay are not counted: their pay is in another currency, has no low end, or the role is outside the US.';
     }
+    if (pay.gov) $('gov-year').textContent = 'May ' + pay.gov.year;
+    else $('gov-about').hidden = true;
     if (stamp) $('run-note').textContent = 'Data generated ' + stamp + ' · ' + plural(pay.counts.postings, 'posting', 'postings') + ' with published pay';
   }
 

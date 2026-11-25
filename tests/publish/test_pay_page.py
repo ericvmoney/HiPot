@@ -48,9 +48,14 @@ def test_table_scrolls_inside_its_own_box():
     assert ".page > *, .main > * { min-width: 0; }" in STYLE
 
 
-def test_government_wage_place_is_marked_and_empty():
-    assert "GOVERNMENT WAGE COLUMN (planned, not built)" in PAGE
-    assert "function govWage(group, level, market) { return null; }" in SCRIPT
+def test_government_wage_line_follows_the_hub():
+    # Metro markets only: All US and Remote (US) say n/a; a top-coded value reads "above" the cap.
+    assert "if (market === US || market === REMOTE) return { na: true };" in SCRIPT
+    assert "'Gov. wage n/a'" in SCRIPT
+    assert "var amount = gov.top ? 'above ' + money(data.gov.top_code[per], per) : money(gov.value, per);" in SCRIPT
+    # Each figure names its statistic, occupation, BLS area and survey year.
+    assert "' (BLS OEWS, May ' + data.gov.year + ')'" in SCRIPT
+    assert '<p id="gov-about"><strong>Gov. wage</strong>' in PAGE and "It is not used to grade any role." in PAGE
 
 
 def test_page_and_publish_step_agree_on_the_data_version():

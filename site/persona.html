@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HiPot Persona Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Turn your resume into a persona.yml for HiPot, entirely in your browser. Your resume never leaves this page.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+/* Layout: the board's header and tokens, then three numbered steps that really are a sequence:
+   read the resume, review what was found, save persona.yml. One column, form rows in cards. */
+:root {
+  --bg: #F5F2EA;
+  --surface: #ECE8DD;
+  --card: #FBF9F4;
+  --ink: #1A1A18;
+  --soft: #4A4842;
+  --muted: #5A574F;
+  --rule: #C8C2B3;
+  --accent: #5C6B0F;
+  --rust: #9A4A12;
+  --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA;
+    --muted: #A19D92; --rule: #34322D; --accent: #C9DB5A; --rust: #F0A56A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA;
+  --muted: #A19D92; --rule: #34322D; --accent: #C9DB5A; --rust: #F0A56A;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 var(--sans);
+  padding-block: 0 48px; padding-left: var(--gutter-l); padding-right: var(--gutter-r);
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ul, ol, dl, dd, fieldset { margin: 0; padding: 0; }
+fieldset { border: 0; min-width: 0; }
+ul { list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--ink); text-underline-offset: 0.15em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mono { font: 500 11.5px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.page { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.page > * { min-width: 0; }
+
+.top { padding: 44px 0 26px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; }
+.top-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; align-items: baseline; }
+.top-line a { font: 500 13.5px var(--sans); color: var(--soft); }
+.top h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; margin: 10px 0 12px; text-wrap: balance; }
+.top > p { max-width: 66ch; color: var(--soft); }
+.privacy { margin-top: 18px; background: var(--surface); border-radius: 10px; padding: 14px 16px; color: var(--soft); font-size: 14.5px; max-width: 72ch; }
+.privacy strong { color: var(--ink); }
+
+/* Steps */
+.step { display: flex; flex-direction: column; gap: 14px; }
+.step-head { display: flex; align-items: baseline; gap: 12px; }
+.step-head h2 { font-size: 22px; letter-spacing: -0.01em; }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.help { color: var(--muted); font-size: 13.5px; max-width: 70ch; }
+.input, .select, textarea {
+  background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px;
+  min-height: 40px; padding: 8px 12px; font-size: 14.5px; max-width: 100%;
+}
+textarea { width: 100%; min-height: 150px; resize: vertical; line-height: 1.45; }
+.input.num { width: 9em; }
+.btn {
+  background: transparent; color: var(--soft); border: 1px solid var(--rule); border-radius: 999px;
+  min-height: 40px; padding: 7px 15px; cursor: pointer; font: 500 14px var(--sans);
+}
+.btn:hover { border-color: var(--ink); color: var(--ink); }
+.btn-primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn-primary:hover { color: var(--bg); }
+.btn-small { min-height: 32px; padding: 4px 11px; font-size: 13px; }
+.status { font-size: 14px; color: var(--soft); }
+.status.error, .errors { color: var(--rust); }
+
+/* Review form */
+.checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2px 14px; }
+.check { display: flex; align-items: flex-start; gap: 9px; padding: 5px 0; cursor: pointer; font-size: 14.5px; color: var(--soft); }
+.check input { width: 17px; height: 17px; margin: 3px 0 0; flex: none; accent-color: var(--ink); }
+.check input:checked + span { color: var(--ink); font-weight: 600; }
+.check small { display: block; color: var(--muted); font-weight: 400; font-size: 12.5px; }
+.tag { display: inline-block; font: 500 10.5px/1.5 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; color: var(--accent); margin-left: 6px; vertical-align: 1px; }
+.skills { display: flex; flex-direction: column; gap: 8px; }
+.skill { display: grid; grid-template-columns: minmax(0, 1fr) 7em auto; gap: 6px 10px; align-items: center; padding: 10px 0; border-top: 1px solid var(--rule); }
+.skill:first-child { border-top: 0; }
+.skill .evidence { grid-column: 1 / -1; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
+.skill .evidence q { color: var(--soft); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--bg); border: 0; border-radius: 999px; padding: 4px 12px; font: 500 13px var(--sans); cursor: pointer; min-height: 30px; }
+.chip::after { content: "\00d7"; opacity: 0.7; }
+pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overflow-x: auto; font: 400 12.5px/1.5 var(--mono); margin: 0; max-height: 420px; }
+.errors li { list-style: disc; margin-left: 18px; font-size: 14px; }
+.found { color: var(--soft); font-size: 14px; }
+.found li { list-style: disc; margin-left: 18px; }
+@media (max-width: 560px) {
+  .skill { grid-template-columns: minmax(0, 1fr) 6em; }
+  .skill .remove { grid-column: 1 / -1; justify-self: start; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="top-line">
+      <p class="mono">Persona builder · draft · rules only, no AI model</p>
+      <a href="index.html">Back to the job board</a>
+    </div>
+    <h1>Build your persona</h1>
+    <p>Turn your resume into a short <code>persona.yml</code>: the kinds of work, disciplines, level, skills and preferences HiPot can use to find roles for you. The page proposes; you check every field and save the file. Later it will rank roles for you.</p>
+    <p class="privacy"><strong>Your resume stays on this page.</strong> It is read by code running in your browser and is never sent anywhere: the page makes no network request that carries your resume, and it stores nothing in your browser. Your name, email, phone number, street address and employer names are removed before anything is kept, and none of them is written to the file. Close the tab and it is gone.</p>
+  </header>
+
+  <!-- Step 1: read the resume -->
+  <section class="step" aria-labelledby="s1-title">
+    <div class="step-head"><span class="mono">Step 1</span><h2 id="s1-title">Read your resume</h2></div>
+    <div class="card">
+      <div class="field">
+        <label for="resume-file">Choose a PDF, Word (.docx) or text file</label>
+        <input id="resume-file" type="file" accept=".pdf,.docx,.txt,.text,.md,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain">
+      </div>
+      <div class="field">
+        <label for="resume-text">Or paste the text</label>
+        <textarea id="resume-text" spellcheck="false" placeholder="Paste your resume here"></textarea>
+        <p class="help">The text you see here is what the rules read. Check it, especially from a two-column PDF, where lines can come out in the wrong order. A scanned PDF has no text to read.</p>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-primary" id="read-btn">Find details</button>
+        <span class="status" id="read-status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="field">
+        <label for="persona-file">Already have a persona.yml? Open it to edit</label>
+        <input id="persona-file" type="file" accept=".yml,.yaml,.txt,text/yaml,text/plain">
+      </div>
+      <span class="status" id="import-status" role="status" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <!-- Step 2: review -->
+  <section class="step" id="review" aria-labelledby="s2-title" hidden>
+    <div class="step-head"><span class="mono">Step 2</span><h2 id="s2-title">Check every field</h2></div>
+    <p class="help" id="review-intro">These were found by simple rules, which get things wrong. Change anything that is not right.</p>
+
+    <div class="card">
+      <ul class="found" id="removed" hidden></ul>
+      <ul class="found" id="roles-found" hidden></ul>
+    </div>
+
+    <fieldset class="card" id="fs-functions">
+      <legend class="mono">Kind of work</legend>
+      <p class="help">Up to four. Leave only Engineering ticked if that is all you want.</p>
+      <div class="checks" id="functions"></div>
+    </fieldset>
+
+    <fieldset class="card" id="fs-disciplines">
+      <legend class="mono">Disciplines</legend>
+      <p class="help">One to six. Ticked ones were proposed from your job titles and the words in your experience; rules often miss or over-pick here, so check them.</p>
+      <div class="checks" id="disciplines"></div>
+      <div class="row">
+        <button type="button" class="btn btn-small" id="all-disciplines" aria-expanded="false">Show all disciplines</button>
+        <button type="button" class="btn btn-small" id="ai-disciplines" hidden>Suggest with the on-device model</button>
+        <span class="status" id="ai-status" role="status" aria-live="polite"></span>
+      </div>
+    </fieldset>
+
+    <div class="card">
+      <div class="row">
+        <div class="field">
+          <label class="mono" for="level">Level</label>
+          <select class="select" id="level"><option value="">Not stated</option></select>
+        </div>
+        <p class="help" id="level-help"></p>
+      </div>
+    </div>
+
+    <fieldset class="card">
+      <legend class="mono">Sectors you have worked in</legend>
+      <div class="checks" id="domains"></div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend class="mono">Skills</legend>
+      <p class="help">Years are counted from the dates of the roles that mention a skill, never guessed. A skill named only in your skills list has no years. The quoted line shows where each was found.</p>
+      <div class="skills" id="skills"></div>
+      <div class="row">
+        <label class="sr-only" for="new-skill">New skill</label>
+        <input class="input" id="new-skill" placeholder="Add a skill" maxlength="80">
+        <button type="button" class="btn btn-small" id="add-skill">Add</button>
+      </div>
+    </fieldset>
+
+    <div class="card">
+      <div class="field">
+        <label class="mono" for="standards">Standards, one per line</label>
+        <textarea id="standards" style="min-height: 90px"></textarea>
+      </div>
+    </div>
+
+    <fieldset class="card">
+      <legend class="mono">Where you want to work</legend>
+      <div class="row">
+        <div class="field">
+          <label for="metro-pick">Add a metro area</label>
+          <select class="select" id="metro-pick"><option value="">Choose…</option></select>
+        </div>
+      </div>
+      <div class="chips" id="metros" aria-label="Chosen metro areas"></div>
+      <label class="check"><input type="checkbox" id="remote"><span>Open to remote roles</span></label>
+      <div class="field">
+        <label for="relocate">Willing to relocate</label>
+        <select class="select" id="relocate"><option value="">Not stated</option><option value="yes">Yes</option><option value="no">No</option></select>
+      </div>
+    </fieldset>
+
+    <fieldset class="card">
+      <legend class="mono">Preferences and constraints</legend>
+      <div class="row">
+        <div class="field">
+          <label for="min-base">Minimum base salary (US$ a year)</label>
+          <input class="input num" id="min-base" inputmode="numeric" placeholder="e.g. 150000">
+        </div>
+        <div class="field">
+          <label for="work-auth">Work authorization</label>
+          <input class="input" id="work-auth" placeholder="e.g. US" maxlength="60">
+        </div>
+        <div class="field">
+          <label for="clearance">Clearance</label>
+          <input class="input" id="clearance" placeholder="e.g. Secret" maxlength="60">
+        </div>
+      </div>
+      <p class="mono">Company stage you prefer</p>
+      <div class="checks" id="stages"></div>
+      <p class="mono">Sectors you want</p>
+      <div class="checks" id="pref-sectors"></div>
+      <p class="mono">Sectors to leave out</p>
+      <div class="checks" id="exclude-sectors"></div>
+      <div class="field">
+        <label for="exclude-companies">Companies to leave out, one per line</label>
+        <textarea id="exclude-companies" style="min-height: 70px"></textarea>
+      </div>
+      <div class="field">
+        <label for="notes">Notes for yourself (optional)</label>
+        <textarea id="notes" maxlength="1000" style="min-height: 70px"></textarea>
+      </div>
+    </fieldset>
+  </section>
+
+  <!-- Step 3: save -->
+  <section class="step" id="save" aria-labelledby="s3-title" hidden>
+    <div class="step-head"><span class="mono">Step 3</span><h2 id="s3-title">Save persona.yml</h2></div>
+    <div class="card">
+      <label class="check"><input type="checkbox" id="reviewed"><span>I have checked these details</span></label>
+      <ul class="errors" id="errors" aria-live="polite"></ul>
+      <div class="row">
+        <button type="button" class="btn btn-primary" id="download">Save persona.yml</button>
+        <button type="button" class="btn" id="copy">Copy the text</button>
+        <span class="status" id="save-status" role="status" aria-live="polite"></span>
+      </div>
+      <p class="help" id="save-help"></p>
+      <pre class="yaml" id="yaml" tabindex="0" aria-label="persona.yml preview"></pre>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---- Libraries: pinned, from cdnjs, loaded only when a file needs them ----------------------
+  var LIBS = {
+    pdf: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+    pdfWorker: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+    mammoth: 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js',
+    yaml: 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js'
+  };
+  var TAXONOMY_URL = 'data/taxonomy.json';
+  var GENERATED_BY = 'hipot-rules-v0';
+
+  var tax = null;          // the taxonomy file
+  var persona = null;      // the persona being edited
+  var proposals = { disciplines: [] };
+  var showAllDisciplines = false;
+  var loaded = {};
+
+  function $(id) { return document.getElementById(id); }
+
+  function el(tag, props, children) {
+    var node = document.createElement(tag);
+    Object.keys(props || {}).forEach(function (name) {
+      var value = props[name];
+      if (value === null || value === undefined || value === false) return;
+      if (name === 'text') node.textContent = value;
+      else if (name === 'class') node.className = value;
+      else node.setAttribute(name, value === true ? '' : value);
+    });
+    (children || []).forEach(function (child) {
+      if (child === null || child === undefined) return;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+
+  function loadScript(url) {
+    if (loaded[url]) return loaded[url];
+    loaded[url] = new Promise(function (resolve, reject) {
+      var tag = document.createElement('script');
+      tag.src = url;
+      tag.onload = function () { resolve(); };
+      tag.onerror = function () { delete loaded[url]; reject(new Error('could not load ' + url.split('/').pop())); };
+      document.head.appendChild(tag);
+    });
+    return loaded[url];
+  }
+
+  function setStatus(id, text, isError) {
+    $(id).textContent = text;
+    $(id).classList.toggle('error', !!isError);
+  }
+
+  // ---- Reading files -------------------------------------------------------------------------
+
+  function readAsText(file) { return file.text(); }
+
+  // pdf.js: the worker file is loaded as an ordinary script, which gives pdf.js a worker that runs
+  // on the page itself. No separate worker is started, so it works under artifact hosting's rules.
+  function readPdf(file) {
+    return loadScript(LIBS.pdf).then(function () { return loadScript(LIBS.pdfWorker); }).then(function () {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = LIBS.pdfWorker;
+      return file.arrayBuffer();
+    }).then(function (buffer) {
+      return window.pdfjsLib.getDocument({ data: new Uint8Array(buffer), isEvalSupported: false }).promise;
+    }).then(function (doc) {
+      var pages = [];
+      for (var n = 1; n <= doc.numPages; n++) pages.push(n);
+      return Promise.all(pages.map(function (n) {
+        return doc.getPage(n).then(function (page) { return page.getTextContent(); }).then(function (content) {
+          var lines = [], line = '', lastY = null;
+          content.items.forEach(function (item) {
+            var y = item.transform ? Math.round(item.transform[5]) : lastY;
+            if (lastY !== null && y !== lastY && Math.abs(y - lastY) > 2) { lines.push(line); line = ''; }
+            line += item.str;
+            if (item.hasEOL) { lines.push(line); line = ''; y = null; }
+            lastY = y;
+          });
+          if (line) lines.push(line);
+          return lines.join('\n');
+        });
+      }));
+    }).then(function (texts) { return texts.join('\n'); });
+  }
+
+  function readDocx(file) {
+    return loadScript(LIBS.mammoth).then(function () { return file.arrayBuffer(); }).then(function (buffer) {
+      return window.mammoth.extractRawText({ arrayBuffer: buffer });
+    }).then(function (result) { return result.value; });
+  }
+
+  function readResumeFile(file) {
+    var name = (file.name || '').toLowerCase();
+    if (name.endsWith('.pdf') || file.type === 'application/pdf') return readPdf(file);
+    if (name.endsWith('.docx')) return readDocx(file);
+    return readAsText(file);
+  }
+
+  // ---- Extraction: rules only ----------------------------------------------------------------
+
+  var MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, sept: 8, oct: 9, nov: 10, dec: 11 };
+  var DASH = /\s*(?:-|–|—|to)\s*/;
+  var DATE = '(?:(jan|feb|mar|apr|may|jun|jul|aug|sept|sep|oct|nov|dec)[a-z]*\\.?\\s+|(\\d{1,2})/)?((?:19|20)\\d{2})';
+  var RANGE = new RegExp(DATE + '\\s*(?:-|–|—|to)\\s*(?:' + DATE + '|(present|current|now|today))', 'i');
+  var HEADINGS = /^(summary|profile|about|objective|experience|work experience|professional experience|employment|employment history|career history|skills|technical skills|core skills|tools|education|certifications|certificates|projects|publications|patents|awards|languages|interests|looking for|what i am looking for|preferences|volunteering|references)\s*:?$/i;
+  var TITLE_WORDS = /\b(engineer|engineering|manager|director|technician|scientist|lead|specialist|analyst|designer|intern|co-op|architect|developer|operator|planner|buyer|coordinator|head|vp|vice president|officer|associate|consultant|administrator|electrician|machinist|supervisor|founder|chief|researcher|programmer|assembler|inspector|estimator)\b/i;
+
+  function monthIndex(token) { return MONTHS[token.toLowerCase().slice(0, token.toLowerCase() === 'sept' ? 4 : 3)]; }
+
+  // A date as a decimal year. Year only: January of that year (so 2017-2021 counts four years).
+  function decimalYear(monthWord, monthNumber, year) {
+    var month = monthWord ? monthIndex(monthWord) : monthNumber ? Number(monthNumber) - 1 : 0;
+    return Number(year) + month / 12;
+  }
+
+  function now() { var d = new Date(); return d.getFullYear() + d.getMonth() / 12; }
+
+  // Today in the visitor's own time zone, as YYYY-MM-DD.
+  function localDate() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  function findRange(line) {
+    var m = RANGE.exec(line.replace(/[‐-‒]/g, '-'));
+    if (!m) return null;
+    var start = decimalYear(m[1], m[2], m[3]);
+    var end = m[7] ? now() : decimalYear(m[4], m[5], m[6]);
+    if (end < start) return null;
+    return { start: start, end: end, text: m[0], present: !!m[7] };
+  }
+
+  function stripBullet(line) { return line.replace(/^\s*(?:[-•*·▪●◦–]|\d+[.)])\s*/, '').trim(); }
+  function isBullet(line) { return /^\s*(?:[-•*·▪●◦–]|\d+[.)])\s+/.test(line); }
+  function words(text) { return text.toLowerCase(); }
+  function escapeRe(text) { return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  // Identity, found first so it can be removed from everything the page keeps.
+  var EMAIL = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
+  var PHONE = /(?:\+?\d{1,2}[\s.-]?)?(?:\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}\b|\b\d{3}-\d{4}\b/g;
+  var LINK = /\b(?:https?:\/\/|www\.)\S+|\blinkedin\.com\/\S+|\bgithub\.com\/\S+/gi;
+  var STREET = /\b\d{1,6}\s+(?:[A-Z][\w.]*\s){0,4}(?:street|st|avenue|ave|road|rd|boulevard|blvd|lane|ln|drive|dr|court|ct|way|place|pl|parkway|pkwy|terrace|circle)\b\.?(?:,?\s*(?:apt|suite|unit|#)\s*\w+)?/gi;
+
+  function findName(lines) {
+    for (var i = 0; i < Math.min(lines.length, 6); i++) {
+      var line = lines[i].trim();
+      if (!line || EMAIL.test(line)) { EMAIL.lastIndex = 0; continue; }
+      if (/^[A-Z][a-zA-Z'’-]+(?:\s+[A-Z][a-zA-Z'’.-]+){1,3}$/.test(line) && !TITLE_WORDS.test(line) && !HEADINGS.test(line)) return line;
+    }
+    return null;
+  }
+
+  function scrubber(identity) {
+    var swaps = [];
+    if (identity.name) {
+      identity.name.split(/\s+/).forEach(function (part) {
+        var bare = part.replace(/[.,]/g, '');
+        if (bare.length > 1) swaps.push([new RegExp('\\b' + escapeRe(bare) + '\\b', 'g'), '[name]']);
+      });
+    }
+    identity.employers.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (employer) {
+      swaps.push([new RegExp(escapeRe(employer), 'gi'), '[employer]']);
+    });
+    return function (text) {
+      var out = text.replace(EMAIL, '[email]').replace(LINK, '[link]').replace(STREET, '[address]').replace(PHONE, '[phone]');
+      swaps.forEach(function (swap) { out = out.replace(swap[0], swap[1]); });
+      return out;
+    };
+  }
+
+  // Split "Staff Controls Engineer, Kestrel Grid Storage, Longmont, CO   2021 - present" into title and employer.
+  function splitRoleLine(line, range) {
+    var head = line.replace(range.text, '').replace(/[\s|,–—-]+$/, '').trim();
+    var parts = head.split(/\s*(?:,|\||\s[–—-]\s|\sat\s|\s@\s)\s*/).filter(Boolean);
+    if (!parts.length) return { title: '', employer: '' };
+    if (TITLE_WORDS.test(parts[0])) return { title: parts[0], employer: parts[1] || '' };
+    if (parts[1] && TITLE_WORDS.test(parts[1])) return { title: parts[1], employer: parts[0] };
+    return { title: parts[0], employer: parts[1] || '' };
+  }
+
+  function parseResume(raw) {
+    var lines = raw.replace(/\r\n?/g, '\n').split('\n');
+    var identity = { name: findName(lines), employers: [], removed: [] };
+
+    // Sections by heading line.
+    var sections = [], current = { name: 'header', lines: [] };
+    lines.forEach(function (line) {
+      var bare = line.trim();
+      if (bare && HEADINGS.test(bare) && bare.length < 40) {
+        sections.push(current);
+        current = { name: bare.toLowerCase().replace(/:$/, ''), lines: [] };
+      } else {
+        current.lines.push(line);
+      }
+    });
+    sections.push(current);
+    function section(pattern) {
+      return sections.filter(function (s) { return pattern.test(s.name); }).reduce(function (all, s) { return all.concat(s.lines); }, []);
+    }
+    var experience = section(/experience|employment|career/);
+    if (!experience.length) experience = lines;   // no heading: look for dated roles anywhere
+
+    // Dated roles.
+    var roles = [], role = null;
+    experience.forEach(function (line) {
+      var range = !isBullet(line) && findRange(line);
+      if (range) {
+        var split = splitRoleLine(line, range);
+        role = { title: split.title, employer: split.employer, start: range.start, end: range.end, present: range.present, dates: range.text, bullets: [] };
+        if (split.employer) identity.employers.push(split.employer.replace(/\s*\(.*?\)\s*/g, ' ').trim(), split.employer);
+        roles.push(role);
+      } else if (role && line.trim()) {
+        role.bullets.push(stripBullet(line));
+      }
+    });
+    identity.employers = identity.employers.filter(function (e, i, all) { return e.length > 2 && all.indexOf(e) === i; });
+    roles.sort(function (a, b) { return b.end - a.end || b.start - a.start; });
+
+    var scrub = scrubber(identity);
+    var found = {
+      email: EMAIL.test(raw), phone: PHONE.test(raw), url: LINK.test(raw), street: STREET.test(raw)
+    };
+    EMAIL.lastIndex = PHONE.lastIndex = LINK.lastIndex = STREET.lastIndex = 0;
+    if (identity.name) identity.removed.push('your name');
+    if (found.email) identity.removed.push('email address');
+    if (found.phone) identity.removed.push('phone number');
+    if (found.url) identity.removed.push('web links');
+    if (found.street) identity.removed.push('street address');
+    if (identity.employers.length) identity.removed.push(identity.employers.length > 1 ? 'employer names' : 'employer name');
+
+    var clean = {
+      roles: roles.map(function (r) {
+        return { title: scrub(r.title), start: r.start, end: r.end, present: r.present, dates: r.dates, bullets: r.bullets.map(scrub) };
+      }),
+      header: section(/^header$/).map(scrub),
+      summary: section(/summary|profile|about|objective/).map(scrub),
+      skills: section(/skills|tools/).map(scrub),
+      wants: section(/looking for|preferences|objective/).map(scrub),
+      certifications: section(/certif/).map(scrub)
+    };
+    clean.all = [].concat(clean.header, clean.summary, clean.wants, clean.skills, clean.certifications,
+      clean.roles.reduce(function (all, r) { return all.concat([r.title], r.bullets); }, []));
+    return { identity: identity, clean: clean };
+  }
+
+  // Skills: common hardware tools and the taxonomy's own words. [name, pattern, case-sensitive?]
+  var SKILLS = [
+    ['MATLAB', /\bmatlab\b/i], ['Simulink', /\bsimulink\b/i], ['Stateflow', /\bstateflow\b/i],
+    ['Embedded Coder', /\bembedded coder\b/i], ['Python', /\bpython\b/i], ['C', /(?:^|[\s,;(/])C(?=[\s,;)/]|$)/],
+    ['C++', /\bC\+\+/], ['Rust', /\brust\b/i], ['Java', /\bjava\b/i], ['SQL', /\bsql\b/i],
+    ['CAN', /\bCAN(?:\s?bus|\s?FD)?\b/], ['Modbus', /\bmodbus\b/i], ['EtherCAT', /\bethercat\b/i], ['Ethernet', /\bethernet\b/i],
+    ['SPI, I2C and UART', /\b(?:spi|i2c|uart)\b/i], ['dSPACE', /\bdspace\b/i], ['Speedgoat', /\bspeedgoat\b/i],
+    ['Hardware-in-the-loop testing', /\bhil\b|hardware[- ]in[- ]the[- ]loop/i], ['LabVIEW', /\blabview\b/i],
+    ['Jama', /\bjama\b/i], ['DOORS', /\bDOORS\b/], ['Polarion', /\bpolarion\b/i], ['Git', /\bgit\b/i], ['Jira', /\bjira\b/i],
+    ['SolidWorks', /\bsolidworks\b/i], ['Creo', /\bcreo\b/i], ['CATIA', /\bcatia\b/i], ['Siemens NX', /\bsiemens nx\b|\bNX\b/],
+    ['Onshape', /\bonshape\b/i], ['Fusion 360', /\bfusion 360\b/i], ['AutoCAD', /\bautocad\b/i], ['GD&T', /\bgd&t\b/i],
+    ['Altium', /\baltium\b/i], ['KiCad', /\bkicad\b/i], ['OrCAD', /\borcad\b/i], ['Cadence', /\bcadence\b/i],
+    ['LTspice', /\blt-?spice\b/i], ['PLECS', /\bplecs\b/i], ['PSIM', /\bpsim\b/i], ['ANSYS', /\bansys\b/i], ['COMSOL', /\bcomsol\b/i],
+    ['FEA', /\bfea\b|finite element/i], ['CFD', /\bcfd\b|computational fluid/i], ['PCB design', /\bpcb\b/i],
+    ['FPGA', /\bfpga\b/i], ['Verilog', /\bverilog\b/i], ['VHDL', /\bvhdl\b/i], ['RTOS', /\brtos\b|freertos|zephyr/i],
+    ['Embedded Linux', /embedded linux|\byocto\b/i], ['TI C2000', /\bc2000\b/i], ['STM32', /\bstm32\b/i], ['AUTOSAR', /\bautosar\b/i],
+    ['PLC programming', /\bplcs?\b/i], ['SCADA', /\bscada\b/i], ['Minitab', /\bminitab\b/i], ['JMP', /\bJMP\b/],
+    ['FMEA', /\b[dp]?fmea\b/i], ['Root cause analysis', /root cause|\b8d\b/i], ['Six Sigma', /six sigma/i], ['SPC', /\bspc\b/i],
+    ['Design for manufacturing', /\bdfm\b|design for manufactur/i], ['New product introduction', /\bnpi\b|new product introduction/i],
+    ['Requirements management', /\brequirements?\b/i], ['System architecture', /\barchitecture\b/i],
+    ['Hazard analysis', /hazard analysis|\bhara\b|\bfta\b/i], ['Functional safety', /functional safety|\bsil\b|\basil\b/i],
+    ['Design verification testing', /design verification|\bdvt\b|\bdvp&r\b/i], ['EMC testing', /\bemc\b|\bemi\b/i],
+    ['Battery management systems', /\bbms\b|battery management/i], ['Thermal management', /thermal management/i],
+    ['Power electronics', /power electronics|power conversion|\binverters?\b|\bconverters?\b/i],
+    ['Grid-forming control', /grid[- ]forming/i], ['Motor control', /motor control/i], ['State machines', /state machine/i],
+    ['Control algorithms', /control algorithm|controller development|controls?\s+(?:design|development)/i],
+    ['Plant modelling and simulation', /plant model|simulation model|\bmodelling\b|\bmodeling\b/i],
+    ['Commissioning', /commissioning/i], ['Site acceptance testing', /site acceptance|\bsat\b/i],
+    ['Grid interconnection', /interconnection/i], ['Fault ride-through', /ride[- ]through/i],
+    ['Cell characterization', /cell characteri[sz]ation/i], ['Failure analysis', /failure analysis/i],
+    ['Reliability testing', /reliability/i], ['Test automation', /automated test|test automation/i],
+    ['Data analysis', /data analysis|log analysis/i], ['Supplier quality', /supplier quality/i],
+    ['Project management', /project management|program management/i], ['Team leadership', /\bled a team\b|\bmanaged a team\b|\bteam of \w+/i]
+  ];
+
+  // Discipline words, added to each discipline's own label and "covers" text from the taxonomy.
+  var DISCIPLINE_WORDS = {
+    systems: ['systems engineer', 'system requirements', 'requirements', 'architecture', 'integration', 'verification', 'traced'],
+    electrical: ['electrical engineer', 'schematic', 'pcb', 'harness', 'board design'],
+    'power-electronics': ['power electronics', 'inverter', 'converter', 'gate drive', 'magnetics', 'power conversion'],
+    battery: ['battery', 'cell', 'pack', 'bms', 'lithium'],
+    'power-systems': ['grid', 'interconnection', 'substation', 'utility', 'protection'],
+    mechanical: ['mechanical engineer', 'cad', 'solidworks', 'enclosure', 'mechanism', 'structural'],
+    thermal: ['thermal', 'cooling', 'heat transfer', 'hvac'],
+    controls: ['controls engineer', 'control algorithm', 'controller', 'simulink', 'state machine', 'control systems'],
+    firmware: ['firmware', 'embedded', 'rtos', 'bootloader', 'microcontroller'],
+    software: ['software engineer', 'python', 'backend', 'frontend', 'web'],
+    data: ['data scientist', 'machine learning', 'data engineer', 'analytics'],
+    test: ['test engineer', 'validation', 'hil', 'hardware-in-the-loop', 'design verification', 'test bench'],
+    manufacturing: ['manufacturing', 'process engineer', 'npi', 'production line', 'dfm'],
+    quality: ['quality', 'certification', 'compliance', 'fmea'],
+    field: ['field', 'commissioning', 'site acceptance', 'applications engineer', 'deployment']
+  };
+
+  var STOP = /^(and|or|the|for|of|to|a|an|in|on|with|tied|product|products|roles|role|engineering|design|work|plus|systems?|company|companies)$/;
+
+  function disciplineTerms(entry) {
+    var extra = DISCIPLINE_WORDS[entry.id] || [];
+    var fromTaxonomy = (entry.label + ' ' + (entry.covers || '')).toLowerCase().replace(/[^a-z0-9 -]/g, ' ').split(/\s+/)
+      .filter(function (w) { return w.length > 3 && !STOP.test(w); });
+    return extra.concat(fromTaxonomy).filter(function (t, i, all) { return all.indexOf(t) === i; });
+  }
+
+  function countTerm(text, term) {
+    var re = new RegExp('\\b' + escapeRe(term) + '\\b', 'g');
+    return (text.match(re) || []).length;
+  }
+
+  function proposeDisciplines(clean) {
+    var recentTitles = words(clean.roles.slice(0, 2).map(function (r) { return r.title; }).join(' \n '));
+    var allTitles = words(clean.roles.map(function (r) { return r.title; }).join(' \n '));
+    var body = words([].concat(clean.summary, clean.wants, clean.roles.reduce(function (a, r) { return a.concat(r.bullets); }, [])).join(' \n '));
+    var scores = tax.disciplines.map(function (entry) {
+      var terms = disciplineTerms(entry), score = 0, inTitle = false;
+      // The label up to "and" or a comma ("Power systems and grid" -> "power system"), without a plural s.
+      var label = entry.label.toLowerCase().split(/,| and /)[0].trim().replace(/s$/, '');
+      var inLabel = new RegExp('\\b' + escapeRe(label));
+      if (inLabel.test(recentTitles)) { score += 12; inTitle = true; }
+      else if (inLabel.test(allTitles)) score += 5;
+      terms.forEach(function (term) { score += Math.min(countTerm(body, term), 3); });
+      return { id: entry.id, score: score, inTitle: inTitle };
+    }).sort(function (a, b) { return b.score - a.score; });
+    var ticked = scores.filter(function (s) { return s.inTitle; }).map(function (s) { return s.id; });
+    if (!ticked.length && scores[0] && scores[0].score > 0) ticked = [scores[0].id];
+    var shortList = scores.filter(function (s) { return s.score > 0; }).slice(0, 8).map(function (s) { return s.id; });
+    ticked.forEach(function (id) { if (shortList.indexOf(id) === -1) shortList.unshift(id); });
+    return { ticked: ticked.slice(0, 6), shortList: shortList };
+  }
+
+  var LEVEL_RULES = [
+    ['executive', /\b(vp|vice president|chief|cto|ceo|coo)\b/i], ['director', /\b(director|head of)\b/i],
+    ['manager', /\bmanager\b/i], ['principal', /\b(principal|architect|distinguished|fellow)\b/i],
+    ['staff', /\b(staff|lead)\b/i], ['senior', /\b(senior|sr\.?)\b/i], ['intern', /\b(intern|internship|co-op)\b/i],
+    ['entry', /\b(junior|jr\.?|associate|entry|graduate|I)\b/], ['mid', /\b(II|III|mid)\b/]
+  ];
+
+  function levelFrom(title) {
+    for (var i = 0; i < LEVEL_RULES.length; i++) if (LEVEL_RULES[i][1].test(title)) return LEVEL_RULES[i][0];
+    return null;
+  }
+
+  var FUNCTION_RULES = [
+    ['technician', /technician/i], ['trades', /\b(electrician|welder|machinist|installer|lineworker)\b/i],
+    ['production', /\b(production|operator|assembler)\b/i], ['supply-chain', /\b(buyer|procurement|sourcing|supply chain|logistics|planner)\b/i],
+    ['quality-compliance', /\b(inspector|auditor|compliance specialist)\b/i], ['ehs', /\b(ehs|safety specialist|industrial hygien)/i],
+    ['project-program', /\b(program manager|project manager|construction manager)\b/i], ['product', /\b(product manager|industrial designer|product designer)\b/i],
+    ['science', /\b(scientist|physicist|chemist|researcher)\b/i], ['engineering', /\b(engineer|developer|architect)\b/i]
+  ];
+
+  function functionsFrom(roles) {
+    var found = [];
+    roles.slice(0, 3).forEach(function (r) {
+      for (var i = 0; i < FUNCTION_RULES.length; i++) {
+        if (FUNCTION_RULES[i][1].test(r.title)) { if (found.indexOf(FUNCTION_RULES[i][0]) === -1) found.push(FUNCTION_RULES[i][0]); break; }
+      }
+    });
+    return found.length ? found.slice(0, 4) : ['engineering'];
+  }
+
+  // Years: the union of the date ranges of the roles that mention the skill, to the half year.
+  function yearsFor(intervals) {
+    if (!intervals.length) return null;
+    intervals = intervals.slice().sort(function (a, b) { return a[0] - b[0]; });
+    var total = 0, start = intervals[0][0], end = intervals[0][1];
+    intervals.slice(1).forEach(function (iv) {
+      if (iv[0] <= end) end = Math.max(end, iv[1]);
+      else { total += end - start; start = iv[0]; end = iv[1]; }
+    });
+    total += end - start;
+    return Math.round(total * 2) / 2;
+  }
+
+  function findSkills(clean) {
+    var out = [];
+    SKILLS.forEach(function (skill) {
+      var pattern = skill[1], intervals = [], evidence = null, spans = [];
+      clean.roles.forEach(function (r) {
+        var lines = [r.title].concat(r.bullets), hit = null;
+        for (var i = 0; i < lines.length; i++) if (pattern.test(lines[i])) { hit = lines[i]; break; }
+        if (hit) {
+          intervals.push([r.start, r.end]);
+          spans.push(r.dates);
+          if (!evidence) evidence = hit;
+        }
+      });
+      if (!evidence) {
+        var elsewhere = [].concat(clean.skills, clean.summary, clean.certifications);
+        for (var j = 0; j < elsewhere.length; j++) if (pattern.test(elsewhere[j])) { evidence = elsewhere[j].trim(); break; }
+      }
+      if (!evidence) return;
+      var item = { name: skill[0] };
+      var years = yearsFor(intervals);
+      if (years !== null && years > 0) item.years = years;
+      item.evidence = evidence.slice(0, 300);
+      item.from = spans;
+      out.push(item);
+    });
+    return out.slice(0, 60);
+  }
+
+  var STANDARD = /\b(UL|IEC|ISO|IEEE|SAE|NFPA|ASME|IPC|ANSI|CSA|IATF|NEC|EN|DO|MIL-STD|MIL-PRF|AS)[\s-]?(\d{2,5}(?:[.-]\d+)*[A-Z]?)(?![\w])/g;
+
+  function findStandards(text) {
+    var found = [], m;
+    STANDARD.lastIndex = 0;
+    while ((m = STANDARD.exec(text))) {
+      var name = m[1] + ' ' + m[2];
+      if (/^(EN|DO|AS)$/.test(m[1]) && !/\d{3,}/.test(m[2])) continue;
+      if (found.indexOf(name) === -1) found.push(name);
+    }
+    return found;
+  }
+
+  var SECTOR_WORDS = {
+    'energy-storage': /energy storage|\bbess\b|storage system|grid storage|long-duration storage/i,
+    solar: /\bsolar\b|photovoltaic|\bpv\b/i, wind: /\bwind\b/i,
+    grid: /\bgrid\b|utility|interconnection|substation|transmission/i,
+    'distributed-generation': /microgrid|distributed generation/i, geothermal: /geothermal/i,
+    fusion: /\bfusion\b/i, fission: /\bfission\b|nuclear reactor/i, hydrogen: /hydrogen|electroly[sz]er|fuel cell/i,
+    ev: /electric vehicle|\bevs?\b|traction|shuttle bus|electric bus|electric truck/i, charging: /charging|charger/i,
+    'electric-aviation': /aircraft|aviation|evtol/i, buildings: /heat pump|building electrification|home energy/i,
+    'industrial-heat': /industrial heat|process heat|thermal batter/i, 'carbon-removal': /carbon removal|carbon capture|direct air capture/i,
+    'battery-materials': /battery materials|recycling|cathode|anode/i
+  };
+
+  function sectorsIn(text) {
+    return tax.sectors.filter(function (s) { return SECTOR_WORDS[s.id] && SECTOR_WORDS[s.id].test(text); }).map(function (s) { return s.id; });
+  }
+
+  // "seed to Series B" -> seed, series-a, series-b.
+  function stagesIn(text) {
+    var order = tax.stages.map(function (s) { return s.id; });
+    var name = { 'pre-seed': /pre-?seed/i, seed: /\bseed\b/i, 'series-a': /series a\b/i, 'series-b': /series b\b/i, 'series-c': /series c\b/i, late: /series [d-z]\b|late[- ]stage/i, public: /\bpublic compan/i };
+    var hits = order.filter(function (id) { return name[id] && name[id].test(text); });
+    var range = /(pre-?seed|seed|series [a-e])\s*(?:to|through|-|–)\s*(seed|series [a-e])/i.exec(text);
+    if (range) {
+      var key = function (t) { t = t.toLowerCase().replace(/\s+/g, '-'); return t === 'preseed' ? 'pre-seed' : t; };
+      var a = order.indexOf(key(range[1])), b = order.indexOf(key(range[2]));
+      if (a !== -1 && b !== -1) for (var i = Math.min(a, b); i <= Math.max(a, b); i++) if (hits.indexOf(order[i]) === -1) hits.push(order[i]);
+    }
+    return order.filter(function (id) { return hits.indexOf(id) !== -1; });
+  }
+
+  function salaryIn(lines) {
+    var text = lines.join(' \n ');
+    var m = /(?:salary|base|compensation|pay)[^$\n]{0,40}\$\s?(\d{2,3}(?:,\d{3})+|\d{2,3}(?:\.\d)?\s?[kK])/i.exec(text) ||
+            /\$\s?(\d{2,3}(?:,\d{3})+|\d{2,3}\s?[kK])\s*\+?\s*(?:base|salary|minimum)/i.exec(text);
+    if (!m) return null;
+    var raw = m[1].replace(/[,\s]/g, '');
+    var value = /k$/i.test(raw) ? Math.round(parseFloat(raw) * 1000) : parseInt(raw, 10);
+    return value >= 10000 && value <= 2000000 ? value : null;
+  }
+
+  function metrosIn(text) {
+    if (!text) return [];
+    return tax.metros.filter(function (m) {
+      var first = m.label.split(/[-,]/)[0].trim();
+      return first.length > 3 && new RegExp('\\b' + escapeRe(first) + '\\b').test(text);
+    }).map(function (m) { return m.id; });
+  }
+
+  function extract(raw) {
+    var parsed = parseResume(raw);
+    var clean = parsed.clean;
+    var everything = clean.all.join(' \n ');
+    var prefsText = [].concat(clean.header, clean.wants, clean.summary).join(' \n ');
+    var experienceText = [].concat(clean.summary, clean.roles.reduce(function (a, r) { return a.concat([r.title], r.bullets); }, [])).join(' \n ');
+    var discipline = proposeDisciplines(clean);
+    proposals.disciplines = discipline.shortList;
+
+    var remote = /open to remote|remote (?:roles|work|positions|ok|friendly)|fully remote|remote-first|work remotely/i.test(prefsText) &&
+                 !/no remote|not (?:open to|interested in) remote|on-?site only/i.test(prefsText);
+    var relocate = /not (?:looking|willing|able|open) to relocate|no relocation|cannot relocate/i.test(prefsText) ? false
+      : /(?:open|willing|happy) to relocat/i.test(prefsText) ? true : null;
+    var auth = /\bus citizen|u\.s\. citizen|green card|permanent resident|authori[sz]ed to work in the (?:us|u\.s\.|united states)/i.test(everything) ? 'US'
+      : /require[sd]? (?:visa )?sponsorship|need(?:s)? sponsorship/i.test(everything) ? 'needs sponsorship' : null;
+    var clearance = (/\b(ts\/sci|top secret|secret|public trust)\b(?= (?:security )?clearance)/i.exec(everything) || [])[1] || null;
+    var wantsText = clean.wants.join(' \n ');
+    var mostRecent = clean.roles[0];
+
+    var draft = {
+      persona_version: 0,
+      generated: { by: GENERATED_BY, on_device: true, date: localDate(), reviewed: false },
+      functions: functionsFrom(clean.roles),
+      disciplines: discipline.ticked,
+      level: mostRecent ? levelFrom(mostRecent.title) : null,
+      domains: sectorsIn(experienceText),
+      skills: findSkills(clean),
+      standards: findStandards(everything),
+      locations: { metros: metrosIn(wantsText), remote: remote },
+      hard_constraints: { work_authorization: auth, clearance: clearance ? clearance.replace(/\b\w/g, function (c) { return c.toUpperCase(); }) : null },
+      preferences: { stage: stagesIn(wantsText || prefsText), sectors: sectorsIn(wantsText), min_base_usd: salaryIn(clean.wants.concat(clean.header, clean.summary)) },
+      exclude: { sectors: [], companies: [] }
+    };
+    if (relocate !== null) draft.locations.relocate = relocate;
+    return { persona: draft, identity: parsed.identity, roles: clean.roles, levelTitle: mostRecent ? mostRecent.title : '' };
+  }
+
+  // ---- Review form -----------------------------------------------------------------------------
+
+  function labelOf(list, id) {
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i].label;
+    return id;
+  }
+
+  function checkList(host, entries, chosen, onChange, extras) {
+    host.replaceChildren();
+    entries.forEach(function (entry) {
+      var input = el('input', { type: 'checkbox', id: host.id + '-' + entry.id });
+      input.checked = chosen.indexOf(entry.id) !== -1;
+      input.addEventListener('change', function () { onChange(entry.id, input.checked); });
+      host.appendChild(el('label', { class: 'check', for: input.id }, [
+        input, el('span', null, [entry.label, extras && extras(entry)])
+      ]));
+    });
+  }
+
+  function toggle(list, id, on) {
+    var i = list.indexOf(id);
+    if (on && i === -1) list.push(id);
+    if (!on && i !== -1) list.splice(i, 1);
+  }
+
+  function renderDisciplines() {
+    var ids = showAllDisciplines ? tax.disciplines.map(function (d) { return d.id; })
+      : proposals.disciplines.concat(persona.disciplines).filter(function (id, i, all) { return all.indexOf(id) === i; });
+    if (!ids.length) ids = tax.disciplines.map(function (d) { return d.id; });
+    var entries = ids.map(function (id) { return tax.disciplines.filter(function (d) { return d.id === id; })[0]; }).filter(Boolean);
+    checkList($('disciplines'), entries, persona.disciplines, function (id, on) { toggle(persona.disciplines, id, on); refreshOutput(); }, function (entry) {
+      return el('small', { text: entry.covers || '' });
+    });
+    $('all-disciplines').textContent = showAllDisciplines ? 'Show the short list' : 'Show all disciplines';
+    $('all-disciplines').setAttribute('aria-expanded', showAllDisciplines ? 'true' : 'false');
+  }
+
+  function renderSkills() {
+    var host = $('skills');
+    host.replaceChildren();
+    persona.skills.forEach(function (skill, index) {
+      var name = el('input', { class: 'input', value: skill.name, maxlength: '80', 'aria-label': 'Skill name' });
+      name.addEventListener('input', function () { skill.name = name.value; refreshOutput(); });
+      var years = el('input', { class: 'input num', inputmode: 'decimal', value: skill.years === undefined ? '' : String(skill.years), placeholder: 'years', 'aria-label': 'Years with ' + skill.name });
+      years.addEventListener('input', function () {
+        var v = years.value.trim();
+        if (v === '') delete skill.years; else skill.years = Number(v);
+        refreshOutput();
+      });
+      var remove = el('button', { type: 'button', class: 'btn btn-small remove', text: 'Remove', 'aria-label': 'Remove ' + skill.name });
+      remove.addEventListener('click', function () { persona.skills.splice(index, 1); renderSkills(); refreshOutput(); });
+      var evidence = skill.evidence
+        ? el('p', { class: 'evidence' }, ['Found in: ', el('q', { text: skill.evidence }), skill.from && skill.from.length ? ' · years from ' + skill.from.join(', ') : ''])
+        : el('p', { class: 'evidence', text: 'Added by you.' });
+      host.appendChild(el('div', { class: 'skill' }, [name, years, remove, evidence]));
+    });
+    if (!persona.skills.length) host.appendChild(el('p', { class: 'help', text: 'No skills yet. Add them below.' }));
+  }
+
+  function renderMetros() {
+    var host = $('metros');
+    host.replaceChildren();
+    persona.locations.metros.forEach(function (id) {
+      var chip = el('button', { type: 'button', class: 'chip', text: labelOf(tax.metros, id), 'aria-label': 'Remove ' + labelOf(tax.metros, id) });
+      chip.addEventListener('click', function () { toggle(persona.locations.metros, id, false); renderMetros(); refreshOutput(); });
+      host.appendChild(chip);
+    });
+  }
+
+  function fillForm(found) {
+    $('review').hidden = false;
+    $('save').hidden = false;
+    var removed = $('removed'), rolesFound = $('roles-found');
+    removed.replaceChildren(); rolesFound.replaceChildren();
+    if (found && found.identity.removed.length) {
+      removed.appendChild(el('li', { text: 'Removed before anything was kept: ' + found.identity.removed.join(', ') + '.' }));
+    }
+    if (found && found.roles.length) {
+      found.roles.forEach(function (r) {
+        rolesFound.appendChild(el('li', { text: 'Dated role: ' + (r.title || 'untitled') + ' (' + r.dates + ')' }));
+      });
+    } else if (found) {
+      rolesFound.appendChild(el('li', { text: 'No dated roles found, so no years per skill. Dates such as "2019 - 2023" or "Mar 2019 – present" next to each job title are what the rules look for.' }));
+    }
+    removed.hidden = !removed.childNodes.length;
+    rolesFound.hidden = !rolesFound.childNodes.length;
+
+    checkList($('functions'), tax.functions, persona.functions || [], function (id, on) {
+      persona.functions = persona.functions || [];
+      toggle(persona.functions, id, on); refreshOutput();
+    });
+    renderDisciplines();
+    var level = $('level');
+    level.replaceChildren(el('option', { value: '', text: 'Not stated' }));
+    tax.levels.forEach(function (l) { level.appendChild(el('option', { value: l.id, text: l.label })); });
+    level.value = persona.level || '';
+    $('level-help').textContent = found && found.levelTitle ? 'From your most recent title: "' + found.levelTitle + '".' : '';
+    persona.domains = persona.domains || [];
+    checkList($('domains'), tax.sectors, persona.domains, function (id, on) { toggle(persona.domains, id, on); refreshOutput(); });
+    renderSkills();
+    $('standards').value = (persona.standards || []).join('\n');
+    $('remote').checked = !!persona.locations.remote;
+    $('relocate').value = persona.locations.relocate === true ? 'yes' : persona.locations.relocate === false ? 'no' : '';
+    renderMetros();
+    persona.hard_constraints = persona.hard_constraints || {};
+    persona.preferences = persona.preferences || {};
+    persona.exclude = persona.exclude || {};
+    $('min-base').value = persona.preferences.min_base_usd ? String(persona.preferences.min_base_usd) : '';
+    $('work-auth').value = persona.hard_constraints.work_authorization || '';
+    $('clearance').value = persona.hard_constraints.clearance || '';
+    persona.preferences.stage = persona.preferences.stage || [];
+    persona.preferences.sectors = persona.preferences.sectors || [];
+    persona.exclude.sectors = persona.exclude.sectors || [];
+    persona.exclude.companies = persona.exclude.companies || [];
+    checkList($('stages'), tax.stages, persona.preferences.stage, function (id, on) { toggle(persona.preferences.stage, id, on); refreshOutput(); });
+    checkList($('pref-sectors'), tax.sectors, persona.preferences.sectors, function (id, on) { toggle(persona.preferences.sectors, id, on); refreshOutput(); });
+    checkList($('exclude-sectors'), tax.sectors, persona.exclude.sectors, function (id, on) { toggle(persona.exclude.sectors, id, on); refreshOutput(); });
+    $('exclude-companies').value = persona.exclude.companies.join('\n');
+    $('notes').value = persona.notes || '';
+    $('reviewed').checked = !!(persona.generated && persona.generated.reviewed);
+    refreshOutput();
+  }
+
+  function lines(text) { return text.split('\n').map(function (l) { return l.trim(); }).filter(Boolean).filter(function (l, i, all) { return all.indexOf(l) === i; }); }
+
+  function readForm() {
+    persona.level = $('level').value || null;
+    persona.standards = lines($('standards').value);
+    persona.locations.remote = $('remote').checked;
+    var relocate = $('relocate').value;
+    if (relocate) persona.locations.relocate = relocate === 'yes'; else delete persona.locations.relocate;
+    var base = $('min-base').value.replace(/[$,\s]/g, '');
+    persona.preferences.min_base_usd = base === '' ? null : /^\d+[kK]$/.test(base) ? parseInt(base, 10) * 1000 : Number(base);
+    persona.hard_constraints.work_authorization = $('work-auth').value.trim() || null;
+    persona.hard_constraints.clearance = $('clearance').value.trim() || null;
+    persona.exclude.companies = lines($('exclude-companies').value);
+    var notes = $('notes').value.trim();
+    if (notes) persona.notes = notes; else delete persona.notes;
+    persona.generated.reviewed = $('reviewed').checked;
+  }
+
+  // ---- Validation: the persona schema's rules, in plain words --------------------------------
+
+  var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  var IDENTITY = [[EMAIL, 'an email address'], [PHONE, 'a phone number'], [LINK, 'a web link']];
+
+  function validate(p) {
+    var errors = [];
+    var ids = function (key) { return tax[key].map(function (e) { return e.id; }); };
+    if (!p.disciplines.length) errors.push('Tick at least one discipline.');
+    if (p.disciplines.length > 6) errors.push('Tick at most six disciplines.');
+    p.disciplines.forEach(function (d) { if (ids('disciplines').indexOf(d) === -1) errors.push('Unknown discipline "' + d + '".'); });
+    if (p.functions && p.functions.length > 4) errors.push('Tick at most four kinds of work.');
+    (p.functions || []).forEach(function (f) { if (ids('functions').indexOf(f) === -1) errors.push('Unknown kind of work "' + f + '".'); });
+    if (p.level !== null && ids('levels').indexOf(p.level) === -1) errors.push('Unknown level "' + p.level + '".');
+    if (p.skills.length > 60) errors.push('Keep to 60 skills or fewer.');
+    p.skills.forEach(function (s, i) {
+      var label = 'Skill ' + (i + 1);
+      if (!s.name || !s.name.trim()) errors.push(label + ' has no name.');
+      else if (s.name.length > 80) errors.push(label + ' has a name longer than 80 characters.');
+      if (s.years !== undefined && (typeof s.years !== 'number' || isNaN(s.years) || s.years < 0 || s.years > 60)) errors.push('Years for "' + s.name + '" must be a number from 0 to 60.');
+      if (s.evidence && s.evidence.length > 300) errors.push('The evidence for "' + s.name + '" is longer than 300 characters.');
+    });
+    (p.standards || []).forEach(function (s) { if (s.length > 60) errors.push('Standard "' + s.slice(0, 20) + '…" is longer than 60 characters.'); });
+    var base = p.preferences.min_base_usd;
+    if (base !== null && base !== undefined && (!Number.isInteger(base) || base < 0)) errors.push('Minimum base salary must be a whole number of dollars.');
+    if (p.notes && p.notes.length > 1000) errors.push('Notes must be 1,000 characters or fewer.');
+    [p.domains, p.preferences.sectors, p.exclude.sectors].forEach(function (list) {
+      (list || []).forEach(function (s) { if (!SLUG.test(s) || ids('sectors').indexOf(s) === -1) errors.push('Unknown sector "' + s + '".'); });
+    });
+    (p.preferences.stage || []).forEach(function (s) { if (ids('stages').indexOf(s) === -1) errors.push('Unknown company stage "' + s + '".'); });
+    // No identity may leave the page, wherever it was typed.
+    var free = JSON.stringify([p.skills, p.standards, p.notes, p.exclude.companies, p.hard_constraints]);
+    IDENTITY.forEach(function (rule) {
+      rule[0].lastIndex = 0;
+      if (rule[0].test(free)) errors.push('Remove ' + rule[1] + ': the file must not identify you.');
+      rule[0].lastIndex = 0;
+    });
+    return errors;
+  }
+
+  // ---- Output ---------------------------------------------------------------------------------
+
+  // The persona as it is saved: fields in schema order, empty optional parts left out.
+  function forSaving(p) {
+    var out = { persona_version: 0, generated: { by: p.generated.by, on_device: p.generated.on_device, date: p.generated.date } };
+    if (p.generated.reviewed) out.generated.reviewed = true;
+    if (p.functions && p.functions.length) out.functions = p.functions.slice();
+    out.disciplines = p.disciplines.slice();
+    out.level = p.level;
+    if (p.domains && p.domains.length) out.domains = p.domains.slice();
+    out.skills = p.skills.map(function (s) {
+      var item = { name: s.name.trim() };
+      if (s.years !== undefined) item.years = s.years;
+      if (s.evidence) item.evidence = s.evidence;
+      return item;
+    });
+    if (p.standards && p.standards.length) out.standards = p.standards.slice();
+    out.locations = { metros: p.locations.metros.slice(), remote: !!p.locations.remote };
+    if (typeof p.locations.relocate === 'boolean') out.locations.relocate = p.locations.relocate;
+    if (p.hard_constraints.work_authorization || p.hard_constraints.clearance) {
+      out.hard_constraints = { work_authorization: p.hard_constraints.work_authorization || null, clearance: p.hard_constraints.clearance || null };
+    }
+    var prefs = {};
+    if (p.preferences.stage.length) prefs.stage = p.preferences.stage.slice();
+    if (p.preferences.sectors.length) prefs.sectors = p.preferences.sectors.slice();
+    if (p.preferences.min_base_usd !== null && p.preferences.min_base_usd !== undefined) prefs.min_base_usd = p.preferences.min_base_usd;
+    if (Object.keys(prefs).length) out.preferences = prefs;
+    if (p.exclude.sectors.length || p.exclude.companies.length) out.exclude = { sectors: p.exclude.sectors.slice(), companies: p.exclude.companies.slice() };
+    if (p.notes) out.notes = p.notes;
+    return out;
+  }
+
+  function toYaml(p) {
+    var header = '# HiPot persona. Built in your browser; edit it freely.\n';
+    return header + window.jsyaml.dump(forSaving(p), { lineWidth: -1, noRefs: true, sortKeys: false, flowLevel: -1 });
+  }
+
+  var currentYaml = '';
+  function refreshOutput() {
+    if (!persona) return;
+    readForm();
+    var errors = validate(persona);
+    var list = $('errors');
+    list.replaceChildren.apply(list, errors.map(function (e) { return el('li', { text: e }); }));
+    $('download').disabled = errors.length > 0;
+    $('copy').disabled = errors.length > 0;
+    if (!window.jsyaml) { $('yaml').textContent = 'Loading…'; return; }
+    currentYaml = toYaml(persona);
+    $('yaml').textContent = currentYaml;
+  }
+
+  var downloads = null;
+  function save() {
+    if (!currentYaml) return;
+    if (downloads) {
+      // Artifact hosting saves only some file types, and .yml is not one of them: save as .txt.
+      downloads.save({ filename: 'persona.yml.txt', data: currentYaml }).then(function () {
+        setStatus('save-status', 'Saved as persona.yml.txt. Rename it to persona.yml if you like; HiPot reads either.');
+      }).catch(function (error) {
+        setStatus('save-status', error && error.code === 'declined' ? 'Not saved.' : 'This page cannot save files here. Use "Copy the text" and paste it into a file named persona.yml.', error && error.code !== 'declined');
+      });
+      return;
+    }
+    var url = window.URL.createObjectURL(new Blob([currentYaml], { type: 'text/yaml' }));
+    var link = el('a', { href: url, download: 'persona.yml' });
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(function () { window.URL.revokeObjectURL(url); }, 1000);
+    setStatus('save-status', 'Saved persona.yml to your downloads.');
+  }
+
+  function copyText() {
+    if (!currentYaml) return;
+    var done = function () { setStatus('save-status', 'Copied. Paste it into a file named persona.yml.'); };
+    try {
+      navigator.clipboard.writeText(currentYaml).then(done, function () { selectYaml(); });
+    } catch (error) { selectYaml(); }
+  }
+
+  function selectYaml() {
+    var range = document.createRange();
+    range.selectNodeContents($('yaml'));
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    setStatus('save-status', 'Copying is blocked here; the text is selected, so press Ctrl+C or Cmd+C.');
+  }
+
+  // ---- Import an existing persona.yml ---------------------------------------------------------
+
+  function importPersona(text) {
+    var data = window.jsyaml.load(text, { schema: window.jsyaml.JSON_SCHEMA });
+    if (!data || typeof data !== 'object' || data.persona_version !== 0) throw new Error('this is not a HiPot persona file (persona_version 0)');
+    data.generated = data.generated || { by: 'form', on_device: true, date: localDate() };
+    data.generated.date = String(data.generated.date);
+    data.disciplines = data.disciplines || [];
+    data.skills = (data.skills || []).map(function (s) { return typeof s === 'string' ? { name: s } : s; });
+    data.locations = data.locations || { metros: [], remote: false };
+    data.locations.metros = data.locations.metros || [];
+    data.level = data.level === undefined ? null : data.level;
+    return data;
+  }
+
+  // ---- On-device model (optional, off unless the browser has one) ----------------------------
+
+  function offerModel() {
+    if (typeof window.LanguageModel === 'undefined' || !window.LanguageModel.availability) return;
+    window.LanguageModel.availability().then(function (state) {
+      if (state === 'available') $('ai-disciplines').hidden = false;
+    }).catch(function () {});
+  }
+
+  var lastExperienceText = '';
+  function suggestWithModel() {
+    var ids = tax.disciplines.map(function (d) { return d.id; });
+    setStatus('ai-status', 'Asking the model built into your browser…');
+    window.LanguageModel.create().then(function (session) {
+      var prompt = 'Pick one to three hardware engineering disciplines for this experience. Answer with ids only from: ' +
+        tax.disciplines.map(function (d) { return d.id + ' (' + d.covers + ')'; }).join('; ') + '\n\nExperience:\n' + lastExperienceText.slice(0, 6000);
+      return session.prompt(prompt, { responseConstraint: { type: 'object', properties: { disciplines: { type: 'array', items: { enum: ids }, maxItems: 3 } }, required: ['disciplines'] } });
+    }).then(function (answer) {
+      var picked = JSON.parse(answer).disciplines.filter(function (id) { return ids.indexOf(id) !== -1; });
+      setStatus('ai-status', picked.length ? 'The on-device model suggests: ' + picked.map(function (id) { return labelOf(tax.disciplines, id); }).join(', ') + '. Tick them if you agree.' : 'The model made no suggestion.');
+      picked.forEach(function (id) { if (proposals.disciplines.indexOf(id) === -1) proposals.disciplines.push(id); });
+      renderDisciplines();
+    }).catch(function () { setStatus('ai-status', 'The on-device model did not answer. The rules’ proposal stands.', true); });
+  }
+
+  // ---- Start ----------------------------------------------------------------------------------
+
+  function runExtraction(text) {
+    if (!text.trim()) { setStatus('read-status', 'There is no text to read yet.', true); return; }
+    var found = extract(text);
+    persona = found.persona;
+    lastExperienceText = found.roles.map(function (r) { return r.title + '\n' + r.bullets.join('\n'); }).join('\n\n');
+    showAllDisciplines = false;
+    fillForm(found);
+    setStatus('read-status', 'Found ' + found.roles.length + ' dated role' + (found.roles.length === 1 ? '' : 's') + ', ' + persona.skills.length + ' skills and ' + persona.standards.length + ' standards. Check them below.');
+    $('review').scrollIntoView({ block: 'start' });
+  }
+
+  function wire() {
+    $('resume-file').addEventListener('change', function () {
+      var file = $('resume-file').files[0];
+      if (!file) return;
+      setStatus('read-status', 'Reading ' + file.name + '…');
+      readResumeFile(file).then(function (text) {
+        $('resume-text').value = text;
+        runExtraction(text);
+      }).catch(function (error) {
+        setStatus('read-status', 'Could not read that file (' + (error && error.message ? error.message : 'unknown error') + '). Paste the text instead.', true);
+      });
+    });
+    $('read-btn').addEventListener('click', function () { runExtraction($('resume-text').value); });
+    $('persona-file').addEventListener('change', function () {
+      var file = $('persona-file').files[0];
+      if (!file) return;
+      Promise.all([file.text(), loadScript(LIBS.yaml)]).then(function (results) {
+        persona = importPersona(results[0]);
+        proposals.disciplines = persona.disciplines.slice();
+        fillForm(null);
+        setStatus('import-status', 'Opened ' + file.name + '. Edit below and save it again.');
+        $('review').scrollIntoView({ block: 'start' });
+      }).catch(function (error) {
+        setStatus('import-status', 'Could not open that file: ' + (error && error.message ? error.message : 'unknown error') + '.', true);
+      });
+    });
+    $('all-disciplines').addEventListener('click', function () { showAllDisciplines = !showAllDisciplines; renderDisciplines(); });
+    $('ai-disciplines').addEventListener('click', suggestWithModel);
+    $('add-skill').addEventListener('click', function () {
+      var name = $('new-skill').value.trim();
+      if (!name) return;
+      persona.skills.push({ name: name });
+      $('new-skill').value = '';
+      renderSkills(); refreshOutput();
+    });
+    $('metro-pick').addEventListener('change', function () {
+      var id = $('metro-pick').value;
+      if (id) toggle(persona.locations.metros, id, true);
+      $('metro-pick').value = '';
+      renderMetros(); refreshOutput();
+    });
+    ['standards', 'remote', 'relocate', 'min-base', 'work-auth', 'clearance', 'exclude-companies', 'notes', 'reviewed', 'level'].forEach(function (id) {
+      $(id).addEventListener('input', refreshOutput);
+      $(id).addEventListener('change', refreshOutput);
+    });
+    $('download').addEventListener('click', save);
+    $('copy').addEventListener('click', copyText);
+  }
+
+  fetch(TAXONOMY_URL).then(function (response) {
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    return response.json();
+  }).then(function (data) {
+    tax = data;
+    tax.metros.slice().sort(function (a, b) { return a.label.localeCompare(b.label); }).forEach(function (m) {
+      $('metro-pick').appendChild(el('option', { value: m.id, text: m.label }));
+    });
+    wire();
+    loadScript(LIBS.yaml).then(refreshOutput, function () {});
+    offerModel();
+    if (window.claude && window.claude.use) {
+      window.claude.use('downloads').then(function (d) {
+        downloads = d;
+        if (d) $('save-help').textContent = 'On this page the file is saved as persona.yml.txt, because the host only saves a few file types. HiPot reads either name.';
+      }, function () {});
+    }
+  }).catch(function (error) {
+    setStatus('read-status', 'The page did not load its lists (' + error.message + '). Reload to try again.', true);
+  });
+})();
+</script>
+</body>
+</html>

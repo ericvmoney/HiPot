@@ -83,6 +83,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .top-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; align-items: baseline; }
 .top-line a { font: 500 13.5px var(--sans); color: var(--soft); }
 .top-line a:hover { color: var(--ink); }
+.top-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .top h1 {
   font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700;
   margin: 10px 0 12px; text-wrap: balance;
@@ -323,7 +324,7 @@ body::before {
   <header class="top">
     <div class="top-line">
       <p class="mono" id="eyebrow">United States · every metro area and remote</p>
-      <a href="pay.html">Pay ranges by role and market</a>
+      <span class="top-links"><a href="pay.html">Pay ranges by role and market</a> <a href="persona.html">Build your persona (draft)</a></span>
     </div>
     <h1>HiPot</h1>
     <p>Open roles at hardware startups in clean technology and electrification: engineers, technicians, trades, production, supply chain and more. Every role is read from the hiring company's own job board, so a role that closes there leaves here.</p>
