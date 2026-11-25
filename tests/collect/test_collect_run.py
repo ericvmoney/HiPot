@@ -415,3 +415,35 @@ def test_a_replay_run_leaves_the_run_history_alone(tmp_path, monkeypatch):
     (tmp_path / "saved").mkdir()
     main(common + ["--replay", str(tmp_path / "saved")])
     assert len(load_json(runs)["runs"]) == 1
+
+
+@pytest.mark.parametrize("ats,board,ok", [
+    ("workday", "solvenergy.wd1/SOLV_External_Career", True),
+    ("workday", "plugpower", False),
+    ("paylocity", "e85e8980-8325-4e41-9404-be920804d97d", True),
+    ("paylocity", "4683948", False),
+    ("other", "https://acme.example.com/careers", True),
+    ("other", "acme.example.com/careers", False),
+    ("teamtailor", "career.airahome.com", True),
+    ("teamtailor", "na", False),
+    ("greenhouse", "anything", True),
+])
+def test_boards_in_the_form_their_reader_needs(ats, board, ok):
+    entry = company("a", ats, board)
+    assert (run_module.board_problem(entry) is None) == ok
+    reason = skip_reason(entry)
+    assert (reason is None) == ok if ats in run_module.READERS else True
+    if not ok:
+        assert reason.startswith("not collected: ") and "not in the form the reader needs" in reason
+
+
+def test_check_boards_lists_problems_without_requests(tmp_path, monkeypatch, capsys):
+    import yaml
+    registry = tmp_path / "companies.yml"
+    registry.write_text(yaml.safe_dump({"registry_version": 0, "companies": [
+        company("good", "workday", "solvenergy.wd1/SOLV_External_Career"), company("bad", "workday", "plugpower"),
+        company("out", "workday", "x", tier="out")]}), encoding="utf-8")
+    monkeypatch.setattr(run_module, "Fetcher", lambda *a, **k: pytest.fail("no requests for --check-boards"))
+    assert main(["--companies", str(registry), "--check-boards"]) == 1
+    printed = capsys.readouterr().out
+    assert "bad: workday board 'plugpower'" in printed and "good" not in printed and "out:" not in printed

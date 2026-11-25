@@ -12,6 +12,7 @@ failing does not stop the run.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -73,6 +74,27 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+# The board shapes some readers need. A board that does not fit is skipped
+# with the reason, and `--check-boards` lists them all before a run.
+BOARD_SHAPES = {
+    "workday": (re.compile(r"^[A-Za-z0-9_-]+\.wd\d+/[A-Za-z0-9_.\-]+$"), "'{tenant}.wd{N}/{site}', e.g. 'solvenergy.wd1/SOLV_External_Career'"),
+    "paylocity": (re.compile(r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(/[A-Za-z0-9-]+)?$"),
+                  "the company GUID from recruiting.paylocity.com/recruiting/jobs/All/{GUID}"),
+    "other": (re.compile(r"^https://[^/\s]+\.[^/\s]+"), "the careers page's https address"),
+    "teamtailor": (re.compile(r"^(?!(?:na|www|app|career|careers|jobs)$)[A-Za-z0-9.-]+$"),
+                   "the careers site's host, or its subdomain on teamtailor.com (not a region prefix like 'na')"),
+}
+
+
+def board_problem(company: dict) -> str | None:
+    """Why a company's board cannot be read by its reader, or None."""
+    ats, board = company["ats"]["type"], company["ats"]["board"]
+    shape = BOARD_SHAPES.get(ats)
+    if board and shape and not shape[0].match(board):
+        return f"{ats} board {board!r} is not in the form the reader needs: {shape[1]}"
+    return None
+
+
 def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | None:
     """Why a company is not collected, or None when it is."""
     tier = company["climate"]["tier"]
@@ -89,6 +111,9 @@ def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | No
         return f"no reader for {ats}"
     if not company["ats"]["board"]:
         return f"no board token for {ats}"
+    problem = board_problem(company)
+    if problem:
+        return f"not collected: {problem}"
     return None
 
 
@@ -238,6 +263,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="run history: per run, the companies read (not written with --replay)")
     parser.add_argument("--greenhouse-pay", action="store_true",
                         help="one extra request per Greenhouse posting to read its structured pay range")
+    parser.add_argument("--check-boards", action="store_true",
+                        help="list collectable companies whose board is not in the form its reader needs, then stop")
     parser.add_argument("--disable-reader", action="append", default=[], metavar="TYPE", choices=sorted(READERS),
                         help="do not run this reader in this run (a vendor or company objected); may be repeated")
     parser.add_argument("--record", type=Path, metavar="DIR",
@@ -249,6 +276,14 @@ def main(argv: list[str] | None = None) -> int:
         sys.stdout.reconfigure(errors="replace")   # an error message may hold text the console cannot show
 
     companies = load_yaml(args.companies)["companies"]
+    if args.check_boards:
+        problems = [(company["id"], board_problem(company)) for company in companies
+                    if company["climate"]["tier"] in COLLECT_TIERS and company.get("read") != "none"]
+        problems = [(cid, why) for cid, why in problems if why]
+        for cid, why in problems:
+            print(f"{cid}: {why}")
+        print(f"{len(problems)} boards to fix" if problems else "every board is in the form its reader needs")
+        return 1 if problems else 0
     if args.company:
         known = {company["id"] for company in companies}
         unknown = [wanted for wanted in args.company if wanted not in known]
