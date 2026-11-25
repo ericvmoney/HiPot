@@ -107,3 +107,13 @@ def test_probe_fills_careers_page_and_unknown_board_only():
     known = {"id": "x", "careers_url": None, "ats": {"type": "greenhouse", "board": "x"}, "read": "auto", "notes": None}
     apply_probe(known, found)
     assert known["ats"] == {"type": "greenhouse", "board": "x"}       # a known board is never replaced
+
+
+from tools.apply_screening import listing_year  # noqa: E402
+
+
+def test_listing_year_from_the_scouts_wording():
+    assert listing_year("97 employees; listed via SPAC in 2022, under five years.") == 2022
+    assert listing_year("listed 2022 or 2023 (sources differ)") == 2022     # the stricter reading
+    assert listing_year("Large public company.") is None
+    assert listing_year("founded 2011; raised a Series B in 2024") is None  # a raise is not a listing

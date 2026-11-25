@@ -244,6 +244,17 @@ def startup_test(company: dict) -> tuple[str, str]:
     return "out", f"{owner.capitalize()}; {size}; founded {founded}, with no equity raise in 5 years or recent listing found."
 
 
+LISTED = re.compile(r"\b(?:listed|went public|IPO|SPAC)\b[^.;]*?\b((?:19|20)\d\d)\b", re.I)
+
+
+def listing_year(reason: str | None) -> int | None:
+    """The year a public company listed, from the scout's wording ("listed via
+    SPAC in 2022", "listed 2022 or 2023"): the first year named, the earlier
+    and so stricter reading when sources differ."""
+    found = LISTED.search(reason or "")
+    return int(found.group(1)) if found else None
+
+
 def apply_probe(company: dict, entry: dict) -> None:
     """A careers-page probe result: fill the careers address, and take a job
     board it found when the registry has none (ats type 'unknown')."""
@@ -304,6 +315,14 @@ def main() -> int:
         if proposal["id"] not in companies:
             companies[proposal["id"]] = proposal
             added.append(proposal["id"])
+    # Listing years the scout wrote only in prose: read them from its own
+    # proposal text (the registry's reason is rewritten by startup_test).
+    scout_reason = {p["id"]: (p.get("startup") or {}).get("reason") for p in proposals}
+    for company in companies.values():
+        if company.get("stage") == "public" and company.get("ipo_year") is None:
+            year = listing_year(scout_reason.get(company["id"]) or company["startup"].get("reason"))
+            if year:
+                company["ipo_year"] = year
 
     for fix in fixes:
         if fix["id"] in companies:
