@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: 247solar
   name: 247Solar
@@ -130,6 +130,36 @@ companies:
     (testing, seeking partners). Evidence: https://acceleratewind.com/ https://acceleratewind.com/company Region
     sources: third-derivative, cri. Confidence: medium. Unresolved: HQ city (input says Birmingham, AL; site does
     not state); funding stage.'
+- id: adion-solar
+  name: Adion Solar
+  website: https://adionsolar.com
+  careers_url: null
+  hq: Madison, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solar panels (ADiON PV540 G1 540 W module), plus inverters and LiFePO4 batteries; planned 500 MW module
+      assembly plant in Madison, GA.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Spin-off of B.I. Production Works (film equipment leasing
+    firm, Madison GA); no outside funding round found Flags: Plant status not established (not confirmed running,
+    built or cancelled): own site does not say whether the Madison factory produces or where panels are made. Also
+    does commercial installations, so it is partly a distributor/installer.. Evidence: s o l a r p Region sources:
+    cp-ga-2025. Confidence: low.'
 - id: adroit-materials
   name: Adroit Materials
   website: null
@@ -1308,6 +1338,34 @@ companies:
     Region sources: cp-nc-2025. Confidence: medium. Unresolved: Search snippets place the pre-processing plant in
     Winston-Salem, NC (13,500 t/yr scrap, start planned 2026); the input says Liberty, NC. Whether the plant has
     opened, and JV headquarters, not found. Pages themselves not fetched, only search snippets.'
+- id: green-new-energy-materials
+  name: Green New Energy Materials
+  website: null
+  careers_url: null
+  hq: Denver, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: subsidiary
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery separators (dry, wet and coated).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Volta Foundation interview 2026-05-26 names the parent
+    as Senior (Shenzhen Senior Technology Material, Chinese separator maker); Manufacturing Dive calls GNEM China-based
+    Flags: Plant status not established: the May 2026 interview describes it as scaling with demand but gives no
+    production start date. No company website found. Parent identity is from the Volta interview; the expansion
+    of Senior as ''Shenzhen Senior Technology Material'' is not confirmed by a fetched page.. Evidence: E D P N
+    C   Region sources: cp-nc-2025. Confidence: low.'
 - id: hanon-systems
   name: Hanon Systems
   website: https://www.hanonsystems.com
@@ -1868,6 +1926,35 @@ companies:
     Flags: not clearly clean tech (optics); website has no content. Evidence: https://innovationcrossroads.ornl.gov/people/p46433/
     Region sources: ornl-ic. Confidence: low. Unresolved: Company site returns an empty page; HQ, status, funding,
     headcount.'
+- id: microporous
+  name: Microporous
+  website: https://microporous.com
+  careers_url: null
+  hq: Piney Flats, TN
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: late
+  founded: 1991
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Battery separators: lithium-ion separators for EVs and storage, plus lead-acid separators; Pittsylvania
+      County (Danville), VA lithium-ion separator plant announced, construction pending.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No board found: robots.txt asks automated clients to stay out; site not read. Stage: Private-equity owned:
+    Trent Capital Partners acquired full ownership of Microporous LLC in 2024 (company history page); DOE grant
+    and final project funding announced 2026-04-30. Flags: Microporous name dates to 1991; separator lineage back
+    to American Rubber Co., 1934. Formerly MP Assets Corp. at the Dec 2023 DOE grant. Also has a plant in Feistritz
+    im Rosental, Austria. Sources: https://www.microporous.net/company-history ; https://www.constructiondive.com/news/microporous-buildi.
+    Evidence: O w n   s i Region sources: cp-va-2025. Confidence: low.'
 - id: mss-steel-tubes-usa
   name: MSS Steel Tubes USA
   website: null
@@ -2623,6 +2710,64 @@ companies:
     Flags: owned by investment firm Lion Point Capital; founding year sources disagree (2006/2007/2008). Evidence:
     https://en.wikipedia.org/wiki/Suniva Region sources: e2-ga, cp-ga-2025. Confidence: medium. Unresolved: suniva.com
     returned 403 to automated client (stopped). Current production status and headcount not found.'
+- id: sunlight-batteries-usa
+  name: Sunlight Batteries USA
+  website: https://www.sunlightgroup.com
+  careers_url: null
+  hq: Greensboro, NC
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 2019
+  headcount:
+    value: 130
+    as_of: '2026-11-25'
+    source: Sunlight Group North America contact page ('more than 130 employees'; page undated, date is fetch date)
+      (https://www.sunlight-group.com/en/north-america/contact)
+  climate:
+    tier: core
+    reason: Lead-acid and lithium-ion motive power batteries and power systems for forklifts and material handling.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 130 people (Sunlight Group North America contact page ('more than 130 employees'; page undated, date
+      is fetch date), 2026-11-25). Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: US arm of Greek Sunlight Group (Systems Sunlight S.A.,
+    in industrial batteries since 1991) Flags: The correct domain is sunlight-group.com (hyphen); sunlightgroup.com
+    is the unrelated Singapore switchgear firm. Mebane plant: built and running (listed with ISO certificates).
+    Founded year is for the US entity''s first NC operation.. Evidence: N C   G o v Region sources: e2-nc, cp-nc-2025.
+    Confidence: low.'
+- id: sunmaxtech-solar
+  name: SunMaxTech Solar
+  website: https://www.sunmaxtech.com
+  careers_url: null
+  hq: Dalton, GA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: 'Solar-module components: junction boxes, cables, connectors and frames.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round or parent found Flags: Adairsville
+    plant status not established (not confirmed running, built or cancelled); own site does not mention it. Parent
+    and country of origin not stated.. Evidence: W B H F   R Region sources: cp-ga-2025. Confidence: low.'
 - id: sustaera
   name: Sustaera
   website: https://sustaera.com
