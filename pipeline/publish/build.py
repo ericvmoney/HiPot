@@ -162,11 +162,12 @@ def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlist
 
 
 def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
-                grades: bool = True, seed_ids: set[str] = frozenset()) -> dict:
+                grades: bool = True, seed_ids: set[str] = frozenset(), runs: dict | None = None) -> dict:
     """Return the board data as a dict. Raises PublishError on input that fails the contracts.
 
     `grades` adds a pay-vs-market grade to each role with a published range (see grades.py).
     `seed_ids` are the ids the collector primed from the old hub's seed; they are never new (see fresh.py).
+    `runs` is the collector's run history (data/state/runs.json); without it, first reads are inferred.
     """
     selected = _select(jobs_file, registry_file, taxonomy, include_unlisted)
     companies, kept = selected["companies"], selected["kept"]
@@ -183,8 +184,8 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
     labels["company_types"] = [{"id": kind, "label": COMPANY_TYPE_LABELS[kind]} for kind in COMPANY_TYPES if kind in present]
     records = [_role_record(job) for job in kept]
     # New roles: first seen in the last 3 business days, not counting a company's first collection.
-    baselines = fresh.first_collection(jobs_file["jobs"], seed_ids)
-    new_ids = fresh.new_role_ids(kept, jobs_file["generated_at"], baselines, seed_ids)
+    read_ends = fresh.first_read_ends(jobs_file["jobs"], seed_ids, runs)
+    new_ids = fresh.new_role_ids(kept, jobs_file["generated_at"], read_ends, seed_ids)
     for record in records:
         if record["id"] in new_ids:
             record["new"] = True
