@@ -95,6 +95,12 @@ OWNER_RULINGS: dict[str, dict] = {
                     "reason": "Wave-powered ocean nodes whose stated product is on-board computing; computing is out."},
     "on-energy": {"q": "A2", "tier": "enabling", "sectors": ["energy-storage"], "basis": "provisional",
                   "reason": "Battery storage and power systems for data centers and industrial sites."},
+    # Data-center equipment, found by the Milestone 3 spot check (2026-11-25): both
+    # companies moved into data-center products after their records were written.
+    "amber-semiconductor": {"q": "A2", "tier": "out",
+                            "reason": "Power-management chips mounted on AI server boards for data centers; data-center equipment is out."},
+    "boston-materials": {"q": "A2", "tier": "out",
+                         "reason": "Thermal interface material for AI and data-center chips; data-center equipment is out."},
     # Methane monitoring (owner, 2026-11-25: "Methane monitoring should be excluded").
     # Leak detection and measurement sold to oil and gas is out; companies that
     # capture, destroy or prevent methane (landfill gas, oxidizers, compressors,

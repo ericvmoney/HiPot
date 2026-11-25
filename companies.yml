@@ -1610,8 +1610,8 @@ companies:
   founded: null
   headcount: null
   climate:
-    tier: enabling
-    reason: Solid-state AC switching and AC-to-DC conversion chips for electrical devices and buildings (AmberSemi).
+    tier: out
+    reason: Power-management chips mounted on AI server boards for data centers; data-center equipment is out.
     basis: agent
     approved: false
   startup:
@@ -1621,7 +1621,8 @@ companies:
     now brands itself AmberSemi. Has BusinessWire releases from March 2025 and a 2026 profile citing more than 50
     US patents. Caution: ambersemi.com currently serves an unrelated Shanghai equipment maker, so the US company''s
     current domain is unconfirmed.. Evidence: https://www.businesswire.com/news/home/20250317967866/en https://prnewswire.com/news-releases/at-apec-2024-ambersemi-to-demonstrate-its-silicon-based-ac-to-dc-power-conversion-technology-302070039.html
-    https://www.cbinsights.com/company/amber-solutions Region sources: kb-ba-hardware. Confidence: low.'
+    https://www.cbinsights.com/company/amber-solutions Region sources: kb-ba-hardware. Confidence: low. Owner ruling
+    A2 (2026-11-24) applied.'
 - id: ambient-photonics
   name: Ambient Photonics
   website: https://www.ambientphotonics.com
@@ -3700,9 +3701,8 @@ companies:
     as_of: '2026-11-24'
     source: Dealroom (https://dealroom.co/companies/boston-materials)
   climate:
-    tier: enabling
-    reason: Carbon-fiber composite materials, including Liquid Metal ZRT thermal interface materials, for high-performance
-      electronics, aerospace and electrified mobility.
+    tier: out
+    reason: Thermal interface material for AI and data-center chips; data-center equipment is out.
     basis: agent
     approved: false
   startup:
@@ -3715,7 +3715,8 @@ companies:
     Ventures); round letter not stated. https://dealroom.co/companies/boston-materials Flags: about 10 years old
     (founded 2016); product is a material/component, not a system. Evidence: https://dealroom.co/companies/boston-materials
     Confidence: medium. Unresolved: Round letter for Nov 2024 raise not confirmed; whether thermal-interface customers
-    are mainly data center / AI electronics not checked. Missing facts filled from data/screening/registry-fixes.'
+    are mainly data center / AI electronics not checked. Missing facts filled from data/screening/registry-fixes.
+    Owner ruling A2 (2026-11-24) applied.'
 - id: boston-metal
   name: Boston Metal
   website: https://www.bostonmetal.com
@@ -7663,13 +7664,14 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+    status: out
+    reason: Part of Xylem; not independent.
   notes: 'Board workday:xylem.wd5.myworkdayjobs.com/xylem-careers seen 2026-11-24, linked from the company''s own
     site: role count not read (no public feed). Stage: evoqua.com redirects to xylem.com/en-us/brand/evoqua, which
     says ''In 2023, Evoqua joined forces with Xylem''. Flags: subsidiary of Xylem; HQ outside region (input lists
     Tewksbury, MA site; not verified). Evidence: https://www.xylem.com/en-us/brand/evoqua/ Region sources: builtin-boston-greentech.
-    Confidence: medium. Unresolved: Tewksbury, MA site; headcount.'
+    Confidence: medium. Unresolved: Tewksbury, MA site; headcount. Missing facts filled from data/screening/registry-fixes.'
+  parent: Xylem
 - id: excipio-energy
   name: Excipio Energy
   website: https://excipioenergy.com
@@ -14175,15 +14177,19 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: Independent; 48 people (Dealroom (https://dealroom.co/companies/nanoramic), 2026-11-24); founded 2010,
-      with no equity raise in 5 years or recent listing found.
+    status: in
+    reason: 'Independent; 48 people (Dealroom (https://dealroom.co/companies/nanoramic), 2026-11-24); growth sign:
+      equity round in 2026.'
   notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
     https://dealroom.co/companies/nanoramic. Stage: Company-named rounds: ''Series 1'' $54M Nov 2025 (GM Ventures,
     Samsung Ventures, ITOCHU, Top Material; Dealroom calls it late-stage VC); ''Series 2'' first close Sept 2026
     at $250M pre-money led by Catalus Capital, amount undisclosed (Dealroom). Evidence: https://nanoramic.com https://dealroom.co/companies/nanoramic
     Region sources: mit-sloan-cleantech. Confidence: medium. Unresolved: Dealroom lists both Wakefield and Boston;
-    mapping of ''Series 1/2'' to standard stages.'
+    mapping of ''Series 1/2'' to standard stages. Missing facts filled from data/screening/registry-fixes.'
+  last_raise:
+    date: 2026-09
+    type: equity round
+    source: Equity raises in November 2025 ($54M) and September 2026, per the registry's own notes and reports/M3-spot-check-01.md.
 - id: nanotech-materials
   name: Nanotech Materials
   website: https://nanotechmaterials.com/
