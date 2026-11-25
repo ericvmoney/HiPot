@@ -1,0 +1,408 @@
+# Registry fixes 10: cleanup checks the supervisor asked for (2026-11-25).
+#
+# Written by workstream A2. Each entry carries its sources; evidence quotes come from the companies' own pages
+# unless marked otherwise. Sites answering with a bot challenge (HTTP 202) or refusing automated clients were not
+# retried.
+#
+#   founded / last_raise      facts filled where the registry has none (tools/apply_screening.py fill_missing)
+#   kind: status-check        dormant check; status active, closed or unknown. None of the five is clearly gone,
+#                             so no entry says closed.
+#   kind: website             current official website; `now: null` where none was found. The apply tool has no
+#                             website field yet, so these need a hand edit or a tool change.
+#   kind: unconfirmed         a given value that could not be confirmed; left unfilled.
+#   reference_lists           notes on regional reference lists, not on registry companies (ESS Inc's closure).
+#
+# No tier changes here, so no entry carries a ruling.
+
+fixes:
+- id: optibike
+  name: Optibike
+  founded:
+    value: 2005
+    source: 'https://optibike.com/?p=10231 (company post, 2014-05-02): ''That was in 2005'''
+    confidence: 'medium: 1998 (concept) and 2006-07 (first production and sale) are also cited for other milestones; every
+      candidate year is before 2011'
+  last_raise: null
+  startup_label: 'established: founded 2005 (company''s own account); no equity raise found'
+  evidence:
+  - 'https://optibike.com/?p=10231 (post dated May 2, 2014): ''That was in 2005'' (describing how the company was born)'
+  - 'https://optibike.com/20-years-of-innovation-the-human-story-behind-optibike/ (February 13, 2026): ''the 12-year gap between
+    his first prototype in 1995 and his first commercial sale in 2007'''
+  - 'https://elevationoutdoors.com/?p=11993 (March 28, 2012): ''founded the company in 1998 and started production in 2006'''
+  - 'https://optibike.com: ''Celebrating 20 Years of Optibike Innovation''; address 41404 Stewart Mesa Rd Paonia, CO 81428'
+  note: With a founding year before 2011 and no raise, the startup test gives 'out' (established); the tier is unchanged.
+  checked: '2026-11-25'
+- id: mmci-solar
+  name: MMCI Solar
+  kind: status-check
+  status: unknown
+  confidence: 'low: dormant-looking site, no dated activity found'
+  note: Site still loads; footer reads 'Copyright © 2017 Mark Miles Consulting Inc.'; no dated news. Dormant-looking, but
+    no shutdown notice found.
+  evidence:
+  - 'https://www.mmcisolar.com: ''With its headquarters in Oakland, CA''; ''Copyright © 2017 Mark Miles Consulting Inc.'';
+    no dated news'
+  checked: '2026-11-25'
+- id: alkemy-environmental
+  name: Alkemy Environmental
+  kind: status-check
+  status: unknown
+  confidence: medium that the company is dormant (spam-injected site with no dates); low on closed vs active
+  note: Site still describes the company but has no dates or contact details and carries injected casino spam, so it is not
+    maintained. No shutdown notice found.
+  evidence:
+  - 'https://www.alkemyenvironmental.com: ''clean technology company that recycles industrial waste'''
+  - 'https://www.alkemyenvironmental.com: casino text ''the world of online gaming offers thrilling opportunities to turn
+    small bets into big wins'', links to nv.casino and xonbet.io'
+  checked: '2026-11-25'
+- id: prieto-battery
+  name: Prieto Battery
+  kind: status-check
+  status: active
+  confidence: 'medium: live site with a 2026 copyright and the company''s own email domain, but no dated news'
+  note: prieto.com is live with '© 2026 Prieto' and the company's own email domain, marketing sodium-ion batteries; prietobattery.com
+    has an expired certificate.
+  evidence:
+  - 'https://www.prieto.com: ''© 2026 Prieto. All Rights Reserved.''; contact info@prietobattery.com, +1 (970) 746-5273'
+  - 'https://www.prietobattery.com: certificate has expired (fetch error, 2026-11-25)'
+  checked: '2026-11-25'
+  website:
+    was: https://www.prietobattery.com
+    now: https://www.prieto.com
+- id: spark-thermionics
+  name: Spark Thermionics
+  kind: status-check
+  status: unknown
+  confidence: 'low: no dated activity after 2022 found'
+  note: One-page site with 'Copyright © Spark Thermionics 2022' and no news; nothing dated after 2022 found, and no shutdown
+    notice.
+  evidence:
+  - 'https://www.sparkthermionics.com: ''Copyright © Spark Thermionics 2022''; ''A power plant on a chip'''
+  - 'https://newscenter.lbl.gov/2016/02/29/modernizing-a-technology-from-the-vacuum-tube-era-to-generate-cheap-power/ (search
+    result, 2016): ARPA-E award to the thermionics collaboration'
+  checked: '2026-11-25'
+- id: geothermal-technologies-inc
+  name: Geothermal Technologies, Inc.
+  kind: status-check
+  status: unknown
+  confidence: 'low: nothing dated after mid-2024'
+  note: Latest dated activity is June 2024 (Colorado Energy Office awards for a Weld County dairy project, ThinkGeoEnergy);
+    no website or shutdown notice found.
+  evidence:
+  - 'https://www.thinkgeoenergy.com/news-roundup-state-funding-spurs-multiple-geothermal-projects-in-colorado/ (7 June 2024):
+    ''We have received the necessary deep-well geothermal drilling permits from the State.'''
+  - 'https://bizwest.com/?p=366854 (April 13, 2023): ''A company based in Baltimore wants to drill geothermal wells in Weld
+    County.'''
+  - 'https://www.geothermaltechnologies.com: 307 redirect to forsale.godaddy.com (parked, for sale)'
+  - 'https://www.cpr.org/2025/04/25/geothermal-energy-pierce-colorado/: HTTP 403, not retried'
+  - 'https://www.businesswire.com/news/home/20230411005176/en: HTTP 403, not retried'
+  - 'https://www.gem.wiki/D-J_Basin_geothermal_power_plant: HTTP 403, not retried'
+  checked: '2026-11-25'
+- id: tau-motors
+  name: Tau Motors
+  kind: website
+  website:
+    was: null
+    now: https://taumotors.com
+  evidence:
+  - 'https://taumotors.com/newsroom: ''© 2025  Tau Motors, Inc. |  All rights reserved'''
+  - 'https://taumotors.com/newsroom: 1/8/26 ''Tau Redefines Power Electronics to Accelerate Electrification and Smart Energy
+    Applications'''
+  checked: '2026-11-25'
+- id: terawatt-infrastructure
+  name: Terawatt Infrastructure
+  kind: website
+  website:
+    was: null
+    now: https://terawattinfrastructure.com
+  evidence:
+  - 'https://terawattinfrastructure.com: ''Terawatt is the leading infrastructure platform powering the autonomous and electric
+    transportation ecosystem.'''
+  - 'https://terawattinfrastructure.com: ''© 2024 Terawatt Infrastructure. All rights reserved.'''
+  checked: '2026-11-25'
+- id: xflow-energy
+  name: XFlow Energy
+  founded:
+    value: 2017
+    source: 'https://tomkat.stanford.edu/news/shifting-winds (Stanford TomKat Center, 2020-03-31): the two co-founders ''co-founded
+      XFlow Energy in 2017'''
+  checked: '2026-11-25'
+- id: opcondys
+  name: Opcondys
+  kind: unconfirmed
+  note: '2014 not confirmed: its site gives no founding year; one aggregator snippet (village.ai) says 2015. Left unfilled.
+    Either year is after 2011, so the startup label stays ''in''.'
+  evidence:
+  - 'https://www.opcondys.com/about: ''early stage start-up founded to develop the optical transconductance varistor (OTV)'';
+    no year'
+  - 'https://village.ai/company/opcondys-inc: search snippet says ''Founded 2015''; page itself HTTP 403, not retried'
+  checked: '2026-11-25'
+- id: excipio-energy
+  name: Excipio Energy
+  kind: unconfirmed
+  note: '2016 not confirmed: the only support is the site footer ''© 2016 EXCIPIO ENERGY.'', which is a copyright line, not
+    a founding statement. Left unfilled; the label stays ''in'' (no year, so included).'
+  evidence:
+  - 'https://excipioenergy.com: ''© 2016 EXCIPIO ENERGY.'' (copyright, not a founding statement)'
+  - 'https://tethys-engineering.pnnl.gov/organizations/excipio-energy-inc: HTTP 403, not retried'
+  checked: '2026-11-25'
+- id: airmyne
+  name: AirMyne
+  kind: website
+  failure: unchanged
+  website:
+    was: https://www.airmyne.com/
+    now: https://www.airmyne.com/
+  note: Live site behind a bot challenge (HTTP 202); YC lists the same domain.
+  evidence:
+  - 'https://www.ycombinator.com/companies/airmyne: website http://www.airmyne.com; status Active; founded 2022'
+  - 'https://airmyne.com: empty response (202-style), not retried'
+  checked: '2026-11-25'
+- id: element-energy
+  name: Element Energy
+  kind: website
+  failure: unchanged
+  website:
+    was: https://elementenergy.com
+    now: https://elementenergy.com
+  note: Live site behind a bot challenge (HTTP 202); Utility Dive (2024-11-26) links to it.
+  evidence:
+  - 'https://www.utilitydive.com/news/element-energy-commissions-53-mwh-second-life-battery-energy-storage-projec/734020/
+    (November 26, 2024): ''Element Energy has energized the world''s largest second-life battery energy storage facility'';
+    links to elementenergy.com'
+  - 'https://elementenergy.com: empty response (202-style), not retried'
+  checked: '2026-11-25'
+- id: quino-energy
+  name: Quino Energy
+  kind: website
+  failure: unchanged
+  website:
+    was: https://www.quinoenergy.com/
+    now: https://www.quinoenergy.com/
+  note: Live site behind a bot challenge (HTTP 202); pv magazine USA (2026-03-24) links to it.
+  evidence:
+  - 'https://pv-magazine-usa.com/2026/03/24/quino-signs-joint-development-deal-with-jena-for-flow-battery-energy-storage/
+    (March 24, 2026): ''California-based Quino Energy has signed a joint development agreement with Germany-based Jena Flow
+    Batteries''; links https://quinoenergy.com/'
+  checked: '2026-11-25'
+- id: aseon-labs
+  name: Aseon Labs
+  kind: website
+  failure: moved
+  website:
+    was: https://www.aseonlabs.com/
+    now: https://aseon.com
+  note: aseonlabs.com redirects to aseon.com ('© 2026 Aseon Labs, Inc.').
+  evidence:
+  - 'https://aseon.com: ''© 2026 Aseon Labs, Inc.''; ''Robotic pitstops for self driving cars.'''
+  checked: '2026-11-25'
+- id: c-crete-technologies
+  name: C-Crete Technologies
+  kind: website
+  failure: moved
+  website:
+    was: https://www.c-crete.com/
+    now: https://ccretetech.com
+  note: c-crete.com no longer resolves; ccretetech.com is live (San Leandro, CA).
+  evidence:
+  - 'https://ccretetech.com: ''© 2025 C-Crete Technologies. All Rights Reserved.''; 14421 Catalina St, San Leandro, CA 94577'
+  - 'https://www.c-crete.com: getaddrinfo ENOTFOUND'
+  checked: '2026-11-25'
+- id: coolerado
+  name: Coolerado
+  kind: website
+  failure: acquired
+  website:
+    was: https://www.coolerado.com
+    now: https://www.seeleyinternational.com/commercial/brands/coolerado/
+  note: 'Coolerado is now a brand of Seeley International (coolerado.com serves a Breezair certificate). The registry may
+    want to record the parent: Seeley International (Australia).'
+  evidence:
+  - 'https://coolerado.com: certificate altnames ''DNS:*.breezair.com.au'' (hostname mismatch)'
+  - 'https://www.seeleyinternational.com: ''Coolerado by Seeley International logo''; brand page /commercial/brands/coolerado/'
+  checked: '2026-11-25'
+- id: evoloh
+  name: EvolOH
+  kind: website
+  failure: renamed-domain
+  website:
+    was: https://www.origen.energy
+    now: https://evoloh.com
+  note: origen.energy redirects to evoloh.com ('© EVOLOH 2026').
+  evidence:
+  - 'https://evoloh.com: ''EVOLOH manufactures electrolyzer stacks engineered for lower total installed cost and simpler integration.'';
+    ''© EVOLOH 2026'''
+  checked: '2026-11-25'
+- id: gopowerev
+  name: GoPowerEV
+  kind: website
+  failure: moved
+  website:
+    was: https://gopowerev.com/
+    now: https://gopower.ai
+  note: gopowerev.com redirects to gopower.ai ('© 2026 GoPowerEV, Inc.').
+  evidence:
+  - 'https://gopower.ai: ''© 2026 GoPowerEV, Inc.''; ''Give residents charging where they already park'''
+  checked: '2026-11-25'
+- id: gridtential-energy
+  name: Gridtential Energy
+  kind: website
+  failure: renamed
+  website:
+    was: https://www.gridtential.com
+    now: https://siliconjoule.com
+  note: Rebranded SiliconJoule on 2026-03-01 (BEST Magazine); the legal entity is still Gridtential Energy, Inc.
+  evidence:
+  - 'https://www.bestmag.co.uk/gridtential-rebrands-as-siliconjoule/ (01 Mar 2026): ''has announced a corporate rebrand to
+    SiliconJoule''; ''the legal entity will remain Gridtential Energy, Inc.'''
+  - 'https://siliconjoule.com: ''Gridtential, SiliconJoule™ and the SiliconJoule™ logo are registered trademarks of Gridtential
+    Energy, Inc.'''
+  - 'https://gridtential.com: certificate has expired'
+  checked: '2026-11-25'
+- id: motiv-power-systems
+  name: Motiv Power Systems
+  kind: website
+  failure: merged
+  website:
+    was: https://www.motivps.com/
+    now: https://workhorse.com
+  note: 'Merged into Workhorse Group (Nasdaq: WKHS), completed 2025-12-15 per a Workhorse press release; motivps.com fails
+    TLS. Startup label already out (registry-fixes-08).'
+  evidence:
+  - 'https://ir.workhorse.com/news-events/press-releases/detail/322/workhorse-group-and-motiv-electric-trucks-complete-merger
+    (December 15, 2025): ''Combined company to be called Workhorse and trade on Nasdaq under WKHS'''
+  - 'https://www.motivps.com: SSLV3_ALERT_HANDSHAKE_FAILURE'
+  - 'https://ir.workhorse.com: latest release November 18, 2026'
+  checked: '2026-11-25'
+- id: olympian-motors
+  name: Olympian Motors
+  kind: website
+  failure: moved
+  website:
+    was: https://olympianmotors.com
+    now: https://olympus.auto
+  note: olympianmotors.com redirects to olympus.auto (Olympian Motors, Inc.).
+  evidence:
+  - 'https://olympus.auto: ''2027 Olympus | Olympian Motors, Inc.''; ''Olympus is bringing a renaissance to the American automotive
+    industry.'''
+  checked: '2026-11-25'
+- id: oned-battery-sciences
+  name: OneD Battery Sciences
+  kind: website
+  failure: moved
+  website:
+    was: https://onedbattery.com
+    now: https://onedsinanode.com
+  note: onedbattery.com redirects to onedsinanode.com ('Copyright 2026 OneD Battery Sciences').
+  evidence:
+  - 'https://onedsinanode.com: ''Copyright 2026 OneD Battery Sciences'''
+  checked: '2026-11-25'
+- id: prometheus-fuels
+  name: Prometheus Fuels
+  kind: website
+  failure: moved
+  website:
+    was: https://www.prometheusfuels.com
+    now: https://prometheusfuels.ai
+  note: prometheusfuels.com redirects (301) to prometheusfuels.ai, which timed out when read.
+  evidence:
+  - 'https://www.prometheusfuels.com: ''301 Moved Permanently'' to https://prometheusfuels.ai/'
+  - 'https://prometheusfuels.ai: timeout of 60000ms exceeded (2026-11-25)'
+  - 'https://www.businesswire.com/news/home/20260114310118/en (search result, January 2026): e-kerosene announcement'
+  checked: '2026-11-25'
+- id: sonocharge-energy
+  name: Sonocharge Energy
+  kind: website
+  failure: moved
+  website:
+    was: https://www.sonocharge.com/
+    now: https://sonochargeenergy.com
+  note: sonocharge.com redirects to sonochargeenergy.com.
+  evidence:
+  - 'https://sonochargeenergy.com: ''can make the world''s batteries last longer, charge faster, and be safer''; ''2025 All
+    Rights Reserved.'''
+  checked: '2026-11-25'
+- id: zero-emission-industries
+  name: Zero Emission Industries
+  kind: website
+  failure: moved
+  website:
+    was: https://www.zeroemissionindustries.com/
+    now: https://zeroei.com
+  note: zeroemissionindustries.com fails TLS; zeroei.com is live ('Copyright © 2025').
+  evidence:
+  - 'https://zeroei.com: ''Copyright © 2025 Zero Emission Industries. All rights reserved.'''
+  checked: '2026-11-25'
+- id: maple-materials
+  name: Maple Materials
+  kind: website
+  failure: broken
+  website:
+    was: https://maplematerials.com
+    now: null
+  note: maplematerials.com returns 404 at the root; YC still lists it as Active (Winter 2019). Status not established.
+  evidence:
+  - 'https://www.ycombinator.com/companies/maple-materials: website http://maplematerials.com; status Active; ''We turn CO2
+    into battery-grade graphite and oxygen.'''
+  - 'https://www.maplematerials.com: HTTP 404 (2026-11-25)'
+  checked: '2026-11-25'
+- id: ambient-photonics
+  name: Ambient Photonics
+  kind: website
+  failure: none-found
+  website:
+    was: https://www.ambientphotonics.com
+    now: null
+  note: Both hosts fail the TLS handshake; news coverage stops in April 2025. Status not established.
+  evidence:
+  - 'https://ambientphotonics.com and https://www.ambientphotonics.com: SSLV3_ALERT_HANDSHAKE_FAILURE (2026-11-25)'
+  - 'https://qorvo.com/innovation/ultra-wideband/partners/ambient-photonics: HTTP 429, not retried'
+  checked: '2026-11-25'
+- id: fenix-international
+  name: Fenix International
+  kind: website
+  failure: rebranded
+  website:
+    was: https://www.fenixintl.com
+    now: null
+  note: Rebranded into ENGIE Energy Access (announced 2021-06-29); fenixintl.com now redirects to an unrelated gambling site.
+    No current site found; ENGIE ownership makes it not independent.
+  evidence:
+  - 'https://www.engie-energyaccess.com and https://engie-energyaccess.com: getaddrinfo ENOTFOUND (2026-11-25)'
+  - 'https://www.thisdaylive.com/2021/07/02/fenix-international-rebrands-now-engie-energy-access/ (search result): ''Fenix
+    International Rebrands, Now ENGIE Energy Access'''
+  checked: '2026-11-25'
+- id: gravity-renewables
+  name: Gravity Renewables
+  kind: website
+  failure: none-found
+  website:
+    was: https://gravityrenewables.com
+    now: null
+  note: Domain resolves but refuses HTTPS connections; a reported acquisition by Relevate Power is a search snippet only.
+    Status not established.
+  evidence:
+  - 'https://www.gravityrenewables.com: connect ECONNREFUSED 67.205.32.215:443 (2026-11-25)'
+  - 'https://relevatepower.com: no mention of Gravity Renewables; ''© 2025 Relevate Power'''
+  checked: '2026-11-25'
+- id: orva-energy
+  name: Orva Energy
+  kind: website
+  failure: none-found
+  website:
+    was: https://orvaenergy.com
+    now: null
+  note: Domain points at Squarespace with no certificate for it (hostname mismatch). Status not established.
+  evidence:
+  - 'https://orvaenergy.com and https://www.orvaenergy.com: ''Hostname/IP does not match certificate''s altnames ... DNS:*.squarespace.com'''
+  checked: '2026-11-25'
+reference_lists:
+- name: ESS Inc (ESS Tech, Inc.)
+  list: universe/pacific-northwest.yml
+  kind: closed-confirmed
+  note: Chapter 7 confirmed from the primary source. Not in the registry; the Pacific Northwest reference list (universe/pacific-northwest.yml)
+    already marks it closed, and its reason now cites the filing.
+  evidence:
+  - 'https://www.sec.gov/Archives/edgar/data/1819438/000181943826000091/wk-20261113.htm: Form 8-K filed 2026-11-13, Item 1.03
+    Bankruptcy or Receivership; the company ceased operations and filed a voluntary Chapter 7 petition (CIK 0001819438).'
+  checked: '2026-11-25'
