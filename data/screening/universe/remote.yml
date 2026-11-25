@@ -1,0 +1,663 @@
+# Reference list for remote: US companies anywhere that hire engineering staff remotely, meaning 3 or more
+# US-remote roles on their own board, or a remote-first or remote-friendly policy on their own careers page.
+# Written by workstream A2. Format: tools/coverage.py. Many entries are also on a regional list.
+
+region: remote
+built: '2026-11-25'
+sources:
+- id: board-remote-scan
+  name: The scout's scan of each company's own job board for US-remote roles (2026-11-25)
+  url: null
+  note: Every Greenhouse, Lever, Ashby and Rippling board in companies.yml and the scout's proposals, loaded once
+    (data/screening/tools/remote_scan.py). A role counts when the feed marks it remote or its location says remote
+    or anywhere, and no non-US place is named. Companies with 3 or more such roles are listed. Built from the registry's
+    boards, so not independent of companies.yml.
+- id: own-careers-remote
+  name: Remote-work statements on companies' own careers pages
+  url: null
+  note: About 220 clean-tech hardware careers pages read for a stated remote-first or remote-friendly policy (harvest
+    of 2026-11-24).
+- id: awesome-sustainability-jobs
+  name: awesome-sustainability-jobs (github.com/pogopaule), USA and Remote sections, 're' flag
+  url: https://github.com/pogopaule/awesome-sustainability-jobs
+  note: '''re'' flag means ''has at least one remote job offering'' (not a stated policy)'
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: web-search-snippets
+  name: Web search results quoting company job posts or remote-job board profiles
+  url: null
+  note: 10 web searches used; only kept where the company's own words or a remote-job board profile were quoted
+companies:
+- name: AeroVect
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: aerovect
+  decision: registry
+  reason: 23 of 44 roles on its own board are US-remote (14 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: AeroVect
+  open_roles: 44
+- name: Alva Energy
+  website: https://alvaenergy.com
+  hq: Cambridge, MA
+  sources:
+  - board-remote-scan
+  registry_id: alva-energy
+  decision: registry
+  reason: 8 of 8 roles on its own board are US-remote (5 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: alva-energy
+  open_roles: 8
+- name: Antora Energy
+  website: null
+  hq: Sunnyvale, CA
+  sources:
+  - board-remote-scan
+  - own-careers-remote
+  registry_id: antora-energy
+  decision: registry
+  reason: 7 of 44 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: antora
+  open_roles: 44
+- name: Aventon
+  website: https://aventon.com
+  hq: Brea, CA
+  sources:
+  - board-remote-scan
+  registry_id: aventon
+  decision: registry
+  reason: 4 of 10 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: aventon
+  open_roles: 10
+- name: Bedrock Robotics
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: bedrock-robotics
+  decision: registry
+  reason: 46 of 61 roles on its own board are US-remote (30 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: bedrock-robotics
+  open_roles: 61
+- name: Blink Charging
+  website: https://blinkcharging.com
+  hq: Bowie, MD
+  sources:
+  - own-careers-remote
+  registry_id: blink-charging
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: "a remote-first culture that values flexibility
+    and results"; "We hire for talent and results, not necessarily locality" (https://blinkcharging.com/careers)'
+  ats: null
+  open_roles: null
+- name: Blue Energy
+  website: https://blueenergy.co
+  hq: North Bethesda / Chevy Chase, MD area (not confirmed; job listings say DC area and Greater Houston; office
+    in Edinburgh)
+  sources:
+  - board-remote-scan
+  registry_id: blue-energy
+  decision: registry
+  reason: 12 of 17 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: blue-energy
+  open_roles: 17
+- name: Built Robotics
+  website: https://builtrobotics.com
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: built-robotics
+  decision: registry
+  reason: 4 of 7 roles on its own board are US-remote (4 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: built-robotics
+  open_roles: 7
+- name: ChargePoint
+  website: null
+  hq: Campbell, CA
+  sources:
+  - board-remote-scan
+  registry_id: chargepoint
+  decision: registry
+  reason: 10 of 42 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: chargepoint
+  open_roles: 42
+- name: Critical Loop
+  website: https://criticalloop.com
+  hq: Long Beach, CA
+  sources:
+  - board-remote-scan
+  registry_id: critical-loop
+  decision: registry
+  reason: 5 of 18 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: criticalloop
+  open_roles: 18
+- name: Crusoe
+  website: null
+  hq: Denver, CO
+  sources:
+  - board-remote-scan
+  registry_id: crusoe
+  decision: registry
+  reason: 8 of 304 roles on its own board are US-remote (7 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: Crusoe
+  open_roles: 304
+- name: Dandelion Energy
+  website: https://dandelionenergy.com
+  hq: Arlington, VA
+  sources:
+  - board-remote-scan
+  registry_id: dandelion-energy
+  decision: registry
+  reason: 3 of 11 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: dandelion
+  open_roles: 11
+- name: Energy Vault
+  website: null
+  hq: Westlake Village, CA
+  sources:
+  - board-remote-scan
+  registry_id: energy-vault
+  decision: registry
+  reason: 13 of 19 roles on its own board are US-remote (5 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: EnergyVault
+  open_roles: 19
+- name: FlexGen
+  website: https://flexgen.com
+  hq: Durham, NC
+  sources:
+  - board-remote-scan
+  registry_id: flexgen
+  decision: registry
+  reason: 3 of 6 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: rippling
+    token: external-job-board
+  open_roles: 6
+- name: Fluence Energy
+  website: https://fluenceenergy.com
+  hq: Arlington, VA
+  sources:
+  - remotefirstjobs
+  - own-careers-remote
+  registry_id: fluence-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: "Flexible hybrid work environment and home office
+    stipend"; "Flexible Remote Work Options"; benefits vary by location (https://fluenceenergy.com/energy-storage-'
+  ats:
+    type: workday
+    token: fluenceenergy
+  open_roles: null
+- name: Form Energy
+  website: null
+  hq: Somerville, MA
+  sources:
+  - board-remote-scan
+  registry_id: form-energy
+  decision: registry
+  reason: 33 of 209 roles on its own board are US-remote (13 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: formenergy
+  open_roles: 209
+- name: Glacier
+  website: https://www.glacier.tech
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: glacier
+  decision: registry
+  reason: 3 of 3 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: glacier
+  open_roles: 3
+- name: Glydways
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: glydways
+  decision: registry
+  reason: 6 of 13 roles on its own board are US-remote (5 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: glydways
+  open_roles: 13
+- name: Highland Electric Fleets
+  website: https://highlandfleets.com
+  hq: Beverly, MA
+  sources:
+  - board-remote-scan
+  registry_id: highland-electric-fleets
+  decision: registry
+  reason: 5 of 11 roles on its own board are US-remote (2 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: highlandfleets-2
+  open_roles: 11
+- name: Humble Robotics
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: humble-robotics
+  decision: registry
+  reason: 4 of 21 roles on its own board are US-remote (4 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: humble-robotics
+  open_roles: 21
+- name: inferra
+  website: null
+  hq: Menlo Park, CA (per SEC Form D)
+  sources:
+  - board-remote-scan
+  registry_id: inferra
+  decision: registry
+  reason: 7 of 8 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: inferra
+  open_roles: 8
+- name: Inlyte Energy
+  website: https://inlyteenergy.com
+  hq: San Leandro, CA
+  sources:
+  - board-remote-scan
+  registry_id: inlyte-energy
+  decision: registry
+  reason: 3 of 5 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: rippling
+    token: inlyte-energy
+  open_roles: 5
+- name: Kairos Power
+  website: https://kairospower.com
+  hq: Alameda, CA
+  sources:
+  - board-remote-scan
+  registry_id: kairos-power
+  decision: registry
+  reason: 10 of 83 roles on its own board are US-remote (4 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: kairospower
+  open_roles: 83
+- name: KoBold Metals
+  website: https://koboldmetals.com
+  hq: Berkeley, CA
+  sources:
+  - board-remote-scan
+  registry_id: kobold-metals
+  decision: registry
+  reason: 21 of 28 roles on its own board are US-remote (10 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: koboldmetals
+  open_roles: 28
+- name: Lightbridge
+  website: https://ltbridge.com
+  hq: Reston, VA
+  sources:
+  - board-remote-scan
+  registry_id: lightbridge
+  decision: registry
+  reason: 7 of 12 roles on its own board are US-remote (5 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: lightbridgecorporationanevadacorporation
+  open_roles: 12
+- name: Lunar Energy
+  website: null
+  hq: Mountain View, CA
+  sources:
+  - own-careers-remote
+  registry_id: lunar-energy
+  decision: registry
+  reason: 'Stated remote policy. Careers page: ''work from any of our offices or remotely for specific roles''.'
+  ats:
+    type: greenhouse
+    token: lunarenergy
+  open_roles: 20
+- name: Mainspring Energy
+  website: null
+  hq: Menlo Park, CA
+  sources:
+  - board-remote-scan
+  registry_id: mainspring-energy
+  decision: registry
+  reason: 13 of 93 roles on its own board are US-remote (9 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: mainspringenergy
+  open_roles: 93
+- name: Merlin Labs
+  website: null
+  hq: Boston, MA
+  sources:
+  - board-remote-scan
+  registry_id: merlin-labs
+  decision: registry
+  reason: 10 of 23 roles on its own board are US-remote (10 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: merlinlabs
+  open_roles: 23
+- name: Mojave Energy Systems
+  website: https://mojavehvac.com
+  hq: Sunnyvale, CA (manufacturing roles in Anderson, SC)
+  sources:
+  - board-remote-scan
+  registry_id: mojave-energy-systems
+  decision: registry
+  reason: 4 of 8 roles on its own board are US-remote (2 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: mojave-energy-systems
+  open_roles: 8
+- name: Mytra
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: mytra
+  decision: registry
+  reason: 4 of 40 roles on its own board are US-remote (4 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: rippling
+    token: mytra
+  open_roles: 40
+- name: Nuvation Energy
+  website: https://www.nuvationenergy.com
+  hq: Sunnyvale, CA and Waterloo, Ontario, Canada
+  sources:
+  - own-careers-remote
+  registry_id: nuvation-energy
+  decision: registry
+  reason: 'Stated remote policy. Careers page: ''Hybrid or remote work options''.'
+  ats: null
+  open_roles: null
+- name: Oklo
+  website: https://oklo.com
+  hq: Santa Clara, CA
+  sources:
+  - board-remote-scan
+  - own-careers-remote
+  registry_id: oklo
+  decision: registry
+  reason: 38 of 54 roles on its own board are US-remote (23 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: oklo
+  open_roles: 54
+- name: Panthalassa
+  website: https://panthalassa.com
+  hq: Portland, OR
+  sources:
+  - board-remote-scan
+  registry_id: panthalassa
+  decision: registry
+  reason: 4 of 52 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: panthalassa
+  open_roles: 52
+- name: Proper Voltage
+  website: null
+  hq: Carlsbad, CA
+  sources:
+  - board-remote-scan
+  registry_id: proper-voltage
+  decision: registry
+  reason: 7 of 19 roles on its own board are US-remote (5 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: rippling
+    token: proper-voltage
+  open_roles: 19
+- name: Pyka
+  website: https://flypyka.com
+  hq: Alameda, CA
+  sources:
+  - board-remote-scan
+  registry_id: pyka
+  decision: registry
+  reason: 3 of 16 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: pyka
+  open_roles: 16
+- name: Reframe Systems
+  website: https://reframe.systems
+  hq: Andover, MA
+  sources:
+  - own-careers-remote
+  registry_id: reframe-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: 4 of 30 roles on its own Ashby board are US-remote
+    (2026-11-24).'
+  ats:
+    type: ashby
+    token: reframesystems
+  open_roles: 30
+- name: Reliable Robotics
+  website: null
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan
+  registry_id: reliable-robotics
+  decision: registry
+  reason: 7 of 75 roles on its own board are US-remote (6 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: reliable-robotics
+  open_roles: 75
+- name: Rivian and Volkswagen Group Technologies
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - board-remote-scan
+  registry_id: rivian-and-volkswagen-group-technologies
+  decision: registry
+  reason: 158 of 177 roles on its own board are US-remote (136 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: rivianvw.tech
+  open_roles: 177
+- name: Sense
+  website: https://sense.com
+  hq: Cambridge, MA
+  sources:
+  - awesome-sustainability-jobs
+  - own-careers-remote
+  registry_id: sense
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: "Hybrid and remote work opportunities" plus remote
+    work stipend (https://sense.com/careers)'
+  ats:
+    type: workable
+    token: sense
+  open_roles: 1
+- name: Serve Robotics
+  website: null
+  hq: San Carlos, CA
+  sources:
+  - board-remote-scan
+  registry_id: serve-robotics
+  decision: registry
+  reason: 10 of 13 roles on its own board are US-remote (3 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: serverobotics
+  open_roles: 13
+- name: Skydio
+  website: null
+  hq: San Mateo, CA
+  sources:
+  - board-remote-scan
+  registry_id: skydio
+  decision: registry
+  reason: 130 of 184 roles on its own board are US-remote (78 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: skydio
+  open_roles: 184
+- name: Skyven Technologies
+  website: https://skyven.co
+  hq: Farmers Branch, TX
+  sources:
+  - web-search-snippets
+  registry_id: skyven-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: Its own job posts on Workable, as quoted in a search
+    result, say ''fully remote; a remote first organization''; its careers page says nothing about remote work.
+    W'
+  ats:
+    type: workable
+    token: skyven-technologies
+  open_roles: 6
+- name: Smart Wires
+  website: https://www.smartwires.com
+  hq: Durham, NC (Research Triangle Park)
+  sources:
+  - own-careers-remote
+  registry_id: smart-wires
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: "Working everywhere"; "Remote-friendly" and "flexible
+    work environments" listed as benefits (https://www.smartwires.com/careers/)'
+  ats:
+    type: paylocity
+    token: 8f488a31-5cd0-45aa-8731-aee8fbf85852
+  open_roles: null
+- name: SPAN
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: span
+  decision: registry
+  reason: 6 of 31 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: span
+  open_roles: 31
+- name: Terabase Energy
+  website: https://terabase.energy
+  hq: Berkeley, CA
+  sources:
+  - own-careers-remote
+  registry_id: terabase-energy
+  decision: registry
+  reason: 'Stated remote policy. Careers page benefits: ''Remote work flexibility''.'
+  ats:
+    type: workable
+    token: terabase-energy
+  open_roles: null
+- name: Terawatt Infrastructure
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: terawatt-infrastructure
+  decision: registry
+  reason: 3 of 12 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: lever
+    token: terawattinfrastructure
+  open_roles: 12
+- name: TerraPower
+  website: https://terrapower.com
+  hq: Bellevue, WA
+  sources:
+  - board-remote-scan
+  registry_id: terrapower
+  decision: registry
+  reason: 11 of 96 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: terrapowerllc
+  open_roles: 96
+- name: Type One Energy
+  website: https://typeoneenergy.com
+  hq: Knoxville, TN
+  sources:
+  - own-careers-remote
+  registry_id: type-one-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-remote.yml. Remote evidence: "Our hybrid work policies and distributed teams
+    encourage the flexibility that employees need" (https://typeoneenergy.com/careers/)'
+  ats: null
+  open_roles: null
+- name: Vaulted Deep
+  website: https://vaulteddeep.com
+  hq: Houston, TX
+  sources:
+  - board-remote-scan
+  registry_id: vaulted-deep
+  decision: registry
+  reason: 4 of 5 roles on its own board are US-remote (0 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: ashby
+    token: vaulted-deep
+  open_roles: 5
+- name: Wing
+  website: https://wing.com
+  hq: Palo Alto, CA (not stated on wing.com/about)
+  sources:
+  - board-remote-scan
+  registry_id: wing
+  decision: registry
+  reason: 13 of 41 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: wing
+  open_roles: 41
+- name: Xos
+  website: https://xostrucks.com
+  hq: Los Angeles, CA
+  sources:
+  - board-remote-scan
+  registry_id: xos
+  decision: registry
+  reason: 5 of 13 roles on its own board are US-remote (4 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: xosinc
+  open_roles: 13
+- name: Zipline
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan
+  registry_id: zipline
+  decision: registry
+  reason: 3 of 313 roles on its own board are US-remote (1 with engineering or technical titles), 2026-11-25.
+  ats:
+    type: greenhouse
+    token: flyzipline
+  open_roles: 313
