@@ -1,0 +1,95 @@
+# Registry fixes 11: boards for the companies the 2026-11-25 full run could not read (A1 collector).
+#
+# Written by workstream A1 at the supervisor's request. Each entry replaces the registry's board
+# (tools/apply_screening.py replace_board). Every board was read from the company's own careers page
+# and confirmed by one request to the feed (a Workday search, or a full read by the collector's own
+# reader), with a generic client name, on 2026-11-25. No sign-in, bot check or CAPTCHA was involved,
+# and robots.txt was obeyed for these look-ups.
+
+fixes:
+- id: evoqua-water-technologies
+  name: Evoqua Water Technologies
+  ats: {type: workday, board: "xylem.wd5/xylem-careers"}
+  careers_url: https://xylem.wd5.myworkdayjobs.com/xylem-careers
+  source: >-
+    Evoqua is part of Xylem; the careers page https://www.xylem.com/en-us/careers/ links to
+    https://xylem.wd5.myworkdayjobs.com/xylem-careers. The Workday search answered total 497 on 2026-11-25.
+    The old board 'xylem' lacked the '{tenant}.wd{N}/{site}' form the reader needs.
+  note: Xylem's whole board (497 postings); the collector cannot tell Evoqua's roles apart.
+- id: ge-vernova
+  name: GE Vernova
+  ats: {type: workday, board: "gevernova.wd5/Vernova_ExternalSite"}
+  careers_url: https://careers.gevernova.com/
+  source: >-
+    https://www.gevernova.com/careers redirects to https://careers.gevernova.com, which links to
+    https://gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite. The Workday search answered total 2257 on 2026-11-25.
+  note: About 2,300 postings; one request per posting at 2 s means a read of roughly 80 minutes.
+- id: sa-recycling
+  name: SA Recycling
+  ats: {type: workday, board: "sarecycling.wd503/SA_Recycling_Careers"}
+  careers_url: https://www.sarecycling.com/company/careers/
+  source: >-
+    https://www.sarecycling.com/company/careers/ links to https://sarecycling.wd503.myworkdayjobs.com/SA_Recycling_Careers.
+    The Workday search answered total 130 on 2026-11-25.
+- id: trojan-battery
+  name: Trojan Battery
+  ats: {type: workday, board: "trojanbattery.wd5/Trojan"}
+  careers_url: https://www.trojanbattery.com/about-us/careers
+  source: >-
+    https://www.trojanbattery.com/about-us/careers links to https://trojanbattery.wd5.myworkdayjobs.com/Trojan. The
+    Workday search answered total 147 on 2026-11-25. The page also links Stryten Energy's own board
+    (https://jobs.stryten.com/stryten/jobs), not read here.
+- id: linevision
+  name: LineVision
+  ats: {type: paylocity, board: "e85e8980-8325-4e41-9404-be920804d97d"}
+  careers_url: https://www.linevisioninc.com/careers
+  source: >-
+    https://www.linevisioninc.com/careers links to individual Paylocity postings
+    (recruiting.paylocity.com/recruiting/jobs/Details/<id>/LineVision-Inc/...); a posting page links the company board
+    https://recruiting.paylocity.com/recruiting/jobs/All/e85e8980-8325-4e41-9404-be920804d97d/LineVision-Inc. The
+    collector's Paylocity reader read 9 postings from it on 2026-11-25. The old board '4683948' was a posting id.
+- id: lime
+  name: Lime
+  ats: {type: other, board: "https://www.li.me/about/careers"}
+  careers_url: https://www.li.me/about/careers
+  source: >-
+    https://www.li.me/about/careers embeds Ashby (https://jobs.ashbyhq.com/Lime/embed), but Ashby's public posting API
+    answered 404 for both 'Lime' and 'lime' on 2026-11-25, so the board's public feed is off.
+  note: >-
+    No working board. The careers reader will report 'ats-found' (Ashby) while the page embeds Ashby; set the
+    Ashby board back once api.ashbyhq.com/posting-api/job-board/Lime answers.
+- id: navier
+  name: Navier
+  ats: {type: other, board: "https://www.navierboat.com/careers"}
+  careers_url: https://www.navierboat.com/careers
+  source: >-
+    https://www.navierboat.com/careers embeds Greenhouse (boards.greenhouse.io/embed/job_board/js?for=navierboat), but
+    the Greenhouse job board API answered 404 for both 'navierboat' and 'navier' on 2026-11-25.
+  note: >-
+    No working board. The careers reader will report 'ats-found' (Greenhouse) while the page embeds it.
+
+# Found while checking the 'unreadable' careers pages (supervisor's second item).
+- id: enervenue
+  name: EnerVenue
+  ats: {type: rippling, board: "enervenue-inc"}
+  careers_url: https://www.enervenue.com/careers
+  source: >-
+    https://www.enervenue.com/careers embeds https://ats.rippling.com/embed/enervenue-inc/jobs (the probe took
+    'embed' for the token). The collector's Rippling reader read 18 postings on 2026-11-25.
+- id: zero-motorcycles
+  name: Zero Motorcycles
+  ats: {type: recruitee, board: "zeromotorcycles"}
+  careers_url: https://zeromotorcycles.com/employment
+  source: >-
+    https://zeromotorcycles.com/employment holds a Recruitee widget (<div id="recruitee-careers">) that names no
+    account. The token 'zeromotorcycles' was a guess, confirmed: https://zeromotorcycles.recruitee.com/api/offers/
+    answered 5 offers, each with company_name 'Zero Motorcycles Inc.', on 2026-11-25.
+- id: quantumscape
+  name: QuantumScape
+  ats: {type: other, board: "https://careers.quantumscape.com/search/"}
+  careers_url: https://careers.quantumscape.com/
+  source: >-
+    https://careers.quantumscape.com/ is an SAP SuccessFactors career site (career41.sapsf.com), which the collector
+    has no reader for; its search page https://careers.quantumscape.com/search/ lists every posting ('1 – 19 of 19').
+    The careers reader read all 19 from it on 2026-11-25.
+  note: If QuantumScape lists more than one search page, only the first is read (SuccessFactors pages by startrow).
