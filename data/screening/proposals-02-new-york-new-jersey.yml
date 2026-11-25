@@ -1,0 +1,1866 @@
+# Proposals 02 (the New York metro area and New Jersey): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+status: draft
+companies:
+- id: amatec
+  name: Amatec
+  website: https://amatec-corp.com
+  careers_url: null
+  hq: Essex County, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: High-density gypsum material positioned as a lower-carbon alternative to cement concrete (per search
+      snippets of HAX/SOSV and CB Insights; own site could not be read).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/compare/amatec-vs-lafargeholcim.
+    Stage: CB Insights snippet: about $350K seed funding (date not shown); listed in SOSV/HAX portfolio (https://sosv.com/company/amatec/,
+    https://hax.co/tx_company/amatec/). Third-party, unverified. Evidence: https://www.cbinsights.com/compare/amatec-vs-lafargeholcim
+    https://sosv.com/company/amatec/ https://hax.co/tx_company/amatec/ Region sources: njeda-csit-demo-r2. Confidence:
+    low. Unresolved: amatec-corp.com home page exceeded the fetch size limit and /about returned 404; facts come
+    from search snippets only (portfolio pages not fetched). NJ vs NY location unresolved; headcount not found.
+    amatec.com does not resolve.'
+- id: amogy
+  name: Amogy
+  website: https://amogy.co
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 142
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/amogy)
+  climate:
+    tier: core
+    reason: Ammonia-based power systems (AMMDrive power systems and hydrogen generators) and ammonia-cracking catalysts
+      for onsite power, industry and maritime.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 142 people (Dealroom, 2026-11-24); founded 2020, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 142, band 100-500; undated,
+    read 2026-11-24. Founded: https://dealroom.co/companies/amogy. Stage: Dealroom cites a USD 150M Series B led
+    by SK Innovation (undated) and a USD 15M ''other financing'' in November 2025 (GS Futures, GS E&C, Xplor); total
+    disclosed equity USD 500M-1B suggests rounds beyond Series B not itemized here. Flags: data centers listed among
+    several target markets. Evidence: https://amogy.co https://dealroom.co/companies/amogy Region sources: newlab-posts,
+    dcvc, greentown. Confidence: medium. Unresolved: Latest round letter (may be later than Series B). Dealroom
+    says HQ New York City; input says Brooklyn; site also names a Houston facility (Athena).'
+- id: andluca-technologies
+  name: Andluca Technologies
+  website: https://www.andluca.com
+  careers_url: null
+  hq: Princeton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Wireless smart windows and smart glass powered by harvested UV light (Innovio Glass with adaptive shading
+      and dynamic tint).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists support from Princeton University, NSF and
+    Empire State Development; no round. Dealroom slug 404. Flags: pre-commercial (waitlist; first Bay Area installs
+    planned 2027). Evidence: https://andluca.com Region sources: njeda-csit-seed-r1, princeton-acee. Confidence:
+    medium. Unresolved: HQ not stated (input says Princeton, NJ; Bay Area installs and Empire State Development
+    support suggest other locations); founded year; headcount; funding.'
+- id: arbela-laboratories
+  name: Arbela Laboratories
+  website: null
+  careers_url: null
+  hq: Randolph, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Methanol-fed Pichia yeast platform to raise the scale and lower the cost of biomanufacturing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Seed, USD 575K total, last announced April 2024; investors
+    Manifest and NJ Commission on Science, Innovation and Technology (VCBacked profile via search). Evidence: https://www.vcbacked.co/company/arbela-laboratories
+    Region sources: njeda-csit-seed-r1. Confidence: low. Unresolved: Own website and product not found (arbelalabs.com
+    guess was rate-limited at the safety check). What it sells (organism platform, products or licensing), founded
+    year, headcount, status.'
+- id: arbon
+  name: Arbon
+  website: https://arboncorp.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Humidity-swing carbon capture technology for direct air capture and industrial point sources.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated on own site; no Dealroom profile found
+    (arbon, arboncorp slugs 404). Evidence: https://arboncorp.com Region sources: activate, greentown. Confidence:
+    medium. Unresolved: Founding year, headcount and funding not found. Address is Newlab, Brooklyn Navy Yard.'
+- id: bettergy
+  name: Bettergy
+  website: https://bettergy.com
+  careers_url: null
+  hq: Peekskill, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Membrane and electrode materials for flow batteries, electrolyzers and fuel cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; Dealroom slug bettergy 404. Evidence:
+    https://www.bettergy.com Region sources: arpa-e. Confidence: medium. Unresolved: Domain found by guess; Peekskill
+    address matches the input. Founding year, headcount, funding not found.'
+- id: brookhaven-technology-group
+  name: Brookhaven Technology Group
+  website: https://www.brookhaventech.com
+  careers_url: null
+  hq: Stony Brook, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-temperature superconductor wire and cable for power transmission and magnets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site says it uses government grants and private investment;
+    no round found. Evidence: https://brookhaventech.com Region sources: aertc-incubator. Confidence: medium. Unresolved:
+    HQ not stated on site (input says Stony Brook, NY); founded year, headcount, customers (Navy/defense not mentioned).'
+- id: buoyant-aero
+  name: Buoyant Aero
+  website: https://buoyant.aero
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom branded advertising blimps flown as a service; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site lists backers Y Combinator, Soma Capital, Global
+    Founders Capital, Tango VC; no round details. Dealroom ''buoyant'' is an unrelated software company. Flags:
+    sells flight services with its own airships. Evidence: https://buoyant.aero Region sources: yc. Confidence:
+    medium. Unresolved: Own site says blimps are built in Brooklyn and assembled in San Francisco; HQ not stated.
+    Cargo-airship product from input not shown on current site. Founding year, headcount, funding not found.'
+- id: canyon-magnet-energy
+  name: Canyon Magnet Energy
+  website: https://canyonmagnet.energy
+  careers_url: null
+  hq: Newark, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-temperature superconducting magnets for fusion and other energy uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Evidence: https://www.canyonmagnet.energy/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Site gives no address, founded year, headcount
+    or funding; HQ from NJEDA. Status ''active'' from the Jan 2026 grant; site has no dated news.'
+- id: carbon-infuse
+  name: Carbon Infuse
+  website: https://carboninfuse.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turns CO2 and industrial/municipal waste into minerals for building products, paper, coatings and rubber.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found; Dealroom slug carbon-infuse 404. Evidence:
+    https://carboninfuse.com Region sources: activate. Confidence: medium. Unresolved: HQ not stated on own site
+    (input says New York, NY); founding year, headcount, funding not found.'
+- id: carbondots
+  name: CarbonDots
+  website: https://carbondots.co
+  careers_url: null
+  hq: Lawrence Township, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Domestic production of battery-grade graphite from waste plastic (site tagline).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to CarbonDots, LLC (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Evidence: https://www.carbondots.co/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Site is a ''Coming Soon'' placeholder; founded,
+    headcount, funding not found.'
+- id: cecilia-energy
+  name: Cecilia Energy
+  website: https://ceciliamaterials.com
+  careers_url: null
+  hq: Newark, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Microwave process that splits plastic waste into carbon materials (including carbon nanotubes) and clean
+      hydrogen.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to Cecilia Energy, Inc (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Site lists NASA, NETL, DOE, NJEDA, NJIT as partners, no amounts. Flags: now trading as Cecilia Materials (ceciliaenergy.com
+    redirects to ceciliamaterials.com). Evidence: https://www.ceciliamaterials.com/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4, njeda-csit-demo-r2. Confidence: medium. Unresolved: Site gives no address,
+    founded year or headcount; HQ from NJEDA. About page not read (fetch safety check rate-limited). Latest site
+    news dated 3 Nov 2026.'
+- id: chemfinity-technologies
+  name: ChemFinity Technologies
+  website: https://chemfinitytech.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - water
+  stage: null
+  founded: 2022
+  headcount:
+    value: 15
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/chemfinity-technologies)
+  climate:
+    tier: core
+    reason: Separation materials/technologies that recover critical minerals and precious metals from waste streams.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 15 people (Dealroom, 2026-11-24); founded 2022.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated (date is fetch date);
+    band <100. Founded: https://dealroom.co/companies/chemfinity-technologies. Stage: Own site lists investors (At
+    One Ventures, Overture, Closed Loop Partners, Woven Earth, Pace Ventures, Climate Capital) without rounds; Dealroom:
+    total disclosed equity $0-10M, latest entry a $100K Empire State Development grant, July 2026. Likely seed-stage
+    but round not confirmed. Evidence: https://chemfinitytech.com https://dealroom.co/companies/chemfinity-technologies
+    Region sources: third-derivative. Confidence: medium. Unresolved: Round type not found.'
+- id: clip
+  name: Clip
+  website: https://clip.bike
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: CLIP, a plug-and-play friction-drive device that clips onto a bicycle's front fork to add electric assist;
+      also a NYC e-bike subscription (neonfleet).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated on site; Dealroom slug clip 404. Evidence:
+    https://clip.bike Region sources: newlab-posts. Confidence: medium. Unresolved: Input had no domain; clip.bike
+    (Brooklyn Navy Yard) matches the product. Founded year, headcount, funding unknown.'
+- id: coherent-photonics
+  name: Coherent Photonics
+  website: https://coherentphotonics.com
+  careers_url: null
+  hq: Princeton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Metasurface flat optical components; no clean-energy application stated, so no climate case under the
+      rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to Coherent Photonics LLC (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Flags: clean-tech application not stated on site. Evidence: https://www.coherentphotonics.com/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Site address 303 College Road East, Princeton
+    (NJEDA says Plainsboro Township). Site lists 5 issued US patents, 12 pending. Founded, headcount, funding not
+    found; about page not read (rate-limited).'
+- id: eew-american-offshore-structures
+  name: EEW American Offshore Structures
+  website: https://eew-group.com
+  careers_url: null
+  hq: Paulsboro, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  - industrial-heat
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 100
+    as_of: '2023-06-01'
+    source: Philadelphia Inquirer (via search result) (https://inquirer.com/news/atlantic-ocean-wind-energy-new-jersey-monopile-whales-20230622.html)
+  climate:
+    tier: core
+    reason: Steel monopile foundations for offshore wind, built at the Paulsboro Marine Terminal, NJ.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 100 people (Philadelphia Inquirer (via search result), 2023-06-01). Owned by EEW Group; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Inquirer, June 2023 (month only, first day
+    used): 100 employees in Paulsboro, Phase 2 a year behind; plan for 500+ at full build-out. Stage: US unit of
+    EEW Group (Erndtebrueck, Germany), per eew-group.com and NJ/DOE documents. DOE LPO issued an environmental assessment/FONSI
+    for a possible federal loan. Flags: subsidiary of EEW Group (Germany); parent also makes pipe for offshore oil
+    and gas. Evidence: https://www.eew-group.com https://www.energy.gov/nepa/doeea-2221-eew-american-offshore-structures-inc-paulsboro-nj
+    https://www.oedigital.com/amp/news/501545-eew-aos-to-build-monopiles-for-atlantic-shores-offshore-wind-farm-off-new-jersey
+    https://inquirer.com/news/atlantic-ocean-wind-energy-new-jersey-monopile-whales-20230622.html Region sources:
+    njeda-osw-assessment. Confidence: medium. Unresolved: 2026 plant status not found (parent''s site does not list
+    the Paulsboro plant); status of the Atlantic Shores monopile order; founded year.'
+- id: eion
+  name: Eion
+  website: https://www.eion.team
+  careers_url: null
+  hq: Princeton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: series-a
+  founded: 2020
+  headcount:
+    value: 43
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/eion)
+  climate:
+    tier: core
+    reason: 'Enhanced rock weathering: a mineral soil amendment spread on farmland that removes carbon dioxide.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 43 people (Dealroom, 2026-11-24); founded 2020, funding round reported in 2024.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Headcount
+    note: Dealroom figure 43, band under 100; undated, read 2026-11-24. Founded: https://dealroom.co/companies/eion.
+    Stage: Series A, USD 3M, September 2024 per Dealroom (amount looks low for a Series A; may be an extension);
+    total disclosed equity USD 10-50M. Flags: carbon removal; revenue may come mainly from removal credits rather
+    than product sales. Evidence: https://dealroom.co/companies/eion Region sources: njeda-csit-seed-r1, njeda-csit-rd-vouchers.
+    Confidence: medium. Unresolved: eion.team did not resolve; Dealroom gives eioncarbon.com, which could not be
+    fetched (safety check rate-limited twice). Whether the main revenue is the mineral product or carbon credits.'
+- id: energy-research-company
+  name: Energy Research Company
+  website: https://er-co.com
+  careers_url: null
+  hq: Plainfield, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1991
+  headcount: null
+  climate:
+    tier: out
+    reason: Contract research and laser diagnostic instruments for material chemistry; no climate case under the
+      rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1991 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://mapquest.com/us/new-jersey/energy-research-co-290348968.
+    Stage: Private, no venture rounds found; funded by federal and state R&D contracts. NJ CSIT Clean Tech Seed
+    Grant $74,996 (Aug 2022, https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/)
+    and Round 3 award (Oct 2024, https://www.njeda.gov/?p=31499). Flags: contract R&D firm, not a startup. Evidence:
+    https://www.njeda.gov/?p=31499 https://mapquest.com/us/new-jersey/energy-research-co-290348968 https://opengovus.com/sam-entity/F73PML6U3L49
+    Region sources: njeda-csit-demo-r1, njeda-csit-seed-r3, njeda-csit-seed-45. Confidence: medium. Unresolved:
+    Own site er-co.com returned an empty page to the fetcher; product and 1991 founding come from a search snippet
+    of a MapQuest listing; address 400 Leland Ave, Plainfield. Headcount not found.'
+- id: ev-buddy
+  name: EV Buddy
+  website: https://evbuddy.net
+  careers_url: null
+  hq: Edison, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Portable vehicle-to-vehicle DC fast charger (EVChargeShare) that draws energy from a donor EV's battery,
+      plus charger-sharing software and rental.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to EV Buddy Inc. (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Evidence: https://www.evbuddy.net/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: high. Unresolved: Founded and headcount not found. Site says
+    it is piloting in central New Jersey (news Aug-Nov 2026).'
+- id: every-electric
+  name: Every Electric
+  website: https://everyelectric.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Plug-in A/C powerbank (home battery) for Con Edison customers in New York, aggregated to earn grid-flexibility
+      rewards.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; Dealroom slug every-electric 404.
+    Evidence: https://everyelectric.com Region sources: activate. Confidence: medium. Unresolved: Founding year,
+    headcount and funding not found. Office at Brooklyn Navy Yard (63 Flushing Ave).'
+- id: evolve-hydrogen
+  name: Evolve Hydrogen
+  website: https://www.evolvehydrogen.com
+  careers_url: null
+  hq: Stony Brook, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrolyzers for green hydrogen, including direct electrolysis of seawater without desalination.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; site notes DOE H-Prize Phase One
+    winner. Dealroom slug 404. Evidence: https://evolvehydrogen.com Region sources: aertc-incubator. Confidence:
+    medium. Unresolved: Founded year, headcount, funding.'
+- id: exodys-energy
+  name: Exodys Energy
+  website: https://exodysenergy.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: UPCYCLE, a small modular nuclear fuel recycling facility (in development) that converts spent fuel into
+      domestic feedstock.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No investors or amounts stated on own site; Dealroom
+    slug exodys-energy 404. Evidence: https://exodysenergy.com Region sources: arpa-e. Confidence: medium. Unresolved:
+    Founding year, headcount, funding not found.'
+- id: exovolar-industries
+  name: Exovolar Industries
+  website: https://exovolar.com
+  careers_url: null
+  hq: New Jersey
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Personal VTOL and jet-suit prototypes, not stated to be electric; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech Seed Grant $74,930
+    to Exovolar Industries Corp (Aug 2022, https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/).
+    Flags: personal aircraft prototypes; clean-tech link not stated on site; not solar as the input guessed. Evidence:
+    https://exovolar.com/ https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/
+    Region sources: njeda-csit-seed-45. Confidence: low. Unresolved: Site has no address, dates or team; ''active''
+    only because it takes inquiries. Town, founded, headcount not found.'
+- id: farm-to-flame-energy
+  name: Farm to Flame Energy
+  website: null
+  careers_url: null
+  hq: West Orange, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: 2018
+  headcount: null
+  climate:
+    tier: core
+    reason: Biomass generators and fuel processors that turn agricultural and wood waste into electricity, for off-grid
+      and rural sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2018.
+  notes: 'No job board found on the company''s site. Founded: https://www.cmu.edu/energy/news-multimedia/2022/farm-to-flame-energy.html.
+    Stage: EPA Phase I small-business grant and a USD 200K investment from the Richard King Mellon Foundation (search
+    results). Evidence: https://www.cmu.edu/energy/news-multimedia/2022/farm-to-flame-energy.html https://readtheimpact.com/the-biomass-replacement-for-diesel-farm-to-flame-energy/
+    https://cfpub.epa.gov/ncer_abstracts/index.cfm/fuseaction/display.abstractDetail/abstract_id/11163/report/0
+    Region sources: njeda-csit-seed-r1, njeda-csit-demo-r1. Confidence: low. Unresolved: Own website not found.
+    HQ not confirmed (input says West Orange, NJ; CMU and Mellon Foundation ties suggest Pittsburgh links; installs
+    reported in PA and NJ). Founded year 2018 is from a search summary of the CMU/press pages, not read directly.
+    Headcount, current status.'
+- id: fast-metals
+  name: FAST Metals
+  website: https://fastmetalsinc.com
+  careers_url: null
+  hq: New York
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Recovers iron, alumina, titania and rare earths from red mud (alumina refining waste) using mobile modular
+      skids at client sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site news item dated July 29, 2026: raised USD 4.3M
+    (round type not stated). Flags: HQ possibly outside region (site links to a Yale article about its ''footing
+    in Connecticut''). Evidence: https://fastmetalsinc.com Region sources: activate-ny, azolla, activate, greentown.
+    Confidence: medium. Unresolved: HQ city (input says New York, city not stated; site hints Connecticut); founded
+    year; headcount; round type. Technology from CEO''s PhD work at WPI.'
+- id: fundamental-carbon
+  name: Fundamental Carbon
+  website: https://ourosmaterials.com
+  careers_url: null
+  hq: Piscataway, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Ouros Materials: advanced ceramic hybrids made by a proprietary low-temperature process, for building
+      infrastructure, energy and defense.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to Fundamental Carbon Co (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Flags: trades as Ouros Materials (NJEDA links Fundamental Carbon Co to ourosmaterials.com); lists defense among
+    markets. Evidence: https://ourosmaterials.com/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Ouros site lists only ''New York, New York'';
+    NJEDA gives Piscataway, NJ. Site does not mention Fundamental Carbon. Founded, headcount not found.'
+- id: gridless-power-corporation
+  name: Gridless Power Corporation
+  website: https://gridlesspower.com
+  careers_url: null
+  hq: Pennsauken, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: 2010
+  headcount:
+    value: 4
+    as_of: '2018-04-10'
+    source: NJEDA (https://www.njeda.gov/gridless-power-corporation-turns-to-nj-covest-fund-in-quest-to-bring-renewable-energy-to-customers-worldwide/)
+  climate:
+    tier: core
+    reason: Designs, manufactures and markets portable rechargeable batteries and off-grid power products.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 4 people (NJEDA, 2018-04-10); founded 2010 and no equity raise in the last 5 years found, so no growth
+      sign.
+  notes: 'No job board found on the company''s site. Headcount note: NJEDA 2018 release: four employees in NJ. Salary.com
+    estimate 11-20 (undated, search snippet). Founded: https://craft.co/gridless-power-corporation. Stage: $250,000
+    NJ CoVest Fund convertible-note loan, April 2018 (https://www.njeda.gov/gridless-power-corporation-turns-to-nj-covest-fund-in-quest-to-bring-renewable-energy-to-customers-worldwide/).
+    No venture rounds found. Evidence: https://www.njeda.gov/gridless-power-corporation-turns-to-nj-covest-fund-in-quest-to-bring-renewable-energy-to-customers-worldwide/
+    https://craft.co/gridless-power-corporation Region sources: njeda-csit-demo-r1. Confidence: medium. Unresolved:
+    gridlesspower.com returned empty pages to the fetcher, so current activity unconfirmed. HQ sources disagree:
+    directories give 7905 Browning Rd, Pennsauken; the 2018 NJEDA release and others say Collingswood, NJ. Founded
+    2010 is from Craft (search snippet).'
+- id: hit-nano
+  name: HiT Nano
+  website: https://hitnanoinc.com
+  careers_url: null
+  hq: Bordentown, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-ion battery (full-cell SIB system) for low-cost electric vehicles, per NJEDA's 2024 award description.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grants only found: NJ CSIT Clean Tech Seed Grant $75,000
+    (Aug 2022, https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/)
+    and Round 3 award (Oct 2024, https://www.njeda.gov/?p=31499). Evidence: https://www.njeda.gov/?p=31499 https://www.hitnanoinc.com/
+    Region sources: njeda-csit-demo-r1, njeda-csit-seed-r3, njeda-csit-seed-45, njeda-csit-rd-vouchers, activate.
+    Confidence: medium. Unresolved: Own site returned only its title to the fetcher; no Dealroom page (404). Founded,
+    headcount and funding rounds not found. HQ from input (NJEDA says Burlington County).'
+- id: holtec-international
+  name: Holtec International
+  website: https://holtecinternational.com
+  careers_url: null
+  hq: Camden, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: null
+  founded: 1986
+  headcount:
+    value: 4350
+    as_of: '2026-11-25'
+    source: StockAnalysis (https://stockanalysis.com/stocks/hnuc/company/)
+  climate:
+    tier: core
+    reason: 'Nuclear technology: SMR-300 small modular reactors, spent fuel dry casks and storage, heat-transfer
+      equipment, plus decommissioning and the Palisades restart.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 4,350 people (StockAnalysis, 2026-11-25); founded 1986 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: StockAnalysis figure, undated (page last updated
+    25 Nov 2026), presumably from the IPO filing. Other figures: Holtec''s own 2025 corporate profile ''2,400+ employees''
+    (search snippet of a Rowan University conference deck, Sep 2025, which could not be fetched); Revelio Labs ~1,587;
+    Built In 748; ZoomInfo band 1K-5K. Founded: https://stockanalysis.com/stocks/hnuc/company/. Stage: Private,
+    no venture rounds; founder-led (founded 1986 in New Jersey). Filed confidentially for IPO Jan 2026 and publicly
+    July 2026 as Holtec Nuclear (Nasdaq: HNUC proposed); set terms for $825M offering in Sep 2026, then postponed
+    on 17 Sep 2026 citing adverse market sentiment (search snippets of S&P Global, Renaissance Capital, Bloomberg
+    Government). StockAnalysis says the IPO was withdrawn on 25 Sep 2026. Not listed. Flags: over 1,000 employees;
+    has a Holtec Government Services division; IPO filed then postponed/withdrawn Sep 2026. Evidence: https://holtecinternational.com
+    https://stockanalysis.com/stocks/hnuc/company/ https://www.renaissancecapital.com/IPO-Center/News/121530/nuclear-plant-equipment-provider-holtec-nuclear-sets-terms-for-825-million
+    https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/9/holtec-postpones-ipo-citing-adverse-market-sentiment-106139736
+    https://news.bgov.com/mergers-and-acquisitions/nuclear-services-firm-holtec-is-said-to-suspend-us-ipo-plan https://www.reveliolabs.com/companies/holtec-international/employees
+    Region sources: doe-edf. Confidence: high. Unresolved: Headcount sources disagree widely (748 to 4,350). Sources
+    disagree on whether the IPO was postponed (registration kept) or withdrawn. ENR, S&P Global and Rowan pages
+    could not be fetched (safety-check rate limit / redirect).'
+- id: hydronic-shell-technologies
+  name: Hydronic Shell Technologies
+  website: https://hydronicshell.com
+  careers_url: null
+  hq: Long Island City, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Facade-integrated central HVAC systems: HydroWall for new construction and HydroShell retrofit panels
+      for aging buildings.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Finalist (with Cycle Retrotech) in New York''s Empire
+    Technology Prize, Sept 2025, offering modular overclad facades for apartment retrofits; finalists shared $1.2M
+    demonstration funding. No equity rounds found. Evidence: https://www.hydronicshell.com https://naturalrefrigerants.com/news/high-temperature-co2-heat-pump-team-is-runner-up-in-new-yorks-empire-technology-prize/
+    Region sources: governor-empire-prize. Confidence: medium. Unresolved: HQ not stated on own site (input says
+    Long Island City, NY); founding year, headcount and funding not found.'
+- id: innosepra
+  name: InnoSepra
+  website: https://innosepra.com
+  careers_url: null
+  hq: Middlesex, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Gas separation and purification technology: biogas upgrading to renewable natural gas, post-combustion
+      CO2 capture, direct air capture and flue gas purification.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site cites a Department of Energy award to test
+    its direct air capture technology at NCCC; no equity rounds found. Evidence: https://www.innosepra.com Region
+    sources: njeda-csit-demo-r2. Confidence: medium. Unresolved: Own site lists 452 Lincoln Blvd, Middlesex, NJ
+    (Middlesex County), not Warren County as in the input. Unclear whether it sells equipment or licenses technology.
+    Founding year, headcount and funding not found.'
+- id: it-s-electric
+  name: It's Electric
+  website: https://itselectric.us
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: workable
+    board: itselectric
+  read: manual
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Curbside Level-2 EV chargers installed at no cost to property owners and powered by the adjacent building's
+      spare electrical capacity; operates the charging network.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board workable:itselectric seen 2026-11-25, linked from the company''s own site: 2 open roles. Stage:
+    No funding stated on own site; Dealroom slugs itselectric and its-electric 404. Flags: designs own charger but
+    business is charging-network operation. Evidence: https://itselectric.us Region sources: third-derivative, greentown,
+    laci. Confidence: medium. Unresolved: Founding year, headcount and funding not found. Site lists operations
+    in NYC, Jersey City, Yonkers, Newburgh, Boston, Detroit, LA, SF and others.'
+- id: kelvin
+  name: Kelvin
+  website: https://kel.vin
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: series-a
+  founded: 2011
+  headcount:
+    value: 59
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/kelvin)
+  climate:
+    tier: core
+    reason: The Cozy smart radiator cover for steam-heated buildings, plus an 'Adaptive Electrification' platform
+      replacing window ACs with smart heat pumps.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 59 people (Dealroom, 2026-11-24); founded 2011, funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''current team size'', undated (date
+    is fetch date); band <100. Founded: https://dealroom.co/companies/kelvin. Stage: Series A $30M, May 2023 (investors
+    incl. 2150, Partnership Fund for New York City, Hillspire) per Dealroom; later undisclosed convertible from
+    Elemental Excelerator, Oct 2023. Flags: formerly Radiator Labs. Evidence: https://kel.vin https://dealroom.co/companies/kelvin
+    Region sources: elemental. Confidence: high. Unresolved: Founding year conflicts within Dealroom: 2011 in header,
+    2013 in About section.'
+- id: materium-technologies
+  name: Materium Technologies
+  website: https://materiumtech.com
+  careers_url: null
+  hq: Union County, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - solar
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Self-assembling nanocomposite films and coatings for electronics and solar devices.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://www.materiumtech.com/. Stage: Grant found
+    only: NJ CSIT Clean Tech Seed Grant Round 3 (Oct 2024, https://www.njeda.gov/?p=31499). No venture rounds found.
+    Evidence: https://www.materiumtech.com/ https://www.njeda.gov/?p=31499 Region sources: njeda-csit-seed-r3. Confidence:
+    medium. Unresolved: Site footer says only ''New Jersey & Ohio, USA''; town not found. Headcount not found.'
+- id: metal-light
+  name: Metal Light
+  website: https://metallight.io
+  careers_url: null
+  hq: Newark, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Zinc-based long-duration energy storage (site tagline 'Long-duration storage, reinvented in zinc').
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $74,370 to Metal Light Inc (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Evidence: https://metallight.io https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4, third-derivative. Confidence: medium. Unresolved: Site shows only a tagline;
+    /about 404, Dealroom 404, a web search found nothing. Founded, headcount not found.'
+- id: miller-proctor-nickolas-mpn
+  name: Miller Proctor Nickolas (MPN)
+  website: null
+  careers_url: null
+  hq: Sleepy Hollow, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Steam and hot-water heat pumps using R515B and HFO-1233zd refrigerants (trade press); input says mobile
+      systems built on Oilon ChillHeat technology.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grand prize ($1M) winner of New York''s Empire Technology
+    Prize, award ceremony 19 Sept 2025 (naturalrefrigerants.com, 23 Sept 2025). No equity rounds found. Flags: may
+    package another maker''s (Oilon) heat pumps rather than manufacture its own. Evidence: https://naturalrefrigerants.com/news/high-temperature-co2-heat-pump-team-is-runner-up-in-new-yorks-empire-technology-prize/
+    Region sources: governor-empire-prize. Confidence: low. Unresolved: No website found. Trade press says MPN ''manufactures''
+    the heat pumps but the input links them to Oilon technology; who builds the hardware is unresolved. Founding
+    year, headcount, funding not found.'
+- id: mimic-systems
+  name: MIMiC Systems
+  website: https://mimic.systems
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: lever
+    board: mimic
+  read: auto
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Refrigerant-free solid-state thermal engine for room heating and cooling.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board lever:mimic seen 2026-11-24, token matched by name; board page checked: 1 open roles, 1 US-remote.
+    Stage: No funding stated; mentions first paid pilot and NSF among partners; Dealroom slug mimic-systems 404.
+    Evidence: https://mimic.systems Region sources: third-derivative. Confidence: medium. Unresolved: Own site lists
+    a Brooklyn office and Newark, NJ R&D site (both in region), HQ not explicitly named. Target markets include
+    hospitality, residential, healthcare, retail, cold chain and data centers (data centers not the main stated
+    customer). Founding year, headcount, funding not found.'
+- id: neutroelectric-becq
+  name: Neutroelectric (BECQ)
+  website: https://becqtech.com
+  careers_url: null
+  hq: Camden, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Radiation-shielding materials; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: SBIR/STTR award recipient (inknowvation.com listing)
+    and NJ CSIT Clean Tech Seed Grant $75,000 (Aug 2022, https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/).
+    No venture rounds found. Flags: radiation shielding, not energy storage as the input guessed. Evidence: https://www.becqtech.com/
+    https://inknowvation.com/node/174154 Region sources: njeda-csit-demo-r1, njeda-csit-seed-45. Confidence: medium.
+    Unresolved: Site copyright is 2022 only, so current activity unconfirmed. Address 808 Market Street, Camden,
+    from an SBIR listing snippet. Founded and headcount not found.'
+- id: pave-motors
+  name: Pave Motors
+  website: https://www.pavemotors.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric motorbikes designed and assembled in Brooklyn.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found; Dealroom slug pave-motors 404. Evidence:
+    https://pavemotors.com Region sources: newlab-posts. Confidence: medium. Unresolved: Founded year, headcount,
+    funding. HQ inferred from the Brooklyn workshop on the site.'
+- id: pfasolve
+  name: PFASolve
+  website: https://pfasolve.com
+  careers_url: null
+  hq: Jersey City, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: PFAS detection, a capture medium sold as a drop-in replacement for granular activated carbon, and PFAS
+      destruction.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $75,000 to PFASolve Inc. (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Site shows NSF and NJIT among partners, no amounts. Flags: water treatment (PFAS), not energy. Evidence: https://www.pfasolve.com/
+    https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: HQ from NJEDA. Team page not read (fetch
+    safety check rate-limited). Founded, headcount not found.'
+- id: pliant-energy-systems
+  name: Pliant Energy Systems
+  website: https://www.pliantenergy.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Undulating-fin propulsion for marine robots and hydrokinetic generators that make power from currents.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; a sponsor logo file on the site is
+    named ONR (Office of Naval Research). Dealroom slugs 404. Flags: possible defense (ONR) sponsorship; share of
+    business unknown. Evidence: https://pliantenergy.com Region sources: newlab-posts. Confidence: medium. Unresolved:
+    Founded year, headcount, funding, whether defense is the main customer.'
+- id: polygone-systems
+  name: PolyGone Systems
+  website: https://polygonesystems.com
+  careers_url: null
+  hq: Princeton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Passive media that capture microplastics in water, sold in filtration products.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech Seed Grant $74,990
+    to Project Plastic LLC (Aug 2022), whose site projectplastic.site now redirects to polygonesystems.com. No venture
+    rounds found. Flags: water treatment (microplastics), not energy; appears to be the same company as input entry
+    Project Plastic. Evidence: https://www.polygonesystems.com/ https://www.projectplastic.site/ https://www.njeda.gov/csit-awards-nearly-4-million-to-45-nj-startups-through-catalyst-and-clean-tech-seed-grant-programs/
+    Region sources: njeda-csit-demo-r1. Confidence: medium. Unresolved: Site gives no HQ, founded year, headcount
+    or funding; HQ from input. Dealroom 404. Site mentions a municipal-scale (30 million GPD) project ''launched
+    in October 2026'', unclear if done.'
+- id: popwheels
+  name: PopWheels
+  website: https://popwheels.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - electric-mobility
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery-swapping cabinets for e-bike delivery workers (input only; site could not be reached).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Nothing found; Built In and Dealroom slugs popwheels 404. Region sources: ufl-acre. Confidence: low. Unresolved:
+    popwheels.com and www.popwheels.com did not resolve (DNS error EAI_AGAIN, three tries; may be a local DNS fault,
+    not closure). Everything else unknown.'
+- id: princeton-critical-minerals-pureli
+  name: Princeton Critical Minerals (PureLi)
+  website: https://pcmtech.com
+  careers_url: null
+  hq: Somerset County, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium extraction from saline sources such as produced water and brines (NJEDA description; input says
+      by interfacial crystallization).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech Seed Grant Round
+    3 to PureLi, Inc. (Oct 2024, https://www.njeda.gov/?p=31499). No venture rounds found. Flags: oil and gas produced
+    water as feedstock. Evidence: https://pureli.com/ https://www.njeda.gov/?p=31499 Region sources: njeda-csit-seed-r3,
+    njeda-csit-demo-r2, arpa-e. Confidence: medium. Unresolved: pureli.com shows only a ''moved'' notice pointing
+    to pcmtech.com; pcmtech.com could not be read (fetch safety check rate-limited twice), so the rename and current
+    details are unconfirmed. Status ''active'' rests on the redirect notice only. Founded, headcount, town not found.'
+- id: princeton-fusion-systems
+  name: Princeton Fusion Systems
+  website: https://princetonfusionsystems.com
+  careers_url: null
+  hq: Plainsboro, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Develops the Princeton Field-Reversed Configuration (PFRC) compact fusion reactor concept and its RF
+      (rotating magnetic field) plasma heating systems, with PPPL.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: 2022 DOE INFUSE award with PPPL to evaluate RF antenna
+    designs for PFRC plasma heating (infuse.ornl.gov); no equity rounds found. Evidence: https://infuse.ornl.gov/awards/evaluating-rf-antenna-designs-for-pfrc-plasma-heating-and-sustainment
+    Region sources: arpa-e. Confidence: low. Unresolved: princetonfusionsystems.com (found by guess) has an expired
+    TLS certificate and could not be read; current activity unconfirmed (sources found date 2007-2023). Founding
+    year, headcount, funding not found. Facts from a search summary; INFUSE page not fetched.'
+- id: princeton-nuenergy
+  name: Princeton NuEnergy
+  website: https://www.pnecycle.com
+  careers_url: null
+  hq: Monmouth Junction
+  ats:
+    type: bamboohr
+    board: pnecycle
+  read: manual
+  sectors:
+  - recycling
+  - battery-materials
+  stage: series-a
+  founded: 2019
+  headcount:
+    value: 36
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/princeton-nuenergy)
+  climate:
+    tier: core
+    reason: Direct-recycled battery-grade cathode active material and 'Advanced Black Mass' from spent lithium-ion
+      batteries (Cathode-to-Cathode process).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 36 people (Dealroom, 2026-11-24); founded 2019, funding round reported in 2026.
+  notes: 'Board bamboohr:pnecycle seen 2026-11-25, linked from the company''s own site: 6 open roles. Headcount
+    note: Dealroom figure 36, band under 100; undated, read 2026-11-24. Founded: https://www.pnecycle.com/about.
+    Stage: Series A, USD 10M, May 2024, led by Tech Council Ventures and SCG Chemicals (Dealroom); total disclosed
+    equity USD 50-100M. DOE selected it for a USD 50M grant in August 2026 (own site). Flags: pilot plant in McKinney,
+    TX and flagship facility in South Carolina. Evidence: https://pnecycle.com https://www.pnecycle.com/about https://dealroom.co/companies/princeton-nuenergy
+    Region sources: njeda-csit-seed-r1, njeda-csit-demo-r1, princeton-acee. Confidence: high. Unresolved: Input
+    says Bordentown, NJ; own site gives Monmouth Junction, NJ.'
+- id: purenanotech
+  name: PureNanoTech
+  website: null
+  careers_url: null
+  hq: Parsippany-Troy Hills, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Nanobubble generation systems for research and industrial use (including water treatment), based on
+      NJIT-patented technology (per search snippet of an NJIT/EurekAlert release).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NJIT-supported startup; no funding rounds found. Evidence:
+    https://www.eurekalert.org/news-releases/1132809 https://app.dealroom.co/companies/purenanotech/team Region
+    sources: njeda-csit-demo-r2. Confidence: low. Unresolved: No company website found (purenanotech.com redirects
+    to a domain-for-sale page). Facts from search snippets only; Dealroom public slug purenanotech returned 404.
+    Founding year, headcount and funding not found. Partner in organizing NJIT''s Nanobubble 2026 conference (Aug
+    2026), so likely active.'
+- id: pwrcor
+  name: PwrCor
+  website: https://pwrcor.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proprietary heat-conversion engine that turns low-grade waste heat into power (also pitched for geothermal,
+      clean water and hydrogen).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred
+    in violation of protocol (_ssl.c:1035)). Stage: No funding or listing information on own site; Dealroom slug
+    pwrcor 404. Evidence: https://www.pwrcor.com/ Region sources: third-derivative. Confidence: low. Unresolved:
+    Own site footer copyright 2023 and no dated news, so current activity unconfirmed. HQ, founding year, headcount,
+    funding or any public listing not found.'
+- id: queens-carbon
+  name: Queens Carbon
+  website: https://queenscarbon.com
+  careers_url: null
+  hq: Cedar Grove, NJ
+  ats:
+    type: breezy
+    board: queens-carbon
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 28
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/queens-carbon)
+  climate:
+    tier: core
+    reason: 'Low-carbon cement: Q-SCM, a supplementary cementitious material replacing up to 50% of cement, made
+      with carbonate processing systems deployable at existing cement plants.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 28 people (Dealroom, 2026-11-24); founded 2022, funding round reported in 2026.
+  notes: 'Board breezy:queens-carbon seen 2026-11-25, linked from the company''s own site: 5 open roles. Headcount
+    note: Dealroom figure is undated; dated to fetch day. Founded: https://dealroom.co/companies/queens-carbon.
+    Stage: Seed $10M, April 2025 (Plug and Play, Clean Energy Venture Group, Buzzi, Clean Energy Ventures) per Dealroom
+    (https://dealroom.co/companies/queens-carbon); $14.5M ARPA-E SCALEUP grant per own site; NJ CSIT Round 4 seed
+    grant $74,999 (Jan 2026). Evidence: https://queenscarbon.com https://dealroom.co/companies/queens-carbon https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4, cev, arpa-e. Confidence: high. Unresolved: Own site gives HQ 107 Commerce
+    Rd, Cedar Grove; NJEDA lists Montville, NJ.'
+- id: redox-metals
+  name: Redox Metals
+  website: null
+  careers_url: null
+  hq: New York
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular electrochemical platform replacing high-temperature smelting to produce nickel and cobalt domestically.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Activate fellowship profile only; no round found. Flags:
+    defense named among target markets. Evidence: https://activate.org/redox-metals Region sources: activate-ny,
+    activate. Confidence: low. Unresolved: Own site not found (redoxmetals.com guess was rate-limited at the safety
+    check). HQ, founded year, headcount, funding unknown.'
+- id: renewco2
+  name: RenewCO2
+  website: https://www.renewco2.com
+  careers_url: null
+  hq: Cranford, NJ
+  ats:
+    type: breezy
+    board: renewco2
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrocatalytic conversion of CO2 (eCUT) into carbon-negative chemicals and fuels such as plastic precursors.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board breezy:renewco2 seen 2026-11-24, linked from the company''s own site: 9 open roles. Stage: No funding
+    stated on site; Dealroom slug renewco2 404. Evidence: https://renewco2.com Region sources: njeda-csit-seed-r1,
+    njeda-csit-seed-r3. Confidence: medium. Unresolved: HQ not stated (input says Cranford, NJ); founded year; headcount;
+    funding; Rutgers origin not confirmed.'
+- id: shutterbug-exchange
+  name: Shutterbug Exchange
+  website: https://shutterbugexchange.com
+  careers_url: null
+  hq: Hudson County, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'SBX Labs: R&D on circular solar; developing Solar Revitalizer, a sensing and AI decision system that
+      records retired solar panels'' identity, imaging and test results and routes them to reuse, material recovery
+      or review.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech Seed Grant Round
+    3 (Oct 2024, https://www.njeda.gov/?p=31499); site also cites NSF I-Corps participation. No venture rounds found.
+    Flags: pre-product R&D; product mixes sensing hardware and software. Evidence: https://www.shutterbugexchange.com/
+    https://www.njeda.gov/?p=31499 Region sources: njeda-csit-seed-r3. Confidence: medium. Unresolved: Founded year
+    (research direction began 2022 per site), headcount and town not found. Input''s ''upcycling and refurbishing
+    panels'' is now framed as a triage system still in development.'
+- id: sinkco-labs
+  name: Sinkco Labs
+  website: https://sinkcolabs.com
+  careers_url: null
+  hq: New York, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon removal by injecting agricultural biomass waste into marine sediment, raising the seabed for
+      coastal resilience and long-term storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site names backers (Breakthrough Energy Ventures,
+    Activate, Collab Fund, Airminers, BMW Foundation, Climate KIC) without rounds; July 2025 ''seven-figure catalytic
+    pre-purchase'' of carbon removal. Dealroom slug 404. Flags: carbon removal service rather than a product. Evidence:
+    https://sinkcolabs.com Region sources: activate, shell-gamechanger. Confidence: medium. Unresolved: HQ not stated
+    on own site (input says New York, NY); founding year, headcount and equity rounds not found.'
+- id: skyraptor
+  name: Skyraptor
+  website: https://skyraptor.net
+  careers_url: null
+  hq: Moorestown, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Robots that inspect, clean, repair and de-ice wind turbine blades up-tower, offered as services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grant found only: NJ CSIT Clean Tech R&D Seed Grant
+    Round 4, $74,014 to Skyraptor LLC (Jan 8 2026, https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/).
+    Flags: robot-as-a-service model; could be read as services. Evidence: https://www.skyraptor.net/ https://www.njeda.gov/csit-awards-nearly-1-3m-to-17-nj-startups-through-round-4-clean-tech-rd-seed-grant-program/
+    Region sources: njeda-csit-seed-r4. Confidence: medium. Unresolved: Site gives no address, founded year, headcount
+    or funding; HQ from NJEDA. About page not read (rate-limited).'
+- id: sunray-scientific
+  name: SunRay Scientific
+  website: https://www.sunrayscientific.com
+  careers_url: null
+  hq: Wall Township, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Conductive adhesives and silver inks for electronics assembly; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated. Flags: electronics materials; clean-tech
+    link unclear. Evidence: https://sunrayscientific.com Region sources: njeda-csit-seed-r1, njeda-csit-demo-r1,
+    njeda-csit-seed-r3. Confidence: medium. Unresolved: Input says Eatontown, NJ; site contact address is Wall Township,
+    NJ. Founded year (site says 20+ years of expertise), headcount, funding.'
+- id: superclean-glass
+  name: SuperClean Glass
+  website: https://supercleanglass.com
+  careers_url: null
+  hq: Stony Brook, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Waterless self-cleaning technology for solar panels: electrodes create electric fields that sweep dust
+      off panels.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; site cites R&D 100 and DOE Solar
+    Prize awards. Dealroom slug 404. Evidence: https://supercleanglass.com Region sources: aertc-incubator. Confidence:
+    medium. Unresolved: HQ not stated (input says Stony Brook, NY); founded year, headcount, funding. ''Recent news''
+    section is empty.'
+- id: thermolift
+  name: ThermoLift
+  website: https://thermoliftsolutions.com
+  careers_url: null
+  hq: Stony Brook
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2012
+  headcount:
+    value: 14
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/thermolift)
+  climate:
+    tier: core
+    reason: Thermally driven heat pumps (TC3, TNQ) supplying heating, cooling and hot water for homes and businesses;
+      pre-orders, limited production.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 14 people (Dealroom, 2026-11-24); founded 2012.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 14, band under 100; undated,
+    read 2026-11-24. Founded: https://dealroom.co/companies/thermolift. Stage: Dealroom lists a ''late-stage VC''
+    round of USD 26M in June 2021 (Angel Dough Ventures, Euclidean Capital), round letter not given; total disclosed
+    equity USD 10-50M. Site cites DOE and NYSERDA funding. Evidence: https://thermoliftsolutions.com https://dealroom.co/companies/thermolift
+    Region sources: aertc-incubator. Confidence: medium. Unresolved: Heat source of the thermally driven heat pump
+    (possibly natural gas) not confirmed on fetched pages. Site banner still says ''Coming in 2024'', so commercial
+    availability is unclear. Round letter unknown.'
+- id: tidal-metals
+  name: Tidal Metals
+  website: https://tidalmetals.com
+  careers_url: null
+  hq: Hamilton, NJ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2016
+  headcount:
+    value: 17
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/tidal-metals)
+  climate:
+    tier: core
+    reason: Decarbonized magnesium metal produced from seawater and electricity.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 17 people (Dealroom, 2026-11-24); founded 2016, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''at a glance'' figure, undated (date
+    is fetch date); band <100; 67% US, 33% Italy. Founded: https://dealroom.co/companies/tidal-metals. Stage: $8.5M
+    Series Seed led by DCVC, September 2024 (own site; Dealroom lists $8.5M seed Sep 2024 with First Spark Ventures,
+    Bidra Innovations, DCVC). Also a 2018 $1.6M DOE solar office award under former name GreenBlu. Flags: formerly
+    GreenBlu, Inc.. Evidence: https://tidalmetals.com https://dealroom.co/companies/tidal-metals Region sources:
+    dcvc, halliburton-labs. Confidence: high.'
+- id: turnover-labs
+  name: Turnover Labs
+  website: https://turnoverlabs.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Durable electrolyzers that convert dilute industrial CO2 emissions into chemical building blocks on
+      site.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Team page shows five named people; not a headcount.
+    Stage: No funding stated on own site; Dealroom slug turnover-labs 404. Evidence: https://turnoverlabs.com Region
+    sources: activate, greentown. Confidence: medium. Unresolved: Founding year, headcount, funding not found.'
+- id: urban-electric-power
+  name: Urban Electric Power
+  website: https://urbanelectricpower.com
+  careers_url: null
+  hq: Pearl River
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2014
+  headcount:
+    value: 39
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/urban-electric-power)
+  climate:
+    tier: core
+    reason: Rechargeable zinc alkaline (zinc-manganese dioxide) batteries and energy storage systems for commercial
+      and public-sector uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 39 people (Dealroom, 2026-11-24); founded 2014.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 39, band under 100; undated,
+    read 2026-11-24. Founded: https://dealroom.co/companies/urban-electric-power. Stage: Dealroom lists a ''late-stage
+    VC'' round of USD 21M in December 2020 (round letter not given) and a USD 50K RISE grant in October 2021; total
+    disclosed equity USD 10-50M. Evidence: https://urbanelectricpower.com https://urbanelectricpower.com/about/
+    https://dealroom.co/companies/urban-electric-power Region sources: newlab-resilient-energy, doe-oced. Confidence:
+    medium. Unresolved: Founded year disagrees: Dealroom field says 2014, Dealroom description says spun out of
+    the CUNY Energy Institute in 2012. Round letter of the 2020 round unknown.'
+- id: urban-mining-industries
+  name: Urban Mining Industries
+  website: https://pozzotive.com
+  careers_url: null
+  hq: New Rochelle, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Pozzotive, a ground-glass pozzolan cement replacement made from recycled post-consumer glass; also industrial
+      filler and abrasive media.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; Dealroom slug urban-mining-industries
+    404. Evidence: https://pozzotive.com Region sources: third-derivative. Confidence: medium. Unresolved: Plant
+    location, founding year, headcount and funding not found.'
+- id: voltaic-systems
+  name: Voltaic Systems
+  website: https://voltaicsystems.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: null
+  founded: 2004
+  headcount: null
+  climate:
+    tier: core
+    reason: Small solar panels, battery packs and complete solar power kits for IoT devices, plus portable solar
+      chargers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2004 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.voltaicsystems.com/about-us. Stage: No
+    funding or ownership stated on the site; Dealroom slugs 404. Evidence: https://voltaicsystems.com https://www.voltaicsystems.com/about-us
+    Region sources: newlab-posts. Confidence: medium. Unresolved: HQ not stated on fetched pages (input says Brooklyn,
+    NY); headcount; ownership/stage.'
+- id: vycarb
+  name: Vycarb
+  website: https://www.vycarb.com
+  careers_url: null
+  hq: Brooklyn, NY
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Water-based carbon capture and storage device that stores CO2 as bicarbonate in water, with a sensing
+      system that measures the stored carbon.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Founded: https://vycarb.com. Stage: Site lists supporters (Rio
+    Tinto, NYSERDA, Shell Ventures) and carbon-removal buyers (Frontier, Stripe, Klarna, Milkywire, DOE) but no
+    round. Dealroom slug vycarb 404. Flags: carbon removal. Evidence: https://vycarb.com Region sources: newlab-posts,
+    activate, third-derivative. Confidence: medium. Unresolved: Headcount; funding round and stage.'
