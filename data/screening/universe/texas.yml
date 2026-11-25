@@ -459,13 +459,13 @@ companies:
   ats: null
   open_roles: null
 - name: CarbonFree
-  website: null
+  website: https://carbonfree.cc
   hq: San Antonio, TX
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: carbonfree
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Cemvita
@@ -473,9 +473,9 @@ companies:
   hq: Houston, TX
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: cemvita
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: CLS Wind
@@ -742,9 +742,9 @@ companies:
   hq: Houston, TX
   sources:
   - web-tx-transformers
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: giga-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
   ats:
     type: ashby
     token: giga-energy
@@ -889,24 +889,14 @@ companies:
   reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: Induction Food Systems
-  website: null
-  hq: Austin, TX
-  sources:
-  - ati-energy
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
-  ats: null
-  open_roles: null
 - name: Inductive Robotics
-  website: null
+  website: https://inductiverobotics.com
   hq: Austin, TX
   sources:
   - ati-energy
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: inductive-robotics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Infinitum
@@ -1015,9 +1005,9 @@ companies:
   hq: Houston, TX
   sources:
   - web-houston-hydrogen
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: lummus-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: out, startup out.'
   ats:
     type: workday
     token: lummustechnology.wd501.myworkdayjobs.com/LummusTechnology
@@ -1104,9 +1094,9 @@ companies:
   - builtin-sa-greentech
   - web-tx-solar-mfg
   - e2-texas
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: mission-solar-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: core, startup out.'
   ats:
     type: ukg
     token: recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38
@@ -1224,13 +1214,13 @@ companies:
   ats: null
   open_roles: null
 - name: Renu Robotics
-  website: null
+  website: https://renurobotics.com
   hq: San Antonio, TX
   sources:
   - builtin-sa-greentech
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: renu-robotics
+  decision: registry
+  reason: 'Proposed in proposals-02-texas.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Resilient Grid
@@ -1705,6 +1695,10 @@ excluded:
   sources:
   - web-tx-battery-mfg
   reason: Headquartered outside the US (Xiamen, China (footer names Xiamen Hithi); no main site in the region found.
+- name: Induction Food Systems
+  sources:
+  - ati-energy
+  reason: Its own site gives Durham, NC (and offices near Chicago); a Texas presence was not confirmed.
 - name: MGM Transformers
   sources:
   - web-tx-transformers

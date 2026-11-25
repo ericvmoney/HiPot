@@ -433,6 +433,73 @@ companies:
     Evidence: https://dealroom.co/companies/branch-energy Region sources: prelude, cev. Confidence: medium. Unresolved:
     Company site returned empty content twice (likely a JavaScript-only page); whether Branch designs or makes the
     Arc hardware.'
+- id: carbonfree
+  name: CarbonFree
+  website: https://carbonfree.cc
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Captures industrial CO2 and turns it into industrial minerals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site names investors Fortistar, Apollo Investment
+    Corporation, Berg & Berg Enterprises, Husky Partners and Braemar Energy Ventures; no rounds or amounts given.
+    Flags: domain inferred (carbonfree.cc, San Antonio address matches). Evidence: https://www.carbonfree.cc/ https://www.carbonfree.cc/about
+    Region sources: greentown. Confidence: medium. Unresolved: Founded year, headcount, round/stage; Dealroom slugs
+    carbonfree / carbonfree_chemicals 404. SkyMine plant address in San Antonio listed; plant operating status not
+    confirmed.'
+- id: cemvita
+  name: Cemvita
+  website: https://www.cemvita.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - recycling
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 51
+    as_of: '2026-11-24'
+    source: Dealroom / FundedIQ (https://dealroom.co/companies/cemvita-factory)
+  climate:
+    tier: core
+    reason: Engineers microbes to make bio-based products (FermOil renewable bio-oils, soil/plant products, fermentation-derived
+      materials) from CO2 and other feedstocks; primary model is now to develop and license the technology with
+      partners deploying it.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 51 people (Dealroom / FundedIQ, 2026-11-24); founded 2017, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom says headcount under 100 (no exact
+    band shown); FundedIQ (search snippet) band 51-100; lower bound used. Undated. Founded: https://houston.innovationmap.com/cemvita-factory-series-a-8090-partners-2654630319.html.
+    Stage: Series A initial closing led by 8090 Partners, amount undisclosed, Aug 11 2021 (InnovationMap). Aggregators
+    (search snippets) list a further $6.5M round Feb 2024 of unknown type; Dealroom shows total funding $10-50M
+    (''over $15 million''). Later round types unverified. Flags: licensing model: partners lead deployment; spinouts
+    Endolith (biomining) and Eclipse Energy (subsurface biotech, depleted oil and gas reservoirs); investors include
+    Oxy Low Carbon Ventures. Evidence: https://cemvita.com/ https://dealroom.co/companies/cemvita-factory https://houston.innovationmap.com/cemvita-factory-series-a-8090-partners-2654630319.html
+    Region sources: greentown. Confidence: medium. Unresolved: Exact headcount; type of rounds after the 2021 Series
+    A; whether Cemvita itself still operates a production plant (Dealroom mentions 500 bbl/day at a first commercial
+    plant, own site stresses licensing).'
 - id: cls-wind
   name: CLS Wind
   website: https://clswind.com
@@ -866,6 +933,40 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: Not found. Evidence: https://geofuels.com
     Region sources: greentown. Confidence: low. Unresolved: HQ not stated (input said Sugar Land); founding year,
     headcount, funding; whether any plant exists.'
+- id: giga-energy
+  name: Giga Energy
+  website: https://www.gigaenergy.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ashby
+    board: giga-energy
+  read: auto
+  sectors:
+  - grid
+  stage: null
+  founded: 2019
+  headcount:
+    value: 150
+    as_of: '2026-11-24'
+    source: Giga Energy (company statement) (https://gigaenergy.com/about)
+  climate:
+    tier: enabling
+    reason: Transformers, substations and switchboards; much of it for data centers, but grid equipment stays in
+      (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 150 people (Giga Energy (company statement), 2026-11-24); founded 2019.
+  notes: 'Board ashby:giga-energy seen 2026-11-24, linked from the company''s own site: 61 open roles, 36 US-remote.
+    Headcount note: Own site says ''150+ employees across the U.S. and internationally'' (undated). Built In lists
+    41 total employees (https://builtin.com/company/giga-energy). Founded: https://gigaenergy.com/about. Stage:
+    No funding information on own site or Built In; not checked further. Flags: main customers are data centers
+    (AI/data centers headline; also utilities, renewables, oil and gas, bitcoin mining); bitcoin-mining equipment
+    line; factories in Houston, TX (transformers) and Long Beach/Los Angeles, CA (switchboards). Evidence: https://gigaenergy.com/
+    https://gigaenergy.com/about https://builtin.com/company/giga-energy Region sources: web-tx-transformers. Confidence:
+    medium. Unresolved: Funding/stage; Dealroom page (giga_energy) 404.'
 - id: gigadac
   name: GigaDAC
   website: https://gigadac.com
@@ -1192,6 +1293,38 @@ companies:
     https://www.citybiz.co/article/662604/ignis-h2-energy-raises-12-5m-in-series-a/ Region sources: web-houston-geothermal.
     Confidence: medium. Unresolved: Own domain not reached (ignis-h2.com certificate mismatch). Founding year comes
     from search-snippet summaries, not a fetched page.'
+- id: inductive-robotics
+  name: Inductive Robotics
+  website: https://inductiverobotics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: pre-seed
+  founded: 2023
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Autonomous EV charging for parking lots: charging robots dispatched to parked cars fitted with a smart
+      adapter, plus docking stations; offered to parking operators as a subscription service.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'No job board found on the company''s site. Founded: https://startupintros.com/orgs/inductive-robotics.
+    Stage: Search snippets only: StartupIntros reports $100K raised in 1 round; another source (not usable as evidence)
+    said it was raising a $2M pre-seed. Austin Technology Incubator member (ati.utexas.edu). Flags: builds its own
+    robot hardware but sells charging as a subscription service; founded year and Austin HQ from search snippets
+    (StartupIntros), not own site. Evidence: https://www.inductiverobotics.com/ https://www.inductiverobotics.com/product
+    https://ati.utexas.edu/company/inductive-robotics/ https://startupintros.com/orgs/inductive-robotics Region
+    sources: ati-energy. Confidence: low. Unresolved: Headcount; confirmed founding year and funding; own site states
+    no location. Dealroom inductive_robotics 404.'
 - id: inovues
   name: INOVUES
   website: https://inovues.com
@@ -1347,6 +1480,42 @@ companies:
     https://www.locoal.com https://www.locoal.com/about Region sources: gtx-2025h2. Confidence: medium. Unresolved:
     Founded (site copyright 2023 only). Domain guessed (not in input) but matches the climate-tech description and
     Boerne, TX.'
+- id: lummus-technology
+  name: Lummus Technology
+  website: https://www.lummustechnology.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: workday
+    board: lummustechnology
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1907
+  headcount:
+    value: 616
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/lummus-technology)
+  climate:
+    tier: out
+    reason: Licenses process technology mainly to refining, petrochemical and gas-processing customers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 616 people (Built In, 2026-11-24); founded 1907 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'Board workday:lummustechnology.wd501.myworkdayjobs.com/LummusTechnology seen 2026-11-24, linked from the
+    company''s own site: role count not read (no public feed). Headcount note: Built In ''total employees'' figure,
+    undated (retrieval date used); likely understates a global firm. Own site says ''115+ years of technology leadership''.
+    Founded: https://builtin.com/company/lummus-technology. Stage: Ownership not stated on own site; JVs listed
+    (CLG with Chevron, Lummus Digital with TCG Digital). Private, no venture rounds; owner not verified in this
+    pass. Flags: main customers are refining, petrochemical and gas processing (oil and gas); mainly technology
+    licensing and services, with some equipment and catalysts; established company (founded 1907). Evidence: https://www.lummustechnology.com/
+    https://www.lummustechnology.com/about https://builtin.com/company/lummus-technology Region sources: web-houston-hydrogen.
+    Confidence: medium. Unresolved: Current owner(s) and stage; company-stated headcount; the Pasadena, TX green
+    hydrogen pilot plant was not confirmed on the pages read. Dealroom slugs lummus_technology / lummus-technology
+    returned 404; Wikipedia page 404.'
 - id: lyondellbasell
   name: LyondellBasell
   website: https://www.lyondellbasell.com/
@@ -1463,6 +1632,44 @@ companies:
     pre-seed from HL Energy Ventures announced 2025-09-09 (https://mcatalysis.com). Evidence: https://mcatalysis.com
     https://www.mcatalysis.com/about https://www.mcatalysis.com/team Region sources: gtx-2025h2, rice-etvf-2026,
     greentown. Confidence: medium. Unresolved: Founded, headcount; which office is HQ.'
+- id: mission-solar-energy
+  name: Mission Solar Energy
+  website: https://www.missionsolar.com/
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38
+  read: manual
+  sectors:
+  - solar
+  - grid
+  stage: subsidiary
+  founded: 2014
+  headcount:
+    value: 70
+    as_of: '2025-01-01'
+    source: Solar Power World (company president's ITC testimony) (https://www.solarpowerworldonline.com/2026/09/texas-records-suggest-oci-is-bringing-elite-solar-to-mission-solar-energy-manufacturing-site/)
+  climate:
+    tier: core
+    reason: Makes solar modules (N-type bifacial and rooftop) for residential, commercial and utility markets at
+      a San Antonio plant.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 70 people (Solar Power World (company president's ITC testimony), 2025-01-01). Owned by OCI Holdings;
+      not independent.
+  notes: 'Board ukg:recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38 seen 2026-11-24,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Year only (2025,
+    first day used). Previously over 200 workers; president testified the company had ''temporarily ceased all manufacturing
+    operations and related employment'' (article Sep 18 2026), so current headcount may be near zero. Founded: https://www.missionsolar.com/about-us/.
+    Stage: Own site: ''Mission Solar Energy is a subsidiary of OCI Holdings'' (South Korea), led in the US by OCI
+    Enterprises. Flags: subsidiary of OCI Holdings (South Korea); manufacturing temporarily ceased per 2026 ITC
+    testimony; 2 GW / $265M cell factory announced 2025 never progressed past warehouse stage; Aug 2026 Texas filing
+    shows Elite Solar factory planned at the site. Evidence: https://www.missionsolar.com/about-us/ https://www.solarpowerworldonline.com/2026/09/texas-records-suggest-oci-is-bringing-elite-solar-to-mission-solar-energy-manufacturing-site/
+    Region sources: builtin-sa-greentech, web-tx-solar-mfg, e2-texas. Confidence: medium. Unresolved: Whether manufacturing
+    has restarted or the company will close; no closure or WARN notice found as of Sep 2026.'
 - id: momentum-technologies
   name: Momentum Technologies
   website: https://momentum.technology/
@@ -1700,6 +1907,39 @@ companies:
     Bechtel (https://rsenrg.com). No equity round found. Pre-commercial; first field deployment targeted 3Q 2027.
     Flags: main customers are oil and gas; pre-commercial. Evidence: https://rsenrg.com Region sources: halliburton-labs.
     Confidence: medium. Unresolved: HQ (input guess Corpus Christi, TX not confirmed), founded, headcount, stage.'
+- id: renu-robotics
+  name: Renu Robotics
+  website: https://renurobotics.com
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2018
+  headcount:
+    value: 27
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/renu-robotics)
+  climate:
+    tier: enabling
+    reason: 'All-electric autonomous mowers that maintain vegetation at solar plants (owner ruling A6: robots built
+      for solar are in).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 27 people (Built In, 2026-11-24); founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total employees, undated (retrieval
+    date used). Own site: over 100 units in the field in 20 states. Founded: https://www.renurobotics.com/about.
+    Stage: Aggregator search snippets conflict: $3.5M seed Jun 2021; a $20M round May 2022 (type not given); totals
+    $7.1M-$31.5M. Not verified from a primary source. Flags: autonomous off-road vehicle (site mowing, not road);
+    domain inferred (renurobotics.com, San Antonio address matches). Evidence: https://www.renurobotics.com/ https://www.renurobotics.com/about
+    https://builtin.com/company/renu-robotics Region sources: builtin-sa-greentech. Confidence: medium. Unresolved:
+    Stage (2022 round type unknown); Dealroom slugs renu_robotics / renu-robotics 404.'
 - id: resollant
   name: Resollant
   website: https://resollant.com
