@@ -104,7 +104,7 @@ Check that it looks right in the claude.ai viewer, on a phone, and in desktop Ch
 
 Written so a new supervisor session can pick up without the conversation. Read PLAN.md section 9 (decisions) first.
 
-**Published.** Private board, version 2: https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ (3,642 roles at 143 companies; built from `data/jobs.json` collected before Colorado). Republish by publishing `site/index.html` with `data/board.json` as a supporting file to the same artifact.
+**Published.** Board, version 3: https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ, now shared by the owner as "anyone with the link" (viewers see updates at once). 3,681 roles at 146 companies from the full collection over 338 companies, plus the pay page. Pay grades are left out of the shared build (`pipeline.publish --no-grades`) until the owner reviews them; local builds show them. Republish: publish `site/index.html` with supporting files `data/board.json`, `data/pay.json` and `pay.html` to the same artifact.
 
 **Registry.** 338 companies, 221 listed, after Colorado (`proposals-02-colorado.yml`) and the startup facts (`registry-fixes-03.yml`). Apply screening with `uv run python -m tools.apply_screening` (idempotent; log in `data/screening/applied-latest.md`). Coverage: `uv run python -m tools.coverage`.
 
