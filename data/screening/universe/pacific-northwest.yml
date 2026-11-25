@@ -1,0 +1,1357 @@
+# Reference list for the Pacific Northwest (Washington, Oregon, Idaho): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: pacific-northwest
+built: '2026-11-25'
+sources:
+- id: cta-members
+  name: CleanTech Alliance (Washington) membership directory
+  url: https://www.cleantechalliance.org/members/
+  note: single page, 1177 member cards read; websites from member pages; most members are water systems, cities,
+    roofers and health-trust brokers
+- id: wa-commerce-cef
+  name: Washington State Department of Commerce Clean Energy Fund award announcements (RD&D and grid modernization
+    rounds)
+  url: https://www.commerce.wa.gov/commerce-invests-37-million-in-46-clean-energy-projects-across-washington-state/
+  note: 'six award pages read: 2024 $37M (46 projects), 2022 $8.5M RD&D (?p=76329), 2019 $8.2M RD&D, 2017 $7M RD&D
+    (?p=12775), grid-modernization round (?p=62521) and the $8.1M grid round (?p=110759); the main CEF/RD&D programme
+    pages return 404'
+- id: pnnl-flc
+  name: PNNL Federal Laboratory Consortium technology-transfer awards page (licensees and spinouts)
+  url: https://www.pnnl.gov/about/federal-laboratory-consortium-awards
+  note: only PNNL page used; pnnl.gov then returned 403 on another page and the site was dropped
+- id: wcet-partners
+  name: UW Clean Energy Institute / Washington Clean Energy Testbeds partners page (Tech Advisory Council firms)
+  url: https://www.wcet.washington.edu/about-wcet/partners/
+  note: CEI has no public spinout list (startups pages 404); only TAC member companies with hardware taken
+- id: uw-comotion-climate
+  name: UW CoMotion Labs Climate Tech Incubator page (named past participants)
+  url: https://comotion.uw.edu/startups-incubation/comotion-labs/comotion-labs-climate-tech-incubator/
+  note: participants named in testimonials (read before the refusal); the CoMotion spinoff directory itself was
+    refused by the permission check and not used
+- id: cascadia-cca-alumni
+  name: Cascadia CleanTech Accelerator alumni 2018-2024 (CleanTech Alliance + VertueLab, Oregon/Washington)
+  url: https://cascadiacleantech.org/alumni-2/
+  note: alumni page gives no locations; kept only those whose PNW location was confirmed on their own site, another
+    source or prior knowledge (noted)
+- id: osu-terra-2010
+  name: 'Oregon State University Terra: OSU spinoff and partner company list (2010)'
+  url: https://terra.oregonstate.edu/?p=3429
+  note: old list; several companies likely defunct
+- id: osu-advantage-clients
+  name: OSU Advantage Accelerator current and alumni clients
+  url: https://advantage.oregonstate.edu/advantage-accelerator/accelerator-clients
+  note: names only for most cohort entries; kept the plausibly clean-tech named companies
+- id: osu-advantage-news
+  name: Corvallis Advocate on OSU spinouts, plus OSU Advantage Oregon Innovation Showcase page
+  url: https://corvallisadvocate.com/osu-already-morphs-discoveries-into-companies-now-theyre-accelerating-that-ambition/
+  note: also https://advantage.oregonstate.edu/oregon-innovation-showcase; semiconductor spinouts other than NexTC
+    skipped as not clean-tech
+- id: psu-psba-grads
+  name: Portland State Business Accelerator graduates and current companies
+  url: https://www.pdx.edu/accelerator/graduates
+  note: current companies page (pdx.edu/accelerator/companies) had no clean-tech hardware
+- id: psu-techhub
+  name: Portland State-led Pacific Northwest Smart Energy Strategy Development Consortium (EDA Tech Hubs) members
+  url: https://www.pdx.edu/news/portland-state-receives-federal-funding-lead-regional-innovation-smart-energy-storage
+- id: or-cleantech-taskforce
+  name: Oregon Clean Technology Task Force Report, September 2024
+  url: https://olis.oregonlegislature.gov/liz/2023I1/Downloads/CommitteeMeetingDocument/285903
+  note: Oregon clean-tech group report; companies named in members list and findings
+- id: energytrust-blog
+  name: Energy Trust of Oregon blog (programme participants)
+  url: https://blog.energytrust.org/portland-startups-new-lighting-allows-founders-to-focus-on-battery-storage-breakthroughs/
+  note: also the blog search page for startup
+- id: oregonbusiness-2025
+  name: 'Oregon Business: Struggles mount for two Oregon green tech businesses'
+  url: https://oregonbusiness.com/struggles-mount-for-two-oregon-green-tech-businesses/
+- id: idaho-commerce-energy
+  name: Idaho Commerce energy industry one-sheet
+  url: https://commerce.idaho.gov/content/uploads/2021/06/Industry-One-Sheet-Energy-2-2.pdf
+- id: heraldnet-snohomish
+  name: 'Everett Herald: Snohomish County becomes haven for green energy'
+  url: https://www.heraldnet.com/?p=841683
+- id: wagov-moses-lake
+  name: 'Washington Governor''s Office: Clean tech takes off in Moses Lake'
+  url: https://medium.com/wagovernor/clean-tech-takes-off-in-moses-lake-211294767929
+- id: tid-washington
+  name: 'Trade & Industry Development: Washington State, building a sustainable clean future'
+  url: https://www.tradeandindustrydev.com/region/washington/washington-state-building-sustainable-clean-future-33973
+- id: geekwire-puget-cleantech
+  name: 'GeekWire sponsor post: Inside Puget Sound''s booming cleantech industry'
+  url: https://www.geekwire.com/sponsor-post/inside-puget-sounds-booming-cleantech-industry/
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: congruent
+  name: Congruent Ventures portfolio
+  url: https://www.congruentvc.com/portfolio
+  note: 62 companies listed.
+- id: dcvc
+  name: DCVC companies (energy-climate and industrial-transformation sectors)
+  url: https://www.dcvc.com/companies
+  note: 60 of 301 companies are tagged energy-climate or industrial-transformation; only those were reviewed.
+- id: eip
+  name: Energy Impact Partners portfolio
+  url: https://www.energyimpactpartners.com/_portfolio/
+  note: 151 cards (current and exits); cards give description and site URL but no names, so names come from descriptions
+    and domains.
+- id: elemental
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 141 companies with HQ city (113 US).
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: halliburton-labs
+  name: Halliburton Labs portfolio
+  url: https://halliburtonlabs.com/companies
+  note: 49 companies with HQ city.
+- id: ic
+  name: Innovation Crossroads (Oak Ridge) cohorts 2017-2026 and alumni
+  url: https://innovationcrossroads.ornl.gov/people/?alumni=true
+  note: 58 innovator profiles read.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: shell-gamechanger
+  name: Shell GameChanger start-ups (graduates since 2021 and current projects)
+  url: https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/shell-gamechanger/portfolio.html
+  note: ~110 names, client-rendered (read in a browser after rejecting optional cookies). No HQ shown; many non-US.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: voyager
+  name: Voyager Ventures portfolio
+  url: https://www.voyagervc.com/portfolio
+  note: 41 companies over 5 pages.
+- id: web-search-snippets
+  name: Web search results quoting company job posts or remote-job board profiles
+  url: null
+  note: 10 web searches used; only kept where the company's own words or a remote-job board profile were quoted
+- id: west-gate
+  name: NLR (formerly NREL) West Gate lab-embedded entrepreneurship, cohorts 1-5
+  url: https://www.nlr.gov/west-gate/alumni
+  note: Alumni page names companies; current-innovator company names and HQs reused from this session's Colorado
+    harvest of the innovator detail pages (https://www.nlr.gov/west-gate/innovators).
+- id: yc
+  name: Y Combinator company directory (yc-oss public JSON mirror)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
+    climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
+companies:
+- name: 7GEN Components
+  website: null
+  hq: Kent, WA
+  sources:
+  - cta-members
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: AltaRock Energy
+  website: https://altarockenergy.com
+  hq: Seattle, WA
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Its website shows 'Account Suspended'; current status not established.
+  ats: null
+  open_roles: null
+- name: Apex Drive Laboratories
+  website: null
+  hq: Portland, OR
+  sources:
+  - osu-terra-2010
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Architectural Applications (A2)
+  website: null
+  hq: Portland, OR
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: not-in-scope
+  reason: Design firm (professional corporation) with R&D; no product sold.
+  ats: null
+  open_roles: null
+- name: Aris Hydronics
+  website: https://www.arishydronics.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  - third-derivative
+  registry_id: aris-hydronics
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Arrow Carbon
+  website: https://arrowcarbon.com
+  hq: Portland, OR
+  sources:
+  - third-derivative
+  registry_id: arrow-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Atlas Agro (Pacific Green Fertilizer)
+  website: https://www.atlasagro.ag
+  hq: Zug, Switzerland
+  sources:
+  - wa-commerce-cef
+  registry_id: atlas-agro-pacific-green-fertilizer
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Avalanche Energy
+  website: https://avalanchefusion.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - lc
+  - congruent
+  - azolla
+  - greentown
+  registry_id: avalanche-energy
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: avalanchefusion
+  open_roles: null
+- name: Azuray Technologies
+  website: null
+  hq: Tualatin, OR
+  sources:
+  - osu-terra-2010
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Banyu Carbon
+  website: https://banyucarbon.com
+  hq: Seattle, WA
+  sources:
+  - activate
+  registry_id: banyu-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Battery Informatics
+  website: null
+  hq: Seattle, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: BattGenie
+  website: https://battgenie.life
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Bio Fiber Industries
+  website: https://www.biofiberindustries.com
+  hq: Seattle, WA
+  sources:
+  - uw-comotion-climate
+  - cascadia-cca-alumni
+  registry_id: bio-fiber-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BladeRunner Energy
+  website: https://www.bladerunnerenergy.com
+  hq: Bend, OR
+  sources:
+  - cascadia-cca-alumni
+  registry_id: bladerunner-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Blue Dot Motorworks
+  website: https://bluedotmotorworks.com
+  hq: Seattle, WA
+  sources:
+  - cascadia-cca-alumni
+  registry_id: blue-dot-motorworks
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: BlueDot Photonics
+  website: https://bluedotphotonics.com
+  hq: Seattle, WA
+  sources:
+  - third-derivative
+  - shell-gamechanger
+  registry_id: null
+  decision: closed
+  reason: Acquired by UbiQD and absorbed.
+  ats: null
+  open_roles: null
+- name: CarbonQuest
+  website: https://carbonquest.com
+  hq: Spokane Valley, WA
+  sources:
+  - cta-members
+  registry_id: carbonquest
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Corumat
+  website: https://www.biggreenloop.com
+  hq: Mercer Island, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: corumat
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Coulomb Technology
+  website: https://coulombtechnology.com
+  hq: Meridian, ID
+  sources:
+  - ic
+  registry_id: coulomb-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Critical Mineral Separations
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Daimler Truck North America
+  website: https://northamerica.daimlertruck.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: daimler-truck-north-america
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats:
+    type: workday
+    token: dtna.wd5.myworkdayjobs.com/DTNA_external
+  open_roles: null
+- name: Dehlsen Associates
+  website: https://www.dehlsen.com
+  hq: Santa Barbara, CA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Demand Energy Networks
+  website: null
+  hq: Liberty Lake, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: closed
+  reason: Acquired by Enel Green Power North America in January 2017 and absorbed.
+  ats: null
+  open_roles: null
+- name: DWP Energy Solutions
+  website: https://www.dwpenergysolutions.com
+  hq: Vancouver, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: dwp-energy-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: easyXAFS
+  website: https://easyxafs.com
+  hq: Renton, WA
+  sources:
+  - cta-members
+  registry_id: easyxafs
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ecellix
+  website: https://ecellix.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - pnnl-flc
+  registry_id: ecellix
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Electric Logistics
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Endurance Energy
+  website: https://enduranceenergy.com
+  hq: Seattle, WA
+  sources:
+  - voyager
+  registry_id: endurance-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: endurance-energy
+  open_roles: 24
+- name: ESS Inc
+  website: https://www.essinc.com
+  hq: Wilsonville, OR
+  sources:
+  - psu-psba-grads
+  - psu-techhub
+  - or-cleantech-taskforce
+  - energytrust-blog
+  - oregonbusiness-2025
+  - bev
+  - arpa-e
+  registry_id: null
+  decision: closed
+  reason: 'Closed: ceased operations and filed Chapter 7, 2026-11-13 public company (NYSE: GWH)'
+  ats: null
+  open_roles: null
+- name: Eviation Aircraft
+  website: https://www.eviation.com
+  hq: Arlington, WA
+  sources:
+  - heraldnet-snohomish
+  - tid-washington
+  - wagov-moses-lake
+  registry_id: eviation-aircraft
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: ExoFusion
+  website: null
+  hq: Bellevue, WA
+  sources:
+  - arpa-e
+  registry_id: exofusion
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: First Mode
+  website: https://www.firstmode.com
+  hq: Seattle, WA
+  sources:
+  - geekwire-puget-cleantech
+  registry_id: first-mode
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: GemaTEG
+  website: https://www.gemateg.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  registry_id: gemateg
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Grays Harbor Carbon Capture
+  website: null
+  hq: Elma, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: not-in-scope
+  reason: A study of carbon capture at a natural-gas power plant, not a company with a product.
+  ats: null
+  open_roles: null
+- name: Gridstor
+  website: https://www.gridstor.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops, owns and runs battery storage projects; a project developer.
+  ats: null
+  open_roles: null
+- name: Group14 Technologies
+  website: https://group14.technology
+  hq: Woodinville (Maltby), WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  - wcet-partners
+  - tid-washington
+  - wagov-moses-lake
+  registry_id: group14-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: group14
+  open_roles: null
+- name: Helion Energy
+  website: https://helionenergy.com
+  hq: Everett, WA
+  sources:
+  - cta-members
+  - heraldnet-snohomish
+  - geekwire-puget-cleantech
+  - yc
+  - arpa-e
+  registry_id: helion
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: helion
+  open_roles: null
+- name: Hempitecture
+  website: https://www.hempitecture.com
+  hq: Jerome, ID
+  sources:
+  - cascadia-cca-alumni
+  - greentown
+  - ic
+  registry_id: hempitecture
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Homeostasis Systems
+  website: null
+  hq: Tacoma, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: homeostasis-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Inergy Technologies
+  website: https://www.inergysolar.com
+  hq: Pocatello, ID
+  sources:
+  - idaho-commerce-energy
+  registry_id: inergy-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Infra Innovations
+  website: https://www.infra-innovations.com
+  hq: Silverton, OR
+  sources:
+  - cta-members
+  registry_id: null
+  decision: not-in-scope
+  reason: Small consulting and repair-services firm.
+  ats: null
+  open_roles: null
+- name: Insitu
+  website: https://www.insitu.com
+  hq: Bingen, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: insitu
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats:
+    type: workday
+    token: insitu.wd1.myworkdayjobs.com/Careers
+  open_roles: null
+- name: Joule Case
+  website: https://joulecase.com
+  hq: Seattle, WA
+  sources:
+  - third-derivative
+  registry_id: joule-case
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: magniX
+  website: https://www.magnix.aero
+  hq: Everett, WA
+  sources:
+  - heraldnet-snohomish
+  - tid-washington
+  - wagov-moses-lake
+  registry_id: magnix
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Mammoth Summit Power
+  website: https://www.mammothsummit.com
+  hq: Spokane, WA
+  sources:
+  - cta-members
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Develops energy projects (solar-plus-storage) with landowners; a project developer,
+    not a manufacturer.'
+  ats: null
+  open_roles: null
+- name: Manaflex
+  website: https://www.manaflex.com
+  hq: Vancouver, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: manaflex
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Mauka Energy
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: McKinstry
+  website: https://www.mckinstry.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Design, construction, energy services, optimization and maintenance of buildings
+    and energy assets (MEP contractor and energy services).'
+  ats: null
+  open_roles: null
+- name: Melni Technologies
+  website: null
+  hq: Twin Falls, ID
+  sources:
+  - arpa-e
+  registry_id: melni-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Membrion
+  website: https://membrion.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - third-derivative
+  registry_id: membrion
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Modern Electron
+  website: null
+  hq: Woodinville, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: closed
+  reason: 'Closed: now named Modern Hydrogen laid off most employees Oct 2025 citing funding changes contractors
+    sued over unpaid invoices (GeekWire 2026) website not working (modernhydrogen.com cert mismatch, www does '
+  ats: null
+  open_roles: null
+- name: Molecule Works
+  website: https://moleculeworks.com
+  hq: Richland, WA
+  sources:
+  - cta-members
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Mtek Energy Solutions
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-terra-2010
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: MujiElectric
+  website: null
+  hq: Renton, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Mutual Materials
+  website: https://www.mutualmaterials.com
+  hq: Bellevue, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: mutual-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats:
+    type: paycom
+    token: A7E1149E4B2E9BA3C0EC2833884EA335
+  open_roles: null
+- name: NexTC
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  - osu-advantage-news
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: NextWatts
+  website: https://nextwatts.com
+  hq: Spokane, WA
+  sources:
+  - cta-members
+  - wcet-partners
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Nimbus Aerospace
+  website: null
+  hq: null
+  sources:
+  - uw-comotion-climate
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: NuCube Energy
+  website: https://nucube.energy
+  hq: Idaho Falls, ID
+  sources:
+  - shell-gamechanger
+  - halliburton-labs
+  registry_id: nucube-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: NuScale Power
+  website: https://www.nuscalepower.com
+  hq: Portland, OR
+  sources:
+  - osu-terra-2010
+  - osu-advantage-news
+  registry_id: nuscale-power
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats:
+    type: jobvite
+    token: nuscale-power
+  open_roles: null
+- name: Nvirovate Materials
+  website: https://www.nvirovate.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  registry_id: nvirovate-materials
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: OCOchem
+  website: https://ocochem.com
+  hq: Richland, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  - halliburton-labs
+  - arpa-e
+  registry_id: ocochem
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Onboard Dynamics
+  website: https://www.onboarddynamics.com
+  hq: Bend, OR
+  sources:
+  - osu-advantage-news
+  registry_id: onboard-dynamics
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: OnTo Technology
+  website: null
+  hq: Bend, OR
+  sources:
+  - arpa-e
+  registry_id: onto-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Oscilla Power
+  website: https://oscillapower.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: oscilla-power
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: PACCAR
+  website: https://www.paccar.com
+  hq: Bellevue, WA
+  sources:
+  - geekwire-puget-cleantech
+  registry_id: paccar
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Pacific Light Technologies
+  website: https://www.pacificlighttech.com
+  hq: Portland, OR
+  sources:
+  - psu-psba-grads
+  registry_id: null
+  decision: closed
+  reason: Acquired by Osram about December 2017 and absorbed.
+  ats: null
+  open_roles: null
+- name: Panthalassa
+  website: https://panthalassa.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  - lc
+  registry_id: panthalassa
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: panthalassa
+  open_roles: null
+- name: Peregrin Power
+  website: null
+  hq: Wilsonville, OR
+  sources:
+  - osu-terra-2010
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Perpetua Power Source Technologies
+  website: https://perpetuapower.com
+  hq: Corvallis, OR
+  sources:
+  - pnnl-flc
+  - psu-psba-grads
+  registry_id: perpetua-power-source-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup out.'
+  ats: null
+  open_roles: null
+- name: Photon Marine
+  website: https://www.photonmarine.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: photon-marine
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Polar Defense
+  website: https://www.polardefense.com
+  hq: Moses Lake, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: PolyDrop
+  website: https://www.polydrop.com
+  hq: Seattle, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: closed
+  reason: 'Closed: website gone: polydrop.com redirects to a domain-for-sale page (domains.atom.com)'
+  ats: null
+  open_roles: null
+- name: Powin
+  website: https://powin.com
+  hq: Tualatin, OR
+  sources:
+  - psu-techhub
+  - or-cleantech-taskforce
+  - oregonbusiness-2025
+  registry_id: null
+  decision: closed
+  reason: Bankrupt in 2025; its assets were bought by FlexGen, which is in the registry.
+  ats:
+    type: rippling
+    token: external-job-board
+  open_roles: 6
+- name: Pure Blue Tech
+  website: https://purebluetech.com
+  hq: Bellingham, WA
+  sources:
+  - cascadia-cca-alumni
+  registry_id: pure-blue-tech
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: QPO
+  website: null
+  hq: Tualatin, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: qpo
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Radius Recycling
+  website: https://www.radiusrecycling.com
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: radius-recycling
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Ranger EV
+  website: https://www.rangercharging.com
+  hq: Portland, OR
+  sources:
+  - cascadia-cca-alumni
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Social payment platform that lets hosts charge guests for EV charging from existing
+    outlets and chargers; no new hardware.'
+  ats: null
+  open_roles: null
+- name: RenewCat
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Samsar
+  website: null
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Sekisui Aerospace
+  website: https://www.sekisuiaerospace.com
+  hq: Renton, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: sekisui-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 54a4e977-5ddb-4e59-a5e5-1fdd0b57dc57
+  open_roles: null
+- name: Siemens (Portland)
+  website: https://www.siemens.com/
+  hq: Germany
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  registry_id: siemens
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Sila Nanotechnologies
+  website: https://silanano.com
+  hq: Alameda, CA
+  sources:
+  - cta-members
+  - wagov-moses-lake
+  registry_id: sila-nanotechnologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: silananotechnologies
+  open_roles: null
+- name: Silica-X
+  website: https://silicax.com
+  hq: Spokane, WA
+  sources:
+  - cta-members
+  registry_id: silica-x
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: SimplyLEDs
+  website: https://simplyleds.com
+  hq: Boise, ID
+  sources:
+  - cta-members
+  registry_id: simplyleds
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sironix Renewables
+  website: https://sironixrenewables.com
+  hq: Seattle, WA
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  - cascadia-cca-alumni
+  registry_id: sironix-renewables
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Skip Technology
+  website: null
+  hq: Portland, OR
+  sources:
+  - energytrust-blog
+  registry_id: skip-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Small Planet Supply
+  website: https://www.smallplanetsupply.com
+  hq: Tumwater, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Its own domain does not resolve; status not established.
+  ats: null
+  open_roles: null
+- name: SolarX Works
+  website: https://www.solarxworks.com
+  hq: Moses Lake, WA
+  sources:
+  - cta-members
+  - cascadia-cca-alumni
+  registry_id: solarx-works
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Solid Carbon
+  website: https://solid-carbon.com
+  hq: McMinnville, OR
+  sources:
+  - third-derivative
+  registry_id: solid-carbon
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: STARS Technology Corporation
+  website: https://starsh2.com
+  hq: Richland, WA
+  sources:
+  - pnnl-flc
+  - cascadia-cca-alumni
+  registry_id: stars-technology-corporation
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: StorEdgeAI
+  website: null
+  hq: Bothell, WA
+  sources:
+  - wa-commerce-cef
+  registry_id: null
+  decision: null
+  reason: Third-party profiles conflict on what it makes; identity not established.
+  ats: null
+  open_roles: null
+- name: Sunshot Energy
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-advantage-clients
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: TerraPower
+  website: https://terrapower.com
+  hq: Bellevue, WA
+  sources:
+  - heraldnet-snohomish
+  - arpa-e
+  registry_id: terrapower
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: terrapowerllc
+  open_roles: null
+- name: Trillium FiberFuels
+  website: null
+  hq: Corvallis, OR
+  sources:
+  - osu-terra-2010
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Ultropia
+  website: https://ultropia.us
+  hq: Seattle, WA
+  sources:
+  - activate
+  registry_id: null
+  decision: null
+  reason: University spinout launched 2021; no recent activity found.
+  ats: null
+  open_roles: null
+- name: UniEnergy Technologies
+  website: https://uetechnologies.com
+  hq: Mukilteo, WA
+  sources:
+  - cta-members
+  - pnnl-flc
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed (bankrupt 2021-2022) domain now redirects to an unrelated site'
+  ats: null
+  open_roles: null
+- name: Universal Hydrogen
+  website: null
+  hq: Hawthorne, CA
+  sources:
+  - wagov-moses-lake
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed June 2024 HQ outside region (California); flight-test site at Moses Lake, WA 2021-2023'
+  ats: null
+  open_roles: null
+- name: Vecarius
+  website: https://vecarius.com
+  hq: Seattle, WA
+  sources:
+  - greentown
+  registry_id: null
+  decision: null
+  reason: Its site shows a 2021 copyright and nothing newer; status not established.
+  ats: null
+  open_roles: null
+- name: Willamette Technical Fabricators
+  website: null
+  hq: Portland, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: XFlow Energy
+  website: https://xflowenergy.com
+  hq: Colorado
+  sources:
+  - wa-commerce-cef
+  - west-gate
+  - arpa-e
+  registry_id: xflow-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Zap Energy
+  website: https://zapenergy.com
+  hq: Everett, WA
+  sources:
+  - cta-members
+  - heraldnet-snohomish
+  - geekwire-puget-cleantech
+  - bev
+  - lc
+  - dcvc
+  - eip
+  - arpa-e
+  registry_id: zap-energy
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: zap-energy-careers
+  open_roles: null
+- name: ZeroAvia
+  website: https://zeroavia.com/
+  hq: Everett, WA
+  sources:
+  - heraldnet-snohomish
+  - bev
+  - elemental
+  registry_id: zeroavia
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: ZILA BioWorks
+  website: https://www.zilaworks.com
+  hq: Renton, WA
+  sources:
+  - cta-members
+  - uw-comotion-climate
+  registry_id: zila-bioworks
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ZincFive
+  website: https://zincfive.com
+  hq: Tualatin, OR
+  sources:
+  - or-cleantech-taskforce
+  registry_id: zincfive
+  decision: registry
+  reason: 'Proposed in proposals-02-pacific-northwest.yml: core, startup in.'
+  ats:
+    type: adp
+    token: d5ca7713-e342-4b90-89f2-0d351ff60dbb
+  open_roles: null
+excluded:
+- name: Boeing
+  sources:
+  - cta-members
+  reason: Headquartered in Arlington, VA, outside the region; no main site in the region found.
+- name: Clobotics
+  sources:
+  - cta-members
+  reason: Headquartered in Singapore; the Seattle office was not confirmed as a main site.
+- name: Columbia Power Technologies (C-Power)
+  sources:
+  - osu-terra-2010
+  reason: Headquartered in Charlottesville, VA, outside the region; no main site in the region found.
+- name: Echandia
+  sources:
+  - heraldnet-snohomish
+  reason: Headquartered outside the US (Solna, Sweden); no main site in the region found.
+- name: Emrgy
+  sources:
+  - wa-commerce-cef
+  reason: Headquartered in Atlanta, GA, outside the region; no main site in the region found.
+- name: EVELO
+  sources:
+  - web-search-snippets
+  reason: Its site footer gives Culver City, CA.
+- name: FOM Technologies
+  sources:
+  - cta-members
+  - wa-commerce-cef
+  reason: Headquartered in Kastrup, Denmark; Seattle is a sales office.
+- name: Kyoto Fusioneering America
+  sources:
+  - cta-members
+  reason: Moving its US headquarters from Seattle to Oak Ridge, TN (announced August 2026).
+- name: Maxwell Vehicles
+  sources:
+  - cascadia-cca-alumni
+  reason: Its site gives Los Angeles; listed in Southern California.
+- name: Plug Power
+  sources:
+  - wagov-moses-lake
+  reason: Headquartered in Latham, NY, outside the region; no main site in the region found.
