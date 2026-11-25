@@ -305,8 +305,11 @@ def summarize(system: str, token: str, status: int | None, text: str, name: str)
             titles.append(job.get("name", ""))
             places.append(((job.get("workLocation") or {}).get("label", "")) or "")
     remote_flags += [False] * (len(places) - len(remote_flags))
-    remote_us = sum(1 for place, flag in zip(places, remote_flags)
-                    if (flag or REMOTE.search(place or "")) and not NOT_US.search(place or ""))
+    remote_mask = [(flag or bool(REMOTE.search(place or ""))) and not NOT_US.search(place or "")
+                   for place, flag in zip(places, remote_flags)]
+    remote_us = sum(remote_mask)
+    remote_us_eng = sum(1 for title, remote in zip(titles, remote_mask) if remote and ENG_TITLE.search(title or ""))
+    remote_titles = [title for title, remote in zip(titles, remote_mask) if remote][:8]
     words = [w for w in re.sub(r"[^a-z0-9 ]+", " ", name.lower()).split() if w not in STOP_WORDS]
     full = r"\s*".join(re.escape(w) for w in words) or re.escape(name.lower())
     mentions = len(re.findall(full, text, re.I))
@@ -314,6 +317,8 @@ def summarize(system: str, token: str, status: int | None, text: str, name: str)
         "open_roles": len(jobs),
         "engineering_titles": sum(bool(ENG_TITLE.search(title)) for title in titles),
         "remote_us_roles": remote_us,
+        "remote_us_engineering": remote_us_eng,
+        "remote_titles": remote_titles,
         "board_name": board_name,
         "link_hosts": sorted(h for h in link_hosts if h),
         "name_mentions": mentions,

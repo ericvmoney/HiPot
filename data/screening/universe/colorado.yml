@@ -240,6 +240,16 @@ sources:
   url: null
   note: used only where a fetched list did not name the company; includes energy-storage.news, CPR/KUNC, CBS Colorado,
     coloradobiz, assemblymag, coloradopolitics, metaltechnews, coloradobiz fusion week
+- id: owner-named-2026-11-24
+  name: Companies the owner named as missing from the Colorado list (2026-11-24)
+  url: null
+  note: L-Charge, OptiGrid, FlipTurn, Outrider and Gillig.
+- id: drive-clean-colorado
+  name: 'Drive Clean Colorado (the DOE Clean Cities coalition for Denver and Colorado): champions and members'
+  url: https://drivecleancolorado.org/about-us/our-members/
+- id: inven-co-ev
+  name: 'Inven: electric vehicle companies in Colorado (aggregator list)'
+  url: https://www.inven.ai/company-lists/top-19-electric-vehicle-companies-in-colorado
 companies:
 - name: 3 Rocks Engineering
   website: https://3rocksengineering.com
@@ -411,6 +421,17 @@ companies:
   reason: Named by a Colorado source, but the company could not be identified.
   ats: null
   open_roles: null
+- name: APC Automotive Technologies
+  website: https://apcautotech.com
+  hq: Littleton, CO
+  sources:
+  - inven-co-ev
+  registry_id: null
+  decision: not-in-scope
+  reason: Aftermarket underbody auto parts (brakes, chassis, exhaust); the list's EV description does not match
+    the company. CB Insights lists it as dead.
+  ats: null
+  open_roles: null
 - name: Aquarry
   website: null
   hq: Colorado
@@ -572,6 +593,7 @@ companies:
   sources:
   - coloradobiz-made
   - search-snippets
+  - inven-co-ev
   registry_id: null
   decision: closed
   reason: Ended production September 2014.
@@ -899,6 +921,16 @@ companies:
     type: adp
     token: e715f1d4-503d-480f-8910-9c8d566a74ed
   open_roles: null
+- name: Enertech
+  website: https://enertech.energy
+  hq: Colorado Front Range
+  sources:
+  - drive-clean-colorado
+  registry_id: null
+  decision: not-in-scope
+  reason: Installs, owns and operates other makers' (Autel) chargers at Colorado properties; not a product maker.
+  ats: null
+  open_roles: null
 - name: Entegrity Wind Systems
   website: https://entegritywind.com
   hq: Prince Edward Island, Canada
@@ -939,6 +971,17 @@ companies:
   registry_id: etuk-usa
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: EV Source
+  website: https://www.evsource.com
+  hq: Colorado (city not confirmed)
+  sources:
+  - inven-co-ev
+  registry_id: null
+  decision: closed
+  reason: Online seller of EV conversion parts, mostly others' components; its domain no longer resolves (last product
+    pages seen July 2025).
   ats: null
   open_roles: null
 - name: ExoPower
@@ -1041,6 +1084,20 @@ companies:
     type: rippling
     token: gevo-careers
   open_roles: 2
+- name: Gillig
+  website: https://www.gillig.com
+  hq: Livermore, CA (engineering centre in Loveland, CO)
+  sources:
+  - owner-named-2026-11-24
+  registry_id: gillig
+  decision: registry
+  reason: 'Runs the GILLIG Colorado Technology Center, a zero-emission powertrain engineering site in Loveland,
+    CO (opened 2024). Proposed in proposals-02-bay-area.yml (its headquarters): out, startup out (founded 1890;
+    owned by Henry Crown and Company).'
+  ats:
+    type: greenhouse
+    token: gillig
+  open_roles: 0
 - name: Gradient Geothermal
   website: https://www.gradientgeothermal.com
   hq: Denver, CO
@@ -1083,6 +1140,17 @@ companies:
   registry_id: green-steel-environmental
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GreenCore
+  website: https://greencore.global
+  hq: Englewood, CO
+  sources:
+  - inven-co-ev
+  registry_id: null
+  decision: closed
+  reason: Solar EV-charging plaza developer; its domain no longer resolves (2026-11-24) and no recent activity was
+    found.
   ats: null
   open_roles: null
 - name: GridVisibility
@@ -1294,6 +1362,7 @@ companies:
   sources:
   - siteselection-clean
   - search-snippets
+  - inven-co-ev
   registry_id: null
   decision: closed
   reason: Went into receivership; assets bought by Gillig.
@@ -1447,12 +1516,23 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
   ats: null
   open_roles: null
+- name: National Car Charging
+  website: https://www.nationalcarcharging.com
+  hq: Denver, CO
+  sources:
+  - drive-clean-colorado
+  registry_id: null
+  decision: not-in-scope
+  reason: Resells and installs other makers' chargers (ChargePoint, Kempower and others).
+  ats: null
+  open_roles: null
 - name: New Day Hydrogen
   website: https://newdayhydrogen.com/
   hq: Englewood, CO
   sources:
   - ccia-members
   - yellowscene-hydrogen
+  - drive-clean-colorado
   registry_id: new-day-hydrogen
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
@@ -1539,6 +1619,19 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
   ats: null
   open_roles: null
+- name: OptiGrid
+  website: https://www.optigridllc.com
+  hq: Kansas City, KS (engineering office in Longmont, CO)
+  sources:
+  - owner-named-2026-11-24
+  registry_id: optigrid
+  decision: registry
+  reason: 'Main engineering office in Longmont, CO (one of three sites). Proposed in proposals-03-colorado-additions.yml:
+    core, startup in.'
+  ats:
+    type: adp
+    token: 275f2b3c-c1d2-4535-aedc-2637a5e2d9c6
+  open_roles: null
 - name: OPX Biotechnologies
   website: null
   hq: Boulder, CO
@@ -1603,6 +1696,19 @@ companies:
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
   ats: null
+  open_roles: null
+- name: Outrider
+  website: https://www.outrider.ai
+  hq: Brighton, CO
+  sources:
+  - owner-named-2026-11-24
+  registry_id: outrider
+  decision: registry
+  reason: In the registry as tier out (autonomous vehicles); registry-fixes-04.yml lays out the A5 question for
+    the owner.
+  ats:
+    type: greenhouse
+    token: outrider
   open_roles: null
 - name: Outward Technologies
   website: https://outward.tech
@@ -1888,6 +1994,16 @@ companies:
   reason: Solar installer of others' products.
   ats: null
   open_roles: null
+- name: Sawatch Labs
+  website: https://www.sawatchlabs.com
+  hq: Denver, CO
+  sources:
+  - drive-clean-colorado
+  registry_id: null
+  decision: not-in-scope
+  reason: Fleet electrification analytics software.
+  ats: null
+  open_roles: null
 - name: Scoggins Enterprises
   website: null
   hq: Grand Junction, CO
@@ -2001,6 +2117,7 @@ companies:
   - cu-vp-battery
   - cu-mse-spinoffs
   - bs-co-ev
+  - inven-co-ev
   registry_id: solid-power
   decision: registry
   reason: null
@@ -2540,6 +2657,16 @@ excluded:
   - bev-vcbacked
   - builtin-co-greentech
   reason: Headquartered in Morrisville, NC; Boulder is a distributor's address. Also not clean-tech (health ingredients).
+- name: FlipTurn
+  sources:
+  - owner-named-2026-11-24
+  reason: EV-charging operations software, headquartered in New York with an Austin office; no Colorado site, and
+    no hardware. Being acquired by Einride (announced 2026-07-21).
+- name: L-Charge
+  sources:
+  - owner-named-2026-11-24
+  reason: Headquartered in Redwood City, CA, with manufacturing in Corona, CA; no Colorado site found. Added to
+    the Bay Area list.
 - name: Microvast
   sources:
   - climatepower-co
