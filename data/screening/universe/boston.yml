@@ -276,12 +276,12 @@ companies:
   open_roles: null
 - name: 360energy
   website: null
-  hq: null
+  hq: Worcester, MA
   sources:
   - wpi-startups
   registry_id: null
   decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  reason: WPI lists it with a tagline only; no product could be established.
   ats: null
   open_roles: null
 - name: 6K
@@ -387,9 +387,9 @@ companies:
   hq: Cambridge, MA
   sources:
   - masscec-pr-2-5m-18
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: adhesion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Adiabatic Materials
@@ -430,9 +430,9 @@ companies:
   hq: Somerville, MA
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: alkemy-environmental
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
   ats: null
   open_roles: null
 - name: Allium Engineering
@@ -569,9 +569,9 @@ companies:
   hq: Somerville, MA
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: arco-technologies-inc
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats:
     type: greenhouse
     token: arco
@@ -872,14 +872,14 @@ companies:
   open_roles: null
 - name: Copernic Catalysts
   website: https://coperniccatalysts.com
-  hq: Massachusetts
+  hq: Cambridge, MA
   sources:
   - engine-ventures
   - engine
   - arpa-e
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: copernic-catalysts
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: CubicPV
@@ -900,9 +900,9 @@ companies:
   hq: Cambridge, MA
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: czar-power
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Daqus Energy
@@ -1114,9 +1114,9 @@ companies:
   hq: Worcester, MA
   sources:
   - masscec-pr-4m
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: eski-jaccpro
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: EVOLOH
@@ -1323,9 +1323,9 @@ companies:
   hq: Somerville, MA
   sources:
   - masscec-pr-4-5m
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: gencores
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: GenH
@@ -1425,8 +1425,8 @@ companies:
   sources:
   - greentown
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Listed as out of business in a PitchBook search snippet (low confidence).
   ats: null
   open_roles: null
 - name: Hera Materials (Atacama Biomaterials)
@@ -1546,8 +1546,8 @@ companies:
   sources:
   - greentown
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Acquired by L3 Technologies in May 2017 and absorbed (now part of L3Harris).
   ats: null
   open_roles: null
 - name: Latimer Technologies
@@ -1566,8 +1566,9 @@ companies:
   sources:
   - greentown
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  decision: closed
+  reason: Dead website and no news since 2020 (inferred). Closure is inferred from a dead website and no news since
+    2020, not from a shutdown notice. The name changed from Leading Edge Crystal Technologies to Leading Edge Equipmen
   ats: null
   open_roles: null
 - name: LIFTE H2
@@ -1776,12 +1777,12 @@ companies:
   open_roles: null
 - name: Metal Fuels
   website: https://metal-fuels.com
-  hq: null
+  hq: Charlestown, MA
   sources:
   - masscec-catalyst
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: metal-fuels
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: MetalMark Innovations
@@ -1890,9 +1891,9 @@ companies:
   - masscec-pr-4m
   - mit-news-startups
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: optigon
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: enabling, startup in.'
   ats:
     type: rippling
     token: optigon
@@ -1948,9 +1949,9 @@ companies:
   - engine-ventures
   - engine
   - activate
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: pascal-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: PECOS Wind
@@ -1984,13 +1985,13 @@ companies:
   ats: null
   open_roles: null
 - name: Phoebus American Energy Systems
-  website: null
-  hq: null
+  website: https://phoebusamerican.us
+  hq: Worcester, MA
   sources:
   - wpi-startups
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: phoebus-american-energy-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Phoenix Tailings
@@ -2059,12 +2060,12 @@ companies:
   open_roles: null
 - name: Promethean Power Systems
   website: null
-  hq: Somerville, MA
+  hq: Boston, MA
   sources:
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: promethean-power-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
   ats:
     type: ashby
     token: promethean
@@ -2130,14 +2131,14 @@ companies:
   ats: null
   open_roles: null
 - name: REON Technology
-  website: null
+  website: https://reoncorp.com
   hq: Chelmsford, MA
   sources:
   - masscec-pr-tax-incentives
   - greentown
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: reon-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Resolute Methane
@@ -2404,13 +2405,13 @@ companies:
   ats: null
   open_roles: null
 - name: StepWise Electric
-  website: https://stepwise.squarespace.com
+  website: https://www.getstepwise.com
   hq: Somerville, MA
   sources:
   - masscec-pr-2-5m-18
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: stepwise-electric
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Sublime Systems
@@ -2436,13 +2437,13 @@ companies:
     token: SublimeSystems
   open_roles: 0
 - name: Suryatech EV Power
-  website: null
+  website: https://suryatechpower.com
   hq: Tyngsboro, MA
   sources:
   - masscec-pr-4m
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: suryatech-ev-power
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: SWERV
@@ -2712,13 +2713,13 @@ companies:
   ats: null
   open_roles: null
 - name: WoHo
-  website: null
+  website: https://www.woho.us
   hq: Cambridge, MA
   sources:
   - engine-ventures
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: woho
+  decision: registry
+  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Xilectric

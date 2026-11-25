@@ -251,6 +251,34 @@ companies:
     DOE E-ROBOT Prize Phase 1, MassCEC Catalyst award; no investors named. Flags: identity inferred from guessed
     domain; technology from Brown University (Derek Stein). Evidence: https://www.adeptmaterials.com/ Region sources:
     masscec-investments. Confidence: medium. Unresolved: Founded, headcount, funding.'
+- id: adhesion-technologies
+  name: Adhesion Technologies
+  website: null
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - recycling
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: VOC-free bio-based wood adhesive for plywood and particleboard made from corn-ethanol distillers grains
+      (DDGS).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded only: EPA SBIR Phase I (2023-12-01 to 2024-05-30)
+    and a $75,000 Massachusetts grant; no equity round found Flags: Legal entity Lab to Market Fund, LLC. No website
+    found; adhesiontechnologies.com is a parked redirect to /lander. Active status rests on the 2024 project end
+    date.. Evidence: E P A   N C Region sources: masscec-pr-2-5m-18. Confidence: low.'
 - id: adiabatic-materials
   name: Adiabatic Materials
   website: https://adiabatic.co
@@ -306,6 +334,39 @@ companies:
     masscec-t2m, masscec-pr-tax-incentives, masscec-pr-criticalmass-3-9m, mit-tlo-startups, mit-news-startups, builtin-boston-energy,
     massventures, activate, greentown, arpa-e. Confidence: medium. Unresolved: founded, headcount, funding; /about
     404; Dealroom and Built In slugs 404'
+- id: alkemy-environmental
+  name: Alkemy Environmental
+  website: https://alkemyenvironmental.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - buildings
+  stage: null
+  founded: 2008
+  headcount: null
+  climate:
+    tier: core
+    reason: Structural-grade lightweight concrete aggregate made from recycled industrial waste (including cement-plant
+      waste), for ready-mix, masonry and precast concrete.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://gccassociation.org/innovandi/openchallenge/alkemy-environmental/.
+    Stage: No funding round found in third-party sources checked. Flags: product is concrete aggregate, not ceramics
+    as the directory said. Evidence: https://gccassociation.org/innovandi/openchallenge/alkemy-environmental/ https://www.curbwaste.com/company-profiles-network/alkemy-environmental
+    https://i3connect.com/company/alkemy-environmental https://www.mass.gov/doc/2025-wrig-award-recipients/download
+    Region sources: greentown. Confidence: medium. Unresolved: Founded year conflicts: 2008 (GCCA page; CB Insights
+    and Crunchbase per search snippets), 2014 (i3connect per search snippet). Address 444 Somerville Ave, Somerville
+    comes from a search snippet only. A mass.gov 2025 WRIG award-recipient list showed up in a search for the company,
+    which may mean it was active in 2025, but the page returned 403 so it is unconfirmed. Headcount and funding
+    not found.'
 - id: allium-engineering
   name: Allium Engineering
   website: https://www.alliumeng.com
@@ -552,6 +613,41 @@ companies:
     (LOIs, with industrial buyers); nuclear fission. Evidence: https://apolloatomics.com https://dealroom.co/companies/apollo-atomics
     Region sources: yc. Confidence: medium. Unresolved: Seed amount differs ($31M table vs $26M description); site
     does not state HQ.'
+- id: arco-technologies-inc
+  name: Arco Technologies Inc
+  website: https://arco.tech
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: greenhouse
+    board: arco
+  read: auto
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proton exchange membrane (PEM) fuel cells and anion exchange membrane (AEM) electrolyzers, including
+      a hydrogen fuel cell module for large yachts.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board greenhouse:arco seen 2026-11-24, token matched by name; board page checked: 382 open roles. Stage:
+    No priced round found. A July 2023 press release covers a partnership with Shell GameChanger on a high-volume
+    AEM electrolyzer, but it does not say Arco received funding. A CB Insights search snippet gives the latest round
+    as ''Other Investors'' with no amount. Flags: HQ sources disagree (Somerville MA vs New York NY). Evidence:
+    https://www.prnewswire.com/news-releases/arco-technologies-inc-and-shell-gamechanger-join-forces-to-create-a-high-volume-hydrogen-aem-electrolyzer-301887061.html
+    https://prnewswire.com/news-releases/arco-technologies-inc-partners-with-baglietto-for-bzero-mega-yacht-hydrogen-power-system-301803347.html
+    https://www.cbinsights.com/company/arco-technologies Region sources: greentown. Confidence: medium. Unresolved:
+    The July 2023 PR Newswire release says Somerville, MA. A CB Insights search snippet gives a New York address
+    (48 Wall Street); the page itself returned 403. Founded year, headcount and funding not found. Newest evidence
+    is from 2023, so current status is unknown. The search results did not confirm that heavy-duty transport is
+    a main market; the products found are marine (yacht) and electrolyzer products.'
 - id: ascend-elements
   name: Ascend Elements
   website: https://ascendelements.com
@@ -987,6 +1083,32 @@ companies:
     https://agfundernews.com/?p=40585 Region sources: masstech-m2i2-10m. Confidence: medium. Unresolved: Own site
     refused automated client (403); founded year (one source says spun out 2023); headcount; HQ taken from Waltham
     pilot plant.'
+- id: copernic-catalysts
+  name: Copernic Catalysts
+  website: https://coperniccatalysts.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Neptune, a drop-in, computationally designed ammonia synthesis catalyst for existing and new plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2026.
+  notes: 'No board found: home page not readable (202). Stage: $8M Series Seed Prime led by Breakout Ventures, announced
+    2024-11-12 (BusinessWire); Fertilizer Institute profile says next round expected Q3 2026 Flags: Own domain returned
+    empty content (likely JS-rendered).. Evidence: h t t p s : Region sources: engine-ventures, engine, arpa-e.
+    Confidence: low.'
 - id: cubicpv
   name: CubicPV
   website: https://cubicpv.com
@@ -1019,6 +1141,36 @@ companies:
     Region sources: masscec-investments, masscec-pr-4-5m, bev, arpa-e. Confidence: medium. Unresolved: own site
     returned no readable content; founded 2021 per Dealroom, but the company is commonly described as the successor
     of 1366 Technologies (not verified here); current product focus after any pivot not verified'
+- id: czar-power
+  name: CZAR Power
+  website: https://czar-power.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular EV charging power electronics (a 20 kW per-module 'cassette' charger, model CZAR-20KW/750V-USA,
+      with 480 Vac input and OCPP/CAN communication).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found. Evidence: https://solarimpulse.com/companies_file/czar-power.com-2.pdf
+    Region sources: greentown. Confidence: low. Unresolved: The product spec comes only from a search snippet of
+    a Solar Impulse PDF (the file returned 403). The directory says Cambridge, MA, but no usable third-party source
+    confirms the HQ; the only other hits were Greentown pages, which were excluded. Founded year, headcount and
+    funding not found. Built In Boston returned 404.'
 - id: daqus-energy
   name: Daqus Energy
   website: null
@@ -1315,6 +1467,33 @@ companies:
     real domain eqore.com. Evidence: https://www.eqore.com/ https://www.builtinboston.com/company/eqore https://electrek.co/2025/11/20/eqore-bags-1-7m-to-bring-smart-storage-to-power-hungry-factories/
     Region sources: masscec-pr-4m, masscec-investments, builtin-boston-energy, builtin-boston-greentech, greentown.
     Confidence: medium. Unresolved: founded, headcount; Concord, MA (input) not confirmed'
+- id: eski-jaccpro
+  name: eSki (JaccPro)
+  website: null
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric personal watercraft for rental fleets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Founder said in June 2023 the company was trying to
+    raise money; $75,000 MassCEC Catalyst/DICES award announced 2024-07-30; no equity round found Flags: Trades
+    as eSki Watercraft; legal name JaccPro. No website found (eski.com is an unrelated ski site); only a Facebook
+    page. Latest evidence is July 2024, so current status is not confirmed. wpi.edu was not used after a 403 there;
+    mass.gov event page returned 403.. Evidence: M a s s C E Region sources: masscec-pr-4m. Confidence: low.'
 - id: evonatura
   name: EvoNatura
   website: https://evonatura.com
@@ -1548,6 +1727,33 @@ companies:
     Spun off from General Electric and began trading on NYSE (GEV) April 2, 2024 (https://en.wikipedia.org/wiki/GE_Vernova).
     Flags: over 1,000 employees; gas turbines are a major business line. Evidence: https://www.gevernova.com https://en.wikipedia.org/wiki/GE_Vernova
     Region sources: builtin-boston-energy, arpa-e, builtin-energy. Confidence: high.'
+- id: gencores
+  name: Gencores
+  website: https://gencores.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Industrial ultra-high-temperature non-metallic pipes; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found; site lists Breakthrough Energy,
+    ARPA-E, DOE, NSF, US Air Force and MIT as partners and links an open careers board (jobs.polymer.co/gencores-inc)
+    Flags: Product focus appears to have shifted from vehicle materials to high-temperature pipes. HQ not confirmed
+    on site. Job board returned 403, not retried.. Evidence: g e n c o r Region sources: masscec-pr-4-5m. Confidence:
+    low.'
 - id: genh
   name: GenH
   website: https://genh.co
@@ -2276,6 +2482,34 @@ companies:
     robotics and drone makers; defense share unclear; second site in Columbus, IN. Evidence: https://massmagnetics.com
     Region sources: greentown, yc. Confidence: medium. Unresolved: Founding, headcount, funding; whether defense
     is the main customer.'
+- id: metal-fuels
+  name: Metal Fuels
+  website: https://metal-fuels.com
+  careers_url: null
+  hq: Charlestown, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Energy from scrap aluminum: on-site green hydrogen, megawatt-scale zero-carbon power, battery storage,
+      EV charging and electric marine solutions.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Site
+    does not mention alumina or water atomisation; matched to the source on scrap-aluminium energy and the source-given
+    domain.. Evidence: m e t a l - Region sources: masscec-catalyst. Confidence: low.'
 - id: metalmark-innovations
   name: MetalMark Innovations
   website: null
@@ -2483,6 +2717,32 @@ companies:
     US (Africa). Evidence: https://offgridbox.com Region sources: builtin-boston-greentech, builtin-boston-energy,
     builtin-greentech, builtin-energy. Confidence: low. Unresolved: HQ (input guess Boston, MA), headcount, funding
     (Dealroom 404).'
+- id: optigon
+  name: Optigon
+  website: https://optigon.us
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: rippling
+    board: optigon
+  read: auto
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-speed automated characterization tools for perovskite and other solar materials.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board rippling:optigon seen 2026-11-24, linked from the company''s own site: 2 open roles. Stage: No funding
+    round found in fetched pages Evidence: o p t i g o Region sources: masscec-pr-4m, mit-news-startups, greentown.
+    Confidence: low.'
 - id: orien-energy
   name: Orien Energy
   website: https://orien.energy
@@ -2571,6 +2831,36 @@ companies:
     Evidence: https://dealroom.co/companies/osmoses Region sources: masscec-t2m, engine-ventures, mit-sloan-cleantech,
     mit-news-startups, massventures, engine, activate, greentown, halliburton-labs. Confidence: high. Unresolved:
     Own site not fetched.'
+- id: pascal-technologies
+  name: Pascal Technologies
+  website: https://www.pascaltech.co
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Heat pumps, air conditioners and refrigerators based on low-pressure solid barocaloric refrigerants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Search result summary of a GlobalSpec article reports
+    $8M raised by the Harvard spinout; round type and date not confirmed (GlobalSpec returned 403). Stage seed is
+    inferred. Flags: pascaltech.co now serves only a script redirect to /lander (a typical parked-domain pattern),
+    so the company may have moved domains; website kept as given but unverified. DOE project record suggests activity
+    in 2026. builtinboston /company/pascal is an unrelated Japanese firm. A follow-up web search. Evidence: W e
+    b   s e Region sources: masscec-pr-9-8m, masscec-pr-tax-incentives, engine-ventures, engine, activate. Confidence:
+    low.'
 - id: pecos-wind-power
   name: Pecos Wind Power
   website: https://pecoswindpower.com
@@ -2629,6 +2919,36 @@ companies:
     not shown; total disclosed $10-50M. https://dealroom.co/companies/phase-two-chemicals Flags: facilities in Hangzhou
     and Shaoxing, China. Evidence: https://phasetwochemicals.com https://dealroom.co/companies/phase-two-chemicals
     Region sources: greentown. Confidence: medium. Unresolved: Series A amount and date; headcount.'
+- id: phoebus-american-energy-systems
+  name: Phoebus American Energy Systems
+  website: https://phoebusamerican.us
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: pre-seed
+  founded: 2025
+  headcount:
+    value: 3
+    as_of: '2026-11-24'
+    source: wpi-startups; undated, so as_of is the day it was read (https://www.wpi.edu/about/ie/startups/phoebus-american-energy-systems-corp)
+  climate:
+    tier: core
+    reason: Metal-alloy sponge for solid-state hydrogen storage (mobility, metallurgy, agriculture).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 3 people (wpi-startups; undated, so as_of is the day it was read, 2026-11-24); founded 2025, funding
+      round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Only funding listed is $5,000 from the WPI i3Lab, dated
+    2025-06-27 Flags: Corporate name Phoebus American Energy Systems Corp.. Evidence: W P I   s t Region sources:
+    wpi-startups. Confidence: low.'
 - id: pixelframe
   name: Pixelframe
   website: null
@@ -2741,6 +3061,72 @@ companies:
     Corporation; site describes it as IoT and AI software; hardware share unclear. Evidence: https://powerhousedynamics.com
     https://dealroom.co/companies/powerhouse-dynamics Region sources: launchpad-venture-group. Confidence: high.
     Unresolved: Whether hardware or software is the main product.'
+- id: promethean-power-systems
+  name: Promethean Power Systems
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: ashby
+    board: promethean
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2007
+  headcount:
+    value: 33
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/promethean-power-systems)
+  climate:
+    tier: core
+    reason: 'Thermal energy storage (''thermal battery'', a phase-change material tank) refrigeration systems: bulk
+      milk coolers, rapid milk chillers, cold storage and refrigerated trucks that remove the need for backup diesel
+      generators.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 33 people (Built In Boston, 2026-11-24); founded 2007 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'Board ashby:promethean seen 2026-11-24, token matched by name; board page checked: 2 open roles, 2 US-remote.
+    Headcount note: Built In shows 33 total employees, undated (as_of is the retrieval date). A YourStory search
+    snippet gives a band of 41-60. Founded: https://www.builtinboston.com/company/promethean-power-systems. Stage:
+    No funding rounds found in the third-party sources checked. Flags: main market and operations in India (Pune).
+    Evidence: https://www.builtinboston.com/company/promethean-power-systems https://news.mit.edu/2015/promethean-power-india-milk-chillers-0908
+    https://www.technologyreview.com/2013/01/25/180312/novel-energy-storage-to-chill-milk-in-rural-india/ https://www.aiche.org/sites/default/files/cep/20150316.pdf
+    https://yourstory.com/companies/promethean-power-systems/amp Region sources: greentown. Confidence: medium.
+    Unresolved: HQ sources disagree: Built In and YourStory say Boston; AIChE (2015) says Somerville, MA; others
+    say Pune, India and Boston. Current activity was not confirmed (the newest dated coverage is 2015). Built In
+    gives the website as promethean-power.com (not fetched). Funding not found. YourStory returned 403.'
+- id: reon-technology
+  name: REON Technology
+  website: https://reoncorp.com
+  careers_url: null
+  hq: Chelmsford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery energy storage and microgrid systems with individual cell- and panel-level control to get more
+      usable energy and longer life.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Also
+    operates in Singapore per a search result. reontechnology.com is unrelated (redirects to a Dubai firm).. Evidence:
+    r e o n c o Region sources: masscec-pr-tax-incentives, greentown. Confidence: low.'
 - id: resolute-methane
   name: Resolute Methane
   website: https://resolutemethane.com
@@ -3125,6 +3511,34 @@ companies:
     https://govconinabox.com/explore/smb-federal-contractors/stec-technology-inc-EGAQFQQ8NFK1 Region sources: masscec-pr-2-5m-18.
     Confidence: low. Unresolved: Website, founded, headcount, funding, current status; New Bedford vs Bristol, RI
     HQ. Sources from search results only (not fetched).'
+- id: stepwise-electric
+  name: StepWise Electric
+  website: https://www.getstepwise.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Stepwise Tap, a load-management device between the panel and appliances that lets EV chargers and electric
+      appliances run without a panel upgrade.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Website
+    moved from stepwise.squarespace.com to getstepwise.com. HQ from source only; site gives a 508 phone number and
+    no address.. Evidence: s t e p w i Region sources: masscec-pr-2-5m-18. Confidence: low.'
 - id: sublime-systems
   name: Sublime Systems
   website: https://sublime-systems.com
@@ -3161,6 +3575,33 @@ companies:
     Region sources: masscec-pr-2-5m-18, engine-ventures, mit-news-startups, lc, eip, engine, azolla, activate, greentown,
     arpa-e, doe-oced. Confidence: high. Unresolved: Exact round letter of latest raise; plant site (own site says
     a kiloton-scale plant is being built, location not named on home page).'
+- id: suryatech-ev-power
+  name: Suryatech EV Power
+  website: https://suryatechpower.com
+  careers_url: null
+  hq: Tyngsboro, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Compact solar-powered smart EV charger with integrated battery storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Only funding found is a $91,000 MassCEC InnovateMass
+    award (press release 2024-07-30) to test its hybrid solar EV charger and battery; no equity round found Flags:
+    Site trades as Suryatech Power; site assets dated 2024, no address on the page.. Evidence: M a s s C E Region
+    sources: masscec-pr-4m. Confidence: low.'
 - id: swerv
   name: SWERV
   website: https://swervair.com
@@ -3602,6 +4043,33 @@ companies:
     https://www.axios.com/pro/climate-deals/2022/08/09/ev-charging-startup-witricity-raises-63m-siemens Region sources:
     mit-sloan-cleantech, builtin-energy. Confidence: low. Unresolved: Whether WiTricity was sold or restructured
     into WiTricity AI Tech LLC (Florida) and when.'
+- id: woho
+  name: WoHo
+  website: https://www.woho.us
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular building systems of configurable components for low-to-high-rise residential and commercial
+      construction.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Stage: $4.5M seed led by The Engine, announced 2020-10-22 (BusinessWire);
+    no later round found Flags: Activity is thinly evidenced: site footer is 2022 and no news of progress after
+    2020 funding apart from a 2025 interview listing. Legal name WoHo Systems, Inc. woho.com is an unrelated for-sale
+    domain.. Evidence: E n g i n e Region sources: engine-ventures. Confidence: low.'
 - id: yard-stick
   name: Yard Stick
   website: https://www.yardstick.live
