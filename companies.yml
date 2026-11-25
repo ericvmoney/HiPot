@@ -639,7 +639,7 @@ companies:
 - id: ampt
   name: Ampt
   website: https://www.ampt.com
-  careers_url: null
+  careers_url: https://www.ampt.com/careers/
   hq: Fort Collins, CO
   ats:
     type: unknown
@@ -1264,7 +1264,7 @@ companies:
 - id: big-blue-technologies
   name: Big Blue Technologies
   website: https://bigbluetech.com
-  careers_url: null
+  careers_url: https://bigbluetech.com/careers/
   hq: Cheyenne, WY
   ats:
     type: unknown
@@ -1428,7 +1428,7 @@ companies:
 - id: blue-mountain-operations
   name: Blue Mountain Operations
   website: https://www.bluemountainops.com/
-  careers_url: null
+  careers_url: https://www.bluemountainops.com/careers
   hq: null
   ats:
     type: unknown
@@ -2522,7 +2522,7 @@ companies:
 - id: egauge-systems
   name: eGauge Systems
   website: https://www.egauge.net
-  careers_url: null
+  careers_url: https://www.egauge.net/company/careers/
   hq: Boulder, CO
   ats:
     type: unknown
@@ -3830,7 +3830,7 @@ companies:
 - id: gradient-geothermal
   name: Gradient Geothermal
   website: https://www.gradientgeothermal.com
-  careers_url: null
+  careers_url: https://www.gradientgeothermal.com/
   hq: Denver, CO
   ats:
     type: unknown
@@ -3967,7 +3967,7 @@ companies:
 - id: gridvisibility
   name: GridVisibility
   website: https://gridvisibility.com
-  careers_url: null
+  careers_url: https://www.gridvisibility.com/careers/
   hq: Longmont, CO
   ats:
     type: unknown
@@ -4824,7 +4824,7 @@ companies:
 - id: ion-clean-energy
   name: ION Clean Energy
   website: https://ioncleanenergy.com
-  careers_url: null
+  careers_url: https://www.ioncleanenergy.com/careers
   hq: Boulder, CO
   ats:
     type: unknown
@@ -4855,7 +4855,7 @@ companies:
 - id: iontra
   name: Iontra
   website: https://iontra.com
-  careers_url: null
+  careers_url: https://iontra.com/careers/
   hq: Centennial, CO
   ats:
     type: unknown
@@ -5041,7 +5041,7 @@ companies:
 - id: koloma
   name: Koloma
   website: https://koloma.com
-  careers_url: null
+  careers_url: https://www.koloma.com/resources/careers/
   hq: Denver, CO
   ats:
     type: unknown
@@ -5073,12 +5073,12 @@ companies:
 - id: kratos-industries
   name: Kratos Industries
   website: https://kratosind.com
-  careers_url: null
+  careers_url: https://kratosind.com/kratos-culture/
   hq: Arvada / Golden, CO
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: dfb968b7-8b94-4cef-bc3c-25cf9c292997
+  read: auto
   sectors:
   - grid
   stage: subsidiary
@@ -5095,7 +5095,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Site says ''a brand of Legrand'' and links to Legrand
     acquisition announcement (https://www.kratosind.com) Flags: subsidiary of Legrand; data centers listed first
     among markets (may be main customers). Evidence: https://www.kratosind.com Region sources: inven-co-powerelec.
-    Confidence: medium. Unresolved: Acquisition date, founding year, headcount.'
+    Confidence: medium. Unresolved: Acquisition date, founding year, headcount. Job board found by the collector''s
+    careers-page probe (data/screening/careers-probe-*.yml).'
 - id: last-energy
   name: Last Energy
   website: https://lastenergy.com
@@ -6958,7 +6959,7 @@ companies:
 - id: prometheus-materials
   name: Prometheus Materials
   website: https://prometheusmaterials.com
-  careers_url: null
+  careers_url: https://prometheusmaterials.com/careers/
   hq: Longmont, CO
   ats:
     type: unknown
@@ -7692,7 +7693,7 @@ companies:
 - id: rindev
   name: RINDEV
   website: https://rindev.com
-  careers_url: null
+  careers_url: https://rindev.com/jobs/
   hq: Colorado
   ats:
     type: unknown
@@ -8219,7 +8220,7 @@ companies:
 - id: sionic-energy
   name: Sionic Energy
   website: https://sionicenergy.com
-  careers_url: null
+  careers_url: https://sionicenergy.com/about/careers
   hq: Boulder, CO
   ats:
     type: unknown
@@ -8529,7 +8530,7 @@ companies:
 - id: sphere-renewables
   name: Sphere Renewables
   website: https://sphere-renewables.com
-  careers_url: null
+  careers_url: https://www.sphere-renewables.com/careers
   hq: Commerce City, CO
   ats:
     type: unknown
@@ -8716,7 +8717,7 @@ companies:
 - id: steelhead-composites
   name: Steelhead Composites
   website: https://steelheadcomposites.com
-  careers_url: null
+  careers_url: https://steelheadcomposites.com/careers
   hq: Golden, CO
   ats:
     type: unknown
@@ -9877,7 +9878,7 @@ companies:
 - id: veolia-nuclear-solutions
   name: Veolia Nuclear Solutions
   website: https://nuclearsolutions.veolia.com
-  careers_url: null
+  careers_url: https://www.nuclearsolutions.veolia.com/en/careers
   hq: Lafayette, CO
   ats:
     type: unknown

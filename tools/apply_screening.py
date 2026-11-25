@@ -5,6 +5,7 @@ Inputs
   data/screening/seed-review.yml         the scout's checks of the seed companies
   data/screening/proposals-*.yml         the scout's new companies, every file
   data/screening/registry-fixes-*.yml    facts the registry lacks (filled, never overwritten)
+  data/screening/careers-probe-*.yml     careers addresses and job boards found by the collector
   OWNER_RULINGS below                    the owner's answers to decisions-needed.md
 
 Outputs
@@ -32,6 +33,7 @@ REVIEW = ROOT / "data" / "screening" / "seed-review.yml"
 SCREENING = ROOT / "data" / "screening"
 PROPOSAL_FILES = "proposals-*.yml"        # proposals-01.yml, proposals-02-colorado.yml, ...
 FIX_FILES = "registry-fixes-*.yml"        # facts for companies already in the registry
+PROBE_FILES = "careers-probe-*.yml"       # the collector's careers-page probes
 LOG = SCREENING / "applied-latest.md"     # applied-01.md keeps the first run's log
 HEADCOUNT_LINE, BORDERLINE = 4000, 5000   # agreed 2026-11-24: 4,000 people, about 25 percent tolerance
 VENTURE_STAGES = {"pre-seed", "seed", "series-a", "series-b", "series-c", "late"}
@@ -242,6 +244,20 @@ def startup_test(company: dict) -> tuple[str, str]:
     return "out", f"{owner.capitalize()}; {size}; founded {founded}, with no equity raise in 5 years or recent listing found."
 
 
+def apply_probe(company: dict, entry: dict) -> None:
+    """A careers-page probe result: fill the careers address, and take a job
+    board it found when the registry has none (ats type 'unknown')."""
+    if entry.get("careers_url") and not company.get("careers_url"):
+        company["careers_url"] = entry["careers_url"]
+    boards = [b for b in (entry.get("ats") or []) if b.get("readable") and b.get("type") and b.get("board")]
+    if entry.get("outcome") == "ats-found" and boards and company["ats"]["type"] == "unknown":
+        company["ats"] = {"type": boards[0]["type"], "board": boards[0]["board"]}
+        company["read"] = "auto"
+        note = "Job board found by the collector's careers-page probe (data/screening/careers-probe-*.yml)."
+        if note not in (company.get("notes") or ""):
+            company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
 def apply_ruling(company: dict, ruling: dict) -> None:
     if "tier" in ruling:
         company["climate"]["tier"] = ruling["tier"]
@@ -292,6 +308,11 @@ def main() -> int:
     for fix in fixes:
         if fix["id"] in companies:
             fill_missing(companies[fix["id"]], fix)
+
+    probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
+    for entry in probes:
+        if entry.get("company_id") in companies:
+            apply_probe(companies[entry["company_id"]], entry)
 
     # The agreed startup definition, for every company that has been looked at.
     # An owner ruling that names a company (OWNER_RULINGS) still wins, below.

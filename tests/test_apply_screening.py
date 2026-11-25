@@ -89,3 +89,21 @@ def test_share_sales_by_public_companies_are_not_growth_funding():
 def test_founded_fifteen_years_ago_still_counts():
     assert startup_test(company(founded=2011, stage="public"))[0] == "in"
     assert startup_test(company(founded=2010, stage="public"))[0] == "out"
+
+
+from tools.apply_screening import apply_probe  # noqa: E402
+
+
+def test_probe_fills_careers_page_and_unknown_board_only():
+    found = {"company_id": "x", "careers_url": "https://example.com/careers", "outcome": "ats-found",
+             "ats": [{"type": "paylocity", "board": "abc", "readable": True}]}
+    unknown = {"id": "x", "careers_url": None, "ats": {"type": "unknown", "board": None}, "read": "manual", "notes": None}
+    apply_probe(unknown, found)
+    assert unknown["ats"] == {"type": "paylocity", "board": "abc"} and unknown["read"] == "auto"
+    assert unknown["careers_url"] == "https://example.com/careers"
+    again = copy.deepcopy(unknown)
+    apply_probe(again, found)
+    assert again == unknown
+    known = {"id": "x", "careers_url": None, "ats": {"type": "greenhouse", "board": "x"}, "read": "auto", "notes": None}
+    apply_probe(known, found)
+    assert known["ats"] == {"type": "greenhouse", "board": "x"}       # a known board is never replaced
