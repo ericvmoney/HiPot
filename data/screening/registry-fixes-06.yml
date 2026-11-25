@@ -1,0 +1,39 @@
+# Registry fixes 06: job-board corrections the owner asked for (2026-11-25).
+#
+# Written by workstream A2. Each entry gives the board the registry should hold, with how it was checked.
+# Checked by one request each, with a generic client name.
+
+fixes:
+- id: fluence-energy
+  name: Fluence Energy
+  ats: {type: workday, board: "fluenceenergy.wd12/fluenceenergy-jobs"}
+  read: manual
+  careers_url: https://fluenceenergy.wd12.myworkdayjobs.com/en-US/fluenceenergy-jobs
+  source: >-
+    The Careers link on fluenceenergy.com points to
+    https://fluenceenergy.wd12.myworkdayjobs.com/en-US/fluenceenergy-jobs (seen by the scout's careers-page
+    probe, 2026-11-24); that page answered 200 on 2026-11-25. Tenant 'fluenceenergy', data centre wd12, site
+    'fluenceenergy-jobs'.
+  note: Set read to auto once the collector's Workday reader is on.
+- id: amber-kinetics
+  name: Amber Kinetics
+  ats: {type: unknown, board: null}
+  read: none
+  careers_url: https://amberkinetics.com/careers/
+  source: >-
+    Its careers page (https://amberkinetics.com/careers/) still links to BambooHR (amberkinetics.bamboohr.com),
+    but that address now redirects to BambooHR's own home page, so the board is retired. Its site links to no
+    other job-board system (only LinkedIn). Checked 2026-11-25.
+  note: No active public job board found.
+- id: kiverdi
+  name: Kiverdi
+  ats: {type: unknown, board: null}
+  read: none
+  careers_url: null
+  source: >-
+    Its home page (https://www.kiverdi.com/) still links to BambooHR (kiverdi.bamboohr.com), but that address
+    now redirects to BambooHR's own home page, so the board is retired. No other job-board link was found.
+    Checked 2026-11-25.
+  note: >-
+    No active public job board found. Its site's footer shows 2019 and its news is undated, so the company's
+    activity is itself uncertain (raised in the Bay Area identity pass).

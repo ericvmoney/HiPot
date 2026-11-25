@@ -341,7 +341,8 @@ def probe(fetcher: Fetcher, system: str, token: str, name: str) -> dict:
                 try:
                     out["open_roles"] = count(json.loads(text))
                 except (ValueError, AttributeError, TypeError):
-                    out["error"] = "not JSON"
+                    # A retired board answers 200 with an HTML page (BambooHR redirects to its own home page).
+                    out["status"], out["error"] = "not-a-feed", "not JSON: board retired or moved"
         else:
             out["status"] = "no-feed"  # token from the company's own careers link; roles not counted
         return out
