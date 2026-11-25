@@ -10,7 +10,7 @@ from pipeline.io import ROOT
 from pipeline.publish import BOARD_VERSION
 
 PAGE = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
-SCRIPT = PAGE[PAGE.index("<script>"):PAGE.index("</script>")]
+SCRIPT = PAGE[PAGE.index("<script>"):PAGE.index("</script>", PAGE.index("<script>"))]   # the page script, after the ranking block
 STYLE = PAGE[PAGE.index("<style>"):PAGE.index("</style>")]
 
 
@@ -22,9 +22,14 @@ GOOGLE_FONTS = ("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;5
                 "&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap")
 
 
-def test_page_loads_nothing_from_another_origin_except_its_fonts():
-    # No external scripts, images or frames: script and styles are inline.
-    assert PAGE.count("<script") == 1 and "<script src" not in PAGE
+YAML_LIB = "https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"
+
+
+def test_page_loads_nothing_from_another_origin_except_its_fonts_and_the_yaml_reader():
+    # No external scripts, images or frames: the page's scripts and styles are inline. The one exception
+    # is js-yaml, pinned on cdnjs and loaded only when a visitor opens a persona file.
+    assert PAGE.count("<script") == 2 and '<script id="hipot-rank">' in PAGE and "<script src" not in PAGE
+    assert f"var YAML_LIB = '{YAML_LIB}';" in SCRIPT and "tag.src = YAML_LIB;" in SCRIPT
     for needle in ("<img", "<iframe", "<object", "<embed", "@import", "url("):
         assert needle not in PAGE, needle
     # The one stylesheet is Google Fonts, the only stylesheet host artifact hosting allows.
@@ -36,7 +41,7 @@ def test_page_loads_nothing_from_another_origin_except_its_fonts():
     ]
     # Apart from those, no address is written in the source; role links come from the data.
     addresses = re.findall(r"""["'](?:https?:)?//[^"']+["']""", PAGE)
-    assert sorted(addresses) == sorted(['"https://fonts.googleapis.com"', '"https://fonts.gstatic.com"', f'"{GOOGLE_FONTS}"'])
+    assert sorted(addresses) == sorted(['"https://fonts.googleapis.com"', '"https://fonts.gstatic.com"', f'"{GOOGLE_FONTS}"', f"'{YAML_LIB}'"])
     # Every font has a system fallback.
     assert '--sans: "Inter Tight", system-ui,' in STYLE and '--mono: "JetBrains Mono", ui-monospace,' in STYLE
 
@@ -47,7 +52,8 @@ def test_data_is_fetched_once_by_a_relative_address():
 
 
 def test_no_cookies_storage_tracking_or_other_network_calls():
-    for needle in ("document.cookie", "localStorage", "sessionStorage", "indexedDB", "sendBeacon",
+    # sessionStorage holds the persona for the tab only; test_ranking.py checks how it is used.
+    for needle in ("document.cookie", "localStorage", "indexedDB", "sendBeacon",
                    "XMLHttpRequest", "WebSocket", "EventSource", "navigator.userAgent", "gtag", "analytics"):
         assert needle not in PAGE, needle
 
@@ -86,10 +92,12 @@ def test_side_gutter_and_its_promise_go_together():
     assert "padding-left: var(--gutter-l);" in STYLE and "padding-right: var(--gutter-r);" in STYLE
 
 
-def test_persona_hook_exists_and_no_persona_interface_is_built():
+def test_persona_hook_ranks_and_the_board_never_reads_a_resume():
     assert "function rankRolesForPersona(rolesInOrder, candidatePersona)" in SCRIPT
     assert "rankRolesForPersona(sortRoles(outcome.matched), persona)" in SCRIPT
-    assert 'type="file"' not in PAGE and "resume" not in PAGE.lower()
+    # The one file input takes a persona; resumes are read only on the persona page.
+    assert PAGE.count('type="file"') == 1 and 'id="persona-file"' in PAGE
+    assert 'accept=".yml,.yaml,.txt,.json,' in PAGE and ".pdf" not in PAGE and ".docx" not in PAGE
 
 
 def test_role_type_is_the_first_filter_and_every_role_shows_its_function():
