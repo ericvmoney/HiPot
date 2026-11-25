@@ -8,6 +8,7 @@
   "required": ["registry_version", "companies"],
   "properties": {
     "registry_version": {"const": 0},
+    "status": {"enum": ["draft", "final"], "description": "Proposal files only: 'draft' while the scout is still working on it; tools/apply_screening.py skips drafts."},
     "companies": {"type": "array", "items": {"$ref": "company.schema.json"}}
   }
 }
