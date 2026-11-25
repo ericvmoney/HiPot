@@ -64,7 +64,9 @@ ATS_PATTERNS = [
     ("lever", r"jobs\.(?:eu\.)?lever\.co/([A-Za-z0-9_.\-]+)"),
     ("ashby", r"jobs\.ashbyhq\.com/([A-Za-z0-9_.%\-]+)"),
     ("rippling", r"ats\.rippling\.com/(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_\-]+)"),
-    ("workable", r"apply\.workable\.com/([A-Za-z0-9_\-]+)"),
+    # apply.workable.com/j/<code> is a short posting link that names no account.
+    ("workable", r"apply\.workable\.com/(?!j/)([A-Za-z0-9_\-]+)"),
+    ("workable", r"apply\.workable\.com/j/"),
     ("workable", r"//([A-Za-z0-9\-]+)\.workable\.com"),
     ("bamboohr", r"//([A-Za-z0-9\-]+)\.bamboohr\.com"),
     ("smartrecruiters", r"(?:jobs|careers)\.smartrecruiters\.com/([A-Za-z0-9_\-]+)"),
@@ -256,9 +258,11 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
     if _NONE_OPEN.search(text):
         return {"outcome": "none-open", "method": "notice", "postings": 0,
                 "note": _NONE_OPEN.search(text).group(0)[:80]}
-    if len(text) < 600 and _JS_APP.search(page):
+    if len(text) < 600:
+        # Almost no text and nothing to read: built by JavaScript, or empty.
         return {"outcome": "unreadable", "method": "javascript", "postings": 0,
-                "note": "page text is built by JavaScript"}
+                "note": "page text is built by JavaScript" if _JS_APP.search(page)
+                else f"careers page has almost no text ({len(text)} characters); built by JavaScript or empty"}
     return {"outcome": "unclear", "method": None, "postings": 0,
             "note": f"careers page read ({len(text)} characters of text); no postings, links or notice found"}
 

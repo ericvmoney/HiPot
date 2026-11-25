@@ -236,3 +236,13 @@ def test_established_companies_are_probed_with_the_flag():
     established = {**company("b", "unknown", None, status="out"), "website": "https://b.example.com"}
     assert probe_module.companies_to_probe([established]) == []
     assert probe_module.companies_to_probe([established], established=True) == [established]
+
+
+def test_workable_short_links_name_the_system_without_a_token():
+    found = ats_links('<a href="https://apply.workable.com/j/1A2B3C4D5E">Apply</a>')
+    assert found == [{"type": "workable", "board": None, "readable": True}]
+
+
+def test_a_careers_page_with_almost_no_text_is_unreadable():
+    result = classify_careers_page("<html><body><div>Careers</div></body></html>", "https://acme.example.com/careers", "example.com")
+    assert result["outcome"] == "unreadable" and "almost no text" in result["note"]
