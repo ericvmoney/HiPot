@@ -1,0 +1,285 @@
+# Proposals 02 (the San Francisco Bay Area): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+companies:
+- id: ayr-energy
+  name: Ayr Energy
+  website: https://ayr.energy
+  careers_url: null
+  hq: Mountain View, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Sells power grid equipment: power and medium-voltage transformers, special-purpose transformers, high-voltage
+      circuit breakers and medium-voltage switchgear.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: markets listed
+    include data centers and oil and gas, alongside renewables, utilities and industrial (not stated as main); unclear
+    whether it manufactures or sources equipment. Evidence: https://ayr.energy Region sources: eip. Confidence:
+    low. Unresolved: Founded year, headcount, funding, and whether it makes the equipment itself or resells/sources
+    it. Dealroom and Built In SF profiles not found (404).'
+- id: conifer
+  name: Conifer
+  website: https://conifer.io
+  careers_url: null
+  hq: Sunnyvale, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 58
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/conifer)
+  climate:
+    tier: enabling
+    reason: Low-cost electric motors and in-wheel powertrains made without rare-earth magnets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 58 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 58, undated (band under 100); own
+    site says 30+ engineers and industry experts. Founded: https://dealroom.co/companies/conifer. Stage: Seed, $20M,
+    April 2025 (True Ventures, MaC Venture Capital, Voyager, SVB) per Dealroom; own site says $20M total funding:
+    https://dealroom.co/companies/conifer Flags: sources disagree on HQ: own site Sunnyvale, Dealroom Houston; data
+    centers one of three target markets. Evidence: https://conifer.io https://dealroom.co/companies/conifer Region
+    sources: voyager. Confidence: medium. Unresolved: Exact HQ (Sunnyvale vs Houston); dated headcount.'
+- id: electroflow
+  name: Electroflow
+  website: https://eflowtech.com
+  careers_url: null
+  hq: San Bruno, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2023
+  headcount:
+    value: 8
+    as_of: '2026-11-24'
+    source: Built In SF; undated, so as_of is the day it was read (https://www.builtinsf.com/company/electroflow-technologies)
+  climate:
+    tier: core
+    reason: Electrochemical process that turns brines into battery materials; sells lithium iron phosphate (LFP)
+      cathode material.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 8 people (Built In SF; undated, so as_of is the day it was read, 2026-11-24); founded 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Built In, undated. Founded: https://www.builtinsf.com/company/electroflow-technologies.
+    Stage: No funding information found. Evidence: https://eflowtech.com https://www.builtinsf.com/company/electroflow-technologies
+    Region sources: voyager, halliburton-labs. Confidence: medium. Unresolved: HQ city not stated (Built In lists
+    United States, San Francisco office; input guess San Bruno); funding stage.'
+- id: expand-power-technologies
+  name: Expand Power Technologies
+  website: https://expand.tech
+  careers_url: null
+  hq: Berkeley, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - components
+  stage: null
+  founded: null
+  headcount:
+    value: 1
+    as_of: '2026-11-24'
+    source: Climatebase; undated, so as_of is the day it was read (https://climatebase.org/job/74501553/founding-electrical-engineer)
+  climate:
+    tier: core
+    reason: PowerGuard, a compact solid-state transformer using wide-bandgap semiconductors and modular power electronics.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (Climatebase; undated, so as_of is the day it was read, 2026-11-24); founding year and funding
+      not found, so included as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Climatebase band 1-5, undated (seen via search
+    snippet); hiring founding engineers. Stage: No funding information found; Activate fellow company (founder and
+    CEO Carla Pinzon). Evidence: https://expand.tech https://www.activate.org/expand-power-technologies https://climatebase.org/job/74501553/founding-electrical-engineer
+    Region sources: activate, cyclotron-road. Confidence: medium. Unresolved: Founded year and funding. Own site
+    returned almost no text. Berkeley location is from a job posting seen in a search snippet.'
+- id: ohmium-international
+  name: Ohmium International
+  website: https://ohmium.com
+  careers_url: null
+  hq: Newark, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: series-c
+  founded: 2019
+  headcount:
+    value: 551
+    as_of: '2026-11-24'
+    source: Built In SF; undated, so as_of is the day it was read (https://www.builtinsf.com/company/ohmium)
+  climate:
+    tier: core
+    reason: Modular PEM electrolyzers (Lotus Mark 3) for green hydrogen, plus EPC services.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 551 people (Built In SF; undated, so as_of is the day it was read, 2026-11-24); founded 2019, funding
+      round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Built In 551, undated; Dealroom 555, undated,
+    band 500-1k, about 88% of staff in India. Founded: https://dealroom.co/companies/ohmium. Stage: Series C $250M,
+    April 2023, at a reported $1B valuation (Fenice, Hanover, Energy Transition Ventures, TPG Rise); later ''Other
+    financing'' July 2024 with 3M as investor (amount not shown): https://dealroom.co/companies/ohmium Flags: most
+    staff in India (about 88% per Dealroom). Evidence: https://ohmium.com https://dealroom.co/companies/ohmium https://www.builtinsf.com/company/ohmium
+    Region sources: greentown, builtin-energy. Confidence: high. Unresolved: Dated headcount; main manufacturing
+    location not checked.'
+- id: perawatt-energy
+  name: PeraWatt Energy
+  website: https://perawatt.com
+  careers_url: null
+  hq: Berkeley, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Critical-mineral-free soft magnetic cores for inductors, transformers and motor stators.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site lists grant and accelerator backers (NSF, DOE,
+    CalOSBA, Alchemist Accelerator, Cyclotron Road, Activate and others); no round or amount stated. Flags: data
+    centers listed as one application area, alongside electric transportation and motors (not stated as main). Evidence:
+    https://perawatt.com Region sources: activate, cyclotron-road. Confidence: low. Unresolved: HQ city (input guess
+    Berkeley; not stated on site), founded year, headcount, funding rounds. Dealroom profile 404.'
+- id: powernap-energy
+  name: PowerNaP Energy
+  website: https://powernapenergy.com
+  careers_url: null
+  hq: San Leandro, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Sodium-phosphorus (non-lithium) batteries aiming for LFP-level energy density at sodium-ion cost.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site names CEO Giselle Cheung and CTO Ben Rupert
+    plus three advisors. Stage: Breakthrough Energy Explorers program support from 2024 (grant); no venture round
+    found: https://powernapenergy.com/about Flags: early stage; site has placeholder text. Evidence: https://powernapenergy.com
+    https://powernapenergy.com/about Region sources: cri. Confidence: medium. Unresolved: Founded year (site timeline
+    starts 2024), headcount, venture funding. Dealroom profile 404.'
+- id: proof-energy
+  name: Proof Energy
+  website: https://proof-energy.com
+  careers_url: null
+  hq: Fremont, CA
+  ats:
+    type: greenhouse
+    board: proof
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Zero-emission catalytic cabin heater for battery-electric vehicles, plus metallic-oxide fuel cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board greenhouse:proof seen 2026-11-24, token matched by name; board page checked: 124 open roles, 5 US-remote.
+    Stage: Investors or partners named include Halliburton Labs, Plug and Play and BlueLaunch (search snippets);
+    no round found. Flags: sources disagree on founding year (2018, 2019, 2020) and HQ (Fremont vs San Francisco);
+    Halliburton Labs (oil-field services accelerator) is a partner. Evidence: https://proof-energy.com https://www.hydrogenfuelnews.com/insights/org/proof-energy/
+    https://www.cbinsights.com/company/proof-energy (403; seen in search snippet) Region sources: halliburton-labs.
+    Confidence: medium. Unresolved: Founded year (sources disagree), headcount, funding stage. Own /about page 404;
+    CB Insights refused automated fetch.'
+- id: radify-metals
+  name: Radify Metals
+  website: https://radifymetals.com
+  careers_url: null
+  hq: Campbell, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount:
+    value: 5
+    as_of: '2026-04-09'
+    source: TechCrunch (https://techcrunch.com/2026/04/09/radifys-sci-fi-plasma-reactors-could-break-chinas-dominance-of-rare-earth-elements/)
+  climate:
+    tier: core
+    reason: Modular hydrogen cold-plasma reactors that reduce metal oxides such as rare earths without carbon.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 5 people (TechCrunch, 2026-04-09); founding year and funding not found, so included as a missing figure
+      (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Five-person team per TechCrunch. Stage: Just
+    under $3M from Overture, Founders Inc., Mana Ventures and Acequia Capital (round not named), TechCrunch 2026-04-09:
+    https://techcrunch.com/2026/04/09/radifys-sci-fi-plasma-reactors-could-break-chinas-dominance-of-rare-earth-elements/
+    Flags: lab is in Campbell, CA (input guess said Berkeley). Evidence: https://radifymetals.com https://techcrunch.com/2026/04/09/radifys-sci-fi-plasma-reactors-could-break-chinas-dominance-of-rare-earth-elements/
+    Region sources: activate, cyclotron-road. Confidence: medium. Unresolved: Founded year; round name (likely pre-seed
+    or seed, but not stated).'
