@@ -14,7 +14,7 @@
     "counts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["roles", "companies", "roles_left_out", "left_out_company", "left_out_function", "companies_provisional", "companies_by_type", "roles_by_type", "functions"],
+      "required": ["roles", "companies", "roles_left_out", "left_out_company", "left_out_function", "companies_provisional", "new", "new_since", "companies_by_type", "roles_by_type", "functions"],
       "properties": {
         "roles": {"type": "integer", "minimum": 0},
         "companies": {"type": "integer", "minimum": 0},
@@ -22,6 +22,8 @@
         "left_out_company": {"type": "integer", "minimum": 0, "description": "Roles left out because their company is not listed."},
         "left_out_function": {"type": "integer", "minimum": 0, "description": "Roles at listed companies left out because their function is not listed."},
         "companies_provisional": {"type": "integer", "minimum": 0, "description": "Companies in this file whose climate tier is not yet approved."},
+        "new": {"type": "integer", "minimum": 0, "description": "Roles first seen in the last 3 business days (pipeline/publish/fresh.py)."},
+        "new_since": {"type": "string", "format": "date", "description": "The earliest first_seen date (Mountain time) that counts as new."},
         "companies_by_type": {"type": "object", "additionalProperties": false, "required": ["startup", "established", "unchecked"],
                               "properties": {"startup": {"type": "integer", "minimum": 0}, "established": {"type": "integer", "minimum": 0}, "unchecked": {"type": "integer", "minimum": 0}}},
         "roles_by_type": {"type": "object", "additionalProperties": false, "required": ["startup", "established", "unchecked"],
@@ -112,6 +114,7 @@
           "posted": {"type": "string", "format": "date"},
           "seen": {"type": "string", "format": "date", "description": "The day the role was first seen."},
           "summary": {"type": "string", "minLength": 1, "maxLength": 500},
+          "new": {"const": true, "description": "Present when the role was first seen in the last 3 business days."},
           "grade": {
             "description": "This role's published midpoint against comparable published ranges: same role group and level (the role's own, or 'none') and pay period, in market m. Not a salary estimate.",
             "type": "object",

@@ -113,3 +113,8 @@ A candidate turns a resume (PDF, Word or text, or pasted) into `persona.yml` in 
 
 ### Later: filters as dropdowns (owner request, not built)
 See "Later: filters as dropdowns with checkboxes" above.
+
+## Company type and New roles
+
+- **Company type** (decision 14). A company is listed when its climate tier is core or enabling (`tools.validate.is_listed`); the startup test only labels it (`tools.validate.company_type`: startup, established, or unchecked). Each company record carries `type`, `counts` give companies and roles by type, and the board has a Company type filter (`ct-startup`, `ct-established`) and a type tag beside the climate tier.
+- **New roles** (decision 15, `fresh.py`). A role is new when its first-seen date in Mountain time falls in the last 3 business days (Monday to Friday, no holiday calendar) up to the board's generated date. Roles primed from the old hub's seed are never new, and roles found the first time a company's board is read (within 6 hours of its earliest other first-seen) are not new either. Each new role carries `"new": true`; `counts.new` and `counts.new_since` feed the header stat; the board has a New tag and a New filter (`n-new`). A run history in `data/state/` would make "first read" exact; until then it is inferred.
