@@ -1,0 +1,113 @@
+# Registry fixes 12: the 13 new-region companies the 1,404-company full run could not read (A1 collector).
+#
+# Written by workstream A1 at the supervisor's request, 2026-11-25. Each board was read from the company's
+# own careers page (robots.txt obeyed, at most four pages a company) and confirmed with one Workday search
+# (`total`) or one feed request, with a generic client name. No sign-in, bot check or CAPTCHA was involved.
+#
+#   entries with `ats` and `source`   replace the registry's board (tools/apply_screening.py replace_board)
+#   kind: parent-board                the only board found belongs to a parent company; NOT routed, per the
+#                                     supervisor; the note says whether it can be narrowed and to how many
+#   kind: unknown                     no board found; the reason is given
+#
+# `python -m pipeline.collect --check-boards` now lists any board not in the form its reader needs.
+
+fixes:
+- id: array-technologies
+  name: Array Technologies
+  ats: {type: workday, board: "arraytechinc.wd5/Array_Careers"}
+  careers_url: https://arraytechinc.com/our-story/careers/
+  source: >-
+    https://arraytechinc.com/our-story/careers/ links to https://arraytechinc.wd5.myworkdayjobs.com/Array_Careers;
+    the Workday search answered total 27 on 2026-11-25.
+- id: canadian-solar-e-storage
+  name: Canadian Solar e-Storage
+  ats: {type: workday, board: "canadiansolar.wd5/eStorage"}
+  careers_url: https://csestorage.com/careers/
+  source: >-
+    https://csestorage.com/careers/ links to https://canadiansolar.wd5.myworkdayjobs.com/eStorage, a site of its own on
+    Canadian Solar's tenant (the canadian-solar company reads the 'CanadianSolar' site); total 89 on 2026-11-25.
+- id: eos-energy-enterprises
+  name: Eos Energy Enterprises
+  ats: {type: workday, board: "eosenergystorage.wd1/EoS"}
+  careers_url: https://www.eose.com/careers/
+  source: >-
+    https://www.eose.com/careers/ links to https://eosenergystorage.wd1.myworkdayjobs.com/EoS; total 77 on 2026-11-25.
+- id: illuminate-usa
+  name: Illuminate USA
+  ats: {type: workday, board: "illuminateusa.wd503/Illuminate_Careers"}
+  careers_url: https://www.illuminateusa.com/careers/
+  source: >-
+    https://www.illuminateusa.com/careers/ links to https://illuminateusa.wd503.myworkdayjobs.com/Illuminate_Careers;
+    total 43 on 2026-11-25.
+- id: plug-power
+  name: Plug Power
+  ats: {type: workday, board: "plugpower.wd5/Plug_Power_Inc"}
+  careers_url: https://www.plugpower.com/company-investors/careers/
+  source: >-
+    https://www.plugpower.com/company-investors/careers/ links to https://plugpower.wd5.myworkdayjobs.com/Plug_Power_Inc;
+    total 95 on 2026-11-25.
+- id: wolfspeed
+  name: Wolfspeed
+  ats: {type: workday, board: "cree.wd108/EXT"}
+  careers_url: https://www.wolfspeed.com/careers/
+  source: >-
+    https://www.wolfspeed.com/careers/ links to https://cree.wd108.myworkdayjobs.com/EXT (Wolfspeed was Cree; the
+    tenant keeps the old name); total 218 on 2026-11-25.
+- id: omco-solar
+  name: OMCO Solar
+  ats: {type: teamtailor, board: "omco.na.teamtailor.com"}
+  careers_url: https://omcosolar.com/careers/
+  source: >-
+    https://omcosolar.com/careers/ links to https://omco.na.teamtailor.com/ (Teamtailor's North America stack). Its
+    feed https://omco.na.teamtailor.com/jobs.rss answered on 2026-11-25 as 'OMCO (a MacLean-Fogg Company)' with no
+    postings today. The old board 'na' made the reader ask na.teamtailor.com, which redirects to teamtailor.com.
+
+- id: wedeco-xylem
+  name: Wedeco (Xylem)
+  kind: parent-board
+  board_found: {type: workday, board: "xylem.wd5/xylem-careers", total: 497}
+  narrowing: >-
+    Partly. Workday's keyword search 'Wedeco' returns 8 of Xylem's 497 postings; the location facet has 4 in Herford
+    (Wedeco's German site). Evoqua reads the same board (66 match 'Evoqua'). Narrowing needs a search term per board in
+    the Workday reader, not built.
+  source: https://wedeco.com redirects to https://www.xylem.com/en-us/brands/wedeco/; Xylem's careers page links the board.
+- id: trachte
+  name: Trachte (nVent)
+  kind: parent-board
+  board_found: {type: workday, board: "nvent.wd5/nVent", total: 577}
+  narrowing: >-
+    Not cheaply. 'Trachte' matches 573 of 577 (the search reaches text common to nVent postings), and the location facet
+    names no Sun Prairie, WI site. 413 of the 577 are in the US.
+  source: https://trachteusa.com redirects to https://www.nvent.com/en-us/trachte; https://www.nvent.com/en-us/careers links the board.
+- id: celgard
+  name: Celgard (Asahi Kasei America)
+  kind: parent-board
+  board_found: {type: workday, board: "akamerica.wd501/aka", total: 57}
+  narrowing: >-
+    Yes. 'Celgard' matches 24 of 57, the same number as the board's Charlotte, NC (12) and Concord, NC (12) postings,
+    which are Celgard's sites. A search term or a location facet in the reader would narrow it.
+  source: https://www.celgard.com/about-us/careers links https://akamerica.wd501.myworkdayjobs.com/aka (Asahi Kasei America).
+- id: fujihatsu-tech-america-toyota-tsusho-america-battery-components
+  name: Fujihatsu Tech America / Toyota Tsusho America battery components
+  kind: parent-board
+  board_found: {type: workday, board: "kaishaservice.wd1/ToyotaTsushoAmerica", total: 31}
+  narrowing: >-
+    Weakly. 'Fujihatsu' and 'battery' match none of the 31; 5 are in Greensboro and Liberty, NC, near the battery plant,
+    but nothing names the company. Treat as not narrowable.
+  source: https://www.taiamerica.com/careers/ links https://kaishaservice.wd1.myworkdayjobs.com/ToyotaTsushoAmerica.
+- id: fronius-usa
+  name: Fronius USA
+  kind: parent-board
+  board_found: {type: workday, board: "fronius.wd3/Job_Board", total: 136}
+  narrowing: >-
+    Yes, by country. The board is Fronius International's (85 in Austria); its Country facet has 12 in the United States
+    (Portage, IN 5; Houston, TX 4). A country facet in the Workday reader would narrow it to those.
+  source: https://www.fronius.com/en-us/usa links https://fronius.wd3.myworkdayjobs.com/Job_Board.
+  note: Not in the supervisor's list of parent boards, but the board is the global company's, so it is held here too.
+
+- id: albemarle
+  name: Albemarle
+  kind: unknown
+  note: >-
+    https://www.albemarle.com/careers answered HTTP 403 on 2026-11-25; stopped there, as the rules require. The board
+    'albemarle' (a bare tenant) stays unusable; the guard now skips it with the reason.
