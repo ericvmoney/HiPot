@@ -9155,9 +9155,9 @@ companies:
     as_of: '2026-11-24'
     source: Giga Energy (company statement) (https://gigaenergy.com/about)
   climate:
-    tier: enabling
-    reason: Transformers, substations and switchboards; much of it for data centers, but grid equipment stays in
-      (decision 13).
+    tier: out
+    reason: Builds electrical and cooling infrastructure for AI data centers and develops and leases its own data-center
+      sites; companies that build or run data centers are out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -9171,7 +9171,7 @@ companies:
     (AI/data centers headline; also utilities, renewables, oil and gas, bitcoin mining); bitcoin-mining equipment
     line; factories in Houston, TX (transformers) and Long Beach/Los Angeles, CA (switchboards). Evidence: https://gigaenergy.com/
     https://gigaenergy.com/about https://builtin.com/company/giga-energy Region sources: web-tx-transformers. Confidence:
-    medium. Unresolved: Funding/stage; Dealroom page (giga_energy) 404.'
+    medium. Unresolved: Funding/stage; Dealroom page (giga_energy) 404. Tier set under owner decision 13.'
 - id: gigadac
   name: GigaDAC
   website: https://gigadac.com
@@ -9458,7 +9458,8 @@ companies:
     source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/gradient)
   climate:
     tier: core
-    reason: Window-mounted heat pump air conditioners (R-32), sold direct to consumers.
+    reason: All-weather 120V window heat pumps that heat and cool from a standard outlet, for homes and multifamily
+      buildings.
     basis: agent
     approved: false
   startup:
@@ -11037,7 +11038,8 @@ companies:
     source: Dealroom (https://dealroom.co/companies/infinite-cooling)
   climate:
     tier: core
-    reason: Captures and recycles water from cooling-tower plumes at power plants and industrial sites.
+    reason: TowerPulse wireless sensors and analytics that cut water and energy use in cooling towers at power plants
+      and industrial sites.
     basis: agent
     approved: false
   startup:
@@ -11890,7 +11892,8 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers.
+    reason: Low- and medium-voltage switchboards and switchgear, much of it for data centers; a Legrand brand since
+      2026.
     basis: agent
     approved: false
   startup:
@@ -14152,7 +14155,8 @@ companies:
     source: Built In SF (https://www.builtinsf.com/company/motiv-power-systems)
   climate:
     tier: enabling
-    reason: Electric medium-duty truck and bus chassis (step vans, box trucks, shuttle and school buses).
+    reason: 'Class 4 to 6 battery-electric trucks and buses; merged with Workhorse Group (Nasdaq: WKHS) in December
+      2025 and operates under the Workhorse name.'
     basis: agent
     approved: false
   startup:
@@ -14163,7 +14167,7 @@ companies:
     alert handshake failure (_ssl.c:1035)). Headcount note: Built In figure, undated. Founded: https://www.builtinsf.com/company/motiv-power-systems.
     Stage: No funding data found. Evidence: https://www.builtinsf.com/company/motiv-power-systems Region sources:
     cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: medium. Unresolved: motivps.com failed with a TLS handshake
-    error, so status is from Built In only; funding/stage.'
+    error, so status is from Built In only; funding/stage. Missing facts filled from data/screening/registry-fixes.'
 - id: muon-vision
   name: Muon Vision
   website: https://muonvision.com
@@ -14844,8 +14848,9 @@ companies:
   founded: 2024
   headcount: null
   climate:
-    tier: core
-    reason: Modular ion-concentration-polarization system that recovers cooling-tower water for reuse.
+    tier: out
+    reason: Recovers cooling-tower blowdown water for reuse, sold mainly to data centers; data-center cooling equipment
+      is out (decision 13).
     basis: agent
     approved: false
   startup:
@@ -14857,7 +14862,8 @@ companies:
     centers (pilots at a 1.5 MW data center in Ohio; delivered with Park Place Technologies); MIT spinout. Evidence:
     https://www.nona-technologies.com/ https://tlo.mit.edu/industry-entrepreneurs/startups/nona-technologies https://news.mit.edu/2022/100k-competition-nona-0516
     Region sources: masscec-investments, mit-tlo-startups. Confidence: medium. Unresolved: Headcount; funding round.
-    Earlier MIT material described seawater desalination; current product is cooling-tower water reuse.'
+    Earlier MIT material described seawater desalination; current product is cooling-tower water reuse. Tier set
+    under owner decision 13.'
 - id: noon-energy
   name: Noon Energy
   website: null
@@ -21410,8 +21416,8 @@ companies:
     source: Built In (https://builtin.com/company/syzygy-plasmonics)
   climate:
     tier: core
-    reason: Rigel light-driven photocatalytic reactor cells used to make sustainable aviation fuel (NovaSAF), methanol,
-      hydrogen from ammonia and other chemicals.
+    reason: Light-driven reactor cells that turn waste biogas and renewable power into sustainable aviation fuel
+      (NovaSAF); first plant in Uruguay targets 2028.
     basis: agent
     approved: false
   startup:
@@ -22303,8 +22309,8 @@ companies:
   headcount: null
   climate:
     tier: core
-    reason: MOF-based desiccant coatings and devices that dehumidify air before cooling, integrated with standard
-      air conditioners; licenses to AC makers.
+    reason: Rooftop heat pumps for commercial buildings that use MOF desiccants to dry air before cooling, cutting
+      cooling energy.
     basis: agent
     approved: false
   startup:
@@ -22884,8 +22890,8 @@ companies:
   headcount: null
   climate:
     tier: core
-    reason: Custom liquid-filled and dry medium-voltage transformers (padmount, substation, polemount, submersible,
-      grounding), made in Waco, TX.
+    reason: Custom liquid-filled and dry medium-voltage transformers made in Waco, TX; now part of Forgent Power
+      Solutions.
     basis: agent
     approved: false
   startup:
@@ -23467,8 +23473,8 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Drone- and rover-mounted neutron activation systems for exploring clean-energy metals (directory description;
-      not confirmed).
+    reason: Drone-mounted neutron systems that map rock chemistry without drilling, sold as an exploration service
+      for clean-energy metals.
     basis: agent
     approved: false
   startup:
@@ -23745,7 +23751,7 @@ companies:
   headcount: null
   climate:
     tier: enabling
-    reason: Battery-free wireless sensors for building energy savings.
+    reason: Peel-and-stick sensors that find energy waste in buildings, with the fixes funded through shared savings.
     basis: agent
     approved: false
   startup:
@@ -23839,7 +23845,8 @@ companies:
     source: Built In SF (https://www.builtinsf.com/company/wisk)
   climate:
     tier: enabling
-    reason: Autonomous all-electric four-seat air taxi.
+    reason: Autonomous all-electric four-seat air taxi in flight testing; acquired from Boeing by Archer Aviation
+      in 2026.
     basis: agent
     approved: false
   startup:

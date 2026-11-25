@@ -295,6 +295,10 @@ def retier(company: dict, fix: dict) -> None:
     when the fix names the decision (`ruling`), so the scout cannot re-tier a
     company on its own judgement."""
     climate = fix.get("climate") or {}
+    # A reason correction that leaves the tier alone needs no ruling.
+    if fix.get("kind") == "reason-only" and climate.get("reason"):
+        company["climate"]["reason"] = climate["reason"]
+        return
     if not (climate.get("tier") and fix.get("ruling")):
         return
     company["climate"].update(tier=climate["tier"], basis="agent")

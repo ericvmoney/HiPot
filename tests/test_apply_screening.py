@@ -156,3 +156,10 @@ def test_a_sourced_board_replaces_the_registry_board():
     unsourced = {"ats": {"type": "lever", "board": "x"}, "read": "auto", "careers_url": None}
     replace_board(unsourced, {"ats": {"type": "unknown", "board": None}})
     assert unsourced["ats"]["type"] == "lever"
+
+
+def test_reason_only_fix_changes_the_reason_not_the_tier():
+    company = {"climate": {"tier": "enabling", "reason": "Old product.", "basis": "agent", "approved": False},
+               "sectors": ["ev"], "notes": None}
+    retier(company, {"kind": "reason-only", "climate": {"tier": "out", "reason": "New product."}})
+    assert company["climate"]["tier"] == "enabling" and company["climate"]["reason"] == "New product."
