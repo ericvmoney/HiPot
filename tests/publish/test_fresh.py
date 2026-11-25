@@ -67,3 +67,62 @@ def test_the_board_flags_and_counts_new_roles():
     assert roles["a2"].get("new") is True and "new" not in roles["a1"]
     assert board["counts"]["new"] == 1 and board["counts"]["new_since"] == "2026-11-20"
     assert board["taxonomy"]["fresh"] == [{"id": "new", "label": "New in the last 3 business days"}]
+
+
+# --- First read from the collector's run history (data/state/runs.json) -----------------
+
+def runs(*spans):
+    """runs(("2026-11-23T09:00:00-07:00", "2026-11-23T09:40:00-07:00", ["alpha"]), ...)"""
+    return {"state_version": 0, "runs": [{"started_at": s, "finished_at": f, "read": sorted(read), "partial": []}
+                                         for s, f, read in spans]}
+
+
+def test_history_sets_the_first_read_even_after_its_roles_have_closed():
+    # Alpha was first read on the 17th; every role from that read has closed. A role first seen on the 23rd
+    # is new with the history, but inference would treat it as the first read.
+    history = runs(("2026-11-17T09:00:00-07:00", "2026-11-17T09:30:00-07:00", ["alpha"]),
+                   ("2026-11-23T09:00:00-07:00", "2026-11-23T09:30:00-07:00", ["alpha"]))
+    jobs = [seen("a1", "alpha", "2026-11-23T09:10:00-07:00")]
+    assert new_role_ids(jobs, GENERATED, runs=history) == {"a1"}
+    assert new_role_ids(jobs, GENERATED) == set()
+
+
+def test_history_first_read_ends_at_the_runs_finish():
+    # A new company read for the first time on the 24th: what that run found is not new, however long it took.
+    history = runs(("2026-11-24T08:00:00-07:00", "2026-11-24T16:00:00-07:00", ["beta"]))
+    jobs = [seen("b1", "beta", "2026-11-24T08:05:00-07:00"), seen("b2", "beta", "2026-11-24T15:55:00-07:00"),
+            seen("b3", "beta", "2026-11-24T17:30:00-07:00")]
+    assert new_role_ids(jobs, GENERATED, runs=history) == {"b3"}
+
+
+def test_a_company_read_before_the_history_began_keeps_its_inferred_first_read():
+    # Gamma was collected on the 10th, before runs.json existed; history starts on the 23rd.
+    history = runs(("2026-11-23T09:00:00-07:00", "2026-11-23T09:30:00-07:00", ["gamma"]))
+    jobs = [seen("g1", "gamma", "2026-11-10T09:00:00-07:00"), seen("g2", "gamma", "2026-11-23T09:10:00-07:00")]
+    assert new_role_ids(jobs, GENERATED, runs=history) == {"g2"}
+
+
+def test_companies_missing_from_the_history_fall_back_to_inference():
+    history = runs(("2026-11-17T09:00:00-07:00", "2026-11-17T09:30:00-07:00", ["alpha"]))
+    jobs = [seen("d1", "delta", "2026-11-23T09:00:00-07:00"), seen("d2", "delta", "2026-11-23T12:00:00-07:00"),
+            seen("d3", "delta", "2026-11-24T10:00:00-07:00")]
+    assert new_role_ids(jobs, GENERATED, runs=history) == {"d3"}
+
+
+def test_seed_rule_still_applies_with_history():
+    history = runs(("2026-11-24T11:00:00-07:00", "2026-11-24T11:30:00-07:00", ["antora"]))
+    jobs = [seen("old", "antora", "2026-11-20T14:00:00-07:00"), seen("b1", "antora", "2026-11-24T11:15:00-07:00"),
+            seen("later", "antora", "2026-11-24T17:45:00-07:00")]
+    assert new_role_ids(jobs, GENERATED, runs=history, seed_ids={"old"}) == {"later"}
+
+
+def test_the_command_reads_the_run_history(tmp_path, capsys):
+    import json
+    from pipeline.publish.__main__ import main
+    history = tmp_path / "runs.json"
+    history.write_text(json.dumps(runs(("2026-11-24T08:00:00-07:00", "2026-11-24T09:00:00-07:00", ["also"]))), encoding="utf-8")
+    seed = str(ROOT / "data" / "seed" / "jobs.json")
+    assert main(["--jobs", seed, "--out", str(tmp_path / "board.json"), "--runs", str(history)]) == 0
+    assert "run history: 1 runs" in capsys.readouterr().out
+    assert main(["--jobs", seed, "--out", str(tmp_path / "board.json"), "--runs", str(tmp_path / "none.json")]) == 0
+    assert "no run history, first reads inferred" in capsys.readouterr().out

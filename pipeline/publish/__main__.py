@@ -43,6 +43,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
     parser.add_argument("--wages", type=Path, default=ROOT / "data" / "pay" / "bls-oews-2025.json",
                         help="government wage reference for the pay page; skipped if the file is missing")
+    parser.add_argument("--runs", type=Path, default=ROOT / "data" / "state" / "runs.json",
+                        help="the collector's run history, for New roles; first reads are inferred if it is missing")
     parser.add_argument("--pay-out", type=Path, default=None,
                         help="pay bands for the pay page; default pay.json beside --out")
     parser.add_argument(
@@ -68,7 +70,9 @@ def main(argv: list[str] | None = None) -> int:
         inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
         seed_file = ROOT / "data" / "seed" / "jobs.json"
         seed_ids = {job["id"] for job in load_json(seed_file)["jobs"]} if seed_file.is_file() else set()
-        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades, seed_ids=seed_ids)
+        runs = load_json(args.runs) if args.runs and args.runs.is_file() else None
+        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades, seed_ids=seed_ids,
+                            runs=runs)
         wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
         pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
@@ -86,7 +90,8 @@ def main(argv: list[str] | None = None) -> int:
                                            if board["scope"] == "all" else ""))
     print(f"  roles: {counts['roles']} at {counts['companies']} companies; {counts['roles_left_out']} left out "
           f"({counts['left_out_company']} at unlisted companies, {counts['left_out_function']} in unlisted functions)")
-    print(f"  new: {counts['new']} roles first seen since {counts['new_since']} (3 business days, Mountain time)")
+    history = f"run history: {len(runs['runs'])} runs" if runs else "no run history, first reads inferred"
+    print(f"  new: {counts['new']} roles first seen since {counts['new_since']} (3 business days, Mountain time; {history})")
     types = counts["companies_by_type"]
     print(f"  company type: {types['startup']} startups, {types['established']} established, {types['unchecked']} unchecked "
           f"({counts['roles_by_type']['startup']} / {counts['roles_by_type']['established']} / {counts['roles_by_type']['unchecked']} roles)")
