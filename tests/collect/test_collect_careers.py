@@ -184,3 +184,24 @@ def test_context_round_trip(tmp_path):
     saved = careers.Context(path=path, sites={"example.com": {"read_at": "2026-11-25T16:00:00Z", "drafts": []}})
     saved.save()
     assert careers.Context.load(path).sites == saved.sites
+
+
+def test_found_in_the_first_live_run():
+    # Big Blue: a JobPosting block with no address or identifier on each posting
+    # page, and a standing "Any Position" invitation. Steelhead: a posting page
+    # whose text is outside <main>.
+    site = FakeSite({
+        CAREERS: '<a href="/jobs/foundry-operator/">Foundry Operator</a><a href="/jobs/any-position/">Any Position</a>'
+                 '<a href="/careers/production-technician">Production Technician</a>',
+        "https://acme.example.com/jobs/foundry-operator/": ld(title="Foundry Operator", description=BODY, datePosted="2026-10-31T19:49:09-06:00"),
+        "https://acme.example.com/jobs/any-position/": ld(title="Any Position", description=BODY),
+        "https://acme.example.com/careers/production-technician":
+            "<html><body><main><h1>Production Technician</h1></main><div class='content'>" + BODY + "</div></body></html>",
+    })
+    result = careers.read(CAREERS, site, context())
+    assert result.status == "ok"
+    by_title = {made["title"]: made for made in result.drafts}
+    assert set(by_title) == {"Foundry Operator", "Production Technician"}
+    assert by_title["Foundry Operator"]["posting_id"] == "jobs/foundry-operator"
+    assert by_title["Foundry Operator"]["posted_date"] == "2026-10-31"
+    assert "design power electronics" in by_title["Production Technician"]["description_text"]

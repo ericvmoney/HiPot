@@ -220,12 +220,18 @@ def draft_from_page(page: str, url: str, today: datetime) -> dict | None:
     """A posting page without a JobPosting block: its heading and main text."""
     items = job_posting_items(page)
     if items:
-        return draft_from_ld(items[0], url, today)
+        made = draft_from_ld(items[0], url, today)
+        if made and made["url"] == url:
+            made["posting_id"] = _posting_id(url)      # the page is the posting
+        return made
     heading = _H1.search(page) or _TITLE.search(page)
     title = _text_of(heading.group(1)) if heading else ""
     title = re.split(r"\s+[|–—-]\s+", title)[0].strip() if not _H1.search(page) else title
     body = _MAIN.search(page)
-    text = html_to_text(_CHROME.sub(" ", body.group(2) if body else page))
+    text = html_to_text(_CHROME.sub(" ", body.group(2))) if body else ""
+    if len(text) < MIN_DESCRIPTION:
+        # Some sites keep the posting outside <main>: the whole page, less its chrome.
+        text = html_to_text(_CHROME.sub(" ", page))
     if not title or len(text) < MIN_DESCRIPTION:
         return None
     where = _LOCATION_LINE.search(text)
@@ -462,9 +468,16 @@ def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Cont
     return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} postings on LinkedIn, where the careers page points")
 
 
+# A standing invitation to apply is not a posting.
+GENERAL_APPLICATION = re.compile(r"\b(?:any position|general application|open application|spontaneous application|"
+                                 r"talent (?:pool|network|community)|future (?:opportunities|openings|roles))\b", re.I)
+
+
 def _unique(drafts: list[dict]) -> list[dict]:
     seen, kept = set(), []
     for made in drafts:
+        if GENERAL_APPLICATION.search(made["title"]):
+            continue
         if made["posting_id"] not in seen:
             seen.add(made["posting_id"])
             kept.append(made)
