@@ -2,6 +2,7 @@
 # electrification products here, drawn from the named sources below (not from companies.yml).
 # Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
 # that turned out not to be in the region; they are not part of the list.
+# Quarantined sources (robots.txt barred the pages read): builtin-boston-energy, builtin-boston-greentech, builtin-energy, builtin-greentech. Companies named only by them were removed.
 
 region: boston
 built: '2026-11-25'
@@ -90,16 +91,6 @@ sources:
 - id: harvard-otd-search
   name: Harvard OTD / SEAS licensing news (search results)
   url: https://otd.harvard.edu/news/fast-charging-over-10-000-cycles
-- id: builtin-boston-greentech
-  name: Built In Boston, Greentech companies
-  url: https://www.builtinboston.com/companies/type/greentech-companies
-  note: pages 1-4 (page 5+ empty); listing order shuffles between requests, so pages were fetched four times; 54
-    unique profiles seen against a header count of 73
-- id: builtin-boston-energy
-  name: Built In Boston, Energy companies
-  url: https://www.builtinboston.com/companies/type/energy-companies
-  note: pages 1-7, fetched four times because order shuffles; 108 unique profiles seen against a header count of
-    140
 - id: material-impact
   name: Material Impact portfolio
   url: https://www.materialimpact.com/companies
@@ -145,15 +136,6 @@ sources:
   name: Breakthrough Energy Ventures portfolio
   url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
   note: Read from the data embedded in the page (103 unique companies).
-- id: builtin-energy
-  name: Built In energy company directory
-  url: https://builtin.com/companies/type/energy-companies
-  note: '266 pages. Combined with greentech: 5,543 distinct companies, 1,710 matched clean-tech keywords and were
-    read by hand. Mostly oil and gas, utilities, installers, developers and software.'
-- id: builtin-greentech
-  name: Built In greentech company directory
-  url: https://builtin.com/companies/type/greentech-companies
-  note: 101 pages. Cards give a city without a state, or only an office count; states were added from company knowledge.
 - id: cev
   name: Clean Energy Ventures portfolio
   url: https://cleanenergyventures.com/portfolio
@@ -254,11 +236,7 @@ companies:
   hq: Cambridge, MA
   sources:
   - mit-sloan-cleantech
-  - builtin-boston-greentech
-  - builtin-boston-energy
   - arpa-e
-  - builtin-greentech
-  - builtin-energy
   registry_id: 24m-technologies
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
@@ -300,26 +278,13 @@ companies:
   website: https://acceleronfusion.com
   hq: Cambridge, MA
   sources:
-  - builtin-boston-greentech
-  - builtin-boston-energy
   - lc
-  - builtin-greentech
   registry_id: acceleron-fusion
   decision: registry
   reason: null
   ats:
     type: greenhouse
     token: acceleronfusion
-  open_roles: null
-- name: Aclara
-  website: https://www.aclara.com
-  hq: St. Louis, MO
-  sources:
-  - builtin-boston-energy
-  registry_id: aclara
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: enabling, startup out.'
-  ats: null
   open_roles: null
 - name: Aclarity
   website: https://www.aclaritywater.com
@@ -415,7 +380,6 @@ companies:
   - masscec-pr-criticalmass-3-9m
   - mit-tlo-startups
   - mit-news-startups
-  - builtin-boston-energy
   - massventures
   - activate
   - greentown
@@ -447,16 +411,6 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Alloy Enterprises
-  website: https://www.alloyenterprises.co
-  hq: Burlington, MA
-  sources:
-  - builtin-boston-greentech
-  registry_id: alloy-enterprises
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: out, startup out.'
-  ats: null
-  open_roles: null
 - name: Aloft Systems
   website: https://aloft.systems
   hq: Boston, MA
@@ -472,7 +426,6 @@ companies:
   hq: Malden, MA
   sources:
   - mit-news-startups
-  - builtin-boston-energy
   registry_id: alsym-energy
   decision: registry
   reason: null
@@ -494,7 +447,6 @@ companies:
   sources:
   - masstech-m2i2-10m
   - wpi-startups
-  - builtin-energy
   registry_id: am-batteries
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
@@ -509,19 +461,6 @@ companies:
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
-  open_roles: null
-- name: Ameresco
-  website: https://www.ameresco.com
-  hq: Framingham, MA
-  sources:
-  - builtin-boston-greentech
-  - builtin-boston-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: Energy services company and project developer; it builds and runs others' equipment.
-  ats:
-    type: workday
-    token: ameresco.wd5.myworkdayjobs.com/Ameresco
   open_roles: null
 - name: American Superconductor (AMSC)
   website: https://amsc.com
@@ -582,7 +521,6 @@ companies:
   sources:
   - wpi-startups
   - massventures
-  - builtin-greentech
   registry_id: ascend-elements
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
@@ -828,18 +766,6 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Clean Harbors
-  website: https://www.cleanharbors.com
-  hq: Norwell, MA
-  sources:
-  - builtin-boston-greentech
-  - builtin-boston-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: 'Not a physical product: Environmental and industrial services (hazardous waste disposal, field services)
-    plus Safety-Kleen used-oil re-refining and recycling.'
-  ats: null
-  open_roles: null
 - name: CoBon Technologies
   website: null
   hq: Massachusetts
@@ -927,16 +853,6 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: enabling, startup in.'
   ats: null
   open_roles: null
-- name: Divert Inc.
-  website: https://www.divertinc.com
-  hq: Concord, MA
-  sources:
-  - builtin-boston-energy
-  registry_id: divert-inc
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
-  ats: null
-  open_roles: null
 - name: Dottir Labs
   website: https://dottirlabs.com
   hq: Somerville, MA
@@ -962,7 +878,6 @@ companies:
   hq: Somerville, MA
   sources:
   - masscec-pr-tax-incentives
-  - builtin-boston-greentech
   - massventures
   - third-derivative
   - greentown
@@ -991,7 +906,6 @@ companies:
   hq: Natick, MA (factory in Devens, MA)
   sources:
   - masscec-pr-tax-incentives
-  - builtin-boston-energy
   registry_id: electric-hydrogen
   decision: registry
   reason: null
@@ -1007,13 +921,11 @@ companies:
   - masstech-m2i2-7-3m
   - mit-news-startups
   - mit-tlo-startups
-  - builtin-boston-energy
   - massventures
   - cev
   - activate
   - shell-gamechanger
   - arpa-e
-  - builtin-energy
   registry_id: electrified-thermal-solutions
   decision: registry
   reason: null
@@ -1077,7 +989,6 @@ companies:
   website: https://enverid.com
   hq: Massachusetts
   sources:
-  - builtin-boston-greentech
   - bev
   - elemental
   registry_id: enverid-systems
@@ -1101,8 +1012,6 @@ companies:
   sources:
   - masscec-pr-4m
   - masscec-investments
-  - builtin-boston-energy
-  - builtin-boston-greentech
   - greentown
   registry_id: eqore
   decision: registry
@@ -1138,31 +1047,6 @@ companies:
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
-  open_roles: null
-- name: Evoqua Water Technologies
-  website: https://www.evoqua.com
-  hq: Pittsburgh, PA
-  sources:
-  - builtin-boston-greentech
-  registry_id: evoqua-water-technologies
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
-  ats:
-    type: workday
-    token: xylem.wd5.myworkdayjobs.com/xylem-careers
-  open_roles: null
-- name: Factorial Energy
-  website: https://factorialenergy.com
-  hq: Woburn, MA
-  sources:
-  - builtin-boston-energy
-  - builtin-energy
-  registry_id: factorial-energy
-  decision: registry
-  reason: null
-  ats:
-    type: greenhouse
-    token: factorialenergy
   open_roles: null
 - name: FastCAP Systems (Nanoramic)
   website: null
@@ -1236,8 +1120,6 @@ companies:
   - greentown
   - arpa-e
   - doe-oced
-  - builtin-greentech
-  - builtin-energy
   registry_id: form-energy
   decision: registry
   reason: null
@@ -1283,10 +1165,8 @@ companies:
   sources:
   - masscec-pr-tax-incentives
   - mit-news-startups
-  - builtin-boston-energy
   - bev
   - dcvc
-  - builtin-energy
   registry_id: fourth-power
   decision: registry
   reason: null
@@ -1308,9 +1188,7 @@ companies:
   website: https://www.gevernova.com
   hq: Cambridge, MA
   sources:
-  - builtin-boston-energy
   - arpa-e
-  - builtin-energy
   registry_id: ge-vernova
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: enabling, startup out.'
@@ -1350,20 +1228,6 @@ companies:
   reason: Mainly contract research and development in electrochemistry.
   ats: null
   open_roles: null
-- name: Glimpse
-  website: https://glimp.se
-  hq: Somerville, MA
-  sources:
-  - builtin-boston-energy
-  - builtin-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: 'Not a physical product: CT-scan analysis software (Glimpse Portal) and on-demand CT scanning services
-    for battery quality inspection; states it is not a scanner manufacturer.'
-  ats:
-    type: ashby
-    token: glimp-se
-  open_roles: 3
 - name: Global Mineral Recovery
   website: https://globalmineralrecovery.com
   hq: Worcester, MA
@@ -1469,7 +1333,6 @@ companies:
   hq: Malden, MA
   sources:
   - mit-sloan-cleantech
-  - builtin-boston-energy
   - material-impact
   - massventures
   registry_id: infinite-cooling
@@ -1571,24 +1434,11 @@ companies:
     2020, not from a shutdown notice. The name changed from Leading Edge Crystal Technologies to Leading Edge Equipmen
   ats: null
   open_roles: null
-- name: LIFTE H2
-  website: null
-  hq: Boston, MA
-  sources:
-  - builtin-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: 'Not a physical product: Developed end-to-end hydrogen supply chains and fueling infrastructure projects
-    for energy-intensive businesses.'
-  ats: null
-  open_roles: null
 - name: LineVision
   website: https://www.linevisioninc.com
   hq: Boston, MA
   sources:
-  - builtin-boston-energy
   - cev
-  - builtin-energy
   registry_id: linevision
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
@@ -1721,7 +1571,6 @@ companies:
   sources:
   - bev
   - greentown
-  - builtin-energy
   registry_id: malta
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
@@ -1867,19 +1716,6 @@ companies:
   - greentown
   - ic
   registry_id: nth-cycle
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
-  ats: null
-  open_roles: null
-- name: OffGridBox
-  website: https://www.offgridbox.com
-  hq: Boston, MA
-  sources:
-  - builtin-boston-greentech
-  - builtin-boston-energy
-  - builtin-greentech
-  - builtin-energy
-  registry_id: offgridbox
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
@@ -2070,25 +1906,12 @@ companies:
     type: ashby
     token: promethean
   open_roles: 2
-- name: Pure Lithium
-  website: https://purelithium.io
-  hq: Chicago, IL
-  sources:
-  - builtin-energy
-  registry_id: pure-lithium
-  decision: registry
-  reason: null
-  ats:
-    type: rippling
-    token: pure-lithium
-  open_roles: null
 - name: Quaise Energy
   website: https://quaise.com
   hq: Cambridge, MA
   sources:
   - engine-ventures
   - mit-sloan-cleantech
-  - builtin-boston-energy
   registry_id: quaise-energy
   decision: registry
   reason: null
@@ -2231,16 +2054,6 @@ companies:
   reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
-- name: Schneider Electric
-  website: https://www.se.com/us
-  hq: Rueil-Malmaison, France
-  sources:
-  - builtin-boston-energy
-  registry_id: schneider-electric
-  decision: registry
-  reason: null
-  ats: null
-  open_roles: null
 - name: SeaDeep
   website: https://seadeep.io
   hq: Boston, MA
@@ -2371,11 +2184,9 @@ companies:
   hq: Somerville, MA
   sources:
   - masscec-pr-criticalmass-3-9m
-  - builtin-boston-energy
   - elemental
   - greentown
   - laci
-  - builtin-energy
   registry_id: sparkcharge
   decision: registry
   reason: null
@@ -2517,7 +2328,6 @@ companies:
   hq: Salem, MA
   sources:
   - greentown
-  - builtin-energy
   registry_id: null
   decision: duplicate
   reason: Same company as Titan AES.
@@ -2538,8 +2348,6 @@ companies:
   hq: Somerville, MA
   sources:
   - masscec-investments
-  - builtin-boston-greentech
-  - builtin-boston-energy
   - massventures
   - cev
   - eip
@@ -2572,16 +2380,6 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: Upstart Power
-  website: https://upstartpower.com
-  hq: Southborough, MA
-  sources:
-  - builtin-energy
-  registry_id: upstart-power
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
-  ats: null
-  open_roles: null
 - name: VEIR
   website: https://www.veir.com
   hq: Woburn, MA
@@ -2599,18 +2397,6 @@ companies:
   ats:
     type: greenhouse
     token: veir
-  open_roles: null
-- name: Veolia North America
-  website: https://www.veolianorthamerica.com
-  hq: Boston, MA
-  sources:
-  - builtin-boston-greentech
-  - builtin-boston-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: 'Not a physical product: Water and wastewater treatment, hazardous waste treatment and incineration, recycling
-    and energy services in North America.'
-  ats: null
   open_roles: null
 - name: Verdox
   website: https://verdox.com
@@ -2690,23 +2476,11 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: enabling, startup in.'
   ats: null
   open_roles: null
-- name: WindESCo
-  website: https://www.windesco.com
-  hq: Burlington, MA
-  sources:
-  - builtin-boston-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: 'Not a physical product: Wind turbine performance analytics (Pulse) and wake-steering control software
-    (Swarm); successor also offers hydro sensors.'
-  ats: null
-  open_roles: null
 - name: WiTricity
   website: https://witricity.com
   hq: Watertown, MA
   sources:
   - mit-sloan-cleantech
-  - builtin-energy
   registry_id: witricity
   decision: registry
   reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
@@ -2744,18 +2518,6 @@ companies:
     type: lever
     token: yardstick
   open_roles: 2
-- name: Yaskawa Solectria Solar
-  website: https://solectria.com
-  hq: Lawrence, MA
-  sources:
-  - builtin-energy
-  registry_id: yaskawa-solectria-solar
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup out.'
-  ats:
-    type: ukg
-    token: recruiting.ultipro.com/YAS1000YAAMI/JobBoard/8a2317d2-a61e-4259-a857-722d164a211c
-  open_roles: null
 - name: Z-Polymers
   website: https://z-polymers.com
   hq: Lowell, MA
@@ -2767,18 +2529,6 @@ companies:
   reason: 'Proposed in proposals-02-boston.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: ZwitterCo
-  website: https://www.zwitterco.com
-  hq: Woburn, MA
-  sources:
-  - builtin-boston-greentech
-  registry_id: zwitterco
-  decision: registry
-  reason: 'Proposed in proposals-02-boston.yml: core, startup in.'
-  ats:
-    type: rippling
-    token: zwitterco
-  open_roles: 2
 excluded:
 - name: 247Solar
   sources:
@@ -2820,7 +2570,5 @@ excluded:
   reason: Headquartered outside the US (Yateley, United Kingdom); no main site in the region found.
 - name: VesprSolar
   sources:
-  - builtin-boston-energy
   - launchpad-venture-group
-  - builtin-energy
   reason: Its own site gives Norman, OK.

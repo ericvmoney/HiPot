@@ -2,6 +2,7 @@
 # electrification products here, drawn from the named sources below (not from companies.yml).
 # Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
 # that turned out not to be in the region; they are not part of the list.
+# Quarantined sources (robots.txt barred the pages read): builtin-co-energy, builtin-co-greentech. Companies named only by them were removed.
 
 region: colorado
 built: '2026-11-25'
@@ -148,14 +149,6 @@ sources:
 - id: builtin-co-sustain
   name: 'Built In: Colorado companies focused on sustainability'
   url: https://builtin.com/articles/homegrown-colorado-companies-focusing-sustainability
-- id: builtin-co-greentech
-  name: Built In Colorado greentech companies directory
-  url: https://www.builtincolorado.com/companies/type/greentech-companies
-  note: pages 1-6, ~115 companies
-- id: builtin-co-energy
-  name: Built In Colorado energy companies directory
-  url: https://www.builtincolorado.com/companies/type/energy-companies
-  note: pages 1-13, ~253 companies, mostly oil and gas, services, utilities
 - id: siteselection-clean
   name: 'Site Selection: Clean as a whistle (Colorado cleantech, cites CCIA)'
   url: https://siteselection.com/clean-as-a-whistle/
@@ -278,7 +271,6 @@ companies:
   sources:
   - inven-co-storage
   - inven-co-powerelec
-  - builtin-co-energy
   registry_id: ada-technologies
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
@@ -324,7 +316,6 @@ companies:
   hq: Fort Collins, CO
   sources:
   - oedit-ai
-  - builtin-co-greentech
   registry_id: null
   decision: closed
   reason: Acquired by Generac; now part of Generac Industrial Energy (Generac is in the registry).
@@ -365,23 +356,12 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
   ats: null
   open_roles: null
-- name: Altela
-  website: null
-  hq: Englewood, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: null
-  decision: closed
-  reason: PitchBook lists it as out of business.
-  ats: null
-  open_roles: null
 - name: AMP
   website: https://ampsortation.com
   hq: Louisville, CO
   sources:
   - ccia-members
   - builtin-co-sustain
-  - builtin-co-greentech
   - prelude-portfolio
   - congruent-portfolio
   registry_id: amp
@@ -490,25 +470,12 @@ companies:
   sources:
   - ceo-cap-2026feb
   - csu-powerhouse
-  - builtin-co-greentech
   registry_id: atmoszero
   decision: registry
   reason: null
   ats:
     type: rippling
     token: atmoszero-careers
-  open_roles: null
-- name: Barber-Nichols
-  website: https://www.barber-nichols.com
-  hq: Arvada, CO
-  sources:
-  - builtin-co-energy
-  registry_id: barber-nichols
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
-  ats:
-    type: paylocity
-    token: 7c93589b-cde5-4150-8a12-8b2c4e916295
   open_roles: null
 - name: Big Blue Technologies
   website: https://bigbluetech.com
@@ -622,17 +589,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
   ats: null
   open_roles: null
-- name: Carbon America
-  website: https://carbonamerica.com
-  hq: Arvada, CO
-  sources:
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: carbon-america
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
-  ats: null
-  open_roles: null
 - name: Charm Industrial
   website: https://charmindustrial.com
   hq: San Francisco, CA
@@ -665,16 +621,6 @@ companies:
   reason: Named by a Colorado source, but the company could not be identified.
   ats: null
   open_roles: null
-- name: Cool Planet
-  website: https://www.coolplanet.com
-  hq: Greenwood Village, CO
-  sources:
-  - builtin-co-energy
-  registry_id: null
-  decision: closed
-  reason: Reported acquired by National Carbon Technologies (2020); no activity found since.
-  ats: null
-  open_roles: null
 - name: Coolerado
   website: https://www.coolerado.com
   hq: Denver, CO
@@ -696,16 +642,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
   ats: null
   open_roles: null
-- name: Copper Labs
-  website: null
-  hq: Boulder, CO
-  sources:
-  - builtin-co-energy
-  registry_id: copper-labs
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
-  ats: null
-  open_roles: null
 - name: Cowboy Clean Fuels
   website: null
   hq: Denver, CO
@@ -723,7 +659,6 @@ companies:
   - edc-named
   - siteselection-renew
   - lowercarbon-portfolio
-  - builtin-co-energy
   - inven-co-powerelec
   registry_id: crusoe
   decision: registry
@@ -748,7 +683,6 @@ companies:
   hq: Fort Collins, CO
   sources:
   - csu-powerhouse
-  - builtin-co-energy
   registry_id: null
   decision: not-in-scope
   reason: Engineering and prototyping services.
@@ -759,7 +693,6 @@ companies:
   hq: Nordborg, Denmark
   sources:
   - bs-co-ev
-  - builtin-co-energy
   registry_id: danfoss-editron-formerly-uqm-technologies
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup out.'
@@ -773,17 +706,6 @@ companies:
   registry_id: null
   decision: null
   reason: Named by a Colorado source, but the company could not be identified.
-  ats: null
-  open_roles: null
-- name: Earthview
-  website: null
-  hq: Denver, CO
-  sources:
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: earthview
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Ecovaleric
@@ -820,9 +742,7 @@ companies:
   website: https://www.egauge.net
   hq: Boulder, CO
   sources:
-  - builtin-co-greentech
   - inven-co-smartgrid
-  - builtin-co-energy
   registry_id: egauge-systems
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
@@ -879,8 +799,6 @@ companies:
   sources:
   - inven-co-storage
   - inven-co-smartgrid
-  - builtin-co-greentech
-  - builtin-co-energy
   registry_id: emporia
   decision: registry
   reason: null
@@ -912,7 +830,6 @@ companies:
   website: https://www.energyfuels.com
   hq: Lakewood, CO
   sources:
-  - builtin-co-energy
   - search-snippets
   registry_id: energy-fuels
   decision: registry
@@ -1040,16 +957,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
   ats: null
   open_roles: null
-- name: FrostCarbon
-  website: null
-  hq: Arvada, CO
-  sources:
-  - builtin-co-energy
-  registry_id: frostcarbon
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
-  ats: null
-  open_roles: null
 - name: GeoKiln
   website: https://geokiln.com
   hq: Houston, TX
@@ -1072,18 +979,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: Gevo
-  website: https://gevo.com
-  hq: Englewood, CO
-  sources:
-  - builtin-co-energy
-  registry_id: gevo
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup out.'
-  ats:
-    type: rippling
-    token: gevo-careers
-  open_roles: 2
 - name: Gillig
   website: https://www.gillig.com
   hq: Livermore, CA (engineering centre in Loveland, CO)
@@ -1177,8 +1072,6 @@ companies:
   website: https://h3x.tech
   hq: Louisville, CO
   sources:
-  - builtin-co-greentech
-  - builtin-co-energy
   - bs-co-ev
   - inven-co-powerelec
   registry_id: h3x-technologies
@@ -1217,8 +1110,6 @@ companies:
   hq: Boulder, CO
   sources:
   - bs-co-cleantech
-  - builtin-co-greentech
-  - builtin-co-energy
   registry_id: hygge-power
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
@@ -1256,23 +1147,12 @@ companies:
   reason: Technology bought by Apple about 2013-2014; domain now an unrelated site.
   ats: null
   open_roles: null
-- name: ION Clean Energy
-  website: https://ioncleanenergy.com
-  hq: Boulder, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: ion-clean-energy
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
-  ats: null
-  open_roles: null
 - name: Iontra
   website: https://iontra.com
   hq: Centennial, CO
   sources:
   - oedit-ai
   - inven-co-powerelec
-  - builtin-co-energy
   registry_id: iontra
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
@@ -1333,16 +1213,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
   ats: null
   open_roles: null
-- name: Latent Heat Solutions
-  website: null
-  hq: Golden, CO
-  sources:
-  - builtin-co-energy
-  registry_id: latent-heat-solutions
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
-  ats: null
-  open_roles: null
 - name: Latimer Controls
   website: https://www.latimercontrols.com
   hq: Denver, CO
@@ -1382,28 +1252,6 @@ companies:
     type: lever
     token: lightship
   open_roles: null
-- name: Lightspeed Road Solar
-  website: null
-  hq: Westminster, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: null
-  decision: closed
-  reason: No sign of activity since 2016; treated as closed.
-  ats: null
-  open_roles: null
-- name: Lignetics
-  website: https://www.lignetics.com
-  hq: Broomfield, CO
-  sources:
-  - builtin-co-energy
-  registry_id: lignetics
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
-  ats:
-    type: paylocity
-    token: 63a09f66-cfab-450b-b3b3-e5b1c22230b5
-  open_roles: null
 - name: Living Ink Technologies
   website: https://livingink.co
   hq: Fort Collins, CO
@@ -1421,7 +1269,6 @@ companies:
   - oedit-ai
   - cu-vp-portfolio
   - cu-vp-climate
-  - builtin-co-greentech
   registry_id: longpath-technologies
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
@@ -1803,18 +1650,6 @@ companies:
   reason: Acquired by Ryse Energy (2023); the brand now runs from Houston, TX.
   ats: null
   open_roles: null
-- name: Project Canary
-  website: https://www.projectcanary.com
-  hq: Denver, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: project-canary
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
-  ats:
-    type: pinpoint
-    token: projectcanary
-  open_roles: 4
 - name: Prometheus Materials
   website: https://prometheusmaterials.com
   hq: Longmont, CO
@@ -1880,17 +1715,6 @@ companies:
   reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: RavenWindow
-  website: https://ravenwindow.com
-  hq: Denver, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: null
-  decision: closed
-  reason: CB Insights lists RavenBrick (RavenWindow) as dead; latest company news is from 2017 and the domain now
-    carries gambling links.
-  ats: null
-  open_roles: null
 - name: RayChill
   website: null
   hq: Boulder, CO
@@ -1919,7 +1743,6 @@ companies:
   hq: Commerce City, CO
   sources:
   - fundraise-insider-co
-  - builtin-co-energy
   - elemental-portfolio
   - cev-portfolio
   registry_id: rebound-technologies
@@ -2002,16 +1825,6 @@ companies:
   registry_id: null
   decision: not-in-scope
   reason: Fleet electrification analytics software.
-  ats: null
-  open_roles: null
-- name: Scoggins Enterprises
-  website: null
-  hq: Grand Junction, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: scoggins-enterprises
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Seditio
@@ -2161,8 +1974,6 @@ companies:
   hq: Fort Collins, CO
   sources:
   - csu-powerhouse
-  - builtin-co-greentech
-  - builtin-co-energy
   registry_id: null
   decision: not-in-scope
   reason: Grid-control software.
@@ -2199,7 +2010,6 @@ companies:
   sources:
   - bs-co-cleantech
   - bs-co-cleanenergy
-  - builtin-co-energy
   registry_id: steelhead-composites
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: enabling, startup in.'
@@ -2210,7 +2020,6 @@ companies:
   hq: Longmont, CO
   sources:
   - edc-named
-  - builtin-co-energy
   - search-snippets
   registry_id: stored-energy-systems-sens
   decision: registry
@@ -2247,17 +2056,6 @@ companies:
   registry_id: sunpath
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: core, startup in.'
-  ats: null
-  open_roles: null
-- name: SunTech Drive
-  website: https://suntechdrive.com
-  hq: Boulder, CO
-  sources:
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: null
-  decision: closed
-  reason: Domain now redirects to an unrelated gambling site; no other activity found.
   ats: null
   open_roles: null
 - name: Sustainable Chemicals
@@ -2339,7 +2137,6 @@ companies:
   hq: Golden, CO
   sources:
   - bev-vcbacked
-  - builtin-co-greentech
   - fundraise-insider-co
   registry_id: terra-co2-technologies
   decision: registry
@@ -2364,27 +2161,6 @@ companies:
   registry_id: terralux
   decision: registry
   reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
-  ats: null
-  open_roles: null
-- name: The Hemp Plastic Company
-  website: null
-  hq: Boulder, CO
-  sources:
-  - builtin-co-greentech
-  registry_id: the-hemp-plastic-company
-  decision: registry
-  reason: 'Proposed in proposals-02-colorado.yml: out, startup in.'
-  ats: null
-  open_roles: null
-- name: Thunderbird Solar
-  website: null
-  hq: Denver, CO
-  sources:
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: Three-person solar design consultancy and equipment reseller.
   ats: null
   open_roles: null
 - name: Tierra Metrics
@@ -2412,7 +2188,6 @@ companies:
   website: https://travertinetech.com
   hq: Boulder, CO
   sources:
-  - builtin-co-greentech
   - vcbacked-boulder
   - cev-portfolio
   registry_id: travertine
@@ -2462,7 +2237,6 @@ companies:
   website: https://www.vartega.com
   hq: Golden, CO
   sources:
-  - builtin-co-greentech
   - fundraise-insider-co
   registry_id: vartega
   decision: registry
@@ -2519,17 +2293,6 @@ companies:
   registry_id: null
   decision: not-in-scope
   reason: Energy-storage software.
-  ats: null
-  open_roles: null
-- name: Western Autotroph Company
-  website: null
-  hq: Parker, CO
-  sources:
-  - builtin-co-greentech
-  - builtin-co-energy
-  registry_id: null
-  decision: not-in-scope
-  reason: Wastewater-treatment microbes; no energy or emissions product.
   ats: null
   open_roles: null
 - name: WHISPER Energy
@@ -2655,7 +2418,6 @@ excluded:
 - name: DMC Biotechnologies (Dynamic Metabolic Control)
   sources:
   - bev-vcbacked
-  - builtin-co-greentech
   reason: Headquartered in Morrisville, NC; Boulder is a distributor's address. Also not clean-tech (health ingredients).
 - name: FlipTurn
   sources:
@@ -2686,8 +2448,6 @@ excluded:
 - name: ScarabTECH
   sources:
   - bs-co-cleanenergy
-  - builtin-co-greentech
-  - builtin-co-energy
   reason: Its own site says the plastic-to-fuel units are designed in Johannesburg, South Africa; the Glenwood Springs,
     CO listing appears stale.
 - name: Sun Metalon
