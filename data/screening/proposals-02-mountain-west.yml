@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: aeonix
   name: Aeonix
@@ -364,6 +364,33 @@ companies:
     March 2025 (https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups);
     site refers to a pilot. Evidence: https://www.carbonutility.com/ https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups
     Region sources: sw-futures-engine-2025. Confidence: medium. Unresolved: Founding year, funding, headcount.'
+- id: chemtronergy
+  name: Chemtronergy
+  website: https://www.chemtronergy.com
+  careers_url: null
+  hq: Salt Lake City, UT
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid oxide fuel cells and electrolyzers, plus all-solid-state lithium batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site cites ARPA-E REFUEL and OPEN 2018 participation,
+    no amounts; no equity round found Flags: Latest dated sign of activity is the 2024 copyright; /about returned
+    404.. Evidence: c h e m t r Region sources: arpa-e. Confidence: low.'
 - id: comstock-metals
   name: Comstock Metals
   website: https://comstock.inc/
@@ -478,6 +505,30 @@ companies:
   notes: 'No job board found on the company''s site. Founded: https://echo-elements.com/. Stage: No rounds or grants
     listed; site invites investment inquiries. Flags: very early stage (founded 2026). Evidence: https://echo-elements.com/
     Region sources: unr-tech-hub. Confidence: medium. Unresolved: Funding and headcount.'
+- id: electrafly
+  name: ElectraFly
+  website: https://www.electrafly.com
+  careers_url: null
+  hq: Utah
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: enabling
+    reason: VTOL aircraft for package delivery and personal flight, plus composite manufacturing and CNC machining.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'No job board found on the company''s site. Flags: Site gives no address; Utah location rests on the ut-goeo-mfg-grant
+    source only.. Evidence: e l e c t r Region sources: ut-goeo-mfg-grant. Confidence: low.'
 - id: electric-power-systems-ep-systems
   name: Electric Power Systems (EP Systems)
   website: https://www.epsenergy.com/
@@ -817,6 +868,31 @@ companies:
     Region sources: az-tech-council-battery, gpec-av-ev. Confidence: medium. Unresolved: Whether mass production
     started in 2026 (2025 reports targeted spring/summer 2026); site headcount; lgensol.com company page 404 and
     Dealroom 404.'
+- id: liberty-fusion
+  name: Liberty Fusion
+  website: https://www.libertyfusion.com
+  careers_url: null
+  hq: New Mexico
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Fusion power reactors (magneto-inertial category).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Plasma-jet (PJMIF, LANL PLX) link not confirmed by any
+    page read; /about returned 404.. Evidence: l i b e r t Region sources: nm-aea, nm-search. Confidence: low.'
 - id: lion-energy
   name: Lion Energy
   website: https://lionenergy.com/
@@ -933,6 +1009,33 @@ companies:
     rail, industrial, utility. Evidence: https://www.livewireinnovation.com/ Region sources: uofu-tlo-portfolio.
     Confidence: medium. Unresolved: HQ not stated on the site (taken from input); founding year, headcount, funding
     not found; Dealroom slug 404.'
+- id: molten-salt-solutions
+  name: Molten Salt Solutions
+  website: null
+  careers_url: null
+  hq: Santa Fe, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Enriched lithium-7 and lithium-6 for molten-salt reactors and fusion.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Search results (interestingengineering.com, neimagazine.com)
+    report a $7 million seed round announced 2026-08-31, cumulative funding over $15 million Flags: Facts come from
+    search result summaries only; the Dealroom page (dealroom.co/companies/molten-salt-solutions/) and moltensaltsolutions.com
+    could not be fetched because the fetch tool hit a usage limit. Website not confirmed.. Evidence: S e a r c h
+    Region sources: nm-aea. Confidence: low.'
 - id: moxy
   name: MOXY
   website: https://moxyoid.com
@@ -960,6 +1063,32 @@ companies:
     #1 (amount not stated); no venture rounds found. Flags: second head office in Toronto, ON; CO2 storage claim
     from the directory not confirmed on the home page. Evidence: https://moxyoid.com/ Region sources: third-derivative.
     Confidence: medium. Unresolved: Founding year, headcount, factory location.'
+- id: navitasmax
+  name: NAVITASMAX
+  website: https://www.navitasmax.com
+  careers_url: null
+  hq: Chandler, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Grid-scale energy storage using supercritical fluids.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Weak activity signal: the site has no dated content
+    or copyright year.. Evidence: n a v i t a Region sources: arpa-e. Confidence: low.'
 - id: nextech-batteries
   name: NexTech Batteries
   website: https://www.nextechbatteries.com/
@@ -986,6 +1115,32 @@ companies:
   notes: 'No job board found on the company''s site. Evidence: https://nextechbatteries.com/ Region sources: nv-goed-lithium-loop,
     nv-battery-coalition. Confidence: medium. Unresolved: Founded, funding, plant and headcount not found; Dealroom
     404. Footer 2025, no dated news.'
+- id: osazda-energy
+  name: Osazda Energy
+  website: https://www.osazda.com
+  careers_url: null
+  hq: Albuquerque, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: seed
+  founded: 2017
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Crack-tolerant metallization paste and plating for solar cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded: DOE SBIR Phase II $1.1M (UNM Engineering
+    news 2024-02-28), DOE SETO $1.25M (2020), NM SBIR matching grant; no equity round found Flags: Stage set to
+    seed on grant funding alone; may be pre-seed in equity terms.. Evidence: o s a z d a Region sources: nm-search.
+    Confidence: low.'
 - id: oxeon-energy
   name: OxEon Energy
   website: https://www.oxeonenergy.com/
@@ -1138,6 +1293,33 @@ companies:
     main customers are oil and gas; runs mainly on natural gas / waste methane; HQ sources: Dealroom lists Israel;
     Ogden, UT is main US site. Evidence: https://www.qnergy.com/ https://dealroom.co/companies/qnergy Region sources:
     builtin-ut-energy. Confidence: high. Unresolved: Whether legal HQ is now Ogden or Israel.'
+- id: quantum-copper
+  name: Quantum Copper
+  website: https://www.quantumpowerinc.com/
+  careers_url: null
+  hq: Las Vegas, NV
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Fire-retardant separators, current collectors and casings for lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No board found: home page not readable (202). Stage: quantumcopper.com reports a $274,610 NSF SBIR Phase
+    I grant announced 2024-12-12; no equity round found Flags: Input URL quantumpowerinc.com returned an empty page;
+    it is not this company''s domain. Product is battery components, not cells and packs as the source said. The
+    shell fetch of quantumpowerinc.com was refused by the permission check.. Evidence: q u a n t u Region sources:
+    nv-goed-lithium-loop. Confidence: low.'
 - id: rivixl
   name: Rivixl
   website: null
@@ -1384,6 +1566,61 @@ companies:
     AG; HQ outside region; over 1,000 employees; site: Salt Lake City, UT. Evidence: https://www.stadlerrail.com/en/
     Region sources: ut-goeo-mfg-grant. Confidence: medium. Unresolved: Salt Lake City plant details, US headcount,
     founding year and listing year not retrieved (site pages are JavaScript-rendered).'
+- id: surface-transfer-heatflow
+  name: Surface Transfer (HeatFlow)
+  website: null
+  careers_url: null
+  hq: New Mexico
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - geothermal
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turbine-cycle system for power from lower-temperature geothermal brine.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Search results report a $650,000 NM EDD Advanced Energy
+    Award paid in two phases and Roadrunner Venture Studios as backer; no priced round found Flags: The name ''Surface
+    Transfer'' was not found anywhere; HeatFlow is the matching company. The Albuquerque Journal article in results
+    was not opened (barred). Website not found; fetch tool hit a usage limit before more checks.. Evidence: S e
+    a r c h Region sources: nm-aea. Confidence: low.'
+- id: tibbar-technologies
+  name: Tibbar Technologies
+  website: https://www.tibbartech.com
+  careers_url: null
+  hq: Los Alamos, NM
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Plasma-based electrical transformers and power conversion, with fusion research.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: tibbartech.com says ''millions of dollars'' from NSF
+    and ARPA-E; no equity round found Flags: Legal name is Tibbar Plasma Technologies, Inc.; not a rename. Dealroom
+    slug guesses returned 404.. Evidence: t i b b a r Region sources: arpa-e. Confidence: low.'
 - id: tpi-composites
   name: TPI Composites
   website: https://www.tpicomposites.com/
@@ -1530,6 +1767,33 @@ companies:
     Zetwerk (per site footer). Evidence: https://unimacts.com/ Region sources: house-unimacts. Confidence: low.
     Unresolved: HQ and Las Vegas, NV site not stated on home page; Spain wind plant not confirmed; headcount and
     founding year not found.'
+- id: vastvision-technologies
+  name: VastVision Technologies
+  website: null
+  careers_url: null
+  hq: New Mexico
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Battery-free magnetoelastic tags for inventory and asset tracking; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: sandia.gov article: $925,000 NM Advanced Energy Award
+    and over $2 million total investment; no named equity round Flags: No company website found: vastvisiontech.com
+    returned empty, vastvisiontechnologies.com does not resolve, vastvision.com has an expired certificate (may
+    not be this company). Article date not shown.. Evidence: s a n d i a Region sources: nm-aea, lanl-fci-2025.
+    Confidence: low.'
 - id: visionary-products
   name: Visionary Products
   website: null

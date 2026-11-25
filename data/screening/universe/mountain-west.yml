@@ -182,7 +182,7 @@ companies:
   - ua-tla-portfolio
   registry_id: null
   decision: null
-  reason: University licence from 2014 and no recent activity found; status not established.
+  reason: Identity check found nothing conclusive. Not reached before the fetch and search tools hit a usage limit.
   ats: null
   open_roles: null
 - name: Aeonix
@@ -345,17 +345,18 @@ companies:
   - uofu-tlo-portfolio
   registry_id: null
   decision: null
-  reason: Its site certificate has expired and its sodium work moved to Enlighten Innovations; status not established.
+  reason: 'Identity check found nothing conclusive. REFUSED: a shell fetch of ceramatec.com that ignored the expired
+    certificate was denied by this session''s permission check; not retried another way.'
   ats: null
   open_roles: null
 - name: Chemtronergy
-  website: null
+  website: https://www.chemtronergy.com
   hq: Salt Lake City, UT
   sources:
   - arpa-e
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: chemtronergy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Circularity Fuels
@@ -414,13 +415,13 @@ companies:
   ats: null
   open_roles: null
 - name: ElectraFly
-  website: null
+  website: https://www.electrafly.com
   hq: Utah
   sources:
   - ut-goeo-mfg-grant
-  registry_id: null
-  decision: null
-  reason: Its domain was guessed; identity not established.
+  registry_id: electrafly
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: ElectraMeccanica
@@ -513,7 +514,7 @@ companies:
   - builtin-ut-greentech
   registry_id: null
   decision: null
-  reason: Product described only vaguely; identity not established.
+  reason: Identity check found nothing conclusive. Not reached before the fetch and search tools hit a usage limit.
   ats:
     type: greenhouse
     token: builtin
@@ -525,7 +526,8 @@ companies:
   - ua-tla-portfolio
   registry_id: null
   decision: null
-  reason: Its site certificate has expired; status not established.
+  reason: 'Identity check found nothing conclusive. REFUSED: a shell fetch of fontanasystems.com that ignored the
+    expired certificate was denied by this session''s permission check; not retried another way.'
   ats: null
   open_roles: null
 - name: Footprint
@@ -540,18 +542,6 @@ companies:
     type: workable
     token: footprint
   open_roles: 16
-- name: Gemini Energy
-  website: null
-  hq: null
-  sources:
-  - lanl-fci-2025
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
-  ats:
-    type: greenhouse
-    token: gemini
-  open_roles: 24
 - name: GlycoSurf
   website: https://glycosurf.com/
   hq: Salt Lake City, UT
@@ -570,7 +560,8 @@ companies:
   - ua-tla-portfolio
   registry_id: null
   decision: null
-  reason: Its domain does not resolve; status not established.
+  reason: Identity check found nothing conclusive. Leans closed, but a dead domain alone was already known; the
+    planned search failed on a usage limit.
   ats: null
   open_roles: null
 - name: GridFlow
@@ -644,7 +635,9 @@ companies:
   - nv-goed-lithium-loop
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Identity is now traced to k2energysolutions.com, but the page
+    carries no content, so active status is not established. The shell fetch of k2batterystore.com was refused by
+    the permission check.
   ats: null
   open_roles: null
 - name: LG Energy Solution Arizona
@@ -659,14 +652,14 @@ companies:
   ats: null
   open_roles: null
 - name: Liberty Fusion
-  website: null
+  website: https://www.libertyfusion.com
   hq: New Mexico
   sources:
   - nm-aea
   - nm-search
-  registry_id: null
-  decision: null
-  reason: Early R&D with no product; identity not established.
+  registry_id: liberty-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Lilac Solutions (Western Ceramics Company 1 LLC)
@@ -687,8 +680,9 @@ companies:
   sources:
   - nv-goed-lithium-loop
   registry_id: null
-  decision: null
-  reason: The domain found belongs to an Indian company; identity not established.
+  decision: duplicate
+  reason: Now part of Comstock Inc. (linicocorp.com redirects to comstock.inc); its recycling work is under Comstock
+    Metals, listed separately.
   ats: null
   open_roles: null
 - name: Lion Energy
@@ -767,12 +761,12 @@ companies:
   open_roles: null
 - name: Molten Salt Solutions
   website: null
-  hq: New Mexico
+  hq: Santa Fe, NM
   sources:
   - nm-aea
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: molten-salt-solutions
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: MOXY
@@ -786,13 +780,13 @@ companies:
   ats: null
   open_roles: null
 - name: NAVITASMAX
-  website: null
+  website: https://www.navitasmax.com
   hq: Chandler, AZ
   sources:
   - arpa-e
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: navitasmax
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: NexTech Batteries
@@ -841,13 +835,13 @@ companies:
     token: null
   open_roles: null
 - name: Osazda Energy
-  website: null
+  website: https://www.osazda.com
   hq: Albuquerque, NM
   sources:
   - nm-search
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: osazda-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: OxEon Energy
@@ -931,12 +925,12 @@ companies:
   open_roles: null
 - name: Quantum Copper
   website: https://www.quantumpowerinc.com/
-  hq: Nevada
+  hq: Las Vegas, NV
   sources:
   - nv-goed-lithium-loop
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: quantum-copper
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Reaction Engineering International
@@ -1037,7 +1031,9 @@ companies:
   - ua-tla-portfolio
   registry_id: null
   decision: null
-  reason: Its site gives only a tagline; product and status not established.
+  reason: 'Identity check found nothing conclusive. Copyright 2026 suggests the site is maintained, but product
+    and HQ are not shown. REFUSED: a shell fetch of its /technology and /products pages was denied by the permission
+    check; not retried another'
   ats: null
   open_roles: null
 - name: Solestial
@@ -1101,9 +1097,9 @@ companies:
   hq: New Mexico
   sources:
   - nm-aea
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: surface-transfer-heatflow
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Tesla (Gigafactory Nevada)
@@ -1118,13 +1114,13 @@ companies:
   ats: null
   open_roles: null
 - name: Tibbar Technologies
-  website: null
+  website: https://www.tibbartech.com
   hq: Los Alamos, NM
   sources:
   - arpa-e
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: tibbar-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Torus
@@ -1210,13 +1206,13 @@ companies:
   open_roles: null
 - name: VastVision Technologies
   website: null
-  hq: Albuquerque, NM
+  hq: New Mexico
   sources:
   - nm-aea
   - lanl-fci-2025
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: vastvision-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-mountain-west.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Visionary Products
@@ -1320,6 +1316,10 @@ excluded:
   sources:
   - asu-search
   reason: Headquartered in Princeville, HI, outside the region; no main site in the region found.
+- name: Gemini Energy
+  sources:
+  - lanl-fci-2025
+  reason: Headquartered in Los Angeles, CA, outside the region; no main site in the region found.
 - name: Greenore
   sources:
   - third-derivative
