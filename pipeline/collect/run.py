@@ -3,9 +3,11 @@
     uv run python -m pipeline.collect [--company <id>] [--out data/jobs.raw.json]
 
 Writes a raw jobs file (schema/raw-jobs-file.schema.json). A company is
-collected when its climate tier is core or enabling, its startup status is in
-or review, and its ATS has a reader and a board token. Every other company gets
-a `skipped` entry with the reason. One company failing does not stop the run.
+collected when its climate tier is core or enabling and its ATS has a reader
+and a board token, whatever its startup status: established companies are
+collected too (PLAN.md decision 14), and the board decides what it shows.
+Every other company gets a `skipped` entry with the reason. One company
+failing does not stop the run.
 """
 from __future__ import annotations
 
@@ -55,7 +57,6 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
          "paylocity": "recruiting.paylocity.com"}
 COLLECT_TIERS = ("core", "enabling")
-COLLECT_STARTUP = ("in", "review")
 
 
 def utc_now() -> str:
@@ -64,11 +65,9 @@ def utc_now() -> str:
 
 def skip_reason(company: dict, readers: dict = READERS, disabled=()) -> str | None:
     """Why a company is not collected, or None when it is."""
-    tier, status = company["climate"]["tier"], company["startup"]["status"]
+    tier = company["climate"]["tier"]
     if tier not in COLLECT_TIERS:
         return f"not collected: climate tier is '{tier}'"
-    if status not in COLLECT_STARTUP:
-        return f"not collected: startup status is '{status}'"
     if company.get("read") == "none":
         return "not collected: the registry says read: none"
     # 'read: manual' does not stop a company being collected: the field says
