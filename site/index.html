@@ -268,6 +268,7 @@ body::before {
 .tier-core { color: var(--ink); }
 .tier-enabling, .tier-other { color: var(--muted); }
 .tier-other { border-style: dashed; }
+.tier-type { color: var(--soft); border-color: var(--rule); }
 
 .role-side { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 2px; font-size: 13.5px; color: var(--soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .pay { font-weight: 600; color: var(--ink); }
@@ -327,7 +328,7 @@ body::before {
       <span class="top-links"><a href="pay.html">Pay ranges by role and market</a> <a href="persona.html">Build your persona (draft)</a></span>
     </div>
     <h1>HiPot</h1>
-    <p>Open roles at hardware startups in clean technology and electrification: engineers, technicians, trades, production, supply chain and more. Every role is read from the hiring company's own job board, so a role that closes there leaves here.</p>
+    <p>Open roles at clean-technology and electrification hardware companies, startups and established ones alike: engineers, technicians, trades, production, supply chain and more. Every role is read from the hiring company's own job board, so a role that closes there leaves here.</p>
     <div class="stats" id="stats" hidden>
       <div><b id="s-roles">0</b><span class="mono">Open roles</span></div>
       <div><b id="s-cos">0</b><span class="mono">Companies hiring</span></div>
@@ -398,7 +399,8 @@ body::before {
     <div class="cols">
       <div>
         <p><strong>Every role comes from the company's own job board.</strong> The board reads each company's public job feed and links each role to the posting there. Nothing comes from an aggregator or a search result. A role that leaves the company's board leaves this one at the next refresh.</p>
-        <p><strong>Companies are screened before their roles appear,</strong> for climate fit under a written rubric and for size: a startup here has fewer than 1,000 people. <span id="unlisted-functions"></span></p>
+        <p><strong>Companies are screened for climate fit before their roles appear,</strong> under a written rubric. <span id="unlisted-functions"></span></p>
+        <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
         <p id="provisional-note"><strong>The company screen is provisional.</strong> The climate tier and reason shown for each company are a first pass. They have not yet been checked against the company's own site or approved.</p>
         <p class="mono" id="run-note"></p>
@@ -454,6 +456,7 @@ body::before {
   // One entry per checkbox group. `key` is also the key in the URL fragment.
   var FACETS = [
     { key: 'f', title: 'Role type', tax: 'functions', open: true },
+    { key: 'ct', title: 'Company type', tax: 'company_types', open: true },
     { key: 'd', title: 'Discipline', tax: 'disciplines', open: true },
     { key: 'l', title: 'Level', tax: 'levels', none: 'Not stated in the title', open: true },
     { key: 'm', title: 'Location', tax: 'metros', open: true },
@@ -603,6 +606,7 @@ body::before {
       role.payCompare = comparablePay(role.pay);
       role.facets = {
         f: [role.fn],
+        ct: [company.type || 'unchecked'],
         d: role.disc || [],
         l: [role.level || NONE],
         m: places,
@@ -931,9 +935,16 @@ body::before {
 
   // ---- Rendering --------------------------------------------------------------------------------
 
+  // The climate tier tag, followed by the company-type tag (Startup or Established) when the type is known.
   function tierBadge(company) {
     var known = company.tier === 'core' || company.tier === 'enabling';
-    return el('span', { class: 'tier ' + (known ? 'tier-' + company.tier : 'tier-other'), text: labels.climate_tiers[company.tier] || company.tier });
+    var tags = document.createDocumentFragment();
+    tags.appendChild(el('span', { class: 'tier ' + (known ? 'tier-' + company.tier : 'tier-other'), text: labels.climate_tiers[company.tier] || company.tier }));
+    if (company.type && company.type !== 'unchecked' && labels.company_types) {
+      tags.appendChild(document.createTextNode(' '));
+      tags.appendChild(el('span', { class: 'tier tier-type', text: labels.company_types[company.type] || company.type }));
+    }
+    return tags;
   }
 
   function whereText(role) {

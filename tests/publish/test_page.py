@@ -175,3 +175,12 @@ def test_pay_vs_market_tag_and_filter():
     # It sits above the card's stretched link so its tooltip can show.
     assert ".grade { position: relative; z-index: 1;" in STYLE
     assert '<p id="grade-note" hidden>' in PAGE and "$('grade-note').hidden = !board.grades;" in SCRIPT
+
+
+def test_company_type_filter_and_tag():
+    # Decision 14: Startup and Established, both shown by default, kept in the address like the others.
+    assert "{ key: 'ct', title: 'Company type', tax: 'company_types', open: true }" in SCRIPT
+    assert "ct: [company.type || 'unchecked']," in SCRIPT
+    assert "el('span', { class: 'tier tier-type', text: labels.company_types[company.type] || company.type })" in SCRIPT
+    assert "Startups and established companies are both listed, and labelled." in PAGE
+    assert "fewer than 4,000 people" in PAGE and "fewer than 1,000 people" not in PAGE
