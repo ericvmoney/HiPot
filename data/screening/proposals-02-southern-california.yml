@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: 4th-state-energies
   name: 4th State Energies
@@ -65,6 +65,36 @@ companies:
     Evidence: https://aluminaenergy.com/ https://aluminaenergy.com/team Region sources: laci-portfolio, shell-gamechanger,
     laci. Confidence: medium. Unresolved: Headcount and funding not found. Dealroom slug alumina_energy and builtinla.com/company/alumina-energy
     404.'
+- id: american-lithium-energy
+  name: American Lithium Energy
+  website: https://www.americanlithiumenergy.com/
+  careers_url: null
+  hq: Vista, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2006
+  headcount: null
+  climate:
+    tier: out
+    reason: Silicon-anode lithium-ion battery cells and custom battery packs (ZeroVolt, SafeCore+) for defense,
+      space, electric flight and EVs. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2006 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.americanlithiumenergy.com/about-us. Stage:
+    No venture rounds found; site lists government funding (US Army 2008, DOE 2014, $13M California energy grant
+    2022, Stratfi 2025). Ownership not stated. Flags: defense is a main market (founded to make cells for the US
+    Army); HQ is Vista, not Carlsbad as input guessed. Evidence: https://www.americanlithiumenergy.com/ https://www.americanlithiumenergy.com/about-us
+    Region sources: cec-zev-mfg-table, cec-gfo-21-605, sdedc-cleantech. Confidence: medium. Unresolved: Headcount
+    and ownership/private funding not found; Dealroom 404.'
 - id: ampaire
   name: Ampaire
   website: https://www.ampaire.com/
@@ -98,6 +128,35 @@ companies:
     https://www.builtinla.com/company/ampaire Region sources: laci-portfolio, elemental, laci, arpa-e. Confidence:
     high. Unresolved: HQ: own site Long Beach (4301 E Donald Douglas Dr); Built In LA says Hawthorne. Site lists
     NASA, ARPA-E and USAF among those it is ''trusted by''; defense is not stated as the main business.'
+- id: aquacycl
+  name: Aquacycl
+  website: https://www.aquacycl.com/
+  careers_url: null
+  hq: Escondido, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: BETT modular bio-electrochemical systems for on-site treatment of high-strength industrial wastewater,
+      and SulfideFix H2S removal; also treatment as a service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: HQ is Escondido, not San Diego city
+    (still San Diego County); also offers treatment as a service. Evidence: https://www.aquacycl.com/ Region sources:
+    sdedc-cleantech. Confidence: medium. Unresolved: Founded year, headcount and funding stage not found; Dealroom
+    404; /about 404.'
 - id: aquatrino
   name: Aquatrino
   website: https://www.aquatrino.com/
@@ -218,6 +277,35 @@ companies:
     ayyeka_technologies 404. Flags: hardware plus software platform. Evidence: https://ayyeka.com/ https://ayyeka.com/about/
     Region sources: laci-portfolio. Confidence: low. Unresolved: HQ (input says Los Angeles; site silent), founding
     year (site says operating ''since 2015''), headcount, funding.'
+- id: bandgap-technologies
+  name: Bandgap Technologies
+  website: https://bandgaptech.com/
+  careers_url: null
+  hq: Escondido, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: SiC and GaN power electronics, including inverters, converters and solid-state transformers.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by RockeTruck aerospace and defense and data centers among four listed markets;
+      not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Site lists 5 industry leaders on the team;
+    not a headcount. Stage: Site describes Bandgap Technologies as ''a RockeTruck Company''. Flags: subsidiary of
+    RockeTruck; aerospace and defense and data centers among four listed markets. Evidence: https://www.bandgaptech.com/
+    https://www.bandgaptech.com/about Region sources: core-catalog. Confidence: medium. Unresolved: Founded year,
+    headcount and main customer mix not found.'
 - id: basestud-io
   name: BASEstud.io
   website: https://basestud.io/
@@ -341,6 +429,38 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Nothing found. Evidence: https://blucoreminerals.com/
     Region sources: ucr-otp-portfolio. Confidence: medium. Unresolved: HQ (input says Riverside), founding, headcount,
     funding.'
+- id: btc-power
+  name: BTC Power
+  website: https://www.btcpower.com/
+  careers_url: null
+  hq: Irvine, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: 1999
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: BTC Power website (https://www.btcpower.com/)
+  climate:
+    tier: core
+    reason: AC Level 2 and DC fast EV chargers, including chargers for buses and Class 8 trucks.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 500 people (BTC Power website, 2026-11-24); founded 1999 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Company site figure, undated. Founded: https://www.btcpower.com/about.
+    Stage: Ownership not stated on company site (parent such as Hanwha not confirmed); no venture rounds found.
+    Flags: manufacturing also in Cebu, Philippines. Evidence: https://www.btcpower.com/ https://www.btcpower.com/about
+    Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: Ownership/parent not confirmed; Dealroom
+    404.'
 - id: byd-motors
   name: BYD Motors
   website: https://en.byd.com/
@@ -373,8 +493,9 @@ companies:
     listing year not established here. Flags: subsidiary of BYD Co. Ltd (China); factory in Lancaster, CA (main
     site); headcount data dated 2017. Evidence: https://en.byd.com/ https://cleantechnica.com/2017/10/07/byd-triples-the-size-of-lancaster-bus-factory/
     https://www.metro-magazine.com/10033516/byd-unveils-north-americas-largest-electric-bus-factory Region sources:
-    pola-zet. Confidence: medium. Unresolved: en.byd.com returned no readable content; current headcount, US founding
-    year and current Lancaster status not confirmed.'
+    pola-zet, hvip-catalog, cec-zev-mfg-table, cec-gfo-21-605, powerforward-nopa, calstart-member-logos, carb-zev-oem-map.
+    Confidence: medium. Unresolved: en.byd.com returned no readable content; current headcount, US founding year
+    and current Lancaster status not confirmed.'
 - id: calcarea
   name: Calcarea
   website: https://calcarea.com
@@ -432,6 +553,34 @@ companies:
     manufacturing in Mesa, Arizona; projects in Wyoming and Canada (subsidiary True North Carbon). Evidence: https://carboncapture.com
     https://www.carboncapture.com/about Region sources: cec-epic-nopa. Confidence: medium. Unresolved: Founding
     year, headcount. Dealroom slugs carboncapture and carboncapture-inc 404; Built In carboncapture-inc 404.'
+- id: carmine-minerals
+  name: Carmine Minerals
+  website: https://www.carmineminerals.com/
+  careers_url: null
+  hq: Riverside, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery recycling process that recovers high-purity lithium (plus nickel and cobalt) from Li-ion battery
+      recycling waste at below virgin-material cost.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Site is a JS single-page app; only meta tags readable.
+    HQ city taken from the UCR listing (not stated on the site).. Evidence: L i v e   s Region sources: ucr-otp-portfolio.
+    Confidence: low.'
 - id: cero-bikes
   name: CERO Bikes
   website: https://cero.bike/
@@ -547,6 +696,34 @@ companies:
       B3).
   notes: 'No job board found on the company''s site. Stage: Nothing found. Region sources: uci-startups. Confidence:
     low. Unresolved: closedloopplastics.com is a parked domain on a Namecheap auction page; no company site found.'
+- id: complete-coach-works
+  name: Complete Coach Works
+  website: https://completecoach.com/
+  careers_url: null
+  hq: Riverside, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Refurbishes and repowers transit buses, including battery-electric conversions.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Private, no venture rounds; 100% employee-owned (ESOP)
+    per company site; site says ''over 38 years'' in the industry. Flags: mainly refurbishment and repair services;
+    employee-owned (ESOP). Evidence: https://www.completecoach.com/ https://www.completecoach.com/about Region sources:
+    hvip-catalog, cec-zev-mfg-table, carb-zev-oem-map, laedc-ev-report. Confidence: medium. Unresolved: Founded
+    year (site implies about 1987), headcount, and share of battery-electric work not found.'
 - id: critical-energy
   name: Critical Energy
   website: https://criticalenergy.com
@@ -581,6 +758,38 @@ companies:
     it to AI power demand (not confirmed as main customer). Evidence: https://criticalenergy.com https://builtin.com/company/critical-energy
     https://dealroom.co/companies/critical-energy Region sources: builtin-fully-remote. Confidence: medium. Unresolved:
     Round amount ($19M vs $22M); Built In says employees work remotely; Dealroom header says Los Angeles.'
+- id: dana-electrified-san-clemente-site
+  name: Dana Electrified (San Clemente site)
+  website: https://www.dana.com/
+  careers_url: null
+  hq: Maumee, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - components
+  stage: public
+  founded: 1904
+  headcount:
+    value: 28000
+    as_of: '2026-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Dana_Incorporated)
+  climate:
+    tier: enabling
+    reason: Drivetrains and electrified propulsion systems (e-axles, e-drives, motors, inverters, thermal and sealing)
+      for light, commercial and off-highway vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '28,000 people (Wikipedia infobox, 2026-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Year only (2026). Founded: https://en.wikipedia.org/wiki/Dana_Incorporated.
+    Stage: NYSE: DAN (listing year not found). Flags: over 1,000 employees; HQ outside region (Maumee, OH); San
+    Clemente is a site. Evidence: https://www.dana.com/ https://en.wikipedia.org/wiki/Dana_Incorporated Region sources:
+    carb-zev-oem-map. Confidence: medium. Unresolved: San Clemente site not confirmed by any page read. Possible
+    sale of Off-Highway business not confirmed.'
 - id: delphire
   name: Delphire
   website: https://delphiretech.com/
@@ -607,6 +816,64 @@ companies:
     in part by an unnamed funder (logo only). Evidence: https://delphiretech.com/ Region sources: laci-portfolio.
     Confidence: medium. Unresolved: Main stated customers are utilities, first responders and communities. Founding
     year, headcount and funding not found; /team returned 500 and /about 404; Dealroom slug delphire 404.'
+- id: ebus
+  name: Ebus
+  website: null
+  careers_url: null
+  hq: Downey, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: null
+  founded: 1998
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery-electric buses (EBUS22 shuttle, composite bus), retrofit kits converting diesel/CNG buses to
+      battery-electric, battery swap and fast-charging stations.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1998 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/ebus-1. Stage:
+    Private; formed when Eklov bought the subsidiary from EVI in 1998 (search snippet). No funding found. Flags:
+    website not updated since 2017. Evidence: https://fcebus.wixsite.com/ebus-birdie https://www.automotive-fleet.com/news/ebus-delivers-electric-shuttle-buses-to-city-of-anaheim-ca
+    Region sources: laedc-ev-report. Confidence: low. Unresolved: ebus.com redirects to a Wix site with copyright
+    2017 (address 9250 Washburn Rd., Downey); fuel-cell bus product not seen; current activity and headcount unknown.'
+- id: eldorado-national-california
+  name: ElDorado National-California
+  website: null
+  careers_url: null
+  hq: Riverside, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 1975
+  headcount: null
+  climate:
+    tier: core
+    reason: Heavy-duty transit buses (Axess, E-Z Rider II, XHF, Passport-HD), including battery-electric and fuel-cell
+      versions per input.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Rivaz; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://en.wikipedia.org/wiki/ENC_(company). Stage:
+    Owned by Thor 1991-2013, REV Group 2013-2024; REV announced wind-down Jan 2024; Rivaz, Inc. completed acquisition
+    2024-10-18 so the wind-down did not proceed (Wikipedia). Flags: subsidiary of Rivaz, Inc.; now known as ENC.
+    Evidence: https://en.wikipedia.org/wiki/ENC_(company) Region sources: carb-zev-oem-map, laedc-ev-report. Confidence:
+    medium. Unresolved: Whether production continues in 2026 under Rivaz not confirmed; battery-electric/fuel-cell
+    share not confirmed; headcount not found.'
 - id: eli-electric-vehicles
   name: Eli Electric Vehicles
   website: https://www.eli.world/
@@ -661,6 +928,37 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding found. Evidence: https://emc2vehicles.com/
     Region sources: laci-portfolio. Confidence: medium. Unresolved: HQ, founding year, headcount and funding not
     found on the home page. Not searched (budget).'
+- id: enevate
+  name: Enevate
+  website: https://www.enevate.com/
+  careers_url: null
+  hq: Irvine, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: late
+  founded: 2005
+  headcount:
+    value: 44
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/enevate)
+  climate:
+    tier: core
+    reason: Licensable silicon-dominant anode lithium-ion battery cell technology (Trifecta) for fast-charging EVs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 44 people (Dealroom, 2026-11-24); funding round reported in 2021.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom undated; band under 100. Founded:
+    https://dealroom.co/companies/enevate. Stage: Series E, $81M, February 2021 (Fidelity, Mission Ventures, Infinite
+    Potential Technologies) per Dealroom. Flags: licenses technology rather than selling cells. Evidence: https://www.enevate.com/
+    https://dealroom.co/companies/enevate Region sources: cec-zev-mfg-table, laedc-ev-report. Confidence: medium.
+    Unresolved: Physical is borderline: business model is technology licensing of battery cells.'
 - id: epave
   name: ePave
   website: https://www.epavellc.com/
@@ -750,9 +1048,126 @@ companies:
     equity funding. Founded 2022 is from a search snippet (CB Insights / SDBJ: spun out of UCSD in 2022; one listing
     says December 2022). Addresses differ (site: 7348 Trade St, San Diego; other sources: La Jolla or 6640 Via Madera,
     San Diego), all in San Diego. SDBJ page returned 402 (paywall), so read only as a search snippet.'
+- id: firstelement-fuel
+  name: FirstElement Fuel
+  website: https://www.firstelementfuel.com/
+  careers_url: null
+  hq: Santa Ana, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - ev
+  stage: late
+  founded: 2014
+  headcount:
+    value: 55
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/firstelement-fuel)
+  climate:
+    tier: core
+    reason: Builds and operates the True Zero network of hydrogen fueling stations for fuel-cell vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 55 people (Dealroom, 2026-11-24); founded 2014, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom undated; band under 100. Founded:
+    https://dealroom.co/companies/firstelement-fuel. Stage: Dealroom lists a Dec 2025 late VC round (amount undisclosed)
+    and total equity $100-500M; investors include Air Liquide, Mitsui, JBIC (2019-20), Nikkiso, MUFG, Mitsubishi
+    HC Capital, Air Water (2021-23). Flags: station operator (plant it builds and runs). Evidence: https://www.firstelementfuel.com/
+    https://dealroom.co/companies/firstelement-fuel Region sources: cec-zev-mfg-table, cec-gfo-21-605, laedc-ev-report.
+    Confidence: medium. Unresolved: HQ conflicts: company site gives Santa Ana (660 E. Dyer Road), Dealroom gives
+    Newport Beach. Stage label ''late'' is inferred from Dealroom''s ''late VC'' tag, not a named Series D.'
+- id: flion-energy
+  name: Flion Energy
+  website: null
+  careers_url: null
+  hq: Pasadena, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: seed
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Primary and secondary fluoride-ion batteries, mainly for high-temperature applications (R&D stage, stealth).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Stage: Web search summary of CB Insights profile: about $1.13M
+    raised in total, stealth mode; round names and dates not seen (CB Insights page refused the automated client
+    with HTTP 403). Flags: flionenergy.com is a parked GoDaddy lander and flion.com is an unrelated site; no own
+    website found. Stage ''seed'' is inferred from ~$1.1M total raised.. Evidence: I D T e c h Region sources: caltech-local-startups.
+    Confidence: low.'
+- id: flux-power
+  name: Flux Power
+  website: https://www.fluxpower.com/
+  careers_url: null
+  hq: Vista, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: public
+  founded: null
+  headcount:
+    value: 70
+    as_of: '2026-11-24'
+    source: StockAnalysis (https://stockanalysis.com/stocks/flux/company/)
+  climate:
+    tier: core
+    reason: Lithium-ion battery packs, BMS and chargers for forklifts, airport ground support equipment, AGVs and
+      other industrial equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 70 people (StockAnalysis, 2026-11-24); founding year and funding not found, so included as a missing
+      figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Undated figure on page updated 2026-11-19.
+    Stage: Flux Power Holdings, Nasdaq: FLUX (listing year not found). Evidence: https://www.fluxpower.com/ https://stockanalysis.com/stocks/flux/company/
+    Region sources: sdedc-cleantech. Confidence: medium. Unresolved: Founded year and Nasdaq listing year not found
+    (site says ''over a decade'').'
+- id: gate-5-energy-partners
+  name: Gate 5 Energy Partners
+  website: https://gate-5.com
+  careers_url: null
+  hq: Irvine, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Patented onsite non-incineration thermal process turning sewage, manure and other organic waste into
+      renewable energy while destroying PFAS, microplastics and pharmaceuticals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Legal name Gate 5 Energy Partners, Inc.; site brands
+    the technology as Gate 5 Infrastructure.. Evidence: U C I   s t Region sources: uci-startups. Confidence: low.'
 - id: general-atomics
   name: General Atomics
-  website: https://ga.com
+  website: https://www.ga.com/
   careers_url: null
   hq: San Diego, CA
   ats:
@@ -777,8 +1192,8 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Company says ''over 14,000'' employees; undated
     (as_of is date fetched). Founded: https://www.ga.com/about. Stage: Private, no venture rounds; owned by the
     Blue family since 1986 (company site). Flags: over 1,000 employees; defense is main business. Evidence: https://www.ga.com/about
-    Region sources: arpa-e. Confidence: high. Unresolved: HQ city not stated on the about page (input says San Diego).
-    Defense revenue share not stated.'
+    Region sources: sdedc-cleantech, arpa-e. Confidence: high. Unresolved: HQ city not stated on the about page
+    (input says San Diego). Defense revenue share not stated.'
 - id: general-engineering-and-research
   name: General Engineering & Research
   website: https://www.geandr.com/
@@ -839,6 +1254,35 @@ companies:
     disagree on status: Dealroom shows no acquisition. Evidence: https://again.bio/ https://dealroom.co/companies/genomatica
     Region sources: echai-sd-cleantech. Confidence: medium. Unresolved: Acquisition date and terms; whether it licensed
     process technology or sold its own product (physical left unclear).'
+- id: greenkraft
+  name: Greenkraft
+  website: https://www.greenkraft.com/
+  careers_url: null
+  hq: Santa Ana, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Commercial trucks and vans running mostly on gasoline, CNG and LPG, with an electric line.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: robots.txt asks automated clients to stay out; site not read. Stage: Traded OTC as GKIT
+    (OTCQB: GKIT in a 2015 release; OTC in 2017 articles); listing year not found; current listing status not checked.
+    Flags: mainly natural-gas/LPG trucks historically; no news found after 2019. Evidence: https://www.greenkraftinc.com/
+    https://www.businesswire.com/news/home/20150729006797/en/ https://www.globenewswire.com/news-release/2017/01/26/911344/0/en/Several-Major-U-S-Cities-are-Using-Greenkraft-Inc-Alternative-Fuel-Trucks-For-Their-Operations.html
+    Region sources: hvip-catalog, cec-gfo-21-605. Confidence: low. Unresolved: greenkraft.com returns 404; site
+    greenkraftinc.com (address 2530 S. Birch Street, Santa Ana) is up but undated. Founded year, headcount, current
+    operating status and battery-electric share unknown. Dealroom 404.'
 - id: hago-energetics
   name: Hago Energetics
   website: https://hagoenergetics.com/
@@ -979,6 +1423,35 @@ companies:
     Region sources: cec-epic-nopa. Confidence: medium. Unresolved: Founded year is from a search-result snippet
     of Wikipedia, not fetched. Headcount, ownership. The hiipumps.com page also contained unrelated gambling spam
     (site may be compromised). Target industries listed include aviation, oil & gas, hydrogen, diving, fire, mining.'
+- id: hyperion-motors
+  name: Hyperion Motors
+  website: https://www.hyperion.inc/
+  careers_url: null
+  hq: Orange, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 1 MW multi-fuel gensets and 1-5 MW containers (including 100% hydrogen operation), hydrogen storage
+      and on-site fuel generation; earlier the XP-1 hydrogen supercar.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: pivoted from hydrogen supercar to
+    multi-fuel gensets (engines can run on fuels other than hydrogen); XP-1 never entered production (Wikipedia,
+    as of Apr 2024). Evidence: https://hyperion.inc/ https://en.wikipedia.org/wiki/Hyperion_XP-1 Region sources:
+    laedc-ev-report. Confidence: low. Unresolved: HQ not stated on site (Orange is input guess); founded year, headcount,
+    funding, and the gensets'' main fuel and customers not found.'
 - id: icarus-rt
   name: Icarus RT
   website: https://icarusrt.com
@@ -1046,6 +1519,39 @@ companies:
     https://www.cbinsights.com/company/in-charge-energy Region sources: builtinla-energy, cec-epic-nopa, remotefirstjobs,
     web-search-snippets. Confidence: medium. Unresolved: Founding year; whether hardware or services dominate revenue;
     site address is 3760 Motor Ave, Los Angeles vs Built In Santa Monica.'
+- id: karma-automotive
+  name: Karma Automotive
+  website: https://www.karmaautomotive.com/
+  careers_url: null
+  hq: Irvine, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: 2014
+  headcount:
+    value: 434
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/karma-automotive)
+  climate:
+    tier: enabling
+    reason: Extended-range electric and battery-electric luxury cars.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 434 people (Dealroom, 2026-11-24). Owned by Wanxiang Group; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''current team size'', undated; band
+    100-500. Wikipedia infobox: 625 as of 2016 (marked needs update). Founded: https://en.wikipedia.org/wiki/Karma_Automotive.
+    Stage: Formed by Wanxiang Group (China) from Fisker Automotive assets bought Feb 2014; Wikipedia names Wanxiang
+    Group as parent. Dealroom does not name a parent and lists a $100M round July 2020 at $400M valuation. Flags:
+    subsidiary of Wanxiang Group (China) per Wikipedia. Evidence: https://www.karmaautomotive.com/ https://dealroom.co/companies/karma-automotive
+    https://en.wikipedia.org/wiki/Karma_Automotive Region sources: hvip-catalog, cec-zev-mfg-table, powerforward-nopa,
+    laedc-ev-report. Confidence: medium. Unresolved: Current ownership share of Wanxiang not confirmed by a dated
+    source.'
 - id: lasso-loop
   name: Lasso Loop
   website: https://www.lassoloop.com/
@@ -1110,6 +1616,39 @@ companies:
     whether it manufactures its chargers. Evidence: https://loopglobal.com/ https://loopglobal.com/about Region
     sources: fifthwall. Confidence: medium. Unresolved: evloop.io redirects to loopglobal.com. Founding year, headcount,
     funding. Built In ''loop''/''loop-0'' are other companies; Dealroom loop-global 404.'
+- id: luxfer-gas-cylinders
+  name: Luxfer Gas Cylinders
+  website: https://www.luxfercylinders.com/
+  careers_url: null
+  hq: Riverside, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: subsidiary
+  founded: 1898
+  headcount:
+    value: 1350
+    as_of: '2026-11-24'
+    source: StockAnalysis (Luxfer Holdings PLC) (https://stockanalysis.com/stocks/lxfr/company/)
+  climate:
+    tier: enabling
+    reason: High-pressure composite gas cylinders, including hydrogen storage for vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 1,350 people (StockAnalysis (Luxfer Holdings PLC), 2026-11-24). Owned by Luxfer Holdings parent acquired
+      by Wynnchurch Capital Nov 2026 over 1; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Whole Luxfer Holdings group, undated. Founded:
+    https://stockanalysis.com/stocks/lxfr/company/. Stage: Division of Luxfer Holdings PLC (NYSE LXFR, listed 2012-10-03),
+    which was delisted 2026-11-19 after acquisition by Wynnchurch Capital per StockAnalysis. Flags: subsidiary of
+    Luxfer Holdings; parent acquired by Wynnchurch Capital Nov 2026; over 1,000 employees (group). Evidence: https://www.luxfercylinders.com/
+    https://stockanalysis.com/stocks/lxfr/company/ Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved:
+    StockAnalysis gives the group HQ as Riverside, CA (3016 Kansas Avenue); not cross-checked. Founded 1898 is the
+    group''s year.'
 - id: magneto-inertial-fusion-technologies-mifti
   name: Magneto-Inertial Fusion Technologies (MIFTI)
   website: https://miftifusion.com
@@ -1222,6 +1761,35 @@ companies:
     Region sources: third-derivative, greentown, halliburton-labs. Confidence: medium. Unresolved: Input says Pasadena;
     HAX says Los Angeles. Founding year, headcount. Site says contact form temporarily paused. Applications named
     include gas-fired power plants and boilers.'
+- id: nantg-power
+  name: NantG Power
+  website: null
+  careers_url: null
+  hq: El Segundo, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-ion battery cells using silicon-graphite / 3D-architecture anode and cathode materials.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/nantg-power. Stage:
+    Part of the NantWorks group (chairman Patrick Soon-Shiong); no venture rounds found. Flags: part of NantWorks
+    group. Evidence: https://www.businesswire.com/news/home/20230921916521/en https://www.cbinsights.com/company/nantg-power
+    Region sources: powerforward-nopa. Confidence: low. Unresolved: Founded year 2021 and a Culver City address
+    come only from a CB Insights search snippet; most sources say El Segundo. Headcount and ownership structure
+    not found. Partnership with Enevate (Sept 2023) and Windrose (Aug 2025) reported.'
 - id: nuvola
   name: Nuvola
   website: https://nuvola.tech
@@ -1287,6 +1855,35 @@ companies:
     sources: cec-epic-nopa, echai-sd-cleantech. Confidence: medium. Unresolved: Current listing status not checked
     (investors.nuvve.com returned 403; did not retry). Customers are school districts, municipalities, utilities,
     fleets, C&I.'
+- id: oberon-fuels
+  name: Oberon Fuels
+  website: https://oberonfuels.com/
+  careers_url: null
+  hq: San Diego, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Produces renewable dimethyl ether (rDME), low-CI LPG blends, renewable methanol and renewable hydrogen
+      at its Imperial Valley plant.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: fuel producer running its own plant
+    (Imperial Valley). Evidence: https://oberonfuels.com/ https://oberonfuels.com/about/ Region sources: sdedc-cleantech.
+    Confidence: medium. Unresolved: HQ not stated on site (San Diego is input guess); plant city (Brawley) not confirmed;
+    founded year, headcount and funding not found; Dealroom 404.'
 - id: ocean-motion-technologies
   name: Ocean Motion Technologies
   website: https://www.oceanmotion.tech/
@@ -1399,6 +1996,42 @@ companies:
     and gas (enhanced oil recovery, borehole seismic, pipeline monitoring); also lists defense contractors and government
     agencies as partners. Evidence: https://paulsson.com Region sources: calseed-awardees. Confidence: medium. Unresolved:
     Founding year; headcount.'
+- id: phoenix-motorcars
+  name: Phoenix Motorcars
+  website: https://www.phoenixmotorcars.com/
+  careers_url: null
+  hq: Anaheim, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: public
+  founded: 2003
+  headcount:
+    value: 159
+    as_of: '2026-11-24'
+    source: StockAnalysis (Phoenix Motor Inc.) (https://stockanalysis.com/stocks/pev/company/)
+  climate:
+    tier: enabling
+    reason: Battery-electric shuttle, school and transit buses (now including Proterra's former bus business).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 159 people (StockAnalysis (Phoenix Motor Inc.), 2026-11-24); public, with a listing or offering reported
+      in 2024.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls
+    alert handshake failure (_ssl.c:1035)). Headcount note: Undated figure on a page updated 2026-11-20. Founded:
+    https://stockanalysis.com/stocks/pev/company/. Stage: Parent Phoenix Motor Inc. listed on Nasdaq as PEV with
+    IPO in 2022 (Dealroom); now quoted on OTC Markets as PEVM per StockAnalysis. Founded year conflicts: Wikipedia
+    2002, StockAnalysis 2003, Dealroom 2009. Bought Proterra transit business for $10M (completed Jan 2024 per press;
+    Nov 2023 per Wikipedia). Flags: moved from Nasdaq to OTC; acquired Proterra transit business. Evidence: https://stockanalysis.com/stocks/pev/company/
+    https://dealroom.co/companies/phoenix-motorcars https://en.wikipedia.org/wiki/Phoenix_Motorcars https://www.masstransitmag.com/home/press-release/53082730/phoenix-cars-llc-phoenix-motor-completes-acquisition-of-proterra-transit-business-line
+    Region sources: hvip-catalog, cec-zev-mfg-table, sbcounty-ev, carb-zev-oem-map, laedc-ev-report. Confidence:
+    medium. Unresolved: Company site failed (SSL handshake error). Ontario CA site not confirmed. Founded year varies
+    by source (2002/2003/2009).'
 - id: plus-rides
   name: Plus Rides
   website: https://ridewithplus.com/
@@ -1426,6 +2059,33 @@ companies:
     grants; no venture round found. Evidence: https://www.ridewithplus.com/ Region sources: laci-portfolio. Confidence:
     medium. Unresolved: HQ, founding year and headcount not on site (site says product refined ''since 2019'' by
     the team behind Uber''s JUMP Bikes). Not searched (budget).'
+- id: polyloop-recycling
+  name: PolyLoop Recycling
+  website: https://www.polyloopcorp.com/
+  careers_url: null
+  hq: Riverside, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Catalysts for chemical deconstruction and recycling of polymers and plastics, licensed from UC Riverside.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (202). Flags: Own site served a SiteGround bot challenge (sgcaptcha)
+    to an automated client, so it was not read; activity rests on the live domain and the current UCR listing..
+    Evidence: U C R   O f Region sources: ucr-otp-portfolio. Confidence: low.'
 - id: project-k-energy
   name: Project K Energy
   website: https://projectk.energy
@@ -1509,6 +2169,34 @@ companies:
     nature not stated). Evidence: https://pyro-e.com/ Region sources: laci-portfolio. Confidence: medium. Unresolved:
     Headcount and funding not found. Defense appears only as one logo among several, not as main customer. Dealroom
     slugs pyro_e and pyro-e 404.'
+- id: quantum-fuel-systems
+  name: Quantum Fuel Systems
+  website: https://www.qtww.com/
+  careers_url: null
+  hq: Lake Forest, CA
+  ats:
+    type: workable
+    board: quantum-fuel-systems-llc
+  read: manual
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Virtual-pipeline trailers and fuel systems for hydrogen, RNG and CNG.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board workable:quantum-fuel-systems-llc seen 2026-11-25, linked from the company''s own site: 7 open roles.
+    Headcount note: Site says ''over 25 years'' in clean fuel. Stage: Ownership not stated on site; not determined.
+    Flags: mainly natural-gas (CNG/RNG) storage, also hydrogen. Evidence: https://www.qtww.com/ Region sources:
+    laedc-ev-report. Confidence: medium. Unresolved: Founded year, headcount, ownership (post-2016 history) not
+    found. Site news runs to November 2026.'
 - id: radiant-nuclear
   name: Radiant Nuclear
   website: https://www.radiantnuclear.com/
@@ -1696,6 +2384,35 @@ companies:
     and testing services. Evidence: https://rejouleenergy.com https://dealroom.co/companies/rejoule Region sources:
     calseed-awardees, ucr-otp-portfolio, doe-oced. Confidence: medium. Unresolved: Whether revenue is mainly hardware
     or testing services; exact headcount.'
+- id: ryvid
+  name: Ryvid
+  website: https://ryvid.com/
+  careers_url: null
+  hq: Hawaiian Gardens, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Battery-electric motorcycles designed and built in Southern California.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/ryvid. Stage: Avoided
+    venture capital; $20M California Competes grant, 2022-11-29 (BusinessWire). Funding stage not determinable.
+    Flags: factory in San Bernardino; HQ Hawaiian Gardens per press. Evidence: https://www.businesswire.com/news/home/20221129005395/en/RYVID-Receives-%2420-Million-Grant-to-Increase-Jobs-and-Contribute-to-Californias-World-Leading-Climate-Goals
+    https://labusinessjournal.com/featured/ryvid-set-to-roll/ https://www.cyclenews.com/2024/01/article/ryvid-ev-factory-in-san-bernardino-set-to-open-in-2024/
+    Region sources: cec-zev-mfg-table, powerforward-nopa. Confidence: low. Unresolved: Founded year conflicts (CB
+    Insights 2020 vs Cyclenews 2021; from search snippets). HQ conflicts (Hawaiian Gardens vs Irvine on CB Insights).
+    Company site returned only a title. Headcount and 2026 status not confirmed.'
 - id: sa-recycling
   name: SA Recycling
   website: https://www.sarecycling.com/
@@ -1886,7 +2603,7 @@ companies:
     One source calls it Carlsbad-based.'
 - id: solid-energies
   name: Solid Energies
-  website: https://solidenergies.com
+  website: https://solidenergies.com/
   careers_url: null
   hq: Anaheim, CA
   ats:
@@ -1909,9 +2626,9 @@ companies:
       B3).
   notes: 'No job board found on the company''s site. Stage: No funding stated; began as a joint effort within the
     Bioenno Group (sister company of Bioenno Tech). Flags: target markets include military, commercial aviation
-    and EVs; related to Bioenno Group. Evidence: https://solidenergies.com Region sources: arpa-e. Confidence: low.
-    Unresolved: HQ (input says Anaheim; site says Southern California, 714 phone), founding year, headcount, ownership.
-    Domain found by guess (input had none).'
+    and EVs; related to Bioenno Group. Evidence: https://solidenergies.com Region sources: cec-gfo-21-605, powerforward-nopa,
+    arpa-e. Confidence: low. Unresolved: HQ (input says Anaheim; site says Southern California, 714 phone), founding
+    year, headcount, ownership. Domain found by guess (input had none).'
 - id: south-8-technologies
   name: South 8 Technologies
   website: https://www.south8technologies.com/
@@ -1976,6 +2693,34 @@ companies:
     calseed-awardees. Confidence: medium. Unresolved: Founding year; headcount; funding. News page shows a New Mexico
     pilot tied to water challenges in the Permian Basin (oil and gas region); whether oil and gas produced water
     is a main market is not stated.'
+- id: tabc-toyota
+  name: TABC (Toyota)
+  website: null
+  careers_url: null
+  hq: Long Beach, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Toyota plant making truck beds and parts; fuel-cell module assembly there was not confirmed.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Toyota fuel-cell module assembly in Long Beach not confirmed; not independent.
+  notes: 'No job board found on the company''s site. Stage: Toyota subsidiary per input; not confirmed from a fetched
+    page. Flags: subsidiary of Toyota; fuel-cell module assembly in Long Beach not confirmed (Toyota press points
+    to Georgetown, KY). Evidence: https://cdn.southbaycities.org/wp-content/uploads/2024/12/25144338/HANDOUT_Toyota_H2HQ_One-Pager_V11.pdf
+    https://pressroom.toyota.com/toyota-to-assemble-fuel-cell-modules-at-kentucky-plant-in-2023/ Region sources:
+    laedc-ev-report. Confidence: low. Unresolved: tabc.com failed (certificate error). Fuel-cell module assembly
+    at TABC Long Beach not found; search results place Toyota fuel-cell module assembly in Georgetown, KY. Founded
+    year and headcount not found.'
 - id: tae-technologies
   name: TAE Technologies
   website: https://tae.com/
@@ -2041,6 +2786,34 @@ companies:
     product award. Evidence: https://tbm-designs.com/ https://tbm-designs.com/team Region sources: laci-portfolio.
     Confidence: medium. Unresolved: HQ, founding year, headcount and funding not on site (installations at LACI
     and Brooks+Scarpa). Not searched (budget).'
+- id: tellus-power-green
+  name: Tellus Power Green
+  website: https://telluspowergreen.com/
+  careers_url: null
+  hq: Laguna Hills, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: AC and DC EV chargers, bidirectional V2G chargers and distributed charging systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not determined; site has an Investor Relations section
+    but does not say whether public or private. Evidence: https://www.telluspowergreen.com/ Region sources: cec-zev-mfg-table.
+    Confidence: low. Unresolved: Site lists unlabeled addresses in Irvine (11 Studebaker) and Laguna Hills (23541
+    Ridge Route Dr.); HQ, founded year, ownership and headcount not found.'
 - id: thermoshade
   name: ThermoShade
   website: https://www.getthermoshade.com/
@@ -2072,6 +2845,65 @@ companies:
     Dinino, co-founder/COO John Carl, head of sales); a count of listed people. Stage: No funding information found;
     Dealroom has no page (404). Evidence: https://getthermoshade.com https://getthermoshade.com/team Region sources:
     calseed-awardees, laci-portfolio. Confidence: medium. Unresolved: Founding year; funding.'
+- id: tig-m
+  name: TIG/m
+  website: https://www.tig-m.com/
+  careers_url: null
+  hq: Chatsworth, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Battery and hydrogen-hybrid modern streetcars and rail vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: TIG/m, LLC (copyright 2025); no funding found. Evidence:
+    https://www.tig-m.com/ Region sources: laedc-ev-report. Confidence: low. Unresolved: HQ not stated on site (Chatsworth
+    is input guess); founded year, headcount, ownership and current activity not found.'
+- id: trojan-battery
+  name: Trojan Battery
+  website: https://www.trojanbattery.com/
+  careers_url: null
+  hq: Santa Fe Springs, CA
+  ats:
+    type: workday
+    board: trojanbattery
+  read: manual
+  sectors:
+  - energy-storage
+  stage: subsidiary
+  founded: 1925
+  headcount:
+    value: 3000
+    as_of: '2026-11-24'
+    source: Trojan Battery website (https://www.trojanbattery.com/about-us/)
+  climate:
+    tier: core
+    reason: Deep-cycle flooded lead-acid, AGM, gel and lithium-ion batteries for golf carts, LSVs, floor machines,
+      work platforms, RVs, marine and solar storage.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 3,000 people (Trojan Battery website, 2026-11-24). Owned by Stryten Energy over 1; not independent.
+  notes: 'Board workday:trojanbattery.wd5.myworkdayjobs.com/Trojan seen 2026-11-25, linked from the company''s own
+    site: role count not read (no public feed). Headcount note: Site says 3000+, undated; may describe the wider
+    Stryten/C&D group. Founded: https://www.trojanbattery.com/about-us/. Stage: Site calls Trojan ''a Stryten Energy
+    brand''; acquired by C&D Technologies in 2018. Flags: subsidiary of Stryten Energy; over 1,000 employees (as
+    stated); mainly lead-acid batteries. Evidence: https://www.trojanbattery.com/about-us/ Region sources: cec-zev-mfg-table,
+    laedc-ev-report. Confidence: medium. Unresolved: Exact relation between Stryten Energy and C&D Technologies
+    not stated on site. Founded 1925 is ''powered equipment since 1925''.'
 - id: ts-conductor
   name: TS Conductor
   website: https://tsconductor.com
@@ -2195,6 +3027,33 @@ companies:
     Region sources: echai-sd-cleantech. Confidence: low. Unresolved: Site is live with blog posts from 2015 to 2024;
     unclear whether the product is commercially deployed or the company still operates. Founding year, headcount,
     funding.'
+- id: vantage-vehicle-international
+  name: Vantage Vehicle International
+  website: https://www.vantagevehicle.com/
+  careers_url: null
+  hq: Corona, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Gas and electric low-speed and utility vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site says in business over 25 years; copyright
+    1999-2025. Stage: Private, no venture rounds found; ownership not stated. Flags: includes gasoline models. Evidence:
+    https://www.vantagevehicle.com/ Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: Founded year
+    (about 1999?), headcount, and MPAK Motor Co relation not confirmed.'
 - id: voltu-motor
   name: Voltu Motor
   website: https://www.voltumotor.com/
@@ -2223,6 +3082,36 @@ companies:
     is ''1980 Eastridge Ave, Riverside, CA 90670'' (zip 90670 does not match Riverside; HQ city taken from the stated
     city). Site says ''Voltu3 Being Delivered Now''; headline specs show placeholder zeros. Dealroom slug voltu-motor
     404; /about 404.'
+- id: waev
+  name: Waev
+  website: https://www.waevinc.com/
+  careers_url: null
+  hq: Anaheim, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Battery-electric low-speed and industrial utility vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No board found: home page not readable (202). Headcount note: Taylor-Dunn had 150 employees in 2016 (Wikipedia);
+    no Waev figure found. Founded: https://www.businesswire.com/news/home/20220103005173/en/Waev-Inc.-Completes-Purchase-of-GEM-and-Taylor-Dunn-Businesses.
+    Stage: Private; formed by management buyout of GEM and Taylor-Dunn from Polaris completed 2021-12-31 (BusinessWire
+    2022-01-03); asset-based lending facility from J.P. Morgan reported. No venture rounds found. Flags: management
+    buyout from Polaris. Evidence: https://www.businesswire.com/news/home/20220103005173/en/Waev-Inc.-Completes-Purchase-of-GEM-and-Taylor-Dunn-Businesses
+    https://en.wikipedia.org/wiki/Taylor-Dunn https://electrek.co/2022/01/04/polaris-spins-off-gem-taylor-dunn-brands-into-waev-inc/
+    Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: waevinc.com returned an empty page; founded
+    year taken as the buyout year (Wikipedia gives 2022). Headcount not found.'
 - id: water-illumination
   name: Water Illumination
   website: https://waterillumination.com
@@ -2279,6 +3168,33 @@ companies:
     Stage: No funding information found; lists CalSEED among partners. Dealroom has no page (404). Evidence: https://waysideenergy.com
     Region sources: calseed-awardees, laci-portfolio. Confidence: medium. Unresolved: HQ (site says only ''Designed
     and built in California''; input guess Los Angeles); headcount; funding. Founded from footer ''EST. MMXXII''.'
+- id: wiggins-lift-co
+  name: Wiggins Lift Co.
+  website: https://wigginslift.com/
+  careers_url: null
+  hq: Oxnard, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: 1963
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-capacity forklifts, including battery-electric models.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1963 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.wigginslift.com/about. Stage: Private,
+    no venture rounds; family-owned (CEO is founders'' granddaughter) per company site. Flags: family-owned; electric
+    models are part of a mainly conventional forklift line. Evidence: https://www.wigginslift.com/ https://www.wigginslift.com/about
+    Region sources: core-catalog, cec-zev-mfg-table, cec-gfo-21-605. Confidence: medium. Unresolved: HQ city not
+    stated on pages read (Oxnard is the input guess); headcount not found.'
 - id: wildcat-discovery-technologies
   name: Wildcat Discovery Technologies
   website: https://www.wildcatdiscovery.com/
@@ -2370,3 +3286,57 @@ companies:
     Stage: Y Combinator Fall 2025 batch; no round disclosed. Flags: in-space power; target markets listed include
     defense and data centers. Evidence: https://zephyrfusion.com https://www.ycombinator.com/companies/zephyr-fusion
     Region sources: yc. Confidence: medium. Unresolved: Funding amounts.'
+- id: zero-labs-automotive
+  name: Zero Labs Automotive
+  website: https://www.zerolabs.com/
+  careers_url: null
+  hq: Los Angeles, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric vehicle design and electric conversions of classic vehicles.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found. Flags: may now be mainly a design/engineering
+    service (ZLABS). Evidence: https://zerolabs.com/ Region sources: laedc-ev-report. Confidence: low. Unresolved:
+    Site presents Zero Labs Automotive as a button under ZLABS product-design services, not a separate company;
+    HQ, founded year, headcount, funding and status not found; Dealroom 404.'
+- id: zm-trucks
+  name: ZM Trucks
+  website: https://zmtrucks.com/
+  careers_url: null
+  hq: Fontana, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Battery-electric commercial trucks (Class 4 to 5 cab-chassis).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; press contact uses a zo-motors domain, suggesting
+    a link to ZO Motors (not confirmed). Flags: possible parent ZO Motors (unconfirmed). Evidence: https://zmtrucks.us/
+    Region sources: sbcounty-ev. Confidence: low. Unresolved: zmtrucks.com redirects to zmtrucks.us. Founded year,
+    headcount, ownership not found. Terminal tractor and airport GSE products in input not seen on site.'
