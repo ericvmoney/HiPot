@@ -246,3 +246,11 @@ def test_workable_short_links_name_the_system_without_a_token():
 def test_a_careers_page_with_almost_no_text_is_unreadable():
     result = classify_careers_page("<html><body><div>Careers</div></body></html>", "https://acme.example.com/careers", "example.com")
     assert result["outcome"] == "unreadable" and "almost no text" in result["note"]
+
+
+def test_a_careers_page_that_points_to_linkedin_is_routed_to_the_careers_reader():
+    page = TEXT + '<p>We post our openings on LinkedIn.</p><a href="https://www.linkedin.com/company/acme/jobs/">See our open jobs</a>'
+    result = classify_careers_page(page, "https://acme.example.com/careers", "example.com")
+    assert result["outcome"] == "unclear" and result["method"] == "linkedin"
+    icon = TEXT + '<a href="https://www.linkedin.com/company/acme/">LinkedIn</a>'
+    assert classify_careers_page(icon, "https://acme.example.com/careers", "example.com")["method"] != "linkedin"
