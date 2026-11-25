@@ -101,3 +101,15 @@ With `--no-grades` the board carries `"grades": false`, no role has a grade, and
 ## Government wage reference (pay page)
 
 When `data/pay/bls-oews-2025.json` exists (`--wages` to point elsewhere), the publish step copies into `pay.json` only what the pay page needs (`gov`): for each role group and level in the bands, the occupation and statistic to use, and for each metro market in the bands, those occupations' figures and the BLS area they come from. The rules are in `wages.py`: the supervisor's `role_to_occupation`, `manager_occupation` for manager, director and executive levels of engineering and production roles, and `level_to_statistic`. All US and Remote (US) have no figure yet. Top-coded values stay null and read "above $239.2K". These figures never enter the pay-vs-market grades.
+
+## Persona builder (`site/persona.html`, draft)
+
+A candidate turns a resume (PDF, Word or text, or pasted) into `persona.yml` in the browser, checks every field, and saves the file; an existing `persona.yml` can be opened, edited and saved again. Rules only, no model. The publish step writes `site/data/taxonomy.json` (ids, labels and each discipline's `covers` text, all metro areas) for it.
+
+- Libraries load from cdnjs only when needed, pinned: pdf.js 3.11.174 (its worker file is loaded as a plain script, so pdf.js runs it on the page and starts no separate worker), mammoth 1.6.0, js-yaml 4.1.0.
+- No request carries resume text and nothing is stored in the browser. Name, email, phone, links, street address and employer names are removed before anything is kept; a file that still holds an email, phone number or link cannot be saved.
+- Saving on artifact hosting needs the `downloads` capability (`capabilities: {downloads: true}` when publishing). That capability saves only some file types and `.yml` is not one of them, so there the file is saved as `persona.yml.txt`; a "Copy the text" button is the fallback. Elsewhere the page saves `persona.yml` through an ordinary download link.
+- If the browser reports Chrome's built-in model (`LanguageModel`) as available, a button offers on-device suggestions for disciplines only. It is hidden otherwise.
+
+### Later: filters as dropdowns (owner request, not built)
+See "Later: filters as dropdowns with checkboxes" above.

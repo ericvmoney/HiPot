@@ -258,6 +258,29 @@ def write_pay(pay: dict, path: Path | str) -> int:
     return len(data)
 
 
+def build_taxonomy_file(taxonomy: dict) -> dict:
+    """The taxonomy the persona page needs: ids, labels and what each discipline covers."""
+    def pick(key: str, *fields: str) -> list[dict]:
+        return [{field: entry[field] for field in ("id", "label") + fields if field in entry} for entry in taxonomy[key]]
+    return {
+        "taxonomy_version": taxonomy.get("taxonomy_version"),
+        "functions": pick("functions", "covers", "listed"),
+        "disciplines": pick("disciplines", "covers"),
+        "levels": pick("levels"),
+        "sectors": pick("sectors"),
+        "stages": pick("stages"),
+        "metros": pick("metros"),
+    }
+
+
+def write_taxonomy_file(taxonomy: dict, path: Path | str) -> int:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = (_compact(build_taxonomy_file(taxonomy)) + "\n").encode("utf-8")
+    path.write_bytes(data)
+    return len(data)
+
+
 def _compact(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
 

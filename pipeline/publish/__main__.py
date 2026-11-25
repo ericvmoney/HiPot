@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay
+from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay, write_taxonomy_file
 
 MAX_SHOWN = 15
 
@@ -95,6 +95,10 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print("  pay grades: off (--no-grades)")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
+
+    taxonomy_out = args.out.with_name("taxonomy.json")
+    taxonomy_size = write_taxonomy_file(inputs[2], taxonomy_out)
+    print(f"Wrote {taxonomy_out} (for the persona page, {taxonomy_size:,} bytes)")
 
     pay_out = args.pay_out or args.out.with_name("pay.json")
     pay_size = write_pay(pay, pay_out)
