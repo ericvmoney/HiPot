@@ -2869,8 +2869,8 @@ companies:
   hq: Kitchener, ON, Canada
   ats:
     type: workday
-    board: canadiansolar
-  read: manual
+    board: canadiansolar.wd5/CanadianSolar
+  read: auto
   sectors:
   - solar
   - energy-storage
@@ -5011,8 +5011,8 @@ companies:
   hq: Fremont, CA
   ats:
     type: workday
-    board: enovix
-  read: manual
+    board: enovix.wd12/External
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -7801,8 +7801,8 @@ companies:
   hq: Chicago, IL
   ats:
     type: workday
-    board: invenergyllc
-  read: manual
+    board: invenergyllc.wd1/invenergycareers
+  read: auto
   sectors:
   - solar
   - wind
@@ -8964,8 +8964,8 @@ companies:
   hq: San Jose, CA
   ats:
     type: workday
-    board: lyten
-  read: manual
+    board: lyten.wd503/Lyten_External_Career_Site
+  read: auto
   sectors:
   - energy-storage
   stage: late
@@ -14232,8 +14232,8 @@ companies:
   hq: San Diego, CA
   ats:
     type: workday
-    board: solvenergy
-  read: manual
+    board: solvenergy.wd1/SOLV_External_Career
+  read: auto
   sectors:
   - solar
   - energy-storage
@@ -16919,8 +16919,8 @@ companies:
   hq: Mountain View, CA
   ats:
     type: workday
-    board: wisk
-  read: manual
+    board: wisk.wd108/Wisk_Careers
+  read: auto
   sectors:
   - electric-aviation
   stage: subsidiary

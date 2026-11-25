@@ -87,6 +87,8 @@ MANUAL_PLACES = [
     ("TX", "Dallas-Fort Worth", "48113"),    # Dallas County
     ("TX", "DFW", "48113"),
     ("TX", "Spicewood", "48453"),            # unincorporated, Travis County (Austin region)
+    ("TX", "Mesquite", "48113"),             # the Dallas County city, not the Starr County CDP
+    ("IN", "Jeffersonville", "18019"),       # the Clark County city (Louisville region)
     ("TX", "Dallas Fort Worth Metroplex", "48113"),
 ]
 # Not mapped on purpose: "Front Range" (CO) spans the Denver and Fort Collins
