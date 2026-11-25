@@ -1,0 +1,14 @@
+# Registry fixes 13: Ohmium's Workday site (A1 collector, 2026-11-25).
+#
+# careers-probe-03 found Ohmium's board as a bare Workday tenant ('ohmium'), which the guard flags. The
+# full address was in the probe's saved copy of https://ohmium.com, and one Workday search confirmed it,
+# with a generic client name. No sign-in, bot check or CAPTCHA was involved.
+
+fixes:
+- id: ohmium-international
+  name: Ohmium International
+  ats: {type: workday, board: "ohmium.wd12/Ohmium_Careers"}
+  careers_url: https://ohmium.wd12.myworkdayjobs.com/Ohmium_Careers
+  source: >-
+    The home page https://ohmium.com (as saved by careers-probe-03 on 2026-11-25) links twice to
+    https://ohmium.wd12.myworkdayjobs.com/Ohmium_Careers. The Workday search answered total 13 on 2026-11-25.
