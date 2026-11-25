@@ -1,0 +1,16 @@
+# Registry fixes 07: startup facts from the Milestone 3 spot check
+# (reports/M3-spot-check-01.md, 2026-11-25), written by the supervisor.
+# Format as registry-fixes-03; applied by tools/apply_screening.py.
+
+fixes:
+- id: evoqua-water-technologies
+  name: Evoqua Water Technologies
+  parent: Xylem
+  parent_headcount: 22,000 or more (Xylem, 2025)
+  source: Acquired by Xylem in 2023; see reports/M3-spot-check-01.md.
+- id: nanoramic
+  name: Nanoramic
+  last_raise:
+    date: 2026-09
+    type: equity round
+    source: Equity raises in November 2025 ($54M) and September 2026, per the registry's own notes and reports/M3-spot-check-01.md.
