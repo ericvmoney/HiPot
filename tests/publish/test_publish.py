@@ -301,7 +301,10 @@ def test_two_thousand_roles_stay_well_under_five_megabytes():
         ))
     text = dumps_board(build_board(jobs_file(jobs), REGISTRY, TAXONOMY))
     assert text.count("\n") > 2000
-    assert len(text.encode("utf-8")) < 2_500_000
+    # The roles are spread over every listed company, so the company records
+    # grow with the registry (365 listed companies on 2026-11-24). The target
+    # stays "well under 5 MB at 2,000 roles".
+    assert len(text.encode("utf-8")) < 3_000_000
 
 
 # --- Refusing bad input, and the command line -------------------------------
