@@ -1161,10 +1161,29 @@ pre.yaml { background: var(--surface); border-radius: 10px; padding: 14px; overf
     $('copy').addEventListener('click', copyText);
   }
 
+  // Say what the page is doing, so a host that blocks or delays something is
+  // visible instead of a button that silently does nothing.
+  window.addEventListener('error', function (event) {
+    setStatus('read-status', 'Something on this page failed: ' + (event.message || 'unknown error') + '. Reload to try again.', true);
+  });
+  window.addEventListener('unhandledrejection', function (event) {
+    var reason = event.reason && event.reason.message ? event.reason.message : String(event.reason);
+    setStatus('read-status', 'Something on this page failed: ' + reason + '. Reload to try again.', true);
+  });
+  setStatus('read-status', 'Loading the page’s lists…');
+  var listsTimer = setTimeout(function () {
+    if (!tax) setStatus('read-status', 'The page’s lists are taking a long time to load. Reload to try again.', true);
+  }, 10000);
+  $('read-btn').addEventListener('click', function () {
+    if (!tax) setStatus('read-status', 'The page’s lists have not loaded yet, so nothing can be read. Reload to try again.', true);
+  });
+
   fetch(TAXONOMY_URL).then(function (response) {
     if (!response.ok) throw new Error('HTTP ' + response.status);
     return response.json();
   }).then(function (data) {
+    clearTimeout(listsTimer);
+    setStatus('read-status', '');
     tax = data;
     tax.metros.slice().sort(function (a, b) { return a.label.localeCompare(b.label); }).forEach(function (m) {
       $('metro-pick').appendChild(el('option', { value: m.id, text: m.label }));
