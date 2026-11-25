@@ -61,7 +61,8 @@ def test_a_perfect_fit_scores_100_and_says_why_in_one_line(js):
 
 
 def test_normalize_rejects_what_is_not_a_persona_and_defaults_to_engineering(js):
-    for bad in ({}, {"persona_version": 1, "disciplines": ["controls"]}, {"persona_version": 0, "disciplines": []}, [1, 2]):
+    for bad in ({}, {"persona_version": 1, "disciplines": ["controls"]}, {"persona_version": 0, "disciplines": []}, [1, 2],
+                {"persona_version": 0, "functions": ["engineering", "supply-chain"], "disciplines": []}):
         with pytest.raises(Exception):
             js.call("HiPotRank.normalize", bad)
     assert js.call("HiPotRank.normalize", {"persona_version": 0, "disciplines": ["controls"]})["functions"] == ["engineering"]
@@ -106,6 +107,43 @@ def test_place_metro_remote_and_relocation(js):
     assert match(js, elsewhere, unstated)["parts"]["place"] == 4
     not_remote = dict(PERSONA, locations={"metros": ["denver"], "remote": False})
     assert match(js, role(metros=[], loc=["Remote"], wp="remote"), not_remote)["parts"]["place"] == 6
+
+
+@pytest.mark.parametrize("places,abroad", [
+    (["United Kingdom - Remote"], True), (["United-Kingdom---Remote"], True), (["Germany - Remote"], True),
+    (["Remote Latin America based"], True), (["Remote - Toronto, Ontario, Canada"], True), (["Remote, EMEA", "United Kingdom"], True),
+    (["Canada - Remote", "US - Remote"], False), (["Remote"], False), (["Remote, USA"], False), (["US-CA-Remote"], False),
+    (["Remote in the U.S"], False), (["Remote (United States)"], False), ([], False),
+])
+def test_remote_means_remote_in_the_us(js, places, abroad):
+    result = match(js, role(metros=[], loc=places, wp="remote"))
+    if abroad:
+        assert result["parts"]["place"] == -10   # this persona will not relocate
+        assert result["why"].split(" · ")[2].startswith("remote from ") and result["why"].split(" · ")[2].endswith(", outside the US")
+    else:
+        assert result["parts"]["place"] == 15 and " · remote · " in result["why"]
+
+
+def test_a_role_abroad_gains_nothing_for_place_even_when_the_candidate_would_move(js):
+    moving = dict(PERSONA, locations={"metros": ["denver"], "remote": True, "relocate": True})
+    uk = match(js, role(metros=[], loc=["United Kingdom - Remote"], wp="remote"), moving)
+    assert uk["parts"]["place"] == 0 and "remote from United Kingdom, outside the US" in uk["why"]
+    onsite = match(js, role(metros=[], loc=["Bengaluru, India"], wp="onsite"), moving)
+    assert onsite["parts"]["place"] == 0 and "Bengaluru, India, outside the US" in onsite["why"]
+    # A US state or metro area on the role settles it, whatever else the text says.
+    assert match(js, role(metros=[], st=["ca"], loc=["United Kingdom; San Jose"], wp="remote"), moving)["parts"]["place"] == 15
+
+
+def test_non_technical_work_needs_no_discipline(js):
+    supply = dict(PERSONA, functions=["supply-chain"], disciplines=[], level="manager")
+    for disc in ([], ["manufacturing"]):
+        result = match(js, role(fn="supply-chain", level="manager", disc=disc), supply)
+        assert result["parts"]["disc"] == 12.5 and result["why"].startswith("Supply chain · Manager")
+    assert js.call("HiPotRank.describe", js.call("HiPotRank.normalize", supply), LABELS).startswith("Supply chain · Manager")
+    # Engineering, science and technician work still need one, as tools/validate.check_persona says.
+    for functions in ([], ["engineering"], ["supply-chain", "technician"]):
+        with pytest.raises(Exception):
+            js.call("HiPotRank.normalize", dict(PERSONA, functions=functions, disciplines=[]))
 
 
 def test_preferred_sectors_and_stages(js):
