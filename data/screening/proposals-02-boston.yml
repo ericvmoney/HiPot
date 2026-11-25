@@ -1,0 +1,4186 @@
+# Proposals 02 (Greater Boston): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+companies:
+- id: 10dq
+  name: 10DQ
+  website: null
+  careers_url: null
+  hq: Greater Boston
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Redox Loop Battery using water-based electrolytes for long-duration energy storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://greentownlabs.com/members/10dq-inc/ Region
+    sources: masscec-pr-4-5m. Confidence: low. Unresolved: domain (10dq.com 404), founded, headcount, funding; Greentown
+    page refused automated client (403), facts from search snippet only'
+- id: 24m-technologies
+  name: 24M Technologies
+  website: https://24-m.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2010
+  headcount:
+    value: 228
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/24m-technologies)
+  climate:
+    tier: core
+    reason: Semi-solid lithium-ion cell technology and production equipment/components (separator, electrolyte,
+      electrode, pack design) offered to battery-making partners.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 228 people (Built In Boston, 2026-11-24); founded 2010 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Built In says 228 total (undated); Dealroom
+    maps 88 employees, band under 100. Sources disagree. Founded: https://dealroom.co/companies/24m-technologies.
+    Stage: Dealroom lists seed investors (CRV, North Bridge) and 11 ''Series B and later'' investors (Kyocera, ITOCHU
+    and others) and a last-recorded 2026 valuation of $1-2.5B; round names and amounts not shown. Flags: partner/licensing
+    model: technology drops into partners'' production lines. Evidence: https://24-m.com https://dealroom.co/companies/24m-technologies
+    https://www.builtinboston.com/company/24m-technologies Region sources: mit-sloan-cleantech, builtin-boston-greentech,
+    builtin-boston-energy, arpa-e, builtin-greentech, builtin-energy. Confidence: medium. Unresolved: Latest round
+    name; whether revenue is mainly licensing or product sales.'
+- id: 6k
+  name: 6K
+  website: https://www.6kinc.com
+  careers_url: null
+  hq: North Andover, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: late
+  founded: 2014
+  headcount:
+    value: 157
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/6k)
+  climate:
+    tier: core
+    reason: Advanced materials (metal and alloy powders, battery cathode material via 6K Energy, oxides, silicon)
+      made with UniMelt microwave-plasma production.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 157 people (Dealroom, 2026-11-24); founded 2014, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band 100-500 Founded:
+    https://dealroom.co/companies/6k. Stage: Series E $82M, Sept 2024 (Anzu, Volta Energy Technologies, Energy Impact
+    Partners), per Dealroom; also $23M DoD grant Nov 2023. Flags: Federal & Defense listed as an application area;
+    6K Additive site in Burgettstown, PA. Evidence: https://6kinc.com https://dealroom.co/companies/6k Region sources:
+    mit-news-startups, material-impact, eip. Confidence: medium. Unresolved: Whether the 6K Energy battery business
+    has been divested (site still shows it).'
+- id: aclara
+  name: Aclara
+  website: https://www.aclara.com
+  careers_url: null
+  hq: St. Louis, MO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Smart meters and grid sensing equipment (a Hubbell company; plant in Somersworth, NH).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owned by Hubbell; not independent.
+  notes: 'No job board found on the company''s site. Stage: aclara.com now redirects (301) to hubbell.com/aclara,
+    i.e. a Hubbell brand; acquisition date not confirmed from a fetched source. Flags: subsidiary of Hubbell; HQ
+    outside region (St. Louis per input; main regional site Somersworth, NH, not verified). Evidence: https://aclara.com
+    Region sources: builtin-boston-energy. Confidence: medium. Unresolved: Founded, headcount, Somersworth NH site,
+    Hubbell acquisition date (hubbell.com returned 403; stopped there).'
+- id: aclarity
+  name: Aclarity
+  website: https://www.aclaritywater.com
+  careers_url: null
+  hq: Medway, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 20
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/aclarity)
+  climate:
+    tier: core
+    reason: 'Octa System: on-site electrochemical oxidation systems that destroy PFAS in landfill leachate, industrial
+      and municipal water.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 20 people (Dealroom, 2026-11-24); founded 2017, funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows 20, band <100; undated Founded:
+    https://dealroom.co/companies/aclarity. Stage: Dealroom: Series A Nov 2023, $16M (MassVentures, Nor''easter
+    Ventures, Bidra Innovations, HG Ventures); earlier $13M Jul 2023 entry; About text says $20.2M raised. https://dealroom.co/companies/aclarity
+    Evidence: https://aclaritywater.com https://dealroom.co/companies/aclarity Region sources: massventures. Confidence:
+    high. Unresolved: Input HQ guess Clinton, MA; site and Dealroom both say Medway, MA.'
+- id: active-surfaces
+  name: Active Surfaces
+  website: https://www.activesurfaces.tech
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: seed
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Lightweight flexible perovskite thin-film solar modules (as thin as 15 microns), printed roll-to-roll,
+      that stick to curved or flat surfaces.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022, funding round reported in 2026.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Founded:
+    https://news.mit.edu/2026/active-surfaces-aims-to-install-peel-and-stick-solar-panels-everywhere-0324. Stage:
+    USD 5.6M oversubscribed pre-seed (c. 2024; pv-magazine-india, Mercom); MIT News 2026-03-24: more than USD 10M
+    raised in two years from VC, corporate and state grants, latest from Electric Power Development Co (J-Power),
+    Tokyo, in October 2025. Round label beyond pre-seed not stated; seed chosen as nearest. Flags: MIT spinout;
+    5,000 sq ft development facility in Woburn, MA (opened 2024). Evidence: https://news.mit.edu/2026/active-surfaces-aims-to-install-peel-and-stick-solar-panels-everywhere-0324
+    https://energy.mit.edu/news/active-surfaces-raises-5-6-million-to-develop-solar-2-0/ https://mercomindia.com/flexible-solar-panel-startup-active-surfaces-secures-5-6-million
+    Region sources: masscec-pr-2-5m-18, mit-news-startups, mit-tlo-startups, third-derivative, greentown. Confidence:
+    medium. Unresolved: HQ city (MIT News says about 15 miles from MIT; Woburn facility; input Somerville); domain
+    activesurfaces.tech did not resolve; headcount.'
+- id: addis-energy
+  name: Addis Energy
+  website: https://www.addisenergy.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: seed
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Geologic ammonia: produces ammonia by injecting engineered fluids into subsurface iron-rich rock using
+      oil-and-gas techniques.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100, undated Founded: https://dealroom.co/companies/addis-energy.
+    Stage: Dealroom: seed investors Pillar VC, Voyager VC, Engine Ventures, ARPA-E, At One Ventures; total equity
+    USD 10-50M; valuation USD 25-50M (2025); amounts and dates not shown. Flags: uses oil and gas drilling techniques
+    (not an oil and gas producer). Evidence: https://dealroom.co/companies/addis-energy Region sources: engine-ventures,
+    pillar-vc, engine, voyager, arpa-e. Confidence: medium. Unresolved: Headcount; round amount and date.'
+- id: adept-materials
+  name: Adept Materials
+  website: https://adeptmaterials.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Moisture-control material technology sold as coatings, films and overlays (e.g. Lilypad Paint) for buildings,
+      apparel, packaging and healthcare.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive support only listed: NSF SBIR Phase I,
+    DOE E-ROBOT Prize Phase 1, MassCEC Catalyst award; no investors named. Flags: identity inferred from guessed
+    domain; technology from Brown University (Derek Stein). Evidence: https://www.adeptmaterials.com/ Region sources:
+    masscec-investments. Confidence: medium. Unresolved: Founded, headcount, funding.'
+- id: adhesion-technologies
+  name: Adhesion Technologies
+  website: null
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - recycling
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: VOC-free bio-based wood adhesive for plywood and particleboard made from corn-ethanol distillers grains
+      (DDGS).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded only: EPA SBIR Phase I (2023-12-01 to 2024-05-30)
+    and a $75,000 Massachusetts grant; no equity round found Flags: Legal entity Lab to Market Fund, LLC. No website
+    found; adhesiontechnologies.com is a parked redirect to /lander. Active status rests on the 2024 project end
+    date.. Evidence: E P A   N C Region sources: masscec-pr-2-5m-18. Confidence: low.'
+- id: adiabatic-materials
+  name: Adiabatic Materials
+  website: https://adiabatic.co
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: rippling
+    board: adiabatic
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Electrified production of critical chemicals (site tagline only: domestic production of critical chemicals
+      with electricity).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board rippling:adiabatic seen 2026-11-24, linked from the company''s own site: 2 open roles. Stage: Not
+    found; Dealroom slug adiabatic-materials 404. Evidence: https://adiabatic.co Region sources: voyager, greentown.
+    Confidence: low. Unresolved: Site has only a tagline; HQ (input Somerville, MA), founding, headcount and funding
+    not found.'
+- id: aeroshield-materials
+  name: AeroShield Materials
+  website: https://www.aeroshield.tech
+  careers_url: null
+  hq: Waltham, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Ultra-clear silica aerogel for energy-efficient residential windows, doors and skylights.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://aeroshield.tech Region sources: masscec-investments,
+    masscec-t2m, masscec-pr-tax-incentives, masscec-pr-criticalmass-3-9m, mit-tlo-startups, mit-news-startups, builtin-boston-energy,
+    massventures, activate, greentown, arpa-e. Confidence: medium. Unresolved: founded, headcount, funding; /about
+    404; Dealroom and Built In slugs 404'
+- id: alkemy-environmental
+  name: Alkemy Environmental
+  website: https://alkemyenvironmental.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - buildings
+  stage: null
+  founded: 2008
+  headcount: null
+  climate:
+    tier: core
+    reason: Structural-grade lightweight concrete aggregate made from recycled industrial waste (including cement-plant
+      waste), for ready-mix, masonry and precast concrete.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://gccassociation.org/innovandi/openchallenge/alkemy-environmental/.
+    Stage: No funding round found in third-party sources checked. Flags: product is concrete aggregate, not ceramics
+    as the directory said. Evidence: https://gccassociation.org/innovandi/openchallenge/alkemy-environmental/ https://www.curbwaste.com/company-profiles-network/alkemy-environmental
+    https://i3connect.com/company/alkemy-environmental https://www.mass.gov/doc/2025-wrig-award-recipients/download
+    Region sources: greentown. Confidence: medium. Unresolved: Founded year conflicts: 2008 (GCCA page; CB Insights
+    and Crunchbase per search snippets), 2014 (i3connect per search snippet). Address 444 Somerville Ave, Somerville
+    comes from a search snippet only. A mass.gov 2025 WRIG award-recipient list showed up in a search for the company,
+    which may mean it was active in 2025, but the page returned 403 so it is unconfirmed. Headcount and funding
+    not found.'
+- id: allium-engineering
+  name: Allium Engineering
+  website: https://www.alliumeng.com
+  careers_url: null
+  hq: North Billerica, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Stainless-clad corrosion-resistant rebar; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site shows investor logos for Anthropocene Ventures,
+    Propeller, Great Wave and Aera VC; no round details. Evidence: https://alliumeng.com Region sources: masscec-pr-9-8m,
+    masscec-investments, mit-news-startups. Confidence: medium. Unresolved: HQ (site says only US-based; input North
+    Billerica), founded, headcount, round'
+- id: alloy-enterprises
+  name: Alloy Enterprises
+  website: https://www.alloyenterprises.co
+  careers_url: null
+  hq: Burlington, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2020
+  headcount:
+    value: 32
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/alloy-enterprises)
+  climate:
+    tier: out
+    reason: Aluminium thermal-management parts such as cold plates, sold mainly to data centers; data-center equipment
+      is out (decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 32 people (Dealroom, 2026-11-24). Owned by Johnson Controls main customers are data centers; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/alloy-enterprises. Stage: Series A $26M May 2023 (Flybridge, Riot, Congruent,
+    FootPrint Coalition) before acquisition by Johnson Controls, Feb 2026 (Dealroom; https://alloyenterprises.co).
+    Flags: subsidiary of Johnson Controls; main customers are data centers, with military customers also named.
+    Evidence: https://alloyenterprises.co https://dealroom.co/companies/alloy-enterprises Region sources: builtin-boston-greentech.
+    Confidence: high. Unresolved: Dealroom lists HQ as Somerville; site address is Burlington, MA.'
+- id: aloft-systems
+  name: Aloft Systems
+  website: https://aloft.systems
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular containerised rigid wing sails with robotic control for wind-assist retrofits on cargo ships.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Founders Miles Keeney-Ritchie (CEO) and Satchel
+    Douglas. Stage: No funding stated; partner logos include TST Group, Pangaea, MassCEC, Thordon Bearings, UMass
+    Dartmouth, Autodesk. 2023 articles: quarter-scale land prototype done, full-scale ocean pilot sought. Evidence:
+    https://aloft.systems/ https://www.ship-technology.com/features/novel-containerised-wind-propulsion-system-examined-aloft-systems/
+    https://www.massrobotics.org/latest-blueswell-startups-harnessing-wind-for-ships-and-ai-for-fish-management/
+    Region sources: masscec-pr-2-5m-18. Confidence: medium. Unresolved: HQ from search results only (one MassRobotics
+    article mentions Boulder, CO); founded, headcount, funding, pilot status.'
+- id: am-batteries
+  name: AM Batteries
+  website: https://www.ambatteries.com
+  careers_url: null
+  hq: Billerica, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: series-b
+  founded: 2016
+  headcount:
+    value: 64
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/am-batteries)
+  climate:
+    tier: core
+    reason: Dry 'powder to electrode' lithium-ion electrode manufacturing process and equipment, skipping solvent
+      drying and recovery.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 64 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2016, funding round
+      reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 64, undated, band under 100 Founded:
+    https://dealroom.co/companies/am-batteries. Stage: Dealroom description: Series B USD 30M led by Toyota Ventures
+    (undated; investor list places Toyota at Series A, inconsistent); Dec 2024 late-stage VC from Shibaura Machine
+    (amount undisclosed); Jul 2024 grant USD 2.3M; total equity USD 50-100M. Evidence: https://dealroom.co/companies/am-batteries
+    Region sources: masstech-m2i2-10m, wpi-startups, builtin-energy. Confidence: medium. Unresolved: Dealroom lists
+    website as am-batteries.com vs input ambatteries.com; round labels inconsistent.'
+- id: ambri
+  name: Ambri
+  website: https://ambri.com
+  careers_url: null
+  hq: Marlborough, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Liquid metal batteries for long-duration stationary storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert
+    internal error (_ssl.c:1035)). Headcount note: Built In says employees work remotely. Stage: Recapitalized by
+    existing investors on emerging from Chapter 11, July 2024 (https://www.businesswire.com/news/home/20240730239061/en/Ambri-Successfully-Completes-Sale-and-Emerges-from-Chapter-11).
+    Flags: went through Chapter 11 in 2024; own site failed to load (TLS error) on 2026-11-24; post-2024 activity
+    not confirmed. Evidence: https://www.businesswire.com/news/home/20240730239061/en/Ambri-Successfully-Completes-Sale-and-Emerges-from-Chapter-11
+    https://www.energy-storage.news/liquid-metal-startup-ambri-back-in-business-after-chapter-11-bankruptcy https://www.builtinboston.com/company/ambri
+    Region sources: mit-sloan-cleantech. Confidence: medium. Unresolved: Current status after 2024, headcount, founded
+    year (Dealroom 404, site TLS error).'
+- id: american-superconductor-amsc
+  name: American Superconductor (AMSC)
+  website: https://amsc.com
+  careers_url: null
+  hq: Ayer, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: public
+  founded: 1987
+  headcount:
+    value: 1195
+    as_of: '2026-03-31'
+    source: Nasdaq earnings-call summary (search snippet) (https://www.nasdaq.com/articles/american-superconductor-q4-earnings-call-highlights)
+  climate:
+    tier: enabling
+    reason: Grid power electronics and power-quality systems, and wind-turbine electrical systems.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 1,195 people (Nasdaq earnings-call summary (search snippet), 2026-03-31); founded 1987 and no equity
+      raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Search snippet says workforce grew from 569
+    to 1,195 during the fiscal year (FY ended 2026-03-31 assumed from a May 2026 results release); article fetch
+    timed out, not verified against the 10-K Founded: https://www.amsc.com/about/. Stage: Publicly listed, ticker
+    AMSC (ir.amsc.com; 10-K on SEC EDGAR CIK 880807). Listing year not confirmed in fetched sources. https://www.sec.gov/Archives/edgar/data/880807/000143774925017986/0001437749-25-017986-index.html
+    Flags: possibly over 1,000 employees (unverified); military (Navy) power and protection is one segment; share
+    not found. Evidence: https://www.amsc.com https://www.amsc.com/about/ https://www.nasdaq.com/articles/american-superconductor-q4-earnings-call-highlights
+    https://www.sec.gov/Archives/edgar/data/880807/000143774925017986/0001437749-25-017986-index.html Region sources:
+    arpa-e. Confidence: medium. Unresolved: IPO year and exchange; verified headcount; military share of revenue.'
+- id: anvil-capture-systems
+  name: Anvil Capture Systems
+  website: https://anvilcarbon.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Carbon dioxide removal by direct air mineralization of CO2.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: product is carbon removal from a process it runs; physical
+    judged on that basis. Evidence: https://anvilcarbon.com Region sources: masscec-pr-9-8m, masscec-catalyst. Confidence:
+    low. Unresolved: HQ (input Somerville), founded, headcount, funding; /about 404; Dealroom slug 404'
+- id: apollo-atomics
+  name: Apollo Atomics
+  website: https://apolloatomics.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  - hydrogen
+  stage: seed
+  founded: 2025
+  headcount:
+    value: 9
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/apollo-atomics)
+  climate:
+    tier: core
+    reason: Compact nuclear reactors (Apollo Reactor) supplying electricity and heat, and able to produce hydrogen
+      and synthetic fuels.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 9 people (Dealroom, 2026-11-24); founded 2025, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows 9, band <100; undated Founded:
+    https://dealroom.co/companies/apollo-atomics. Stage: Dealroom: seed Aug 2026, $31M (Telesoft Partners, Duke
+    Capital Partners, Y Combinator); description says $26M seed including about $5M debt; YC pre-seed $125K Mar
+    2026. https://dealroom.co/companies/apollo-atomics Flags: data centers named among main prospective customers
+    (LOIs, with industrial buyers); nuclear fission. Evidence: https://apolloatomics.com https://dealroom.co/companies/apollo-atomics
+    Region sources: yc. Confidence: medium. Unresolved: Seed amount differs ($31M table vs $26M description); site
+    does not state HQ.'
+- id: arco-technologies-inc
+  name: Arco Technologies Inc
+  website: https://arco.tech
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: greenhouse
+    board: arco
+  read: auto
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Proton exchange membrane (PEM) fuel cells and anion exchange membrane (AEM) electrolyzers, including
+      a hydrogen fuel cell module for large yachts.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board greenhouse:arco seen 2026-11-24, token matched by name; board page checked: 382 open roles. Stage:
+    No priced round found. A July 2023 press release covers a partnership with Shell GameChanger on a high-volume
+    AEM electrolyzer, but it does not say Arco received funding. A CB Insights search snippet gives the latest round
+    as ''Other Investors'' with no amount. Flags: HQ sources disagree (Somerville MA vs New York NY). Evidence:
+    https://www.prnewswire.com/news-releases/arco-technologies-inc-and-shell-gamechanger-join-forces-to-create-a-high-volume-hydrogen-aem-electrolyzer-301887061.html
+    https://prnewswire.com/news-releases/arco-technologies-inc-partners-with-baglietto-for-bzero-mega-yacht-hydrogen-power-system-301803347.html
+    https://www.cbinsights.com/company/arco-technologies Region sources: greentown. Confidence: medium. Unresolved:
+    The July 2023 PR Newswire release says Somerville, MA. A CB Insights search snippet gives a New York address
+    (48 Wall Street); the page itself returned 403. Founded year, headcount and funding not found. Newest evidence
+    is from 2023, so current status is unknown. The search results did not confirm that heavy-duty transport is
+    a main market; the products found are marine (yacht) and electrolyzer products.'
+- id: ascend-elements
+  name: Ascend Elements
+  website: https://ascendelements.com
+  careers_url: null
+  hq: Westborough, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - battery-materials
+  stage: null
+  founded: 2015
+  headcount:
+    value: 100
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/ascend-elements)
+  climate:
+    tier: core
+    reason: Recycles spent lithium-ion batteries and scrap into battery precursor (pCAM), cathode material and lithium
+      carbonate via Hydro-to-Cathode process.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 100 people (Dealroom, 2026-11-24); founded 2015.
+  notes: 'No board found: home page not readable (503). Headcount note: Dealroom band 100-500 (lower bound used);
+    undated, may predate 2025-2026 layoffs Founded: https://dealroom.co/companies/ascend-elements. Stage: Dealroom:
+    total disclosed equity $1-2.5B, 20 investors at Series B and later; round names not shown. Chapter 11 filed
+    Apr 2026 (https://techcrunch.com/2026/04/10/battery-recycler-ascend-elements-files-for-bankruptcy/). Flags:
+    in Chapter 11 since April 2026; cut Hopkinsville, KY plant scope in 2025 after DOE grant cancellation; own site
+    returned 503. Evidence: https://dealroom.co/companies/ascend-elements https://techcrunch.com/2026/04/10/battery-recycler-ascend-elements-files-for-bankruptcy/
+    https://www.electrive.com/2026/04/13/us-battery-recycler-ascend-elements-files-for-insolvency/ Region sources:
+    wpi-startups, massventures, builtin-greentech. Confidence: medium. Unresolved: Result of the bankruptcy (sale,
+    reorganisation or wind-down).'
+- id: aspen-aerogels
+  name: Aspen Aerogels
+  website: https://aerogel.com
+  careers_url: null
+  hq: Northborough, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: public
+  founded: 2001
+  headcount:
+    value: 454
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/aspen-aerogels)
+  climate:
+    tier: enabling
+    reason: Aerogel thermal barriers for EV batteries and insulation for energy infrastructure.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 454 people (Dealroom, 2026-11-24); public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''maps'' 454 employees (US 68%, Mexico
+    24%); undated; not checked against the 10-K Founded: https://dealroom.co/companies/aspen-aerogels. Stage: Listed
+    via IPO in 2014 (Dealroom); market cap about $405M in 2026 per Dealroom. Exchange and ticker not shown in fetched
+    sources. https://dealroom.co/companies/aspen-aerogels Flags: significant industrial insulation sales to LNG,
+    refining, petrochemical and subsea (oil and gas) markets; main customer split not found. Evidence: https://www.aerogel.com
+    https://dealroom.co/companies/aspen-aerogels Region sources: arpa-e. Confidence: medium. Unresolved: Filed headcount;
+    share of revenue from EV versus energy industrial (oil and gas).'
+- id: blackburn-energy
+  name: Blackburn Energy
+  website: https://blackburnenergy.com
+  careers_url: null
+  hq: Rowley, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: RelGen driveshaft-driven hybrid charging system that generates electricity on heavy trucks for liftgates
+      and electric APUs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug blackburn-energy 404. Evidence:
+    https://blackburnenergy.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount,
+    funding.'
+- id: blueshift-materials
+  name: BlueShift Materials
+  website: https://blueshiftmaterials.com
+  careers_url: null
+  hq: Spencer, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Polymer aerogel materials: AeroZero thermal-protection materials and PhaseBlue low-dielectric circuit
+      materials.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: target markets
+    are aerospace, space and electronics, plus thermal battery protection. Evidence: https://www.blueshiftmaterials.com/
+    Region sources: masscec-investments. Confidence: medium. Unresolved: Founded, headcount, funding.'
+- id: bootbox-labs
+  name: BootBox Labs
+  website: https://sensibleheatpump.com
+  careers_url: null
+  hq: Boxford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: '''sensible'', a compact low-GWP-refrigerant window heat pump for heating, cooling, dehumidification
+      and filtration (product formerly called bootbox); pre-launch, taking pre-orders.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found. Flags: pre-launch; product uses low-GWP
+    refrigerant per own site (input said refrigerant-free). Evidence: https://www.bootboxlabs.com/ (301 to sensibleheatpump.com)
+    https://sensibleheatpump.com/ Region sources: masscec-pr-2-5m-18. Confidence: medium. Unresolved: HQ (input
+    says Boxford, MA), founded, headcount, funding. Site does not name the company BootBox Labs, only ''formerly
+    bootbox''. Dealroom 404.'
+- id: boston-metal
+  name: Boston Metal
+  website: https://www.bostonmetal.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: series-c
+  founded: 2013
+  headcount:
+    value: 316
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/boston-metal)
+  climate:
+    tier: core
+    reason: Molten oxide electrolysis technology and plants producing green steel and high-value metals from ore
+      using electricity.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 316 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2013, funding round
+      reported in 2025.
+  notes: 'No board found: home page not readable (202). Headcount note: Dealroom 316, undated, band 100-500; 20%
+    team decline over past year Founded: https://dealroom.co/companies/boston-metal. Stage: Dealroom: Series C Jan
+    2024 USD 20M (Marunouchi Innovation Partners) at reported USD 610M valuation, extending earlier Series C; Jul
+    2025 convertible note USD 51M (Breakthrough Energy Ventures, Piva, SiteGround, BHP Ventures); total equity USD
+    100-500M. Flags: wholly owned subsidiary in Brazil. Evidence: https://dealroom.co/companies/boston-metal Region
+    sources: engine-ventures, mit-news-startups, bev, prelude, eip, engine, arpa-e. Confidence: high. Unresolved:
+    Own site not fetched.'
+- id: bridge-12-technologies
+  name: Bridge 12 Technologies
+  website: https://bridge12.com
+  careers_url: null
+  hq: Framingham, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-power microwave and terahertz systems, including heating sources for fusion research.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug bridge12-technologies 404.
+    Flags: main named customers are research institutions (spectroscopy); fusion share unclear. Evidence: https://www.bridge12.com
+    Region sources: arpa-e. Confidence: medium. Unresolved: About page returned 403 (site refused; stopped on it).
+    HQ (input Framingham, MA), founding (site copyright 2010-2026), headcount, funding.'
+- id: building-envelope-materials
+  name: Building Envelope Materials
+  website: null
+  careers_url: null
+  hq: Amesbury, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount:
+    value: 2
+    as_of: '2026-11-24'
+    source: MassCEC company profile (Massachusetts employees) (https://www.masscec.com/company/building-envelope-materials)
+  climate:
+    tier: core
+    reason: 'Pinhole Insulation: minimally invasive retrofit insulation for occupied commercial, institutional and
+      multifamily buildings.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 2 people (MassCEC company profile (Massachusetts employees), 2026-11-24); founding year and funding
+      not found, so included as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: MassCEC lists 2 Massachusetts employees; profile
+    undated Stage: Not found; site lists DOE, MassCEC and Saint-Gobain CertainTeed as sponsors. Evidence: https://bematerials.com
+    https://www.masscec.com/company/building-envelope-materials Region sources: greentown. Confidence: medium. Unresolved:
+    Founding year and funding. Website is bematerials.com (from MassCEC contact email). Unclear whether it sells
+    material or an installation service.'
+- id: cala-systems
+  name: Cala Systems
+  website: https://www.calasystems.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: Intelligent residential heat pump water heaters that learn household hot-water use.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band under 100, undated; no figure
+    Founded: https://dealroom.co/companies/cala-systems. Stage: Dealroom: seed USD 5.6M (undated); total equity
+    USD 10-50M; valuation USD 25-50M (2024). Later rounds not visible, so stage may be later than seed. Evidence:
+    https://dealroom.co/companies/cala-systems Region sources: masscec-investments, masstech-m2i2-7-3m, greentown.
+    Confidence: medium. Unresolved: Exact headcount; whether a Series A followed the seed.'
+- id: cambridge-heavy-industries
+  name: Cambridge Heavy Industries
+  website: https://cambridgeheavy.xyz
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fusion
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular benchtop-scale inertial-confinement (fast ignition) fusion system for producing tritium.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Nothing found; Dealroom 404. Flags: fusion / tritium
+    production. Evidence: https://cambridgeheavy.xyz/ Region sources: masscec-investments, azolla. Confidence: low.
+    Unresolved: HQ (input says Cambridge, MA), founded, headcount, funding.'
+- id: capybara-energy
+  name: CapyBara Energy
+  website: https://capybara.energy
+  careers_url: null
+  hq: Groveland, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Non-flammable aqueous carbon-based stationary energy storage systems (activated carbon, water, salt),
+      modular, 40-year design life; taking pre-orders with 18-month delivery.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated on site; Dealroom 404. Flags: pre-commercial
+    (pre-orders); markets listed include military. Evidence: https://capybara.energy/ Region sources: masscec-amplifymass,
+    masstech-m2i2-10m. Confidence: medium. Unresolved: HQ (input says Groveland, MA), founded, headcount, funding.'
+- id: carbion
+  name: Carbion
+  website: https://carbion.webflow.io
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery-grade graphite made from biomass.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: very early; site
+    is a webflow page with contact address at carbion.xyz. Evidence: https://carbion.webflow.io Region sources:
+    mit-deltav-2025. Confidence: low. Unresolved: HQ (input guess Cambridge, MA), founded, headcount, funding; Dealroom
+    404.'
+- id: cemcycle
+  name: CemCycle
+  website: https://cemcycle.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Systems that convert organic waste into renewable energy and carbon-storing mineral materials used as
+      low-carbon construction additives.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.cemcycle.com Region sources: masscec-pr-4-5m,
+    wpi-startups, greentown. Confidence: medium. Unresolved: HQ (input Cambridge), founded, headcount, funding;
+    domain guessed, content matches'
+- id: cf-technologies
+  name: CF Technologies
+  website: null
+  careers_url: null
+  hq: Hyde Park
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Supercritical-CO2 process (licensed from Idaho National Laboratory) converting waste brown grease into
+      biodiesel / marine fuel; 1 gal/h pilot run October 2024.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Phase 2 STTR grant per INL (https://inl.gov/feature-story/turning-gross-grease-into-biodiesel/);
+    no venture rounds found. Evidence: https://inl.gov/feature-story/turning-gross-grease-into-biodiesel/ https://advancedbiofuelsusa.info/cf-tech-commissions-a-first-of-it-s-kind-supercritical-fluid-brown-grease-to-biodiesel-system-in-massachusetts
+    Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: founded, headcount, own domain (cftech.com
+    shows only a bare directory listing); whether it sells equipment or runs fuel plants; CB Insights refused (403)'
+- id: circe-bioscience
+  name: Circe Bioscience
+  website: https://circebioscience.com
+  careers_url: null
+  hq: Waltham, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Fermentation that turns CO2 and hydrogen into food fats; food ingredients, not a material or energy
+      product.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Harvard OTD 2024-05-17: raised more than USD 8M from
+    Regen Ventures, Undeterred Capital, Ponderosa Ventures, Bee Partners, Elementum Ventures; earlier USD 3.2M ARPA-E
+    award at Wyss. Round label not stated; seed is inferred from size. Flags: food ingredients focus (fats), Wyss
+    Institute spinout. Evidence: https://otd.harvard.edu/news/circe-bioscience-licenses-technology-to-decarbonize-industry-with-microbes-developed-at-wyss-institute-at-harvard-university
+    https://agfundernews.com/?p=40585 Region sources: masstech-m2i2-10m. Confidence: medium. Unresolved: Own site
+    refused automated client (403); founded year (one source says spun out 2023); headcount; HQ taken from Waltham
+    pilot plant.'
+- id: copernic-catalysts
+  name: Copernic Catalysts
+  website: https://coperniccatalysts.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: seed
+  founded: 2021
+  headcount: null
+  climate:
+    tier: core
+    reason: Neptune, a drop-in, computationally designed ammonia synthesis catalyst for existing and new plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2026.
+  notes: 'No board found: home page not readable (202). Stage: $8M Series Seed Prime led by Breakout Ventures, announced
+    2024-11-12 (BusinessWire); Fertilizer Institute profile says next round expected Q3 2026 Flags: Own domain returned
+    empty content (likely JS-rendered).. Evidence: h t t p s : Region sources: engine-ventures, engine, arpa-e.
+    Confidence: low.'
+- id: cubicpv
+  name: CubicPV
+  website: https://cubicpv.com
+  careers_url: null
+  hq: Bedford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: 2021
+  headcount:
+    value: 58
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/cubicpv)
+  climate:
+    tier: core
+    reason: Silicon wafer and tandem perovskite-silicon solar technology, processes and materials.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 58 people (Dealroom, 2026-11-24); founded 2021.
+  notes: 'No board found: home page not readable (202). Headcount note: Dealroom figure, undated; about 89% in the
+    US, rest in Thailand, Hong Kong, China. Founded: https://dealroom.co/companies/cubicpv. Stage: Dealroom labels
+    a $33M round Jun 2023 as late-stage VC (Breakthrough Energy Ventures, Hunt Energy, Siam Cement); $300K MassCEC
+    grant Feb 2026; total $50-100M. Round series letter not shown, so not mapped to ''late''. Evidence: https://dealroom.co/companies/cubicpv
+    Region sources: masscec-investments, masscec-pr-4-5m, bev, arpa-e. Confidence: medium. Unresolved: own site
+    returned no readable content; founded 2021 per Dealroom, but the company is commonly described as the successor
+    of 1366 Technologies (not verified here); current product focus after any pivot not verified'
+- id: czar-power
+  name: CZAR Power
+  website: https://czar-power.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular EV charging power electronics (a 20 kW per-module 'cassette' charger, model CZAR-20KW/750V-USA,
+      with 480 Vac input and OCPP/CAN communication).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found. Evidence: https://solarimpulse.com/companies_file/czar-power.com-2.pdf
+    Region sources: greentown. Confidence: low. Unresolved: The product spec comes only from a search snippet of
+    a Solar Impulse PDF (the file returned 403). The directory says Cambridge, MA, but no usable third-party source
+    confirms the HQ; the only other hits were Greentown pages, which were excluded. Founded year, headcount and
+    funding not found. Built In Boston returned 404.'
+- id: daqus-energy
+  name: Daqus Energy
+  website: null
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Transition-metal-free organic cathode material (TAQ) for lithium-ion batteries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Founded: TechCrunch (2025-03-10) says it had operated quietly
+    for four months, implying late 2024: https://techcrunch.com/2025/03/10/daqus-energy-has-a-plan-to-make-ev-sports-cars-fast-light-and-cheap.
+    Stage: $6M seed led by Morningside, announced 2025-03-10 (https://techcrunch.com/2025/03/10/daqus-energy-has-a-plan-to-make-ev-sports-cars-fast-light-and-cheap).
+    CB Insights (via search) lists $6.5M total over three rounds. Evidence: https://techcrunch.com/2025/03/10/daqus-energy-has-a-plan-to-make-ev-sports-cars-fast-light-and-cheap
+    https://www.cbinsights.com/company/daqus-energy Region sources: masscec-pr-tax-incentives, masscec-pr-4-5m,
+    activate. Confidence: medium. Unresolved: headcount; own domain (daqusenergy.com returned empty content)'
+- id: de-ice
+  name: De-Ice
+  website: https://deice.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: series-a
+  founded: 2015
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric, chemical-free ice protection for aircraft.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2015.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band <100 only Founded: https://dealroom.co/companies/de-ice.
+    Stage: Dealroom: seed (Founder Collective) and Series A (Brand New Matter, Intuitive Private Equity, Natural
+    Bridge Fund), amounts and dates not shown; description says $18M raised. https://dealroom.co/companies/de-ice
+    Evidence: https://deice.com https://dealroom.co/companies/de-ice Region sources: greentown. Confidence: medium.
+    Unresolved: Series A date and amount; headcount. Air Canada is launch customer.'
+- id: divert-inc
+  name: Divert Inc.
+  website: https://www.divertinc.com
+  careers_url: null
+  hq: Concord, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - methane
+  stage: null
+  founded: 2007
+  headcount:
+    value: 150
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/divert-inc)
+  climate:
+    tier: core
+    reason: Collects unsold retail food and turns it into renewable energy at its own digesters, keeping it out
+      of landfill.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 150 people (Built In Boston, 2026-11-24); founded 2007 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Built In ''about 150 total'', undated Founded:
+    https://www.builtinboston.com/company/divert-inc. Stage: No funding details found in sources fetched. Flags:
+    operates anaerobic-digestion / RNG facilities (e.g. new North Carolina facility). Evidence: https://divertinc.com
+    https://www.builtinboston.com/company/divert-inc Region sources: builtin-boston-energy. Confidence: medium.
+    Unresolved: Funding and stage (Dealroom 404).'
+- id: dottir-labs
+  name: Dottir Labs
+  website: https://dottirlabs.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: out
+    reason: Benchtop Raman spectroscopy sensors for process monitoring; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Site lists three team members. Founded: https://www.dottirlabs.com/.
+    Stage: No rounds stated; supporters include SeaAhead, Luminate, NSF, Greentown Labs, Activate, MassCEC, Braid
+    Theory, NextFab Ventures, VentureWell. Flags: oil and gas listed among four target sectors. Evidence: https://www.dottirlabs.com/
+    Region sources: masscec-pr-2-5m-18. Confidence: medium. Unresolved: Headcount, funding; input HQ Brookline vs
+    site Somerville.'
+- id: eden-geopower
+  name: Eden Geopower
+  website: https://www.edengeopower.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: workable
+    board: eden-geopower
+  read: manual
+  sectors:
+  - geothermal
+  - hydrogen
+  stage: series-a
+  founded: 2017
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Electrical Reservoir Stimulation: high-voltage pulses that fracture rock for geothermal, geologic hydrogen,
+      mineral mining and carbon storage.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017, funding round reported in 2024.
+  notes: 'Board workable:eden-geopower seen 2026-11-24, linked from the company''s own site: 1 open roles. Headcount
+    note: Dealroom band <100 only. Founded: https://dealroom.co/companies/eden-geopower. Stage: $12M seed announced
+    2023-10-24 (own site); Dealroom lists a Series A1 with Good Growth Capital, no amount or date (https://dealroom.co/companies/eden-geopower).
+    ARPA-E awards $3.5M (2022) and $1.4M (2024). Evidence: https://edengeopower.com https://dealroom.co/companies/eden-geopower
+    Region sources: masscec-pr-tax-incentives, builtin-boston-greentech, massventures, third-derivative, greentown,
+    arpa-e. Confidence: medium. Unresolved: headcount; whether it sells equipment or stimulation services (physical
+    unclear); Series A1 amount and date'
+- id: elementium-materials
+  name: Elementium Materials
+  website: https://elementium.io
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery electrolyte materials (IonPro solutions) for lithium-ion cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site shows six leadership/advisor names only.
+    Flags: HQ not stated; sites in Woburn, MA and Katy, TX. Evidence: https://elementium.io Region sources: masscec-innovatemass,
+    masscec-pr-4-5m, mit-tlo-startups, third-derivative, greentown. Confidence: medium. Unresolved: HQ (site lists
+    Woburn R&D facility and Katy TX office; input said Somerville), founded, headcount, funding; Dealroom slugs
+    404'
+- id: elementloop
+  name: ElementLoop
+  website: null
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - recycling
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: Process that extracts 99.9%-pure lithium carbonate from brine and wastewater using recyclable solvents.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Founded: https://www.wpi.edu/about/ie/startups/elementloop.
+    Stage: No funding information found; founded by WPI professor Yan Wang. Flags: WPI startup; unclear whether
+    it will produce lithium carbonate or license a process. Evidence: https://www.wpi.edu/about/ie/startups/elementloop
+    Region sources: wpi-startups. Confidence: low. Unresolved: Domain, HQ (input guess Worcester, MA), headcount,
+    funding.'
+- id: emvolon
+  name: Emvolon
+  website: https://www.emvolon.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  - hydrogen
+  stage: seed
+  founded: 2021
+  headcount:
+    value: 24
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/emvolon)
+  climate:
+    tier: core
+    reason: Repurposed engines used as modular reactors that turn flared or stranded methane into methanol and ammonia.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 24 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2021, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 24, undated, band under 100; 14.3%
+    growth over past year Founded: https://dealroom.co/companies/emvolon. Stage: Dealroom: Early VC Oct 2024 USD
+    11M at reported USD 42M valuation; Aug 2026 MassVentures grant USD 500K; seed investors The Engine, MassVentures.
+    Dealroom description says USD 1.5M over two rounds, conflicting. Flags: feedstock includes flared or stranded
+    methane (natural gas). Evidence: https://dealroom.co/companies/emvolon Region sources: masstech-m2i2-7-3m, engine-ventures,
+    mit-news-startups, mit-tlo-startups, massventures, engine, arpa-e. Confidence: medium. Unresolved: Round label
+    of the USD 11M raise (seed vs series A).'
+- id: enverid-systems
+  name: enVerid Systems
+  website: https://enverid.com
+  careers_url: null
+  hq: Massachusetts
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: HVAC Load Reduction modules using sorbent ventilation technology that clean recirculated building air
+      and cut HVAC energy use.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site mentions further investment from SCG (amount not
+    given); Daikin Applied holds an exclusive license to the technology. Flags: technology now sold through partners
+    (Daikin Applied exclusive license, Aeroseal, SCG); company may be largely a licensor; no street address on site.
+    Evidence: https://enverid.com Region sources: builtin-boston-greentech, bev, elemental. Confidence: low. Unresolved:
+    Whether the company still operates independently; founded, headcount (Dealroom 404).'
+- id: eqore
+  name: EQORE
+  website: https://www.builtinboston.com/company/eqore
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turnkey on-site battery storage systems (QorePack 200 kW/400 kWh) with metering and controls, installed
+      and operated for factories under shared-savings or purchase-plus-subscription terms.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: $1.7M oversubscribed seed, 2025-11-20, MassCEC, Henry
+    Ford III, Jonathan Kraft (https://electrek.co/2025/11/20/eqore-bags-1-7m-to-bring-smart-storage-to-power-hungry-factories/).
+    Flags: storage-as-a-service; unclear whether it makes its own battery hardware; input domain was builtinboston.com;
+    real domain eqore.com. Evidence: https://www.eqore.com/ https://www.builtinboston.com/company/eqore https://electrek.co/2025/11/20/eqore-bags-1-7m-to-bring-smart-storage-to-power-hungry-factories/
+    Region sources: masscec-pr-4m, masscec-investments, builtin-boston-energy, builtin-boston-greentech, greentown.
+    Confidence: medium. Unresolved: founded, headcount; Concord, MA (input) not confirmed'
+- id: eski-jaccpro
+  name: eSki (JaccPro)
+  website: null
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-mobility
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Electric personal watercraft for rental fleets.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Founder said in June 2023 the company was trying to
+    raise money; $75,000 MassCEC Catalyst/DICES award announced 2024-07-30; no equity round found Flags: Trades
+    as eSki Watercraft; legal name JaccPro. No website found (eski.com is an unrelated ski site); only a Facebook
+    page. Latest evidence is July 2024, so current status is not confirmed. wpi.edu was not used after a 403 there;
+    mass.gov event page returned 403.. Evidence: M a s s C E Region sources: masscec-pr-4m. Confidence: low.'
+- id: evonatura
+  name: EvoNatura
+  website: https://evonatura.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Drop-in microbial additive that helps compostable plastics degrade; pilot stage (TRL 5) with manufacturing
+      partners.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site''s ''Backed by'' section lists no investors. Evidence:
+    https://www.evonatura.com Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: HQ (input Cambridge),
+    founded, headcount, funding; domain guessed, content matches'
+- id: evoqua-water-technologies
+  name: Evoqua Water Technologies
+  website: https://www.evoqua.com
+  careers_url: null
+  hq: Pittsburgh, PA
+  ats:
+    type: workday
+    board: xylem
+  read: manual
+  sectors:
+  - water
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Water and wastewater treatment systems (a Xylem company; Massachusetts operations).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Part of Xylem since 2023; not independent.
+  notes: 'Board workday:xylem.wd5.myworkdayjobs.com/xylem-careers seen 2026-11-24, linked from the company''s own
+    site: role count not read (no public feed). Stage: evoqua.com redirects to xylem.com/en-us/brand/evoqua, which
+    says ''In 2023, Evoqua joined forces with Xylem''. Flags: subsidiary of Xylem; HQ outside region (input lists
+    Tewksbury, MA site; not verified). Evidence: https://www.xylem.com/en-us/brand/evoqua/ Region sources: builtin-boston-greentech.
+    Confidence: medium. Unresolved: Tewksbury, MA site; headcount.'
+- id: feon-energy
+  name: Feon Energy
+  website: https://feonenergy.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery electrolytes designed with its EDGE discovery platform for various chemistries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Founded: https://www.feonenergy.com/company. Stage: Site ''Supported
+    by'' list includes Fprime, Foothill Ventures, Eight Roads, Valkyrie, Mass Ventures, EPS Ventures, Collaborative
+    Fund, Gigascale Capital, Safar Partners, MassCEC, Activate; no rounds stated. Flags: Stanford spinout. Evidence:
+    https://feonenergy.com https://www.feonenergy.com/company Region sources: masscec-pr-4m, masscec-t2m, masstech-m2i2-1-85m,
+    massventures, activate, greentown, shell-gamechanger. Confidence: medium. Unresolved: HQ (input Woburn, not
+    stated on site), headcount, round amounts'
+- id: finwave-semiconductor
+  name: Finwave Semiconductor
+  website: https://finwavesemi.com
+  careers_url: null
+  hq: Waltham, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2012
+  headcount:
+    value: 31
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/finwave-semiconductor)
+  climate:
+    tier: out
+    reason: GaN transistors for RF and 5G; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 31 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2012, funding round
+      reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 31, undated, band under 100 Founded:
+    https://dealroom.co/companies/finwave-semiconductor. Stage: Dealroom: Series A Jul 2022 USD 16M (Safar Partners,
+    Fine Structure Ventures, Alumni Ventures, Soitec; FinSMEs title says USD 12.2M); May 2025 early VC USD 8.2M
+    (GlobalFoundries, Safar, Fine Structure, Engine Ventures) at USD 80M valuation. Flags: semiconductor component
+    maker; Dealroom lists telecom customers (input mentions data centres). Evidence: https://dealroom.co/companies/finwave-semiconductor
+    Region sources: engine-ventures, arpa-e. Confidence: medium. Unresolved: Whether 2025 raise was a Series A extension
+    or Series B; offices also in San Diego and Bay Area.'
+- id: fleet-robotics
+  name: Fleet Robotics
+  website: null
+  careers_url: null
+  hq: Somerville or Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Resident robots that clean and inspect ship hulls underwater to cut fuel use.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Search snippets: Caplight lists a $2.4M seed dated 2026-07-01
+    and Dealroom also lists a $2.4M seed (https://www.caplight.com/company/fleet-robotics, https://app.dealroom.co/companies/fleet_robotics);
+    Dealroom also lists a $350K grant, Signalbase a $100K grant. No primary press release found. Flags: may sell
+    hull cleaning as a service rather than selling robots. Evidence: https://www.caplight.com/company/fleet-robotics
+    https://greentownlabs.com/fleet-robotics-decreases-ships-fuel-consumption-with-hull-cleaning-resident-robots/
+    https://propellervc.com/fleet-robotics Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: fleetrobotics.com
+    refused automated client (403); founded, headcount; one search snippet calls it ''formerly Fleet Cleaner'',
+    which looks like confusion with the Dutch company and was not used; HQ (input Charlestown, MA; a job listing
+    says Charlestown, RI; others say Somerville)'
+- id: foundation-alloy
+  name: Foundation Alloy
+  website: https://foundationalloy.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: rippling
+    board: foundation-alloy
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: series-a
+  founded: 2022
+  headcount: null
+  climate:
+    tier: core
+    reason: Engineering alloys (molybdenum alloys, specialty steels; nickel superalloys next) made by a solid-state,
+      melt-free process, sold as parts, near-net shapes or stock.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022, funding round reported in 2026.
+  notes: 'Board rippling:foundation-alloy seen 2026-11-24, linked from the company''s own site: 3 open roles. Founded:
+    https://www.builtinboston.com/company/foundation-alloy. Stage: Company site cites a $22M Series A reported June
+    2026 (https://foundationalloy.com). Flags: defense is one of several stated sectors (with automotive, consumer).
+    Evidence: https://foundationalloy.com https://www.builtinboston.com/company/foundation-alloy Region sources:
+    engine-ventures, mit-news-startups, engine, voyager. Confidence: medium. Unresolved: Headcount; input HQ guess
+    was Woburn, MA but Built In lists Cambridge, MA (site gives no address). Dealroom profile 404.'
+- id: gallox-semiconductors
+  name: Gallox Semiconductors
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Gallium-oxide power semiconductors (site describes work in progress).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.galloxsemi.com Region sources: activate.
+    Confidence: low. Unresolved: Site (galloxsemi.com, guessed; names Gallox Semiconductors, Inc.) gives no HQ,
+    founding, headcount or funding; input HQ Boston, MA unverified.'
+- id: ge-vernova
+  name: GE Vernova
+  website: https://www.gevernova.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: workday
+    board: gevernova
+  read: manual
+  sectors:
+  - wind
+  - grid
+  stage: public
+  founded: 2024
+  headcount:
+    value: 70000
+    as_of: '2025-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/GE_Vernova)
+  climate:
+    tier: enabling
+    reason: Wind turbines, grid equipment, and nuclear, hydro and gas power equipment; gas turbines are a major
+      line.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: About 70,000 employees; an established public company.
+  notes: 'Board workday:gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite seen 2026-11-24, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Wikipedia 70,000 (2025, year only); company
+    site says about 85,000 across about 100 countries Founded: https://en.wikipedia.org/wiki/GE_Vernova. Stage:
+    Spun off from General Electric and began trading on NYSE (GEV) April 2, 2024 (https://en.wikipedia.org/wiki/GE_Vernova).
+    Flags: over 1,000 employees; gas turbines are a major business line. Evidence: https://www.gevernova.com https://en.wikipedia.org/wiki/GE_Vernova
+    Region sources: builtin-boston-energy, arpa-e, builtin-energy. Confidence: high.'
+- id: gencores
+  name: Gencores
+  website: https://gencores.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Industrial ultra-high-temperature non-metallic pipes; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found; site lists Breakthrough Energy,
+    ARPA-E, DOE, NSF, US Air Force and MIT as partners and links an open careers board (jobs.polymer.co/gencores-inc)
+    Flags: Product focus appears to have shifted from vehicle materials to high-temperature pipes. HQ not confirmed
+    on site. Job board returned 403, not retried.. Evidence: g e n c o r Region sources: masscec-pr-4-5m. Confidence:
+    low.'
+- id: genh
+  name: GenH
+  website: https://genh.co
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Adaptive Hydro modular hydropower systems retrofitted onto unpowered dams and existing water infrastructure.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug genh 404. Evidence: https://genh.co
+    Region sources: greentown, laci. Confidence: medium. Unresolved: Founding, headcount, funding.'
+- id: global-mineral-recovery
+  name: Global Mineral Recovery
+  website: https://globalmineralrecovery.com
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: Reprocessing of bauxite residue and other mining and metal-manufacturing residues to recover minerals
+      and metallic oxides.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Founded: https://www.wpi.edu/about/ie/startups/global-mineral-recovery.
+    Stage: No funding information found. Flags: WPI startup; own site shows copyright 2018, conflicting with WPI
+    founding year 2025. Evidence: https://www.wpi.edu/about/ie/startups/global-mineral-recovery https://globalmineralrecovery.com
+    Region sources: wpi-startups. Confidence: low. Unresolved: HQ (input guess Worcester, MA), headcount, funding,
+    true founding year.'
+- id: gradiant
+  name: Gradiant
+  website: https://www.gradiant.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - recycling
+  stage: late
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Designs, builds and operates industrial water treatment, recycling, ultrapure water and resource-recovery
+      systems, plus treatment chemicals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Series E at a $2B valuation announced May 18, 2026,
+    led by Safar Partners and Hostplus; amount undisclosed; IPO preparation cited (https://gradiant.com). Flags:
+    main named customers are semiconductor makers and hyperscale data centers (HyperSolved data-center cooling-water
+    product); likely large; mixes equipment, chemicals and operating services. Evidence: https://gradiant.com https://www.builtinboston.com/company/gradiant
+    Region sources: mit-news-startups. Confidence: medium. Unresolved: Founded year, headcount (Dealroom 404; Built
+    In gives neither).'
+- id: heliotrope-photonics
+  name: Heliotrope Photonics
+  website: https://heliotropephotonics.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Spectrum-shifting coating for silicon solar panels that converts UV to usable infrared light, claimed
+      to raise panel output 8-15%.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug heliotrope-photonics 404. Evidence:
+    https://heliotropephotonics.com Region sources: activate, third-derivative, greentown. Confidence: medium. Unresolved:
+    Founding (site copyright reads 2014-2026, not a founding date), headcount, funding.'
+- id: helix-carbon
+  name: Helix Carbon
+  website: https://helixcarbon.co
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: CO2 electrolyzers that turn industrial CO2 into carbon monoxide, syngas and oxygen.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grants and prizes only: $310K Carbontech Development
+    Initiative grant (2026-07-06), MassCEC Catalyst (2024-07-30), MIT $100K grand prize (May 2024) (own news page).
+    Evidence: https://helixcarbon.co https://www.helixcarbon.co/news Region sources: masscec-pr-4m, masscec-investments,
+    mit-news-startups, third-derivative. Confidence: medium. Unresolved: founded, headcount; input HQ Milton but
+    site says Cambridge; downstream oil and gas is one of five listed sectors (steel listed first)'
+- id: hera-materials-atacama-biomaterials
+  name: Hera Materials (Atacama Biomaterials)
+  website: https://heramaterials.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: 2019
+  headcount: null
+  climate:
+    tier: core
+    reason: WoodPack, a recyclable wood-fiber paper film for flexible packaging.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Founded: https://heramaterials.com (Spanish-language video
+    description). Flags: formerly Atacama Biomaterials. Evidence: https://heramaterials.com Region sources: masscec-pr-4-5m,
+    masstech-m2i2-7-3m, mit-news-startups, greentown. Confidence: medium. Unresolved: which office is HQ, headcount,
+    funding'
+- id: highland-park-technologies
+  name: Highland Park Technologies
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: HP Panel, a prefabricated exterior retrofit wall panel made from bio-based materials with a wood-fibre
+      insulation base, for recladding older buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: DOE BENEFIT 2022/23 award USD 1.5M (plus USD 375K cost
+    share) for ''A Tight Enclosure on the Path to Net Zero'', 2023-10-01 to 2026-09-30, with ORNL and Simpson Gumpertz
+    & Heger; page dated 2024-02-15. No venture round found. Evidence: https://www.energy.gov/cmei/buildings/articles/tight-enclosure-path-net-zero
+    Region sources: masscec-pr-4m, masstech-m2i2-1-85m. Confidence: medium. Unresolved: Website not found; founded,
+    headcount, equity funding. DOE lists Boston, input says Somerville. Legal name Highland Park Technologies, LLC.'
+- id: hkg-energy
+  name: HKG Energy
+  website: https://hkgenergy.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Terra Silicon, a silicon anode material for lithium-ion cells.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://hkgenergy.com Region sources: masscec-pr-9-8m,
+    masscec-catalyst. Confidence: medium. Unresolved: HQ (input Somerville), founded, headcount, funding; /about
+    404; Dealroom slug 404; defense is one of six listed customer markets'
+- id: infinite-cooling
+  name: Infinite Cooling
+  website: https://www.infinite-cooling.com
+  careers_url: null
+  hq: Malden, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: series-a
+  founded: 2017
+  headcount:
+    value: 17
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/infinite-cooling)
+  climate:
+    tier: core
+    reason: Captures and recycles water from cooling-tower plumes at power plants and industrial sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 17 people (Dealroom, 2026-11-24); founded 2017, funding round reported in 2021.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/infinite-cooling. Stage: Series A $12M, Jun 2021, Material Impact; seed $4M Nov
+    2019 (Dealroom; one more event hidden). Flags: data centers listed first among target industries, alongside
+    power generation, buildings, manufacturing, refineries; site now leads with AI-based TowerPulse software. Evidence:
+    https://infinite-cooling.com https://dealroom.co/companies/infinite-cooling Region sources: mit-sloan-cleantech,
+    builtin-boston-energy, material-impact, massventures. Confidence: medium. Unresolved: Rounds after 2021.'
+- id: infinium
+  name: Infinium
+  website: null
+  careers_url: null
+  hq: Natick, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: null
+  founded: 2008
+  headcount: null
+  climate:
+    tier: core
+    reason: Solid oxide membrane (molten salt) electrolysis that produces metals such as magnesium and neodymium
+      with oxygen as the only byproduct.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band <100 only Founded: https://dealroom.co/companies/infinium-metals.
+    Stage: Dealroom: seed-stage investors DOE, NSF, MassCEC; total disclosed equity $10-50M; aggregators give totals
+    of $9.9M or $11.99M. Founded 2008 as Metal Oxygen Separation Technologies (MOxST), rebranded March 2013. https://dealroom.co/companies/infinium-metals
+    Flags: not the Sacramento e-fuels company of the same name. Evidence: https://dealroom.co/companies/infinium-metals
+    https://crunchbase.com/organization/infinium-metals Region sources: arpa-e. Confidence: medium. Unresolved:
+    Company website not found (infinium.com does not resolve); no recent news found, so current status unknown.'
+- id: kira-systems
+  name: KIRA Systems
+  website: https://www.kira.eco
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular on-site industrial wastewater system (WAVE-3-20) using heat-pump-driven evaporation to produce
+      clean water and dry solids.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site names two co-founders (MIT engineers).
+    Stage: Site lists a16z speedrun (SR007) and Activate as backers, plus MIT and MassCEC programs; no round amounts.
+    Evidence: https://kira.eco https://www.kira.eco/about Region sources: masscec-pr-9-8m, mit-deltav-2025. Confidence:
+    medium. Unresolved: HQ (input Boston), founded, headcount, funding amounts; target sectors include data centers
+    and oil and gas among five; Built In Boston ''kira'' page is an unrelated Web3 company'
+- id: kula-bio
+  name: Kula Bio
+  website: https://www.kulabio.com
+  careers_url: null
+  hq: Natick, MA
+  ats:
+    type: paylocity
+    board: 289c9efb-be57-4191-88ad-b83ef6af6248
+  read: manual
+  sectors:
+  - industrial-heat
+  stage: series-a
+  founded: 2018
+  headcount:
+    value: 50
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/kula-bio)
+  climate:
+    tier: core
+    reason: Microbe-based (Xanthobacter) biological products that produce nitrogen at the plant root zone, replacing
+      part of synthetic nitrogen fertilizer.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 50 people (Dealroom, 2026-11-24); founded 2018, funding round reported in 2025.
+  notes: 'Board paylocity:289c9efb-be57-4191-88ad-b83ef6af6248 seen 2026-11-24, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Dealroom shows 50 and band <100; undated (fetch date used)
+    Founded: https://dealroom.co/companies/kula-bio. Stage: Dealroom: Series A Nov 2025 (amount not shown); Dec
+    2025 financing with linked SEC notice of about $25M exempt offering; total disclosed equity $50-100M across
+    9 events. https://dealroom.co/companies/kula-bio Evidence: https://kulabio.com https://dealroom.co/companies/kula-bio
+    Region sources: pillar-vc. Confidence: medium. Unresolved: Site lists only a Technology and Development Center
+    in Natick, MA; input guess Watertown, MA. Exact Series A amount not shown.'
+- id: linevision
+  name: LineVision
+  website: https://www.linevisioninc.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: paylocity
+    board: '4683948'
+  read: manual
+  sectors:
+  - grid
+  - components
+  stage: null
+  founded: 2018
+  headcount:
+    value: 70
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/linevision)
+  climate:
+    tier: core
+    reason: Contactless optical sensors on transmission lines plus a software platform that provides dynamic line
+      ratings to utilities.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 70 people (Built In Boston, 2026-11-24); founded 2018.
+  notes: 'Board paylocity:4683948 seen 2026-11-24, linked from the company''s own site: role count not read (no
+    public feed). Headcount note: Built In total, undated Founded: https://www.builtinboston.com/company/linevision.
+    Stage: No funding details found; National Grid Partners linked on site. Flags: sensor hardware plus software
+    subscription; offices in Boulder, CO and the Netherlands. Evidence: https://linevisioninc.com https://www.builtinboston.com/company/linevision
+    Region sources: builtin-boston-energy, cev, builtin-energy. Confidence: medium. Unresolved: Funding and stage
+    (Dealroom 404).'
+- id: lithios
+  name: Lithios
+  website: https://lithios.xyz
+  careers_url: null
+  hq: Medford, MA
+  ats:
+    type: breezy
+    board: lithios-inc
+  read: manual
+  sectors:
+  - battery-materials
+  - energy-storage
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 23
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/lithios)
+  climate:
+    tier: core
+    reason: Modular electrochemical Advanced Lithium Extraction (ALE) systems that recover battery-grade lithium
+      from low-grade brines without reagents.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 23 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2024.
+  notes: 'Board breezy:lithios-inc seen 2026-11-24, linked from the company''s own site: 5 open roles. Headcount
+    note: Dealroom 23, undated, band under 100; 4.2% decline over past year Founded: https://dealroom.co/companies/lithios.
+    Stage: Dealroom: Seed Oct 2023 USD 10M (MassCEC, Lowercarbon Capital, Clean Energy Ventures, GS Futures) at
+    USD 40M valuation; Oct 2024 USD 2M debt from SVB; description mentions a USD 12M seed. https://dealroom.co/companies/lithios
+    Flags: oilfield brines among feedstocks. Evidence: https://lithiosinc.com/ https://dealroom.co/companies/lithios
+    Region sources: masscec-investments, masscec-amplifymass, mit-news-startups, lc, cev, activate, arpa-e. Confidence:
+    high. Unresolved: Dealroom HQ Medford vs input Somerville; domain lithios.xyz now redirects to lithiosinc.com.'
+- id: littoral-power-systems
+  name: Littoral Power Systems
+  website: null
+  careers_url: null
+  hq: New Bedford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount:
+    value: 5
+    as_of: '2026-11-24'
+    source: MassCEC company profile (Massachusetts employees) (https://www.masscec.com/company/littoral-power-systems-inc)
+  climate:
+    tier: core
+    reason: Develops and sells low-impact small hydropower, hydrokinetic and wave power equipment, including modular
+      prefabricated low-head hydropower units.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 5 people (MassCEC company profile (Massachusetts employees), 2026-11-24); founding year and funding
+      not found, so included as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: MassCEC lists 5 Massachusetts employees; profile
+    undated Stage: No venture rounds found; multiple DOE awards from 2015; a hydrokinetic cooperative agreement
+    cut to about $2.0M, ending Mar 2024 (HigherGov). Flags: no news after 2024 found. Evidence: https://www.masscec.com/company/littoral-power-systems-inc
+    https://www.watertechonline.com/industry/article/16205589/littoral-power-systems-receives-doe-award-to-advance-hydropower-technologies
+    https://www.highergov.com/grant/DEAR0001447 Region sources: greentown, arpa-e. Confidence: medium. Unresolved:
+    littoralpower.com returned an empty page; current status; founding year (relocated from New Jersey).'
+- id: lnk-energies
+  name: LNK Energies
+  website: https://lnkenergies.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Hydrogen Release Unit that releases hydrogen from liquid organic hydrogen carriers (LOHC) as fuel for
+      heavy-duty transport.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site describes a team of MIT engineers; three
+    people named. Stage: No rounds found; site lists MIT ProtoVentures, MIT DeltaV and 776 Fellowship and seeks
+    investors. Evidence: https://lnkenergies.com Region sources: mit-deltav-2025. Confidence: low. Unresolved: HQ
+    (input guess Cambridge, MA), founded, headcount, funding; Dealroom 404.'
+- id: loci-controls
+  name: LoCI Controls
+  website: https://locicontrols.com
+  careers_url: null
+  hq: Wareham, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  - components
+  stage: series-c
+  founded: 2012
+  headcount:
+    value: 46
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/loci-controls)
+  climate:
+    tier: core
+    reason: Landfill gas well controllers, header sensors and liquid-level devices with the WellWatcher cloud platform
+      that automatically adjusts valves to raise methane capture.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 46 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2012, funding round
+      reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 46, undated, band under 100 Founded:
+    https://dealroom.co/companies/loci-controls. Stage: Dealroom: Series C Nov 2022 led by Turnbridge Capital (amount
+    undisclosed); Mar 2025 MassCEC grant USD 350K. Flags: hardware plus SaaS; also sells carbon credits. Evidence:
+    https://www.locicontrols.com/ https://dealroom.co/companies/loci-controls Region sources: masscec-investments.
+    Confidence: high.'
+- id: loop-co2
+  name: Loop CO2
+  website: https://loopco2.com
+  careers_url: null
+  hq: Marlborough, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turns CO2 into a new polymer backbone for optical, circular and safer materials (adhesives, elastomers,
+      cosmetic oils).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Grants on site: DOE STTR Phase 2 $1.6M (about Aug 2023),
+    MassCEC/MassVentures grants 2023 and 2025, SBIR/STTR Phase I 2022; no equity rounds found. https://loopco2.com
+    Evidence: https://loopco2.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount,
+    equity funding.'
+- id: luminous-robotics
+  name: Luminous Robotics
+  website: https://www.luminousrobotics.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - grid
+  stage: null
+  founded: 2023
+  headcount:
+    value: 69
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/luminous-3/)
+  climate:
+    tier: core
+    reason: LUMI tracked robots that pick up and install solar modules on utility-scale solar farms, deployed as
+      fleet-as-a-service.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 69 people (Dealroom, 2026-11-24); founded 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; page read 2026-11-24.
+    Founded: https://dealroom.co/companies/luminous-3/. Stage: Dealroom shows $10-50M disclosed equity (range) but
+    only a $3.2M ARENA grant (Jul 2025) as a visible event; ARENA Solar ScaleUp grant AU$4.9M (2025) and up to AU$17.8M
+    (Oct 2026) for a Melbourne robot factory (https://www.pv-magazine.com/2026/10/13/arena-pumps-32-3-million-into-solar-robotics-manufacturing-projects/).
+    Flags: main deployments and planned factory in Australia. Evidence: https://luminousrobotics.com https://dealroom.co/companies/luminous-3/
+    https://www.therobotreport.com/luminous-gets-funding-to-bring-lumi-solar-construction-robot-to-australia/ Region
+    sources: masscec-investments, masscec-pr-tax-incentives, masscec-pr-criticalmass-3-9m. Confidence: medium. Unresolved:
+    venture round type and amounts'
+- id: macrocycle-technologies
+  name: MacroCycle Technologies
+  website: https://www.macrocycle.tech
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Polyester and PET resin made from end-of-life textile waste (MacroTEX for textiles, MacroPACK for bottles).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Own site links a press headline ''MacroCycle Raises
+    $6.5M to Commercialize Plastic Upcycling Technology''; no round type or date given on the page. Evidence: https://macrocycle.tech
+    Region sources: masscec-innovatemass, masscec-pr-2-5m-18, greentown. Confidence: medium. Unresolved: founded
+    year, headcount, round type and date of the $6.5M raise; Dealroom and Built In Boston slugs 404; Greentown member
+    page refused automated client (403)'
+- id: maglev-aero
+  name: Maglev Aero
+  website: https://maglevaero.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  - components
+  stage: seed
+  founded: 2018
+  headcount:
+    value: 18
+    as_of: '2026-11-24'
+    source: Built In (https://builtin.com/company/maglev-aero-inc)
+  climate:
+    tier: enabling
+    reason: MagLev HyperDrive rim-driven, magnetically levitated electric propulsion units for eVTOL aircraft and
+      drones, sold to aircraft OEMs.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 18 people (Built In, 2026-11-24); founded 2018, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total via search snippet, undated;
+    Dealroom band under 100 Founded: https://dealroom.co/companies/maglev-aero. Stage: Dealroom: $14.1M over two
+    rounds, investors listed at seed stage (Moai, Grit, Material Impact; Breakthrough Energy Ventures named); DARPA
+    award for drone propulsion Sept 2026 (non-dilutive, seen via aggregator). Flags: DARPA-funded drone propulsion
+    work (defense not stated as main business); pre-commercial. Evidence: https://dealroom.co/companies/maglev-aero
+    https://builtin.com/company/maglev-aero-inc https://www.militaryaerospace.com/uncrewed/article/55408306/darpa-funds-maglev-aero-propulsion-demonstration-for-drones
+    Region sources: material-impact. Confidence: medium. Unresolved: Own site returned only a title; round names.'
+- id: malta
+  name: Malta
+  website: https://maltainc.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - buildings
+  stage: null
+  founded: 2018
+  headcount:
+    value: 509
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/malta)
+  climate:
+    tier: core
+    reason: Malta AHP steam-based ultra-high-temperature industrial heat pump, and pumped-heat (electro-thermal)
+      long-duration energy storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 509 people (Dealroom, 2026-11-24); founded 2018.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows 509, band 500-1k; undated and
+    looks high for this company; treat with caution Founded: https://dealroom.co/companies/malta. Stage: Dealroom
+    shows 5 funding events, total disclosed equity $50-100M; visible: Nov 2023 financing (Alfa Laval, Chevron Technology
+    Ventures, Breakthrough Energy Ventures, Piva), Jan 2026 financing (amount not shown); site: Kobe Steel strategic
+    alliance and investment announced 2026-09-14. Round letters not shown. https://dealroom.co/companies/malta Flags:
+    Dealroom headcount 509 (possibly over 500 employees; unverified). Evidence: https://maltainc.com https://dealroom.co/companies/malta
+    Region sources: bev, greentown, builtin-energy. Confidence: medium. Unresolved: Round series and amounts; reliable
+    headcount. First commercial AHP at Proman methanol plant, Pampa, TX.'
+- id: mantel
+  name: Mantel
+  website: https://www.mantel.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  - industrial-heat
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 51
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/mantel)
+  climate:
+    tier: core
+    reason: Molten-borate carbon capture for high-temperature industrial sources (boilers, kilns, furnaces) that
+      recovers heat as steam.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 51 people (Dealroom, 2026-11-24); founded 2022, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; page read 2026-11-24.
+    Founded: https://dealroom.co/companies/mantel. Stage: Dealroom: Series A $18M, Aug 2026, at $150M valuation,
+    led by Azimut Investments and Constellation Technology Ventures; earlier Series A event (Alumni Ventures) dated
+    Apr 2025; total $50-100M (https://dealroom.co/companies/mantel). Flags: input domain mantel.com is a Dutch bicycle
+    retailer; correct domain is mantelcapture.com. Evidence: https://mantelcapture.com https://dealroom.co/companies/mantel
+    https://www.builtinboston.com/company/mantel Region sources: masscec-pr-tax-incentives, masstech-m2i2-10m, engine-ventures,
+    mit-news-startups, engine, third-derivative, greentown. Confidence: medium. Unresolved: full round history (gated)'
+- id: mass-magnetics
+  name: Mass Magnetics
+  website: https://massmagnetics.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - recycling
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: US-made sintered rare-earth magnets from recycled and domestic feedstock.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Backers listed on site: Y Combinator, Greentown Labs,
+    MIT Sandbox; no round, amount or date. Flags: targets defense suppliers needing DFARS-compliant magnets plus
+    robotics and drone makers; defense share unclear; second site in Columbus, IN. Evidence: https://massmagnetics.com
+    Region sources: greentown, yc. Confidence: medium. Unresolved: Founding, headcount, funding; whether defense
+    is the main customer.'
+- id: metal-fuels
+  name: Metal Fuels
+  website: https://metal-fuels.com
+  careers_url: null
+  hq: Charlestown, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: 'Energy from scrap aluminum: on-site green hydrogen, megawatt-scale zero-carbon power, battery storage,
+      EV charging and electric marine solutions.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Site
+    does not mention alumina or water atomisation; matched to the source on scrap-aluminium energy and the source-given
+    domain.. Evidence: m e t a l - Region sources: masscec-catalyst. Confidence: low.'
+- id: metalmark-innovations
+  name: MetalMark Innovations
+  website: null
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Air-purification products; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NSF SBIR and I-Corps awards; EPA wildfire indoor-air
+    challenge Phase 2 winner; no venture round found. Flags: Harvard spinout. Evidence: https://www.achrnews.com/articles/154770-metalmark-tatama-air-cleaner
+    https://seedfund.nsf.gov/news/metalmark https://www.einpresswire.com/article/733440695/metalmark-unveils-groundbreaking-sierra-air-filter-the-world-s-first-merv-13-wildfire-smoke-filter-for-hvac-systems
+    Region sources: masscec-pr-2-5m-18. Confidence: low. Unresolved: Website (metalmarkinnovations.com does not
+    resolve), HQ (input Cambridge, MA), founded, headcount, funding. Sources from search results only; Greentown
+    member page refused (403).'
+- id: muon-vision
+  name: Muon Vision
+  website: https://muonvision.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Muon imaging and subsurface monitoring for mining operators; mining is out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug muon-vision 404. Flags: serves
+    mining operators; may be a monitoring service rather than hardware sale; product differs from directory description
+    (metals processing). Evidence: https://muonvision.com Region sources: azolla. Confidence: medium. Unresolved:
+    Founding, headcount, funding; whether it sells detectors or monitoring as a service. Also has office in Santiago,
+    Chile.'
+- id: nanoramic
+  name: Nanoramic
+  website: https://www.nanoramic.com
+  careers_url: null
+  hq: Wakefield, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: null
+  founded: 2010
+  headcount:
+    value: 48
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/nanoramic)
+  climate:
+    tier: core
+    reason: Neocarbonix slurry precursor, a drop-in binder/additive electrode material for Li-ion cathodes and anodes.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 48 people (Dealroom, 2026-11-24); founded 2010 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/nanoramic. Stage: Company-named rounds: ''Series 1'' $54M Nov 2025 (GM Ventures,
+    Samsung Ventures, ITOCHU, Top Material; Dealroom calls it late-stage VC); ''Series 2'' first close Sept 2026
+    at $250M pre-money led by Catalus Capital, amount undisclosed (Dealroom). Evidence: https://nanoramic.com https://dealroom.co/companies/nanoramic
+    Region sources: mit-sloan-cleantech. Confidence: medium. Unresolved: Dealroom lists both Wakefield and Boston;
+    mapping of ''Series 1/2'' to standard stages.'
+- id: nona-technologies
+  name: Nona Technologies
+  website: https://nona-technologies.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular ion-concentration-polarization system that recovers cooling-tower water for reuse.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Founders Bruce Crawford and Junghyo Yoon. Founded:
+    https://www.nona-technologies.com/. Stage: No equity round disclosed; over USD 200K non-dilutive (MIT delta
+    v, 2022 MIT USD 100K competition winner); NSF-backed data-centre pilot. Flags: main customers appear to be data
+    centers (pilots at a 1.5 MW data center in Ohio; delivered with Park Place Technologies); MIT spinout. Evidence:
+    https://www.nona-technologies.com/ https://tlo.mit.edu/industry-entrepreneurs/startups/nona-technologies https://news.mit.edu/2022/100k-competition-nona-0516
+    Region sources: masscec-investments, mit-tlo-startups. Confidence: medium. Unresolved: Headcount; funding round.
+    Earlier MIT material described seawater desalination; current product is cooling-tower water reuse.'
+- id: novo-blades
+  name: Novo Blades
+  website: https://novoblades.com
+  careers_url: null
+  hq: Massachusetts
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: Wind turbine blade technology to lower cost of energy (site names no specific product; directory says
+      a patented blade tip design).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Three co-founders named. Founded: https://www.novoblades.com
+    (founded through the 2025 MassCEC/FedTech ClimateTech Studio). Stage: Grants only: $75K MassCEC Catalyst award
+    and $25K FedTech alumni award (own site, undated). Evidence: https://www.novoblades.com Region sources: masscec-pr-4-5m.
+    Confidence: medium. Unresolved: whether it makes blade hardware or licenses a design; operating location'
+- id: nth-cycle
+  name: Nth Cycle
+  website: https://nthcycle.com
+  careers_url: null
+  hq: Burlington, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - energy-storage
+  stage: series-b
+  founded: 2017
+  headcount:
+    value: 64
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/nth-cycle)
+  climate:
+    tier: core
+    reason: Modular electro-extraction systems (OYSTER) that refine recycled and mined material into battery metals
+      such as nickel/cobalt mixed hydroxide precipitate.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 64 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2017, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 64, undated, band under 100 Founded:
+    https://dealroom.co/companies/nth-cycle. Stage: Dealroom: Series B Dec 2023 USD 37M (VoLo Earth Ventures, Equinor
+    Ventures, Caterpillar Ventures) at USD 148M valuation, plus USD 7M debt; total equity USD 100-500M. Own site:
+    DOE selection 2026-08-20 for award negotiations up to USD 100M for a refining facility; 2026-09-22 binding term
+    sheet for strategic partnership with Glencore. Flags: processes low-grade ore and mine tailings as well as scrap.
+    Evidence: https://www.nthcycle.com/ https://dealroom.co/companies/nth-cycle Region sources: masscec-t2m, mit-news-startups,
+    cev, elemental, greentown, ic. Confidence: high. Unresolved: Dealroom HQ Burlington vs input Beverly; later
+    rounds after 2023 not visible.'
+- id: offgridbox
+  name: OffGridBox
+  website: https://www.offgridbox.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - water
+  - solar
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: core
+    reason: Containerised solar power and water purification units, mainly for health clinics in Africa.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2016.
+  notes: 'No job board found on the company''s site. Founded: https://offgridbox.com. Stage: No funding amounts
+    found; site shows funding and deployment partner logos including the UN. Flags: deployments mainly outside the
+    US (Africa). Evidence: https://offgridbox.com Region sources: builtin-boston-greentech, builtin-boston-energy,
+    builtin-greentech, builtin-energy. Confidence: low. Unresolved: HQ (input guess Boston, MA), headcount, funding
+    (Dealroom 404).'
+- id: optigon
+  name: Optigon
+  website: https://optigon.us
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: rippling
+    board: optigon
+  read: auto
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: High-speed automated characterization tools for perovskite and other solar materials.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board rippling:optigon seen 2026-11-24, linked from the company''s own site: 2 open roles. Stage: No funding
+    round found in fetched pages Evidence: o p t i g o Region sources: masscec-pr-4m, mit-news-startups, greentown.
+    Confidence: low.'
+- id: orien-energy
+  name: Orien Energy
+  website: https://orien.energy
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Thermally driven adsorption heat pump that turns low-grade industrial waste heat into steam, with cooling
+      as a second output.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists sponsors/programs only (MassCEC, Activate,
+    Cleantech to Market, NSF I-Corps, MIT programs); no rounds. Evidence: https://orien.energy Region sources: masscec-pr-9-8m,
+    masscec-investments, activate, greentown. Confidence: medium. Unresolved: founded, headcount, funding; data
+    centers are one of six listed target markets (not the main one)'
+- id: orpheus-ocean
+  name: Orpheus Ocean
+  website: https://orpheusocean.com
+  careers_url: null
+  hq: Plymouth, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous underwater vehicles for seafloor surveys; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: About page profiles 10 team members (may not
+    be full staff). Flags: subsea defense is one of three listed markets (with marine resources and offshore infrastructure).
+    Evidence: https://orpheusocean.com https://www.orpheusocean.com/about Region sources: masscec-innovatemass,
+    masscec-pr-tax-incentives. Confidence: medium. Unresolved: founded, headcount, funding; input HQ New Bedford
+    but site lists a Plymouth, MA address'
+- id: osmoses
+  name: Osmoses
+  website: https://osmoses.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: seed
+  founded: 2021
+  headcount:
+    value: 28
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/osmoses)
+  climate:
+    tier: core
+    reason: Polymer membranes for industrial gas separations (e.g. hydrogen, natural gas purification).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 28 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2021, funding round
+      reported in 2023.
+  notes: 'No board found: home page not readable (202). Headcount note: Dealroom 28, undated, band under 100 Founded:
+    https://dealroom.co/companies/osmoses. Stage: Dealroom: Seed Oct 2023 USD 11M (Blindspot Ventures, Fine Structure
+    Ventures, Collaborative Fund, The Engine) at USD 44M valuation; Jun 2023 MassVentures grant USD 100K; total
+    equity USD 10-50M. Flags: oil and gas firms listed among industrial clients (Dealroom), not stated as main.
+    Evidence: https://dealroom.co/companies/osmoses Region sources: masscec-t2m, engine-ventures, mit-sloan-cleantech,
+    mit-news-startups, massventures, engine, activate, greentown, halliburton-labs. Confidence: high. Unresolved:
+    Own site not fetched.'
+- id: pascal-technologies
+  name: Pascal Technologies
+  website: https://www.pascaltech.co
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Heat pumps, air conditioners and refrigerators based on low-pressure solid barocaloric refrigerants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Search result summary of a GlobalSpec article reports
+    $8M raised by the Harvard spinout; round type and date not confirmed (GlobalSpec returned 403). Stage seed is
+    inferred. Flags: pascaltech.co now serves only a script redirect to /lander (a typical parked-domain pattern),
+    so the company may have moved domains; website kept as given but unverified. DOE project record suggests activity
+    in 2026. builtinboston /company/pascal is an unrelated Japanese firm. A follow-up web search. Evidence: W e
+    b   s e Region sources: masscec-pr-9-8m, masscec-pr-tax-incentives, engine-ventures, engine, activate. Confidence:
+    low.'
+- id: pecos-wind-power
+  name: Pecos Wind Power
+  website: https://pecoswindpower.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: 2017
+  headcount:
+    value: 4
+    as_of: '2026-11-24'
+    source: MassCEC company profile (Massachusetts employees) (https://www.masscec.com/company/pecos-wind-power)
+  climate:
+    tier: core
+    reason: Low-cost 85 kW community-scale distributed wind turbine (PW85) for low-wind sites.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 4 people (MassCEC company profile (Massachusetts employees), 2026-11-24); founded 2017.
+  notes: 'No job board found on the company''s site. Headcount note: MassCEC lists 4 Massachusetts employees; profile
+    undated Founded: https://www.masscec.com/company/pecos-wind-power. Stage: Not found. Evidence: https://pecoswindpower.com
+    https://www.masscec.com/company/pecos-wind-power Region sources: greentown. Confidence: medium. Unresolved:
+    Funding.'
+- id: phase-two-chemicals
+  name: Phase Two Chemicals
+  website: https://phasetwochemicals.com
+  careers_url: null
+  hq: Lowell, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: series-a
+  founded: 2015
+  headcount: null
+  climate:
+    tier: core
+    reason: Electrochemical systems that make hydrogen peroxide on site for pulp and paper mills and electronics
+      uses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2015.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band <100 only Founded: https://dealroom.co/companies/phase-two-chemicals.
+    Stage: Dealroom: Series A investors syensqo Ventures, Richland Capital, Keyuan Industry Fund; amount and date
+    not shown; total disclosed $10-50M. https://dealroom.co/companies/phase-two-chemicals Flags: facilities in Hangzhou
+    and Shaoxing, China. Evidence: https://phasetwochemicals.com https://dealroom.co/companies/phase-two-chemicals
+    Region sources: greentown. Confidence: medium. Unresolved: Series A amount and date; headcount.'
+- id: phoebus-american-energy-systems
+  name: Phoebus American Energy Systems
+  website: https://phoebusamerican.us
+  careers_url: null
+  hq: Worcester, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - industrial-heat
+  stage: pre-seed
+  founded: 2025
+  headcount:
+    value: 3
+    as_of: '2026-11-24'
+    source: wpi-startups; undated, so as_of is the day it was read (https://www.wpi.edu/about/ie/startups/phoebus-american-energy-systems-corp)
+  climate:
+    tier: core
+    reason: Metal-alloy sponge for solid-state hydrogen storage (mobility, metallurgy, agriculture).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 3 people (wpi-startups; undated, so as_of is the day it was read, 2026-11-24); founded 2025, funding
+      round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Only funding listed is $5,000 from the WPI i3Lab, dated
+    2025-06-27 Flags: Corporate name Phoebus American Energy Systems Corp.. Evidence: W P I   s t Region sources:
+    wpi-startups. Confidence: low.'
+- id: pixelframe
+  name: Pixelframe
+  website: null
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Reconfigurable precast post-tensioned concrete structural system for reuse in construction; MIT Digital
+      Structures spinout.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://impactclimate.mit.edu/2023/06/14/reusable-concrete-components-pixelframe/
+    https://impactclimate.mit.edu/2025/05/09/pixelframe-at-architecture-biennale/ Region sources: masscec-pr-4m.
+    Confidence: low. Unresolved: company domain, HQ (input Cambridge), founded, headcount, funding'
+- id: planck-energies
+  name: Planck Energies
+  website: https://planckenergies.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Passive radiative cooling additives and other optical/nanomaterial products for buildings.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site copyright 2021. Evidence: https://www.planckenergies.com
+    Region sources: masscec-pr-4m. Confidence: medium. Unresolved: HQ (input Boston), founded, headcount, funding;
+    domain guessed, content matches'
+- id: polyjoule
+  name: PolyJoule
+  website: https://polyjoule.com
+  careers_url: null
+  hq: Billerica, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount:
+    value: 15
+    as_of: '2026-11-24'
+    source: MassCEC company profile (Massachusetts employees) (https://www.masscec.com/company/polyjoule)
+  climate:
+    tier: core
+    reason: Conductive-polymer (organic) battery energy storage systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 15 people (MassCEC company profile (Massachusetts employees), 2026-11-24); founding year and funding
+      not found, so included as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: MassCEC lists 15 Massachusetts employees; profile
+    undated Stage: Not found; Dealroom slug polyjoule 404. Evidence: https://polyjoule.com https://www.masscec.com/company/polyjoule
+    Region sources: greentown. Confidence: medium. Unresolved: Founding year and funding stage.'
+- id: powerhouse-dynamics
+  name: Powerhouse Dynamics
+  website: https://www.powerhousedynamics.com
+  careers_url: null
+  hq: Newton, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: 2009
+  headcount: null
+  climate:
+    tier: enabling
+    reason: SiteSage IoT energy monitoring and equipment control (sensors, controllers and software) for restaurants,
+      convenience stores and other multi-site facilities.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by The Middleby Corporation site describes it as IoT and AI software; not
+      independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band <100 only Founded: https://dealroom.co/companies/powerhouse-dynamics.
+    Stage: Dealroom: acquired by The Middleby Corporation, April 2019, about $11M; earlier seed and Series A (SOSV,
+    MassCEC, Constellation). https://dealroom.co/companies/powerhouse-dynamics Flags: subsidiary of The Middleby
+    Corporation; site describes it as IoT and AI software; hardware share unclear. Evidence: https://powerhousedynamics.com
+    https://dealroom.co/companies/powerhouse-dynamics Region sources: launchpad-venture-group. Confidence: high.
+    Unresolved: Whether hardware or software is the main product.'
+- id: promethean-power-systems
+  name: Promethean Power Systems
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: ashby
+    board: promethean
+  read: auto
+  sectors:
+  - energy-storage
+  stage: null
+  founded: 2007
+  headcount:
+    value: 33
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/promethean-power-systems)
+  climate:
+    tier: core
+    reason: 'Thermal energy storage (''thermal battery'', a phase-change material tank) refrigeration systems: bulk
+      milk coolers, rapid milk chillers, cold storage and refrigerated trucks that remove the need for backup diesel
+      generators.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 33 people (Built In Boston, 2026-11-24); founded 2007 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'Board ashby:promethean seen 2026-11-24, token matched by name; board page checked: 2 open roles, 2 US-remote.
+    Headcount note: Built In shows 33 total employees, undated (as_of is the retrieval date). A YourStory search
+    snippet gives a band of 41-60. Founded: https://www.builtinboston.com/company/promethean-power-systems. Stage:
+    No funding rounds found in the third-party sources checked. Flags: main market and operations in India (Pune).
+    Evidence: https://www.builtinboston.com/company/promethean-power-systems https://news.mit.edu/2015/promethean-power-india-milk-chillers-0908
+    https://www.technologyreview.com/2013/01/25/180312/novel-energy-storage-to-chill-milk-in-rural-india/ https://www.aiche.org/sites/default/files/cep/20150316.pdf
+    https://yourstory.com/companies/promethean-power-systems/amp Region sources: greentown. Confidence: medium.
+    Unresolved: HQ sources disagree: Built In and YourStory say Boston; AIChE (2015) says Somerville, MA; others
+    say Pune, India and Boston. Current activity was not confirmed (the newest dated coverage is 2015). Built In
+    gives the website as promethean-power.com (not fetched). Funding not found. YourStory returned 403.'
+- id: reon-technology
+  name: REON Technology
+  website: https://reoncorp.com
+  careers_url: null
+  hq: Chelmsford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - grid
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Battery energy storage and microgrid systems with individual cell- and panel-level control to get more
+      usable energy and longer life.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Also
+    operates in Singapore per a search result. reontechnology.com is unrelated (redirects to a Dubai firm).. Evidence:
+    r e o n c o Region sources: masscec-pr-tax-incentives, greentown. Confidence: low.'
+- id: resolute-methane
+  name: Resolute Methane
+  website: https://resolutemethane.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: core
+    reason: Compact regenerative thermal oxidizer that destroys dilute methane, using particles instead of ceramic
+      beds for heat recovery.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Only founder/CEO Will Sawyer named on site.
+    Founded: https://resolutemethane.com/. Stage: No funding stated; partners listed: MassCEC, Activate, Greentown
+    Labs. Evidence: https://resolutemethane.com/ Region sources: masscec-catalyst, activate, greentown. Confidence:
+    medium. Unresolved: HQ (input says Boston, MA), headcount, funding.'
+- id: respire-energy
+  name: Respire Energy
+  website: https://respireenergy.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - industrial-heat
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: Non-flammable metal-air battery for multi-day energy storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Founded: https://greentownlabs.com/members/respire-energy/
+    (search snippet; page itself refused automated client). Stage: No funding found. Evidence: https://respireenergy.com
+    https://greentownlabs.com/members/respire-energy/ Region sources: masscec-pr-9-8m, masscec-pr-studio, wpi-startups,
+    greentown. Confidence: medium. Unresolved: headcount, funding; site says metal-air, does not confirm aluminium
+    chemistry'
+- id: rise-robotics
+  name: RISE Robotics
+  website: https://riserobotics.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: workable
+    board: rise-robotics
+  read: manual
+  sectors:
+  - components
+  stage: null
+  founded: 2011
+  headcount:
+    value: 17
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/rise-robotics)
+  climate:
+    tier: enabling
+    reason: Electric linear actuators that replace hydraulic cylinders on heavy equipment.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 17 people (Dealroom, 2026-11-24); founded 2011.
+  notes: 'Board workable:rise-robotics seen 2026-11-24, linked from the company''s own site: 5 open roles. Headcount
+    note: Dealroom figure, undated; band under 100 Founded: https://dealroom.co/companies/rise-robotics. Stage:
+    Round names not shown: Dealroom lists $1.5M equity round Apr 2025 (The Engine, Techstars, others; reported $79M
+    valuation), $100K MassVentures grant Aug 2026, total equity $10-50M across 7 events; company site says it is
+    fundraising on Wefunder (community round). Flags: US DoD named among customers alongside Tier 1s and OEMs. Evidence:
+    https://riserobotics.com https://dealroom.co/companies/rise-robotics Region sources: engine-ventures, engine,
+    greentown. Confidence: medium. Unresolved: Named stage of latest venture round.'
+- id: river-otter-renewables
+  name: River Otter Renewables
+  website: https://riverotter.io
+  careers_url: null
+  hq: Stow, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - biofuels
+  - water
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Turns sewage sludge into renewable fuel and clean water.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists ''Funded By'' US Army, SERDP, EPA, MassCEC,
+    AFWERX, MassVentures (grants or awards; amounts not given). Flags: military research funders (Army, AFWERX,
+    SERDP). Evidence: https://www.riverotterrenewables.com/ (301 to riverotter.io) https://riverotter.io/ Region
+    sources: masscec-pr-2-5m-18, wpi-startups. Confidence: medium. Unresolved: HQ (input Stow, MA), founded, headcount,
+    product detail.'
+- id: rock-zero
+  name: Rock Zero
+  website: https://rockzero.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - energy-storage
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Low-temperature (<100 C) process to extract battery-grade lithium chemicals from hard-rock ore such
+      as spodumene, recycling its reagent; pilot plant targeted for end of 2026.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (202). Founded: StartupHub says 2022 (https://www.startuphub.ai/startups/rock-zero);
+    Chemeurope says spun out of MIT in 2024 (https://www.chemeurope.com/en/companies/1047570/rock-zero.html). Stage:
+    Listed as seed stage on The Engine jobs board (https://jobs.engine.xyz/companies/rock-zero-2); StartupHub reports
+    $12M total (low-authority aggregator, unverified). Evidence: https://engine.xyz/resident-companies/rock-zero
+    https://www.technologyreview.com/2026/05/28/1138096/lithium-extraction-rock-zero/amp/ https://news.mit.edu/2026/mit-researchers-develop-low-cost-technique-lithium-from-rocks-0528
+    Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: founded year (2022 vs 2024), headcount, round
+    amounts; rockzero.com returned empty content'
+- id: rstream-recycling
+  name: rStream Recycling
+  website: https://rstreamrecycling.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: null
+  founded: 2022
+  headcount:
+    value: 6
+    as_of: '2026-11-24'
+    source: Built In Boston (https://www.builtinboston.com/company/rstream)
+  climate:
+    tier: core
+    reason: On-site robotic and computer-vision waste sorting systems that recover recyclables at venues such as
+      stadiums.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 6 people (Built In Boston, 2026-11-24); founded 2022.
+  notes: 'No job board found on the company''s site. Headcount note: Built In total employees; undated, page read
+    2026-11-24. Founded: https://www.builtinboston.com/company/rstream. Stage: Gazette reporting (via search) says
+    founders raised $3M; NSF SBIR involvement (https://seedfund.nsf.gov/news/rStream); round type unknown. Evidence:
+    https://www.rstreamrecycling.com/ https://www.builtinboston.com/company/rstream https://www.umass.edu/news/article/ai-driven-recycling-pilot-program-launches-umass-campus-center
+    Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: round type and date'
+- id: sistine-solar
+  name: Sistine Solar
+  website: https://sistinesolar.com
+  careers_url: null
+  hq: Wakefield, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: SolarSkin customizable graphic overlays for solar panels (logos, colours, patterns) compatible with
+      any panel maker.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug sistine-solar 404. Evidence:
+    https://sistinesolar.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount, funding.'
+- id: sitration
+  name: SiTration
+  website: https://sitration.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  - energy-storage
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 32
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/sitration)
+  climate:
+    tier: core
+    reason: Silicon-based electro-extraction and nanofiltration membrane systems that recover metals and minerals
+      (copper, rare earths, battery metals) from mining waste, leachate and recycling streams.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 32 people (Dealroom, 2026-11-24); founded 2020, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/sitration. Stage: Seed $12M Jun 2024 (Orion Industrial Ventures, E14, BHP Ventures,
+    Extantia); seed $2.4M Jul 2022 (Dealroom; 5 more events hidden). Flags: mining is main market (BHP pilot in
+    Arizona, Aug 2026). Evidence: https://sitration.com https://dealroom.co/companies/sitration Region sources:
+    mit-news-startups, mit-tlo-startups, azolla, activate, greentown, halliburton-labs, arpa-e. Confidence: medium.
+    Unresolved: HQ: Dealroom says Cambridge, a Boston Business Journal headline on the site calls it a Watertown
+    company.'
+- id: sol-clarity
+  name: Sol Clarity
+  website: https://solclarity.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount:
+    value: 2
+    as_of: '2026-11-24'
+    source: MassCEC company profile (Massachusetts employees) (https://www.masscec.com/company/sol-clarity)
+  climate:
+    tier: core
+    reason: Transparent electrodynamic screen overlays that remove dust from solar panels without water or moving
+      parts.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 2 people (MassCEC company profile (Massachusetts employees), 2026-11-24); founding year and funding
+      not found, so included as a missing figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: MassCEC lists 2 Massachusetts employees; profile
+    undated Stage: Not found. Flags: site shows only a 2022 copyright; activity level uncertain. Evidence: https://www.solclarityeds.com/
+    https://www.masscec.com/company/sol-clarity Region sources: greentown. Confidence: medium. Unresolved: Founding,
+    funding. Domain redirects to solclarityeds.com.'
+- id: solar-mantle
+  name: Solar Mantle
+  website: https://solarmantle.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Thin passive radiative cooling film that reflects sunlight and emits heat to cut HVAC loads.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; site cites Chevron Studio selection and NREL
+    support, no amounts. Flags: listed target markets include defense and data centers among others; HQ may be Champaign,
+    IL. Evidence: https://solarmantle.com Region sources: greentown. Confidence: medium. Unresolved: Which site
+    is HQ; founding, headcount, funding.'
+- id: solvanic
+  name: Solvanic
+  website: https://solvanic.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - carbon-removal
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular drop-in electrochemical carbon capture technology for industrial emitters.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.solvanic.com Region sources: masscec-pr-4-5m.
+    Confidence: medium. Unresolved: HQ (input Cambridge), founded, headcount, funding; domain guessed, content matches'
+- id: sora-fuel
+  name: Sora Fuel
+  website: https://sorafuel.com
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - carbon-removal
+  stage: null
+  founded: 2024
+  headcount:
+    value: 23
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/sora-fuel)
+  climate:
+    tier: core
+    reason: Drop-in jet fuel and diesel (e-fuels) made from CO2 captured from air, water and renewable electricity
+      via electrolysis to syngas.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 23 people (Dealroom, 2026-11-24); founded 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/sora-fuel. Stage: Dealroom: seed $6M Aug 2024 (Wireframe, Engine Ventures); ''early
+    VC'' $15M Apr 2026 (press headline says $14.6M; Engine Ventures, Inspired Capital, Spero, Wireframe). Round
+    name for 2026 raise not given; likely seed-extension or Series A. Evidence: https://sorafuel.com https://dealroom.co/companies/sora-fuel
+    Region sources: engine-ventures, engine, greentown, shell-gamechanger. Confidence: medium. Unresolved: Name
+    of the 2026 round.'
+- id: stec-technology
+  name: Stec Technology
+  website: null
+  careers_url: null
+  hq: New Bedford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Exhaust treatment retrofits for marine diesel engines; emissions controls on combustion engines, not
+      electrification.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: CEO Walt Schulz. Stage: Nothing found. Flags:
+    federal contractor listing gives Bristol, RI address (Providence area). Evidence: https://www.nationalfisherman.com/solution-for-boatbuilders-facing-tier-iv-regulations
+    https://govconinabox.com/explore/smb-federal-contractors/stec-technology-inc-EGAQFQQ8NFK1 Region sources: masscec-pr-2-5m-18.
+    Confidence: low. Unresolved: Website, founded, headcount, funding, current status; New Bedford vs Bristol, RI
+    HQ. Sources from search results only (not fetched).'
+- id: stepwise-electric
+  name: StepWise Electric
+  website: https://www.getstepwise.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Stepwise Tap, a load-management device between the panel and appliances that lets EV chargers and electric
+      appliances run without a panel upgrade.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round found in fetched pages Flags: Website
+    moved from stepwise.squarespace.com to getstepwise.com. HQ from source only; site gives a 508 phone number and
+    no address.. Evidence: s t e p w i Region sources: masscec-pr-2-5m-18. Confidence: low.'
+- id: sublime-systems
+  name: Sublime Systems
+  website: https://sublime-systems.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: lever
+    board: SublimeSystems
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: 2020
+  headcount:
+    value: 71
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/sublime-systems)
+  climate:
+    tier: core
+    reason: Sublime Cement, a portland-cement replacement made by an electrochemical process (no kiln) powered by
+      electricity; co-produces critical minerals.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 71 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020.
+  notes: 'Board lever:SublimeSystems seen 2026-11-24, linked from the company''s own site: 0 open roles. Headcount
+    note: Dealroom 71 (undated, band under 100); Built In Boston lists 47 total employees (undated) at https://www.builtinboston.com/company/sublime-systems
+    Founded: https://dealroom.co/companies/sublime-systems. Stage: Dealroom: Sep 2024 ''Late VC'' USD 75M from CRH
+    Ventures and Holcim at reported USD 300M valuation; May 2025 financing from Suffolk Technologies (amount not
+    shown); total equity USD 100-500M; earlier seed and Series A rounds listed without amounts. Own site names Holcim,
+    CRH, Amrize, Siam Cement Group, Suffolk as backers. Round letter of the 2024 deal not confirmed (series-b or
+    later). Evidence: https://sublime-systems.com/ https://dealroom.co/companies/sublime-systems https://www.builtinboston.com/company/sublime-systems
+    Region sources: masscec-pr-2-5m-18, engine-ventures, mit-news-startups, lc, eip, engine, azolla, activate, greentown,
+    arpa-e, doe-oced. Confidence: high. Unresolved: Exact round letter of latest raise; plant site (own site says
+    a kiloton-scale plant is being built, location not named on home page).'
+- id: suryatech-ev-power
+  name: Suryatech EV Power
+  website: https://suryatechpower.com
+  careers_url: null
+  hq: Tyngsboro, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - solar
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Compact solar-powered smart EV charger with integrated battery storage.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Only funding found is a $91,000 MassCEC InnovateMass
+    award (press release 2024-07-30) to test its hybrid solar EV charger and battery; no equity round found Flags:
+    Site trades as Suryatech Power; site assets dated 2024, no address on the page.. Evidence: M a s s C E Region
+    sources: masscec-pr-4m. Confidence: low.'
+- id: swerv
+  name: SWERV
+  website: https://swervair.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: core
+    reason: SWERV V3 window-mounted energy recovery ventilator, from $799; preorders open, shipping February 2027.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Founded: https://greentownlabs.com/?p=38965 (search snippet;
+    Greentown site refused automated client). Stage: No funding found; site says beta run sold out. Evidence: https://www.swervair.com
+    https://www.citybiz.co/?p=923111 Region sources: masscec-pr-9-8m. Confidence: medium. Unresolved: headcount,
+    funding'
+- id: teragen-energy
+  name: Teragen Energy
+  website: https://teragenenergy.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: ashby
+    board: teragenenergy
+  read: auto
+  sectors:
+  - distributed-generation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular advanced fuel cell systems for onsite power, optionally with energy storage and carbon capture;
+      technology from Lawrence Berkeley National Laboratory.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:teragenenergy seen 2026-11-24, linked from the company''s own site: 0 open roles. Stage: Site
+    shows a ''Backed by'' section with unnamed logos; Dealroom 404. Flags: fuel type not stated (may run on natural
+    gas). Evidence: https://teragenenergy.com/ Region sources: masscec-investments, activate. Confidence: low. Unresolved:
+    HQ (input says Boston, MA), founded, headcount, funding, fuel, main customers.'
+- id: thalon-materials
+  name: Thalon Materials
+  website: https://thalonmaterials.io
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Low-carbon magnesium metal made by a patented electrolysis and distillation process, designed to run
+      in idled US aluminum smelters.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists partners MassCEC, Greentown and FedTech;
+    no funding. Flags: defense alloy supply chain named among applications. Evidence: https://thalonmaterials.io
+    Region sources: masscec-pr-4-5m, masscec-catalyst, wpi-startups, greentown. Confidence: medium. Unresolved:
+    HQ (input Boston), founded, headcount, funding'
+- id: thermobionics
+  name: ThermoBionics
+  website: https://thermobionics.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Battery-powered evaporative-cooling shirt; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Nothing on site. Flags: pre-launch consumer/worker wearable.
+    Evidence: https://www.thermobionics.com/ Region sources: masscec-pr-2-5m-18. Confidence: medium. Unresolved:
+    HQ (input Boston, MA), founded, headcount, funding.'
+- id: thiozen
+  name: Thiozen
+  website: https://thiozen.com
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - hydrogen
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Removes hydrogen sulfide from sour gas and converts it to hydrogen; customers are gas processors and
+      refineries.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Only funding seen: $3.2M grant from Emission Reduction
+    Alberta (company site). Flags: main target customers are gas processors and refineries; domain guessed (thiozen.com);
+    site does not mention MIT. Evidence: https://thiozen.com Region sources: mit-tlo-startups. Confidence: low.
+    Unresolved: HQ (Alberta grant suggests Canadian activity), founded, headcount, funding; Dealroom 404.'
+- id: titan-aes
+  name: Titan AES
+  website: https://titanaes.com
+  careers_url: null
+  hq: Salem, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: IonSight ultrasound-based in-line battery cell inspection systems for battery factories.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding on site; Dealroom 404. Flags: legal name
+    Titan Advanced Energy Solutions. Evidence: https://www.titanaes.com/ Region sources: masscec-investments. Confidence:
+    medium. Unresolved: Founded, headcount, funding.'
+- id: transaera
+  name: Transaera
+  website: https://www.transaera.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: 2017
+  headcount: null
+  climate:
+    tier: core
+    reason: MOF-based desiccant coatings and devices that dehumidify air before cooling, integrated with standard
+      air conditioners; licenses to AC makers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017, funding round reported in 2024.
+  notes: 'No board found: home page not readable (202). Headcount note: Dealroom band under 100, undated Founded:
+    https://dealroom.co/companies/transaera. Stage: Dealroom: seed-stage round with 11 investors incl. MassVentures,
+    DOE, NSF; total equity USD 10-50M; valuation USD 25-50M (2024); no dates or amounts. Flags: licensing model.
+    Evidence: https://dealroom.co/companies/transaera Region sources: masscec-investments, builtin-boston-greentech,
+    builtin-boston-energy, massventures, cev, eip, third-derivative, elemental, greentown. Confidence: medium. Unresolved:
+    Headcount; round dates.'
+- id: trellis-air
+  name: Trellis Air
+  website: https://trellisair.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Low-energy dehumidification system (input describes a membrane system that makes air conditioning more
+      efficient; site does not name the technology).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: pre-launch: site
+    has a sign-up form only; domain guessed (trellisair.com, Trellis Air Corporation). Evidence: https://trellisair.com
+    Region sources: harvard-gazette-climate, greentown. Confidence: low. Unresolved: Founded, headcount, funding,
+    HQ confirmation; Dealroom 404.'
+- id: triton-anchor
+  name: Triton Anchor
+  website: https://www.tritonanchor.com
+  careers_url: null
+  hq: Chelmsford, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - wind
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Anchoring system for floating offshore renewable moorings, from catenary to tension leg, in all soils.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated; industry supporters listed (Rice
+    Alliance, California Energy Commission, Katapult Ocean, OESI, OWIH). 2023 Ventus Award winner. Flags: also offices
+    in Edinburgh UK and Oslo Norway. Evidence: https://tritonanchor.com/ Region sources: masscec-t2m. Confidence:
+    medium. Unresolved: Founded, headcount, funding. Dealroom 404.'
+- id: upstart-power
+  name: Upstart Power
+  website: https://upstartpower.com
+  careers_url: null
+  hq: Southborough, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - distributed-generation
+  stage: late
+  founded: 2017
+  headcount:
+    value: 21
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/upstart-power)
+  climate:
+    tier: core
+    reason: Solid-oxide fuel-cell power generators (now branded Redde); fuel type to be confirmed.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 21 people (Dealroom, 2026-11-24); founded 2017, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows 21, band <100; undated Founded:
+    https://dealroom.co/companies/upstart-power. Stage: Dealroom: Series C Nov 2022, $17M (ITOCHU, Enphase Energy,
+    Rodgers Capital, H+ Partners); late VC Jul 2024, $23M at $90M valuation (round letter not shown). https://dealroom.co/companies/upstart-power
+    Flags: apparently rebranded as Redde (upstartpower.com redirects to reddepower.com; Redde partner portal on
+    upstartpower.net). Evidence: https://upstartpower.com http://reddepower.com/ https://dealroom.co/companies/upstart-power
+    Region sources: builtin-energy. Confidence: medium. Unresolved: Rename not announced on fetched pages; Jul 2024
+    round may be Series C extension rather than Series D (stage ''late'' rests on Dealroom ''Late VC'' label). Founding
+    year 2017 (Dealroom) vs 2018 (other directories).'
+- id: verdox
+  name: Verdox
+  website: https://verdox.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: pinpoint
+    board: verdox
+  read: manual
+  sectors:
+  - carbon-removal
+  - industrial-heat
+  stage: null
+  founded: 2019
+  headcount:
+    value: 26
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/verdox)
+  climate:
+    tier: core
+    reason: Modular electrochemical (electro-swing) carbon capture system that captures and releases CO2 using electricity
+      only.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 26 people (Dealroom, 2026-11-24); founded 2019.
+  notes: 'Board pinpoint:verdox seen 2026-11-24, linked from the company''s own site: 0 open roles. Headcount note:
+    Dealroom figure, undated; band under 100 Founded: https://dealroom.co/companies/verdox. Stage: Company site:
+    raised $80M in 2022 (Breakthrough Energy, Lowercarbon, Prime Azolla, Norsk Hydro); Dealroom shows $20M early
+    VC Feb 2022 from Hydro; round name not stated. Flags: first application targeted at aluminum smelting off-gas
+    (Norsk Hydro demo Nov 2025). Evidence: https://verdox.com https://dealroom.co/companies/verdox Region sources:
+    mit-sloan-cleantech, bev, lc, azolla, greentown, arpa-e. Confidence: medium. Unresolved: Round name; funding
+    after 2022.'
+- id: vertical-semiconductor
+  name: Vertical Semiconductor
+  website: https://verticalsemi.com
+  careers_url: null
+  hq: Somerville, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  - components
+  stage: seed
+  founded: 2024
+  headcount:
+    value: 10
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/vertical-semiconductor)
+  climate:
+    tier: out
+    reason: Vertical gallium-nitride power transistors (40 V to 2.3 kV) for data center power delivery and grid
+      infrastructure. Data-center equipment and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 10 people (Dealroom, 2026-11-24); founded 2024, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; page read 2026-11-24.
+    Founded: https://dealroom.co/companies/vertical-semiconductor. Stage: Dealroom: $11M seed, Oct 2025, led by
+    Playground Global (JIMCO, milemark, Shin-Etsu). Own site: letter of intent for $73M CHIPS funding from US Commerce
+    Dept, 2026-10-22 (not finalized). Flags: main customers are data centers. Evidence: https://www.verticalsemi.com
+    https://dealroom.co/companies/vertical-semiconductor Region sources: masscec-pr-tax-incentives, mit-tlo-startups,
+    greentown. Confidence: high.'
+- id: voltserver
+  name: VoltServer
+  website: https://voltserver.com
+  careers_url: null
+  hq: Warwick, RI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: series-b
+  founded: 2011
+  headcount:
+    value: 61
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/voltserver)
+  climate:
+    tier: enabling
+    reason: Fault-managed Digital Electricity power distribution for buildings, telecom and greenhouses.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 61 people (Dealroom, 2026-11-24); founded 2011, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom shows 61, band <100; undated Founded:
+    https://dealroom.co/companies/voltserver. Stage: Dealroom: Series B Apr 2023, $18M (Clean Energy Venture Group,
+    RightHill, Marker Hill, Constellation); Jul 2026 strategic financing from Eaton, amount undisclosed; site announces
+    Eaton strategic partnership. https://dealroom.co/companies/voltserver Flags: data centers are one of several
+    listed markets; Eaton strategic investor. Evidence: https://voltserver.com https://dealroom.co/companies/voltserver
+    Region sources: cev. Confidence: high. Unresolved: Input HQ East Greenwich, RI vs Dealroom Warwick, RI.'
+- id: voluna
+  name: VOLUNA
+  website: https://www.pillar.vc/companies/voluna/
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Drone- and rover-mounted neutron activation systems for exploring clean-energy metals (directory description;
+      not confirmed).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: identity uncertain; domain given (pillar.vc) is an investor''s
+    site, not the company''s. Region sources: pillar-vc. Confidence: low. Unresolved: No company site found; input
+    says Cambridge, MA (The Engine resident) with HQ reported Madison, WI. Nothing verified; search budget not spent
+    on it.'
+- id: witricity
+  name: WiTricity
+  website: https://witricity.com
+  careers_url: null
+  hq: Watertown, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - ev
+  stage: null
+  founded: 2007
+  headcount:
+    value: 42
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/witricity)
+  climate:
+    tier: core
+    reason: Wireless (magnetic resonance) charging systems for electric vehicles, light- to heavy-duty.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 42 people (Dealroom, 2026-11-24); founded 2007 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band under 100 Founded:
+    https://dealroom.co/companies/witricity. Stage: Dealroom: late-stage VC $65M Aug 2022 at $500M valuation (Axios
+    reports $63M led by Siemens); 10 funding events, round names not shown. Flags: ownership uncertain: witricity.com
+    now names ''WiTricity AI Tech, LLC'' at Stuart, FL; Dealroom still shows Watertown, operational; no acquisition
+    report found; possible HQ outside region (Stuart, FL). Evidence: https://witricity.com https://dealroom.co/companies/witricity
+    https://www.axios.com/pro/climate-deals/2022/08/09/ev-charging-startup-witricity-raises-63m-siemens Region sources:
+    mit-sloan-cleantech, builtin-energy. Confidence: low. Unresolved: Whether WiTricity was sold or restructured
+    into WiTricity AI Tech LLC (Florida) and when.'
+- id: woho
+  name: WoHo
+  website: https://www.woho.us
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: seed
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Modular building systems of configurable components for low-to-high-rise residential and commercial
+      construction.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Stage: $4.5M seed led by The Engine, announced 2020-10-22 (BusinessWire);
+    no later round found Flags: Activity is thinly evidenced: site footer is 2022 and no news of progress after
+    2020 funding apart from a 2025 interview listing. Legal name WoHo Systems, Inc. woho.com is an unrelated for-sale
+    domain.. Evidence: E n g i n e Region sources: engine-ventures. Confidence: low.'
+- id: yard-stick
+  name: Yard Stick
+  website: https://www.yardstick.live
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: lever
+    board: yardstick
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Soil-carbon measurement probe for agriculture; measurement only.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board lever:yardstick seen 2026-11-24, token matched by name; board page checked: 2 open roles, 1 US-remote.
+    Flags: given domain yardstick.live is an unrelated Indian software agency; company site is useyardstick.com.
+    Evidence: https://www.useyardstick.com https://yardstick.live Region sources: pillar-vc. Confidence: medium.
+    Unresolved: HQ (input Cambridge, MA), founding year, headcount and funding not found. Hardware plus data service;
+    main revenue model not stated.'
+- id: yaskawa-solectria-solar
+  name: Yaskawa Solectria Solar
+  website: https://solectria.com
+  careers_url: null
+  hq: Lawrence, MA
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/YAS1000YAAMI/JobBoard/8a2317d2-a61e-4259-a857-722d164a211c
+  read: manual
+  sectors:
+  - solar
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Utility-scale PV inverters, string combiners, PowerRacks, DC-coupled energy storage and data communications
+      products.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owned by Yaskawa Electric since 2014; not independent.
+  notes: 'Board ukg:recruiting.ultipro.com/YAS1000YAAMI/JobBoard/8a2317d2-a61e-4259-a857-722d164a211c seen 2026-11-24,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Over 160 people at
+    acquisition in 2014 (press); no current figure Stage: Yaskawa Electric agreed to acquire Solectria Renewables
+    through Yaskawa America in July 2014; runs as a wholly owned subsidiary. https://www.automation.com/article/yaskawa-acquires-solectria-renewables
+    Flags: subsidiary of Yaskawa Electric (Japan). Evidence: https://www.solectria.com https://www.solectria.com/about-us/
+    https://www.automation.com/article/yaskawa-acquires-solectria-renewables Region sources: builtin-energy. Confidence:
+    high. Unresolved: Founding year; current headcount.'
+- id: z-polymers
+  name: Z-Polymers
+  website: https://z-polymers.com
+  careers_url: null
+  hq: Lowell, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: High-strength polymer 3D-printing filament; no climate case under the rubric.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding stated on site. Evidence: https://www.z-polymers.com/
+    https://www.z-polymers.com/about Region sources: masscec-pr-4m, masstech-m2i2-10m. Confidence: medium. Unresolved:
+    Founded year, headcount, funding. Address on site is 110 Canal Street, Lowell (UMass Lowell Innovation Hub),
+    not explicitly labelled HQ. Founder Mike Zimmerman. Dealroom 404.'
+- id: zwitterco
+  name: ZwitterCo
+  website: https://www.zwitterco.com
+  careers_url: null
+  hq: Woburn, MA
+  ats:
+    type: rippling
+    board: zwitterco
+  read: auto
+  sectors:
+  - water
+  stage: series-b
+  founded: 2018
+  headcount:
+    value: 82
+    as_of: '2026-11-24'
+    source: Dealroom (https://dealroom.co/companies/zwitterco)
+  climate:
+    tier: core
+    reason: Fouling-resistant zwitterionic membranes and membrane systems/rentals for industrial wastewater, food
+      and dairy, and bioprocessing.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 82 people (Dealroom, 2026-11-24); founded 2018, funding round reported in 2024.
+  notes: 'Board rippling:zwitterco seen 2026-11-24, linked from the company''s own site: 2 open roles. Headcount
+    note: Dealroom figure, undated; band under 100 Founded: https://dealroom.co/companies/zwitterco. Stage: Series
+    B $58M Jul 2024 (DCVC, BHP, Munich Re Ventures); Series A $33M Sep 2022 (Dealroom). Flags: produced water and
+    refineries among listed markets (not the main focus). Evidence: https://zwitterco.com https://dealroom.co/companies/zwitterco
+    Region sources: builtin-boston-greentech. Confidence: high.'
