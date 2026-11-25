@@ -97,3 +97,7 @@ uv run python -m pipeline.publish --jobs data/jobs.json --no-grades
 ```
 
 With `--no-grades` the board carries `"grades": false`, no role has a grade, and the page shows no tag, no filter and no footer note.
+
+## Government wage reference (pay page)
+
+When `data/pay/bls-oews-2025.json` exists (`--wages` to point elsewhere), the publish step copies into `pay.json` only what the pay page needs (`gov`): for each role group and level in the bands, the occupation and statistic to use, and for each metro market in the bands, those occupations' figures and the BLS area they come from. The rules are in `wages.py`: the supervisor's `role_to_occupation`, `manager_occupation` for manager, director and executive levels of engineering and production roles, and `level_to_statistic`. All US and Remote (US) have no figure yet. Top-coded values stay null and read "above $239.2K". These figures never enter the pay-vs-market grades.

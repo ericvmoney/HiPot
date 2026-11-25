@@ -41,6 +41,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--companies", type=Path, default=ROOT / "companies.yml")
     parser.add_argument("--taxonomy", type=Path, default=ROOT / "taxonomy.yml")
     parser.add_argument("--out", type=Path, default=ROOT / "site" / "data" / "board.json")
+    parser.add_argument("--wages", type=Path, default=ROOT / "data" / "pay" / "bls-oews-2025.json",
+                        help="government wage reference for the pay page; skipped if the file is missing")
     parser.add_argument("--pay-out", type=Path, default=None,
                         help="pay bands for the pay page; default pay.json beside --out")
     parser.add_argument(
@@ -65,7 +67,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         inputs = (load_json(args.jobs), load_yaml(args.companies), load_yaml(args.taxonomy))
         board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades)
-        pay = build_pay(*inputs, include_unlisted=args.include_unlisted)
+        wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
+        pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
         print(f"FAIL  nothing written: {len(error.problems)} problem(s)", file=sys.stderr)
         for line in error.problems[:MAX_SHOWN]:
@@ -99,6 +102,12 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Wrote {pay_out}")
     print(f"  pay bands: {len(pay['bands'])} ({shown} with 3+ postings) from {pay['counts']['postings']} postings "
           f"with published US-dollar pay ({pay['counts']['year']} yearly, {pay['counts']['hour']} hourly)")
+    if "gov" in pay:
+        gov = pay["gov"]
+        print(f"  gov. wages: {len(gov['occupations'])} occupations in {len(gov['figures'])} metro regions "
+              f"(from {args.wages.name})")
+    else:
+        print(f"  gov. wages: none (no file at {args.wages})")
     print(f"  size: {pay_size:,} bytes ({pay_size / 1024:.1f} KB)")
     return 0
 
