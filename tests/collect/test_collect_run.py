@@ -368,3 +368,21 @@ def test_report_lists_unmapped_us_locations():
     assert "Postings per ATS: ashby 6, greenhouse 4, lever 3" in text
     assert "Structured pay (basis feed): 4 of 13 postings" in text
     assert "US locations with no metro: 1 distinct cities" in text and "     1  Pratt, KS" in text
+
+
+@pytest.mark.parametrize("status", ["ok", "error", "blocked", "skipped", "none-open", "partial", "unreadable",
+                                    "no-careers-page", "ats-found"])
+def test_run_statuses_in_the_contract(status):
+    raw = {"schema_version": 0, "generated_at": "2026-11-25T10:00:00Z",
+           "run": {"started_at": "2026-11-25T10:00:00Z", "finished_at": "2026-11-25T10:01:00Z",
+                   "companies": [{"company_id": "a", "ats": "other", "status": status, "postings": 0, "error": None}]},
+           "jobs": []}
+    assert schema_errors(raw, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY) == []
+
+
+def test_an_unknown_run_status_is_refused():
+    raw = {"schema_version": 0, "generated_at": "2026-11-25T10:00:00Z",
+           "run": {"started_at": "2026-11-25T10:00:00Z", "finished_at": "2026-11-25T10:01:00Z",
+                   "companies": [{"company_id": "a", "ats": "other", "status": "maybe", "postings": 0, "error": None}]},
+           "jobs": []}
+    assert schema_errors(raw, SCHEMAS["raw-jobs-file.schema.json"], REGISTRY)
