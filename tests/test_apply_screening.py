@@ -109,6 +109,17 @@ def test_probe_fills_careers_page_and_unknown_board_only():
     assert known["ats"] == {"type": "greenhouse", "board": "x"}       # a known board is never replaced
 
 
+def test_a_checked_no_board_fix_clears_a_wrong_careers_page_and_holds_off_probes():
+    from tools.apply_screening import board_fixed, replace_board
+    fix = {"id": "voluna", "ats": {"type": "unknown", "board": None}, "read": "none", "careers_url": None,
+           "source": "The registry's board was an investor's careers page."}
+    company = {"id": "voluna", "careers_url": "https://investor.example/careers",
+               "ats": {"type": "other", "board": "https://investor.example/careers"}, "read": "auto", "notes": None}
+    replace_board(company, fix)
+    assert company["ats"] == {"type": "unknown", "board": None} and company["careers_url"] is None
+    assert board_fixed([fix, {"id": "x", "kind": "website"}]) == {"voluna"}
+
+
 def test_probe_skips_a_board_a_registry_fix_found_retired():
     found = {"company_id": "kiverdi", "careers_url": None, "outcome": "ats-found",
              "ats": [{"type": "bamboohr", "board": "kiverdi", "readable": True}]}

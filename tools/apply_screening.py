@@ -303,6 +303,16 @@ def replace_board(company: dict, fix: dict) -> None:
     company["read"] = "auto" if ats["type"] in READABLE and ats.get("board") else (fix.get("read") or "none")
     if fix.get("careers_url") and not company.get("careers_url"):
         company["careers_url"] = fix["careers_url"]
+    # A checked "no board, no careers page" clears an address that was wrong
+    # (Voluna's pointed at its investor's careers page).
+    if "careers_url" in fix and fix["careers_url"] is None and ats["type"] == "unknown":
+        company["careers_url"] = None
+
+
+def board_fixed(fixes: list[dict]) -> set[str]:
+    """Companies whose board a sourced registry fix set: a later probe does not
+    override what a person or the scout checked by hand."""
+    return {f["id"] for f in fixes if isinstance(f.get("ats"), dict) and f["ats"].get("type") and f.get("source")}
 
 
 def retier(company: dict, fix: dict) -> None:
@@ -422,8 +432,9 @@ def main() -> int:
             new_website(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
+    checked = board_fixed(fixes)
     for entry in probes:
-        if entry.get("company_id") in companies:
+        if entry.get("company_id") in companies and entry["company_id"] not in checked:
             apply_probe(companies[entry["company_id"]], entry)
 
     # The agreed startup definition, for every company that has been looked at.

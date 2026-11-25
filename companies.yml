@@ -2326,9 +2326,9 @@ companies:
   careers_url: https://amberkinetics.com/careers/
   hq: Union City, CA
   ats:
-    type: bamboohr
-    board: resources
-  read: auto
+    type: unknown
+    board: null
+  read: none
   sectors:
   - energy-storage
   - industrial-heat
@@ -39967,12 +39967,12 @@ companies:
 - id: voluna
   name: VOLUNA
   website: https://www.voluna.com/
-  careers_url: https://www.pillar.vc/careers/
+  careers_url: null
   hq: Cambridge, MA
   ats:
-    type: other
-    board: https://www.pillar.vc/careers/
-  read: auto
+    type: unknown
+    board: null
+  read: none
   sectors:
   - electric-aviation
   - industrial-heat
