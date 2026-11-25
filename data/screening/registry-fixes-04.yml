@@ -1,0 +1,63 @@
+# Registry fixes 04: owner-requested checks on companies already in companies.yml.
+#
+# Written 2026-11-24 by workstream A2 (company scout). The owner decides the tier; nothing here
+# changes it. 'proposed' is the scout's reading, with the facts on both sides.
+
+fixes:
+- id: outrider
+  name: Outrider
+  question: >-
+    Owner ruling A5: "Purely autonomous cars and vehicles are out; transit-oriented autonomous electric
+    vehicles are in." Outrider is in the registry as tier out (provisional basis). Does it fall on the
+    out side or the in side?
+  facts_for_in:
+  - >-
+    Every Outrider system runs on a battery-electric yard truck: "All Outrider systems operate on electric
+    truck platforms" (FreightWaves, 2025-07-16); its 2024 Series D release describes an "electric-first yard
+    truck platform strategy". The product replaces diesel yard tractors, and its stated mission is to deploy
+    zero-emission systems in freight yards.
+  - >-
+    It never runs on public roads: it moves trailers inside private distribution-centre yards (hitching,
+    connecting brake lines with a robotic arm, parking at dock doors). No source mentions public-road
+    operation. It is not a robotaxi or a self-driving car.
+  - >-
+    The closest precedent is Parallel Systems (autonomous battery-electric rail cars for freight), which the
+    owner placed in under A5 although it carries freight rather than passengers.
+  facts_for_out:
+  - >-
+    It is an autonomy company first: it sells an autonomy kit fitted onto other makers' electric trucks
+    (its early fleet was built with Orange EV) plus yard operations as a service. It does not build the
+    electric truck.
+  - >-
+    It is not transit-oriented: it carries freight in private yards and has no passenger or public-transit
+    role. Driverless operation with select customers was due to start in the second half of 2025, with remote
+    staff and dispatchers in the loop.
+  - Its emissions case is stated only in general terms; no quantified emissions figure was found.
+  proposed:
+    tier: enabling
+    sectors: [ev]
+    reason: >-
+      Autonomy kits for battery-electric yard trucks that replace diesel yard tractors inside private
+      distribution yards; freight, not transit, but like Parallel Systems it electrifies freight equipment
+      and never runs on public roads.
+  other_facts:
+    hq: {value: "Brighton, CO", source: "Series D release dateline and FreightWaves (2023); earlier coverage gives Golden, CO. https://coloradobiz.com/brighton-yard-automation-firm-closes-on-62-million-series-d-financing/"}
+    website: https://www.outrider.ai
+    founded: {value: 2017, source: "FreightWaves, 2023-10-06. https://www.freightwaves.com/news/outrider-hiring-globally-for-launch-of-autonomous-distribution-yards"}
+    last_raise: {date: "2024-10-24", type: Series D, amount: "$62M (over $250M raised in total)", source: "https://www.prweb.com/releases/outrider-closes-62-million-series-d-financing-to-drive-growth-of-yard-automation-302285511.html"}
+    parent: null
+    headcount_note: >-
+      The registry holds 123 (Revelio Labs, 2026-06-01), which is newer than the company's last stated figure
+      (194 employees, FreightWaves, 2023-10-06). The registry figure is kept.
+    customers: "Georgia-Pacific; YMX Logistics (five-year partnership, 2026-10-01); unnamed Fortune 500 shippers."
+    startup: "Unchanged: in (independent, about 123 people, founded 2017, Series D in 2024)."
+  evidence:
+  - https://www.prweb.com/releases/outrider-closes-62-million-series-d-financing-to-drive-growth-of-yard-automation-302285511.html
+  - https://coloradobiz.com/brighton-yard-automation-firm-closes-on-62-million-series-d-financing/
+  - https://www.freightwaves.com/news/outrider-hiring-globally-for-launch-of-autonomous-distribution-yards
+  - https://www.freightwaves.com/news/outrider-ready-to-scale-distribution-yard-autonomy
+  - https://www.supplychaindive.com/press-release/20260930-ymx-logistics-and-outrider-establish-strategic-partnership-to-accelerate-au-1/
+  confidence: >-
+    High on what it does, its electric platform, its private-yard domain, HQ and Series D; medium on its
+    current driverless status and on the Greenhouse token (taken from job links, since its careers page
+    renders by script).

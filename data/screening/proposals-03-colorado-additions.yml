@@ -1,0 +1,42 @@
+# Proposals 03 (Colorado additions): companies the owner named as missing, and those found by the sources
+# added for them. Written 2026-11-24 by workstream A2. Same shape as companies.yml; basis agent, approved false.
+# Of the five named: OptiGrid is proposed here; Gillig is proposed in proposals-02-bay-area.yml (Livermore HQ);
+# Outrider is already in the registry (see registry-fixes-04.yml); L-Charge (Redwood City, CA) is in the Bay Area
+# proposals; FlipTurn (New York software) is not in scope. The new sources named no other company that qualifies.
+
+registry_version: 0
+companies:
+- id: optigrid
+  name: OptiGrid
+  website: https://www.optigridllc.com
+  careers_url: https://orangeev.com/careers/
+  hq: Kansas City, KS
+  ats:
+    type: adp
+    board: 275f2b3c-c1d2-4535-aedc-2637a5e2d9c6
+  read: manual
+  sectors:
+  - charging
+  stage: null
+  founded: 2025
+  headcount:
+    value: 50
+    as_of: '2025-06-02'
+    source: 'Trucknews: ''OptiGrid currently employs 50 people across Kansas, California, and Colorado.'' (https://www.trucknews.com/products/orange-ev-launches-optigrid-for-battery-integrated-charging)'
+  climate:
+    tier: core
+    reason: Battery-integrated DC fast chargers for electric fleets (about 180 kWh of storage with up to 200 kW
+      of charging), built on FreeWire's technology and team.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 50 people (Trucknews, 2025-06-02); founded 2025. Created and backed by Orange EV, an electric terminal-truck
+      maker far under the cap; coverage does not call it a subsidiary.
+  notes: 'Colorado: engineering office in Longmont, CO, one of three sites with Kansas City, KS and Newark, CA;
+    its engineering roles (power electronics, mechanical, technical operations) are posted in Longmont. Board: its
+    Careers link goes to Orange EV''s ADP Workforce Now board (cid 275f2b3c-...), which does not list OptiGrid''s
+    Longmont roles; those appear only on aggregators, so it may use another system its site does not link to. Funding:
+    not disclosed. Owner request 2026-11-24. Evidence: https://www.optigridllc.com/about https://pulse2.com/optigrid-profile-tyler-phillipi-interview/
+    https://www.trucknews.com/products/orange-ev-launches-optigrid-for-battery-integrated-charging https://www.truckinginfo.com/news/orange-ev-introduces-optigrid-fleet-charging-solution
+    Confidence: medium.'
