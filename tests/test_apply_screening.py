@@ -163,3 +163,15 @@ def test_reason_only_fix_changes_the_reason_not_the_tier():
                "sectors": ["ev"], "notes": None}
     retier(company, {"kind": "reason-only", "climate": {"tier": "out", "reason": "New product."}})
     assert company["climate"]["tier"] == "enabling" and company["climate"]["reason"] == "New product."
+
+
+from tools.apply_screening import new_website  # noqa: E402
+
+
+def test_website_fix_sets_the_current_site_or_notes_its_absence():
+    company = {"website": "https://old.example", "notes": None}
+    new_website(company, {"kind": "website", "website": {"was": "https://old.example", "now": "https://new.example"}})
+    assert company["website"] == "https://new.example"
+    gone = {"website": "https://old.example", "notes": None}
+    new_website(gone, {"kind": "website", "website": {"was": "https://old.example", "now": None}})
+    assert gone["website"] == "https://old.example" and "No current website" in gone["notes"]

@@ -1708,7 +1708,8 @@ companies:
   notes: 'No board found: home page not readable (error: ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls
     alert handshake failure (_ssl.c:1035)). Headcount note: Undated. Founded: https://www.builtinsf.com/company/ambient-photonics.
     Evidence: https://www.builtinsf.com/company/ambient-photonics Region sources: kb-ba-hardware, at-one, eif. Confidence:
-    medium. Unresolved: Own site failed TLS handshake; Dealroom 404; funding stage not found.'
+    medium. Unresolved: Own site failed TLS handshake; Dealroom 404; funding stage not found. No current website
+    found (registry-fixes); the company may have closed or renamed.'
 - id: ambri
   name: Ambri
   website: https://ambri.com
@@ -2829,7 +2830,7 @@ companies:
     Grant St, Thornton per StockAnalysis.'
 - id: aseon-labs
   name: Aseon Labs
-  website: https://www.aseonlabs.com/
+  website: https://aseon.com
   careers_url: null
   hq: Redwood City, CA
   ats:
@@ -4714,7 +4715,7 @@ companies:
     and current Lancaster status not confirmed.'
 - id: c-crete-technologies
   name: C-Crete Technologies
-  website: https://www.c-crete.com/
+  website: https://ccretetech.com
   careers_url: null
   hq: San Leandro, CA
   ats:
@@ -6008,7 +6009,7 @@ companies:
     source: https://www.utilitydive.com/news/blackrock-temasek-decarbonization-partners-venture-leads-35m-funding-round-connectder/734673/
 - id: coolerado
   name: Coolerado
-  website: https://www.coolerado.com
+  website: https://www.seeleyinternational.com/commercial/brands/coolerado/
   careers_url: null
   hq: Denver, CO
   ats:
@@ -9146,7 +9147,7 @@ companies:
     letter of the Sept 2023 round not given. Site also lists an address in Bogota, Colombia.'
 - id: evoloh
   name: EvolOH
-  website: https://www.origen.energy
+  website: https://evoloh.com
   careers_url: null
   hq: Santa Clara, CA
   ats:
@@ -9591,7 +9592,8 @@ companies:
     mostly in Africa. Founded: https://dealroom.co/companies/fenix-international. Stage: Acquired by ENGIE Oct 2017;
     later merged with ENGIE Mobisol and ENGIE PowerCorner into ENGIE Energy Access (Dealroom). Flags: subsidiary
     of ENGIE (now part of ENGIE Energy Access); operates outside the US. Evidence: https://dealroom.co/companies/fenix-international
-    Region sources: builtin-sf-greentech. Confidence: high. Unresolved: whether any San Francisco office remains'
+    Region sources: builtin-sf-greentech. Confidence: high. Unresolved: whether any San Francisco office remains
+    No current website found (registry-fixes); the company may have closed or renamed.'
 - id: feon-energy
   name: Feon Energy
   website: https://feonenergy.com
@@ -11148,7 +11150,7 @@ companies:
     Cemvita retains control unknown.'
 - id: gopowerev
   name: GoPowerEV
-  website: https://gopowerev.com/
+  website: https://gopower.ai
   careers_url: null
   hq: Palo Alto, CA
   ats:
@@ -11377,7 +11379,7 @@ companies:
     https://bizwest.com/gravity-renewables-raises-3-2-million/ https://www.cbinsights.com/company/gravity-renewables
     Region sources: bs-co-cleanenergy. Confidence: low. Unresolved: Company site refused connections (ECONNREFUSED).
     Founding year conflicts (Dealroom header 2010, About text 2013). Acquisition by Relevate Power in Dec 2024 seen
-    only in search summaries.'
+    only in search summaries. No current website found (registry-fixes); the company may have closed or renamed.'
 - id: green-giant-energy-texas
   name: Green Giant Energy Texas
   website: null
@@ -11520,7 +11522,7 @@ companies:
     HQ confirmation, founded, headcount, stage'
 - id: gridtential-energy
   name: Gridtential Energy
-  website: https://www.gridtential.com
+  website: https://siliconjoule.com
   careers_url: null
   hq: Santa Clara, CA
   ats:
@@ -15698,7 +15700,8 @@ companies:
     grants; Caplight lists seed and Series A entries in 2024, amounts unconfirmed. Flags: formerly Saratoga Energy
     (a Greentown Labs page says founded 2013). Evidence: https://www.ycombinator.com/companies/maple-materials https://www.caplight.com/company/maplematerials
     https://app.dealroom.co/companies/maple_materials_fka_saratoga_energy_ Region sources: yc-directory, yc-climate.
-    Confidence: medium. Unresolved: Own site returned 404; founding year 2013 vs 2019; latest round label.'
+    Confidence: medium. Unresolved: Own site returned 404; founding year 2013 vs 2019; latest round label. No current
+    website found (registry-fixes); the company may have closed or renamed.'
 - id: marathon-fusion
   name: Marathon Fusion
   website: https://www.marathonfusion.com
@@ -16734,7 +16737,7 @@ companies:
     source: https://techcrunch.com/2024/05/02/hyundai-is-spending-close-to-1-billion-to-keep-self-driving-startup-motional-alive
 - id: motiv-power-systems
   name: Motiv Power Systems
-  website: https://www.motivps.com/
+  website: https://workhorse.com
   careers_url: null
   hq: Foster City, CA
   ats:
@@ -18224,7 +18227,7 @@ companies:
     no readable text. Pre-seed vs seed. Tier set under owner decision 13.'
 - id: olympian-motors
   name: Olympian Motors
-  website: https://olympianmotors.com
+  website: https://olympus.auto
   careers_url: null
   hq: null
   ats:
@@ -18335,7 +18338,7 @@ companies:
     and private funding rounds not found.'
 - id: oned-battery-sciences
   name: OneD Battery Sciences
-  website: https://onedbattery.com
+  website: https://onedsinanode.com
   careers_url: null
   hq: Palo Alto, CA
   ats:
@@ -18485,7 +18488,7 @@ companies:
   sectors:
   - electric-mobility
   stage: null
-  founded: null
+  founded: 2005
   headcount: null
   climate:
     tier: enabling
@@ -18494,11 +18497,12 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
+    status: out
+    reason: Independent; no headcount figure found; founded 2005, with no equity raise in 5 years or recent listing
+      found.
   notes: 'No job board found on the company''s site. Evidence: https://optibike.com Region sources: bs-co-ev. Confidence:
     medium. Unresolved: Founding year not stated (site says ''Celebrating 20 Years'', started in a Boulder garage);
-    headcount and funding not found.'
+    headcount and funding not found. Missing facts filled from data/screening/registry-fixes.'
 - id: optigon
   name: Optigon
   website: https://optigon.us
@@ -18667,7 +18671,8 @@ companies:
     pre-seed inferred. Flags: early stage (research). Evidence: https://www.colorado.edu/venturepartners/node/2952
     https://www.nlr.gov/west-gate/innovators Region sources: nlr-annual-2026, doe-leep-2026, nlr-westgate-innovators,
     cu-lvc. Confidence: medium. Unresolved: orvaenergy.com failed TLS check (Squarespace), so domain not verified.
-    Co-founders Evan Flitz and Chunmei Ban (CU Boulder). Founded, headcount.'
+    Co-founders Evan Flitz and Chunmei Ban (CU Boulder). Founded, headcount. No current website found (registry-fixes);
+    the company may have closed or renamed.'
 - id: oscilla-power
   name: Oscilla Power
   website: https://oscillapower.com
@@ -20275,7 +20280,7 @@ companies:
     gives the website as promethean-power.com (not fetched). Funding not found. YourStory returned 403.'
 - id: prometheus-fuels
   name: Prometheus Fuels
-  website: https://www.prometheusfuels.com
+  website: https://prometheusfuels.ai
   careers_url: null
   hq: Santa Cruz, CA
   ats:
@@ -24406,7 +24411,7 @@ companies:
     no customers named. Input describes a liquid cooling additive.'
 - id: sonocharge-energy
   name: Sonocharge Energy
-  website: https://www.sonocharge.com/
+  website: https://sonochargeenergy.com
   careers_url: null
   hq: Mountain View, CA
   ats:
@@ -25847,7 +25852,7 @@ companies:
     high.'
 - id: tau-motors
   name: Tau Motors
-  website: null
+  website: https://taumotors.com
   careers_url: null
   hq: Redwood City, CA
   ats:
@@ -26024,7 +26029,7 @@ companies:
     HQ (input says Boston, MA), founded, headcount, funding, fuel, main customers.'
 - id: terawatt-infrastructure
   name: Terawatt Infrastructure
-  website: null
+  website: https://terawattinfrastructure.com
   careers_url: null
   hq: San Francisco, CA
   ats:
@@ -28806,7 +28811,7 @@ companies:
   sectors:
   - wind
   stage: null
-  founded: null
+  founded: 2017
   headcount:
     value: 5
     as_of: '2026-11-24'
@@ -28818,12 +28823,13 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; 5 people (company site team list (https://xflowenergy.com), 2026-11-24); founding year
-      not found, so included.
+    reason: 'Independent; 5 people (company site team list (https://xflowenergy.com), 2026-11-24); growth sign:
+      founded 2017.'
   notes: 'No job board found on the company''s site. Headcount note: Count of team members named on the About section
     (5), not a stated headcount. Stage: Support from NREL and US DOE (site); West Gate cohort 4 (https://www.nlr.gov/west-gate/ian-brownstein-affordable-wind-energy).
     No venture rounds found. Evidence: https://xflowenergy.com https://www.nlr.gov/west-gate/innovators Region sources:
-    nlr-westgate-innovators. Confidence: medium. Unresolved: Founded, HQ city, funding.'
+    nlr-westgate-innovators. Confidence: medium. Unresolved: Founded, HQ city, funding. Missing facts filled from
+    data/screening/registry-fixes.'
 - id: xgs-energy
   name: XGS Energy
   website: https://xgsenergy.com
@@ -29268,7 +29274,7 @@ companies:
     Own domain not found (zeroelectric.com does not resolve). Founding year, headcount and round details unknown.'
 - id: zero-emission-industries
   name: Zero Emission Industries
-  website: https://www.zeroemissionindustries.com/
+  website: https://zeroei.com
   careers_url: null
   hq: South San Francisco, CA
   ats:

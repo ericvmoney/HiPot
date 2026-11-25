@@ -277,6 +277,21 @@ def listing_year(reason: str | None) -> int | None:
     return int(found.group(1)) if found else None
 
 
+def new_website(company: dict, fix: dict) -> None:
+    """A company's current website, as the scout checked it (kind: website).
+    `now: null` means no current site was found: the old one is kept and a note
+    says so, since an unreachable site is not proof the company has closed."""
+    if fix.get("kind") != "website" or not isinstance(fix.get("website"), dict):
+        return
+    now = fix["website"].get("now")
+    if now:
+        company["website"] = now
+    else:
+        note = "No current website found (registry-fixes); the company may have closed or renamed."
+        if note not in (company.get("notes") or ""):
+            company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
 def replace_board(company: dict, fix: dict) -> None:
     """A job board the scout checked, with its source: it replaces the registry's
     board (boards move and retire). Reading is automatic when the collector has
@@ -399,6 +414,7 @@ def main() -> int:
             fill_missing(companies[fix["id"]], fix)
             retier(companies[fix["id"]], fix)
             replace_board(companies[fix["id"]], fix)
+            new_website(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
     for entry in probes:
