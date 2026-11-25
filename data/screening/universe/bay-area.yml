@@ -237,6 +237,10 @@ sources:
   name: DOE OTT Technology Commercialization Fund CLIMR FY2025/FY2026 projects
   url: https://www.energy.gov/technologycommercialization/fiscal-year-2025-climr-projects-commercializing-energy-technologies
   note: lab-led projects; few named company partners
+- id: owner-named-2026-11-24
+  name: Companies the owner named as missing (2026-11-24)
+  url: null
+  note: Named as Denver-area; L-Charge is in fact based in Redwood City, CA.
 companies:
 - name: 1849 bio
   website: https://www.1849.bio
@@ -516,9 +520,9 @@ companies:
   hq: Dublin, CA
   sources:
   - kb-ba-hardware
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: amber-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Ambient Photonics
@@ -593,13 +597,13 @@ companies:
   ats: null
   open_roles: null
 - name: And Battery Aero
-  website: null
+  website: https://and.aero
   hq: Palo Alto, CA
   sources:
   - arpae-projects
-  registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  registry_id: and-battery-aero
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Anode Technology Company
@@ -809,8 +813,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: closed
+  reason: Domain for sale; no activity after its ARPA-E award (about 2012).
   ats: null
   open_roles: null
 - name: Bloom Energy
@@ -913,9 +917,9 @@ companies:
   - cec-eif-showcase
   - cec-nopa
   - calseed-awardees
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: c-crete-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Calectra
@@ -1249,8 +1253,8 @@ companies:
   - cyclotron-road-fellows
   - calseed-awardees
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Domain does not resolve and its Workable board has no openings; no recent activity.
   ats: null
   open_roles: null
 - name: DarmokTech
@@ -1712,8 +1716,8 @@ companies:
   sources:
   - caltestbed-directory
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: closed
+  reason: Domain parked for sale; no other trace found.
   ats: null
   open_roles: null
 - name: Form Energy
@@ -1769,8 +1773,8 @@ companies:
   sources:
   - builtin-sf-greentech
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  decision: closed
+  reason: Latest dated material is from June 2020; domain does not resolve.
   ats: null
   open_roles: null
 - name: Galvanized Energy
@@ -1967,9 +1971,9 @@ companies:
   sources:
   - cec-eif-showcase
   - calseed-awardees
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: halo-industries
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: enabling, startup in.'
   ats: null
   open_roles: null
 - name: Halotechnics
@@ -2086,8 +2090,8 @@ companies:
   sources:
   - kb-ba-hardware
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  decision: closed
+  reason: Technology sold to CCL Industries in 2023; site fails TLS.
   ats: null
   open_roles: null
 - name: Impulse Labs
@@ -2192,9 +2196,9 @@ companies:
   hq: Los Altos, CA
   sources:
   - cec-eif-showcase
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: ixp
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: JaroFleet
@@ -2225,9 +2229,9 @@ companies:
   hq: Berkeley, CA
   sources:
   - arpae-projects
-  registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  registry_id: jupiter-volta
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Kairos Power
@@ -2275,12 +2279,12 @@ companies:
   open_roles: null
 - name: Kiverdi
   website: https://www.kiverdi.com
-  hq: Pleasanton, CA
+  hq: San Leandro, CA
   sources:
   - builtin-sf-greentech
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: kiverdi
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: out, startup in.'
   ats:
     type: bamboohr
     token: kiverdi
@@ -2305,8 +2309,18 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: closed
+  reason: No recent activity found; its domain does not resolve.
+  ats: null
+  open_roles: null
+- name: L-Charge
+  website: https://www.l-charge.net
+  hq: Redwood City, CA
+  sources:
+  - owner-named-2026-11-24
+  registry_id: l-charge
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Laminera
@@ -2494,8 +2508,8 @@ companies:
   - yc-directory
   - kb-ba-hardware
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  decision: closed
+  reason: Wound down through asset sales; its site returns HTTP 402 and its job board is gone.
   ats: null
   open_roles: null
 - name: Lyten
@@ -2829,8 +2843,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: closed
+  reason: No activity after its ARPA-E award (about 2010-2013); its domain is now an unrelated store.
   ats: null
   open_roles: null
 - name: NanoConversion Technologies
@@ -3155,8 +3169,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: duplicate
+  reason: Former name of EvolOH; listed under that name.
   ats: null
   open_roles: null
 - name: Otherlab
@@ -3257,8 +3271,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: not-in-scope
+  reason: 'Now GigaCrop: engineered crop photosynthesis traits, not hardware.'
   ats: null
   open_roles: null
 - name: Perseus Materials
@@ -3309,8 +3323,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: closed
+  reason: Site unchanged since 2018 with no later news.
   ats: null
   open_roles: null
 - name: PLANT PV
@@ -3426,8 +3440,8 @@ companies:
   - kb-ba-hardware
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  decision: closed
+  reason: Listed among defunct zinc-bromine flow-battery developers; no news since 2019 (low confidence).
   ats: null
   open_roles: null
 - name: Principle Power
@@ -3568,8 +3582,8 @@ companies:
   sources:
   - arpae-projects
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: closed
+  reason: Nothing found after its 2010-2012 ARPA-E project; domains broken or gone.
   ats: null
   open_roles: null
 - name: Redwood Materials
@@ -3841,9 +3855,9 @@ companies:
   hq: Scotts Valley, CA
   sources:
   - kb-ba-hardware
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: soliculture
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Sonocharge Energy
@@ -4068,8 +4082,8 @@ companies:
   sources:
   - calseed-awardees
   registry_id: null
-  decision: null
-  reason: Named by an award list, but the company or its current status could not be established.
+  decision: duplicate
+  reason: Former name of Sunspan; listed under that name.
   ats: null
   open_roles: null
 - name: Takachar
@@ -4228,9 +4242,9 @@ companies:
   sources:
   - cec-eif-showcase
   - kb-ba-hardware
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company or its current status could not be established.
+  registry_id: ubiquitous-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-bay-area.yml: core, startup in.'
   ats: null
   open_roles: null
 - name: Unemit

@@ -389,6 +389,34 @@ companies:
     Stage: No rounds found; ownership not stated on site. Evidence: https://amberkinetics.com/ https://www.builtinsf.com/company/amber-kinetics
     Region sources: cec-eif-showcase. Confidence: medium. Unresolved: Funding and ownership not found; Dealroom
     404.'
+- id: amber-semiconductor
+  name: Amber Semiconductor
+  website: https://www.ambersemi.com
+  careers_url: null
+  hq: Dublin, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Solid-state AC switching and AC-to-DC conversion chips for electrical devices and buildings (AmberSemi).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No round found in this pass Flags: Formerly Amber Solutions;
+    now brands itself AmberSemi. Has BusinessWire releases from March 2025 and a 2026 profile citing more than 50
+    US patents. Caution: ambersemi.com currently serves an unrelated Shanghai equipment maker, so the US company''s
+    current domain is unconfirmed.. Evidence: https://www.businesswire.com/news/home/20250317967866/en https://prnewswire.com/news-releases/at-apec-2024-ambersemi-to-demonstrate-its-silicon-based-ac-to-dc-power-conversion-technology-302070039.html
+    https://www.cbinsights.com/company/amber-solutions Region sources: kb-ba-hardware. Confidence: low.'
 - id: ambient-photonics
   name: Ambient Photonics
   website: https://www.ambientphotonics.com
@@ -451,6 +479,35 @@ companies:
     drones / aviation a large customer segment; check defense share. Evidence: https://dealroom.co/companies/amprius
     https://stockanalysis.com/stocks/ampx/employees/ Region sources: kb-ba-hardware. Confidence: high. Unresolved:
     Share of revenue from defense (drone) customers not checked.'
+- id: and-battery-aero
+  name: And Battery Aero
+  website: https://and.aero
+  careers_url: null
+  hq: Palo Alto, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Lithium-metal battery packs for electric aviation.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: ARPA-E support; no equity round found Flags: Co-founded
+    by Venkat Viswanathan (U. Michigan) and Shashank Sripad. Site is live and gives a Palo Alto address, but has
+    little content. Weak evidence of current operations beyond the live site and University of Michigan coverage
+    of its 24M cell-testing work.. Evidence: https://and.aero https://battery-tech.net/company/and-battery-aero-aba/
+    https://www.halo.science/company/and-battery-aero Region sources: arpae-projects. Confidence: low.'
 - id: anode-technology-company
   name: Anode Technology Company
   website: https://anode.tech
@@ -933,6 +990,35 @@ companies:
     Ventures, Skip); strategic early VC from Mercury Insurance May 2026 (undisclosed) per Dealroom. Flags: sells
     services using its own machines. Evidence: https://dealroom.co/companies/burnbot Region sources: elemental-portfolio,
     overture-jobs, lowercarbon-portfolio, eif. Confidence: medium.'
+- id: c-crete-technologies
+  name: C-Crete Technologies
+  website: https://www.c-crete.com/
+  careers_url: null
+  hq: San Leandro, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Cement-free concrete binders made from non-carbonate rocks and industrial by-products.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Grant-funded (CEC and DOE grants of $10.4M announced Oct 2024; CEC $8.5M pilot agreement EPC-24-020); no equity
+    round found Flags: The c-crete.com domain in the input no longer resolves; the live site is ccretetech.com.
+    A CEQA notice for its San Leandro pilot plant was filed 2026-07-07, and the site says it was named a TIME Best
+    Invention of 2026.. Evidence: https://www.ccretetech.com https://ceqanet.lci.ca.gov/2026070212 https://prnewswire.com/news-releases/c-crete-technologies-receives-10-4m-in-grants-from-california-energy-commission-and-us-department-of-energy-to-scale-up-its-co2-free-concrete-products-302269004.html
+    Region sources: cec-eif-showcase, cec-nopa, calseed-awardees. Confidence: low.'
 - id: calectra
   name: Calectra
   website: https://calectra.com
@@ -2281,12 +2367,12 @@ companies:
   read: auto
   sectors:
   - ev
-  stage: null
+  stage: subsidiary
   founded: 1890
   headcount:
-    value: 413
-    as_of: '2026-11-24'
-    source: Built In SF (https://www.builtinsf.com/company/gillig)
+    value: 1100
+    as_of: '2025-03-06'
+    source: Alliance for American Manufacturing (about 1,100 employees, all in the US) (https://americanmanufacturing.org/blog/gillig-sets-the-standard-for-american-made-transit-manufacturing)
   climate:
     tier: out
     reason: Transit buses, still mostly diesel and CNG; battery-electric and hydrogen buses are a growing share.
@@ -2294,14 +2380,17 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Founded 1890; its own site says it is privately owned by three American families; no venture or growth
-      round, so no growth sign.
+    reason: About 1,100 employees (Alliance for American Manufacturing, 2025-03-06); founded 1890; owned since 2008
+      by Henry Crown and Company through CC Industries. No venture or growth round, so no growth sign. Runs an engineering
+      centre in Loveland, CO (also on the Colorado list).
   notes: 'Board greenhouse:gillig seen 2026-11-24, linked from the company''s own site: 0 open roles. Headcount
-    note: Built In ''total employees'', undated; likely an undercount for a large bus maker, not verified. Founded:
-    https://www.gillig.com/about. Stage: Private, no venture rounds; site says privately owned by three American
-    families since 1890. Flags: long-established manufacturer; most buses still diesel/CNG; electric and hydrogen
-    are part of the range. Evidence: https://www.gillig.com/about https://www.builtinsf.com/company/gillig Region
-    sources: cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: high. Unresolved: Reliable headcount.'
+    note: An APTA article with the same figures refused automated fetches. Founded: https://americanmanufacturing.org/blog/gillig-sets-the-standard-for-american-made-transit-manufacturing.
+    Stage: Owned since 2008 by Henry Crown and Company through CC Industries; no venture rounds. Flags: long-established
+    manufacturer; most buses still diesel or CNG; engineering centre in Loveland, CO (Colorado Technology Center,
+    opened 2024 on former Lightning eMotors assets bought by its subsidiary GERCO); jobs on SAP SuccessFactors (gilligllc)
+    and Greenhouse (gillig). Evidence: https://en.wikipedia.org/wiki/Gillig https://bizwest.com/2024/02/27/gillig-to-launch-technology-center-at-lightnings-loveland-site
+    https://www.gillig.com/careers Region sources: cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: high. Unresolved:
+    Loveland headcount not published.'
 - id: glacier
   name: Glacier
   website: https://www.glacier.tech
@@ -2539,6 +2628,33 @@ companies:
     https://techcrunch.com/?p=3144417 Flags: Dealroom ''gritt'' profile mixes this company with a Brazilian sales
     consultancy. Evidence: https://gritt.ai https://techcrunch.com/?p=3144417 Region sources: congruent, climactic.
     Confidence: medium. Unresolved: HQ city (Belmont, CA unconfirmed), founded, headcount'
+- id: halo-industries
+  name: Halo Industries
+  website: https://www.halo-industries.com/
+  careers_url: null
+  hq: Santa Clara, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: null
+  founded: 2014
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Laser-based silicon-carbide wafering and wafers for power electronics.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2014.
+  notes: 'No board found: robots.txt asks automated clients to stay out; site not read. Stage: Site states $132M
+    total raised from VCs and government partners (Prime Movers Lab, Fontinalis, Abstract Ventures, CEC and others);
+    latest round and date not stated Flags: Stanford spinout. Site is live with a 2026 copyright. HQ is taken from
+    the input; the site does not state it.. Evidence: https://www.halo-industries.com/ Region sources: cec-eif-showcase,
+    calseed-awardees. Confidence: low.'
 - id: harvest-thermal
   name: Harvest Thermal
   website: https://www.harvest-thermal.com/
@@ -2713,6 +2829,34 @@ companies:
     Series A; round details hidden. Flags: formerly ZenLabs Energy (also in this list). Evidence: https://ionblox.com
     https://dealroom.co/companies/ionblox Region sources: cec-nopa, kb-ba-hardware. Confidence: medium. Unresolved:
     Latest round and stage; headcount'
+- id: ixp
+  name: IXP
+  website: null
+  careers_url: null
+  hq: Los Altos, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Mobile EV charging using mobile battery storage and modular skid-mounted EV chargers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: CEC EPIC grant agreement EPC-24-032 with IXP, LLC for
+    $3,999,317, approved at the 2025-01-21 business meeting; term 2025-02-03 to 2027-12-31; no equity round found
+    Flags: Legal entity IXP, LLC. Demonstration at four sites in Santa Clara, San Diego and Los Angeles counties.
+    No company website found; HQ is from the input. Active by virtue of a grant running to 2027.. Evidence: https://www.energy.ca.gov/filebrowser/download/6912?fid=6912
+    Region sources: cec-eif-showcase. Confidence: low.'
 - id: jarofleet
   name: JaroFleet
   website: https://www.jarofleet.com
@@ -2774,6 +2918,34 @@ companies:
     https://www.builtinsf.com/company/joby-aviation. Stage: Listed on NYSE (JOBY) via SPAC in 2021 (general record;
     filing not fetched). Flags: public company; may be over 1,000 employees (not verified). Evidence: https://www.builtinsf.com/company/joby-aviation
     Region sources: cec-nopa-ztm, kb-ba-hardware. Confidence: medium. Unresolved: Headcount from a 10-K.'
+- id: jupiter-volta
+  name: Jupiter Volta
+  website: https://jupitervolta.com
+  careers_url: null
+  hq: Berkeley, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: RF plasma tool now used to make nitrate fertilizer from air, replacing fossil ammonia routes.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding disclosed on site Flags: Live site with a
+    2026 copyright. It lists a CEO/founder described as a Diamond Foundry co-founder, plus three other leaders.
+    It has pivoted or broadened from the ARPA-E diamond-metal composite work to plasma chemistry and fusion. HQ
+    is from the input; the site does not state it.. Evidence: https://jupitervolta.com https://jupitervolta.com/company
+    Region sources: arpae-projects. Confidence: low.'
 - id: kara
   name: Kara
   website: https://karalabs.ai/
@@ -2829,6 +3001,35 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding stated. Evidence: https://www.khemiametals.com
     Region sources: arpae-projects. Confidence: medium. Unresolved: Domain guessed but content matches; founding,
     headcount, funding.'
+- id: kiverdi
+  name: Kiverdi
+  website: https://www.kiverdi.com
+  careers_url: null
+  hq: San Leandro, CA
+  ats:
+    type: bamboohr
+    board: kiverdi
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Microbial conversion of CO2 into proteins, oils and feed. Recycled or bio-based materials; the climate
+      case is lower-carbon feedstock, not emissions cuts or electrification as the main product. Held out pending
+      the owner's call on materials (raised with the Colorado list).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board bamboohr:kiverdi seen 2026-11-24, linked from the company''s own site: role count not read (no public
+    feed). Stage: No round found; Air Protein is listed as its subsidiary Flags: Site is live but shows a 2019 copyright
+    and undated news, so activity is weak. Footer address is San Leandro, not Pleasanton. Most operating activity
+    appears to sit in the Air Protein spinout. Status is borderline.. Evidence: https://www.kiverdi.com Region sources:
+    builtin-sf-greentech. Confidence: low.'
 - id: kobold-metals
   name: KoBold Metals
   website: https://koboldmetals.com
@@ -2862,6 +3063,34 @@ companies:
     mainly outside the US (Zambia). Evidence: https://www.koboldmetals.com https://www.builtinsf.com/company/kobold-metals
     https://techcrunch.com/2025/01/02/kobold-used-ai-to-find-copper-now-investors-are-piling-in-to-the-tune-of-537m
     Region sources: bev, builtin-sf-greentech, arpae-projects. Confidence: high.'
+- id: l-charge
+  name: L-Charge
+  website: https://www.l-charge.net
+  careers_url: null
+  hq: Redwood City, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - charging
+  - grid
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: core
+    reason: Off-grid DC fast chargers for fleets, powered by on-site generation and storage, built in Corona, CA.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Headcount note: No headcount published; its about page profiles
+    17 people. Founded: https://www.l-charge.net/about/. Stage: Raised $10M on 2026-01-20, led by Ultra Capital
+    (round letter not stated). Flags: l-charge.com is a parked domain; the company site is l-charge.net; careers
+    page uses an in-page form, no job-board system. Evidence: https://www.l-charge.net/about/ https://www.l-charge.net/careers/
+    Region sources: owner-named-2026-11-24. Confidence: medium. Unresolved: Round letter of the 2026 raise; headcount.'
 - id: lime
   name: Lime
   website: https://li.me
@@ -5096,6 +5325,34 @@ companies:
     warehouses and grocery cold chain). Evidence: https://skycoolsystems.com https://dealroom.co/companies/skycool-systems
     Region sources: cec-eif-showcase, cec-nopa, calseed-awardees, kb-ba-hardware, startx, arpae-projects, in2-portfolio.
     Confidence: medium. Unresolved: Stage, headcount'
+- id: soliculture
+  name: Soliculture
+  website: https://www.soliculture.com
+  careers_url: null
+  hq: Scotts Valley, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: LUMO luminescent solar greenhouse panels and agrivoltaic systems.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found Flags: Live site with a 2025 copyright,
+    product pages, an inquiry form and a contact address at 54 Old El Pueblo, Scotts Valley. It is outside the core
+    Bay Area (Santa Cruz County). Its commercial luminescent concentrator launched in 2012. No dated news.. Evidence:
+    https://www.soliculture.com https://www.soliculture.com/contact Region sources: kb-ba-hardware. Confidence:
+    low.'
 - id: sonocharge-energy
   name: Sonocharge Energy
   website: https://www.sonocharge.com/
@@ -5562,6 +5819,33 @@ companies:
     site). Flags: part of the business is power products for defense/mission-critical uses. Evidence: https://turnongreen.com
     Region sources: builtin-sf-greentech. Confidence: medium. Unresolved: founded, headcount, share of revenue from
     defense'
+- id: ubiquitous-energy
+  name: Ubiquitous Energy
+  website: https://ubiquitous.energy/
+  careers_url: null
+  hq: Redwood City, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: core
+    reason: Transparent solar window coating (UE Power) that harvests UV and IR light.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No round confirmed in this pass Flags: Live site with
+    a 2025 copyright and product content, but no dated news was readable. HQ is from the input.. Evidence: https://ubiquitous.energy/
+    Region sources: cec-eif-showcase, kb-ba-hardware. Confidence: low.'
 - id: unemit
   name: Unemit
   website: https://www.unemit.com
