@@ -224,29 +224,75 @@ def draft_from_page(page: str, url: str, today: datetime) -> dict | None:
         if made and made["url"] == url:
             made["posting_id"] = _posting_id(url)      # the page is the posting
         return made
-    heading = _H1.search(page) or _TITLE.search(page)
-    title = _text_of(heading.group(1)) if heading else ""
-    title = re.split(r"\s+[|–—-]\s+", title)[0].strip() if not _H1.search(page) else title
-    body = _MAIN.search(page)
-    text = html_to_text(_CHROME.sub(" ", body.group(2))) if body else ""
+    micro = _microdata(page)
+    title = micro.get("title") or _page_title(page)
+    text = micro.get("description") or ""
+    if len(text) < MIN_DESCRIPTION:
+        body = _MAIN.search(page)
+        text = html_to_text(_CHROME.sub(" ", body.group(2))) if body else ""
     if len(text) < MIN_DESCRIPTION:
         # Some sites keep the posting outside <main>: the whole page, less its chrome.
         text = html_to_text(_CHROME.sub(" ", page))
     if not title or len(text) < MIN_DESCRIPTION:
         return None
-    where = _LOCATION_LINE.search(text)
+    where = micro.get("location") or (_LOCATION_LINE.search(text).group(1) if _LOCATION_LINE.search(text) else None)
     return normalize.draft(
         posting_id=_posting_id(url),
         title=title,
         url=url,
-        locations=[parse_location(where.group(1))] if where else [],
+        locations=[parse_location(where)] if where else [],
         workplace=None,
         employment=normalize.employment_from_title(title),
         pay=None,
-        posted_date=None,
+        posted_date=micro.get("date"),
         department=None,
         description_text=text,
     )
+
+
+# A page's first heading that names the section, not the posting.
+_GENERIC_HEADING = re.compile(r"^(?:current |our |open |job )?(?:openings?|open (?:positions|roles)|positions|careers?|"
+                              r"jobs|join (?:us|our team)|opportunities|vacancies|job details)$", re.I)
+
+
+def _page_title(page: str) -> str:
+    """The posting's title: the first heading that is not a section name, else
+    the page's <title> up to its first separator."""
+    for match in re.finditer(r"<h([12])\b[^>]*>(.*?)</h\1>", page, re.I | re.S):
+        text = _text_of(match.group(2))
+        if text and not _GENERIC_HEADING.match(text):
+            return text
+    title = _TITLE.search(page)
+    return re.split(r"\s+[|–—-]\s+", _text_of(title.group(1)))[0].strip() if title else ""
+
+
+_ITEMPROP = re.compile(r"<(\w+)\b[^>]*\bitemprop=\"(title|description|datePosted)\"[^>]*>", re.I)
+
+
+def _microdata(page: str) -> dict:
+    """Fields a posting page marks with schema.org microdata (SAP SuccessFactors
+    career sites do): itemprop title, description and datePosted, and the
+    jobGeoLocation text. The description runs to the end of its element's
+    enclosing block, which is enough for these pages."""
+    found = {}
+    for match in _ITEMPROP.finditer(page):
+        tag, prop = match.group(1), match.group(2)
+        if prop == "datePosted":
+            content = re.search(r'content="([^"]+)"', match.group(0))
+            found.setdefault("date", normalize.iso_date(content.group(1)) if content else None)
+            continue
+        close = page.find(f"</{tag}>", match.end())
+        if prop == "description":
+            # The description holds nested elements of the same tag; read to the
+            # next field marker or the end of the page's main block.
+            nxt = re.search(r'data-careersite-propertyid="(?!description)|</main>|<footer\b', page[match.end():])
+            close = match.end() + nxt.start() if nxt else len(page)
+        value = page[match.end():close] if close > 0 else ""
+        found.setdefault(prop, _text_of(value) if prop == "title" else html_to_text(value))
+    geo = re.search(r'class="jobGeoLocation"[^>]*>([^<]+)<', page)
+    if geo and geo.group(1).strip():
+        found["location"] = geo.group(1).strip()
+    return {key: value for key, value in found.items() if value}
 
 
 def linkedin_targets(page: str, base: str) -> tuple[list[str], list[str]]:
@@ -347,9 +393,13 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         raise Blocked(f"{why} on {urlsplit(final).netloc}")
 
     systems = ats_links(page)
-    if systems:
-        named = ", ".join(f"{s['type']}:{s['board'] or '?'}" for s in systems)
+    readable = [s for s in systems if s["readable"]]
+    if readable:
+        named = ", ".join(f"{s['type']}:{s['board'] or '?'}" for s in readable)
         return normalize.ReadResult(status="ats-found", note=f"careers page links to {named}")
+    # A system the collector has no reader for (SuccessFactors, GoHire...): the
+    # page itself may still list the postings, so it is read as usual.
+    unread = ", ".join(sorted({s["type"] for s in systems}))
 
     today = context.now
     drafts: list[dict] = []
@@ -389,6 +439,10 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
                                         note=f"{why}; {len(drafts)} of {len(postings)} listed postings read ({missing} missing)")
         return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} posting pages from the listing")
 
+    inline = inline_postings(page, final, today)
+    if inline:
+        return normalize.ReadResult(drafts=_unique(inline), note=f"read {len(inline)} postings written on the careers page")
+
     jobs, company_pages = linkedin_targets(page, final)
     if jobs or company_pages:
         return _read_linkedin(jobs, company_pages, get, context)
@@ -402,7 +456,92 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         return normalize.ReadResult(status="none-open", note=_NONE_OPEN.search(text).group(0)[:80])
     if len(text) < 600 and _JS_APP.search(page):
         return normalize.ReadResult(status="unreadable", note="the list is built by JavaScript")
-    return normalize.ReadResult(status="unreadable", note="neither postings nor a no-openings notice found on the page")
+    note = "neither postings nor a no-openings notice found on the page"
+    if unread:
+        note += f"; the page uses {unread}, which the collector has no reader for"
+    return normalize.ReadResult(status="unreadable", note=note)
+
+
+# Where a page's openings begin: a heading, a labelled section or a label span
+# ("Current Open Positions", <section aria-label="Open roles">, <span>Open roles</span>).
+_OPENINGS_HEADING = re.compile(
+    r"(?:<h[1-6][^>]*>|<span[^>]*>|aria-label=\")\s*(?:<[^>]+>\s*)*(?:current |our |open |job )?"
+    r"(?:open (?:positions|roles)|openings|opportunities|positions|vacancies)\b", re.I)
+_DETAILS = re.compile(r"<details\b[^>]*>\s*<summary\b[^>]*>(.*?)</summary>(.*?)</details>", re.I | re.S)
+_SMALL = re.compile(r"<small\b[^>]*>(.*?)</small>", re.I | re.S)
+
+
+def inline_postings(page: str, url: str, today) -> list[dict]:
+    """Postings written on the careers page itself, one per <details> block
+    under an openings heading ("Current open positions"): the summary is the
+    title (a <small> in it gives place and type), the block the description."""
+    heading = _OPENINGS_HEADING.search(page)
+    if not heading:
+        return []
+    drafts = []
+    for summary, body in _DETAILS.findall(page[heading.end():]):
+        small = _SMALL.search(summary)
+        facts = _text_of(small.group(1)) if small else ""
+        title = _text_of(_SMALL.sub(" ", summary))
+        description = html_to_text(body)
+        if not title or len(description) < MIN_DESCRIPTION or GENERAL_APPLICATION.search(title):
+            continue
+        parts = [part.strip() for part in re.split(r"[·•|]", facts) if part.strip()]
+        employment = next((normalize.employment_from_text(part) for part in parts
+                           if normalize.employment_from_text(part) != "unknown"), normalize.employment_from_title(title))
+        places = [parse_location(part) for part in parts if normalize.employment_from_text(part) == "unknown"]
+        slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:80]
+        drafts.append(normalize.draft(
+            posting_id=f"{_posting_id(url)}#{slug}", title=title, url=url,
+            locations=[place for place in places if len(place) > 1][:3], workplace=None, employment=employment,
+            pay=None, posted_date=None, department=None, description_text=description))
+    return drafts or heading_postings(page, heading.end(), url)
+
+
+# Whole words: "Engineer" is a title, "Engineering" (a team) is not.
+_JOB_TITLE = re.compile(r"\b(?:engineer|technician|scientist|manager|director|designer|developer|analyst|specialist|"
+                        r"operator|mechanic|electrician|chemist|physicist|lead|head of|associate|coordinator|"
+                        r"intern|assistant|planner|buyer|accountant|controller|architect|machinist|welder|"
+                        r"assembler|inspector|supervisor|officer|administrator|representative|consultant)s?\b", re.I)
+_ANY_HEADING = re.compile(r"<(h[1-6])\b[^>]*>(.*?)</\1>", re.I | re.S)
+_PAGE_END = re.compile(r"<footer\b", re.I)
+
+
+def heading_postings(page: str, start: int, url: str) -> list[dict]:
+    """Postings written as headings under the openings heading, each followed by
+    its description ("Senior Mechanical Design Engineer", then its text). A
+    heading counts only when it reads like a job title and at least
+    MIN_DESCRIPTION characters of text follow it before the next heading of its
+    level or above."""
+    end = _PAGE_END.search(page, start)
+    region = page[start:end.start() if end else len(page)]
+    headings = [(m.start(), m.end(), m.group(1).lower(), _text_of(m.group(2))) for m in _ANY_HEADING.finditer(region)]
+    is_title = lambda text: 3 <= len(text) <= 100 and bool(_JOB_TITLE.search(text))
+    titled = [h for h in headings if is_title(h[3])]
+    if not titled:
+        return []
+    level = titled[0][2]
+    drafts = []
+    for index, (_s, e, tag, title) in enumerate(headings):
+        if tag != level or not is_title(title):
+            continue
+        following = [h for h in headings[index + 1:] if h[2] <= level]
+        stop = following[0][0] if following else len(region)
+        description = html_to_text(region[e:stop])
+        if len(description) < MIN_DESCRIPTION or GENERAL_APPLICATION.search(title):
+            continue
+        slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:80]
+        # A short first line of facts under the title: "Berkeley, CA • Full Time".
+        first = description.split("\n", 1)[0]
+        facts = [part.strip() for part in re.split(r"[·•|]", first) if part.strip()] if len(first) <= 80 and re.search(r"[·•|]", first) else []
+        employment = next((normalize.employment_from_text(part) for part in facts
+                           if normalize.employment_from_text(part) != "unknown"), normalize.employment_from_title(title))
+        places = [parse_location(part) for part in facts if normalize.employment_from_text(part) == "unknown"]
+        drafts.append(normalize.draft(
+            posting_id=f"{_posting_id(url)}#{slug}", title=title, url=url,
+            locations=[place for place in places if len(place) > 1][:3], workplace=None,
+            employment=employment, pay=None, posted_date=None, department=None, description_text=description))
+    return drafts
 
 
 def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Context) -> normalize.ReadResult:

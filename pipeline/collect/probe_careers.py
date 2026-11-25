@@ -63,7 +63,7 @@ ATS_PATTERNS = [
     ("greenhouse", r"boards-api\.greenhouse\.io/v1/boards/([A-Za-z0-9_]+)"),
     ("lever", r"jobs\.(?:eu\.)?lever\.co/([A-Za-z0-9_.\-]+)"),
     ("ashby", r"jobs\.ashbyhq\.com/([A-Za-z0-9_.%\-]+)"),
-    ("rippling", r"ats\.rippling\.com/(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_\-]+)"),
+    ("rippling", r"ats\.rippling\.com/(?:embed/)?(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_\-]+)"),
     # apply.workable.com/j/<code> is a short posting link that names no account.
     ("workable", r"apply\.workable\.com/(?!j/)([A-Za-z0-9_\-]+)"),
     ("workable", r"apply\.workable\.com/j/"),
@@ -71,12 +71,14 @@ ATS_PATTERNS = [
     ("bamboohr", r"//([A-Za-z0-9\-]+)\.bamboohr\.com"),
     ("smartrecruiters", r"(?:jobs|careers)\.smartrecruiters\.com/([A-Za-z0-9_\-]+)"),
     ("recruitee", r"//([A-Za-z0-9\-]+)\.recruitee\.com"),
+    ("recruitee", r"id=\"recruitee-careers\""),          # the widget, which names no account
     ("jazzhr", r"//([A-Za-z0-9\-]+)\.applytojob\.com"),
     ("jazzhr", r"app\.jazz\.co/widgets/[a-z]+/create/([A-Za-z0-9_\-]+)"),
     ("breezy", r"//([A-Za-z0-9\-]+)\.breezy\.hr"),
     ("teamtailor", r"//([A-Za-z0-9\-]+)\.(?:na\.)?teamtailor\.com"),
     ("gem", r"jobs\.gem\.com/([A-Za-z0-9_\-]+)"),
-    ("paylocity", r"recruiting\.paylocity\.com/recruiting/jobs/(?:All|Details)/([0-9a-fA-F\-]{36}|\d+)"),
+    ("paylocity", r"recruiting\.paylocity\.com/recruiting/jobs/All/([0-9a-fA-F\-]{36})"),
+    ("paylocity", r"recruiting\.paylocity\.com/recruiting/jobs/Details/\d+"),   # a posting; no board
     ("workday", r"//([A-Za-z0-9\-]+)\.wd\d+\.myworkdayjobs\.com"),
     ("icims", r"//([A-Za-z0-9\-]+)\.icims\.com"),
     ("adp", r"workforcenow\.adp\.com|myjobs\.adp\.com"),
@@ -85,6 +87,8 @@ ATS_PATTERNS = [
     ("pinpoint", r"//([A-Za-z0-9\-]+)\.pinpointhq\.com"),
     ("dover", r"(?:app|jobs)\.dover\.com/(?:jobs/)?([A-Za-z0-9_\-]+)"),
     ("jobvite", r"jobs\.jobvite\.com/([A-Za-z0-9_\-]+)"),
+    ("successfactors", r"\.sapsf\.com|\.jobs2web\.com|successfactors\.com"),
+    ("gohire", r"widget\.gohire\.io|jobs\.gohire\.io"),
     ("other", r"recruitingbypaycor\.com|\.isolvedhire\.com|jobs\.gusto\.com|trinethire\.com|zohorecruit\.com|"
               r"\.careerplug\.com|\.applicantpro\.com|\.hirehive\.com|jobs\.polymer\.co|\.jobs\.personio\."),
 ]
@@ -104,14 +108,16 @@ _LD = re.compile(r"""<script[^>]+type=["']application/ld\+json["'][^>]*>(.*?)</s
 _CAREERS = re.compile(r"career|jobs?\b|join[- ]?(us|our[- ]team|the[- ]team)|work[- ]with[- ]us|work[- ]here|"
                       r"open[- ](roles|positions)|openings|hiring|employment|opportunities", re.I)
 _POSTING_PATH = re.compile(r"^/(?:[a-z]{2}(?:-[a-z]{2})?/)?(?:careers?|jobs?|positions?|openings?|opportunities|"
-                           r"open-positions|join-us|work-with-us|vacancies|employment)/[^/?#]+", re.I)
+                           r"open-positions|current-openings|job-openings|career-opportunities|roles?|join-us|work-with-us|vacancies|employment)/[^/?#]+", re.I)
 _NOT_POSTING = re.compile(r"^(?:apply|benefits?|culture|life|team|teams|faq|faqs|values|perks|students?|"
                           r"university|internships?|locations?|search|all|page|category|tag|feed|why-.*|"
                           r"our-.*|meet-.*|contact)$", re.I)
 _NONE_OPEN = re.compile(r"no (?:current |open )?(?:openings|open positions|positions (?:available|open)|"
                         r"vacancies|job openings|opportunities (?:available|at this time))|"
                         r"not (?:currently )?hiring|(?:there are|we have) no (?:current |open )?(?:openings|positions|roles)|"
-                        r"no (?:current|open) (?:roles|jobs)|check back (?:soon|later)", re.I)
+                        r"no (?:current|open) (?:roles|jobs)|check back (?:soon|later)|"
+                        r"(?:do not|don.t) have any (?:current |open )?(?:openings|positions|roles|vacancies)|"
+                        r"(?:job )?openings will be posted (?:on|here)|^no items found$|\bno items found\b", re.I)
 # A bot check or block page. "captcha" alone is not one: ordinary pages load
 # reCAPTCHA for their contact forms, and site builders name it in their config.
 _CHALLENGE_TITLE = re.compile(r"<title>\s*(?:just a moment|attention required|access denied|"
@@ -161,6 +167,7 @@ def ats_links(page: str) -> list[dict]:
     """Job-board systems the page links to or embeds, with board tokens."""
     text = html_lib.unescape(page).replace("\\/", "/")
     addresses = " ".join(_SRC.findall(text)) + " " + " ".join(re.findall(r"https?://[^\s\"'<>]+", text))
+    addresses += " " + " ".join(re.findall(r'id="recruitee-careers"', text))      # widgets that name no address
     found, seen = [], set()
     for system, pattern in ATS_PATTERNS:
         for match in re.finditer(pattern, addresses):
