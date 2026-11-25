@@ -1,0 +1,1710 @@
+# Reference list for Southern California: companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: southern-california
+built: '2026-11-25'
+sources:
+- id: calseed-awardees
+  name: CalSEED awardee directory (all cohorts)
+  url: https://calseed.fund/awardees/
+  note: 25 listing pages, 147 awardee pages read; awardee pages give no location, so region was taken from the company's
+    own site, another source in this file, or general knowledge (said in note)
+- id: laci-portfolio
+  name: LACI (Los Angeles Cleantech Incubator) portfolio, all programmes incl. alumni
+  url: https://laincubator.org/portfolio/
+  note: 140 entries, read from the JSON feed the portfolio page itself loads (/wp-json/endpoints/startups/); LACI
+    is LA-based but serves some out-of-region startups, so known out-of-region ones were dropped
+- id: builtinla-greentech
+  name: Built In LA greentech companies
+  url: https://www.builtinla.com/companies/type/greentech-companies
+  note: page 1 only (20 companies); robots.txt disallows ?page= pagination
+- id: builtinla-energy
+  name: Built In LA energy companies
+  url: https://www.builtinla.com/companies/type/energy-companies
+  note: page 1 only (20 companies); robots.txt disallows ?page= pagination
+- id: pola-zet
+  name: Port of Los Angeles zero-emissions technology demonstration projects (project fact sheets)
+  url: https://www.portoflosangeles.org/environment/air-quality/zero-emissions-technologies
+  note: Green Omni, Everport, AID and SEA-CHANGE fact sheets read; most partners are terminals, agencies or out-of-region
+    OEMs
+- id: uci-startups
+  name: UCI Beall Applied Innovation startups
+  url: https://innovation.uci.edu/startups/
+  note: 128 entries via the site's WordPress listing; mostly biotech/software
+- id: caltech-local-startups
+  name: Caltech local startups (energy section) and Caltech venture mentions
+  url: https://local.caltech.edu/economic-impact/local-startups
+  note: Captura, Contour Energy Systems and Powerflex named as Caltech ventures in Caltech pages seen via search
+    results
+- id: ucsd-battery-startups
+  name: 'UC San Diego Today: researchers at the forefront of the EV battery revolution (+ UCSD story on Ateios)'
+  url: https://today.ucsd.edu/story/uc-san-diego-researchers-at-the-forefront-of-the-ev-battery-revolution
+  note: no UCSD startup directory found (innovation.ucsd.edu startup paths 404)
+- id: ucr-otp-portfolio
+  name: UC Riverside Office of Technology Partnerships company portfolio
+  url: https://techpartnerships.ucr.edu/company-portfolio
+  note: 133 entries (spinouts plus incubator/OASIS companies, many Inland Empire)
+- id: cec-epic-nopa
+  name: CEC EPIC Notice of Proposed Awards results tables
+  url: https://www.energy.ca.gov/funding-opportunities/awards
+  note: GFO-22-301 rounds 1-3, GFO-24-305, 24-310, 24-312, 25-301, 25-306, 25-307; tables give no location, so region
+    is from general knowledge or company site
+- id: echai-sd-cleantech
+  name: 'eChai: cleantech and energy startups in San Diego'
+  url: https://echai.ventures/sandiego/cleantech
+  note: substitute for the blocked San Diego directories; names from the page's structured data
+- id: activate
+  name: 'Activate companies index (all communities: Berkeley, Boston, Houston, New York, Anywhere)'
+  url: https://activate-companies-index.softr.app/
+  note: 263 companies read from the page's own records request; Singapore community and life-science, computing
+    and agriculture companies skipped. No HQ field; community city used as inferred HQ where nothing better was
+    found.
+- id: arpa-e
+  name: ARPA-E project awardees (private companies)
+  url: https://arpa-e.energy.gov/jsonapi/custom/index/project
+  note: All 1,762 projects (36 pages of 50); 488 distinct private-company awardees plus 74 untyped organizations
+    reviewed. HQ is the project location ARPA-E gives unless noted.
+- id: azolla
+  name: Azolla Ventures portfolio (incl. Prime Impact Fund)
+  url: https://azollaventures.com/our-portfolio/
+  note: 36 companies.
+- id: bev
+  name: Breakthrough Energy Ventures portfolio
+  url: https://www.breakthroughenergy.org/our-work/breakthrough-energy-ventures/bev-portfolio/
+  note: Read from the data embedded in the page (103 unique companies).
+- id: builtin-fully-remote
+  name: Built In, 'Fully Remote' renewable-energy, greentech and energy company pages (page 1 of each; robots.txt
+    disallows ?page=)
+  url: https://builtin.com/companies/location/fully-remote/type/renewable-energy-companies
+  note: Built In company profiles say 'Remote Workspace. Employees work remotely.'; also read /type/greentech-companies
+    and /type/energy-companies page 1
+- id: congruent
+  name: Congruent Ventures portfolio
+  url: https://www.congruentvc.com/portfolio
+  note: 62 companies listed.
+- id: cyclotron-road
+  name: Cyclotron Road (Berkeley Lab) fellows by year, 2015-2026
+  url: https://cyclotronroad.lbl.gov/fellows/fellows-by-year/
+  note: ~100 companies; almost all overlap the Activate Berkeley community; Cuberg (closed) and Mosaic Materials
+    (acquired) skipped.
+- id: dcvc
+  name: DCVC companies (energy-climate and industrial-transformation sectors)
+  url: https://www.dcvc.com/companies
+  note: 60 of 301 companies are tagged energy-climate or industrial-transformation; only those were reviewed.
+- id: doe-oced
+  name: DOE Office of Clean Energy Demonstrations award posts
+  url: https://www.energy.gov/cmei/oced/listings/oced-news
+  note: Award Wednesday posts and other OCED news (59 articles). Most awards went to utilities, co-ops, tribes and
+    large incumbents, which were skipped. The OCED selections pages now return 404.
+- id: elemental
+  name: Elemental Impact portfolio
+  url: https://elementalimpact.com/portfolio/
+  note: 141 companies with HQ city (113 US).
+- id: fifthwall
+  name: Fifth Wall portfolio
+  url: https://www.fifthwall.com/portfolio
+  note: No separate climate list on the site; reviewed the full portfolio (4 pages, about 54 companies).
+- id: greentown
+  name: Greentown Labs member companies (current and alumni)
+  url: https://greentown.org/members
+  note: 744 members (245 current, 499 alumni) read from data embedded in the page; no HQ field (only Greentown Boston/Houston
+    campus). Member pages gave websites for the first ~30, then returned a Cloudflare bot challenge; not worked
+    around.
+- id: halliburton-labs
+  name: Halliburton Labs portfolio
+  url: https://halliburtonlabs.com/companies
+  note: 49 companies with HQ city.
+- id: khosla
+  name: Khosla Ventures sustainability companies
+  url: https://www.khoslaventures.com/category/sustainability
+  note: 14 companies in the sustainability category.
+- id: laci
+  name: LACI (Los Angeles Cleantech Incubator) portfolio
+  url: https://laincubator.org/portfolio/
+  note: 140 startups from the page's own JSON endpoint (/wp-json/endpoints/startups/); no HQ field.
+- id: lc
+  name: Lowercarbon Capital companies
+  url: https://lowercarbon.com/companies/
+  note: 102 companies; HQ read from the site's own company records (wp-json).
+- id: prelude
+  name: Prelude Ventures portfolio
+  url: https://www.preludeventures.com/portfolio
+  note: 61 companies including exits.
+- id: remotefirstjobs
+  name: Remote First Jobs company directory (aggregator; sitemap_companies.xml slugs plus company pages)
+  url: https://remotefirstjobs.com/companies
+  note: Aggregator calls every listed company a 'remote-first company' when it has remote postings; weak evidence
+- id: shell-gamechanger
+  name: Shell GameChanger start-ups (graduates since 2021 and current projects)
+  url: https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/shell-gamechanger/portfolio.html
+  note: ~110 names, client-rendered (read in a browser after rejecting optional cookies). No HQ shown; many non-US.
+- id: slc
+  name: Spring Lane Capital investments
+  url: https://www.springlanecapital.com/investments
+  note: 13 companies listed by name only.
+- id: third-derivative
+  name: Third Derivative (RMI) startup portfolio
+  url: https://www.third-derivative.org/portfolio
+  note: 322 profile pages (read earlier today, cached in scratchpad); HQ field on each profile; 161 non-US skipped.
+- id: voyager
+  name: Voyager Ventures portfolio
+  url: https://www.voyagervc.com/portfolio
+  note: 41 companies over 5 pages.
+- id: web-search-snippets
+  name: Web search results quoting company job posts or remote-job board profiles
+  url: null
+  note: 10 web searches used; only kept where the company's own words or a remote-job board profile were quoted
+- id: yc
+  name: Y Combinator company directory (yc-oss public JSON mirror)
+  url: https://yc-oss.github.io/api/companies/all.json
+  note: Mirror of YC's directory (6,408 companies). Filtered to active/public US companies in industrials, energy,
+    climate, aviation, automotive or manufacturing, or with matching tags (913), then read by hand.
+companies:
+- name: 4th State Energies
+  website: https://www.4thstateenergies.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  - activate
+  - cyclotron-road
+  registry_id: 4th-state-energies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Alumina Energy
+  website: https://www.aluminaenergy.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - shell-gamechanger
+  - laci
+  registry_id: alumina-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ampaire
+  website: https://www.ampaire.com/
+  hq: Long Beach, CA
+  sources:
+  - laci-portfolio
+  - elemental
+  - laci
+  - arpa-e
+  registry_id: ampaire
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Aquatrino
+  website: https://www.aquatrino.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: aquatrino
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Arbor Energy
+  website: https://arbor.co
+  hq: El Segundo, CA
+  sources:
+  - lc
+  - voyager
+  registry_id: arbor-energy
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: arborenergy
+  open_roles: null
+- name: Arc Boats
+  website: https://arcboats.com
+  hq: Los Angeles, CA
+  sources:
+  - lc
+  registry_id: arc-boats
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Ashipa Electric
+  website: https://ashipaelectric.com/en-US
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Ateios Systems
+  website: https://ateios.com
+  hq: San Diego, CA
+  sources:
+  - ucsd-battery-startups
+  registry_id: ateios-systems
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Avnos
+  website: https://avnos.com
+  hq: Los Angeles, CA
+  sources:
+  - cec-epic-nopa
+  - third-derivative
+  registry_id: avnos
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: avnos
+  open_roles: null
+- name: Ayyeka
+  website: https://www.ayyeka.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: ayyeka
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BASEstud.io
+  website: https://basestud.io/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: basestud-io
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Beam Global
+  website: https://beamforall.com/
+  hq: San Diego, CA
+  sources:
+  - echai-sd-cleantech
+  registry_id: beam-global
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BioZen Batteries
+  website: https://biozenbatteries.com/
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: biozen-batteries
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BluCore Minerals
+  website: https://www.blucoreminerals.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: blucore-minerals
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: BYD Motors
+  website: https://en.byd.com/
+  hq: Los Angeles, CA
+  sources:
+  - pola-zet
+  registry_id: byd-motors
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup out.'
+  ats:
+    type: greenhouse
+    token: byd
+  open_roles: 22
+- name: Calcarea
+  website: https://calcarea.com
+  hq: Long Beach, CA
+  sources:
+  - azolla
+  registry_id: calcarea
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: California Lithium Battery
+  website: https://www.clbattery.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: No news found after about 2016.
+  ats: null
+  open_roles: null
+- name: Captura
+  website: https://capturacorp.com
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  - arpa-e
+  registry_id: captura
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: captura
+  open_roles: null
+- name: CarbonCapture Inc.
+  website: https://www.carboncapture.com/
+  hq: Los Angeles, CA
+  sources:
+  - cec-epic-nopa
+  registry_id: carboncapture-inc
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: lever
+    token: carboncapture
+  open_roles: 0
+- name: Carmine Minerals
+  website: https://www.carmineminerals.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Carvajal Motorsports
+  website: https://www.carvajalcs.com/
+  hq: Southern California
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: Builds prototype and concept cars for automakers; contract engineering services.
+  ats: null
+  open_roles: null
+- name: CERO Bikes
+  website: https://cero.bike/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - laci
+  registry_id: cero-bikes
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: ChargeNet Stations
+  website: https://chargenetstations.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: chargenet-stations
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: ChargeWheel
+  website: https://chargewheel.com
+  hq: San Francisco, CA
+  sources:
+  - laci-portfolio
+  registry_id: chargewheel
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Clairity Technology
+  website: https://clairitytech.com
+  hq: Los Angeles, CA
+  sources:
+  - lc
+  registry_id: clairity-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Closed Loop Plastics
+  website: null
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  registry_id: closed-loop-plastics
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Contour Energy Systems
+  website: null
+  hq: Azusa, CA
+  sources:
+  - caltech-local-startups
+  registry_id: null
+  decision: closed
+  reason: No news after its 2012 merger with ActaCell.
+  ats: null
+  open_roles: null
+- name: Critical Energy
+  website: https://criticalenergy.com
+  hq: Hawthorne, CA
+  sources:
+  - builtin-fully-remote
+  registry_id: critical-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: ashby
+    token: critical-energy
+  open_roles: 6
+- name: Critical Loop
+  website: https://criticalloop.com
+  hq: Long Beach, CA
+  sources:
+  - builtinla-energy
+  registry_id: critical-loop
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: criticalloop
+  open_roles: null
+- name: CZAR Power
+  website: https://czar-power.com
+  hq: Cambridge, MA
+  sources:
+  - laci-portfolio
+  registry_id: czar-power
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Delphire
+  website: https://delphiretech.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: delphire
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Edyza Sensors
+  website: null
+  hq: Irvine, CA
+  sources:
+  - builtinla-greentech
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Eli Electric Vehicles
+  website: https://www.eli.world/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: eli-electric-vehicles
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: EMC Squared Vehicles
+  website: https://www.emc2vehicles.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: emc-squared-vehicles
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Energy Vault
+  website: https://www.energyvault.com/
+  hq: Westlake Village, CA
+  sources:
+  - builtinla-energy
+  - remotefirstjobs
+  registry_id: energy-vault
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: EnergyVault
+  open_roles: null
+- name: ePave
+  website: https://www.epavellc.com/
+  hq: Pasadena, CA
+  sources:
+  - laci-portfolio
+  registry_id: epave
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: EV Safe Charge
+  website: https://www.evsafecharge.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - laci
+  registry_id: null
+  decision: not-in-scope
+  reason: Rents, resells and installs other makers' EV chargers.
+  ats: null
+  open_roles: null
+- name: EVCS
+  website: https://evcs.com
+  hq: Arcadia, CA
+  sources:
+  - slc
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Operates a public EV fast-charging network (301 locations, 2,083 ports) and offers
+    turnkey charger installation for site hosts.'
+  ats: null
+  open_roles: null
+- name: EvGateway
+  website: https://www.evgateway.com/
+  hq: Foothill Ranch, CA
+  sources:
+  - cec-epic-nopa
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Hardware-agnostic EV charging network software and services (network management,
+    white label, fleet, turnkey solutions, driver app).'
+  ats: null
+  open_roles: null
+- name: Evolectric
+  website: https://evolectricnow.com/
+  hq: Rancho Dominguez, CA
+  sources:
+  - laci-portfolio
+  registry_id: evolectric
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: ExPost Technology
+  website: https://www.exposttechnology.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - ucsd-battery-startups
+  - third-derivative
+  registry_id: expost-technology
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Flion Energy
+  website: null
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Gate 5 Energy Partners
+  website: null
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: General Atomics
+  website: https://ga.com
+  hq: San Diego, CA
+  sources:
+  - arpa-e
+  registry_id: general-atomics
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: General Engineering & Research
+  website: https://www.geandr.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  registry_id: general-engineering-and-research
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: GenH
+  website: https://genh.co
+  hq: Boston, MA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: genh
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Genomatica
+  website: https://www.genomatica.com/
+  hq: San Diego, CA
+  sources:
+  - echai-sd-cleantech
+  registry_id: genomatica
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup out.'
+  ats:
+    type: teamtailor
+    token: again
+  open_roles: null
+- name: Global Energy Credit
+  website: https://globalenergycredit.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: GreenTech California
+  website: null
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Hago Energetics
+  website: https://hagoenergetics.com/
+  hq: Irvine, CA
+  sources:
+  - calseed-awardees
+  - uci-startups
+  registry_id: hago-energetics
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Heart Aerospace
+  website: https://heartaerospace.com
+  hq: El Segundo (Los Angeles), CA
+  sources:
+  - bev
+  - lc
+  - yc
+  registry_id: heart-aerospace
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: heartaerospace
+  open_roles: null
+- name: Heliogen
+  website: https://heliogen.com
+  hq: Pasadena, CA
+  sources:
+  - elemental
+  registry_id: heliogen
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: HGenium
+  website: https://hgenium.com/
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: hgenium
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Hive Lighting
+  website: https://www.hivelighting.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: hive-lighting
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Humble
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Hydraulics International
+  website: https://hiipumps.com
+  hq: Chatsworth, CA
+  sources:
+  - cec-epic-nopa
+  registry_id: hydraulics-international
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Icarus RT
+  website: https://icarusrt.com
+  hq: San Diego, CA
+  sources:
+  - shell-gamechanger
+  - halliburton-labs
+  registry_id: icarus-rt
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Impossible Metals
+  website: https://impossiblemetals.com
+  hq: San Jose, CA
+  sources:
+  - yc
+  registry_id: impossible-metals
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: InCharge Energy
+  website: https://www.inchargeus.com/
+  hq: Los Angeles, CA
+  sources:
+  - builtinla-energy
+  - cec-epic-nopa
+  - remotefirstjobs
+  - web-search-snippets
+  registry_id: incharge-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: inchargeenergy
+  open_roles: 10
+- name: Joule
+  website: https://thejoulefactory.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: JUMPWatts
+  website: https://www.jumpwatts.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: status inferred: jumpwatts.com redirects to a HugeDomains for-sale page'
+  ats: null
+  open_roles: null
+- name: Lasso Loop
+  website: https://www.lassoloop.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: lasso-loop
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Loop
+  website: https://evloop.io
+  hq: El Segundo, CA
+  sources:
+  - fifthwall
+  registry_id: loop
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mack Designs
+  website: https://mack-designs.com
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: duplicate
+  reason: Its domain now redirects to Mack Research, which is listed.
+  ats: null
+  open_roles: null
+- name: Mack Research
+  website: https://mack-research.com
+  hq: Los Angeles, CA
+  sources:
+  - laci
+  registry_id: null
+  decision: not-in-scope
+  reason: Sustainable-construction research firm; research services, not a product.
+  ats: null
+  open_roles: null
+- name: Magneto-Inertial Fusion Technologies (MIFTI)
+  website: https://miftifusion.com
+  hq: Tustin, CA
+  sources:
+  - arpa-e
+  registry_id: magneto-inertial-fusion-technologies-mifti
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Maxwell Vehicles
+  website: https://www.maxwellvehicles.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - laci
+  registry_id: maxwell-vehicles
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Mirai Solar
+  website: https://miraisolar.com/
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: mirai-solar
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Mitico
+  website: https://mitico.tech
+  hq: Los Angeles, CA
+  sources:
+  - third-derivative
+  - greentown
+  - halliburton-labs
+  registry_id: mitico
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Moon Five Technologies
+  website: https://www.moonfive.tech/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Navia Energy
+  website: https://www.naviaenergy.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Navia Cortex, a decision-intelligence software layer coordinating generation,
+    storage and load across distributed energy assets.'
+  ats: null
+  open_roles: null
+- name: Newbury Power Solutions
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Nice
+  website: https://www.nice.car/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - laci
+  registry_id: null
+  decision: closed
+  reason: 'Closed: website gone: nice.car does not resolve (DNS) on 2026-11-24'
+  ats: null
+  open_roles: null
+- name: Nrgtek
+  website: https://www.nrgtekusa.com/
+  hq: Orange, CA
+  sources:
+  - calseed-awardees
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops several unrelated technologies; an R&D and patent-licensing firm.
+  ats: null
+  open_roles: null
+- name: Nuvola
+  website: https://nuvola.tech
+  hq: Los Angeles, CA
+  sources:
+  - yc
+  registry_id: nuvola
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Nuvve
+  website: https://nuvve.com/
+  hq: San Diego, CA
+  sources:
+  - cec-epic-nopa
+  - echai-sd-cleantech
+  registry_id: nuvve
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Ocean Motion Technologies
+  website: https://www.oceanmotion.tech/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  registry_id: ocean-motion-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Odys Aviation
+  website: https://odysaviation.com
+  hq: Long Beach, CA
+  sources:
+  - yc
+  registry_id: odys-aviation
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: odys-aviation
+  open_roles: null
+- name: OMNIPOWER
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - arpa-e
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: ONYX Power
+  website: https://www.onyxpower.io/
+  hq: Long Beach, CA
+  sources:
+  - laci-portfolio
+  - ucr-otp-portfolio
+  registry_id: onyx-power
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Parallel Systems
+  website: https://moveparallel.com
+  hq: Los Angeles, CA
+  sources:
+  - congruent
+  - arpa-e
+  registry_id: parallel-systems
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: parallel
+  open_roles: null
+- name: Parthian Energy
+  website: https://www.parthianenergy.com/
+  hq: Pasadena, CA
+  sources:
+  - calseed-awardees
+  - uci-startups
+  - caltech-local-startups
+  - third-derivative
+  registry_id: parthian-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Paulsson
+  website: https://paulsson.com/
+  hq: Van Nuys
+  sources:
+  - calseed-awardees
+  registry_id: paulsson
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Planet A Energy
+  website: https://planeta.energy
+  hq: Pasadena, CA
+  sources:
+  - third-derivative
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Plus Rides
+  website: https://ridewithplus.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: plus-rides
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: PolyLoop Recycling
+  website: https://www.polyloopcorp.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Popion Mobility
+  website: https://www.popionmobility.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: website gone: popionmobility.com and www return 404 on 2026-11-24'
+  ats: null
+  open_roles: null
+- name: Portable Solar
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Powerflex
+  website: https://www.powerflex.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - caltech-local-startups
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops, installs and manages EV charging and solar projects (an EDF company); a project developer.
+  ats:
+    type: jazzhr
+    token: powerflex
+  open_roles: null
+- name: Project K Energy
+  website: https://projectk.energy
+  hq: Pasadena, CA
+  sources:
+  - arpa-e
+  registry_id: project-k-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Pure Energy Stream
+  website: https://www.pureenergystream.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: pure-energy-stream
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Purist
+  website: null
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Pyro-E
+  website: https://www.pyro-e.com/
+  hq: Downey, CA
+  sources:
+  - laci-portfolio
+  registry_id: pyro-e
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Radiant Nuclear
+  website: https://www.radiantnuclear.com/
+  hq: El Segundo, CA
+  sources:
+  - builtinla-greentech
+  - dcvc
+  registry_id: radiant-nuclear
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Rangeview
+  website: https://rangeview.com
+  hq: El Segundo, CA
+  sources:
+  - builtinla-energy
+  registry_id: rangeview
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: RCAM Technologies
+  website: https://rcamtechnologies.com/
+  hq: San Pedro, CA
+  sources:
+  - laci-portfolio
+  registry_id: rcam-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Rechargify
+  website: https://rechargify.io/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: website gone: rechargify.io redirects to an unrelated domain (not followed) identity uncertain'
+  ats: null
+  open_roles: null
+- name: Recreate Energy
+  website: null
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  registry_id: recreate-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: RedoxBlox
+  website: https://redoxblox.com
+  hq: San Diego, CA
+  sources:
+  - bev
+  - khosla
+  - arpa-e
+  registry_id: redoxblox
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: tempo
+  open_roles: 5
+- name: ReJoule
+  website: https://www.rejouleenergy.com/
+  hq: Signal Hill, CA
+  sources:
+  - calseed-awardees
+  - ucr-otp-portfolio
+  - doe-oced
+  registry_id: rejoule
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: SA Recycling
+  website: https://www.sarecycling.com/
+  hq: Orange, CA
+  sources:
+  - builtinla-greentech
+  registry_id: sa-recycling
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup out.'
+  ats:
+    type: workday
+    token: sarecycling.wd503.myworkdayjobs.com/SA_Recycling_Careers
+  open_roles: null
+- name: SAFCell
+  website: https://safcell.com/
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  - arpa-e
+  registry_id: safcell
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: Saya Life
+  website: https://saya.life/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: saya-life
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Seatrec
+  website: https://seatrec.com/
+  hq: Vista, CA
+  sources:
+  - laci-portfolio
+  - laci
+  registry_id: seatrec
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SEEDD (Solar-Enhanced Evaporative Desalination and De-brining)
+  website: null
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Sienza Energy
+  website: https://sienzaenergy.com/
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: SiLi-ion
+  website: https://siliion.com/
+  hq: Irvine, CA
+  sources:
+  - calseed-awardees
+  - uci-startups
+  registry_id: sili-ion
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Smartville
+  website: https://smartville.io/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - doe-oced
+  registry_id: smartville
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sola United
+  website: https://www.solaunited.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: Sells others' graphene supercapacitor batteries as a licensee or distributor.
+  ats: null
+  open_roles: null
+- name: Solid Energies
+  website: https://solidenergies.com
+  hq: Anaheim, CA
+  sources:
+  - arpa-e
+  registry_id: solid-energies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Sonocharge Energy
+  website: https://www.sonocharge.com/
+  hq: Mountain View, CA
+  sources:
+  - calseed-awardees
+  - echai-sd-cleantech
+  - arpa-e
+  registry_id: sonocharge-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: South 8 Technologies
+  website: https://www.south8technologies.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - ucsd-battery-startups
+  - arpa-e
+  registry_id: south-8-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Substance Power & Mobility
+  website: https://substancepowerandmobility.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company or its current status could not be established.
+  ats: null
+  open_roles: null
+- name: Sunvapor
+  website: https://www.sunvapor.net/
+  hq: Pasadena, CA
+  sources:
+  - calseed-awardees
+  registry_id: sunvapor
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Symbiotic Ecosystems
+  website: null
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: T2M Global
+  website: https://www.t2mglobal.com/
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Consulting firm that gives strategic, technology-development and commercialization
+    guidance to advanced-energy start-ups (biomass conversion, hydrogen'
+  ats: null
+  open_roles: null
+- name: TAE Technologies
+  website: https://tae.com/
+  hq: Foothill Ranch
+  sources:
+  - uci-startups
+  registry_id: tae-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/TRI1021TRIAE/JobBoard/49386e5d-f909-4648-8335-415ce97e3f15
+  open_roles: null
+- name: TBM Designs
+  website: https://www.tbm-designs.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: tbm-designs
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Tempo
+  website: https://tempoenergy.com
+  hq: San Diego, CA
+  sources:
+  - echai-sd-cleantech
+  - prelude
+  registry_id: tempo
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: tempo
+  open_roles: null
+- name: Tesserol
+  website: https://www.tesserol.com/
+  hq: Santa Barbara, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: HQ outside region status inferred: tesserol.com no longer resolves'
+  ats: null
+  open_roles: null
+- name: ThermoShade
+  website: https://www.getthermoshade.com/
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: thermoshade
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Thiozen
+  website: https://thiozen.com
+  hq: Pasadena, CA
+  sources:
+  - greentown
+  registry_id: thiozen
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: TinHy
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: TransforMAX
+  website: https://transformax.hybridata.us/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: TransGrid Energy
+  website: https://transgridenergy.com
+  hq: Irvine, CA
+  sources:
+  - builtinla-energy
+  registry_id: null
+  decision: not-in-scope
+  reason: Develops, owns and runs power and battery projects, mainly for data centers (a Hanwha company).
+  ats: null
+  open_roles: null
+- name: Transpower
+  website: null
+  hq: Poway, CA
+  sources:
+  - pola-zet
+  registry_id: null
+  decision: closed
+  reason: Its domain now hosts an unrelated casino site.
+  ats: null
+  open_roles: null
+- name: TS Conductor
+  website: https://tsconductor.com
+  hq: Huntington Beach, CA
+  sources:
+  - bev
+  - third-derivative
+  registry_id: ts-conductor
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats:
+    type: adp
+    token: eee849ed-3684-4f60-bc80-eea09aeb8b18
+  open_roles: null
+- name: TyFast
+  website: https://tyfast.energy
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - ucsd-battery-startups
+  - echai-sd-cleantech
+  - activate
+  - cyclotron-road
+  - arpa-e
+  registry_id: tyfast
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: UNIGRID
+  website: https://www.unigridbattery.com/
+  hq: San Diego, CA
+  sources:
+  - calseed-awardees
+  - ucsd-battery-startups
+  registry_id: unigrid
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Uprise Energy
+  website: https://upriseenergy.com
+  hq: San Diego, CA
+  sources:
+  - echai-sd-cleantech
+  registry_id: uprise-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: URB-E
+  website: https://urb-e.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed: llamacargo.com announces the closure of Llama, formerly known as URB-E'
+  ats: null
+  open_roles: null
+- name: Veloce Energy
+  website: https://www.veloceenergy.com/
+  hq: Los Angeles, CA
+  sources:
+  - laci-portfolio
+  - builtinla-energy
+  - greentown
+  - laci
+  registry_id: null
+  decision: closed
+  reason: 'Closed: status inferred: veloceenergy.com now redirects to unrelated sites HQ disputed (Los Angeles vs
+    Denver, CO)'
+  ats: null
+  open_roles: null
+- name: Voltu Motor
+  website: https://www.voltumotor.com/
+  hq: Riverside, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: voltu-motor
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Water Illumination
+  website: https://waterillumination.com
+  hq: Lake Forest, CA
+  sources:
+  - ucr-otp-portfolio
+  registry_id: water-illumination
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wayside Energy
+  website: https://www.waysideenergy.com/
+  hq: Los Angeles, CA
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  registry_id: wayside-energy
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Wild Technologies
+  website: https://wildenergy.io/
+  hq: Santa Monica, CA
+  sources:
+  - laci-portfolio
+  registry_id: null
+  decision: closed
+  reason: 'Closed: status inferred: wildenergy.io now serves an unrelated gambling spam page identity uncertain'
+  ats: null
+  open_roles: null
+- name: Wildcat Discovery Technologies
+  website: https://www.wildcatdiscovery.com/
+  hq: San Diego, CA
+  sources:
+  - echai-sd-cleantech
+  registry_id: wildcat-discovery-technologies
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: core, startup out.'
+  ats: null
+  open_roles: null
+- name: XOTO
+  website: https://xotoinc.com/
+  hq: Burbank, CA
+  sources:
+  - laci-portfolio
+  registry_id: xoto
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Zephyr Fusion
+  website: https://zephyrfusion.com
+  hq: San Diego, CA
+  sources:
+  - yc
+  registry_id: zephyr-fusion
+  decision: registry
+  reason: 'Proposed in proposals-02-southern-california.yml: out, startup in.'
+  ats: null
+  open_roles: null
+excluded:
+- name: Anagy
+  sources:
+  - laci-portfolio
+  reason: Headquartered in Silicon Valley, CA, outside the region; no main site in the region found.
+- name: Blip Energy
+  sources:
+  - laci-portfolio
+  reason: Its own site gives a Chicago, IL address.
+- name: Empower Semiconductor
+  sources:
+  - arpa-e
+  reason: Headquartered in Milpitas, CA, outside the region; no main site in the region found.
+- name: Exa Water
+  sources:
+  - ucr-otp-portfolio
+  reason: Its site footer gives Seattle, WA.
+- name: Fluid Efficiency
+  sources:
+  - caltech-local-startups
+  reason: Headquartered in Houston, TX, outside the region; no main site in the region found.
+- name: NeoCharge
+  sources:
+  - calseed-awardees
+  - laci-portfolio
+  reason: Headquartered in San Luis Obispo, CA, outside the region; no main site in the region found.
+- name: Olokun Minerals
+  sources:
+  - laci-portfolio
+  reason: Headquartered in Richmond, VA, outside the region; no main site in the region found.
+- name: PCC Hydrogen
+  sources:
+  - ucr-otp-portfolio
+  reason: Headquartered in Louisville, KY, outside the region; no main site in the region found.
+- name: Reverse Energy Solutions
+  sources:
+  - laci-portfolio
+  reason: Its own site gives a Chicago, IL address.
+- name: Sinkco Labs
+  sources:
+  - laci-portfolio
+  reason: Headquartered in New York, NY, outside the region; no main site in the region found.
+- name: Stak Mobility
+  sources:
+  - laci-portfolio
+  reason: Headquartered in Brooklyn, NY, outside the region; no main site in the region found.
+- name: Xeal
+  sources:
+  - laci-portfolio
+  reason: Headquartered in New York, NY, outside the region; no main site in the region found.
