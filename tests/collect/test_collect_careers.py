@@ -205,3 +205,93 @@ def test_found_in_the_first_live_run():
     assert by_title["Foundry Operator"]["posting_id"] == "jobs/foundry-operator"
     assert by_title["Foundry Operator"]["posted_date"] == "2026-10-31"
     assert "design power electronics" in by_title["Production Technician"]["description_text"]
+
+
+# Patterns found on the 'unreadable' careers pages of the 2026-11-25 full run.
+
+LONG = "<p>" + "You will build and test our charging trailers in the field and in the shop. " * 4 + "</p>"
+
+
+def test_accordion_postings_written_on_the_careers_page():
+    # L-Charge: <details><summary>Title<small>Place · Type</small></summary>...</details>
+    page = ("<h3>Current open positions</h3><div data-jobs>"
+            "<details><summary><span>Engine Mechanic<small>USA · Full-Time</small></span></summary><div>" + LONG + "</div></details>"
+            "<details><summary><span>Field Service Technician<small>Corona, California · Full-Time</small></span></summary><div>" + LONG + "</div></details>"
+            "</div>")
+    result = careers.read(CAREERS, FakeSite({CAREERS: page}), context())
+    assert result.status == "ok" and [d["title"] for d in result.drafts] == ["Engine Mechanic", "Field Service Technician"]
+    second = result.drafts[1]
+    assert second["employment"] == "full-time" and second["locations"][0]["city"] == "Corona"
+    assert second["url"] == CAREERS and second["posting_id"] == "careers#field-service-technician"
+
+
+def test_heading_postings_under_a_labelled_section():
+    # Jupiter Volta: <section aria-label="Open roles"><article><h3>Title</h3><p>Place • Type</p>...
+    page = ('<h2>Careers</h2><section aria-label="Open roles">'
+            "<article><h3>Senior Mechanical Design Engineer</h3><p><span>Berkeley, CA</span> • <span>Full Time</span></p>" + LONG +
+            '<a href="https://www.indeed.com/job/x">Apply Now</a></article>'
+            "<article><h3>Our Values</h3>" + LONG + "</article></section>")
+    result = careers.read(CAREERS, FakeSite({CAREERS: page}), context())
+    assert [d["title"] for d in result.drafts] == ["Senior Mechanical Design Engineer"]     # "Our Values" is not a job
+    made = result.drafts[0]
+    assert made["url"] == CAREERS                                                          # never the Indeed link
+    assert made["locations"][0]["city"] == "Berkeley" and made["employment"] == "full-time"
+
+
+def test_a_team_heading_is_not_a_posting():
+    page = "<h2>Open positions</h2><h3>Engineering</h3>" + LONG
+    assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "unreadable"
+
+
+def test_posting_links_under_other_path_words_and_a_generic_first_heading():
+    # Nuvation: /current-openings/<slug>/ whose page opens with <h1>Current Openings</h1>.
+    site = FakeSite({
+        CAREERS: '<a href="/current-openings/senior-electrical-designer/">Senior Electrical Designer</a>',
+        "https://acme.example.com/current-openings/senior-electrical-designer/":
+            "<html><title>Senior Electrical Designer - Acme</title><body><h1>Current Openings</h1>"
+            "<h2>Senior Electrical Designer</h2>" + LONG + "</body></html>",
+    })
+    result = careers.read(CAREERS, site, context())
+    assert result.status == "ok" and result.drafts[0]["title"] == "Senior Electrical Designer"
+
+
+def test_successfactors_microdata_and_reading_on_past_an_unread_system():
+    # QuantumScape: the careers site is SAP SuccessFactors, which has no reader; its
+    # search page still lists the postings, and posting pages carry microdata.
+    search = "https://acme.example.com/search/"
+    posting = "https://acme.example.com/job/Senior-Applications-Engineer-Req-1588-CA-95110/1411772600/"
+    site = FakeSite({
+        search: '<script src="https://career41.sapsf.com/x.js"></script><a href="/job/Senior-Applications-Engineer-Req-1588-CA-95110/1411772600/">Senior Applications Engineer</a>',
+        posting: ('<p>By continuing to use this website you agree to cookies.</p><h1><span class="joblayouttoken-label">Title: </span>'
+                  '<span itemprop="title" data-careersite-propertyid="title">Senior Applications Engineer - Req 1588</span></h1>'
+                  '<span class="jobGeoLocation">CA, US</span>'
+                  '<span class="jobdescription" itemprop="description" data-careersite-propertyid="description">' + LONG + "</span>"
+                  '<span data-careersite-propertyid="companyname">Acme</span>'),
+    })
+    result = careers.read(search, site, context())
+    assert result.status == "ok"
+    made = result.drafts[0]
+    assert made["title"] == "Senior Applications Engineer - Req 1588"
+    assert made["description_text"].startswith("You will build") and "cookies" not in made["description_text"]
+    assert made["locations"] == [{"text": "CA, US", "state": "CA", "country": "US"}]
+
+
+@pytest.mark.parametrize("page", [
+    "<h2>Current Openings</h2><p>We don’t have any current openings, but please reach out.</p>" + LONG,
+    "<p>Job openings will be posted on this page. Sign up below.</p>" + LONG,
+    "<h2>Open Positions</h2><div>No items found.</div>" + LONG,
+])
+def test_more_no_openings_notices(page):
+    assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "none-open"
+
+
+def test_boards_the_probe_missed():
+    from pipeline.collect.probe_careers import ats_links
+    found = lambda page: [(s["type"], s["board"]) for s in ats_links(page)]
+    assert found('<iframe src="https://ats.rippling.com/embed/enervenue-inc/jobs?s=x"></iframe>') == [("rippling", "enervenue-inc")]
+    assert found('<div id="recruitee-careers"></div>') == [("recruitee", None)]
+    # A Paylocity posting link names no board; the board is the company GUID.
+    assert found('<a href="https://recruiting.paylocity.com/recruiting/jobs/Details/4612656/LineVision-Inc/Engineer">x</a>') == [("paylocity", None)]
+    assert found('<a href="https://recruiting.paylocity.com/recruiting/jobs/All/e85e8980-8325-4e41-9404-be920804d97d/LineVision-Inc">x</a>') \
+        == [("paylocity", "e85e8980-8325-4e41-9404-be920804d97d")]
+    assert found('<script src="https://widget.gohire.io/widget/abc"></script>') == [("gohire", None)]
