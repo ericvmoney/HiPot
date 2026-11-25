@@ -126,12 +126,12 @@ companies:
 - id: 247solar
   name: 247Solar
   website: https://247solar.com
-  careers_url: null
+  careers_url: https://247solar.com/solar-energy-careers/
   hq: Great Falls, VA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://247solar.com/solar-energy-careers/
+  read: auto
   sectors:
   - solar
   - industrial-heat
@@ -153,12 +153,12 @@ companies:
 - id: 24m-technologies
   name: 24M Technologies
   website: https://24-m.com
-  careers_url: null
+  careers_url: https://24-m.com/press-releases/24m-unlocks-new-u.s.-battery-manufacturing-opportunities-with-groundbreaking-energy-dense-24m-etop-electrode-to-pack-technology
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://24-m.com/press-releases/24m-unlocks-new-u.s.-battery-manufacturing-opportunities-with-groundbreaking-energy-dense-24m-etop-electrode-to-pack-technology
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -274,12 +274,12 @@ companies:
 - id: 6k
   name: 6K
   website: https://www.6kinc.com
-  careers_url: null
+  careers_url: https://www.6kinc.com/about-6k-inc/careers/
   hq: North Andover, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.6kinc.com/about-6k-inc/careers/
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -401,12 +401,12 @@ companies:
 - id: accelerate-wind
   name: Accelerate Wind
   website: https://acceleratewind.com
-  careers_url: null
+  careers_url: https://www.acceleratewind.com/careers-1
   hq: Birmingham, AL
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.acceleratewind.com/careers-1
+  read: auto
   sectors:
   - solar
   - wind
@@ -527,12 +527,12 @@ companies:
 - id: aclarity
   name: Aclarity
   website: https://www.aclaritywater.com
-  careers_url: null
+  careers_url: https://www.aclaritywater.com/careers/
   hq: Medway, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.aclaritywater.com/careers/
+  read: auto
   sectors:
   - industrial-heat
   stage: series-a
@@ -742,7 +742,7 @@ companies:
 - id: addis-energy
   name: Addis Energy
   website: https://www.addisenergy.com
-  careers_url: null
+  careers_url: https://addisenergy.com/careers/
   hq: Somerville, MA
   ats:
     type: unknown
@@ -771,12 +771,12 @@ companies:
 - id: adena-power
   name: Adena Power
   website: https://adenapower.com
-  careers_url: null
+  careers_url: https://adenapower.com/careers/
   hq: Lewis Center, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://adenapower.com/careers/
+  read: auto
   sectors:
   - energy-storage
   stage: null
@@ -1178,7 +1178,7 @@ companies:
 - id: aeromine-technologies-inc
   name: Aeromine Technologies, Inc.
   website: https://aerominepower.com
-  careers_url: null
+  careers_url: https://aerominepower.com/careers
   hq: Houston, TX
   ats:
     type: unknown
@@ -1669,7 +1669,7 @@ companies:
 - id: alga-biosciences
   name: Alga Biosciences
   website: https://www.alga.bio/
-  careers_url: null
+  careers_url: https://www.alga.bio/apply
   hq: San Francisco, CA
   ats:
     type: unknown
@@ -2018,12 +2018,12 @@ companies:
 - id: alpitronic-americas
   name: alpitronic Americas
   website: https://www.alpitronic.it
-  careers_url: null
+  careers_url: https://www.alpitronic.it/us/careers/
   hq: Charlotte, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.alpitronic.it/us/careers/
+  read: auto
   sectors:
   - charging
   - ev
@@ -2142,12 +2142,12 @@ companies:
 - id: altairnano
   name: Altairnano
   website: https://altairnano.com/
-  careers_url: null
+  careers_url: https://altairnano.com/contact-altairnano/
   hq: Reno, NV
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://altairnano.com/contact-altairnano/
+  read: auto
   sectors:
   - energy-storage
   - grid
@@ -2260,7 +2260,7 @@ companies:
 - id: am-batteries
   name: AM Batteries
   website: https://www.ambatteries.com
-  careers_url: null
+  careers_url: https://www.ambatteries.com/careers
   hq: Billerica, MA
   ats:
     type: unknown
@@ -2326,9 +2326,9 @@ companies:
   careers_url: https://amberkinetics.com/careers/
   hq: Union City, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: bamboohr
+    board: resources
+  read: auto
   sectors:
   - energy-storage
   - industrial-heat
@@ -2351,7 +2351,7 @@ companies:
     (no public feed). Headcount note: Built In SF figure, undated. Founded: https://www.builtinsf.com/company/amber-kinetics.
     Stage: No rounds found; ownership not stated on site. Evidence: https://amberkinetics.com/ https://www.builtinsf.com/company/amber-kinetics
     Region sources: cec-eif-showcase. Confidence: medium. Unresolved: Funding and ownership not found; Dealroom
-    404.'
+    404. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: amber-semiconductor
   name: Amber Semiconductor
   website: https://www.ambersemi.com
@@ -2445,12 +2445,12 @@ companies:
 - id: american-battery-factory
   name: American Battery Factory
   website: https://americanbatteryfactory.com/
-  careers_url: null
+  careers_url: https://americanbatteryfactory.com/careers
   hq: American Fork, UT
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://americanbatteryfactory.com/careers
+  read: auto
   sectors:
   - energy-storage
   - industrial-heat
@@ -2571,12 +2571,12 @@ companies:
 - id: american-superconductor-amsc
   name: American Superconductor (AMSC)
   website: https://amsc.com
-  careers_url: null
+  careers_url: https://www.amsc.com/careers/
   hq: Ayer, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.amsc.com/careers/
+  read: auto
   sectors:
   - grid
   stage: public
@@ -2605,12 +2605,12 @@ companies:
 - id: amhytech
   name: AmHyTech
   website: https://amhytech.com
-  careers_url: null
+  careers_url: https://amhytech.com/careers/
   hq: Detroit, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://amhytech.com/careers/
+  read: auto
   sectors:
   - hydrogen
   stage: null
@@ -2666,12 +2666,12 @@ companies:
 - id: amogy
   name: Amogy
   website: https://amogy.co
-  careers_url: null
+  careers_url: https://amogy.co/careers
   hq: New York, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://amogy.co/careers
+  read: auto
   sectors:
   - hydrogen
   stage: series-b
@@ -2732,7 +2732,7 @@ companies:
 - id: ampaire
   name: Ampaire
   website: https://www.ampaire.com/
-  careers_url: null
+  careers_url: https://www.ampaire.com/careers
   hq: Long Beach, CA
   ats:
     type: unknown
@@ -2766,12 +2766,12 @@ companies:
 - id: ampcera
   name: Ampcera
   website: https://www.ampcera.com/
-  careers_url: null
+  careers_url: https://www.ampcera.com/pages/career
   hq: Tucson, AZ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.ampcera.com/pages/career
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -2954,12 +2954,12 @@ companies:
 - id: andluca-technologies
   name: Andluca Technologies
   website: https://www.andluca.com
-  careers_url: null
+  careers_url: https://www.andluca.com/careers
   hq: Princeton, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.andluca.com/careers
+  read: auto
   sectors:
   - buildings
   stage: null
@@ -2982,12 +2982,12 @@ companies:
 - id: anning-corporation
   name: Anning Corporation
   website: https://anning.io
-  careers_url: null
+  careers_url: https://www.anning.io/careers
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.anning.io/careers
+  read: auto
   sectors:
   - hydrogen
   stage: null
@@ -3165,9 +3165,9 @@ companies:
   careers_url: null
   hq: Somerville, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: ashby
+    board: anvilcarbon
+  read: auto
   sectors:
   - carbon-removal
   stage: null
@@ -3183,7 +3183,8 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: product is carbon removal from a process it runs; physical
     judged on that basis. Evidence: https://anvilcarbon.com Region sources: masscec-pr-9-8m, masscec-catalyst. Confidence:
-    low. Unresolved: HQ (input Somerville), founded, headcount, funding; /about 404; Dealroom slug 404'
+    low. Unresolved: HQ (input Somerville), founded, headcount, funding; /about 404; Dealroom slug 404 Job board
+    found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: apollo-atomics
   name: Apollo Atomics
   website: https://apolloatomics.com
@@ -3476,12 +3477,12 @@ companies:
 - id: aquacycl
   name: Aquacycl
   website: https://www.aquacycl.com/
-  careers_url: null
+  careers_url: https://aquacycl.com/company/careers/
   hq: Escondido, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://aquacycl.com/company/careers/
+  read: auto
   sectors:
   - water
   - industrial-heat
@@ -3504,12 +3505,12 @@ companies:
 - id: aquafer-technologies
   name: Aquafer Technologies
   website: https://aquafertech.com
-  careers_url: null
+  careers_url: https://aquafertech.com/careers
   hq: Knoxville, TN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://aquafertech.com/careers
+  read: auto
   sectors:
   - water
   stage: null
@@ -3555,12 +3556,12 @@ companies:
 - id: aquatherm-industries
   name: Aquatherm Industries
   website: https://aquathermsolar.com
-  careers_url: null
+  careers_url: https://aquathermsolar.com/aquatherm-solar-dealer-opportunities/
   hq: Lakewood, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://aquathermsolar.com/aquatherm-solar-dealer-opportunities/
+  read: auto
   sectors:
   - solar
   stage: null
@@ -3663,12 +3664,12 @@ companies:
 - id: arbon
   name: Arbon
   website: https://arboncorp.com
-  careers_url: null
+  careers_url: https://www.arboncorp.com/career
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.arboncorp.com/career
+  read: auto
   sectors:
   - carbon-removal
   stage: null
@@ -3913,12 +3914,12 @@ companies:
 - id: aries-clean-technologies
   name: Aries Clean Technologies
   website: https://ariescleantech.com
-  careers_url: null
+  careers_url: https://ariescleantech.com/careers/
   hq: Franklin, TN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://ariescleantech.com/careers/
+  read: auto
   sectors:
   - recycling
   stage: null
@@ -4272,7 +4273,7 @@ companies:
 - id: aspen-aerogels
   name: Aspen Aerogels
   website: https://aerogel.com
-  careers_url: null
+  careers_url: https://www.aerogel.com/careers/
   hq: Northborough, MA
   ats:
     type: unknown
@@ -4365,12 +4366,12 @@ companies:
 - id: ateios-systems
   name: Ateios Systems
   website: https://ateios.com
-  careers_url: null
+  careers_url: https://ateios.com/careers
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://ateios.com/careers
+  read: auto
   sectors:
   - recycling
   - energy-storage
@@ -4397,12 +4398,12 @@ companies:
 - id: atlas-agro-pacific-green-fertilizer
   name: Atlas Agro (Pacific Green Fertilizer)
   website: https://www.atlasagro.ag
-  careers_url: null
+  careers_url: https://www.atlasagro.ag/career/
   hq: Zug, Switzerland
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.atlasagro.ag/career/
+  read: auto
   sectors:
   - hydrogen
   - industrial-heat
@@ -4517,12 +4518,12 @@ companies:
 - id: atom-power
   name: Atom Power
   website: https://www.atompower.com
-  careers_url: null
+  careers_url: https://www.atompower.com/jobs
   hq: Huntersville, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.atompower.com/jobs
+  read: auto
   sectors:
   - grid
   - charging
@@ -4838,12 +4839,12 @@ companies:
 - id: ayr-energy
   name: Ayr Energy
   website: https://ayr.energy
-  careers_url: null
+  careers_url: https://www.ayr.energy/about-us
   hq: Mountain View, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: rippling
+    board: ayr-careers
+  read: auto
   sectors:
   - grid
   stage: null
@@ -4862,7 +4863,8 @@ companies:
     include data centers and oil and gas, alongside renewables, utilities and industrial (not stated as main); unclear
     whether it manufactures or sources equipment. Evidence: https://ayr.energy Region sources: eip. Confidence:
     low. Unresolved: Founded year, headcount, funding, and whether it makes the equipment itself or resells/sources
-    it. Dealroom and Built In SF profiles not found (404).'
+    it. Dealroom and Built In SF profiles not found (404). Job board found by the collector''s careers-page probe
+    (data/screening/careers-probe-*.yml).'
 - id: ayyeka
   name: Ayyeka
   website: https://www.ayyeka.com/
@@ -5039,12 +5041,12 @@ companies:
 - id: beam-global
   name: Beam Global
   website: https://beamforall.com/
-  careers_url: null
+  careers_url: https://beamforall.com/careers/
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://beamforall.com/careers/
+  read: auto
   sectors:
   - charging
   - solar
@@ -5166,12 +5168,12 @@ companies:
 - id: bettergy
   name: Bettergy
   website: https://bettergy.com
-  careers_url: null
+  careers_url: https://bettergy.com/careers/
   hq: Peekskill, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://bettergy.com/careers/
+  read: auto
   sectors:
   - energy-storage
   - hydrogen
@@ -5192,12 +5194,12 @@ companies:
 - id: beyond-silicon
   name: Beyond Silicon
   website: https://beyondsilicon.com/
-  careers_url: null
+  careers_url: https://www.beyondsilicon.com/careers
   hq: Tempe, AZ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.beyondsilicon.com/careers
+  read: auto
   sectors:
   - solar
   stage: pre-seed
@@ -5250,7 +5252,7 @@ companies:
 - id: bila-solar
   name: Bila Solar
   website: https://bilasolar.com/
-  careers_url: null
+  careers_url: https://www.bilasolar.com/careers/
   hq: Indianapolis, IN
   ats:
     type: unknown
@@ -5276,12 +5278,12 @@ companies:
 - id: bio-fiber-industries
   name: Bio Fiber Industries
   website: https://www.biofiberindustries.com
-  careers_url: null
+  careers_url: https://biofiberindustries.com/about-bio-fiber-industries/industrial-hemp-agriculture/
   hq: Seattle, WA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://biofiberindustries.com/about-bio-fiber-industries/industrial-hemp-agriculture/
+  read: auto
   sectors:
   - biofuels
   - recycling
@@ -5598,12 +5600,12 @@ companies:
 - id: blink-charging
   name: Blink Charging
   website: https://blinkcharging.com
-  careers_url: null
+  careers_url: https://blinkcharging.com/company/careers
   hq: Bowie, MD
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://blinkcharging.com/company/careers
+  read: auto
   sectors:
   - charging
   stage: public
@@ -5992,12 +5994,12 @@ companies:
 - id: bolder-industries
   name: Bolder Industries
   website: https://bolderindustries.com
-  careers_url: null
+  careers_url: https://bolderindustries.com/applynow
   hq: Boulder, CO
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: d16d53ad-a494-47a9-a5fe-b3848017d12a
+  read: auto
   sectors:
   - recycling
   stage: null
@@ -6017,7 +6019,8 @@ companies:
     Aravaipa Venture, Tauber Oil, Tiger Infrastructure Partners) entered at Series B or later; exact series not
     shown. Flags: plants outside region (Maryville MO, Terre Haute IN, Antwerp Belgium). Evidence: https://bolderindustries.com
     https://dealroom.co/companies/bolder-industries Region sources: bs-co-cleanenergy, siteselection-clean, fundraise-insider-co.
-    Confidence: medium. Unresolved: Latest series; headcount figure. Tier set under owner decision 13.'
+    Confidence: medium. Unresolved: Latest series; headcount figure. Tier set under owner decision 13. Job board
+    found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: boom-supersonic
   name: Boom Supersonic
   website: null
@@ -6075,12 +6078,12 @@ companies:
 - id: borgwarner
   name: BorgWarner
   website: https://www.borgwarner.com/
-  careers_url: null
+  careers_url: https://www.borgwarner.com/careers
   hq: Auburn Hills, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.borgwarner.com/careers
+  read: auto
   sectors:
   - ev
   - components
@@ -6241,12 +6244,12 @@ companies:
 - id: bridge-12-technologies
   name: Bridge 12 Technologies
   website: https://bridge12.com
-  careers_url: null
+  careers_url: https://www.bridge12.com/company/careers/
   hq: Framingham, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.bridge12.com/company/careers/
+  read: auto
   sectors:
   - components
   stage: null
@@ -6627,7 +6630,7 @@ companies:
 - id: c-motive-technologies
   name: C-Motive Technologies
   website: https://www.c-motive.com/
-  careers_url: null
+  careers_url: https://c-motive.com/about/careers/
   hq: Middleton, WI
   ats:
     type: unknown
@@ -6688,7 +6691,7 @@ companies:
 - id: cala-systems
   name: Cala Systems
   website: https://www.calasystems.com
-  careers_url: null
+  careers_url: https://www.calasystems.com/mission-and-careers
   hq: Somerville, MA
   ats:
     type: unknown
@@ -6715,12 +6718,12 @@ companies:
 - id: calcarea
   name: Calcarea
   website: https://calcarea.com
-  careers_url: null
+  careers_url: https://calcarea.com/careers/
   hq: Long Beach, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://calcarea.com/careers/
+  read: auto
   sectors:
   - carbon-removal
   stage: null
@@ -6826,12 +6829,12 @@ companies:
 - id: calysta
   name: Calysta
   website: https://calysta.com
-  careers_url: null
+  careers_url: https://calysta.com/careers/
   hq: Menlo Park, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: jazzhr
+    board: calysta
+  read: auto
   sectors:
   - recycling
   stage: null
@@ -6851,16 +6854,17 @@ companies:
     series letters not confirmed. Flags: main production plant in Chongqing, China (Calysseo JV); methane feedstock
     (natural gas). Evidence: https://calysta.com https://en.wikipedia.org/wiki/Calysta Region sources: arpae-projects.
     Confidence: medium. Unresolved: Headcount, recent funding and current HQ (site gives no address). Dealroom and
-    Built In SF had no profile. Tier set under owner decision 13.'
+    Built In SF had no profile. Tier set under owner decision 13. Job board found by the collector''s careers-page
+    probe (data/screening/careers-probe-*.yml).'
 - id: cambridge-heavy-industries
   name: Cambridge Heavy Industries
   website: https://cambridgeheavy.xyz
-  careers_url: null
+  careers_url: https://cambridgeheavy.xyz/careers
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://cambridgeheavy.xyz/careers
+  read: auto
   sectors:
   - fusion
   stage: null
@@ -7091,12 +7095,12 @@ companies:
 - id: capybara-energy
   name: CapyBara Energy
   website: https://capybara.energy
-  careers_url: null
+  careers_url: https://www.capybara.energy/careers
   hq: Groveland, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.capybara.energy/careers
+  read: auto
   sectors:
   - energy-storage
   stage: null
@@ -7117,12 +7121,12 @@ companies:
 - id: carba
   name: Carba
   website: https://carba.com/
-  careers_url: null
+  careers_url: https://carba.com/jobs
   hq: Minneapolis, MN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://carba.com/jobs
+  read: auto
   sectors:
   - carbon-removal
   stage: seed
@@ -7292,7 +7296,7 @@ companies:
 - id: carbon-infuse
   name: Carbon Infuse
   website: https://carboninfuse.com
-  careers_url: null
+  careers_url: https://www.carboninfuse.com/careers
   hq: New York, NY
   ats:
     type: unknown
@@ -7373,7 +7377,7 @@ companies:
 - id: carbondots
   name: CarbonDots
   website: https://carbondots.co
-  careers_url: null
+  careers_url: https://www.carbondots.co/careers
   hq: Lawrence Township, NJ
   ats:
     type: unknown
@@ -7401,7 +7405,7 @@ companies:
 - id: carbonfree
   name: CarbonFree
   website: https://carbonfree.cc
-  careers_url: null
+  careers_url: https://carbonfree.cc/careers/
   hq: San Antonio, TX
   ats:
     type: unknown
@@ -7429,12 +7433,12 @@ companies:
 - id: carbonquest
   name: CarbonQuest
   website: https://carbonquest.com
-  careers_url: null
+  careers_url: https://carbonquest.com/careers
   hq: Spokane Valley, WA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://carbonquest.com/careers
+  read: auto
   sectors:
   - carbon-removal
   - buildings
@@ -7466,7 +7470,7 @@ companies:
 - id: carmine-minerals
   name: Carmine Minerals
   website: https://www.carmineminerals.com/
-  careers_url: null
+  careers_url: https://carmineminerals.com/careers
   hq: Riverside, CA
   ats:
     type: unknown
@@ -7702,12 +7706,12 @@ companies:
 - id: cenntro-electric-group
   name: Cenntro Electric Group
   website: https://cenntroauto.com
-  careers_url: null
+  careers_url: https://cenntroauto.com/careers/
   hq: Freehold, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://cenntroauto.com/careers/
+  read: auto
   sectors:
   - ev
   stage: public
@@ -8042,7 +8046,7 @@ companies:
 - id: chemfinity-technologies
   name: ChemFinity Technologies
   website: https://chemfinitytech.com
-  careers_url: null
+  careers_url: https://chemfinitytech.com/careers/
   hq: Brooklyn, NY
   ats:
     type: unknown
@@ -8218,12 +8222,12 @@ companies:
 - id: clairity-technology
   name: Clairity Technology
   website: https://clairitytech.com
-  careers_url: null
+  careers_url: https://www.clairitytech.com/about
   hq: Los Angeles, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.clairitytech.com/about
+  read: auto
   sectors:
   - carbon-removal
   - industrial-heat
@@ -8411,12 +8415,12 @@ companies:
 - id: cls-wind
   name: CLS Wind
   website: https://clswind.com
-  careers_url: null
+  careers_url: https://www.clswind.com/careers/
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.clswind.com/careers/
+  read: auto
   sectors:
   - wind
   stage: null
@@ -8582,12 +8586,12 @@ companies:
 - id: complete-coach-works
   name: Complete Coach Works
   website: https://completecoach.com/
-  careers_url: null
+  careers_url: https://completecoach.com/careers/
   hq: Riverside, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://completecoach.com/careers/
+  read: auto
   sectors:
   - ev
   stage: null
@@ -8923,7 +8927,7 @@ companies:
 - id: corumat
   name: Corumat
   website: https://www.biggreenloop.com
-  careers_url: null
+  careers_url: https://www.biggreenloop.com/careers
   hq: Mercer Island, WA
   ats:
     type: unknown
@@ -9292,12 +9296,12 @@ companies:
 - id: crystal-sonic
   name: Crystal Sonic
   website: https://xtalsonic.com/
-  careers_url: null
+  careers_url: https://xtalsonic.com/careers/
   hq: Arizona
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://xtalsonic.com/careers/
+  read: auto
   sectors:
   - components
   - solar
@@ -9613,7 +9617,7 @@ companies:
 - id: dana-electrified-san-clemente-site
   name: Dana Electrified (San Clemente site)
   website: https://www.dana.com/
-  careers_url: null
+  careers_url: https://jobs.dana.com/
   hq: Maumee, OH
   ats:
     type: unknown
@@ -9740,12 +9744,12 @@ companies:
 - id: darcy-solutions
   name: Darcy Solutions
   website: https://darcysolutions.com/
-  careers_url: null
+  careers_url: https://darcysolutions.com/careers/
   hq: New Brighton, MN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://darcysolutions.com/careers/
+  read: auto
   sectors:
   - geothermal
   - buildings
@@ -9801,12 +9805,12 @@ companies:
 - id: de-ice
   name: De-Ice
   website: https://deice.com
-  careers_url: null
+  careers_url: https://www.deice.com/careers
   hq: Somerville, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.deice.com/careers
+  read: auto
   sectors:
   - electric-aviation
   stage: series-a
@@ -10005,12 +10009,12 @@ companies:
 - id: delta-star
   name: Delta Star
   website: https://www.deltastar.com
-  careers_url: null
+  careers_url: https://www.deltastar.com/careers/
   hq: Lynchburg, VA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.deltastar.com/careers/
+  read: auto
   sectors:
   - grid
   stage: subsidiary
@@ -10059,12 +10063,12 @@ companies:
 - id: dexmat
   name: DexMat
   website: https://dexmat.com
-  careers_url: null
+  careers_url: https://dexmat.com/careers/
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://dexmat.com/careers/
+  read: auto
   sectors:
   - components
   stage: seed
@@ -10207,12 +10211,12 @@ companies:
 - id: divert-inc
   name: Divert Inc.
   website: https://www.divertinc.com
-  careers_url: null
+  careers_url: https://divertinc.com/careers/
   hq: Concord, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://divertinc.com/careers/
+  read: auto
   sectors:
   - recycling
   - methane
@@ -10359,12 +10363,12 @@ companies:
 - id: dragonfly-energy
   name: Dragonfly Energy
   website: https://dragonflyenergy.com/
-  careers_url: null
+  careers_url: https://dragonflyenergy.com/media/events/
   hq: Reno, NV
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://dragonflyenergy.com/media/events/
+  read: auto
   sectors:
   - energy-storage
   stage: public
@@ -10387,12 +10391,12 @@ companies:
 - id: dranetz
   name: Dranetz
   website: https://dranetz.com
-  careers_url: null
+  careers_url: https://www.dranetz.com/company/career-opportunities/
   hq: Edison, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.dranetz.com/company/career-opportunities/
+  read: auto
   sectors:
   - grid
   stage: subsidiary
@@ -10588,12 +10592,12 @@ companies:
 - id: earthly-labs
   name: Earthly Labs
   website: https://earthlylabs.com
-  careers_url: null
+  careers_url: https://earthlylabs.com/Careers
   hq: Austin, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://earthlylabs.com/Careers
+  read: auto
   sectors:
   - carbon-removal
   stage: subsidiary
@@ -10816,12 +10820,12 @@ companies:
 - id: echogen-power-systems
   name: Echogen Power Systems
   website: https://echogen.com
-  careers_url: null
+  careers_url: https://www.echogen.com/about/careers
   hq: Akron, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.echogen.com/about/careers
+  read: auto
   sectors:
   - industrial-heat
   - energy-storage
@@ -11081,12 +11085,12 @@ companies:
 - id: egi-battery
   name: EGI Battery
   website: https://egibattery.com
-  careers_url: null
+  careers_url: https://egibattery.com/company/
   hq: Ann Arbor, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://egibattery.com/company/
+  read: auto
   sectors:
   - energy-storage
   stage: seed
@@ -11324,7 +11328,7 @@ companies:
 - id: electric-power-systems-ep-systems
   name: Electric Power Systems (EP Systems)
   website: https://www.epsenergy.com/
-  careers_url: null
+  careers_url: https://epsenergy.com/about-electric-power-systems/careers/
   hq: North Logan, UT
   ats:
     type: unknown
@@ -11423,12 +11427,12 @@ companies:
 - id: electro-industries-gaugetech
   name: Electro Industries/GaugeTech
   website: https://electroind.com
-  careers_url: null
+  careers_url: https://www.electroind.com/careers-at-eig/
   hq: Westbury, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.electroind.com/careers-at-eig/
+  read: auto
   sectors:
   - grid
   stage: subsidiary
@@ -11509,12 +11513,12 @@ companies:
 - id: electronic-concepts
   name: Electronic Concepts
   website: https://ecicaps.com
-  careers_url: null
+  careers_url: https://www.ecicaps.com/us/employment-opportunities/
   hq: Eatontown, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.ecicaps.com/us/employment-opportunities/
+  read: auto
   sectors:
   - components
   stage: null
@@ -12200,12 +12204,12 @@ companies:
 - id: energyx
   name: EnergyX
   website: https://energyx.com/
-  careers_url: null
+  careers_url: https://energyx.com/careers/
   hq: San Juan, Puerto Rico
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://energyx.com/careers/
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -12263,12 +12267,12 @@ companies:
 - id: enevate
   name: Enevate
   website: https://www.enevate.com/
-  careers_url: null
+  careers_url: https://www.enevate.com/careers/index.html
   hq: Irvine, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.enevate.com/careers/index.html
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -12322,12 +12326,12 @@ companies:
 - id: enkoat
   name: EnKoat
   website: https://enkoat.com
-  careers_url: null
+  careers_url: https://www.enkoat.com/careers
   hq: Chandler, AZ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.enkoat.com/careers
+  read: auto
   sectors:
   - buildings
   stage: null
@@ -12452,12 +12456,12 @@ companies:
 - id: enspired-solutions
   name: Enspired Solutions
   website: https://www.enspiredsolutions.com/
-  careers_url: null
+  careers_url: https://www.enspiredsolutions.com/about/careers.html
   hq: East Lansing, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.enspiredsolutions.com/about/careers.html
+  read: auto
   sectors:
   - water
   stage: seed
@@ -12688,9 +12692,9 @@ companies:
   careers_url: https://www.epcpower.com/about/careers
   hq: Poway, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: c1f3b7e2-3b9f-4552-ae5e-972d37009918
+  read: auto
   sectors:
   - energy-storage
   - grid
@@ -12713,16 +12717,16 @@ companies:
     no revenue split given. Stage: Controlling shareholders Goldman Sachs Alternatives and Cleanhill Partners (Cleanhill
     first invested 2021), per the Flex sale announcement 2026-09-03. Evidence: https://www.epcpower.com/ https://www.epcpower.com/about/company
     https://www.epcpower.com/news/epc-power-announces-sale-to-flex-for-4-4b https://www.epcpower.com/about/careers
-    Confidence: high.'
+    Confidence: high. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: epic-cleantec
   name: Epic Cleantec
   website: https://www.epiccleantec.com
-  careers_url: null
+  careers_url: https://epiccleantec.com/careers
   hq: San Francisco, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://epiccleantec.com/careers
+  read: auto
   sectors:
   - water
   stage: series-b
@@ -12747,12 +12751,12 @@ companies:
 - id: eqore
   name: EQORE
   website: https://www.builtinboston.com/company/eqore
-  careers_url: null
+  careers_url: https://www.builtinboston.com/jobs
   hq: Somerville, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.builtinboston.com/jobs
+  read: auto
   sectors:
   - energy-storage
   - buildings
@@ -12975,12 +12979,12 @@ companies:
 - id: ev-buddy
   name: EV Buddy
   website: https://evbuddy.net
-  careers_url: null
+  careers_url: https://evbuddy.net/jobs
   hq: Edison, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://evbuddy.net/jobs
+  read: auto
   sectors:
   - energy-storage
   - charging
@@ -13105,12 +13109,12 @@ companies:
 - id: every-electric
   name: Every Electric
   website: https://everyelectric.com
-  careers_url: null
+  careers_url: https://everyelectric.com/jobs
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://everyelectric.com/jobs
+  read: auto
   sectors:
   - energy-storage
   - buildings
@@ -13132,7 +13136,7 @@ companies:
 - id: eviation-aircraft
   name: Eviation Aircraft
   website: https://www.eviation.com
-  careers_url: null
+  careers_url: https://www.eviation.com/careers
   hq: Arlington, WA
   ats:
     type: unknown
@@ -13515,12 +13519,12 @@ companies:
 - id: expost-technology
   name: ExPost Technology
   website: https://www.exposttechnology.com/
-  careers_url: null
+  careers_url: https://www.exposttechnology.com/careers
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.exposttechnology.com/careers
+  read: auto
   sectors:
   - recycling
   - battery-materials
@@ -14235,12 +14239,12 @@ companies:
 - id: flowcellutions
   name: FlowCellutions
   website: https://flowcellutions.com
-  careers_url: null
+  careers_url: https://www.flowcellutions.com/join-our-team
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.flowcellutions.com/join-our-team
+  read: auto
   sectors:
   - energy-storage
   - components
@@ -14322,7 +14326,7 @@ companies:
 - id: flux-power
   name: Flux Power
   website: https://www.fluxpower.com/
-  careers_url: null
+  careers_url: https://www.fluxpower.com/careers
   hq: Vista, CA
   ats:
     type: unknown
@@ -14386,12 +14390,12 @@ companies:
 - id: fluxworks
   name: FluxWorks
   website: https://fluxworks.co
-  careers_url: null
+  careers_url: https://www.fluxworks.co/careers
   hq: Conroe, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.fluxworks.co/careers
+  read: auto
   sectors:
   - components
   stage: null
@@ -15043,12 +15047,12 @@ companies:
 - id: gate-5-energy-partners
   name: Gate 5 Energy Partners
   website: https://gate-5.com
-  careers_url: null
+  careers_url: https://gate-5.com
   hq: Irvine, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://gate-5.com
+  read: auto
   sectors: []
   stage: null
   founded: null
@@ -15241,12 +15245,12 @@ companies:
 - id: general-engineering-and-research
   name: General Engineering & Research
   website: https://www.geandr.com/
-  careers_url: null
+  careers_url: https://www.geandr.com/pages/careers
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.geandr.com/pages/careers
+  read: auto
   sectors:
   - components
   stage: null
@@ -15637,12 +15641,12 @@ companies:
 - id: glasco-uv
   name: Glasco UV
   website: https://glascouv.com
-  careers_url: null
+  careers_url: https://glascouv.com/about-us/careers/
   hq: Mahwah, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://glascouv.com/about-us/careers/
+  read: auto
   sectors:
   - water
   stage: null
@@ -15778,7 +15782,7 @@ companies:
 - id: gold-h2
   name: Gold H2
   website: https://goldh2.com
-  careers_url: null
+  careers_url: https://goldh2.com/careers
   hq: Houston, TX
   ats:
     type: unknown
@@ -15835,12 +15839,12 @@ companies:
 - id: gosun
   name: GoSun
   website: https://www.gosun.co/
-  careers_url: null
+  careers_url: https://gosun.co/pages/careers
   hq: Cincinnati, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://gosun.co/pages/careers
+  read: auto
   sectors:
   - water
   - solar
@@ -15892,12 +15896,12 @@ companies:
 - id: gradiant
   name: Gradiant
   website: https://www.gradiant.com
-  careers_url: null
+  careers_url: https://gradiant.com/contact/careers/
   hq: Woburn, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://gradiant.com/contact/careers/
+  read: auto
   sectors:
   - water
   - recycling
@@ -16364,7 +16368,7 @@ companies:
 - id: gridless-power-corporation
   name: Gridless Power Corporation
   website: https://gridlesspower.com
-  careers_url: null
+  careers_url: https://gridlesspower.com/careers
   hq: Pennsauken, NJ
   ats:
     type: unknown
@@ -16733,12 +16737,12 @@ companies:
 - id: hago-energetics
   name: Hago Energetics
   website: https://hagoenergetics.com/
-  careers_url: null
+  careers_url: https://hagoenergetics.com/2026/01/28/hago-energetics-supports-california-jobs-first-catalyst-projects-in-kern-county/
   hq: Irvine, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://hagoenergetics.com/2026/01/28/hago-energetics-supports-california-jobs-first-catalyst-projects-in-kern-county/
+  read: auto
   sectors:
   - biofuels
   - hydrogen
@@ -17044,7 +17048,7 @@ companies:
 - id: heliogen
   name: Heliogen
   website: https://heliogen.com
-  careers_url: null
+  careers_url: https://heliogen.com/careers
   hq: Pasadena, CA
   ats:
     type: unknown
@@ -17136,12 +17140,12 @@ companies:
 - id: helix-carbon
   name: Helix Carbon
   website: https://helixcarbon.co
-  careers_url: null
+  careers_url: https://helixcarbon.co/careers
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://helixcarbon.co/careers
+  read: auto
   sectors:
   - hydrogen
   stage: null
@@ -17163,12 +17167,12 @@ companies:
 - id: helix-earth-technologies
   name: Helix Earth Technologies
   website: https://helixearth.com
-  careers_url: null
+  careers_url: https://helixearth.com/index.html
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://helixearth.com/index.html
+  read: auto
   sectors:
   - buildings
   stage: seed
@@ -17190,7 +17194,7 @@ companies:
 - id: hemlock-semiconductor
   name: Hemlock Semiconductor
   website: https://www.hscpoly.com/
-  careers_url: null
+  careers_url: https://careers.hscpoly.com
   hq: Hemlock, MI
   ats:
     type: unknown
@@ -17370,12 +17374,12 @@ companies:
 - id: hevi
   name: Hevi
   website: https://gethevi.com
-  careers_url: null
+  careers_url: https://gethevi.com/electric-heavy-equipment-manufacturer/career-opportunities/
   hq: East Windsor, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://gethevi.com/electric-heavy-equipment-manufacturer/career-opportunities/
+  read: auto
   sectors:
   - ev
   stage: subsidiary
@@ -17550,12 +17554,12 @@ companies:
 - id: hif-global
   name: HIF Global
   website: https://hifglobal.com/
-  careers_url: null
+  careers_url: https://hifglobal.com/home?initialRequestUrl=http%3a%2f%2fhifglobal.com%2fjobs
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://hifglobal.com/home?initialRequestUrl=http%3a%2f%2fhifglobal.com%2fjobs
+  read: auto
   sectors:
   - biofuels
   - hydrogen
@@ -18046,12 +18050,12 @@ companies:
 - id: hungerford-and-terry
   name: Hungerford & Terry
   website: https://hungerfordterry.com
-  careers_url: null
+  careers_url: https://hungerfordterry.com/about/careers/
   hq: Clayton, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://hungerfordterry.com/about/careers/
+  read: auto
   sectors:
   - water
   stage: null
@@ -18257,12 +18261,12 @@ companies:
 - id: hyper-tech-research
   name: Hyper Tech Research
   website: https://hypertechresearch.com
-  careers_url: null
+  careers_url: https://www.hypertechresearch.com/careers
   hq: Columbus, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.hypertechresearch.com/careers
+  read: auto
   sectors:
   - hydrogen
   - components
@@ -18317,12 +18321,12 @@ companies:
 - id: hyperion-motors
   name: Hyperion Motors
   website: https://www.hyperion.inc/
-  careers_url: null
+  careers_url: https://www.hyperion.inc/careers
   hq: Orange, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.hyperion.inc/careers
+  read: auto
   sectors:
   - hydrogen
   stage: null
@@ -18501,12 +18505,12 @@ companies:
 - id: ideal-power
   name: Ideal Power
   website: https://www.idealpower.com/
-  careers_url: null
+  careers_url: https://idealpower.com/careers/
   hq: Austin, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://idealpower.com/careers/
+  read: auto
   sectors:
   - energy-storage
   - charging
@@ -18751,7 +18755,7 @@ companies:
 - id: inductive-robotics
   name: Inductive Robotics
   website: https://inductiverobotics.com
-  careers_url: null
+  careers_url: https://www.inductiverobotics.com/careers
   hq: Austin, TX
   ats:
     type: unknown
@@ -18783,12 +18787,12 @@ companies:
 - id: industrial-microbes
   name: Industrial Microbes
   website: https://imicrobes.com
-  careers_url: null
+  careers_url: https://www.imicrobes.com/careers
   hq: Alameda, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.imicrobes.com/careers
+  read: auto
   sectors:
   - recycling
   stage: seed
@@ -18919,12 +18923,12 @@ companies:
 - id: infinite-cooling
   name: Infinite Cooling
   website: https://www.infinite-cooling.com
-  careers_url: null
+  careers_url: https://www.infinite-cooling.com/careers
   hq: Malden, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.infinite-cooling.com/careers
+  read: auto
   sectors:
   - water
   stage: series-a
@@ -19082,9 +19086,9 @@ companies:
   careers_url: null
   hq: Milwaukee, WI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: teamtailor
+    board: ingeteam
+  read: auto
   sectors:
   - charging
   - ev
@@ -19109,7 +19113,7 @@ companies:
     ''the spirit of a family-owned company''; ownership not stated; no venture rounds. Flags: over 1,000 employees;
     HQ outside region. Evidence: https://www.ingeteam.com/us https://www.ingeteam.com/en-us/about-us Region sources:
     e2-announcements. Confidence: medium. Unresolved: Parent HQ city, founded (site: ''over 85 years of experience''),
-    Milwaukee plant products and size.'
+    Milwaukee plant products and size. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: inlyte-energy
   name: Inlyte Energy
   website: https://inlyteenergy.com
@@ -19498,7 +19502,7 @@ companies:
 - id: ionna
   name: IONNA
   website: https://www.ionna.com
-  careers_url: null
+  careers_url: https://www.ionna.com/careers/
   hq: Durham, NC
   ats:
     type: unknown
@@ -19704,12 +19708,12 @@ companies:
 - id: joule-case
   name: Joule Case
   website: https://joulecase.com
-  careers_url: null
+  careers_url: https://www.joulecase.com/careers
   hq: Seattle, WA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.joulecase.com/careers
+  read: auto
   sectors:
   - energy-storage
   - grid
@@ -19824,12 +19828,12 @@ companies:
 - id: kanin-energy
   name: Kanin Energy
   website: https://kaninenergy.com
-  careers_url: null
+  careers_url: https://kaninenergy.com/careers/
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://kaninenergy.com/careers/
+  read: auto
   sectors:
   - distributed-generation
   stage: null
@@ -20034,12 +20038,12 @@ companies:
 - id: kempower
   name: Kempower
   website: https://kempower.com
-  careers_url: null
+  careers_url: https://kempower.com/careers/
   hq: Durham, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://kempower.com/careers/
+  read: auto
   sectors:
   - charging
   - ev
@@ -20182,12 +20186,12 @@ companies:
 - id: kira-systems
   name: KIRA Systems
   website: https://www.kira.eco
-  careers_url: null
+  careers_url: https://www.kira.eco/careers
   hq: Boston, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.kira.eco/careers
+  read: auto
   sectors:
   - water
   stage: null
@@ -20448,12 +20452,12 @@ companies:
 - id: kyma-technologies
   name: Kyma Technologies
   website: https://kymatech.com
-  careers_url: null
+  careers_url: https://www.kymatech.com/careers
   hq: Raleigh, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.kymatech.com/careers
+  read: auto
   sectors:
   - components
   stage: null
@@ -20534,7 +20538,7 @@ companies:
 - id: lakril-technologies
   name: Lakril Technologies
   website: https://www.lakril.com/
-  careers_url: null
+  careers_url: https://www.lakril.com/careers
   hq: Chicago, IL
   ats:
     type: unknown
@@ -20560,7 +20564,7 @@ companies:
 - id: lanzatech
   name: LanzaTech
   website: https://lanzatech.com/
-  careers_url: null
+  careers_url: https://lanzatech.com/careers/
   hq: Skokie, IL
   ats:
     type: unknown
@@ -21450,7 +21454,7 @@ companies:
 - id: livewire-innovation
   name: LiveWire Innovation
   website: https://www.livewireinnovation.com/
-  careers_url: null
+  careers_url: https://www.livewireinnovation.com/team/careers/
   hq: Salt Lake City, UT
   ats:
     type: unknown
@@ -21818,12 +21822,12 @@ companies:
 - id: luminous-robotics
   name: Luminous Robotics
   website: https://www.luminousrobotics.com
-  careers_url: null
+  careers_url: https://www.luminousrobotics.com/career
   hq: Boston, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.luminousrobotics.com/career
+  read: auto
   sectors:
   - solar
   - grid
@@ -21969,12 +21973,12 @@ companies:
 - id: luxfer-gas-cylinders
   name: Luxfer Gas Cylinders
   website: https://www.luxfercylinders.com/
-  careers_url: null
+  careers_url: https://www.luxfercylinders.com/careers/
   hq: Riverside, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: jazzhr
+    board: luxfergascylindersriverside
+  read: auto
   sectors:
   - hydrogen
   stage: subsidiary
@@ -21998,16 +22002,16 @@ companies:
     Luxfer Holdings; parent acquired by Wynnchurch Capital Nov 2026; over 1,000 employees (group). Evidence: https://www.luxfercylinders.com/
     https://stockanalysis.com/stocks/lxfr/company/ Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved:
     StockAnalysis gives the group HQ as Riverside, CA (3016 Kansas Avenue); not cross-checked. Founded 1898 is the
-    group''s year.'
+    group''s year. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: luxwall
   name: LuxWall
   website: https://luxwall.com
-  careers_url: null
+  careers_url: https://www.luxwall.com/careers/
   hq: Ypsilanti Township, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.luxwall.com/careers/
+  read: auto
   sectors:
   - buildings
   stage: series-b
@@ -22246,7 +22250,7 @@ companies:
 - id: maglev-aero
   name: Maglev Aero
   website: https://maglevaero.com
-  careers_url: null
+  careers_url: https://maglevaero.com/careers
   hq: Boston, MA
   ats:
     type: unknown
@@ -22935,12 +22939,12 @@ companies:
 - id: maxwell-vehicles
   name: Maxwell Vehicles
   website: https://www.maxwellvehicles.com/
-  careers_url: null
+  careers_url: https://www.maxwellvehicles.com/careers.html
   hq: Los Angeles, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.maxwellvehicles.com/careers.html
+  read: auto
   sectors:
   - ev
   stage: null
@@ -22960,12 +22964,12 @@ companies:
 - id: mazama-energy
   name: Mazama Energy
   website: https://mazamaenergy.com
-  careers_url: null
+  careers_url: https://mazamaenergy.com/careers
   hq: Frisco, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://mazamaenergy.com/careers
+  read: auto
   sectors:
   - geothermal
   stage: series-b
@@ -22993,12 +22997,12 @@ companies:
 - id: mcatalysis
   name: MCatalysis
   website: https://mcatalysis.com
-  careers_url: null
+  careers_url: https://mcatalysis.com/jobs
   hq: Houston / Dallas, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://mcatalysis.com/jobs
+  read: auto
   sectors:
   - industrial-heat
   stage: seed
@@ -23075,12 +23079,12 @@ companies:
 - id: membrion
   name: Membrion
   website: https://membrion.com
-  careers_url: null
+  careers_url: https://membrion.com/careers/
   hq: Seattle, WA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://membrion.com/careers/
+  read: auto
   sectors:
   - water
   - industrial-heat
@@ -23373,12 +23377,12 @@ companies:
 - id: microlink-devices
   name: Microlink Devices
   website: https://mldevices.com/
-  careers_url: null
+  careers_url: https://mldevices.com/careers/
   hq: Niles, IL
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://mldevices.com/careers/
+  read: auto
   sectors:
   - solar
   - electric-aviation
@@ -23710,12 +23714,12 @@ companies:
 - id: mitico
   name: Mitico
   website: https://mitico.tech
-  careers_url: null
+  careers_url: https://www.mitico.tech/careers
   hq: Los Angeles, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.mitico.tech/careers
+  read: auto
   sectors:
   - carbon-removal
   stage: seed
@@ -23738,12 +23742,12 @@ companies:
 - id: mito-material-solutions
   name: MITO Material Solutions
   website: https://mitomaterials.com/
-  careers_url: null
+  careers_url: https://mitomaterials.com/about/careers
   hq: Indianapolis, IN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: breezy
+    board: mito-material-solutions
+  read: auto
   sectors: []
   stage: subsidiary
   founded: null
@@ -23765,7 +23769,7 @@ companies:
     Region sources: evergreen-portfolio. Confidence: high. Unresolved: Founded year: Dealroom gives 2016 in its
     header and 2018 in its About text. Exact closing date of the acquisition not confirmed (a Cortado Ventures notice
     of 2026-07-15 says acquired). The deal was for product lines, equipment and IP; whether the Indianapolis entity
-    continues is unclear.'
+    continues is unclear. Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: mitra-chem
   name: Mitra Chem
   website: https://www.mitrachem.com
@@ -23926,7 +23930,7 @@ companies:
 - id: molecule-works
   name: Molecule Works
   website: https://moleculeworks.com
-  careers_url: null
+  careers_url: https://moleculeworks.com/careers
   hq: Richland, WA
   ats:
     type: unknown
@@ -24274,7 +24278,7 @@ companies:
 - id: mycoworks
   name: MycoWorks
   website: https://mycoworks.com
-  careers_url: null
+  careers_url: https://mycoworks.com/careers
   hq: Emeryville, CA
   ats:
     type: unknown
@@ -24434,12 +24438,12 @@ companies:
 - id: nanotech-materials
   name: Nanotech Materials
   website: https://nanotechmaterials.com/
-  careers_url: null
+  careers_url: https://nanotechmaterials.com/careers
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://nanotechmaterials.com/careers
+  read: auto
   sectors:
   - buildings
   stage: null
@@ -24521,7 +24525,7 @@ companies:
 - id: natureworks
   name: NatureWorks
   website: https://www.natureworksllc.com/
-  careers_url: null
+  careers_url: https://natureworksllc.com/about/career-opportunities
   hq: Minnetonka, MN
   ats:
     type: unknown
@@ -24878,12 +24882,12 @@ companies:
 - id: nexceris-formerly-nextech-materials
   name: Nexceris (formerly NexTech Materials)
   website: https://nexceris.com/
-  careers_url: null
+  careers_url: https://nexceris.com/careers/
   hq: Lewis Center, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://nexceris.com/careers/
+  read: auto
   sectors:
   - energy-storage
   - industrial-heat
@@ -24907,7 +24911,7 @@ companies:
 - id: nextech-batteries
   name: NexTech Batteries
   website: https://www.nextechbatteries.com/
-  careers_url: null
+  careers_url: https://www.nextechbatteries.com/join-us
   hq: Carson City, NV
   ats:
     type: unknown
@@ -25343,12 +25347,12 @@ companies:
 - id: novoloop
   name: Novoloop
   website: https://www.novoloop.com
-  careers_url: null
+  careers_url: https://www.novoloop.com/careers
   hq: Menlo Park, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.novoloop.com/careers
+  read: auto
   sectors:
   - recycling
   stage: series-b
@@ -25373,12 +25377,12 @@ companies:
 - id: novonix
   name: NOVONIX
   website: https://www.novonixgroup.com
-  careers_url: null
+  careers_url: https://www.novonixgroup.com/careers/
   hq: Chattanooga, TN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.novonixgroup.com/careers/
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -25433,7 +25437,7 @@ companies:
 - id: nth-cycle
   name: Nth Cycle
   website: https://nthcycle.com
-  careers_url: null
+  careers_url: https://nthcycle.com/careers
   hq: Burlington, MA
   ats:
     type: unknown
@@ -25655,12 +25659,12 @@ companies:
 - id: nuvola
   name: Nuvola
   website: https://nuvola.tech
-  careers_url: null
+  careers_url: https://nuvola.tech/careers/
   hq: Los Angeles, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://nuvola.tech/careers/
+  read: auto
   sectors:
   - battery-materials
   - energy-storage
@@ -25687,12 +25691,12 @@ companies:
 - id: nuvve
   name: Nuvve
   website: https://nuvve.com/
-  careers_url: null
+  careers_url: https://nuvve.com/careers/
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://nuvve.com/careers/
+  read: auto
   sectors:
   - energy-storage
   - charging
@@ -25775,12 +25779,12 @@ companies:
 - id: nwl
   name: NWL
   website: https://nwl.com
-  careers_url: null
+  careers_url: https://www.nwl.com/careers/
   hq: Bordentown, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.nwl.com/careers/
+  read: auto
   sectors:
   - grid
   stage: subsidiary
@@ -25831,12 +25835,12 @@ companies:
 - id: oberon-fuels
   name: Oberon Fuels
   website: https://oberonfuels.com/
-  careers_url: null
+  careers_url: https://www.oberonfuels.com/about
   hq: San Diego, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: c81380f1-dc11-4041-b245-cd53e4da8ccf
+  read: auto
   sectors:
   - biofuels
   - hydrogen
@@ -25855,7 +25859,8 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Not found. Flags: fuel producer running its own plant
     (Imperial Valley). Evidence: https://oberonfuels.com/ https://oberonfuels.com/about/ Region sources: sdedc-cleantech.
     Confidence: medium. Unresolved: HQ not stated on site (San Diego is input guess); plant city (Brawley) not confirmed;
-    founded year, headcount and funding not found; Dealroom 404.'
+    founded year, headcount and funding not found; Dealroom 404. Job board found by the collector''s careers-page
+    probe (data/screening/careers-probe-*.yml).'
 - id: ocean-motion-technologies
   name: Ocean Motion Technologies
   website: https://www.oceanmotion.tech/
@@ -26011,12 +26016,12 @@ companies:
 - id: offgridbox
   name: OffGridBox
   website: https://www.offgridbox.com
-  careers_url: null
+  careers_url: https://www.offgridbox.com/work-with-us
   hq: Boston, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.offgridbox.com/work-with-us
+  read: auto
   sectors:
   - water
   - solar
@@ -26371,7 +26376,7 @@ companies:
 - id: oneh2
   name: OneH2
   website: https://www.oneh2.com
-  careers_url: null
+  careers_url: https://oneh2.com/careers/
   hq: Longview, NC
   ats:
     type: unknown
@@ -26783,12 +26788,12 @@ companies:
 - id: oscilla-power
   name: Oscilla Power
   website: https://oscillapower.com
-  careers_url: null
+  careers_url: https://www.oscillapower.com/opicareers
   hq: Seattle, WA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.oscillapower.com/opicareers
+  read: auto
   sectors:
   - distributed-generation
   stage: null
@@ -26841,7 +26846,7 @@ companies:
 - id: osmopure-technologies
   name: Osmopure Technologies
   website: https://www.osmopuretechnologies.com
-  careers_url: null
+  careers_url: https://www.osmopuretechnologies.com/careers
   hq: Boulder, CO
   ats:
     type: unknown
@@ -27128,12 +27133,12 @@ companies:
 - id: page-technologies
   name: PAGE Technologies
   website: https://pagetechnologies.io
-  careers_url: null
+  careers_url: https://pagetechnologies.io/careers
   hq: Boulder, CO
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://pagetechnologies.io/careers
+  read: auto
   sectors:
   - water
   stage: null
@@ -27181,12 +27186,12 @@ companies:
 - id: pajarito-powder
   name: Pajarito Powder
   website: https://www.pajaritopowder.com/
-  careers_url: null
+  careers_url: https://pajaritopowder.com/careers/
   hq: Albuquerque, NM
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://pajaritopowder.com/careers/
+  read: auto
   sectors:
   - hydrogen
   - industrial-heat
@@ -27266,7 +27271,7 @@ companies:
 - id: pallidus
   name: Pallidus
   website: https://pallidus.com
-  careers_url: null
+  careers_url: https://www.pallidus.com/careers
   hq: Albany, NY
   ats:
     type: unknown
@@ -27422,12 +27427,12 @@ companies:
 - id: parthian-energy
   name: Parthian Energy
   website: https://www.parthianenergy.com/
-  careers_url: null
+  careers_url: https://parthianenergy.com/jobs
   hq: Pasadena, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://parthianenergy.com/jobs
+  read: auto
   sectors:
   - energy-storage
   stage: null
@@ -27450,7 +27455,7 @@ companies:
 - id: pascal-technologies
   name: Pascal Technologies
   website: https://www.pascaltech.co
-  careers_url: null
+  careers_url: https://www.pascaltech.co/careers
   hq: Cambridge, MA
   ats:
     type: unknown
@@ -27641,12 +27646,12 @@ companies:
 - id: perawatt-energy
   name: PeraWatt Energy
   website: https://perawatt.com
-  careers_url: null
+  careers_url: https://perawatt.com/careers/
   hq: Berkeley, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://perawatt.com/careers/
+  read: auto
   sectors:
   - grid
   - components
@@ -27811,12 +27816,12 @@ companies:
 - id: ph-matter
   name: pH Matter
   website: https://phmatter.com
-  careers_url: null
+  careers_url: https://www.phmatter.com/about-us/careers/
   hq: Columbus, OH
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.phmatter.com/about-us/careers/
+  read: auto
   sectors:
   - hydrogen
   - battery-materials
@@ -28312,12 +28317,12 @@ companies:
 - id: pliant-energy-systems
   name: Pliant Energy Systems
   website: https://www.pliantenergy.com
-  careers_url: null
+  careers_url: https://www.pliantenergy.com/employment
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.pliantenergy.com/employment
+  read: auto
   sectors:
   - distributed-generation
   stage: null
@@ -28397,12 +28402,12 @@ companies:
 - id: polaris-america
   name: Polaris America
   website: https://polarisamerica.com
-  careers_url: null
+  careers_url: https://www.polarisamerica.com/dealers/dealer-opportunities/
   hq: Allenwood, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.polarisamerica.com/dealers/dealer-opportunities/
+  read: auto
   sectors:
   - wind
   stage: null
@@ -28423,7 +28428,7 @@ companies:
 - id: pollux-technologies
   name: Pollux Technologies
   website: https://lumiaq.com
-  careers_url: null
+  careers_url: https://lumiaq.com/careers
   hq: Piscataway, NJ
   ats:
     type: unknown
@@ -28455,12 +28460,12 @@ companies:
 - id: polygone-systems
   name: PolyGone Systems
   website: https://polygonesystems.com
-  careers_url: null
+  careers_url: https://www.polygonesystems.com/careers
   hq: Princeton, NJ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.polygonesystems.com/careers
+  read: auto
   sectors:
   - water
   stage: null
@@ -28625,7 +28630,7 @@ companies:
 - id: porifera
   name: Porifera
   website: https://www.porifera.com/
-  careers_url: null
+  careers_url: https://www.porifera.com/careers
   hq: Hayward, CA
   ats:
     type: unknown
@@ -28683,7 +28688,7 @@ companies:
 - id: power-edison
   name: Power Edison
   website: https://www.poweredison.com
-  careers_url: null
+  careers_url: https://www.poweredison.com/careers
   hq: New Jersey
   ats:
     type: unknown
@@ -28781,12 +28786,12 @@ companies:
 - id: powerhouse-dynamics
   name: Powerhouse Dynamics
   website: https://www.powerhousedynamics.com
-  careers_url: null
+  careers_url: https://powerhousedynamics.com/about-us/
   hq: Newton, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: 52308326-4513-4581-b398-0e8870b2f699
+  read: auto
   sectors:
   - components
   stage: subsidiary
@@ -28807,16 +28812,17 @@ companies:
     MassCEC, Constellation). https://dealroom.co/companies/powerhouse-dynamics Flags: subsidiary of The Middleby
     Corporation; site describes it as IoT and AI software; hardware share unclear. Evidence: https://powerhousedynamics.com
     https://dealroom.co/companies/powerhouse-dynamics Region sources: launchpad-venture-group. Confidence: high.
-    Unresolved: Whether hardware or software is the main product.'
+    Unresolved: Whether hardware or software is the main product. Job board found by the collector''s careers-page
+    probe (data/screening/careers-probe-*.yml).'
 - id: powernap-energy
   name: PowerNaP Energy
   website: https://powernapenergy.com
-  careers_url: null
+  careers_url: https://www.powernapenergy.com/about
   hq: San Leandro, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.powernapenergy.com/about
+  read: auto
   sectors:
   - energy-storage
   stage: null
@@ -30125,12 +30131,12 @@ companies:
 - id: radiant-nuclear
   name: Radiant Nuclear
   website: https://www.radiantnuclear.com/
-  careers_url: null
+  careers_url: https://www.radiantnuclear.com/careers
   hq: El Segundo, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.radiantnuclear.com/careers
+  read: auto
   sectors:
   - fission
   stage: series-c
@@ -30194,7 +30200,7 @@ companies:
 - id: radius-recycling
   name: Radius Recycling
   website: https://www.radiusrecycling.com
-  careers_url: null
+  careers_url: https://www.radiusrecycling.com/company/careers
   hq: Portland, OR
   ats:
     type: unknown
@@ -30508,12 +30514,12 @@ companies:
 - id: realta-fusion
   name: Realta Fusion
   website: https://realtafusion.com/
-  careers_url: null
+  careers_url: https://realtafusion.com/careers/
   hq: Madison, WI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://realtafusion.com/careers/
+  read: auto
   sectors:
   - fusion
   - industrial-heat
@@ -30822,12 +30828,12 @@ companies:
 - id: rejoule
   name: ReJoule
   website: https://www.rejouleenergy.com/
-  careers_url: null
+  careers_url: https://rejouleenergy.com/careers-1
   hq: Signal Hill, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://rejouleenergy.com/careers-1
+  read: auto
   sectors:
   - energy-storage
   stage: seed
@@ -30942,12 +30948,12 @@ companies:
 - id: renegade-plastics
   name: Renegade Plastics
   website: https://renegadeplastics.com/
-  careers_url: null
+  careers_url: https://renegadeplastics.com/about/jobs-at-renegade/
   hq: Denver, CO per own site
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://renegadeplastics.com/about/jobs-at-renegade/
+  read: auto
   sectors:
   - recycling
   stage: pre-seed
@@ -31025,12 +31031,12 @@ companies:
 - id: renu-robotics
   name: Renu Robotics
   website: https://renurobotics.com
-  careers_url: null
+  careers_url: https://renurobotics.com/career/
   hq: San Antonio, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://renurobotics.com/career/
+  read: auto
   sectors:
   - solar
   stage: null
@@ -31232,9 +31238,9 @@ companies:
   careers_url: https://www.resolutegrid.com/careers/
   hq: Texas (Dallas per one directory; first facility and test lab in Austin)
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.resolutegrid.com/careers/
+  read: auto
   sectors:
   - grid
   stage: seed
@@ -31288,12 +31294,12 @@ companies:
 - id: resource-chemical
   name: ReSource Chemical
   website: https://www.resourcechemicalcorp.com/
-  careers_url: null
+  careers_url: https://www.resourcechemicalcorp.com/careers
   hq: Berkeley, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.resourcechemicalcorp.com/careers
+  read: auto
   sectors:
   - recycling
   stage: null
@@ -31932,12 +31938,12 @@ companies:
 - id: rubi-laboratories
   name: Rubi Laboratories
   website: https://www.rubi.earth
-  careers_url: null
+  careers_url: https://www.rubi.earth/careers
   hq: Alameda, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.rubi.earth/careers
+  read: auto
   sectors:
   - recycling
   stage: series-a
@@ -32340,12 +32346,12 @@ companies:
 - id: saya-life
   name: Saya Life
   website: https://saya.life/
-  careers_url: null
+  careers_url: https://saya.life/jobs
   hq: Los Angeles, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://saya.life/jobs
+  read: auto
   sectors:
   - water
   stage: null
@@ -32418,12 +32424,12 @@ companies:
 - id: scalvy
   name: Scalvy
   website: https://scalvy.com
-  careers_url: null
+  careers_url: https://scalvy.com/careers
   hq: Austin, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://scalvy.com/careers
+  read: auto
   sectors:
   - energy-storage
   - components
@@ -33099,12 +33105,12 @@ companies:
 - id: siemens
   name: Siemens
   website: https://www.siemens.com/
-  careers_url: null
+  careers_url: https://www.siemens.com/en-us/company/jobs/
   hq: Germany
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.siemens.com/en-us/company/jobs/
+  read: auto
   sectors:
   - charging
   stage: public
@@ -33525,7 +33531,7 @@ companies:
 - id: sion-power
   name: Sion Power
   website: https://sionpower.com/
-  careers_url: null
+  careers_url: https://sionpower.com/careers
   hq: Tucson, AZ
   ats:
     type: unknown
@@ -33681,12 +33687,12 @@ companies:
 - id: sitration
   name: SiTration
   website: https://sitration.com
-  careers_url: null
+  careers_url: https://www.sitration.com/careers
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.sitration.com/careers
+  read: auto
   sectors:
   - recycling
   - energy-storage
@@ -33716,7 +33722,7 @@ companies:
 - id: sk-on-sk-battery-america
   name: SK On / SK Battery America
   website: https://www.skbatteryamerica.com
-  careers_url: null
+  careers_url: https://www.skbatteryamerica.com/career/opportunity.html
   hq: Commerce, GA
   ats:
     type: unknown
@@ -34311,12 +34317,12 @@ companies:
 - id: solid-carbon
   name: Solid Carbon
   website: https://solid-carbon.com
-  careers_url: null
+  careers_url: https://solid-carbon.com/careers
   hq: McMinnville, OR
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://solid-carbon.com/careers
+  read: auto
   sectors:
   - carbon-removal
   - industrial-heat
@@ -34431,7 +34437,7 @@ companies:
 - id: solidec
   name: Solidec
   website: https://solidec.com
-  careers_url: null
+  careers_url: https://solidec.com/careers/
   hq: Houston, TX
   ats:
     type: unknown
@@ -34526,12 +34532,12 @@ companies:
 - id: solvanic
   name: Solvanic
   website: https://solvanic.com
-  careers_url: null
+  careers_url: https://solvanic.com/careers
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://solvanic.com/careers
+  read: auto
   sectors:
   - carbon-removal
   - industrial-heat
@@ -34608,7 +34614,7 @@ companies:
 - id: sora-fuel
   name: Sora Fuel
   website: https://sorafuel.com
-  careers_url: null
+  careers_url: https://www.sorafuel.com/careers
   hq: Cambridge, MA
   ats:
     type: unknown
@@ -34642,7 +34648,7 @@ companies:
 - id: sortera-technologies
   name: Sortera Technologies
   website: https://www.sorteratechnologies.com/
-  careers_url: null
+  careers_url: https://www.sorteratechnologies.com/careers
   hq: Markle, IN
   ats:
     type: unknown
@@ -35099,7 +35105,7 @@ companies:
 - id: stadler-us
   name: Stadler US
   website: https://www.stadlerrail.com/
-  careers_url: null
+  careers_url: https://www.stadlerrail.com/en/us/careers
   hq: Bussnang, Switzerland
   ats:
     type: unknown
@@ -35718,7 +35724,7 @@ companies:
 - id: sun-metalon
   name: SUN METALON
   website: https://sunmetalon.com
-  careers_url: null
+  careers_url: https://sunmetalon.com/careers
   hq: Wood Dale, IL
   ats:
     type: unknown
@@ -35778,7 +35784,7 @@ companies:
 - id: sungeel-hitech-sungeel-recycling-park-georgia
   name: SungEel HiTech (SungEel Recycling Park Georgia)
   website: https://www.sungeel.com
-  careers_url: null
+  careers_url: https://www.sungeel.com/careers
   hq: Toccoa, GA
   ats:
     type: unknown
@@ -35837,12 +35843,12 @@ companies:
 - id: sunlight-batteries-usa
   name: Sunlight Batteries USA
   website: https://www.sunlightgroup.com
-  careers_url: null
+  careers_url: https://www.sunlightgroup.com/jobs
   hq: Greensboro, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.sunlightgroup.com/jobs
+  read: auto
   sectors:
   - energy-storage
   stage: subsidiary
@@ -35979,12 +35985,12 @@ companies:
 - id: sunvapor
   name: Sunvapor
   website: https://www.sunvapor.net/
-  careers_url: null
+  careers_url: https://www.sunvapor.net/careers
   hq: Pasadena, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.sunvapor.net/careers
+  read: auto
   sectors:
   - industrial-heat
   stage: null
@@ -36117,7 +36123,7 @@ companies:
 - id: suryatech-ev-power
   name: Suryatech EV Power
   website: https://suryatechpower.com
-  careers_url: null
+  careers_url: https://suryatechpower.com/careers
   hq: Tyngsboro, MA
   ats:
     type: unknown
@@ -36147,9 +36153,9 @@ companies:
   careers_url: null
   hq: Durham, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: lever
+    board: sustaera
+  read: auto
   sectors:
   - carbon-removal
   stage: series-a
@@ -36171,7 +36177,8 @@ companies:
     lists HQ as Cary, NC; own site says Durham, NC 27709. Founded: https://dealroom.co/companies/sustaera. Stage:
     $10M Series A, Dec 2021, Breakthrough Energy and Grantham listed (own site news); Dealroom also lists a $750K
     debt deal Jul 2023: https://www.sustaera.com/ Evidence: https://www.sustaera.com/ https://dealroom.co/companies/sustaera
-    Region sources: bev, third-derivative. Confidence: medium. Unresolved: Later rounds, if any; reliable headcount.'
+    Region sources: bev, third-derivative. Confidence: medium. Unresolved: Later rounds, if any; reliable headcount.
+    Job board found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: sustainable-chemicals
   name: Sustainable Chemicals
   website: null
@@ -36314,12 +36321,12 @@ companies:
 - id: switch-bioworks
   name: Switch Bioworks
   website: https://switchbioworks.com
-  careers_url: null
+  careers_url: https://www.switchbioworks.com/careers
   hq: San Carlos, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.switchbioworks.com/careers
+  read: auto
   sectors:
   - industrial-heat
   stage: seed
@@ -36457,12 +36464,12 @@ companies:
 - id: syzygy-plasmonics
   name: Syzygy Plasmonics
   website: https://plasmonics.tech/
-  careers_url: null
+  careers_url: https://www.plasmonics.tech/jobs
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.plasmonics.tech/jobs
+  read: auto
   sectors:
   - hydrogen
   - biofuels
@@ -36754,12 +36761,12 @@ companies:
 - id: tellus-power-green
   name: Tellus Power Green
   website: https://telluspowergreen.com/
-  careers_url: null
+  careers_url: https://telluspowergreen.com/us/careers/
   hq: Laguna Hills, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://telluspowergreen.com/us/careers/
+  read: auto
   sectors:
   - charging
   - ev
@@ -37309,7 +37316,7 @@ companies:
 - id: the-shyft-group
   name: The Shyft Group
   website: https://theshyftgroup.com/
-  careers_url: null
+  careers_url: https://theshyftgroup.com/careers/
   hq: Novi, MI
   ats:
     type: unknown
@@ -37418,7 +37425,7 @@ companies:
 - id: thermolift
   name: ThermoLift
   website: https://thermoliftsolutions.com
-  careers_url: null
+  careers_url: https://thermoliftsolutions.com/careers/
   hq: Stony Brook
   ats:
     type: unknown
@@ -37508,12 +37515,12 @@ companies:
 - id: thiozen
   name: Thiozen
   website: https://thiozen.com
-  careers_url: null
+  careers_url: https://www.thiozen.com/join
   hq: null
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.thiozen.com/join
+  read: auto
   sectors:
   - hydrogen
   stage: null
@@ -37676,12 +37683,12 @@ companies:
 - id: tikal-industries
   name: Tikal Industries
   website: https://www.tikalindustries.com/
-  careers_url: null
+  careers_url: https://www.tikalindustries.com/jobs
   hq: Chicago, IL
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.tikalindustries.com/jobs
+  read: auto
   sectors:
   - buildings
   - recycling
@@ -37728,12 +37735,12 @@ companies:
 - id: tmc-transformers
   name: TMC Transformers
   website: https://www.tmctransformers.com
-  careers_url: null
+  careers_url: https://www.tmctransformers.com/work-with-us
   hq: Waynesboro, GA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.tmctransformers.com/work-with-us
+  read: auto
   sectors:
   - fission
   - grid
@@ -37843,12 +37850,12 @@ companies:
 - id: tpi-composites
   name: TPI Composites
   website: https://www.tpicomposites.com/
-  careers_url: null
+  careers_url: https://tpicomposites.com/career-opportunities/
   hq: Scottsdale, AZ
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://tpicomposites.com/career-opportunities/
+  read: auto
   sectors:
   - wind
   stage: subsidiary
@@ -37996,7 +38003,7 @@ companies:
 - id: trellis-air
   name: Trellis Air
   website: https://trellisair.com
-  careers_url: null
+  careers_url: https://trellisair.com/careers/
   hq: Boston, MA
   ats:
     type: unknown
@@ -38049,12 +38056,12 @@ companies:
 - id: triton-anchor
   name: Triton Anchor
   website: https://www.tritonanchor.com
-  careers_url: null
+  careers_url: https://www.tritonanchor.com/jobs
   hq: Chelmsford, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.tritonanchor.com/jobs
+  read: auto
   sectors:
   - wind
   stage: null
@@ -38354,12 +38361,12 @@ companies:
 - id: type-one-energy
   name: Type One Energy
   website: https://typeoneenergy.com
-  careers_url: null
+  careers_url: https://typeoneenergy.com/careers/
   hq: Knoxville, TN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://typeoneenergy.com/careers/
+  read: auto
   sectors:
   - fusion
   stage: series-a
@@ -38386,12 +38393,12 @@ companies:
 - id: ubiqd
   name: UbiQD
   website: https://www.ubiqd.com/
-  careers_url: null
+  careers_url: https://www.ubiqd.com/careers
   hq: Los Alamos, NM
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.ubiqd.com/careers
+  read: auto
   sectors:
   - solar
   - buildings
@@ -38530,12 +38537,12 @@ companies:
 - id: unagi-scooters
   name: Unagi Scooters
   website: https://unagiscooters.com
-  careers_url: null
+  careers_url: https://unagiscooters.com/pages/careers/
   hq: New York, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://unagiscooters.com/pages/careers/
+  read: auto
   sectors:
   - electric-mobility
   stage: null
@@ -38617,7 +38624,7 @@ companies:
 - id: unimacts
   name: Unimacts
   website: https://www.unimacts.com/
-  careers_url: null
+  careers_url: https://www.unimacts.com/careers/
   hq: Las Vegas, NV
   ats:
     type: unknown
@@ -39044,12 +39051,12 @@ companies:
 - id: vantage-vehicle-international
   name: Vantage Vehicle International
   website: https://www.vantagevehicle.com/
-  careers_url: null
+  careers_url: https://www.vantagevehicle.com/
   hq: Corona, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.vantagevehicle.com/
+  read: auto
   sectors:
   - ev
   stage: null
@@ -39070,12 +39077,12 @@ companies:
 - id: vantem
   name: Vantem
   website: https://vantem.com
-  careers_url: null
+  careers_url: https://vantem.com/careers/
   hq: Durham, NC
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://vantem.com/careers/
+  read: auto
   sectors:
   - buildings
   stage: null
@@ -39097,12 +39104,12 @@ companies:
 - id: vantran-transformers
   name: VanTran Transformers
   website: https://vantran.com
-  careers_url: null
+  careers_url: https://vantran.com/about-us/join-our-team/
   hq: Waco, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: paylocity
+    board: bcdf9e68-390f-4301-9ef0-35fa3efddf66
+  read: auto
   sectors:
   - buildings
   - grid
@@ -39129,7 +39136,8 @@ companies:
     https://www.tdlr.texas.gov/TABS/Projects/TABS2025003332 https://www.renaissancecapital.com/Profile/FPS/Forgent-Power-Solutions/IPO
     Region sources: web-tx-transformers. Confidence: high. Unresolved: Founding year (site says ''over 50 years'');
     VanTran-only headcount. Joint 430,000 sq ft Waco plant opened 2025-04-24 (TDLR filing says 433,000 sq ft). Markets
-    listed include oil and gas, petrochemical, utility and data centers among nine; none stated as main.'
+    listed include oil and gas, petrochemical, utility and data centers among nine; none stated as main. Job board
+    found by the collector''s careers-page probe (data/screening/careers-probe-*.yml).'
 - id: vartega
   name: Vartega
   website: https://www.vartega.com
@@ -39744,12 +39752,12 @@ companies:
 - id: volt-harbor
   name: Volt Harbor
   website: https://voltharbor.com/
-  careers_url: null
+  careers_url: https://voltharbor.com/careers
   hq: Ann Arbor, MI
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://voltharbor.com/careers
+  read: auto
   sectors:
   - energy-storage
   - grid
@@ -39798,12 +39806,12 @@ companies:
 - id: voltaic-systems
   name: Voltaic Systems
   website: https://voltaicsystems.com
-  careers_url: null
+  careers_url: https://voltaicsystems.com/jobs/
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://voltaicsystems.com/jobs/
+  read: auto
   sectors:
   - energy-storage
   - solar
@@ -39958,12 +39966,12 @@ companies:
 - id: voluna
   name: VOLUNA
   website: https://www.pillar.vc/companies/voluna/
-  careers_url: null
+  careers_url: https://www.pillar.vc/careers/
   hq: Cambridge, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.pillar.vc/careers/
+  read: auto
   sectors:
   - electric-aviation
   - industrial-heat
@@ -40088,12 +40096,12 @@ companies:
 - id: vycarb
   name: Vycarb
   website: https://www.vycarb.com
-  careers_url: null
+  careers_url: https://vycarb.com/careers
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://vycarb.com/careers
+  read: auto
   sectors:
   - carbon-removal
   stage: null
@@ -40482,12 +40490,12 @@ companies:
 - id: wiggins-lift-co
   name: Wiggins Lift Co.
   website: https://wigginslift.com/
-  careers_url: null
+  careers_url: https://wigginslift.com/careers/
   hq: Oxnard, CA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://wigginslift.com/careers/
+  read: auto
   sectors:
   - ev
   stage: null
@@ -40667,12 +40675,12 @@ companies:
 - id: witching-hour
   name: Witching Hour
   website: https://witchinghour.io
-  careers_url: null
+  careers_url: https://witchinghour.io/company
   hq: Oak Ridge, TN
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://witchinghour.io/company
+  read: auto
   sectors:
   - grid
   stage: null
@@ -40693,12 +40701,12 @@ companies:
 - id: witricity
   name: WiTricity
   website: https://witricity.com
-  careers_url: null
+  careers_url: https://www.witricity.com/careers.php
   hq: Watertown, MA
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.witricity.com/careers.php
+  read: auto
   sectors:
   - charging
   - ev
@@ -40959,12 +40967,12 @@ companies:
 - id: xgs-energy
   name: XGS Energy
   website: https://xgsenergy.com
-  careers_url: null
+  careers_url: https://www.xgsenergy.com/careers/
   hq: Houston, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.xgsenergy.com/careers/
+  read: auto
   sectors:
   - geothermal
   stage: series-a
@@ -41110,12 +41118,12 @@ companies:
 - id: yank-technologies
   name: Yank Technologies
   website: https://yanktechnologies.com
-  careers_url: null
+  careers_url: https://www.yanktechnologies.com/careers
   hq: Brooklyn, NY
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.yanktechnologies.com/careers
+  read: auto
   sectors:
   - charging
   stage: null
@@ -41375,12 +41383,12 @@ companies:
 - id: zenthos-energy
   name: Zenthos Energy
   website: https://www.zenthosenergy.com/
-  careers_url: null
+  careers_url: https://www.zenthosenergy.com/careers/
   hq: Albuquerque, NM
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.zenthosenergy.com/careers/
+  read: auto
   sectors:
   - energy-storage
   - industrial-heat
@@ -41403,12 +41411,12 @@ companies:
 - id: zentra-power-technologies
   name: Zentra Power Technologies
   website: https://zentrapower.com
-  careers_url: null
+  careers_url: https://www.zentrapower.com/Jobs/zentra-job-opennings
   hq: Austin, TX
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: other
+    board: https://www.zentrapower.com/Jobs/zentra-job-opennings
+  read: auto
   sectors:
   - grid
   stage: null
@@ -41549,7 +41557,7 @@ companies:
 - id: zero-labs-automotive
   name: Zero Labs Automotive
   website: https://www.zerolabs.com/
-  careers_url: null
+  careers_url: https://zerolabs.com/careers
   hq: Los Angeles, CA
   ats:
     type: unknown

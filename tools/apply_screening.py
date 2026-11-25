@@ -331,7 +331,8 @@ def apply_probe(company: dict, entry: dict) -> None:
     board it found when the registry has none (ats type 'unknown')."""
     if entry.get("careers_url") and not company.get("careers_url"):
         company["careers_url"] = entry["careers_url"]
-    boards = [b for b in (entry.get("ats") or []) if b.get("readable") and b.get("type") and b.get("board")]
+    boards = [b for b in (entry.get("ats") or []) if b.get("readable") and b.get("type") and b.get("board")
+              and (b["type"], b["board"]) not in RETIRED_BOARDS]
     if entry.get("outcome") == "ats-found" and boards and company["ats"]["type"] == "unknown":
         company["ats"] = {"type": boards[0]["type"], "board": boards[0]["board"]}
         company["read"] = "auto"
@@ -347,6 +348,10 @@ def apply_probe(company: dict, entry: dict) -> None:
 
 
 CAREERS_READABLE = {"ok", "partial", "none-open", "unclear"}
+
+# Boards a registry fix found retired: a company's site can still link them, so
+# a probe sees them again, but they only redirect away (registry-fixes-06).
+RETIRED_BOARDS = {("bamboohr", "kiverdi"), ("bamboohr", "amberkinetics")}
 
 
 def apply_ruling(company: dict, ruling: dict) -> None:

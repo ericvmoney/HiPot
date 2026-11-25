@@ -109,6 +109,14 @@ def test_probe_fills_careers_page_and_unknown_board_only():
     assert known["ats"] == {"type": "greenhouse", "board": "x"}       # a known board is never replaced
 
 
+def test_probe_skips_a_board_a_registry_fix_found_retired():
+    found = {"company_id": "kiverdi", "careers_url": None, "outcome": "ats-found",
+             "ats": [{"type": "bamboohr", "board": "kiverdi", "readable": True}]}
+    company = {"id": "kiverdi", "careers_url": None, "ats": {"type": "unknown", "board": None}, "read": "none", "notes": None}
+    apply_probe(company, found)
+    assert company["ats"] == {"type": "unknown", "board": None} and company["read"] == "none"
+
+
 from tools.apply_screening import listing_year  # noqa: E402
 
 
