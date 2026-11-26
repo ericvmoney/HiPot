@@ -95,6 +95,32 @@ def test_the_real_client_has_a_timeout_and_does_not_follow_redirects():
         fetcher.close()
 
 
+def test_an_answer_that_never_finishes_is_given_up_after_the_deadline():
+    import threading
+    release = threading.Event()
+
+    def stalled(request):
+        release.wait(5)                                 # a server that holds the connection
+        return httpx.Response(200, json={})
+
+    calls = []
+
+    def handler(request):
+        calls.append(request)
+        return stalled(request)
+
+    clock = Clock()
+    client = httpx.Client(transport=httpx.MockTransport(handler))
+    fetcher = Fetcher(client=client, clock=clock, sleep=clock.sleep, deadline=0.2)
+    try:
+        with pytest.raises(FetchError, match="no complete answer within 0.2s"):
+            fetcher.get_json("https://slow.example.com/feed")
+        assert len(calls) == 2                          # the one retry, then give up
+    finally:
+        release.set()
+    assert fetch.DEADLINE > fetch.TIMEOUT
+
+
 @pytest.mark.parametrize("status", [403, 429])
 def test_a_refusal_is_reported_as_blocked_and_never_retried(status):
     fetcher, clock, seen = make(lambda request: httpx.Response(status, text="no"))

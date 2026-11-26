@@ -4,7 +4,9 @@ The rules, which have no exceptions:
 
   * one request at a time (the collector is single-threaded), and at least
     MIN_INTERVAL seconds between two requests to the same host;
-  * a timeout on every request;
+  * a timeout on every request: TIMEOUT for each read, and DEADLINE for the
+    whole answer (a server that trickles bytes never trips a per-read timeout;
+    one held a full run for four hours on 2026-11-25);
   * a generic User-Agent that names neither the project nor a person;
   * HTTP 403 or 429 means the host refused us: raise Blocked and let the caller
     move on. A block is never retried and never worked around.
@@ -16,6 +18,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import queue
+import threading
 import time
 from typing import Any, Callable
 from urllib.parse import urljoin, urlsplit
@@ -45,6 +49,7 @@ HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecrui
 # every PAGE_INTERVAL seconds per host.
 PAGE_INTERVAL = 3.0
 TIMEOUT = 30.0
+DEADLINE = 120.0
 MAX_PAGE_BYTES = 1_000_000
 PAGE_HEADERS = {"Accept": "text/html, application/xhtml+xml;q=0.9, text/plain;q=0.5"}
 RETRY_WAIT = 5.0
@@ -69,7 +74,9 @@ class Fetcher:
         host_intervals: dict[str, float] | None = None,
         clock: Callable[[], float] = time.monotonic,
         sleep: Callable[[float], None] = time.sleep,
+        deadline: float = DEADLINE,
     ) -> None:
+        self._deadline = deadline
         self._client = client or httpx.Client(
             timeout=TIMEOUT,
             follow_redirects=False,
@@ -111,13 +118,35 @@ class Fetcher:
         self._wait_for(host)
         try:
             if payload is not None:
-                return self._client.post(url, params=params, headers=headers, json=payload)
-            return self._client.get(url, params=params, headers=headers)
+                return self._within_deadline(lambda: self._client.post(url, params=params, headers=headers, json=payload))
+            return self._within_deadline(lambda: self._client.get(url, params=params, headers=headers))
         finally:
             # Counted from the end of the request, so a slow answer still
             # leaves a full interval before the next one.
             self._last[host] = self._clock()
             self.requests += 1
+
+    def _within_deadline(self, request: Callable[[], httpx.Response]) -> httpx.Response:
+        """Run one request, giving up when the whole answer takes longer than
+        the deadline. The request runs on a daemon thread, so a connection that
+        never finishes is left behind instead of holding the run (or its exit).
+        Requests stay one at a time: the caller waits for this one."""
+        result: queue.Queue = queue.Queue(maxsize=1)
+
+        def run() -> None:
+            try:
+                result.put((True, request()))
+            except BaseException as error:  # handed back to the caller below
+                result.put((False, error))
+
+        threading.Thread(target=run, daemon=True).start()
+        try:
+            ok, value = result.get(timeout=self._deadline)
+        except queue.Empty:
+            raise httpx.ReadTimeout(f"no complete answer within {self._deadline:g}s") from None
+        if ok:
+            return value
+        raise value
 
     def get_json(self, url: str, params: dict | None = None) -> Any:
         """GET a URL and return its parsed JSON body."""
@@ -171,7 +200,7 @@ class Fetcher:
             try:
                 response = self._get(url, params, headers, payload)
             except httpx.TimeoutException as error:
-                failure = f"timed out after {TIMEOUT:g}s ({type(error).__name__})"
+                failure = f"timed out ({type(error).__name__}: {error or f'no data for {TIMEOUT:g}s'})"
             except httpx.HTTPError as error:
                 failure = f"request failed ({type(error).__name__}: {error})"
             else:
