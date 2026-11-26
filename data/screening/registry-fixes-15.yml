@@ -1,0 +1,48 @@
+# Registry fixes 15: the four boards from careers-probe-03 that the 2026-11-26 full run could not read (A1 collector).
+#
+# Written by workstream A1 at the supervisor's request, 2026-11-26. Each company's own pages were read once
+# (robots.txt obeyed) with a generic client name; no sign-in, bot check or CAPTCHA was involved. All four boards
+# are retired: the companies' pages still link three of them. Those three are now in
+# pipeline/collect/probe_careers.py RETIRED_BOARDS, so the careers reader reads the page instead of reporting
+# the dead link as a job board (tools/apply_screening.py has its own RETIRED_BOARDS; keep the two in step).
+
+fixes:
+- id: calysta
+  name: Calysta
+  ats: {type: other, board: "https://calysta.com/careers/"}
+  careers_url: https://calysta.com/careers/
+  source: >-
+    https://calysta.com/careers/ still loads the JazzHR widget https://app.jazz.co/widgets/basic/create/calysta, but
+    the JazzHR feed for 'calysta' answered HTTP 410 (Gone) in the 2026-11-26 run. No other job board is linked.
+  note: The careers reader now ignores the retired JazzHR link and reads the page.
+- id: mito-material-solutions
+  name: MITO Material Solutions
+  ats: {type: other, board: "https://mitomaterials.com/about/careers"}
+  careers_url: https://mitomaterials.com/about/careers
+  source: >-
+    https://mitomaterials.com/about/careers still embeds https://mito-material-solutions.breezy.hr/embed/js, but the
+    Breezy board answered HTTP 404 in the 2026-11-26 run. No other job board is linked.
+  note: The careers reader now ignores the retired Breezy link and reads the page.
+- id: sustaera
+  name: Sustaera
+  ats: {type: unknown, board: null}
+  read: none
+  careers_url: null
+  source: >-
+    https://www.sustaera.com/ links Lever 'sustaera', which answered HTTP 404 in the 2026-11-26 run;
+    https://sustaera.com/careers answered 404 on 2026-11-26. No careers page or other board was found.
+  note: No public job listing found; nothing to read.
+- id: navier
+  name: Navier
+  kind: website
+  website:
+    was: https://www.navierboat.com
+    now: https://www.naviermaritime.com
+  ats: {type: unknown, board: null}
+  read: none
+  careers_url: null
+  source: >-
+    https://www.navierboat.com/careers now redirects to the new site; https://www.naviermaritime.com loads ('Navier |
+    Own the edge') but links no careers page or job board, and https://naviermaritime.com/careers answered 404 on
+    2026-11-26. The old Greenhouse board 'navierboat' answers 404.
+  note: No public job listing found on the new site; nothing to read until it adds one.

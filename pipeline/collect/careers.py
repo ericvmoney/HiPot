@@ -50,6 +50,7 @@ from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError
 from pipeline.collect.locations import parse_location, structured_location
 from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_TITLE, _JOB_WORDS, ats_links, links,
+                                            live_systems,
                                             on_site, posting_links, refusal, registrable, visible_text)
 from pipeline.collect.text import html_to_text
 from pipeline.io import ROOT
@@ -393,6 +394,7 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         raise Blocked(f"{why} on {urlsplit(final).netloc}")
 
     systems = ats_links(page)
+    systems = live_systems(systems)          # a retired board's link is not a board
     readable = [s for s in systems if s["readable"]]
     if readable:
         named = ", ".join(f"{s['type']}:{s['board'] or '?'}" for s in readable)

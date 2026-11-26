@@ -93,6 +93,22 @@ ATS_PATTERNS = [
               r"\.careerplug\.com|\.applicantpro\.com|\.hirehive\.com|jobs\.polymer\.co|\.jobs\.personio\."),
 ]
 # Readers the collector has (pipeline.collect.run.READERS).
+# Boards a company's page still links or embeds but that no longer answer
+# (410 Gone, 404, or a redirect to the vendor's home page), checked on the dates
+# given in the registry-fixes files. A link to one is not a job board: the page
+# is read as if it were not there. Keep in step with tools/apply_screening.py.
+RETIRED_BOARDS = {
+    ("bamboohr", "kiverdi"), ("bamboohr", "amberkinetics"),          # registry-fixes-06
+    ("ashby", "Lime"), ("greenhouse", "navierboat"),                  # registry-fixes-11
+    ("jazzhr", "calysta"), ("breezy", "mito-material-solutions"),     # registry-fixes-15
+    ("lever", "sustaera"),
+}
+
+
+def live_systems(systems: list[dict]) -> list[dict]:
+    return [s for s in systems if (s["type"], s["board"]) not in RETIRED_BOARDS]
+
+
 READABLE = {"greenhouse", "lever", "ashby", "rippling", "workable", "bamboohr", "smartrecruiters", "recruitee",
             "jazzhr", "breezy", "teamtailor", "gem", "paylocity"}
 NOT_TOKENS = {"embed", "v1", "boards", "api", "jobs", "job_board", "js", "www", "careers", "apply", "en-us", "app"}
@@ -282,7 +298,7 @@ def refusal(page: str) -> str | None:
 
 def classify_careers_page(page: str, url: str, domain: str) -> dict:
     """What a careers page shows, without reading any posting."""
-    systems = ats_links(page)
+    systems = live_systems(ats_links(page))
     if systems:
         return {"outcome": "ats-found", "method": "ats-link", "ats": systems}
     blocks = job_postings(page)

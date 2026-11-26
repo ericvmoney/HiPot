@@ -295,3 +295,11 @@ def test_boards_the_probe_missed():
     assert found('<a href="https://recruiting.paylocity.com/recruiting/jobs/All/e85e8980-8325-4e41-9404-be920804d97d/LineVision-Inc">x</a>') \
         == [("paylocity", "e85e8980-8325-4e41-9404-be920804d97d")]
     assert found('<script src="https://widget.gohire.io/widget/abc"></script>') == [("gohire", None)]
+
+
+def test_a_retired_board_link_is_not_a_board():
+    # Calysta's page still loads the JazzHR widget for a board that answers 410 Gone.
+    page = '<script src="https://app.jazz.co/widgets/basic/create/calysta"></script><p>We have no open positions at this time.</p>'
+    assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "none-open"
+    live = '<script src="https://app.jazz.co/widgets/basic/create/acme"></script>'
+    assert careers.read(CAREERS, FakeSite({CAREERS: live}), context()).status == "ats-found"
