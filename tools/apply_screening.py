@@ -136,6 +136,9 @@ OWNER_RULINGS: dict[str, dict] = {
     # A6b: mine operators are out.
     "mariana-minerals": {"q": "A6b", "tier": "out",
                          "reason": "Operates mines and refineries for copper, lithium and nickel; mine operation is out."},
+    # A6b, extended 2026-11-25: survey and exploration equipment for mining is out too.
+    "voluna": {"q": "A6b", "tier": "out",
+               "reason": "Drone- and rover-mounted neutron tools for mineral exploration; mining survey equipment is out."},
     # A7: Mainspring is excluded for now.
     "mainspring-energy": {"q": "A7", "tier": "out",
                           "reason": "Linear generators that mostly run on natural gas or biogas today; excluded for now."},

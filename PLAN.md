@@ -256,7 +256,7 @@ Decided by Eric on 2026-11-24:
    - A3. Defense business is fine so long as it is not the company's primary or only business (Xcimer, Pacific Fusion, Pyka, Pivotal, Regent in; Antares, H3X, Odys, Whisper, Elroy out).
    - A4. Archer is in, despite about 1,160 employees.
    - A5. Purely autonomous cars are out; transit-oriented autonomous electric vehicles are in (Glydways, Parallel Systems).
-   - A6. Robots built only to deploy solar are in for now. A6b. Mine operators are out (Mariana Minerals).
+   - A6. Robots built only to deploy solar are in for now. A6b. Mine operators are out (Mariana Minerals); so is survey and exploration equipment for mining (Voluna, 2026-11-25). Processors and recyclers of battery metals stay in.
    - A7. Mainspring is excluded for now (mostly natural gas today). A8. SENS is in.
    - B1. Age is a guide, not a rule: older companies under 1,000 people are in.
    - B2. Borderline headcount is included (Form Energy, Redwood, Commonwealth Fusion Systems). Applied as about 25 percent over the line at most; Scout Motors (Volkswagen subsidiary, about 1,250 and growing to 4,000), ChargePoint (1,440) and Atoms (2,000) stay out.
