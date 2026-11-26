@@ -1,7 +1,7 @@
-"""Run the pages' own JavaScript (the ranking on the board, the resume rules on the persona page) in V8.
+"""Run the pages' own JavaScript (the ranking and My Roles on the board, the resume rules on the persona page) in V8.
 
-The pages keep these as pure functions in a named inline block, `<script id="hipot-rank">` in
-site/index.html and `<script id="persona-rules">` in site/persona.html, so the tests and the
+The pages keep these as pure functions in named inline blocks, `<script id="hipot-rank">` and
+`<script id="my-roles">` in site/index.html and `<script id="persona-rules">` in site/persona.html, so the tests and the
 ranking check run exactly the code the browser runs. Needs the `mini-racer` dev dependency.
 
     with PageScripts("hipot-rank", "persona-rules") as js:
@@ -15,7 +15,7 @@ from pathlib import Path
 from pipeline.io import ROOT
 
 SITE = ROOT / "site"
-BLOCKS = {"hipot-rank": SITE / "index.html", "persona-rules": SITE / "persona.html"}
+BLOCKS = {"hipot-rank": SITE / "index.html", "my-roles": SITE / "index.html", "persona-rules": SITE / "persona.html"}
 
 
 def script_block(block_id: str, page: Path | None = None) -> str:

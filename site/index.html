@@ -30,6 +30,8 @@
   --ochre: #7A5A10;
   --violet: #6B3FA0;
   --rose: #A3264B;
+  /* A role in My Roles: its card border. Its status tag carries the meaning too. */
+  --mine: #2B55A0;
   --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
   --gutter-l: max(16px, env(safe-area-inset-left, 0px));
@@ -40,14 +42,14 @@
   :root:not([data-theme="light"]) {
     --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA;
     --muted: #A19D92; --rule: #34322D; --accent: #C9DB5A;
-    --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B; --violet: #C3A6F2; --rose: #F29AB4;
+    --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B; --violet: #C3A6F2; --rose: #F29AB4; --mine: #8FB4F5;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA;
   --muted: #A19D92; --rule: #34322D; --accent: #C9DB5A;
-  --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B; --violet: #C3A6F2; --rose: #F29AB4;
+  --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B; --violet: #C3A6F2; --rose: #F29AB4; --mine: #8FB4F5;
   color-scheme: dark;
 }
 
@@ -285,6 +287,92 @@ body::before {
   .role-side { flex-direction: row; flex-wrap: wrap; align-items: baseline; text-align: left; gap: 2px 14px; white-space: normal; }
 }
 
+/* Board and My Roles tabs */
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--rule); margin-top: -8px; }
+.tab {
+  background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 10px 14px; min-height: 44px;
+  cursor: pointer; font: 600 15px var(--sans); color: var(--muted);
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.tab-n { font: 500 12px var(--mono); color: var(--muted); margin-left: 4px; }
+
+/* Cards in My Roles, and great matches */
+.role.role-mine { border-color: var(--mine); border-width: 2px; padding: 11px 13px; }
+.tags .tag-mine { background: var(--mine); color: var(--bg); border-color: var(--mine); }
+.role.role-great { box-shadow: inset 5px 0 0 var(--accent); padding-left: 19px; }
+.role.role-great.role-mine { padding-left: 18px; }
+.tags .tag-great { color: var(--accent); border-color: var(--accent); font-weight: 600; cursor: help; position: relative; z-index: 1; }
+.role-more {
+  position: absolute; top: 6px; right: 6px; z-index: 2; opacity: 0;
+  background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px;
+  width: 34px; height: 30px; line-height: 1; font-size: 17px; cursor: pointer; padding: 0;
+}
+.role:hover .role-more, .role:focus-within .role-more, .role-more[aria-expanded="true"] { opacity: 1; }
+@media (hover: none) { .role-more { opacity: 1; } }
+.role { -webkit-touch-callout: none; }
+.role .role-side { padding-right: 34px; }
+@media (max-width: 760px) { .role .role-side { padding-right: 0; } .role h3 { padding-right: 38px; } }
+
+/* Card menu: replaces the browser's menu on a card */
+.menu {
+  position: fixed; z-index: 30; min-width: 230px; max-width: calc(100vw - 16px); max-height: calc(100vh - 16px); overflow-y: auto;
+  background: var(--card); color: var(--ink); border: 1px solid var(--ink); border-radius: 10px; padding: 6px;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.25); display: flex; flex-direction: column;
+}
+.menu button {
+  background: none; border: 0; border-radius: 6px; text-align: left; padding: 8px 10px; min-height: 38px; cursor: pointer;
+  font: 500 14px var(--sans); color: var(--ink); display: flex; gap: 8px; align-items: center;
+}
+.menu button:hover, .menu button:focus-visible { background: var(--surface); outline: none; }
+.menu button[aria-checked="true"]::before { content: "\2713"; }
+.menu button[role="menuitemradio"]:not([aria-checked="true"])::before { content: ""; width: 0.75em; }
+.menu-head { font: 500 11px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 8px 10px 2px; }
+.menu hr { border: 0; border-top: 1px solid var(--rule); margin: 4px 0; }
+
+/* "Applied to ...?" when the board tab regains focus: never blocks the page */
+.apply-bar {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 20;
+  width: min(640px, calc(100% - 24px)); background: var(--ink); color: var(--bg); border-radius: 12px; padding: 10px 12px 10px 16px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; box-shadow: 0 8px 28px rgb(0 0 0 / 0.3); font-size: 14.5px;
+}
+.apply-bar p { flex: 1 1 260px; min-width: 0; overflow-wrap: anywhere; }
+.apply-bar .btn { color: var(--bg); border-color: var(--bg); min-height: 38px; }
+.apply-bar .btn-primary { background: var(--bg); color: var(--ink); }
+.apply-bar:not([hidden]) + .toast { bottom: calc(max(12px, env(safe-area-inset-bottom, 0px)) + 120px); }
+
+/* My Roles view */
+.mine-view { display: flex; flex-direction: column; gap: 14px; }
+.mine-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mine-head h2 { font-size: 22px; letter-spacing: -0.01em; flex: 1 1 200px; }
+.mine-note { color: var(--soft); font-size: 14px; max-width: 72ch; }
+.mine-note.warn { color: var(--rust); }
+.mine-list { display: flex; flex-direction: column; gap: 8px; }
+.mine-row {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 12px; align-items: start;
+  background: var(--card); border: 2px solid var(--mine); border-radius: 10px; padding: 12px 14px 12px 10px;
+}
+.mine-row.gone { border-style: dashed; }
+.mine-row.dragging { opacity: 0.5; }
+.mine-row.drop-before { box-shadow: 0 -3px 0 var(--ink); }
+.mine-order { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.mine-order .btn { min-height: 32px; width: 34px; padding: 0; }
+.grip { cursor: grab; color: var(--muted); font-size: 16px; line-height: 1; padding: 4px; user-select: none; }
+.mine-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.mine-main h3 { font-size: 16px; line-height: 1.3; overflow-wrap: anywhere; }
+.mine-main h3 a { text-decoration: none; }
+.mine-meta { font-size: 13.5px; color: var(--muted); overflow-wrap: anywhere; }
+.mine-gone { font-size: 13px; color: var(--rust); }
+.mine-fields { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: flex-end; }
+.mine-fields label { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--muted); }
+.mine-fields .select, .mine-fields .input { min-height: 38px; padding-block: 5px; font-size: 14px; width: auto; }
+.mine-notes { width: 100%; min-height: 60px; resize: vertical; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 14px; }
+.mine-foot { align-items: center; justify-content: space-between; }
+.mine-history { font-size: 13px; color: var(--muted); }
+.mine-history summary { cursor: pointer; width: fit-content; }
+.mine-history li { padding-left: 2px; }
+.mine-empty { padding: 26px; border: 1px dashed var(--rule); border-radius: 10px; color: var(--muted); text-align: center; }
+
 /* Persona: an invitation, then a "Persona in use" bar */
 .persona { background: var(--surface); border: 1px solid transparent; border-radius: 10px; padding: 12px 14px; }
 .persona.persona-active { background: var(--card); border-color: var(--ink); }
@@ -295,6 +383,8 @@ body::before {
 .persona-status { flex-basis: 100%; padding: 0; }
 .persona-status:empty { display: none; }
 .why { font-size: 13.5px; color: var(--ink); overflow-wrap: anywhere; }
+.great-only[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.persona-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .why-label { color: var(--muted); }
 
 .more { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 4px; }
@@ -353,7 +443,34 @@ body::before {
 
   <p class="banner" id="dev-banner" hidden>Development build. It includes companies and role types that are not listed on the public board. Do not publish this build.</p>
 
-  <div class="layout">
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button type="button" class="tab" role="tab" id="tab-board" aria-controls="board-view" aria-selected="true">Board</button>
+    <button type="button" class="tab" role="tab" id="tab-mine" aria-controls="mine-view" aria-selected="false" tabindex="-1">My Roles <span class="tab-n" id="mine-n">0</span></button>
+  </div>
+
+  <section class="mine-view" id="mine-view" role="tabpanel" aria-labelledby="tab-mine" hidden>
+    <div class="mine-head">
+      <h2>My Roles</h2>
+      <span class="sort"><label class="mono" for="mine-sort">Order</label>
+      <select class="select" id="mine-sort">
+        <option value="mine">My order</option>
+        <option value="status">Status</option>
+        <option value="applied">Applied date, newest first</option>
+        <option value="company">Company A to Z</option>
+      </select></span>
+    </div>
+    <p class="mine-note" id="mine-note">Kept in this browser only; export to keep a copy. Nothing here is sent anywhere or put in the page address.</p>
+    <div class="persona-actions">
+      <button type="button" class="btn" id="mine-export">Export My Roles</button>
+      <button type="button" class="btn" id="mine-import">Import</button>
+      <input type="file" id="mine-file" class="sr-only" tabindex="-1" aria-hidden="true" accept=".yml,.yaml,.txt,.json,text/yaml,text/plain,application/json">
+    </div>
+    <p class="hint persona-status" id="mine-status" role="status" aria-live="polite"></p>
+    <ol class="mine-list" id="mine-list" aria-label="My Roles, in your order"></ol>
+    <p class="mine-empty" id="mine-empty">No roles yet. On the board, right-click a role, long-press it, or use its ⋯ button, and choose Mark as applied or Save for later.</p>
+  </section>
+
+  <div class="layout" id="board-view" role="tabpanel" aria-labelledby="tab-board">
     <aside class="sidebar" id="sidebar" aria-labelledby="sidebar-title">
       <h2 class="mono" id="sidebar-title">Filters</h2>
       <form class="filters" id="filters" autocomplete="off">
@@ -370,6 +487,15 @@ body::before {
               <span class="opt-label">Pay stated</span>
             </label>
             <p class="hint" id="pay-hint">Pay appears only when the employer published it. A minimum keeps roles whose published range reaches that figure and hides roles with no published pay.</p>
+          </div>
+        </details>
+        <details class="facet" id="facet-mine" open hidden>
+          <summary><span class="mono">My Roles</span> <span class="facet-n" id="facet-n-mine" hidden></span></summary>
+          <div class="options">
+            <label class="opt" for="f-hide-mine">
+              <input type="checkbox" id="f-hide-mine">
+              <span class="opt-label">Hide roles in My Roles</span>
+            </label>
           </div>
         </details>
       </form>
@@ -394,7 +520,10 @@ body::before {
             <p class="persona-desc" id="persona-desc"></p>
             <p class="hint" id="persona-note"></p>
           </div>
-          <button type="button" class="btn" id="persona-stop">Stop using it</button>
+          <div class="persona-actions">
+            <button type="button" class="btn great-only" id="great-only" aria-pressed="false">Great matches only</button>
+            <button type="button" class="btn" id="persona-stop">Stop using it</button>
+          </div>
         </div>
       </section>
 
@@ -434,6 +563,7 @@ body::before {
         <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
         <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. A role in a discipline next to one of yours, such as test next to controls, earns part of the discipline points; a technical role in a discipline far from all of yours, such as cloud software for a controls engineer, earns none and only half the points for kind of work. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Remote means remote in the US: a role whose only places are in other countries gains nothing for place. A persona for non-technical work, such as supply chain, needs no discipline; then discipline counts the same for every role. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies you left out are hidden, and so are companies whose only sectors are ones you left out; a company that also works in other sectors stays, 6 points down. A role whose published pay tops out a little under your minimum (within 10%) stays, 5 points down; further under, it is hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
+        <p><strong>My Roles keeps the roles you mark, on this device only.</strong> Right-click a role, long-press it, or use its ⋯ button to mark it applied or save it, then set its status by hand in My Roles, in your own order, with private notes. It is kept in this browser and nowhere else: never sent anywhere, never put in the page address. Export it to keep a copy or to move it to another browser. <strong>Great match</strong> marks, while your persona is in use, the best-fitting roles among those shown: its top 2%, at most 30, each scoring 70 or more.</p>
         <p id="provisional-note"><strong>The company screen is provisional.</strong> The climate tier and reason shown for each company are a first pass. They have not yet been checked against the company's own site or approved.</p>
         <p class="mono" id="run-note"></p>
       </div>
@@ -465,6 +595,14 @@ body::before {
     </div>
   </div>
 </dialog>
+
+<div class="menu" id="card-menu" role="menu" aria-label="Role actions" hidden></div>
+<div class="apply-bar" id="apply-bar" role="region" aria-label="Did you apply?" hidden>
+  <p id="apply-text" aria-live="polite"></p>
+  <button type="button" class="btn btn-primary" id="apply-yes">Yes, add to My Roles</button>
+  <button type="button" class="btn" id="apply-no">No</button>
+</div>
+<div class="apply-bar toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script id="hipot-rank">
 /* Ranking roles for a candidate's persona (Milestone 2). Plain rules, no model: it ranks roles for a
@@ -741,7 +879,202 @@ var HiPotRank = (function () {
     return bits.join(' · ');
   }
 
-  return { WEIGHTS: WEIGHTS, PAY_UNPUBLISHED: PAY_UNPUBLISHED, normalize: normalize, forTab: forTab, match: match, rank: rank, describe: describe };
+  // Great matches among the roles shown (decision 18): the persona's top 2% of them, at most 30,
+  // each scoring at least 70. Relative, because absolute scores run lower for some personas. The
+  // order of `roles` does not matter; ties keep it. Returns their ids.
+  var GREAT_SHARE = 0.02, GREAT_MAX = 30, GREAT_MIN_SCORE = 70;
+  function great(roles) {
+    var ranked = rank(roles);
+    var take = Math.min(GREAT_MAX, Math.max(1, Math.floor(ranked.length * GREAT_SHARE)));
+    return ranked.slice(0, take).filter(function (role) { return role.match.score >= GREAT_MIN_SCORE; })
+      .map(function (role) { return role.id; });
+  }
+
+  return { WEIGHTS: WEIGHTS, PAY_UNPUBLISHED: PAY_UNPUBLISHED, normalize: normalize, forTab: forTab, match: match, rank: rank, describe: describe,
+           great: great, GREAT_SHARE: GREAT_SHARE, GREAT_MAX: GREAT_MAX, GREAT_MIN_SCORE: GREAT_MIN_SCORE };
+})();
+</script>
+
+<script id="my-roles">
+/* My Roles (decision 18): the roles a candidate marks, with statuses set by hand, in the candidate's own
+   order. Pure functions over plain data, so the tests run them as they are; the page keeps the list in
+   localStorage under one key and nowhere else. Lists are never changed in place: every function returns
+   a new list. Dates are YYYY-MM-DD strings in the candidate's own time zone, passed in as `today`. */
+var MyRoles = (function () {
+  'use strict';
+
+  var KEY = 'hipot-my-roles';
+  var VERSION = 0;
+  var STATUSES = [
+    { id: 'saved', label: 'Saved' }, { id: 'applied', label: 'Applied' }, { id: 'recruiter-screen', label: 'Recruiter screen' },
+    { id: 'interviewing', label: 'Interviewing' }, { id: 'offer', label: 'Offer' }, { id: 'accepted', label: 'Accepted' },
+    { id: 'rejected', label: 'Rejected' }, { id: 'withdrawn', label: 'Withdrawn' }, { id: 'no-response', label: 'No response' }
+  ];
+  var IDS = STATUSES.map(function (s) { return s.id; });
+  var DATE = /^\d{4}-\d{2}-\d{2}$/;
+  var MAX_ROLES = 1000, MAX_HISTORY = 100, MAX_NOTES = 5000;
+
+  function label(status) { var i = IDS.indexOf(status); return i === -1 ? status : STATUSES[i].label; }
+  function text(value, max) { return typeof value === 'string' ? value.slice(0, max) : ''; }
+  function date(value) { return typeof value === 'string' && DATE.test(value) ? value : null; }
+  function https(url) { return typeof url === 'string' && /^https:\/\//i.test(url) ? url.slice(0, 2000) : ''; }
+  function num(value) { return typeof value === 'number' && isFinite(value) && value >= 0 ? value : null; }
+
+  function cleanPay(pay) {
+    if (!pay || typeof pay !== 'object') return null;
+    var min = num(pay.min), max = num(pay.max);
+    if (min === null || max === null || typeof pay.cur !== 'string' || (pay.per !== 'year' && pay.per !== 'hour')) return null;
+    return { min: min, max: max, cur: pay.cur.slice(0, 3), per: pay.per };
+  }
+
+  // One entry, with only the fields My Roles keeps. Throws if it has no id.
+  function cleanEntry(e) {
+    if (!e || typeof e !== 'object' || typeof e.id !== 'string' || !e.id.trim()) throw new Error('an entry has no role id');
+    var status = IDS.indexOf(e.status) === -1 ? 'saved' : e.status;
+    var history = (Array.isArray(e.history) ? e.history : []).filter(function (h) {
+      return h && IDS.indexOf(h.status) !== -1 && date(h.on);
+    }).map(function (h) { return { status: h.status, on: h.on }; }).slice(-MAX_HISTORY);
+    var added = date(e.added_on) || (history[0] && history[0].on) || null;
+    if (!history.length && added) history = [{ status: status, on: added }];
+    return {
+      id: e.id.trim().slice(0, 200), title: text(e.title, 300), company: text(e.company, 200), place: text(e.place, 200),
+      pay: cleanPay(e.pay), url: https(e.url), status: status, history: history, applied_on: date(e.applied_on),
+      notes: text(e.notes, MAX_NOTES), added_on: added, last_listed: date(e.last_listed)
+    };
+  }
+
+  // A stored or imported My Roles file, as a list. Throws if it is not one.
+  function fromData(data) {
+    if (Array.isArray(data)) data = { my_roles_version: VERSION, roles: data };
+    if (!data || typeof data !== 'object' || data.my_roles_version !== VERSION || !Array.isArray(data.roles)) {
+      throw new Error('this is not a HiPot My Roles file (my_roles_version 0)');
+    }
+    var seen = {}, list = [];
+    data.roles.slice(0, MAX_ROLES).forEach(function (e) {
+      var entry = cleanEntry(e);
+      if (!seen[entry.id]) { seen[entry.id] = true; list.push(entry); }
+    });
+    return list;
+  }
+
+  function toData(list) { return { my_roles_version: VERSION, roles: list.map(cleanEntry) }; }
+  function parse(json) { return json ? fromData(JSON.parse(json)) : []; }
+  function serialize(list) { return JSON.stringify(toData(list)); }
+
+  function find(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
+  function byId(list) { var map = {}; list.forEach(function (e) { map[e.id] = e; }); return map; }
+
+  // What is copied from the board when a role is marked, so the entry outlives the posting.
+  function snapshot(role, companyName, place, today) {
+    return { id: role.id, title: role.title, company: companyName, place: place, pay: role.pay || null, url: role.url, last_listed: today };
+  }
+
+  // Add a role (from snapshot()), or set the status of one already there. A new entry goes to the end of the
+  // candidate's order. Anything but Saved sets the applied date, if none yet.
+  function add(list, snap, status, today) {
+    status = IDS.indexOf(status) === -1 ? 'applied' : status;
+    if (find(list, snap.id)) return setStatus(list, snap.id, status, today);
+    var entry = cleanEntry({
+      id: snap.id, title: snap.title, company: snap.company, place: snap.place, pay: snap.pay, url: snap.url,
+      status: status, history: [{ status: status, on: today }], applied_on: status === 'saved' ? null : today,
+      added_on: today, last_listed: snap.last_listed || today
+    });
+    return list.concat([entry]);
+  }
+
+  function update(list, id, change) {
+    return list.map(function (e) { if (e.id !== id) return e; var next = cleanEntry(e); change(next); return next; });
+  }
+
+  function setStatus(list, id, status, today) {
+    if (IDS.indexOf(status) === -1) throw new Error('unknown status ' + status);
+    return update(list, id, function (e) {
+      if (e.status === status) return;
+      e.status = status;
+      e.history = e.history.concat([{ status: status, on: today }]).slice(-MAX_HISTORY);
+      if (status !== 'saved' && !e.applied_on) e.applied_on = today;
+    });
+  }
+
+  function setNotes(list, id, notes) { return update(list, id, function (e) { e.notes = text(notes, MAX_NOTES); }); }
+  function setAppliedOn(list, id, on) { return update(list, id, function (e) { e.applied_on = date(on); }); }
+  function remove(list, id) { return list.filter(function (e) { return e.id !== id; }); }
+
+  // The candidate's order: move one entry to a position (drag), or one step up or down (buttons).
+  function moveTo(list, id, index) {
+    var from = -1;
+    list.forEach(function (e, i) { if (e.id === id) from = i; });
+    if (from === -1) return list;
+    var next = list.slice(), item = next.splice(from, 1)[0];
+    next.splice(Math.max(0, Math.min(index, next.length)), 0, item);
+    return next;
+  }
+  function move(list, id, delta) {
+    var at = -1;
+    list.forEach(function (e, i) { if (e.id === id) at = i; });
+    return at === -1 ? list : moveTo(list, id, at + delta);
+  }
+
+  // The board's roles are known: record when each entry was last listed. Returns the same list when nothing changed.
+  function markListed(list, listedIds, today) {
+    var changed = false;
+    var next = list.map(function (e) {
+      if (!listedIds[e.id] || e.last_listed === today) return e;
+      changed = true;
+      var copy = cleanEntry(e); copy.last_listed = today; return copy;
+    });
+    return changed ? next : list;
+  }
+
+  function lastChange(e) { return e.history.length ? e.history[e.history.length - 1].on : e.added_on; }
+
+  function daysSince(e, today) {
+    var from = lastChange(e);
+    if (!from || !date(today)) return null;
+    return Math.round((Date.parse(today + 'T00:00:00Z') - Date.parse(from + 'T00:00:00Z')) / 86400000);
+  }
+
+  // Display orders. 'mine' is the candidate's own; the others leave it untouched.
+  function sorted(list, by) {
+    var copy = list.map(function (e, i) { return [e, i]; });
+    var key = {
+      status: function (e) { return IDS.indexOf(e.status); },
+      applied: function (e) { return e.applied_on ? -Date.parse(e.applied_on + 'T00:00:00Z') : Infinity; },
+      company: function (e) { return e.company.toLowerCase(); }
+    }[by];
+    if (!key) return list.slice();
+    return copy.sort(function (a, b) {
+      var ka = key(a[0]), kb = key(b[0]);
+      return (ka < kb ? -1 : ka > kb ? 1 : 0) || (a[1] - b[1]);
+    }).map(function (pair) { return pair[0]; });
+  }
+
+  // A file to keep: plain data, written as YAML by the page.
+  function exportData(list, today) {
+    var data = toData(list);
+    return { my_roles_version: VERSION, exported_on: today, roles: data.roles };
+  }
+
+  // Merge an imported file into the list. An entry already here is replaced when the file's copy changed
+  // later (or on the same day); new entries go to the end, in the file's order.
+  function importData(data, list) {
+    var incoming = fromData(data), next = list.slice(), added = 0, updated = 0, kept = 0;
+    incoming.forEach(function (entry) {
+      var at = -1;
+      next.forEach(function (e, i) { if (e.id === entry.id) at = i; });
+      if (at === -1) { next.push(entry); added += 1; }
+      else if ((lastChange(entry) || '') >= (lastChange(next[at]) || '')) { next[at] = entry; updated += 1; }
+      else kept += 1;
+    });
+    return { list: next, added: added, updated: updated, kept: kept };
+  }
+
+  return {
+    KEY: KEY, VERSION: VERSION, STATUSES: STATUSES, label: label, parse: parse, serialize: serialize, fromData: fromData,
+    snapshot: snapshot, add: add, setStatus: setStatus, setNotes: setNotes, setAppliedOn: setAppliedOn, remove: remove,
+    move: move, moveTo: moveTo, markListed: markListed, daysSince: daysSince, lastChange: lastChange, sorted: sorted,
+    find: find, byId: byId, exportData: exportData, importData: importData
+  };
 })();
 </script>
 
@@ -792,12 +1125,22 @@ var HiPotRank = (function () {
   var groupCounts = {};     // company id -> matching roles, in the company sort
   var lastHash = null;
   var searchTimer = 0;
+  var roleById = {};        // role id -> role, for My Roles and the card menu
+  var mine = [];            // My Roles entries, in the candidate's own order (MyRoles); never in the address
+  var mineById = {};
+  var mineStorage = 'ok';   // 'ok', 'blocked' (this tab only) or 'unreadable'
+  var mineSort = 'mine';
+  var greatIds = null;      // ids of the great matches among the roles shown, while a persona is in use
+  var cardNodes = {};       // role id -> its card in the list, to redraw one card in place
+  var MINE_KEY = MyRoles.KEY;   // localStorage: the only key this page keeps beyond the tab
+  var APPLY_WINDOW_MS = 30 * 60 * 1000, APPLY_BAR_MS = 45 * 1000;
 
   function $(id) { return document.getElementById(id); }
 
   // No search, no filters, newest first. One empty set per checkbox group in FACETS.
   function emptyState() {
-    var fresh = { q: '', pay: 0, paid: false, c: '', sort: 'new' };
+    // hideMine and great are kept out of the address on purpose: nothing about My Roles or the persona goes there.
+    var fresh = { q: '', pay: 0, paid: false, c: '', sort: 'new', hideMine: false, great: false };
     FACETS.forEach(function (facet) { fresh[facet.key] = new Set(); });
     return fresh;
   }
@@ -978,6 +1321,475 @@ var HiPotRank = (function () {
     });
   }
 
+  // ---- My Roles (decision 18) -------------------------------------------------------------------
+  //
+  // Kept in localStorage under one key, MINE_KEY, on this device only: never in the address, never sent
+  // anywhere. Every access is wrapped: where storage is blocked, My Roles lasts for the tab and says so.
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  function localDay(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return today();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  function loadMine() {
+    var text = null;
+    try { text = localStorage.getItem(MINE_KEY); } catch (error) { mineStorage = 'blocked'; }
+    try { mine = MyRoles.parse(text); } catch (error) { mine = []; mineStorage = 'unreadable'; }
+    mineById = MyRoles.byId(mine);
+  }
+
+  function saveMine() {
+    try {
+      localStorage.setItem(MINE_KEY, MyRoles.serialize(mine));
+      mineStorage = 'ok';
+    } catch (error) {
+      mineStorage = 'blocked';
+    }
+  }
+
+  // Change My Roles: keep it, and redraw what shows it. `options.render` false skips the My Roles view (typing
+  // notes); `options.save` false does not write (page load, when nothing changed).
+  function setMine(next, options) {
+    var before = mineById;
+    mine = next;
+    mineById = MyRoles.byId(mine);
+    if (!options || options.save !== false) saveMine();
+    renderMineNote();
+    $('mine-n').textContent = String(mine.length);
+    $('facet-mine').hidden = mine.length === 0 && !state.hideMine;
+    if (!options || options.render !== false) renderMine();
+    if (state.hideMine) { update(); return; }
+    // Redraw only the cards whose entry changed, in place, so the list keeps its place.
+    Object.keys(cardNodes).forEach(function (id) {
+      if (before[id] !== mineById[id]) redrawCard(id);
+    });
+  }
+
+  function redrawCard(id) {
+    var old = cardNodes[id], role = roleById[id];
+    if (!old || !role || !old.parentNode) return null;
+    var node = roleNode(role, state.sort === 'co');
+    old.parentNode.replaceChild(node, old);
+    cardNodes[id] = node;
+    return node;
+  }
+
+  function renderMineNote() {
+    var note = $('mine-note');
+    note.classList.toggle('warn', mineStorage !== 'ok');
+    note.textContent = mineStorage === 'blocked'
+      ? 'This browser is not letting the page keep anything, so My Roles lasts only while this tab is open. Export to keep a copy.'
+      : mineStorage === 'unreadable'
+        ? 'The My Roles kept in this browser could not be read. A change now replaces it; import an exported copy if you have one.'
+        : 'Kept in this browser only; export to keep a copy. Nothing here is sent anywhere or put in the page address.';
+  }
+
+  function placeOf(role) { return whereText(role); }
+
+  function markRole(role, status) {
+    var had = mineById[role.id];
+    setMine(MyRoles.add(mine, MyRoles.snapshot(role, role.company.name, placeOf(role), localDay(board.generated_at)), status, today()));
+    toast((had ? 'Status set to ' + MyRoles.label(status) : status === 'saved' ? 'Saved to My Roles' : 'Added to My Roles as ' + MyRoles.label(status)) + ': ' + role.title);
+  }
+
+  function removeFromMine(id) {
+    var previous = mine, entry = mineById[id];
+    if (!entry) return;
+    setMine(MyRoles.remove(mine, id));
+    toast('Removed ' + entry.title + ' from My Roles.', 'Undo', function () { setMine(previous); });
+  }
+
+  // ---- A short message, with an optional action (Undo); it never takes the focus --------------------
+
+  var toastTimer = 0;
+  function toast(message, actionText, action) {
+    var box = $('toast');
+    var children = [el('p', { text: message })];
+    if (actionText) {
+      var button = el('button', { type: 'button', class: 'btn', text: actionText });
+      button.addEventListener('click', function () { box.hidden = true; action(); });
+      children.push(button);
+    }
+    setChildren(box, children);
+    box.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { box.hidden = true; }, actionText ? 10000 : 4000);
+  }
+
+  // ---- The card menu: right-click, long-press or the card's ⋯ button ------------------------------
+
+  var menuFor = null;
+
+  function openPosting(role) {
+    if (!isHttps(role.url)) return;
+    noteOpened(role);
+    window.open(role.url, '_blank', 'noopener,noreferrer');
+  }
+
+  function copyLink(url) {
+    var done = function () { toast('Posting link copied.'); };
+    var fail = function () { toast('Copying is blocked here. The link: ' + url); };
+    try { navigator.clipboard.writeText(url).then(done, fail); } catch (error) { fail(); }
+  }
+
+  function openMenu(role, trigger, point) {
+    closeMenu(false);
+    var menu = $('card-menu'), items = [];
+    function item(text, action, extra) {
+      var props = { type: 'button', role: 'menuitem', tabindex: '-1', text: text };
+      Object.keys(extra || {}).forEach(function (key) { props[key] = extra[key]; });
+      var button = el('button', props);
+      button.addEventListener('click', function () { closeMenu(false); action(); restoreFocus(role.id, trigger); });
+      items.push(button);
+    }
+    if (isHttps(role.url)) {
+      item('Open posting in a new tab', function () { openPosting(role); });
+      item('Copy posting link', function () { copyLink(role.url); });
+      items.push(el('hr'));
+    }
+    var entry = mineById[role.id];
+    if (!entry) {
+      item('Mark as applied', function () { markRole(role, 'applied'); });
+      item('Save for later', function () { markRole(role, 'saved'); });
+    } else {
+      items.push(el('p', { class: 'menu-head', text: 'Status in My Roles' }));
+      MyRoles.STATUSES.forEach(function (status) {
+        item(status.label, function () { markRole(role, status.id); },
+             { role: 'menuitemradio', 'aria-checked': entry.status === status.id ? 'true' : 'false' });
+      });
+      items.push(el('hr'));
+      item('Remove from My Roles', function () { removeFromMine(role.id); });
+    }
+    setChildren(menu, items);
+    menu.setAttribute('aria-label', 'Actions for ' + role.title);
+    menu.hidden = false;
+    var width = menu.offsetWidth, height = menu.offsetHeight, x, y;
+    if (point) { x = point.x; y = point.y; }
+    else { var box = trigger.getBoundingClientRect(); x = box.right - width; y = box.bottom + 4; if (y + height > innerHeight - 8) y = box.top - height - 4; }
+    menu.style.left = Math.max(8, Math.min(x, innerWidth - width - 8)) + 'px';
+    menu.style.top = Math.max(8, Math.min(y, innerHeight - height - 8)) + 'px';
+    menuFor = { role: role, trigger: trigger };
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    var first = menu.querySelector('button');
+    if (first) first.focus();
+  }
+
+  function closeMenu(returnFocus) {
+    var menu = $('card-menu');
+    if (menu.hidden) return;
+    menu.hidden = true;
+    var was = menuFor;
+    menuFor = null;
+    if (was && was.trigger) was.trigger.setAttribute('aria-expanded', 'false');
+    if (was && returnFocus) restoreFocus(was.role.id, was.trigger);
+  }
+
+  // After the menu, put the keyboard back on the card's ⋯ button (the card may have been redrawn).
+  function restoreFocus(id, trigger) {
+    var node = cardNodes[id];
+    var target = trigger && trigger.isConnected ? trigger : node && node.querySelector('.role-more');
+    if (target) target.focus();
+  }
+
+  function menuKeys(event) {
+    var buttons = Array.prototype.slice.call($('card-menu').querySelectorAll('button'));
+    var at = buttons.indexOf(document.activeElement);
+    if (event.key === 'Escape') { event.preventDefault(); closeMenu(true); }
+    else if (event.key === 'Tab') { closeMenu(true); event.preventDefault(); }
+    else if (event.key === 'ArrowDown') { event.preventDefault(); buttons[(at + 1) % buttons.length].focus(); }
+    else if (event.key === 'ArrowUp') { event.preventDefault(); buttons[(at - 1 + buttons.length) % buttons.length].focus(); }
+    else if (event.key === 'Home') { event.preventDefault(); buttons[0].focus(); }
+    else if (event.key === 'End') { event.preventDefault(); buttons[buttons.length - 1].focus(); }
+  }
+
+  var LONG_PRESS_MS = 550;
+  function wireCard(card, role, link, more) {
+    more.addEventListener('click', function (event) {
+      event.stopPropagation();
+      if (menuFor && menuFor.trigger === more) closeMenu(true); else openMenu(role, more, null);
+    });
+    // Right-click: the card menu, which repeats the link entries it replaces. Shift+right-click keeps the browser's own.
+    card.addEventListener('contextmenu', function (event) {
+      if (event.shiftKey) return;
+      event.preventDefault();
+      if (!(menuFor && menuFor.role === role)) openMenu(role, null, { x: event.clientX, y: event.clientY });
+    });
+    // Long-press for touch screens that do not raise a context menu (Safari on iPhone).
+    var timer = 0, start = null, pressed = 0;
+    card.addEventListener('touchstart', function (event) {
+      if (event.touches.length !== 1) return;
+      var touch = event.touches[0];
+      start = { x: touch.clientX, y: touch.clientY };
+      timer = setTimeout(function () { pressed = Date.now(); openMenu(role, null, start); }, LONG_PRESS_MS);
+    }, { passive: true });
+    card.addEventListener('touchmove', function (event) {
+      var touch = event.touches[0];
+      if (start && (Math.abs(touch.clientX - start.x) > 10 || Math.abs(touch.clientY - start.y) > 10)) clearTimeout(timer);
+    }, { passive: true });
+    card.addEventListener('touchend', function () { clearTimeout(timer); });
+    card.addEventListener('touchcancel', function () { clearTimeout(timer); });
+    if (link) {
+      link.addEventListener('click', function (event) {
+        if (Date.now() - pressed < 800) { event.preventDefault(); return; }   // the long-press opened the menu
+        noteOpened(role);
+      });
+      link.addEventListener('auxclick', function (event) { if (event.button === 1) noteOpened(role); });
+    }
+  }
+
+  // ---- "Applied to ...?" when the board tab comes back within 30 minutes of opening a role ---------
+
+  var lastOpened = null, asked = {}, applyTimer = 0, applyRole = null;
+
+  function noteOpened(role) { lastOpened = { id: role.id, at: Date.now() }; }
+
+  function onReturn() {
+    if (document.visibilityState === 'hidden' || !lastOpened) return;
+    var opened = lastOpened, role = roleById[opened.id], entry = mineById[opened.id];
+    lastOpened = null;
+    if (!role || Date.now() - opened.at > APPLY_WINDOW_MS || asked[opened.id]) return;
+    if (entry && entry.status !== 'saved') return;   // already marked as applied or further
+    asked[opened.id] = true;
+    applyRole = role;
+    $('apply-text').textContent = 'Applied to ' + role.title + ' at ' + role.company.name + '?';
+    $('apply-bar').hidden = false;
+    clearTimeout(applyTimer);
+    applyTimer = setTimeout(hideApplyBar, APPLY_BAR_MS);
+  }
+
+  function hideApplyBar() { $('apply-bar').hidden = true; applyRole = null; clearTimeout(applyTimer); }
+
+  // ---- The My Roles view ------------------------------------------------------------------------
+
+  var dragId = null;
+
+  function showView(which) {
+    var mineOn = which === 'mine';
+    $('board-view').hidden = mineOn;
+    $('mine-view').hidden = !mineOn;
+    $('tab-board').setAttribute('aria-selected', String(!mineOn));
+    $('tab-mine').setAttribute('aria-selected', String(mineOn));
+    $('tab-board').tabIndex = mineOn ? -1 : 0;
+    $('tab-mine').tabIndex = mineOn ? 0 : -1;
+    closeMenu(false);
+    if (mineOn) renderMine();
+  }
+
+  function payText(pay) {
+    if (!pay) return '';
+    var parts = payParts(pay);
+    return parts[0] + ' ' + parts[1];
+  }
+
+  function renderMine() {
+    if ($('mine-view').hidden) return;
+    var host = $('mine-list');
+    var focused = document.activeElement && host.contains(document.activeElement) ? document.activeElement.id : null;
+    var order = MyRoles.sorted(mine, mineSort), now = today(), byHand = mineSort === 'mine';
+    host.replaceChildren();
+    order.forEach(function (entry, i) {
+      host.appendChild(mineRow(entry, i, order.length, now, byHand));
+    });
+    $('mine-empty').hidden = mine.length > 0;
+    $('mine-export').disabled = mine.length === 0;
+    if (focused && $(focused)) $(focused).focus();
+  }
+
+  function mineRow(entry, i, count, now, byHand) {
+    var role = roleById[entry.id], key = 'mine-' + i;
+    var heading = el('h3', null, [role && entry.url ? outLink(entry.url, entry.title, ' at ' + entry.company + ' (opens the posting in a new tab)') : el('span', { text: entry.title || entry.id })]);
+    var meta = [entry.company, entry.place, payText(entry.pay)].filter(Boolean).join(' · ');
+
+    var status = el('select', { class: 'select', id: key + '-status' });
+    MyRoles.STATUSES.forEach(function (s) { status.appendChild(el('option', { value: s.id, text: s.label })); });
+    status.value = entry.status;
+    status.addEventListener('change', function () { setMine(MyRoles.setStatus(mine, entry.id, status.value, today())); });
+
+    var applied = el('input', { class: 'input', type: 'date', id: key + '-applied', value: entry.applied_on || '', max: now });
+    applied.addEventListener('change', function () { setMine(MyRoles.setAppliedOn(mine, entry.id, applied.value)); });
+
+    var notes = el('textarea', { class: 'mine-notes', id: key + '-notes', maxlength: '5000', placeholder: 'Private notes, kept in this browser' });
+    notes.value = entry.notes;
+    var notesTimer = 0;
+    notes.addEventListener('input', function () {
+      clearTimeout(notesTimer);
+      notesTimer = setTimeout(function () { setMine(MyRoles.setNotes(mine, entry.id, notes.value), { render: false }); }, 400);
+    });
+    notes.addEventListener('change', function () { clearTimeout(notesTimer); setMine(MyRoles.setNotes(mine, entry.id, notes.value), { render: false }); });
+
+    var days = MyRoles.daysSince(entry, now);
+    var since = days === null ? '' : days <= 0 ? 'Status changed today' : 'Status changed ' + plural(days, 'day', 'days') + ' ago';
+    var history = el('details', { class: 'mine-history' }, [
+      el('summary', { text: 'History (' + entry.history.length + ')' }),
+      el('ul', null, entry.history.slice().reverse().map(function (h) { return el('li', { text: formatDate(h.on) + ' · ' + MyRoles.label(h.status) }); }))
+    ]);
+
+    var remove = el('button', { type: 'button', class: 'btn btn-quiet', id: key + '-remove', text: 'Remove', 'aria-label': 'Remove ' + entry.title + ' from My Roles' });
+    remove.addEventListener('click', function () { removeFromMine(entry.id); });
+
+    var orderBox = null;
+    if (byHand) {
+      var up = el('button', { type: 'button', class: 'btn', id: key + '-up', text: '↑', 'aria-label': 'Move up: ' + entry.title, disabled: i === 0 });
+      var down = el('button', { type: 'button', class: 'btn', id: key + '-down', text: '↓', 'aria-label': 'Move down: ' + entry.title, disabled: i === count - 1 });
+      up.addEventListener('click', function () { setMine(MyRoles.move(mine, entry.id, -1)); focusAfterMove(i - 1, 'up'); });
+      down.addEventListener('click', function () { setMine(MyRoles.move(mine, entry.id, 1)); focusAfterMove(i + 1, 'down'); });
+      var grip = el('span', { class: 'grip', 'aria-hidden': 'true', title: 'Drag to reorder', text: '⠿' });
+      orderBox = el('div', { class: 'mine-order' }, [up, grip, down]);
+    } else {
+      orderBox = el('div', { class: 'mine-order' }, [el('span', { class: 'mine-meta', text: String(i + 1) })]);
+    }
+
+    var row = el('li', { class: 'mine-row' + (role ? '' : ' gone') }, [
+      orderBox,
+      el('div', { class: 'mine-main' }, [
+        heading,
+        meta ? el('p', { class: 'mine-meta', text: meta }) : null,
+        role ? null : el('p', { class: 'mine-gone', text: 'No longer listed' + (entry.last_listed ? ' (last seen ' + formatDate(entry.last_listed) + ')' : '') }),
+        el('div', { class: 'mine-fields' }, [
+          el('label', { for: key + '-status' }, ['Status', status]),
+          el('label', { for: key + '-applied' }, ['Applied on', applied]),
+          since ? el('span', { class: 'mine-meta', text: since }) : null
+        ]),
+        el('label', { class: 'sr-only', for: key + '-notes', text: 'Notes for ' + entry.title }),
+        notes,
+        el('div', { class: 'mine-fields mine-foot' }, [history, remove])
+      ])
+    ]);
+    if (byHand) wireDrag(row, entry.id, grip);
+    return row;
+  }
+
+  function focusAfterMove(index, which) {
+    // The row moved to `index`; at the top or bottom its button in that direction is disabled, so take the other.
+    var target = [$('mine-' + index + '-' + which), $('mine-' + index + '-' + (which === 'up' ? 'down' : 'up'))]
+      .filter(function (button) { return button && !button.disabled; })[0];
+    if (target) target.focus();
+  }
+
+  // Drag by the grip to reorder (mouse); the ↑ ↓ buttons do the same from the keyboard and on touch screens.
+  function wireDrag(row, id, grip) {
+    grip.addEventListener('mousedown', function () { row.draggable = true; });
+    row.addEventListener('dragstart', function (event) {
+      dragId = id;
+      row.classList.add('dragging');
+      try { event.dataTransfer.setData('text/plain', ''); event.dataTransfer.effectAllowed = 'move'; } catch (error) { /* older browsers */ }
+    });
+    row.addEventListener('dragend', function () {
+      row.draggable = false;
+      row.classList.remove('dragging');
+      dragId = null;
+      Array.prototype.forEach.call($('mine-list').children, function (r) { r.classList.remove('drop-before'); });
+    });
+    row.addEventListener('dragover', function (event) {
+      if (!dragId) return;
+      event.preventDefault();
+      Array.prototype.forEach.call($('mine-list').children, function (r) { r.classList.remove('drop-before'); });
+      row.classList.add('drop-before');
+    });
+    row.addEventListener('drop', function (event) {
+      if (!dragId) return;
+      event.preventDefault();
+      var from = -1, to = -1;
+      mine.forEach(function (e, i) { if (e.id === dragId) from = i; if (e.id === id) to = i; });
+      if (from === -1 || to === -1 || from === to) return;
+      setMine(MyRoles.moveTo(mine, dragId, from < to ? to - 1 : to));
+    });
+  }
+
+  // ---- Export and import: a YAML file the candidate keeps ---------------------------------------
+
+  var downloads = null;
+  function exportMine() {
+    loadYaml().then(function () {
+      var text = '# HiPot My Roles. Kept in your browser; import it on the board to restore it.\n' +
+        window.jsyaml.dump(MyRoles.exportData(mine, today()), { lineWidth: -1, noRefs: true, sortKeys: false });
+      if (downloads) {
+        // Artifact hosting saves only some file types, and .yml is not one of them.
+        return downloads.save({ filename: 'my-roles.yml.txt', data: text }).then(function () {
+          $('mine-status').textContent = 'Saved as my-roles.yml.txt.';
+        }, function (error) {
+          $('mine-status').textContent = error && error.code === 'declined' ? 'Not saved.' : 'This page cannot save files here.';
+        });
+      }
+      var url = window.URL.createObjectURL(new Blob([text], { type: 'text/yaml' }));
+      var link = el('a', { href: url, download: 'my-roles.yml' });
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(function () { window.URL.revokeObjectURL(url); }, 1000);
+      $('mine-status').textContent = 'Saved my-roles.yml to your downloads.';
+    }).catch(function (error) {
+      $('mine-status').textContent = 'Could not export: ' + (error && error.message || 'unknown error') + '.';
+    });
+  }
+
+  function importMine(file) {
+    if (file.size > 5000000) { $('mine-status').textContent = 'That file is too large to be My Roles.'; return; }
+    Promise.all([file.text(), loadYaml()]).then(function (results) {
+      var outcome = MyRoles.importData(window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }), mine);
+      setMine(outcome.list);
+      $('mine-status').textContent = 'Imported ' + file.name + ': ' + plural(outcome.added, 'role', 'roles') + ' added, ' +
+        outcome.updated + ' updated' + (outcome.kept ? ', ' + outcome.kept + ' kept as they were here (changed more recently in this browser)' : '') + '.';
+    }).catch(function (error) {
+      $('mine-status').textContent = 'Could not import that file: ' + (error && (error.reason || error.message) || 'unknown error') + '.';
+    });
+  }
+
+  function wireMine() {
+    var tabs = [$('tab-board'), $('tab-mine')];
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { showView(i === 1 ? 'mine' : 'board'); });
+      tab.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        var next = tabs[1 - i];
+        next.focus();
+        showView(next === tabs[1] ? 'mine' : 'board');
+      });
+    });
+    $('mine-sort').addEventListener('change', function () { mineSort = $('mine-sort').value; renderMine(); });
+    $('mine-export').addEventListener('click', exportMine);
+    $('mine-import').addEventListener('click', function () { $('mine-file').click(); });
+    $('mine-file').addEventListener('change', function () {
+      var file = $('mine-file').files[0];
+      $('mine-file').value = '';
+      if (file) importMine(file);
+    });
+    $('f-hide-mine').addEventListener('change', function () { state.hideMine = $('f-hide-mine').checked; update(); });
+    $('great-only').addEventListener('click', function () { state.great = !state.great; update(); });
+
+    $('card-menu').addEventListener('keydown', menuKeys);
+    document.addEventListener('mousedown', function (event) {
+      if (!$('card-menu').hidden && !$('card-menu').contains(event.target) && !(menuFor && event.target === menuFor.trigger)) closeMenu(false);
+    });
+    document.addEventListener('touchstart', function (event) {
+      if (!$('card-menu').hidden && !$('card-menu').contains(event.target)) closeMenu(false);
+    }, { passive: true });
+    window.addEventListener('resize', function () { closeMenu(false); });
+    window.addEventListener('scroll', function () { closeMenu(false); }, { passive: true });
+
+    $('apply-yes').addEventListener('click', function () { var role = applyRole; hideApplyBar(); if (role) markRole(role, 'applied'); });
+    $('apply-no').addEventListener('click', hideApplyBar);
+    window.addEventListener('focus', onReturn);
+    document.addEventListener('visibilitychange', onReturn);
+
+    // Another tab changed My Roles: follow it.
+    window.addEventListener('storage', function (event) {
+      if (event.key !== MINE_KEY) return;
+      try { setMine(MyRoles.parse(event.newValue)); } catch (error) { /* keep what this tab has */ }
+    });
+
+    if (window.claude && window.claude.use) {
+      window.claude.use('downloads').then(function (d) { downloads = d; }, function () {});
+    }
+  }
+
   // ---- Preparing the data ---------------------------------------------------------------------
 
   function prepare(data) {
@@ -1000,6 +1812,7 @@ var HiPotRank = (function () {
       if (!places.length) places.push(ELSEWHERE);   // outside every metro area, and not remote
       states.forEach(function (code) { places.push(STATE_PREFIX + code); });
       role.company = company;
+      roleById[role.id] = role;
       role.time = Date.parse((role.posted || role.seen) + 'T00:00:00Z') || 0;
       role.payCompare = comparablePay(role.pay);
       role.facets = {
@@ -1180,6 +1993,7 @@ var HiPotRank = (function () {
     for (var i = 0; i < roles.length; i++) {
       var role = roles[i];
       if (state.c && role.co !== state.c) continue;
+      if (state.hideMine && mineById[role.id]) continue;
       if (role.match && role.match.excluded) continue;   // the persona's own exclusions
       if (needPay && !role.pay) continue;
       if (state.pay > 0 && !(role.payCompare !== null && role.payCompare >= state.pay)) continue;
@@ -1226,7 +2040,7 @@ var HiPotRank = (function () {
 
   function activeCount() {
     var n = FACETS.reduce(function (sum, facet) { return sum + state[facet.key].size; }, 0);
-    return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0);
+    return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0) + (state.hideMine ? 1 : 0);
   }
 
   // ---- Building the filter controls (once) ------------------------------------------------------
@@ -1318,6 +2132,7 @@ var HiPotRank = (function () {
 
   // Make the controls show `state` (after reading the address, or after "Clear all").
   function syncControls() {
+    $('f-hide-mine').checked = !!state.hideMine;
     $('q').value = state.q;
     $('sort').value = state.sort;
     $('f-paid').checked = state.paid;
@@ -1369,7 +2184,12 @@ var HiPotRank = (function () {
       window.scrollTo(0, 0);
     });
 
-    var tags = el('ul', { class: 'tags', 'aria-label': 'Role type, level and disciplines' });
+    var entry = mineById[role.id];
+    var isGreat = !!(greatIds && greatIds.has(role.id));
+    var tags = el('ul', { class: 'tags', 'aria-label': 'Status, role type, level and disciplines' });
+    // In My Roles: the status as a tag, so color (the border) is never the only cue.
+    if (entry) tags.appendChild(el('li', { class: 'tag-mine' }, [el('span', { class: 'sr-only', text: 'In My Roles: ' }), MyRoles.label(entry.status)]));
+    if (isGreat) tags.appendChild(el('li', { class: 'tag-great', title: role.match.why, text: 'Great match' }));
     if (role.new) tags.appendChild(el('li', { class: 'tag-new', text: 'New' }));
     tags.appendChild(el('li', { class: 'tag-fn', 'data-fn': role.fn, text: labels.functions[role.fn] || role.fn }));
     if (role.level) tags.appendChild(el('li', { class: 'tag-level', text: labels.levels[role.level] || role.level }));
@@ -1395,9 +2215,14 @@ var HiPotRank = (function () {
       role.posted ? 'Posted ' : 'First seen ', el('time', { datetime: dateIso, text: formatDate(dateIso) })
     ]);
 
-    return el('li', { class: 'role' }, [
+    var title = el('h3', null, [outLink(role.url, role.title, ' at ' + company.name + ' (opens the company’s own posting in a new tab)')]);
+    var more = el('button', {
+      type: 'button', class: 'role-more', text: '⋯', 'aria-haspopup': 'menu', 'aria-expanded': 'false',
+      'aria-label': 'Actions for ' + role.title + ' at ' + company.name
+    });
+    var card = el('li', { class: 'role' + (entry ? ' role-mine' : '') + (isGreat ? ' role-great' : '') }, [
       el('div', { class: 'role-main' }, [
-        el('h3', null, [outLink(role.url, role.title, ' at ' + company.name + ' (opens the company’s own posting in a new tab)')]),
+        title,
         grouped ? null : el('p', { class: 'role-co' }, [
           companyButton, ' ', tierBadge(company), ' ',
           company.reason ? el('span', { class: 'reason', text: company.reason }) : null
@@ -1407,8 +2232,11 @@ var HiPotRank = (function () {
         tags,
         role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null
       ]),
-      el('div', { class: 'role-side' }, [payNode, gradeNode, dateNode])
+      el('div', { class: 'role-side' }, [payNode, gradeNode, dateNode]),
+      more
     ]);
+    wireCard(card, role, title.querySelector('a'), more);
+    return card;
   }
 
   // A company heading for the company sort, as in the hub: name, open roles here, tier and reason.
@@ -1459,6 +2287,7 @@ var HiPotRank = (function () {
         fragment.appendChild(companyHeading(results[i]));
       }
       var node = roleNode(results[i], grouped);
+      cardNodes[results[i].id] = node;
       if (!firstNew) firstNew = node;
       fragment.appendChild(node);
     }
@@ -1480,6 +2309,7 @@ var HiPotRank = (function () {
   function renderList() {
     var list = $('roles'), empty = $('state');
     list.replaceChildren();
+    cardNodes = {};
     shown = 0;
     lastGroup = null;
     groupCounts = {};
@@ -1512,6 +2342,9 @@ var HiPotRank = (function () {
   }
 
   function renderFacets(counts) {
+    $('facet-n-mine').hidden = !state.hideMine;
+    $('facet-n-mine').textContent = state.hideMine ? '1' : '';
+    $('facet-mine').hidden = mine.length === 0 && !state.hideMine;
     FACETS.forEach(function (facet, index) {
       var chosen = state[facet.key];
       facet.options.forEach(function (option) {
@@ -1558,6 +2391,8 @@ var HiPotRank = (function () {
     });
     if (state.pay > 0) chip('Pay', money(state.pay, 'USD', false) + ' or more', function () { state.pay = 0; });
     if (state.paid) chip('Pay', 'Pay stated', function () { state.paid = false; });
+    if (state.hideMine) chip('My Roles', 'Roles in My Roles hidden', function () { state.hideMine = false; });
+    if (state.great && persona) chip('Persona', 'Great matches only', function () { state.great = false; });
     if (chips.length) {
       var clear = el('button', { type: 'button', class: 'chip chip-clear', text: 'Clear all' });
       clear.addEventListener('click', clearAll);
@@ -1597,8 +2432,16 @@ var HiPotRank = (function () {
   }
 
   function update() {
+    closeMenu(false);
     var outcome = runFilters();
-    results = rankRolesForPersona(sortRoles(outcome.matched), persona);
+    var shownRoles = outcome.matched;
+    // Great matches: among the roles these filters show, whatever the sort; only while a persona is in use.
+    greatIds = persona ? new Set(HiPotRank.great(shownRoles)) : null;
+    if (!persona) state.great = false;
+    if (persona && state.great) shownRoles = shownRoles.filter(function (role) { return greatIds.has(role.id); });
+    $('great-only').setAttribute('aria-pressed', String(!!state.great));
+    $('great-only').textContent = 'Great matches only (' + (greatIds ? greatIds.size : 0) + ')';
+    results = rankRolesForPersona(sortRoles(shownRoles), persona);
     renderCount();
     renderFacets(outcome.counts);
     renderChips();
@@ -1719,7 +2562,10 @@ var HiPotRank = (function () {
     window.addEventListener('hashchange', function () {
       var hash = location.hash.replace(/^#/, '');
       if (hash === lastHash) return;
+      var keep = { hideMine: state.hideMine, great: state.great };   // never in the address, so carried over
       state = decodeState(hash);
+      state.hideMine = keep.hideMine;
+      state.great = keep.great;
       lastHash = hash;   // update() rewrites the address if this was not in normal form
       syncControls();
       update();
@@ -1745,6 +2591,11 @@ var HiPotRank = (function () {
       buildFilters();
       renderStatic();
       wireControls();
+      loadMine();
+      // Record that the board still lists these roles, for "no longer listed (last seen ...)" later.
+      var listed = MyRoles.markListed(mine, roleById, localDay(board.generated_at));
+      setMine(listed, { render: false, save: listed !== mine });   // nothing is written for a visitor who has no My Roles
+      wireMine();
       setPersona(storedPersona());   // before reading the address, so "sort-match" is understood
       state = decodeState(location.hash);
       if (persona && !/(^|--)sort-/.test(location.hash.replace(/^#/, ''))) state.sort = 'match';

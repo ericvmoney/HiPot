@@ -84,6 +84,32 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 
 `rankRolesForPersona(rolesInOrder, candidatePersona)` is still the hook the list passes through.
 
+## My Roles and great matches (decision 18)
+
+**My Roles.** A tab beside the board holds the roles a candidate marks.
+- **Statuses**, set by hand, each change dated: Saved, Applied, Recruiter screen, Interviewing, Offer, Accepted, Rejected, Withdrawn, No response.
+- **Each entry** has an applied date, private notes, and the candidate's own order: drag by the grip, or the ↑ ↓ buttons, which also work from the keyboard and on touch screens. Ranking happens only here.
+- **A snapshot** of title, company, place, published pay and posting address is kept, so an entry outlives its posting. A posting gone from the board shows "No longer listed (last seen …)".
+- **The pure code** is `<script id="my-roles">` (`MyRoles.add`, `setStatus`, `move`, `moveTo`, `exportData`, `importData` …), run in V8 by `tests/publish/test_my_roles.py`.
+
+**Marking a role.** Right-click or long-press the card, or use its ⋯ button (shown on hover and focus). The menu repeats what it replaces: Open posting in a new tab, and Copy posting link. Shift+right-click keeps the browser's own menu. When the board tab regains focus within 30 minutes of opening a role from it, a bar asks "Applied to … at …?". It never takes the focus and goes away by itself.
+
+**On the board.**
+- A card in My Roles shows its status as a tag, plus a `--mine` border (a dark value too), so color is never the only cue.
+- "Hide roles in My Roles" is a filter, off by default.
+
+**Storage.**
+- `localStorage`, one key: `hipot-my-roles`. Nothing is written for a visitor who never marks a role.
+- Every access is wrapped. Where storage is blocked, My Roles lasts for the tab, and the view says so.
+- Never in the address; never sent anywhere.
+- Export and import as YAML. On artifact hosting this needs the `downloads` capability on the board page too; the file is saved as `my-roles.yml.txt` there, and as `my-roles.yml` elsewhere.
+
+**Great match**, only while a persona is in use.
+- `HiPotRank.great()` picks, from the roles the filters show and whatever the sort, the persona's top 2%, at most 30, each scoring at least 70.
+- Each gets a "Great match" badge whose tooltip is the "why" line, and an accent left edge.
+- A "Great matches only" toggle sits in the persona bar.
+- Nothing new is stored.
+
 ### Checking a ranking
 
 ```
