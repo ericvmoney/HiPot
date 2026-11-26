@@ -52,7 +52,8 @@
     "workplace": {"enum": ["onsite", "hybrid", "remote", "unknown"]},
     "function": {"$ref": "#/$defs/slug", "description": "The kind of work: one id from taxonomy.yml functions."},
     "disciplines": {"type": "array", "uniqueItems": true, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Technical fields, most relevant first. Expected for engineering and science roles; optional for others."},
-    "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}], "description": "Null when the title does not state a level."},
+    "level": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}], "description": "From the title when it states one. Otherwise inferred from the years of experience the posting asks for (tagging.level_by 'years'; entry to principal only, never for an internship). Null when neither gives one."},
+    "experience_years": {"type": "integer", "minimum": 0, "maximum": 30, "description": "Years of experience the posting asks for: the largest required minimum it states (pipeline/tag/years.py). Absent when the posting states none."},
     "employment": {"enum": ["full-time", "part-time", "contract", "intern", "unknown"]},
     "pay": {
       "oneOf": [
@@ -83,7 +84,7 @@
       "properties": {
         "function_by": {"$ref": "#/$defs/tagger"},
         "disciplines_by": {"$ref": "#/$defs/tagger"},
-        "level_by": {"$ref": "#/$defs/tagger"},
+        "level_by": {"enum": ["rule", "model", "human", "seed", "years"], "description": "rule: the title states the level. years: inferred from experience_years because the title states none. A title level always wins."},
         "model": {"type": ["string", "null"], "description": "Model name when a model set any tag."}
       }
     },

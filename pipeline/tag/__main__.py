@@ -38,6 +38,11 @@ def print_summary(summary: dict, records: list[dict], hardest: int) -> None:
     print("Levels:")
     for level, count in summary["by_level"].items():
         print(f"    {level:<22} {count:>5}")
+    unlevelled = summary["level_from_years"] + summary["no_level"]
+    print(f"Level from the title: {summary['level_from_title']}; title states none: {unlevelled}, of which "
+          f"inferred from years asked: {_share(summary['level_from_years'], unlevelled)} "
+          f"{summary['level_from_years_by_level']}")
+    print(f"Postings that state years of experience: {summary['with_experience_years']}")
     print(f"With pay: {_share(summary['with_pay'], total)}  {summary['pay_by_basis']}; "
           f"in listed functions: {_share(summary['with_pay_listed'], summary['in_listed_functions'])}")
     if summary["feed_pay_refused"]:
