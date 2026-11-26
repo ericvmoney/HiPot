@@ -12751,12 +12751,12 @@ companies:
 - id: eqore
   name: EQORE
   website: https://www.builtinboston.com/company/eqore
-  careers_url: https://www.builtinboston.com/jobs
+  careers_url: null
   hq: Somerville, MA
   ats:
-    type: other
-    board: https://www.builtinboston.com/jobs
-  read: auto
+    type: unknown
+    board: null
+  read: none
   sectors:
   - energy-storage
   - buildings
@@ -12777,7 +12777,8 @@ companies:
     Flags: storage-as-a-service; unclear whether it makes its own battery hardware; input domain was builtinboston.com;
     real domain eqore.com. Evidence: https://www.eqore.com/ https://www.builtinboston.com/company/eqore https://electrek.co/2025/11/20/eqore-bags-1-7m-to-bring-smart-storage-to-power-hungry-factories/
     Region sources: masscec-pr-4m, masscec-investments, builtin-boston-energy, builtin-boston-greentech, greentown.
-    Confidence: medium. Unresolved: founded, headcount; Concord, MA (input) not confirmed'
+    Confidence: medium. Unresolved: founded, headcount; Concord, MA (input) not confirmed No current website found
+    (registry-fixes); the company may have closed or renamed.'
 - id: erg-bio
   name: Erg Bio
   website: https://ergbio.com
