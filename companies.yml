@@ -6832,8 +6832,8 @@ companies:
   careers_url: https://calysta.com/careers/
   hq: Menlo Park, CA
   ats:
-    type: jazzhr
-    board: calysta
+    type: other
+    board: https://calysta.com/careers/
   read: auto
   sectors:
   - recycling
@@ -23745,8 +23745,8 @@ companies:
   careers_url: https://mitomaterials.com/about/careers
   hq: Indianapolis, IN
   ats:
-    type: breezy
-    board: mito-material-solutions
+    type: other
+    board: https://mitomaterials.com/about/careers
   read: auto
   sectors: []
   stage: subsidiary
@@ -24558,13 +24558,13 @@ companies:
     own page does not state HQ.'
 - id: navier
   name: Navier
-  website: https://www.navierboat.com
-  careers_url: https://www.navierboat.com/careers
+  website: https://www.naviermaritime.com
+  careers_url: null
   hq: Alameda, CA
   ats:
-    type: other
-    board: https://www.navierboat.com/careers
-  read: auto
+    type: unknown
+    board: null
+  read: none
   sectors:
   - ev
   stage: seed
@@ -36154,9 +36154,9 @@ companies:
   careers_url: null
   hq: Durham, NC
   ats:
-    type: lever
-    board: sustaera
-  read: auto
+    type: unknown
+    board: null
+  read: none
   sectors:
   - carbon-removal
   stage: series-a

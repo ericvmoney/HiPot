@@ -362,9 +362,9 @@ def apply_probe(company: dict, entry: dict) -> None:
 
 CAREERS_READABLE = {"ok", "partial", "none-open", "unclear"}
 
-# Boards a registry fix found retired: a company's site can still link them, so
-# a probe sees them again, but they only redirect away (registry-fixes-06).
-RETIRED_BOARDS = {("bamboohr", "kiverdi"), ("bamboohr", "amberkinetics")}
+# Boards a registry fix found retired: a company's site can still link them, so a
+# probe sees them again, but they no longer answer. One list, kept by the collector.
+from pipeline.collect.probe_careers import RETIRED_BOARDS  # noqa: E402
 
 
 def apply_ruling(company: dict, ruling: dict) -> None:
