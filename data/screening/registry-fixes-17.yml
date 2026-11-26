@@ -1,0 +1,37 @@
+# Registry fixes 17: Eqore's own website and careers page (2026-11-26).
+#
+# Written by workstream A2 at the supervisor's request, after registry-fixes-16 cleared Eqore's aggregator board
+# (builtinboston.com). eqore.com's robots.txt allows all agents (and names Claude-User with Allow: /); its home
+# page and careers page were each read once with a generic client. No sign-in, bot check or CAPTCHA.
+#
+#   kind: website        current official website (tools/apply_screening.py new_website)
+#   ats + source         the careers page on the company's own site is the board (type other; replace_board)
+#   founded              filled where the registry has none (fill_missing)
+
+fixes:
+- id: eqore
+  name: EQORE
+  kind: website
+  failure: aggregator
+  website:
+    was: https://www.builtinboston.com/company/eqore
+    now: https://www.eqore.com/
+  ats: {type: other, board: "https://www.eqore.com/careers"}
+  read: auto
+  careers_url: https://www.eqore.com/careers
+  founded:
+    value: 2024
+    source: 'https://www.eqore.com/careers: schema.org Organization data, "legalName":"EQORE Inc.", "foundingDate":"2024"'
+  source: >-
+    The Careers link in the footer of https://www.eqore.com/ leads to https://www.eqore.com/careers ("Careers at
+    EQORE | Energy Storage Jobs in Somerville, MA"), which links its own posting pages, for example
+    /careers/account-executive, /careers/controls-qoreai-engineer and /careers/head-of-project-finance. No
+    job-board system is linked. Read 2026-11-26.
+  evidence:
+  - 'https://www.eqore.com/: title "Commercial Battery Energy Storage Solutions | EQORE"; footer "EQORE Inc. © 2026", "444 Somerville Ave, Somerville, MA 02143"'
+  - 'https://www.eqore.com/careers: postings linked on the page itself (account executive, business development representative, chief of staff, controls engineer, energy markets pricing engineer, full-stack engineers, head of growth, head of project finance and others)'
+  - 'https://www.eqore.com/robots.txt: "User-agent: * ... Allow: /" and Claude-User listed with "Allow: /"'
+  note: >-
+    Its own description: "EQORE designs, installs and operates behind-the-meter battery storage for commercial and
+    industrial facilities." Founded 2024, so the startup label stays in.
+  checked: '2026-11-26'
