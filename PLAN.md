@@ -282,5 +282,15 @@ Decided by Eric on 2026-11-24:
 
 16. **Methane monitoring** (Eric, 2026-11-25): excluded. Leak detection and measurement sold to oil and gas (Earthview, LongPath, Project Canary, TrelliSense) is out; companies that capture, destroy or prevent methane (landfill gas, oxidizers, Blue Mountain's compressors, Alga's cattle feed) stay in.
 17. **Discovery sources and robots.txt:** the scout removed sources read against their robots.txt (the CEC Energize Innovation database, which bars AI agents by name, and Built In's paged lists) from the reference lists. About 40 registry companies first found only through them stay in the registry, since their facts come from other sources; the owner may decide otherwise. From now on discovery sources follow robots.txt unless the owner extends decision 12b to them.
+18. **My Roles and great matches** (Eric, 2026-11-25; scope in reports/my-roles-scope.md):
+    - My Roles tracks the roles a candidate marks, with statuses set by hand. Ranking happens only within My Roles.
+    - The statuses are as scoped, Saved included.
+    - The "Applied to X?" bar on return is in.
+    - My Roles is kept in this browser's `localStorage` for now, with export and import. It will move to account data once accounts exist; search itself stays login-free.
+    - Great-match highlighting works only while a persona is loaded in the tab. The persona stays tab-only.
+19. **Persona ranking** (Eric's feedback, 2026-11-25):
+    - Disciplines next to the persona's earn part credit, and a far-off technical role gets half the kind-of-work points.
+    - A left-out sector hides a company only when it is all the company does.
+    - Pay up to 10% under the minimum is shown, a few points lower.
 
 Next after the current coverage run (Eric, 2026-11-24): a draft of the in-browser resume parser, and artifact hosting prepared for first testing.

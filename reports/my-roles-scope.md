@@ -1,6 +1,12 @@
 # Scope: "My Roles" and great-match highlighting
 
-Owner request, 2026-11-25. This is a scope for the owner to approve. Nothing here is built yet.
+Owner request, 2026-11-25. **Approved the same day, with the answers below** (PLAN.md decision 18):
+
+1. Ranking is only within My Roles.
+2. The statuses are as listed, Saved included.
+3. Storage is `localStorage` on this device, with export and import, for now. It moves to account data once accounts exist.
+4. Great-match highlighting works only while a persona is loaded, which is option (a). Nothing new is stored for it.
+5. The "Applied to X?" bar on return is in.
 
 ## 1. My Roles
 
