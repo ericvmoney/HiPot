@@ -156,11 +156,36 @@ def test_preferred_sectors_and_stages(js):
 @pytest.mark.parametrize("company,the_role,reason", [
     (dict(COMPANY, name="ACME Reactors"), role(), "a company you left out"),
     (dict(COMPANY, sectors=["fission"]), role(), "a sector you left out (nuclear fission)"),
-    (COMPANY, role(pay={"min": 150000, "max": 180000, "cur": "USD", "per": "year"}), "published pay below your minimum"),
+    (COMPANY, role(pay={"min": 130000, "max": 160000, "cur": "USD", "per": "year"}), "published pay below your minimum"),
     (COMPANY, role(pay={"min": 40, "max": 60, "cur": "USD", "per": "hour"}), "published pay below your minimum"),
 ])
 def test_hard_exclusions(js, company, the_role, reason):
     assert match(js, the_role, company=company)["excluded"] == reason
+
+
+def test_a_role_in_a_discipline_next_to_yours_beats_one_far_from_them(js):
+    # Owner feedback 2026-11-25: test work (next to controls) and cloud software (far from it) scored the same.
+    exact, near, far = match(js, role(disc=["controls"])), match(js, role(disc=["test"])), match(js, role(disc=["software"]))
+    assert near["parts"]["disc"] == 10 and near["parts"]["fn"] == 25
+    assert near["why"].startswith("test, next to your disciplines")      # no label for test in LABELS: the id is shown
+    assert far["parts"]["disc"] == 0 and far["parts"]["fn"] == 12.5         # a different job: kind of work counts half
+    assert exact["score"] > near["score"] > far["score"]
+    # Only technical work is cut: a non-technical role keeps its function points when no discipline fits.
+    assert match(js, role(fn="supply-chain", disc=["software"]), dict(PERSONA, functions=["engineering", "supply-chain"]))["parts"]["fn"] == 25
+
+
+def test_a_company_partly_in_a_left_out_sector_is_shown_lower_not_hidden(js):
+    partly = match(js, role(), company=dict(COMPANY, sectors=["fission", "energy-storage"]))
+    assert partly["excluded"] is None and partly["parts"]["sector"] == 8 - 6
+    assert "partly nuclear fission, a sector you left out" in partly["why"]
+    assert match(js, role(), company=dict(COMPANY, sectors=["fission"]))["excluded"] == "a sector you left out (nuclear fission)"
+
+
+def test_pay_a_little_under_the_minimum_is_shown_lower_not_hidden(js):
+    near = match(js, role(pay={"min": 125000, "max": 180000, "cur": "USD", "per": "year"}))   # 97% of $185K
+    assert near["excluded"] is None and near["parts"]["pay"] == -5
+    assert "pays $125K–$180K, under your $185K minimum" in near["why"]
+    assert match(js, role(pay={"min": 120000, "max": 165000, "cur": "USD", "per": "year"}))["excluded"] == "published pay below your minimum"
 
 
 def test_unpublished_pay_costs_a_few_points_and_never_hides_a_role(js):

@@ -433,7 +433,7 @@ body::before {
         <p><strong>Companies are screened for climate fit before their roles appear,</strong> under a written rubric. <span id="unlisted-functions"></span></p>
         <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
-        <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Remote means remote in the US: a role whose only places are in other countries gains nothing for place. A persona for non-technical work, such as supply chain, needs no discipline; then discipline counts the same for every role. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies and sectors you left out, and roles whose published pay tops out below your minimum, are hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
+        <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. A role in a discipline next to one of yours, such as test next to controls, earns part of the discipline points; a technical role in a discipline far from all of yours, such as cloud software for a controls engineer, earns none and only half the points for kind of work. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Remote means remote in the US: a role whose only places are in other countries gains nothing for place. A persona for non-technical work, such as supply chain, needs no discipline; then discipline counts the same for every role. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies you left out are hidden, and so are companies whose only sectors are ones you left out; a company that also works in other sectors stays, 6 points down. A role whose published pay tops out a little under your minimum (within 10%) stays, 5 points down; further under, it is hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
         <p id="provisional-note"><strong>The company screen is provisional.</strong> The climate tier and reason shown for each company are a first pass. They have not yet been checked against the company's own site or approved.</p>
         <p class="mono" id="run-note"></p>
       </div>
@@ -479,6 +479,30 @@ var HiPotRank = (function () {
   var PAY_UNPUBLISHED = 3;     // the most a role loses for having no published pay
   var PAY_STRADDLES = 1;       // range starts below the candidate's minimum but reaches it
   var NOT_MOVING = -10;        // place points for an on-site role elsewhere when the candidate will not relocate
+  var PAY_NEAR = 0.9;          // published pay topping out at or above 90% of the minimum is shown, a few points off...
+  var PAY_SHORT = 5;           // ...this many; further below the minimum, the role is hidden
+  var SECTOR_PARTLY = 6;       // a company that works in a left-out sector and in others: shown, this many points off
+  var RELATED_SHARE = 0.4;     // a role in a discipline next to one of yours earns this share of that discipline's points
+  var MISMATCH_FN = 0.5;       // a technical role in none of your disciplines nor next to one: its kind of work counts half
+  // Disciplines next to each other, that people commonly move between. Symmetric: built from pairs.
+  var NEXT_TO = (function (pairs) {
+    var map = {};
+    pairs.forEach(function (pair) {
+      (map[pair[0]] = map[pair[0]] || []).push(pair[1]);
+      (map[pair[1]] = map[pair[1]] || []).push(pair[0]);
+    });
+    return map;
+  })([
+    ['systems', 'controls'], ['systems', 'electrical'], ['systems', 'test'], ['systems', 'quality'], ['systems', 'field'],
+    ['electrical', 'power-electronics'], ['electrical', 'battery'], ['electrical', 'firmware'], ['electrical', 'test'],
+    ['electrical', 'power-systems'], ['power-electronics', 'battery'], ['power-electronics', 'power-systems'],
+    ['power-electronics', 'controls'], ['power-electronics', 'test'], ['battery', 'materials'], ['battery', 'test'],
+    ['battery', 'thermal'], ['power-systems', 'field'], ['mechanical', 'thermal'], ['mechanical', 'manufacturing'],
+    ['mechanical', 'civil-structural'], ['mechanical', 'aerospace'], ['mechanical', 'test'], ['thermal', 'chemical-process'],
+    ['controls', 'firmware'], ['controls', 'test'], ['firmware', 'test'], ['software', 'data'],
+    ['test', 'quality'], ['test', 'manufacturing'], ['test', 'field'], ['manufacturing', 'quality'],
+    ['manufacturing', 'chemical-process'], ['chemical-process', 'materials']
+  ]);
   var HOURS_PER_YEAR = 2080;
   var DEFAULT_FUNCTIONS = ['engineering'];
   var TECHNICAL = ['engineering', 'science', 'technician'];
@@ -592,10 +616,14 @@ var HiPotRank = (function () {
     // Hard exclusions: the candidate said no.
     var name = fold(company.name);
     if (p.excludeCompanies.some(function (x) { return x === name || x === fold(company.id); })) out.excluded = 'a company you left out';
-    var badSector = sectors.filter(function (s) { return p.excludeSectors.indexOf(s) !== -1; })[0];
-    if (!out.excluded && badSector) out.excluded = 'a sector you left out (' + lower(label('sectors', badSector)) + ')';
+    // A sector left out hides the company only when it is all the company does; a company that also
+    // works in other sectors is a gray area, shown a few points down (see the sector part below).
+    var badSectors = sectors.filter(function (s) { return p.excludeSectors.indexOf(s) !== -1; });
+    var partlyBad = badSectors.length && badSectors.length < sectors.length ? badSectors[0] : null;
+    if (!out.excluded && badSectors.length && !partlyBad) out.excluded = 'a sector you left out (' + lower(label('sectors', badSectors[0])) + ')';
     var pay = role.pay && role.pay.cur === 'USD' ? role.pay : null;
-    if (!out.excluded && pay && p.minBase && perYear(pay.max, pay.per) < p.minBase) out.excluded = 'published pay below your minimum';
+    var payShort = pay && p.minBase && perYear(pay.max, pay.per) < p.minBase;
+    if (!out.excluded && payShort && perYear(pay.max, pay.per) < p.minBase * PAY_NEAR) out.excluded = 'published pay below your minimum';
 
     var why = [], parts = out.parts;
 
@@ -604,18 +632,26 @@ var HiPotRank = (function () {
     parts.fn = fnOk ? WEIGHTS.fn : 0;
 
     // Discipline: the persona's order is its weight (first 1.0, then 0.85, 0.7, ... no lower than 0.4).
-    var disc = role.disc || [], best = 0, hits = [];
+    // A role in a discipline next to one of the persona's earns a share of that one's weight.
+    var disc = role.disc || [], best = 0, hits = [], near = 0, nearBy = null;
     p.disciplines.forEach(function (id, i) {
-      if (disc.indexOf(id) === -1) return;
-      hits.push(id);
-      best = Math.max(best, Math.max(0.4, 1 - 0.15 * i));
+      var weight = Math.max(0.4, 1 - 0.15 * i);
+      if (disc.indexOf(id) !== -1) { hits.push(id); best = Math.max(best, weight); return; }
+      var next = disc.filter(function (d) { return (NEXT_TO[id] || []).indexOf(d) !== -1; })[0];
+      if (next && weight * RELATED_SHARE > near) { near = weight * RELATED_SHARE; nearBy = next; }
     });
+    var mismatch = false;
     if (!p.disciplines.length) parts.disc = WEIGHTS.disc / 2;   // non-technical work: disciplines neither help nor hurt
     else if (hits.length) parts.disc = Math.round(WEIGHTS.disc * Math.min(1, best + (hits.length > 1 ? 0.12 : 0)) * 10) / 10;
-    else parts.disc = disc.length ? 0 : Math.round(WEIGHTS.disc * 0.25 * 10) / 10;   // no discipline on the role: unknown, not a mismatch
+    else if (nearBy) parts.disc = Math.round(WEIGHTS.disc * near * 10) / 10;
+    else if (disc.length) { parts.disc = 0; mismatch = TECHNICAL.indexOf(role.fn) !== -1; }
+    else parts.disc = Math.round(WEIGHTS.disc * 0.25 * 10) / 10;   // no discipline on the role: unknown, not a mismatch
+    // A technical role in none of the persona's disciplines, nor next to one, is a different job: its kind of work counts half.
+    if (fnOk && mismatch) parts.fn = WEIGHTS.fn * MISMATCH_FN;
     if (!fnOk) why.push(label('functions', role.fn) + ' role');
     else if (!p.disciplines.length) why.push(label('functions', role.fn));
     else if (hits.length) why.push(hits.slice(0, 2).map(function (id) { return label('disciplines', id); }).join(' and '));
+    else if (nearBy) why.push(label('disciplines', nearBy) + ', next to your disciplines');
     else if (disc.length) why.push(label('disciplines', disc[0]) + ', not one of your disciplines');
     else why.push(label('functions', role.fn));
 
@@ -663,14 +699,15 @@ var HiPotRank = (function () {
     if (liked.length) { parts.sector = WEIGHTS.sector; why.push(lower(label('sectors', liked[0]))); }
     else if (known.length) { parts.sector = p.sectors.length ? 3 : 4; why.push(lower(label('sectors', known[0])) + ', a sector you know'); }
     else parts.sector = 0;
+    if (partlyBad) { parts.sector -= SECTOR_PARTLY; why.push('partly ' + lower(label('sectors', partlyBad)) + ', a sector you left out'); }
     if (!p.stages.length) parts.stage = WEIGHTS.stage / 2;
     else if (company.stage && p.stages.indexOf(company.stage) !== -1) { parts.stage = WEIGHTS.stage; why.push(label('stages', company.stage)); }
     else parts.stage = company.stage ? 0 : 3;
 
     // Pay, only when published, and only ever a small deduction.
     if (pay) {
-      why.push(payWords(pay));
-      parts.pay = p.minBase && perYear(pay.min, pay.per) < p.minBase ? -PAY_STRADDLES : 0;
+      why.push(payWords(pay) + (payShort ? ', under your ' + compactMoney(p.minBase) + ' minimum' : ''));
+      parts.pay = payShort ? -PAY_SHORT : p.minBase && perYear(pay.min, pay.per) < p.minBase ? -PAY_STRADDLES : 0;
     } else {
       why.push(role.pay ? 'pay in ' + role.pay.cur : 'pay not published');
       parts.pay = p.minBase ? -PAY_UNPUBLISHED : 0;
