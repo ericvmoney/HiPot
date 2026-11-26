@@ -1,0 +1,21 @@
+# Registry fixes 16: a careers board on an aggregator (A1 collector, 2026-11-26).
+#
+# Found while checking the careers reader's new patterns live. Roles enter only from a company's own pages,
+# never from an aggregator; the collector now refuses such a board and `--check-boards` lists it.
+
+fixes:
+- id: eqore
+  name: Eqore
+  kind: website
+  website:
+    was: https://www.builtinboston.com/company/eqore
+    now: null
+  ats: {type: unknown, board: null}
+  read: none
+  careers_url: null
+  source: >-
+    The registry's website for Eqore is Built In Boston's company page
+    (https://www.builtinboston.com/company/eqore), and its careers board had become Built In's job list
+    (https://www.builtinboston.com/jobs), an aggregator. A live read on 2026-11-26 returned other companies'
+    jobs (for example 'Oracle Application Security & Controls'), so nothing from it is kept.
+  note: For the scout - Eqore's own website and careers page are still to be found.

@@ -226,9 +226,21 @@ _JOB_TITLE = re.compile(
     r"executive|associate|coordinator|intern|assistant|planner|buyer|accountant|controller|architect|machinist|"
     r"welder|fitter|fabricator|assembler|installer|inspector|tester|supervisor|foreman|superintendent|estimator|"
     r"scheduler|officer|administrator|representative|consultant|recruiter|generalist|clerk|driver|lineman|"
-    r"millwright|advisor|strategist|counsel|paralegal|writer|editor|partner|staff)s?\b", re.I)
+    r"millwright|advisor|strategist|counsel|paralegal|writer|editor)s?\b", re.I)
 # A posting id in an address: a long number, or a UUID.
 _POSTING_ID = re.compile(r"^(?:\d{4,}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$", re.I)
+
+
+_JOB_TITLE_ONE = re.compile(_JOB_TITLE.pattern.replace(")s?\\b", ")\\b"), re.I)
+_JOB_TITLE_MANY = re.compile(_JOB_TITLE.pattern.replace(")s?\\b", ")s\\b"), re.I)
+_VACANCY = re.compile(r"/vacanc(?:y|ies)/[^/]+", re.I)
+_SECTION_WORDS = re.compile(r"partner|board|team|leadership|management|about|contact|investor|news|blog|press|"
+                            r"product|solution|service|customer|support|project|director(?:s|y)|executives?$", re.I)
+
+
+def _shared_words(label: str, slug_words: str) -> set[str]:
+    words = lambda text: {w for w in re.findall(r"[a-z]{4,}", text.lower())}
+    return words(label) & words(slug_words)
 
 
 def posting_links(page: str, base: str, domain: str) -> list[str]:
@@ -248,7 +260,18 @@ def posting_links(page: str, base: str, domain: str) -> list[str]:
         words = last.replace("-", " ").replace("_", " ")
         reads_as_job = bool(_JOB_TITLE.search(words) or _JOB_TITLE.search(label or "") or _POSTING_ID.match(last)
                             or _POSTING_ID.match(path.rsplit("/", 2)[-2] if path.count("/") >= 2 else ""))
-        if (under_careers or _POSTING_PATH.match(path)) and not _NOT_POSTING.match(last) and reads_as_job:
+        # "/vacancy/<slug>" anywhere in the path (AMSC, NWL's /blog/vacancy/), and a
+        # root-level slug whose link names a job title the slug repeats
+        # ("/vp-of-sales-au", "/open-roles-lab-manager").
+        vacancy = bool(_VACANCY.search(path))
+        # Singular only at the root: "Fabricator" is a role, "Fabricators" an audience
+        # (LuxWall's "EnThermal Plus Fabricators" page).
+        # A job title's link is short; a menu blurb ("LuxWall Certified Fabricator
+        # ... Become a certified fabricator") is not.
+        root_job = (path.count("/") == 1 and len(label or "") <= 80 and bool(_JOB_TITLE_ONE.search(label or ""))
+                    and not _SECTION_WORDS.search(last) and not _JOB_TITLE_MANY.search(label or "")
+                    and not _JOB_TITLE_MANY.search(words) and bool(_shared_words(label or "", words)))
+        if (under_careers or _POSTING_PATH.match(path) or vacancy or root_job) and not _NOT_POSTING.match(last) and reads_as_job:
             if url.split("#")[0] not in found:
                 found.append(url.split("#")[0])
     return found

@@ -257,14 +257,24 @@ _GENERIC_HEADING = re.compile(r"^(?:current |our |open |job )?(?:openings?|open 
 
 
 def _page_title(page: str) -> str:
-    """The posting's title: the first heading that is not a section name, else
-    the page's <title> up to its first separator."""
-    for match in re.finditer(r"<h([12])\b[^>]*>(.*?)</h\1>", page, re.I | re.S):
-        text = _text_of(match.group(2))
-        if text and not _GENERIC_HEADING.match(text):
+    """The posting's title: a first-level heading that reads as a job title,
+    else the page's <title> when it does ("VP of Sales - AU — Luminous"), else
+    the first heading that is not a section name ("ABOUT LUMINOUS" is one)."""
+    headings = [_text_of(m.group(2)) for m in re.finditer(r"<h([12])\b[^>]*>(.*?)</h\1>", page, re.I | re.S)]
+    headings = [text for text in headings if text and not _GENERIC_HEADING.match(text)]
+    for text in headings:
+        if _JOB_TITLE.search(text) and len(text) <= 100:
             return text
     title = _TITLE.search(page)
-    return re.split(r"\s+[|–—-]\s+", _text_of(title.group(1)))[0].strip() if title else ""
+    if title:
+        whole = _text_of(title.group(1))
+        # The company name follows a pipe or a long dash; a hyphen inside the title stays.
+        named = re.split(r"\s+[|–—]\s+", whole)[0].strip()
+        if named == whole:
+            named = re.split(r"\s+-\s+", whole)[0].strip()
+        if _JOB_TITLE.search(named):
+            return named
+    return headings[0] if headings else ""
 
 
 _ITEMPROP = re.compile(r"<(\w+)\b[^>]*\bitemprop=\"(title|description|datePosted)\"[^>]*>", re.I)
@@ -331,6 +341,9 @@ def read(board: str, fetcher, context: Context | None = None) -> normalize.ReadR
     context = context or Context()
     careers_url = _canonical(board)
     host = urlsplit(careers_url).netloc
+    if AGGREGATORS.search(host):
+        # Roles enter only from the company's own pages, never an aggregator's.
+        return normalize.ReadResult(status="skipped", note=f"board {careers_url} is an aggregator's page; not read")
     domain = registrable(host)
     stay = lambda url: on_site(url, domain)
     used = [0]
@@ -479,7 +492,9 @@ def inline_postings(page: str, url: str, today) -> list[dict]:
     title (a <small> in it gives place and type), the block the description."""
     heading = _OPENINGS_HEADING.search(page)
     if not heading:
-        return []
+        # No openings heading: job-title headings still count, but only when the
+        # text under each reads like a posting (not a leadership bio).
+        return heading_postings(page, 0, url, strict=True)
     drafts = []
     for summary, body in _DETAILS.findall(page[heading.end():]):
         small = _SMALL.search(summary)
@@ -504,7 +519,14 @@ _ANY_HEADING = re.compile(r"<(h[1-6])\b[^>]*>(.*?)</\1>", re.I | re.S)
 _PAGE_END = re.compile(r"<footer\b", re.I)
 
 
-def heading_postings(page: str, start: int, url: str) -> list[dict]:
+# Words a posting's text has and a bio or a product section does not.
+_POSTING_WORDS = re.compile(r"responsibilit|qualification|requirement|you will|you.ll|we are (?:looking|seeking)|"
+                            r"we.re (?:looking|seeking)|looking for|to apply|apply (?:now|here|today|for)|duties|"
+                            r"years of (?:relevant )?experience|job (?:summary|description)|what you.ll do|"
+                            r"about the role|the ideal candidate|preferred skills|required skills|benefits", re.I)
+
+
+def heading_postings(page: str, start: int, url: str, strict: bool = False) -> list[dict]:
     """Postings written as headings under the openings heading, each followed by
     its description ("Senior Mechanical Design Engineer", then its text). A
     heading counts only when it reads like a job title and at least
@@ -512,8 +534,11 @@ def heading_postings(page: str, start: int, url: str) -> list[dict]:
     level or above."""
     end = _PAGE_END.search(page, start)
     region = page[start:end.start() if end else len(page)]
-    headings = [(m.start(), m.end(), m.group(1).lower(), _text_of(m.group(2))) for m in _ANY_HEADING.finditer(region)]
-    is_title = lambda text: 3 <= len(text) <= 100 and bool(_JOB_TITLE.search(text))
+    headings = [(m.start(), m.end(), m.group(1).lower(), clean_title(_text_of(m.group(2)))[0])
+                for m in _ANY_HEADING.finditer(region)]
+    places_in = {i: clean_title(_text_of(m.group(2)))[1] for i, m in enumerate(_ANY_HEADING.finditer(region))}
+    is_title = lambda text: (3 <= len(text) <= 100 and bool(_JOB_TITLE.search(text))
+                             and not _SECTION_HEADING.match(text))
     titled = [h for h in headings if is_title(h[3])]
     if not titled:
         return []
@@ -527,6 +552,8 @@ def heading_postings(page: str, start: int, url: str) -> list[dict]:
         description = html_to_text(region[e:stop])
         if len(description) < MIN_DESCRIPTION or GENERAL_APPLICATION.search(title):
             continue
+        if strict and not _POSTING_WORDS.search(description):
+            continue
         slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:80]
         # A short first line of facts under the title: "Berkeley, CA • Full Time".
         first = description.split("\n", 1)[0]
@@ -534,11 +561,35 @@ def heading_postings(page: str, start: int, url: str) -> list[dict]:
         employment = next((normalize.employment_from_text(part) for part in facts
                            if normalize.employment_from_text(part) != "unknown"), normalize.employment_from_title(title))
         places = [parse_location(part) for part in facts if normalize.employment_from_text(part) == "unknown"]
+        if places_in.get(index):
+            places.insert(0, parse_location(places_in[index]))
         drafts.append(normalize.draft(
             posting_id=f"{_posting_id(url)}#{slug}", title=title, url=url,
             locations=[place for place in places if len(place) > 1][:3], workplace=None,
             employment=employment, pay=None, posted_date=None, department=None, description_text=description))
     return drafts
+
+
+# A heading that opens a section, not a job: "Hear From Our Interns", "Meet the Team".
+_SECTION_HEADING = re.compile(r"^(?:hear|meet|our|why|life|about|join|working|benefits|what|how|who|where|"
+                              r"explore|discover|see|learn|read|watch|careers? at|opportunities)\b", re.I)
+_TITLE_LABEL = re.compile(r"^(?:job position|open position|position|job title|now hiring|hiring|role|opening)\s*:\s*", re.I)
+_TITLE_TAIL = re.compile(r"\s+(?:job description\b.*|location\s*:\s*(.+))$", re.I)
+
+
+def clean_title(text: str) -> tuple[str, str | None]:
+    """A heading as a job title: labels ("Open Position: ") and tails ("Job
+    Description Location: Houston, TX") cut off; a place in the tail is returned."""
+    text = _TITLE_LABEL.sub("", text.strip())
+    place = None
+    tail = _TITLE_TAIL.search(text)
+    if tail:
+        place = (tail.group(1) or "").strip() or None
+        if place is None:
+            inner = re.search(r"location\s*:\s*(.+)$", tail.group(0), re.I)
+            place = inner.group(1).strip() if inner else None
+        text = text[:tail.start()].strip()
+    return text, place
 
 
 def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Context) -> normalize.ReadResult:
