@@ -28,7 +28,8 @@ YAML_LIB = "https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"
 def test_page_loads_nothing_from_another_origin_except_its_fonts_and_the_yaml_reader():
     # No external scripts, images or frames: the page's scripts and styles are inline. The one exception
     # is js-yaml, pinned on cdnjs and loaded only when a visitor opens a persona file.
-    assert PAGE.count("<script") == 2 and '<script id="hipot-rank">' in PAGE and "<script src" not in PAGE
+    assert PAGE.count("<script") == 3 and '<script id="hipot-rank">' in PAGE and '<script id="my-roles">' in PAGE
+    assert "<script src" not in PAGE
     assert f"var YAML_LIB = '{YAML_LIB}';" in SCRIPT and "tag.src = YAML_LIB;" in SCRIPT
     for needle in ("<img", "<iframe", "<object", "<embed", "@import", "url("):
         assert needle not in PAGE, needle
@@ -52,8 +53,9 @@ def test_data_is_fetched_once_by_a_relative_address():
 
 
 def test_no_cookies_storage_tracking_or_other_network_calls():
-    # sessionStorage holds the persona for the tab only; test_ranking.py checks how it is used.
-    for needle in ("document.cookie", "localStorage", "indexedDB", "sendBeacon",
+    # sessionStorage holds the persona for the tab only (test_ranking.py); localStorage holds My Roles under
+    # one key (test_my_roles.py). Nothing else is kept, and nothing is sent.
+    for needle in ("document.cookie", "indexedDB", "sendBeacon",
                    "XMLHttpRequest", "WebSocket", "EventSource", "navigator.userAgent", "gtag", "analytics"):
         assert needle not in PAGE, needle
 
@@ -63,7 +65,9 @@ def test_data_values_never_become_markup():
         assert needle not in SCRIPT, needle
     # Links leave the site only through outLink(), which refuses anything that is not https.
     assert "function isHttps(url) { return typeof url === 'string' && /^https:\\/\\//i.test(url); }" in SCRIPT
-    assert SCRIPT.count("href:") == 1
+    # Two href: outLink(), and the link that saves an exported My Roles file from a blob: address.
+    assert SCRIPT.count("href:") == 2 and "el('a', { href: url, download: 'my-roles.yml' })" in SCRIPT
+    assert "var url = window.URL.createObjectURL(new Blob([text], { type: 'text/yaml' }));" in SCRIPT
     assert "rel: 'noopener noreferrer'" in SCRIPT and "target: '_blank'" in SCRIPT
 
 
@@ -79,10 +83,10 @@ def test_theme_tokens_follow_the_hosting_contract():
     tokens = lambda block: dict(re.findall(r"(--[a-z-]+):\s*([^;]+);", block))
     assert tokens(media) == tokens(forced)
     assert set(tokens(media)) <= set(tokens(light))
-    # No colour literal outside the token blocks, apart from the dialog backdrop.
+    # No colour literal outside the token blocks, apart from the dialog backdrop and two shadows (card menu, bars).
     rest = STYLE[STYLE.index("*, *::before"):]
     assert re.findall(r"#[0-9a-fA-F]{3,8}\b", rest) == []
-    assert re.findall(r"rgba?\([^)]*\)", rest) == ["rgb(0 0 0 / 0.45)"]
+    assert sorted(re.findall(r"rgba?\([^)]*\)", rest)) == ["rgb(0 0 0 / 0.25)", "rgb(0 0 0 / 0.3)", "rgb(0 0 0 / 0.45)"]
 
 
 def test_side_gutter_and_its_promise_go_together():
@@ -94,9 +98,9 @@ def test_side_gutter_and_its_promise_go_together():
 
 def test_persona_hook_ranks_and_the_board_never_reads_a_resume():
     assert "function rankRolesForPersona(rolesInOrder, candidatePersona)" in SCRIPT
-    assert "rankRolesForPersona(sortRoles(outcome.matched), persona)" in SCRIPT
-    # The one file input takes a persona; resumes are read only on the persona page.
-    assert PAGE.count('type="file"') == 1 and 'id="persona-file"' in PAGE
+    assert "rankRolesForPersona(sortRoles(shownRoles), persona)" in SCRIPT
+    # The file inputs take a persona and a My Roles file; resumes are read only on the persona page.
+    assert PAGE.count('type="file"') == 2 and 'id="persona-file"' in PAGE and 'id="mine-file"' in PAGE
     assert 'accept=".yml,.yaml,.txt,.json,' in PAGE and ".pdf" not in PAGE and ".docx" not in PAGE
 
 
@@ -149,7 +153,8 @@ def test_whole_card_opens_the_posting_through_one_stretched_link():
     assert ".role .co-btn, .role .summary { position: relative; z-index: 1; }" in STYLE
     # Keyboard focus on the title outlines the whole card.
     assert ".role h3 a:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 2px; }" in STYLE
-    assert SCRIPT.count("href:") == 1
+    # The card's ⋯ button sits above the stretched link too.
+    assert ".role-more {\n  position: absolute; top: 6px; right: 6px; z-index: 2;" in STYLE
 
 
 def test_listed_role_types_sentence_follows_the_taxonomy():
