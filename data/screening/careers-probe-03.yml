@@ -6,7 +6,8 @@ rules: robots.txt obeyed for '*'; at most 4 page requests and 6 requests with re
 passes: 'Live pass 2026-11-25 over 573 core or enabling companies with ats.type unknown and a website that no earlier
   probe covered, robots.txt obeyed. Re-classified offline after one fix: a link counts as a posting only when its
   address or label names a job title or ends in a posting id (careers section pages were counted before). 19 sites
-  answered with a bot challenge (HTTP 202) and 32 redirect to another domain.'
+  answered with a bot challenge (HTTP 202) and 32 redirect to another domain. Follow-up the same day: the 4 sites
+  whose robots.txt disallows their pages, read with the owner''s approval (15 requests).'
 outcomes:
   ok: postings found on the careers page (JobPosting blocks, or links to posting pages on the site)
   ats-found: the site links to a job-board system; see ats
@@ -19,17 +20,16 @@ outcomes:
   error: the site could not be reached
 summary:
   companies: 573
-  requests: 2187
+  requests: 2202
   outcomes:
-    no-careers-page: 225
+    no-careers-page: 227
     unclear: 133
-    error: 84
-    unreadable: 49
+    error: 85
+    unreadable: 50
     ats-found: 34
     none-open: 19
     ok: 17
     blocked: 8
-    robots-disallowed: 4
   ok_by_method:
     plain-listing: 17
   postings_seen:
@@ -49,8 +49,8 @@ summary:
     workday: 1
     lever: 1
     workable: 1
-  requests_note: network requests in the one live pass (about 4 a company); re-classified afterwards from saved
-    pages with no new requests
+  requests_note: 'network requests: 2,187 in the main pass and 15 in the follow-up over the 4 robots-disallowed
+    sites; re-classified from saved pages with no new requests'
 companies:
 - company_id: 1pointfive
   name: 1PointFive
@@ -1190,14 +1190,15 @@ companies:
   name: Carbion
   website: https://carbion.webflow.io
   careers_url: null
-  outcome: robots-disallowed
+  outcome: no-careers-page
   method: null
   postings: 0
   ats: null
-  requests: 1
-  note: robots.txt disallows the home page
-  review: 'not read: robots.txt disallows the home page; this run obeyed robots.txt (the decision 12b read needs
-    the owner''s approval in the A1 session)'
+  requests: 4
+  note: '/jobs: HTTP 404: no board at this address (wrong or retired board token)'
+  robots: robots.txt disallows /jobs; read under decision 12b
+  review: read 2026-11-25 although robots.txt disallows it, under decision 12b, with the owner's approval in the
+    A1 session ('Yes, read them')
 - company_id: carbon-infuse
   name: Carbon Infuse
   website: https://carboninfuse.com
@@ -3394,14 +3395,15 @@ companies:
   name: Microporous
   website: https://microporous.com
   careers_url: null
-  outcome: robots-disallowed
+  outcome: no-careers-page
   method: null
   postings: 0
   ats: null
-  requests: 1
-  note: robots.txt disallows the home page
-  review: 'not read: robots.txt disallows the home page; this run obeyed robots.txt (the decision 12b read needs
-    the owner''s approval in the A1 session)'
+  requests: 6
+  note: '/jobs: request failed (RemoteProtocolError: Server disconnected without sending a respo'
+  robots: robots.txt disallows /jobs; read under decision 12b
+  review: read 2026-11-25 although robots.txt disallows it, under decision 12b, with the owner's approval in the
+    A1 session ('Yes, read them')
 - company_id: microvi-biotech
   name: Microvi Biotech
   website: https://www.microvi.com/
@@ -3785,14 +3787,15 @@ companies:
   name: ONYX Power
   website: https://www.onyxpower.io/
   careers_url: null
-  outcome: robots-disallowed
+  outcome: error
   method: null
   postings: 0
   ats: null
-  requests: 1
-  note: robots.txt disallows the home page
-  review: 'not read: robots.txt disallows the home page; this run obeyed robots.txt (the decision 12b read needs
-    the owner''s approval in the A1 session)'
+  requests: 2
+  note: HTTP 401
+  robots: robots.txt disallows the home page; read under decision 12b
+  review: read 2026-11-25 although robots.txt disallows it, under decision 12b, with the owner's approval in the
+    A1 session ('Yes, read them'); the site answered HTTP 401 (sign-in required), so the probe stopped
 - company_id: orien-energy
   name: Orien Energy
   website: https://orien.energy
@@ -5706,15 +5709,16 @@ companies:
 - company_id: volexion
   name: Volexion
   website: https://volexion.com
-  careers_url: null
-  outcome: robots-disallowed
-  method: null
+  careers_url: https://volexion.com/careers
+  outcome: unreadable
+  method: javascript
   postings: 0
   ats: null
-  requests: 1
-  note: robots.txt disallows the home page
-  review: 'not read: robots.txt disallows the home page; this run obeyed robots.txt (the decision 12b read needs
-    the owner''s approval in the A1 session)'
+  requests: 3
+  note: careers page has almost no text (88 characters); built by JavaScript or empty
+  robots: robots.txt disallows /careers; read under decision 12b
+  review: read 2026-11-25 although robots.txt disallows it, under decision 12b, with the owner's approval in the
+    A1 session ('Yes, read them')
 - company_id: volt-harbor
   name: Volt Harbor
   website: https://voltharbor.com/
