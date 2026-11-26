@@ -98,6 +98,8 @@
           "wp": {"enum": ["onsite", "hybrid", "remote"]},
           "disc": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Left out when the role has no discipline."},
           "level": {"$ref": "#/$defs/slug"},
+          "lvb": {"const": "years", "description": "Present when the level was inferred from the years of experience the posting asks for, because the title states none. Absent when the title states the level."},
+          "yrs": {"type": "integer", "minimum": 0, "maximum": 30, "description": "Years of experience the posting asks for (the largest required minimum). Present whenever the posting states it, with or without lvb."},
           "emp": {"enum": ["full-time", "part-time", "contract", "intern"]},
           "pay": {
             "description": "As the employer published it. Never an estimate.",

@@ -16,6 +16,7 @@ from pipeline.tag.pay import pay_from_text, plausible
 from pipeline.tag.rules import Decision, classify
 from pipeline.tag.summary import summarise
 from pipeline.tag.workplace import refine_workplace
+from pipeline.tag.years import experience_years, level_from_years
 
 # Fields a Job shares with a RawJob, in the order the schema lists them.
 _CARRIED = ("id", "company_id", "title", "url", "source", "locations", "metros")
@@ -30,7 +31,12 @@ def tag_job(raw: dict) -> tuple[dict, dict]:
     """One raw posting to (job, report record)."""
     text = raw.get("description_text") or ""
     decision: Decision = classify(raw["title"], raw.get("department"), text)
-    level = level_from_title(raw["title"])
+    level, level_by = level_from_title(raw["title"]), "rule"
+    asked = experience_years(text)
+    # A title level always wins. Without one, the years the posting asks for
+    # give entry to principal; an internship is never levelled this way.
+    if level is None and asked and raw["employment"] != "intern":
+        level, level_by = level_from_years(asked.years), "years"
 
     pay = raw.get("pay")
     refused = None
@@ -47,6 +53,10 @@ def tag_job(raw: dict) -> tuple[dict, dict]:
         "function": decision.function,
         "disciplines": decision.disciplines,
         "level": level,
+    })
+    if asked:
+        job["experience_years"] = asked.years
+    job.update({
         "employment": raw["employment"],
         "pay": pay,
         "posted_date": raw["posted_date"],
@@ -56,7 +66,7 @@ def tag_job(raw: dict) -> tuple[dict, dict]:
     summary = summarise(text)
     if summary:
         job["summary"] = summary
-    job["tagging"] = {"function_by": "rule", "disciplines_by": "rule", "level_by": "rule", "model": None}
+    job["tagging"] = {"function_by": "rule", "disciplines_by": "rule", "level_by": level_by, "model": None}
 
     record = {
         "id": raw["id"],
@@ -69,6 +79,9 @@ def tag_job(raw: dict) -> tuple[dict, dict]:
         "function_confidence": decision.function_confidence,
         "disciplines": decision.disciplines,
         "level": level,
+        "level_by": level_by,
+        "experience_years": asked.years if asked else None,
+        "years_preferred_only": bool(asked and asked.preferred_only),
         "confidence": decision.confidence,
         "evidence": decision.evidence,
         "notes": decision.notes,
@@ -117,6 +130,11 @@ def summarise_run(records: list[dict], listed: set[str]) -> dict:
         "by_discipline": dict(Counter(d for r in records for d in r["disciplines"]).most_common()),
         "technical_without_discipline": sum(1 for r in technical if not r["disciplines"]),
         "by_level": dict(Counter(r["level"] or "not-stated" for r in records).most_common()),
+        "level_from_title": sum(1 for r in records if r["level"] and r["level_by"] == "rule"),
+        "level_from_years": sum(1 for r in records if r["level_by"] == "years"),
+        "level_from_years_by_level": dict(Counter(r["level"] for r in records if r["level_by"] == "years").most_common()),
+        "no_level": sum(1 for r in records if not r["level"]),
+        "with_experience_years": sum(1 for r in records if r["experience_years"] is not None),
         "discipline_confidence_technical": dict(Counter(r["confidence"] for r in technical).most_common()),
         "with_pay": sum(1 for r in records if r["pay_basis"]),
         "with_pay_listed": sum(1 for r in on_board if r["pay_basis"]),

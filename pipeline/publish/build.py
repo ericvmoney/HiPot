@@ -128,6 +128,11 @@ def _role_record(job: dict) -> dict[str, Any]:
         record["disc"] = list(job["disciplines"])
     if job["level"]:
         record["level"] = job["level"]
+        if job["tagging"]["level_by"] == "years":
+            # Inferred from the years asked, not stated in the title.
+            record["lvb"] = "years"
+    if job.get("experience_years") is not None:
+        record["yrs"] = job["experience_years"]
     if job["employment"] != "unknown":
         record["emp"] = job["employment"]
     if job["pay"]:
