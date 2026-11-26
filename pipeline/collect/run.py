@@ -24,6 +24,7 @@ from pipeline.collect import normalize
 from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable, workday
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
+from pipeline.collect.probe_careers import AGGREGATORS
 from pipeline.collect.state import DEFAULT_RUNS, DEFAULT_STATE, SeenState, record_run, write_json_atomic
 from pipeline.collect.text import clip
 from pipeline.io import ROOT, load_yaml
@@ -92,6 +93,8 @@ def board_problem(company: dict) -> str | None:
     shape = BOARD_SHAPES.get(ats)
     if board and shape and not shape[0].match(board):
         return f"{ats} board {board!r} is not in the form the reader needs: {shape[1]}"
+    if ats == "other" and board and AGGREGATORS.search(urlsplit(board).netloc):
+        return f"careers board {board!r} is an aggregator's page; roles come only from the company's own pages"
     return None
 
 

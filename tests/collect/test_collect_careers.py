@@ -303,3 +303,68 @@ def test_a_retired_board_link_is_not_a_board():
     assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "none-open"
     live = '<script src="https://app.jazz.co/widgets/basic/create/acme"></script>'
     assert careers.read(CAREERS, FakeSite({CAREERS: live}), context()).status == "ats-found"
+
+
+# The two patterns built from the 2026-11-26 unreadable pages, and the false
+# postings each had to be guarded against.
+
+POSTING_TEXT = ("<p>We are looking for an engineer to design our process. Responsibilities: run the pilot line, "
+                "write procedures and train operators. Qualifications: a degree in chemical engineering and "
+                "3+ years of experience.</p>")
+BIO_TEXT = ("<p>Jane joined us from a large utility, where she led finance for twelve years. She holds an MBA "
+            "and serves on two boards. Outside work she sails and coaches youth soccer in her town.</p>")
+
+
+def test_job_title_headings_without_an_openings_heading():
+    page = "<h2>Careers</h2><h3>Senior Chemical/Process Engineer</h3>" + POSTING_TEXT
+    result = careers.read(CAREERS, FakeSite({CAREERS: page}), context())
+    assert result.status == "ok" and [d["title"] for d in result.drafts] == ["Senior Chemical/Process Engineer"]
+
+
+@pytest.mark.parametrize("heading,text", [
+    ("Chief Financial Officer", BIO_TEXT),                         # a leadership bio, not a posting
+    ("Hear From Our Interns", POSTING_TEXT),                       # a section heading (Delta Star)
+    ("Aquatherm Partner’s Program for Pool Pros", POSTING_TEXT),   # "partner" is not a job title
+])
+def test_headings_that_are_not_postings(heading, text):
+    page = f"<h2>Careers</h2><h3>{heading}</h3>" + text
+    assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).drafts == []
+
+
+def test_heading_labels_and_tails_are_cut():
+    page = ("<h2>Careers</h2><h3>Open Position: Electrical Engineer - Robotics</h3>" + POSTING_TEXT +
+            "<h3>Software Engineer Job Description Location: Houston, TX</h3>" + POSTING_TEXT)
+    drafts = careers.read(CAREERS, FakeSite({CAREERS: page}), context()).drafts
+    assert [d["title"] for d in drafts] == ["Electrical Engineer - Robotics", "Software Engineer"]
+    assert drafts[1]["locations"][0]["city"] == "Houston" and drafts[1]["locations"][0]["state"] == "TX"
+
+
+def test_vacancy_paths_and_root_level_job_slugs():
+    from pipeline.collect.probe_careers import posting_links
+    page = ('<a href="/blog/vacancy/mechanical-designer/">Mechanical Designer</a>'      # NWL
+            '<a href="/vacancy/test-engineer/">Test Engineer</a>'                        # AMSC
+            '<a href="/open-roles-lab-manager">Lab Manager</a>'                          # Switch Bioworks
+            '<a href="/vp-of-sales-au">VP of Sales, AU</a>'                              # Luminous Robotics
+            '<a href="/enthermal-plus-fabricators/">LuxWall Certified Fabricator Fabricate Enthermal Plus glazing '
+            'systems. Become a LuxWall certified fabricator</a>'                         # a product page
+            '<a href="/partners">Engineering Partners</a>'                               # a section
+            '<a href="/board-of-directors/">Board of Directors</a>')
+    found = posting_links(page, "https://acme.example.com/careers", "example.com")
+    assert [u.rsplit("/", 2)[-2] if u.endswith("/") else u.rsplit("/", 1)[-1] for u in found] == [
+        "mechanical-designer", "test-engineer", "open-roles-lab-manager", "vp-of-sales-au"]
+
+
+def test_an_aggregator_board_is_never_read():
+    # Eqore's registry board had become Built In's job list.
+    site = FakeSite({"https://www.builtinboston.com/jobs": "<h3>Product Design Engineer</h3>" + POSTING_TEXT})
+    result = careers.read("https://www.builtinboston.com/jobs", site, context())
+    assert result.status == "skipped" and "aggregator" in result.note and site.asked == []
+    from pipeline.collect import run as run_module
+    assert "aggregator" in run_module.board_problem(company("eqore", "other", "https://www.builtinboston.com/jobs"))
+
+
+def test_a_posting_page_whose_first_heading_is_a_section():
+    # Luminous Robotics: headings 'ABOUT LUMINOUS', 'THE ROLE'; the title is in <title>.
+    page = ("<html><title>VP of Sales - AU &mdash; Luminous</title><body><h2>ABOUT LUMINOUS</h2><h2>THE ROLE</h2>"
+            + POSTING_TEXT + "</body></html>")
+    assert careers._page_title(page) == "VP of Sales - AU"
