@@ -33,6 +33,11 @@ def role_group(job: dict) -> str:
 
 
 def level_key(job: dict) -> str:
+    """The level pay is grouped by: only a level the title states. A level inferred
+    from the years a posting asks for (tagging.level_by 'years') matches the title's
+    level about half the time, too loose to set pay bands or grades by."""
+    if (job.get("tagging") or {}).get("level_by") == "years":
+        return "none"
     return job["level"] or "none"
 
 

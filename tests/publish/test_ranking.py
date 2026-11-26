@@ -163,6 +163,13 @@ def test_hard_exclusions(js, company, the_role, reason):
     assert match(js, the_role, company=company)["excluded"] == reason
 
 
+def test_an_inferred_level_counts_a_little_less_and_says_about(js):
+    stated, inferred = match(js, role()), match(js, role(lvb="years", yrs=8))
+    assert stated["parts"]["level"] == 20 and inferred["parts"]["level"] == 16
+    assert "about Staff (asks 8+ years)" in inferred["why"]
+    assert match(js, role(level="senior", lvb="years", yrs=5))["parts"]["level"] == 12   # one step off: as a stated level
+
+
 def test_a_role_in_a_discipline_next_to_yours_beats_one_far_from_them(js):
     # Owner feedback 2026-11-25: test work (next to controls) and cloud software (far from it) scored the same.
     exact, near, far = match(js, role(disc=["controls"])), match(js, role(disc=["test"])), match(js, role(disc=["software"]))

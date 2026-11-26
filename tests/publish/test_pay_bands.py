@@ -94,6 +94,9 @@ def test_role_group_level_and_market_rules():
     assert paybands.role_group({**base, "function": "engineering", "disciplines": []}) == "f-engineering"
     assert paybands.role_group({**base, "function": "technician"}) == "f-technician"   # discipline ignored outside eng/science
     assert paybands.level_key(base) == "none"
+    # Only a level the title states groups pay; one inferred from the years asked does not.
+    assert paybands.level_key({**base, "level": "senior", "tagging": {"level_by": "rule"}}) == "senior"
+    assert paybands.level_key({**base, "level": "senior", "tagging": {"level_by": "years"}}) == "none"
     two_metros = {**base, "metros": ["denver", "boston"], "workplace": "remote"}
     assert paybands.markets(two_metros) == ["denver", "boston", "remote", "us"]
     abroad = {**base, "locations": [{"text": "Bengaluru", "country": "IN"}]}

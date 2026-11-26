@@ -574,7 +574,7 @@ body::before {
           <dt><span class="tier tier-enabling">Enabling</span></dt>
           <dd>Electric by design and likely to displace a dirtier alternative, though cutting emissions is not its purpose.</dd>
         </dl>
-        <p><strong>Pay is shown only when the employer published it.</strong> It is never estimated. Role type, level and discipline are assigned automatically from the title and posting, so read the posting before judging fit.</p>
+        <p><strong>Pay is shown only when the employer published it.</strong> It is never estimated. Role type, level and discipline are assigned automatically from the title and posting, so read the posting before judging fit. A level marked “about” is inferred from the years of experience the posting asks for, because the title gives none; it is often one step off.</p>
         <p>Searching needs no login. This page sets no cookies and does no tracking; its fonts load from Google Fonts.</p>
         <p>The name comes from the hipot test, which puts a high potential across a product's insulation to prove it holds before the product ships.</p>
       </div>
@@ -622,6 +622,7 @@ var HiPotRank = (function () {
   var SECTOR_PARTLY = 6;       // a company that works in a left-out sector and in others: shown, this many points off
   var RELATED_SHARE = 0.4;     // a role in a discipline next to one of yours earns this share of that discipline's points
   var MISMATCH_FN = 0.5;       // a technical role in none of your disciplines nor next to one: its kind of work counts half
+  var INFERRED_EXACT = 16;     // level points for an exact fit when the level is inferred from the years asked
   // Disciplines next to each other, that people commonly move between. Symmetric: built from pairs.
   var NEXT_TO = (function (pairs) {
     var map = {};
@@ -797,9 +798,13 @@ var HiPotRank = (function () {
     if (!p.level) parts.level = WEIGHTS.level / 2;
     else if (!role.level) { parts.level = 8; why.push('level not stated'); }
     else {
+      // A level inferred from the years asked (lvb 'years') matches the title's level about half the
+      // time and is within one step 95% of the time: an exact fit counts a little less than a stated one.
+      var inferred = role.lvb === 'years';
       var steps = levelSteps(role.level, p.level);
-      parts.level = [WEIGHTS.level, 12, 4][steps] || 0;
-      var levelLabel = label('levels', role.level);
+      parts.level = [inferred ? INFERRED_EXACT : WEIGHTS.level, 12, 4][steps] || 0;
+      var levelLabel = inferred ? 'about ' + label('levels', role.level) + (role.yrs ? ' (asks ' + role.yrs + '+ years)' : '')
+                                : label('levels', role.level);
       var gap = LADDER[role.level] - LADDER[p.level];
       if (steps === 0) why.push(levelLabel);
       else if (gap === 0) why.push(levelLabel + (MANAGEMENT[role.level] ? ' (a management role)' : ' (not management)'));
@@ -2192,7 +2197,10 @@ var MyRoles = (function () {
     if (isGreat) tags.appendChild(el('li', { class: 'tag-great', title: role.match.why, text: 'Great match' }));
     if (role.new) tags.appendChild(el('li', { class: 'tag-new', text: 'New' }));
     tags.appendChild(el('li', { class: 'tag-fn', 'data-fn': role.fn, text: labels.functions[role.fn] || role.fn }));
-    if (role.level) tags.appendChild(el('li', { class: 'tag-level', text: labels.levels[role.level] || role.level }));
+    if (role.level && role.lvb === 'years') {
+      tags.appendChild(el('li', { class: 'tag-level tag-inferred', text: 'about ' + (labels.levels[role.level] || role.level),
+        title: 'Inferred: the title gives no level' + (role.yrs ? '; the posting asks for ' + role.yrs + '+ years' : '') }));
+    } else if (role.level) tags.appendChild(el('li', { class: 'tag-level', text: labels.levels[role.level] || role.level }));
     if (role.emp && role.emp !== 'full-time') tags.appendChild(el('li', { class: 'tag-level', text: { 'part-time': 'Part time', contract: 'Contract', intern: 'Internship' }[role.emp] || role.emp }));
     (role.disc || []).forEach(function (id) { tags.appendChild(el('li', { text: labels.disciplines[id] || id })); });
 
@@ -2265,7 +2273,8 @@ var MyRoles = (function () {
     var g = role.grade;
     var kind = g.g.slice(0, 2), key = g.g.slice(2);
     var group = (kind === 'd-' ? labels.disciplines[key] : labels.functions[key]) || key;
-    var level = role.level ? ' at the ' + (labels.levels[role.level] || role.level) + ' level' : ' with no level in the title';
+    // Grades compare title levels only (pipeline/publish/pay.level_key): an inferred level is not one.
+    var level = role.level && role.lvb !== 'years' ? ' at the ' + (labels.levels[role.level] || role.level) + ' level' : ' with no level in the title';
     var where = g.m === 'us' ? ' across the US' : g.m === 'remote' ? ' among remote US roles' : ' in ' + (labels.metros[g.m] || g.m);
     var per = role.pay.per === 'hour' ? ' an hour' : ' a year';
     var typical = money(g.med, role.pay.cur, role.pay.per === 'year') + per;
