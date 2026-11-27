@@ -1,0 +1,2094 @@
+# Registry fixes 19: websites, careers and status for 139 more listed companies that had no website (2026-11-27).
+#
+# Written by workstream A2 at the supervisor's request. These listed companies had no website in the registry, so
+# the careers probe never looked at them. For each: its own website, its careers page and board (read only from
+# its own pages), and whether it still operates. Generic client name; no sign-in, bot check or CAPTCHA; robots.txt
+# obeyed; a usage limit means the rest were recorded as unknown.
+#
+#   kind: website     current website (tools/apply_screening.py new_website); `now: null` keeps a note instead
+#   failure           what was found: active, renamed, acquired, closed or unknown
+#   ats + source      the board from the company's own careers link (replace_board); type other means the careers
+#                     page itself, for the careers-page reader
+#   product_on_site   what the site says it makes, for checking the registry's reason
+#
+# Counts: acquired 1, active 77, unknown 61.
+
+fixes:
+- id: 1-arc-power
+  name: 1 Arc Power
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.1ap.com/
+  note: Greenhouse token still uses the former name 1st Avenue Power.
+  evidence:
+  - 'https://www.1ap.com/careers: "Careers at 1 Arc Power"; footer "(c) 2026 1 Arc Power, LLC"; 13 job links to job-boards.greenhouse.io/1stavenuepower'
+  - 'https://www.1ap.com/careers: blog post dated 2026-10-27'
+  checked: '2026-11-27'
+  product_on_site: Solar-plus-storage power systems built around its own power electronics and software.
+- id: alsym-energy
+  name: Alsym Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.alsym.com/
+  note: No careers link or job-board link on the home page; /careers is 404. HQ not stated on the home page (registry value
+    kept).
+  evidence:
+  - 'https://www.alsym.com/: news dated 2026-10-08, "Named One of Fast Company''s Next Big Things in Tech 2026"'
+  - 'https://www.alsym.com/careers: HTTP 404'
+  checked: '2026-11-27'
+  product_on_site: Non-flammable sodium-ion batteries for energy storage.
+- id: archer
+  name: Archer
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.archer.com/
+  note: The careers page exists but is script-rendered, so the board could not be read from the site. seed-review.yml records
+    Greenhouse token archer56 (from the old hub, not from the site this pass).
+  evidence:
+  - 'https://www.archer.com/careers: page title "Careers - Archer"; body rendered by script, no links readable'
+  - 'https://investors.archer.com/news/news-details/2026/Anduril-and-Archer-Unveil-Jointly-Developed-Autonomous-VTOL-Platform-For-Commercial-and-Defense-Applications/default.aspx:
+    company news release dated 2026 (from seed-review.yml)'
+  checked: '2026-11-27'
+  product_on_site: Midnight electric VTOL air taxi (registry; site renders by script, product text not readable).
+- id: also
+  name: ALSO
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.ridealso.com/
+  note: also.com is an unrelated IT distributor (ALSO Holding). The site gives no HQ or copyright year; registry HQ kept.
+  evidence:
+  - 'https://www.ridealso.com/: careers link to jobs.ashbyhq.com/Ridealso; press links reference Rivian'
+  - 'https://techcrunch.com/2026/07/31/rivian-spinoff-also-to-start-delivering-e-bikes-after-months-of-delays/: 2026 news
+    (from seed-review.yml)'
+  checked: '2026-11-27'
+  product_on_site: TM-B modular e-bike and TM-Q quad, plus helmets and gear.
+- id: antora-energy
+  name: Antora Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://antora.com/
+  note: antora.energy redirects to antora.com. Job pages are hosted on its own site; seed-review.yml records Greenhouse token
+    antora (old hub), not seen on the site this pass. Home page names a San Jose factory.
+  evidence:
+  - 'https://antora.com/: "(c)2026 Antora Energy"; links a New York Times article dated 2026-10-29'
+  - 'https://antora.com/careers: about 34 open roles at antora.com/job/<slug>, no third-party board link'
+  checked: '2026-11-27'
+  product_on_site: Thermal batteries that store electricity as heat in solid carbon blocks and deliver firm heat or power.
+- id: aptera
+  name: Aptera
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://aptera.us/
+  note: Careers page shows no board link; seed-review.yml records Rippling token aptera (old hub). Footer copyright has no
+    year.
+  evidence:
+  - 'https://aptera.us/: banner "Aptera Completes First Solar EV for Customer Delivery"'
+  - 'https://aptera.us/careers: "Open Positions" heading with no postings and no board link'
+  - 'https://aptera.us/q1-2026-financial-results/: Q1 2026 results (from seed-review.yml)'
+  checked: '2026-11-27'
+  product_on_site: Solar-powered electric vehicles.
+- id: atmoszero
+  name: AtmosZero
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://atmoszero.energy/
+  note: Site does not state the HQ city; registry value kept.
+  evidence:
+  - 'https://atmoszero.energy/: "(c) 2026 AtmosZero"; podcast item dated 2026-08-27; careers link to ats.rippling.com/atmoszero-careers/jobs'
+  checked: '2026-11-27'
+  product_on_site: Modular electrified heat-pump boilers that make industrial steam from ambient air heat.
+- id: base-power
+  name: Base Power
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.basepowercompany.com/
+  note: No board link readable on the careers page (also checked careers.md); seed-review.yml records Ashby token base-power
+    (old hub).
+  evidence:
+  - 'https://www.basepowercompany.com/careers: Base Power careers page, HQ Austin, serves Texas and Illinois; no job-board
+    URL in page text'
+  - 'https://techcrunch.com/2026/08/03/base-power-raises-another-1b-to-save-the-grid-using-backyard-batteries/: 2026 raise
+    (from seed-review.yml)'
+  checked: '2026-11-27'
+  product_on_site: Home battery plus retail electricity service that keeps homes powered in outages; Texas and Illinois.
+- id: charm-industrial
+  name: Charm Industrial
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://charmindustrial.com/
+  note: No careers link in the home page footer; /careers is 404. seed-review.yml records Lever token charmindustrial found
+    via the site earlier; not re-found this pass.
+  evidence:
+  - 'https://charmindustrial.com/: footer "Charm Industrial (c) 2026"'
+  - 'https://charmindustrial.com/careers: HTTP 404'
+  checked: '2026-11-27'
+  product_on_site: Carbon removal by turning biomass into bio-oil and injecting it into EPA-regulated wells.
+- id: electric-hydrogen
+  name: Electric Hydrogen
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://eh2.com/
+  note: Listings are script-loaded; seed-review.yml records Greenhouse token eh2 linked from the site earlier, not readable
+    this pass.
+  evidence:
+  - 'https://eh2.com/: news item dated 2026-10-26 (new VP Government and Corporate Relations EMEA)'
+  - 'https://eh2.com/join-the-team/: "Current openings at Electric Hydrogen" heading, listings not in page text'
+  checked: '2026-11-27'
+  product_on_site: HYPRPlant PEM electrolyzer hydrogen plants and HYPRPower gas-to-power projects.
+- id: act-ion-battery-technologies
+  name: ACT-ion Battery Technologies
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.act-ion.com/
+  note: Site identity from the press release; page body not readable, so no careers link or date seen.
+  evidence:
+  - 'https://natlawreview.com/press-releases/act-ion-raises-75-million-pre-series-round-led-basf-venture-capital: release
+    dated 2025-02-10, Dallas, names www.act-ion.com'
+  - 'https://www.act-ion.com/: title "ACT-ion | The future of cathode manufacturing"; body script-rendered'
+  checked: '2026-11-27'
+  product_on_site: Cathode active materials made with a continuous process (title "The future of cathode manufacturing").
+- id: building-envelope-materials
+  name: Building Envelope Materials
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://bematerials.com/
+  note: Latest date on the site is a 2024 copyright, so not marked active. No job-board system.
+  evidence:
+  - 'https://bematerials.com/: "Pinhole Insulation (R)"; footer "Copyright 2024"'
+  - 'https://bematerials.com/new-page-1: "We are Hiring!" internships and seasonal roles, apply by email or on-page form'
+  checked: '2026-11-27'
+  product_on_site: Pinhole Insulation, minimally invasive retrofit insulation.
+- id: daqus-energy
+  name: Daqus Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://daqusenergy.com/
+  note: No careers link on the site.
+  evidence:
+  - 'https://daqusenergy.com/: address 3F Gill St., Woburn, MA 01801'
+  - 'https://daqusenergy.com/news/: item dated 2026-08-19, selected for the Massachusetts Climatetech Tax Incentives Program'
+  checked: '2026-11-27'
+  product_on_site: Lower-cost, better EV batteries using its organic cathode material.
+- id: carbogenics-usa
+  name: Carbogenics USA
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.carbogenics.com/
+  note: Site is the parent company's; Santa Fe not mentioned (Raton NM is). The board is a recruiter page, not one of the
+    listed ATS systems.
+  evidence:
+  - 'https://www.carbogenics.com/: "(c) 2026 Carbogenics"; Edinburgh HQ; headlines name a first US production facility in
+    Raton, New Mexico'
+  - 'https://www.carbogenics.com/careers/: links to zero-global.com/carbongenics-careers (recruitment partner), no roles listed'
+  checked: '2026-11-27'
+  product_on_site: CreChar biochar that boosts anaerobic digestion, and FilaChar for wastewater treatment.
+  ats:
+    type: other
+    board: https://www.carbogenics.com/careers/
+  read: auto
+  careers_url: https://www.carbogenics.com/careers/
+  source: Careers link on the company's own site (https://www.carbogenics.com/) leads to https://www.carbogenics.com/careers/;
+    read 2026-11-27.
+- id: cf-technologies
+  name: CF Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.cftechnologies.com/
+  note: Site does not state the city; registry HQ kept. Job postings look stale.
+  evidence:
+  - 'https://www.cftechnologies.com/: copyright "2015-2026"; news "3.10.2026: Patent Issued Press Release"; 3.7.2025 item
+    on a brown grease to biodiesel system in Massachusetts'
+  - 'https://www.cftechnologies.com/jobs.html: careers page with PDF job descriptions dated 2020-2021'
+  checked: '2026-11-27'
+  product_on_site: Supercritical (critical) fluid extraction services and processing equipment; brown-grease-to-biodiesel
+    work.
+  ats:
+    type: other
+    board: https://www.cftechnologies.com/jobs.html
+  read: auto
+  careers_url: https://www.cftechnologies.com/jobs.html
+  source: Careers link on the company's own site (https://www.cftechnologies.com/) leads to https://www.cftechnologies.com/jobs.html;
+    read 2026-11-27.
+- id: algenovas
+  name: ALGENOVAS
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.algenovas.com/
+  note: Site does not state the city; registry HQ kept. No careers page.
+  evidence:
+  - 'https://www.algenovas.com/: "(c) 2026 Algenovas"; supported by ORNL Innovation Crossroads'
+  checked: '2026-11-27'
+  product_on_site: Formaldehyde-free biocomposite building panels from algae and agricultural waste.
+- id: alithic
+  name: Alithic
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.alithic.com/
+  note: No dated news or copyright year read; marked active on the live product site and its forward 2028 pilot plan (judgement).
+    No careers page.
+  evidence:
+  - 'https://www.alithic.com/: address 4458 Robertson Rd, Madison, WI 53714; demo plant in Madison, commercial pilot planned
+    for 2028'
+  checked: '2026-11-27'
+  product_on_site: Carbon-negative supplementary cementitious material that captures and stores CO2 as it replaces cement.
+- id: dongwha-electrolyte-usa
+  name: Dongwha Electrolyte USA
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.dongwhaelectrolyte.com/
+  note: Site is the Korean parent's; the Workday board is Dongwha Group-wide. Copyright line has no year; active on the listed
+    US plant.
+  evidence:
+  - 'https://www.dongwhaelectrolyte.com/dongwha/map.asp: Tennessee electrolyte plant, 4370 Guthrie Hwy, Clarksville, TN (Dongwha
+    Electrolyte USA)'
+  - 'https://www.dongwhaelectrolyte.com/: careers link to dongwha.wd3.myworkdayjobs.com/ko-KR/DongwhaCareers'
+  checked: '2026-11-27'
+  product_on_site: Lithium-ion battery electrolytes.
+  ats:
+    type: workday
+    board: dongwha.wd3/DongwhaCareers
+  read: manual
+  careers_url: dongwha.wd3/DongwhaCareers
+  source: Careers link on the company's own site (https://www.dongwhaelectrolyte.com/) leads to dongwha.wd3/DongwhaCareers;
+    job board workday dongwha.wd3/DongwhaCareers; read 2026-11-27.
+- id: amperesand
+  name: Amperesand
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://amperesand.io/
+  note: amperesand.com does not resolve. Board not readable from the site this pass; seed-review.yml records Greenhouse token
+    amperesand linked from the site earlier. A web search also showed amperesand.jobs.growhire.com and greenhouse job pages,
+    not used (not read from the company's pages). Dealroom gives HQ as Reno.
+  evidence:
+  - 'https://dealroom.co/companies/amperesand: website amperesand.io, HQ Reno, operational'
+  - 'https://amperesand.io/: centers in San Francisco, Singapore (S4IC) and Reno; "(c) Amperesand PTE LTD."'
+  - 'https://amperesand.io/news.html: latest item October 2026 (EE Times)'
+  - 'https://amperesand.io/careers.html: "Loading open positions..." (listings script-loaded)'
+  checked: '2026-11-27'
+  product_on_site: Medium-voltage silicon-carbide solid-state transformer that folds the power chain into one factory-built
+    unit.
+- id: conovate
+  name: COnovate
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://conovateinc.com/
+  note: conovate.com is a domain-sale redirect (atom.com). Site gives Wauwatosa (Milwaukee area) rather than Milwaukee.
+  evidence:
+  - 'https://conovateinc.com/: "(c) 2026"; news dated 2026-09-14, "COnovate Wins $1.25M DOE Contract to Scale U.S. Graphite-Alternative
+    Anode Production"'
+  - 'https://conovateinc.com/about/: location Wauwatosa, Wisconsin; no careers link'
+  checked: '2026-11-27'
+  product_on_site: eCOphite bio-sourced anode material for lithium-ion cells that fits existing cell designs and lines.
+- id: 4earth
+  name: 4Earth
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.4earth.tech/
+  note: Careers inquiries go to an email address; no careers page or board. 4earth.com is an unrelated blog. The hypepotamus
+    URL in the notes returns 404. Marietta is in metro Atlanta.
+  evidence:
+  - 'https://www.4earth.tech/: "(c) 2026"; address 3025 Chastain Meadows Pkwy NW, Suite 800, Marietta, GA 30066'
+  checked: '2026-11-27'
+  product_on_site: Ginseng modular containerized water-treatment systems for industrial and municipal wastewater reuse.
+- id: arbela-laboratories
+  name: Arbela Laboratories
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://arbelalabs.com/
+  note: Site does not state a location; registry HQ kept. The site stresses nutrition and protein rather than a general biomanufacturing
+    platform. No careers page. www.arbelalabs.com does not resolve.
+  evidence:
+  - 'https://arbelalabs.com/: "Sustainable Nutrition and Protein for a Healthier World"; "(c) 2025 Arbela Labs"'
+  checked: '2026-11-27'
+  product_on_site: Pichia pastoris yeast-based protein and nutrition ingredients.
+- id: atmospark
+  name: AtmoSpark
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.atmosparktech.com/
+  note: Careers page lists intern roles on its own site; no third-party board. atmospark.com is a GoDaddy for-sale page.
+  evidence:
+  - 'https://www.atmosparktech.com/: "(c) 2025 AtmoSpark Technologies Inc."; 4200 San Jacinto St, Houston, TX 77004'
+  checked: '2026-11-27'
+  product_on_site: Electroseparation technology that dehumidifies buildings and recovers the water.
+  ats:
+    type: other
+    board: https://www.atmosparktech.com/careers
+  read: auto
+  careers_url: https://www.atmosparktech.com/careers
+  source: Careers link on the company's own site (https://www.atmosparktech.com/) leads to https://www.atmosparktech.com/careers;
+    read 2026-11-27.
+- id: daejin-advanced-manufacturing
+  name: Daejin Advanced Manufacturing
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: http://en.daejin2019.com/
+  note: Site is the Korean parent's (Daejin Advanced Materials); no dates or copyright year, no recruit link. Cumberland City
+    plant not confirmed built. stewartcountystandard.com (article on a Daejin lawsuit) answered 403; stopped there. daejinam.com
+    is parked.
+  evidence:
+  - 'http://en.daejin2019.com/: Daejin Advanced Materials English site; US Corporation at 30300 Telegraph Rd, Bingham Farms,
+    MI; no Tennessee site listed'
+  - 'https://www.batterybeltnews.com/sites/daijin-advanced-materials-cumberland-tn: Cumberland City plant status "Planned",
+    last updated 2025-03-06; announced 2022-09-27'
+  checked: '2026-11-27'
+  product_on_site: Functional polymer sheets and parts (including battery process trays), mould making and recycled resin.
+- id: 10dq
+  name: 10DQ
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: The domain answers but serves 404 for the home page, so no site content could be read. A search showed MassCEC Catalyst
+    grant and Somerville references from directories (not used as status evidence).
+  evidence:
+  - 'https://www.10dq.com/: HTTP 404 (also /home)'
+  checked: '2026-11-27'
+  product_on_site: Redox loop battery with water-based electrolyte for long-duration storage (registry; not from its site).
+- id: adhesion-technologies
+  name: Adhesion Technologies
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No company site found; the parked domain may never have been this company's, so not marked closed. Last known activity
+    is a grant ending 2024-05-30 (registry notes).
+  evidence:
+  - 'https://adhesiontechnologies.com/: redirects to a GoDaddy for-sale page'
+  checked: '2026-11-27'
+  product_on_site: Bio-based VOC-free wood adhesive from distillers grains (registry; no site).
+- id: adroit-materials
+  name: Adroit Materials
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: adroitmaterials.com is a Squarespace site with a broken certificate; content could not be read, so identity and status
+    were not confirmed.
+  evidence:
+  - 'https://adroitmaterials.com/: TLS certificate is for squarespace.com, not this host; page not retrieved'
+  checked: '2026-11-27'
+  product_on_site: GaN power semiconductor materials and devices (registry; site not readable).
+- id: aeonix
+  name: Aeonix
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own website found (aeonixbattery.com does not resolve; aeonix.com is an unrelated publisher). Has 2025 dated news
+    but no site, so left unknown rather than active; owner may treat the 2025 ASU item as enough for active.
+  evidence:
+  - 'https://news.asu.edu/20250312-science-and-technology-asuled-nsf-futures-engine-in-the-southwest-funds-8-promising-startups:
+    dated 2025-03-12, Salt Lake City spinout of Storagenergy Technologies developing anode-free lithium metal batteries'
+  - 'https://storagenergy.com/: parent site does not mention Aeonix; "(c) 2021 Storagenergy"'
+  checked: '2026-11-27'
+  product_on_site: Anode-free lithium-metal batteries aimed at aviation (from ASU news; no site).
+- id: alpha-tech-research-corp
+  name: Alpha Tech Research Corp
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own website found. HQ American Fork, UT from the DOE grant record in search results.
+  evidence:
+  - 'https://www.osti.gov/pages/biblio/2496625: U(IV)/U(III) reference electrode paper with AlphaTech and BYU authors (search
+    result, not fetched)'
+  - 'https://www.alphatechresearchcorp.com/: TLS certificate is for 10kalumni.org; no company site'
+  checked: '2026-11-27'
+  product_on_site: Molten-salt thermodynamic reference electrodes; describes itself as developing a fluoride molten-salt microreactor
+    (search snippet).
+- id: chement
+  name: Chement
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Domain is for sale. A search snippet from PitchBook (not an allowed source) says acquired by Nextli Technologies,
+    and a crustdata profile says 1 employee; neither verified, so left unknown. app.dealroom.co answered 403 (stopped there);
+    dealroom.co/companies/chement is 404.
+  evidence:
+  - 'https://www.chement.com/: redirects to hugedomains.com domain-sale page'
+  - 'https://www.chement.co/: HTTP 404'
+  checked: '2026-11-27'
+  product_on_site: Room-temperature electrochemical Portland cement process (registry; no site).
+- id: clearflame-engines
+  name: ClearFlame Engines
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Likely domain clearflameengines.com was down at check time (522); retry later. Not marked closed on one outage.
+  evidence:
+  - 'https://clearflameengines.com/: HTTP 522 (origin unreachable), also at www.'
+  - 'https://www.clearflame.com/: TLS certificate for a SiteGround host, not this domain'
+  checked: '2026-11-27'
+  product_on_site: Diesel engine modification to run on renewable, low-carbon fuels (registry; site not readable).
+- id: closed-loop-plastics
+  name: Closed Loop Plastics
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No company site found and no news; parked domain may never have been this company's, so left unknown.
+  evidence:
+  - 'https://closedloopplastics.com/: connection refused on 443 (registry notes call it a parked Namecheap auction domain)'
+  checked: '2026-11-27'
+  product_on_site: Extrusion system turning municipal plastic waste into 3D-printing material (registry; not confirmed).
+- id: copper-labs
+  name: Copper Labs
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: STOP - the likely own site answered 401 (asks for authentication); stopped on that site. Identity and status not confirmed.
+  evidence:
+  - 'https://www.copperlabs.com/: HTTP 401 Unauthorized'
+  checked: '2026-11-27'
+  product_on_site: In-home energy-monitoring devices and cloud for utility programmes (registry).
+- id: designs-by-natural-processes
+  name: Designs by Natural Processes
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No website found and no search spent (budget); likely an R&D-only entity.
+  evidence:
+  - 'https://www.lccmr.mn.gov/proposals/2021/originals/proposal_2021-392_and_map.pdf: 2021 grant proposal naming the organization
+    (registry notes; not re-fetched)'
+  checked: '2026-11-27'
+  product_on_site: Proposed CO2-absorbing low-heat cement from Minnesota wastes (registry; from a 2021 LCCMR proposal).
+- id: energy-vault
+  name: Energy Vault
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.energyvault.com
+  note: HQ not stated on the home page; kept from input.
+  evidence:
+  - 'https://www.energyvault.com: © 2026 Energy Vault Holdings, Inc.; press release on Texas 150 MW / 300 MWh financing (URL
+    dated 2026-11-23)'
+  - 'https://www.energyvault.com/careers: Our job applications are hosted by Lever, Inc.'
+  checked: '2026-11-27'
+  product_on_site: Energy infrastructure - grid-scale battery storage, onsite generation and powered land for utilities and
+    data centers.
+- id: fervo-energy
+  name: Fervo Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://fervoenergy.com
+  note: Greenhouse inferred from gh_jid parameters on job links hosted on the company's own site; board token fervoenergy
+    taken from the link path, not from a boards.greenhouse.io address. HQ not stated on the home page.
+  evidence:
+  - 'https://fervoenergy.com: © 2026; post dated 2026-11-24 on bipartisan permitting reform'
+  - 'https://fervoenergy.com/careers/: 59 job links on fervoenergy.com/jobs/fervoenergy/...?gh_jid=...'
+  checked: '2026-11-27'
+  product_on_site: Enhanced geothermal systems producing 24/7 carbon-free electricity.
+- id: form-energy
+  name: Form Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://formenergy.com
+  note: Open jobs at https://formenergy.com/open-jobs/; no job-board system link visible in the fetched text (listings may
+    load by script). Contact address on the site is 26 Iron Way, Weirton, WV.
+  evidence:
+  - 'https://formenergy.com: © 2026 Form Energy; press release dated 2026-11-13 on new board members'
+  - 'https://formenergy.com/open-jobs/: Then take a look at our open roles!'
+  checked: '2026-11-27'
+  product_on_site: Iron-air batteries for 100-hour multi-day grid storage.
+- id: glydways
+  name: Glydways
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.glydways.com
+  note: Careers page shows no listings or job-board link in the fetched text.
+  evidence:
+  - 'https://www.glydways.com: ©2026; news dated 2026-10-12 on Dubai RTA trial at Bluewaters'
+  checked: '2026-11-27'
+  product_on_site: Self-driving Glydcars on dedicated guideways with AI fleet orchestration, for high-capacity low-cost transit.
+- id: invenergy
+  name: Invenergy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://invenergy.com
+  note: Other Workday boards on the same tenant - invenergyllc and invenergyservices.
+  evidence:
+  - 'https://invenergy.com: One South Wacker Drive, Suite 1500, Chicago, IL 60606; ©2026'
+  - 'https://invenergy.com/careers/: links to invenergyllc.wd1.myworkdayjobs.com/invenergycareers'
+  checked: '2026-11-27'
+  product_on_site: Developer, owner and operator of power infrastructure - gas, wind, solar, storage, transmission, geothermal.
+- id: frostcarbon
+  name: FrostCarbon
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://frostcarbon.com
+  note: No careers link in site navigation. HQ not stated on the fetched pages; kept from input.
+  evidence:
+  - 'https://frostcarbon.com/news: 4/30/26 AI Optimization for FrostCC Showcased at AIChE; 4/1/26 accepted into 2026 Holcim
+    MAQER Ventures Accelerator'
+  - 'https://frostcarbon.com/news: 6/2/25 FrostCarbon Launches to Commercialize FrostCC Carbon Capture Technology'
+  checked: '2026-11-27'
+  product_on_site: FrostCC patented modular cryogenic carbon capture for power plants, industrial facilities and pulp and
+    paper mills.
+- id: gallox-semiconductors
+  name: Gallox Semiconductors
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.galloxsemi.com
+  note: Site is a placeholder (rebuild notice, contact page only); 2026 copyright is the only activity sign. HQ not stated;
+    input HQ unverified.
+  evidence:
+  - 'https://www.galloxsemi.com: building the next generation of gallium oxide power semiconductors; © 2026; site being rebuilt'
+  checked: '2026-11-27'
+  product_on_site: Gallium oxide power semiconductors.
+- id: hifunda
+  name: HiFunda
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.hifunda.com
+  note: Applications by email (no job board). No copyright or dated news seen; status active is based on live open roles,
+    undated.
+  evidence:
+  - 'https://www.hifunda.com/contact-1: Employment page lists Technical Project Manager and Chemical Engineer / Chemist, Salt
+    Lake City, Utah'
+  checked: '2026-11-27'
+  product_on_site: Advanced geopolymers, electrochemical processes and sensors, high-temp coils and electrodes, custom engineering
+    and lab testing for space, defense and nuclear.
+- id: imagen-energy
+  name: Imagen Energy
+  kind: website
+  failure: acquired
+  website:
+    was: null
+    now: https://imagenenergy.com
+  note: Acquired by ABB E-mobility. Site still live under its own brand in 2026; acquisition date not stated on the site.
+    Careers page has only an Express Interest button to the contact page. HQ not stated; kept from input.
+  evidence:
+  - 'https://imagenenergy.com: part of ABB E-mobility; © 2026 Imagen Energy'
+  checked: '2026-11-27'
+  product_on_site: High-power EV fast charging (50 kW to megawatt class), inverter and storage integration, grid services.
+  ats:
+    type: other
+    board: https://imagenenergy.com/careers
+  read: auto
+  careers_url: https://imagenenergy.com/careers
+  source: Careers link on the company's own site (https://imagenenergy.com) leads to https://imagenenergy.com/careers; read
+    2026-11-27.
+- id: influit-energy
+  name: Influit Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.influitenergy.com
+  note: No careers link on the home page.
+  evidence:
+  - 'https://www.influitenergy.com: Chicago, IL; © 2025 INFLUIT ENERGY'
+  checked: '2026-11-27'
+  product_on_site: Nano-Electro Fuel (NEF), a liquid rechargeable energy storage technology, with rapid battery swap for transport
+    and heavy industry.
+- id: ignis-h2-energy
+  name: Ignis H2 Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.ignisenergy.com
+  note: Trades as Ignis Energy. /careers returns 404; no careers link seen. ignis.energy failed with a certificate error.
+  evidence:
+  - 'https://www.ignisenergy.com: Ignis H2 Energy Inc., 10402 Valley Forge Dr., Houston, TX 77042; © 2026; Yotta 2026 news
+    item'
+  checked: '2026-11-27'
+  product_on_site: Geothermal development platform - finds and proves geothermal heat and turns it into bankable power projects
+    (hydrothermal, closed-loop or EGS).
+- id: kb-powertrain
+  name: KB Powertrain
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.kbpowertrain.com
+  note: Site copyright is 2024; active rests on the 2025 grant in the registry notes. Location not stated on site (248 is
+    a metro Detroit area code); input HQ unverified.
+  evidence:
+  - 'https://www.kbpowertrain.com: Copyright © 2024 KB Powertrain; phone 248-981-4358'
+  - 'https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/: 2025 Make It in Michigan
+    prototyping grant recipient (from registry notes, not re-fetched)'
+  checked: '2026-11-27'
+  product_on_site: Electric axles for commercial trucks - eRHINO eAxle System and eBadger 15K.
+- id: l-h-battery-company
+  name: L-H Battery Company
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://lhbattery.com
+  note: Eightfold board is an LG CNS tenant with an LGES microsite, not a board owned by L-H alone.
+  evidence:
+  - 'https://lhbattery.com: joint venture of LG Energy Solution and Honda formed January 13, 2023; © 2026; photo caption dated
+    June 13, 2026'
+  - 'https://lhbattery.com/careers: View open positions links to lgcns.eightfold.ai/careers?microsite=LGESHD'
+  checked: '2026-11-27'
+  product_on_site: Lithium-ion batteries (LG Energy Solution and Honda joint venture) from a plant in Jeffersonville, Fayette
+    County, Ohio.
+  ats:
+    type: eightfold
+    board: https://lgcns.eightfold.ai/careers?microsite=LGESHD
+  read: manual
+  careers_url: https://lhbattery.com/careers
+  source: Careers link on the company's own site (https://lhbattery.com) leads to https://lhbattery.com/careers; job board
+    eightfold https://lgcns.eightfold.ai/careers?microsite=LGESHD; read 2026-11-27.
+- id: homeostasis-systems
+  name: Homeostasis Systems
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.homeostasis.earth
+  note: Site footer ©2025 by Homeostasis; product line from the home page tagline plus GeekWire. Application via a form on
+    its own site, no job board.
+  evidence:
+  - 'https://www.geekwire.com/2026/seattle-area-startup-turns-industrial-emissions-into-high-performance-battery-materials/:
+    dated 2026-03-10, links to homeostasis.earth'
+  - 'https://www.homeostasis.earth/join-the-team: We are hiring! (Mechanical Engineer)'
+  checked: '2026-11-27'
+  product_on_site: Critical materials made from CO2 - battery-grade graphite by molten-salt electrolysis of captured CO2.
+  ats:
+    type: other
+    board: https://www.homeostasis.earth/join-the-team
+  read: auto
+  careers_url: https://www.homeostasis.earth/join-the-team
+  source: Careers link on the company's own site (https://www.homeostasis.earth) leads to https://www.homeostasis.earth/join-the-team;
+    read 2026-11-27.
+- id: halo-materials
+  name: Halo Materials
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.halomaterials.com
+  note: Live site matches the registry but shows no copyright year, no dated news (news page empty) and no address, so active
+    is not confirmed by a 2025/2026 date.
+  evidence:
+  - 'https://www.halomaterials.com: backers listed as AFWERX, Roadrunner Venture Studios and the New Mexico Technology & Innovation
+    Office'
+  checked: '2026-11-27'
+  product_on_site: High-purity graphite made from domestic hydrocarbon feedstocks for battery and advanced nuclear markets.
+- id: exofusion
+  name: ExoFusion
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://exofusion.co
+  note: exofusion.com fails with a TLS error; the .co site is the one Dealroom lists. No careers page; contact by email.
+  evidence:
+  - 'https://dealroom.co/companies/exofusion: website exofusion.co; Bellevue; operational'
+  - 'https://exofusion.co: The Confinement Company; © 2026 ExoFusion'
+  checked: '2026-11-27'
+  product_on_site: Magnetic fusion science, simulation and IP company - confinement optimization, liquid metals, Super-XT
+    Divertor, fission-fusion hybrid.
+- id: gridflow
+  name: GridFlow
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://gridflow.tech
+  note: The site describes vanadium flow batteries, while Sandia sources and the registry say a licensed lithium-sulfur flow
+    battery; identity is confirmed by the Sandia park listing and the site's press links, so the chemistry may have changed.
+    Check before correcting the registry product line.
+  evidence:
+  - 'https://sstp.org/companies/gridflow: Company Website gridflow.tech; 10510 Research Road SE, Suite 300, Albuquerque, NM
+    87123'
+  - 'https://gridflow.tech: © 2026; press page lists Sandia partnership (2024-06-25) and New Mexico Inno (2025-01-24) items'
+  checked: '2026-11-27'
+  product_on_site: Long-duration flow batteries for homes, microgrids and commercial storage (site now says vanadium, water-based
+    electrolyte).
+- id: licube
+  name: Licube
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://licube3.com
+  note: Also Licube KK in Hirosaki, Japan. Careers page lists four roles; two link to LinkedIn only, no job-board system.
+    licube.com and licube.ch fail with certificate errors (Swiss hosting).
+  evidence:
+  - 'https://atmospherenewsletter.substack.com/p/licube: post dated 2025-07-01 links to licube3.com'
+  - 'https://licube3.com: Licube, Inc., 4200 San Jacinto St, Houston, TX 77004; © 2026; news dated 2026-11-19 on a TVA research
+    agreement'
+  checked: '2026-11-27'
+  product_on_site: Ultra-high-purity (4N5, at least 99.995%) lithium carbonate by electrodialysis; pilot scale, 1 kg units
+    on pre-order for 2026.
+  ats:
+    type: other
+    board: https://licube3.com/careers-usa/
+  read: auto
+  careers_url: https://licube3.com/careers-usa/
+  source: Careers link on the company's own site (https://licube3.com) leads to https://licube3.com/careers-usa/; read 2026-11-27.
+- id: green-new-energy-materials
+  name: Green New Energy Materials
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.gnem.com
+  note: Careers link points to the company page; resumes to an HR email, no job board.
+  evidence:
+  - 'https://battery-tech.net/company/green-new-energy-materials-inc/: Company Website https://www.gnem.com'
+  - 'https://www.gnem.com: 1011 Lincoln Commerce Ct., Denver, NC 28037; © 2026 GNEM Inc.'
+  - 'https://volta.foundation/scaling-separator-manufacturing-gnem/: published 2026-05-26; parent named as Senior; plant still
+    scaling'
+  checked: '2026-11-27'
+  product_on_site: Ultra-thin lithium-ion battery separators for EVs, energy storage and consumer electronics.
+- id: elemental-advanced-materials
+  name: Elemental Advanced Materials
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No own site found. elementaladvancedmaterials.com refuses connections; elementalam.com does not resolve. Business
+    Wire releases answered 403 (stopped on that site). Product line from news, not from its site.
+  evidence:
+  - 'https://hydrogen-central.com/elemental-advanced-materials-closes-20m-to-scale-production-of-carbon-nanomaterials-clean-hydrogen-and-recovered-critical-minerals/:
+    dated 2025-06-25, HOUSTON dateline, $20M round'
+  checked: '2026-11-27'
+  product_on_site: Graphene, carbon nano-onions and hydrogen from waste plastics, tank bottoms and gas by-products.
+- id: great-lakes-crystal-technologies
+  name: Great Lakes Crystal Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No own site found; the MSU article gives none. greatlakescrystal.com and greatlakescrystaltech.com do not resolve.
+    Business Wire answered 403 (stopped on that site).
+  evidence:
+  - 'https://msutoday.msu.edu/news/2026/07/glct-advancing-diamond-technology-for-next-generation-electronics: dated 2026-07-30,
+    East Lansing'
+  checked: '2026-11-27'
+  product_on_site: Single-crystal CVD diamond substrates, plates and C-12 enriched epiwafers (from news, not its site).
+- id: highland-park-technologies
+  name: Highland Park Technologies
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own site found (highlandparktech.com returns an empty page; highlandparktechnologies.com does not resolve). The
+    only sources are DOE project pages; no 2025/2026 activity seen.
+  evidence:
+  - 'https://www.energy.gov/cmei/buildings/articles/tight-enclosure-path-net-zero: DOE BENEFIT project led by Highland Park
+    Technologies, LLC, Boston, MA'
+  checked: '2026-11-27'
+  product_on_site: HP Panel prefabricated bio-based exterior retrofit wall panel (from DOE pages).
+- id: eve-energy-north-america
+  name: EVE Energy North America
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Subsidiary of China's EVE Energy. No own US site found (eveenergyna.com does not resolve); sources are all from the
+    2023 announcement, so current status is not confirmed.
+  evidence:
+  - 'https://www.jobsohio.com/news-press/eve-energy-north-america-chooses-ohio-for-rd-center-expansion: 2023 R&D center expansion,
+    $1M JobsOhio grant'
+  checked: '2026-11-27'
+  product_on_site: Licenses and distributes EVE Energy lithium-ion battery products; R&D center in Lewis Center, OH (from
+    news).
+- id: green-metals-toyota-tsusho
+  name: Green Metals (Toyota Tsusho)
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No own site found (greenmetalsbi.com does not resolve); the article gives none. Active rests on the 2025 JV announcement;
+    Liberty, NC is not in the article.
+  evidence:
+  - 'https://www.electrive.com/2025/06/19/lg-energy-solution-toyota-team-up-on-battery-recycling-in-the-usa/: dated 2025-06-19,
+    JV Green Metals Battery Innovations, plant in North Carolina to start in 2026'
+  checked: '2026-11-27'
+  product_on_site: Battery-scrap pre-processing plant recovering black mass (up to 13,500 t/y), LG Energy Solution and Toyota
+    Tsusho joint venture.
+- id: jua-technologies-international
+  name: JUA Technologies International
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: juatechnologies.com redirects to a domain-for-sale page (Afternic/GoDaddy); juatech.com did not resolve. Latest activity
+    seen is 2024; no 2025/2026 evidence.
+  evidence:
+  - 'https://portal.nifa.usda.gov/web/crisprojectpages/1028944-smart-multipurpose-solar-dehydration-device-for-value-addition-to-specialty-crops.html:
+    USDA project record for JUA TECHNOLOGIES INTERNATIONAL LLC (search snippet)'
+  checked: '2026-11-27'
+  product_on_site: Solar crop dryers - Dehytray and the Dehymeleon multipurpose solar dryer (beta prototype per a 2024 USDA
+    record).
+- id: ixp
+  name: IXP
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No own site found (ixp.energy and ixpcharge.com do not resolve). Active rests on the running CEC grant term.
+  evidence:
+  - 'https://www.energy.ca.gov: CEC agreement EPC-24-032 with IXP, LLC for $3,999,317, term 2025-02-03 to 2027-12-31 (search
+    snippet)'
+  checked: '2026-11-27'
+  product_on_site: Mobile EV charging with mobile battery storage and modular skid-mounted chargers (from CEC records).
+- id: elementloop
+  name: ElementLoop
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No own site found. elementloop.com redirects to a brandbucket.com name-for-sale page; elementloop.tech does not resolve.
+    Active rests on the 2025 founding on the WPI page.
+  evidence:
+  - 'https://www.wpi.edu/about/ie/startups/elementloop: Closing the Loop on Critical Minerals; founded 2025'
+  checked: '2026-11-27'
+  product_on_site: Extracts 99.9%-pure lithium carbonate from brine and wastewater with recyclable solvents (from WPI page).
+- id: eski-jaccpro
+  name: eSki (JaccPro)
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own site found; both obvious domains are parked. Latest activity in the registry notes is a 2024 MassCEC award.
+  evidence:
+  - 'https://www.eskiwatercraft.com: Namecheap parking page for a recently registered domain'
+  - 'https://www.jaccpro.com: Namecheap parking page'
+  checked: '2026-11-27'
+  product_on_site: Electric personal watercraft for rental fleets (from registry).
+- id: farm-to-flame-energy
+  name: Farm to Flame Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: farmtoflameenergy.com resolves but returns an empty page and /about is 404, so identity could not be confirmed. The
+    CMU source page now redirects to a 2022 news index (not followed).
+  evidence:
+  - 'https://www.farmtoflame.com: 301 redirect to calicreamery.com (unrelated)'
+  checked: '2026-11-27'
+  product_on_site: Biomass generators and fuel processors for off-grid and rural sites (from registry).
+- id: fleet-robotics
+  name: Fleet Robotics
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Stopped on fleetrobotics.com after a 403; identity and careers not checked. Registry notes cite a $2.4M seed dated
+    2026-07-01, which would suggest active, but that was not verified here.
+  evidence:
+  - 'https://www.fleetrobotics.com: HTTP 403 Forbidden'
+  checked: '2026-11-27'
+  product_on_site: Resident robots that clean and inspect ship hulls underwater (from registry).
+- id: flion-energy
+  name: Flion Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Not re-checked beyond the registry notes, which say flionenergy.com is a parked GoDaddy lander; no web search left
+    in budget.
+  evidence: []
+  checked: '2026-11-27'
+  product_on_site: Fluoride-ion batteries for high-temperature uses, R&D stage (from registry).
+- id: green-giant-energy-texas
+  name: Green Giant Energy Texas
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Subsidiary of Green Giant Inc. (NASDAQ GGE). No own site found or checked; no evidence after 2023, so the plan may
+    not have gone ahead.
+  evidence:
+  - 'https://www.recyclingtoday.com/news/green-giant-ace-green-recycling-partner-develop-lithium-ion-battery-recycling-facility-texas:
+    2023 LOI (from registry notes, not re-fetched)'
+  checked: '2026-11-27'
+  product_on_site: Planned lithium-ion battery recycling plant near Houston with ACE Green Recycling under a non-binding 2023
+    LOI (from registry).
+- id: hydrosonics
+  name: Hydrosonics
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own site found (hydrosonicsllc.com and hydrosonics.us do not resolve). Latest activity in the registry notes is
+    a 2024 NM EDD award.
+  evidence:
+  - 'https://www.hydrosonics.com: 307 redirect to a GoDaddy domain-for-sale page'
+  checked: '2026-11-27'
+  product_on_site: Acoustic-assisted liquid alkaline electrolyzer for low-cost on-site hydrogen (from registry).
+- id: innate-energy
+  name: Innate Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No own site found. The registry's Ashby board (innate, 3 roles on 2026-11-24) was not re-checked because no company
+    page links to it; those live roles would suggest active.
+  evidence:
+  - 'https://innate.energy: unrelated San Diego biofield-therapy business, © 2022'
+  - 'https://www.innateenergy.com: 302 redirect to a HugeDomains for-sale page'
+  checked: '2026-11-27'
+  product_on_site: Membraneless, pumpless gravity-circulated zinc-bromine flow battery (from registry).
+- id: latent-heat-solutions
+  name: Latent Heat Solutions
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.latentheatsolutions.com refuses connections on port 443 and the bare domain does not resolve; no other source
+    checked within the search budget.
+  evidence: []
+  checked: '2026-11-27'
+  product_on_site: Phase-change thermal management for lithium-ion batteries (from registry).
+- id: lightship
+  name: Lightship
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://lightshiprv.com
+  note: Careers page lists roles as lightshiprv.com/careers/<uuid> apply pages; no third-party board link visible in today's
+    fetch. Lever token lightship is from seed-review.yml (checked 2026-11-24, feed loaded), not read from the site today.
+  evidence:
+  - 'https://lightshiprv.com: Copyright 2026, Lightship; journal item 04.14.2026 Lightship Expands Colorado Facility'
+  - 'https://lightshiprv.com/careers: Join us in building the future of outdoor travel adventures.'
+  checked: '2026-11-27'
+  product_on_site: All-electric travel trailers (AE.1), built at its Colorado factory.
+- id: lunar-energy
+  name: Lunar Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.lunarenergy.com
+  note: Openings list loads by script, so no board link was visible today. Greenhouse token lunarenergy is from seed-review.yml
+    (checked 2026-11-24, feed loaded).
+  evidence:
+  - 'https://www.lunarenergy.com: © 2026 Lunar Energy. All rights reserved.'
+  - 'https://www.lunarenergy.com/careers: Current openings (list loads dynamically)'
+  checked: '2026-11-27'
+  product_on_site: Home battery system (Lunar System) with app, AI and VPP / Gridshare software.
+- id: noon-energy
+  name: Noon Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.noon.energy
+  note: Site copyright shows 2025; news dated Aug 2026. HQ not stated on the pages read; kept from the registry.
+  evidence:
+  - 'https://www.noon.energy/about: For Talent, Join the Team links to job-boards.greenhouse.io/noonenergy'
+  - 'https://www.noon.energy/news: Aug 2026 agreement with Sabanci Renewables for 1 GW of ultra-long duration storage'
+  checked: '2026-11-27'
+  product_on_site: Ultra-long-duration (100+ hour) carbon-based battery using reversible solid oxide cells.
+- id: pacific-fusion
+  name: Pacific Fusion
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.pacificfusion.com
+  note: No board link visible in today's fetch of the careers page (likely loaded by script). Greenhouse token pacificfusion
+    is from seed-review.yml (found by a link on the company's site, 2026-11-24).
+  evidence:
+  - 'https://www.pacificfusion.com: November 20, 2026, secures key license to advance clean fusion energy in New Mexico'
+  - 'https://www.pacificfusion.com: © 2026 Pacific Fusion'
+  checked: '2026-11-27'
+  product_on_site: Pulser (pulsed-power) driven inertial fusion; first system being built in New Mexico.
+- id: peak-energy
+  name: Peak Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://peakenergy.com
+  note: No board link visible on the careers page today. Greenhouse token peakenergy is from seed-review.yml (checked 2026-11-24,
+    feed loaded).
+  evidence:
+  - 'https://peakenergy.com: Nov 24, 2026 news on expanding Series B financing to $157 million'
+  - 'https://peakenergy.com/get-in-touch/careers: offices in San Francisco and Denver; Burlingame office mentioned'
+  checked: '2026-11-27'
+  product_on_site: Passively cooled sodium-ion grid-scale energy storage systems, US manufactured.
+- id: planted
+  name: Planted
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.plantedsolar.com
+  note: Ashby token planted is from seed-review.yml (found by a link on the company's site, 2026-11-24); the open-roles section
+    was empty in today's fetch.
+  evidence:
+  - 'https://www.plantedsolar.com: © Planted Solar 2026; Oakland, CA'
+  - 'https://www.plantedsolar.com/careers: See open roles (list loads dynamically)'
+  checked: '2026-11-27'
+  product_on_site: High-density, terrain-following solar arrays installed by field robots, under one turnkey agreement.
+- id: redwood-materials
+  name: Redwood Materials
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.redwoodmaterials.com
+  note: Site footer gives Sparks, NV addresses (Battery Blvd, Innovation Way); registry HQ Carson City kept. Greenhouse token
+    redwoodmaterials is from seed-review.yml (checked 2026-11-24, feed loaded).
+  evidence:
+  - 'https://www.redwoodmaterials.com: © 2026 Redwood Materials Inc.; Sparks, NV 89437'
+  - 'https://www.redwoodmaterials.com/join/: Loading current job listings...'
+  checked: '2026-11-27'
+  product_on_site: Battery recycling to recover critical materials, plus Redwood Energy storage systems from new and repurposed
+    batteries.
+- id: on-energy
+  name: ON.energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.on.energy
+  note: Legal name ON Energy Storage, Inc. HQ not stated on the homepage (press release dateline Miami and Denver).
+  evidence:
+  - 'https://www.on.energy: careers link to job-boards.greenhouse.io/onenergy'
+  - 'https://www.on.energy: July 21, 2026 press release on Crusoe partnership for 5 GW of AI UPS; © 2026 ON Energy Storage,
+    Inc.'
+  checked: '2026-11-27'
+  product_on_site: Medium-voltage AI UPS and battery storage for data centers and AI campuses.
+- id: littoral-power-systems
+  name: Littoral Power Systems
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.littoralpower.com
+  note: Site is up and matches the registry, but has no copyright year and no news after 2021; no careers page. Not enough
+    to call active or closed.
+  evidence:
+  - 'https://www.littoralpower.com: 5 Dover Street, New Bedford, MA 02740; footer shows no year'
+  - 'https://www.littoralpower.com/news: latest item July 6, 2021, Littoral Power Systems Acquires Cook Hydro Solutions'
+  checked: '2026-11-27'
+  product_on_site: Small hydropower and marine energy turbines (Reakt, TorrStrom, FlexStream), h-Modulor modular hydropower
+    systems and k-IOT plant software.
+- id: livaq
+  name: LIVAQ
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: livaq.com, www.livaq.com and /about answer but return an empty page (script-rendered), so identity, careers and status
+    could not be read from the site. Press calls the product the EQUAD electric ATV with a swappable battery; no source found
+    describing a structural battery pack.
+  evidence:
+  - 'https://electrek.co/2023/12/04/livaq-equad-unveiled-as-most-capable-electric-atv-ever/: LIVAQ EQUAD electric ATV unveiled
+    (Dec 2023)'
+  - 'https://dbusiness.com/hustle-and-muscle-articles/startup-spotlight-livaq/: Detroit startup profile'
+  checked: '2026-11-27'
+- id: lotte-aluminum-materials-usa
+  name: LOTTE Aluminum Materials USA
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: 'STOP: parent site www.lotteal.co.kr answered 403; stopped on that site. www.lotteal.com does not resolve. No US JV
+    site found and no news after 2022 in the search, so plant status is unknown.'
+  evidence:
+  - 'https://ced.ky.gov/Newsroom/NewsPage/20220804_LOTTE: $238.7M cathode foil plant, 122 jobs, Aug 2022'
+  - 'https://chargedevs.com/newswire/lotte-group-to-build-cathode-foil-factory-in-elizabethtown-kentucky/: LOTTE Group to
+    build cathode foil factory in Elizabethtown'
+  checked: '2026-11-27'
+- id: mettle-ops
+  name: Mettle Ops
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.mettleops.com
+  note: Same company as the registry (legal name Bigelow Family Holdings LLC, Madison Heights facilities). Job board is AppOne,
+    which is not on the listed ATS types. Site names Sterling Heights as HQ; stator-winding systems not mentioned on the pages
+    read. Mainly a defense business.
+  evidence:
+  - 'https://www.mettleops.com/careers: Open Positions links to bigelowfamilyholdingsllc.appone.com; © 2026 Mettle Ops'
+  - 'https://www.mettleops.com/uas: Vertically integrated production capabilities allow for rapid customization'
+  checked: '2026-11-27'
+  product_on_site: Defense contractor (armor, ground-vehicle design and integration) that also makes UAS motors (2208, 4010
+    models).
+  ats:
+    type: other
+    board: https://www.mettleops.com/careers
+  read: auto
+  careers_url: https://www.mettleops.com/careers
+  source: Careers link on the company's own site (https://www.mettleops.com) leads to https://www.mettleops.com/careers; read
+    2026-11-27.
+- id: miller-proctor-nickolas-mpn
+  name: Miller Proctor Nickolas (MPN)
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: Own site not found. millerproctornickolas.com is parked (GoDaddy for-sale); mpnheat.com does not resolve; mpninc.com
+    is an unrelated San Antonio exit-planning firm. Active on the strength of the Sept 2025 state award.
+  evidence:
+  - 'https://www.nyserda.ny.gov/About/Newsroom/2025-Announcements/2025-09-19-Governor-Hochul-Announces-Empire-Technology-Prize-Winner-To-Advance-Low-Carbon-Heating:
+    MPN wins $1M Empire Technology Prize grand prize (2025-09-19)'
+  - 'https://oilon.com/en-gb/oilons-heat-pump-technology-helps-decarbonize-new-yorks-tall-buildings/: MPN deployment used
+    Oilon ChillHeat technology'
+  checked: '2026-11-27'
+- id: milton-manufacturing
+  name: Milton Manufacturing
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.miltonmanufacturing.com returned an empty page; one web search (name plus microgrid, Detroit) found nothing about
+    this company. Only the registry's Michigan grant source remains.
+  evidence: []
+  checked: '2026-11-27'
+- id: modal-motors
+  name: Modal Motors
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.modalmotors.com
+  note: Site gives Detroit, MI (registry says Farmington Hills). No careers link on the site. The registry's ashby:modal board
+    (52 roles) is not linked from this site and its size suggests a different company named Modal; treat it as unconfirmed.
+  evidence:
+  - 'https://www.modalmotors.com: High Torque, Non-rare-earth Motors Made in the USA; © 2026 Modal Motors, Inc.'
+  checked: '2026-11-27'
+  product_on_site: High-torque non-rare-earth and US-sourced rare-earth electric motors and generators (transverse flux motor,
+    Hybrid Enigma Drive).
+- id: molten-salt-solutions
+  name: Molten Salt Solutions
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.moltensaltsolutions.com
+  note: Jobs are posted as pages on the company site; no third-party board. No copyright year or dated news on the site; active
+    on the strength of current openings and the registry's Aug 2026 seed-round reports.
+  evidence:
+  - 'https://www.moltensaltsolutions.com: 3900 Paseo del Sol, Santa Fe, New Mexico 87507'
+  - 'https://www.moltensaltsolutions.com/careers: two openings, Lead Process Engineer and Industrial/Controls Electrician'
+  checked: '2026-11-27'
+  product_on_site: Lithium isotope enrichment (chromatography separation) and metal salt syntheses for advanced energy.
+  ats:
+    type: other
+    board: https://www.moltensaltsolutions.com/careers
+  read: auto
+  careers_url: https://www.moltensaltsolutions.com/careers
+  source: Careers link on the company's own site (https://www.moltensaltsolutions.com) leads to https://www.moltensaltsolutions.com/careers;
+    read 2026-11-27.
+- id: mss-steel-tubes-usa
+  name: MSS Steel Tubes USA
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: Guessed www.msssteeltubes.com reset the connection twice; no own site confirmed. Status active is weak (plant opened
+    2023; no 2025-2026 source read); change to unknown if a 2025+ source is required.
+  evidence:
+  - 'https://www.tn.gov/ecd/news/2023/2/8/governor-lee--commissioner-mcwhorter-announce-mss-steel-tubes-usa-llc-to-establish-first-us-manufacturing-operations-in-shelby-county-.html:
+    $6M project, 129 jobs in Shelby County'
+  - 'https://steelmarketupdate.com/2023/05/18/mss-tubes-nextracker-commission-tennessee-plant: plant commissioned May 2023'
+  checked: '2026-11-27'
+- id: mujielectric
+  name: MujiElectric
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: mujielectric.com and www.mujielectric.com do not resolve. No own site and no 2025-2026 news found.
+  evidence:
+  - 'https://www.perovskite-info.com/washington-state-department-commerce-grants-funding-development-high-efficiency: $1,997,500
+    to MujiElectric LLC (Sept 2024)'
+  - 'https://www.energy.gov/cmei/systems/american-made-challenges-perovskite-startup-prize: listed among perovskite startup
+    prize winners'
+  checked: '2026-11-27'
+- id: nanosepex
+  name: NanoSepex
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: nanosepex.com and www.nanosepex.com answer 404; nanosepex.net does not resolve. No own site found. The 2025 patent
+    and the registry's Jan 2026 NJ grant point to active, but no own page confirms it.
+  evidence:
+  - 'https://patentsgazette.uspto.gov/week12/OG/html/1532-4/US12257558-20250325.html: US 12,257,558 B2 assigned to NanoSepex
+    (2025-03-25)'
+  - 'https://portal.nifa.usda.gov/enterprise-search/cris_projects/1028846: USDA project, lab-pilot CNEM-MD system at Nanosepex
+    facility'
+  checked: '2026-11-27'
+- id: nantg-power
+  name: NantG Power
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.nantgpower.com
+  note: No careers link, copyright year or dated news seen; HQ not stated on the homepage (the /company page is 404). Active
+    is weak, based on a current product site with image uploads dated 2026/05.
+  evidence:
+  - 'https://www.nantgpower.com: Silicon Batteries Without Compromise; SiXXUS 21700 and Olympic pouch cells'
+  checked: '2026-11-27'
+  product_on_site: Silicon-dominant lithium-ion cells (SiXXUS 21700 cylindrical, Olympic Flex and XL pouch cells).
+- id: new-dominion-enterprises
+  name: New Dominion Enterprises
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.newdominionenterprises.com
+  note: 'STOP: /news answered 403; stopped on that site. Homepage does not name electrolytes, INL or San Antonio, so the match
+    rests on name and battery theme. No careers link.'
+  evidence:
+  - 'https://www.newdominionenterprises.com: ©2024 by New Dominion Enterprises, Inc.; mentions manufacturing scale-up negotiations'
+  checked: '2026-11-27'
+  product_on_site: 'Battery chemistry (tagline: Better Energy Because of Better Chemistry); products not named on the homepage.'
+- id: nextset-materials
+  name: NextSet Materials
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.nextsetmaterials.com does not resolve. Not searched (search budget). Registry source is the Activate 2025 cohort
+    profile.
+  evidence: []
+  checked: '2026-11-27'
+- id: noble-geofurnace
+  name: Noble Geofurnace
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.noblegeofurnace.com does not resolve. Not searched (search budget). noblethermo.com appears elsewhere in the repo
+    data but is a different company and was not used.
+  evidence: []
+  checked: '2026-11-27'
+- id: novtech
+  name: Novtech
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.novtech.com is NovTech, Inc. of Coconut Creek, FL (embedded SoC modules), a different company. Not searched (search
+    budget).
+  evidence: []
+  checked: '2026-11-27'
+- id: onto-technology
+  name: OnTo Technology
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.onto-technology.com
+  note: Site matches the registry product but shows nothing dated after Oct 2024 and does not state a location. No careers
+    page.
+  evidence:
+  - 'https://www.onto-technology.com: ©2024 by OnTo Technology; the first to invent Direct Recycling'
+  - 'https://www.onto-technology.com/news-about-onto-technology: latest item October 30, 2024, DOE announces 13 battery supply
+    chain projects'
+  checked: '2026-11-27'
+  product_on_site: Direct recycling of lithium-ion batteries (Inertization and Cathode Healing patents) and battery neutralization.
+- id: orb-aerospace
+  name: Orb Aerospace
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: orbaerospace.com and www.orbaerospace.com fail with a certificate mismatch (served a hostgator.com certificate), so
+    the site could not be read. The registry's lever:orbaerospace board was not re-checked (only board addresses read from
+    the company's pages count).
+  evidence: []
+  checked: '2026-11-27'
+- id: palladias
+  name: Palladias
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.palladias.com
+  note: No careers page.
+  evidence:
+  - 'https://www.palladias.com: Palladias, LLC, Los Alamos, NM; copyright 2026'
+  checked: '2026-11-27'
+  product_on_site: Resins for extracting critical metals (direct lithium extraction, rare earth mining resins, radionuclide
+    scrubbing).
+- id: phenolvation
+  name: Phenolvation
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.phenolvation.com
+  note: Placeholder page only, with no product, location or careers. Name matches; identity not confirmed by content.
+  evidence:
+  - 'https://www.phenolvation.com: Launching Soon; Copyright © 2024 Phenolvation'
+  checked: '2026-11-27'
+- id: phykos
+  name: Phykos
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: phykos.co is for sale and www.phykos.com fails the SSL handshake; one search found only 2021-era coverage. Possibly
+    closed, but phykos.co was not confirmed as its former domain, so left unknown.
+  evidence:
+  - 'https://www.phykos.co: domain offered for sale on an expired-domain marketplace'
+  - 'https://oceanvisions.org/launchpad/phykos/: solar-powered vessels growing seaweed for carbon removal'
+  checked: '2026-11-27'
+- id: pixelframe
+  name: Pixelframe
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.pixelframe.com has an expired certificate (http also upgraded to https); pixelframe.io does not resolve. Own site
+    not confirmed.
+  evidence:
+  - 'https://impactclimate.mit.edu/2025/05/09/pixelframe-at-architecture-biennale/: Pixelframe at the 2025 Architecture Biennale
+    (registry source, not re-read)'
+  checked: '2026-11-27'
+- id: purenanotech
+  name: PureNanoTech
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Own site not found; purenanotech.com is a for-sale domain, not confirmed as ever being this company's. Not searched
+    (search budget).
+  evidence:
+  - 'https://www.purenanotech.com: redirects to atom.com/name/PureNanotech (domain for sale)'
+  checked: '2026-11-27'
+- id: qpo
+  name: QPO
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: qpoenergy.com now carries spam content and does not match the company (likely lapsed and taken over). Founder also
+    founded Powin, which filed Chapter 11 in June 2025; QPO's own status after 2025 not found.
+  evidence:
+  - 'https://www.qpoenergy.com: Columbia, SC address, +62 phone and unrelated gambling posts dated November 27, 2026'
+  - 'https://oregonbusiness.com/lithium-battery-maker-announces-expansion-in-tualatin/: QPO Energy, Tualatin lithium battery
+    module maker, expansion (Sept 2023)'
+  checked: '2026-11-27'
+- id: recreate-energy
+  name: Recreate Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: recreate.energy returned an empty page; registry says recreateenergy.com is 404. Not searched (search budget).
+  evidence: []
+  checked: '2026-11-27'
+- id: redox-metals
+  name: Redox Metals
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: www.redoxmetals.com redirects to redox.com (not followed; not shown to be this company); redoxmetals.co does not resolve.
+    Registry source is the Activate profile. Not searched (search budget).
+  evidence: []
+  checked: '2026-11-27'
+- id: rincell
+  name: Rincell
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.rincell.com
+  note: Domain answers with the company name but no readable content; /about is 404. Identity, careers and status could not
+    be confirmed from the site. Not searched (search budget).
+  evidence:
+  - 'https://www.rincell.com: page text is only the word Rincell (script-rendered)'
+  checked: '2026-11-27'
+- id: rondo-energy
+  name: Rondo Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.rondo.com
+  note: HQ address not on home page (registry says Alameda, CA).
+  evidence:
+  - 'https://rondo.com: "Copyright © 2026, Rondo Energy, Inc."'
+  - 'https://www.rondo.com/careers: Open Positions links to boards.greenhouse.io/rondoenergy'
+  checked: '2026-11-27'
+  product_on_site: Rondo Heat Battery and Heat Bricks; continuous industrial heat and firm power for data centers.
+- id: sigma-powertrain
+  name: Sigma Powertrain
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://sigmapowertrain.com
+  note: Site gives 11800 Sears Street, Livonia, MI; registry says Wayne, MI. No job board.
+  evidence:
+  - 'https://sigmapowertrain.com: "© 2026 Sigma Powertrain, Inc."'
+  - 'https://sigmapowertrain.com/career-opportunities/: "No openings at this time"; applications by email'
+  checked: '2026-11-27'
+  product_on_site: Electric transmissions and powertrains (EMAX, MID-Series, TERRAMAX) for commercial-duty and recreational
+    trucks.
+  ats:
+    type: other
+    board: https://sigmapowertrain.com/career-opportunities/
+  read: auto
+  careers_url: https://sigmapowertrain.com/career-opportunities/
+  source: Careers link on the company's own site (https://sigmapowertrain.com) leads to https://sigmapowertrain.com/career-opportunities/;
+    read 2026-11-27.
+- id: skip-technology
+  name: Skip Technology
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.skiptechnology.com
+  note: Site is live but nothing dated 2025 or later, so not marked active. No careers page.
+  evidence:
+  - 'https://www.skiptechnology.com: "© Skip Tech 2024"; address 2121 SE 7th Ave., Portland, OR'
+  - 'https://www.skiptechnology.com/press-releases/: latest release dated December 20, 2024 (Business Oregon SBIR award)'
+  checked: '2026-11-27'
+  product_on_site: Hydrogen-bromine flow battery with a patented liquid membrane for long-duration storage.
+- id: solid-power
+  name: Solid Power
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.solidpowerbattery.com
+  note: Careers page has an empty "Current Job Openings" section that likely loads by script; no board address visible in
+    the fetched page. seed-review.yml records greenhouse:solidpower, not confirmed here from the company's page.
+  evidence:
+  - 'https://www.solidpowerbattery.com: HQ Louisville, CO 80027; Thornton, CO site'
+  - 'https://www.businesswire.com/news/home/20260224365911/en/solid-power-reports-full-year-2025-results/: full-year 2025
+    results, Feb 2026 (from seed-review evidence list, not re-fetched)'
+  checked: '2026-11-27'
+  product_on_site: All-solid-state battery cells and proprietary sulfide-based solid electrolytes.
+- id: solv-energy
+  name: SOLV Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.solvenergy.com
+  note: null
+  evidence:
+  - 'https://www.solvenergy.com: 16680 West Bernardo Drive, San Diego; copyright 2026'
+  - 'https://www.solvenergy.com/careers: "View current job openings" links to solvenergy.wd1.myworkdayjobs.com/SOLV_External_Career'
+  checked: '2026-11-27'
+  product_on_site: Solar EPC, battery storage, high-voltage and T&D construction, O&M and repowering services.
+- id: span
+  name: SPAN
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.span.io
+  note: Job board page did not expose a board address in the fetched text; seed-review.yml records ashby:span, not confirmed
+    here.
+  evidence:
+  - 'https://www.span.io: news item dated August 25, 2026 ("A New SPAN Home App Experience"); copyright 2026'
+  checked: '2026-11-27'
+  product_on_site: SPAN Panel smart electrical panel, Home App, Drive+ EV charger and XFRA.
+- id: spinor-energy
+  name: Spinor Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.spinorenergy.com
+  note: Site is live but shows no date, copyright year or location, so status left unknown on this pass (a live hiring board
+    suggests active).
+  evidence:
+  - 'https://www.spinorenergy.com: "Superconducting Systems for high-power infrastructure"; careers link goes to jobs.ashbyhq.com/spinorenergy'
+  checked: '2026-11-27'
+  product_on_site: Superconducting systems for high-power infrastructure.
+- id: stafl-systems
+  name: Stafl Systems
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.staflsystems.com
+  note: Careers page lists no openings and links to no board (seed-review.yml records rippling:staflsystems, not linked from
+    the page now).
+  evidence:
+  - 'https://www.staflsystems.com/careers: "Copyright © 2026 Stafl Systems, LLC"; 428 North Canal Street, South San Francisco'
+  checked: '2026-11-27'
+  product_on_site: Battery management systems (BMS2000 series) and custom battery packs from 12 V to 1000 V.
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.sens-usa.com
+  note: Owned by Industrial Growth Partners per registry; not re-checked.
+  evidence:
+  - 'https://www.sens-usa.com/careers: "© 2026 Stored Energy Systems, LLC"; latest news item dated Nov 18, 2026; roles on
+    ADP WorkforceNow'
+  checked: '2026-11-27'
+  product_on_site: Engine starting systems, DC power systems, battery chargers and battery monitoring.
+  ats:
+    type: adp
+    board: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=4b01b1ef-1960-4219-8f3f-6c0652a81377&ccId=19000101_000001&source=CC2&lang=en_US&selectedMenuKey=CurrentOpenings
+  read: manual
+  careers_url: https://www.sens-usa.com/careers
+  source: Careers link on the company's own site (https://www.sens-usa.com) leads to https://www.sens-usa.com/careers; job
+    board adp https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=4b01b1ef-1960-4219-8f3f-6c0652a81377&ccId=19000101_000001&source=CC2&lang=en_US&selectedMenuKey=CurrentOpenings;
+    read 2026-11-27.
+- id: torus
+  name: Torus
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://torus.co
+  note: Site renders by script; the fetch returned only the title, so the careers page and board could not be read (seed-review.yml
+    records rippling:torus).
+  evidence:
+  - 'https://torus.co: page title "Distributed energy and compute infrastructure - Torus"'
+  - 'https://www.utahbusiness.com/press-releases/2026/11/11/torus-launches-modular-ai-infrastructure-foundry-surging-ai-inference/:
+    Nov 11, 2026 release, HQ Salt Lake City, website torus.co, $500M growth funding'
+  checked: '2026-11-27'
+  product_on_site: Distributed energy and compute infrastructure (flywheel-plus-battery storage; Foundry modular AI inference
+    systems).
+- id: veir
+  name: VEIR
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.veir.com
+  note: null
+  evidence:
+  - 'https://www.veir.com/about: headquartered in Woburn, MA; Chief Product Officer joined January 2026'
+  - 'https://www.veir.com/careers: roles link to job-boards.greenhouse.io/veir'
+  checked: '2026-11-27'
+  product_on_site: Superconducting power lines for AI data centers.
+- id: xcimer-energy
+  name: Xcimer Energy
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://xcimer.energy
+  note: xcimer.com did not answer; the site is xcimer.energy.
+  evidence:
+  - 'https://xcimer.energy: 10325 East 47th Ave., Denver, CO; copyright 2026; news dated 11/09/2026 on a first independent
+    board director'
+  - 'https://xcimer.energy/careers/: job links to jobs.lever.co/xcimer/...'
+  checked: '2026-11-27'
+  product_on_site: Excimer-laser inertial fusion energy (Phoenix laser system, planned Athena power plant).
+- id: zipline
+  name: Zipline
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.zipline.com
+  note: Careers and open-roles pages show no third-party board in the fetched text (roles load by script); seed-review.yml
+    records greenhouse:flyzipline.
+  evidence:
+  - 'https://www.zipline.com: drone delivery "now available in select areas in the US"'
+  - 'https://dronexl.co/2026/11/05/zipline-1-5-billion-raise-walmart-300-sites/: $1.5B round, 2026-11-05 (from seed-review
+    evidence list, not re-fetched)'
+  checked: '2026-11-27'
+  product_on_site: Drone delivery of food, groceries and medicine via the Zipline app, plus business and government services.
+- id: spiritus-technologies
+  name: Spiritus Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.spiritus.com
+  note: Site now pitches DAC for CO2-EOR, not carbon removal credits as the registry says; worth a sector review. Copyright
+    line has no end year; active rests on the 2025 award mention and live hiring.
+  evidence:
+  - 'https://www.spiritus.com: "Direct air capture at the wellhead, injected into your reservoir"; 63 Rover Blvd, White Rock,
+    NM'
+  - 'https://www.spiritus.com/careers: "Apply Now" links to jobs.ashbyhq.com/spiritus; cites a "2025 Finalist" award; Lees
+    Summit manufacturing site planned'
+  checked: '2026-11-27'
+  product_on_site: Direct air capture at the wellhead, with the CO2 injected for enhanced oil recovery.
+  ats:
+    type: ashby
+    board: spiritus
+  read: auto
+  careers_url: https://www.spiritus.com/careers
+  source: Careers link on the company's own site (https://www.spiritus.com) leads to https://www.spiritus.com/careers; job
+    board ashby spiritus; read 2026-11-27.
+- id: solarix
+  name: Solarix
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.solarixusa.com
+  note: Registry says HJT panels and 1 GW; site lists an N-type 600 MW line. Goldi America is an assumed name of Solarix LLC.
+  evidence:
+  - 'https://www.solarixusa.com: 2150 Perrowville Rd, Forest, VA; copyright 2026; "Goldi America is an assumed name of Solarix
+    LLC"'
+  - 'https://www.solarixusa.com/careers.html: no listings; applicants contact recruiting; "Jobs announced: 104" (August 2024)'
+  checked: '2026-11-27'
+  product_on_site: Bifacial dual-glass N-type solar modules (GUIDON GAL10R72, 580-605 W) from a 600 MW line in Forest, VA.
+  ats:
+    type: other
+    board: https://www.solarixusa.com/careers.html
+  read: auto
+  careers_url: https://www.solarixusa.com/careers.html
+  source: Careers link on the company's own site (https://www.solarixusa.com) leads to https://www.solarixusa.com/careers.html;
+    read 2026-11-27.
+- id: stonehouse-water-technologies
+  name: Stonehouse Water Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.stonehousewater.com
+  note: No job board.
+  evidence:
+  - 'https://www.stonehousewater.com: 1836 W Fond du Lac Ave, Milwaukee, WI; copyright 2026'
+  - 'https://stonehousewater.com/careers/: one listing (Qualified Sales Representatives), applied through an on-page form'
+  checked: '2026-11-27'
+  product_on_site: WaterPOD water purification systems.
+  ats:
+    type: other
+    board: https://stonehousewater.com/careers/
+  read: auto
+  careers_url: https://stonehousewater.com/careers/
+  source: Careers link on the company's own site (https://www.stonehousewater.com) leads to https://stonehousewater.com/careers/;
+    read 2026-11-27.
+- id: v-glass
+  name: V-Glass
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://v-glass.com
+  note: Two roles on its own pages (/careers/technology-financial-analyst, /careers/electro-mechanical-technician); "Apply
+    now" buttons are placeholders, no job board.
+  evidence:
+  - 'https://v-glass.com: March 2026 "V-Glass Secures $3M Investment to Initiate Move from Lab Scale Production into a Pilot
+    Plant"; copyright 2026'
+  checked: '2026-11-27'
+  product_on_site: Vacuum insulated glass for windows.
+  ats:
+    type: other
+    board: https://v-glass.com/#Careers
+  read: auto
+  careers_url: https://v-glass.com/#Careers
+  source: Careers link on the company's own site (https://v-glass.com) leads to https://v-glass.com/#Careers; read 2026-11-27.
+- id: voltaic-marine
+  name: Voltaic Marine
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.voltaicmarine.com
+  note: Site gives no address; Southfield, MI is from the registry. Also sells a consumer electric sports boat.
+  evidence:
+  - 'https://www.voltaicmarine.com: "© 2026 Voltaic Marine All Rights Reserved"; Defense division AEU39 uncrewed surface vessel'
+  - 'https://www.voltaicmarine.com/careers/: one opening (Technical Program Manager), apply by email'
+  checked: '2026-11-27'
+  product_on_site: Voltaic Marine Platform, AEW24 electric sports boat and AEU39 solar-electric uncrewed surface vessel.
+  ats:
+    type: other
+    board: https://www.voltaicmarine.com/careers/
+  read: auto
+  careers_url: https://www.voltaicmarine.com/careers/
+  source: Careers link on the company's own site (https://www.voltaicmarine.com) leads to https://www.voltaicmarine.com/careers/;
+    read 2026-11-27.
+- id: the-hemp-plastic-company
+  name: The Hemp Plastic Company
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Stop - hempplastic.com answered 403; stopped on that site, so identity and status not confirmed.
+  evidence:
+  - 'https://www.hempplastic.com: HTTP 403 Forbidden'
+  checked: '2026-11-27'
+- id: samsar
+  name: Samsar
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: No site found; no search spent.
+  evidence:
+  - 'https://www.samsar.com: redirects to a GoDaddy for-sale page (not this company)'
+  checked: '2026-11-27'
+- id: terawatt-technology
+  name: TeraWatt Technology
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://terawatt-technology.com
+  note: Site address is now San Francisco (registry says Milpitas). Job postings link to herp.careers (a Japanese ATS not
+    in the list), so ats_type left null. Footer copyright still reads 2019. Not to be confused with terawattinc.com (a Quebec
+    coatings firm).
+  evidence:
+  - 'https://terawatt-technology.com: news dated June 2, 2026 (new Head of Product and Technology); 28 Geary St, Suite 650,
+    San Francisco'
+  - 'https://prnewswire.com/news-releases/terawatt-technology-completes-mass-production-facility-and-starts-initial-operation-302268754.html:
+    Oct 8, 2024, mass-production facility starts operation, datelined Milpitas'
+  - 'https://jobs.khoslaventures.com/companies/terawatt-technology: lists website terawatt-technology.com'
+  checked: '2026-11-27'
+  product_on_site: Lighter, smaller, higher-power and safer lithium-ion batteries made at scale, with a mass-production plant
+    in Shizuoka, Japan.
+  ats:
+    type: other
+    board: https://terawatt-technology.com/#section-careers
+  read: auto
+  careers_url: https://terawatt-technology.com/#section-careers
+  source: Careers link on the company's own site (https://terawatt-technology.com) leads to https://terawatt-technology.com/#section-careers;
+    read 2026-11-27.
+- id: supra-elemental-recovery
+  name: Supra Elemental Recovery
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.getsupra.com
+  note: Open roles link to LinkedIn job pages, not an ATS board.
+  evidence:
+  - 'https://www.getsupra.com/careers: headquarters Austin, TX; founded 2025 as a UT Austin spinout; two open roles; ©2026'
+  - 'https://semiconductor-today.com/news_items/2026/feb/supra-040226.shtml: 4 Feb 2026 launch article, website www.getsupra.com'
+  checked: '2026-11-27'
+  product_on_site: Critical-minerals recovery platform using reusable cartridges, first for gallium and scandium.
+  ats:
+    type: other
+    board: https://www.getsupra.com/careers
+  read: auto
+  careers_url: https://www.getsupra.com/careers
+  source: Careers link on the company's own site (https://www.getsupra.com) leads to https://www.getsupra.com/careers; read
+    2026-11-27.
+- id: sunspan
+  name: Sunspan
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: https://www.sunspansolar.com
+  note: Site is live but undated, so status unknown. sunspan.com is a parked for-sale domain, not this company. No careers
+    page.
+  evidence:
+  - 'https://www.third-derivative.org/portfolio/sunspan: website www.sunspansolar.com; HQ Mountain View, CA; tube-based solar
+    modules'
+  - 'https://www.sunspansolar.com: "Introducing Sunspan''s Patented Tube Technology"; no dates or copyright shown'
+  checked: '2026-11-27'
+  product_on_site: Patented cable-supported solar tube modules where the panel doubles as the structure.
+- id: zero-electric
+  name: Zero Electric
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: The domain the incubator links to no longer matches the registry (no batteries, New York address, partly template
+    text), so website left null. Could be a pivot or a reused domain; needs a person to decide. The registry note's ashby:zero
+    board was not linked from this site.
+  evidence:
+  - 'https://ati.utexas.edu/company/zero-electric-transforming-used-batteries-into-versatile-energy-storage-solutions/: "Visit
+    Website" links to zeroelectric.co; describes second-life battery storage'
+  - 'https://zeroelectric.co/: now sells "Grid Nodal Intelligence" interconnection software; 83 Broadway, New York; "ZeroElectic,2026"'
+  checked: '2026-11-27'
+- id: sigma-advanced-technologies
+  name: Sigma Advanced Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.sigmawaters.com
+  note: Trades as Sigma Waters. No careers page found. PFAS work with Sandia is mentioned in news, not product pages.
+  evidence:
+  - 'https://www.sigmawaters.com: "Sigma Waters"; SIGMA Advanced Technologies LLC, 1400 Eubank Blvd SE, Albuquerque, NM; copyright
+    2026'
+  - 'https://www.sigmawaters.com/news: June 1, 2026 announcement of mobile all-in-one ozone treatment containers'
+  checked: '2026-11-27'
+  product_on_site: Ozone-based water treatment systems, including mobile modular containers for produced and industrial water,
+    up to 4M gallons/day.
+- id: wattsto-energy
+  name: WattSto Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: wattsto.com, wattstoenergy.com and wattsto.energy do not resolve; one search found only an incubator listing (a barred
+    source, not opened).
+  evidence: []
+  checked: '2026-11-27'
+- id: wise-energie
+  name: Wise Energie
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: wiseenergie.com does not resolve and wise-energie.com timed out; one search found only an incubator listing (a barred
+    source, not opened).
+  evidence: []
+  checked: '2026-11-27'
+- id: unitech-north-america
+  name: Unitech North America
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: unitechna.com closed the connection; no company site confirmed. One search found only the January 2024 plant announcement
+    coverage, nothing later.
+  evidence:
+  - 'https://tn.gov/ecd/news/2024/1/12/-governor-lee--commissioner-mcwhorter-announce-unitech-north-america--llc-to-establish-first-us-manufacturing-operations-in-warren-county.html:
+    Jan 12, 2024 plant announcement (from search result, not opened)'
+  checked: '2026-11-27'
+- id: surface-transfer-heatflow
+  name: Surface Transfer (HeatFlow)
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: heatflowenergy.com and heatflow.energy do not resolve. One search returned mainly an abqjournal.com article (barred,
+    not opened) and nothing usable for site or status.
+  evidence: []
+  checked: '2026-11-27'
+- id: zakuro
+  name: Zakuro
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: zakuro.tech and zakuro.us do not resolve; zakuro.co is a Namecheap domain-auction page. One search found only directories
+    and DOE/MSU Foundation pages, none naming a website.
+  evidence:
+  - 'https://dealroom.co/companies/zakuro: HTTP 404'
+  checked: '2026-11-27'
+- id: rivixl
+  name: Rivixl
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: rivixl.com does not resolve. No search spent.
+  evidence:
+  - 'https://cbc.arizona.edu/news/tech-launch-arizona-helps-launch-nine-startups-including-rivixl: Aug 19, 2024 launch article;
+    gives no company website'
+  checked: '2026-11-27'
+- id: safe-li
+  name: Safe-Li
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: safe-li.com and www.safe-li.com both reset the connection (no page returned), so ownership not confirmed. No search
+    spent.
+  evidence: []
+  checked: '2026-11-27'
+- id: seebeckcell-technologies
+  name: SeebeckCell Technologies
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: Domain exists but returns 404 at the root (www too); not enough to call it closed. No search spent.
+  evidence:
+  - 'https://seebeckcell.com: HTTP 404'
+  checked: '2026-11-27'
+- id: swind-power
+  name: Swind Power
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: swindpower.com failed with a TLS error, so not confirmed. Registry already says no website found. No search spent.
+  evidence: []
+  checked: '2026-11-27'
+- id: visionary-products
+  name: Visionary Products
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: visionaryproductsinc.com does not resolve. No search spent.
+  evidence: []
+  checked: '2026-11-27'
+- id: modal-motors
+  name: Modal Motors
+  ats:
+    type: unknown
+    board: null
+  read: none
+  careers_url: null
+  source: 'The registry''s board ashby:modal belongs to a different company: its feed (https://api.ashbyhq.com/posting-api/job-board/modal,
+    read once 2026-11-27) lists 53 roles such as "Member of Technical Staff - ML Performance", "Forward Deployed Engineer
+    - ML" and "Developer Relations Engineer", in San Francisco and New York, which is Modal, the cloud-computing company.
+    modalmotors.com links no job board.'
+  note: No public job board found for Modal Motors (Farmington Hills, MI drone motors).
+  checked: '2026-11-27'
+- id: mettle-ops
+  name: Mettle Ops
+  was:
+    tier: enabling
+    reason: Automated stator-winding systems for drone (UAS) electric motors.
+  climate:
+    tier: out
+    reason: Defense contractor (armor, ground-vehicle design and integration) that also makes drone motors; defense is its
+      main business (owner ruling A3).
+  sectors:
+  - electric-aviation
+  ruling: A3
+  evidence:
+  - 'https://www.mettleops.com: defense contractor work (armor, ground-vehicle design and integration); UAS motors (2208,
+    4010 models) on https://www.mettleops.com/uas'
+  - 'https://www.mettleops.com/careers: Open Positions links to bigelowfamilyholdingsllc.appone.com; © 2026 Mettle Ops'
+  checked: '2026-11-27'
+
+questions:
+- id: spiritus-technologies
+  name: Spiritus Technologies
+  tier_now: core
+  question: Its own site now pitches direct air capture for enhanced oil recovery, not the carbon-removal credits the registry
+    describes. Does DAC sold for enhanced oil recovery keep its core tier?
+  evidence:
+  - 'https://www.spiritus.com: "Direct air capture at the wellhead, injected into your reservoir"; 63 Rover Blvd, White Rock,
+    NM'
+  - 'https://www.spiritus.com/careers: "Apply Now" links to jobs.ashbyhq.com/spiritus; cites a "2025 Finalist" award; Lees
+    Summit manufacturing site planned'
+- id: gridflow
+  name: GridFlow
+  tier_now: core
+  question: Its own site (gridflow.tech) now describes vanadium flow batteries; the registry says a lithium-sulfur flow battery
+    licensed from Sandia. The tier (core energy storage) is the same either way; only the reason needs a check.
+  evidence:
+  - 'https://sstp.org/companies/gridflow: Company Website gridflow.tech; 10510 Research Road SE, Suite 300, Albuquerque, NM
+    87123'
+  - 'https://gridflow.tech: © 2026; press page lists Sandia partnership (2024-06-25) and New Mexico Inno (2025-01-24) items'
+- id: zero-electric
+  name: Zero Electric
+  tier_now: core
+  question: The domain its UT Austin incubator page links (zeroelectric.co) now sells grid-interconnection software from New
+    York and says nothing about batteries. A pivot or a reused domain? The website is left null.
+  evidence:
+  - 'https://ati.utexas.edu/company/zero-electric-transforming-used-batteries-into-versatile-energy-storage-solutions/: "Visit
+    Website" links to zeroelectric.co; describes second-life battery storage'
+  - 'https://zeroelectric.co/: now sells "Grid Nodal Intelligence" interconnection software; 83 Broadway, New York; "ZeroElectic,2026"'

@@ -1,0 +1,212 @@
+# Registry fixes 18: websites and status for 14 Colorado companies that had no website (2026-11-27).
+#
+# Written by workstream A2 at the supervisor's request. These listed companies had no website in the registry, so
+# the careers probe never looked at them. For each: its own website, its careers page and board (read only from
+# its own pages), and whether it still operates. Generic client name; no sign-in, bot check or CAPTCHA; robots.txt
+# obeyed; a usage limit means the rest were recorded as unknown.
+#
+#   kind: website     current website (tools/apply_screening.py new_website); `now: null` keeps a note instead
+#   failure           what was found: active, renamed, acquired, closed or unknown
+#   ats + source      the board from the company's own careers link (replace_board); type other means the careers
+#                     page itself, for the careers-page reader
+#   product_on_site   what the site says it makes, for checking the registry's reason
+#
+# Counts: active 6, unknown 8.
+
+fixes:
+- id: endolith
+  name: Endolith
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.endolithmining.com
+  note: endolith.com is a parked HugeDomains listing, not the company. Site has no job board; careers is a contact form only.
+  evidence:
+  - 'https://coloradobiz.com/endolith-arvada-raises-16-5m-to-boost-copper-extraction/: article (2026-04-21) gives website
+    www.endolithmining.com; labs in Arvada and Westminster'
+  - 'https://www.endolithmining.com: footer ''© Endolith 2025''; Careers section ''Work with us'' links only to /contact'
+  - 'https://www.endolithmining.com/news: newest item 7.30.2026 ''Endolith Featured in Federal Review of Colorado''s Critical
+    Minerals Sector'''
+  checked: '2026-11-27'
+  product_on_site: AI-guided microbes and machine learning that recover copper and other critical minerals within existing
+    heap-leach operations.
+- id: gto-technologies
+  name: GTO Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://gto-egs.com/
+  note: Site gives Golden, CO; registry has Lakewood, CO. No careers page; contact is a HubSpot form. gtotech.com and gtotechnologies.com
+    are unrelated/parked.
+  evidence:
+  - 'https://www.mines.edu/news/all-news/2026/gto-technologies-receives-final-27-million-of-5-million-seed-funding-round.html:
+    article (2026-01-14) links website https://gto-egs.com/'
+  - 'https://gto-egs.com/: ''© 2026 GTO Technologies''; news list through Jan 2026'
+  checked: '2026-11-27'
+  product_on_site: Patented completion and flow-control systems (sliding frac sleeves and wellbore tractor) for Enhanced Geothermal
+    Systems.
+- id: grand-valley-instrumentation
+  name: Grand Valley Instrumentation
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://www.gvinstrumentation.com/
+  note: 'Status from live product pages only: no copyright or dated news on the site (a 2024/2025 year appears only in image
+    filenames). grandvalleyinstrumentation.com redirects here. No careers page.'
+  evidence:
+  - 'https://www.gvinstrumentation.com/: ''Equipment that measures, controls and reports''; Meerkat Monitoring System product
+    page'
+  - 'https://www.gvinstrumentation.com/about-us: ''proudly manufacture[s] in Grand Junction, Colorado'''
+  checked: '2026-11-27'
+  product_on_site: Gas detection equipment and software, including the Meerkat system that monitors and tunes landfill wellfields.
+- id: element-one
+  name: Element One
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: https://elem1.com/
+  note: 'elementonecorp.com is a different company (Vancouver, CSE: EONE, olivine/natural hydrogen); do not use. No careers
+    page on elem1.com or detectape.com.'
+  evidence:
+  - 'https://elem1.com/: ''Element One, Inc., 7253 Siena Way, Boulder, CO 80301''; ''© 2025 Element One, Inc.'''
+  - 'https://detectape.com/: product store; footer ''© 2026 All rights reserved. DetecTape & Element One, Inc.''; logo links
+    to elem1.com'
+  - 'https://www.energy.gov/node/983396: ''Element One Inc. of Boulder, Colorado, has patented unique hydrogen leak detection
+    materials'' (2014)'
+  checked: '2026-11-27'
+  product_on_site: DetecTape H2, a colour-changing self-fusing silicone tape that shows hydrogen leaks, plus hydrogen-detecting
+    pigments.
+- id: alta-resource-technologies
+  name: Alta Resource Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: altaresourcetech.com resolves but returned an empty page (home and /careers), so identity could not be confirmed;
+    likely a script-rendered site worth checking in a browser. altaresource.com and altaresourcetechnologies.com do not resolve.
+    Status from 2025 funding only.
+  evidence:
+  - 'https://dealroom.co/companies/alta-resource-technologies: Boulder, Colorado; emerged from stealth early 2025; Seed 2
+    $4.4M May 2025'
+  checked: '2026-11-27'
+  product_on_site: Custom-designed proteins that extract high-purity rare earth elements and other critical minerals from
+    ores, tailings and waste streams.
+- id: aqueous-resources
+  name: Aqueous Resources
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: aqueousresources.com answers 404 at the root (server exists, no page); aqueousresources.net does not resolve. lithosgroup.com
+    (named parent) failed with a TLS error. No web search spent.
+  evidence: []
+  checked: '2026-11-27'
+- id: blaze-energy-technologies
+  name: Blaze Energy Technologies
+  kind: website
+  failure: active
+  website:
+    was: null
+    now: null
+  note: No article names a website or HQ. blazeenergy.com is an unrelated energy-drink site; blaze.energy resolves but returned
+    an empty page; blazeenergy.tech does not resolve. Colorado HQ not confirmed from sources read.
+  evidence:
+  - 'https://pulse2.com/blaze-energy-raises-6-5-million-seed-round-to-advance-flex-fuel-maritime-technology/: $6.5M seed led
+    by Propeller Ventures and Catalyzer Ventures (2026-10-06); US and Norway operations'
+  - 'https://www.marinelink.com/news/onboard-fuel-reforming-system-pilot-537065: lomarlabs pilot on a Lomar vessel (2026-03-17)'
+  checked: '2026-11-27'
+  product_on_site: 'Flex-Fuel Reformer: compact engine-integrated system that makes hydrogen onboard from ammonia, methanol
+    or LNG for marine engines.'
+- id: geothermal-technologies-inc
+  name: Geothermal Technologies, Inc.
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: 'Stops: businesswire.com and cpr.org both answered 403; stopped on those sites. geothermaltechnologies.com and geothermaltech.com
+    are parked GoDaddy for-sale domains; geothermaltechnologiesinc.com does not resolve.'
+  evidence: []
+  checked: '2026-11-27'
+- id: mach-electric
+  name: Mach Electric
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: machelectric.com is a parked GoDaddy for-sale domain; machelectric.co does not resolve. Portfolio listing is the only
+    trace; no company site found.
+  evidence:
+  - 'https://www.colorado.edu/venturepartners/startup-portfolio/mach-electric-inc: licenses CU Boulder carbon-utilization
+    IP; aerospace-grade carbon fiber while sequestering CO2; stage Pre-Seed; no website listed (LinkedIn only)'
+  checked: '2026-11-27'
+- id: minus-materials
+  name: Minus Materials
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: 'minusmaterials.com (with and without www) fails TLS: certificate is for 2mc-clients.com, so the page could not be
+    read. Likely the company domain on an agency host; check in a browser. CU Venture Partners slugs tried returned 404.'
+  evidence: []
+  checked: '2026-11-27'
+- id: new-iridium
+  name: New Iridium
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: The old domain now redirects to Kemvera, but no Kemvera page read mentions New Iridium, photocatalysis or Colorado,
+    so a rename or acquisition is unconfirmed. www.newiridium.com, newiridium.co and newiridium.tech do not resolve. One web
+    search spent.
+  evidence:
+  - 'https://www.chemicalonline.com/doc/new-iridium-launches-new-class-of-photocatalysts-for-birch-reduction-0001: 2020-12-08
+    release, ''For more information, visit www.NewIridium.com''; Boulder, CO dateline'
+  - 'https://newiridium.com: 301 redirect to http://www.kemvera.com/'
+  - 'https://www.kemvera.com/about-us: ''petroleum-independent chemical supply chain based in the American Midwest''; products
+    bio-acetic acid and bio-ethyl acetate'
+  checked: '2026-11-27'
+- id: sustainable-chemicals
+  name: Sustainable Chemicals
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: 'Not researched beyond the registry: the only source (ptonline.com) is recorded as refusing automated fetch, the name
+    is too generic to guess a domain, and the search budget was used elsewhere.'
+  evidence: []
+  checked: '2026-11-27'
+- id: synforce
+  name: Synforce
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: synforce.com is a DomainMarket for-sale listing. University research team (also listed as 'Synergia'); no company
+    site found. No web search spent.
+  evidence: []
+  checked: '2026-11-27'
+- id: vsk-energy
+  name: VSK Energy
+  kind: website
+  failure: unknown
+  website:
+    was: null
+    now: null
+  note: vskenergy.com no longer belongs to the JV. vikramsolar.us failed TLS (cert for vikram.in). No 2025-2026 evidence the
+    Brighton factory proceeded; no web search spent.
+  evidence:
+  - 'https://www.vskenergy.com: 301 redirect to an unrelated events page (theforsythkingston.com)'
+  - 'https://www.vikramsolar.com: no mention of VSK Energy or a Colorado plant'
+  checked: '2026-11-27'
