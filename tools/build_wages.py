@@ -5,6 +5,10 @@ requests; ignored by git):
   data/pay/source/oesm25ma/MSA_M2025_dl.xlsx   OEWS May 2025, metropolitan areas
   data/geo/source/list1_2023.xlsx              OMB delineations (CBSA -> CSA)
 
+  The zip came from https://www.bls.gov/oes/special-requests/oesm25ma.zip (linked from
+  https://www.bls.gov/oes/tables.htm), unzipped into data/pay/source/. The output is
+  committed, so a new machine needs the download only to rebuild it.
+
 Output (committed, small):
   data/pay/bls-oews-2025.json
 

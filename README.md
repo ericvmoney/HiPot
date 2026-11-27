@@ -2,7 +2,9 @@
 
 A public job board for hardware roles at clean tech and electrification startups. Search needs no login, candidates are never charged, and a candidate's resume is processed on their own device.
 
-- [PLAN.md](PLAN.md): what is being built, the tenets, the agent plan and the milestones. Read this first.
+- [HANDOVER.md](HANDOVER.md): where things stand, what lives outside the repository, and how to restart on a new machine or account. Read this first.
+- [CLAUDE.md](CLAUDE.md): working rules for AI assistants (the owner's standing instructions, privacy and fetching rules, how changes flow).
+- [PLAN.md](PLAN.md): what is being built, the tenets, the agent plan, the milestones and the owner's decisions (section 9).
 - [NAMES.md](NAMES.md): the survey of existing boards and how the name was chosen.
 - [reports/M0-foundations.md](reports/M0-foundations.md): what Milestone 0 delivered and what the sandbox spikes found.
 
@@ -12,7 +14,7 @@ A public job board for hardware roles at clean tech and electrification startups
 |---|---|---|
 | `schema/`, `taxonomy.yml` | The contracts every part builds against | Supervisor |
 | `companies.yml` | The company registry, with climate tier and startup status | A2 company scout |
-| `pipeline/collect/` | Feed readers (Greenhouse, Lever, Ashby, Rippling) | A1 collector |
+| `pipeline/collect/` | Readers for 15 job-board systems (Greenhouse, Lever, Ashby, Rippling, Workday, iCIMS and others) and for companies' own careers pages | A1 collector |
 | `pipeline/tag/` | Discipline and level tagging | A3 tagger |
 | `pipeline/seed/` | One-off import of the old personal hub | Supervisor |
 | `data/seed/` | Seed jobs for building against before the collector exists | Supervisor |
@@ -48,6 +50,10 @@ uv run python -m pipeline.seed.import_old_hub    # rebuild data/seed/jobs.json f
 uv run python -m tools.build_metros              # rebuild metro regions and data/geo/places.json from data/geo/source/
 uv run python -m tools.serve_board               # serve site/ at http://localhost:8734/ (see below)
 uv run python -m tools.build_wages               # rebuild data/pay/bls-oews-2025.json from the BLS file in data/pay/source/
+uv run python -m tools.apply_screening           # apply data/screening/ proposals, fixes and probes to companies.yml (idempotent)
+uv run python -m tools.coverage                  # screened, listed and readable share of each region's reference list
+uv run python -m pipeline.collect --check-boards # list registry boards in a form no reader accepts (no network)
+uv run python -m pipeline.publish --no-grades --out <folder>\board.json   # the shared build (see HANDOVER.md section 4)
 ```
 
 Next steps and the manual checks that help most right now: [reports/M1-status.md](reports/M1-status.md).
@@ -60,7 +66,7 @@ The board is a static page (`site/index.html`) that loads one data file, `site/d
 
 Commands are for PowerShell on Windows, run from the repository root. If `uv` is not found in a new window, restart the terminal after installing it (`winget install astral-sh.uv`).
 
-**1. Collect** the postings from every company's public job board (network; takes about 5 to 8 minutes, mostly because Rippling boards are read 6 seconds apart):
+**1. Collect** the postings from every company's public job board and careers page (network; takes about 3 hours over the full registry, because hosts are read seconds apart and the largest Workday boards hold thousands of postings; run it in the background):
 
 ```powershell
 uv run python -m pipeline.collect
@@ -88,7 +94,7 @@ uv run python -m tools.validate --raw data/jobs.raw.json --jobs data/jobs.json
 uv run python -m pipeline.publish --jobs data/jobs.json
 ```
 
-Without `--jobs` it uses `data/jobs.json` when that file exists and the seed otherwise, and prints which file it read. Writes `site/data/board.json` with only listed companies (core or enabling climate tier, startup status `in`) and listed role types (`listed: true` in `taxonomy.yml`). It prints how many roles were kept and why the rest were left out.
+Without `--jobs` it uses `data/jobs.json` when that file exists and the seed otherwise, and prints which file it read. Writes `site/data/board.json` with only listed companies (core or enabling climate tier; the startup test now only labels a company startup or established, PLAN.md decision 14) and listed role types (`listed: true` in `taxonomy.yml`). It prints how many roles were kept and why the rest were left out.
 
 **5. Serve and open** the page:
 
@@ -111,7 +117,7 @@ Then open <http://localhost:8734/>. Stop the server with Ctrl+C. Use `--port 900
 uv run pytest -q
 ```
 
-Runs every test offline, about 15 seconds.
+Runs every test offline, about a minute.
 
 ## Rules that are not negotiable
 

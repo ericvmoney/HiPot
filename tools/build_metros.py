@@ -5,6 +5,12 @@ Inputs (downloaded once into data/geo/source/, which git ignores):
   national_place_by_county2020.txt   every Census place (cities, towns, CDPs) and its counties
   national_cousub2020.txt            county subdivisions; used for New England towns only
 
+Where they came from (2026-11-24):
+  https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx
+  https://www2.census.gov/geo/docs/reference/codes2020/national_place_by_county2020.txt
+  https://www2.census.gov/geo/docs/reference/codes2020/national_cousub2020.txt
+The outputs below are committed, so a new machine needs these only to rebuild the metros.
+
 Outputs:
   taxonomy.yml       the block between the 'BEGIN metros' and 'END metros' markers
   data/geo/places.json   state -> normalised place name -> metro id
