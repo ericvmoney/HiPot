@@ -122,15 +122,13 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
         if not page or offset >= total:
             break
     drafts, seen = [], set()
+    details = normalize.Details()
     for item in listed:
         if item["externalPath"] in seen:
             continue
         seen.add(item["externalPath"])
-        try:
-            info = (fetcher.get_json(f"{api_prefix}{item['externalPath']}") or {}).get("jobPostingInfo") or {}
-        except Blocked:
-            raise
-        except FetchError:
-            info = {}      # keep the posting from the list without its description
+        # A failed request keeps the posting from the list without its description.
+        answer = details.ask(lambda: fetcher.get_json(f"{api_prefix}{item['externalPath']}"), default={})
+        info = (answer or {}).get("jobPostingInfo") or {}
         drafts.append(_draft(item, info, public_prefix))
-    return drafts
+    return details.result(drafts)

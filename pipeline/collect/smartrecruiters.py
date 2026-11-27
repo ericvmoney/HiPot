@@ -114,12 +114,9 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
         if not content or len(items) >= (answer.get("totalFound") or 0):
             break
     drafts = []
+    details = normalize.Details()
     for item in items:
-        try:
-            detail = fetcher.get_json(f"{base}/{item['id']}")
-        except Blocked:
-            raise
-        except FetchError:
-            detail = {}    # keep the posting from the list without its description
+        # A failed request keeps the posting from the list without its description.
+        detail = details.ask(lambda: fetcher.get_json(f"{base}/{item['id']}"), default={})
         drafts.append(_draft(item, detail if isinstance(detail, dict) else {}, board))
-    return drafts
+    return details.result(drafts)
