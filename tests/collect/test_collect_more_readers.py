@@ -567,6 +567,51 @@ def test_workday_ids_are_stable():
     assert all(job["id"].startswith("workday:solvenergy.wd1-SOLV_External_Career:J") for job in raw["jobs"])
 
 
+# Two companies reading two sites of one Workday tenant (Canadian Solar's
+# 'CanadianSolar' and 'eStorage' sites share 67 requisitions).
+
+def workday_site(tenant: str, wd: str, site: str, requisitions: list[str]) -> dict:
+    search = f"https://{tenant}.{wd}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs"
+    page = {"total": len(requisitions), "jobPostings": [
+        {"title": f"Role {r}", "externalPath": f"/job/US---Remote/Role-{r}_{r}", "locationsText": "US - Remote"}
+        for r in requisitions]}
+    return {(search, 0): page}
+
+
+def test_a_requisition_on_two_sites_stays_with_the_narrower_site():
+    sites = {**workday_site("canadiansolar", "wd5", "CanadianSolar", ["10000001", "10000002", "10000003", "10000858"]),
+             **workday_site("canadiansolar", "wd5", "eStorage", ["10000858", "10000900"])}
+    parent = company("canadian-solar", "workday", "canadiansolar.wd5/CanadianSolar")
+    storage = company("canadian-solar-e-storage", "workday", "canadiansolar.wd5/eStorage")
+    raw = collect([parent, storage], FakeFetcher(extra=sites), SeenState(), now=lambda: "2026-11-27T16:00:00Z")
+    owners = {job["source"]["posting_id"]: job["company_id"] for job in raw["jobs"]}
+    assert owners["10000858"] == "canadian-solar-e-storage"          # 2 postings on eStorage, 4 on CanadianSolar
+    assert sorted(job["source"]["posting_id"] for job in raw["jobs"]) == ["10000001", "10000002", "10000003", "10000858", "10000900"]
+    entries = {entry["company_id"]: entry for entry in raw["run"]["companies"]}
+    assert entries["canadian-solar"]["postings"] == 3 and entries["canadian-solar"]["status"] == "ok"
+    assert entries["canadian-solar"]["error"] == ("1 postings left under canadian-solar-e-storage, which reads a "
+                                                  "narrower site on the same Workday tenant")
+    assert entries["canadian-solar-e-storage"]["postings"] == 2 and entries["canadian-solar-e-storage"]["error"] is None
+
+
+def test_a_tie_goes_to_the_company_first_in_the_registry():
+    sites = {**workday_site("acme", "wd1", "SiteA", ["R1", "R2"]), **workday_site("acme", "wd1", "SiteB", ["R2", "R3"])}
+    first = company("acme-b", "workday", "acme.wd1/SiteB")
+    second = company("acme-a", "workday", "acme.wd1/SiteA")
+    raw = collect([first, second], FakeFetcher(extra=sites), SeenState(), now=lambda: "2026-11-27T16:00:00Z")
+    owners = {job["source"]["posting_id"]: job["company_id"] for job in raw["jobs"]}
+    assert owners["R2"] == "acme-b"                                   # both sites list 2: registry order decides
+    flipped = collect([second, first], FakeFetcher(extra=sites), SeenState(), now=lambda: "2026-11-27T16:00:00Z")
+    assert {job["source"]["posting_id"]: job["company_id"] for job in flipped["jobs"]}["R2"] == "acme-a"
+
+
+def test_other_tenants_and_one_company_are_left_alone():
+    sites = {**workday_site("acme", "wd1", "Careers", ["R1"]), **workday_site("other", "wd5", "Careers", ["R1"])}
+    raw = collect([company("acme", "workday", "acme.wd1/Careers"), company("other", "workday", "other.wd5/Careers")],
+                  FakeFetcher(extra=sites), SeenState(), now=lambda: "2026-11-27T16:00:00Z")
+    assert len(raw["jobs"]) == 2                                      # the same number on two tenants is two postings
+
+
 # -------------------------------------------------------------------- iCIMS
 
 from pipeline.collect import icims  # noqa: E402
