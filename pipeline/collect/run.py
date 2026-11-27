@@ -160,6 +160,49 @@ def finish(made: dict, company: dict, state: SeenState, now: str) -> dict:
     }
 
 
+def shared_workday_postings(jobs: list[dict], entries: list[dict], order: list[str],
+                            log: Callable[[str], None] = lambda line: None) -> list[dict]:
+    """One posting per requisition within a Workday tenant.
+
+    A company can list the same requisition on two sites of one tenant (Canadian
+    Solar's 'CanadianSolar' and 'eStorage' sites share 67). When two companies
+    read such sites, the posting stays with the company whose site listed fewer
+    postings this run: a narrower site is a subsidiary's or a brand's. A tie goes
+    to the company that comes first in the registry. The other company's copy is
+    dropped and its run entry says where the postings were left.
+    """
+    workday_jobs = [job for job in jobs if job["source"]["ats"] == "workday" and job["source"].get("posting_id")]
+    site_size = Counter((job["company_id"], job["source"]["board"]) for job in workday_jobs)
+    rank = {company_id: index for index, company_id in enumerate(order)}
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for job in workday_jobs:
+        tenant = job["source"]["board"].split(".", 1)[0].lower()
+        groups.setdefault((tenant, job["source"]["posting_id"]), []).append(job)
+    dropped_ids: set[int] = set()
+    left_with: dict[str, Counter] = {}
+    for copies in groups.values():
+        if len({job["company_id"] for job in copies}) < 2:
+            continue
+        keeper = min(copies, key=lambda job: (site_size[(job["company_id"], job["source"]["board"])],
+                                              rank.get(job["company_id"], len(rank))))
+        for job in copies:
+            if job["company_id"] != keeper["company_id"]:
+                dropped_ids.add(id(job))
+                left_with.setdefault(job["company_id"], Counter())[keeper["company_id"]] += 1
+    if not dropped_ids:
+        return jobs
+    by_company = {entry["company_id"]: entry for entry in entries}
+    for company_id, keepers in left_with.items():
+        entry = by_company.get(company_id)
+        note = "; ".join(f"{count} postings left under {keeper}, which reads a narrower site on the same Workday tenant"
+                         for keeper, count in keepers.most_common())
+        if entry:
+            entry["postings"] -= sum(keepers.values())
+            entry["error"] = "; ".join(part for part in (entry["error"], note) if part)[:500]
+        log(f"shared   {company_id}: {note}")
+    return [job for job in jobs if id(job) not in dropped_ids]
+
+
 def _entry(company: dict, status: str, postings: int = 0, error: str | None = None) -> dict:
     return {
         "company_id": company["id"], "ats": company["ats"]["type"], "status": status,
@@ -231,6 +274,7 @@ def collect(
         extra = f" [{note_from_reader}]" if note_from_reader else ""
         log(f"{status:<8} {company['id']}: {len(kept)} postings from {ats}{note}{extra}")
 
+    jobs = shared_workday_postings(jobs, entries, [company["id"] for company in companies], log)
     finished = now()
     jobs.sort(key=lambda job: (job["company_id"], job["title"].lower(), job["id"]))
     return {
