@@ -110,6 +110,32 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 - A "Great matches only" toggle sits in the persona bar.
 - Nothing new is stored.
 
+## Saving on this computer (decision 21)
+
+When `uv run python -m tools.serve_board` serves the board, the page also keeps the persona and My Roles in `local-data/` at the repository root.
+- **Never committed:** the folder is git-ignored.
+- **Persistent:** both come back after a reload or a server restart.
+- **Moving the folder:** `--data PATH` or `HIPOT_LOCAL_DATA`.
+
+**When it turns on.** The page turns local saving on only when it is served from `localhost` or `127.0.0.1` and `GET /api/local/status` answers within 1.5 s. On the shared artifact the check never runs.
+
+**What is saved:**
+- **Persona:**
+  - when opened, as the file's text;
+  - when handed over from the persona page, as the handed-over JSON. The board saves it on load, so `persona.html` needs nothing.
+  - "Stop using it" deletes the file.
+  - A tab with no persona loads the saved one.
+- **My Roles:**
+  - saved after each change (debounced 0.8 s), in the export's YAML;
+  - merged into the browser's list on load, latest change wins.
+
+**The server** (`tools/serve_board.py`):
+- **Endpoints:** two fixed files, `persona.yml` and `my-roles.yml`.
+- **Writes:** atomic, capped at 256 KB.
+- **Who it answers:** 127.0.0.1 only, and only requests addressed to `localhost` or `127.0.0.1` on its own port. PUT and DELETE only from its own origin.
+- **No CORS headers;** request bodies are never logged.
+- **Tests:** `tests/test_serve_board.py`.
+
 ### Checking a ranking
 
 ```

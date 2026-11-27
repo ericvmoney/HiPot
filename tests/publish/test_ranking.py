@@ -238,8 +238,14 @@ def test_the_persona_is_kept_in_session_storage_only_and_never_in_the_address():
     assert not re.search(r"localStorage[^;\n]*PERSONA", code)
     encode = SCRIPT[SCRIPT.index("function encodeState()"):SCRIPT.index("function decodeState(")]
     assert "persona" not in encode
-    # What is stored is the reduced form, never the file as opened.
+    # What the tab stores is the reduced form, never the file as opened.
     assert "JSON.stringify(HiPotRank.forTab(data))" in SCRIPT
+    # The one other place it goes (decision 21): the local server's persona file, and only through localApi(),
+    # which does nothing unless the page is served from this machine.
+    assert set(re.findall(r"localApi\('persona'(?:, '(\w+)')?", code)) == {"", "PUT", "DELETE"}
+    api = SCRIPT[SCRIPT.index("function localApi("):SCRIPT.index("function startLocal()")]
+    assert api.index("if (!servedLocally()) return Promise.resolve(null);") < api.index("fetch(")
+    assert "function saveLocalPersona() {\n    if (localOn && personaText)" in SCRIPT
 
 
 def test_persona_controls_are_on_the_board():
