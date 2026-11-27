@@ -134,7 +134,10 @@ _NONE_OPEN = re.compile(r"no (?:current |open )?(?:openings|open positions|posit
                         r"not (?:currently )?hiring|(?:there are|we have) no (?:current |open )?(?:openings|positions|roles)|"
                         r"no (?:current|open) (?:roles|jobs)|check back (?:soon|later)|"
                         r"(?:do not|don.t) have any (?:current |open )?(?:openings|positions|roles|vacancies)|"
-                        r"(?:job )?openings will be posted (?:on|here)|^no items found$|\bno items found\b", re.I)
+                        r"(?:job )?openings will be posted (?:on|here)|^no items found$|\bno items found\b|"
+                        # Iontra: "Currently, our team is complete"; Ampt: "If no postings are listed, ..."
+                        # (read only once the page has shown no postings).
+                        r"our team is (?:currently )?complete|if no (?:postings|positions|openings|jobs) are listed", re.I)
 # A bot check or block page. "captcha" alone is not one: ordinary pages load
 # reCAPTCHA for their contact forms, and site builders name it in their config.
 _CHALLENGE_TITLE = re.compile(r"<title>\s*(?:just a moment|attention required|access denied|"
