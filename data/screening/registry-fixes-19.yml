@@ -284,7 +284,7 @@ fixes:
     type: workday
     board: dongwha.wd3/DongwhaCareers
   read: manual
-  careers_url: dongwha.wd3/DongwhaCareers
+  careers_url: https://dongwha.wd3.myworkdayjobs.com/ko-KR/DongwhaCareers
   source: Careers link on the company's own site (https://www.dongwhaelectrolyte.com/) leads to dongwha.wd3/DongwhaCareers;
     job board workday dongwha.wd3/DongwhaCareers; read 2026-11-27.
 - id: amperesand
@@ -370,8 +370,9 @@ fixes:
   failure: unknown
   website:
     was: null
-    now: http://en.daejin2019.com/
-  note: Site is the Korean parent's (Daejin Advanced Materials); no dates or copyright year, no recruit link. Cumberland City
+    now: null
+  note: Supervisor 2026-11-27, the only site found (http://en.daejin2019.com/) has no https address, which the registry
+    requires, so the website stays empty. Site is the Korean parent's (Daejin Advanced Materials); no dates or copyright year, no recruit link. Cumberland City
     plant not confirmed built. stewartcountystandard.com (article on a Daejin lawsuit) answered 403; stopped there. daejinam.com
     is parked.
   evidence:
