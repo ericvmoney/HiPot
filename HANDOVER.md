@@ -28,7 +28,7 @@ Written 2026-11-27 so the owner and any AI assistant can restart without the old
 | Milestone | Status |
 |---|---|
 | **M0** | Done. |
-| **M1**, board prototype | Met, except "refreshed daily": every run is still started by hand, and no schedule exists. |
+| **M1**, board prototype | Met. The daily refresh has been scheduled since 2026-11-27 (section 4); its first run is 2026-11-28. |
 | **M2**, persona | The in-browser persona builder draft and the ranking are built. The exit needs the owner to judge [reports/M2-ranking-check.md](reports/M2-ranking-check.md). |
 | **M3**, coverage | Far past 300 companies, and the Workday reader is done. The spot-check exit ([reports/M3-spot-check-02.md](reports/M3-spot-check-02.md)) passes if the owner rules Westmag and Conifer out (they are among the open company questions below). |
 | **M4**, employer side | Not started. |
@@ -168,6 +168,25 @@ Publish `site/index.html` as an artifact, with these supporting files:
 | `persona.html` | `site\persona.html` |
 
 Declare the `downloads` capability, which the persona page and My Roles export need. The board is about 8 MB, under the 16 MB artifact limit. Once a URL exists, republish to that same URL. Sharing ("anyone with the link") is set by the owner from the page's Share menu.
+
+### Daily refresh (owner, 2026-11-27)
+
+There are two parts, both on the owner's PC:
+
+1. **08:00, Windows Task Scheduler.** A task named "HiPot daily refresh" runs `uv run python -m tools.refresh` in `C:\HiPot`.
+   - It collects, tags, validates, publishes the local board, and makes the shared build in `data/state/shared-build/`.
+   - Its result goes to `data/state/refresh-latest.json` and its log to `data/state/logs/`. A lock (`data/state/refresh.lock`) stops two runs overlapping.
+   - The PC must be on and signed in. A missed start runs when the PC is next available.
+2. **About 11:08, a Claude scheduled task, "hipot-daily-publish".**
+   - It checks that morning's result and republishes the shared artifact from the shared build. It publishes nothing if the refresh failed, is still running, or looks broken (under 3,000 roles).
+   - It runs only while the Claude desktop app is open; a missed run happens when the app next opens.
+   - Its prompt is in `~/.claude/scheduled-tasks/hipot-daily-publish/SKILL.md`, which is outside the repository: copy that prompt from this section's description if the task must be recreated.
+
+**On a new machine:**
+- Register the Windows task again, with the PowerShell steps in `tools/refresh.py`'s docstring.
+- Recreate the Claude task with the same steps: read `refresh-latest.json`, check it, then publish as in section 4.
+
+To run a refresh by hand, use `uv run python -m tools.refresh`. Add `--skip-collect` to reuse the last collection.
 
 ## 5. Restart the workstreams
 

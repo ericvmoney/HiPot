@@ -299,6 +299,9 @@ Decided by Eric on 2026-11-24:
     - When the board runs on the owner's machine through `tools.serve_board`, the persona and My Roles are also saved to `local-data/` in the repository folder. That folder is git-ignored and never committed. They come back when the page is reloaded or the server restarts.
     - The local server only listens on 127.0.0.1 and only accepts requests from its own page.
     - The shared artifact is unchanged: the persona stays in the tab, and My Roles stays in the browser.
+22. **Daily refresh** (Eric, 2026-11-27):
+    - The board is refreshed every day on the owner's PC. Collection starts at 08:00 (Windows Task Scheduler, `tools.refresh`), and the shared board is republished at about 11:00 Mountain time (a Claude scheduled task) without a review step.
+    - The task publishes nothing if the run failed, is unfinished, or has under 3,000 roles. HANDOVER.md section 4 has the details.
 20. **Large boards** (Eric, 2026-11-26):
     - GE Vernova's Workday board is read in full, and the reader's cap is raised from 1,000 to 4,000.
     - Evoqua keeps reading Xylem's whole board.
