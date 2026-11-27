@@ -368,3 +368,47 @@ def test_a_posting_page_whose_first_heading_is_a_section():
     page = ("<html><title>VP of Sales - AU &mdash; Luminous</title><body><h2>ABOUT LUMINOUS</h2><h2>THE ROLE</h2>"
             + POSTING_TEXT + "</body></html>")
     assert careers._page_title(page) == "VP of Sales - AU"
+
+
+# A site that holds connections (deltaww.com, 2026-11-27): each request waited
+# out the deadline, and a full run stalled on one company for 40 minutes.
+
+TIMED_OUT = FetchError("timed out (ReadTimeout: no complete answer within 120s)")
+LISTING = ('<a href="/careers/controls-engineer">Controls Engineer</a>'
+           '<a href="/careers/test-technician">Test Technician</a>'
+           '<a href="/careers/process-engineer">Process Engineer</a>')
+POSTING = "<h1>{}</h1>" + POSTING_TEXT
+
+
+def listing_site(failures=None):
+    return FakeSite({CAREERS: LISTING,
+                     "https://acme.example.com/careers/controls-engineer": POSTING.format("Controls Engineer"),
+                     "https://acme.example.com/careers/test-technician": POSTING.format("Test Technician"),
+                     "https://acme.example.com/careers/process-engineer": POSTING.format("Process Engineer")},
+                    failures=failures)
+
+
+def test_the_first_timeout_ends_a_companys_reading_and_keeps_what_it_has():
+    site = listing_site({"https://acme.example.com/careers/test-technician": TIMED_OUT})
+    result = careers.read(CAREERS, site, context())
+    assert result.status == "partial" and [d["title"] for d in result.drafts] == ["Controls Engineer"]
+    assert result.note.startswith("stopped after a timeout; 1 of 3 listed postings read")
+    assert "https://acme.example.com/careers/process-engineer" not in site.asked      # nothing after the timeout
+
+
+def test_a_company_has_a_time_budget():
+    ticks = iter([0, 1, 2, 3, 400, 400, 400])
+    site = listing_site()
+    result = careers.read(CAREERS, site, context(clock=lambda: next(ticks)))
+    assert result.status == "partial" and len(result.drafts) == 1
+    assert result.note.startswith("stopped after the 300 s time budget")
+
+
+def test_a_timeout_on_the_careers_page_itself_is_an_error_not_a_partial_read():
+    site = FakeSite({}, failures={CAREERS: TIMED_OUT})
+    with pytest.raises(FetchError, match="timed out"):
+        careers.read(CAREERS, site, context())
+    site = FakeSite({}, failures={ROBOTS: TIMED_OUT})
+    result = careers.read(CAREERS, site, context())
+    assert result.status == "error" and result.note == "stopped after a timeout; the careers page was not read"
+    assert site.asked == [ROBOTS]

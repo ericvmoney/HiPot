@@ -78,15 +78,12 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
     base = BASE.format(board=board)
     answer = fetcher.get_json(f"{base}/list")
     drafts = []
+    details = normalize.Details()
     for item in answer.get("result") or []:
         if not isinstance(item, dict) or not item.get("id"):
             continue
-        try:
-            detail = fetcher.get_json(f"{base}/{item['id']}/detail")
-            opening = ((detail or {}).get("result") or {}).get("jobOpening") or {}
-        except Blocked:
-            raise
-        except FetchError:
-            opening = {}   # keep the posting from the list without its description
+        # A failed request keeps the posting from the list without its description.
+        detail = details.ask(lambda: fetcher.get_json(f"{base}/{item['id']}/detail"), default={})
+        opening = ((detail or {}).get("result") or {}).get("jobOpening") or {}
         drafts.append(_draft(item, opening, board))
-    return drafts
+    return details.result(drafts)

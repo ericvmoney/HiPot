@@ -113,12 +113,10 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
             by_uuid.setdefault(str(entry["uuid"]), []).append(entry)
 
     drafts = []
+    details = normalize.Details()
     for uuid, entries in by_uuid.items():
-        try:
-            detail = fetcher.get_json(f"{API.format(board=board)}/{uuid}")
-        except Blocked:
-            raise                # a refusal blocks the whole company, as for every other host
-        except FetchError:
-            detail = None        # keep what the list gave: title, address, location, department
+        # A refusal blocks the whole company; a failed request keeps what the
+        # list gave: title, address, location, department.
+        detail = details.ask(lambda: fetcher.get_json(f"{API.format(board=board)}/{uuid}"), default=None)
         drafts.append(_draft(uuid, entries, detail if isinstance(detail, dict) else None))
-    return drafts
+    return details.result(drafts)

@@ -666,3 +666,62 @@ def test_icims_reads_the_search_then_each_posting():
 def test_icims_ids_are_stable():
     raw = collect([company("joby-aviation", "icims", "jobyaviation")], joby_site(), SeenState(), now=lambda: "2026-11-25T16:00:00Z")
     assert "icims:jobyaviation:5248" in {job["id"] for job in raw["jobs"]}
+
+
+# ------------------------------------------- detail requests that time out
+
+from pipeline.collect import normalize  # noqa: E402
+
+TIMED_OUT = FetchError("timed out (ReadTimeout: no complete answer within 120s)")
+
+
+def test_details_stop_after_three_timeouts_in_a_row():
+    details = normalize.Details()
+    calls = []
+
+    def fails(error):
+        def call():
+            calls.append(error)
+            raise error
+        return call
+    assert details.ask(fails(TIMED_OUT), default="none") == "none"
+    assert details.ask(fails(TIMED_OUT)) is None
+    assert details.ask(lambda: "answer") == "answer"                 # a success resets the streak
+    assert details.ask(fails(FetchError("HTTP 404"))) is None        # not a timeout: resets it too
+    for _ in range(3):
+        details.ask(fails(TIMED_OUT))
+    assert details.stopped and len(calls) == 6
+    assert details.ask(lambda: pytest.fail("no request once stopped"), default={}) == {}
+    result = details.result([{"title": "kept"}])
+    assert result.status == "partial" and result.drafts == [{"title": "kept"}]
+    assert result.note == "stopped after 3 timeouts in a row; 1 postings kept from the board's list without their details"
+    assert normalize.Details().result(["a"]) == ["a"]                # no stop: the plain list
+
+
+def test_a_refusal_still_ends_the_company():
+    with pytest.raises(Blocked):
+        normalize.Details().ask(lambda: (_ for _ in ()).throw(Blocked("HTTP 429 from x")))
+
+
+def test_a_workday_board_whose_details_time_out_is_partial():
+    search = "https://acme.wd1.myworkdayjobs.com/wday/cxs/acme/Careers/jobs"
+    page = {"total": 5, "jobPostings": [
+        {"title": f"Role {n}", "externalPath": f"/job/Austin-TX/Role-{n}_R{n}", "locationsText": "Austin, TX"} for n in range(5)]}
+    api = "https://acme.wd1.myworkdayjobs.com/wday/cxs/acme/Careers"
+    fetcher = FakeFetcher(extra={(search, 0): page}, failures={f"{api}/job/Austin-TX/Role-{n}_R{n}": TIMED_OUT for n in range(5)})
+    raw = collect([company("acme", "workday", "acme.wd1/Careers")], fetcher, SeenState(), now=lambda: "2026-11-27T16:00:00Z")
+    assert len(raw["jobs"]) == 5                                     # every posting kept from the list
+    assert sum(1 for url, _ in fetcher.calls if "/job/" in url) == 3   # no detail asked after the third timeout
+    entry = raw["run"]["companies"][0]
+    assert entry["status"] == "partial" and entry["postings"] == 5
+    assert entry["error"].startswith("stopped after 3 timeouts in a row; 2 postings kept")
+
+
+def test_an_icims_portal_whose_posting_pages_time_out_is_partial():
+    site = joby_site()
+    cards = icims.cards((FIXTURES / "icims_joby_search_0.html").read_text(encoding="utf-8"))
+    site.failures = {f"{card['url']}?in_iframe=1": TIMED_OUT for card in cards[:3]}
+    result = icims.read("jobyaviation", site)
+    assert result.status == "partial" and len(result.drafts) == 20     # all 20 cards kept
+    assert result.note.startswith("stopped after 3 timeouts in a row; 17 postings kept")
+    assert sum(1 for url in site.asked if "/job?" in url) == 3

@@ -28,6 +28,7 @@ import html as html_lib
 import json
 import re
 import sys
+import time
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -36,7 +37,7 @@ from urllib.robotparser import RobotFileParser
 
 import yaml
 
-from pipeline.collect.fetch import Blocked, FetchError, Fetcher, RecordingFetcher, ReplayFetcher
+from pipeline.collect.fetch import Blocked, FetchError, Fetcher, RecordingFetcher, ReplayFetcher, is_timeout
 from pipeline.io import ROOT, load_yaml
 from tools.validate import company_type, is_listed
 
@@ -354,8 +355,17 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
 
 # -------------------------------------------------------------------- probe
 
+CAP = "request cap reached before a careers page was read"
+COMPANY_BUDGET = 300.0     # seconds per company; a site that holds connections must not hold the probe
+clock = time.monotonic
+
+
 class Budget(Exception):
-    pass
+    """No more requests for this company: the request cap, a timeout, or the time budget."""
+
+    def __init__(self, why: str = CAP) -> None:
+        super().__init__(why)
+        self.why = why
 
 
 class SavedPages:
@@ -402,11 +412,21 @@ def probe(company: dict, fetcher, obey_robots: bool = True) -> dict:
     start = fetcher.requests
     stay = lambda url: on_site(url, domain)
 
+    started = clock()
+
     def get(url: str) -> tuple[str, str]:
+        if clock() - started > COMPANY_BUDGET:
+            raise Budget(f"stopped after the {COMPANY_BUDGET:g} s time budget")
         if entry["page_requests"] >= MAX_PAGES or fetcher.requests - start >= MAX_HOPS:
             raise Budget()
         entry["page_requests"] += 1
-        return fetcher.get_page(url, stay, max_redirects=max(0, min(2, MAX_HOPS - (fetcher.requests - start) - 1)))
+        try:
+            return fetcher.get_page(url, stay, max_redirects=max(0, min(2, MAX_HOPS - (fetcher.requests - start) - 1)))
+        except FetchError as error:
+            if is_timeout(error):
+                # The first timeout ends this company's probe (see careers.read).
+                raise Budget(f"stopped after a timeout on {urlsplit(url).path or '/'}") from None
+            raise
 
     entry["page_requests"] = 0
     robots = RobotFileParser()
@@ -460,7 +480,9 @@ def probe(company: dict, fetcher, obey_robots: bool = True) -> dict:
                 final, careers = get(candidate)
             except Blocked:
                 raise
-            except Budget:
+            except Budget as stop:
+                if stop.why != CAP:
+                    raise                      # a timeout or the time budget ends the company
                 break
             except FetchError as error:
                 entry["note"] = f"{urlsplit(candidate).path}: {str(error)[:80]}"
@@ -487,8 +509,10 @@ def probe(company: dict, fetcher, obey_robots: bool = True) -> dict:
         return _done(entry, start, fetcher, "no-careers-page", note=entry["note"])
     except Blocked as error:
         return _done(entry, start, fetcher, "blocked", note=str(error)[:120])
-    except Budget:
-        return _done(entry, start, fetcher, "unclear", note="request cap reached before a careers page was read")
+    except Budget as stop:
+        if stop.why != CAP:
+            return _done(entry, start, fetcher, "error", note=stop.why)
+        return _done(entry, start, fetcher, "unclear", note=CAP)
     except FetchError as error:
         return _done(entry, start, fetcher, "error", note=str(error)[:160])
 
