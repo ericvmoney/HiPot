@@ -460,6 +460,7 @@ body::before {
       </select></span>
     </div>
     <p class="mine-note" id="mine-note">Kept in this browser only; export to keep a copy. Nothing here is sent anywhere or put in the page address.</p>
+    <p class="mine-note" id="local-note-mine" hidden>Also saved on this computer in local-data/ (not in the repository).</p>
     <div class="persona-actions">
       <button type="button" class="btn" id="mine-export">Export My Roles</button>
       <button type="button" class="btn" id="mine-import">Import</button>
@@ -519,6 +520,7 @@ body::before {
             <p class="mono">Persona in use</p>
             <p class="persona-desc" id="persona-desc"></p>
             <p class="hint" id="persona-note"></p>
+            <p class="hint" id="local-note-persona" hidden>Also saved on this computer in local-data/ (not in the repository).</p>
           </div>
           <div class="persona-actions">
             <button type="button" class="btn great-only" id="great-only" aria-pressed="false">Great matches only</button>
@@ -1280,7 +1282,9 @@ var MyRoles = (function () {
   function storedPersona() {
     try {
       var text = sessionStorage.getItem(PERSONA_KEY);
-      return text ? HiPotRank.normalize(JSON.parse(text)) : null;
+      var found = text ? HiPotRank.normalize(JSON.parse(text)) : null;
+      personaText = found ? text : null;
+      return found;
     } catch (error) {
       forgetPersona();
       return null;
@@ -1307,8 +1311,112 @@ var MyRoles = (function () {
     var notes = ['Roles are sorted by how well they fit it when the sort is Best match; every filter still applies.'];
     if (personaLeftOut) notes.push(personaLeftOut.toLocaleString('en-US') + (personaLeftOut === 1 ? ' role is' : ' roles are') + ' left out by your exclusions or minimum pay.');
     if (persona.minBase) notes.push('A role with no published pay loses ' + HiPotRank.PAY_UNPUBLISHED + ' points of 100 for it, no more, and is never hidden for it.');
-    notes.push('Your persona stays in this tab and is gone when you close it.');
+    if (!localOn) notes.push('Your persona stays in this tab and is gone when you close it.');
     $('persona-note').textContent = notes.join(' ');
+  }
+
+  // ---- Saving on this computer (decision 21) -----------------------------------------------------
+  //
+  // Only when tools/serve_board serves the board on this machine: the page must be on localhost or
+  // 127.0.0.1 and /api/local/status must answer ok within LOCAL_WAIT_MS. Anywhere else (the shared
+  // artifact) the check never runs and nothing here sends anything. The persona and My Roles are then
+  // also kept in local-data/ in the repository folder (git-ignored), and come back after a reload or a
+  // server restart. The address never carries any of it.
+  var LOCAL_HOSTS = ['localhost', '127.0.0.1'];
+  var LOCAL_API = '/api/local/';
+  var LOCAL_WAIT_MS = 1500, LOCAL_SAVE_DELAY_MS = 800;
+  var localOn = false, localMineTimer = 0;
+  var personaText = null;   // the persona as it was opened (the file's text) or handed over (its JSON), for local-data/
+
+  function servedLocally() {
+    return location.protocol === 'http:' && LOCAL_HOSTS.indexOf(location.hostname) !== -1;
+  }
+
+  // The page's only call to the local server: same origin, a fixed relative address. Resolves to the
+  // response, or null on any failure; never throws.
+  function localApi(name, method, body, waitMs, keepalive) {
+    if (!servedLocally()) return Promise.resolve(null);
+    var options = { method: method || 'GET', cache: 'no-store', credentials: 'same-origin', keepalive: !!keepalive };
+    if (body !== undefined) { options.body = body; options.headers = { 'Content-Type': 'text/yaml; charset=utf-8' }; }
+    if (typeof AbortController === 'function') {
+      var controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () { controller.abort(); }, waitMs || 10000);
+    }
+    return fetch(LOCAL_API + name, options).catch(function () { return null; });
+  }
+
+  function startLocal() {
+    if (!servedLocally()) return;
+    localApi('status', 'GET', undefined, LOCAL_WAIT_MS).then(function (response) {
+      if (!response || !response.ok) return false;
+      return response.json().then(function (data) { return !!data && data.ok === true; }, function () { return false; });
+    }).then(function (ok) {
+      if (!ok) return null;
+      localOn = true;
+      renderLocalNotes();
+      return Promise.all([restoreLocalPersona(), restoreLocalMine()]);
+    }).catch(function () { /* stays off, quietly */ });
+  }
+
+  function renderLocalNotes() {
+    ['local-note-persona', 'local-note-mine'].forEach(function (id) { $(id).hidden = !localOn; });
+    renderPersona();
+    renderMineNote();
+  }
+
+  // With no persona in the tab, bring back the one saved on this computer. With one in the tab (handed
+  // over from the persona page, or opened before the check answered), save it unless the file says the same.
+  function restoreLocalPersona() {
+    return localApi('persona').then(function (response) {
+      if (!response || !response.ok) { if (persona) saveLocalPersona(); return null; }
+      return Promise.all([response.text(), loadYaml()]).then(function (results) {
+        var data = window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA });
+        var saved = HiPotRank.normalize(data);
+        if (!persona) {
+          storePersona(data);
+          personaText = results[0];
+          setPersona(saved);
+          syncControls();
+          update();
+        } else if (JSON.stringify(saved) !== JSON.stringify(persona)) {
+          saveLocalPersona();
+        }
+      });
+    }).catch(function () { /* an unreadable file is left as it is */ });
+  }
+
+  function saveLocalPersona() {
+    if (localOn && personaText) localApi('persona', 'PUT', personaText);
+  }
+
+  function forgetLocalPersona() {
+    if (localOn) localApi('persona', 'DELETE');
+  }
+
+  // My Roles saved on this computer is merged into the browser's list: the latest change of each role wins.
+  function restoreLocalMine() {
+    return localApi('my-roles').then(function (response) {
+      if (!response || !response.ok) { if (mine.length) saveLocalMine(); return null; }
+      return Promise.all([response.text(), loadYaml()]).then(function (results) {
+        var outcome = MyRoles.importData(window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }), mine);
+        setMine(outcome.list);
+      });
+    }).catch(function () { /* an unreadable file is left as it is */ });
+  }
+
+  function scheduleLocalMine() {
+    if (!localOn) return;
+    clearTimeout(localMineTimer);
+    localMineTimer = setTimeout(saveLocalMine, LOCAL_SAVE_DELAY_MS);
+  }
+
+  function saveLocalMine(keepalive) {
+    clearTimeout(localMineTimer);
+    localMineTimer = 0;
+    if (!localOn) return;
+    if (keepalive && !window.jsyaml) return;
+    loadYaml().then(function () { localApi('my-roles', 'PUT', mineYaml(), 10000, keepalive); }, function () {});
   }
 
   var yamlLoading = null;
@@ -1334,6 +1442,8 @@ var MyRoles = (function () {
       var data = window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA });
       var next = HiPotRank.normalize(data);
       storePersona(data);
+      personaText = results[0];
+      saveLocalPersona();
       status.textContent = '';
       setPersona(next);
       syncControls();
@@ -1383,7 +1493,7 @@ var MyRoles = (function () {
     var before = mineById;
     mine = next;
     mineById = MyRoles.byId(mine);
-    if (!options || options.save !== false) saveMine();
+    if (!options || options.save !== false) { saveMine(); scheduleLocalMine(); }
     renderMineNote();
     $('mine-n').textContent = String(mine.length);
     $('facet-mine').hidden = mine.length === 0 && !state.hideMine;
@@ -1411,7 +1521,9 @@ var MyRoles = (function () {
       ? 'This browser is not letting the page keep anything, so My Roles lasts only while this tab is open. Export to keep a copy.'
       : mineStorage === 'unreadable'
         ? 'The My Roles kept in this browser could not be read. A change now replaces it; import an exported copy if you have one.'
-        : 'Kept in this browser only; export to keep a copy. Nothing here is sent anywhere or put in the page address.';
+        : localOn
+          ? 'Kept in this browser; export to keep a copy. Never put in the page address.'
+          : 'Kept in this browser only; export to keep a copy. Nothing here is sent anywhere or put in the page address.';
   }
 
   function placeOf(role) { return whereText(role); }
@@ -1729,10 +1841,15 @@ var MyRoles = (function () {
   // ---- Export and import: a YAML file the candidate keeps ---------------------------------------
 
   var downloads = null;
+  // My Roles as a YAML file: the export, and the copy in local-data/ (js-yaml must be loaded).
+  function mineYaml() {
+    return '# HiPot My Roles. Kept in your browser; import it on the board to restore it.\n' +
+      window.jsyaml.dump(MyRoles.exportData(mine, today()), { lineWidth: -1, noRefs: true, sortKeys: false });
+  }
+
   function exportMine() {
     loadYaml().then(function () {
-      var text = '# HiPot My Roles. Kept in your browser; import it on the board to restore it.\n' +
-        window.jsyaml.dump(MyRoles.exportData(mine, today()), { lineWidth: -1, noRefs: true, sortKeys: false });
+      var text = mineYaml();
       if (downloads) {
         // Artifact hosting saves only some file types, and .yml is not one of them.
         return downloads.save({ filename: 'my-roles.yml.txt', data: text }).then(function () {
@@ -1802,6 +1919,9 @@ var MyRoles = (function () {
     $('apply-no').addEventListener('click', hideApplyBar);
     window.addEventListener('focus', onReturn);
     document.addEventListener('visibilitychange', onReturn);
+
+    // Leaving the page with a local save still waiting: send it now.
+    window.addEventListener('pagehide', function () { if (localMineTimer) saveLocalMine(true); });
 
     // Another tab changed My Roles: follow it.
     window.addEventListener('storage', function (event) {
@@ -2558,6 +2678,8 @@ var MyRoles = (function () {
     });
     $('persona-stop').addEventListener('click', function () {
       forgetPersona();
+      forgetLocalPersona();
+      personaText = null;
       setPersona(null);
       syncControls();
       update();
@@ -2629,6 +2751,7 @@ var MyRoles = (function () {
       if (persona && !/(^|--)sort-/.test(location.hash.replace(/^#/, ''))) state.sort = 'match';
       syncControls();
       update();
+      startLocal();   // only on this machine's own server; it does nothing on the shared board
     }).catch(function (error) {
       fail('The role data did not load (' + (error && error.message ? error.message : 'unknown error') + '). Reload the page to try again.');
     });
