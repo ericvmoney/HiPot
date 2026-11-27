@@ -119,6 +119,19 @@ def test_seed_function(title, profiles, expected):
     assert seed_function(title, profiles) == expected
 
 
+def test_categories_clean_tech_is_the_default_and_never_written():
+    categories = {c["id"]: c for c in TAXONOMY["categories"]}
+    assert [cid for cid, c in categories.items() if c.get("default")] == ["clean-tech"]
+    for cid in ("autonomy-robotics", "aerospace-space", "semis-electronics", "advanced-manufacturing",
+                "data-centers", "defense", "mining", "oil-gas"):
+        assert categories[cid]["label"] and categories[cid]["covers"]
+    company = copy.deepcopy(COMPANIES["companies"][0])
+    company["categories"] = ["clean-tech"]
+    assert schema_errors(company, SCHEMAS["company.schema.json"], REGISTRY)      # implied by the tier, never written
+    registry = {"companies": [dict(company, categories=["astrology"])]}
+    assert any("unknown category" in line for line in check_companies(registry, TAXONOMY))
+
+
 def test_screened_company_needs_a_reason():
     company = copy.deepcopy(COMPANIES["companies"][0])
     company["climate"] = {"tier": "out", "reason": None, "basis": "human", "approved": True}

@@ -97,8 +97,11 @@ def check_raw_jobs(raw_file: dict, taxonomy: dict, company_ids: set[str]) -> lis
 
 def check_companies(registry_file: dict, taxonomy: dict) -> list[str]:
     sectors, stages = ids(taxonomy, "sectors"), ids(taxonomy, "stages")
+    categories = ids(taxonomy, "categories") - {"clean-tech"}
     problems = []
     counts = Counter(company["id"] for company in registry_file["companies"])
+    for company in registry_file["companies"]:
+        problems += [f"company {company['id']}: unknown category '{c}'" for c in company.get("categories") or [] if c not in categories]
     problems += [f"duplicate company id {cid} ({n} times)" for cid, n in counts.items() if n > 1]
     for company in registry_file["companies"]:
         tag = f"company {company['id']}"
@@ -128,12 +131,24 @@ def check_persona(persona: dict, taxonomy: dict) -> list[str]:
     return problems
 
 
-def is_listed(company: dict) -> bool:
-    """A company's roles reach the board when its climate tier is core or enabling (decision 14).
-
-    The startup test no longer decides listing; it labels the company (see company_type).
-    """
+def is_clean_tech(company: dict) -> bool:
+    """Core or enabling under the climate rubric."""
     return company["climate"]["tier"] in ("core", "enabling")
+
+
+def company_categories(company: dict) -> list[str]:
+    """Every category the company is in: clean tech first when its tier makes it so, then the
+    adjacent ones it carries in `categories` (decision 23)."""
+    return (["clean-tech"] if is_clean_tech(company) else []) + list(company.get("categories") or [])
+
+
+def is_listed(company: dict) -> bool:
+    """A company's roles reach the board when it is clean tech (core or enabling, decision 14)
+    or in one of the adjacent categories (decision 23).
+
+    The startup test does not decide listing; it labels the company (see company_type).
+    """
+    return bool(company_categories(company))
 
 
 def company_type(company: dict) -> str:
@@ -202,7 +217,7 @@ def main() -> int:
         jobs = jobs_file["jobs"]
         print()
         print("Registry: " + ", ".join(f"{tier} {n}" for tier, n in sorted(tiers.items())))
-        print(f"Listed now (core or enabling): {len(listed)} companies "
+        print(f"Listed now (clean tech or an adjacent category): {len(listed)} companies "
               f"({', '.join(f'{kind} {n}' for kind, n in sorted(by_type.items()))}), "
               f"{sum(job['company_id'] in listed for job in jobs)} of {len(jobs)} jobs")
         print(f"Waiting on the startup test (status 'review'): {len(review)} companies, "

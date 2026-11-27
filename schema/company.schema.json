@@ -23,6 +23,8 @@
     },
     "read": {"enum": ["auto", "manual", "none"], "description": "auto: the collector reads a feed. manual: a person reads the board. none: not read."},
     "sectors": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}},
+    "categories": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug", "not": {"const": "clean-tech"}},
+                   "description": "Categories outside clean tech that fit the company (taxonomy.yml categories; decision 23). Clean tech is never listed here: it follows from a core or enabling climate tier. A company in any category is listed even when its tier is out."},
     "stage": {"oneOf": [{"$ref": "#/$defs/slug"}, {"type": "null"}]},
     "founded": {"type": ["integer", "null"], "minimum": 1800, "maximum": 2100},
     "headcount": {

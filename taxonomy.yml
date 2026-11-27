@@ -193,6 +193,23 @@ sectors:
   - {id: biofuels, label: "Biofuels and renewable fuels"}
   - {id: methane, label: "Methane monitoring and abatement"}
 
+# Company categories (PLAN.md decision 23, 2026-11-27). Clean tech is the climate screen:
+# a company whose climate tier is core or enabling is clean tech; it is never written in a
+# company's `categories`. The others are the layer just outside clean tech. A company
+# carries every one that fits, in its `categories` list, and a company in any of them is
+# listed even when its climate tier is out. The board opens on clean tech (`default: true`);
+# the rest are one click away in its category filter.
+categories:
+  - {id: clean-tech, label: Clean tech, default: true, covers: "Core or enabling under the climate rubric (PLAN.md section 6)."}
+  - {id: autonomy-robotics, label: Autonomy and robotics, covers: "Autonomous vehicles, trucks and drones; industrial, warehouse, field and humanoid robots."}
+  - {id: aerospace-space, label: Aerospace and space, covers: "Aircraft, launch, satellites and space hardware."}
+  - {id: semis-electronics, label: Semiconductors and electronics, covers: "Chips and chip equipment, sensors, lidar, photonics, electronics makers."}
+  - {id: advanced-manufacturing, label: Advanced manufacturing, covers: "Factory automation, additive manufacturing, industrial machinery and equipment."}
+  - {id: data-centers, label: Data-center equipment, covers: "Cooling, power and hardware sold to data centers."}
+  - {id: defense, label: Defense, covers: "Hardware companies whose main business is defense."}
+  - {id: mining, label: Mining and exploration, covers: "Mine operators, mine projects and exploration or survey tools."}
+  - {id: oil-gas, label: "Combustion, oil and gas", covers: "Engines, gas-fired equipment, and suppliers to oil and gas, methane monitoring included."}
+
 stages:
   - {id: pre-seed, label: Pre-seed}
   - {id: seed, label: Seed}

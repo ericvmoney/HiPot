@@ -194,6 +194,22 @@ def parent_is_large(text) -> bool:
 SHARE_SALE = re.compile(r"at-the-market|\bATM\b|registered direct|follow-on|secondary|shelf", re.I)
 
 
+def categorize(company: dict, fix: dict) -> None:
+    """Set the company's adjacent categories (decision 23): `kind: categories` with the
+    full list (empty to clear) and a one-line `reason`. Clean tech is never written here;
+    it follows from the climate tier."""
+    if fix.get("kind") != "categories" or not isinstance(fix.get("categories"), list) or not fix.get("reason"):
+        return
+    wanted = sorted({c for c in fix["categories"] if c != "clean-tech"})
+    if wanted:
+        company["categories"] = wanted
+    else:
+        company.pop("categories", None)
+    note = f"Categories (decision 23): {fix['reason']}"
+    if wanted and note not in (company.get("notes") or ""):
+        company["notes"] = f"{company.get('notes') or ''} {note}".strip()
+
+
 def fill_missing(company: dict, fix: dict) -> None:
     """Fill hq, founded, stage and headcount where the registry has none."""
     for field in ("hq", "founded", "stage"):
@@ -433,6 +449,7 @@ def main() -> int:
             retier(companies[fix["id"]], fix)
             replace_board(companies[fix["id"]], fix)
             new_website(companies[fix["id"]], fix)
+            categorize(companies[fix["id"]], fix)
 
     probes = [e for path in sorted(SCREENING.glob(PROBE_FILES)) for e in load_yaml(path).get("companies", [])]
     checked = board_fixed(fixes)
