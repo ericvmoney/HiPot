@@ -124,9 +124,26 @@ def test_probe_obeys_robots():
 
 
 def test_probe_stops_when_robots_cannot_be_read():
-    site = FakeSite({}, failures={"https://acme.example.com/robots.txt": FetchError("timed out after 30s")})
+    site = FakeSite({}, failures={"https://acme.example.com/robots.txt": FetchError("HTTP 500")})
     result = probe(entry(), site)
     assert result["outcome"] == "error" and "robots.txt could not be read" in result["note"]
+    assert site.asked == ["https://acme.example.com/robots.txt"]
+
+
+def test_probe_stops_a_company_at_its_first_timeout():
+    site = FakeSite({"https://acme.example.com/robots.txt": "", "https://acme.example.com/": HOME},
+                    failures={"https://acme.example.com/careers": FetchError("timed out (ReadTimeout: no complete answer within 120s)")})
+    result = probe(entry(), site)
+    assert result["outcome"] == "error" and result["note"] == "stopped after a timeout on /careers"
+    assert site.asked == ["https://acme.example.com/robots.txt", "https://acme.example.com/", "https://acme.example.com/careers"]
+
+
+def test_probe_stops_a_company_at_its_time_budget(monkeypatch):
+    ticks = iter([0, 10, 400, 400, 400])
+    monkeypatch.setattr(probe_module, "clock", lambda: next(ticks))
+    site = FakeSite({"https://acme.example.com/robots.txt": "", "https://acme.example.com/": HOME})
+    result = probe(entry(), site)
+    assert result["outcome"] == "error" and result["note"] == "stopped after the 300 s time budget"
     assert site.asked == ["https://acme.example.com/robots.txt"]
 
 

@@ -64,6 +64,19 @@ class Blocked(FetchError):
     """The host refused the request (HTTP 403 or 429)."""
 
 
+def default_client() -> httpx.Client:
+    return httpx.Client(
+        timeout=TIMEOUT,
+        follow_redirects=False,
+        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+    )
+
+
+def is_timeout(error: BaseException) -> bool:
+    """A FetchError that says the request timed out (a read or the whole-answer deadline)."""
+    return isinstance(error, FetchError) and str(error).startswith("timed out")
+
+
 class Fetcher:
     """Fetches JSON, spacing requests to each host."""
 
@@ -75,13 +88,16 @@ class Fetcher:
         clock: Callable[[], float] = time.monotonic,
         sleep: Callable[[float], None] = time.sleep,
         deadline: float = DEADLINE,
+        client_factory: Callable[[], httpx.Client] | None = None,
     ) -> None:
         self._deadline = deadline
-        self._client = client or httpx.Client(
-            timeout=TIMEOUT,
-            follow_redirects=False,
-            headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
-        )
+        # A client the Fetcher makes itself can be replaced after a request
+        # misses its deadline (see _within_deadline); one passed in cannot.
+        if client is None and client_factory is None:
+            client_factory = default_client
+        self._client_factory = client_factory if client is None else None
+        self._client = client or client_factory()
+        self.clients_replaced = 0
         self._min_interval = min_interval
         self._host_intervals = HOST_INTERVALS if host_intervals is None else host_intervals
         self._clock = clock
@@ -143,10 +159,23 @@ class Fetcher:
         try:
             ok, value = result.get(timeout=self._deadline)
         except queue.Empty:
+            self._replace_client()
             raise httpx.ReadTimeout(f"no complete answer within {self._deadline:g}s") from None
         if ok:
             return value
         raise value
+
+    def _replace_client(self) -> None:
+        """After a request misses its deadline, its abandoned thread still holds
+        a connection from the client's pool. Enough of them and every later
+        request waits for a free connection and times out too (a full run once
+        stalled this way). So the client is replaced, and the old one is closed
+        on a background thread: closing its pool ends the abandoned read."""
+        if self._client_factory is None:
+            return
+        old, self._client = self._client, self._client_factory()
+        self.clients_replaced += 1
+        threading.Thread(target=old.close, daemon=True).start()
 
     def get_json(self, url: str, params: dict | None = None) -> Any:
         """GET a URL and return its parsed JSON body."""
