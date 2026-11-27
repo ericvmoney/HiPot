@@ -18,6 +18,8 @@ data/fixtures-live/
 private/
 *.resume.*
 persona.yml
+# The board's local saves (decision 21): the owner's persona and My Roles, written by tools/serve_board.py
+local-data/
 
 # Editor and OS
 .vscode/
