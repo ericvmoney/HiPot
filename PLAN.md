@@ -292,6 +292,9 @@ Decided by Eric on 2026-11-24:
     - Disciplines next to the persona's earn part credit, and a far-off technical role gets half the kind-of-work points.
     - A left-out sector hides a company only when it is all the company does.
     - Pay up to 10% under the minimum is shown, a few points lower.
+    - A great match must also be squarely in the candidate's background (owner feedback, 2026-11-27):
+      - the role's main discipline is one of the persona's, and it earns at least 70% of the discipline points;
+      - its company works in a sector the persona knows (domains), not only one it prefers.
 20. **Large boards** (Eric, 2026-11-26):
     - GE Vernova's Workday board is read in full, and the reader's cap is raised from 1,000 to 4,000.
     - Evoqua keeps reading Xylem's whole board.

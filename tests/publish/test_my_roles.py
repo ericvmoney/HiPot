@@ -143,7 +143,7 @@ def test_export_and_import_merge_by_role_and_by_latest_change(js):
 
 def test_great_matches_are_the_top_two_percent_at_most_thirty_scoring_seventy(js):
     def scored(scores):
-        return [{"id": str(i), "match": {"score": s, "excluded": None}} for i, s in enumerate(scores)]
+        return [{"id": str(i), "match": {"score": s, "excluded": None, "fit": {"great": True}}} for i, s in enumerate(scores)]
     assert js.call("HiPotRank.great", scored([90] * 1000)) == [str(i) for i in range(20)]     # 2% of 1,000
     assert len(js.call("HiPotRank.great", scored([90] * 5000))) == 30                         # at most 30
     assert js.call("HiPotRank.great", scored([65] * 1000)) == []                              # none reach 70
@@ -153,6 +153,38 @@ def test_great_matches_are_the_top_two_percent_at_most_thirty_scoring_seventy(js
     mixed[1]["match"]["excluded"] = "a company you left out"
     great = js.call("HiPotRank.great", mixed)
     assert len(great) == 5 and "1" not in great and all(int(i) % 3 == 1 for i in great)   # 2% of the 299 left
+    # A high score outside the candidate's background is never a great match.
+    outside = scored([95, 90, 80])
+    outside[0]["match"]["fit"]["great"] = False
+    assert js.call("HiPotRank.great", outside) == ["1"]
+
+
+PERSONA = {
+    "persona_version": 0, "disciplines": ["controls", "firmware"], "domains": ["energy-storage", "ev"],
+    "locations": {"metros": ["denver"], "remote": True}, "preferences": {"sectors": ["grid", "fission"]},
+}
+
+
+@pytest.mark.parametrize("disc,sectors,great,why", [
+    (["controls"], ["energy-storage"], True, "main discipline, known sector"),
+    (["firmware", "controls"], ["wind", "grid"], False, "a sector the persona prefers but does not know"),
+    (["field", "mechanical", "controls"], ["energy-storage"], False, "controls only as a side tag"),
+    (["field"], ["energy-storage"], False, "a discipline next to the persona's, not one of them"),
+    (["test"], ["ev"], False, "nearby discipline only"),
+    ([], ["ev"], False, "no discipline on the role"),
+])
+def test_a_great_match_is_squarely_in_the_candidates_background(js, disc, sectors, great, why):
+    # Owner feedback 2026-11-27: a sales engineer, balance-of-plant work and gas-turbine plant controls
+    # were flagged as great matches for a controls and firmware engineer.
+    role = {"fn": "engineering", "level": None, "disc": disc, "metros": ["denver"], "loc": ["Denver, CO"], "wp": "onsite", "pay": None}
+    company = {"id": "x", "name": "X", "sectors": sectors, "stage": None}
+    match = js.call("HiPotRank.match", role, company, js.call("HiPotRank.normalize", PERSONA), {})
+    assert match["fit"]["great"] is great, why
+    # A persona with no domains falls back to its preferred sectors.
+    no_domains = dict(PERSONA, domains=[], preferences={"sectors": ["energy-storage"]})
+    known = js.call("HiPotRank.match", dict(role, disc=["controls"]), dict(company, sectors=["energy-storage"]),
+                    js.call("HiPotRank.normalize", no_domains), {})
+    assert known["fit"]["great"] is True
 
 
 # --- The board page --------------------------------------------------------------------------------

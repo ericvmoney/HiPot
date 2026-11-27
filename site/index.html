@@ -860,6 +860,14 @@ var HiPotRank = (function () {
     Object.keys(parts).forEach(function (key) { total += parts[key]; });
     out.score = Math.max(0, Math.round(total * 10) / 10);
     out.why = why.join(' · ');
+
+    // Whether the role is squarely in the candidate's background (see great() below).
+    var knownSectors = p.domains.length ? p.domains : p.sectors;
+    var mainDisc = !p.disciplines.length || (disc.length && p.disciplines.indexOf(disc[0]) !== -1);
+    var strongDisc = !p.disciplines.length || parts.disc >= WEIGHTS.disc * GREAT_MIN_DISC;
+    var knownDomain = !knownSectors.length || sectors.some(function (s) { return knownSectors.indexOf(s) !== -1; });
+    out.fit = { mainDiscipline: !!mainDisc, strongDiscipline: !!strongDisc, knownDomain: knownDomain };
+    out.fit.great = fnOk && !mismatch && out.fit.mainDiscipline && out.fit.strongDiscipline && knownDomain;
     return out;
   }
 
@@ -884,13 +892,24 @@ var HiPotRank = (function () {
     return bits.join(' · ');
   }
 
-  // Great matches among the roles shown (decision 18): the persona's top 2% of them, at most 30,
-  // each scoring at least 70. Relative, because absolute scores run lower for some personas. The
-  // order of `roles` does not matter; ties keep it. Returns their ids.
-  var GREAT_SHARE = 0.02, GREAT_MAX = 30, GREAT_MIN_SCORE = 70;
+  // Great matches among the roles shown (decision 18): roles squarely in the candidate's background,
+  // then the best of those: the persona's top 2% of the roles shown, at most 30, each scoring at
+  // least 70. Relative, because absolute scores run lower for some personas. The order of `roles`
+  // does not matter; ties keep it. Returns their ids.
+  //
+  // "In the background" (owner feedback, 2026-11-27: a sales engineer, a balance-of-plant role and
+  // gas-turbine plant controls were flagged for a controls and firmware engineer) means all three:
+  //   - the role's main discipline (its first) is one of the persona's, not a nearby one or a side tag;
+  //   - it earns at least 70% of the discipline points (one of the persona's first three disciplines,
+  //     or two shared);
+  //   - its company works in a sector the persona knows (`domains`; the preferred sectors only when
+  //     the persona names no domains). A sector someone would like to work in is not experience.
+  // `fit` comes from match(). A persona with no disciplines (non-technical work) skips the first two.
+  var GREAT_SHARE = 0.02, GREAT_MAX = 30, GREAT_MIN_SCORE = 70, GREAT_MIN_DISC = 0.7;
   function great(roles) {
-    var ranked = rank(roles);
-    var take = Math.min(GREAT_MAX, Math.max(1, Math.floor(ranked.length * GREAT_SHARE)));
+    var shown = rank(roles);   // drops excluded roles
+    var ranked = shown.filter(function (role) { return role.match.fit && role.match.fit.great; });
+    var take = Math.min(GREAT_MAX, Math.max(1, Math.floor(shown.length * GREAT_SHARE)));
     return ranked.slice(0, take).filter(function (role) { return role.match.score >= GREAT_MIN_SCORE; })
       .map(function (role) { return role.id; });
   }
