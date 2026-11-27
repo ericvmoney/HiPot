@@ -1,0 +1,2069 @@
+# Registry fixes 20: categories one layer beyond clean tech (decision 23), for companies already in the registry
+# (2026-11-27).
+#
+# Written by workstream A2 at the supervisor's request. Each entry is `kind: categories` with the company's full list
+# and a one-line reason (tools/apply_screening.categorize). Clean tech is never written: it follows from a core or
+# enabling tier, which these entries leave unchanged. `tier` is shown for reading only.
+#
+# Judged from each company's registry reason and notes (which cite its own site); no new fetches.
+#   tier out:              164 of 229 tagged. Left untagged on purpose (65): operators and
+#                          developers, services and research firms, vehicle assembly and auto parts, general lighting,
+#                          chemicals, cement and steel, and products outside every category (see the supervisor note).
+#   core or enabling:      104 tagged where a category also fits (aircraft and drones, robots and
+#                          autonomous vehicles, chips and sensors, energy equipment sold mainly to data centers, a mine
+#                          project, suppliers to oil and gas).
+# Counts per category: advanced-manufacturing 14, aerospace-space 60, autonomy-robotics 57, data-centers 38, defense 18, mining 17, oil-gas 41, semis-electronics 72.
+
+fixes:
+- id: actasys
+  name: Actasys
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Active-airflow cooling modules sold mainly for data centers; data-center equipment is out
+    (decision 13).'
+  tier: out
+- id: ada-technologies
+  name: ADA Technologies
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Lithium and lithium-sulfur batteries whose main customers are defense agencies (owner ruling A3: defense
+    as the main business is out).'
+  tier: out
+- id: adsorptech
+  name: Adsorptech
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: Industrial oxygen-production equipment; no climate case under the rubric.'
+  tier: out
+- id: advanced-emissions-solutions-arq
+  name: Advanced Emissions Solutions (Arq)
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Activated carbon for water treatment and coal-plant emissions control.'
+  tier: out
+- id: advanced-energy
+  name: Advanced Energy
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Semiconductors and electronics, Data-center equipment: Power supplies for semiconductor tools, data centers and
+    industry.'
+  tier: out
+- id: aerovect
+  name: AeroVect
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous vehicles (airport ground equipment).'
+  tier: out
+- id: aetherflux-cowboy-space-corporation
+  name: Aetherflux (Cowboy Space Corporation)
+  kind: categories
+  categories:
+  - aerospace-space
+  - data-centers
+  reason: 'Aerospace and space, Data-center equipment: Orbital solar-powered GPU data centers; space and computing are out
+    by decision.'
+  tier: out
+- id: albedo
+  name: Albedo
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Satellite imaging.'
+  tier: out
+- id: alloy-enterprises
+  name: Alloy Enterprises
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - data-centers
+  reason: 'Data-center equipment, Advanced manufacturing: Aluminium thermal-management parts such as cold plates, sold mainly
+    to data centers; data-center equipment is out (decision 13).'
+  tier: out
+- id: amber-semiconductor
+  name: Amber Semiconductor
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Semiconductors and electronics, Data-center equipment: Power-management chips mounted on AI server boards for data
+    centers; data-center equipment is out.'
+  tier: out
+- id: american-lithium-energy
+  name: American Lithium Energy
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Aerospace and space, Defense: Silicon-anode lithium-ion battery cells and custom battery packs (ZeroVolt, SafeCore+)
+    for defense, space, electric flight and EVs.'
+  tier: out
+- id: antares
+  name: Antares
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Factory-built nuclear microreactors whose main customers so far are the US military; defense as the main
+    business is out.'
+  tier: out
+- id: applied-materials
+  name: Applied Materials
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Semiconductor manufacturing equipment for the whole chip industry; no climate case
+    under the rubric.'
+  tier: out
+- id: aquaquant-laboratories
+  name: AquaQuant Laboratories
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Coatings for direct water-immersion cooling of data-center electronics; data-center equipment
+    is out (decision 13).'
+  tier: out
+- id: arbor-energy
+  name: Arbor Energy
+  kind: categories
+  categories:
+  - data-centers
+  - oil-gas
+  reason: 'Combustion, oil and gas, Data-center equipment: Natural-gas (or biomass) turbines with carbon capture, now sold
+    mainly to data centers; data-center power is out by decision.'
+  tier: out
+- id: ascent-solar-technologies
+  name: Ascent Solar Technologies
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Thin-film solar modules sold mainly for space, aerospace and drones; space is out by decision.'
+  tier: out
+- id: asetek-usa
+  name: Asetek USA
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Liquid cooling for PCs and data-center servers; no climate case under the rubric.'
+  tier: out
+- id: astro-mechanica
+  name: Astro Mechanica
+  kind: categories
+  categories:
+  - aerospace-space
+  - oil-gas
+  reason: 'Aerospace and space, Combustion, oil and gas: Adaptive jet engines and airframes; no electric or emissions case,
+    some defense work.'
+  tier: out
+- id: atomic-machines
+  name: Atomic Machines
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Data-center equipment, Semiconductors and electronics: Relays and switches made first for AI data-center power
+    systems; data-center equipment is out.'
+  tier: out
+- id: atoms
+  name: Atoms
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robotics and automation holding company (ghost kitchens, autonomous mining, robotic transport);
+    general robotics and autonomous vehicles....'
+  tier: out
+- id: barber-nichols
+  name: Barber-Nichols
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Aerospace and space, Defense: Custom turbomachinery whose major markets are defense and aerospace.'
+  tier: out
+- id: bedrock-robotics
+  name: Bedrock Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous construction equipment.'
+  tier: out
+- id: black-mountain-metals
+  name: Black Mountain Metals
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Nickel and copper mining for battery cathode materials; bought the Lanfranchi nickel project
+    in Western Australia and held about 20% of....'
+  tier: out
+- id: bloom-energy
+  name: Bloom Energy
+  kind: categories
+  categories:
+  - data-centers
+  - oil-gas
+  reason: 'Combustion, oil and gas, Data-center equipment: Solid-oxide fuel cells that run mainly on natural gas (owner ruling
+    A2), plus electrolyzers.'
+  tier: out
+- id: boom-supersonic
+  name: Boom Supersonic
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Supersonic jet.'
+  tier: out
+- id: boston-materials
+  name: Boston Materials
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Data-center equipment, Semiconductors and electronics: Thermal interface material for AI and data-center chips;
+    data-center equipment is out.'
+  tier: out
+- id: bridgelux
+  name: Bridgelux
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: LED chips and modules for general lighting; no climate case under the rubric.'
+  tier: out
+- id: buoyant-aero
+  name: Buoyant Aero
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Custom branded advertising blimps flown as a service; no climate case under the rubric.'
+  tier: out
+- id: burnbot
+  name: BurnBot
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Remotely operated prescribed-burn machines for wildfire fuel treatment; no emissions or
+    electrification case.'
+  tier: out
+- id: carbic
+  name: Carbic
+  kind: categories
+  categories:
+  - oil-gas
+  - semis-electronics
+  reason: 'Combustion, oil and gas, Semiconductors and electronics: Ultrasonic fluid sensors aimed at oil and gas and water
+    utilities.'
+  tier: out
+- id: cero-nj
+  name: Cero NJ
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: In-vehicle device that stabilizes diesel-engine control signals; no climate case under
+    the rubric.'
+  tier: out
+- id: chariot-defense
+  name: Chariot Defense
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Amphora transportable, software-defined hybrid power systems (4 kW to 35 kW) that combine solar, generator,
+    vehicle and grid inputs with....'
+  tier: out
+- id: cobra-moto
+  name: Cobra MOTO
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Electrified military motorcycle (prototype).'
+  tier: out
+- id: coherent-photonics
+  name: Coherent Photonics
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Metasurface flat optical components; no clean-energy application stated, so no
+    climate case under the rubric.'
+  tier: out
+- id: coorstek
+  name: CoorsTek
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: Diversified technical ceramics; clean energy is a minor segment.'
+  tier: out
+- id: cowboy-clean-fuels
+  name: Cowboy Clean Fuels
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Grows methane fuel with microbes in coal-bed wells in Wyoming; a natural-gas product.'
+  tier: out
+- id: cummins
+  name: Cummins
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Diesel and gas engines and generators; its zero-emission unit is a small part.'
+  tier: out
+- id: delphire
+  name: Delphire
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Wildfire-detection units; no emissions or electrification product.'
+  tier: out
+- id: dexmate
+  name: Dexmate
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: General robotics.'
+  tier: out
+- id: dg-matrix
+  name: DG Matrix
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Multi-port solid-state transformers whose recent products and press are for AI data centers;
+    equipment made mainly for data centers is....'
+  tier: out
+- id: diamond-foundry
+  name: Diamond Foundry
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Lab-grown diamond, now marketed for chips; no climate case.'
+  tier: out
+- id: dineu-technologies
+  name: DiNeu Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Alpha spectrometers for nuclear-materials accounting; no climate case under the
+    rubric.'
+  tier: out
+- id: dottir-labs
+  name: Dottir Labs
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Benchtop Raman spectroscopy sensors for process monitoring; no climate case under
+    the rubric.'
+  tier: out
+- id: earth-ai
+  name: EARTH AI
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: AI-guided critical-mineral exploration and its own drilling.'
+  tier: out
+- id: earthview
+  name: Earthview
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Methane leak detection and measurement, mainly for oil and gas; methane monitoring is
+    out.'
+  tier: out
+- id: easyxafs
+  name: easyXAFS
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Laboratory X-ray spectroscopy instruments; no climate case under the rubric.'
+  tier: out
+- id: effusio
+  name: Effusio
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: IOCOOL two-phase liquid cooling combining vapor-compression and absorption refrigeration
+    for data centers and high-density servers.'
+  tier: out
+- id: elroy-air
+  name: Elroy Air
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+  reason: 'Aerospace and space, Autonomy and robotics, Defense: Hybrid-electric autonomous cargo aircraft with defense customers
+    and Kratos Defense as manufacturer.'
+  tier: out
+- id: energy-fuels
+  name: Energy Fuels
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Uranium and rare-earth mining and processing; mine operators are out (owner ruling A6b).'
+  tier: out
+- id: enlighted
+  name: Enlighted
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Smart-building IoT sensors and lighting controls with space-management software.'
+  tier: out
+- id: exovolar-industries
+  name: Exovolar Industries
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Personal VTOL and jet-suit prototypes, not stated to be electric; no climate case under the
+    rubric.'
+  tier: out
+- id: exxonmobil
+  name: ExxonMobil
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Oil, gas and chemicals major; its low-carbon business is a small part.'
+  tier: out
+- id: ferveret
+  name: Ferveret
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Rack-integrated phase-change cooling for AI data centers; data-center equipment is out (decision
+    13).'
+  tier: out
+- id: finwave-semiconductor
+  name: Finwave Semiconductor
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: GaN transistors for RF and 5G; no climate case under the rubric.'
+  tier: out
+- id: first-mode
+  name: First Mode
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Hybrid battery/hydrogen powerplants and retrofit kits for mining haul trucks and rail.'
+  tier: out
+- id: flexenergy-solutions
+  name: FlexEnergy Solutions
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Turbine generators that run mainly on natural gas and oilfield gas.'
+  tier: out
+- id: formlabs
+  name: Formlabs
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: 3D printers.'
+  tier: out
+- id: fortescue-fortescue-zero-future-industries
+  name: Fortescue (Fortescue Zero / Future Industries)
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Iron-ore mining group; green hydrogen and electrolyzers are a side business (mining operators
+    are out, owner ruling A6b).'
+  tier: out
+- id: gemateg
+  name: GemaTEG
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: GemaPOD modular AI data center units (100-500 kW) with built-in thermoelectric/cold-plate
+    cooling (DaTEG) and Supervisor control software.'
+  tier: out
+- id: genalpha-nuclear-technologies
+  name: GenAlpha Nuclear Technologies
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Direct energy conversion nuclear power sources (SPACE-TEC plasma thermionic conversion with
+    metal-foam fuels); also radiation detection.'
+  tier: out
+- id: generac
+  name: Generac
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Mostly fuel-burning generators, with a storage line.'
+  tier: out
+- id: general-atomics
+  name: General Atomics
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Defense, Aerospace and space: Defense and diversified technologies; defense is its main business (owner ruling
+    A3).'
+  tier: out
+- id: giga-energy
+  name: Giga Energy
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Builds electrical and cooling infrastructure for AI data centers and develops and leases
+    its own data-center sites; companies that build....'
+  tier: out
+- id: gram
+  name: GRAM
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Swarms of legged general-purpose robots; general robotics is out.'
+  tier: out
+- id: h3x-technologies
+  name: H3X Technologies
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Defense, Aerospace and space: Electric motor drives; the company says defense is its current focus, and defense
+    as the main business is out.'
+  tier: out
+- id: hexaspec
+  name: HEXAspec
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Inorganic fillers for semiconductor packaging; no climate case under the rubric.'
+  tier: out
+- id: humble-robotics
+  name: Humble Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: General robotics.'
+  tier: out
+- id: hydraulics-international
+  name: Hydraulics International
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: High-pressure pumps and gas boosters; no climate case under the rubric.'
+  tier: out
+- id: hyliion
+  name: Hyliion
+  kind: categories
+  categories:
+  - data-centers
+  - oil-gas
+  reason: 'Combustion, oil and gas, Data-center equipment: KARNO generators that run mostly on natural gas, aimed at data
+    centers and the military; no longer the electric truck powertrain business.'
+  tier: out
+- id: ibeam-materials
+  name: iBeam Materials
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Flexible LEDs and displays grown on metal foil; general lighting and displays,
+    no climate case under the rubric.'
+  tier: out
+- id: impossible-metals
+  name: Impossible Metals
+  kind: categories
+  categories:
+  - autonomy-robotics
+  - mining
+  reason: 'Mining and exploration, Autonomy and robotics: Eureka autonomous underwater robots that selectively collect polymetallic
+    nodules from the seabed for battery metals.'
+  tier: out
+- id: innio
+  name: INNIO
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Jenbacher and Waukesha gas engines for power generation, CHP and gas compression, plus
+    service and myplant digital platform.'
+  tier: out
+- id: insitu
+  name: Insitu
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+  reason: 'Defense, Aerospace and space, Autonomy and robotics: Uncrewed aircraft systems (ScanEagle, Integrator, RQ-21A),
+    payloads and ground control software.'
+  tier: out
+- id: intellihot
+  name: Intellihot
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Tankless water heaters and boilers, mostly gas-fired; runs mainly on natural gas (owner
+    ruling A2).'
+  tier: out
+- id: kara
+  name: Kara
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Diamond wafers for heat spreading in electronics; no climate case.'
+  tier: out
+- id: karman-industries
+  name: Karman Industries
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Heat pumps now aimed at data-center cooling; data-center equipment is out.'
+  tier: out
+- id: kobold-metals
+  name: KoBold Metals
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: AI-guided exploration and development of critical-mineral deposits.'
+  tier: out
+- id: kodiak
+  name: Kodiak
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous trucking.'
+  tier: out
+- id: lignetics
+  name: Lignetics
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Wood pellets for heating and grilling; no climate case under the rubric.'
+  tier: out
+- id: liquidcool-solutions
+  name: LiquidCool Solutions
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: High-density, liquid-cooled rack servers for data centers, edge computing and harsh environments.'
+  tier: out
+- id: lithium-americas-thacker-pass
+  name: Lithium Americas (Thacker Pass)
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Building the Thacker Pass lithium mine with an on-site chemical plant; mine operators and
+    pre-production mine projects are out even with....'
+  tier: out
+- id: longpath-technologies
+  name: LongPath Technologies
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Methane leak detection and measurement, mainly for oil and gas; methane monitoring is
+    out.'
+  tier: out
+- id: lummus-technology
+  name: Lummus Technology
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Licenses process technology mainly to refining, petrochemical and gas-processing customers.'
+  tier: out
+- id: lunar-outpost
+  name: Lunar Outpost
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Lunar rovers.'
+  tier: out
+- id: lyondellbasell
+  name: LyondellBasell
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Petrochemicals and polymers producer; its circular and low-carbon business is a small
+    part.'
+  tier: out
+- id: madrone
+  name: Madrone
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Dew-point evaporative cooling systems for data centers; data-center equipment is out (decision
+    13).'
+  tier: out
+- id: mainspring-energy
+  name: Mainspring Energy
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Linear generators that mostly run on natural gas or biogas today; excluded for now.'
+  tier: out
+- id: mantapoole-technologies
+  name: MantaPoole Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Roll-to-roll multispectral light filters; no climate case under the rubric.'
+  tier: out
+- id: mariana-minerals
+  name: Mariana Minerals
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Operates mines and refineries for copper, lithium and nickel; mine operation is out.'
+  tier: out
+- id: merlin-labs
+  name: Merlin Labs
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+  reason: 'Aerospace and space, Autonomy and robotics, Defense: Autonomous flight for defense and cargo aircraft.'
+  tier: out
+- id: meteoric
+  name: Meteoric
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Drones that reduce cloud cover over solar plants (weather modification).'
+  tier: out
+- id: motional
+  name: Motional
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous vehicles.'
+  tier: out
+- id: muon-vision
+  name: Muon Vision
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Muon imaging and subsurface monitoring for mining operators; mining is out (owner ruling
+    A6b).'
+  tier: out
+- id: mytra
+  name: Mytra
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Warehouse robotics.'
+  tier: out
+- id: netenergy
+  name: NETenergy
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Liquid cooling with thermal storage for AI data centers; data-center equipment is out (decision
+    13).'
+  tier: out
+- id: niocorp-developments
+  name: NioCorp Developments
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Niobium, scandium and rare-earth mine project; mining is out (owner ruling A6b).'
+  tier: out
+- id: nona-technologies
+  name: Nona Technologies
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Recovers cooling-tower blowdown water for reuse, sold mainly to data centers; data-center
+    cooling equipment is out (decision 13).'
+  tier: out
+- id: nuro
+  name: Nuro
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous vehicles.'
+  tier: out
+- id: odys-aviation
+  name: Odys Aviation
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Aerospace and space, Defense: Hybrid-electric VTOL aircraft whose current product line is tactical drones, including
+    counter-drone work; military electric aviation is out.'
+  tier: out
+- id: onboard-dynamics
+  name: Onboard Dynamics
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Natural gas compression equipment: GoVAC pipeline evacuation systems and GoFLO vehicle-refueling
+    compressors, plus evacuation-as-a-service.'
+  tier: out
+- id: orpheus-ocean
+  name: Orpheus Ocean
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous underwater vehicles for seafloor surveys; no climate case under the rubric.'
+  tier: out
+- id: oshkosh
+  name: Oshkosh
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Specialty and defense trucks.'
+  tier: out
+- id: outrider
+  name: Outrider
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous yard trucks.'
+  tier: out
+- id: outward-technologies
+  name: Outward Technologies
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Solar concentrators now aimed at space and lunar use; space is out by decision.'
+  tier: out
+- id: overview-energy
+  name: Overview Energy
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Satellites that beam solar energy as near-infrared light to existing ground solar farms (in
+    development; LEO transfer in progress).'
+  tier: out
+- id: palanquin-power
+  name: Palanquin Power
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Rack-level power conversion hardware for data centers; data-center equipment is out (decision
+    13).'
+  tier: out
+- id: panasonic-electric-works-corp-of-america
+  name: Panasonic Electric Works Corp. of America
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Relays, sensors, capacitors and other electronic components for general industry;
+    no climate case under the rubric.'
+  tier: out
+- id: parker-hannifin
+  name: Parker Hannifin
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  reason: 'Advanced manufacturing, Aerospace and space: Motion-control, hydraulic and filtration products for many industries;
+    no climate case under the rubric.'
+  tier: out
+- id: paulsson
+  name: Paulsson
+  kind: categories
+  categories:
+  - oil-gas
+  - semis-electronics
+  reason: 'Combustion, oil and gas, Semiconductors and electronics: Fiber-optic sensing whose main applications are oil and
+    gas; no climate case under the rubric.'
+  tier: out
+- id: piaggio-fast-forward
+  name: Piaggio Fast Forward
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Following robots.'
+  tier: out
+- id: pixelexx-systems
+  name: PixelEXX Systems
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Nano-pixel image sensors and cameras; no climate case under the rubric.'
+  tier: out
+- id: power-integrations
+  name: Power Integrations
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: High-voltage power-conversion chips for broad electronics markets.'
+  tier: out
+- id: project-canary
+  name: Project Canary
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Methane leak detection and measurement, mainly for oil and gas; methane monitoring is
+    out.'
+  tier: out
+- id: pronto
+  name: Pronto
+  kind: categories
+  categories:
+  - autonomy-robotics
+  - mining
+  reason: 'Autonomy and robotics, Mining and exploration: Autonomous haul trucks.'
+  tier: out
+- id: proper-voltage
+  name: Proper Voltage
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Battery interface hardware that lets product makers swap battery packs; markets
+    are critical power, defense and robotics, with no clear....'
+  tier: out
+- id: qnergy
+  name: Qnergy
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Free-piston Stirling engine generators (PowerGen), compressed-air pneumatics for well
+    sites, and TORCH4 landfill methane flares.'
+  tier: out
+- id: quantum-power
+  name: Quantum Power
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Engineered combustion fuel made from non-hazardous waste; no climate case under the rubric.'
+  tier: out
+- id: quest-thermal-group
+  name: Quest Thermal Group
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Cryogenic insulation whose main customers are NASA and aerospace primes.'
+  tier: out
+- id: radia
+  name: Radia
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Very large fuel-burning cargo aircraft for wind blades and military airlift; no electric or
+    emissions case.'
+  tier: out
+- id: rai-institute
+  name: RAI Institute
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robotics research.'
+  tier: out
+- id: rangeview
+  name: Rangeview
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: Digital metal-casting platform whose main customers include defense; no climate case under
+    the rubric.'
+  tier: out
+- id: rare-earths-americas
+  name: Rare Earths Americas
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Rare-earth mining exploration; mining is out (owner ruling A6b).'
+  tier: out
+- id: rare-flora
+  name: Rare Flora
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Phytomining of rare earths from mine tailings; mineral extraction is out (owner ruling
+    A6b).'
+  tier: out
+- id: reach-labs
+  name: Reach Labs
+  kind: categories
+  categories:
+  - defense
+  reason: 'Defense: Long-range wireless power beaming whose main customers are defense agencies (owner ruling A3).'
+  tier: out
+- id: regal-rexnord
+  name: Regal Rexnord
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: Industrial motors, drives and power-transmission parts for many industries; no climate
+    case under the rubric.'
+  tier: out
+- id: reliable-robotics
+  name: Reliable Robotics
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Autonomous flight systems for conventional aircraft.'
+  tier: out
+- id: renesas
+  name: Renesas
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: General semiconductors.'
+  tier: out
+- id: scoggins-enterprises
+  name: Scoggins Enterprises
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Diesel-engine efficiency devices for oilfield service companies.'
+  tier: out
+- id: seatrec
+  name: Seatrec
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Subsea drones powered by ocean temperature differences; defense is a major customer.'
+  tier: out
+- id: sekisui-aerospace
+  name: Sekisui Aerospace
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Composite aerospace structures and engine parts; no climate case under the rubric.'
+  tier: out
+- id: sensatek-propulsion-technology
+  name: Sensatek Propulsion Technology
+  kind: categories
+  categories:
+  - aerospace-space
+  - semis-electronics
+  reason: 'Aerospace and space, Semiconductors and electronics: Wireless sensors for turbine engines, partly for defense;
+    no climate case.'
+  tier: out
+- id: serve-robotics
+  name: Serve Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Sidewalk delivery robots.'
+  tier: out
+- id: sheetak
+  name: Sheetak
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Thermoelectric coolers and modules for electronics; no climate case under the rubric.'
+  tier: out
+- id: shift-thermal
+  name: Shift Thermal
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Phase-change thermal storage sold mainly for data-center cooling; data-center equipment
+    is out (decision 13).'
+  tier: out
+- id: skydio
+  name: Skydio
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+  reason: 'Autonomy and robotics, Defense, Aerospace and space: Drones, largely for defense and public safety.'
+  tier: out
+- id: slb
+  name: SLB
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Oilfield technology and services; its new-energy lines are a small part.'
+  tier: out
+- id: solestial
+  name: Solestial
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Ultrathin silicon solar cells for satellites; space is out by decision.'
+  tier: out
+- id: solvcor
+  name: SolvCor
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Liquid cooling for AI and data centers; data-center equipment is out (decision 13).'
+  tier: out
+- id: source-energy
+  name: Source Energy
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Solar modules and arrays for satellites; space is out by decision.'
+  tier: out
+- id: stec-technology
+  name: Stec Technology
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Exhaust treatment retrofits for marine diesel engines; emissions controls on combustion
+    engines, not electrification.'
+  tier: out
+- id: stone-mountain-technologies
+  name: Stone Mountain Technologies
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Anesi gas absorption heat pumps (ammonia-water cycle) for space heating and hot water;
+    first product an 80,000 Btu....'
+  tier: out
+- id: stormentum
+  name: Stormentum
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Modular UPS, battery and rectifier power systems for AI data centers; data-center equipment
+    is out (decision 13).'
+  tier: out
+- id: sunray-scientific
+  name: SunRay Scientific
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Conductive adhesives and silver inks for electronics assembly; no climate case
+    under the rubric.'
+  tier: out
+- id: terranox-ai
+  name: Terranox AI
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Uranium exploration.'
+  tier: out
+- id: thermamatrix
+  name: ThermaMatrix
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Optical non-destructive inspection technology; no climate case under the rubric.'
+  tier: out
+- id: tierra-metrics
+  name: Tierra Metrics
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Soil-emissions sensors for agriculture; measurement only.'
+  tier: out
+- id: trellisense
+  name: TrelliSense
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Methane leak detection and measurement, mainly for oil and gas; methane monitoring is
+    out.'
+  tier: out
+- id: unspun
+  name: Unspun
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: Apparel made on its own 3D weaving machines.'
+  tier: out
+- id: urban-sky
+  name: Urban Sky
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Stratospheric balloon imaging.'
+  tier: out
+- id: ursa-major
+  name: Ursa Major
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Aerospace and space, Defense: Rocket propulsion and defense.'
+  tier: out
+- id: vastvision-technologies
+  name: VastVision Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Battery-free magnetoelastic tags for inventory and asset tracking; no climate case
+    under the rubric.'
+  tier: out
+- id: verdigris-technologies
+  name: Verdigris Technologies
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Data-center equipment, Semiconductors and electronics: High-frequency power meters and analytics sold mainly to
+    data centers; data-center equipment is out (decision 13).'
+  tier: out
+- id: vertical-semiconductor
+  name: Vertical Semiconductor
+  kind: categories
+  categories:
+  - data-centers
+  - semis-electronics
+  reason: 'Semiconductors and electronics, Data-center equipment: Vertical gallium-nitride power transistors (40 V to 2.3
+    kV) for data center power delivery and grid infrastructure.'
+  tier: out
+- id: vieletech
+  name: Vieletech
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: Combustion-engine research controllers; no climate case.'
+  tier: out
+- id: voltair
+  name: Voltair
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous inspection drones for utilities; no emissions or electrification case.'
+  tier: out
+- id: voluna
+  name: VOLUNA
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: Drone- and rover-mounted neutron tools for mineral exploration; mining survey equipment
+    is out.'
+  tier: out
+- id: whisper-aero
+  name: Whisper Aero
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Aerospace and space, Defense: Quiet electric ducted-fan propulsors and drones whose named customers are mainly
+    DoD and the Air Force; military electric aviation is out.'
+  tier: out
+- id: woodward
+  name: Woodward
+  kind: categories
+  categories:
+  - aerospace-space
+  - oil-gas
+  reason: 'Aerospace and space, Combustion, oil and gas: Controls for aircraft engines, gas turbines and engines.'
+  tier: out
+- id: wootz
+  name: Wootz
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Carbon nanotube material for antennas, sensors and RF parts; no climate case under
+    the rubric.'
+  tier: out
+- id: yard-stick
+  name: Yard Stick
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Soil-carbon measurement probe for agriculture; measurement only.'
+  tier: out
+- id: z-polymers
+  name: Z-Polymers
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  reason: 'Advanced manufacturing: High-strength polymer 3D-printing filament; no climate case under the rubric.'
+  tier: out
+- id: zephyr-fusion
+  name: Zephyr Fusion
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Compact fusion reactor for power in orbit; space is out by decision.'
+  tier: out
+- id: zoox
+  name: Zoox
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous vehicles.'
+  tier: out
+- id: alef-aeronautics
+  name: Alef Aeronautics
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Electric drive-and-fly car (Model A) that drives on roads and takes off vertically.'
+  tier: enabling
+- id: ampaire
+  name: Ampaire
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: AmpDrive hybrid-electric propulsion systems for aircraft (e.g.'
+  tier: enabling
+- id: and-battery-aero
+  name: And Battery Aero
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Lithium-metal battery packs for electric aviation.'
+  tier: core
+- id: archer
+  name: Archer
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Electric vertical-takeoff air taxi (Midnight) for civil passenger service; has a defense line
+    with Anduril.'
+  tier: enabling
+- id: aska
+  name: ASKA
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Hybrid-electric drive-and-fly vertical take-off vehicle.'
+  tier: enabling
+- id: de-ice
+  name: De-Ice
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Electric, chemical-free ice protection for aircraft.'
+  tier: enabling
+- id: electrafly
+  name: ElectraFly
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: VTOL aircraft for package delivery and personal flight, plus composite
+    manufacturing and CNC machining.'
+  tier: enabling
+- id: electric-power-systems-ep-systems
+  name: Electric Power Systems (EP Systems)
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Modular battery systems (EPiC propulsion battery), chargers and charging infrastructure for
+    electric aircraft, aerospace and defense.'
+  tier: core
+- id: eviation-aircraft
+  name: Eviation Aircraft
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Alice all-electric commuter aircraft (program on hold).'
+  tier: enabling
+- id: float
+  name: Float
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Large rigid-frame autonomous airships for industrial freight.'
+  tier: enabling
+- id: heart-aerospace
+  name: Heart Aerospace
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Hybrid-electric regional airliner (ES-36), with an X1 demonstrator.'
+  tier: enabling
+- id: hinetics
+  name: Hinetics
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Ultra-high-efficiency, high-torque-density electric machines, including cryogen-free superconducting
+    machines, for aviation, marine and....'
+  tier: enabling
+- id: joby-aviation
+  name: Joby Aviation
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: All-electric vertical take-off air taxis.'
+  tier: enabling
+- id: maglev-aero
+  name: Maglev Aero
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: MagLev HyperDrive rim-driven, magnetically levitated electric propulsion units for eVTOL aircraft
+    and drones, sold to aircraft OEMs.'
+  tier: enabling
+- id: magnix
+  name: magniX
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Electric propulsion motors and batteries for aircraft.'
+  tier: enabling
+- id: mightyfly
+  name: MightyFly
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Autonomous hybrid-electric VTOL cargo aircraft (up to 500 lb payload)
+    used for same-day and middle-mile delivery services.'
+  tier: enabling
+- id: pivotal
+  name: Pivotal
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Single-seat all-electric light eVTOL aircraft (Helix, earlier BlackFly) for personal flight,
+    emergency response and defense.'
+  tier: enabling
+- id: pyka
+  name: Pyka
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Autonomous electric fixed-wing aircraft: Pelican crop-spraying plane,
+    Pelican Cargo, and DropShip long-range autonomous cargo UAS for....'
+  tier: enabling
+- id: regent
+  name: Regent
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: All-electric Seaglider wing-in-ground-effect vessels (hull, hydrofoil and wing modes) for
+    fast coastal passenger, cargo and defense....'
+  tier: enabling
+- id: wing
+  name: Wing
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Battery-electric delivery drones and a residential drone delivery service
+    (Walmart, DoorDash); an Alphabet company.'
+  tier: enabling
+- id: wisk-aero
+  name: Wisk Aero
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Autonomous all-electric four-seat air taxi in flight testing; acquired
+    from Boeing by Archer Aviation in 2026.'
+  tier: enabling
+- id: zipline
+  name: Zipline
+  kind: categories
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  reason: 'Aerospace and space, Autonomy and robotics: Battery-electric delivery aircraft for retail, restaurant and hospital
+    deliveries, replacing car and van trips.'
+  tier: enabling
+- id: zeroavia
+  name: ZeroAvia
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Hydrogen-electric powertrains and fuel-cell power systems for aircraft (ZA600, ZA200).'
+  tier: core
+- id: microlink-devices
+  name: Microlink Devices
+  kind: categories
+  categories:
+  - aerospace-space
+  - semis-electronics
+  reason: 'Aerospace and space, Semiconductors and electronics: High-efficiency thin-film solar cells for drones, high-altitude
+    aircraft and satellites.'
+  tier: enabling
+- id: modal-motors
+  name: Modal Motors
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: Drone (UAS) motors and ESCs using US-made non-rare-earth magnets.'
+  tier: enabling
+- id: orb-aerospace
+  name: Orb Aerospace
+  kind: categories
+  categories:
+  - aerospace-space
+  reason: 'Aerospace and space: US-made electric motors for drones; earlier described as developing hybrid-electric drone
+    aircraft.'
+  tier: enabling
+- id: mettle-ops
+  name: Mettle Ops
+  kind: categories
+  categories:
+  - aerospace-space
+  - defense
+  reason: 'Defense, Aerospace and space: Defense contractor (armor, ground-vehicle design and integration) that also makes
+    drone motors; defense is its main business (owner....'
+  tier: out
+- id: abb
+  name: ABB
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+  reason: 'Autonomy and robotics, Advanced manufacturing: Electrification and automation equipment (switchgear, drives, motors,
+    robotics), incl.'
+  tier: core
+- id: aseon-labs
+  name: Aseon Labs
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robotic micro-depots that charge, clean and inspect electric autonomous fleets.'
+  tier: enabling
+- id: built-robotics
+  name: Built Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous pile-driving machines that speed up building solar farms.'
+  tier: enabling
+- id: charge-robotics
+  name: Charge Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robots that assemble and install solar modules on utility-scale plants.'
+  tier: enabling
+- id: cosmic-robotics
+  name: Cosmic Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robots that install solar modules on utility-scale plants.'
+  tier: enabling
+- id: fleet-robotics
+  name: Fleet Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Resident robots that clean and inspect ship hulls underwater to cut fuel use.'
+  tier: core
+- id: glacier
+  name: Glacier
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: AI-vision recycling robots.'
+  tier: core
+- id: glydways
+  name: Glydways
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Small autonomous electric pods on dedicated guideways, sold to transit agencies to replace
+    car trips.'
+  tier: enabling
+- id: gritt-robotics
+  name: Gritt Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: AI-controlled robotic systems built on off-the-shelf equipment (rented skidders, robot arms)
+    that install utility-scale solar panels;....'
+  tier: core
+- id: inductive-robotics
+  name: Inductive Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous EV charging for parking lots: charging robots dispatched to parked cars fitted
+    with a smart adapter, plus docking stations;....'
+  tier: core
+- id: luminous-robotics
+  name: Luminous Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: LUMI tracked robots that pick up and install solar modules on utility-scale solar farms,
+    deployed as fleet-as-a-service.'
+  tier: core
+- id: micora
+  name: Micora
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Portable microgrids for industrial power: palletized solar blocks, containerized batteries
+    and robots that assemble solar sites in days....'
+  tier: core
+- id: parallel-systems
+  name: Parallel Systems
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous battery-electric rail cars that move freight containers on existing track instead
+    of diesel trucks.'
+  tier: enabling
+- id: phykos
+  name: Phykos
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Solar-powered autonomous ocean vessels that grow seaweed and sink it for carbon sequestration.'
+  tier: core
+- id: planted
+  name: Planted
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robot-installed, terrain-following solar arrays delivered as turnkey solar plants.'
+  tier: core
+- id: reframe-systems
+  name: Reframe Systems
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+  reason: 'Autonomy and robotics, Advanced manufacturing: Net-zero homes built in robotic microfactories.'
+  tier: core
+- id: renu-robotics
+  name: Renu Robotics
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: All-electric autonomous mowers that maintain vegetation at solar plants (owner ruling A6:
+    robots built for solar are in).'
+  tier: enabling
+- id: robodock
+  name: RoboDock
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robots that automate charging and inspection at electric fleet depots.'
+  tier: enabling
+- id: rstream-recycling
+  name: rStream Recycling
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: On-site robotic and computer-vision waste sorting systems that recover recyclables at venues
+    such as stadiums.'
+  tier: core
+- id: skyraptor
+  name: Skyraptor
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Robots that inspect, clean, repair and de-ice wind turbine blades up-tower, offered as services.'
+  tier: core
+- id: terabase-energy
+  name: Terabase Energy
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Terafab robotic field factory and construction-automation hardware for utility-scale solar,
+    plus construction-management, PlantPredict....'
+  tier: core
+- id: witching-hour
+  name: Witching Hour
+  kind: categories
+  categories:
+  - autonomy-robotics
+  reason: 'Autonomy and robotics: Autonomous robots that crawl energized bare power lines and insulate them to cut wildfire
+    ignition risk.'
+  tier: core
+- id: adroit-materials
+  name: Adroit Materials
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: GaN power semiconductor materials and devices (per input).'
+  tier: enabling
+- id: bandgap-technologies
+  name: Bandgap Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: SiC and GaN power electronics, including inverters, converters and solid-state
+    transformers.'
+  tier: enabling
+- id: crystal-sonic
+  name: Crystal Sonic
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+  reason: 'Semiconductors and electronics, Advanced manufacturing: Sonic Lift-off equipment that uses sound waves to separate
+    thin semiconductor devices from reusable substrates (ASU-developed).'
+  tier: enabling
+- id: everactive
+  name: Everactive
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Batteryless energy-harvesting wireless chips and sensors.'
+  tier: enabling
+- id: forge-nano
+  name: Forge Nano
+  kind: categories
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+  reason: 'Advanced manufacturing, Semiconductors and electronics: Atomic layer deposition (ALD) coating technology and equipment
+    for battery materials and semiconductors, plus lithium-ion cells (Forge....'
+  tier: core
+- id: fuji-electric-corp-of-america
+  name: Fuji Electric Corp. of America
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Drives, power semiconductors, UPS and power-distribution equipment.'
+  tier: enabling
+- id: gallox-semiconductors
+  name: Gallox Semiconductors
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Gallium-oxide power semiconductors (site describes work in progress).'
+  tier: enabling
+- id: great-lakes-crystal-technologies
+  name: Great Lakes Crystal Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Single-crystal, semiconductor-grade CVD diamond substrates, plates and epitaxial
+    wafers for electronics, quantum and other uses.'
+  tier: enabling
+- id: halo-industries
+  name: Halo Industries
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Laser-based silicon-carbide wafering and wafers for power electronics.'
+  tier: enabling
+- id: ideal-power
+  name: Ideal Power
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: B-TRAN bidirectional power semiconductor switches (also SymCool modules and known-good
+    die) for data centers, energy storage, grid and....'
+  tier: core
+- id: iontra
+  name: Iontra
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Battery charge-control technology (firmware and chips) licensed to battery and
+    device makers.'
+  tier: enabling
+- id: kyma-technologies
+  name: Kyma Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: GaN substrates/materials and related power electronics (per input).'
+  tier: enabling
+- id: numat-technologies
+  name: NuMat Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Metal-organic-framework (MOF) chemical products, e.g.'
+  tier: core
+- id: opcondys
+  name: Opcondys
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Optically controlled wide-bandgap switches for grid power control.'
+  tier: enabling
+- id: pallidus
+  name: Pallidus
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Silicon carbide wafers for power electronics (proprietary SiC process).'
+  tier: enabling
+- id: purity-resource
+  name: Purity ReSource
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Membrane separation and cleaning systems that recover and reuse water and chemicals
+    in semiconductor fabs.'
+  tier: enabling
+- id: serinus-labs
+  name: Serinus Labs
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Chip-based trace-gas sensors for hydrogen leaks.'
+  tier: enabling
+- id: brint-tech
+  name: Brint Tech
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Optical hydrogen leak-detection sensors.'
+  tier: enabling
+- id: turbo-power-semiconductor
+  name: Turbo Power Semiconductor
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Ultra-high-voltage silicon carbide power chips (TurboMOS, rated 15 kV and up) for
+    solid-state transformers.'
+  tier: core
+- id: unitedsic-qorvo
+  name: UnitedSiC (Qorvo)
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Silicon carbide power semiconductors (SiC JFETs, cascode FETs, Schottky diodes).'
+  tier: enabling
+- id: wolfspeed
+  name: Wolfspeed
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Silicon carbide materials (substrates) and power semiconductors (MOSFETs, diodes,
+    modules).'
+  tier: enabling
+- id: 75f
+  name: 75F
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Wireless sensors, controllers and software that automate building heating, cooling
+    and lighting.'
+  tier: enabling
+- id: gridvisibility
+  name: GridVisibility
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: GVP point-on-wave grid sensors and a monitoring platform that ride on existing
+    cable broadband networks to monitor the distribution grid.'
+  tier: core
+- id: gridware
+  name: Gridware
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Gridscope pole-mounted sensors that monitor mechanical, electrical and environmental
+    conditions on distribution lines, with analytics....'
+  tier: core
+- id: linevision
+  name: LineVision
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Contactless optical sensors on transmission lines plus a software platform that
+    provides dynamic line ratings to utilities.'
+  tier: core
+- id: livewire-innovation
+  name: LiveWire Innovation
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Spread-spectrum time-domain reflectometry (SSTDR) sensors and fault locators (Arc
+    Chaser, Fault Trapper, Mantis) that find faults in....'
+  tier: enabling
+- id: page-technologies
+  name: PAGE Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Field-deployable water and soil chemistry analyzers.'
+  tier: core
+- id: perpetua-power-source-technologies
+  name: Perpetua Power Source Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Thermoelectric energy harvesting power sources (''Power Pucks'') for industrial
+    and commercial wireless sensors.'
+  tier: enabling
+- id: pyro-e
+  name: Pyro-E
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Vibration energy harvesters that power sensors without batteries.'
+  tier: enabling
+- id: sirenopt
+  name: SirenOpt
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Sensors and software for in-line inspection and process control of thin films (solar,
+    battery manufacturing).'
+  tier: core
+- id: wellntel
+  name: Wellntel
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Groundwater well sensors and telemetry for water-supply monitoring.'
+  tier: enabling
+- id: whisper-energy
+  name: WHISPER Energy
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Peel-and-stick sensors that find energy waste in buildings, with the fixes funded
+    through shared savings.'
+  tier: enabling
+- id: powerhouse-dynamics
+  name: Powerhouse Dynamics
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: SiteSage IoT energy monitoring and equipment control (sensors, controllers and
+    software) for restaurants, convenience stores and other....'
+  tier: enabling
+- id: satec
+  name: Satec
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Power meters, power-quality analyzers and current sensors.'
+  tier: enabling
+- id: infinite-cooling
+  name: Infinite Cooling
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: TowerPulse wireless sensors and analytics that cut water and energy use in cooling
+    towers at power plants and industrial sites.'
+  tier: core
+- id: pollux-technologies
+  name: Pollux Technologies
+  kind: categories
+  categories:
+  - semis-electronics
+  reason: 'Semiconductors and electronics: Now trading as Lumiaq: connected sensors that monitor HVAC filters.'
+  tier: enabling
+- id: aalo-atomics
+  name: Aalo Atomics
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Factory-built sodium-cooled small nuclear reactors; Aalo Pod is a 50 MWe plant made of five
+    10 MWe reactors, aimed at AI data centers.'
+  tier: core
+- id: applied-kinetics
+  name: Applied Kinetics
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Builds transformers, switchgear and cooling equipment to order, first for data centers.'
+  tier: enabling
+- id: amperesand
+  name: Amperesand
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Silicon-carbide solid-state transformers for grid and data-center power conversion.'
+  tier: enabling
+- id: kratos-industries
+  name: Kratos Industries
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Low- and medium-voltage switchboards and switchgear, much of it for data centers; a Legrand
+    brand since 2026.'
+  tier: enabling
+- id: on-energy
+  name: ON.energy
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Battery storage and power systems for data centers and industrial sites.'
+  tier: enabling
+- id: spinor-energy
+  name: Spinor Energy
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Superconducting magnetic energy storage, aimed first at AI data centers.'
+  tier: core
+- id: veir
+  name: VEIR
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: High-temperature superconducting power cables that move electricity with far lower losses;
+    first product serves AI data centers.'
+  tier: core
+- id: zentra-power-technologies
+  name: Zentra Power Technologies
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Solid-state transformers, grid power-conversion equipment; its main customers so far are
+    data centers, but grid equipment stays in....'
+  tier: core
+- id: zincfive
+  name: ZincFive
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Nickel-zinc batteries and battery cabinets for UPS / data-center backup power, plus engine-starting
+    and transportation batteries.'
+  tier: core
+- id: scalvy
+  name: Scalvy
+  kind: categories
+  categories:
+  - data-centers
+  reason: 'Data-center equipment: Modular power electronics (''Power Neurons'' and rack-level PCS) for AI data centers, energy
+    storage and electric mobility.'
+  tier: core
+- id: american-battery-technology-company
+  name: American Battery Technology Company
+  kind: categories
+  categories:
+  - mining
+  reason: 'Mining and exploration: plans its own Tonopah Flats lithium claystone mine.'
+  tier: core
+- id: blue-mountain-operations
+  name: Blue Mountain Operations
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: its customers are oil and gas operators.'
+  tier: core
+- id: thiozen
+  name: Thiozen
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: its customers are gas processors and refineries.'
+  tier: core
+- id: pressure-core
+  name: Pressure Core
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: its customers are gas pipeline operators.'
+  tier: core
+- id: ts-nano
+  name: TS-Nano
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: sealants for oil and gas wells.'
+  tier: core
+- id: sigma-advanced-technologies
+  name: Sigma Advanced Technologies
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: treats oil and gas produced water.'
+  tier: core
+- id: gradient-geothermal
+  name: Gradient Geothermal
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: runs on co-produced oilfield fluids.'
+  tier: core
+- id: ge-vernova
+  name: GE Vernova
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: gas turbines are a major line.'
+  tier: enabling
+- id: emvolon
+  name: Emvolon
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: turns flared and stranded oilfield methane into chemicals.'
+  tier: core
+- id: mcatalysis
+  name: MCatalysis
+  kind: categories
+  categories:
+  - oil-gas
+  reason: 'Combustion, oil and gas: modular refining units for hydrocarbon feedstocks.'
+  tier: core
