@@ -63,3 +63,5 @@ These come from PLAN.md tenets and section 5, and from README.
 - There is no Node and no `gh`.
 - If a git network command hangs, Git Credential Manager is waiting on Eric's sign-in popup.
 - A full collection takes about three hours now. Run it in the background, and expect it to die if the app session restarts.
+- When its output goes to a log file, run it as `uv run python -u -m pipeline.collect > log`. Without `-u`, Python writes the log in 8 KB blocks, so a working run can look frozen for half an hour.
+- Before judging a run stuck, compare the log's last write time with the clock.
