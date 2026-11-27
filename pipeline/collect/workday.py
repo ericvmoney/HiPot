@@ -37,7 +37,9 @@ from pipeline.collect.locations import parse_location, split_locations
 from pipeline.collect.text import html_to_text
 
 PAGE = 20
-MAX_POSTINGS = 1000
+# A guard against a feed that never ends, set above the largest real board: GE Vernova's
+# holds about 2,260, read in full by the owner's decision (PLAN.md decision 20).
+MAX_POSTINGS = 4000
 _BOARD = re.compile(r"^([A-Za-z0-9_-]+)\.(wd\d+)/([A-Za-z0-9_.\-]+)$")
 
 
