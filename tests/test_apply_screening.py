@@ -120,6 +120,23 @@ def test_a_checked_no_board_fix_clears_a_wrong_careers_page_and_holds_off_probes
     assert board_fixed([fix, {"id": "x", "kind": "website"}]) == {"voluna"}
 
 
+def test_categories_are_set_by_a_fix_with_a_reason_and_make_a_company_listed():
+    from tools.apply_screening import categorize
+    from tools.validate import company_categories, is_listed
+    company = {"id": "kodiak", "climate": {"tier": "out"}, "notes": None}
+    assert not is_listed(company)
+    categorize(company, {"id": "kodiak", "kind": "categories", "categories": ["autonomy-robotics"]})   # no reason: ignored
+    assert "categories" not in company
+    categorize(company, {"id": "kodiak", "kind": "categories", "categories": ["autonomy-robotics", "clean-tech"],
+                         "reason": "Autonomous trucks."})
+    assert company["categories"] == ["autonomy-robotics"]                 # clean tech is never written
+    assert is_listed(company) and company_categories(company) == ["autonomy-robotics"]
+    clean = {"climate": {"tier": "core"}, "categories": ["autonomy-robotics"]}
+    assert company_categories(clean) == ["clean-tech", "autonomy-robotics"]
+    categorize(company, {"id": "kodiak", "kind": "categories", "categories": [], "reason": "Not adjacent after all."})
+    assert "categories" not in company and not is_listed(company)
+
+
 def test_probe_skips_a_board_a_registry_fix_found_retired():
     found = {"company_id": "kiverdi", "careers_url": None, "outcome": "ats-found",
              "ats": [{"type": "bamboohr", "board": "kiverdi", "readable": True}]}
