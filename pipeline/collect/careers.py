@@ -41,13 +41,15 @@ import html as html_lib
 import json
 import re
 from dataclasses import dataclass, field
+import time
 from datetime import datetime, timedelta, timezone
+from typing import Callable
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 from urllib.robotparser import RobotFileParser
 
 from pipeline.collect import normalize
-from pipeline.collect.fetch import Blocked, FetchError
+from pipeline.collect.fetch import Blocked, FetchError, is_timeout
 from pipeline.collect.locations import parse_location, structured_location
 from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_TITLE, _JOB_WORDS, ats_links, links,
                                             live_systems,
@@ -57,6 +59,7 @@ from pipeline.io import ROOT
 
 STATE_PATH = ROOT / "data" / "state" / "careers.json"
 MAX_REQUESTS = 25                 # per company per run, robots.txt included
+COMPANY_BUDGET = 300.0            # seconds of reading per company per run; then it stops, keeping what it has
 LINKEDIN_CAP = 30                 # LinkedIn requests per run, all companies together
 ROBOTS_DISALLOWED_EVERY = 7       # days between reads of a site whose robots.txt disallows the page
 MIN_DESCRIPTION = 200
@@ -89,6 +92,8 @@ class Context:
     linkedin_requests: int = 0
     linkedin_blocked: str | None = None
     now: datetime = field(default_factory=utc_now)
+    budget: float = COMPANY_BUDGET                       # seconds of reading per company
+    clock: Callable[[], float] = time.monotonic
 
     @classmethod
     def load(cls, path: Path = STATE_PATH) -> "Context":
@@ -329,7 +334,11 @@ def linkedin_targets(page: str, base: str) -> tuple[list[str], list[str]]:
 # ------------------------------------------------------------------- reader
 
 class _Cap(Exception):
-    pass
+    """No more requests for this company: the request cap, a timeout, or the time budget."""
+
+    def __init__(self, why: str = "request cap reached") -> None:
+        super().__init__(why)
+        self.why = why
 
 
 def _canonical(url: str) -> str:
@@ -347,14 +356,28 @@ def read(board: str, fetcher, context: Context | None = None) -> normalize.ReadR
     domain = registrable(host)
     stay = lambda url: on_site(url, domain)
     used = [0]
+    started = context.clock()
+    stopped: list[str] = []
 
     def get(url: str, within=stay) -> tuple[str, str]:
+        # A site that holds connections makes every request wait out the
+        # deadline (a full run once stalled on one for 40 minutes), so a
+        # company's first timeout ends its reading, and so does its time budget.
+        if stopped:
+            raise _Cap(stopped[0])
+        if context.clock() - started > context.budget:
+            stopped.append(f"stopped after the {context.budget:g} s time budget")
+            raise _Cap(stopped[0])
         if used[0] >= MAX_REQUESTS:
             raise _Cap()
         used[0] += 1
         before = fetcher.requests
         try:
             return fetcher.get_page(url, within, max_redirects=2)
+        except FetchError as error:
+            if is_timeout(error):
+                stopped.append("stopped after a timeout")
+            raise
         finally:
             used[0] += max(0, fetcher.requests - before - 1)     # redirect hops count too
 
@@ -400,8 +423,10 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         if str(error).startswith(("HTTP 404", "HTTP 410")):
             return normalize.ReadResult(status="no-careers-page", note=f"{careers_url}: {str(error)[:120]}")
         raise
-    except _Cap:
-        return normalize.ReadResult(status="partial", note="request cap reached")
+    except _Cap as cap:
+        # Nothing read yet: a stop before the careers page is an error, not a partial read.
+        status = "partial" if cap.why == "request cap reached" else "error"
+        return normalize.ReadResult(status=status, note=f"{cap.why}; the careers page was not read")
     why = refusal(page)
     if why:
         raise Blocked(f"{why} on {urlsplit(final).netloc}")
@@ -427,12 +452,12 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
 
     postings = posting_links(page, final, domain)
     if postings:
-        failed, capped = 0, False
+        failed, capped = 0, None
         for url in postings:
             try:
                 landed, body = get(url)
-            except _Cap:
-                capped = True
+            except _Cap as cap:
+                capped = cap.why
                 break
             except FetchError as error:
                 if isinstance(error, Blocked):
@@ -449,7 +474,7 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         drafts = _unique(drafts)
         if capped or failed:
             missing = len(postings) - len(drafts)
-            why = "request cap reached" if capped else f"{failed} posting pages could not be read"
+            why = capped or f"{failed} posting pages could not be read"
             return normalize.ReadResult(drafts=drafts, status="partial",
                                         note=f"{why}; {len(drafts)} of {len(postings)} listed postings read ({missing} missing)")
         return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} posting pages from the listing")
@@ -600,7 +625,7 @@ def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Cont
 
     def ask(url: str) -> tuple[str, str]:
         if context.linkedin_requests >= LINKEDIN_CAP:
-            raise _Cap()
+            raise _Cap(f"LinkedIn cap of {LINKEDIN_CAP} requests a run reached")
         context.linkedin_requests += 1
         try:
             landed, body = get(url, on_linkedin)
@@ -619,7 +644,7 @@ def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Cont
         return landed, body
 
     today = context.now
-    drafts, failed, capped = [], 0, False
+    drafts, failed, capped = [], 0, None
     try:
         for company_page in company_pages:
             if jobs:
@@ -640,17 +665,17 @@ def _read_linkedin(jobs: list[str], company_pages: list[str], get, context: Cont
                 drafts.append(made)
             else:
                 failed += 1
-    except _Cap:
-        capped = True
+    except _Cap as cap:
+        capped = cap.why
     except FetchError as error:
         if isinstance(error, Blocked):
             raise
         failed += 1
     drafts = _unique(drafts)
-    if not jobs and not drafts:
+    if not jobs and not drafts and not capped:
         return normalize.ReadResult(status="none-open", note="careers page points to LinkedIn, which lists no public jobs")
     if capped or failed:
-        why = f"LinkedIn cap of {LINKEDIN_CAP} requests a run reached" if capped else f"{failed} LinkedIn pages could not be read"
+        why = capped or f"{failed} LinkedIn pages could not be read"
         return normalize.ReadResult(drafts=drafts, status="partial", note=f"{why}; {len(drafts)} of {len(jobs)} read")
     return normalize.ReadResult(drafts=drafts, note=f"read {len(drafts)} postings on LinkedIn, where the careers page points")
 

@@ -227,3 +227,65 @@ def test_record_names_keep_a_query_written_into_the_address():
     first = record_name("https://api.example.com/v1/companies/X/postings?offset=0")
     second = record_name("https://api.example.com/v1/companies/X/postings?offset=100")
     assert first != second and first.endswith("offset_0.json")
+
+
+class HangingFirstConnection:
+    """A local server: the first connection is accepted and never answered (as a
+    host that holds a client's connection); every later one gets a short 200."""
+
+    def __init__(self):
+        import socket
+        import threading
+        self.socket = socket.socket()
+        self.socket.bind(("127.0.0.1", 0))
+        self.socket.listen(8)
+        self.port = self.socket.getsockname()[1]
+        self.held = []
+        threading.Thread(target=self._serve, daemon=True).start()
+
+    def _serve(self):
+        while True:
+            try:
+                connection, _ = self.socket.accept()
+            except OSError:
+                return
+            if not self.held:
+                self.held.append(connection)          # never answered
+                continue
+            connection.recv(65536)
+            connection.sendall(b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 2\r\n\r\nok")
+            connection.close()
+
+    def close(self):
+        self.socket.close()
+        for connection in self.held:
+            connection.close()
+
+
+def small_pool_client() -> httpx.Client:
+    return httpx.Client(limits=httpx.Limits(max_connections=1, max_keepalive_connections=1),
+                        timeout=httpx.Timeout(5.0, pool=5.0))
+
+
+def test_a_request_that_misses_its_deadline_does_not_hold_the_pool():
+    # The 2026-11-27 stall: a timed-out request's thread kept its connection, and
+    # with the pool full the retry waited for it and timed out too.
+    server = HangingFirstConnection()
+    url = f"http://127.0.0.1:{server.port}/careers"
+    try:
+        stuck = Fetcher(client=small_pool_client(), deadline=0.5, sleep=lambda _: None)
+        with pytest.raises(FetchError, match="timed out"):
+            stuck.get_text(url)                      # a client it cannot replace: the retry is stuck too
+        server.held.clear()
+        fixed = Fetcher(client_factory=small_pool_client, deadline=0.5, sleep=lambda _: None)
+        assert fixed.get_text(url) == "ok"           # the retry gets a fresh client and an answer
+        assert fixed.clients_replaced == 1
+    finally:
+        server.close()
+
+
+def test_is_timeout():
+    from pipeline.collect.fetch import is_timeout
+    assert is_timeout(FetchError("timed out (ReadTimeout: no complete answer within 120s)"))
+    assert not is_timeout(FetchError("HTTP 404: no board at this address"))
+    assert not is_timeout(ValueError("timed out"))
