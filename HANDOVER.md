@@ -53,6 +53,7 @@ Everything needed to build and run is in the private GitHub repository `ericvmon
 | Thing | Where | If lost |
 |---|---|---|
 | Collector state: first-seen dates (`seen.json`), run history (`runs.json`) and weekly careers reads (`careers.json`) | `data/state/` (ignored) | The first run on a new machine treats every role as first seen that day, so the "New" flag shows everything for 3 business days and first-seen dates restart. **To keep them, copy `data/state/` to the new machine before the first run.** |
+| Your persona and My Roles, from local use | `local-data/persona.yml` and `local-data/my-roles.yml` (ignored; written by `tools.serve_board`, decision 21) | They are personal: copy them yourself to the new machine's `C:\HiPot\local-data\` and they load on the next visit. Never commit them. My Roles also exports to a file from its tab. |
 | Shared board | Artifact `Qcm1YcmXWV8yuyf3L1VDdJ`, owned by Eric's claude.ai account | Only that account can update it. From a new account, publish a new artifact (section 4) and share the new link; the old link keeps its last version. |
 | Old personal job hub (where the seed data came from) | Artifact `Y1umG9JQJiRcZThtTXHScE`; a snapshot sits untracked in `data/seed/raw/` (it holds one person's search profile) | Not needed: the seed import is committed as `data/seed/jobs.json`. |
 | Census files for the metro regions | `data/geo/source/` (ignored) | Needed only to rebuild the metros. The addresses are in `tools/build_metros.py`. |
