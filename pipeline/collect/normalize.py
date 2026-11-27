@@ -10,6 +10,11 @@ from dataclasses import dataclass, field
 
 import re
 from datetime import datetime, timezone
+from typing import Any, Callable
+
+from pipeline.collect.fetch import Blocked, FetchError, is_timeout
+
+TIMEOUT_STREAK = 3      # a board's detail requests stop after this many timeouts in a row
 
 DRAFT_KEYS = (
     "posting_id", "title", "url", "locations", "workplace", "employment",
@@ -30,6 +35,53 @@ class ReadResult:
     status: str = "ok"
     note: str | None = None
     seen_at: str | None = None
+
+
+class Details:
+    """A reader's per-posting detail requests, which stop after TIMEOUT_STREAK
+    timeouts in a row (a host holding its connections makes each request wait
+    out the deadline). A board as large as GE Vernova's legitimately takes over
+    an hour, so there is no time budget, only the streak.
+
+        details = Details()
+        for item in listed:
+            info = details.ask(lambda: fetcher.get_json(...), default={})
+            drafts.append(...)
+        return details.result(drafts)
+
+    `ask` returns `default` when the request fails or once the loop has
+    stopped, so each posting is still kept from the board's list. A refusal
+    (Blocked) still ends the company. `result` gives the drafts, or a partial
+    ReadResult with the note when the loop stopped."""
+
+    def __init__(self, limit: int = TIMEOUT_STREAK) -> None:
+        self.limit = limit
+        self.streak = 0
+        self.stopped = False
+        self.skipped = 0
+
+    def ask(self, call: Callable[[], Any], default: Any = None) -> Any:
+        if self.stopped:
+            self.skipped += 1
+            return default
+        try:
+            value = call()
+        except Blocked:
+            raise
+        except FetchError as error:
+            self.streak = self.streak + 1 if is_timeout(error) else 0
+            if self.streak >= self.limit:
+                self.stopped = True
+            return default
+        self.streak = 0
+        return value
+
+    def result(self, drafts: list[dict]) -> "list[dict] | ReadResult":
+        if not self.stopped:
+            return drafts
+        return ReadResult(drafts=drafts, status="partial",
+                          note=f"stopped after {self.limit} timeouts in a row; {self.skipped} postings kept from "
+                               f"the board's list without their details")
 
 
 def draft(**values) -> dict:

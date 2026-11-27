@@ -115,16 +115,14 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
     if not isinstance(answer, list):
         raise FetchError("answer was not a list of positions")
     drafts = []
+    details = normalize.Details()
     for job in answer:
         if not isinstance(job, dict) or not job.get("id"):
             continue
         description = ""
         if (job.get("url") or "").startswith("https://"):
-            try:
-                description = job_posting_description(fetcher.get_text(job["url"]))
-            except Blocked:
-                raise
-            except FetchError:
-                pass    # keep the posting from the list without its description
+            # A failed request keeps the posting from the list without its description.
+            page = details.ask(lambda: fetcher.get_text(job["url"]), default="")
+            description = job_posting_description(page) if page else ""
         drafts.append(_draft(job, description))
-    return drafts
+    return details.result(drafts)

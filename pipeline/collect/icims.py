@@ -130,12 +130,9 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
             break
     today = datetime.now(timezone.utc)
     drafts = []
+    details = normalize.Details()
     for card in listed:
-        try:
-            _final, body = fetcher.get_page(f"{card['url']}?in_iframe=1", stay)
-        except Blocked:
-            raise
-        except FetchError:
-            body = ""      # keep the posting from its card
+        # A failed request keeps the posting from its card.
+        _final, body = details.ask(lambda: fetcher.get_page(f"{card['url']}?in_iframe=1", stay), default=("", ""))
         drafts.append(_draft(card, body, today))
-    return drafts
+    return details.result(drafts)

@@ -86,14 +86,11 @@ def _draft(job: dict, description: str) -> dict:
 def read(board: str, fetcher: Fetcher) -> list[dict]:
     jobs = page_data(fetcher.get_text(BOARD.format(board=board)))["Jobs"]
     drafts = []
+    details = normalize.Details()
     for job in jobs:
         if not isinstance(job, dict) or not job.get("JobId") or job.get("IsInternal"):
             continue
-        try:
-            description = job_posting_description(fetcher.get_text(POSTING.format(posting=job["JobId"])))
-        except Blocked:
-            raise
-        except FetchError:
-            description = ""   # keep the posting with the board's short description
-        drafts.append(_draft(job, description))
-    return drafts
+        # A failed request keeps the posting with the board's short description.
+        page = details.ask(lambda: fetcher.get_text(POSTING.format(posting=job["JobId"])), default="")
+        drafts.append(_draft(job, job_posting_description(page) if page else ""))
+    return details.result(drafts)
