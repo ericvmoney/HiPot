@@ -189,6 +189,15 @@ def test_filters(js):
     assert ids(js, {"q": "idle POW"}) == ["idle"]
 
 
+def test_place_filters_for_roles_outside_every_metro_area(js):
+    base = {"q": "", "cats": [], "place": "", "sector": "", "type": "", "stage": "", "hiring": False, "pay": "", "read": "", "fav": False}
+    rural = {"id": "rural", "name": "Rural", "cats": ["clean-tech"], "roles": 2, "out": ["us"], "es": ["co"], "read": "daily"}
+    abroad = {"id": "abroad", "name": "Abroad", "cats": ["clean-tech"], "roles": 1, "out": ["abroad"], "read": "daily"}
+    pick = lambda place: [c["id"] for c in (rural, abroad) if js.call("CompanyRules.matches", c, dict(base, place=place), {})]
+    assert pick("e-co") == ["rural"] and pick("e-wa") == []
+    assert pick("us") == ["rural"] and pick("abroad") == ["abroad"] and pick("unclear") == []
+
+
 @pytest.mark.parametrize("by,order", [
     ("roles", ["bot", "sun", "idle"]), ("new", ["sun", "bot", "idle"]), ("name", ["bot", "idle", "sun"]),
     ("pay", ["bot", "sun", "idle"]), ("headcount", ["bot", "sun", "idle"]),

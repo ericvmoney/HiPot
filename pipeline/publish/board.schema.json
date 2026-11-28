@@ -105,6 +105,8 @@
           "loc": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
           "metros": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}},
           "st": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z]{2}$"}, "description": "US states the role's locations name, as lower-case USPS codes. Keys of taxonomy.states."},
+          "nm": {"enum": ["us", "abroad", "unclear"], "description": "Only for a role with no metro area (states.place_class): in the US, outside it (every place carries another country), or unclear."},
+          "es": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z]{2}$"}, "description": "Of `st`, the states none of the role's metro areas lies in: 'Elsewhere in <state>' (states.elsewhere_states)."},
           "wp": {"enum": ["onsite", "hybrid", "remote"]},
           "disc": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/slug"}, "description": "Left out when the role has no discipline."},
           "level": {"$ref": "#/$defs/slug"},

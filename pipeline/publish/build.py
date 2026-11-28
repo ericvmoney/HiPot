@@ -32,7 +32,7 @@ from pipeline.publish import grades as paygrades
 from pipeline.publish.companies import build_companies
 from pipeline.publish import pay as paybands
 from pipeline.publish import wages as paywages
-from pipeline.publish.states import US_STATES, states_for
+from pipeline.publish.states import US_STATES, elsewhere_states, metro_states, place_class, states_for
 from tools.validate import (check_companies, check_jobs, company_categories, company_type, is_listed, listed_functions,
                             schema_errors, schema_registry)
 
@@ -123,7 +123,7 @@ def _role_date(job: dict) -> str:
     return job["posted_date"] or job["first_seen"][:10]
 
 
-def _role_record(job: dict) -> dict[str, Any]:
+def _role_record(job: dict, metro_codes: dict[str, list[str]] | None = None) -> dict[str, Any]:
     record: dict[str, Any] = {
         "id": job["id"],
         "co": job["company_id"],
@@ -138,6 +138,13 @@ def _role_record(job: dict) -> dict[str, Any]:
     states = states_for(job["locations"])
     if states:
         record["st"] = states
+    # Outside every metro area (the owner's metro review): where, and which of its states it is "elsewhere in".
+    where = place_class(job)
+    if where:
+        record["nm"] = where
+    outside = elsewhere_states(job, metro_codes or {})
+    if outside:
+        record["es"] = outside
     if job["workplace"] != "unknown":
         record["wp"] = job["workplace"]
     if job["disciplines"]:
@@ -247,7 +254,8 @@ def build_all(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unli
     present = {record["type"] for record in company_records.values()}
     labels["company_types"] = [{"id": kind, "label": COMPANY_TYPE_LABELS[kind]} for kind in COMPANY_TYPES if kind in present]
     labels["categories"] = category_labels(taxonomy)
-    records = [_role_record(job) for job in kept]
+    metro_codes = {entry["id"]: metro_states(entry["label"]) for entry in taxonomy["metros"]}
+    records = [_role_record(job, metro_codes) for job in kept]
     # New roles: first seen in the last 3 business days, not counting a company's first collection.
     read_ends = fresh.first_read_ends(jobs_file["jobs"], seed_ids, runs)
     new_ids = fresh.new_role_ids(kept, jobs_file["generated_at"], read_ends, seed_ids)

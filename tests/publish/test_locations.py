@@ -82,6 +82,69 @@ def test_every_state_used_has_a_label_and_every_label_is_used():
     assert with_state > 0.85 * len(board["roles"])
 
 
+# --- Roles outside every metro area (the owner's metro review, 2026-11-28) ----------------------------
+
+@pytest.mark.parametrize("locations,metros,expected", [
+    ([{"text": "Munich", "country": "DE"}], [], "abroad"),
+    ([{"text": "Munich", "country": "DE"}, {"text": "Toronto", "country": "CA"}], [], "abroad"),
+    ([{"text": "Montrose, CO"}], [], "us"),                       # a rural plant: a state, no metro area
+    ([{"text": "Greenville", "country": "US"}], [], "us"),          # in the US, city not placed yet
+    ([{"text": "Munich", "country": "DE"}, {"text": "Greenville", "country": "US"}], [], "us"),   # not all abroad
+    ([{"text": "Munich"}], [], "unclear"),                          # no country to go by
+    ([], [], "unclear"),
+    ([{"text": "Denver, CO"}], ["denver"], None),                   # in a metro area
+])
+def test_place_class(locations, metros, expected):
+    from pipeline.publish.states import place_class
+    assert place_class({"metros": metros, "locations": locations}) == expected
+
+
+def test_elsewhere_in_a_state_is_a_state_none_of_the_roles_metro_areas_covers():
+    from pipeline.publish.states import elsewhere_states, metro_states
+    assert metro_states("New York-Newark-Jersey City, NY-NJ-PA") == ["NY", "NJ", "PA"] and metro_states("Somewhere") == []
+    codes = {"denver": ["CO"], "nyc": ["NY", "NJ", "PA"]}
+    job = lambda metros, *places: {"metros": metros, "locations": [{"text": p} for p in places]}
+    assert elsewhere_states(job([], "Montrose, CO"), codes) == ["co"]
+    assert elsewhere_states(job(["denver"], "Denver, CO", "Moses Lake, WA"), codes) == ["wa"]
+    assert elsewhere_states(job(["nyc"], "Newark, NJ"), codes) == []          # NJ is in the New York metro area
+
+
+def test_the_board_and_companies_carry_the_classes():
+    reg = registry([company("alpha", "core", "in"), company("beta", "core", "in")])
+    jobs = [job("plant", "alpha", locations=[{"text": "Montrose, CO", "state": "CO", "country": "US"}]),
+            job("munich", "alpha", locations=[{"text": "Munich", "country": "DE"}], workplace="remote"),
+            job("den", "beta", metros=["denver"], locations=[{"text": "Denver, CO"}, {"text": "Moses Lake, WA"}])]
+    from pipeline.publish.build import build_all
+    built = build_all(jobs_file(jobs), reg, TAXONOMY)
+    roles = {role["id"]: role for role in built["board"]["roles"]}
+    assert roles["plant"]["nm"] == "us" and roles["plant"]["es"] == ["co"]
+    assert roles["munich"]["nm"] == "abroad" and "es" not in roles["munich"]
+    assert "nm" not in roles["den"] and roles["den"]["es"] == ["wa"]
+    companies = {c["id"]: c for c in built["companies"]["companies"]}
+    # A remote role abroad is not "remote" (remote means in the US) but it is outside the US.
+    assert companies["alpha"]["out"] == ["abroad", "us"] and "remote" not in companies["alpha"]
+    assert companies["alpha"]["es"] == ["co"] and companies["beta"]["es"] == ["wa"] and "out" not in companies["beta"]
+
+
+def test_the_board_page_offers_the_new_choices_and_their_tokens_round_trip():
+    from tests.publish.test_page import SCRIPT
+    assert "var away = role.nm === 'abroad' || !!HiPotRank.abroad(role);" in SCRIPT
+    assert "if (role.wp === 'remote' && !away) places.push(REMOTE);" in SCRIPT
+    assert "{ id: ABROAD, label: 'Outside the US', kind: 'top' }" in SCRIPT
+    assert "label: 'Elsewhere in ' + entry.label, kind: 'else'" in SCRIPT
+    # Last under its state, after the metro areas.
+    prepare = SCRIPT[SCRIPT.index("function prepareLocations(facet)"):SCRIPT.index("// ---- Filter state in the URL fragment")]
+    assert prepare.index("group.metros.forEach") < prepare.index("var rest = group.state ? byId[ELSE_PREFIX + group.state.id] : null;")
+    # Address tokens: written and read back the same way.
+    assert "if (id === ABROAD) return 'abroad';" in SCRIPT and "if (token === 'abroad') { next.m.add(ABROAD); return; }" in SCRIPT
+    assert "if (id === UNCLEAR) return 'unclear';" in SCRIPT and "if (token === 'unclear') { next.m.add(UNCLEAR); return; }" in SCRIPT
+    assert "if (id.indexOf(ELSE_PREFIX) === 0) return 'else-' + id.slice(ELSE_PREFIX.length);" in SCRIPT
+    assert "else if (key === 'else') { if (/^[a-z]{2}$/.test(value) && facetByKey.m.byId[ELSE_PREFIX + value]) next.m.add(ELSE_PREFIX + value); }" in SCRIPT
+    companies = (ROOT / "site" / "companies.html").read_text(encoding="utf-8")
+    assert "value: 'e-' + group.state.id, text: 'Elsewhere in ' + group.state.label" in companies
+    assert "{ value: 'abroad', text: 'Outside the US (' + outCount('abroad') + ')' }" in companies
+
+
 # --- Metro areas grouped under their state (owner's request, 2026-11-28), run in V8 -------------------
 
 METROS = [

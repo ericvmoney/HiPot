@@ -253,7 +253,8 @@ def test_company_and_role_fields_are_carried_over():
     }   # full-time and the first-seen day are left out, and the summary is in summaries.json (test_size_trims)
     # Nothing stated stays nothing stated: no pay, level, workplace or discipline is invented.
     assert by_id["a2"] == {"id": "a2", "co": "alpha", "title": "Engineer a2",
-                           "url": "https://example.com/jobs/a2", "fn": "product", "seen": "2026-11-20"}
+                           "url": "https://example.com/jobs/a2", "fn": "product", "seen": "2026-11-20",
+                           "nm": "unclear"}   # no place at all: outside every metro area, and not placeable
     assert board_errors(board) == []
 
 
