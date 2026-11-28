@@ -1,0 +1,136 @@
+# Registry fixes 24: UKG UltiPro and ADP boards read automatically, weekly (A1 collector, 2026-11-27).
+#
+# Written by workstream A1 at the supervisor's request, 2026-11-27, after the owner's decision 24 (UKG UltiPro
+# list searches, ADP Workforce Now career centers and the jobs.veolia.com search are read at most weekly although
+# robots.txt disallows them). Each board below was read live on 2026-11-27 with the collector's new readers
+# (pipeline/collect/ukg.py, adp.py, weekly.py): no block, no sign-in. The boards are unchanged; each fix only
+# records the read so the company moves from read: manual to read: auto. Veolia Nuclear Solutions is recorded only.
+
+fixes:
+- id: american-battery-solutions
+  name: American Battery Solutions
+  ats:
+    type: adp
+    board: b850b09a-85f3-45a3-9072-51b8e5da9e81
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 32
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: biomason
+  name: Biomason
+  ats:
+    type: adp
+    board: 26dd041f-55ce-4c2f-99d4-134d3bbf4a21
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 0
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: cirba-solutions
+  name: Cirba Solutions
+  ats:
+    type: adp
+    board: d68261e8-6b94-47f8-b413-9db804c98a4d
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 11
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: komline-sanderson
+  name: Komline-Sanderson
+  ats:
+    type: adp
+    board: 612bb66e-3607-4733-b0b5-ee07c92bf575
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 13
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: lion-energy
+  name: Lion Energy
+  ats:
+    type: adp
+    board: 0e788c70-47f0-4896-82d6-96fcb3e8e079
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 6
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: lithion-battery
+  name: Lithion Battery
+  ats:
+    type: adp
+    board: c8842c22-2743-4df9-af35-f08182629130
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 14
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: mission-solar-energy
+  name: Mission Solar Energy
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/OCI1001/JobBoard/bea213fb-61de-4f70-b474-e39aaba85b38
+  source: 'The collector''s UKG reader read this board live on 2026-11-27: UKG UltiPro list, 2 postings. The board is
+    unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: ocean-power-technologies
+  name: Ocean Power Technologies
+  ats:
+    type: adp
+    board: c353f402-97ea-4b3b-9103-73bbb3211550
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 0
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: optigrid
+  name: OptiGrid
+  ats:
+    type: adp
+    board: 275f2b3c-c1d2-4535-aedc-2637a5e2d9c6
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 37
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: our-next-energy
+  name: Our Next Energy
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/OUR1002ONXE/JobBoard/5c7eeefc-e61c-417a-8468-f976a704a34d
+  source: 'The collector''s UKG reader read this board live on 2026-11-27: UKG UltiPro list, 34 postings. The board is
+    unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: powersecure
+  name: PowerSecure
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/POW1009POWS/JobBoard/42398959-f1c7-48da-a3e2-94e525e29808
+  source: 'The collector''s UKG reader read this board live on 2026-11-27: UKG UltiPro list, 74 postings. The board is
+    unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: resintech
+  name: ResinTech
+  ats:
+    type: adp
+    board: 5093d500-696f-400d-a0a9-fa327104888a
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 1
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: stored-energy-systems-sens
+  name: Stored Energy Systems (SENS)
+  ats:
+    type: adp
+    board: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=4b01b1ef-1960-4219-8f3f-6c0652a81377&ccId=19000101_000001&source=CC2&lang=en_US&selectedMenuKey=CurrentOpenings
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 32
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: tae-technologies
+  name: TAE Technologies
+  ats:
+    type: ukg
+    board: recruiting2.ultipro.com/TRI1021TRIAE/JobBoard/49386e5d-f909-4648-8335-415ce97e3f15
+  source: 'The collector''s UKG reader read this board live on 2026-11-27: UKG UltiPro list, 19 postings. The board is
+    unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: ts-conductor
+  name: TS Conductor
+  ats:
+    type: adp
+    board: eee849ed-3684-4f60-bc80-eea09aeb8b18
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 20
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: yaskawa-solectria-solar
+  name: Yaskawa Solectria Solar
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/YAS1000YAAMI/JobBoard/8a2317d2-a61e-4259-a857-722d164a211c
+  source: 'The collector''s UKG reader read this board live on 2026-11-27: UKG UltiPro list, 30 postings. The board is
+    unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: zincfive
+  name: ZincFive
+  ats:
+    type: adp
+    board: d5ca7713-e342-4b90-89f2-0d351ff60dbb
+  source: 'The collector''s ADP reader read this board live on 2026-11-27: ADP Workforce Now public career center, 12
+    postings. The board is unchanged; it is now read automatically, at most weekly (PLAN.md decision 24).'
+- id: veolia-nuclear-solutions
+  name: Veolia Nuclear Solutions
+  source: 'jobs.veolia.com, the Veolia group job site its careers page links to, was searched on 2026-11-27 (decision
+    24): the search has no business-unit filter, a ''nuclear'' search returned 20 postings worldwide, and the only US
+    one (Automation Engineer, Trevose, PA) names Veolia Water Technologies as its employer in its JobPosting block. Veolia
+    Nuclear Solutions had no US postings there.'
+  note: Recorded only; the registry is unchanged and no jobs.veolia.com reader was built. The careers reader still reads
+    its careers page.

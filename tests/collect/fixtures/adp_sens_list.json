@@ -1,0 +1,683 @@
+{
+ "jobRequisitions": [
+  {
+   "itemID": "9201310521902_492",
+   "postingInstructions": [],
+   "links": [],
+   "clientRequisitionID": "1540",
+   "customFieldGroup": {
+    "codeFields": [
+     {
+      "codeValue": "AN",
+      "nameCode": {
+       "codeValue": "SalaryType"
+      },
+      "shortName": "Annually"
+     },
+     {
+      "codeValue": "RANGE",
+      "nameCode": {
+       "codeValue": "SalaryRangeType"
+      },
+      "shortName": "RANGE"
+     }
+    ],
+    "dateFields": [
+     {
+      "dateValue": "2026-11-20T14:09Z",
+      "nameCode": {
+       "codeValue": "PostingDate"
+      }
+     },
+     {
+      "dateValue": "2026-11-27T19:48Z",
+      "nameCode": {
+       "codeValue": "CurrentServerDateTime"
+      }
+     }
+    ],
+    "indicatorFields": [
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "PriortyStatusFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "InternalPostingFlag"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "MinValue"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "IsVsidApplicable"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForExtPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForIntPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsMonetaryFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsNonMonetaryFlag"
+      }
+     }
+    ],
+    "numberFields": [
+     {
+      "categoryCode": {
+       "codeValue": "ApplicantCount"
+      },
+      "numberValue": 0.0
+     },
+     {
+      "categoryCode": {
+       "codeValue": "AwardAmount"
+      }
+     }
+    ],
+    "stringFields": [
+     {
+      "nameCode": {
+       "codeValue": "ExternalJobID"
+      },
+      "stringValue": "569894"
+     },
+     {
+      "nameCode": {
+       "codeValue": "CareerCenterRefId"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "GuidelineOid"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "CurrencySymbolOrCode"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "JobClass"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "SalaryRange"
+      },
+      "stringValue": "120000.00 to 175000.00 (USD) Annually"
+     }
+    ]
+   },
+   "organizationalUnits": [],
+   "payGradeRange": {
+    "minimumRate": {
+     "amountValue": 120000.0,
+     "currencyCode": "USD"
+    },
+    "maximumRate": {
+     "amountValue": 175000.0,
+     "currencyCode": "USD"
+    }
+   },
+   "postDate": "2026-11-21T00:39:00",
+   "requisitionLocations": [
+    {
+     "address": {
+      "cityName": "Longmont",
+      "countrySubdivisionLevel1": {
+       "codeValue": "CO"
+      },
+      "postalCode": "80503"
+     },
+     "aliasNames": [],
+     "nameCode": {
+      "shortName": " Longmont, CO, US"
+     }
+    }
+   ],
+   "requisitionTitle": "Senior Manager, Manufacturing Engineering",
+   "screeningRequirements": [],
+   "sponsoredVisaTypeCodes": [],
+   "workLevelCode": {
+    "shortName": "Full-Time Salary"
+   }
+  },
+  {
+   "itemID": "9201292886268_1",
+   "postingInstructions": [],
+   "links": [],
+   "clientRequisitionID": "1492",
+   "customFieldGroup": {
+    "codeFields": [
+     {
+      "codeValue": "AN",
+      "nameCode": {
+       "codeValue": "SalaryType"
+      },
+      "shortName": "Annually"
+     },
+     {
+      "codeValue": "RANGE",
+      "nameCode": {
+       "codeValue": "SalaryRangeType"
+      },
+      "shortName": "RANGE"
+     }
+    ],
+    "dateFields": [
+     {
+      "dateValue": "2026-11-20T11:23Z",
+      "nameCode": {
+       "codeValue": "PostingDate"
+      }
+     },
+     {
+      "dateValue": "2026-11-27T19:48Z",
+      "nameCode": {
+       "codeValue": "CurrentServerDateTime"
+      }
+     }
+    ],
+    "indicatorFields": [
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "PriortyStatusFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "InternalPostingFlag"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "MinValue"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "IsVsidApplicable"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForExtPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForIntPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsMonetaryFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsNonMonetaryFlag"
+      }
+     }
+    ],
+    "numberFields": [
+     {
+      "categoryCode": {
+       "codeValue": "ApplicantCount"
+      },
+      "numberValue": 0.0
+     },
+     {
+      "categoryCode": {
+       "codeValue": "AwardAmount"
+      }
+     }
+    ],
+    "stringFields": [
+     {
+      "nameCode": {
+       "codeValue": "ExternalJobID"
+      },
+      "stringValue": "567950"
+     },
+     {
+      "nameCode": {
+       "codeValue": "CareerCenterRefId"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "GuidelineOid"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "CurrencySymbolOrCode"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "JobClass"
+      },
+      "stringValue": "P3 Senior Prof"
+     },
+     {
+      "nameCode": {
+       "codeValue": "SalaryRange"
+      },
+      "stringValue": "103000.00 to 146000.00 (USD) Annually"
+     }
+    ]
+   },
+   "organizationalUnits": [],
+   "payGradeRange": {
+    "minimumRate": {
+     "amountValue": 103000.0,
+     "currencyCode": "USD"
+    },
+    "maximumRate": {
+     "amountValue": 146000.0,
+     "currencyCode": "USD"
+    }
+   },
+   "postDate": "2026-11-20T21:53:00",
+   "requisitionLocations": [
+    {
+     "address": {
+      "cityName": "Longmont",
+      "countrySubdivisionLevel1": {
+       "codeValue": "CO"
+      },
+      "postalCode": "80503"
+     },
+     "aliasNames": [],
+     "nameCode": {
+      "shortName": " Longmont, CO, US"
+     }
+    }
+   ],
+   "requisitionTitle": "Advanced Manufacturing Engineer",
+   "screeningRequirements": [],
+   "sponsoredVisaTypeCodes": [],
+   "workLevelCode": {
+    "shortName": "Full-Time Salary"
+   }
+  },
+  {
+   "itemID": "9201292877346_1",
+   "postingInstructions": [],
+   "links": [],
+   "clientRequisitionID": "1491",
+   "customFieldGroup": {
+    "codeFields": [
+     {
+      "codeValue": "AN",
+      "nameCode": {
+       "codeValue": "SalaryType"
+      },
+      "shortName": "Annually"
+     },
+     {
+      "codeValue": "RANGE",
+      "nameCode": {
+       "codeValue": "SalaryRangeType"
+      },
+      "shortName": "RANGE"
+     }
+    ],
+    "dateFields": [
+     {
+      "dateValue": "2026-11-20T11:21Z",
+      "nameCode": {
+       "codeValue": "PostingDate"
+      }
+     },
+     {
+      "dateValue": "2026-11-27T19:48Z",
+      "nameCode": {
+       "codeValue": "CurrentServerDateTime"
+      }
+     }
+    ],
+    "indicatorFields": [
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "PriortyStatusFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "InternalPostingFlag"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "MinValue"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "IsVsidApplicable"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForExtPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForIntPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsMonetaryFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsNonMonetaryFlag"
+      }
+     }
+    ],
+    "numberFields": [
+     {
+      "categoryCode": {
+       "codeValue": "ApplicantCount"
+      },
+      "numberValue": 0.0
+     },
+     {
+      "categoryCode": {
+       "codeValue": "AwardAmount"
+      }
+     }
+    ],
+    "stringFields": [
+     {
+      "nameCode": {
+       "codeValue": "ExternalJobID"
+      },
+      "stringValue": "567947"
+     },
+     {
+      "nameCode": {
+       "codeValue": "CareerCenterRefId"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "GuidelineOid"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "CurrencySymbolOrCode"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "JobClass"
+      },
+      "stringValue": "P2 Exper Prof"
+     },
+     {
+      "nameCode": {
+       "codeValue": "SalaryRange"
+      },
+      "stringValue": "103000.00 to 146000.00 (USD) Annually"
+     }
+    ]
+   },
+   "organizationalUnits": [],
+   "payGradeRange": {
+    "minimumRate": {
+     "amountValue": 103000.0,
+     "currencyCode": "USD"
+    },
+    "maximumRate": {
+     "amountValue": 146000.0,
+     "currencyCode": "USD"
+    }
+   },
+   "postDate": "2026-11-20T21:51:00",
+   "requisitionLocations": [
+    {
+     "address": {
+      "cityName": "Longmont",
+      "countrySubdivisionLevel1": {
+       "codeValue": "CO"
+      },
+      "postalCode": "80503"
+     },
+     "aliasNames": [],
+     "nameCode": {
+      "shortName": " Longmont, CO, US"
+     }
+    }
+   ],
+   "requisitionTitle": "Senior Industrialization Manufacturing Engineer",
+   "screeningRequirements": [],
+   "sponsoredVisaTypeCodes": [],
+   "workLevelCode": {
+    "shortName": "Full-Time Salary"
+   }
+  },
+  {
+   "itemID": "9201313978919_633",
+   "postingInstructions": [],
+   "links": [],
+   "clientRequisitionID": "1549",
+   "customFieldGroup": {
+    "codeFields": [
+     {
+      "codeValue": "AN",
+      "nameCode": {
+       "codeValue": "SalaryType"
+      },
+      "shortName": "Annually"
+     },
+     {
+      "codeValue": "RANGE",
+      "nameCode": {
+       "codeValue": "SalaryRangeType"
+      },
+      "shortName": "RANGE"
+     }
+    ],
+    "dateFields": [
+     {
+      "dateValue": "2026-11-19T17:02Z",
+      "nameCode": {
+       "codeValue": "PostingDate"
+      }
+     },
+     {
+      "dateValue": "2026-11-27T19:48Z",
+      "nameCode": {
+       "codeValue": "CurrentServerDateTime"
+      }
+     }
+    ],
+    "indicatorFields": [
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "PriortyStatusFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "InternalPostingFlag"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "MinValue"
+      }
+     },
+     {
+      "indicatorValue": true,
+      "nameCode": {
+       "codeValue": "IsVsidApplicable"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForExtPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsSassDlReqForIntPostFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsMonetaryFlag"
+      }
+     },
+     {
+      "indicatorValue": false,
+      "nameCode": {
+       "codeValue": "IsNonMonetaryFlag"
+      }
+     }
+    ],
+    "numberFields": [
+     {
+      "categoryCode": {
+       "codeValue": "ApplicantCount"
+      },
+      "numberValue": 0.0
+     },
+     {
+      "categoryCode": {
+       "codeValue": "AwardAmount"
+      }
+     }
+    ],
+    "stringFields": [
+     {
+      "nameCode": {
+       "codeValue": "ExternalJobID"
+      },
+      "stringValue": "570092"
+     },
+     {
+      "nameCode": {
+       "codeValue": "CareerCenterRefId"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "GuidelineOid"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "CurrencySymbolOrCode"
+      }
+     },
+     {
+      "nameCode": {
+       "codeValue": "JobClass"
+      },
+      "stringValue": "P4 Spec Prof"
+     },
+     {
+      "nameCode": {
+       "codeValue": "SalaryRange"
+      },
+      "stringValue": "105000.00 to 155000.00 (USD) Annually"
+     }
+    ]
+   },
+   "organizationalUnits": [],
+   "payGradeRange": {
+    "minimumRate": {
+     "amountValue": 105000.0,
+     "currencyCode": "USD"
+    },
+    "maximumRate": {
+     "amountValue": 155000.0,
+     "currencyCode": "USD"
+    }
+   },
+   "postDate": "2026-11-20T03:32:00",
+   "requisitionLocations": [
+    {
+     "address": {
+      "cityName": "Broomfield",
+      "countrySubdivisionLevel1": {
+       "codeValue": "CO"
+      },
+      "postalCode": "80023"
+     },
+     "aliasNames": [],
+     "nameCode": {
+      "shortName": " Broomfield, CO, US"
+     }
+    }
+   ],
+   "requisitionTitle": "Senior Production Development Engineer",
+   "screeningRequirements": [],
+   "sponsoredVisaTypeCodes": [],
+   "workLevelCode": {
+    "shortName": "Full-Time Salary"
+   }
+  }
+ ],
+ "meta": {
+  "startSequence": 1,
+  "totalNumber": 4
+ }
+}

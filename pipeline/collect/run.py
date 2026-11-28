@@ -21,8 +21,8 @@ from urllib.parse import urlsplit
 from typing import Callable
 
 from pipeline.collect import normalize
-from pipeline.collect import (ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, jobvite, lever, paylocity,
-                              recruitee, rippling, smartrecruiters, successfactors, teamtailor, workable, workday)
+from pipeline.collect import (adp, ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, jobvite, lever, paylocity,
+                              recruitee, rippling, smartrecruiters, successfactors, teamtailor, ukg, weekly, workable, workday)
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.probe_careers import AGGREGATORS
@@ -55,6 +55,11 @@ READERS: dict[str, Callable] = {
     "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
     "breezy": breezy.read,                     # Terms of Service section 5(ix)
     "jobvite": jobvite.read,                   # Terms of Use, Intellectual Property and Restrictions
+    # Listings robots.txt disallows, read at most weekly (decision 24): main()
+    # wraps these two in weekly.reader. ADP's robots.txt redirects to a sign-in
+    # page, which is never asked; only the public career-center list is read.
+    "ukg": ukg.read,                           # terms page answered 403; quoted as barring scrapers
+    "adp": adp.read,                           # adp.com/legal.aspx sections 3 and 10
     # Companies' own careers pages; the board is the careers page address.
     # Follows a company's LinkedIn jobs where its page sends candidates there
     # (LinkedIn User Agreement 8.2 restricts automated access; decision 12).
@@ -72,7 +77,9 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
          "paylocity": "recruiting.paylocity.com",
          # Each Workday tenant has its own host; a 429 from one stops them all.
-         "workday": "myworkdayjobs.com", "icims": "icims.com", "jobvite": "jobs.jobvite.com"}
+         "workday": "myworkdayjobs.com", "icims": "icims.com", "jobvite": "jobs.jobvite.com",
+         "ukg": "ultipro.com", "adp": "workforcenow.adp.com"}
+WEEKLY = ("ukg", "adp")          # decision 24
 # Readers whose board is a site's own address: a 429 there says nothing about other sites.
 OWN_SITE = {"other", "successfactors"}
 COLLECT_TIERS = ("core", "enabling")
@@ -91,6 +98,11 @@ BOARD_SHAPES = {
     "other": (re.compile(r"^https://[^/\s]+\.[^/\s]+"), "the careers page's https address"),
     "successfactors": (re.compile(r"^https://[^/\s]+\.[^/\s]+/?$"), "the career site's https address, e.g. 'https://careers.vestas.com'"),
     "jobvite": (re.compile(r"^[A-Za-z0-9_-]+$"), "the career site's company name from jobs.jobvite.com/{company}/jobs"),
+    "ukg": (re.compile(r"^recruiting\d*\.ultipro\.com/[A-Za-z0-9]+/JobBoard/[0-9a-fA-F-]{36}$"),
+            "'{host}/{tenant}/JobBoard/{board id}', e.g. 'recruiting.ultipro.com/POW1009POWS/JobBoard/42398959-...'"),
+    "adp": (re.compile(r"^(?:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+                       r"|https://workforcenow\.adp\.com/\S*[?&]cid=[0-9a-fA-F-]{36}\S*)$"),
+            "the career center's cid, or its workforcenow.adp.com address with cid="),
     "teamtailor": (re.compile(r"^(?!(?:na|www|app|career|careers|jobs)$)[A-Za-z0-9.-]+$"),
                    "the careers site's host, or its subdomain on teamtailor.com (not a region prefix like 'na')"),
 }
@@ -351,6 +363,8 @@ def main(argv: list[str] | None = None) -> int:
     readers = dict(READERS)
     careers_context = careers.Context.load(args.careers_state)
     readers["other"] = lambda board, fetcher: careers.read(board, fetcher, careers_context)
+    for name in WEEKLY:
+        readers[name] = weekly.reader(name, READERS[name], careers_context)
     for name in args.disable_reader:
         readers.pop(name, None)
     if args.greenhouse_pay:
