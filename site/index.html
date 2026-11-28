@@ -151,6 +151,10 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 }
 .loc-list .opt { font-size: 13.5px; gap: 8px; }
 .loc-list .opt-head { position: sticky; top: 0; z-index: 1; background: var(--card); padding: 8px 0 6px; }
+/* States are the group headings (each is also a filter: every role in the state); metro areas sit under them. */
+.loc-list .opt-state { font-weight: 600; color: var(--ink); padding-top: 8px; }
+.loc-list .opt-metro { padding-left: 22px; }
+.opt-also { color: var(--muted); font-size: 12px; font-weight: 400; }
 @media (pointer: coarse) { .opt { min-height: 44px; } }
 
 /* Controls: pills, as in the hub */
@@ -991,8 +995,37 @@ var BoardFilters = (function () {
     return picked.length ? picked : within(defaultIds, known);   // only unknown ids: back to the default
   }
 
+  // "New York-Newark-Jersey City, NY-NJ-PA" -> { name: "New York-Newark-Jersey City", codes: ["NY", "NJ", "PA"] }.
+  function splitMetro(label) {
+    var cut = String(label).lastIndexOf(', ');
+    if (cut === -1) return { name: String(label), codes: [] };
+    return { name: label.slice(0, cut), codes: label.slice(cut + 2).split('-').filter(function (c) { return /^[A-Z]{2}$/.test(c); }) };
+  }
+
+  // Metro areas grouped under their state (the owner's request, 2026-11-28): states A to Z by full name, metro
+  // areas A to Z within each. A metro area spanning states sits under its first state only, with the others in
+  // `also`. `states` are { id: 'co', label: 'Colorado' }; a state with no metro area still gets its group, and
+  // metro areas whose first state is not among `states` come last, under a null state.
+  function metroGroups(metros, states) {
+    var byCode = {}, groups = {};
+    (states || []).forEach(function (s) { byCode[s.id.toUpperCase()] = s; groups[s.id] = { state: s, metros: [] }; });
+    (metros || []).forEach(function (m) {
+      var parts = splitMetro(m.label), first = byCode[parts.codes[0]];
+      var key = first ? first.id : '';
+      if (!groups[key]) groups[key] = { state: null, metros: [] };
+      groups[key].metros.push({ id: m.id, name: parts.name, also: parts.codes.slice(1) });
+    });
+    var list = Object.keys(groups).map(function (key) { return groups[key]; });
+    list.forEach(function (g) { g.metros.sort(function (a, b) { return a.name.localeCompare(b.name, 'en'); }); });
+    list.sort(function (a, b) {
+      if (!a.state || !b.state) return a.state ? -1 : b.state ? 1 : 0;
+      return a.state.label.localeCompare(b.state.label, 'en');
+    });
+    return list.filter(function (g) { return g.state || g.metros.length; });
+  }
+
   return { NONE: NONE, CAT_ALL: CAT_ALL, passes: passes, companyCategories: companyCategories, defaults: defaults,
-           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens };
+           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens, splitMetro: splitMetro, metroGroups: metroGroups };
 })();
 </script>
 
@@ -2265,16 +2298,30 @@ var MyRoles = (function () {
     defaultCats = BoardFilters.defaults(data.taxonomy.categories);
   }
 
-  // The location list can hold hundreds of metro areas, so it is ordered by how many roles each has,
-  // shortened until the visitor asks for more, and searchable by metro, state or the places roles name.
+  // The location list can hold hundreds of metro areas, so they are grouped under their state (the owner's
+  // request, 2026-11-28): Remote and "outside any metro" first, then states A to Z, each followed by its metro
+  // areas A to Z (BoardFilters.metroGroups). The state's own row is its filter: every role in that state.
+  // The list is searchable by metro, state or the places roles name.
   function prepareLocations(facet) {
-    var order = { top: 0, metro: 1, state: 2 };
-    facet.options.sort(function (a, b) {
-      // Metro areas by role count; states A to Z by name (the owner's choice), so a state is easy to find.
-      if (order[a.kind] !== order[b.kind]) return order[a.kind] - order[b.kind];
-      if (a.kind === 'state') return a.label.localeCompare(b.label, 'en');
-      return (b.total - a.total) || a.label.localeCompare(b.label, 'en');
+    var byId = facet.byId;
+    var groups = BoardFilters.metroGroups(
+      facet.options.filter(function (o) { return o.kind === 'metro'; }).map(function (o) { return { id: o.id, label: o.label }; }),
+      (board.taxonomy.states || []).map(function (s) { return { id: s.id, label: s.label }; }));
+    var ordered = facet.options.filter(function (o) { return o.kind === 'top'; });
+    groups.forEach(function (group) {
+      var head = group.state ? byId[STATE_PREFIX + group.state.id] : null;
+      if (head) { head.members = []; ordered.push(head); }
+      group.metros.forEach(function (m, i) {
+        var option = byId[m.id];
+        option.display = m.name;
+        option.also = m.also;
+        option.head = head;
+        option.other = !group.state && i === 0;   // the first of the metro areas with no known state
+        if (head) head.members.push(option);
+        ordered.push(option);
+      });
     });
+    facet.options = ordered;
     // Option id -> place names from the roles it covers. Only roles with one location count: a role in
     // Weirton and Berkeley would otherwise make "Weirton" find the Bay Area.
     var places = {};
@@ -2285,7 +2332,6 @@ var MyRoles = (function () {
         (role.loc || []).forEach(function (text) { places[id][text] = true; });
       });
     });
-    var counts = { metro: 0, state: 0 };
     facet.options.forEach(function (option) {
       var words = [option.label];
       if (option.kind === 'state') words.push(option.code);
@@ -2296,9 +2342,7 @@ var MyRoles = (function () {
       }
       if (option.kind !== 'top') words = words.concat(Object.keys(places[option.id] || {}));
       option.search = fold(words.join(' \n '));
-      if (option.total > 0 && counts[option.kind] !== undefined) counts[option.kind] += 1;
     });
-    facet.locationCounts = counts;
   }
 
   // ---- Filter state in the URL fragment -------------------------------------------------------
@@ -2476,17 +2520,13 @@ var MyRoles = (function () {
     FACETS.forEach(function (facet) {
       var box = el('div', { class: 'options', role: 'group', 'aria-label': facet.title });
       if (facet.key === 'm') buildLocationTools(facet, box);
-      var lastKind = null;
       facet.options.forEach(function (option) {
-        // Location: Remote and "outside any metro" stay in view; metro areas and states scroll.
+        // Location: Remote and "outside any metro" stay in view; states and their metro areas scroll.
         var into = facet.key === 'm' && option.kind !== 'top' ? facet.scroller : box;
-        if (facet.key === 'm' && option.kind !== lastKind && option.kind !== 'top') {
-          var n = facet.locationCounts[option.kind];
-          var head = el('p', { class: 'opt-head mono', text: (option.kind === 'metro' ? 'Metro areas' : 'States') + ' · ' + n });
-          facet.heads[option.kind] = head;
-          into.appendChild(head);
+        if (facet.key === 'm' && option.other) {
+          facet.heads.other = el('p', { class: 'opt-head mono', text: 'Other metro areas' });
+          into.appendChild(facet.heads.other);
         }
-        lastKind = option.kind;
         var input = el('input', { type: 'checkbox', id: optionDomId(facet, option.id) });
         input.addEventListener('change', function () {
           if (input.checked) state[facet.key].add(option.id); else state[facet.key].delete(option.id);
@@ -2494,9 +2534,14 @@ var MyRoles = (function () {
         });
         option.input = input;
         option.countNode = el('span', { class: 'opt-count' });
-        option.row = el('label', { class: 'opt', for: input.id }, [
-          input, el('span', { class: 'opt-label', text: option.label }), option.countNode
+        // A metro area shows its name without the state codes, and "also NJ, PA" when it spans states.
+        var text = option.display
+          ? [el('span', { text: option.display }), option.also && option.also.length ? el('span', { class: 'opt-also', text: ' also ' + option.also.join(', ') }) : null]
+          : [option.label];
+        option.row = el('label', { class: 'opt' + (option.kind === 'state' ? ' opt-state' : option.kind === 'metro' && option.head ? ' opt-metro' : ''), for: input.id }, [
+          input, el('span', { class: 'opt-label' }, text), option.countNode
         ]);
+        if (option.kind === 'state') option.row.title = 'Every role in ' + option.label + ', in its metro areas and outside them';
         into.appendChild(option.row);
       });
       if (facet.key === 'm') { box.appendChild(facet.scroller); box.appendChild(facet.noMatch); }
@@ -2536,19 +2581,23 @@ var MyRoles = (function () {
   // place search. Ticked places always stay visible.
   function showLocations(facet) {
     var words = fold(facet.find.value).split(/\s+/).filter(Boolean);
-    var chosen = state.m, shownByKind = { metro: 0, state: 0 }, matches = 0;
+    var chosen = state.m, inList = 0, matches = 0, others = 0;
+    var visible = function (option) {
+      if (chosen.has(option.id)) return true;
+      if (option.total === 0) return false;
+      return !words.length || words.every(function (word) { return option.search.indexOf(word) !== -1; });
+    };
     facet.options.forEach(function (option) {
-      var visible;
-      if (chosen.has(option.id)) visible = true;
-      else if (option.total === 0) visible = false;
-      else if (words.length) visible = words.every(function (word) { return option.search.indexOf(word) !== -1; });
-      else visible = true;
-      if (visible && option.kind !== 'top') shownByKind[option.kind] += 1;
-      if (visible && words.length) matches += 1;
-      option.row.hidden = !visible;
+      var show = visible(option);
+      // A state's row stays as the heading of any of its metro areas that show.
+      if (!show && option.kind === 'state') show = option.members.some(visible);
+      if (show && option.kind !== 'top') inList += 1;
+      if (show && option.kind === 'metro' && !option.head) others += 1;
+      if (show && words.length) matches += 1;
+      option.row.hidden = !show;
     });
-    Object.keys(facet.heads).forEach(function (kind) { facet.heads[kind].hidden = shownByKind[kind] === 0; });
-    facet.scroller.hidden = shownByKind.metro + shownByKind.state === 0;
+    if (facet.heads.other) facet.heads.other.hidden = others === 0;
+    facet.scroller.hidden = inList === 0;
     facet.noMatch.hidden = !(words.length && matches === 0);
   }
 

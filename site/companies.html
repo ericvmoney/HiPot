@@ -251,8 +251,37 @@ var BoardFilters = (function () {
     return picked.length ? picked : within(defaultIds, known);   // only unknown ids: back to the default
   }
 
+  // "New York-Newark-Jersey City, NY-NJ-PA" -> { name: "New York-Newark-Jersey City", codes: ["NY", "NJ", "PA"] }.
+  function splitMetro(label) {
+    var cut = String(label).lastIndexOf(', ');
+    if (cut === -1) return { name: String(label), codes: [] };
+    return { name: label.slice(0, cut), codes: label.slice(cut + 2).split('-').filter(function (c) { return /^[A-Z]{2}$/.test(c); }) };
+  }
+
+  // Metro areas grouped under their state (the owner's request, 2026-11-28): states A to Z by full name, metro
+  // areas A to Z within each. A metro area spanning states sits under its first state only, with the others in
+  // `also`. `states` are { id: 'co', label: 'Colorado' }; a state with no metro area still gets its group, and
+  // metro areas whose first state is not among `states` come last, under a null state.
+  function metroGroups(metros, states) {
+    var byCode = {}, groups = {};
+    (states || []).forEach(function (s) { byCode[s.id.toUpperCase()] = s; groups[s.id] = { state: s, metros: [] }; });
+    (metros || []).forEach(function (m) {
+      var parts = splitMetro(m.label), first = byCode[parts.codes[0]];
+      var key = first ? first.id : '';
+      if (!groups[key]) groups[key] = { state: null, metros: [] };
+      groups[key].metros.push({ id: m.id, name: parts.name, also: parts.codes.slice(1) });
+    });
+    var list = Object.keys(groups).map(function (key) { return groups[key]; });
+    list.forEach(function (g) { g.metros.sort(function (a, b) { return a.name.localeCompare(b.name, 'en'); }); });
+    list.sort(function (a, b) {
+      if (!a.state || !b.state) return a.state ? -1 : b.state ? 1 : 0;
+      return a.state.label.localeCompare(b.state.label, 'en');
+    });
+    return list.filter(function (g) { return g.state || g.metros.length; });
+  }
+
   return { NONE: NONE, CAT_ALL: CAT_ALL, passes: passes, companyCategories: companyCategories, defaults: defaults,
-           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens };
+           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens, splitMetro: splitMetro, metroGroups: metroGroups };
 })();
 </script>
 
@@ -567,14 +596,23 @@ var CompanyRules = (function () {
       });
       box.appendChild(el('label', { class: 'opt', for: input.id }, [input, el('span', { text: entry.label }), el('span', { class: 'opt-n', text: n.toLocaleString('en-US') })]));
     });
-    // Locations: remote, then metro areas by how many companies hire there, then states A to Z.
-    var metroCount = {};
-    data.companies.forEach(function (c) { (c.metros || []).forEach(function (m) { metroCount[m] = (metroCount[m] || 0) + 1; }); });
-    var places = [{ value: 'remote', text: 'Remote (' + count(function (c) { return c.remote; }) + ')' }];
-    data.labels.metros.slice().sort(function (a, b) { return (metroCount[b.id] || 0) - (metroCount[a.id] || 0) || a.label.localeCompare(b.label); })
-      .forEach(function (m) { places.push({ value: 'm-' + m.id, text: m.label + ' (' + (metroCount[m.id] || 0) + ')' }); });
-    data.labels.states.forEach(function (s) { places.push({ value: 's-' + s.id, text: s.label + ' (state)' }); });
-    fillSelect('f-place', places);
+    // Locations: remote first, then one group per state A to Z ("All of Colorado", then its metro areas A to Z),
+    // as on the board (BoardFilters.metroGroups). A metro area spanning states is under its first, "also NJ, PA".
+    var metroCount = {}, stateCount = {};
+    data.companies.forEach(function (c) {
+      (c.metros || []).forEach(function (m) { metroCount[m] = (metroCount[m] || 0) + 1; });
+      (c.st || []).forEach(function (s) { stateCount[s] = (stateCount[s] || 0) + 1; });
+    });
+    var select = $('f-place');
+    select.appendChild(el('option', { value: 'remote', text: 'Remote (' + count(function (c) { return c.remote; }) + ')' }));
+    BoardFilters.metroGroups(data.labels.metros, data.labels.states).forEach(function (group) {
+      var box = el('optgroup', { label: group.state ? group.state.label : 'Other metro areas' });
+      if (group.state) box.appendChild(el('option', { value: 's-' + group.state.id, text: 'All of ' + group.state.label + ' (' + (stateCount[group.state.id] || 0) + ')' }));
+      group.metros.forEach(function (m) {
+        box.appendChild(el('option', { value: 'm-' + m.id, text: m.name + (m.also.length ? ', also ' + m.also.join(', ') : '') + ' (' + (metroCount[m.id] || 0) + ')' }));
+      });
+      select.appendChild(box);
+    });
     fillSelect('f-sector', data.labels.sectors.filter(function (s) { return count(function (c) { return (c.sectors || []).indexOf(s.id) !== -1; }); })
       .map(function (s) { return { value: s.id, text: s.label }; }));
     fillSelect('f-stage', data.labels.stages.filter(function (s) { return count(function (c) { return c.stage === s.id; }); })
