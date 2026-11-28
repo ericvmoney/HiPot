@@ -48,7 +48,7 @@ def run(companies=COMPANIES, fetcher=None, state=None, **kwargs) -> dict:
     # Established companies are collected too (PLAN.md decision 14).
     (company("a", "ashby", "a", status="out"), None),
     (company("a", "ashby", "a", status="unscreened"), None),
-    (company("a", "adp", None), "no reader for adp"),
+    (company("a", "dover", None), "no reader for dover"),
     (company("a", "paycom", "a"), "no reader for paycom"),
     (company("a", "unknown", None), "no reader for unknown"),
     (company("a", "greenhouse", None), "no board token for greenhouse"),
@@ -80,7 +80,7 @@ def test_every_company_gets_an_entry_and_skipped_ones_are_not_requested():
     fetcher = FakeFetcher()
     companies = COMPANIES + [
         company("ursa-major", "greenhouse", "ursamajor", tier="out"),
-        company("stored-energy", "adp", None, status="review"),
+        company("stored-energy", "paycom", None, status="review"),
         company("peak-energy", "greenhouse", None),
     ]
     raw = run(companies, fetcher)
@@ -90,7 +90,7 @@ def test_every_company_gets_an_entry_and_skipped_ones_are_not_requested():
         "antora-energy": "ok", "lightship": "ok", "also": "ok", "form-energy": "ok",
         "ursa-major": "skipped", "stored-energy": "skipped", "peak-energy": "skipped",
     }
-    assert entries["stored-energy"]["error"] == "no reader for adp" and entries["stored-energy"]["postings"] == 0
+    assert entries["stored-energy"]["error"] == "no reader for paycom" and entries["stored-energy"]["postings"] == 0
     assert entries["antora-energy"]["postings"] == 4 and entries["antora-energy"]["error"] is None
     assert len(fetcher.calls) == 4                      # one request per collected company, none for the rest
     assert sum(e["postings"] for e in entries.values()) == len(raw["jobs"]) == 13

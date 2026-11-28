@@ -44,7 +44,9 @@ HOST_INTERVALS = {"api.rippling.com": 6.0, "app.jazz.co": 10.0, "api.smartrecrui
                   # to them (PLAN.md decision 12): at least 10 s apart.
                   "www.linkedin.com": 10.0, ".linkedin.com": 10.0,
                   # Workday publishes no limit for its careers sites.
-                  ".myworkdayjobs.com": 2.0, ".icims.com": 2.0}
+                  ".myworkdayjobs.com": 2.0, ".icims.com": 2.0,
+                  # Listings robots.txt disallows, read weekly by decision 24: as slow as a careers page.
+                  ".ultipro.com": 3.0, "workforcenow.adp.com": 3.0}
 # Companies' own web pages (careers pages, posting pages) are asked at most
 # every PAGE_INTERVAL seconds per host.
 PAGE_INTERVAL = 3.0
