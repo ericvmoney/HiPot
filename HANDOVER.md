@@ -162,6 +162,7 @@ Publish `site/index.html` as an artifact, with these supporting files:
 | Published path | Source |
 |---|---|
 | `data/board.json` | `<folder>\board.json` |
+| `data/summaries.json` | `<folder>\summaries.json`, which must come from the same build: the page refuses a pair whose `generated_at` differs |
 | `data/pay.json` | `<folder>\pay.json` |
 | `data/taxonomy.json` | `<folder>\taxonomy.json` |
 | `pay.html` | `site\pay.html` |
