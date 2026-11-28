@@ -66,3 +66,33 @@ def states_for(locations: list[dict]) -> list[str]:
         if code and code.lower() not in found:
             found.append(code.lower())
     return found
+
+
+# --- Roles outside every metro area (the owner's metro review, 2026-11-28) --------------------------------
+
+def place_class(job: dict) -> str | None:
+    """For a role with no metro area: 'abroad' when every place it names carries a country other than the
+    US; 'us' when it names a US state or the US as a country (a rural plant, or a city the parser has not
+    placed yet); 'unclear' otherwise (no place at all, or no country to go by). None when it has a metro area."""
+    if job["metros"]:
+        return None
+    countries = [place.get("country") for place in job["locations"]]
+    if job["locations"] and all(code and code != "US" for code in countries):
+        return "abroad"
+    if states_for(job["locations"]) or "US" in countries:
+        return "us"
+    return "unclear"
+
+
+def metro_states(metro_label: str) -> list[str]:
+    """The state codes a Census metro label ends with: "New York-Newark-Jersey City, NY-NJ-PA" -> NY, NJ, PA."""
+    if ", " not in metro_label:
+        return []
+    return [code for code in metro_label.rsplit(", ", 1)[1].split("-") if re.fullmatch(r"[A-Z]{2}", code)]
+
+
+def elsewhere_states(job: dict, metro_codes: dict[str, list[str]]) -> list[str]:
+    """The role's states (lower case) that none of its metro areas lies in: its places there are outside
+    every metro area ("Elsewhere in Colorado"). `metro_codes` maps a metro id to metro_states() of its label."""
+    covered = {code for metro in job["metros"] for code in metro_codes.get(metro, [])}
+    return [state for state in states_for(job["locations"]) if state.upper() not in covered]

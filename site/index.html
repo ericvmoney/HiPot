@@ -155,6 +155,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .loc-list .opt-state { font-weight: 600; color: var(--ink); padding-top: 8px; }
 .loc-list .opt-metro { padding-left: 22px; }
 .opt-also { color: var(--muted); font-size: 12px; font-weight: 400; }
+.loc-list .opt-else .opt-label { font-style: italic; }
 @media (pointer: coarse) { .opt { min-height: 44px; } }
 
 /* Controls: pills, as in the hub */
@@ -936,7 +937,7 @@ var HiPotRank = (function () {
   }
 
   return { WEIGHTS: WEIGHTS, PAY_UNPUBLISHED: PAY_UNPUBLISHED, normalize: normalize, forTab: forTab, match: match, rank: rank, describe: describe,
-           great: great, GREAT_SHARE: GREAT_SHARE, GREAT_MAX: GREAT_MAX, GREAT_MIN_SCORE: GREAT_MIN_SCORE };
+           great: great, GREAT_SHARE: GREAT_SHARE, GREAT_MAX: GREAT_MAX, GREAT_MIN_SCORE: GREAT_MIN_SCORE, abroad: abroad };
 })();
 </script>
 
@@ -1292,6 +1293,8 @@ var MyRoles = (function () {
 
   // Filter values that are not taxonomy ids. A leading '*' cannot occur in an id.
   var NONE = '*none', REMOTE = '*remote', ELSEWHERE = '*elsewhere';
+  // Outside every metro area (the owner's metro review, 2026-11-28): abroad, place not clear, and per state.
+  var ABROAD = '*abroad', UNCLEAR = '*unclear', ELSE_PREFIX = '*else-';
   var defaultCats = [];      // category ids the board opens on (from the data: clean tech)
 
   // One entry per checkbox group. `key` is also the key in the URL fragment.
@@ -2244,9 +2247,15 @@ var MyRoles = (function () {
       var metros = role.metros || [];
       var states = role.st || [];
       var places = metros.slice();
-      if (role.wp === 'remote') places.push(REMOTE);
-      if (!places.length) places.push(ELSEWHERE);   // outside every metro area, and not remote
+      // Remote means remote in the US. A role whose places are all abroad (the publish step's country check, or
+      // the ranking's own text rule) is "Outside the US"; one in the US outside every metro area is "Outside any
+      // metro area"; one we cannot place is "Place not clear".
+      var away = role.nm === 'abroad' || !!HiPotRank.abroad(role);
+      if (role.wp === 'remote' && !away) places.push(REMOTE);
+      if (away) places.push(ABROAD);
+      else if (!metros.length && role.wp !== 'remote') places.push(role.nm === 'unclear' ? UNCLEAR : ELSEWHERE);
       states.forEach(function (code) { places.push(STATE_PREFIX + code); });
+      (role.es || []).forEach(function (code) { places.push(ELSE_PREFIX + code); });   // "Elsewhere in <state>"
       role.company = company;
       roleById[role.id] = role;
       role.time = Date.parse((role.posted || role.seen) + 'T00:00:00Z') || 0;
@@ -2279,9 +2288,11 @@ var MyRoles = (function () {
       });
       if (facet.key === 'm') {
         facet.options.forEach(function (option) { option.kind = 'metro'; });
-        facet.options.push({ id: REMOTE, label: 'Remote', kind: 'top' }, { id: ELSEWHERE, label: 'Outside any metro area', kind: 'top' });
+        facet.options.push({ id: REMOTE, label: 'Remote', kind: 'top' }, { id: ABROAD, label: 'Outside the US', kind: 'top' },
+                           { id: ELSEWHERE, label: 'Outside any metro area', kind: 'top' }, { id: UNCLEAR, label: 'Place not clear', kind: 'top' });
         (data.taxonomy.states || []).forEach(function (entry) {
           facet.options.push({ id: STATE_PREFIX + entry.id, label: entry.label, kind: 'state', code: entry.id });
+          facet.options.push({ id: ELSE_PREFIX + entry.id, label: 'Elsewhere in ' + entry.label, kind: 'else', code: entry.id });
         });
       }
       if (facet.none) facet.options.push({ id: NONE, label: facet.none });
@@ -2320,6 +2331,9 @@ var MyRoles = (function () {
         if (head) head.members.push(option);
         ordered.push(option);
       });
+      // Last under its state: the state's roles outside every metro area, a rural plant's home.
+      var rest = group.state ? byId[ELSE_PREFIX + group.state.id] : null;
+      if (rest) { rest.head = head; if (head) head.members.push(rest); ordered.push(rest); }
     });
     facet.options = ordered;
     // Option id -> place names from the roles it covers. Only roles with one location count: a role in
@@ -2334,7 +2348,7 @@ var MyRoles = (function () {
     });
     facet.options.forEach(function (option) {
       var words = [option.label];
-      if (option.kind === 'state') words.push(option.code);
+      if (option.kind === 'state' || option.kind === 'else') words.push(option.code, labels.states[option.code] || '');
       if (option.kind === 'metro') {
         // "Pittsburgh-Weirton-Steubenville, PA-OH-WV": add the state names the label's codes stand for.
         var codes = (option.label.split(', ').pop() || '').split('-');
@@ -2373,6 +2387,9 @@ var MyRoles = (function () {
   function tokenFor(facet, id) {
     if (id === REMOTE) return 'remote';
     if (id === ELSEWHERE) return 'elsewhere';
+    if (id === ABROAD) return 'abroad';
+    if (id === UNCLEAR) return 'unclear';
+    if (id.indexOf(ELSE_PREFIX) === 0) return 'else-' + id.slice(ELSE_PREFIX.length);
     if (id.indexOf(STATE_PREFIX) === 0) return 'state-' + id.slice(STATE_PREFIX.length);
     return facet.key + '-' + (id === NONE ? 'none' : id);
   }
@@ -2404,6 +2421,8 @@ var MyRoles = (function () {
       if (token.indexOf('cat-') === 0) return;   // categories are read below, all together
       if (token === 'remote') { next.m.add(REMOTE); return; }
       if (token === 'elsewhere') { next.m.add(ELSEWHERE); return; }
+      if (token === 'abroad') { next.m.add(ABROAD); return; }
+      if (token === 'unclear') { next.m.add(UNCLEAR); return; }
       if (token === 'paid') { next.paid = true; return; }
       var cut = token.indexOf('-');
       if (cut < 1) return;
@@ -2412,6 +2431,7 @@ var MyRoles = (function () {
       else if (key === 'pay') { if (/^\d{1,7}$/.test(value)) next.pay = Number(value); }
       else if (key === 'sort') { if (SORTS.indexOf(value) > 0 && (value !== 'match' || persona)) next.sort = value; }
       else if (key === 'c') { if (SLUG.test(value) && board.companies[value]) next.c = value; }
+      else if (key === 'else') { if (/^[a-z]{2}$/.test(value) && facetByKey.m.byId[ELSE_PREFIX + value]) next.m.add(ELSE_PREFIX + value); }
       else if (key === 'state') { if (/^[a-z]{2}$/.test(value) && facetByKey.m.byId[STATE_PREFIX + value]) next.m.add(STATE_PREFIX + value); }
       else if (facetByKey[key]) {
         var facet = facetByKey[key];
@@ -2538,7 +2558,7 @@ var MyRoles = (function () {
         var text = option.display
           ? [el('span', { text: option.display }), option.also && option.also.length ? el('span', { class: 'opt-also', text: ' also ' + option.also.join(', ') }) : null]
           : [option.label];
-        option.row = el('label', { class: 'opt' + (option.kind === 'state' ? ' opt-state' : option.kind === 'metro' && option.head ? ' opt-metro' : ''), for: input.id }, [
+        option.row = el('label', { class: 'opt' + (option.kind === 'state' ? ' opt-state' : option.head && (option.kind === 'metro' || option.kind === 'else') ? ' opt-metro' + (option.kind === 'else' ? ' opt-else' : '') : ''), for: input.id }, [
           input, el('span', { class: 'opt-label' }, text), option.countNode
         ]);
         if (option.kind === 'state') option.row.title = 'Every role in ' + option.label + ', in its metro areas and outside them';

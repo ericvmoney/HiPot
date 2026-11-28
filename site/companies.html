@@ -373,13 +373,16 @@ var CompanyRules = (function () {
 
   function readText(read) { return READ_TEXT[read] || READ_TEXT['not-read']; }
 
-  // `f`: { q, cats (array; empty = every category), place ('', 'remote', 'm-<metro>', 's-<state>'), sector, type,
+  // `f`: { q, cats (array; empty = every category), place ('', 'remote', 'abroad', 'us', 'unclear', 'm-<metro>',
+  // 's-<state>', 'e-<state>' for "Elsewhere in <state>"), sector, type,
   // stage, hiring, pay, read, fav }. `favIds`: { id: true } for the favorites.
   function matches(company, f, favIds) {
     var words = fold(f.q).split(/\s+/).filter(Boolean), name = fold(company.name);
     for (var i = 0; i < words.length; i++) if (name.indexOf(words[i]) === -1) return false;
     if (!BoardFilters.passes(BoardFilters.companyCategories(company), f.cats || [])) return false;
     if (f.place === 'remote' && !company.remote) return false;
+    if ((f.place === 'abroad' || f.place === 'us' || f.place === 'unclear') && (company.out || []).indexOf(f.place) === -1) return false;
+    if (f.place && f.place.indexOf('e-') === 0 && (company.es || []).indexOf(f.place.slice(2)) === -1) return false;
     if (f.place && f.place.indexOf('m-') === 0 && (company.metros || []).indexOf(f.place.slice(2)) === -1) return false;
     if (f.place && f.place.indexOf('s-') === 0 && (company.st || []).indexOf(f.place.slice(2)) === -1) return false;
     if (f.sector && (company.sectors || []).indexOf(f.sector) === -1) return false;
@@ -604,13 +607,22 @@ var CompanyRules = (function () {
       (c.st || []).forEach(function (s) { stateCount[s] = (stateCount[s] || 0) + 1; });
     });
     var select = $('f-place');
+    var outCount = function (kind) { return count(function (c) { return (c.out || []).indexOf(kind) !== -1; }); };
     select.appendChild(el('option', { value: 'remote', text: 'Remote (' + count(function (c) { return c.remote; }) + ')' }));
+    select.appendChild(el('option', { value: 'abroad', text: 'Outside the US (' + outCount('abroad') + ')' }));
+    select.appendChild(el('option', { value: 'us', text: 'Outside any metro area (' + outCount('us') + ')' }));
+    select.appendChild(el('option', { value: 'unclear', text: 'Place not clear (' + outCount('unclear') + ')' }));
+    var elseCount = {};
+    data.companies.forEach(function (c) { (c.es || []).forEach(function (st) { elseCount[st] = (elseCount[st] || 0) + 1; }); });
     BoardFilters.metroGroups(data.labels.metros, data.labels.states).forEach(function (group) {
       var box = el('optgroup', { label: group.state ? group.state.label : 'Other metro areas' });
       if (group.state) box.appendChild(el('option', { value: 's-' + group.state.id, text: 'All of ' + group.state.label + ' (' + (stateCount[group.state.id] || 0) + ')' }));
       group.metros.forEach(function (m) {
         box.appendChild(el('option', { value: 'm-' + m.id, text: m.name + (m.also.length ? ', also ' + m.also.join(', ') : '') + ' (' + (metroCount[m.id] || 0) + ')' }));
       });
+      if (group.state && elseCount[group.state.id]) {
+        box.appendChild(el('option', { value: 'e-' + group.state.id, text: 'Elsewhere in ' + group.state.label + ' (' + elseCount[group.state.id] + ')' }));
+      }
       select.appendChild(box);
     });
     fillSelect('f-sector', data.labels.sectors.filter(function (s) { return count(function (c) { return (c.sectors || []).indexOf(s.id) !== -1; }); })
@@ -652,6 +664,8 @@ var CompanyRules = (function () {
   function placeText(company) {
     var names = (company.metros || []).map(function (m) { return labels.metros[m] || m; });
     if (company.remote) names.push('Remote');
+    (company.es || []).forEach(function (s) { names.push('elsewhere in ' + (labels.states[s] || s.toUpperCase())); });
+    if ((company.out || []).indexOf('abroad') !== -1) names.push('outside the US');
     if (!names.length && (company.st || []).length) names = company.st.map(function (s) { return labels.states[s] || s.toUpperCase(); });
     if (!names.length) return company.hq ? 'Headquarters: ' + company.hq : '';
     var shown = names.slice(0, 4);

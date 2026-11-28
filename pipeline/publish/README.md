@@ -130,6 +130,24 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 - Kept in `localStorage` under `hipot-favorite-companies`, and in `local-data/favorite-companies.yml` when served locally.
 - My Roles' export carries them, and its import merges them. They never go in the address.
 
+## Location filter (owner's metro review, 2026-11-28)
+
+**Order:**
+- First: Remote, Outside the US, Outside any metro area, and Place not clear.
+- Then states A to Z by full name. Each state's row is its filter (`state-xx`); under it come its metro areas A to Z, then "Elsewhere in <State>" (`else-xx`).
+- A metro area spanning states sits under its first state only, with "also NJ, PA" (`BoardFilters.metroGroups`).
+
+**Where each role goes:**
+- A role with no metro area gets `nm` from `states.place_class`:
+  - `abroad`: every place it names carries a country other than the US;
+  - `us`: a US state, or the US as its country;
+  - `unclear`: otherwise.
+- `es` (`states.elsewhere_states`) lists its states that none of its metro areas lies in.
+- **Outside the US** is `nm: abroad`, or the ranking's own text rule (`HiPotRank.abroad`). Remote roles abroad are there, not under Remote: remote means remote in the US.
+- **Outside any metro area** holds US roles only.
+
+**Companies page:** it carries the same as `out` and `es` per company, and offers the same choices.
+
 ## Keeping board.json small
 
 The artifact limit is 16 MB per file, and the target is about 12 MB.

@@ -23,7 +23,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from pipeline.publish import grades as paygrades
-from pipeline.publish.states import US_STATES, states_for
+from pipeline.publish.states import US_STATES, elsewhere_states, metro_states, place_class, states_for
 from tools.validate import company_categories, company_type, is_listed
 
 COMPANIES_VERSION = 0
@@ -66,7 +66,8 @@ def read_status(company: dict, careers_sites: dict | None = None) -> str:
     return "daily"
 
 
-def _record(company: dict, roles: list[dict], new_ids: set[str], graded: dict[str, dict], careers_sites: dict | None) -> dict:
+def _record(company: dict, roles: list[dict], new_ids: set[str], graded: dict[str, dict], careers_sites: dict | None,
+            metro_codes: dict[str, list[str]] | None = None) -> dict:
     record: dict[str, Any] = {"id": company["id"], "name": company["name"], "cats": company_categories(company),
                               "tier": company["climate"]["tier"], "type": company_type(company)}
     if company["climate"].get("reason"):
@@ -91,8 +92,18 @@ def _record(company: dict, roles: list[dict], new_ids: set[str], graded: dict[st
         record["metros"] = metros
     if states:
         record["st"] = states
-    if any(job["workplace"] == "remote" for job in roles):
+    # As on the board: remote means remote in the US; roles outside every metro area are abroad, in the US
+    # (a rural plant, or a city not yet placed) or unclear; "elsewhere in" a state is outside its metro areas.
+    classes = {job["id"]: place_class(job) for job in roles}
+    if any(job["workplace"] == "remote" and classes[job["id"]] != "abroad" for job in roles):
         record["remote"] = True
+    outside = [kind for kind in ("abroad", "us", "unclear")
+               if any(classes[job["id"]] == kind and (kind == "abroad" or job["workplace"] != "remote") for job in roles)]
+    if outside:
+        record["out"] = outside
+    elsewhere = sorted({state for job in roles for state in elsewhere_states(job, metro_codes or {})})
+    if elsewhere:
+        record["es"] = elsewhere
     record["roles"] = len(roles)
     fresh = sum(1 for job in roles if job["id"] in new_ids)
     if fresh:
@@ -118,10 +129,12 @@ def build_companies(companies: dict[str, dict], kept: list[dict], taxonomy: dict
         by_company.setdefault(job["company_id"], []).append(job)
     chosen = [company for company in companies.values() if include_unlisted or is_listed(company)]
     chosen.sort(key=lambda company: (company["name"].casefold(), company["id"]))
-    records = [_record(company, by_company.get(company["id"], []), new_ids, graded, careers_sites) for company in chosen]
+    metro_codes = {entry["id"]: metro_states(entry["label"]) for entry in taxonomy["metros"]}
+    records = [_record(company, by_company.get(company["id"], []), new_ids, graded, careers_sites, metro_codes)
+               for company in chosen]
 
     used_metros = {metro for record in records for metro in record.get("metros", [])}
-    used_states = {state for record in records for state in record.get("st", [])}
+    used_states = {state for record in records for state in record.get("st", []) + record.get("es", [])}
     labels = {
         "categories": [{"id": e["id"], "label": e["label"], **({"default": True} if e.get("default") else {})}
                        for e in taxonomy.get("categories", [])],
