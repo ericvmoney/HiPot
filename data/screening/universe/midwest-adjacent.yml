@@ -1,0 +1,4601 @@
+# Reference list for the Midwest (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: midwest-adjacent
+built: '2026-11-25'
+sources:
+- id: jobsohio-aero-handout
+  name: JobsOhio 'Where Aerospace Companies Fly Higher' (Paris Air Show 2025 handout, 'Firms Calling Ohio Home'
+    map)
+  url: https://www.jobsohio.com/files/whitepapers/jo25_in-ae_paris-air-show_booth-handout_6.17.25v2-web.pdf
+- id: jobsohio-aero-pages
+  name: JobsOhio Advanced Aerospace & Defense industry pages (main, space, advanced air mobility, commercial, military)
+  url: https://www.jobsohio.com/industries/advanced-aerospace-defense
+- id: jobsohio-uas-blog
+  name: 'JobsOhio blog: Ohio pushes aerospace forward with breakthroughs in UAS'
+  url: https://www.jobsohio.com/blog/ohio-pushes-aerospace-and-aviation-forward-with-breakthroughs-in-unmanned-aircraft-systems
+- id: aviationpros-ohio-aam
+  name: 'AviationPros: From drones to air taxis, why aerospace companies are betting on this region (Dayton/Springfield)'
+  url: https://www.aviationpros.com/aircraft-maintenance-technology/aircraft-technology/news/55395524/from-drones-to-air-taxis-why-aerospace-companies-are-betting-on-this-region
+- id: militaryaerospace-ohio
+  name: 'Military & Aerospace Electronics (sponsored): Ohio, where America''s aerospace and defense future is being
+    built'
+  url: https://www.militaryaerospace.com/sponsored/article/55365011/ohio-where-americas-aerospace-and-defense-future-is-being-built
+  note: named only companies already taken from JobsOhio
+- id: wedc-aero-2019
+  name: WEDC 'Advanced Technology Helps Aerospace Soar in Wisconsin' (May 2019) incl. 'Wisconsin companies active
+    in aerospace' list
+  url: https://inwisconsin.com/wp-content/uploads/2019/05/TMH_Aerospace_2019.pdf
+  note: list has names only, no cities; cities and websites from general knowledge, not checked
+- id: wedc-aero-snapshot-2019
+  name: WEDC Aerospace Snapshot 2019
+  url: https://inwisconsin.com/wp-content/uploads/2020/01/Aerospace-Snapshot_2019.pdf
+  note: names only Astronautics
+- id: tcbmag-mn-aerodefense
+  name: 'Twin Cities Business: Can Minnesota build back its aerospace and defense industries?'
+  url: https://tcbmag.com/?p=102281
+- id: mnchamber-aero
+  name: Minnesota Chamber member directory, Manufacturing - Aerospace
+  url: https://member.mnchamber.com/atb/Aerospace-Manufacturing
+- id: dronelife-mi-aam-2026
+  name: 'DroneLife: Michigan awards $1.7 million for 12 advanced air mobility projects (2026-10-26)'
+  url: https://dronelife.com/2026/10/26/michigan-awards-1-7-million-for-12-advanced-air-mobility-projects/
+  note: most awardees are service or software firms
+- id: thedronegirl-mi-2026
+  name: 'The Drone Girl: Michigan bets $42 million on becoming America''s drone hub (2026-01-22)'
+  url: https://www.thedronegirl.com/2026/01/22/michigan-drone-2026/
+- id: ltu-mim-mobility-2025
+  name: 'Lawrence Tech / State of Michigan: 2025 Make It in Michigan mobility prototyping grants (27 companies)'
+  url: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
+- id: robotics-news-cvr-2026
+  name: 'Robotics & Automation News: Common Vector Robotics wins $425,000 in PitchMI (2026-09-23)'
+  url: https://roboticsandautomationnews.com/2026/09/23/common-vector-robotics-wins-425000-in-pitchmi-startup-competition/105064/
+- id: robotreport-radar-2025
+  name: The Robot Report Robotics Startup Radar 2025 (100 startups)
+  url: https://www.therobotreport.com/wp-content/uploads/2025/11/RR-TopStartup-2025.pdf
+  note: only the Midwest entries taken
+- id: polsky-alchemist-chicago
+  name: 'UChicago Polsky Center: inaugural Alchemist Chicago cohort (2025-10-20)'
+  url: https://polsky.uchicago.edu/2025/10/20/meet-the-inaugural-alchemist-chicago-cohort
+- id: mhub-accelerator
+  name: mHUB Chicago accelerator portfolio logos
+  url: https://mhub.org/accelerator
+  note: logos only, no descriptions
+- id: uiuc-research-park
+  name: 'University of Illinois Research Park: startup highlights and Grainger Engineering CU Aerospace story'
+  url: https://researchpark.illinois.edu/impact/startup-highlights/
+  note: tenant directory has names only (10 pages); not read past page 1
+- id: search-snippets
+  name: Web search result snippets from news sites (Purdue newsroom, Inside Indiana Business, IBJ, uc.edu, Audacy,
+    TechCrunch, Area Development, reshorenow.org)
+  url: null
+  note: company named in a snippet; page not fetched
+- id: jobsohio-advmfg
+  name: JobsOhio Advanced Manufacturing industry page
+  url: https://www.jobsohio.com/industries/advanced-manufacturing
+  note: logos and news items; robots.txt allows
+- id: jobsohio-tech
+  name: JobsOhio Technology industry page
+  url: https://www.jobsohio.com/industries/technology
+- id: jobsohio-semis
+  name: JobsOhio Semiconductors page
+  url: https://www.jobsohio.com/industries/technology/semiconductors
+  note: page content truncated; logos only
+- id: nist-chips-states
+  name: NIST CHIPS for America state pages (MI, MN, OH, IN, IL, WI)
+  url: https://www.nist.gov/states/chips/MI
+  note: also /MN /OH /IN /IL /WI; IL lists only UIUC (university, skipped)
+- id: iedc-semis
+  name: Indiana IEDC Semiconductors industry page
+  url: https://www.iedc.in.gov/industries/semiconductors
+  note: no robots.txt (404); advanced-manufacturing page named no companies
+- id: wedc-advmfg
+  name: WEDC Advanced Manufacturing key industry page
+  url: https://wedc.org/key-industries/advanced-manufacturing/
+  note: logos only
+- id: wedc-epc
+  name: WEDC Energy, Power and Controls key industry page
+  url: https://wedc.org/key-industries/energy-power-and-controls/
+  note: logos only
+- id: wedc-sixline
+  name: WEDC Innovation Investment Portfolio profile (SixLine)
+  url: https://wedc.org/innovate-in-wisconsin/innovation-investment-portfolio/sixline-semiconductor-inc/
+  note: portfolio list itself loads dynamically and returned no names
+- id: yc-industrials-detroit
+  name: Y Combinator Industrials startups in Detroit (path filter)
+  url: https://www.ycombinator.com/companies/industry/industrials/detroit
+  note: hardware/chicago and industrials/chicago gave 1 company each, none kept; industrials/minneapolis and hardware/detroit
+    empty; industrials/columbus not a supported city (fell back to national list)
+- id: purdue-ecosystem
+  name: Purdue Semiconductors local ecosystem page
+  url: https://engineering.purdue.edu/semiconductors/about/local-ecosystem
+  note: 'also read Purdue newsroom ''now and then'' article: no new companies'
+- id: illinoisedc-quantum
+  name: Illinois EDC Quantum, AI and Microelectronics key industry page
+  url: https://www.illinoisedc.org/key-industries/quantum-computing-ai-microelectronics/
+  note: intersectillinois.org redirects here
+- id: illinoisedc-advmfg
+  name: Illinois EDC Advanced Manufacturing key industry page
+  url: https://www.illinoisedc.org/key-industries/advanced-manufacturing/
+  note: top employers list only
+- id: umn-chips
+  name: 'University of Minnesota research CHIPS page: Minnesota''s Microelectronics Ecosystem'
+  url: https://research.umn.edu/chips
+  note: names only, no cities or products; products and cities partly from general knowledge, flagged in notes
+- id: rev1-portfolio
+  name: Rev1 Ventures (Columbus) portfolio
+  url: https://www.rev1ventures.com/portfolio/
+  note: plus company sub-pages for websites
+- id: ohiotechnews
+  name: Ohio Tech News (Niobium article and Startups + VC tag)
+  url: https://www.ohiotechnews.com/tag/startups-vc/
+- id: search-ohio-hw
+  name: 'Web search: Ohio hardware startups 2025 (electronicsforyou.biz, tinytechfund.com results)'
+  url: https://www.electronicsforyou.biz/industry-buzz/us-startup-eagle-electronics-raises-14m-eyes-manufacturing-expansion/
+  note: search result text only
+- id: semiengineering-q4-2025
+  name: Semiconductor Engineering Startup Funding Q4 2025
+  url: https://semiengineering.com/startup-funding-q4-2025/
+  note: only Midwest startup in the table
+- id: makeitmi-2025
+  name: 'Ann Arbor SPARK: 2025 Make It in Michigan mobility prototyping grant winners'
+  url: https://annarborusa.org/news/state-of-michigan-announces-2-million-for-2025-make-it-in-michigan-mobility-prototyping-grant-winners/
+  note: most winners are drones, aerospace, defense or vehicles (other passes)
+- id: wpf-milwaukee-2025
+  name: 'Wisconsin Policy Forum: 2025 VC-backed startups based in metro Milwaukee'
+  url: https://wispolicyforum.org/2025-vc-backed-startups-based-in-metro-milwaukee/
+  note: list gives only an industry label per company; product lines below are that label, not confirmed
+- id: chips-wisc-seed
+  name: UW-Madison CHIPS Entrepreneurship Hub SEED grants (2026-09)
+  url: https://chips.wisc.edu/2026/09/01/seed-grants/
+- id: search-dc-cooling
+  name: 'Web search: Midwest data-center cooling and power factories (prnewswire Modine, mtdcnc Mitsubishi, designdevelopmenttoday
+    Vertiv)'
+  url: https://www.prnewswire.com/news-releases/modine-expands-data-center-cooling-capacity-with-opening-of-new-facility-in-franklin-wisconsin-302614862.html
+  note: search result text
+- id: dc-substack
+  name: 'Data Center Richness: New Factories Rise to Power the AI Buildout'
+  url: https://datacenterrichness.substack.com/p/new-factories-rise-to-power-the-ai
+- id: search-mining
+  name: 'Web search: Minnesota and Michigan copper-nickel projects (talonmetals.com, mprnews, eenews)'
+  url: https://talonmetals.com/
+  note: mining noted in passing, not searched exhaustively
+- id: search-chicago-hw
+  name: 'Web search: Chicago hardware and robotics startups (startupintros.com, damalion.com results)'
+  url: https://startupintros.com/orgs/carbonsix
+  note: search result text; worldbusinesschicago.com article returned 404
+- id: search-michigan-hw
+  name: 'Web search: Michigan hardware startups 2025 (robotics247, takeoffradar results)'
+  url: https://www.takeoffradar.com/state/michigan/
+  note: search result text
+- id: start-midwest
+  name: Start Midwest region pages (WI, OH, MI, IL, MN, IN)
+  url: https://www.start-midwest.com/region/ohio
+  note: robots.txt allows all; six region pages read
+- id: mhub-portfolio
+  name: mHUB accelerator portfolio
+  url: https://mhub.org/accelerator
+  note: 51 names, logos only; global portfolio, most outside region or medtech/clean tech
+- id: mhub-smartmfg-2021
+  name: mHUB inaugural Smart Manufacturing accelerator cohort announcement
+  url: https://mhub.org/blog/mhub-selects-nine-startups-from-around-the-world-to-participate-in-inaugural-cohort-of-accelerator-for-smart-manufacturing-hardtech-innovation-
+  note: found via search of mHUB names
+- id: michauto-investors
+  name: MichAuto (Detroit Regional Chamber) Investor Directory
+  url: https://michauto.org/investor-directory/
+  note: robots.txt allows all (crawl-delay 10); 100 investors, about half are law, banks, consultants, universities
+    and agencies; also homepage https://michauto.org/ (AISIN)
+- id: wp-auto-parts-us
+  name: 'Wikipedia: Category Auto parts suppliers of the United States'
+  url: https://en.wikipedia.org/wiki/Category:Auto_parts_suppliers_of_the_United_States
+  note: Midwest-headquartered, still-operating entries only; HQ cities from scout knowledge
+- id: wp-mvm-states
+  name: 'Wikipedia: Categories Motor vehicle manufacturers based in Michigan, Ohio, Indiana, Illinois, Wisconsin,
+    Minnesota'
+  url: https://en.wikipedia.org/wiki/Category:Motor_vehicle_manufacturers_based_in_Michigan
+  note: also the _Ohio, _Indiana, _Illinois, _Wisconsin and _Minnesota pages; defunct marques skipped
+- id: wp-us-makers
+  name: 'Wikipedia: List of automobile manufacturers of the United States (current section)'
+  url: https://en.wikipedia.org/wiki/List_of_automobile_manufacturers_of_the_United_States
+  note: page gives no HQ cities; Midwest makers picked by scout knowledge
+- id: wp-mi-companies
+  name: 'Wikipedia: List of companies based in Michigan, plus categories Companies based in Oakland County, Troy
+    and Southfield, Michigan'
+  url: https://en.wikipedia.org/wiki/List_of_companies_based_in_Michigan
+  note: also https://en.wikipedia.org/wiki/Category:Companies_based_in_Oakland_County,_Michigan, Category:Companies_based_in_Troy,_Michigan,
+    Category:Companies_based_in_Southfield,_Michigan and Economy_of_metropolitan_Detroit
+- id: jobsohio-auto
+  name: JobsOhio automotive industry page and Ohio leads in electric vehicles page
+  url: https://www.jobsohio.com/industries/automotive
+  note: robots.txt allows all; also /industries/automotive/ohio-leads-in-electric-vehicles; battery and EV-supply-chain
+    names skipped as clean tech
+- id: rgp-auto
+  name: Regional Growth Partnership (Northwest Ohio) automotive industry page
+  url: https://rgp.org/industries/automotive/
+  note: robots.txt bars only /wp-admin/
+- id: purposejobs-mobility
+  name: 'purpose.jobs blog: Top Mobility Companies to Know in Michigan'
+  url: https://www.purpose.jobs/blog/top-mobility-companies-michigan
+  note: robots.txt allows /blog; undated, about 2 years old; software, charging, battery and service firms skipped
+- id: annarbor-mim-2025
+  name: 'Ann Arbor SPARK: 2025 Make It in Michigan mobility prototyping grant winners'
+  url: https://annarborusa.org/news/state-of-michigan-announces-2-million-for-2025-make-it-in-michigan-mobility-prototyping-grant-winners/
+  note: robots.txt allows all; most awardees are drone, space or marine hardware (not automotive, left to other
+    passes)
+- id: sbn-detroit-motors
+  name: 'SBN Detroit: Rebuilding Electric Motor Manufacturing in Michigan'
+  url: https://sbn-detroit.org/rebuilding-electric-motor-manufacturing-in-michigan/
+  note: robots.txt allows all
+- id: conexus-aic
+  name: Conexus Indiana Advanced Industries Council member list
+  url: https://conexusindiana.com/connect-with-leaders/advanced-industries-council/
+  note: robots.txt allows all (crawl-delay 10); about 150 members, mostly non-automotive manufacturers, services
+    and schools
+- id: scout-known
+  name: 'Scout addition: well-known Midwest automotive makers and suppliers not named by a readable source'
+  url: null
+  note: 'Not a document: names from the harvest agent''s own knowledge of the region''s auto suppliers, added because
+    the supplier directories (MEMA/OESA, Automotive News, MEDC) refused our client. Each was checked on the company''s
+    own site in the facts step.'
+companies:
+- name: 3M
+  website: https://www.3m.com
+  hq: Maplewood
+  sources:
+  - umn-chips
+  registry_id: 3m
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: A&P Technology
+  website: https://www.braider.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: aandp-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Accuride Corporation
+  website: https://www.accuridecorp.com
+  hq: Livonia, MI
+  sources:
+  - wp-mi-companies
+  registry_id: accuride-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ace Precision Machining Corp.
+  website: null
+  hq: Wisconsin
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified; search budget went to larger companies.
+  ats: null
+  open_roles: null
+- name: Active Guardian
+  website: https://active-guardian.com
+  hq: Oconomowoc, WI per CB Insights
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Identity and Wisconsin vs Georgia location not established.
+  ats: null
+  open_roles: null
+- name: ADAC Automotive
+  website: https://www.adacautomotive.com
+  hq: Grand Rapids, MI
+  sources:
+  - michauto-investors
+  registry_id: adac-automotive
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: 12cbb723-6e95-4b07-a4cb-4f7d1a7c7dfe
+  open_roles: null
+- name: Adient
+  website: https://www.adient.com
+  hq: Plymouth, MI
+  sources:
+  - michauto-investors
+  - wp-auto-parts-us
+  registry_id: adient
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: adient.wd3.myworkdayjobs.com/External
+  open_roles: null
+- name: Adron Tool Corp.
+  website: https://adron.com
+  hq: Sussex, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract EDM machining shop.
+  ats: null
+  open_roles: null
+- name: Aero Fluid Products
+  website: https://aerofluidproducts.com
+  hq: Painesville, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: duplicate
+  reason: Part of TransDigm Group, listed separately.
+  ats: null
+  open_roles: null
+- name: AeroControlex
+  website: https://aerocontrolex.com
+  hq: Painesville, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Blocked on both the company site and the parent's site; Painesville,
+    OH and TransDigm ownership not confirmed here.
+  ats: null
+  open_roles: null
+- name: Aerogen Systems
+  website: https://aerogensystems.com
+  hq: Ann Arbor, MI
+  sources:
+  - yc-industrials-detroit
+  registry_id: aerogen-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aerospace Fabrication
+  website: https://www.aerospacefab.com
+  hq: Farmington, MN
+  sources:
+  - tcbmag-mn-aerodefense
+  - mnchamber-aero
+  registry_id: aerospace-fabrication
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: '3403669'
+  open_roles: null
+- name: Aerotronic
+  website: null
+  hq: Indianapolis, IN
+  sources:
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure is from aggregator listings
+    only, with no closure date; the state registry was not checked directly.
+  ats: null
+  open_roles: null
+- name: Aetrium
+  website: null
+  hq: North St. Paul, MN
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: closed
+  reason: Its business was sold to Boston Semi Equipment in 2014 and moved to Massachusetts.
+  ats: null
+  open_roles: null
+- name: AG3 Labs
+  website: https://ag3labs.com
+  hq: Michigan
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: ag3-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Agile Ultrasonics
+  website: https://www.agileultrasonics.com
+  hq: Columbus, OH
+  sources:
+  - rev1-portfolio
+  registry_id: agile-ultrasonics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Agnitron Technology
+  website: https://www.agnitron.com
+  hq: Chanhassen, MN
+  sources:
+  - umn-chips
+  registry_id: agnitron-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Allison Transmission
+  website: https://www.allisontransmission.com
+  hq: Indianapolis, IN
+  sources:
+  - wp-auto-parts-us
+  - conexus-aic
+  registry_id: allison-transmission
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: allisontransmission.wd1.myworkdayjobs.com/en-US/ATI-External
+  open_roles: null
+- name: Altin Labs
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Aluvis
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: AM General
+  website: https://www.amgeneral.com
+  hq: South Bend, IN
+  sources:
+  - wp-mvm-states
+  registry_id: am-general
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Amalga Composites
+  website: https://amalgacomposites.com
+  hq: West Allis, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: amalga-composites
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: American Champion Aircraft
+  website: https://www.americanchampionaircraft.com
+  hq: Burlington, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: american-champion-aircraft
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Anduril Industries (Arsenal-1)
+  website: https://www.anduril.com
+  hq: Costa Mesa, CA
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  - jobsohio-uas-blog
+  - aviationpros-ohio-aam
+  - militaryaerospace-ohio
+  registry_id: anduril-industries
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: andurilindustries
+  open_roles: null
+- name: Ant Robotics
+  website: null
+  hq: Chicago, IL
+  sources:
+  - mhub-accelerator
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified; the obvious domain is for sale.
+  ats: null
+  open_roles: null
+- name: Apricity Robotics
+  website: https://apricityrobotics.com
+  hq: Columbus, OH
+  sources:
+  - robotreport-radar-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: A robotic ultrasound system (medical device); it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Arc Suppression Technologies
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Status not established; domain is for sale, which leans toward
+    inactive.
+  ats: null
+  open_roles: null
+- name: Arctic Cat
+  website: https://www.arcticcat.com
+  hq: Thief River Falls, MN
+  sources:
+  - wp-mvm-states
+  registry_id: arctic-cat
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: b7f675f9-7269-4563-a2e6-dcb6003ebe72
+  open_roles: null
+- name: ArtiFlex Manufacturing
+  website: https://artiflexmfg.com
+  hq: Grand Rapids, MI
+  sources:
+  - michauto-investors
+  registry_id: artiflex-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ascent Integrated Tech
+  website: https://ascentitech.com
+  hq: Champaign, IL
+  sources:
+  - mhub-smartmfg-2021
+  registry_id: ascent-integrated-tech
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Astronautics Corporation of America
+  website: https://www.astronautics.com
+  hq: Oak Creek, WI
+  sources:
+  - wedc-aero-2019
+  - wedc-aero-snapshot-2019
+  registry_id: astronautics-corporation-of-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Atomic Industries
+  website: https://atomic.industries
+  hq: Warren, MI
+  sources:
+  - yc-industrials-detroit
+  - search-michigan-hw
+  - start-midwest
+  registry_id: atomic-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: atomic
+  open_roles: 5
+- name: Autokiniton
+  website: https://www.autokiniton.com/
+  hq: New Boston, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: autokiniton
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Avari Aero
+  website: https://avariaero.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: avari-aero
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Avitek Aerospace Industries
+  website: null
+  hq: Wisconsin
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Avtron Power Solutions
+  website: https://www.avtronpower.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-tech
+  registry_id: avtron-power-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 56cc03b7-d58a-4ac9-8391-390840ad8e7e
+  open_roles: null
+- name: Aztalan Engineering
+  website: https://aztalan.com
+  hq: Lake Mills, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract machining shop, now part of Chandler Industries.
+  ats: null
+  open_roles: null
+- name: Baker Engineering
+  website: https://bakerengineering.com
+  hq: Nunica, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: baker-engineering
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Banner Metals
+  website: https://bannermetalsgroup.com
+  hq: Columbus, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: banner-metals
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Basler Turbo Conversions
+  website: https://www.baslerturbo.com
+  hq: Oshkosh, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: basler-turbo-conversions
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: 905d51e0-350b-4f8d-9a2e-f594b2f0af3a
+  open_roles: null
+- name: Battle Motors
+  website: https://battlemotors.com
+  hq: New Philadelphia, OH
+  sources:
+  - scout-known
+  registry_id: battle-motors
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: BeeHex
+  website: https://www.beehex.com
+  hq: Columbus, OH
+  sources:
+  - rev1-portfolio
+  registry_id: beehex
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Beehive Industries
+  website: https://www.beehiveindustries.com
+  hq: Centennial, CO
+  sources:
+  - jobsohio-aero-pages
+  registry_id: beehive-industries
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: civicplus
+  open_roles: null
+- name: Bendix Commercial Vehicle Systems
+  website: https://www.bendix.com
+  hq: Avon, OH
+  sources:
+  - scout-known
+  registry_id: bendix-commercial-vehicle-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Blue Devil Ventures
+  website: null
+  hq: Southfield, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Known only from a grant list.
+  ats: null
+  open_roles: null
+- name: Blueflite
+  website: https://blueflite.com
+  hq: Brighton, MI
+  sources:
+  - dronelife-mi-aam-2026
+  - thedronegirl-mi-2026
+  registry_id: blueflite
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Bollinger Motors
+  website: https://www.bollingermotors.com
+  hq: Oak Park, MI
+  sources:
+  - wp-mvm-states
+  - wp-us-makers
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed: ceased operations 21 Nov 2025 was a subsidiary of Bollinger Innovations (formerly Mullen
+    Automotive) automotive: vehicle maker search summaries report the founder buying back the original IP a'
+  ats: null
+  open_roles: null
+- name: BorgWarner
+  website: https://www.borgwarner.com/
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  - wp-auto-parts-us
+  - wp-mi-companies
+  - purposejobs-mobility
+  registry_id: borgwarner
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.borgwarner.com/careers
+  open_roles: null
+- name: BraunAbility
+  website: https://www.braunability.com
+  hq: Carmel, IN
+  sources:
+  - conexus-aic
+  registry_id: braunability
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: braunability.wd503.myworkdayjobs.com/braunability
+  open_roles: null
+- name: Bridgewater Interiors
+  website: https://www.bridgewater-interiors.com
+  hq: Detroit, MI
+  sources:
+  - michauto-investors
+  registry_id: bridgewater-interiors
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: adient.wd3.myworkdayjobs.com/External
+  open_roles: null
+- name: Briggs & Stratton
+  website: https://www.briggsandstratton.com
+  hq: Wauwatosa, WI
+  sources:
+  - wedc-advmfg
+  - wedc-epc
+  registry_id: briggs-and-stratton
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Brose North America
+  website: https://www.brose.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Its North American headquarters was not confirmed.
+  ats: null
+  open_roles: null
+- name: Böllhoff
+  website: https://www.bollhoff-usa.com
+  hq: Kendallville, IN
+  sources:
+  - michauto-investors
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Kendallville, IN site and its role (US headquarters or site)
+    not confirmed.
+  ats: null
+  open_roles: null
+- name: C&R Racing / PWR North America
+  website: https://pwrna.com
+  hq: Indianapolis, IN
+  sources:
+  - conexus-aic
+  registry_id: candr-racing-pwr-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Canton Drop Forge
+  website: https://www.cantondropforge.com
+  hq: Canton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: canton-drop-forge
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Carlisle Brake & Friction
+  website: https://carlislebrake.com
+  hq: Medina, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: carlisle-brake-and-friction
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cascade Die Casting Group
+  website: https://www.cascade-cdc.com
+  hq: Grand Rapids, MI
+  sources:
+  - michauto-investors
+  registry_id: cascade-die-casting-group
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CFM International
+  website: https://www.cfmaeroengines.com
+  hq: Evendale
+  sources:
+  - jobsohio-aero-handout
+  registry_id: cfm-international
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Chemring Energetic Devices (NASA Standard Initiator)
+  website: https://chemring.com
+  hq: Downers Grove, IL
+  sources:
+  - search-snippets
+  registry_id: chemring-energetic-devices-nasa-standard-initiator
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cincinnati Incorporated
+  website: https://www.e-ci.com
+  hq: Harrison, OH
+  sources:
+  - jobsohio-advmfg
+  registry_id: cincinnati-incorporated
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Clampco Products
+  website: https://clampco.com
+  hq: Wadsworth, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: clampco-products
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Clarience Technologies
+  website: null
+  hq: Southfield, MI
+  sources:
+  - scout-known
+  registry_id: clarience-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Clarios
+  website: https://www.clarios.com
+  hq: Glendale, WI
+  sources:
+  - rgp-auto
+  registry_id: clarios
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: clarios.wd5.myworkdayjobs.com/en-US/clarioscareers
+  open_roles: null
+- name: Cobra Moto
+  website: https://www.cobramoto.com
+  hq: Hillsdale, MI
+  sources:
+  - ltu-mim-mobility-2025
+  - annarbor-mim-2025
+  registry_id: cobra-moto
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Colibrium Additive
+  website: https://www.colibriumadditive.com
+  hq: West Chester, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: duplicate
+  reason: Part of GE Aerospace, listed separately.
+  ats: null
+  open_roles: null
+- name: Common Vector Robotics
+  website: https://us-cvr.com
+  hq: Detroit, MI
+  sources:
+  - robotics-news-cvr-2026
+  registry_id: common-vector-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Consolidated Precision Products (CPP)
+  website: https://www.cppcorp.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: consolidated-precision-products-cpp
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Continental Automotive Systems
+  website: https://www.continental.com
+  hq: Auburn Hills, MI
+  sources:
+  - scout-known
+  registry_id: continental-automotive-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cooper Standard
+  website: https://www.cooperstandard.com
+  hq: Northville, MI
+  sources:
+  - michauto-investors
+  - wp-mi-companies
+  registry_id: cooper-standard
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Core Molding Technologies
+  website: https://coremt.com
+  hq: Columbus, OH
+  sources:
+  - scout-known
+  registry_id: core-molding-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: COTSWORKS
+  website: https://www.cotsworks.com
+  hq: Cleveland area, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: cotsworks
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: moog.wd5.myworkdayjobs.com/MOOG_External_Career_Site
+  open_roles: null
+- name: Creative Liquid Coatings
+  website: https://creativeliquidcoatings.com
+  hq: Kendallville, IN
+  sources:
+  - jobsohio-auto
+  registry_id: creative-liquid-coatings
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: CTL Aerospace
+  website: https://ctlaerospace.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  - aviationpros-ohio-aam
+  registry_id: ctl-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CTS Corporation
+  website: https://www.ctscorp.com
+  hq: Lisle, IL
+  sources:
+  - scout-known
+  registry_id: cts-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CU Aerospace
+  website: https://www.cuaerospace.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: cu-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cummins
+  website: https://www.cummins.com
+  hq: Columbus, IN
+  sources:
+  - wp-auto-parts-us
+  - conexus-aic
+  registry_id: cummins
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Cutting Dynamics
+  website: https://cuttingdynamics.com
+  hq: Avon, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract machining and fabrication to customers' designs.
+  ats: null
+  open_roles: null
+- name: Cygnus Photonics
+  website: https://www.cygnusphoton.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: cygnus-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cymbet
+  website: https://www.cymbet.com
+  hq: New Brighton, MN
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. No sign of activity after about 2016 found; leaning dormant but
+    not confirmed closed.
+  ats: null
+  open_roles: null
+- name: Dakkota Integrated Systems
+  website: https://www.dakkota.com
+  hq: Holt, MI
+  sources:
+  - michauto-investors
+  registry_id: dakkota-integrated-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Dana Incorporated
+  website: https://www.dana.com/
+  hq: Maumee, OH
+  sources:
+  - wp-auto-parts-us
+  - rgp-auto
+  registry_id: dana-electrified-san-clemente-site
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Darkflite
+  website: https://darkflite.com
+  hq: Detroit, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: null
+  decision: duplicate
+  reason: A defense brand of Blueflite's drone platforms, listed separately.
+  ats: null
+  open_roles: null
+- name: Dataspeed
+  website: https://dataspeedinc.com
+  hq: Rochester Hills, MI
+  sources:
+  - scout-known
+  registry_id: dataspeed
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Dauch Corporation
+  website: https://www.aam.com
+  hq: Detroit, MI
+  sources:
+  - michauto-investors
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: dauch-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Dayton Precision Aerospace
+  website: null
+  hq: Dayton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Dayton Rogers of Ohio
+  website: https://daytonrogers.com
+  hq: Minneapolis, MN
+  sources:
+  - jobsohio-aero-handout
+  registry_id: dayton-rogers-of-ohio
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Dedicated Computing
+  website: https://dedicatedcomputing.com
+  hq: Waukesha, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: dedicated-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: DeltaHawk Engines
+  website: https://www.deltahawkengines.com
+  hq: Racine, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: deltahawk-engines
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: DENSO International America
+  website: https://www.denso.com/us-ca/en
+  hq: Japan
+  sources:
+  - michauto-investors
+  registry_id: denso-international-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Deshler Group
+  website: https://www.deshlergroup.com
+  hq: Livonia, MI
+  sources:
+  - michauto-investors
+  registry_id: deshler-group
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Detroit Diesel Corporation
+  website: https://www.demanddetroit.com
+  hq: Redford, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: null
+  decision: duplicate
+  reason: Part of Daimler Truck North America, already in the registry.
+  ats:
+    type: workday
+    token: dtna.wd5.myworkdayjobs.com/DTNA_external
+  open_roles: null
+- name: Dirac Labs
+  website: null
+  hq: Madison, WI
+  sources:
+  - chips-wisc-seed
+  registry_id: dirac-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Donaldson Company
+  website: https://www.donaldson.com
+  hq: Bloomington, MN
+  sources:
+  - scout-known
+  registry_id: donaldson-company
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: donaldson.wd115.myworkdayjobs.com/DonaldsonCareers
+  open_roles: null
+- name: Douglas Dynamics
+  website: https://douglasdynamics.com
+  hq: Milwaukee, WI
+  sources:
+  - scout-known
+  registry_id: douglas-dynamics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: DroneDek
+  website: https://arrive.tech
+  hq: Fishers, IN
+  sources:
+  - search-snippets
+  registry_id: dronedek
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Dura-Shiloh
+  website: https://durashiloh.com
+  hq: Auburn Hills, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: dura-shiloh
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Eagle Electronics (Eagle Wireless)
+  website: https://eaglewireless.com
+  hq: Solon, OH
+  sources:
+  - search-ohio-hw
+  - start-midwest
+  registry_id: eagle-electronics-eagle-wireless
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: EarthSense
+  website: https://earthsense.co
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: earthsense
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: East Manufacturing
+  website: https://east-trailers.com
+  hq: Randolph, OH
+  sources:
+  - jobsohio-auto
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly truck trailers; trailers are not automotive (decision 26, owner ruling 2026-11-28) and fit no other
+    category.
+  ats: null
+  open_roles: null
+- name: Eaton
+  website: https://www.eaton.com
+  hq: Dublin, Ireland
+  sources:
+  - jobsohio-advmfg
+  - wedc-epc
+  - wp-auto-parts-us
+  registry_id: eaton
+  decision: registry
+  reason: null
+  ats:
+    type: eightfold
+    token: eaton
+  open_roles: null
+- name: EAVX
+  website: null
+  hq: Ypsilanti Township, MI
+  sources:
+  - purposejobs-mobility
+  registry_id: eavx
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Eberspaecher North America
+  website: https://www.eberspaecher.com/en
+  hq: Novi, MI
+  sources:
+  - scout-known
+  registry_id: eberspaecher-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Eck Industries
+  website: https://eckindustries.com
+  hq: Manitowoc, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: eck-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: EDCS Power
+  website: null
+  hq: Mequon, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Link to Edison DC Systems not established.
+  ats: null
+  open_roles: null
+- name: Electra
+  website: https://electra.earth
+  hq: Boulder, CO
+  sources:
+  - jobsohio-aero-pages
+  - aviationpros-ohio-aam
+  registry_id: electra
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: electrasteel
+  open_roles: null
+- name: Electrotek Corp.
+  website: null
+  hq: Oak Creek, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed (2024, per search summary) services firm: contract PCB fabrication electrotek.com is a
+    different company (redirects to powerside.com); electrotekcorp.com serves another firm''s certificate'
+  ats: null
+  open_roles: null
+- name: Elwood Corporation
+  website: https://elwood.com
+  hq: Oak Creek, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: elwood-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Engineered Propulsion Systems
+  website: null
+  hq: New Richmond, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Chapter 11 in 2020 is the last known
+    event; no later activity found. The Wisconsin DFI corporate search returned 403 and was stopped.
+  ats: null
+  open_roles: null
+- name: Enginetics Corporation
+  website: null
+  hq: Huber Heights, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: closed
+  reason: Sold to Enjet Aero in 2021; its own domain is parked.
+  ats: null
+  open_roles: null
+- name: EPL Power Electronics
+  website: https://eplpower.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: epl-power-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Esterline & Sons Mfg. Co.
+  website: https://esterlineandsons.com
+  hq: Springfield, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract machining shop.
+  ats: null
+  open_roles: null
+- name: Event 38 Unmanned Systems
+  website: https://event38.com
+  hq: Richfield, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: event-38-unmanned-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Extreme Engineering Solutions (X-ES)
+  website: https://www.xes-inc.com
+  hq: Madison, WI area
+  sources:
+  - wedc-aero-2019
+  registry_id: extreme-engineering-solutions-x-es
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Fairbanks Morse Defense
+  website: https://www.fairbanksmorsedefense.com
+  hq: Beloit, WI
+  sources:
+  - wedc-epc
+  registry_id: fairbanks-morse-defense
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Falcon Motorsports
+  website: null
+  hq: Holly, MI
+  sources:
+  - wp-mvm-states
+  - wp-mi-companies
+  - wp-us-makers
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. No sign of production after 2017 and the domain is for sale;
+    likely inactive but not confirmed closed.
+  ats: null
+  open_roles: null
+- name: Federal Signal
+  website: https://www.federalsignal.com
+  hq: Downers Grove, IL
+  sources:
+  - scout-known
+  registry_id: federal-signal
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/FED1002FSC/JobBoard/d5675b81-d6f5-4226-9f8c-be296cda2308
+  open_roles: null
+- name: Ferro Tech
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Fireline, Inc.
+  website: null
+  hq: Youngstown, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: fireline-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Flex-N-Gate
+  website: https://flex-n-gate.com
+  hq: Illinois
+  sources:
+  - scout-known
+  registry_id: flex-n-gate
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Folio Photonics
+  website: https://www.foliophotonics.com
+  hq: Solon, OH
+  sources:
+  - search-ohio-hw
+  registry_id: folio-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ford Motor Company
+  website: https://www.ford.com/
+  hq: Dearborn, MI
+  sources:
+  - michauto-investors
+  - purposejobs-mobility
+  - wp-mi-companies
+  - wp-us-makers
+  registry_id: ford-motor-company
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Forest River
+  website: https://forestriverinc.com
+  hq: Elkhart, IN
+  sources:
+  - wp-mvm-states
+  registry_id: forest-river
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Forgent
+  website: https://forgentpower.com
+  hq: Maple Grove, MN
+  sources:
+  - jobsohio-tech
+  registry_id: forgent
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Formic
+  website: https://formic.co
+  hq: Chicago, IL
+  sources:
+  - search-chicago-hw
+  registry_id: null
+  decision: not-in-scope
+  reason: Robotic automation sold as a subscription on other makers' robots.
+  ats:
+    type: greenhouse
+    token: formic
+  open_roles: 72
+- name: Forvia Faurecia
+  website: https://www.faurecia.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  - wp-auto-parts-us
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Its North American headquarters was not confirmed.
+  ats: null
+  open_roles: null
+- name: ForwardEdge ASIC
+  website: https://forwardedgeasic.com
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly chip design services.
+  ats: null
+  open_roles: null
+- name: Fuyao Glass America
+  website: https://fuyaousa.com
+  hq: Moraine, OH
+  sources:
+  - scout-known
+  registry_id: fuyao-glass-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: GE Aerospace
+  website: https://www.geaerospace.com
+  hq: Evendale
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  - aviationpros-ohio-aam
+  - militaryaerospace-ohio
+  registry_id: ge-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: GEKOT Robotics
+  website: https://gekotinc.com
+  hq: Bloomfield Hills, MI
+  sources:
+  - purposejobs-mobility
+  registry_id: gekot-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Generac
+  website: https://www.generac.com
+  hq: Waukesha, WI
+  sources:
+  - wedc-epc
+  registry_id: generac
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: General Dynamics Land Systems
+  website: https://www.gdls.com
+  hq: Sterling Heights, MI
+  sources:
+  - wp-mvm-states
+  registry_id: general-dynamics-land-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: General Motors
+  website: https://www.gm.com/
+  hq: Detroit, MI
+  sources:
+  - michauto-investors
+  - purposejobs-mobility
+  - wp-mvm-states
+  - wp-us-makers
+  registry_id: general-motors
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: general
+  open_roles: null
+- name: General Orbit
+  website: https://generalorbit.com
+  hq: Michigan
+  sources:
+  - dronelife-mi-aam-2026
+  - ltu-mim-mobility-2025
+  registry_id: general-orbit
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: General Tool Company
+  website: https://gentool.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract machining, fabrication and assembly to customers' designs.
+  ats: null
+  open_roles: null
+- name: Gentex
+  website: https://www.gentex.com
+  hq: Zeeland, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: gentex
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: gentex.wd5.myworkdayjobs.com/Gentex
+  open_roles: null
+- name: Gentherm
+  website: https://www.gentherm.com
+  hq: Novi, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: gentherm
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Gestamp North America
+  website: https://www.gestamp.com
+  hq: Troy, MI
+  sources:
+  - scout-known
+  registry_id: gestamp-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: GhostWave
+  website: https://www.ghostwaveinc.com
+  hq: Columbus, OH
+  sources:
+  - rev1-portfolio
+  registry_id: ghostwave
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Gill Industries
+  website: https://www.lear.com
+  hq: Grand Rapids, MI
+  sources:
+  - wp-mi-companies
+  registry_id: null
+  decision: duplicate
+  reason: Acquired by Lear in 2020, already in the registry.
+  ats: null
+  open_roles: null
+- name: Great Dane
+  website: https://www.greatdane.com
+  hq: Chicago, IL
+  sources:
+  - wp-mvm-states
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly truck trailers; trailers are not automotive (decision 26, owner ruling 2026-11-28) and fit no other
+    category.
+  ats:
+    type: icims
+    token: greatdane
+  open_roles: null
+- name: Grote Industries
+  website: https://www.grote.com
+  hq: Madison, IN
+  sources:
+  - conexus-aic
+  registry_id: grote-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Grounded
+  website: null
+  hq: Detroit, MI
+  sources:
+  - purposejobs-mobility
+  registry_id: grounded
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: grounded
+  open_roles: 17
+- name: Hanon Systems
+  website: https://www.hanonsystems.com
+  hq: Statesboro, GA
+  sources:
+  - rgp-auto
+  registry_id: hanon-systems
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Harley-Davidson
+  website: https://www.harley-davidson.com
+  hq: Milwaukee, WI
+  sources:
+  - wp-mvm-states
+  registry_id: harley-davidson
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hartzell Propeller
+  website: https://hartzellprop.com
+  hq: Piqua, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: hartzell-propeller
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hawthorn Aero
+  website: https://hawthornaero.com
+  hq: Miamisburg, OH
+  sources:
+  - jobsohio-aero-pages
+  registry_id: hawthorn-aero
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hawthorn Composites
+  website: https://hawthornaero.com
+  hq: Miamisburg, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: duplicate
+  reason: Now part of Hawthorn Aero, listed separately.
+  ats: null
+  open_roles: null
+- name: Heartland Automotive
+  website: https://hauto.net
+  hq: Greencastle, IN
+  sources:
+  - conexus-aic
+  registry_id: heartland-automotive
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hemlock Semiconductor
+  website: https://www.hscpoly.com/
+  hq: Hemlock, MI
+  sources:
+  - nist-chips-states
+  registry_id: hemlock-semiconductor
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Hendrickson
+  website: https://hendrickson-intl.com
+  hq: Woodridge, IL
+  sources:
+  - scout-known
+  registry_id: hendrickson
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Henniges Automotive
+  website: https://henniges.com
+  hq: Auburn Hills, MI
+  sources:
+  - wp-auto-parts-us
+  registry_id: henniges-automotive
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: High Tech Castings
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Hirotec America
+  website: null
+  hq: Auburn Hills, MI
+  sources:
+  - scout-known
+  registry_id: hirotec-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Honda Development & Manufacturing of America
+  website: https://ohio.honda.com
+  hq: Marysville, OH
+  sources:
+  - jobsohio-auto
+  registry_id: honda-development-and-manufacturing-of-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: ohio
+  open_roles: 5
+- name: Hsio Technologies
+  website: null
+  hq: Maple Grove, MN
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. No activity after 2019 found.
+  ats: null
+  open_roles: null
+- name: HUSCO
+  website: https://husco.com
+  hq: Waukesha, WI
+  sources:
+  - scout-known
+  registry_id: husco
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hyundai Mobis North America
+  website: https://www.mobisna.com
+  hq: Plymouth, MI
+  sources:
+  - scout-known
+  registry_id: hyundai-mobis-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Imasen Bucyrus Technology
+  website: https://imasennorthamerica.com
+  hq: Bucyrus, OH
+  sources:
+  - jobsohio-auto
+  registry_id: imasen-bucyrus-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Impossible Objects
+  website: https://www.impossible-objects.com
+  hq: Northbrook, IL
+  sources:
+  - start-midwest
+  registry_id: impossible-objects
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ingantec
+  website: https://ingantec.com
+  hq: Wauwatosa, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: ingantec
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: INNIO Waukesha Gas Engines
+  website: https://www.innio.com/
+  hq: Waukesha, WI
+  sources:
+  - wedc-epc
+  registry_id: innio
+  decision: registry
+  reason: null
+  ats:
+    type: jobvite
+    token: innio
+  open_roles: null
+- name: Intalus
+  website: https://intalustech.com
+  hq: 'Disputed: West Lafayette, IN'
+  sources:
+  - start-midwest
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Headquarters still disputed (West Lafayette, IN or Ashburn, VA).
+  ats: null
+  open_roles: null
+- name: Intel (Ohio One campus)
+  website: https://www.intel.com
+  hq: Santa Clara, CA
+  sources:
+  - jobsohio-advmfg
+  - jobsohio-tech
+  - jobsohio-semis
+  - nist-chips-states
+  registry_id: intel
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: intel
+  open_roles: null
+- name: Intermode
+  website: https://intermode.io
+  hq: Detroit, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: intermode
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: International Motors
+  website: https://www.international.com
+  hq: Lisle, IL
+  sources:
+  - wp-mvm-states
+  - jobsohio-auto
+  registry_id: international-motors
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: icims
+    token: navistar
+  open_roles: null
+- name: Inteva Products
+  website: https://intevaproducts.com
+  hq: Troy, MI
+  sources:
+  - wp-auto-parts-us
+  registry_id: inteva-products
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: InVekTek
+  website: https://invektek.com
+  hq: Waukesha, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: invektek
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ION Corporation
+  website: https://ioncorp.com
+  hq: Eden Prairie, MN
+  sources:
+  - tcbmag-mn-aerodefense
+  registry_id: null
+  decision: not-in-scope
+  reason: Engineering, testing and contract manufacturing services.
+  ats: null
+  open_roles: null
+- name: Iridescent Sensors
+  website: https://www.iridescentsensors.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: iridescent-sensors
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ironwood Electronics
+  website: https://www.ironwoodelectronics.com
+  hq: Eagan, MN
+  sources:
+  - umn-chips
+  registry_id: ironwood-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Jasper Engines & Transmissions
+  website: https://jasperengines.com
+  hq: Jasper, IN
+  sources:
+  - conexus-aic
+  registry_id: jasper-engines-and-transmissions
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Joby Aviation
+  website: https://www.jobyaviation.com/
+  hq: Santa Cruz, CA
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  - aviationpros-ohio-aam
+  - militaryaerospace-ohio
+  registry_id: joby-aviation
+  decision: registry
+  reason: null
+  ats:
+    type: icims
+    token: jobyaviation
+  open_roles: null
+- name: John Deere
+  website: https://www.deere.com
+  hq: Moline, IL
+  sources:
+  - illinoisedc-advmfg
+  registry_id: john-deere
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Johnson Controls
+  website: https://www.johnsoncontrols.com
+  hq: Cork, Ireland
+  sources:
+  - uiuc-research-park
+  - wedc-advmfg
+  - wedc-epc
+  registry_id: johnson-controls
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: jci.wd5.myworkdayjobs.com/en-US/JCI
+  open_roles: null
+- name: Joyson Safety Systems
+  website: https://www.joysonsafety.com
+  hq: Auburn Hills, MI
+  sources:
+  - wp-auto-parts-us
+  registry_id: joyson-safety-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: JR Automation
+  website: https://www.jrautomation.com
+  hq: Holland, MI
+  sources:
+  - start-midwest
+  registry_id: jr-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: KB Powertrain
+  website: https://www.kbpowertrain.com
+  hq: Kalamazoo, MI
+  sources:
+  - annarbor-mim-2025
+  registry_id: kb-powertrain
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Kimball Electronics
+  website: https://www.kimballelectronics.com
+  hq: Jasper, IN
+  sources:
+  - scout-known
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract electronics manufacturing for others' products.
+  ats:
+    type: workday
+    token: kei.wd1.myworkdayjobs.com/GlobalKimballCareers
+  open_roles: null
+- name: Kimura Foundry America
+  website: https://kimurafoundry.com
+  hq: Shelbyville, IN
+  sources:
+  - conexus-aic
+  registry_id: kimura-foundry-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Komatsu Mining Corp.
+  website: https://www.komatsu.com
+  hq: Milwaukee, WI
+  sources:
+  - wedc-advmfg
+  registry_id: komatsu-mining-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: KTH Parts Industries
+  website: https://kth.net
+  hq: St. Paris, OH
+  sources:
+  - scout-known
+  registry_id: kth-parts-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: KYOCERA SENCO Industrial Tools
+  website: https://www.senco.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-advmfg
+  registry_id: kyocera-senco-industrial-tools
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 5132230b-4418-4e6a-abda-3e89526fe524
+  open_roles: null
+- name: Lacks Enterprises
+  website: https://www.lacksenterprises.com
+  hq: Grand Rapids, MI
+  sources:
+  - michauto-investors
+  registry_id: lacks-enterprises
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LCI Industries (Lippert)
+  website: https://lippert.com
+  hq: Elkhart, IN
+  sources:
+  - conexus-aic
+  registry_id: lci-industries-lippert
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LeakShark
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: Lear Corporation
+  website: https://www.lear.com/
+  hq: Southfield, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: lear-corporation
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Leonardo DRS Power & Control Technologies
+  website: https://www.leonardodrs.com
+  hq: Milwaukee, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. The parent is real, but the Milwaukee naval power unit and its
+    current name were not confirmed by any page read.
+  ats: null
+  open_roles: null
+- name: Lightwave Photonics
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified.
+  ats: null
+  open_roles: null
+- name: LinqThingz
+  website: https://linqthingz.com
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: linqthingz
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Littelfuse
+  website: https://www.littelfuse.com
+  hq: Chicago, IL
+  sources:
+  - uiuc-research-park
+  - scout-known
+  registry_id: littelfuse
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: littelfuse.wd1.myworkdayjobs.com/Littelfuse-Careers
+  open_roles: null
+- name: LIVAQ
+  website: null
+  hq: Detroit, MI
+  sources:
+  - purposejobs-mobility
+  - annarbor-mim-2025
+  registry_id: livaq
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: LiveRoad Analytics
+  website: https://liveroadanalytics.com
+  hq: Ann Arbor, MI
+  sources:
+  - makeitmi-2025
+  registry_id: null
+  decision: null
+  reason: Identity confirmed, but it may be mainly data and software; hardware not established.
+  ats: null
+  open_roles: null
+- name: LiveWire
+  website: https://www.livewire.com
+  hq: Milwaukee, WI
+  sources:
+  - wp-mvm-states
+  registry_id: livewire
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: 38c81de5-382a-459c-84b5-012cc108fdd5
+  open_roles: null
+- name: LM Manufacturing
+  website: https://www.lm-mfg.com
+  hq: Detroit, MI
+  sources:
+  - michauto-investors
+  registry_id: lm-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: cc1ab74b-5d2a-485b-a161-b01ddb194b6f
+  open_roles: null
+- name: Lucerne International
+  website: https://www.lucerneintl.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly a sourcing firm working through a supplier network.
+  ats: null
+  open_roles: null
+- name: Madison Air Solutions
+  website: https://madisonair.com
+  hq: Chicago, IL
+  sources:
+  - start-midwest
+  registry_id: madison-air-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Makino Inc.
+  website: https://www.makino.com
+  hq: Mason, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: makino-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Marelli North America
+  website: https://www.marelli.com
+  hq: Southfield, MI
+  sources:
+  - scout-known
+  registry_id: marelli-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Materion Corporation
+  website: https://materion.com
+  hq: Cleveland area, OH
+  sources:
+  - jobsohio-aero-handout
+  - wedc-aero-2019
+  registry_id: materion-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: materion.wd5.myworkdayjobs.com/Materion
+  open_roles: null
+- name: Maxwell Labs
+  website: https://mxllabs.com
+  hq: St. Paul, MN
+  sources:
+  - mhub-portfolio
+  - mhub-smartmfg-2021
+  registry_id: maxwell-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: maxwell
+  open_roles: 3
+- name: May Mobility
+  website: https://maymobility.com
+  hq: Ann Arbor, MI
+  sources:
+  - purposejobs-mobility
+  registry_id: may-mobility
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: maymobility
+  open_roles: 34
+- name: Mayco International
+  website: null
+  hq: Sterling Heights, MI
+  sources:
+  - scout-known
+  registry_id: mayco-international
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Mayville Engineering Company
+  website: https://www.mecinc.com
+  hq: Mayville, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Contract metal fabrication for OEMs: prototyping and tooling, production fabrication,
+    coating, assembly and aftermarket services.'
+  ats: null
+  open_roles: null
+- name: MCT Digital
+  website: null
+  hq: New Berlin, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: closed
+  reason: Acquired by Gerber Technology in 2018.
+  ats: null
+  open_roles: null
+- name: MCT Worldwide
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Means Industries
+  website: null
+  hq: Saginaw, MI
+  sources:
+  - scout-known
+  registry_id: means-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Meritor
+  website: https://www.meritor.com
+  hq: Troy, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: null
+  decision: duplicate
+  reason: Part of Cummins since 2022, already in the registry.
+  ats: null
+  open_roles: null
+- name: MesoCoat
+  website: null
+  hq: Euclid, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Its former domain has been taken over by unrelated content, which
+    suggests it is no longer active, but no closure record found.
+  ats: null
+  open_roles: null
+- name: Metalex Manufacturing
+  website: https://metalexmfg.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract machining shop.
+  ats: null
+  open_roles: null
+- name: Metaltek International
+  website: https://metaltek.com
+  hq: Waukesha, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: metaltek-international
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Methode Electronics
+  website: https://www.methode.com
+  hq: Southfield, MI
+  sources:
+  - scout-known
+  registry_id: methode-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: methode.wd5.myworkdayjobs.com/methode
+  open_roles: null
+- name: Mettle Ops
+  website: https://www.mettleops.com
+  hq: Madison Heights, MI
+  sources:
+  - ltu-mim-mobility-2025
+  - makeitmi-2025
+  registry_id: mettle-ops
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.mettleops.com/careers
+  open_roles: null
+- name: Meyer Tool
+  website: https://www.meyertool.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly contract machining and coating, with a few products of its own.
+  ats: null
+  open_roles: null
+- name: Michigan Space Technologies
+  website: null
+  hq: Ann Arbor, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Mitsubishi Electric Automotive America
+  website: https://us.mitsubishielectric.com
+  hq: Mason, OH
+  sources:
+  - scout-known
+  registry_id: mitsubishi-electric-automotive-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Modal Motors
+  website: https://www.modalmotors.com
+  hq: Farmington Hills, MI
+  sources:
+  - ltu-mim-mobility-2025
+  - sbn-detroit-motors
+  - annarbor-mim-2025
+  registry_id: modal-motors
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Modine
+  website: https://www.modine.com
+  hq: Racine, WI
+  sources:
+  - search-dc-cooling
+  - scout-known
+  registry_id: modine
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Molex
+  website: https://www.molex.com
+  hq: Lisle, IL
+  sources:
+  - scout-known
+  registry_id: molex
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Morgan Olson
+  website: https://www.morganolson.com
+  hq: Sturgis, MI
+  sources:
+  - wp-mvm-states
+  registry_id: morgan-olson
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Moss Vale Inc.
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Motmot
+  website: https://motmot.ai
+  hq: Detroit, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: motmot
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Motor Coach Industries
+  website: https://www.mcicoach.com
+  hq: Des Plaines, IL
+  sources:
+  - wp-mvm-states
+  registry_id: motor-coach-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workable
+    token: motor-coach-industries
+  open_roles: 47
+- name: Multimatic
+  website: https://www.multimatic.com
+  hq: Novi, MI
+  sources:
+  - michauto-investors
+  registry_id: multimatic
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: multimatic.wd10.myworkdayjobs.com/MMEC
+  open_roles: null
+- name: Mutually Assured Development
+  website: null
+  hq: Southfield, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Myers EV
+  website: https://myersev.com
+  hq: Tallmadge, OH
+  sources:
+  - wp-mvm-states
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Active and selling a physical vehicle, but its own site still
+    does not state its location, so Tallmadge, OH is unconfirmed.
+  ats: null
+  open_roles: null
+- name: MūL Technologies
+  website: null
+  hq: Mequon, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: m-l-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Neapco
+  website: null
+  hq: Farmington Hills, MI
+  sources:
+  - scout-known
+  registry_id: neapco
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: NEL Frequency Controls
+  website: https://nelfc.com
+  hq: Burlington, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: closed
+  reason: Its domain now redirects to Abracon; absorbed, date not established.
+  ats: null
+  open_roles: null
+- name: Nelson Manufacturing Company
+  website: null
+  hq: Ottawa, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly truck trailers; trailers are not automotive (decision 26, owner ruling 2026-11-28) and fit no other
+    category.
+  ats: null
+  open_roles: null
+- name: Neumo
+  website: https://neumo.ai
+  hq: Detroit, MI
+  sources:
+  - annarbor-mim-2025
+  registry_id: neumo
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: New Wave Design
+  website: https://newwavedesign.com/
+  hq: Eden Prairie, MN
+  sources:
+  - mnchamber-aero
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats:
+    type: paylocity
+    token: 66f349f0-f1f2-4a08-be09-432eda3bf082
+  open_roles: null
+- name: New Wave Design and Verification
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Probably the same firm as the New Wave Design entry; not confirmed.
+  ats: null
+  open_roles: null
+- name: Newman Technology
+  website: https://newmantech.com
+  hq: Mansfield, OH
+  sources:
+  - jobsohio-auto
+  registry_id: newman-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: NewRange Copper Nickel
+  website: https://newrangecoppernickel.com
+  hq: Hoyt Lakes, MN
+  sources:
+  - search-mining
+  registry_id: newrange-copper-nickel
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Nextant Aerospace
+  website: https://nextantaerospace.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: closed
+  reason: Folded into Flexjet Technical Services.
+  ats: null
+  open_roles: null
+- name: Nexteer Automotive
+  website: https://www.nexteer.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: nexteer-automotive
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Niobium Microsystems
+  website: https://niobium.co
+  hq: not stated on its site
+  sources:
+  - rev1-portfolio
+  - ohiotechnews
+  - semiengineering-q4-2025
+  registry_id: niobium-microsystems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: bamboohr
+    token: niobium
+  open_roles: 4
+- name: NMG Aerospace
+  website: https://nmgaerospace.com
+  hq: Stow, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: nmg-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Nota3D
+  website: https://nota3d.com
+  hq: Mount Pleasant, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Sells and services industrial 3D printers and wide-format UV printers from partner
+    brands (Mimaki, 3D Systems, Markforged, Artec, BMF, Axtra), plus ma'
+  ats: null
+  open_roles: null
+- name: Nox Metals
+  website: https://noxmetals.com
+  hq: Ferndale
+  sources:
+  - yc-industrials-detroit
+  - start-midwest
+  registry_id: null
+  decision: not-in-scope
+  reason: A cut-to-size metal service centre.
+  ats:
+    type: ashby
+    token: nox-metals
+  open_roles: 37
+- name: NSI Crankshaft
+  website: null
+  hq: Fostoria, OH
+  sources:
+  - rgp-auto
+  registry_id: nsi-crankshaft
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: NVE Corporation
+  website: https://www.nve.com
+  hq: Eden Prairie, MN
+  sources:
+  - umn-chips
+  registry_id: nve-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: nve
+  open_roles: 19
+- name: NYX
+  website: https://www.nyxinc.com
+  hq: Plymouth, MI
+  sources:
+  - michauto-investors
+  registry_id: nyx
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: pinpoint
+    token: nyx
+  open_roles: 12
+- name: Oculii
+  website: null
+  hq: Dayton, OH
+  sources:
+  - jobsohio-semis
+  registry_id: null
+  decision: closed
+  reason: Acquired by Ambarella in 2021.
+  ats: null
+  open_roles: null
+- name: Onto Innovation (Minnesota site)
+  website: https://ontoinnovation.com
+  hq: Wilmington, MA
+  sources:
+  - umn-chips
+  registry_id: onto-innovation
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Orb Aerospace
+  website: null
+  hq: Lowell, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: orb-aerospace
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: orbaerospace
+  open_roles: null
+- name: Oshkosh Corporation
+  website: https://www.oshkoshcorp.com
+  hq: Oshkosh, WI
+  sources:
+  - wp-mvm-states
+  registry_id: oshkosh
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: oshkoshcorporation
+  open_roles: null
+- name: P4 Infrastructure
+  website: https://p4infrastructure.com
+  hq: Brown Deer, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: p4-infrastructure
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pacific Manufacturing Ohio
+  website: null
+  hq: Fairfield, OH
+  sources:
+  - jobsohio-auto
+  registry_id: pacific-manufacturing-ohio
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Parker Hannifin
+  website: https://www.parker.com/
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  registry_id: parker-hannifin
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: parker
+  open_roles: null
+- name: Path Robotics
+  website: https://www.path-robotics.com
+  hq: Columbus, OH
+  sources:
+  - ohiotechnews
+  - start-midwest
+  registry_id: path-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: pathrobotics
+  open_roles: 64
+- name: PCC Airfoils
+  website: https://pccairfoils.com
+  hq: Bedford Heights, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: pcc-airfoils
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Performance Plastics, Ltd.
+  website: https://performanceplastics.com
+  hq: Cincinnati, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: performance-plastics-ltd
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: PGC
+  website: https://pgc-solutions.com/
+  hq: Edina, MN
+  sources:
+  - mnchamber-aero
+  registry_id: pgc
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Phase3D
+  website: https://phase3d.com
+  hq: Chicago, IL
+  sources:
+  - start-midwest
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Product and status still not established.
+  ats: null
+  open_roles: null
+- name: Phillips & Temro Industries
+  website: https://phillipsandtemro.com
+  hq: Eden Prairie, MN
+  sources:
+  - scout-known
+  registry_id: phillips-and-temro-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: PHINIA
+  website: https://www.phinia.com
+  hq: Auburn Hills, MI
+  sources:
+  - scout-known
+  registry_id: phinia
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: phinia.wd5.myworkdayjobs.com/PHINIA_Careers
+  open_roles: null
+- name: Photon Queue
+  website: https://photonqueue.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: photon-queue
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pierce Aerospace
+  website: https://pierceaerospace.net
+  hq: Fishers, IN
+  sources:
+  - search-snippets
+  registry_id: pierce-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pierce Manufacturing
+  website: https://www.piercemfg.com
+  hq: Appleton, WI
+  sources:
+  - wp-mvm-states
+  registry_id: null
+  decision: duplicate
+  reason: Part of Oshkosh, already in the registry.
+  ats:
+    type: workday
+    token: oshkoshcorporation.wd5.myworkdayjobs.com/Oshkosh
+  open_roles: null
+- name: Piston Group
+  website: https://www.pistongroup.com
+  hq: Redford, MI
+  sources:
+  - michauto-investors
+  - jobsohio-auto
+  registry_id: piston-group
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Plexus Corp.
+  website: https://www.plexus.com
+  hq: Neenah, WI
+  sources:
+  - wedc-aero-2019
+  - wedc-advmfg
+  - wedc-epc
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Design, manufacturing and aftermarket servicing of complex electronic products
+    for other companies (contract electronics), serving aerospace/defense, '
+  ats:
+    type: lever
+    token: plexus
+  open_roles: 2
+- name: Plymouth Tube Co.
+  website: https://www.plymouth.com
+  hq: Warrenville, IL
+  sources:
+  - wedc-aero-2019
+  registry_id: plymouth-tube-co
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: 85258598-89cd-45e1-ac57-6b7061f554f6
+  open_roles: null
+- name: Polar Semiconductor
+  website: https://www.polarsemi.com
+  hq: Bloomington, MN
+  sources:
+  - nist-chips-states
+  - umn-chips
+  registry_id: polar-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: polarsemi.wd501.myworkdayjobs.com/Polar
+  open_roles: null
+- name: Polaris
+  website: https://www.polaris.com
+  hq: Medina, MN
+  sources:
+  - wp-mvm-states
+  - wp-us-makers
+  registry_id: polaris
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Polymet
+  website: https://polymet.us
+  hq: West Chester, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: polymet
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pratt Miller
+  website: https://www.prattmiller.com
+  hq: New Hudson, MI
+  sources:
+  - wp-mvm-states
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly an engineering services firm.
+  ats:
+    type: workday
+    token: oshkoshcorporation.wd5.myworkdayjobs.com/en-US/Oshkosh
+  open_roles: null
+- name: Precision Aero Corporation
+  website: https://precisionaero.com
+  hq: Troy, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: precision-aero-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Projects Unlimited
+  website: https://projectsunlimited.com
+  hq: Dayton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract electronics manufacturing for others' products.
+  ats: null
+  open_roles: null
+- name: PsiQuantum (Chicago site)
+  website: https://psiquantum.com
+  hq: Palo Alto, CA
+  sources:
+  - illinoisedc-quantum
+  registry_id: psiquantum
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: psiquantum
+  open_roles: null
+- name: QDIR
+  website: https://qdinfrared.com
+  hq: Chicago, IL
+  sources:
+  - polsky-alchemist-chicago
+  registry_id: qdir
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Quantum Devices
+  website: https://quantumdev.com
+  hq: Barneveld, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: quantum-devices
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Quasonix
+  website: https://www.quasonix.com
+  hq: West Chester, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: quasonix
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: R. Stresau Laboratory
+  website: https://stresau.com
+  hq: Spooner, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: r-stresau-laboratory
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Radian IoT
+  website: https://radianiot.com
+  hq: Okauchee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: radian-iot
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rapco
+  website: https://rapcoinc.com
+  hq: Hartland, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: rapco
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rapids Air Quality
+  website: null
+  hq: Grand Rapids, MI
+  sources:
+  - mhub-smartmfg-2021
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Succession to JustAir not confirmed, and JustAir presents itself
+    as software, not a sensor maker.
+  ats: null
+  open_roles: null
+- name: Regal Rexnord
+  website: https://www.regalrexnord.com/
+  hq: Milwaukee, WI
+  sources:
+  - wedc-epc
+  registry_id: regal-rexnord
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Renegade Materials Corporation
+  website: https://renegadematerials.com
+  hq: Miamisburg, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: renegade-materials-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Revolution Computing
+  website: null
+  hq: Lake Mills, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Rhinestahl Corp.
+  website: https://rhaero.com
+  hq: Mason, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: rhinestahl-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rimeco Products
+  website: https://rimecoproducts.com
+  hq: Willoughby, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract machining shop.
+  ats: null
+  open_roles: null
+- name: RoboChef
+  website: https://robochef.ai
+  hq: Chicago, IL
+  sources:
+  - robotreport-radar-2025
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: RoboWorkx
+  website: https://roboworkx.com
+  hq: Southfield, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: roboworkx
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rockwell Automation
+  website: https://www.rockwellautomation.com
+  hq: Milwaukee, WI
+  sources:
+  - wedc-advmfg
+  - wedc-epc
+  - start-midwest
+  registry_id: rockwell-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: rockwellautomation.wd1.myworkdayjobs.com/en-US/External_Rockwell_Automation
+  open_roles: null
+- name: Ross Aluminum
+  website: https://rossal.com
+  hq: Sidney, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: ross-aluminum
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Roush
+  website: https://www.roush.com
+  hq: Livonia, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly engineering, design and testing services.
+  ats: null
+  open_roles: null
+- name: Safepro Technologies
+  website: null
+  hq: Whitewater, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Scanalytics
+  website: null
+  hq: Madison, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: closed
+  reason: Acquired by East West Manufacturing in January 2026.
+  ats: null
+  open_roles: null
+- name: Schneller
+  website: https://schneller.com
+  hq: Kent, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: schneller
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Seagrave Fire Apparatus
+  website: https://www.seagrave.com
+  hq: Clintonville, WI
+  sources:
+  - wp-mvm-states
+  registry_id: seagrave-fire-apparatus
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SeaLandAire Technologies
+  website: https://sealandaire.com
+  hq: Jackson, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: sealandaire-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SelectTech Geospatial
+  website: https://sgamf.com
+  hq: Springfield, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: selecttech-geospatial
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sensory Robotics
+  website: https://sensoryrobotics.com
+  hq: Cincinnati, OH
+  sources:
+  - search-snippets
+  registry_id: sensory-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Septillionth
+  website: null
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Not identified; the domain exists but its content was not readable.
+  ats: null
+  open_roles: null
+- name: Servo Instrument Corp.
+  website: null
+  hq: Baraboo, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Status still not established.
+  ats: null
+  open_roles: null
+- name: Shape Corp
+  website: https://www.shapecorp.com
+  hq: Grand Haven, MI
+  sources:
+  - michauto-investors
+  registry_id: shape-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SIFCO Industries
+  website: https://www.sifco.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: sifco-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: paycom
+    token: E2198342AC745A41D276E0BDA3E26874
+  open_roles: null
+- name: Sigma Powertrain
+  website: https://sigmapowertrain.com
+  hq: Wayne, MI
+  sources:
+  - makeitmi-2025
+  - annarbor-mim-2025
+  registry_id: sigma-powertrain
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://sigmapowertrain.com/career-opportunities/
+  open_roles: null
+- name: Silfex
+  website: https://www.silfex.com
+  hq: Eaton, OH
+  sources:
+  - jobsohio-semis
+  registry_id: silfex
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: silfex.wd503.myworkdayjobs.com/Silfex
+  open_roles: null
+- name: Simpli-Fi Automation
+  website: https://simplifiautomation.com
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: not-in-scope
+  reason: Breath and air chemical-sensing devices for health; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: SixLine Semiconductor
+  website: https://sixlinesemi.com
+  hq: Madison, WI
+  sources:
+  - wedc-sixline
+  registry_id: sixline-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SkyWater Technology
+  website: https://www.skywatertechnology.com
+  hq: Bloomington, MN
+  sources:
+  - nist-chips-states
+  - umn-chips
+  registry_id: skywater-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Slate Auto
+  website: https://www.slate.auto
+  hq: Troy, MI
+  sources:
+  - wp-mi-companies
+  - wp-us-makers
+  registry_id: slate-auto
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: recar.wd108.myworkdayjobs.com/SLATEcareers
+  open_roles: null
+- name: Sonex Aircraft
+  website: https://www.sonexaircraft.com
+  hq: Oshkosh, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: sonex-aircraft
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sortera Technologies
+  website: https://www.sorteratechnologies.com/
+  hq: Markle, IN
+  sources:
+  - start-midwest
+  registry_id: sortera-technologies
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Spintech LLC
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: duplicate
+  reason: Same group as Hawthorn Aero (Spintech Holdings), listed separately.
+  ats: null
+  open_roles: null
+- name: SRG Global
+  website: https://www.srgglobal.com
+  hq: Troy, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: srg-global
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Standex Electronics
+  website: https://standexelectronics.com
+  hq: Fairfield, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: standex-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Stanley Electric U.S.
+  website: https://stanleyelectricus.com
+  hq: London, OH
+  sources:
+  - scout-known
+  registry_id: stanley-electric-u-s
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Stant
+  website: https://stant.com
+  hq: Connersville, IN
+  sources:
+  - scout-known
+  registry_id: stant
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Steam Instruments
+  website: https://steaminstruments.com
+  hq: Madison, WI
+  sources:
+  - nist-chips-states
+  registry_id: steam-instruments
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Stellantis North America
+  website: https://www.stellantis.com/en
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  - wp-mi-companies
+  - wp-us-makers
+  - rgp-auto
+  registry_id: stellantis-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Stoneridge
+  website: https://www.stoneridge.com
+  hq: Novi, MI
+  sources:
+  - scout-known
+  registry_id: stoneridge
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: stoneridge.wd5.myworkdayjobs.com/Careers
+  open_roles: null
+- name: Strattec Security
+  website: https://www.strattec.com
+  hq: Milwaukee, WI
+  sources:
+  - scout-known
+  registry_id: strattec-security
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: icims
+    token: strattec
+  open_roles: null
+- name: Subaru of Indiana Automotive
+  website: https://www.subaru-sia.com
+  hq: Lafayette, IN
+  sources:
+  - conexus-aic
+  registry_id: subaru-of-indiana-automotive
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Substrata
+  website: null
+  hq: Madison, WI
+  sources:
+  - start-midwest
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Superior Industries
+  website: https://www.supind.com
+  hq: Southfield, MI
+  sources:
+  - scout-known
+  registry_id: superior-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sutphen Corporation
+  website: https://www.sutphen.com
+  hq: Dublin, OH
+  sources:
+  - scout-known
+  registry_id: sutphen-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: paycom
+    token: 289F8063E687618FD1088DA609CD431A
+  open_roles: null
+- name: Swagelok
+  website: https://www.swagelok.com
+  hq: Solon, OH
+  sources:
+  - jobsohio-aero-handout
+  - umn-chips
+  registry_id: swagelok
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Swarm Defense Technologies
+  website: https://swarmdefense.com
+  hq: Detroit, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: swarm-defense-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Syagrus Systems
+  website: https://syagrussystems.com
+  hq: Arden Hills, MN
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly contract wafer processing (services).
+  ats: null
+  open_roles: null
+- name: Sygaldry Technologies
+  website: https://sygaldry.com
+  hq: Ann Arbor, MI
+  sources:
+  - yc-industrials-detroit
+  - start-midwest
+  registry_id: sygaldry-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: sygaldry-technologies
+  open_roles: 18
+- name: Synergy Research Labs
+  website: https://www.crystalsynergyrl.com
+  hq: Champaign, IL
+  sources:
+  - uiuc-research-park
+  registry_id: synergy-research-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Taylor Manufacturing
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Team 1 Plastics
+  website: https://www.team1plastics.com
+  hq: Albion, MI
+  sources:
+  - michauto-investors
+  registry_id: team-1-plastics
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: team1plastics
+  open_roles: 4
+- name: Teijin Automotive Technologies
+  website: https://www.thecsp.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  registry_id: teijin-automotive-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: thecsp.wd5.myworkdayjobs.com/CSP
+  open_roles: null
+- name: Tenneco
+  website: https://www.tenneco.com
+  hq: Northville, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: tenneco
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: The Goodyear Tire & Rubber Company
+  website: https://www.goodyear.com
+  hq: Akron, OH
+  sources:
+  - jobsohio-auto
+  registry_id: the-goodyear-tire-and-rubber-company
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: goodyear.wd1.myworkdayjobs.com/GoodyearCareers
+  open_roles: null
+- name: The Shyft Group
+  website: https://theshyftgroup.com/
+  hq: Novi, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mvm-states
+  - wp-mi-companies
+  registry_id: the-shyft-group
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Thermo King
+  website: https://www.thermoking.com
+  hq: Minneapolis, MN
+  sources:
+  - wp-auto-parts-us
+  registry_id: thermo-king
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Third Wave
+  website: null
+  hq: Chicago, IL
+  sources:
+  - mhub-smartmfg-2021
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Mainly a software platform per the source; whether it sells its
+    own hardware is not established.
+  ats: null
+  open_roles: null
+- name: Thogus
+  website: https://www.thogus.com
+  hq: Avon Lake, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: thogus
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Thor Industries
+  website: https://www.thorindustries.com
+  hq: Elkhart, IN
+  sources:
+  - scout-known
+  registry_id: thor-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: a4c08bd3-eedf-419a-9fb6-5d2ac8a3bafa
+  open_roles: null
+- name: Timken
+  website: https://www.timken.com
+  hq: North Canton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: timken
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: TipTek
+  website: https://www.tiptek.com
+  hq: Savoy, IL
+  sources:
+  - uiuc-research-park
+  registry_id: tiptek
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TLC Precision Wafer Tech
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Tomak Precision
+  website: https://tomak.com
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract machining shop.
+  ats: null
+  open_roles: null
+- name: Tomco Machining
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Toyota Motor Manufacturing, Indiana
+  website: null
+  hq: Princeton, IN
+  sources:
+  - conexus-aic
+  registry_id: toyota-motor-manufacturing-indiana
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: TransDigm Group
+  website: https://www.transdigm.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: transdigm-group
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: TreeTown Tech
+  website: https://treetowntech.com
+  hq: Ann Arbor, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Product design and engineering services: industrial design, electrical and software
+    engineering, battery pack and BMS design, UAV work and manufacturi'
+  ats: null
+  open_roles: null
+- name: Trico Products
+  website: https://tricoproducts.com
+  hq: Rochester Hills, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. The brand lives on under Premium Guard, but whether anyone still
+    employs people in Rochester Hills under Trico is not established. Premium Guard's own location was not checked.
+  ats: null
+  open_roles: null
+- name: Tronair
+  website: https://www.tronair.com
+  hq: Holland
+  sources:
+  - jobsohio-aero-handout
+  registry_id: tronair
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Trusted Semiconductor Solutions
+  website: https://trustedsemi.com
+  hq: Brooklyn Park, MN
+  sources:
+  - umn-chips
+  registry_id: trusted-semiconductor-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: TS Tech Americas
+  website: https://tstech.com
+  hq: Ohio
+  sources:
+  - scout-known
+  registry_id: ts-tech-americas
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Tubular Network
+  website: https://tubular.network
+  hq: Austin, TX
+  sources:
+  - dronelife-mi-aam-2026
+  registry_id: tubular-network
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Turbine Technologies
+  website: https://turbinetechnologies.com
+  hq: Chetek, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: turbine-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Twin Metals Minnesota
+  website: https://twin-metals.com
+  hq: Ely, MN
+  sources:
+  - search-mining
+  registry_id: twin-metals-minnesota
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Ubihere
+  website: https://ubihere.com
+  hq: Hilliard, OH
+  sources:
+  - rev1-portfolio
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: UbiVision, a software platform that tracks assets and people using customers''
+    existing cameras.'
+  ats: null
+  open_roles: null
+- name: Uniform Sierra Aerospace
+  website: https://uniformsierra.com
+  hq: West Lafayette, IN
+  sources:
+  - search-snippets
+  registry_id: null
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Absorbed into Flock Safety; its own
+    site is gone and no separate West Lafayette operation is confirmed. Treat as no longer a standalone employer.
+  ats: null
+  open_roles: null
+- name: Unison Industries
+  website: https://unisonindustries.com
+  hq: Dayton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: duplicate
+  reason: Part of GE Aerospace, listed separately.
+  ats: null
+  open_roles: null
+- name: Unmanned Solutions Technology
+  website: null
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Ursa Major
+  website: https://www.ursamajor.com
+  hq: Berthoud, CO
+  sources:
+  - jobsohio-aero-handout
+  registry_id: ursa-major
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: URTPC
+  website: https://www.urtpc.com
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly real-time simulation software for power conversion.
+  ats: null
+  open_roles: null
+- name: US Aeroteam
+  website: https://usaeroteam.com
+  hq: Dayton, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract machining and fabrication.
+  ats: null
+  open_roles: null
+- name: Utilidata
+  website: https://www.utilidata.com
+  hq: Ann Arbor, MI
+  sources:
+  - start-midwest
+  registry_id: null
+  decision: null
+  reason: Renamed Karman; mainly software with a module made by Advantech; whether it sells hardware is not established.
+  ats: null
+  open_roles: null
+- name: Utilimaster
+  website: https://www.utilimaster.com
+  hq: Bristol, IN
+  sources:
+  - wp-mvm-states
+  registry_id: null
+  decision: duplicate
+  reason: A brand of the Aebi Schmidt Group after its merger with The Shyft Group, already in the registry.
+  ats: null
+  open_roles: null
+- name: Valeo North America
+  website: https://www.valeo.com
+  hq: Troy, MI
+  sources:
+  - scout-known
+  registry_id: valeo-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: valeo.wd3.myworkdayjobs.com/en-EN/valeo_jobs
+  open_roles: null
+- name: Vertical Autonomy
+  website: https://verticalautonomy.com
+  hq: Hillsdale, MI
+  sources:
+  - search-snippets
+  registry_id: vertical-autonomy
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Vertiv
+  website: https://www.vertiv.com
+  hq: Westerville, OH
+  sources:
+  - jobsohio-tech
+  - search-dc-cooling
+  - dc-substack
+  registry_id: vertiv
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Virtual EM
+  website: https://virtualem.com
+  hq: Ann Arbor, MI
+  sources:
+  - nist-chips-states
+  registry_id: virtual-em
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Visteon
+  website: https://www.visteon.com
+  hq: Van Buren Township, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: visteon
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/VIS1004VIST/JobBoard/6ea71e1c-667f-4ddc-9024-5966baaa3256
+  open_roles: null
+- name: VLF Automotive
+  website: null
+  hq: Auburn Hills, MI
+  sources:
+  - wp-mvm-states
+  - wp-us-makers
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed: Wikipedia lists it as defunct and says its website was down as of May 2025 founded 2012
+    as VL Automotive; rebranded VLF in January 2016 (Wikipedia gives both dates) automotive: vehicle maker ('
+  ats: null
+  open_roles: null
+- name: Voltaic Marine
+  website: https://www.voltaicmarine.com
+  hq: Southfield, MI
+  sources:
+  - ltu-mim-mobility-2025
+  registry_id: voltaic-marine
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.voltaicmarine.com/careers/
+  open_roles: null
+- name: Voltava Manufacturing
+  website: https://www.dmsna.com
+  hq: Auburn Hills, MI
+  sources:
+  - michauto-investors
+  registry_id: voltava-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Volynt Aero
+  website: https://volynt.aero
+  hq: Ohio
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Voss Industries
+  website: https://vossind.com
+  hq: Cleveland, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. The redirect suggests the business now sits under Howmet Aerospace,
+    but no source read here confirms a sale from PCC or whether the Cleveland plant still runs.
+  ats: null
+  open_roles: null
+- name: Voyager Technologies (ZIN Technologies)
+  website: https://voyagertechnologies.com
+  hq: Denver, CO
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  - militaryaerospace-ohio
+  registry_id: voyager-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: voyagertechnologiesinc
+  open_roles: null
+- name: VyrtX
+  website: https://vyrtx.com
+  hq: Dayton, OH
+  sources:
+  - jobsohio-uas-blog
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Domain is for sale, a sign it may have closed, but no closure
+    evidence found.
+  ats: null
+  open_roles: null
+- name: Wabash
+  website: https://www.onewabash.com
+  hq: Lafayette, IN
+  sources:
+  - conexus-aic
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly truck trailers; trailers are not automotive (decision 26, owner ruling 2026-11-28) and fit no other
+    category.
+  ats: null
+  open_roles: null
+- name: Wag-Aero
+  website: https://wagaero.com
+  hq: Lyons, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Its own domain now points wholly to Aircraft Spruce, which suggests
+    no separate Wag-Aero operation remains, but closure of the manufacturing side is not confirmed.
+  ats: null
+  open_roles: null
+- name: Wanxiang America
+  website: https://www.wanxiang.com
+  hq: Elgin, IL per the source and directories
+  sources:
+  - wp-auto-parts-us
+  registry_id: wanxiang-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Watson Industries
+  website: https://watson-gyro.com
+  hq: Eau Claire, WI
+  sources:
+  - wedc-aero-2019
+  registry_id: watson-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Wayne Trail Technologies
+  website: https://waynetrail.com
+  hq: Fort Loramie, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: wayne-trail-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Webasto Roof & Components Americas
+  website: https://www.webasto.com
+  hq: Auburn Hills, MI
+  sources:
+  - scout-known
+  registry_id: webasto-roof-and-components-americas
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Wellntel
+  website: https://wellntel.com/
+  hq: Milwaukee, WI
+  sources:
+  - wpf-milwaukee-2025
+  registry_id: wellntel
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Winnebago Industries
+  website: https://www.winnebagoind.com
+  hq: Eden Prairie, MN
+  sources:
+  - scout-known
+  registry_id: winnebago-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 82c90207-af7d-495b-b437-aa9a4c72f4e8
+  open_roles: null
+- name: Winsert
+  website: https://winsert.com
+  hq: Marinette, WI
+  sources:
+  - wedc-advmfg
+  registry_id: winsert
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: WinterLogica
+  website: null
+  hq: Minnesota
+  sources:
+  - umn-chips
+  registry_id: null
+  decision: null
+  reason: 'Identity check found nothing conclusive. '
+  ats: null
+  open_roles: null
+- name: Wodin, Inc.
+  website: https://wodin.com
+  hq: Bedford Heights, OH
+  sources:
+  - jobsohio-aero-handout
+  registry_id: wodin-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Workhorse Group
+  website: https://workhorse.com
+  hq: Foster City, CA
+  sources:
+  - wp-mvm-states
+  - wp-us-makers
+  registry_id: motiv-power-systems
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Yamada North America
+  website: https://yamadanorthamerica.com
+  hq: South Charleston, OH
+  sources:
+  - scout-known
+  registry_id: yamada-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Yaskawa America
+  website: https://www.yaskawa.com
+  hq: Waukegan, IL
+  sources:
+  - wedc-epc
+  registry_id: yaskawa-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/YAS1000YAAMI/JobBoard/8a2317d2-a61e-4259-a857-722d164a211c
+  open_roles: null
+- name: ZF North America
+  website: https://www.zf.com
+  hq: Northville, MI
+  sources:
+  - wp-auto-parts-us
+  - wp-mi-companies
+  registry_id: zf-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+excluded:
+- name: ACPS Automotive
+  sources:
+  - michauto-investors
+  reason: Headquartered in Ingersheim, Germany; its regional operation is a site or plant.
+- name: ACS Motion Control
+  sources:
+  - umn-chips
+  reason: Headquartered in Yokneam, Israel (PI Group); Minnesota is a US office.
+- name: Adler Pelzer Group
+  sources:
+  - rgp-auto
+  reason: Headquartered in Hagen, Germany; its regional operation is a site or plant.
+- name: AISIN World Corp. of America
+  sources:
+  - michauto-investors
+  reason: 'Headquartered outside the US (Kariya, Aichi, Japan; site: Northville, ); no main site in the region found.'
+- name: ALBA Robot
+  sources:
+  - ltu-mim-mobility-2025
+  reason: Headquartered in Turin, Italy; Detroit is a US office.
+- name: Aptiv
+  sources:
+  - wp-mi-companies
+  reason: Principal offices in Schaffhausen, Switzerland; Troy, MI is a technical center.
+- name: Astemo Indiana
+  sources:
+  - conexus-aic
+  reason: Headquartered outside the US (Japan (parent Astemo, Ltd.; city not con); no main site in the region found.
+- name: ATI Forged Products (Cudahy)
+  sources:
+  - wedc-aero-2019
+  reason: Part of ATI Inc. (Dallas, TX); Cudahy is a plant.
+- name: Autoliv
+  sources:
+  - wp-mi-companies
+  reason: Headquartered in Stockholm, Sweden; its regional operation is a site or plant.
+- name: Barnes Aerospace
+  sources:
+  - jobsohio-aero-handout
+  reason: Headquartered in Windsor, CT; West Chester, OH is a site.
+- name: Benteler Automotive
+  sources:
+  - scout-known
+  reason: Headquartered in Salzburg, Austria (BENTELER International); its regional operation is a site or plant.
+- name: Beta Technologies
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  reason: Headquartered in South Burlington, VT; Springfield, OH is a charging site.
+- name: Birdstop
+  sources:
+  - dronelife-mi-aam-2026
+  - thedronegirl-mi-2026
+  - ltu-mim-mobility-2025
+  reason: Headquartered in Concord, CA; Detroit is where it manufactures.
+- name: CarbonSix
+  sources:
+  - search-chicago-hw
+  reason: Headquartered in San Francisco, CA, outside the region; no main site in the region found.
+- name: Caterpillar
+  sources:
+  - illinoisedc-advmfg
+  reason: Headquartered in Irving, TX since 2022; its Illinois operations are sites.
+- name: Collins Aerospace (Midwest sites)
+  sources:
+  - jobsohio-aero-handout
+  - wedc-aero-2019
+  - mnchamber-aero
+  reason: Part of RTX; Collins is headquartered in Charlotte, NC and its Midwest operations are plants.
+- name: Diraq (Chicago site)
+  sources:
+  - illinoisedc-quantum
+  reason: Headquartered in Sydney, Australia (US head office Palo Alto, CA); Chicago is a technology hub.
+- name: Entegris (Minnesota sites)
+  sources:
+  - umn-chips
+  reason: Headquartered in Billerica, MA; its Minnesota sites are plants and offices.
+- name: Fives Giddings & Lewis
+  sources:
+  - wedc-aero-2019
+  reason: Part of Fives (Paris, France); Fond du Lac is a site.
+- name: FORVIA HELLA
+  sources:
+  - michauto-investors
+  reason: Headquartered in Lippstadt, Germany (FORVIA group); its regional operation is a site or plant.
+- name: General Atomics Aeronautical Systems (GA-ASI)
+  sources:
+  - jobsohio-aero-pages
+  reason: Headquartered in Poway, CA (General Atomics is in the registry); no Dayton facility confirmed.
+- name: Gulfstream Aerospace (Appleton)
+  sources:
+  - wedc-aero-2019
+  reason: Headquartered in Savannah, GA; Appleton is a site.
+- name: Howmet Aerospace (Ohio sites)
+  sources:
+  - jobsohio-aero-handout
+  reason: Headquartered in Pittsburgh, PA; its Ohio operations are plants.
+- name: Héroux-Devtek (Ohio sites)
+  sources:
+  - jobsohio-aero-handout
+  reason: Headquartered in Longueuil, QC, Canada; its Ohio operations are plants.
+- name: Magellan Aerospace (Middletown)
+  sources:
+  - jobsohio-aero-handout
+  reason: Headquartered in Mississauga, ON, Canada; Middletown is a plant.
+- name: Magna International
+  sources:
+  - michauto-investors
+  - purposejobs-mobility
+  reason: Headquartered in Aurora, ON, Canada; its regional operation is a site or plant.
+- name: MAHLE Industries
+  sources:
+  - michauto-investors
+  - purposejobs-mobility
+  reason: Headquartered outside the US (Germany (group, city not stated on page)); no main site in the region found.
+- name: Martinrea International
+  sources:
+  - michauto-investors
+  reason: Headquartered in Vaughan, ON, Canada; its regional operation is a site or plant.
+- name: Maxion Wheels
+  sources:
+  - scout-known
+  reason: 'Headquartered outside the US (Königswinter, Germany; site: Novi, MI (a); no main site in the region found.'
+- name: Mitsubishi Electric MEHITS US
+  sources:
+  - search-dc-cooling
+  reason: Headquartered outside the US (Tokyo, Japan (Mitsubishi Electric); site); no main site in the region found.
+- name: New Flyer of America
+  sources:
+  - scout-known
+  reason: Headquartered in Winnipeg, MB, outside the region; no main site in the region found.
+- name: Northrop Grumman Xetron
+  sources:
+  - jobsohio-aero-handout
+  reason: Part of Northrop Grumman (Falls Church, VA); Cincinnati is a site.
+- name: OPmobility
+  sources:
+  - jobsohio-auto
+  reason: Headquartered in Levallois-Perret, France; Troy, MI is its North American headquarters.
+- name: Pittsburgh Glass Works
+  sources:
+  - jobsohio-auto
+  reason: Based in Pittsburgh, PA; Crestline, OH is a plant.
+- name: Refraction AI
+  sources:
+  - search-snippets
+  reason: Headquartered in Austin, TX per Dealroom; its site returns 404.
+- name: REV Group
+  sources:
+  - scout-known
+  reason: Merged into Terex (Norwalk, CT) in February 2026.
+- name: Robert Bosch LLC
+  sources:
+  - scout-known
+  reason: Headquartered outside the US (Germany (group, not stated on page); sit); no main site in the region found.
+- name: Safran Power USA
+  sources:
+  - jobsohio-aero-handout
+  reason: Part of Safran (Paris, France); Twinsburg is a site, not confirmed.
+- name: Seagate (Minnesota sites)
+  sources:
+  - umn-chips
+  reason: Headquartered in Dublin, Ireland (operations in Fremont, CA); its Minnesota sites are plants and R&D.
+- name: Sierra Nevada Corporation
+  sources:
+  - jobsohio-aero-handout
+  - jobsohio-aero-pages
+  - aviationpros-ohio-aam
+  - militaryaerospace-ohio
+  - wedc-aero-2019
+  reason: Headquartered in Sparks, NV; Dayton is a site.
+- name: SK hynix (Indiana)
+  sources:
+  - nist-chips-states
+  - iedc-semis
+  - purdue-ecosystem
+  reason: Headquartered in Icheon, South Korea; the Indiana packaging plant is under construction.
+- name: Talon Metals
+  sources:
+  - search-mining
+  reason: Head office in Toronto, ON; Eagle Mine and Humboldt Mill are its Michigan operations.
+- name: TEL Manufacturing and Engineering of America
+  sources:
+  - umn-chips
+  reason: 'Headquartered outside the US (Tokyo, Japan (Tokyo Electron); site: Cha); no main site in the region found.'
+- name: Test-Fuchs Corporation
+  sources:
+  - jobsohio-aero-handout
+  reason: Headquartered in Gross-Siegharts, Austria; no Ohio site confirmed.
+- name: TI Fluid Systems
+  sources:
+  - scout-known
+  reason: Part of ABC Technologies (Toronto, ON) since 2025; Auburn Hills is a corporate office.
+- name: Trane Technologies
+  sources:
+  - wedc-epc
+  reason: Headquartered in Swords, Ireland (regional HQ Davidson, NC); La Crosse is an office.
+- name: Triumph Thermal Systems
+  sources:
+  - jobsohio-aero-handout
+  reason: Part of Triumph Group (headquartered outside the region); Forest, OH is a plant.
+- name: Veeco MBE (Minnesota operations)
+  sources:
+  - umn-chips
+  reason: Headquartered in Plainview, NY (Veeco); St. Paul is a manufacturing site.
+- name: Wheel.me
+  sources:
+  - ltu-mim-mobility-2025
+  reason: Headquartered outside the US (Norway (offices in Oslo and Fredrikstad,); no main site in the region found.
+- name: Wieland (Delaware, OH operations)
+  sources:
+  - jobsohio-advmfg
+  reason: 'Headquartered outside the US (Ulm, Germany; site: Delaware, OH); no main site in the region found.'
+- name: Yanfeng
+  sources:
+  - scout-known
+  reason: Headquartered in Shanghai, China; its regional operation is a site or plant.
+- name: Yazaki North America
+  sources:
+  - scout-known
+  reason: Headquartered outside the US (Japan (parent, not stated on page); site); no main site in the region found.
