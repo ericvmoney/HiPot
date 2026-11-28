@@ -1,0 +1,122 @@
+# Sites that blocked workstream A2's helpers, one entry per host. Every helper brief carries the whole list, whatever
+# the region (supervisor, 2026-11-28): a host here is never fetched again, and search snippets of it are not used.
+# A permission refusal is final by any route (CLAUDE.md); the other kinds are the site's own block on our client.
+#
+# what: permission-refusal (this session's own permission check), 401, 403, 429, bot-check, robots (robots.txt bars
+#       Claude-User, anthropic-ai or all agents), or refused (the site refused us; the exact response was not recorded).
+# region: the pass in which it happened ("several" when it recurred; "not recorded" when the log no longer says).
+# Technical failures (timeouts, certificate errors, DNS) are not blocks and are not listed.
+
+sites:
+# Permission refusals: never reach the same data another way.
+- {host: buildlist.xyz, what: permission-refusal, date: 2026-11-27, region: not recorded}
+- {host: dealroom.co/api/, what: permission-refusal, date: 2026-11-27, region: texas-adjacent, note: "ordinary profile pages at /companies/<slug> stay allowed; never look up an unknown slug another way"}
+- {host: sandiegobusiness.org, what: permission-refusal, date: 2026-11-27, region: southern-california-adjacent}
+# Bot checks.
+- {host: greentownlabs.com, what: bot-check, date: 2026-11-24, region: boston}
+- {host: greentown.org, what: bot-check, date: 2026-11-24, region: boston}
+- {host: mn.gov, what: bot-check, date: 2026-11-27, region: midwest-adjacent, note: "ShieldSquare bot check on Minnesota DEED"}
+- {host: egov.sos.state.or.us, what: bot-check, date: 2026-11-27, region: pacific-northwest-adjacent}
+# robots.txt bars us.
+- {host: energizeinnovation.fund, what: robots, date: 2026-11-24, region: several}
+- {host: abqjournal.com, what: robots, date: 2026-11-26, region: not recorded, note: "bars anthropic-ai"}
+- {host: worldoil.com, what: robots, date: 2026-11-27, region: texas-adjacent, note: "bars anthropic-ai"}
+- {host: f6s.com, what: robots, date: 2026-11-27, region: southern-california-adjacent, note: "disallows all agents"}
+- {host: mema.org, what: robots, date: 2026-11-27, region: midwest-adjacent, note: "bars anthropic-ai, ClaudeBot and Claude-Web; oesa.org redirects here"}
+- {host: oesa.org, what: robots, date: 2026-11-27, region: midwest-adjacent, note: "redirects to mema.org"}
+- {host: chargedevs.com, what: robots, date: 2026-11-27, region: midwest-adjacent, note: "bars anthropic-ai"}
+- {host: autonews.com, what: robots, date: 2026-11-27, region: midwest-adjacent, note: "robots.txt answered 403"}
+# 429 (too many requests).
+- {host: builtin.com, what: 429, date: 2026-11-25, region: several, note: "all Built In sites and pages, regional ones included; earlier its ?page= lists were barred by robots.txt"}
+- {host: blueorigin.com, what: 429, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: tryforerunner.com, what: 429, date: 2026-11-27, region: southern-california-adjacent}
+- {host: cfmaeroengines.com, what: 429, date: 2026-11-27, region: midwest-adjacent}
+# 401 and 403, or refused with the response not recorded.
+- {host: sbir.gov, what: refused, date: 2026-11-24, region: several, note: "refuses scripted requests"}
+- {host: seedtable.com, what: refused, date: 2026-11-25, region: not recorded}
+- {host: techstars.com, what: refused, date: 2026-11-26, region: not recorded}
+- {host: ocbj.com, what: refused, date: 2026-11-27, region: southern-california}
+- {host: yespress.io, what: refused, date: 2026-11-27, region: southern-california}
+- {host: citybiz.co, what: 403, date: 2026-11-27, region: boston-adjacent}
+- {host: brightmachines.com, what: 403, date: 2026-11-27, region: texas-adjacent}
+- {host: perpetuaresources.com, what: 403, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: blockeng.com, what: 403, date: 2026-11-27, region: boston-adjacent}
+- {host: sangtera.com, what: 403, date: 2026-11-27, region: boston-adjacent}
+- {host: hugedomains.com, what: 403, date: 2026-11-27, region: texas-adjacent}
+- {host: thermon.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: oilandgas360.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: hartenergy.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: dmagazine.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: globenewswire.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: connectcre.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: areadevelopment.com, what: 403, date: 2026-11-28, region: several}
+- {host: ilcdover.com, what: refused, date: 2026-11-27, region: texas-adjacent}
+- {host: geekwire.com, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: news.oregonstate.edu, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: oregon.gov, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent, note: "oregon.gov/biz"}
+- {host: indeed.com, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: aeroleads.com, what: 403, date: 2026-11-27, region: southern-california-adjacent}
+- {host: gknaerospace.com, what: 403, date: 2026-11-27, region: several}
+- {host: compositesworld.com, what: 403, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: businesswire.com, what: 403, date: 2026-11-27, region: several}
+- {host: celero.inc, what: 403, date: 2026-11-27, region: southern-california-adjacent}
+- {host: chinookenterprises.com, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: flightwave.aero, what: 403, date: 2026-11-27, region: southern-california-adjacent}
+- {host: kratosdefense.com, what: 403, date: 2026-11-27, region: southern-california-adjacent, note: "ir.kratosdefense.com"}
+- {host: rocketlabcorp.com, what: 403, date: 2026-11-27, region: southern-california-adjacent}
+- {host: tek.com, what: 403, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: usaluminumcastings.com, what: refused, date: 2026-11-27, region: pacific-northwest-adjacent}
+- {host: craft.co, what: 403, date: 2026-11-28, region: southern-california-adjacent}
+- {host: aeccafe.com, what: 403, date: 2026-11-28, region: southern-california-adjacent}
+- {host: gust.com, what: 403, date: 2026-11-28, region: several}
+- {host: aghawkdynamics.com, what: 401, date: 2026-11-28, region: pacific-northwest-adjacent}
+- {host: theflyingengineer.com, what: 403, date: 2026-11-28, region: pacific-northwest-adjacent}
+- {host: cbinsights.com, what: 403, date: 2026-11-28, region: pacific-northwest-adjacent}
+- {host: michiganbusiness.org, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: michigan.gov, what: 403, date: 2026-11-27, region: midwest-adjacent, note: "robots.txt included"}
+- {host: dbusiness.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: axios.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: mcity.umich.edu, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: engin.umich.edu, what: 403, date: 2026-11-27, region: midwest-adjacent, note: "ece.engin.umich.edu; the other engin.umich.edu sites left alone"}
+- {host: warf.org, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: ibmadison.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: quasonix.com, what: 403, date: 2026-11-27, region: midwest-adjacent, note: "asked again on 2026-11-28 because a brief missed it"}
+- {host: transdigm.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: gulfstream.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: leonardodrs.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: newwavedesign.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: vertiv.com, what: 403, date: 2026-11-27, region: midwest-adjacent}
+- {host: robochef.ai, what: 401, date: 2026-11-27, region: midwest-adjacent}
+- {host: honda.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: faurecia.com, what: 403, date: 2026-11-28, region: midwest-adjacent, note: "robots.txt answered 403"}
+- {host: abracon.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: triumphgroup.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: collinsaerospace.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: safran-group.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: aerocontrolex.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: thefabricator.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: nve.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: 3m.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: littelfuse.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: rockwellautomation.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: stellantis.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: forestriverinc.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: ccjdigital.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: autos.yahoo.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: meansindustries.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: hirotec.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: denso.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: zf.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: goodyear.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: allisontransmission.com, what: 403, date: 2026-11-28, region: midwest-adjacent, note: "ir.allisontransmission.com"}
+- {host: strattec.com, what: 403, date: 2026-11-28, region: midwest-adjacent, note: "investors.strattec.com"}
+- {host: polaris.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: nfigroup.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: cummins.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: specialchem.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: crainsdetroit.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: wreg.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: truckpartsandservice.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: plasticsnews.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: wlns.com, what: 403, date: 2026-11-28, region: midwest-adjacent}
+- {host: apps.dfi.wi.gov, what: 403, date: 2026-11-28, region: midwest-adjacent, note: "Wisconsin corporate search"}

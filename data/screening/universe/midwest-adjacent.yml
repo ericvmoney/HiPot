@@ -242,12 +242,12 @@ sources:
 companies:
 - name: 3M
   website: https://www.3m.com
-  hq: St. Paul
+  hq: Maplewood
   sources:
   - umn-chips
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: 3m
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: A&P Technology
@@ -277,7 +277,7 @@ companies:
   - wedc-aero-2019
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified; search budget went to larger companies.
   ats: null
   open_roles: null
 - name: Active Guardian
@@ -287,7 +287,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: Identity not established; it may have moved to Georgia.
+  reason: Identity check found nothing conclusive. Identity and Wisconsin vs Georgia location not established.
   ats: null
   open_roles: null
 - name: ADAC Automotive
@@ -304,13 +304,13 @@ companies:
   open_roles: null
 - name: Adient
   website: https://www.adient.com
-  hq: Dublin, Ireland
+  hq: Plymouth, MI
   sources:
   - michauto-investors
   - wp-auto-parts-us
-  registry_id: null
-  decision: null
-  reason: Registered in Dublin; whether its operational headquarters is in Plymouth, MI was not confirmed.
+  registry_id: adient
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats:
     type: workday
     token: adient.wd3.myworkdayjobs.com/External
@@ -342,7 +342,8 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Blocked on both the company site and the parent's site; Painesville,
+    OH and TransDigm ownership not confirmed here.
   ats: null
   open_roles: null
 - name: Aerogen Systems
@@ -374,8 +375,9 @@ companies:
   sources:
   - search-snippets
   registry_id: null
-  decision: null
-  reason: Its domains are parked and an aggregator says closed; status not established.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Closure is from aggregator listings
+    only, with no closure date; the state registry was not checked directly.
   ats: null
   open_roles: null
 - name: Aetrium
@@ -438,7 +440,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Aluvis
@@ -448,7 +450,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: Its domain is parked; identity and status not established.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: AM General
@@ -504,7 +506,7 @@ companies:
   - mhub-accelerator
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified; the obvious domain is for sale.
   ats: null
   open_roles: null
 - name: Apricity Robotics
@@ -517,16 +519,6 @@ companies:
   reason: A robotic ultrasound system (medical device); it fits no adjacent category.
   ats: null
   open_roles: null
-- name: Aptiv
-  website: https://www.aptiv.com
-  hq: outside US
-  sources:
-  - wp-mi-companies
-  registry_id: null
-  decision: null
-  reason: Registered in Dublin; whether its operational headquarters is in Troy, MI was not confirmed.
-  ats: null
-  open_roles: null
 - name: Arc Suppression Technologies
   website: null
   hq: Minnesota
@@ -534,7 +526,8 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Its domains are parked or do not resolve; status not established.
+  reason: Identity check found nothing conclusive. Status not established; domain is for sale, which leans toward
+    inactive.
   ats: null
   open_roles: null
 - name: Arctic Cat
@@ -622,7 +615,7 @@ companies:
   - wedc-aero-2019
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Avtron Power Solutions
@@ -694,9 +687,9 @@ companies:
   hq: Columbus, OH
   sources:
   - rev1-portfolio
-  registry_id: null
-  decision: null
-  reason: Headquarters and product not established.
+  registry_id: beehex
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Beehive Industries
@@ -728,7 +721,7 @@ companies:
   - ltu-mim-mobility-2025
   registry_id: null
   decision: null
-  reason: Known only from a grant list; no website found.
+  reason: Identity check found nothing conclusive. Known only from a grant list.
   ats: null
   open_roles: null
 - name: Blueflite
@@ -806,12 +799,12 @@ companies:
   open_roles: null
 - name: Brose North America
   website: https://www.brose.com
-  hq: Coburg, Germany
+  hq: Auburn Hills, MI
   sources:
   - michauto-investors
   registry_id: null
   decision: null
-  reason: US headquarters in the region not confirmed.
+  reason: Identity check found nothing conclusive. Its North American headquarters was not confirmed.
   ats: null
   open_roles: null
 - name: Böllhoff
@@ -821,7 +814,8 @@ companies:
   - michauto-investors
   registry_id: null
   decision: null
-  reason: Its site could not be read; Kendallville, IN site not confirmed.
+  reason: Identity check found nothing conclusive. Kendallville, IN site and its role (US headquarters or site)
+    not confirmed.
   ats: null
   open_roles: null
 - name: C&R Racing / PWR North America
@@ -866,12 +860,12 @@ companies:
   open_roles: null
 - name: CFM International
   website: https://www.cfmaeroengines.com
-  hq: Cincinnati, OH
+  hq: Evendale
   sources:
   - jobsohio-aero-handout
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: cfm-international
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Chemring Energetic Devices (NASA Standard Initiator)
@@ -969,12 +963,12 @@ companies:
   open_roles: null
 - name: Continental Automotive Systems
   website: https://www.continental.com
-  hq: Germany
+  hq: Auburn Hills, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: Its automotive business is now AUMOVIO; US headquarters in the region not confirmed.
+  registry_id: continental-automotive-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Cooper Standard
@@ -1089,7 +1083,8 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Its site has an expired certificate; status not established.
+  reason: Identity check found nothing conclusive. No sign of activity after about 2016 found; leaning dormant but
+    not confirmed closed.
   ats: null
   open_roles: null
 - name: Dakkota Integrated Systems
@@ -1152,7 +1147,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Dayton Rogers of Ohio
@@ -1200,9 +1195,9 @@ companies:
   hq: Livonia, MI
   sources:
   - michauto-investors
-  registry_id: null
-  decision: null
-  reason: Its site lists no products; product and headquarters not established.
+  registry_id: deshler-group
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Detroit Diesel Corporation
@@ -1328,13 +1323,13 @@ companies:
   ats: null
   open_roles: null
 - name: Eberspaecher North America
-  website: null
-  hq: Esslingen, Germany
+  website: https://www.eberspaecher.com/en
+  hq: Novi, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: eberspaecher-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Eck Industries
@@ -1354,7 +1349,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: No company of this name found; possibly Edison DC Systems.
+  reason: Identity check found nothing conclusive. Link to Edison DC Systems not established.
   ats: null
   open_roles: null
 - name: Electra
@@ -1397,8 +1392,9 @@ companies:
   sources:
   - wedc-aero-2019
   registry_id: null
-  decision: null
-  reason: No news after 2019 and its domain does not resolve; status not established.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Chapter 11 in 2020 is the last known
+    event; no later activity found. The Wisconsin DFI corporate search returned 403 and was stopped.
   ats: null
   open_roles: null
 - name: Enginetics Corporation
@@ -1470,7 +1466,8 @@ companies:
   - wp-us-makers
   registry_id: null
   decision: null
-  reason: Its domain is for sale; status not established.
+  reason: Identity check found nothing conclusive. No sign of production after 2017 and the domain is for sale;
+    likely inactive but not confirmed closed.
   ats: null
   open_roles: null
 - name: Federal Signal
@@ -1492,7 +1489,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Fireline, Inc.
@@ -1500,9 +1497,9 @@ companies:
   hq: Youngstown, OH
   sources:
   - jobsohio-aero-handout
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: fireline-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Flex-N-Gate
@@ -1578,7 +1575,7 @@ companies:
   - wp-auto-parts-us
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Its North American headquarters was not confirmed.
   ats: null
   open_roles: null
 - name: ForwardEdge ASIC
@@ -1706,12 +1703,12 @@ companies:
   open_roles: null
 - name: Gestamp North America
   website: https://www.gestamp.com
-  hq: Spain
+  hq: Troy, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: gestamp-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: GhostWave
@@ -1725,13 +1722,13 @@ companies:
   ats: null
   open_roles: null
 - name: Gill Industries
-  website: null
+  website: https://www.lear.com
   hq: Grand Rapids, MI
   sources:
   - wp-mi-companies
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: duplicate
+  reason: Acquired by Lear in 2020, already in the registry.
   ats: null
   open_roles: null
 - name: Great Dane
@@ -1769,16 +1766,6 @@ companies:
     type: ashby
     token: grounded
   open_roles: 17
-- name: Gulfstream Aerospace (Appleton)
-  website: https://www.gulfstream.com
-  hq: Appleton, WI
-  sources:
-  - wedc-aero-2019
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
-  ats: null
-  open_roles: null
 - name: Hanon Systems
   website: https://www.hanonsystems.com
   hq: Statesboro, GA
@@ -1876,17 +1863,17 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Hirotec America
   website: null
-  hq: Japan
+  hq: Auburn Hills, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: hirotec-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Honda Development & Manufacturing of America
@@ -1908,7 +1895,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: No activity found after 2019; status not established.
+  reason: Identity check found nothing conclusive. No activity after 2019 found.
   ats: null
   open_roles: null
 - name: HUSCO
@@ -1922,13 +1909,13 @@ companies:
   ats: null
   open_roles: null
 - name: Hyundai Mobis North America
-  website: null
-  hq: South Korea
+  website: https://www.mobisna.com
+  hq: Plymouth, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: hyundai-mobis-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Imasen Bucyrus Technology
@@ -1975,12 +1962,12 @@ companies:
   open_roles: null
 - name: Intalus
   website: https://intalustech.com
-  hq: West Lafayette, IN
+  hq: 'Disputed: West Lafayette, IN'
   sources:
   - start-midwest
   registry_id: null
   decision: null
-  reason: Headquarters disputed (West Lafayette, IN or Ashburn, VA).
+  reason: Identity check found nothing conclusive. Headquarters still disputed (West Lafayette, IN or Ashburn, VA).
   ats: null
   open_roles: null
 - name: Intel (Ohio One campus)
@@ -2003,9 +1990,9 @@ companies:
   hq: Detroit, MI
   sources:
   - ltu-mim-mobility-2025
-  registry_id: null
-  decision: null
-  reason: Its domain was guessed; identity not established.
+  registry_id: intermode
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: International Motors
@@ -2036,9 +2023,9 @@ companies:
   hq: Waukesha, WI
   sources:
   - wpf-milwaukee-2025
-  registry_id: null
-  decision: null
-  reason: May be mainly controller software; only a P.O. Box address found.
+  registry_id: invektek
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: ION Corporation
@@ -2174,12 +2161,12 @@ companies:
   open_roles: null
 - name: Komatsu Mining Corp.
   website: https://www.komatsu.com
-  hq: Tokyo, Japan
+  hq: Milwaukee, WI
   sources:
   - wedc-advmfg
-  registry_id: null
-  decision: null
-  reason: Whether Milwaukee is its headquarters was not confirmed.
+  registry_id: komatsu-mining-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: KTH Parts Industries
@@ -2231,7 +2218,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: Lear Corporation
@@ -2252,7 +2239,8 @@ companies:
   - wedc-aero-2019
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. The parent is real, but the Milwaukee naval power unit and its
+    current name were not confirmed by any page read.
   ats: null
   open_roles: null
 - name: Lightwave Photonics
@@ -2262,7 +2250,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Identity not established.
+  reason: Identity check found nothing conclusive. Not identified.
   ats: null
   open_roles: null
 - name: LinqThingz
@@ -2306,7 +2294,7 @@ companies:
   - makeitmi-2025
   registry_id: null
   decision: null
-  reason: May be mainly data and software; hardware not confirmed.
+  reason: Identity confirmed, but it may be mainly data and software; hardware not established.
   ats: null
   open_roles: null
 - name: LiveWire
@@ -2365,12 +2353,12 @@ companies:
   open_roles: null
 - name: Marelli North America
   website: https://www.marelli.com
-  hq: Japan
+  hq: Southfield, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed; in Chapter 11 since June 2025.
+  registry_id: marelli-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Materion Corporation
@@ -2449,7 +2437,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Its domain belongs to an unrelated firm; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Means Industries
@@ -2480,7 +2468,8 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: No recent activity found; status not established.
+  reason: Identity check found nothing conclusive. Its former domain has been taken over by unrelated content, which
+    suggests it is no longer active, but no closure record found.
   ats: null
   open_roles: null
 - name: Metalex Manufacturing
@@ -2545,7 +2534,7 @@ companies:
   - ltu-mim-mobility-2025
   registry_id: null
   decision: null
-  reason: Known only from a grant list; no website found.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Mitsubishi Electric Automotive America
@@ -2608,7 +2597,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Motmot
@@ -2652,7 +2641,7 @@ companies:
   - ltu-mim-mobility-2025
   registry_id: null
   decision: null
-  reason: Known only from a grant list; no website found.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Myers EV
@@ -2662,7 +2651,8 @@ companies:
   - wp-mvm-states
   registry_id: null
   decision: null
-  reason: Location not stated on its own site.
+  reason: Identity check found nothing conclusive. Active and selling a physical vehicle, but its own site still
+    does not state its location, so Tallmadge, OH is unconfirmed.
   ats: null
   open_roles: null
 - name: MūL Technologies
@@ -2723,7 +2713,7 @@ companies:
   - mnchamber-aero
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats:
     type: paylocity
     token: 66f349f0-f1f2-4a08-be09-432eda3bf082
@@ -2735,7 +2725,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Its site refused our client and was not read; identity not established.
+  reason: Identity check found nothing conclusive. Probably the same firm as the New Wave Design entry; not confirmed.
   ats: null
   open_roles: null
 - name: Newman Technology
@@ -2782,14 +2772,14 @@ companies:
   open_roles: null
 - name: Niobium Microsystems
   website: https://niobium.co
-  hq: Dayton, OH
+  hq: not stated on its site
   sources:
   - rev1-portfolio
   - ohiotechnews
   - semiengineering-q4-2025
-  registry_id: null
-  decision: null
-  reason: Its site leads with an encrypted cloud service; whether it sells chips is not established.
+  registry_id: niobium-microsystems
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats:
     type: bamboohr
     token: niobium
@@ -2880,16 +2870,6 @@ companies:
   registry_id: onto-innovation
   decision: registry
   reason: null
-  ats: null
-  open_roles: null
-- name: OPmobility
-  website: https://www.opmobility.com
-  hq: Troy, MI
-  sources:
-  - jobsohio-auto
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: Orb Aerospace
@@ -2999,7 +2979,7 @@ companies:
   - start-midwest
   registry_id: null
   decision: null
-  reason: Its site returned empty pages; product not established.
+  reason: Identity check found nothing conclusive. Product and status still not established.
   ats: null
   open_roles: null
 - name: Phillips & Temro Industries
@@ -3065,16 +3045,6 @@ companies:
   registry_id: piston-group
   decision: registry
   reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
-  ats: null
-  open_roles: null
-- name: Pittsburgh Glass Works
-  website: null
-  hq: Richland County, OH
-  sources:
-  - jobsohio-auto
-  registry_id: null
-  decision: null
-  reason: Identity and Ohio site not confirmed; its site has an expired certificate.
   ats: null
   open_roles: null
 - name: Plexus Corp.
@@ -3207,9 +3177,9 @@ companies:
   hq: West Chester, OH
   sources:
   - jobsohio-aero-handout
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: quasonix
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: R. Stresau Laboratory
@@ -3249,7 +3219,8 @@ companies:
   - mhub-smartmfg-2021
   registry_id: null
   decision: null
-  reason: Listed as dead by one aggregator; possibly succeeded by JustAir.
+  reason: Identity check found nothing conclusive. Succession to JustAir not confirmed, and JustAir presents itself
+    as software, not a sensor maker.
   ats: null
   open_roles: null
 - name: Regal Rexnord
@@ -3279,7 +3250,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: No source ties a company of this name to Lake Mills, WI.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Rhinestahl Corp.
@@ -3309,7 +3280,7 @@ companies:
   - robotreport-radar-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: RoboWorkx
@@ -3364,7 +3335,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: No company site found and no news after 2021; status not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Scanalytics
@@ -3434,7 +3405,7 @@ companies:
   - wpf-milwaukee-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Not identified; the domain exists but its content was not readable.
   ats: null
   open_roles: null
 - name: Servo Instrument Corp.
@@ -3444,7 +3415,7 @@ companies:
   - wedc-aero-2019
   registry_id: null
   decision: null
-  reason: One listing marks it closed; status not established.
+  reason: Identity check found nothing conclusive. Status still not established.
   ats: null
   open_roles: null
 - name: Shape Corp
@@ -3500,8 +3471,8 @@ companies:
   sources:
   - umn-chips
   registry_id: null
-  decision: null
-  reason: Its site sells chemical sensors, not automation; identity not established.
+  decision: not-in-scope
+  reason: Breath and air chemical-sensing devices for health; it fits no adjacent category.
   ats: null
   open_roles: null
 - name: SixLine Semiconductor
@@ -3574,9 +3545,9 @@ companies:
   sources:
   - wp-auto-parts-us
   - wp-mi-companies
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: srg-global
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Standex Electronics
@@ -3673,7 +3644,7 @@ companies:
   - start-midwest
   registry_id: null
   decision: null
-  reason: No company of this name found.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Superior Industries
@@ -3759,7 +3730,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Team 1 Plastics
@@ -3838,7 +3809,8 @@ companies:
   - mhub-smartmfg-2021
   registry_id: null
   decision: null
-  reason: No company website found; mainly a software platform.
+  reason: Identity check found nothing conclusive. Mainly a software platform per the source; whether it sells its
+    own hardware is not established.
   ats: null
   open_roles: null
 - name: Thogus
@@ -3862,16 +3834,6 @@ companies:
   ats:
     type: adp
     token: a4c08bd3-eedf-419a-9fb6-5d2ac8a3bafa
-  open_roles: null
-- name: TI Fluid Systems
-  website: null
-  hq: Auburn Hills, MI
-  sources:
-  - scout-known
-  registry_id: null
-  decision: null
-  reason: Acquired by ABC Technologies (Toronto) in 2025; its US headquarters not established.
-  ats: null
   open_roles: null
 - name: Timken
   website: https://www.timken.com
@@ -3900,7 +3862,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Tomak Precision
@@ -3920,7 +3882,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Identity not established (the domain redirects to a Wixom, MI company).
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Toyota Motor Manufacturing, Indiana
@@ -3962,7 +3924,8 @@ companies:
   - wp-mi-companies
   registry_id: null
   decision: null
-  reason: Its brand was sold in a bankruptcy in 2026; current operating company not established.
+  reason: Identity check found nothing conclusive. The brand lives on under Premium Guard, but whether anyone still
+    employs people in Rochester Hills under Trico is not established. Premium Guard's own location was not checked.
   ats: null
   open_roles: null
 - name: Tronair
@@ -4042,8 +4005,9 @@ companies:
   sources:
   - search-snippets
   registry_id: null
-  decision: null
-  reason: Reported acquired by Flock Safety (Georgia); not confirmed.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Absorbed into Flock Safety; its own
+    site is gone and no separate West Lafayette operation is confirmed. Treat as no longer a standalone employer.
   ats: null
   open_roles: null
 - name: Unison Industries
@@ -4063,7 +4027,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Ursa Major
@@ -4079,13 +4043,13 @@ companies:
     token: null
   open_roles: null
 - name: URTPC
-  website: null
-  hq: New Berlin, WI
+  website: https://www.urtpc.com
+  hq: Milwaukee, WI
   sources:
   - wpf-milwaukee-2025
   registry_id: null
-  decision: null
-  reason: Probably Universal Real Time Power Conversion; may be mainly simulation software.
+  decision: not-in-scope
+  reason: Mainly real-time simulation software for power conversion.
   ats: null
   open_roles: null
 - name: US Aeroteam
@@ -4105,7 +4069,7 @@ companies:
   - start-midwest
   registry_id: null
   decision: null
-  reason: Renamed Karman; mainly software on a hardware module, product not established.
+  reason: Renamed Karman; mainly software with a module made by Advantech; whether it sells hardware is not established.
   ats: null
   open_roles: null
 - name: Utilimaster
@@ -4120,24 +4084,24 @@ companies:
   open_roles: null
 - name: Valeo North America
   website: https://www.valeo.com
-  hq: France
+  hq: Troy, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: valeo-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats:
     type: workday
     token: valeo.wd3.myworkdayjobs.com/en-EN/valeo_jobs
   open_roles: null
 - name: Vertical Autonomy
   website: https://verticalautonomy.com
-  hq: not stated on its site
+  hq: Hillsdale, MI
   sources:
   - search-snippets
-  registry_id: null
-  decision: null
-  reason: Its site does not state where it is based.
+  registry_id: vertical-autonomy
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Vertiv
@@ -4216,7 +4180,7 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Its domain does not resolve; status not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Voss Industries
@@ -4226,7 +4190,8 @@ companies:
   - jobsohio-aero-handout
   registry_id: null
   decision: null
-  reason: Its domain redirects to Howmet Aerospace; status not established.
+  reason: Identity check found nothing conclusive. The redirect suggests the business now sits under Howmet Aerospace,
+    but no source read here confirms a sale from PCC or whether the Cleveland plant still runs.
   ats: null
   open_roles: null
 - name: Voyager Technologies (ZIN Technologies)
@@ -4250,7 +4215,8 @@ companies:
   - jobsohio-uas-blog
   registry_id: null
   decision: null
-  reason: Its domain is parked; status not established.
+  reason: Identity check found nothing conclusive. Domain is for sale, a sign it may have closed, but no closure
+    evidence found.
   ats: null
   open_roles: null
 - name: Wabash
@@ -4271,17 +4237,18 @@ companies:
   - wedc-aero-2019
   registry_id: null
   decision: null
-  reason: Its parts business went to Aircraft Spruce in 2024; status of the manufacturing side not established.
+  reason: Identity check found nothing conclusive. Its own domain now points wholly to Aircraft Spruce, which suggests
+    no separate Wag-Aero operation remains, but closure of the manufacturing side is not confirmed.
   ats: null
   open_roles: null
 - name: Wanxiang America
-  website: null
-  hq: Elgin, IL
+  website: https://www.wanxiang.com
+  hq: Elgin, IL per the source and directories
   sources:
   - wp-auto-parts-us
-  registry_id: null
-  decision: null
-  reason: Known only from directories; no company website found.
+  registry_id: wanxiang-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Watson Industries
@@ -4306,12 +4273,12 @@ companies:
   open_roles: null
 - name: Webasto Roof & Components Americas
   website: https://www.webasto.com
-  hq: Germany
+  hq: Auburn Hills, MI
   sources:
   - scout-known
-  registry_id: null
-  decision: null
-  reason: US headquarters in the region not confirmed.
+  registry_id: webasto-roof-and-components-americas
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Wellntel
@@ -4353,7 +4320,7 @@ companies:
   - umn-chips
   registry_id: null
   decision: null
-  reason: Its domain does not resolve; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Wodin, Inc.
@@ -4405,9 +4372,9 @@ companies:
   sources:
   - wp-auto-parts-us
   - wp-mi-companies
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: zf-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-midwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 excluded:
@@ -4431,6 +4398,10 @@ excluded:
   sources:
   - ltu-mim-mobility-2025
   reason: Headquartered in Turin, Italy; Detroit is a US office.
+- name: Aptiv
+  sources:
+  - wp-mi-companies
+  reason: Principal offices in Schaffhausen, Switzerland; Troy, MI is a technical center.
 - name: Astemo Indiana
   sources:
   - conexus-aic
@@ -4496,6 +4467,10 @@ excluded:
   sources:
   - jobsohio-aero-pages
   reason: Headquartered in Poway, CA (General Atomics is in the registry); no Dayton facility confirmed.
+- name: Gulfstream Aerospace (Appleton)
+  sources:
+  - wedc-aero-2019
+  reason: Headquartered in Savannah, GA; Appleton is a site.
 - name: Howmet Aerospace (Ohio sites)
   sources:
   - jobsohio-aero-handout
@@ -4538,6 +4513,14 @@ excluded:
   sources:
   - jobsohio-aero-handout
   reason: Part of Northrop Grumman (Falls Church, VA); Cincinnati is a site.
+- name: OPmobility
+  sources:
+  - jobsohio-auto
+  reason: Headquartered in Levallois-Perret, France; Troy, MI is its North American headquarters.
+- name: Pittsburgh Glass Works
+  sources:
+  - jobsohio-auto
+  reason: Based in Pittsburgh, PA; Crestline, OH is a plant.
 - name: Refraction AI
   sources:
   - search-snippets
@@ -4584,6 +4567,10 @@ excluded:
   sources:
   - jobsohio-aero-handout
   reason: Headquartered in Gross-Siegharts, Austria; no Ohio site confirmed.
+- name: TI Fluid Systems
+  sources:
+  - scout-known
+  reason: Part of ABC Technologies (Toronto, ON) since 2025; Auburn Hills is a corporate office.
 - name: Trane Technologies
   sources:
   - wedc-epc

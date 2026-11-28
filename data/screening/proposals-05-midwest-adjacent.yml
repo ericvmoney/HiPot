@@ -6,8 +6,40 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
+- id: 3m
+  name: 3M
+  website: https://www.3m.com
+  careers_url: null
+  hq: Maplewood
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1902
+  headcount:
+    value: 60500
+    as_of: '2025-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/3M)
+  climate:
+    tier: out
+    reason: Diversified manufacturer; products include electrical and electronic connecting and insulating materials,
+      electronic circuits and display films. Adjacent (Semiconductors and electronics, Advanced manufacturing),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '60,500 people (Wikipedia, 2025-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Stage: NYSE: MMM; Dow Jones Industrial Average component (Wikipedia).
+    Flags: 3m.com is off-limits and was not used. Wikipedia does not explicitly name semiconductor materials; electronics
+    materials are listed.. Evidence: h t t p s : Region sources: umn-chips. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: aandp-technology
   name: A&P Technology
   website: https://www.braider.com
@@ -100,6 +132,39 @@ companies:
     on own site; also offers contract machining and engineering services. Evidence: https://www.adaccompanies.com/
     Region sources: michauto-investors. Confidence: medium. Unresolved: Founding year, headcount, owner, product
     list.'
+  categories:
+  - automotive
+- id: adient
+  name: Adient
+  website: https://www.adient.com
+  careers_url: null
+  hq: Plymouth, MI
+  ats:
+    type: workday
+    board: adient
+  read: manual
+  sectors: []
+  stage: public
+  founded: 2016
+  headcount:
+    value: 65000
+    as_of: '2026-01-01'
+    source: Adient FY2026 10-K and adient.com ('more than 65,000 employees') (https://www.sec.gov/Archives/edgar/data/0001670541/000167054126000122/adnt-20260930.htm)
+  climate:
+    tier: out
+    reason: Automotive seating systems and components. Adjacent (Automotive), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '65,000 people (Adient FY2026 10-K and adient.com (''more than 65,000 employees''), 2026-01-01): over
+      the 4,000 cap and its tolerance.'
+  notes: 'Board workday:adient.wd3.myworkdayjobs.com/External seen 2026-11-28, linked from the company''s own site:
+    role count not read (no public feed). Stage: Publicly traded since separating from Johnson Controls on 2016-10-31
+    (adient.com); files 10-Ks with the SEC. Flags: Plymouth is the operational headquarters per the 2016 filing
+    and secondary sources, not the legal one; the latest 10-K itself only calls Plymouth a development center..
+    Evidence: F Y 2 0 2 6 Region sources: michauto-investors, wp-auto-parts-us. Confidence: low.'
   categories:
   - automotive
 - id: aerogen-systems
@@ -740,6 +805,34 @@ companies:
     HQ confirmation, founded, headcount, ownership, electric models'
   categories:
   - automotive
+- id: beehex
+  name: BeeHex
+  website: https://www.beehex.com
+  careers_url: null
+  hq: Columbus, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Bakery and food decoration automation machines and the VersaFlow multi-piston depositor. Adjacent (Advanced
+      manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Now presents as BeeHex Automation for decorated bakery
+    production rather than general 3D food printing. Dealroom slug ''beehex'' returned 404.. Evidence: h t t p s
+    : Region sources: rev1-portfolio. Confidence: low.'
+  categories:
+  - advanced-manufacturing
 - id: bendix-commercial-vehicle-systems
   name: Bendix Commercial Vehicle Systems
   website: https://www.bendix.com
@@ -1024,6 +1117,34 @@ companies:
     Region sources: michauto-investors. Confidence: medium. Unresolved: Headcount; confirmed HQ.'
   categories:
   - automotive
+- id: cfm-international
+  name: CFM International
+  website: https://www.cfmaeroengines.com
+  careers_url: null
+  hq: Evendale
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1974
+  headcount: null
+  climate:
+    tier: out
+    reason: CFM56 and LEAP commercial turbofan engines; RISE in development. Adjacent (Aerospace and space), not
+      clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No board found: site refused automated client (HTTP 429 on robots.txt); site not read. Stage: 50/50 joint
+    venture of GE Aerospace and Safran Aircraft Engines (Wikipedia). Flags: A joint venture rather than a wholly
+    owned subsidiary; Evendale is its headquarters, not just a site.. Evidence: h t t p s : Region sources: jobsohio-aero-handout.
+    Confidence: low.'
+  categories:
+  - aerospace-space
 - id: chemring-energetic-devices-nasa-standard-initiator
   name: Chemring Energetic Devices (NASA Standard Initiator)
   website: https://chemring.com
@@ -1255,6 +1376,39 @@ companies:
     Confidence: medium. Unresolved: Founding year; owner (private equity or other).'
   categories:
   - aerospace-space
+- id: continental-automotive-systems
+  name: Continental Automotive Systems
+  website: https://www.continental.com
+  careers_url: null
+  hq: Auburn Hills, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount:
+    value: 13000
+    as_of: '2026-09-01'
+    source: AUMOVIO Business Wire release via search snippet (more than 13,000 employees in North America) (https://www.morningstar.com/news/business-wire/20260917051914/aumovio-advances-growth-strategy-through-innovation-and-expanding-capabilities)
+  climate:
+    tier: out
+    reason: Sensors, displays, brake and comfort systems, driver-assistance and vehicle software. Adjacent (Automotive,
+      Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '13,000 people (AUMOVIO Business Wire release via search snippet (more than 13,000 employees in North
+      America), 2026-09-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Stage: aumovio.com lists a ''Stock market listing AUMOVIO SE''
+    event on 2025-09-18 in Frankfurt. Flags: Continental''s automotive business was spun off as AUMOVIO SE in 2025.
+    Auburn Hills is the North American headquarters, not only a site.. Evidence: a u m o v i Region sources: scout-known.
+    Confidence: low.'
+  categories:
+  - automotive
+  - semis-electronics
 - id: cooper-standard
   name: Cooper Standard
   website: https://www.cooperstandard.com
@@ -1743,6 +1897,35 @@ companies:
   categories:
   - automotive
   - semis-electronics
+- id: deshler-group
+  name: Deshler Group
+  website: https://www.deshlergroup.com
+  careers_url: null
+  hq: Livonia, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Group of automotive suppliers: U-bolts, stampings and welded assemblies (Amanda Manufacturing), heavy-duty
+      brake components (UniBond), gasket kitting (Feblo), plus logistics (GTM, GS3). Adjacent (Automotive), not
+      clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Headquarters address is not published on the site; Livonia
+    is an inference. It makes physical parts through its member companies.. Evidence: h t t p s : Region sources:
+    michauto-investors. Confidence: low.'
+  categories:
+  - automotive
 - id: dirac-labs
   name: Dirac Labs
   website: null
@@ -2006,6 +2189,34 @@ companies:
     Region sources: purposejobs-mobility. Confidence: medium. Unresolved: founded, headcount, own site'
   categories:
   - automotive
+- id: eberspaecher-north-america
+  name: Eberspaecher North America
+  website: https://www.eberspaecher.com/en
+  careers_url: null
+  hq: Novi, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1999
+  headcount: null
+  climate:
+    tier: out
+    reason: Exhaust systems (now Purem by Eberspaecher), vehicle heaters, climate control and thermal management.
+      Adjacent (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: North American unit of Eberspaecher Gruppe GmbH & Co.
+    KG, Esslingen, Germany. Flags: Novi is the subsidiary''s North American headquarters. Some directories list
+    Brighton, MI; the exhaust business now trades as Purem by Eberspaecher.. Evidence: E b e r s p Region sources:
+    scout-known. Confidence: low.'
+  categories:
+  - automotive
 - id: eck-industries
   name: Eck Industries
   website: https://eckindustries.com
@@ -2225,6 +2436,33 @@ companies:
     Region sources: scout-known. Confidence: high.'
   categories:
   - automotive
+- id: fireline-inc
+  name: Fireline, Inc.
+  website: null
+  careers_url: null
+  hq: Youngstown, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1967
+  headcount: null
+  climate:
+    tier: out
+    reason: Vacuum-formed ceramic fiber parts, slip-cast fused silica, crucibles and refractories; TCON aluminum/alumina
+      composites. Adjacent (Aerospace and space), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1967 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Flags: Active status rests on directory listings only. fireline.com
+    is an unrelated Baltimore fire-protection firm and firelineinc.com is a fire-equipment storefront, so no own
+    website confirmed.. Evidence: W e b   s e Region sources: jobsohio-aero-handout. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: flex-n-gate
   name: Flex-N-Gate
   website: https://flex-n-gate.com
@@ -2584,6 +2822,35 @@ companies:
     wp-mi-companies. Confidence: high.'
   categories:
   - automotive
+- id: gestamp-north-america
+  name: Gestamp North America
+  website: https://www.gestamp.com
+  careers_url: null
+  hq: Troy, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Hot-stamped body-in-white structures and chassis components. Adjacent (Automotive), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''gestamp.com''. (_ssl.c:1035)). Stage: North
+    American division of Gestamp Automoción, Madrid, Spain. Flags: Troy is the subsidiary''s divisional (North American)
+    headquarters, not only a site. Employee figures vary widely (761 to 2,200+) and were not recorded.. Evidence:
+    W e b   s e Region sources: scout-known. Confidence: low.'
+  categories:
+  - automotive
 - id: ghostwave
   name: GhostWave
   website: https://www.ghostwaveinc.com
@@ -2862,6 +3129,34 @@ companies:
     Confidence: medium. Unresolved: Own-site confirmation, current owner, founding year, dated headcount.'
   categories:
   - automotive
+- id: hirotec-america
+  name: Hirotec America
+  website: null
+  careers_url: null
+  hq: Auburn Hills, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1988
+  headcount: null
+  climate:
+    tier: out
+    reason: Closure-panel stamping dies, hemming systems, assembly tooling and welding automation; door and closure
+      assemblies. Adjacent (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: North American arm of HIROTEC Group, Japan. Flags: Auburn
+    Hills is the subsidiary''s own headquarters, with plants in Michigan. hirotec.com is off-limits and was not
+    used, so no website is recorded. Headcount estimates (200 to 450+) are too inconsistent to record.. Evidence:
+    W e b   s e Region sources: scout-known. Confidence: low.'
+  categories:
+  - automotive
 - id: honda-development-and-manufacturing-of-america
   name: Honda Development & Manufacturing of America
   website: https://ohio.honda.com
@@ -2922,6 +3217,33 @@ companies:
     Privately owned (own site); private, no venture rounds. Flags: automotive: parts supplier (automotive division;
     off-highway hydraulics also major); over 1,000 employees. Evidence: https://www.husco.com/ https://husco.com/about-us/
     Region sources: scout-known. Confidence: high. Unresolved: HQ confirmation'
+  categories:
+  - automotive
+- id: hyundai-mobis-north-america
+  name: Hyundai Mobis North America
+  website: https://www.mobisna.com
+  careers_url: null
+  hq: Plymouth, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Chassis and cockpit modules, hybrid battery modules, and driver-assistance, lighting and infotainment
+      R&D. Adjacent (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: North American unit of Hyundai Mobis, South Korea. Flags:
+    Plymouth is the subsidiary''s own North American headquarters.. Evidence: h t t p s : Region sources: scout-known.
+    Confidence: low.'
   categories:
   - automotive
 - id: imasen-bucyrus-technology
@@ -3016,6 +3338,34 @@ companies:
     Region sources: wpf-milwaukee-2025. Confidence: medium. Unresolved: founded, headcount, funding'
   categories:
   - semis-electronics
+- id: intermode
+  name: Intermode
+  website: https://intermode.io
+  careers_url: null
+  hq: Detroit, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Mobile robotics infrastructure; robot platform called Max. Adjacent (Autonomy and robotics), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Site confirms a Detroit mobile-robot company; it does
+    not mention drones, so the ''links air and ground drones'' description is unconfirmed.. Evidence: h t t p s
+    : Region sources: ltu-mim-mobility-2025. Confidence: low.'
+  categories:
+  - autonomy-robotics
 - id: international-motors
   name: International Motors
   website: https://www.international.com
@@ -3076,6 +3426,34 @@ companies:
     Region sources: wp-auto-parts-us. Confidence: medium. Unresolved: Owner, headcount.'
   categories:
   - automotive
+- id: invektek
+  name: InVekTek
+  website: https://invektek.com
+  careers_url: null
+  hq: Waukesha, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: SwayMaster anti-sway control for industrial overhead cranes. Adjacent (Semiconductors and electronics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: The site does not say whether SwayMaster ships as a
+    hardware controller or as software; it reads as control software configured onto existing drives. Own physical
+    hardware not confirmed.. Evidence: h t t p s : Region sources: wpf-milwaukee-2025. Confidence: low.'
+  categories:
+  - semis-electronics
 - id: iridescent-sensors
   name: Iridescent Sensors
   website: https://www.iridescentsensors.com
@@ -3341,6 +3719,35 @@ companies:
     Region sources: conexus-aic. Confidence: high. Unresolved: headcount'
   categories:
   - automotive
+- id: komatsu-mining-corp
+  name: Komatsu Mining Corp.
+  website: https://www.komatsu.com
+  careers_url: null
+  hq: Milwaukee, WI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Surface and underground mining equipment. Adjacent (Mining and exploration, Advanced manufacturing),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Part of Komatsu Ltd., Tokyo. Flags: Milwaukee is the
+    US mining business''s own headquarters, not just a site. The 2023 page names only Komatsu America Corp., so
+    the Komatsu Mining Corp. entity name may since have been folded in; not confirmed.. Evidence: K o m a t s Region
+    sources: wedc-advmfg. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - mining
 - id: kth-parts-industries
   name: KTH Parts Industries
   website: https://kth.net
@@ -3691,6 +4098,34 @@ companies:
   categories:
   - advanced-manufacturing
   - aerospace-space
+- id: marelli-north-america
+  name: Marelli North America
+  website: https://www.marelli.com
+  careers_url: null
+  hq: Southfield, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automotive lighting, electronics, interiors, thermal, suspension, exhaust and propulsion systems. Adjacent
+      (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Subsidiary of Marelli Holdings Co., Ltd. (Japan), in
+    Chapter 11 in the District of Delaware since 2025-06-11. Flags: Southfield is the North American headquarters,
+    not only a site. Still operating in Chapter 11; emergence not confirmed.. Evidence: m a r e l l Region sources:
+    scout-known. Confidence: low.'
+  categories:
+  - automotive
 - id: materion-corporation
   name: Materion Corporation
   website: https://materion.com
@@ -4307,6 +4742,35 @@ companies:
     wp-auto-parts-us, wp-mi-companies. Confidence: high. Unresolved: Listing year, controlling shareholder.'
   categories:
   - automotive
+- id: niobium-microsystems
+  name: Niobium Microsystems
+  website: https://niobium.co
+  careers_url: null
+  hq: not stated on its site
+  ats:
+    type: bamboohr
+    board: niobium
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Fully homomorphic encryption accelerator ASIC (mistic) and an encrypted cloud service (The Fog) running
+      on it. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'Board bamboohr:niobium seen 2026-11-27, linked from the company''s own site: 4 open roles. Stage: About
+    page names investors (Fusion Fund, Morgan Creek, Block Change) but no round or date. Flags: It designs its own
+    chip, but today it sells cloud access running on it; the ASIC is not yet sold on its own. HQ city not stated
+    on its pages.. Evidence: n i o b i u Region sources: rev1-portfolio, ohiotechnews, semiengineering-q4-2025.
+    Confidence: low.'
+  categories:
+  - semis-electronics
 - id: nmg-aerospace
   name: NMG Aerospace
   website: https://nmgaerospace.com
@@ -5001,6 +5465,34 @@ companies:
     wedc-aero-2019. Confidence: high. Unresolved: Founded; headcount; ownership.'
   categories:
   - aerospace-space
+- id: quasonix
+  name: Quasonix
+  website: https://www.quasonix.com
+  careers_url: null
+  hq: West Chester, OH
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2002
+  headcount: null
+  climate:
+    tier: out
+    reason: Aeronautical telemetry transmitters (TIMTER, QSX-V) and receivers. Adjacent (Aerospace and space, Defense),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2002 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Flags: Privately held as far as found; ownership not checked.
+    Legal name appears as both Quasonix, Inc. and Quasonix, LLC.. Evidence: q u a s o n Region sources: jobsohio-aero-handout.
+    Confidence: low.'
+  categories:
+  - aerospace-space
+  - defense
 - id: r-stresau-laboratory
   name: R. Stresau Laboratory
   website: https://stresau.com
@@ -5632,6 +6124,36 @@ companies:
     Region sources: wedc-aero-2019. Confidence: medium. Unresolved: Founding year, headcount.'
   categories:
   - aerospace-space
+- id: srg-global
+  name: SRG Global
+  website: https://www.srgglobal.com
+  careers_url: null
+  hq: Troy, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2009
+  headcount: null
+  climate:
+    tier: out
+    reason: Chrome-plated and painted exterior and interior plastic trim, grilles and moldings for automakers. Adjacent
+      (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''srgglobal.com''. (_ssl.c:1035)). Stage: Sold
+    by Guardian Industries to an affiliate of Atlas Holdings, complete 2025-04-03; joined REHAU Automotive to form
+    RESRG Automotive. Flags: Troy is its own world headquarters. It may now trade under the RESRG Automotive name;
+    whether the SRG Global brand remains is not confirmed.. Evidence: g u a r d i Region sources: wp-auto-parts-us,
+    wp-mi-companies. Confidence: low.'
+  categories:
+  - automotive
 - id: standex-electronics
   name: Standex Electronics
   website: https://standexelectronics.com
@@ -6581,6 +7103,63 @@ companies:
     used).'
   categories:
   - mining
+- id: valeo-north-america
+  name: Valeo North America
+  website: https://www.valeo.com
+  careers_url: null
+  hq: Troy, MI
+  ats:
+    type: workday
+    board: valeo
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Lighting, thermal, driver assistance sensors and electrification systems. Adjacent (Automotive), not
+      clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'Board workday:valeo.wd3.myworkdayjobs.com/en-EN/valeo_jobs seen 2026-11-28, linked from the company''s
+    own site: role count not read (no public feed). Stage: US subsidiary of Valeo SA (France). Flags: Troy is the
+    US subsidiary''s own headquarters per its LEI record, not only a site.. Evidence: S e a r c h Region sources:
+    scout-known. Confidence: low.'
+  categories:
+  - automotive
+- id: vertical-autonomy
+  name: Vertical Autonomy
+  website: https://verticalautonomy.com
+  careers_url: null
+  hq: Hillsdale, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: VA Series VTOL unmanned aircraft and autonomy systems for defense. Adjacent (Defense, Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Consolidating into southern Michigan from California
+    and Arizona. Hillsdale is its existing Michigan facility; whether it is now the formal headquarters is not stated..
+    Evidence: v e r t i c Region sources: search-snippets. Confidence: low.'
+  categories:
+  - autonomy-robotics
+  - defense
 - id: vertiv
   name: Vertiv
   website: https://www.vertiv.com
@@ -6717,6 +7296,33 @@ companies:
     headcount; exact legal name (''Voltava, LLC'' per release, not ''Voltava Manufacturing'')'
   categories:
   - automotive
+- id: wanxiang-america
+  name: Wanxiang America
+  website: https://www.wanxiang.com
+  careers_url: null
+  hq: Elgin, IL per the source and directories
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Universal joints, bearings, driveline and brake components. Adjacent (Automotive), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Its site title says it is the US incorporated offices
+    of Wanxiang China. Flags: The company exists, but its own site gives no address, so Elgin, IL is not confirmed
+    as its US headquarters.. Evidence: w a n x i a Region sources: wp-auto-parts-us. Confidence: low.'
+  categories:
+  - automotive
 - id: watson-industries
   name: Watson Industries
   website: https://watson-gyro.com
@@ -6780,6 +7386,33 @@ companies:
   categories:
   - advanced-manufacturing
   - aerospace-space
+- id: webasto-roof-and-components-americas
+  name: Webasto Roof & Components Americas
+  website: https://www.webasto.com
+  careers_url: null
+  hq: Auburn Hills, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Sunroofs, panoramic and convertible roofs, roof sensor modules, battery systems and heaters. Adjacent
+      (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Americas unit of Webasto SE (Stockdorf, Germany). Flags:
+    Auburn Hills is the Americas headquarters; Plymouth is a plant. Older sources naming Rochester Hills are outdated..
+    Evidence: w e b a s t Region sources: scout-known. Confidence: low.'
+  categories:
+  - automotive
 - id: winnebago-industries
   name: Winnebago Industries
   website: https://www.winnebagoind.com
@@ -6937,3 +7570,31 @@ companies:
     Unresolved: US founding year, headcount, whether Franklin WI is the Motoman robotics plant.'
   categories:
   - advanced-manufacturing
+- id: zf-north-america
+  name: ZF North America
+  website: https://www.zf.com
+  careers_url: null
+  hq: Northville, MI
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Transmissions, chassis, steering, brakes and safety systems (includes former TRW Automotive). Adjacent
+      (Automotive), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: North American arm of ZF Friedrichshafen AG (Germany).
+    Flags: Northville is the US subsidiary''s office of record and widely given as its headquarters; Livonia is
+    a large divisional site.. Evidence: z f . c o m Region sources: wp-auto-parts-us, wp-mi-companies. Confidence:
+    low.'
+  categories:
+  - automotive
