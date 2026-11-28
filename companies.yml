@@ -5148,7 +5148,11 @@ companies:
     status: in
     reason: 'Independent; 57 people (Aptera Q1 2026 results press release (company) https://www.globenewswire.com/news-release/2026/05/13/3294552/0/en/Aptera-Motors-Reports-First-Quarter-2026-Financial-Results.html,
       2026-03-31); growth sign: founded 2019.'
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml.
+  notes: 'Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Categories
+    (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles):
+    Solar-assisted three-wheel electric vehicle. Decision 26.'
+  categories:
+  - automotive
 - id: aqua-metals
   name: Aqua Metals
   website: https://www.aquametals.com/
@@ -7246,7 +7250,11 @@ companies:
     Partners (https://www.autokiniton.com); acquired Tower International via a subsidiary. Flags: private-equity
     owned (KPS Capital Partners); not EV-specific: propulsion-agnostic structural parts. Evidence: https://www.autokiniton.com
     Region sources: e2-announcements. Confidence: medium. Unresolved: Founded year, headcount (likely large but
-    no figure found), Bellevue plant details.'
+    no figure found), Bellevue plant details. Categories (decision 23): Automotive (auto-parts supplier: parts and
+    systems supplied for road vehicles): Stamped structural components for vehicles in general, not specific to
+    electric vehicles; no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: automat-solutions
   name: Automat Solutions
   website: https://www.automatsoln.com/
@@ -8701,7 +8709,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug blackburn-energy 404. Evidence:
     https://blackburnenergy.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount,
-    funding.'
+    funding. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles):
+    RelGen driveshaft-driven hybrid charging system that generates electricity on heavy trucks for liftgates and
+    electric APUs. Decision 26.'
+  categories:
+  - automotive
 - id: bladerunner-energy
   name: BladeRunner Energy
   website: https://www.bladerunnerenergy.com
@@ -8909,7 +8921,11 @@ companies:
     Founded: https://en.wikipedia.org/wiki/Blue_Bird_Corporation. Stage: Nasdaq: BLBD, publicly traded since February
     2015. https://en.wikipedia.org/wiki/Blue_Bird_Corporation Flags: over 1,000 employees; public company. Evidence:
     https://www.blue-bird.com https://en.wikipedia.org/wiki/Blue_Bird_Corporation Region sources: cp-ga-2025. Confidence:
-    high. Unresolved: EV assembly plant conversion details not confirmed.'
+    high. Unresolved: EV assembly plant conversion details not confirmed. Categories (decision 23): Automotive (vehicle
+    maker: makes cars, trucks or buses): School buses, mostly diesel, propane and gasoline; electric models are
+    a small share. Decision 26.'
+  categories:
+  - automotive
 - id: blue-canyon-technologies
   name: Blue Canyon Technologies
   website: https://www.bluecanyontech.com
@@ -9006,7 +9022,11 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Site invites investment via Wefunder (crowdfunding);
     no amounts or rounds stated. Flags: crowdfunding (Wefunder). Evidence: https://bluedotmotorworks.com Region
     sources: cascadia-cca-alumni. Confidence: medium. Unresolved: Founding year, headcount, funding amounts not
-    found; Dealroom slug 404.'
+    found; Dealroom slug 404. Categories (decision 23): Automotive (vehicle conversion or powertrain: powertrains
+    and conversion kits for road vehicles): Retrofit plug-in hybrid systems that convert existing gas and diesel
+    vehicles into plug-in hybrids. Decision 26.'
+  categories:
+  - automotive
 - id: blue-energy
   name: Blue Energy
   website: https://blueenergy.co
@@ -9323,7 +9343,10 @@ companies:
     Stage: Parent is BMW Group (Wikipedia); plant announced 1992, opened 1994. Flags: subsidiary of BMW; over 1,000
     employees. Evidence: https://en.wikipedia.org/wiki/BMW_US_Manufacturing_Company Region sources: e2-sc, cp-sc-2024,
     c2es-se, c2es-sc. Confidence: high. Unresolved: Woodruff battery assembly plant not confirmed from a fetched
-    source.'
+    source. Categories (decision 23): Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle
+    assembly plant, still mostly combustion; electric models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: bolder-industries
   name: Bolder Industries
   website: https://bolderindustries.com
@@ -9473,7 +9496,12 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Publicly listed (general knowledge; site links SEC filings;
     exchange and year not verified this session). Flags: over 1,000 employees. Evidence: https://www.borgwarner.com
     https://www.borgwarner.com/company Region sources: e2-announcements. Confidence: medium. Unresolved: Founded,
-    headcount (number missing from extracted page), listing year; battery packs not mentioned on pages fetched.'
+    headcount (number missing from extracted page), listing year; battery packs not mentioned on pages fetched.
+    Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Vehicle
+    propulsion parts, including electric motors, inverters and battery packs alongside combustion-engine parts.
+    Decision 26.'
+  categories:
+  - automotive
 - id: boston-dynamics
   name: Boston Dynamics
   website: https://bostondynamics.com/
@@ -10361,7 +10389,11 @@ companies:
     https://www.metro-magazine.com/10033516/byd-unveils-north-americas-largest-electric-bus-factory Region sources:
     pola-zet, hvip-catalog, cec-zev-mfg-table, cec-gfo-21-605, powerforward-nopa, calstart-member-logos, carb-zev-oem-map.
     Confidence: medium. Unresolved: en.byd.com returned no readable content; current headcount, US founding year
-    and current Lancaster status not confirmed.'
+    and current Lancaster status not confirmed. Categories (decision 23): Automotive (electric-vehicle maker: makes
+    electric cars, trucks, buses or low-speed vehicles): Battery-electric transit buses, coaches and medium/heavy-duty
+    trucks assembled at its Lancaster, CA factory. Decision 26.'
+  categories:
+  - automotive
 - id: c-crete-technologies
   name: C-Crete Technologies
   website: https://ccretetech.com
@@ -11924,7 +11956,11 @@ companies:
     Flags: vehicle kits made in China, assembled in Freehold, NJ and Ontario, CA. Evidence: https://www.cenntroauto.com/
     https://www.sec.gov/Archives/edgar/data/1707919/000114036125011607/ef20038940_10k.htm Region sources: inven-nj-ev.
     Confidence: high. Unresolved: The 2025 proxy gives a corporate office in Iselin, NJ (33 Wood Ave South), so
-    HQ may have moved from Freehold. Founded year is when Cenntro Motor Corporation was registered (2013-03-22).'
+    HQ may have moved from Freehold. Founded year is when Cenntro Motor Corporation was registered (2013-03-22).
+    Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed
+    vehicles): Commercial electric vehicles, assembled in New Jersey from kits made in China. Decision 26.'
+  categories:
+  - automotive
 - id: cepton
   name: Cepton
   website: https://www.cepton.com
@@ -11952,8 +11988,13 @@ companies:
     since 2025-01-07 (Cepton 8-K / Business Wire). Flags: subsidiary of Koito Manufacturing (Japan); defense not
     main business; not pure software. Evidence: https://www.cepton.com https://www.sec.gov/Archives/edgar/data/1498233/000121390025001480/ea022693601ex99-1_cepton.htm
     https://autotechinsight.spglobal.com/news/5280002/koito-completes-acquisition-of-us-based-lidar-specialist-cepton
-    Region sources: search-lidar. Confidence: high. Unresolved: Founded year and headcount.'
+    Region sources: search-lidar. Confidence: high. Unresolved: Founded year and headcount. Categories (decision
+    23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Lidar sensors (Vista Ultra,
+    Nova Ultra) and Helius perception software for automotive and smart infrastructure. Adjacent (Semiconductors
+    and electronics, Autonomy and robotics), not clean tech under the rubric (decision 23). Decision 26. Keeps autonomy-robotics,
+    semis-electronics.'
   categories:
+  - automotive
   - autonomy-robotics
   - semis-electronics
 - id: cerebras-systems
@@ -13229,8 +13270,12 @@ companies:
   notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
     recipient (announced 2025-09-24); no venture round found. Flags: defense is main business. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
     Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found;
-    prototype stage. Categories (decision 23): Defense: Electrified military motorcycle (prototype).'
+    prototype stage. Categories (decision 23): Defense: Electrified military motorcycle (prototype). Categories
+    (decision 23): Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling
+    of 2026-11-28): Electrified military motorcycle (prototype). Defense is its main business (owner ruling A3).
+    Decision 26. Keeps defense.'
   categories:
+  - automotive
   - defense
 - id: coflux-purification
   name: Coflux Purification
@@ -13475,7 +13520,11 @@ companies:
     per company site; site says ''over 38 years'' in the industry. Flags: mainly refurbishment and repair services;
     employee-owned (ESOP). Evidence: https://www.completecoach.com/ https://www.completecoach.com/about Region sources:
     hvip-catalog, cec-zev-mfg-table, carb-zev-oem-map, laedc-ev-report. Confidence: medium. Unresolved: Founded
-    year (site implies about 1987), headcount, and share of battery-electric work not found.'
+    year (site implies about 1987), headcount, and share of battery-electric work not found. Categories (decision
+    23): Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Refurbishes
+    and repowers transit buses, including battery-electric conversions. Decision 26.'
+  categories:
+  - automotive
 - id: compotics
   name: Compotics
   website: https://compotics.com/
@@ -14697,8 +14746,11 @@ companies:
       2025-12-31): over the 4,000-person line.'
   notes: 'Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
     facts filled from data/screening/registry-fixes. Categories (decision 23): Combustion, oil and gas: Diesel and
-    gas engines and generators; its zero-emission unit is a small part.'
+    gas engines and generators; its zero-emission unit is a small part. Categories (decision 23): Automotive (auto-parts
+    supplier: parts and systems supplied for road vehicles): Diesel and gas engines and generators; its zero-emission
+    unit is a small part. Decision 26. Keeps oil-gas.'
   categories:
+  - automotive
   - oil-gas
 - id: curtis-instruments
   name: Curtis Instruments
@@ -14971,7 +15023,11 @@ companies:
     site); name dates from about 2008, roots in Freightliner (1942) per Wikipedia. Flags: subsidiary of Daimler
     Truck Holding AG; large truck OEM (headcount not sourced, very likely over 1,000); Wikipedia lists Portland
     Truck Manufacturing Plant closure year as 2026. Evidence: https://northamerica.daimlertruck.com https://en.wikipedia.org/wiki/Daimler_Truck_North_America
-    Region sources: or-cleantech-taskforce. Confidence: high. Unresolved: Headcount.'
+    Region sources: or-cleantech-taskforce. Confidence: high. Unresolved: Headcount. Categories (decision 23): Automotive
+    (vehicle maker: makes cars, trucks or buses): Freightliner and other heavy trucks and buses, still mostly diesel;
+    electric models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: dana-electrified-san-clemente-site
   name: Dana Electrified (San Clemente site)
   website: https://www.dana.com/
@@ -15004,7 +15060,11 @@ companies:
     Stage: NYSE: DAN (listing year not found). Flags: over 1,000 employees; HQ outside region (Maumee, OH); San
     Clemente is a site. Evidence: https://www.dana.com/ https://en.wikipedia.org/wiki/Dana_Incorporated Region sources:
     carb-zev-oem-map. Confidence: medium. Unresolved: San Clemente site not confirmed by any page read. Possible
-    sale of Off-Highway business not confirmed.'
+    sale of Off-Highway business not confirmed. Categories (decision 23): Automotive (auto-parts supplier: parts
+    and systems supplied for road vehicles): Drivetrains and electrified propulsion systems (e-axles, e-drives,
+    motors, inverters, thermal and sealing) for light, commercial and off-highway vehicles. Decision 26.'
+  categories:
+  - automotive
 - id: dandelion-energy
   name: Dandelion Energy
   website: https://dandelionenergy.com
@@ -16152,7 +16212,10 @@ companies:
     Flags: subsidiary of Doowon Group; HQ outside region (South Korea); over 1,000 employees (group); auto parts
     supplier, not EV-only. Evidence: https://gov.georgia.gov/press-releases/2024-02-06/gov-kemp-second-automotive-supplier-creating-200-new-jobs-candler-county
     Region sources: cp-ga-2025. Confidence: medium. Unresolved: Whether the Metter plant started operating in 2026;
-    company website.'
+    company website. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road
+    vehicles): Vehicle air-conditioning systems for all vehicles; no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: dos-republicas-coal-partnership
   name: Dos Republicas Coal Partnership
   website: null
@@ -16786,7 +16849,12 @@ companies:
     Private; formed when Eklov bought the subsidiary from EVI in 1998 (search snippet). No funding found. Flags:
     website not updated since 2017. Evidence: https://fcebus.wixsite.com/ebus-birdie https://www.automotive-fleet.com/news/ebus-delivers-electric-shuttle-buses-to-city-of-anaheim-ca
     Region sources: laedc-ev-report. Confidence: low. Unresolved: ebus.com redirects to a Wix site with copyright
-    2017 (address 9250 Washburn Rd., Downey); fuel-cell bus product not seen; current activity and headcount unknown.'
+    2017 (address 9250 Washburn Rd., Downey); fuel-cell bus product not seen; current activity and headcount unknown.
+    Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed
+    vehicles): Battery-electric buses (EBUS22 shuttle, composite bus), retrofit kits converting diesel/CNG buses
+    to battery-electric, battery swap and fast-charging stations. Decision 26.'
+  categories:
+  - automotive
 - id: ecellix
   name: Ecellix
   website: https://ecellix.com
@@ -17270,7 +17338,11 @@ companies:
     2024-10-18 so the wind-down did not proceed (Wikipedia). Flags: subsidiary of Rivaz, Inc.; now known as ENC.
     Evidence: https://en.wikipedia.org/wiki/ENC_(company) Region sources: carb-zev-oem-map, laedc-ev-report. Confidence:
     medium. Unresolved: Whether production continues in 2026 under Rivaz not confirmed; battery-electric/fuel-cell
-    share not confirmed; headcount not found.'
+    share not confirmed; headcount not found. Categories (decision 23): Automotive (electric-vehicle maker: makes
+    electric cars, trucks, buses or low-speed vehicles): Heavy-duty transit buses (Axess, E-Z Rider II, XHF, Passport-HD),
+    including battery-electric and fuel-cell versions per input. Decision 26.'
+  categories:
+  - automotive
 - id: electra
   name: Electra
   website: https://electra.earth
@@ -17855,7 +17927,10 @@ companies:
     eli_electric_vehicles) and Built In slugs 404. Evidence: https://eli.world/ https://www.eli.world/about Region
     sources: laci-portfolio. Confidence: medium. Unresolved: Founding year, headcount, funding. Site says ''Designed
     in Los Angeles''; HQ not stated explicitly. Copyright Eli Electric Vehicles, Inc. 2026; regional partner sites
-    in Italy, Netherlands, Estonia.'
+    in Italy, Netherlands, Estonia. Categories (decision 23): Automotive (electric-vehicle maker: makes electric
+    cars, trucks, buses or low-speed vehicles): Two-seat enclosed micro electric vehicle. Decision 26.'
+  categories:
+  - automotive
 - id: eliyan
   name: Eliyan
   website: https://eliyan.com
@@ -19575,8 +19650,12 @@ companies:
     Headcount note: Dealroom 102 employees, band 100-500, undated Founded: https://dealroom.co/companies/ethernovia.
     Stage: Dealroom: Series B $90M Jan 2026 (Qualcomm Ventures, Porsche SE); Series A $64M May 2023. https://dealroom.co/companies/ethernovia
     Flags: not pure software; defense is not the main business. Evidence: https://dealroom.co/companies/ethernovia
-    Region sources: semieng-funding. Confidence: medium. Unresolved: Own site not read'
+    Region sources: semieng-funding. Confidence: medium. Unresolved: Own site not read Categories (decision 23):
+    Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Ethernet packet-processor networking
+    chips and software for vehicles and robots, built for automotive functional safety. Adjacent (Semiconductors
+    and electronics), not clean tech under the rubric (decision 23). Decision 26. Keeps semis-electronics.'
   categories:
+  - automotive
   - semis-electronics
 - id: ethos-space-resources
   name: Ethos Space Resources
@@ -20009,7 +20088,11 @@ companies:
     band <100. Founded: https://dealroom.co/companies/evolectric. Stage: Dealroom: early-stage VC round, $15M, September
     2023, led by Seismic Capital Company (round letter not given); total disclosed equity $10-50M. Evidence: https://evolectricnow.com/
     https://dealroom.co/companies/evolectric Region sources: laci-portfolio. Confidence: high. Unresolved: Round
-    letter of the Sept 2023 round not given. Site also lists an address in Bogota, Colombia.'
+    letter of the Sept 2023 round not given. Site also lists an address in Bogota, Colombia. Categories (decision
+    23): Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Kits
+    that convert existing fleet vehicles to battery-electric. Decision 26.'
+  categories:
+  - automotive
 - id: evoloh
   name: EvolOH
   website: https://evoloh.com
@@ -20709,7 +20792,12 @@ companies:
     Flags: public company; older than 10 years (founded 2014); staff in China and UAE; robotics and blockchain side
     businesses. Evidence: https://www.boardroomalpha.com/sec/ffai-10-k-2026-03-31-0001628280-26-022509 https://www.reveliolabs.com/companies/faraday-future/employees/
     https://www.macrotrends.net/stocks/charts/FFAI/faraday-future-intelligent-electric/number-of-employees Confidence:
-    medium. Unresolved: Founding year 2014 not verified on a primary source in this run.'
+    medium. Unresolved: Founding year 2014 not verified on a primary source in this run. Categories (decision 23):
+    Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles
+    (FF 91, FX Super One) on its AIEV platform, plus a preliminary EAI robotics initiative and a majority-owned
+    blockchain subsidiary (AIXC). Decision 26.'
+  categories:
+  - automotive
 - id: farasis-energy-usa
   name: Farasis Energy USA
   website: https://www.farasis.com
@@ -21852,7 +21940,10 @@ companies:
     https://en.wikipedia.org/wiki/Ford_Motor_Company. Stage: NYSE: F; IPO 1956 (Wikipedia). Flags: over 1,000 employees.
     Evidence: https://en.wikipedia.org/wiki/Ford_Motor_Company Region sources: medc-clean-energy-race, e2-announcements,
     arpa-e. Confidence: high. Unresolved: Status of BlueOval Battery Park Michigan (Marshall) not covered in fetched
-    content.'
+    content. Categories (decision 23): Automotive (vehicle maker: makes cars, trucks or buses): Cars and trucks,
+    still mostly combustion; electric models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: forerunner
   name: Forerunner
   website: https://tryforerunner.com
@@ -23009,7 +23100,10 @@ companies:
     NYSE: GM, S&P 500. Present company formed 2009-07-10 (original 1908); relisting year (2010 IPO) not in fetched
     content. Flags: over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/General_Motors Region sources:
     medc-clean-energy-race, e2-announcements, arpa-e. Confidence: high. Unresolved: Listing year of the present
-    company not confirmed from a fetched source.'
+    company not confirmed from a fetched source. Categories (decision 23): Automotive (vehicle maker: makes cars,
+    trucks or buses): Cars and trucks, still mostly combustion; electric models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: general-plastics
   name: General Plastics
   website: https://www.generalplastics.com
@@ -23418,7 +23512,11 @@ companies:
     opened 2024 on former Lightning eMotors assets bought by its subsidiary GERCO); jobs on SAP SuccessFactors (gilligllc)
     and Greenhouse (gillig). Evidence: https://en.wikipedia.org/wiki/Gillig https://bizwest.com/2024/02/27/gillig-to-launch-technology-center-at-lightnings-loveland-site
     https://www.gillig.com/careers Region sources: cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: high. Unresolved:
-    Loveland headcount not published.'
+    Loveland headcount not published. Categories (decision 23): Automotive (vehicle maker: makes cars, trucks or
+    buses): Transit buses, still mostly diesel and CNG; battery-electric and hydrogen buses are a growing share.
+    Decision 26.'
+  categories:
+  - automotive
 - id: gitai-usa
   name: GITAI USA
   website: https://gitai.tech
@@ -24326,7 +24424,11 @@ companies:
     https://www.businesswire.com/news/home/20150729006797/en/ https://www.globenewswire.com/news-release/2017/01/26/911344/0/en/Several-Major-U-S-Cities-are-Using-Greenkraft-Inc-Alternative-Fuel-Trucks-For-Their-Operations.html
     Region sources: hvip-catalog, cec-gfo-21-605. Confidence: low. Unresolved: greenkraft.com returns 404; site
     greenkraftinc.com (address 2530 S. Birch Street, Santa Ana) is up but undated. Founded year, headcount, current
-    operating status and battery-electric share unknown. Dealroom 404.'
+    operating status and battery-electric share unknown. Dealroom 404. Categories (decision 23): Automotive (vehicle
+    maker: makes cars, trucks or buses): Commercial trucks and vans running mostly on gasoline, CNG and LPG, with
+    an electric line. Decision 26.'
+  categories:
+  - automotive
 - id: greensight
   name: GreenSight
   website: https://greensightag.com/
@@ -25129,7 +25231,11 @@ companies:
     Flags: majority-owned by Hankook & Company (since Jan 2025); over 1,000 employees; HQ outside region (South
     Korea). Evidence: https://www.hanonsystems.com https://en.wikipedia.org/wiki/Hanon_Systems Region sources: e2-ga,
     cp-ga-2025, e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Statesboro GA and Loudon TN plants not confirmed
-    in fetched sources; listing year.'
+    in fetched sources; listing year. Categories (decision 23): Automotive (auto-parts supplier: parts and systems
+    supplied for road vehicles): Thermal-management systems for all vehicles; electric-vehicle share not stated,
+    so no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: hanwha-advanced-materials-georgia
   name: Hanwha Advanced Materials Georgia
   website: https://www.hanwhaadvancedmaterials.com
@@ -25229,7 +25335,11 @@ companies:
     prototype contract) and energy storage. Flags: defense customers (Army uncrewed supply vehicle prototype via
     American Rheinmetall); Series D / late stage. Evidence: https://www.freightwaves.com/?p=585117 https://techcrunch.com/2025/11/13/harbinger-raises-160m-will-build-trucks-for-fedex
     https://www.ocbj.com/automobiles/fedex-joins-160m-harbinger-raise/ https://www.freightwaves.com/news/harbinger-lands-160m-series-c-inks-initial-fedex-deal-for-53-electric-trucks
-    Confidence: high.'
+    Confidence: high. Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks,
+    buses or low-speed vehicles): Medium-duty electric (and range-extended) stripped truck chassis and EV platform,
+    built in-house. Decision 26.'
+  categories:
+  - automotive
 - id: harmonic-bionics
   name: Harmonic Bionics
   website: https://www.harmonicbionics.com/
@@ -26348,7 +26458,11 @@ companies:
     Americas arm of Hitachi Astemo, Ltd. (Japan). Ownership of the parent not verified this pass. Flags: subsidiary
     of Hitachi Astemo, Ltd. (Japan); over 1,000 employees likely (global parent); not verified. Region sources:
     e2-ky. Confidence: low. Unresolved: hitachiastemo.com fetch was blocked by a rate-limited safety check (twice);
-    stopped on that site. Americas HQ, Berea plant details, headcount, parent ownership not verified.'
+    stopped on that site. Americas HQ, Berea plant details, headcount, parent ownership not verified. Categories
+    (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Automotive components
+    for all vehicles; electric-powertrain parts are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: hive-lighting
   name: Hive Lighting
   website: https://www.hivelighting.com/
@@ -27307,7 +27421,11 @@ companies:
     only, first day used). Founded: https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America. Stage:
     Owned by Hyundai Motor Group; full production began October 2024. https://hmgma.com Flags: subsidiary of Hyundai
     Motor Group; over 1,000 employees; HQ of parent outside region. Evidence: https://hmgma.com https://en.wikipedia.org/wiki/Hyundai_Motor_Group_Metaplant_America
-    Region sources: cp-ga-2025, c2es-se. Confidence: high.'
+    Region sources: cp-ga-2025, c2es-se. Confidence: high. Categories (decision 23): Automotive (vehicle plant:
+    a vehicle maker''s assembly or parts plant): EV assembly plant building the Hyundai Ioniq 5 and Ioniq 9 (also
+    Kia Sportage Hybrid from 2026); designed for 500,000+ vehicles a year. Decision 26.'
+  categories:
+  - automotive
 - id: hyundai-motor-manufacturing-alabama
   name: Hyundai Motor Manufacturing Alabama
   website: https://www.hmmausa.com
@@ -27340,7 +27458,11 @@ companies:
     listing year not verified this pass). Flags: subsidiary of Hyundai Motor Company; over 1,000 employees; mostly
     internal-combustion vehicles; hybrids/EV a share of output. Evidence: https://www.hmmausa.com/our-company/ Region
     sources: madeinalabama-battery. Confidence: high. Unresolved: Founding year; whether GV70 electrified is still
-    built there (own site lists only Santa Fe Hybrid as electrified).'
+    built there (own site lists only Santa Fe Hybrid as electrified). Categories (decision 23): Automotive (vehicle
+    plant: a vehicle maker''s assembly or parts plant): Vehicle assembly plant, still mostly combustion; electric
+    models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: ibeam-materials
   name: iBeam Materials
   website: https://ibeammaterials.com
@@ -28166,7 +28288,11 @@ companies:
     https://techcrunch.com/2024/10/29/infinite-machine-raises-9m-a16z-led-round-to-convince-americans-to-buy-scooters
     https://prnewswire.com/news-releases/infinite-machine-raises-9-3m-in-seed-round-led-by-a16z-to-fuel-non-car-revolution-302289974.html
     Confidence: medium. Unresolved: Founding year and headcount not found; no round since October 2024 found. Missing
-    facts filled from data/screening/registry-fixes.'
+    facts filled from data/screening/registry-fixes. Categories (decision 23): Automotive (motorcycle or powersports
+    maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric two-wheelers: the Olto two-seat
+    bike-lane vehicle and the P1 electric scooter/motorcycle. Decision 26.'
+  categories:
+  - automotive
 - id: infinitum
   name: Infinitum
   website: https://goinfinitum.com
@@ -29123,7 +29249,11 @@ companies:
       found.
   notes: 'No job board found on the company''s site. Founded: https://inventev.com. Evidence: https://inventev.com
     Region sources: arpa-e. Confidence: medium. Unresolved: Site says founded ''2010/2011''; headcount and funding
-    not found; Dealroom 404.'
+    not found; Dealroom 404. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied
+    for road vehicles): Subsystems that convert hybrid, battery-electric and fuel-cell truck energy into exportable
+    power for commercial fleets, supplied to truck OEMs. Decision 26.'
+  categories:
+  - automotive
 - id: inversion-semiconductor
   name: Inversion Semiconductor
   website: https://www.inversionsemi.com
@@ -30289,7 +30419,10 @@ companies:
     subsidiary of Wanxiang Group (China) per Wikipedia. Evidence: https://www.karmaautomotive.com/ https://dealroom.co/companies/karma-automotive
     https://en.wikipedia.org/wiki/Karma_Automotive Region sources: hvip-catalog, cec-zev-mfg-table, powerforward-nopa,
     laedc-ev-report. Confidence: medium. Unresolved: Current ownership share of Wanxiang not confirmed by a dated
-    source.'
+    source. Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or
+    low-speed vehicles): Extended-range electric and battery-electric luxury cars. Decision 26.'
+  categories:
+  - automotive
 - id: karman
   name: Karman+
   website: https://www.karmanplus.com
@@ -30412,7 +30545,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
     recipient (as KB Powertrain Inc.); no venture round found. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
-    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.'
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.
+    Categories (decision 23): Automotive (vehicle conversion or powertrain: powertrains and conversion kits for
+    road vehicles): eRHINO electrified axle for commercial vehicles (prototype). Decision 26.'
+  categories:
+  - automotive
 - id: kelvin
   name: Kelvin
   website: https://kel.vin
@@ -30632,7 +30769,11 @@ companies:
     fetch date). Founded: https://www.kiageorgia.com. Stage: Kia''s US plant (Kia Corporation, Hyundai Motor Group);
     production started November 2009. https://www.kiageorgia.com Flags: subsidiary of Kia Corporation; over 1,000
     employees; mainly builds combustion vehicles; EVs are part of output. Evidence: https://www.kiageorgia.com Region
-    sources: e2-ga, cp-ga-2025, c2es-se. Confidence: high.'
+    sources: e2-ga, cp-ga-2025, c2es-se. Confidence: high. Categories (decision 23): Automotive (vehicle plant:
+    a vehicle maker''s assembly or parts plant): Vehicle assembly plant, still mostly combustion; electric models
+    are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: kineticcore-solutions
   name: KineticCore Solutions
   website: https://kineticcore.com
@@ -31674,7 +31815,11 @@ companies:
     exchange and year not verified this session). Site: ''largest U.S.-based automotive supplier'', ''more than
     100 years of heritage''. Flags: over 1,000 employees. Evidence: https://www.lear.com Region sources: e2-announcements.
     Confidence: medium. Unresolved: Founded year, headcount, listing year; EV-specific power electronics not described
-    on page.'
+    on page. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles):
+    Automotive seating and electrical distribution for all vehicles; electric-vehicle parts are a small share. Decision
+    26.'
+  categories:
+  - automotive
 - id: lefiell-manufacturing
   name: LeFiell Manufacturing
   website: https://lefiell.com
@@ -32519,7 +32664,11 @@ companies:
     (possible crowdfunding). Flags: still pre-production after 15+ years (pre-orders); site describes itself as
     Portland / San Francisco based. Evidence: https://litmotors.com https://www.builtinsf.com/company/lit-motors
     Region sources: collab-fund. Confidence: medium. Unresolved: Funding stage; current headcount; whether HQ is
-    now Portland, OR; active only by 2026 site copyright and pre-orders.'
+    now Portland, OR; active only by 2026 site copyright and pre-orders. Categories (decision 23): Automotive (motorcycle
+    or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): AEV, a gyro-stabilized
+    enclosed two-wheeled electric vehicle seating two, open for pre-order. Decision 26.'
+  categories:
+  - automotive
 - id: lithion-battery
   name: Lithion Battery
   website: https://www.lithionbattery.com/
@@ -33318,13 +33467,17 @@ companies:
     status: out
     reason: '9,000 people (Lucid 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/lcid/employees/),
       2025-12-31): over the 4,000-person line.'
-  notes: Missing facts filled from data/screening/registry-fixes. Owned by Public Investment Fund (Saudi Arabia),
-    about 64% as of March 2025; counted as independent (owner under 4,000 people or an investment firm).
+  notes: 'Missing facts filled from data/screening/registry-fixes. Owned by Public Investment Fund (Saudi Arabia),
+    about 64% as of March 2025; counted as independent (owner under 4,000 people or an investment firm). Categories
+    (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles):
+    Electric vehicles. Decision 26.'
   last_raise:
     date: '2026-04-14'
     type: follow-on offering plus private placement
     source: https://electrek.co/2026/04/14/lucid-names-new-ceo-raises-over-1-billion-ramps-robotaxi-ambitions/
   ipo_year: 2021
+  categories:
+  - automotive
 - id: lumilens
   name: Lumilens
   website: https://lumilens.com
@@ -33919,7 +34072,11 @@ companies:
     of the Volvo Group'' per own about page: https://www.macktrucks.com/about-mack/ Flags: subsidiary of Volvo Group;
     over 1,000 employees likely (not verified); mostly diesel trucks; EV a minority. Evidence: https://www.macktrucks.com/about-mack/
     Region sources: cp-va-2025. Confidence: medium. Unresolved: HQ not stated on about page; Salem, VA operation
-    and electric-truck output not mentioned there; headcount.'
+    and electric-truck output not mentioned there; headcount. Categories (decision 23): Automotive (vehicle maker:
+    makes cars, trucks or buses): Heavy and medium trucks, still mostly combustion; electric models are a small
+    share. Decision 26.'
+  categories:
+  - automotive
 - id: macom-technology-solutions
   name: MACOM Technology Solutions
   website: https://www.macom.com
@@ -35145,7 +35302,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: No funding found. Evidence: https://maxwellvehicles.com/
     Region sources: laci-portfolio, laci. Confidence: medium. Unresolved: Site lists Los Angeles, CA under ''Visit''
-    (not explicitly HQ). Founding year, headcount and funding not found; /about 404.'
+    (not explicitly HQ). Founding year, headcount and funding not found; /about 404. Categories (decision 23): Automotive
+    (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Electric drivetrain conversions
+    for delivery vans. Decision 26.'
+  categories:
+  - automotive
 - id: maybell-quantum
   name: Maybell Quantum
   website: https://www.maybellquantum.com
@@ -36869,7 +37030,12 @@ companies:
     https://jobsohio.com/news-press/mobis-north-america-chooses-toledo-for-electric-battery-assembly-plant https://www.bricker.com/DevelopOhio/doe-awards-32m-to-toledo-ev-battery-plant-project
     Region sources: e2-announcements. Confidence: medium. Unresolved: Whether Toledo battery production started
     on schedule (Aug 2024) not confirmed. Mobis North America''s US headquarters city not found. A separate Hyundai
-    Mobis electrification subsidiary in Ohio exists (2024) and is a different entity.'
+    Mobis electrification subsidiary in Ohio exists (2024) and is a different entity. Categories (decision 23):
+    Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Assembles EV and plug-in hybrid
+    battery systems (battery base plates and installed packs) at a Toledo, OH plant for just-in-time supply to Stellantis
+    Jeep assembly. Decision 26.'
+  categories:
+  - automotive
 - id: modal-motors
   name: Modal Motors
   website: https://www.modalmotors.com
@@ -37268,7 +37434,12 @@ companies:
     alert handshake failure (_ssl.c:1035)). Headcount note: Built In figure, undated. Founded: https://www.builtinsf.com/company/motiv-power-systems.
     Stage: No funding data found. Evidence: https://www.builtinsf.com/company/motiv-power-systems Region sources:
     cec-nopa-ztm, kb-ba-hardware, carb-hvip. Confidence: medium. Unresolved: motivps.com failed with a TLS handshake
-    error, so status is from Built In only; funding/stage. Missing facts filled from data/screening/registry-fixes.'
+    error, so status is from Built In only; funding/stage. Missing facts filled from data/screening/registry-fixes.
+    Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed
+    vehicles): Class 4 to 6 battery-electric trucks and buses; merged with Workhorse Group (Nasdaq: WKHS) in December
+    2025 and operates under the Workhorse name. Decision 26.'
+  categories:
+  - automotive
 - id: movandi
   name: Movandi
   website: https://movandi.com
@@ -38931,7 +39102,11 @@ companies:
     Nissan North America is a wholly owned subsidiary of Nissan Motor Corporation (Wikipedia); HQ moved from Gardena,
     CA to Franklin, TN in 2005. Flags: subsidiary of Nissan Motor; over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/Nissan_North_America
     Region sources: livability-tn, e2-tn, c2es-se. Confidence: high. Unresolved: Leaf production at Smyrna and e-motors
-    at Decherd not confirmed from the page.'
+    at Decherd not confirmed from the page. Categories (decision 23): Automotive (vehicle plant: a vehicle maker''s
+    assembly or parts plant): Vehicle assembly, still mostly combustion; electric models are a small share. Decision
+    26.'
+  categories:
+  - automotive
 - id: nitricity
   name: Nitricity
   website: https://nitricity.co
@@ -40690,7 +40865,11 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Site has an ''Invest'' link to a separate site (possible
     crowdfunding); no rounds found. Flags: olympianmotors.com redirects to olympus.auto (Olympian Motors, Inc.).
     Evidence: https://olympus.auto/ Region sources: collab-fund. Confidence: low. Unresolved: HQ, founded year,
-    headcount, stage; no Dealroom profile.'
+    headcount, stage; no Dealroom profile. Categories (decision 23): Automotive (electric-vehicle maker: makes electric
+    cars, trucks, buses or low-speed vehicles): Model O1 electric coupe and a modular EV chassis with integrated
+    drivetrain for other automakers (now branded Olympus). Decision 26.'
+  categories:
+  - automotive
 - id: omc-hydrogen
   name: OMC Hydrogen
   website: https://omcthermo.com
@@ -41634,9 +41813,12 @@ companies:
     reason: '18,400 people (Oshkosh 2025 Annual Report / 10-K https://online.flippingbook.com/view/225999757/19/,
       2025-12-31): over the 4,000-person line.'
   notes: 'Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
-    facts filled from data/screening/registry-fixes. Categories (decision 23): Defense: Specialty and defense trucks.'
+    facts filled from data/screening/registry-fixes. Categories (decision 23): Defense: Specialty and defense trucks.
+    Categories (decision 23): Automotive (vehicle maker: makes cars, trucks or buses): Specialty and defense trucks.
+    Decision 26. Keeps defense.'
   ipo_year: 1985
   categories:
+  - automotive
   - defense
 - id: osmopure-technologies
   name: Osmopure Technologies
@@ -42103,7 +42285,11 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Year only (2025). Founded: https://en.wikipedia.org/wiki/Paccar.
     Stage: Nasdaq: PCAR (Wikipedia); listing year not found. Flags: over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/Paccar
     Region sources: geekwire-puget-cleantech. Confidence: high. Unresolved: Listing year; paccar.com returned 403.
-    Zero-emission models not confirmed on Wikipedia page read.'
+    Zero-emission models not confirmed on Wikipedia page read. Categories (decision 23): Automotive (vehicle maker:
+    makes cars, trucks or buses): Kenworth, Peterbilt and DAF heavy trucks, still mostly diesel; electric models
+    are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: pacific
   name: Pacific
   website: https://pacificmachines.com
@@ -42846,7 +43032,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: No funding found; Dealroom slug pave-motors 404. Evidence:
     https://pavemotors.com Region sources: newlab-posts. Confidence: medium. Unresolved: Founded year, headcount,
-    funding. HQ inferred from the Brooklyn workshop on the site.'
+    funding. HQ inferred from the Brooklyn workshop on the site. Categories (decision 23): Automotive (motorcycle
+    or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric motorbikes designed
+    and assembled in Brooklyn. Decision 26.'
+  categories:
+  - automotive
 - id: peabody-twentymile-coal-co
   name: Peabody (Twentymile Coal Co.)
   website: https://www.peabodyenergy.com
@@ -43553,7 +43743,11 @@ companies:
     https://dealroom.co/companies/phoenix-motorcars https://en.wikipedia.org/wiki/Phoenix_Motorcars https://www.masstransitmag.com/home/press-release/53082730/phoenix-cars-llc-phoenix-motor-completes-acquisition-of-proterra-transit-business-line
     Region sources: hvip-catalog, cec-zev-mfg-table, sbcounty-ev, carb-zev-oem-map, laedc-ev-report. Confidence:
     medium. Unresolved: Company site failed (SSL handshake error). Ontario CA site not confirmed. Founded year varies
-    by source (2002/2003/2009).'
+    by source (2002/2003/2009). Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars,
+    trucks, buses or low-speed vehicles): Battery-electric shuttle, school and transit buses (now including Proterra''s
+    former bus business). Decision 26.'
+  categories:
+  - automotive
 - id: phoenix-semiconductor
   name: Phoenix Semiconductor
   website: https://phoenixsemicorp.com
@@ -45705,7 +45899,11 @@ companies:
     Halliburton Labs (oil-field services accelerator) is a partner. Evidence: https://proof-energy.com https://www.hydrogenfuelnews.com/insights/org/proof-energy/
     https://www.cbinsights.com/company/proof-energy (403; seen in search snippet) Region sources: halliburton-labs.
     Confidence: medium. Unresolved: Founded year (sources disagree), headcount, funding stage. Own /about page 404;
-    CB Insights refused automated fetch.'
+    CB Insights refused automated fetch. Categories (decision 23): Automotive (auto-parts supplier: parts and systems
+    supplied for road vehicles): Zero-emission catalytic cabin heater for battery-electric vehicles, plus metallic-oxide
+    fuel cells. Decision 26.'
+  categories:
+  - automotive
 - id: proper-voltage
   name: Proper Voltage
   website: null
@@ -48867,7 +49065,11 @@ companies:
     crowdfunding campaign under the revopowertrains name. Flags: site appears dated (copyright 2022); ownership
     change from Wrightspeed to REVO not documented on site. Evidence: https://wrightspeed.com https://dealroom.co/companies/wrightspeed
     Region sources: cec-nopa. Confidence: low. Unresolved: Whether operating now; relationship between Wrightspeed
-    and REVO Powertrains'
+    and REVO Powertrains Categories (decision 23): Automotive (vehicle conversion or powertrain: powertrains and
+    conversion kits for road vehicles): RePower kits that convert diesel trucks and buses to electric (e-axle, battery,
+    harness, controls); formerly microturbine range-extended powertrains. Decision 26.'
+  categories:
+  - automotive
 - id: revolution-space
   name: Revolution Space
   website: https://revolutionspace.com
@@ -48928,7 +49130,11 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated and likely stale. Founded:
     https://www.ycombinator.com/companies/revoy. Stage: YC W22; no round found in this pass. Evidence: https://www.ycombinator.com/companies/revoy
     https://www.revoy.com/ Region sources: yc-directory, overture-portfolio, root-ventures. Confidence: medium.
-    Unresolved: Funding; current headcount.'
+    Unresolved: Funding; current headcount. Categories (decision 23): Automotive (vehicle conversion or powertrain:
+    powertrains and conversion kits for road vehicles): Electric powered dolly (SixWheel) that makes diesel semi
+    trucks hybrid-electric; offered with no upfront cost. Decision 26.'
+  categories:
+  - automotive
 - id: revterra
   name: Revterra
   website: https://revterra.energy
@@ -49133,7 +49339,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Flags: pre-production (preorders only). Evidence: https://rindev.com
     Region sources: bs-co-ev. Confidence: low. Unresolved: City, founding, headcount, funding not found; Dealroom
-    slug 404.'
+    slug 404. Categories (decision 23): Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles,
+    owner ruling of 2026-11-28): Unity, an electric side-by-side off-road vehicle (500+ peak hp, up to 350 miles
+    range), taking preorders. Decision 26.'
+  categories:
+  - automotive
 - id: rise-robotics
   name: RISE Robotics
   website: https://riserobotics.com
@@ -49221,12 +49431,15 @@ companies:
     status: out
     reason: '15,232 people (Rivian 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/rivn/employees/),
       2025-12-31): over the 4,000-person line.'
-  notes: Missing facts filled from data/screening/registry-fixes.
+  notes: 'Missing facts filled from data/screening/registry-fixes. Categories (decision 23): Automotive (electric-vehicle
+    maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles. Decision 26.'
   last_raise:
     date: '2026-04-30'
     type: private placement (strategic equity from Volkswagen)
     source: https://electrek.co/2026/05/05/volkswagen-rivian-stake-15-percent-largest-shareholder/
   ipo_year: 2021
+  categories:
+  - automotive
 - id: rivian-and-volkswagen-group-technologies
   name: Rivian and Volkswagen Group Technologies
   website: null
@@ -49252,8 +49465,12 @@ companies:
   startup:
     status: out
     reason: Part of Rivian and Volkswagen Group; not independent.
-  notes: Missing facts filled from data/screening/registry-fixes.
+  notes: 'Missing facts filled from data/screening/registry-fixes. Categories (decision 23): Automotive (auto-parts
+    supplier: parts and systems supplied for road vehicles): Vehicle software and electronics joint venture. Decision
+    26.'
   parent: Rivian and Volkswagen Group
+  categories:
+  - automotive
 - id: rivixl
   name: Rivixl
   website: null
@@ -49848,7 +50065,11 @@ companies:
     https://labusinessjournal.com/featured/ryvid-set-to-roll/ https://www.cyclenews.com/2024/01/article/ryvid-ev-factory-in-san-bernardino-set-to-open-in-2024/
     Region sources: cec-zev-mfg-table, powerforward-nopa. Confidence: low. Unresolved: Founded year conflicts (CB
     Insights 2020 vs Cyclenews 2021; from search snippets). HQ conflicts (Hawaiian Gardens vs Irvine on CB Insights).
-    Company site returned only a title. Headcount and 2026 status not confirmed.'
+    Company site returned only a title. Headcount and 2026 status not confirmed. Categories (decision 23): Automotive
+    (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Battery-electric
+    motorcycles designed and built in Southern California. Decision 26.'
+  categories:
+  - automotive
 - id: sa-recycling
   name: SA Recycling
   website: https://www.sarecycling.com/
@@ -50637,9 +50858,13 @@ companies:
   startup:
     status: out
     reason: Part of Volkswagen Group; not independent.
-  notes: Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
-    facts filled from data/screening/registry-fixes.
+  notes: 'Checked by the company scout on 2026-11-24; facts and sources in data/screening/seed-review.yml. Missing
+    facts filled from data/screening/registry-fixes. Categories (decision 23): Automotive (electric-vehicle maker:
+    makes electric cars, trucks, buses or low-speed vehicles): Electric and range-extended (gasoline generator)
+    SUVs and pickups; Volkswagen Group subsidiary. Decision 26.'
   parent: Volkswagen Group
+  categories:
+  - automotive
 - id: scythe-robotics
   name: Scythe Robotics
   website: https://www.scytherobotics.com
@@ -51577,7 +51802,10 @@ companies:
     Flags: automotive sealant supplier; no clean-tech product stated; HQ outside region (South Korea, per press).
     Evidence: https://georgia.org/press-releases/2024/automotive-supplier-invests-112-million-toombs-county https://www.ajc.com/news/business/11m-georgia-plant-to-join-facilities-supplying-hyundais-ev-factory/RMS7UYMLKNBR7KOG3BFSKTZ33E
     Region sources: cp-ga-2025. Confidence: medium. Unresolved: Whether the Lyons plant is running; HQ city; website;
-    headcount.'
+    headcount. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles):
+    Automotive adhesives and sealants; no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: shoals-technologies-group
   name: Shoals Technologies Group
   website: https://www.shoals.com
@@ -51789,7 +52017,11 @@ companies:
     reason: Independent; no headcount figure found; founding year not found, so included.
   notes: 'No job board found on the company''s site. Stage: 2025 Make It in Michigan mobility prototyping grant
     recipient; no venture round found. Flags: product for mining haul trucks. Evidence: https://ltu.edu/ltu-state-announce-2m-for-2025-make-it-in-michigan-mobility-prototyping-grants/
-    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.'
+    Region sources: medc-mobility-grants. Confidence: low. Unresolved: Domain, founding year, headcount not found.
+    Categories (decision 23): Automotive (vehicle conversion or powertrain: powertrains and conversion kits for
+    road vehicles): Multi-speed all-electric powertrain for heavy haul trucks. Decision 26.'
+  categories:
+  - automotive
 - id: sigmasense
   name: SigmaSense
   website: https://www.sigmasense.com/
@@ -52244,7 +52476,10 @@ companies:
     Evidence: https://livebrooks.com/making-news/tesla-supplier-opening-a-plant-at-brooks-joining-a-growing-south-side-automotive-manufacturing-hub-san-antonio-express-news/
     https://e2.org/announcements/states/texas/ Region sources: e2-texas. Confidence: low. Unresolved: That Simon
     NA Corp (e2 listing) is Simwon NA Corp. is inferred, not confirmed. Plant jobs, opening date and investment
-    unknown.'
+    unknown. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied for road vehicles):
+    EV doors for Tesla''s Austin factory; car body parts, no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: simora-core
   name: Simora Core
   website: https://simoracore.com
@@ -55360,7 +55595,11 @@ companies:
       growth sign: founded 2024.'
   notes: 'No job board found on the company''s site. Headcount note: YC team size, undated. Founded: https://www.ycombinator.com/companies/steinmetz.
     Stage: YC W25; no priced round found. Evidence: https://www.ycombinator.com/companies/steinmetz Region sources:
-    yc-directory. Confidence: medium. Unresolved: Funding.'
+    yc-directory. Confidence: medium. Unresolved: Funding. Categories (decision 23): Automotive (auto-parts supplier:
+    parts and systems supplied for road vehicles): Power electronics, starting with high-power-density motor inverters
+    for electric vehicles. Decision 26.'
+  categories:
+  - automotive
 - id: stepwise-electric
   name: StepWise Electric
   website: https://www.getstepwise.com
@@ -56799,7 +57038,11 @@ companies:
     https://pressroom.toyota.com/toyota-to-assemble-fuel-cell-modules-at-kentucky-plant-in-2023/ Region sources:
     laedc-ev-report. Confidence: low. Unresolved: tabc.com failed (certificate error). Fuel-cell module assembly
     at TABC Long Beach not found; search results place Toyota fuel-cell module assembly in Georgetown, KY. Founded
-    year and headcount not found.'
+    year and headcount not found. Categories (decision 23): Automotive (vehicle plant: a vehicle maker''s assembly
+    or parts plant): Toyota plant making truck beds and parts; fuel-cell module assembly there was not confirmed.
+    Decision 26.'
+  categories:
+  - automotive
 - id: tactical-laser-defense-systems
   name: Tactical Laser Defense Systems
   website: https://laserdefensesystems.online
@@ -57432,8 +57675,12 @@ companies:
     Flags: formerly AutoX; AutoX China operations divested and shut down; autonomous road vehicle; offices also
     in Barcelona, Singapore, Dubai; defense is not the main business. Evidence: https://www.tensor.auto https://www.ktvu.com/news/san-jose-startup-unveils-first-consumer-focused-fully-autonomous-car
     Region sources: ca-dmv-av. Confidence: medium. Unresolved: Headcount, funding; HQ (441 W Trimble Rd, San Jose)
-    from LinkedIn snippet only; own site says only ''Designed in California''.'
+    from LinkedIn snippet only; own site says only ''Designed in California''. Categories (decision 23): Automotive
+    (autonomous-vehicle maker: builds its own road vehicles): Tensor Robocar, a Level 4 personally owned autonomous
+    luxury crossover to be sold to consumers from 2026. Purely autonomous road vehicles are out (owner ruling A5).
+    Decision 26. Keeps autonomy-robotics.'
   categories:
+  - automotive
   - autonomy-robotics
 - id: terabase-energy
   name: Terabase Energy
@@ -57504,8 +57751,13 @@ companies:
     Flags: automotive sensor for autonomous / driver-assist vehicles. Evidence: https://teradar.com https://dealroom.co/companies/teradar
     Region sources: nemc-members, engine-ventures, semieng-funding. Confidence: high. Unresolved: Founding year
     conflicts within Dealroom (header 2021, About text 2020). The site gives 88 Black Falcon Ave, Suite 188, Boston,
-    MA 02210; Dealroom''s header says Cambridge.'
+    MA 02210; Dealroom''s header says Cambridge. Categories (decision 23): Automotive (auto-parts supplier: parts
+    and systems supplied for road vehicles): Solid-state terahertz vision sensors (Modular Terahertz Engine chip
+    architecture) for automotive ADAS and autonomy, plus defense and security screening. Adjacent (Semiconductors
+    and electronics, Autonomy and robotics), not clean tech under the rubric (decision 23). Decision 26. Keeps autonomy-robotics,
+    semis-electronics.'
   categories:
+  - automotive
   - autonomy-robotics
   - semis-electronics
 - id: teradyne
@@ -58001,8 +58253,11 @@ companies:
     status: out
     reason: '134,785 people (Tesla 10-K FY2025 via Stock Analysis (https://stockanalysis.com/stocks/tsla/employees/),
       2025-12-31): over the 4,000-person line.'
-  notes: Missing facts filled from data/screening/registry-fixes.
+  notes: 'Missing facts filled from data/screening/registry-fixes. Categories (decision 23): Automotive (electric-vehicle
+    maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles and storage. Decision 26.'
   ipo_year: 2010
+  categories:
+  - automotive
 - id: tetramer-technologies
   name: Tetramer Technologies
   website: null
@@ -58278,7 +58533,11 @@ companies:
     Schmidt Group'' (merger); page title still shows NASDAQ: SHYF (https://www.theshyftgroup.com). Flags: subsidiary
     of Aebi Schmidt Group; over 1,000 employees (likely; no figure found). Evidence: https://www.theshyftgroup.com
     Region sources: e2-announcements. Confidence: medium. Unresolved: Merger closing date, current listing (Aebi
-    Schmidt), Blue Arc production status, headcount.'
+    Schmidt), Blue Arc production status, headcount. Categories (decision 23): Automotive (electric-vehicle maker:
+    makes electric cars, trucks, buses or low-speed vehicles): Specialty vehicles (walk-in vans, truck bodies) incl.
+    Blue Arc EV electric delivery vans. Decision 26.'
+  categories:
+  - automotive
 - id: the-subvocal-company
   name: The Subvocal Company
   website: https://subvocal.company
@@ -60146,8 +60405,12 @@ companies:
     Flags: semiconductor (radar chips), automotive; Dealroom says operational, but own site footer reads 2021 and
     its latest news item is Feb 2024; defense not main business (Lockheed Martin an investor). Evidence: https://www.uhnder.com
     https://dealroom.co/companies/uhnder Region sources: opportunity-austin. Confidence: medium. Unresolved: No
-    news after Feb 2024 checked; current operating status not confirmed beyond Dealroom.'
+    news after Feb 2024 checked; current operating status not confirmed beyond Dealroom. Categories (decision 23):
+    Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Digital imaging radar-on-chip
+    (software-defined digital radar chips) and sensor modules, mainly for automotive. Adjacent (Semiconductors and
+    electronics), not clean tech under the rubric (decision 23). Decision 26. Keeps semis-electronics.'
   categories:
+  - automotive
   - semis-electronics
 - id: ultion-technologies
   name: Ultion Technologies
@@ -61218,7 +61481,11 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: Site says in business over 25 years; copyright
     1999-2025. Stage: Private, no venture rounds found; ownership not stated. Flags: includes gasoline models. Evidence:
     https://www.vantagevehicle.com/ Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: Founded year
-    (about 1999?), headcount, and MPAK Motor Co relation not confirmed.'
+    (about 1999?), headcount, and MPAK Motor Co relation not confirmed. Categories (decision 23): Automotive (electric-vehicle
+    maker: makes electric cars, trucks, buses or low-speed vehicles): Gas and electric low-speed and utility vehicles.
+    Decision 26.'
+  categories:
+  - automotive
 - id: vantem
   name: Vantem
   website: https://vantem.com
@@ -62434,7 +62701,11 @@ companies:
     Stage: Owned by Volkswagen Group of America (Wikipedia). Flags: subsidiary of Volkswagen Group; over 1,000 employees;
     EV production ended. Evidence: https://en.wikipedia.org/wiki/Volkswagen_Chattanooga_Assembly_Plant Region sources:
     livability-tn, c2es-se, epb-ev. Confidence: high. Unresolved: Battery pack assembly and battery engineering
-    lab not mentioned in the part of the page read. Founded = production start year.'
+    lab not mentioned in the part of the page read. Founded = production start year. Categories (decision 23): Automotive
+    (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly; ID.4 electric production ended
+    in April 2026, so still mostly combustion; electric models are a small share. Decision 26.'
+  categories:
+  - automotive
 - id: volt-harbor
   name: Volt Harbor
   website: https://voltharbor.com/
@@ -62689,7 +62960,10 @@ companies:
     Region sources: ucr-otp-portfolio. Confidence: medium. Unresolved: Founding year, headcount, funding. Site address
     is ''1980 Eastridge Ave, Riverside, CA 90670'' (zip 90670 does not match Riverside; HQ city taken from the stated
     city). Site says ''Voltu3 Being Delivered Now''; headline specs show placeholder zeros. Dealroom slug voltu-motor
-    404; /about 404.'
+    404; /about 404. Categories (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks,
+    buses or low-speed vehicles): All-electric heavy-duty work pickup. Decision 26.'
+  categories:
+  - automotive
 - id: voluna
   name: VOLUNA
   website: https://www.voluna.com/
@@ -63009,7 +63283,11 @@ companies:
     buyout from Polaris. Evidence: https://www.businesswire.com/news/home/20220103005173/en/Waev-Inc.-Completes-Purchase-of-GEM-and-Taylor-Dunn-Businesses
     https://en.wikipedia.org/wiki/Taylor-Dunn https://electrek.co/2022/01/04/polaris-spins-off-gem-taylor-dunn-brands-into-waev-inc/
     Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: waevinc.com returned an empty page; founded
-    year taken as the buyout year (Wikipedia gives 2022). Headcount not found.'
+    year taken as the buyout year (Wikipedia gives 2022). Headcount not found. Categories (decision 23): Automotive
+    (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric low-speed
+    and industrial utility vehicles. Decision 26.'
+  categories:
+  - automotive
 - id: wafertech
   name: WaferTech
   website: https://www.tsmc.com
@@ -64132,7 +64410,10 @@ companies:
     2023, 130+ jobs; supplier to Tesla, Rivian, Lucid, Canoo. https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county
     Flags: HQ outside region (South Korea); over 1,000 employees. Evidence: https://gov.georgia.gov/press-releases/2023-06-07/gov-kemp-woory-open-ev-parts-manufacturing-rd-facility-laurens-county
     Region sources: e2-ga, cp-ga-2025. Confidence: medium. Unresolved: Whether the Dublin plant opened as planned;
-    listing status; website.'
+    listing status; website. Categories (decision 23): Automotive (auto-parts supplier: parts and systems supplied
+    for road vehicles): HVAC components for all vehicles; no climate case under the rubric. Decision 26.'
+  categories:
+  - automotive
 - id: wootz
   name: Wootz
   website: https://wootznano.com
@@ -64477,7 +64758,12 @@ companies:
     share issuance with change of control. Evidence: https://stockanalysis.com/stocks/xos/company/ https://www.boardroomalpha.com/sec/xos-10-k-2026-03-30-0001819493-26-000008
     https://www.boardroomalpha.com/sec/xos-8-k-2026-06-25-0001819493-26-000047 Confidence: high. Unresolved: StockAnalysis
     lists a Form 25-NSE dated 2026-08-19 with no explanation; not resolved whether any listing change or transaction
-    followed. S&P gives founded 2016, the 10-K says October 2015.'
+    followed. S&P gives founded 2016, the 10-K says October 2015. Categories (decision 23): Automotive (electric-vehicle
+    maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric medium-duty commercial trucks
+    and step vans, powertrains for specialty vehicles (e.g. school buses), and mobile charging (Xos Hub). Decision
+    26.'
+  categories:
+  - automotive
 - id: xoto
   name: XOTO
   website: https://xotoinc.com/
@@ -65278,7 +65564,11 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Not found. Flags: may now be mainly a design/engineering
     service (ZLABS). Evidence: https://zerolabs.com/ Region sources: laedc-ev-report. Confidence: low. Unresolved:
     Site presents Zero Labs Automotive as a button under ZLABS product-design services, not a separate company;
-    HQ, founded year, headcount, funding and status not found; Dealroom 404.'
+    HQ, founded year, headcount, funding and status not found; Dealroom 404. Categories (decision 23): Automotive
+    (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Electric vehicle design
+    and electric conversions of classic vehicles. Decision 26.'
+  categories:
+  - automotive
 - id: zero-motorcycles
   name: Zero Motorcycles
   website: https://www.zeromotorcycles.com
@@ -65309,7 +65599,11 @@ companies:
     both undated. Founded: https://dealroom.co/companies/zero-motorcycles. Stage: Dealroom: $100M round Oct 2024
     at $535M valuation; investors include Hero MotoCorp, Invus, EXOR. Evidence: https://dealroom.co/companies/zero-motorcycles
     https://www.builtinsf.com/company/zero-motorcycles Region sources: kb-ba-hardware. Confidence: medium. Unresolved:
-    Reported shift of production outside the US not checked.'
+    Reported shift of production outside the US not checked. Categories (decision 23): Automotive (motorcycle or
+    powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric motorcycles and
+    Z-Force powertrains, including police models and powertrains for partners. Decision 26.'
+  categories:
+  - automotive
 - id: zeroavia
   name: ZeroAvia
   website: https://zeroavia.com/
@@ -65620,7 +65914,11 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Not found; press contact uses a zo-motors domain, suggesting
     a link to ZO Motors (not confirmed). Flags: possible parent ZO Motors (unconfirmed). Evidence: https://zmtrucks.us/
     Region sources: sbcounty-ev. Confidence: low. Unresolved: zmtrucks.com redirects to zmtrucks.us. Founded year,
-    headcount, ownership not found. Terminal tractor and airport GSE products in input not seen on site.'
+    headcount, ownership not found. Terminal tractor and airport GSE products in input not seen on site. Categories
+    (decision 23): Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles):
+    Battery-electric commercial trucks (Class 4 to 5 cab-chassis). Decision 26.'
+  categories:
+  - automotive
 - id: zoox
   name: Zoox
   website: null
@@ -65646,9 +65944,11 @@ companies:
     status: out
     reason: Part of Amazon; not independent.
   notes: 'Missing facts filled from data/screening/registry-fixes. Categories (decision 23): Autonomy and robotics:
-    Autonomous vehicles.'
+    Autonomous vehicles. Categories (decision 23): Automotive (autonomous-vehicle maker: builds its own road vehicles):
+    Autonomous vehicles. Out by decision. Decision 26. Keeps autonomy-robotics.'
   parent: Amazon
   categories:
+  - automotive
   - autonomy-robotics
 - id: zwitterco
   name: ZwitterCo
