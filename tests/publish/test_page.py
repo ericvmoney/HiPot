@@ -136,14 +136,13 @@ def test_role_type_hues_live_in_the_stylesheet():
 
 
 def test_location_filter_lists_every_place_in_a_searchable_scrolling_list():
-    # Every metro area and state with roles is listed, by role count, in a scrolling box with a search.
+    # Every metro area and state with roles is listed in a scrolling box with a search.
     assert "LOCATION_SHORT_LIST" not in SCRIPT and "moreButton" not in SCRIPT
     assert "facet.scroller = el('div', { class: 'loc-list'" in SCRIPT
     assert re.search(r"\.loc-list \{[^}]*max-height: 320px; overflow-y: auto;", STYLE)
     assert "id: 'f-m-find', type: 'search'" in SCRIPT
-    # Metro areas by role count; states A to Z by name.
-    assert "if (a.kind === 'state') return a.label.localeCompare(b.label, 'en');" in SCRIPT
-    assert "return (b.total - a.total) || a.label.localeCompare(b.label, 'en');" in SCRIPT
+    # Grouped under their state, states A to Z and metro areas A to Z within (BoardFilters.metroGroups, test_locations.py).
+    assert "var groups = BoardFilters.metroGroups(" in SCRIPT
     # States are location options in their own right, kept in the address as 'state-xx'.
     assert "if (id.indexOf(STATE_PREFIX) === 0) return 'state-' + id.slice(STATE_PREFIX.length);" in SCRIPT
     assert "states.forEach(function (code) { places.push(STATE_PREFIX + code); });" in SCRIPT
