@@ -142,7 +142,7 @@ companies:
   - avadt50
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats:
     type: greenhouse
     token: 1autechnologies
@@ -154,7 +154,8 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Its site shows only a title; identity not established.
+  reason: Identity check found nothing conclusive. Title is consistent with print equipment but identity and location
+    remain unconfirmed
   ats: null
   open_roles: null
 - name: 9 Mothers
@@ -253,7 +254,7 @@ companies:
   - houston-spaceport
   registry_id: null
   decision: null
-  reason: Current status of the Webster, TX unit not established.
+  reason: Identity check found nothing conclusive. Status of the Webster unit not established in this pass
   ats:
     type: workday
     token: ag.wd3.myworkdayjobs.com/Airbus
@@ -285,7 +286,7 @@ companies:
   - ati-ut
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Allen Control Systems
@@ -334,13 +335,13 @@ companies:
     token: defc0b8b-addd-4382-bcd6-0acd2b378ea9
   open_roles: null
 - name: Anantak Robotics
-  website: null
+  website: https://www.anantak.com
   hq: Dallas, TX
   sources:
   - dallas-innovates-awards-2025
-  registry_id: null
-  decision: null
-  reason: No website found; identity not established.
+  registry_id: anantak-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Applied Optoelectronics (AOI)
@@ -388,13 +389,13 @@ companies:
   ats: null
   open_roles: null
 - name: Astroport Space Technologies
-  website: null
+  website: https://www.astroportspace.com
   hq: San Antonio, TX
   sources:
   - port-sa-2021
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: astroport-space-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Atlas Energy Solutions
@@ -426,7 +427,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Axiom Space
@@ -518,7 +519,7 @@ companies:
   - houston-spaceport
   registry_id: null
   decision: null
-  reason: No website found; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Caddo Creek Resources Company
@@ -604,13 +605,13 @@ companies:
   ats: null
   open_roles: null
 - name: CNPC USA Corporation
-  website: null
+  website: https://www.cnpcusa.com
   hq: Houston, TX
   sources:
   - otc-spotlight-2026
-  registry_id: null
-  decision: null
-  reason: Product and status not established.
+  registry_id: cnpc-usa-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Control Panels USA
@@ -693,7 +694,8 @@ companies:
   - rice-etvf-2022
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. The given domain belongs to a different business; the sensor
+    company itself was not found
   ats: null
   open_roles: null
 - name: Diligent Robotics
@@ -757,7 +759,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: EFR Alta Mesa
@@ -792,24 +794,14 @@ companies:
     type: other
     token: https://energyx.com/careers/
   open_roles: null
-- name: ENF Technology
-  website: null
-  hq: Austin, TX
-  sources:
-  - opportunity-austin
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
-  ats: null
-  open_roles: null
 - name: Enflite
   website: https://enflite.com
   hq: Georgetown, TX
   sources:
   - opportunity-austin
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: enflite
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: EOS North America
@@ -851,7 +843,7 @@ companies:
   - rice-etvf-2022
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Possibly related to Universal Subsea, but no link found
   ats: null
   open_roles: null
 - name: ezNG Solutions
@@ -896,16 +888,6 @@ companies:
   registry_id: field-viewers-inc
   decision: registry
   reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
-  ats: null
-  open_roles: null
-- name: Fine Semitech
-  website: null
-  hq: Hutto, TX
-  sources:
-  - opportunity-austin
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: Firefly Aerospace
@@ -953,7 +935,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Galadyne
@@ -971,9 +953,9 @@ companies:
   hq: Austin, TX
   sources:
   - opportunity-austin
-  registry_id: null
-  decision: null
-  reason: No site could be read; status not established.
+  registry_id: genxcomm
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Graze Robotics
@@ -983,7 +965,8 @@ companies:
   - dallas-innovates-awards-2025
   registry_id: null
   decision: null
-  reason: No website found; identity not established.
+  reason: Identity check found nothing conclusive. The redirect suggests the domain lapsed and the company may be
+    defunct; not confirmed
   ats: null
   open_roles: null
 - name: GRC (Green Revolution Cooling)
@@ -1013,7 +996,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Halliburton
@@ -1055,7 +1038,7 @@ companies:
   - dallas-innovates-awards-2025
   registry_id: null
   decision: null
-  reason: No website found; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats:
     type: ashby
     token: harbor
@@ -1146,13 +1129,13 @@ companies:
   ats: null
   open_roles: null
 - name: Indo-MIM
-  website: null
+  website: https://www.indo-mim.com
   hq: San Antonio, TX
   sources:
   - port-sa-2021
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: indo-mim
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Inductive Robotics
@@ -1230,17 +1213,6 @@ companies:
   registry_id: intuitive-machines
   decision: registry
   reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
-  ats: null
-  open_roles: null
-- name: Involve Space
-  website: null
-  hq: Houston, TX
-  sources:
-  - houston-spaceport
-  - innovationmap-space
-  registry_id: null
-  decision: null
-  reason: No website found; identity not established.
   ats: null
   open_roles: null
 - name: IronLattice
@@ -1340,14 +1312,14 @@ companies:
   ats: null
   open_roles: null
 - name: LTD Material
-  website: null
+  website: https://www.ltdmaterial.com
   hq: Austin, TX
   sources:
   - opportunity-austin
   - tsif-listing
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: ltd-material
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Luminant Mining Company
@@ -1367,7 +1339,7 @@ companies:
   - texastribune-2025-mining
   registry_id: null
   decision: null
-  reason: The funded company of that name works on mining waste, not the input's product.
+  reason: Identity check found nothing conclusive. No San Antonio or produced-water company of this name confirmed
   ats: null
   open_roles: null
 - name: Maverick Power
@@ -1451,7 +1423,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: NetForwards
@@ -1461,7 +1433,7 @@ companies:
   - rice-etvf-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Neurophos
@@ -1491,9 +1463,9 @@ companies:
   hq: Houston, TX
   sources:
   - rice-etvf-2024
-  registry_id: null
-  decision: null
-  reason: Its site is a template; identity not established.
+  registry_id: novapont-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Noveon Magnetics
@@ -1514,7 +1486,7 @@ companies:
   - houston-spaceport
   registry_id: null
   decision: null
-  reason: No website found; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Oceaneering Space Systems
@@ -1674,7 +1646,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Pulseforge
@@ -1708,7 +1680,7 @@ companies:
   - houston-spaceport
   registry_id: null
   decision: null
-  reason: No website found; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Reckon Point
@@ -1718,7 +1690,8 @@ companies:
   - port-sa-2021
   registry_id: null
   decision: null
-  reason: Its domain now redirects to a domain-for-sale page; status not established.
+  reason: Identity check found nothing conclusive. Company was real but no activity after about 2021 found and its
+    domain is for sale; likely dormant or closed, not confirmed. hugedomains.com returned 403 and was not retried
   ats: null
   open_roles: null
 - name: Red Shift Energy
@@ -1749,7 +1722,8 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Its site returns 404; status not established.
+  reason: Identity check found nothing conclusive. Likely defunct (dead site, no news since mid-2022) but no closure
+    notice found
   ats: null
   open_roles: null
 - name: Renesin
@@ -1782,7 +1756,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats:
     type: ashby
     token: resurgent-industries
@@ -1792,9 +1766,9 @@ companies:
   hq: Austin, TX
   sources:
   - rice-etvf-2022
-  registry_id: null
-  decision: null
-  reason: Its site names Tribo Dynamics Inc.; identity not established.
+  registry_id: rset-rotating-sleeve-engine-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Safe Isolations
@@ -1804,7 +1778,8 @@ companies:
   - rice-etvf-2022
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Company exists as a patent holder; location and current status
+    not confirmed
   ats: null
   open_roles: null
 - name: Saronic
@@ -1961,7 +1936,8 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Likely the US arm of German machine-tool maker SPINNER, but no
+    Austin entity confirmed
   ats: null
   open_roles: null
 - name: Starlab Space
@@ -1993,7 +1969,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: The SunScout found points to Massachusetts and New Zealand, not Buda, TX.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Sykes Industries
@@ -2003,7 +1979,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Known only from a state project record; identity not established.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: TAMOS
@@ -2029,13 +2005,13 @@ companies:
     token: tau
   open_roles: 2
 - name: TDK RF Solutions
-  website: https://tdkrfsolutions.com
+  website: https://www.tdkrfsolutions.tdk.com
   hq: Cedar Park, TX
   sources:
   - opportunity-austin
-  registry_id: null
-  decision: null
-  reason: Its site had a certificate error; identity not established.
+  registry_id: tdk-rf-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Terminus Industrials
@@ -2258,7 +2234,7 @@ companies:
   - ati-ut
   registry_id: null
   decision: null
-  reason: Its domain no longer resolves; status not established.
+  reason: Identity check found nothing conclusive. Dead domain suggests it may be defunct; no closure evidence
   ats: null
   open_roles: null
 - name: Wright One
@@ -2268,7 +2244,7 @@ companies:
   - opportunity-austin
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: XArc (Exploration Architecture Corporation)
@@ -2279,7 +2255,7 @@ companies:
   - port-sa-2021
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Yerico Manufacturing
@@ -2338,10 +2314,18 @@ excluded:
   sources:
   - opportunity-austin
   reason: Headquartered in Atlanta, GA; Round Rock was not confirmed.
+- name: ENF Technology
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Yongin, South Korea.
 - name: EVS Metal
   sources:
   - opportunity-austin
   reason: Headquartered in Riverdale, NJ.
+- name: Fine Semitech
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Hwaseong, South Korea.
 - name: FormFactor
   sources:
   - tsif-listing
@@ -2358,6 +2342,11 @@ excluded:
   sources:
   - tx-space-commission
   reason: Headquartered in Seattle, WA; Texas is an R&D site.
+- name: Involve Space
+  sources:
+  - houston-spaceport
+  - innovationmap-space
+  reason: Headquartered in Italy.
 - name: Iron Ox
   sources:
   - opportunity-austin

@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: 9-mothers
   name: 9 Mothers
@@ -386,6 +386,34 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
+- id: anantak-robotics
+  name: Anantak Robotics
+  website: https://www.anantak.com
+  careers_url: null
+  hq: Dallas, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Autonomous mobile robots for warehouses and factories: autonomous pallet jacks, tuggers and forklifts,
+      plus Firefly floor-signal devices. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: a n a n t a Region sources: dallas-innovates-awards-2025.
+    Confidence: low.'
+  categories:
+  - autonomy-robotics
 - id: applied-optoelectronics-aoi
   name: Applied Optoelectronics (AOI)
   website: https://ao-inc.com/
@@ -485,6 +513,33 @@ companies:
     https://dealroom.co/companies/arix-technologies Region sources: innovationmap-tempest. Confidence: medium. Unresolved:
     HQ not stated on own site (Dealroom: Houston); round dates.'
   categories:
+  - autonomy-robotics
+- id: astroport-space-technologies
+  name: Astroport Space Technologies
+  website: https://www.astroportspace.com
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: out
+    reason: Lunar construction materials and systems (regolith bricks, Lunatron 3D printing / Brickbot, site preparation).
+      Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Stage: Own site mentions a $1.4M NASA STTR portfolio; no equity
+    round found Evidence: a s t r o p Region sources: port-sa-2021. Confidence: low.'
+  categories:
+  - aerospace-space
   - autonomy-robotics
 - id: atlas-energy-solutions
   name: Atlas Energy Solutions
@@ -936,6 +991,34 @@ companies:
     for semiconductor machinery) not confirmed.'
   categories:
   - semis-electronics
+- id: cnpc-usa-corporation
+  name: CNPC USA Corporation
+  website: https://www.cnpcusa.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2011
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Oilfield technology: PDC drill bits, Monox expandable casing, UltraSense bit-intelligence sub, frac
+      plugs, fracturing fluids, drilling-fluid additives. Adjacent (Combustion, oil and gas), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Own about page ties it to CNPC''s worldwide energy operations
+    (China National Petroleum Corporation unit) Flags: Street address not on site. Evidence: c n p c u s Region
+    sources: otc-spotlight-2026. Confidence: low.'
+  categories:
+  - oil-gas
 - id: control-panels-usa
   name: Control Panels USA
   website: https://controlpanelsusa.net
@@ -1306,6 +1389,33 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
+- id: enflite
+  name: Enflite
+  website: https://enflite.com
+  careers_url: null
+  hq: Georgetown, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom aircraft cabin mechanisms and galley appliances. Adjacent (Aerospace and space), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Founded year not on site; ''30+ years'' implies early-to-mid
+    1990s. Evidence: e n f l i t Region sources: opportunity-austin. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: eos-north-america
   name: EOS North America
   website: https://www.eos.info/
@@ -1586,6 +1696,39 @@ companies:
   categories:
   - aerospace-space
   - defense
+- id: genxcomm
+  name: GenXComm
+  website: https://genxcomm.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2016
+  headcount:
+    value: 139
+    as_of: '2026-11-24'
+    source: dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/gxc)
+  climate:
+    tier: out
+    reason: Photonic processors and full-duplex wireless/cellular mesh networking technology. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 139 people (dealroom; undated, so as_of is the day it was read, 2026-11-24). Owned by a larger company;
+      not independent.
+  notes: 'No job board found on the company''s site. Stage: Dealroom lists acquisition by Motive Companies, November
+    2024 (amount undisclosed); prior round 8.2M USD, July 2023 Flags: genxcomm.com serves a self-signed certificate,
+    so the site could not be read. The photonic-chip business the source describes was sold to ORCA Computing; the
+    remaining GXC is owned by Motive Companies. Evidence: D e a l r o Region sources: opportunity-austin. Confidence:
+    low.'
+  categories:
+  - semis-electronics
 - id: grc-green-revolution-cooling
   name: GRC (Green Revolution Cooling)
   website: https://www.grcooling.com/
@@ -1812,6 +1955,34 @@ companies:
   categories:
   - advanced-manufacturing
   - aerospace-space
+- id: indo-mim
+  name: Indo-MIM
+  website: https://www.indo-mim.com
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Metal injection molded parts, metal additive manufacturing and precision machining. Adjacent (Advanced
+      manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Indo-MIM Inc. is the US manufacturing arm of the India-based
+    Indo-MIM group Flags: indo-mim.com answered every fetch with a 307 redirect, so its pages were not read directly.
+    Headcount figures in the press (about 50 to 300) are old and conflict, so none recorded. Evidence: S e a r c
+    h Region sources: port-sa-2021. Confidence: low.'
+  categories:
+  - advanced-manufacturing
 - id: infravision
   name: Infravision
   website: https://theinfravision.com
@@ -2181,6 +2352,34 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
+- id: ltd-material
+  name: LTD Material
+  website: https://www.ltdmaterial.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Fused quartz and ceramic components for semiconductor tools (chamber liners, domes, boats, process tubes,
+      injectors, windows). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Site says it has served clients ''over a decade''; founded
+    year not stated. Evidence: l t d m a t Region sources: opportunity-austin, tsif-listing. Confidence: low.'
+  categories:
+  - semis-electronics
 - id: luminant-mining-company
   name: Luminant Mining Company
   website: https://www.luminant.com
@@ -2478,6 +2677,34 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
+- id: novapont-technology
+  name: Novapont Technology
+  website: https://novaponttechnology.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: H2DZL water-fed hydrogen generator that injects hydrogen into diesel engine air intakes. Adjacent (Combustion,
+      oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Weak: much of the site is theme filler (Gazolin template
+    credits, duplicated testimonials). Product matches the source; no street address or founding year. Evidence:
+    n o v a p o Region sources: rice-etvf-2024. Confidence: low.'
+  categories:
+  - oil-gas
 - id: noveon-magnetics
   name: Noveon Magnetics
   website: https://noveon.co/
@@ -3055,6 +3282,35 @@ companies:
     Unresolved: HQ, founded, headcount, funding'
   categories:
   - semis-electronics
+- id: rset-rotating-sleeve-engine-technologies
+  name: RSET (Rotating Sleeve Engine Technologies)
+  website: https://www.rotatingliner.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Rotating liner engine (RLE) retrofit that rotates the cylinder liner to cut piston friction in heavy-duty
+      diesels (about 10 percent fuel saving claimed). Adjacent (Combustion, oil and gas), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Same technology and same inventor''s patents; that RSET
+    became Tribo Dynamics is inferred, not stated by a source. Evidence: r o t a t i Region sources: rice-etvf-2022.
+    Confidence: low.'
+  categories:
+  - oil-gas
 - id: saronic
   name: Saronic
   website: https://www.saronic.com/
@@ -3537,6 +3793,35 @@ companies:
     facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
     quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.tausystems.com/
     Region sources: avadt50. Confidence: high.'
+  categories:
+  - semis-electronics
+- id: tdk-rf-solutions
+  name: TDK RF Solutions
+  website: https://www.tdkrfsolutions.tdk.com
+  careers_url: null
+  hq: Cedar Park, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1987
+  headcount: null
+  climate:
+    tier: out
+    reason: 'EMC and antenna test equipment: anechoic chambers, RF absorbers, antennas, automated test systems and
+      software; EMC test services. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Part of TDK Corporation''s EMC & RF engineering business;
+    acquired by TDK in 1998 (search snippets of company''s own about page) Flags: tdkrfsolutions.tdk.com returned
+    403 to the fetcher, so details come from search-result snippets only; not retried. Evidence: W e b   s e Region
+    sources: opportunity-austin. Confidence: low.'
   categories:
   - semis-electronics
 - id: terminus-industrials
