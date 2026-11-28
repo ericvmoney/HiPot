@@ -1,0 +1,660 @@
+# Registry fixes 26: the Automotive category (decision 26, 2026-11-27) for companies already in the registry.
+#
+# Written by workstream A2 at the supervisor's request. Each entry is `kind: categories` with the company's full list
+# (its existing categories kept, automotive added) and a one-line reason. Clean tech is never written: it follows from
+# a core or enabling tier, which these entries leave unchanged. `tier` is shown for reading only.
+#
+# taxonomy.yml: automotive covers "Vehicle makers and their plants, and auto-parts suppliers, whatever the drivetrain."
+# The owner's ruling on the edges (decision 26, 2026-11-28): RVs, fire trucks and specialty vehicles, and powersports
+# and motorcycles are automotive; trailers are not.
+# Tagged here: road-vehicle makers (cars, trucks, buses, vans, specialty and low-speed vehicles) and their plants,
+# electric-vehicle makers already in clean tech, motorcycle and powersports makers, powertrain and conversion-kit
+# makers for road vehicles, and parts suppliers whose main market is road vehicles. No RV or fire-truck maker is in
+# the registry yet. Left untagged on purpose: trailers, battery cells, packs and battery materials, chargers, e-bikes
+# and scooters, lift trucks, rail, aircraft, autonomy software and robotaxi operators, and sensor makers that sell to
+# many markets.
+# Judged from each company's registry reason and notes; no new fetches.
+# Entries: 77; out-tier companies listed for the first time: 22.
+# Counts per category: automotive 77, autonomy-robotics 4, defense 2, oil-gas 1, semis-electronics 4.
+
+fixes:
+- id: ford-motor-company
+  name: Ford Motor Company
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Cars and trucks, still mostly combustion; electric models
+    are a small share. Decision 26.'
+  tier: out
+- id: general-motors
+  name: General Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Cars and trucks, still mostly combustion; electric models
+    are a small share. Decision 26.'
+  tier: out
+- id: paccar
+  name: PACCAR
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Kenworth, Peterbilt and DAF heavy trucks, still mostly
+    diesel; electric models are a small share. Decision 26.'
+  tier: out
+- id: mack-trucks
+  name: Mack Trucks
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Heavy and medium trucks, still mostly combustion; electric
+    models are a small share. Decision 26.'
+  tier: out
+- id: daimler-truck-north-america
+  name: Daimler Truck North America
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Freightliner and other heavy trucks and buses, still mostly
+    diesel; electric models are a small share. Decision 26.'
+  tier: out
+- id: blue-bird-corporation
+  name: Blue Bird Corporation
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): School buses, mostly diesel, propane and gasoline; electric
+    models are a small share. Decision 26.'
+  tier: out
+- id: gillig
+  name: Gillig
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Transit buses, still mostly diesel and CNG; battery-electric
+    and hydrogen buses are a growing share. Decision 26.'
+  tier: out
+- id: greenkraft
+  name: Greenkraft
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Commercial trucks and vans running mostly on gasoline,
+    CNG and LPG, with an electric line. Decision 26.'
+  tier: out
+- id: oshkosh
+  name: Oshkosh
+  kind: categories
+  categories:
+  - automotive
+  - defense
+  reason: 'Automotive (vehicle maker: makes cars, trucks or buses): Specialty and defense trucks. Decision 26. Keeps defense.'
+  tier: out
+- id: kia-georgia
+  name: Kia Georgia
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly plant, still mostly combustion;
+    electric models are a small share. Decision 26.'
+  tier: out
+- id: hyundai-motor-manufacturing-alabama
+  name: Hyundai Motor Manufacturing Alabama
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly plant, still mostly combustion;
+    electric models are a small share. Decision 26.'
+  tier: out
+- id: hyundai-motor-group-metaplant-america
+  name: Hyundai Motor Group Metaplant America
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): EV assembly plant building the Hyundai
+    Ioniq 5 and Ioniq 9 (also Kia Sportage Hybrid from 2026); designed for 500,000+ vehicles a year. Decision 26.'
+  tier: enabling
+- id: bmw-manufacturing
+  name: BMW Manufacturing
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly plant, still mostly combustion;
+    electric models are a small share. Decision 26.'
+  tier: out
+- id: nissan
+  name: Nissan
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly, still mostly combustion;
+    electric models are a small share. Decision 26.'
+  tier: out
+- id: volkswagen-chattanooga
+  name: Volkswagen Chattanooga
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Vehicle assembly; ID.4 electric production
+    ended in April 2026, so still mostly combustion; electric models are a small share. Decision 26.'
+  tier: out
+- id: tabc-toyota
+  name: TABC (Toyota)
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle plant: a vehicle maker''s assembly or parts plant): Toyota plant making truck beds and parts;
+    fuel-cell module assembly there was not confirmed. Decision 26.'
+  tier: out
+- id: rivian
+  name: Rivian
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles.
+    Decision 26.'
+  tier: enabling
+- id: tesla
+  name: Tesla
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles
+    and storage. Decision 26.'
+  tier: enabling
+- id: lucid-motors
+  name: Lucid Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles.
+    Decision 26.'
+  tier: enabling
+- id: scout-motors
+  name: Scout Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric and range-extended
+    (gasoline generator) SUVs and pickups; Volkswagen Group subsidiary. Decision 26.'
+  tier: enabling
+- id: xos
+  name: Xos
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    medium-duty commercial trucks and step vans, powertrains for specialty vehicles (e.g. school buses), and mobile charging
+    (Xos Hub). Decision 26.'
+  tier: enabling
+- id: harbinger
+  name: Harbinger
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Medium-duty electric
+    (and range-extended) stripped truck chassis and EV platform, built in-house. Decision 26.'
+  tier: enabling
+- id: aptera
+  name: Aptera
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Solar-assisted three-wheel
+    electric vehicle. Decision 26.'
+  tier: enabling
+- id: byd-motors
+  name: BYD Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    transit buses, coaches and medium/heavy-duty trucks assembled at its Lancaster, CA factory. Decision 26.'
+  tier: enabling
+- id: cenntro-electric-group
+  name: Cenntro Electric Group
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Commercial electric
+    vehicles, assembled in New Jersey from kits made in China. Decision 26.'
+  tier: enabling
+- id: faraday-future
+  name: Faraday Future
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Electric vehicles
+    (FF 91, FX Super One) on its AIEV platform, plus a preliminary EAI robotics initiative and a majority-owned blockchain
+    subsidiary (AIXC). Decision 26.'
+  tier: enabling
+- id: karma-automotive
+  name: Karma Automotive
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Extended-range electric
+    and battery-electric luxury cars. Decision 26.'
+  tier: enabling
+- id: motiv-power-systems
+  name: Motiv Power Systems
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Class 4 to 6 battery-electric
+    trucks and buses; merged with Workhorse Group (Nasdaq: WKHS) in December 2025 and operates under the Workhorse name. Decision
+    26.'
+  tier: enabling
+- id: phoenix-motorcars
+  name: Phoenix Motorcars
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    shuttle, school and transit buses (now including Proterra''s former bus business). Decision 26.'
+  tier: enabling
+- id: eldorado-national-california
+  name: ElDorado National-California
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Heavy-duty transit
+    buses (Axess, E-Z Rider II, XHF, Passport-HD), including battery-electric and fuel-cell versions per input. Decision 26.'
+  tier: core
+- id: ebus
+  name: Ebus
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    buses (EBUS22 shuttle, composite bus), retrofit kits converting diesel/CNG buses to battery-electric, battery swap and
+    fast-charging stations. Decision 26.'
+  tier: core
+- id: the-shyft-group
+  name: The Shyft Group
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Specialty vehicles
+    (walk-in vans, truck bodies) incl. Blue Arc EV electric delivery vans. Decision 26.'
+  tier: enabling
+- id: voltu-motor
+  name: Voltu Motor
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): All-electric heavy-duty
+    work pickup. Decision 26.'
+  tier: enabling
+- id: zm-trucks
+  name: ZM Trucks
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    commercial trucks (Class 4 to 5 cab-chassis). Decision 26.'
+  tier: enabling
+- id: olympian-motors
+  name: Olympian Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Model O1 electric
+    coupe and a modular EV chassis with integrated drivetrain for other automakers (now branded Olympus). Decision 26.'
+  tier: enabling
+- id: eli-electric-vehicles
+  name: Eli Electric Vehicles
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Two-seat enclosed
+    micro electric vehicle. Decision 26.'
+  tier: enabling
+- id: vantage-vehicle-international
+  name: Vantage Vehicle International
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Gas and electric
+    low-speed and utility vehicles. Decision 26.'
+  tier: enabling
+- id: waev
+  name: Waev
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (electric-vehicle maker: makes electric cars, trucks, buses or low-speed vehicles): Battery-electric
+    low-speed and industrial utility vehicles. Decision 26.'
+  tier: enabling
+- id: zoox
+  name: Zoox
+  kind: categories
+  categories:
+  - automotive
+  - autonomy-robotics
+  reason: 'Automotive (autonomous-vehicle maker: builds its own road vehicles): Autonomous vehicles. Out by decision. Decision
+    26. Keeps autonomy-robotics.'
+  tier: out
+- id: tensor-auto
+  name: Tensor Auto
+  kind: categories
+  categories:
+  - automotive
+  - autonomy-robotics
+  reason: 'Automotive (autonomous-vehicle maker: builds its own road vehicles): Tensor Robocar, a Level 4 personally owned
+    autonomous luxury crossover to be sold to consumers from 2026. Purely autonomous road vehicles are out (owner ruling A5).
+    Decision 26. Keeps autonomy-robotics.'
+  tier: out
+- id: zero-motorcycles
+  name: Zero Motorcycles
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    motorcycles and Z-Force powertrains, including police models and powertrains for partners. Decision 26.'
+  tier: enabling
+- id: ryvid
+  name: Ryvid
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Battery-electric
+    motorcycles designed and built in Southern California. Decision 26.'
+  tier: enabling
+- id: pave-motors
+  name: Pave Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    motorbikes designed and assembled in Brooklyn. Decision 26.'
+  tier: enabling
+- id: infinite-machine
+  name: Infinite Machine
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    two-wheelers: the Olto two-seat bike-lane vehicle and the P1 electric scooter/motorcycle. Decision 26.'
+  tier: enabling
+- id: lit-motors
+  name: Lit Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): AEV,
+    a gyro-stabilized enclosed two-wheeled electric vehicle seating two, open for pre-order. Decision 26.'
+  tier: enabling
+- id: rindev
+  name: RINDEV
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Unity,
+    an electric side-by-side off-road vehicle (500+ peak hp, up to 350 miles range), taking preorders. Decision 26.'
+  tier: enabling
+- id: cobra-moto
+  name: Cobra MOTO
+  kind: categories
+  categories:
+  - automotive
+  - defense
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electrified
+    military motorcycle (prototype). Defense is its main business (owner ruling A3). Decision 26. Keeps defense.'
+  tier: out
+- id: blue-dot-motorworks
+  name: Blue Dot Motorworks
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Retrofit plug-in
+    hybrid systems that convert existing gas and diesel vehicles into plug-in hybrids. Decision 26.'
+  tier: enabling
+- id: evolectric
+  name: Evolectric
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Kits that convert
+    existing fleet vehicles to battery-electric. Decision 26.'
+  tier: enabling
+- id: maxwell-vehicles
+  name: Maxwell Vehicles
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Electric drivetrain
+    conversions for delivery vans. Decision 26.'
+  tier: enabling
+- id: zero-labs-automotive
+  name: Zero Labs Automotive
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Electric vehicle
+    design and electric conversions of classic vehicles. Decision 26.'
+  tier: enabling
+- id: revo-powertrains-wrightspeed
+  name: REVO Powertrains (Wrightspeed)
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): RePower kits
+    that convert diesel trucks and buses to electric (e-axle, battery, harness, controls); formerly microturbine range-extended
+    powertrains. Decision 26.'
+  tier: core
+- id: complete-coach-works
+  name: Complete Coach Works
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Refurbishes and
+    repowers transit buses, including battery-electric conversions. Decision 26.'
+  tier: enabling
+- id: revoy
+  name: Revoy
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Electric powered
+    dolly (SixWheel) that makes diesel semi trucks hybrid-electric; offered with no upfront cost. Decision 26.'
+  tier: enabling
+- id: sigma-powertrain
+  name: Sigma Powertrain
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): Multi-speed all-electric
+    powertrain for heavy haul trucks. Decision 26.'
+  tier: enabling
+- id: kb-powertrain
+  name: KB Powertrain
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (vehicle conversion or powertrain: powertrains and conversion kits for road vehicles): eRHINO electrified
+    axle for commercial vehicles (prototype). Decision 26.'
+  tier: enabling
+- id: lear-corporation
+  name: Lear Corporation
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Automotive seating and electrical
+    distribution for all vehicles; electric-vehicle parts are a small share. Decision 26.'
+  tier: out
+- id: hanon-systems
+  name: Hanon Systems
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Thermal-management systems for
+    all vehicles; electric-vehicle share not stated, so no climate case under the rubric. Decision 26.'
+  tier: out
+- id: hitachi-astemo-americas
+  name: Hitachi Astemo Americas
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Automotive components for all vehicles;
+    electric-powertrain parts are a small share. Decision 26.'
+  tier: out
+- id: doowon-climate-control-america
+  name: DooWon Climate Control America
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Vehicle air-conditioning systems
+    for all vehicles; no climate case under the rubric. Decision 26.'
+  tier: out
+- id: woory-industrial
+  name: Woory Industrial
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): HVAC components for all vehicles;
+    no climate case under the rubric. Decision 26.'
+  tier: out
+- id: shinsung-petrochemical
+  name: Shinsung Petrochemical
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Automotive adhesives and sealants;
+    no climate case under the rubric. Decision 26.'
+  tier: out
+- id: autokiniton
+  name: Autokiniton
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Stamped structural components for
+    vehicles in general, not specific to electric vehicles; no climate case under the rubric. Decision 26.'
+  tier: out
+- id: simon-na-corp
+  name: Simon NA Corp
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): EV doors for Tesla''s Austin factory;
+    car body parts, no climate case under the rubric. Decision 26.'
+  tier: out
+- id: borgwarner
+  name: BorgWarner
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Vehicle propulsion parts, including
+    electric motors, inverters and battery packs alongside combustion-engine parts. Decision 26.'
+  tier: enabling
+- id: dana-electrified-san-clemente-site
+  name: Dana Electrified (San Clemente site)
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Drivetrains and electrified propulsion
+    systems (e-axles, e-drives, motors, inverters, thermal and sealing) for light, commercial and off-highway vehicles. Decision
+    26.'
+  tier: enabling
+- id: mobis-north-america
+  name: Mobis North America
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Assembles EV and plug-in hybrid
+    battery systems (battery base plates and installed packs) at a Toledo, OH plant for just-in-time supply to Stellantis
+    Jeep assembly. Decision 26.'
+  tier: core
+- id: steinmetz
+  name: Steinmetz
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Power electronics, starting with
+    high-power-density motor inverters for electric vehicles. Decision 26.'
+  tier: enabling
+- id: proof-energy
+  name: Proof Energy
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Zero-emission catalytic cabin heater
+    for battery-electric vehicles, plus metallic-oxide fuel cells. Decision 26.'
+  tier: enabling
+- id: cummins
+  name: Cummins
+  kind: categories
+  categories:
+  - automotive
+  - oil-gas
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Diesel and gas engines and generators;
+    its zero-emission unit is a small part. Decision 26. Keeps oil-gas.'
+  tier: out
+- id: inventev
+  name: Inventev
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Subsystems that convert hybrid,
+    battery-electric and fuel-cell truck energy into exportable power for commercial fleets, supplied to truck OEMs. Decision
+    26.'
+  tier: core
+- id: blackburn-energy
+  name: Blackburn Energy
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): RelGen driveshaft-driven hybrid
+    charging system that generates electricity on heavy trucks for liftgates and electric APUs. Decision 26.'
+  tier: core
+- id: rivian-and-volkswagen-group-technologies
+  name: Rivian and Volkswagen Group Technologies
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Vehicle software and electronics
+    joint venture. Decision 26.'
+  tier: enabling
+- id: uhnder
+  name: Uhnder
+  kind: categories
+  categories:
+  - automotive
+  - semis-electronics
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Digital imaging radar-on-chip (software-defined
+    digital radar chips) and sensor modules, mainly for automotive. Adjacent (Semiconductors and electronics), not clean tech
+    under the rubric (decision 23). Decision 26. Keeps semis-electronics.'
+  tier: out
+- id: ethernovia
+  name: Ethernovia
+  kind: categories
+  categories:
+  - automotive
+  - semis-electronics
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Ethernet packet-processor networking
+    chips and software for vehicles and robots, built for automotive functional safety. Adjacent (Semiconductors and electronics),
+    not clean tech under the rubric (decision 23). Decision 26. Keeps semis-electronics.'
+  tier: out
+- id: cepton
+  name: Cepton
+  kind: categories
+  categories:
+  - automotive
+  - autonomy-robotics
+  - semis-electronics
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Lidar sensors (Vista Ultra, Nova
+    Ultra) and Helius perception software for automotive and smart infrastructure. Adjacent (Semiconductors and electronics,
+    Autonomy and robotics), not clean tech under the rubric (decision 23). Decision 26. Keeps autonomy-robotics, semis-electronics.'
+  tier: out
+- id: teradar
+  name: Teradar
+  kind: categories
+  categories:
+  - automotive
+  - autonomy-robotics
+  - semis-electronics
+  reason: 'Automotive (auto-parts supplier: parts and systems supplied for road vehicles): Solid-state terahertz vision sensors
+    (Modular Terahertz Engine chip architecture) for automotive ADAS and autonomy, plus defense and security screening. Adjacent
+    (Semiconductors and electronics, Autonomy and robotics), not clean tech under the rubric (decision 23). Decision 26. Keeps
+    autonomy-robotics, semis-electronics.'
+  tier: out
