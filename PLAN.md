@@ -332,7 +332,7 @@ Decided by Eric on 2026-11-24:
     - The board opens on clean tech, with the other categories one click away in a category filter.
     - The climate tier and its owner rulings are unchanged: they still decide what counts as clean tech.
 22. **Daily refresh** (Eric, 2026-11-27):
-    - The board is refreshed every day on the owner's PC. Collection starts at 08:00 (Windows Task Scheduler, `tools.refresh`), and the shared board is republished at about 11:00 Mountain time (a Claude scheduled task) without a review step.
+    - The board is refreshed every day on the owner's PC. Collection starts at 05:00 (Windows Task Scheduler, `tools.refresh`; 08:00 until 2026-11-28, when the larger registry made runs too long), and the shared board is republished at about 11:00 Mountain time (a Claude scheduled task) without a review step.
     - The task publishes nothing if the run failed, is unfinished, or has under 3,000 roles. HANDOVER.md section 4 has the details.
 20. **Large boards** (Eric, 2026-11-26):
     - GE Vernova's Workday board is read in full, and the reader's cap is raised from 1,000 to 4,000.

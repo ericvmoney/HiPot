@@ -56,7 +56,7 @@ Everything needed to build and run is in the private GitHub repository `ericvmon
 | Your persona and My Roles, from local use | `local-data/persona.yml` and `local-data/my-roles.yml` (ignored; written by `tools.serve_board`, decision 21) | They are personal: copy them yourself to the new machine's `C:\HiPot\local-data\` and they load on the next visit. Never commit them. My Roles also exports to a file from its tab. |
 | Shared board | Artifact `Qcm1YcmXWV8yuyf3L1VDdJ`, owned by Eric's claude.ai account | Only that account can update it. From a new account, publish a new artifact (section 4) and share the new link; the old link keeps its last version. |
 | Old personal job hub (where the seed data came from) | Artifact `Y1umG9JQJiRcZThtTXHScE`; a snapshot sits untracked in `data/seed/raw/` (it holds one person's search profile) | Not needed: the seed import is committed as `data/seed/jobs.json`. |
-| Census files for the metro regions | `data/geo/source/` (ignored) | Needed only to rebuild the metros. The addresses are in `tools/build_metros.py`. |
+| Census files for the metro regions | `data/geo/source/` (ignored), including Connecticut's planning-region crosswalk (`ct_cou_to_cousub_crosswalk.txt`, added 2026-11-28) | Needed only to rebuild the metros. The addresses are in `tools/build_metros.py`. |
 | BLS wage file | `data/pay/source/` (ignored) | Needed only to rebuild the wage reference. The address is in `tools/build_wages.py`. BLS refuses scripts, so download it in a browser. |
 | Recorded feed answers | `data/fixtures-live/` (ignored, about 100 MB) | Optional. A run with `--record` remakes them. |
 | Generated data | `data/jobs.raw.json`, `data/jobs.json`, `site/data/*.json` | Rebuilt by a run (section 3). |
@@ -176,7 +176,7 @@ Declare the `downloads` capability, which the persona page and My Roles export n
 
 There are two parts, both on the owner's PC:
 
-1. **08:00, Windows Task Scheduler.** A task named "HiPot daily refresh" runs `uv run python -m tools.refresh` in `C:\HiPot`.
+1. **05:00, Windows Task Scheduler.** A task named "HiPot daily refresh" runs `uv run python -m tools.refresh` in `C:\HiPot`. It started at 08:00 until 2026-11-28; with about 2,000 listed companies a run takes more than three hours, so it moved earlier to finish before 11:00.
    - It collects, tags, validates, publishes the local board, and makes the shared build in `data/state/shared-build/`.
    - Its result goes to `data/state/refresh-latest.json` and its log to `data/state/logs/`. A lock (`data/state/refresh.lock`) stops two runs overlapping.
    - The PC must be on and signed in. A missed start runs when the PC is next available.

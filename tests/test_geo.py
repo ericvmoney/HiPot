@@ -22,7 +22,7 @@ def test_every_lookup_target_is_a_taxonomy_metro():
     places = json.loads(PLACES_FILE.read_text(encoding="utf-8"))["places"]
     targets = {metro for names in places.values() for metro in names.values()}
     assert targets <= METRO_IDS
-    assert "CT" not in places            # known gap: planning regions vs 2020 counties
+    assert len(places["CT"]) > 150       # Connecticut through its planning regions since 2026-11-28
 
 
 @pytest.mark.parametrize("city,state,expected", [
@@ -57,6 +57,10 @@ def test_every_lookup_target_is_a_taxonomy_metro():
     ("Spicewood", "TX", "austin-tx"),            # not a Census place; hand-mapped
     ("Mesquite", "TX", "dallas-tx"),
     ("Jeffersonville", "IN", "louisville-jefferson-county-ky"),
+    # Connecticut maps through its planning regions since 2026-11-28 (ct_cou_to_cousub_crosswalk.txt).
+    ("North Haven", "CT", "new-haven-ct"),
+    ("Hartford", "CT", "new-haven-ct"),
+    ("Stamford", "CT", "new-york-ny"),
 ])
 def test_metro_for(city, state, expected):
     assert metro_for(city, state) == expected
@@ -64,7 +68,6 @@ def test_metro_for(city, state, expected):
 
 @pytest.mark.parametrize("city,state", [
     ("Milford", "UT"),          # rural: no metro, the board still has the state
-    ("North Haven", "CT"),      # Connecticut gap
     ("Atlantis", "CA"),         # not a place
     ("Front Range", "CO"),      # spans two metro regions: not guessed
     ("Bengaluru", None),

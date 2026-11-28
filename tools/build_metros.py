@@ -20,9 +20,13 @@ to one, otherwise the Metropolitan Statistical Area itself. Micropolitan areas
 join their CSA when they are in one; a micropolitan area outside any CSA, and
 rural places, get no metro (the board still has the state).
 
-Known gap: the 2023 delineations use Connecticut's nine planning regions, but the
-2020 place and town files use its old counties, so Connecticut places are left
-unmapped until a planning-region crosswalk is added.
+Connecticut: the 2023 delineations use its nine planning regions, but the 2020 place
+and town files use its old counties. ct_cou_to_cousub_crosswalk.txt (Census, from
+https://www2.census.gov/geo/docs/reference/ct_change/ct_cou_to_cousub_crosswalk.txt,
+downloaded 2026-11-28) gives each town's planning region, so towns map through it. A
+Connecticut place that is not itself a town maps only when every planning region its
+old county became lies in the same metro. (Until 2026-11-28 Connecticut places were left
+unmapped.)
 
     uv run python -m tools.build_metros
 """
@@ -43,11 +47,27 @@ SOURCE = ROOT / "data" / "geo" / "source"
 DELINEATION = SOURCE / "list1_2023.xlsx"
 PLACES = SOURCE / "national_place_by_county2020.txt"
 COUSUBS = SOURCE / "national_cousub2020.txt"
+CT_CROSSWALK = SOURCE / "ct_cou_to_cousub_crosswalk.txt"
 TAXONOMY = ROOT / "taxonomy.yml"
 BEGIN, END = "# BEGIN metros", "# END metros"
 
-NEW_ENGLAND = {"ME", "NH", "VT", "MA", "RI"}  # Connecticut: see the known gap above
-NOT_MAPPED_STATES = {"CT"}
+NEW_ENGLAND = {"ME", "NH", "VT", "MA", "RI", "CT"}   # towns (county subdivisions) are the places people name
+
+
+def read_ct_crosswalk(path=CT_CROSSWALK) -> tuple[dict, dict]:
+    """Connecticut: (old county fips, town fips) -> planning-region fips, and old county
+    fips -> every planning-region fips it became."""
+    import csv
+    town, old_to_new = {}, defaultdict(set)
+    with open(path, encoding="utf-8-sig", newline="") as handle:
+        rows = list(csv.reader(handle, delimiter="|"))
+    for row in rows[1:]:
+        if len(row) < 6 or not row[0].strip().isdigit():
+            continue
+        statefp, old_county, new_county, cousub = row[0].strip(), row[1].strip(), row[3].strip(), row[5].strip()
+        town[(statefp + old_county, cousub)] = statefp + new_county
+        old_to_new[statefp + old_county].add(statefp + new_county)
+    return town, old_to_new
 
 # Ids the seed data already uses stay stable.
 LEGACY_IDS = {("CSA", "488"): "sf-bay-area", ("CBSA", "41740"): "san-diego",
@@ -171,11 +191,26 @@ def place_names(state: str, census_name: str) -> list[str]:
 def build_places(region_of_county: dict, regions: dict) -> tuple[dict, Counter]:
     candidates: dict[tuple[str, str], set] = defaultdict(set)
     stats = Counter()
+    ct_town, ct_old_to_new = read_ct_crosswalk()
 
-    def add(state, census_name, county_fips):
-        if state in NOT_MAPPED_STATES:
-            stats["connecticut_skipped"] += 1
-            return
+    def add(state, census_name, county_fips, town_fips=None):
+        if state == "CT":
+            # Old county -> planning region: exact for a town; for another place, only
+            # when every planning region the old county became is in the same metro.
+            if town_fips is not None:
+                county_fips = ct_town.get((county_fips, town_fips))
+                if county_fips is None:
+                    stats["connecticut_town_not_in_crosswalk"] += 1
+                    return
+            else:
+                found = {region_of_county.get(new) for new in ct_old_to_new.get(county_fips, ())}
+                if len(found) != 1:
+                    stats["connecticut_place_spans_regions"] += 1
+                    return
+                region = next(iter(found))
+                for name in place_names(state, census_name):
+                    candidates[(state, normalise_place(name))].add(regions[region]["id"] if region else None)
+                return
         region = region_of_county.get(county_fips)
         for name in place_names(state, census_name):
             candidates[(state, normalise_place(name))].add(regions[region]["id"] if region else None)
@@ -184,9 +219,9 @@ def build_places(region_of_county: dict, regions: dict) -> tuple[dict, Counter]:
         state, statefp, countyfp, _, _, _, name, *_ = line.split("|")
         add(state, name, statefp + countyfp)
     for line in COUSUBS.read_text(encoding="utf-8").splitlines()[1:]:
-        state, statefp, countyfp, _, _, _, name, *_ = line.split("|")
-        if state in NEW_ENGLAND:
-            add(state, name, statefp + countyfp)
+        state, statefp, countyfp, _, cousubfp, _, name, *_ = line.split("|")
+        if state in NEW_ENGLAND and cousubfp != "00000":
+            add(state, name, statefp + countyfp, cousubfp if state == "CT" else None)
 
     places: dict[str, dict[str, str]] = defaultdict(dict)
     for (state, key), found in candidates.items():
@@ -235,8 +270,8 @@ def main() -> int:
     PLACES_FILE.parent.mkdir(parents=True, exist_ok=True)
     PLACES_FILE.write_text(json.dumps({
         "generated_by": "tools/build_metros.py",
-        "sources": {path.name: sha256(path) for path in (DELINEATION, PLACES, COUSUBS)},
-        "note": "state -> normalised place name (pipeline.geo.normalise_place) -> metro id in taxonomy.yml. Connecticut is not mapped yet.",
+        "sources": {path.name: sha256(path) for path in (DELINEATION, PLACES, COUSUBS, CT_CROSSWALK)},
+        "note": "state -> normalised place name (pipeline.geo.normalise_place) -> metro id in taxonomy.yml. Connecticut maps through its planning regions (ct_cou_to_cousub_crosswalk.txt).",
         "places": places,
     }, separators=(",", ":"), sort_keys=False) + "\n", encoding="utf-8", newline="\n")
 
