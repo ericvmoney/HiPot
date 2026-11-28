@@ -308,6 +308,7 @@ Decided by Eric on 2026-11-24:
     - A ninth adjacent category, `automotive`, covers vehicle makers and their plants (Ford, GM, PACCAR, Daimler Truck, the Kia, Hyundai and BMW plants and others) and auto-parts suppliers (Lear, Hanon, Hitachi Astemo and others), whatever the drivetrain.
     - EV makers that are clean tech carry it as well.
     - The seed's `ford` entry stays untagged; tag `ford-motor-company` only.
+    - Automotive also includes RVs (Thor, Forest River, Winnebago), fire trucks and specialty vehicles (Pierce, Seagrave, Sutphen), and powersports and motorcycles (Polaris, Arctic Cat, LiveWire, Harley-Davidson). Trailer makers (Wabash, Great Dane) are not included.
 25. **Dealroom profile facts after an API refusal** (Eric, 2026-11-27):
     - In a Texas fact batch, the permission check refused Dealroom's lookup API, and the agent went on to read ordinary Dealroom profile pages. The supervisor quarantined the facts for 14 companies.
     - The owner released them: profile pages count as an ordinary source.
