@@ -236,6 +236,13 @@ body::before {
 .role h3 a:focus-visible { outline: none; }
 .role h3 a:focus-visible::after { outline: 2px solid var(--accent); outline-offset: 2px; }
 .role .co-btn, .role .summary { position: relative; z-index: 1; }
+/* The favorite-company star: above the card's stretched link. Filled when the company is a favorite. */
+.fav-btn {
+  position: relative; z-index: 1; background: none; border: 0; padding: 0 2px; cursor: pointer;
+  font-size: 16px; line-height: 1; color: var(--muted); vertical-align: -1px;
+}
+.fav-btn:hover { color: var(--ink); }
+.fav-btn.fav-on { color: var(--ochre); }
 .role-main { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .role h3 { font-size: 16px; font-weight: 600; line-height: 1.3; overflow-wrap: anywhere; }
 .role h3 a { text-decoration: none; }
@@ -430,7 +437,7 @@ body::before {
   <header class="top">
     <div class="top-line">
       <p class="mono" id="eyebrow">United States · every metro area and remote</p>
-      <span class="top-links"><a href="pay.html">Pay ranges by role and market</a> <a href="persona.html">Build your persona (draft)</a></span>
+      <span class="top-links"><a href="companies.html">Companies</a> <a href="pay.html">Pay ranges by role and market</a> <a href="persona.html">Build your persona (draft)</a></span>
     </div>
     <h1>HiPot</h1>
     <p>Open roles at clean-technology and electrification hardware companies, startups and established ones alike: engineers, technicians, trades, production, supply chain and more. Every role is read from the hiring company's own job board, so a role that closes there leaves here.</p>
@@ -494,11 +501,15 @@ body::before {
           </div>
         </details>
         <details class="facet" id="facet-mine" open hidden>
-          <summary><span class="mono">My Roles</span> <span class="facet-n" id="facet-n-mine" hidden></span></summary>
+          <summary><span class="mono">My Roles and favorites</span> <span class="facet-n" id="facet-n-mine" hidden></span></summary>
           <div class="options">
             <label class="opt" for="f-hide-mine">
               <input type="checkbox" id="f-hide-mine">
               <span class="opt-label">Hide roles in My Roles</span>
+            </label>
+            <label class="opt" for="f-fav-only">
+              <input type="checkbox" id="f-fav-only">
+              <span class="opt-label">Favorite companies only</span>
             </label>
           </div>
         </details>
@@ -985,6 +996,64 @@ var BoardFilters = (function () {
 })();
 </script>
 
+<script id="favorites">
+/* Favorite companies (decision 27): kept like My Roles, in this browser under one key and, when the board
+   runs on this machine, in local-data/favorite-companies.yml. Pure functions over plain data; the same block
+   is in index.html and companies.html. Lists are never changed in place. */
+var Favorites = (function () {
+  'use strict';
+
+  var KEY = 'hipot-favorite-companies';
+  var VERSION = 0;
+  var DATE = /^\d{4}-\d{2}-\d{2}$/;
+  var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  var MAX = 2000;
+
+  function clean(entry) {
+    if (!entry || typeof entry !== 'object' || typeof entry.id !== 'string' || !SLUG.test(entry.id)) return null;
+    return { id: entry.id, name: typeof entry.name === 'string' ? entry.name.slice(0, 200) : entry.id,
+             added_on: typeof entry.added_on === 'string' && DATE.test(entry.added_on) ? entry.added_on : null };
+  }
+
+  // A stored or imported favorites list (or a bare array of entries). Throws if it is not one.
+  function fromData(data) {
+    if (Array.isArray(data)) data = { favorites_version: VERSION, companies: data };
+    if (!data || typeof data !== 'object' || data.favorites_version !== VERSION || !Array.isArray(data.companies)) {
+      throw new Error('this is not a HiPot favorites list (favorites_version 0)');
+    }
+    var seen = {}, out = [];
+    data.companies.slice(0, MAX).forEach(function (entry) {
+      var item = clean(entry);
+      if (item && !seen[item.id]) { seen[item.id] = true; out.push(item); }
+    });
+    return out;
+  }
+
+  function toData(list) { return { favorites_version: VERSION, companies: list.map(clean).filter(Boolean) }; }
+  function parse(json) { return json ? fromData(JSON.parse(json)) : []; }
+  function serialize(list) { return JSON.stringify(toData(list)); }
+  function has(list, id) { return list.some(function (item) { return item.id === id; }); }
+  function ids(list) { var set = {}; list.forEach(function (item) { set[item.id] = true; }); return set; }
+
+  // Star or unstar a company. A new favorite goes to the end.
+  function toggle(list, id, name, today) {
+    if (has(list, id)) return list.filter(function (item) { return item.id !== id; });
+    var item = clean({ id: id, name: name, added_on: today });
+    return item ? list.concat([item]) : list;
+  }
+
+  // Another list (an import, or the copy on this computer) joins this one: every company in either stays.
+  function merge(list, incoming) {
+    var out = list.slice(), seen = ids(list), added = 0;
+    fromData(incoming).forEach(function (item) { if (!seen[item.id]) { seen[item.id] = true; out.push(item); added += 1; } });
+    return { list: out, added: added };
+  }
+
+  return { KEY: KEY, VERSION: VERSION, fromData: fromData, toData: toData, parse: parse, serialize: serialize,
+           has: has, ids: ids, toggle: toggle, merge: merge };
+})();
+</script>
+
 <script id="my-roles">
 /* My Roles (decision 18): the roles a candidate marks, with statuses set by hand, in the candidate's own
    order. Pure functions over plain data, so the tests run them as they are; the page keeps the list in
@@ -1223,6 +1292,11 @@ var MyRoles = (function () {
   var mineById = {};
   var mineStorage = 'ok';   // 'ok', 'blocked' (this tab only) or 'unreadable'
   var mineSort = 'mine';
+  var favs = [];            // favorite companies (Favorites, decision 27); never in the address
+  var favIds = {};
+  var favStorage = 'ok';
+  var FAV_KEY = Favorites.KEY;   // localStorage: this page's second and last key beyond the tab
+  var headStars = {};       // company id -> the star in its heading, in the company sort
   var greatIds = null;      // ids of the great matches among the roles shown, while a persona is in use
   var cardNodes = {};       // role id -> its card in the list, to redraw one card in place
   var MINE_KEY = MyRoles.KEY;   // localStorage: the only key this page keeps beyond the tab
@@ -1233,7 +1307,7 @@ var MyRoles = (function () {
   // No search, no filters, newest first. One empty set per checkbox group in FACETS.
   function emptyState() {
     // hideMine and great are kept out of the address on purpose: nothing about My Roles or the persona goes there.
-    var fresh = { q: '', pay: 0, paid: false, c: '', sort: 'new', hideMine: false, great: false };
+    var fresh = { q: '', pay: 0, paid: false, c: '', sort: 'new', hideMine: false, great: false, favOnly: false };
     FACETS.forEach(function (facet) { fresh[facet.key] = new Set(); });
     return fresh;
   }
@@ -1392,7 +1466,7 @@ var MyRoles = (function () {
   var LOCAL_HOSTS = ['localhost', '127.0.0.1'];
   var LOCAL_API = '/api/local/';
   var LOCAL_WAIT_MS = 1500, LOCAL_SAVE_DELAY_MS = 800;
-  var localOn = false, localMineTimer = 0;
+  var localOn = false, localMineTimer = 0, localFavsTimer = 0;
   var personaText = null;   // the persona as it was opened (the file's text) or handed over (its JSON), for local-data/
 
   function servedLocally() {
@@ -1424,8 +1498,9 @@ var MyRoles = (function () {
       renderLocalNotes();
       // The status says which files exist; only those are asked for, so a fresh folder makes no 404s.
       // (An older server that does not say gets asked for both.)
-      var files = status.files && typeof status.files === 'object' ? status.files : { persona: true, 'my-roles': true };
-      return Promise.all([restoreLocalPersona(files.persona === true), restoreLocalMine(files['my-roles'] === true)]);
+      var files = status.files && typeof status.files === 'object' ? status.files : { persona: true, 'my-roles': true, 'favorite-companies': true };
+      return Promise.all([restoreLocalPersona(files.persona === true), restoreLocalMine(files['my-roles'] === true),
+                          restoreLocalFavs(files['favorite-companies'] === true)]);
     }).catch(function () { /* stays off, quietly */ });
   }
 
@@ -1475,6 +1550,32 @@ var MyRoles = (function () {
         setMine(outcome.list);
       });
     }).catch(function () { /* an unreadable file is left as it is */ });
+  }
+
+  // Favorite companies saved on this computer join the browser's list: every company in either stays.
+  function restoreLocalFavs(exists) {
+    if (!exists) { if (favs.length) saveLocalFavs(); return Promise.resolve(null); }
+    return localApi('favorite-companies').then(function (response) {
+      if (!response || !response.ok) return null;
+      return Promise.all([response.text(), loadYaml()]).then(function (results) {
+        var merged = Favorites.merge(favs, window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }));
+        setFavs(merged.list, { save: merged.added > 0 });
+      });
+    }).catch(function () { /* an unreadable file is left as it is */ });
+  }
+
+  function scheduleLocalFavs() {
+    if (!localOn) return;
+    clearTimeout(localFavsTimer);
+    localFavsTimer = setTimeout(saveLocalFavs, LOCAL_SAVE_DELAY_MS);
+  }
+
+  function saveLocalFavs(keepalive) {
+    clearTimeout(localFavsTimer);
+    localFavsTimer = 0;
+    if (!localOn) return;
+    if (keepalive && !window.jsyaml) return;
+    loadYaml().then(function () { localApi('favorite-companies', 'PUT', favsYaml(), 10000, keepalive); }, function () {});
   }
 
   function scheduleLocalMine() {
@@ -1559,6 +1660,65 @@ var MyRoles = (function () {
     }
   }
 
+  // ---- Favorite companies (decision 27) ----------------------------------------------------------
+
+  function loadFavs() {
+    var text = null;
+    try { text = localStorage.getItem(FAV_KEY); } catch (error) { favStorage = 'blocked'; }
+    try { favs = Favorites.parse(text); } catch (error) { favs = []; favStorage = 'unreadable'; }
+    favIds = Favorites.ids(favs);
+  }
+
+  function saveFavs() {
+    try { localStorage.setItem(FAV_KEY, Favorites.serialize(favs)); favStorage = 'ok'; } catch (error) { favStorage = 'blocked'; }
+  }
+
+  // Change the favorites: keep them, and redraw the stars whose company changed.
+  function setFavs(next, options) {
+    var before = favIds;
+    favs = next;
+    favIds = Favorites.ids(favs);
+    if (!options || options.save !== false) { saveFavs(); scheduleLocalFavs(); }
+    $('facet-mine').hidden = mine.length === 0 && favs.length === 0 && !state.hideMine && !state.favOnly;
+    if (state.favOnly) { update(); return; }
+    Object.keys(cardNodes).forEach(function (id) {
+      var role = roleById[id];
+      if (role && !!before[role.co] !== !!favIds[role.co]) redrawCard(id);
+    });
+    Object.keys(headStars).forEach(function (co) {
+      var old = headStars[co];
+      if (!!before[co] === !!favIds[co] || !old.isConnected) return;
+      var fresh = favButton(board.companies[co]);
+      old.parentNode.replaceChild(fresh, old);
+      headStars[co] = fresh;
+    });
+  }
+
+  function toggleFavorite(company) {
+    var on = !favIds[company.id];
+    setFavs(Favorites.toggle(favs, company.id, company.name, today()));
+    toast((on ? 'Added to favorite companies: ' : 'Removed from favorite companies: ') + company.name);
+  }
+
+  // The star: filled for a favorite company. Its label says the state, so the glyph is never the only cue.
+  // `roleId`: the card it sits on (none in a company heading), to put the keyboard back after a redraw.
+  function favButton(company, roleId) {
+    var on = !!favIds[company.id];
+    var button = el('button', {
+      type: 'button', class: 'fav-btn' + (on ? ' fav-on' : ''), 'aria-pressed': on ? 'true' : 'false',
+      'aria-label': 'Favorite company: ' + company.name, title: on ? 'A favorite company (click to remove)' : 'Mark as a favorite company',
+      text: on ? '★' : '☆'
+    });
+    button.addEventListener('click', function (event) {
+      event.stopPropagation();
+      toggleFavorite(company);
+      if (button.isConnected) return;
+      var again = roleId && cardNodes[roleId] ? cardNodes[roleId].querySelector('.fav-btn') : headStars[company.id];
+      if (again && again.isConnected) again.focus();
+    });
+    return button;
+  }
+
   // Change My Roles: keep it, and redraw what shows it. `options.render` false skips the My Roles view (typing
   // notes); `options.save` false does not write (page load, when nothing changed).
   function setMine(next, options) {
@@ -1568,7 +1728,7 @@ var MyRoles = (function () {
     if (!options || options.save !== false) { saveMine(); scheduleLocalMine(); }
     renderMineNote();
     $('mine-n').textContent = String(mine.length);
-    $('facet-mine').hidden = mine.length === 0 && !state.hideMine;
+    $('facet-mine').hidden = mine.length === 0 && favs.length === 0 && !state.hideMine && !state.favOnly;
     if (!options || options.render !== false) renderMine();
     if (state.hideMine) { update(); return; }
     // Redraw only the cards whose entry changed, in place, so the list keeps its place.
@@ -1914,14 +2074,23 @@ var MyRoles = (function () {
 
   var downloads = null;
   // My Roles as a YAML file: the export, and the copy in local-data/ (js-yaml must be loaded).
-  function mineYaml() {
+  // My Roles as a YAML file: the export (with favorite companies, decision 27), and the copy in local-data/
+  // (without them: favorites have their own file there). js-yaml must be loaded.
+  function mineYaml(withFavorites) {
+    var data = MyRoles.exportData(mine, today());
+    if (withFavorites) data.favorite_companies = Favorites.toData(favs).companies;
     return '# HiPot My Roles. Kept in your browser; import it on the board to restore it.\n' +
-      window.jsyaml.dump(MyRoles.exportData(mine, today()), { lineWidth: -1, noRefs: true, sortKeys: false });
+      window.jsyaml.dump(data, { lineWidth: -1, noRefs: true, sortKeys: false });
+  }
+
+  function favsYaml() {
+    return '# HiPot favorite companies. Kept in your browser; My Roles export carries them too.\n' +
+      window.jsyaml.dump(Favorites.toData(favs), { lineWidth: -1, noRefs: true, sortKeys: false });
   }
 
   function exportMine() {
     loadYaml().then(function () {
-      var text = mineYaml();
+      var text = mineYaml(true);
       if (downloads) {
         // Artifact hosting saves only some file types, and .yml is not one of them.
         return downloads.save({ filename: 'my-roles.yml.txt', data: text }).then(function () {
@@ -1945,10 +2114,17 @@ var MyRoles = (function () {
   function importMine(file) {
     if (file.size > 5000000) { $('mine-status').textContent = 'That file is too large to be My Roles.'; return; }
     Promise.all([file.text(), loadYaml()]).then(function (results) {
-      var outcome = MyRoles.importData(window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }), mine);
+      var data = window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA });
+      var outcome = MyRoles.importData(data, mine);
       setMine(outcome.list);
+      var favNote = '';
+      if (data && Array.isArray(data.favorite_companies)) {
+        var merged = Favorites.merge(favs, data.favorite_companies);
+        setFavs(merged.list);
+        favNote = ' Favorite companies: ' + merged.added + ' added.';
+      }
       $('mine-status').textContent = 'Imported ' + file.name + ': ' + plural(outcome.added, 'role', 'roles') + ' added, ' +
-        outcome.updated + ' updated' + (outcome.kept ? ', ' + outcome.kept + ' kept as they were here (changed more recently in this browser)' : '') + '.';
+        outcome.updated + ' updated' + (outcome.kept ? ', ' + outcome.kept + ' kept as they were here (changed more recently in this browser)' : '') + '.' + favNote;
     }).catch(function (error) {
       $('mine-status').textContent = 'Could not import that file: ' + (error && (error.reason || error.message) || 'unknown error') + '.';
     });
@@ -1975,6 +2151,7 @@ var MyRoles = (function () {
       if (file) importMine(file);
     });
     $('f-hide-mine').addEventListener('change', function () { state.hideMine = $('f-hide-mine').checked; update(); });
+    $('f-fav-only').addEventListener('change', function () { state.favOnly = $('f-fav-only').checked; update(); });
     $('great-only').addEventListener('click', function () { state.great = !state.great; update(); });
 
     $('card-menu').addEventListener('keydown', menuKeys);
@@ -1993,14 +2170,22 @@ var MyRoles = (function () {
     document.addEventListener('visibilitychange', onReturn);
 
     // Leaving the page with a local save still waiting: send it now.
-    window.addEventListener('pagehide', function () { if (localMineTimer) saveLocalMine(true); });
+    window.addEventListener('pagehide', function () {
+      if (localMineTimer) saveLocalMine(true);
+      if (localFavsTimer) saveLocalFavs(true);
+    });
 
     // Another tab changed My Roles: follow it.
     // A removal (cleared site data, or the key deleted) is not a change to follow: emptying this tab's list
     // would also empty the copy in local-data/. This tab keeps its list and writes it back on its next change.
     window.addEventListener('storage', function (event) {
-      if (event.key !== MINE_KEY || event.newValue === null) return;
-      try { setMine(MyRoles.parse(event.newValue)); } catch (error) { /* keep what this tab has */ }
+      if (event.newValue === null) return;
+      if (event.key === MINE_KEY) {
+        try { setMine(MyRoles.parse(event.newValue)); } catch (error) { /* keep what this tab has */ }
+      } else if (event.key === FAV_KEY) {
+        // The Companies page or another tab starred a company.
+        try { setFavs(Favorites.parse(event.newValue)); } catch (error) { /* keep what this tab has */ }
+      }
     });
 
     if (window.claude && window.claude.use) {
@@ -2229,6 +2414,7 @@ var MyRoles = (function () {
       var role = roles[i];
       if (state.c && role.co !== state.c) continue;
       if (state.hideMine && mineById[role.id]) continue;
+      if (state.favOnly && !favIds[role.co]) continue;
       if (role.match && role.match.excluded) continue;   // the persona's own exclusions
       if (needPay && !role.pay) continue;
       if (state.pay > 0 && !(role.payCompare !== null && role.payCompare >= state.pay)) continue;
@@ -2276,7 +2462,7 @@ var MyRoles = (function () {
     var n = FACETS.reduce(function (sum, facet) {
       return sum + (facet.key === 'cat' && isDefaultCats(state.cat) ? 0 : state[facet.key].size);
     }, 0);
-    return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0) + (state.hideMine ? 1 : 0);
+    return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0) + (state.hideMine ? 1 : 0) + (state.favOnly ? 1 : 0);
   }
 
   // ---- Building the filter controls (once) ------------------------------------------------------
@@ -2369,6 +2555,7 @@ var MyRoles = (function () {
   // Make the controls show `state` (after reading the address, or after "Clear all").
   function syncControls() {
     $('f-hide-mine').checked = !!state.hideMine;
+    $('f-fav-only').checked = !!state.favOnly;
     $('q').value = state.q;
     $('sort').value = state.sort;
     $('f-paid').checked = state.paid;
@@ -2472,7 +2659,7 @@ var MyRoles = (function () {
       el('div', { class: 'role-main' }, [
         title,
         grouped ? null : el('p', { class: 'role-co' }, [
-          companyButton, ' ', tierBadge(company), ' ',
+          companyButton, ' ', favButton(company, role.id), ' ', tierBadge(company), ' ',
           company.reason ? el('span', { class: 'reason', text: company.reason }) : null
         ]),
         el('p', { class: 'where', text: whereText(role) }),
@@ -2535,6 +2722,7 @@ var MyRoles = (function () {
     var n = groupCounts[role.co] || 0;
     return el('li', { class: 'co-head' }, [
       el('h2', null, [name]),
+      (headStars[role.co] = favButton(company)),
       el('span', { class: 'co-n', text: plural(n, 'role', 'roles') }),
       tierBadge(company),
       company.reason ? el('p', { class: 'reason', text: company.reason }) : null
@@ -2626,9 +2814,10 @@ var MyRoles = (function () {
   }
 
   function renderFacets(counts) {
-    $('facet-n-mine').hidden = !state.hideMine;
-    $('facet-n-mine').textContent = state.hideMine ? '1' : '';
-    $('facet-mine').hidden = mine.length === 0 && !state.hideMine;
+    $('facet-n-mine').hidden = !state.hideMine && !state.favOnly;
+    var yours = (state.hideMine ? 1 : 0) + (state.favOnly ? 1 : 0);
+    $('facet-n-mine').textContent = yours ? String(yours) : '';
+    $('facet-mine').hidden = mine.length === 0 && favs.length === 0 && !state.hideMine && !state.favOnly;
     FACETS.forEach(function (facet, index) {
       var chosen = state[facet.key];
       facet.options.forEach(function (option) {
@@ -2678,6 +2867,7 @@ var MyRoles = (function () {
     if (state.pay > 0) chip('Pay', money(state.pay, 'USD', false) + ' or more', function () { state.pay = 0; });
     if (state.paid) chip('Pay', 'Pay stated', function () { state.paid = false; });
     if (state.hideMine) chip('My Roles', 'Roles in My Roles hidden', function () { state.hideMine = false; });
+    if (state.favOnly) chip('Favorites', 'Favorite companies only', function () { state.favOnly = false; });
     if (state.great && persona) chip('Persona', 'Great matches only', function () { state.great = false; });
     if (chips.length) {
       var clear = el('button', { type: 'button', class: 'chip chip-clear', text: 'Clear all' });
@@ -2908,10 +3098,12 @@ var MyRoles = (function () {
       renderStatic();
       wireControls();
       loadMine();
+      loadFavs();
       // Record that the board still lists these roles, for "no longer listed (last seen ...)" later.
       var listed = MyRoles.markListed(mine, roleById, localDay(board.generated_at));
       setMine(listed, { render: false, save: listed !== mine });   // nothing is written for a visitor who has no My Roles
       wireMine();
+      setFavs(favs, { save: false });
       setPersona(storedPersona());   // before reading the address, so "sort-match" is understood
       state = decodeState(location.hash);
       if (persona && !/(^|--)sort-/.test(location.hash.replace(/^#/, ''))) state.sort = 'match';

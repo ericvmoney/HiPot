@@ -72,6 +72,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .top-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; align-items: baseline; }
 .top-line a { font: 500 13.5px var(--sans); color: var(--soft); }
 .top-line a:hover { color: var(--ink); }
+.top-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .top h1 {
   font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700;
   margin: 10px 0 12px; text-wrap: balance;
@@ -137,7 +138,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
   <header class="top">
     <div class="top-line">
       <p class="mono" id="eyebrow">Pay ranges · published by employers · nothing estimated</p>
-      <a href="index.html">Back to the job board</a>
+      <span class="top-links"><a href="index.html">Back to the job board</a> <a href="companies.html">Companies and their pay notes</a></span>
     </div>
     <h1>Pay ranges</h1>
     <p>What the companies on HiPot advertise right now, by role, level and market. Each figure is the median low end to the median high end of the pay ranges employers published, with the number of postings behind it. Use it to sense-check an offer or a posting; it is not a salary estimate.</p>

@@ -234,7 +234,7 @@ def test_the_persona_is_kept_in_session_storage_only_and_never_in_the_address():
     code = re.sub(r"//[^\n]*", "", SCRIPT)
     assert len(re.findall(r"sessionStorage", code)) == 3
     # The only localStorage key is My Roles' (decision 18); the persona never goes there.
-    assert set(re.findall(r"localStorage\.\w+\((\w+)", code)) == {"MINE_KEY"} and "var MINE_KEY = MyRoles.KEY;" in SCRIPT
+    assert set(re.findall(r"localStorage\.\w+\((\w+)", code)) == {"MINE_KEY", "FAV_KEY"} and "var MINE_KEY = MyRoles.KEY;" in SCRIPT
     assert not re.search(r"localStorage[^;\n]*PERSONA", code)
     encode = SCRIPT[SCRIPT.index("function encodeState()"):SCRIPT.index("function decodeState(")]
     assert "persona" not in encode

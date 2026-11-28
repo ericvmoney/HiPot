@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HiPot Companies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Every company HiPot lists: where its open roles are, how many, how its published pay compares with the market, and how its jobs are read.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+/* Layout: the board's header and tokens, then a filter column beside a list of company cards. On a phone
+   the filters fold into a "Filters" panel above the list. */
+:root {
+  --bg: #F5F2EA; --surface: #ECE8DD; --card: #FBF9F4; --ink: #1A1A18; --soft: #4A4842; --muted: #5A574F;
+  --rule: #C8C2B3; --accent: #5C6B0F; --olive: #5C6B0F; --rust: #9A4A12; --blue: #1F5A7A; --ochre: #7A5A10;
+  --sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA; --muted: #A19D92;
+    --rule: #34322D; --accent: #C9DB5A; --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E0D; --surface: #191917; --card: #151513; --ink: #EDEAE2; --soft: #C9C5BA; --muted: #A19D92;
+  --rule: #34322D; --accent: #C9DB5A; --olive: #C9DB5A; --rust: #F0A56A; --blue: #7CC3E6; --ochre: #E3C26B;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 var(--sans);
+  padding-block: 0 48px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ul, ol, dl, dd, fieldset { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+fieldset { border: 0; min-width: 0; }
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--ink); text-underline-offset: 0.15em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.mono { font: 500 11.5px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.page { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.page > * { min-width: 0; }
+.top { padding: 44px 0 26px; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; }
+.top-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; align-items: baseline; }
+.top-line a { font: 500 13.5px var(--sans); color: var(--soft); }
+.top-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.top h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; margin: 10px 0 12px; }
+.top > p:not(.mono) { max-width: 66ch; color: var(--soft); }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 22px; }
+.stats b { display: block; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.3; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+@media (min-width: 860px) {
+  .layout { grid-template-columns: 250px minmax(0, 1fr); gap: 30px; align-items: start; }
+  .filters { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto; padding: 2px 6px 2px 2px; margin: -2px -6px -2px -2px; }
+}
+.filters > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; min-height: 44px; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 16px; width: fit-content; font-weight: 500; }
+.filters > summary::-webkit-details-marker { display: none; }
+@media (min-width: 860px) { .filters > summary { display: none; } }
+.filter-body { display: flex; flex-direction: column; gap: 14px; padding-top: 10px; }
+.group { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); padding-top: 10px; }
+.opt { display: flex; align-items: center; gap: 10px; min-height: 34px; cursor: pointer; font-size: 14.5px; color: var(--soft); }
+.opt input { width: 17px; height: 17px; margin: 0; flex: none; accent-color: var(--ink); }
+.opt input:checked + span { color: var(--ink); font-weight: 600; }
+.opt-n { margin-left: auto; font: 400 12px var(--mono); color: var(--muted); }
+@media (pointer: coarse) { .opt { min-height: 44px; } }
+.input, .select {
+  background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 999px;
+  min-height: 40px; padding: 7px 14px; width: 100%; font-size: 14.5px; max-width: 100%;
+}
+.btn {
+  background: transparent; color: var(--soft); border: 1px solid var(--rule); border-radius: 999px;
+  min-height: 40px; padding: 6px 15px; cursor: pointer; font: 500 13.5px var(--sans);
+}
+.btn:hover { border-color: var(--ink); color: var(--ink); }
+
+.results { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.count { flex: 1; min-width: 0; font-size: 13.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.count strong { color: var(--ink); font-weight: 600; }
+.sort { display: flex; align-items: center; gap: 8px; }
+.sort .select { width: auto; min-height: 38px; padding-block: 5px; font-size: 13.5px; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.co { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.co-top { display: flex; align-items: flex-start; gap: 10px; }
+.co-top h3 { flex: 1; min-width: 0; font-size: 17px; line-height: 1.3; overflow-wrap: anywhere; }
+.co-top h3 a { text-decoration: none; }
+.co-top h3 a:hover { text-decoration: underline; }
+.ext { font: 400 0.8em var(--mono); margin-left: 0.3em; color: var(--muted); }
+.fav-btn { background: none; border: 0; padding: 0 2px; cursor: pointer; font-size: 20px; line-height: 1; color: var(--muted); min-height: 32px; }
+.fav-btn:hover { color: var(--ink); }
+.fav-btn.fav-on { color: var(--ochre); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { display: inline-block; font: 500 10.5px/1.5 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid currentColor; border-radius: 4px; padding: 1px 6px; color: var(--muted); }
+.tag-core { color: var(--ink); }
+.tag-cat { color: var(--blue); }
+.tag-type { color: var(--soft); border-color: var(--rule); cursor: help; }
+.reason, .meta, .where, .read { font-size: 13.5px; color: var(--muted); overflow-wrap: anywhere; }
+.reason { color: var(--soft); }
+.jobs { font-size: 14px; color: var(--soft); overflow-wrap: anywhere; }
+.jobs a { font-weight: 600; }
+.paynote { font-size: 13.5px; color: var(--soft); overflow-wrap: anywhere; }
+.pay-above { color: var(--olive); }
+.pay-below { color: var(--rust); }
+.more { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.more p, .note { color: var(--muted); font-size: 13.5px; }
+.state { padding: 26px; border: 1px dashed var(--rule); border-radius: 10px; color: var(--muted); text-align: center; }
+.how { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; max-width: 76ch; }
+.how h2 { font-size: 20px; }
+.how p { color: var(--soft); font-size: 14.5px; }
+.how strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="top-line">
+      <p class="mono" id="eyebrow">Every company HiPot lists</p>
+      <span class="top-links"><a href="index.html">Job board</a> <a href="pay.html">Pay ranges</a> <a href="persona.html">Build your persona (draft)</a></span>
+    </div>
+    <h1>Companies</h1>
+    <p>Every company on HiPot, hiring or not: where its open roles are, how many there are, how the pay it publishes compares with the market, and how we read its jobs. A company we cannot read may still be hiring: its careers link is here.</p>
+    <div class="stats" id="stats" hidden>
+      <div><b id="s-companies">0</b><span class="mono">Companies</span></div>
+      <div><b id="s-hiring">0</b><span class="mono">Hiring now</span></div>
+      <div><b id="s-read">0</b><span class="mono">Read automatically</span></div>
+      <div><b id="s-favs">0</b><span class="mono">Your favorites</span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <details class="filters" id="filters" open>
+      <summary>Filters</summary>
+      <form class="filter-body" id="filter-form" autocomplete="off">
+        <div>
+          <label class="mono" for="q">Search by name</label>
+          <input class="input" id="q" type="search" maxlength="80" placeholder="Company name" spellcheck="false">
+        </div>
+        <fieldset class="group"><legend class="mono">Category</legend><div id="f-cats"></div></fieldset>
+        <div class="group">
+          <label class="opt" for="f-hiring"><input type="checkbox" id="f-hiring"><span>Hiring now</span></label>
+          <label class="opt" for="f-fav"><input type="checkbox" id="f-fav"><span>Favorites only</span></label>
+        </div>
+        <div class="group"><label class="mono" for="f-place">Location of open roles</label><select class="select" id="f-place"><option value="">Anywhere</option></select></div>
+        <div class="group"><label class="mono" for="f-sector">Sector</label><select class="select" id="f-sector"><option value="">Any sector</option></select></div>
+        <div class="group"><label class="mono" for="f-type">Startup or established</label>
+          <select class="select" id="f-type"><option value="">Either</option><option value="startup">Startup</option><option value="established">Established</option></select></div>
+        <div class="group"><label class="mono" for="f-stage">Stage</label><select class="select" id="f-stage"><option value="">Any stage</option></select></div>
+        <div class="group"><label class="mono" for="f-pay">Pay note</label><select class="select" id="f-pay"><option value="">Any</option></select></div>
+        <div class="group"><label class="mono" for="f-read">How we read its jobs</label><select class="select" id="f-read"><option value="">Any</option></select></div>
+        <div class="group"><button type="button" class="btn" id="clear">Clear filters</button></div>
+      </form>
+    </details>
+
+    <main class="results">
+      <div class="bar">
+        <p class="count" id="count" role="status" aria-live="polite">Loading companies…</p>
+        <div class="sort">
+          <label class="mono" for="sort">Sort</label>
+          <select class="select" id="sort">
+            <option value="roles">Open roles</option>
+            <option value="new">New roles</option>
+            <option value="name">Name</option>
+            <option value="pay">Pay note</option>
+            <option value="headcount">Headcount</option>
+          </select>
+        </div>
+      </div>
+      <p class="note" id="fav-note">Favorites are kept in this browser only and never sent anywhere; My Roles' export on the board carries them.</p>
+      <p class="note" id="local-note" hidden>Also saved on this computer in local-data/ (not in the repository).</p>
+      <ol class="list" id="list" aria-label="Companies"></ol>
+      <div class="state" id="empty" hidden></div>
+      <div class="more" id="more" hidden><button type="button" class="btn" id="more-btn">Show more</button><p id="more-note"></p></div>
+      <noscript><div class="state">This page needs JavaScript to load the companies.</div></noscript>
+    </main>
+  </div>
+
+  <section class="how" aria-labelledby="how-title">
+    <h2 id="how-title">How this page is built</h2>
+    <p><strong>Every listed company is here</strong>, clean tech and the categories next to it, including companies with no open roles. Open roles, new roles and locations come from the board: a company's locations are where its open roles are, and with none, its headquarters.</p>
+    <p><strong>The pay note</strong> sums up the pay its open roles publish, using the board's market comparison: each role's midpoint against comparable published ranges (same role group and level, in its metro area, or across the US). Above or below market means the median of its graded roles is more than 10 percent from the market; at market, within it. <strong>Too few to say</strong> means fewer than 3 roles could be compared; <strong>unlisted salaries</strong> means none of its open roles publishes pay. Nothing is estimated.</p>
+    <p><strong>How we read its jobs:</strong> read daily from its job board; read weekly where the job board's robots.txt asks for less; or not read automatically, when we have no job board for it that we can read. Those companies may well be hiring: follow their careers link.</p>
+    <p class="mono" id="run-note"></p>
+  </section>
+</div>
+
+<script id="board-filters">
+/* The filter rules that decide what the board shows, as pure functions the tests run as they are.
+   A filter group passes a role when nothing is ticked in it or one of the role's values is ticked.
+   Company categories (decision 23): the board opens on the default ones (clean tech); the address says
+   nothing when the choice is the default, 'cat-all' for every category, and 'cat-<id>' per ticked one. */
+var BoardFilters = (function () {
+  'use strict';
+
+  var NONE = '*none';          // the page's id for "no value" in a filter group
+  var CAT = 'cat-', CAT_ALL = 'cat-all', CAT_NONE = 'cat-none';
+
+  function asSet(chosen) { return chosen instanceof Set ? chosen : new Set(chosen); }
+
+  function passes(values, chosen) {
+    chosen = asSet(chosen);
+    if (!chosen.size) return true;
+    for (var i = 0; i < values.length; i++) if (chosen.has(values[i])) return true;
+    return false;
+  }
+
+  // A company's categories as filter values: clean tech first when it is clean tech; none at all is NONE.
+  function companyCategories(company) {
+    return company && Array.isArray(company.cats) && company.cats.length ? company.cats.slice() : [NONE];
+  }
+
+  // The categories the board opens on: those marked default in the data's taxonomy (clean tech).
+  function defaults(entries) {
+    return (entries || []).filter(function (entry) { return entry && entry.default === true; }).map(function (entry) { return entry.id; });
+  }
+
+  function within(ids, known) { return ids.filter(function (id) { return known.indexOf(id) !== -1; }); }
+
+  // `known` is every category option the board has, in order (NONE included when present).
+  function isDefault(chosen, defaultIds, known) {
+    var want = within(defaultIds, known), set = asSet(chosen);
+    return set.size === want.length && want.every(function (id) { return set.has(id); });
+  }
+
+  function tokens(chosen, defaultIds, known) {
+    var set = asSet(chosen);
+    if (isDefault(set, defaultIds, known)) return [];
+    if (!set.size) return [CAT_ALL];
+    return known.filter(function (id) { return set.has(id); }).map(function (id) { return id === NONE ? CAT_NONE : CAT + id; });
+  }
+
+  // From the address's tokens (all of them; only cat- ones count) back to the ticked categories.
+  function fromTokens(all, defaultIds, known) {
+    var said = all.filter(function (token) { return token.indexOf(CAT) === 0; });
+    if (!said.length) return within(defaultIds, known);
+    if (said.indexOf(CAT_ALL) !== -1) return [];
+    var ids = said.map(function (token) { return token === CAT_NONE ? NONE : token.slice(CAT.length); });
+    var picked = known.filter(function (id) { return ids.indexOf(id) !== -1; });
+    return picked.length ? picked : within(defaultIds, known);   // only unknown ids: back to the default
+  }
+
+  return { NONE: NONE, CAT_ALL: CAT_ALL, passes: passes, companyCategories: companyCategories, defaults: defaults,
+           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens };
+})();
+</script>
+
+<script id="favorites">
+/* Favorite companies (decision 27): kept like My Roles, in this browser under one key and, when the board
+   runs on this machine, in local-data/favorite-companies.yml. Pure functions over plain data; the same block
+   is in index.html and companies.html. Lists are never changed in place. */
+var Favorites = (function () {
+  'use strict';
+
+  var KEY = 'hipot-favorite-companies';
+  var VERSION = 0;
+  var DATE = /^\d{4}-\d{2}-\d{2}$/;
+  var SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+  var MAX = 2000;
+
+  function clean(entry) {
+    if (!entry || typeof entry !== 'object' || typeof entry.id !== 'string' || !SLUG.test(entry.id)) return null;
+    return { id: entry.id, name: typeof entry.name === 'string' ? entry.name.slice(0, 200) : entry.id,
+             added_on: typeof entry.added_on === 'string' && DATE.test(entry.added_on) ? entry.added_on : null };
+  }
+
+  // A stored or imported favorites list (or a bare array of entries). Throws if it is not one.
+  function fromData(data) {
+    if (Array.isArray(data)) data = { favorites_version: VERSION, companies: data };
+    if (!data || typeof data !== 'object' || data.favorites_version !== VERSION || !Array.isArray(data.companies)) {
+      throw new Error('this is not a HiPot favorites list (favorites_version 0)');
+    }
+    var seen = {}, out = [];
+    data.companies.slice(0, MAX).forEach(function (entry) {
+      var item = clean(entry);
+      if (item && !seen[item.id]) { seen[item.id] = true; out.push(item); }
+    });
+    return out;
+  }
+
+  function toData(list) { return { favorites_version: VERSION, companies: list.map(clean).filter(Boolean) }; }
+  function parse(json) { return json ? fromData(JSON.parse(json)) : []; }
+  function serialize(list) { return JSON.stringify(toData(list)); }
+  function has(list, id) { return list.some(function (item) { return item.id === id; }); }
+  function ids(list) { var set = {}; list.forEach(function (item) { set[item.id] = true; }); return set; }
+
+  // Star or unstar a company. A new favorite goes to the end.
+  function toggle(list, id, name, today) {
+    if (has(list, id)) return list.filter(function (item) { return item.id !== id; });
+    var item = clean({ id: id, name: name, added_on: today });
+    return item ? list.concat([item]) : list;
+  }
+
+  // Another list (an import, or the copy on this computer) joins this one: every company in either stays.
+  function merge(list, incoming) {
+    var out = list.slice(), seen = ids(list), added = 0;
+    fromData(incoming).forEach(function (item) { if (!seen[item.id]) { seen[item.id] = true; out.push(item); added += 1; } });
+    return { list: out, added: added };
+  }
+
+  return { KEY: KEY, VERSION: VERSION, fromData: fromData, toData: toData, parse: parse, serialize: serialize,
+           has: has, ids: ids, toggle: toggle, merge: merge };
+})();
+</script>
+
+<script id="company-rules">
+/* The Companies page's rules, as pure functions the tests run as they are: the pay note in words, the
+   filters and the sort. The pay note itself is decided by the publish step (pipeline/publish/companies.py). */
+var CompanyRules = (function () {
+  'use strict';
+
+  var PAY_ORDER = ['above', 'at', 'below', 'few', 'unlisted'];
+  var PAY_LABELS = { above: 'Above market', at: 'At market', below: 'Below market', few: 'Too few to say', unlisted: 'Unlisted salaries' };
+  var READ_TEXT = {
+    daily: 'Read daily from its job board',
+    weekly: 'Read weekly: its job board’s robots.txt asks for less',
+    'not-read': 'Not read automatically: see its careers page'
+  };
+
+  function num(n) { return Number(n).toLocaleString('en-US'); }
+  function plural(n, one, many) { return num(n) + ' ' + (n === 1 ? one : many); }
+  function fold(text) { return String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+
+  // The pay note in words: { v, label, basis }.
+  function payText(note) {
+    if (!note) return { v: 'none', label: 'No open roles', basis: '' };
+    var label = PAY_LABELS[note.v] || note.v;
+    if (note.v === 'unlisted') return { v: note.v, label: label, basis: note.roles === 1 ? 'its open role publishes no pay' : 'none of its ' + num(note.roles) + ' open roles publishes pay' };
+    if (note.v === 'few') return { v: note.v, label: label, basis: plural(note.paid, 'role', 'roles') + ' with pay, not enough to compare' };
+    var how = note.v === 'at' ? 'median within 10% of the market' : 'median ' + Math.abs(note.pct) + '% ' + (note.v === 'above' ? 'above' : 'below') + ' the market';
+    return { v: note.v, label: label, basis: num(note.paid) + ' of ' + plural(note.roles, 'role publishes', 'roles publish') + ' pay; ' + how };
+  }
+
+  function readText(read) { return READ_TEXT[read] || READ_TEXT['not-read']; }
+
+  // `f`: { q, cats (array; empty = every category), place ('', 'remote', 'm-<metro>', 's-<state>'), sector, type,
+  // stage, hiring, pay, read, fav }. `favIds`: { id: true } for the favorites.
+  function matches(company, f, favIds) {
+    var words = fold(f.q).split(/\s+/).filter(Boolean), name = fold(company.name);
+    for (var i = 0; i < words.length; i++) if (name.indexOf(words[i]) === -1) return false;
+    if (!BoardFilters.passes(BoardFilters.companyCategories(company), f.cats || [])) return false;
+    if (f.place === 'remote' && !company.remote) return false;
+    if (f.place && f.place.indexOf('m-') === 0 && (company.metros || []).indexOf(f.place.slice(2)) === -1) return false;
+    if (f.place && f.place.indexOf('s-') === 0 && (company.st || []).indexOf(f.place.slice(2)) === -1) return false;
+    if (f.sector && (company.sectors || []).indexOf(f.sector) === -1) return false;
+    if (f.type && company.type !== f.type) return false;
+    if (f.stage && company.stage !== f.stage) return false;
+    if (f.hiring && !company.roles) return false;
+    if (f.pay && !(company.pay && company.pay.v === f.pay)) return false;
+    if (f.read && company.read !== f.read) return false;
+    if (f.fav && !(favIds && favIds[company.id])) return false;
+    return true;
+  }
+
+  function byName(a, b) { return fold(a.name) < fold(b.name) ? -1 : fold(a.name) > fold(b.name) ? 1 : 0; }
+
+  // A new array in the chosen order; ties by name.
+  function sort(list, by) {
+    var key = {
+      roles: function (c) { return -c.roles; },
+      'new': function (c) { return -(c.new || 0); },
+      pay: function (c) { var at = c.pay ? PAY_ORDER.indexOf(c.pay.v) : PAY_ORDER.length; return at * 1000 - (typeof c.pay === 'object' && c.pay && typeof c.pay.pct === 'number' ? c.pay.pct : 0); },
+      headcount: function (c) { return c.hc ? -c.hc.n : Infinity; }
+    }[by];
+    return list.slice().sort(function (a, b) {
+      if (key) { var ka = key(a), kb = key(b); if (ka !== kb) return ka < kb ? -1 : 1; }
+      return byName(a, b);
+    });
+  }
+
+  // "12 engineering, 3 technicians": open roles by role type, most first, the first `limit` of them.
+  function rolesByType(company, functionLabels, limit) {
+    var types = Object.keys(company.fns || {});
+    var shown = types.slice(0, limit || types.length).map(function (fn) {
+      return company.fns[fn].toLocaleString('en-US') + ' ' + String(functionLabels[fn] || fn).toLowerCase();
+    });
+    var rest = types.length - shown.length;
+    return shown.join(', ') + (rest > 0 ? ' and ' + rest + ' more ' + (rest === 1 ? 'type' : 'types') : '');
+  }
+
+  return { PAY_ORDER: PAY_ORDER, PAY_LABELS: PAY_LABELS, payText: payText, readText: readText, matches: matches,
+           sort: sort, rolesByType: rolesByType };
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  var DATA_URL = 'data/companies.json';
+  var YAML_LIB = 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js';
+  var PAGE_SIZE = 50;
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var FAV_KEY = Favorites.KEY;   // the only key this page keeps beyond the tab; shared with the board
+  var LOCAL_HOSTS = ['localhost', '127.0.0.1'];
+  var LOCAL_API = '/api/local/';
+
+  var data = null, labels = {}, defaultCats = [];
+  var favs = [], favIds = {}, favStorage = 'ok';
+  var filters = null, sortBy = 'roles', results = [], shown = 0;
+  var localOn = false, localTimer = 0, yamlLoading = null, searchTimer = 0;
+
+  function $(id) { return document.getElementById(id); }
+
+  function el(tag, props, children) {
+    var node = document.createElement(tag);
+    Object.keys(props || {}).forEach(function (name) {
+      var value = props[name];
+      if (value === null || value === undefined || value === false) return;
+      if (name === 'text') node.textContent = value;
+      else if (name === 'class') node.className = value;
+      else node.setAttribute(name, value === true ? '' : value);
+    });
+    (children || []).forEach(function (child) {
+      if (child === null || child === undefined || child === '') return;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+
+  function isHttps(url) { return typeof url === 'string' && /^https:\/\//i.test(url); }
+
+  function outLink(url, text, hiddenText) {
+    if (!isHttps(url)) return el('span', { text: text });
+    return el('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, [
+      text, el('span', { class: 'ext', 'aria-hidden': 'true', text: '↗' }), hiddenText ? el('span', { class: 'sr-only', text: hiddenText }) : null
+    ]);
+  }
+
+  function formatDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+    return m ? Number(m[3]) + ' ' + MONTHS[Number(m[2]) - 1] + ' ' + m[1] : '';
+  }
+
+  function plural(n, one, many) { return n.toLocaleString('en-US') + ' ' + (n === 1 ? one : many); }
+
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+
+  // ---- Favorites: this browser, plus local-data/ when served by tools/serve_board on this machine ----
+
+  function loadFavs() {
+    var text = null;
+    try { text = localStorage.getItem(FAV_KEY); } catch (error) { favStorage = 'blocked'; }
+    try { favs = Favorites.parse(text); } catch (error) { favs = []; favStorage = 'unreadable'; }
+    favIds = Favorites.ids(favs);
+  }
+
+  function setFavs(next, options) {
+    favs = next;
+    favIds = Favorites.ids(favs);
+    if (!options || options.save !== false) {
+      try { localStorage.setItem(FAV_KEY, Favorites.serialize(favs)); favStorage = 'ok'; } catch (error) { favStorage = 'blocked'; }
+      scheduleLocal();
+    }
+    renderFavNote();
+    $('s-favs').textContent = String(favs.length);
+  }
+
+  function renderFavNote() {
+    $('fav-note').textContent = favStorage === 'blocked'
+      ? 'This browser is not letting the page keep anything, so favorites last only while this tab is open.'
+      : 'Favorites are kept in this browser only and never sent anywhere; My Roles’ export on the board carries them.';
+  }
+
+  function servedLocally() { return location.protocol === 'http:' && LOCAL_HOSTS.indexOf(location.hostname) !== -1; }
+
+  // The page's only call to the local server: same origin, a fixed relative address; null on any failure.
+  function localApi(name, method, body, waitMs) {
+    if (!servedLocally()) return Promise.resolve(null);
+    var options = { method: method || 'GET', cache: 'no-store', credentials: 'same-origin' };
+    if (body !== undefined) { options.body = body; options.headers = { 'Content-Type': 'text/yaml; charset=utf-8' }; }
+    if (typeof AbortController === 'function') {
+      var controller = new AbortController();
+      options.signal = controller.signal;
+      setTimeout(function () { controller.abort(); }, waitMs || 10000);
+    }
+    return fetch(LOCAL_API + name, options).catch(function () { return null; });
+  }
+
+  function loadYaml() {
+    if (window.jsyaml) return Promise.resolve();
+    if (!yamlLoading) {
+      yamlLoading = new Promise(function (resolve, reject) {
+        var tag = document.createElement('script');
+        tag.src = YAML_LIB;
+        tag.onload = function () { resolve(); };
+        tag.onerror = function () { yamlLoading = null; reject(new Error('the YAML reader did not load')); };
+        document.head.appendChild(tag);
+      });
+    }
+    return yamlLoading;
+  }
+
+  function startLocal() {
+    if (!servedLocally()) return;
+    localApi('status', 'GET', undefined, 1500).then(function (response) {
+      if (!response || !response.ok) return null;
+      return response.json().then(function (status) { return status && status.ok === true ? status : null; }, function () { return null; });
+    }).then(function (status) {
+      if (!status) return null;
+      localOn = true;
+      $('local-note').hidden = false;
+      if (!(status.files && status.files['favorite-companies'] === true)) { if (favs.length) saveLocal(); return null; }
+      return localApi('favorite-companies').then(function (response) {
+        if (!response || !response.ok) return null;
+        return Promise.all([response.text(), loadYaml()]).then(function (results) {
+          var merged = Favorites.merge(favs, window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }));
+          setFavs(merged.list, { save: merged.added > 0 });
+          update();
+        });
+      });
+    }).catch(function () { /* stays off, quietly */ });
+  }
+
+  function scheduleLocal() {
+    if (!localOn) return;
+    clearTimeout(localTimer);
+    localTimer = setTimeout(saveLocal, 800);
+  }
+
+  function saveLocal() {
+    clearTimeout(localTimer);
+    localTimer = 0;
+    if (!localOn) return;
+    loadYaml().then(function () {
+      var text = '# HiPot favorite companies. Kept in your browser; My Roles export carries them too.\n' +
+        window.jsyaml.dump(Favorites.toData(favs), { lineWidth: -1, noRefs: true, sortKeys: false });
+      localApi('favorite-companies', 'PUT', text);
+    }, function () {});
+  }
+
+  // ---- Filters ------------------------------------------------------------------------------------
+
+  function emptyFilters() {
+    return { q: '', cats: defaultCats.slice(), place: '', sector: '', type: '', stage: '', hiring: false, pay: '', read: '', fav: false };
+  }
+
+  function fillSelect(id, entries) {
+    var select = $(id);
+    entries.forEach(function (entry) { select.appendChild(el('option', { value: entry.value, text: entry.text })); });
+  }
+
+  function buildFilters() {
+    var count = function (test) { return data.companies.filter(test).length; };
+    var box = $('f-cats');
+    data.labels.categories.forEach(function (entry) {
+      var n = count(function (c) { return c.cats.indexOf(entry.id) !== -1; });
+      if (!n) return;
+      var input = el('input', { type: 'checkbox', id: 'f-cat-' + entry.id, value: entry.id });
+      input.addEventListener('change', function () {
+        filters.cats = Array.prototype.slice.call(box.querySelectorAll('input:checked')).map(function (i) { return i.value; });
+        update();
+      });
+      box.appendChild(el('label', { class: 'opt', for: input.id }, [input, el('span', { text: entry.label }), el('span', { class: 'opt-n', text: n.toLocaleString('en-US') })]));
+    });
+    // Locations: remote, then metro areas by how many companies hire there, then states A to Z.
+    var metroCount = {};
+    data.companies.forEach(function (c) { (c.metros || []).forEach(function (m) { metroCount[m] = (metroCount[m] || 0) + 1; }); });
+    var places = [{ value: 'remote', text: 'Remote (' + count(function (c) { return c.remote; }) + ')' }];
+    data.labels.metros.slice().sort(function (a, b) { return (metroCount[b.id] || 0) - (metroCount[a.id] || 0) || a.label.localeCompare(b.label); })
+      .forEach(function (m) { places.push({ value: 'm-' + m.id, text: m.label + ' (' + (metroCount[m.id] || 0) + ')' }); });
+    data.labels.states.forEach(function (s) { places.push({ value: 's-' + s.id, text: s.label + ' (state)' }); });
+    fillSelect('f-place', places);
+    fillSelect('f-sector', data.labels.sectors.filter(function (s) { return count(function (c) { return (c.sectors || []).indexOf(s.id) !== -1; }); })
+      .map(function (s) { return { value: s.id, text: s.label }; }));
+    fillSelect('f-stage', data.labels.stages.filter(function (s) { return count(function (c) { return c.stage === s.id; }); })
+      .map(function (s) { return { value: s.id, text: s.label }; }));
+    fillSelect('f-pay', data.labels.pay.map(function (p) { return { value: p.id, text: p.label + ' (' + (data.counts.pay[p.id] || 0) + ')' }; }));
+    fillSelect('f-read', data.labels.read.map(function (r) { return { value: r.id, text: r.label + ' (' + (data.counts.read[r.id] || 0) + ')' }; }));
+  }
+
+  function syncControls() {
+    $('q').value = filters.q;
+    Array.prototype.forEach.call($('f-cats').querySelectorAll('input'), function (input) { input.checked = filters.cats.indexOf(input.value) !== -1; });
+    ['place', 'sector', 'type', 'stage', 'pay', 'read'].forEach(function (key) { $('f-' + key).value = filters[key]; });
+    $('f-hiring').checked = filters.hiring;
+    $('f-fav').checked = filters.fav;
+    $('sort').value = sortBy;
+  }
+
+  // ---- Rendering ------------------------------------------------------------------------------------
+
+  function favButton(company) {
+    var on = !!favIds[company.id];
+    var button = el('button', {
+      type: 'button', class: 'fav-btn' + (on ? ' fav-on' : ''), 'aria-pressed': on ? 'true' : 'false',
+      'aria-label': 'Favorite company: ' + company.name, title: on ? 'A favorite company (click to remove)' : 'Mark as a favorite company',
+      text: on ? '★' : '☆'
+    });
+    button.addEventListener('click', function () {
+      setFavs(Favorites.toggle(favs, company.id, company.name, today()));
+      var fresh = favButton(company);
+      button.parentNode.replaceChild(fresh, button);
+      fresh.focus();
+      if (filters.fav) update();
+    });
+    return button;
+  }
+
+  function placeText(company) {
+    var names = (company.metros || []).map(function (m) { return labels.metros[m] || m; });
+    if (company.remote) names.push('Remote');
+    if (!names.length && (company.st || []).length) names = company.st.map(function (s) { return labels.states[s] || s.toUpperCase(); });
+    if (!names.length) return company.hq ? 'Headquarters: ' + company.hq : '';
+    var shown = names.slice(0, 4);
+    return 'Open roles in ' + shown.join('; ') + (names.length > 4 ? '; and ' + (names.length - 4) + ' more' : '');
+  }
+
+  function companyNode(company) {
+    var tags = el('div', { class: 'tags' });
+    var clean = company.cats.indexOf('clean-tech') !== -1;
+    if (clean) tags.appendChild(el('span', { class: 'tag' + (company.tier === 'core' ? ' tag-core' : ''), text: labels.climate_tiers[company.tier] || company.tier }));
+    company.cats.filter(function (id) { return id !== 'clean-tech'; }).forEach(function (id) {
+      tags.appendChild(el('span', { class: 'tag tag-cat', text: labels.categories[id] || id }));
+    });
+    if (company.type !== 'unchecked') tags.appendChild(el('span', { class: 'tag tag-type', title: company.type_why || null, text: company.type === 'startup' ? 'Startup' : 'Established' }));
+
+    var meta = [];
+    if ((company.sectors || []).length) meta.push(company.sectors.map(function (s) { return labels.sectors[s] || s; }).join(', '));
+    if (company.stage) meta.push(labels.stages[company.stage] || company.stage);
+    if (company.founded) meta.push('founded ' + company.founded);
+    var headcount = company.hc ? el('span', { title: 'Source: ' + company.hc.src, text: company.hc.n.toLocaleString('en-US') + ' people (' + formatDate(company.hc.as_of) + ')' }) : null;
+    var metaLine = el('p', { class: 'meta' }, [meta.join(' · '), headcount && meta.length ? ' · ' : '', headcount, company.parent ? ' · Part of ' + company.parent : '']);
+
+    var jobs;
+    if (company.roles) {
+      jobs = el('p', { class: 'jobs' }, [
+        el('a', { href: 'index.html#c-' + company.id + '--cat-all', text: plural(company.roles, 'open role', 'open roles') }),
+        company.new ? ' · ' + company.new.toLocaleString('en-US') + ' new' : '',
+        company.fns ? ' · ' + CompanyRules.rolesByType(company, labels.functions, 4) : ''
+      ]);
+    } else {
+      jobs = el('p', { class: 'jobs', text: 'No open roles on the board' + (company.read === 'not-read' ? ' (we do not read its jobs automatically)' : '') });
+    }
+    var pay = CompanyRules.payText(company.pay);
+    var payLine = company.pay ? el('p', { class: 'paynote' }, [el('span', { class: 'tag pay-' + pay.v, text: pay.label }), ' ', pay.basis]) : null;
+    var readLine = el('p', { class: 'read' }, [CompanyRules.readText(company.read), company.careers ? ' · ' : '',
+      company.careers ? outLink(company.careers, 'Careers page', ' at ' + company.name + ' (opens in a new tab)') : null]);
+    var where = placeText(company);
+
+    return el('li', { class: 'co' }, [
+      el('div', { class: 'co-top' }, [el('h3', null, [outLink(company.website, company.name, ' (website, opens in a new tab)')]), favButton(company)]),
+      tags,
+      company.reason ? el('p', { class: 'reason', text: company.reason }) : null,
+      metaLine.textContent ? metaLine : null,
+      where ? el('p', { class: 'where', text: where }) : null,
+      jobs, payLine, readLine
+    ]);
+  }
+
+  function appendPage() {
+    var end = Math.min(shown + PAGE_SIZE, results.length), fragment = document.createDocumentFragment();
+    for (var i = shown; i < end; i++) fragment.appendChild(companyNode(results[i]));
+    $('list').appendChild(fragment);
+    shown = end;
+    var left = results.length - shown;
+    $('more').hidden = left === 0;
+    if (left > 0) {
+      $('more-btn').textContent = 'Show ' + Math.min(PAGE_SIZE, left) + ' more';
+      $('more-note').textContent = 'Showing ' + shown.toLocaleString('en-US') + ' of ' + results.length.toLocaleString('en-US');
+    }
+  }
+
+  function update() {
+    results = CompanyRules.sort(data.companies.filter(function (c) { return CompanyRules.matches(c, filters, favIds); }), sortBy);
+    var hiring = results.filter(function (c) { return c.roles; }).length;
+    var count = $('count');
+    count.replaceChildren(el('strong', { text: results.length.toLocaleString('en-US') }), ' of ' + data.companies.length.toLocaleString('en-US') +
+      ' companies · ' + hiring.toLocaleString('en-US') + ' hiring now');
+    $('list').replaceChildren();
+    shown = 0;
+    $('empty').hidden = results.length > 0;
+    $('list').hidden = !results.length;
+    if (!results.length) {
+      var clear = el('button', { type: 'button', class: 'btn', text: 'Clear filters' });
+      clear.addEventListener('click', clearAll);
+      $('empty').replaceChildren(el('p', { text: 'No company matches these filters.' }), clear);
+      $('more').hidden = true;
+      return;
+    }
+    appendPage();
+  }
+
+  function clearAll() { filters = emptyFilters(); syncControls(); update(); }
+
+  function wire() {
+    $('q').addEventListener('input', function () {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () { filters.q = $('q').value; update(); }, 140);
+    });
+    $('filter-form').addEventListener('submit', function (event) { event.preventDefault(); });
+    ['place', 'sector', 'type', 'stage', 'pay', 'read'].forEach(function (key) {
+      $('f-' + key).addEventListener('change', function () { filters[key] = $('f-' + key).value; update(); });
+    });
+    $('f-hiring').addEventListener('change', function () { filters.hiring = $('f-hiring').checked; update(); });
+    $('f-fav').addEventListener('change', function () { filters.fav = $('f-fav').checked; update(); });
+    $('sort').addEventListener('change', function () { sortBy = $('sort').value; update(); });
+    $('clear').addEventListener('click', clearAll);
+    $('more-btn').addEventListener('click', appendPage);
+    // The board or another tab starred a company. A removal of the key is not a change to follow.
+    window.addEventListener('storage', function (event) {
+      if (event.key !== FAV_KEY || event.newValue === null) return;
+      try { setFavs(Favorites.parse(event.newValue), { save: false }); update(); } catch (error) { /* keep this tab's */ }
+    });
+    // Filters open beside the list on a wide screen, folded above it on a phone.
+    var wide = window.matchMedia('(min-width: 860px)');
+    var fold = function () { $('filters').open = wide.matches; };
+    fold();
+    if (wide.addEventListener) wide.addEventListener('change', fold); else wide.addListener(fold);
+  }
+
+  function start() {
+    fetch(DATA_URL).then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    }).then(function (json) {
+      if (!json || json.companies_version !== 0 || !Array.isArray(json.companies) || !json.labels) throw new Error('unexpected data format');
+      data = json;
+      Object.keys(data.labels).forEach(function (key) {
+        labels[key] = {};
+        data.labels[key].forEach(function (entry) { labels[key][entry.id] = entry.label; });
+      });
+      defaultCats = BoardFilters.defaults(data.labels.categories);
+      filters = emptyFilters();
+      loadFavs();
+      setFavs(favs, { save: false });
+      buildFilters();
+      wire();
+      syncControls();
+      $('s-companies').textContent = data.counts.companies.toLocaleString('en-US');
+      $('s-hiring').textContent = data.counts.hiring.toLocaleString('en-US');
+      $('s-read').textContent = ((data.counts.read.daily || 0) + (data.counts.read.weekly || 0)).toLocaleString('en-US');
+      $('stats').hidden = false;
+      $('run-note').textContent = 'Data generated ' + formatDate(data.generated_at) + ' · ' + plural(data.counts.companies, 'company', 'companies');
+      update();
+      startLocal();
+    }).catch(function (error) {
+      $('count').textContent = 'Companies did not load';
+      $('empty').replaceChildren(el('p', { text: 'The company data did not load (' + (error && error.message || 'unknown error') + '). Reload the page to try again.' }));
+      $('empty').hidden = false;
+    });
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>

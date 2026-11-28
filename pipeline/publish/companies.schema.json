@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Companies file",
+  "description": "The shape of site/data/companies.json, written by pipeline.publish beside board.json (same generated_at) and read by site/companies.html. Every listed company, with or without open roles (PLAN.md decision 27). Owned by workstream A4.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["companies_version", "generated_at", "scope", "counts", "labels", "companies"],
+  "properties": {
+    "companies_version": {"const": 0},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "scope": {"enum": ["listed", "all"]},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["companies", "hiring", "read", "pay"],
+      "properties": {
+        "companies": {"type": "integer", "minimum": 0},
+        "hiring": {"type": "integer", "minimum": 0, "description": "Companies with at least one open role on the board."},
+        "read": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "pay": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}}
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["categories", "sectors", "stages", "functions", "climate_tiers", "metros", "states", "pay", "read"],
+      "patternProperties": {
+        "^[a-z_]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label"],
+            "properties": {
+              "id": {"type": "string", "minLength": 1},
+              "label": {"type": "string", "minLength": 1},
+              "default": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "companies": {
+      "type": "array",
+      "description": "By name.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "cats", "tier", "type", "roles", "read"],
+        "properties": {
+          "id": {"$ref": "#/$defs/slug"},
+          "name": {"type": "string", "minLength": 1},
+          "cats": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/slug"}, "description": "tools.validate.company_categories: clean-tech first when its tier is core or enabling."},
+          "tier": {"enum": ["core", "enabling", "out", "unscreened"]},
+          "reason": {"type": "string", "minLength": 1, "description": "The climate tier's one-line reason."},
+          "type": {"enum": ["startup", "established", "unchecked"]},
+          "type_why": {"type": "string", "minLength": 1, "description": "The startup test's reason."},
+          "sectors": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}},
+          "stage": {"$ref": "#/$defs/slug"},
+          "founded": {"type": "integer"},
+          "parent": {"type": "string", "minLength": 1},
+          "hq": {"type": "string", "minLength": 1},
+          "hc": {"type": "object", "additionalProperties": false, "required": ["n", "as_of", "src"],
+                 "properties": {"n": {"type": "integer", "minimum": 1}, "as_of": {"type": "string", "format": "date"}, "src": {"type": "string"}}},
+          "website": {"type": "string", "pattern": "^https://"},
+          "careers": {"type": "string", "pattern": "^https://"},
+          "metros": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/slug"}, "description": "Metro areas of its open roles."},
+          "st": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z]{2}$"}, "description": "US states of its open roles."},
+          "remote": {"const": true, "description": "At least one open role is remote."},
+          "roles": {"type": "integer", "minimum": 0, "description": "Open roles on the board."},
+          "new": {"type": "integer", "minimum": 1, "description": "Of those, first seen in the last 3 business days."},
+          "fns": {"type": "object", "propertyNames": {"$ref": "#/$defs/slug"}, "additionalProperties": {"type": "integer", "minimum": 1},
+                  "description": "Open roles by role type, most first."},
+          "pay": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["v", "roles", "paid", "graded"],
+            "description": "The pay note (pipeline/publish/companies.py). Absent when the company has no open roles.",
+            "properties": {
+              "v": {"enum": ["above", "at", "below", "few", "unlisted"]},
+              "roles": {"type": "integer", "minimum": 1},
+              "paid": {"type": "integer", "minimum": 0, "description": "Open roles that publish pay."},
+              "graded": {"type": "integer", "minimum": 0, "description": "Of those, roles graded against their market."},
+              "pct": {"type": "integer", "description": "Median of the graded roles' midpoints against their market, in percent. Only for above, at and below."}
+            }
+          },
+          "read": {"enum": ["daily", "weekly", "not-read"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"}
+  }
+}
