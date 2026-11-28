@@ -93,6 +93,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
 .top > p:not(.mono) { max-width: 66ch; color: var(--soft); }
 .stats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 22px; }
 .stats b { display: block; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.3; }
+.stats-scope { margin-top: 10px; text-transform: none; letter-spacing: 0.02em; }
 
 .banner {
   color: var(--rust); border: 1px solid currentColor; border-radius: 10px;
@@ -440,6 +441,7 @@ body::before {
       <div><b id="s-places">0</b><span class="mono">Metro areas</span></div>
       <div><b id="s-refresh">–</b><span class="mono">Last refreshed</span></div>
     </div>
+    <p class="mono stats-scope" id="s-scope" hidden></p>
   </header>
 
   <p class="banner" id="dev-banner" hidden>Development build. It includes companies and role types that are not listed on the public board. Do not publish this build.</p>
@@ -1414,12 +1416,15 @@ var MyRoles = (function () {
     if (!servedLocally()) return;
     localApi('status', 'GET', undefined, LOCAL_WAIT_MS).then(function (response) {
       if (!response || !response.ok) return false;
-      return response.json().then(function (data) { return !!data && data.ok === true; }, function () { return false; });
-    }).then(function (ok) {
-      if (!ok) return null;
+      return response.json().then(function (data) { return data && data.ok === true ? data : false; }, function () { return false; });
+    }).then(function (status) {
+      if (!status) return null;
       localOn = true;
       renderLocalNotes();
-      return Promise.all([restoreLocalPersona(), restoreLocalMine()]);
+      // The status says which files exist; only those are asked for, so a fresh folder makes no 404s.
+      // (An older server that does not say gets asked for both.)
+      var files = status.files && typeof status.files === 'object' ? status.files : { persona: true, 'my-roles': true };
+      return Promise.all([restoreLocalPersona(files.persona === true), restoreLocalMine(files['my-roles'] === true)]);
     }).catch(function () { /* stays off, quietly */ });
   }
 
@@ -1431,7 +1436,8 @@ var MyRoles = (function () {
 
   // With no persona in the tab, bring back the one saved on this computer. With one in the tab (handed
   // over from the persona page, or opened before the check answered), save it unless the file says the same.
-  function restoreLocalPersona() {
+  function restoreLocalPersona(exists) {
+    if (!exists) { if (persona) saveLocalPersona(); return Promise.resolve(null); }
     return localApi('persona').then(function (response) {
       if (!response || !response.ok) { if (persona) saveLocalPersona(); return null; }
       return Promise.all([response.text(), loadYaml()]).then(function (results) {
@@ -1459,7 +1465,8 @@ var MyRoles = (function () {
   }
 
   // My Roles saved on this computer is merged into the browser's list: the latest change of each role wins.
-  function restoreLocalMine() {
+  function restoreLocalMine(exists) {
+    if (!exists) { if (mine.length) saveLocalMine(); return Promise.resolve(null); }
     return localApi('my-roles').then(function (response) {
       if (!response || !response.ok) { if (mine.length) saveLocalMine(); return null; }
       return Promise.all([response.text(), loadYaml()]).then(function (results) {
@@ -1988,8 +1995,10 @@ var MyRoles = (function () {
     window.addEventListener('pagehide', function () { if (localMineTimer) saveLocalMine(true); });
 
     // Another tab changed My Roles: follow it.
+    // A removal (cleared site data, or the key deleted) is not a change to follow: emptying this tab's list
+    // would also empty the copy in local-data/. This tab keeps its list and writes it back on its next change.
     window.addEventListener('storage', function (event) {
-      if (event.key !== MINE_KEY) return;
+      if (event.key !== MINE_KEY || event.newValue === null) return;
       try { setMine(MyRoles.parse(event.newValue)); } catch (error) { /* keep what this tab has */ }
     });
 
@@ -2672,8 +2681,39 @@ var MyRoles = (function () {
     host.hidden = false;
   }
 
+  // The header's figures cover the categories chosen (decision 23: clean tech by default), not the other
+  // filters: open roles, companies, new roles and metro areas. A line under them names the categories and,
+  // unless every category is shown, gives the figure for all of them.
+  var headerKey = null;
+  function renderHeader() {
+    var key = Array.from(state.cat || []).sort().join(',');
+    if (key === headerKey) return;
+    headerKey = key;
+    var count = 0, fresh = 0, companies = {}, metros = {}, allCompanies = {};
+    roles.forEach(function (role) {
+      allCompanies[role.co] = true;
+      if (!BoardFilters.passes(role.facets.cat, state.cat)) return;
+      count += 1;
+      companies[role.co] = true;
+      if (role.new) fresh += 1;
+      (role.metros || []).forEach(function (id) { metros[id] = true; });
+    });
+    $('s-roles').textContent = count.toLocaleString('en-US');
+    $('s-cos').textContent = Object.keys(companies).length.toLocaleString('en-US');
+    $('s-new').textContent = fresh.toLocaleString('en-US');
+    $('s-places').textContent = Object.keys(metros).length.toLocaleString('en-US');
+    var all = !state.cat || !state.cat.size;
+    var names = all ? 'All categories' : catIds().filter(function (id) { return state.cat.has(id); })
+      .map(function (id) { return id === NONE ? 'No category' : (labels.categories || {})[id] || id; }).join(', ');
+    var total = Object.keys(allCompanies).length;
+    $('s-scope').textContent = all || count === roles.length ? names
+      : names + ' · of ' + plural(roles.length, 'role', 'roles') + ' at ' + plural(total, 'company', 'companies') + ' in all categories';
+    $('s-scope').hidden = !(board.taxonomy.categories || []).length;
+  }
+
   function update() {
     closeMenu(false);
+    renderHeader();
     var outcome = runFilters();
     var shownRoles = outcome.matched;
     // Great matches: among the roles these filters show, whatever the sort; only while a persona is in use.
@@ -2719,11 +2759,8 @@ var MyRoles = (function () {
     var metroCount = (board.taxonomy.metros || []).length;
     var remote = roles.some(function (role) { return role.wp === 'remote'; });
     $('eyebrow').textContent = 'United States · ' + plural(metroCount, 'metro area', 'metro areas') + (remote ? ' and remote' : '') + ' · read from company job boards';
-    $('s-roles').textContent = roles.length.toLocaleString('en-US');
-    $('s-cos').textContent = Object.keys(board.companies).length.toLocaleString('en-US');
-    $('s-new').textContent = (board.counts.new || 0).toLocaleString('en-US');
+    // Open roles, companies, new roles and metro areas follow the category choice: renderHeader(), on every update.
     if (board.counts.new_since) $('s-new-label').title = 'First seen on or after ' + formatDate(board.counts.new_since) + ', Mountain time';
-    $('s-places').textContent = metroCount.toLocaleString('en-US');
     var stamp = formatStamp(board.generated_at);
     if (stamp) $('s-refresh').replaceChildren(el('time', { datetime: board.generated_at, text: stamp }));
     $('stats').hidden = false;
