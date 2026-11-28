@@ -24,8 +24,11 @@ by default under the standing rule, PLAN.md decision 6).
 
 Fields read. Search: total, jobPostings[] (title, externalPath, locationsText,
 bulletFields). Posting: jobPostingInfo (title, jobDescription (HTML),
-location, additionalLocations, country.descriptor, timeType, remoteType,
-startDate, jobReqId, externalUrl). There is no structured pay.
+location, additionalLocations, country.descriptor,
+jobRequisitionLocation.country.alpha2Code, timeType, remoteType, startDate,
+jobReqId, externalUrl). There is no structured pay, and no state or region:
+a site's state is filled only when the board's own postings settle it
+(locations.fill_from_board).
 """
 from __future__ import annotations
 
@@ -33,7 +36,7 @@ import re
 
 from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError, Fetcher
-from pipeline.collect.locations import parse_location, split_locations
+from pipeline.collect.locations import country_code, fill_from_board, parse_location, split_locations
 from pipeline.collect.text import html_to_text
 
 PAGE = 20
@@ -64,15 +67,34 @@ def _posting_id(info: dict, path: str) -> str:
     return tail.rsplit("_", 1)[-1] if "_" in tail else tail
 
 
+def _feed_country(info: dict) -> tuple[str | None, str]:
+    """The primary location's country: (ISO code, the name Workday gives)."""
+    named = info.get("country") if isinstance(info.get("country"), dict) else {}
+    requisition = info.get("jobRequisitionLocation") if isinstance(info.get("jobRequisitionLocation"), dict) else {}
+    coded = requisition.get("country") if isinstance(requisition.get("country"), dict) else {}
+    name = named.get("descriptor") or coded.get("descriptor") or ""
+    code = coded.get("alpha2Code") if isinstance(coded.get("alpha2Code"), str) else None
+    return (code.upper() if code else country_code(name)), name
+
+
 def _locations(info: dict, listed: str | None) -> list[dict]:
-    texts = [info.get("location")] + list(info.get("additionalLocations") or [])
+    """Workday gives the primary location's country but never its state or region.
+    The country wins over a reading of the text ("Chennai, IN" is India, not
+    Indiana); a state is never inferred from it."""
+    primary = info.get("location") if isinstance(info.get("location"), str) else ""
+    texts = [primary] + list(info.get("additionalLocations") or [])
     texts = [text for text in texts if isinstance(text, str) and text.strip()] or ([listed] if listed else [])
     found = [parse_location(piece) for text in texts for piece in split_locations(text)]
-    country = ((info.get("country") or {}).get("descriptor") or "") if isinstance(info.get("country"), dict) else ""
-    if country and len(found) == 1 and "country" not in found[0]:
-        enriched = parse_location(f"{found[0]['text']}, {country}")
-        if enriched.get("country"):
-            found = [{**enriched, "text": found[0]["text"]}]
+    code, name = _feed_country(info)
+    if code and primary.strip() and len(split_locations(primary)) == 1 and found and found[0].get("country") != code:
+        first = found[0]
+        enriched = parse_location(f"{first['text']}, {name}") if name else {}
+        if enriched.get("country") == code:
+            found[0] = {**enriched, "text": first["text"]}
+        else:
+            found[0] = {"text": first["text"], "country": code}
+    if not found and code:
+        found = [{"text": name or code, "country": code}]       # no place named, but the country is given
     return list({location["text"].lower(): location for location in found}.values())
 
 
@@ -131,4 +153,4 @@ def read(board: str, fetcher: Fetcher) -> list[dict]:
         answer = details.ask(lambda: fetcher.get_json(f"{api_prefix}{item['externalPath']}"), default={})
         info = (answer or {}).get("jobPostingInfo") or {}
         drafts.append(_draft(item, info, public_prefix))
-    return details.result(drafts)
+    return details.result(fill_from_board(drafts))

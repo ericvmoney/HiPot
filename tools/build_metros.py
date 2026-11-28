@@ -96,6 +96,16 @@ MANUAL_PLACES = [
     ("TX", "Mesquite", "48113"),             # the Dallas County city, not the Starr County CDP
     ("IN", "Jeffersonville", "18019"),       # the Clark County city (Louisville region)
     ("TX", "Dallas Fort Worth Metroplex", "48113"),
+    # Neighbourhoods, districts and townships that boards name as places (A1, 2026-11-28).
+    ("NC", "Research Triangle Park", "37063"),  # spans Durham and Wake counties, both Raleigh-Durham
+    ("MA", "Charlestown", "25025"),          # a Boston neighbourhood, Suffolk County
+    ("CA", "San Pedro", "06037"),            # a Los Angeles neighbourhood
+    ("FL", "Ponte Vedra Beach", "12109"),    # St. Johns County (Jacksonville); not a 2020 Census place
+    ("PA", "Warrendale", "42003"),           # in Marshall Township, Allegheny County (Pittsburgh)
+    ("NJ", "Edison", "34023"),               # a township, not a Census place; Middlesex County
+    ("NJ", "Cedar Grove", "34013"),          # a township, Essex County
+    ("NJ", "Bridgewater", "34035"),          # a township, Somerset County
+    ("OH", "West Chester", "39017"),         # West Chester Township, Butler County (Cincinnati)
 ]
 # Not mapped on purpose: "Front Range" (CO) spans the Denver and Fort Collins
 # regions, and "St. Landry" (LA) is a parish, not a town.
