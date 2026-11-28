@@ -220,16 +220,6 @@ companies:
   reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
-- name: American Atomics
-  website: null
-  hq: not found
-  sources:
-  - cma-members
-  registry_id: null
-  decision: null
-  reason: Headquarters not found.
-  ats: null
-  open_roles: null
 - name: AMP Robotics
   website: https://www.amprobotics.com
   hq: Louisville, CO
@@ -297,7 +287,9 @@ companies:
   - cgs-is88
   registry_id: null
   decision: null
-  reason: The New Elk mine's operator is New Elk Coal Company (Allegiance Coal); the input name does not match.
+  reason: 'Identity check found nothing conclusive. Unverified lead: Basin Resources Inc. may be the historical
+    operator of a different Las Animas County coal mine (Golden Eagle), not New Elk. Not checked; no search budget
+    left.'
   ats: null
   open_roles: null
 - name: Beehive Industries
@@ -319,7 +311,8 @@ companies:
   - beststartup-robotics-co
   registry_id: null
   decision: null
-  reason: Pre-launch site with a 2021 copyright; status not established.
+  reason: Identity check found nothing conclusive. Location not stated on site; no evidence of a shipped product
+    or of activity after 2021.
   ats: null
   open_roles: null
 - name: Beyond Imagination
@@ -329,7 +322,8 @@ companies:
   - beststartup-robotics-co
   registry_id: null
   decision: null
-  reason: Its domain is parked for sale; status not established.
+  reason: Identity check found nothing conclusive. Closure is likely but no shutdown or bankruptcy evidence found.
+    One profile in search results gives a Burbank, CA address, which conflicts with Colorado Springs.
   ats: null
   open_roles: null
 - name: Bifrost Electronics
@@ -395,7 +389,8 @@ companies:
   - beststartup-robotics-co
   registry_id: null
   decision: null
-  reason: Its site is a 'Launching Soon' placeholder; status not established.
+  reason: Identity check found nothing conclusive. Signals point to wind-down (domain lost, headcount 1) but no
+    shutdown or bankruptcy evidence found.
   ats: null
   open_roles: null
 - name: CAES (formerly Cobham Advanced Electronic Solutions)
@@ -425,7 +420,8 @@ companies:
   - oedit-choosecolorado
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Connection refused, not a bot challenge; domain may be dead,
+    not confirmed.
   ats: null
   open_roles: null
 - name: CisLunar Industries
@@ -602,12 +598,12 @@ companies:
   open_roles: null
 - name: Homeland Uranium
   website: https://www.homeland-uranium.com
-  hq: not stated on site
+  hq: Coyote Basin project, CO
   sources:
   - cgs-is88
-  registry_id: null
-  decision: null
-  reason: Headquarters not stated on its site.
+  registry_id: homeland-uranium
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Honeybee Robotics
@@ -622,13 +618,13 @@ companies:
   ats: null
   open_roles: null
 - name: HYSA Fillers
-  website: null
+  website: https://www.hysafillers.com
   hq: Golden, CO
   sources:
   - mines-search
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: hysa-fillers
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Icarus Quantum
@@ -657,14 +653,14 @@ companies:
     token: coldquanta
   open_roles: 74
 - name: InnovaFlex Foundry
-  website: null
+  website: https://innovaflexusa.com
   hq: Colorado Springs, CO
   sources:
   - tid-semis-co
   - cu-semis-forum
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: innovaflex-foundry
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Inspectorbots
@@ -694,9 +690,9 @@ companies:
   hq: Denver, CO
   sources:
   - mdedc-aero-study-2023
-  registry_id: null
-  decision: null
-  reason: The merge had matched it to a different registry company (Karman Industries); its facts were not gathered.
+  registry_id: karman
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: KMLabs
@@ -738,7 +734,7 @@ companies:
   - beststartup-robotics-co
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Dead domain suggests closure but no dated evidence found.
   ats: null
   open_roles: null
 - name: Lockheed Martin Space
@@ -855,17 +851,6 @@ companies:
   reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Metallic Minerals
-  website: https://mmgsilver.com
-  hq: not stated on site
-  sources:
-  - cma-members
-  - cgs-is88
-  registry_id: null
-  decision: null
-  reason: Headquarters not stated on its site.
-  ats: null
-  open_roles: null
 - name: Micro-g LaCoste
   website: https://www.microglacoste.com
   hq: Lafayette, CO
@@ -967,7 +952,7 @@ companies:
   - cu-vp-midyear
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. The for-sale domain may never have been this company's.
   ats: null
   open_roles: null
 - name: Pattern Labs
@@ -1115,9 +1100,9 @@ companies:
   hq: Denver, CO
   sources:
   - mdedc-aero-report-2025
-  registry_id: null
-  decision: null
-  reason: Matched by name only with no domain; identity not established.
+  registry_id: robotic-construction-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Rocky Mountain Instrument Co.
@@ -1187,16 +1172,6 @@ companies:
   reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Ska Fabricating
-  website: https://www.skafab.com
-  hq: Durango, CO
-  sources:
-  - mfredge-cmn-awards
-  registry_id: null
-  decision: null
-  reason: Its domain now redirects to an unrelated Swedish company; status not established.
-  ats: null
-  open_roles: null
 - name: Sodern America
   website: https://www.sodern.com
   hq: Limeil-Brevannes, France
@@ -1209,13 +1184,13 @@ companies:
   ats: null
   open_roles: null
 - name: Space Dust Research & Technologies
-  website: null
+  website: https://www.spacedusttech.com
   hq: Boulder, CO
   sources:
   - cu-vp-annual
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: space-dust-research-and-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Space River Labs
@@ -1225,7 +1200,7 @@ companies:
   - cu-vp-midyear
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Space-ng
@@ -1349,23 +1324,23 @@ companies:
   ats: null
   open_roles: null
 - name: Synteric Robotics
-  website: null
-  hq: Boulder, CO
+  website: https://www.syntericrobotics.com
+  hq: Denver, CO
   sources:
   - cu-vp-midyear
-  registry_id: null
-  decision: null
-  reason: Identity and Boulder location not established.
+  registry_id: synteric-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Tangy Consulting
-  website: null
+  website: https://www.tangyconsulting.com
   hq: Boulder, CO
   sources:
   - cu-vp-midyear
   registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  decision: not-in-scope
+  reason: Product management, marketing and development consulting (services).
   ats: null
   open_roles: null
 - name: Tendeg
@@ -1429,7 +1404,8 @@ companies:
   - cu-vp-midyear
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Possibly an early CU Boulder spinout around Brillouin microresonator
+    work; not confirmed.
   ats: null
   open_roles: null
 - name: Trimble
@@ -1542,7 +1518,8 @@ companies:
   - csc-metrodenver
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Domain is live, so likely an existing company, but identity and
+    product not established.
   ats: null
   open_roles: null
 - name: Vescent
@@ -1608,7 +1585,7 @@ companies:
   - cu-jila-spinoffs
   registry_id: null
   decision: null
-  reason: Current activity not established.
+  reason: Identity check found nothing conclusive. No own website found; current activity not established.
   ats: null
   open_roles: null
 - name: WinterWinds Robotics
@@ -1618,7 +1595,8 @@ companies:
   - beststartup-robotics-co
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Domain maintained in 2026, so likely an early-stage company;
+    not confirmed.
   ats: null
   open_roles: null
 - name: Wolf Robotics (Lincoln Electric Automation)
@@ -1649,9 +1627,9 @@ companies:
   sources:
   - mdedc-aero-cluster
   - mdedc-aero-scan-2026
-  registry_id: null
-  decision: null
-  reason: Best match is Xairos Systems (Arvada, CO), not confirmed.
+  registry_id: xairo
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: York Space Systems
@@ -1668,6 +1646,10 @@ companies:
   ats: null
   open_roles: null
 excluded:
+- name: American Atomics
+  sources:
+  - cma-members
+  reason: Headquartered in Vancouver, BC; its Colorado holding (Nuvemco) is one project.
 - name: American Rare Earths
   sources:
   - cma-members
@@ -1769,6 +1751,11 @@ excluded:
   sources:
   - cgs-is88
   reason: Headquartered outside the US (South Melbourne, Victoria, Australia; si); no main site in the region found.
+- name: Metallic Minerals
+  sources:
+  - cma-members
+  - cgs-is88
+  reason: Headquartered in Vancouver, BC, outside the region; no main site in the region found.
 - name: Metals One
   sources:
   - cgs-is88
@@ -1827,6 +1814,10 @@ excluded:
   - cos-chamber-aero
   - ucd-aero-list
   reason: Headquartered in Sparks, NV (Mountain West); headquartered elsewhere; its Colorado site is one of several.
+- name: Ska Fabricating
+  sources:
+  - mfredge-cmn-awards
+  reason: Headquartered in Grand Rapids, MI.
 - name: Sphero
   sources:
   - beststartup-robotics-co

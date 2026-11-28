@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: acroname
   name: Acroname
@@ -922,6 +922,35 @@ companies:
     operation still runs under FormFactor.'
   categories:
   - semis-electronics
+- id: homeland-uranium
+  name: Homeland Uranium
+  website: https://www.homeland-uranium.com
+  careers_url: null
+  hq: Coyote Basin project, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Uranium-vanadium explorer and developer; Coyote Basin and Cross Bones projects in Colorado (agreeing
+      to acquire Coyote Basin and Red Wash in the Maybell district). Adjacent (Mining and exploration), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Listed TSXV: HLU, FSE: D3U, OTC: HLUCF (own site). Flags:
+    Holds projects, does not run a mine. HQ not stated on site; no Dealroom profile.. Evidence: O w n   s i Region
+    sources: cgs-is88. Confidence: low.'
+  categories:
+  - mining
 - id: honeybee-robotics
   name: Honeybee Robotics
   website: https://www.honeybeerobotics.com
@@ -958,6 +987,33 @@ companies:
   categories:
   - aerospace-space
   - autonomy-robotics
+- id: hysa-fillers
+  name: HYSA Fillers
+  website: https://www.hysafillers.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'New filler alloys for brazing and joining: superalloy braze repair, dissimilar-metal and metal-to-ceramic
+      joining. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Colorado School of Mines spinout. Funding not stated..
+    Evidence: O w n   s i Region sources: mines-search. Confidence: low.'
+  categories:
+  - advanced-manufacturing
 - id: icarus-quantum
   name: Icarus Quantum
   website: https://www.icarusquantum.com
@@ -1022,6 +1078,34 @@ companies:
     vs Louisville HQ.'
   categories:
   - semis-electronics
+- id: innovaflex-foundry
+  name: InnovaFlex Foundry
+  website: https://innovaflexusa.com
+  careers_url: null
+  hq: Colorado Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1999
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Large-panel (920 x 730 mm) flat-panel semiconductor foundry: electronics on glass and flexible polyimide
+      (sensors/MEMS, imaging arrays, flexible hybrid electronics, displays, advanced packaging). Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1999 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Flags: Formerly dpiX LLC (renamed before this list; input already
+    uses the new name). Parent and ownership not stated. semi.org returned 403, so not read.. Evidence: O w n   s
+    i Region sources: tid-semis-co, cu-semis-forum. Confidence: low.'
+  categories:
+  - semis-electronics
 - id: inspectorbots
   name: Inspectorbots
   website: https://inspectorbots.com
@@ -1083,6 +1167,38 @@ companies:
   categories:
   - advanced-manufacturing
   - aerospace-space
+- id: karman
+  name: Karman+
+  website: https://www.karmanplus.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 19
+    as_of: '2026-11-27'
+    source: dealroom (https://dealroom.co/companies/karman)
+  climate:
+    tier: out
+    reason: Asteroid-mining spacecraft; sells in-space fuel (water from asteroids); first mission targets asteroid
+      Apophis. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 19 people (dealroom, 2026-11-27); founded 2022, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Dealroom: $20M seed, Feb 2025 (investors incl. Plural,
+    Norrsken VC); earlier seed Mar 2023. Flags: Distinct from Karman Industries; own site does not state HQ. Holds
+    no mine; it is a spacecraft developer.. Evidence: O w n   s i Region sources: mdedc-aero-study-2023. Confidence:
+    low.'
+  categories:
+  - aerospace-space
+  - mining
 - id: kmlabs
   name: KMLabs
   website: https://www.kmlabs.com
@@ -2046,6 +2162,35 @@ companies:
     automated client (403); Dealroom 404'
   categories:
   - semis-electronics
+- id: robotic-construction-technologies
+  name: Robotic Construction Technologies
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic 3D concrete printing systems for large-scale additive construction; builds own projects and
+      sells or leases systems. Adjacent (Advanced manufacturing, Autonomy and robotics), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Flags: Also called RoboCon. Own website not found. The $9.5M
+    aerospace award named by the source was not confirmed; the aerospace-space category looks doubtful for a construction-printing
+    company.. Evidence: F e d e r a Region sources: mdedc-aero-report-2025. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
 - id: rocky-mountain-instrument-co
   name: Rocky Mountain Instrument Co.
   website: https://rmico.com
@@ -2292,6 +2437,35 @@ companies:
   categories:
   - aerospace-space
   - semis-electronics
+- id: space-dust-research-and-technologies
+  name: Space Dust Research & Technologies
+  website: https://www.spacedusttech.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Electron-beam dust mitigation for lunar surfaces, CubeSat Langmuir probe for LEO plasma, electron-beam
+      regolith separator. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: CU Boulder Venture Partners startup page lists stage
+    Pre-Seed (updated Oct 13, 2025); NASA TechLeap Prize 2025, two NASA SBIR Phase I subcontracts. Flags: HQ inferred
+    from CU Boulder affiliation; neither page gives a street address.. Evidence: O w n   s i Region sources: cu-vp-annual.
+    Confidence: low.'
+  categories:
+  - aerospace-space
 - id: space-ng
   name: Space-ng
   website: https://space-ng.com
@@ -2512,6 +2686,34 @@ companies:
     year, headcount, funding stage.'
   categories:
   - advanced-manufacturing
+  - autonomy-robotics
+- id: synteric-robotics
+  name: Synteric Robotics
+  website: https://www.syntericrobotics.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 30-cm autonomous legged robot that inspects crawl spaces, attics and fire scenes for restoration work,
+      logging moisture, air quality and imagery. Adjacent (Autonomy and robotics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Located in Denver, not Boulder. Company funding not
+    stated.. Evidence: O w n   s i Region sources: cu-vp-midyear. Confidence: low.'
+  categories:
   - autonomy-robotics
 - id: tendeg
   name: Tendeg
@@ -2986,6 +3188,37 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
+- id: xairo
+  name: Xairo
+  website: https://xairos.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Quantum time transfer: enterprise timing over space and fiber links, building toward a global entanglement
+      network. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive only on site: SpaceWERX Direct-to-Phase
+    II SBIR (undated), Innovate UK and ESA contracts (Oct 2025, May 2026); no equity round stated. Flags: Input
+    ''Xairo'' read as a misspelling of Xairos Systems, Inc. The $1.9M award was not found on its site. Founded likely
+    2018 (copyright start), not confirmed.. Evidence: O w n   s i Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026.
+    Confidence: low.'
+  categories:
+  - aerospace-space
 - id: york-space-systems
   name: York Space Systems
   website: https://www.yorkspacesystems.com
