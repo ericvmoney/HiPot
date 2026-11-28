@@ -590,9 +590,12 @@ companies:
     board: 22109fcc-6006-4b20-ad53-1da2c510248f
   read: manual
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 88
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/accelsius
   climate:
     tier: out
     reason: NeuCool two-phase direct-to-chip liquid cooling systems for data centers. Data-center equipment and
@@ -601,13 +604,12 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
+    reason: 'Independent; 88 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/accelsius,
+      2026-11-24); growth sign: founded 2022.'
   notes: 'Board adp:22109fcc-6006-4b20-ad53-1da2c510248f seen 2026-11-27, linked from the company''s own site: role
-    count not read (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined
-    (dealroom-after-api-refusal). Flags: main customers are data centers; Innventure company; dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://accelsius.com/
-    Region sources: ocp-members, opportunity-austin. Confidence: high.'
+    count not read (no public feed). Flags: main customers are data centers; Innventure company. Evidence: https://accelsius.com/
+    Region sources: ocp-members, opportunity-austin. Confidence: high. Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - data-centers
 - id: accion-systems
@@ -2557,9 +2559,12 @@ companies:
   sectors:
   - electric-aviation
   - buildings
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 229
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/allen-control-systems
   climate:
     tier: out
     reason: Bullfrog, an AI-enabled robotic weapon station that makes existing weapons (M240, M2) autonomous to
@@ -2568,14 +2573,13 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
+    reason: 'Independent; 229 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/allen-control-systems,
+      2026-11-24); growth sign: founded 2022.'
   notes: 'Board ashby:allen-control-systems seen 2026-11-27, token matched by name; board page checked: 19 open
-    roles. Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal).
-    Flags: defense is main business; deployed with US Army, Navy, Air Force per company site; offices also in Alexandria
-    VA and Huntsville AL; dealroom-after-api-refusal: facts read from Dealroom profile pages in this batch after
-    the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27) and do not decide the
-    tier or startup test. Evidence: https://www.allencontrolsystems.com/ Region sources: avadt50, opportunity-austin.
-    Confidence: high.'
+    roles. Flags: defense is main business; deployed with US Army, Navy, Air Force per company site; offices also
+    in Alexandria VA and Huntsville AL. Evidence: https://www.allencontrolsystems.com/ Region sources: avadt50,
+    opportunity-austin. Confidence: high. Missing facts filled from data/screening/registry-fixes. Dealroom facts
+    released by the owner (decision 25, 2026-11-27).'
   categories:
   - autonomy-robotics
   - defense
@@ -22250,9 +22254,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
+  stage: late
   founded: 2009
-  headcount: null
+  headcount:
+    value: 38
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/green-revolution-cooling
   climate:
     tier: out
     reason: Single-phase immersion cooling systems (ICEraQ, ICETank) and dielectric fluids for data-center servers.
@@ -22260,15 +22267,13 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: Independent; no headcount figure found; founded 2009, with no equity raise in 5 years or recent listing
-      found.
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Founded:
-    https://www.grcooling.com/about/. Stage: Quarantined (dealroom-after-api-refusal). Flags: main customers are
-    data centers; dealroom-after-api-refusal: facts read from Dealroom profile pages in this batch after the permission
-    check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27) and do not decide the tier or startup
-    test. Evidence: https://www.grcooling.com/about/ Region sources: ocp-members. Confidence: medium. Unresolved:
-    exact stage of June 2025 round'
+    status: in
+    reason: Independent; 38 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/green-revolution-cooling,
+      2026-11-24); founded 2009 but venture-backed (late); latest round not yet checked, so included.
+  notes: 'No job board found on the company''s site. Founded: https://www.grcooling.com/about/. Flags: main customers
+    are data centers. Evidence: https://www.grcooling.com/about/ Region sources: ocp-members. Confidence: medium.
+    Unresolved: exact stage of June 2025 round Missing facts filled from data/screening/registry-fixes. Dealroom
+    facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - data-centers
 - id: great-lakes-crystal-technologies
@@ -23328,7 +23333,7 @@ companies:
   read: none
   sectors: []
   stage: null
-  founded: null
+  founded: 2016
   headcount: null
   climate:
     tier: out
@@ -23338,13 +23343,12 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
-  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only team size <100. Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: acquired or being acquired by Bioness Medical (announced June
-    2025; completion not confirmed); medical device; dealroom-after-api-refusal: facts read from Dealroom profile
-    pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27)
-    and do not decide the tier or startup test. Evidence: https://harmonicbionics.com/about/ Region sources: cockrell-funding.
-    Confidence: medium. Unresolved: whether the Bioness deal closed; site still active in 2026'
+    reason: 'Independent; no headcount figure found; growth sign: founded 2016.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only team size <100. Flags:
+    acquired or being acquired by Bioness Medical (announced June 2025; completion not confirmed); medical device.
+    Evidence: https://harmonicbionics.com/about/ Region sources: cockrell-funding. Confidence: medium. Unresolved:
+    whether the Bioness deal closed; site still active in 2026 Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - autonomy-robotics
 - id: harmonic-drive-llc
@@ -25399,9 +25403,12 @@ companies:
     board: icon
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2017
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/icon-build
   climate:
     tier: out
     reason: Titan 3D construction printers (robotic arm on mobile base, with pump, mixer and BuildOS software) and
@@ -25411,14 +25418,13 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
+    reason: 'Independent; 500 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/icon-build,
+      2026-11-24); growth sign: founded 2017.'
   notes: 'Board ashby:icon seen 2026-11-27, token matched by name; board page checked: 6 open roles, 6 US-remote.
-    Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal). Flags:
-    construction 3D printing; lunar/NASA work not confirmed on company pages read; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.iconbuild.com/technology
+    Flags: construction 3D printing; lunar/NASA work not confirmed on company pages read. Evidence: https://www.iconbuild.com/technology
     Region sources: tx-space-commission, avadt50. Confidence: medium. Unresolved: Series D date; lunar construction
-    work not checked (iconbuild.com/about 404).'
+    work not checked (iconbuild.com/about 404). Missing facts filled from data/screening/registry-fixes. Dealroom
+    facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - advanced-manufacturing
   - aerospace-space
@@ -35617,9 +35623,12 @@ companies:
   sectors:
   - components
   - recycling
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-c
+  founded: 2014
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/noveon-magnetics
   climate:
     tier: enabling
     reason: Sintered rare-earth magnets made largely from recycled magnet material.
@@ -35627,12 +35636,11 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: dealroom-after-api-refusal: facts read from Dealroom profile
-    pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27)
-    and do not decide the tier or startup test. Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved:
-    noveon.co/about content not readable'
+    reason: 'Independent; 95 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/noveon-magnetics,
+      2026-11-24); growth sign: founded 2014.'
+  notes: 'No job board found on the company''s site. Flags: Region sources: avadt50, opportunity-austin. Confidence:
+    high. Unresolved: noveon.co/about content not readable Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - advanced-manufacturing
   - semis-electronics
@@ -39546,9 +39554,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 28
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/pipedream-labs
   climate:
     tier: out
     reason: Underground pipe network with autonomous rail robots that deliver grocery-sized totes, plus an instant-pickup
@@ -39558,12 +39569,11 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: legal name Pipedream Labs; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.pipedreamlabs.co/
-    Region sources: avadt50. Confidence: high.'
+    reason: 'Independent; 28 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/pipedream-labs,
+      2026-11-24); growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Flags: legal name Pipedream Labs. Evidence: https://www.pipedreamlabs.co/
+    Region sources: avadt50. Confidence: high. Missing facts filled from data/screening/registry-fixes. Dealroom
+    facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - autonomy-robotics
 - id: piris-labs
@@ -46733,7 +46743,10 @@ companies:
   sectors: []
   stage: public
   founded: 1996
-  headcount: null
+  headcount:
+    value: 1930
+    as_of: '2026-11-24'
+    source: StockAnalysis company profile (undated; read 2026-11-24) https://stockanalysis.com/stocks/slab/company/
   climate:
     tier: out
     reason: Fabless mixed-signal wireless IoT chips (SoCs and modules) for industrial IoT, smart home, connected
@@ -46743,17 +46756,15 @@ companies:
     approved: false
   startup:
     status: out
-    reason: Independent; no headcount figure found; founded 1996, with no equity raise in 5 years or recent listing
-      found.
+    reason: Independent; 1,930 people (StockAnalysis company profile (undated; read 2026-11-24) https://stockanalysis.com/stocks/slab/company/,
+      2026-11-24); founded 1996, with no equity raise in 5 years or recent listing found.
   notes: 'Board workday:silabs.wd1.myworkdayjobs.com/SiliconlabsCareers seen 2026-11-27, linked from the company''s
-    own site: role count not read (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Founded:
-    https://stockanalysis.com/stocks/slab/company/. Stage: IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments agreed
-    2026-02-04 to buy it for $231/share (~$7.5B), close expected H1 2027 (TI/Silicon Labs press release). Flags:
-    over 1,000 employees; pending acquisition by Texas Instruments; silabs.com refused automated fetch (403); dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://stockanalysis.com/stocks/slab/company/
-    https://news.silabs.com/2026-02-04-Texas-Instruments-to-acquire-Silicon-Labs Region sources: opportunity-austin,
-    tsif-listing. Confidence: high.'
+    own site: role count not read (no public feed). Founded: https://stockanalysis.com/stocks/slab/company/. Stage:
+    IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments agreed 2026-02-04 to buy it for $231/share (~$7.5B), close expected
+    H1 2027 (TI/Silicon Labs press release). Flags: over 1,000 employees; pending acquisition by Texas Instruments;
+    silabs.com refused automated fetch (403). Evidence: https://stockanalysis.com/stocks/slab/company/ https://news.silabs.com/2026-02-04-Texas-Instruments-to-acquire-Silicon-Labs
+    Region sources: opportunity-austin, tsif-listing. Confidence: high. Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - semis-electronics
 - id: silvis-materials
@@ -51186,9 +51197,12 @@ companies:
   read: auto
   sectors:
   - components
-  stage: null
-  founded: null
-  headcount: null
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 22
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/tau-systems
   climate:
     tier: out
     reason: Compact laser-driven particle accelerators and X-ray light sources for semiconductor lithography, plus
@@ -51197,12 +51211,11 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
-  notes: 'Board greenhouse:tau seen 2026-11-27, token matched by name; board page checked: 2 open roles. Headcount
-    note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal). Flags: dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.tausystems.com/
-    Region sources: avadt50. Confidence: high.'
+    reason: 'Independent; 22 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/tau-systems,
+      2026-11-24); growth sign: founded 2020.'
+  notes: 'Board greenhouse:tau seen 2026-11-27, token matched by name; board page checked: 2 open roles. Flags:
+    Evidence: https://www.tausystems.com/ Region sources: avadt50. Confidence: high. Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - semis-electronics
 - id: tbm-designs
@@ -51796,9 +51809,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-a
+  founded: 2023
+  headcount:
+    value: 25
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/terrafirma
   climate:
     tier: out
     reason: Retrofits existing heavy machinery for remote and autonomous operation, sells construction planning/control
@@ -51808,13 +51824,12 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: mix of software, machine retrofits and earthworks services;
-    does not manufacture machines per its site; autonomous construction equipment; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://terrafirma.inc/ Region
-    sources: avadt50, opportunity-austin. Confidence: high.'
+    reason: 'Independent; 25 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/terrafirma,
+      2026-11-24); growth sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Flags: mix of software, machine retrofits and earthworks services;
+    does not manufacture machines per its site; autonomous construction equipment. Evidence: https://terrafirma.inc/
+    Region sources: avadt50, opportunity-austin. Confidence: high. Missing facts filled from data/screening/registry-fixes.
+    Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - autonomy-robotics
 - id: terralux
@@ -52138,9 +52153,12 @@ companies:
     board: the-boring-company
   read: manual
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2016
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/the-boring-company
   climate:
     tier: out
     reason: Designs and builds Prufrock tunnel boring machines and builds and operates Loop transport and utility/freight
@@ -52149,13 +52167,12 @@ companies:
     approved: false
   startup:
     status: in
-    reason: Independent; no headcount figure found; founding year not found, so included.
+    reason: 'Independent; 500 people (Dealroom (undated; read 2026-11-24) https://dealroom.co/companies/the-boring-company,
+      2026-11-24); growth sign: founded 2016.'
   notes: 'Board gem:the-boring-company seen 2026-11-27, linked from the company''s own site: role count not read
-    (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal).
-    Flags: builds and operates tunnels as well as making machines; dealroom-after-api-refusal: facts read from Dealroom
-    profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor,
-    2026-11-27) and do not decide the tier or startup test. Evidence: https://www.boringcompany.com/ Region sources:
-    avadt50, opportunity-austin. Confidence: high. Unresolved: date of Series D'
+    (no public feed). Flags: builds and operates tunnels as well as making machines. Evidence: https://www.boringcompany.com/
+    Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved: date of Series D Missing facts filled
+    from data/screening/registry-fixes. Dealroom facts released by the owner (decision 25, 2026-11-27).'
   categories:
   - advanced-manufacturing
 - id: the-hemp-plastic-company
