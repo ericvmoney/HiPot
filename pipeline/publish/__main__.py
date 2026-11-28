@@ -13,8 +13,8 @@ import sys
 from pathlib import Path
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.publish.build import (PublishError, build_outputs, build_pay, write_board, write_pay, write_summaries,
-                                    write_taxonomy_file)
+from pipeline.publish.build import (PublishError, build_all, build_pay, write_board, write_companies, write_pay,
+                                    write_summaries, write_taxonomy_file)
 
 MAX_SHOWN = 15
 
@@ -46,6 +46,8 @@ def main(argv: list[str] | None = None) -> int:
                         help="government wage reference for the pay page; skipped if the file is missing")
     parser.add_argument("--runs", type=Path, default=ROOT / "data" / "state" / "runs.json",
                         help="the collector's run history, for New roles; first reads are inferred if it is missing")
+    parser.add_argument("--careers-state", type=Path, default=ROOT / "data" / "state" / "careers.json",
+                        help="the collector's careers-page state, to tell which careers pages are read weekly")
     parser.add_argument("--pay-out", type=Path, default=None,
                         help="pay bands for the pay page; default pay.json beside --out")
     parser.add_argument(
@@ -72,8 +74,10 @@ def main(argv: list[str] | None = None) -> int:
         seed_file = ROOT / "data" / "seed" / "jobs.json"
         seed_ids = {job["id"] for job in load_json(seed_file)["jobs"]} if seed_file.is_file() else set()
         runs = load_json(args.runs) if args.runs and args.runs.is_file() else None
-        board, summaries = build_outputs(*inputs, include_unlisted=args.include_unlisted, grades=args.grades,
-                                         seed_ids=seed_ids, runs=runs)
+        careers_state = load_json(args.careers_state) if args.careers_state and args.careers_state.is_file() else {}
+        built = build_all(*inputs, include_unlisted=args.include_unlisted, grades=args.grades, seed_ids=seed_ids,
+                          runs=runs, careers_sites=careers_state.get("sites") or {})
+        board, summaries, companies_file = built["board"], built["summaries"], built["companies"]
         wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
         pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
@@ -118,6 +122,16 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Wrote {summaries_out}")
     print(f"  summaries: {len(summaries['texts'])} distinct texts for {with_text} roles; "
           f"size: {summaries_size:,} bytes ({summaries_size / 1024:.1f} KB)")
+
+    # Beside the board too: the Companies page's data, every listed company with or without open roles.
+    companies_out = args.out.with_name("companies.json")
+    companies_size = write_companies(companies_file, companies_out)
+    company_counts = companies_file["counts"]
+    print(f"Wrote {companies_out}")
+    print(f"  companies: {company_counts['companies']} listed, {company_counts['hiring']} hiring; read: "
+          + ", ".join(f"{key} {n}" for key, n in company_counts["read"].items())
+          + "; pay notes: " + ", ".join(f"{key} {n}" for key, n in company_counts["pay"].items()))
+    print(f"  size: {companies_size:,} bytes ({companies_size / 1024:.1f} KB)")
 
     taxonomy_out = args.out.with_name("taxonomy.json")
     taxonomy_size = write_taxonomy_file(inputs[2], taxonomy_out)
