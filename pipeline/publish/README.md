@@ -110,6 +110,26 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 - A "Great matches only" toggle sits in the persona bar.
 - Nothing new is stored.
 
+## Companies page (decision 27)
+
+**`site/companies.html`** lists every listed company, hiring or not, from **`data/companies.json`**. The publish step writes that file beside `board.json` with the same `generated_at` (`companies.py`, schema in `companies.schema.json`). Each company carries:
+- registry facts: categories, tier and reason, startup or established, sectors, stage, founded, headcount, parent, website, careers link;
+- where its open roles are (metro areas, states, remote), or its headquarters when it has none;
+- open roles, new roles and roles by type;
+- **a pay note** from the board's market grades: above, at or below market (the median graded role more than 10% from its market), "too few to say" (fewer than 3 graded roles), or unlisted salaries (no role publishes pay). A company with no open roles has none;
+- **read status:** daily; weekly (UKG and ADP listings, and careers pages whose robots.txt disallows them, per the collector's careers state); or not read automatically.
+
+**Page rules:** filters, sort and the pay note's wording are pure functions in `<script id="company-rules">`. The page also carries exact copies of the board's `board-filters` and `favorites` blocks; the tests check they match.
+
+**Links:**
+- A company's open-roles count links to `index.html#c-<id>--cat-all`. That's every category, so an adjacent company's roles aren't hidden by the board's clean-tech default.
+- The board's header and the pay page link to the Companies page.
+
+**Favorite companies:**
+- A star on the Companies page and on the board's cards, plus a "Favorite companies only" filter on the board.
+- Kept in `localStorage` under `hipot-favorite-companies`, and in `local-data/favorite-companies.yml` when served locally.
+- My Roles' export carries them, and its import merges them. They never go in the address.
+
 ## Keeping board.json small
 
 The artifact limit is 16 MB per file, and the target is about 12 MB.

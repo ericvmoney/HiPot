@@ -16,7 +16,7 @@ from pipeline.io import ROOT
 
 SITE = ROOT / "site"
 BLOCKS = {"hipot-rank": SITE / "index.html", "my-roles": SITE / "index.html", "board-filters": SITE / "index.html",
-          "persona-rules": SITE / "persona.html"}
+          "favorites": SITE / "index.html", "company-rules": SITE / "companies.html", "persona-rules": SITE / "persona.html"}
 
 
 def script_block(block_id: str, page: Path | None = None) -> str:

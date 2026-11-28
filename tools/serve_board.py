@@ -13,14 +13,16 @@ Local data (decision 21). The page saves the persona and My Roles to
 `local-data/` in the repository folder (git-ignored), so they come back after a
 reload or a restart. The folder can be moved with --data or HIPOT_LOCAL_DATA.
 
-    GET    /api/local/status      {"ok": true, "files": {"persona": bool, "my-roles": bool}}
+    GET    /api/local/status      {"ok": true, "files": {"persona": bool, "my-roles": bool, "favorite-companies": bool}}
     GET    /api/local/persona     local-data/persona.yml, as the page last saved it (404 if none)
     PUT    /api/local/persona     replace it
     DELETE /api/local/persona     remove it
     GET    /api/local/my-roles    local-data/my-roles.yml, in the My Roles export format (404 if none)
     PUT    /api/local/my-roles    replace it
+    GET    /api/local/favorite-companies    local-data/favorite-companies.yml (404 if none)
+    PUT    /api/local/favorite-companies    replace it
 
-Only these two file names are ever used; nothing in a request names a path.
+Only these three file names (FILES) are ever used; nothing in a request names a path.
 The server listens on 127.0.0.1 only, answers only requests addressed to
 localhost or 127.0.0.1 on its own port (against DNS rebinding), takes PUT and
 DELETE only from its own page (the Origin header), sends no CORS headers, caps
@@ -41,7 +43,8 @@ from pipeline.io import ROOT
 SITE = ROOT / "site"
 LOCAL_DATA = ROOT / "local-data"
 API = "/api/local/"
-FILES = {"persona": "persona.yml", "my-roles": "my-roles.yml"}   # the only names ever written
+FILES = {"persona": "persona.yml", "my-roles": "my-roles.yml",          # the only names ever written
+         "favorite-companies": "favorite-companies.yml"}                 # decision 27
 DELETABLE = {"persona"}
 MAX_BYTES = 256 * 1024
 DRAIN_BYTES = 4 * MAX_BYTES    # a larger body is not even read: the connection is closed
@@ -108,7 +111,7 @@ def make_handler(site: Path, data_dir: Path, port: int):
             if name is None:
                 super().do_GET()
             elif name == "status":
-                # Which of the two files exist, so the page asks only for those (no 404s on a fresh folder).
+                # Which of the files exist, so the page asks only for those (no 404s on a fresh folder).
                 files = {key: (data_dir / file).is_file() for key, file in FILES.items()}
                 self.send_plain(200, "", "application/json", json.dumps({"ok": True, "files": files}).encode("utf-8"))
             elif name in FILES:

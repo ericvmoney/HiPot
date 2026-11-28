@@ -50,17 +50,18 @@ def call(srv, method, path, body=None, host=None, origin="own", headers=None):
 
 def test_status(server):
     status, headers, body = call(server, "GET", "/api/local/status")
-    assert status == 200 and json.loads(body) == {"ok": True, "files": {"persona": False, "my-roles": False}}
+    assert status == 200 and json.loads(body) == {"ok": True, "files": {"persona": False, "my-roles": False, "favorite-companies": False}}
     assert not any(key.lower().startswith("access-control") for key in headers)
     # It says which files exist, so the page asks only for those.
     call(server, "PUT", "/api/local/my-roles", b"my_roles_version: 0\nroles: []\n")
-    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True}
+    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True, "favorite-companies": False}
     call(server, "PUT", "/api/local/persona", PERSONA)
     call(server, "DELETE", "/api/local/persona")
-    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True}
+    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True, "favorite-companies": False}
 
 
-@pytest.mark.parametrize("name,file", [("persona", "persona.yml"), ("my-roles", "my-roles.yml")])
+@pytest.mark.parametrize("name,file", [("persona", "persona.yml"), ("my-roles", "my-roles.yml"),
+                                       ("favorite-companies", "favorite-companies.yml")])
 def test_round_trip_into_the_fixed_file(server, name, file):
     assert call(server, "GET", f"/api/local/{name}")[0] == 404           # nothing yet, and no folder made by reading
     assert not server.data_dir.exists()
