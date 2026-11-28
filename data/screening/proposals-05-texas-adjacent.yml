@@ -8,7 +8,7 @@
 registry_version: 0
 status: final
 companies:
-- id: 9-mothers
+- id: 9-mothers-texas-adjacent
   name: 9 Mothers
   website: https://9mothers.com
   careers_url: null
@@ -41,7 +41,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: accelsius
+- id: accelsius-texas-adjacent
   name: Accelsius
   website: https://accelsius.com/
   careers_url: null
@@ -51,9 +51,12 @@ companies:
     board: 22109fcc-6006-4b20-ad53-1da2c510248f
   read: manual
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 88
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/accelsius)
   climate:
     tier: out
     reason: NeuCool two-phase direct-to-chip liquid cooling systems for data centers. Data-center equipment and
@@ -62,17 +65,16 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
+    reason: 88 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
   notes: 'Board adp:22109fcc-6006-4b20-ad53-1da2c510248f seen 2026-11-27, linked from the company''s own site: role
-    count not read (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined
-    (dealroom-after-api-refusal). Flags: main customers are data centers; Innventure company; dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://accelsius.com/
-    Region sources: ocp-members, opportunity-austin. Confidence: high.'
+    count not read (no public feed). Headcount note: Dealroom 88, band <100; undated. Founded: https://dealroom.co/companies/accelsius.
+    Stage: Series B $65M, January 2026, led by Johnson Controls with Legrand (Dealroom). Created by Innventure on
+    Nokia Bell Labs IP. Flags: main customers are data centers; Innventure company. Evidence: https://accelsius.com/
+    https://dealroom.co/companies/accelsius Region sources: ocp-members, opportunity-austin. Confidence: high.'
   categories:
   - data-centers
-- id: acutronic-aerospace-components
+- id: acutronic-aerospace-components-texas-adjacent
   name: Acutronic Aerospace Components
   website: https://acutronic.com
   careers_url: null
@@ -102,7 +104,7 @@ companies:
     opportunity-austin. Confidence: low. Unresolved: HQ city, Austin/Bastrop site, jet engine product, headcount'
   categories:
   - aerospace-space
-- id: additive-manufacturing-technologies-amt
+- id: additive-manufacturing-technologies-amt-texas-adjacent
   name: Additive Manufacturing Technologies (AMT)
   website: https://amtechnologies.com
   careers_url: null
@@ -131,7 +133,7 @@ companies:
     Region sources: opportunity-austin. Confidence: medium. Unresolved: Headcount and funding not found.'
   categories:
   - advanced-manufacturing
-- id: aegis-aerospace
+- id: aegis-aerospace-texas-adjacent
   name: Aegis Aerospace
   website: https://aegisaero.com/
   careers_url: null
@@ -161,7 +163,7 @@ companies:
     Confidence: medium. Unresolved: Headcount; split between hardware and services.'
   categories:
   - aerospace-space
-- id: aeon-industries
+- id: aeon-industries-texas-adjacent
   name: Aeon Industries
   website: https://aeonindustrial.com
   careers_url: null
@@ -195,7 +197,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: agellus-tank-robotics
+- id: agellus-tank-robotics-texas-adjacent
   name: Agellus Tank Robotics
   website: https://agellustankrobotics.com
   careers_url: null
@@ -227,7 +229,7 @@ companies:
   categories:
   - autonomy-robotics
   - oil-gas
-- id: akos-energy
+- id: akos-energy-texas-adjacent
   name: AKOS Energy
   website: https://www.akosenergy.com
   careers_url: null
@@ -257,7 +259,7 @@ companies:
     rice-etvf-2023. Confidence: low. Unresolved: hq, founded, headcount, funding, current activity'
   categories:
   - oil-gas
-- id: allen-control-systems
+- id: allen-control-systems-texas-adjacent
   name: Allen Control Systems
   website: https://allencontrolsystems.com/
   careers_url: null
@@ -269,9 +271,12 @@ companies:
   sectors:
   - electric-aviation
   - buildings
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 229
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/allen-control-systems)
   climate:
     tier: out
     reason: Bullfrog, an AI-enabled robotic weapon station that makes existing weapons (M240, M2) autonomous to
@@ -280,19 +285,19 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
+    reason: 229 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
   notes: 'Board ashby:allen-control-systems seen 2026-11-27, token matched by name; board page checked: 19 open
-    roles. Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal).
-    Flags: defense is main business; deployed with US Army, Navy, Air Force per company site; offices also in Alexandria
-    VA and Huntsville AL; dealroom-after-api-refusal: facts read from Dealroom profile pages in this batch after
-    the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27) and do not decide the
-    tier or startup test. Evidence: https://www.allencontrolsystems.com/ Region sources: avadt50, opportunity-austin.
-    Confidence: high.'
+    roles. Headcount note: Dealroom figure 229, band 100-500; undated. Company site cites a 191,000 sq ft manufacturing
+    facility in Austin. Founded: https://dealroom.co/companies/allen-control-systems. Stage: Series B $200M, June
+    2026, $2.2B post-money (Dealroom); Series A $30M March 2025. Flags: defense is main business; deployed with
+    US Army, Navy, Air Force per company site; offices also in Alexandria VA and Huntsville AL. Evidence: https://www.allencontrolsystems.com/
+    https://dealroom.co/companies/allen-control-systems Region sources: avadt50, opportunity-austin. Confidence:
+    high.'
   categories:
   - autonomy-robotics
   - defense
-- id: alpine-silica
+- id: alpine-silica-texas-adjacent
   name: Alpine Silica
   website: https://alpinesilica.com
   careers_url: null
@@ -324,7 +329,7 @@ companies:
   categories:
   - mining
   - oil-gas
-- id: amazing-magnets
+- id: amazing-magnets-texas-adjacent
   name: Amazing Magnets
   website: https://amazingmagnets.com
   careers_url: null
@@ -353,7 +358,7 @@ companies:
     found.'
   categories:
   - advanced-manufacturing
-- id: americase-international
+- id: americase-international-texas-adjacent
   name: Americase International
   website: https://www.americaseinternational.com/
   careers_url: null
@@ -386,7 +391,7 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
-- id: anantak-robotics
+- id: anantak-robotics-texas-adjacent
   name: Anantak Robotics
   website: https://www.anantak.com
   careers_url: null
@@ -414,7 +419,7 @@ companies:
     Confidence: low.'
   categories:
   - autonomy-robotics
-- id: applied-optoelectronics-aoi
+- id: applied-optoelectronics-aoi-texas-adjacent
   name: Applied Optoelectronics (AOI)
   website: https://ao-inc.com/
   careers_url: null
@@ -450,7 +455,7 @@ companies:
   categories:
   - data-centers
   - semis-electronics
-- id: apptronik
+- id: apptronik-texas-adjacent
   name: Apptronik
   website: https://apptronik.com/
   careers_url: null
@@ -482,7 +487,7 @@ companies:
     stated on fetched pages (Austin from input, not confirmed); headcount.'
   categories:
   - autonomy-robotics
-- id: arix-technologies
+- id: arix-technologies-texas-adjacent
   name: ARIX Technologies
   website: https://arix-tech.com
   careers_url: null
@@ -514,7 +519,7 @@ companies:
     HQ not stated on own site (Dealroom: Houston); round dates.'
   categories:
   - autonomy-robotics
-- id: astroport-space-technologies
+- id: astroport-space-technologies-texas-adjacent
   name: Astroport Space Technologies
   website: https://www.astroportspace.com
   careers_url: null
@@ -541,7 +546,7 @@ companies:
   categories:
   - aerospace-space
   - autonomy-robotics
-- id: atlas-energy-solutions
+- id: atlas-energy-solutions-texas-adjacent
   name: Atlas Energy Solutions
   website: https://atlas.energy
   careers_url: null
@@ -580,7 +585,7 @@ companies:
   categories:
   - mining
   - oil-gas
-- id: avant-technology
+- id: avant-technology-texas-adjacent
   name: Avant Technology
   website: null
   careers_url: null
@@ -611,7 +616,7 @@ companies:
     Confidence: medium. Unresolved: Own website not identified; founding year and headcount not found.'
   categories:
   - semis-electronics
-- id: axiom-space
+- id: axiom-space-texas-adjacent
   name: Axiom Space
   website: https://www.axiomspace.com/
   careers_url: null
@@ -647,7 +652,7 @@ companies:
     Confidence: medium. Unresolved: Exact latest round and date.'
   categories:
   - aerospace-space
-- id: baker-hughes
+- id: baker-hughes-texas-adjacent
   name: Baker Hughes
   website: https://www.bakerhughes.com
   careers_url: null
@@ -682,7 +687,7 @@ companies:
     Unresolved: founded year, listing year, HQ confirmation'
   categories:
   - oil-gas
-- id: blue-sky-measurements
+- id: blue-sky-measurements-texas-adjacent
   name: Blue Sky Measurements
   website: https://bluesky.eco
   careers_url: null
@@ -711,7 +716,7 @@ companies:
     medium. Unresolved: founded, headcount, funding'
   categories:
   - oil-gas
-- id: bot-auto
+- id: bot-auto-texas-adjacent
   name: Bot Auto
   website: https://bot.auto/
   careers_url: null
@@ -746,7 +751,7 @@ companies:
     trucks).'
   categories:
   - autonomy-robotics
-- id: bovi
+- id: bovi-texas-adjacent
   name: Bovi
   website: https://bovi.tech
   careers_url: null
@@ -776,7 +781,7 @@ companies:
     funding'
   categories:
   - advanced-manufacturing
-- id: bravo-ordnance
+- id: bravo-ordnance-texas-adjacent
   name: Bravo Ordnance
   website: https://warhead.co
   careers_url: null
@@ -806,7 +811,7 @@ companies:
   categories:
   - advanced-manufacturing
   - defense
-- id: caddo-creek-resources-company
+- id: caddo-creek-resources-company-texas-adjacent
   name: Caddo Creek Resources Company
   website: null
   careers_url: null
@@ -835,7 +840,7 @@ companies:
     sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
   categories:
   - mining
-- id: capwell-services
+- id: capwell-services-texas-adjacent
   name: Capwell Services
   website: https://capwell.org
   careers_url: null
@@ -864,7 +869,7 @@ companies:
     rice-evd-2026. Confidence: medium. Unresolved: hq, founded, headcount, funding'
   categories:
   - oil-gas
-- id: cesiumastro
+- id: cesiumastro-texas-adjacent
   name: CesiumAstro
   website: https://www.cesiumastro.com/
   careers_url: null
@@ -899,7 +904,7 @@ companies:
     Unresolved: Whether defense is the main business; Series D date.'
   categories:
   - aerospace-space
-- id: chatsworth-products
+- id: chatsworth-products-texas-adjacent
   name: Chatsworth Products
   website: https://www.chatsworth.com/
   careers_url: null
@@ -931,7 +936,7 @@ companies:
     on fetched page; Round Rock site not confirmed.'
   categories:
   - data-centers
-- id: circul8-energy-and-environment
+- id: circul8-energy-and-environment-texas-adjacent
   name: Circul8 Energy & Environment
   website: https://circul8nrg.com
   careers_url: null
@@ -961,7 +966,7 @@ companies:
     hq, founded, headcount, funding, equipment vs service'
   categories:
   - oil-gas
-- id: ckd-usa
+- id: ckd-usa-texas-adjacent
   name: CKD USA
   website: https://ckdusa.com
   careers_url: null
@@ -991,7 +996,7 @@ companies:
     for semiconductor machinery) not confirmed.'
   categories:
   - semis-electronics
-- id: cnpc-usa-corporation
+- id: cnpc-usa-corporation-texas-adjacent
   name: CNPC USA Corporation
   website: https://www.cnpcusa.com
   careers_url: null
@@ -1019,7 +1024,7 @@ companies:
     sources: otc-spotlight-2026. Confidence: low.'
   categories:
   - oil-gas
-- id: control-panels-usa
+- id: control-panels-usa-texas-adjacent
   name: Control Panels USA
   website: https://controlpanelsusa.net
   careers_url: null
@@ -1049,7 +1054,7 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
-- id: cool-edge-bits
+- id: cool-edge-bits-texas-adjacent
   name: Cool Edge Bits
   website: https://cooledgebits.com
   careers_url: null
@@ -1077,7 +1082,7 @@ companies:
     https://cooledgebits.com Region sources: rice-etvf-2024. Confidence: medium. Unresolved: headcount, funding'
   categories:
   - oil-gas
-- id: corrolytics
+- id: corrolytics-texas-adjacent
   name: Corrolytics
   website: https://corrolytics.com
   careers_url: null
@@ -1109,7 +1114,7 @@ companies:
     rice-etvf-2024, rice-evd-2026. Confidence: medium. Unresolved: hq, founded, headcount'
   categories:
   - oil-gas
-- id: creative-3d
+- id: creative-3d-texas-adjacent
   name: Creative 3D
   website: null
   careers_url: null
@@ -1141,7 +1146,7 @@ companies:
     funding not found.'
   categories:
   - advanced-manufacturing
-- id: crewline
+- id: crewline-texas-adjacent
   name: Crewline
   website: https://crewline.ai
   careers_url: null
@@ -1170,7 +1175,7 @@ companies:
     Unresolved: Founded year, headcount, seed date and investors.'
   categories:
   - autonomy-robotics
-- id: critical-materials-group
+- id: critical-materials-group-texas-adjacent
   name: Critical Materials Group
   website: null
   careers_url: null
@@ -1204,7 +1209,7 @@ companies:
   categories:
   - advanced-manufacturing
   - defense
-- id: cumberland-additive
+- id: cumberland-additive-texas-adjacent
   name: Cumberland Additive
   website: null
   careers_url: null
@@ -1236,7 +1241,7 @@ companies:
     Unresolved: Current website not found; headcount and ownership not found.'
   categories:
   - advanced-manufacturing
-- id: diligent-robotics
+- id: diligent-robotics-texas-adjacent
   name: Diligent Robotics
   website: https://www.diligentrobotics.com/
   careers_url: null
@@ -1271,7 +1276,7 @@ companies:
     not confirmed by a press release or the company''s own site.'
   categories:
   - autonomy-robotics
-- id: doodle-labs
+- id: doodle-labs-texas-adjacent
   name: Doodle Labs
   website: https://doodlelabs.com/
   careers_url: null
@@ -1303,7 +1308,7 @@ companies:
   categories:
   - autonomy-robotics
   - semis-electronics
-- id: dos-republicas-coal-partnership
+- id: dos-republicas-coal-partnership-texas-adjacent
   name: Dos Republicas Coal Partnership
   website: null
   careers_url: null
@@ -1331,7 +1336,7 @@ companies:
     Region sources: rrc-coal-permits. Confidence: medium. Unresolved: owners, operating status, headcount'
   categories:
   - mining
-- id: dsm-semichem
+- id: dsm-semichem-texas-adjacent
   name: DSM Semichem
   website: null
   careers_url: null
@@ -1360,7 +1365,7 @@ companies:
     Region sources: tsif-listing. Confidence: high. Unresolved: Website, founding year, headcount not found.'
   categories:
   - semis-electronics
-- id: emergent-matter
+- id: emergent-matter-texas-adjacent
   name: Emergent Matter
   website: https://emergentmatter.com
   careers_url: null
@@ -1389,7 +1394,7 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
-- id: enflite
+- id: enflite-texas-adjacent
   name: Enflite
   website: https://enflite.com
   careers_url: null
@@ -1416,7 +1421,7 @@ companies:
     1990s. Evidence: e n f l i t Region sources: opportunity-austin. Confidence: low.'
   categories:
   - aerospace-space
-- id: eos-north-america
+- id: eos-north-america-texas-adjacent
   name: EOS North America
   website: https://www.eos.info/
   careers_url: null
@@ -1447,7 +1452,7 @@ companies:
     Headcount; EOS GmbH ownership.'
   categories:
   - advanced-manufacturing
-- id: ets-lindgren
+- id: ets-lindgren-texas-adjacent
   name: ETS-Lindgren
   website: https://www.ets-lindgren.com/
   careers_url: null
@@ -1478,7 +1483,7 @@ companies:
     Confidence: high. Unresolved: Exact HQ city not stated on fetched page; headcount not found.'
   categories:
   - semis-electronics
-- id: even-platforms
+- id: even-platforms-texas-adjacent
   name: Even Platforms
   website: https://evenplatforms.com
   careers_url: null
@@ -1508,7 +1513,7 @@ companies:
     founded, headcount, round'
   categories:
   - advanced-manufacturing
-- id: fab2
+- id: fab2-texas-adjacent
   name: fab2
   website: https://fab2.com
   careers_url: null
@@ -1539,7 +1544,7 @@ companies:
     founded year, headcount, round'
   categories:
   - semis-electronics
-- id: farsoon-technologies
+- id: farsoon-technologies-texas-adjacent
   name: Farsoon Technologies
   website: https://farsoon.com
   careers_url: null
@@ -1568,7 +1573,7 @@ companies:
     Confidence: low. Unresolved: HQ, US site, founding year, listing and headcount not found.'
   categories:
   - advanced-manufacturing
-- id: field-viewers-inc
+- id: field-viewers-inc-texas-adjacent
   name: Field Viewers Inc.
   website: https://fieldviewers.com
   careers_url: null
@@ -1598,7 +1603,7 @@ companies:
     medium. Unresolved: HQ, founded, headcount'
   categories:
   - semis-electronics
-- id: firefly-aerospace
+- id: firefly-aerospace-texas-adjacent
   name: Firefly Aerospace
   website: https://fireflyspace.com/
   careers_url: null
@@ -1635,7 +1640,7 @@ companies:
     Region sources: tx-space-commission, opportunity-austin. Confidence: high.'
   categories:
   - aerospace-space
-- id: first-order-effects
+- id: first-order-effects-texas-adjacent
   name: First Order Effects
   website: https://firstordereffects.com
   careers_url: null
@@ -1666,7 +1671,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: galadyne
+- id: galadyne-texas-adjacent
   name: Galadyne
   website: https://galadyne.io
   careers_url: null
@@ -1696,7 +1701,7 @@ companies:
   categories:
   - aerospace-space
   - defense
-- id: genxcomm
+- id: genxcomm-texas-adjacent
   name: GenXComm
   website: https://genxcomm.com
   careers_url: null
@@ -1729,7 +1734,7 @@ companies:
     low.'
   categories:
   - semis-electronics
-- id: grc-green-revolution-cooling
+- id: grc-green-revolution-cooling-texas-adjacent
   name: GRC (Green Revolution Cooling)
   website: https://www.grcooling.com/
   careers_url: null
@@ -1739,9 +1744,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
+  stage: late
   founded: 2009
-  headcount: null
+  headcount:
+    value: 38
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/green-revolution-cooling)
   climate:
     tier: out
     reason: Single-phase immersion cooling systems (ICEraQ, ICETank) and dielectric fluids for data-center servers.
@@ -1749,17 +1757,18 @@ companies:
     basis: agent
     approved: false
   startup:
-    status: out
-    reason: no headcount found; founded 2009 and no equity raise in the last 5 years found, so no growth sign.
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Founded:
-    https://www.grcooling.com/about/. Stage: Quarantined (dealroom-after-api-refusal). Flags: main customers are
-    data centers; dealroom-after-api-refusal: facts read from Dealroom profile pages in this batch after the permission
-    check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27) and do not decide the tier or startup
-    test. Evidence: https://www.grcooling.com/about/ Region sources: ocp-members. Confidence: medium. Unresolved:
-    exact stage of June 2025 round'
+    status: in
+    reason: 38 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); funding round reported in
+      2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 38, band <100; undated. Founded: https://www.grcooling.com/about/.
+    Stage: Series C $28M March 2022 led by SK Lubricants; later undisclosed late-stage round June 2025 (HTS Engineering,
+    Samsung Ventures, ENEOS, SK Enmove) per Dealroom. Series letter after C not stated. Flags: main customers are
+    data centers; founding year: company says 2009, Dealroom header 2008; stage may be series-c; Dealroom labels
+    the 2025 round only as late-stage. Evidence: https://www.grcooling.com/about/ https://dealroom.co/companies/green-revolution-cooling
+    Region sources: ocp-members. Confidence: medium. Unresolved: exact stage of June 2025 round'
   categories:
   - data-centers
-- id: gs-vortex-systems
+- id: gs-vortex-systems-texas-adjacent
   name: GS Vortex Systems
   website: https://gsvortex.com
   careers_url: null
@@ -1789,7 +1798,7 @@ companies:
     Unresolved: hq, founded, headcount, funding'
   categories:
   - oil-gas
-- id: halliburton
+- id: halliburton-texas-adjacent
   name: Halliburton
   website: https://www.halliburton.com
   careers_url: null
@@ -1825,7 +1834,7 @@ companies:
   categories:
   - mining
   - oil-gas
-- id: hanyang-eng-usa
+- id: hanyang-eng-usa-texas-adjacent
   name: Hanyang Eng USA
   website: null
   careers_url: null
@@ -1856,7 +1865,7 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
-- id: harmonic-bionics
+- id: harmonic-bionics-texas-adjacent
   name: Harmonic Bionics
   website: https://www.harmonicbionics.com/
   careers_url: null
@@ -1867,7 +1876,7 @@ companies:
   read: none
   sectors: []
   stage: null
-  founded: null
+  founded: 2016
   headcount: null
   climate:
     tier: out
@@ -1878,15 +1887,15 @@ companies:
   startup:
     status: out
     reason: no headcount found. Owned by Bioness Medical; not independent.
-  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only team size <100. Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: acquired or being acquired by Bioness Medical (announced June
-    2025; completion not confirmed); medical device; dealroom-after-api-refusal: facts read from Dealroom profile
-    pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27)
-    and do not decide the tier or startup test. Evidence: https://harmonicbionics.com/about/ Region sources: cockrell-funding.
-    Confidence: medium. Unresolved: whether the Bioness deal closed; site still active in 2026'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only team size <100. Founded:
+    https://dealroom.co/companies/harmonic-bionics. Stage: Investors listed at seed and Series A; total equity $10-50M
+    (Dealroom). June 2025: Bioness Medical announced acquiring its assets and business, pending regulatory clearance.
+    Flags: acquired or being acquired by Bioness Medical (announced June 2025; completion not confirmed); medical
+    device. Evidence: https://harmonicbionics.com/about/ https://dealroom.co/companies/harmonic-bionics Region sources:
+    cockrell-funding. Confidence: medium. Unresolved: whether the Bioness deal closed; site still active in 2026'
   categories:
   - autonomy-robotics
-- id: hiller-measurements
+- id: hiller-measurements-texas-adjacent
   name: Hiller Measurements
   website: https://hillermeas.com
   careers_url: null
@@ -1921,7 +1930,7 @@ companies:
     Springs, TX); ownership not found. hillermeasurements.com redirects to hillermeas.com.'
   categories:
   - semis-electronics
-- id: icon
+- id: icon-texas-adjacent
   name: ICON
   website: https://www.iconbuild.com/
   careers_url: null
@@ -1931,9 +1940,12 @@ companies:
     board: icon
   read: auto
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2017
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/icon-build)
   climate:
     tier: out
     reason: Titan 3D construction printers (robotic arm on mobile base, with pump, mixer and BuildOS software) and
@@ -1943,19 +1955,17 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
+    reason: 500 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2017.
   notes: 'Board ashby:icon seen 2026-11-27, token matched by name; board page checked: 6 open roles, 6 US-remote.
-    Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal). Flags:
-    construction 3D printing; lunar/NASA work not confirmed on company pages read; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.iconbuild.com/technology
-    Region sources: tx-space-commission, avadt50. Confidence: medium. Unresolved: Series D date; lunar construction
-    work not checked (iconbuild.com/about 404).'
+    Headcount note: Dealroom band 500-1k (talent data maps 622); undated. Founded: https://dealroom.co/companies/icon-build.
+    Stage: Dealroom news headline: Icon raises $200M Series D at $1.4B valuation (date not shown on page). Flags:
+    construction 3D printing; lunar/NASA work not confirmed on company pages read. Evidence: https://www.iconbuild.com/technology
+    https://dealroom.co/companies/icon-build Region sources: tx-space-commission, avadt50. Confidence: medium. Unresolved:
+    Series D date; lunar construction work not checked (iconbuild.com/about 404).'
   categories:
   - advanced-manufacturing
   - aerospace-space
-- id: indo-mim
+- id: indo-mim-texas-adjacent
   name: Indo-MIM
   website: https://www.indo-mim.com
   careers_url: null
@@ -1983,7 +1993,7 @@ companies:
     h Region sources: port-sa-2021. Confidence: low.'
   categories:
   - advanced-manufacturing
-- id: infravision
+- id: infravision-texas-adjacent
   name: Infravision
   website: https://theinfravision.com
   careers_url: null
@@ -2014,7 +2024,7 @@ companies:
     Headcount; own site text did not load.'
   categories:
   - autonomy-robotics
-- id: innowave-rf
+- id: innowave-rf-texas-adjacent
   name: Innowave RF
   website: https://innowaverf.com
   careers_url: null
@@ -2045,7 +2055,7 @@ companies:
     found.'
   categories:
   - semis-electronics
-- id: intelliepi
+- id: intelliepi-texas-adjacent
   name: IntelliEPI
   website: https://www.intelliepi.com/
   careers_url: null
@@ -2076,7 +2086,7 @@ companies:
     tsif-listing. Confidence: medium. Unresolved: Founding year, headcount, listing status.'
   categories:
   - semis-electronics
-- id: intuitive-machines
+- id: intuitive-machines-texas-adjacent
   name: Intuitive Machines
   website: https://www.intuitivemachines.com/
   careers_url: null
@@ -2110,7 +2120,7 @@ companies:
     failed to load (redirect loop), so product line not confirmed there.'
   categories:
   - aerospace-space
-- id: ironlattice
+- id: ironlattice-texas-adjacent
   name: IronLattice
   website: https://ironlattice.com/
   careers_url: null
@@ -2140,7 +2150,7 @@ companies:
     Unresolved: HQ, founding year, headcount, funding stage.'
   categories:
   - semis-electronics
-- id: jewett-mining
+- id: jewett-mining-texas-adjacent
   name: Jewett Mining
   website: null
   careers_url: null
@@ -2169,7 +2179,7 @@ companies:
     Region sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
   categories:
   - mining
-- id: kane-robotics
+- id: kane-robotics-texas-adjacent
   name: Kane Robotics
   website: https://kanerobotics.com
   careers_url: null
@@ -2199,7 +2209,7 @@ companies:
     is script-rendered and gave no text); headcount; customers (defense/aerospace?).'
   categories:
   - autonomy-robotics
-- id: keydrill-technology
+- id: keydrill-technology-texas-adjacent
   name: KeyDrill Technology
   website: null
   careers_url: null
@@ -2228,7 +2238,7 @@ companies:
     Region sources: otc-spotlight-2026. Confidence: medium. Unresolved: website, headcount'
   categories:
   - oil-gas
-- id: knight-aerospace
+- id: knight-aerospace-texas-adjacent
   name: Knight Aerospace
   website: https://knightaerospace.com/
   careers_url: null
@@ -2259,7 +2269,7 @@ companies:
   categories:
   - aerospace-space
   - defense
-- id: kulr-technology-group
+- id: kulr-technology-group-texas-adjacent
   name: KULR Technology Group
   website: https://kulrtechnology.com/
   careers_url: null
@@ -2294,7 +2304,7 @@ companies:
   - aerospace-space
   - data-centers
   - semis-electronics
-- id: leviathan-air
+- id: leviathan-air-texas-adjacent
   name: Leviathan Air
   website: https://leviathan-air.com
   careers_url: null
@@ -2323,7 +2333,7 @@ companies:
     HQ, founded, headcount, funding, whether active'
   categories:
   - aerospace-space
-- id: loombotic
+- id: loombotic-texas-adjacent
   name: Loombotic
   website: https://loombotic.com
   careers_url: null
@@ -2352,7 +2362,7 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
-- id: ltd-material
+- id: ltd-material-texas-adjacent
   name: LTD Material
   website: https://www.ltdmaterial.com
   careers_url: null
@@ -2380,7 +2390,7 @@ companies:
     year not stated. Evidence: l t d m a t Region sources: opportunity-austin, tsif-listing. Confidence: low.'
   categories:
   - semis-electronics
-- id: luminant-mining-company
+- id: luminant-mining-company-texas-adjacent
   name: Luminant Mining Company
   website: https://www.luminant.com
   careers_url: null
@@ -2413,7 +2423,7 @@ companies:
     Confidence: medium. Unresolved: active vs reclamation status of each mine, headcount, parent chain'
   categories:
   - mining
-- id: maverick-power
+- id: maverick-power-texas-adjacent
   name: Maverick Power
   website: https://maverickpwr.com/
   careers_url: null
@@ -2450,7 +2460,7 @@ companies:
     Region sources: ocp-members. Confidence: high. Unresolved: Founding year (2020 implied, not stated).'
   categories:
   - data-centers
-- id: mdc-precision
+- id: mdc-precision-texas-adjacent
   name: MDC Precision
   website: https://mdcprecision.com
   careers_url: null
@@ -2480,7 +2490,7 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
-- id: microsilicon
+- id: microsilicon-texas-adjacent
   name: MicroSilicon
   website: https://www.microsiliconinc.com
   careers_url: null
@@ -2514,7 +2524,7 @@ companies:
     news found)'
   categories:
   - oil-gas
-- id: mission-critical-group
+- id: mission-critical-group-texas-adjacent
   name: Mission Critical Group
   website: https://www.missioncriticalgroup.com/
   careers_url: null
@@ -2551,7 +2561,7 @@ companies:
     (own site says Frisco).'
   categories:
   - data-centers
-- id: mithril-minerals
+- id: mithril-minerals-texas-adjacent
   name: Mithril Minerals
   website: https://mithrilminerals.com
   careers_url: null
@@ -2582,7 +2592,7 @@ companies:
   categories:
   - autonomy-robotics
   - mining
-- id: modular-mopu
+- id: modular-mopu-texas-adjacent
   name: Modular MOPU
   website: https://modularmopu.com
   careers_url: null
@@ -2613,7 +2623,7 @@ companies:
     sources: rice-etvf-2025. Confidence: medium. Unresolved: founded, headcount, funding'
   categories:
   - oil-gas
-- id: neurophos
+- id: neurophos-texas-adjacent
   name: Neurophos
   website: https://neurophos.com
   careers_url: null
@@ -2646,7 +2656,7 @@ companies:
     Confidence: high.'
   categories:
   - semis-electronics
-- id: noren-products
+- id: noren-products-texas-adjacent
   name: Noren Products
   website: https://norenthermal.com
   careers_url: null
@@ -2677,7 +2687,7 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
-- id: novapont-technology
+- id: novapont-technology-texas-adjacent
   name: Novapont Technology
   website: https://novaponttechnology.com
   careers_url: null
@@ -2705,7 +2715,7 @@ companies:
     n o v a p o Region sources: rice-etvf-2024. Confidence: low.'
   categories:
   - oil-gas
-- id: noveon-magnetics
+- id: noveon-magnetics-texas-adjacent
   name: Noveon Magnetics
   website: https://noveon.co/
   careers_url: null
@@ -2717,9 +2727,12 @@ companies:
   sectors:
   - components
   - recycling
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-c
+  founded: 2014
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/noveon-magnetics)
   climate:
     tier: enabling
     reason: Sintered rare-earth magnets made largely from recycled magnet material.
@@ -2727,17 +2740,16 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: dealroom-after-api-refusal: facts read from Dealroom profile
-    pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor, 2026-11-27)
-    and do not decide the tier or startup test. Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved:
-    noveon.co/about content not readable'
+    reason: 95 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2014, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 95 but band 100-500; undated. Formerly
+    Urban Mining Company. Founded: https://dealroom.co/companies/noveon-magnetics. Stage: Series C $215M, January
+    2026, led by OneIM, ~$860M valuation (Dealroom); Series B $75M May 2023. Evidence: https://dealroom.co/companies/noveon-magnetics
+    Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved: noveon.co/about content not readable'
   categories:
   - advanced-manufacturing
   - semis-electronics
-- id: oceaneering-space-systems
+- id: oceaneering-space-systems-texas-adjacent
   name: Oceaneering Space Systems
   website: https://www.oceaneering.com/
   careers_url: null
@@ -2774,7 +2786,7 @@ companies:
     Region sources: houston-spaceport. Confidence: high. Unresolved: Division headcount; parent listing year.'
   categories:
   - aerospace-space
-- id: oil-states-international
+- id: oil-states-international-texas-adjacent
   name: Oil States International
   website: https://www.oilstatesintl.com
   careers_url: null
@@ -2805,7 +2817,7 @@ companies:
     otc-spotlight-2026, otc-spotlight-2025. Confidence: medium. Unresolved: founded, listing year, headcount'
   categories:
   - oil-gas
-- id: oliden-technology
+- id: oliden-technology-texas-adjacent
   name: Oliden Technology
   website: null
   careers_url: null
@@ -2837,7 +2849,7 @@ companies:
     product not confirmed'
   categories:
   - oil-gas
-- id: oxefit
+- id: oxefit-texas-adjacent
   name: OxeFit
   website: https://oxefit.com/
   careers_url: null
@@ -2870,7 +2882,7 @@ companies:
     whether still selling.'
   categories:
   - autonomy-robotics
-- id: paladin-drones
+- id: paladin-drones-texas-adjacent
   name: Paladin Drones
   website: https://paladindrones.io
   careers_url: null
@@ -2902,7 +2914,7 @@ companies:
     Unresolved: Headcount; whether a Series A closed.'
   categories:
   - autonomy-robotics
-- id: paradigm-manufacturing
+- id: paradigm-manufacturing-texas-adjacent
   name: Paradigm Manufacturing
   website: null
   careers_url: null
@@ -2934,7 +2946,7 @@ companies:
     not found.'
   categories:
   - advanced-manufacturing
-- id: paradigm-robotics
+- id: paradigm-robotics-texas-adjacent
   name: Paradigm Robotics
   website: https://paradigmrobotics.tech
   careers_url: null
@@ -2964,7 +2976,7 @@ companies:
   categories:
   - autonomy-robotics
   - oil-gas
-- id: perseus-defense
+- id: perseus-defense-texas-adjacent
   name: Perseus Defense
   website: https://perseusdefense.com
   careers_url: null
@@ -2995,7 +3007,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: persona-ai
+- id: persona-ai-texas-adjacent
   name: Persona AI
   website: https://personainc.ai/
   careers_url: null
@@ -3031,7 +3043,7 @@ companies:
     Unresolved: HQ not stated on own site (Dealroom says Houston); whether a round after the May 2025 seed exists.'
   categories:
   - autonomy-robotics
-- id: phoenix-semiconductor
+- id: phoenix-semiconductor-texas-adjacent
   name: Phoenix Semiconductor
   website: https://phoenixsemicorp.com
   careers_url: null
@@ -3067,7 +3079,7 @@ companies:
   categories:
   - defense
   - semis-electronics
-- id: pike-robotics
+- id: pike-robotics-texas-adjacent
   name: Pike Robotics
   website: https://www.pikerobotics.com
   careers_url: null
@@ -3098,7 +3110,7 @@ companies:
   categories:
   - autonomy-robotics
   - oil-gas
-- id: pipedream
+- id: pipedream-texas-adjacent
   name: Pipedream
   website: https://pipedreamlabs.co
   careers_url: null
@@ -3108,9 +3120,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 28
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/pipedream-labs)
   climate:
     tier: out
     reason: Underground pipe network with autonomous rail robots that deliver grocery-sized totes, plus an instant-pickup
@@ -3120,16 +3135,15 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: legal name Pipedream Labs; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.pipedreamlabs.co/
+    reason: 28 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020, funding round
+      reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Undated. Founded: https://dealroom.co/companies/pipedream-labs.
+    Stage: $13M seed, April 2024, led by Starship Ventures with Cortado Ventures and Myelin VC (Dealroom). Flags:
+    legal name Pipedream Labs. Evidence: https://www.pipedreamlabs.co/ https://dealroom.co/companies/pipedream-labs
     Region sources: avadt50. Confidence: high.'
   categories:
   - autonomy-robotics
-- id: plus-one-robotics
+- id: plus-one-robotics-texas-adjacent
   name: Plus One Robotics
   website: https://plusonerobotics.com/
   careers_url: null
@@ -3163,7 +3177,7 @@ companies:
     Region sources: port-sa-2025, port-sa-2021. Confidence: medium. Unresolved: Exact latest round not found.'
   categories:
   - autonomy-robotics
-- id: poseidon-minerals
+- id: poseidon-minerals-texas-adjacent
   name: Poseidon Minerals
   website: https://www.poseidonminerals.com
   careers_url: null
@@ -3193,7 +3207,7 @@ companies:
   categories:
   - mining
   - oil-gas
-- id: pulseforge
+- id: pulseforge-texas-adjacent
   name: Pulseforge
   website: https://pulseforge.com/
   careers_url: null
@@ -3224,7 +3238,7 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
-- id: redbird-flight-simulations
+- id: redbird-flight-simulations-texas-adjacent
   name: Redbird Flight Simulations
   website: https://redbirdflight.com/
   careers_url: null
@@ -3253,7 +3267,7 @@ companies:
     sources: opportunity-austin. Confidence: medium. Unresolved: HQ, headcount, ownership'
   categories:
   - aerospace-space
-- id: renesin
+- id: renesin-texas-adjacent
   name: Renesin
   website: https://renesin.com
   careers_url: null
@@ -3282,7 +3296,7 @@ companies:
     Unresolved: HQ, founded, headcount, funding'
   categories:
   - semis-electronics
-- id: rset-rotating-sleeve-engine-technologies
+- id: rset-rotating-sleeve-engine-technologies-texas-adjacent
   name: RSET (Rotating Sleeve Engine Technologies)
   website: https://www.rotatingliner.com
   careers_url: null
@@ -3311,7 +3325,7 @@ companies:
     Confidence: low.'
   categories:
   - oil-gas
-- id: saronic
+- id: saronic-texas-adjacent
   name: Saronic
   website: https://www.saronic.com/
   careers_url: null
@@ -3348,7 +3362,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: sensorera
+- id: sensorera-texas-adjacent
   name: SensorEra
   website: https://www.sensorera.tech
   careers_url: null
@@ -3378,7 +3392,7 @@ companies:
     funding'
   categories:
   - oil-gas
-- id: sigmasense
+- id: sigmasense-texas-adjacent
   name: SigmaSense
   website: https://www.sigmasense.com/
   careers_url: null
@@ -3412,7 +3426,7 @@ companies:
     opportunity-austin. Confidence: medium. Unresolved: Label of the 2023 round.'
   categories:
   - semis-electronics
-- id: silicon-labs
+- id: silicon-labs-texas-adjacent
   name: Silicon Labs
   website: https://www.silabs.com/
   careers_url: null
@@ -3424,7 +3438,10 @@ companies:
   sectors: []
   stage: public
   founded: 1996
-  headcount: null
+  headcount:
+    value: 1930
+    as_of: '2026-11-24'
+    source: StockAnalysis company profile; undated, so as_of is the day it was read (https://stockanalysis.com/stocks/slab/company/)
   climate:
     tier: out
     reason: Fabless mixed-signal wireless IoT chips (SoCs and modules) for industrial IoT, smart home, connected
@@ -3434,19 +3451,19 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; public, with a listing or offering reported in 2027.
+    reason: 1,930 people (StockAnalysis company profile; undated, so as_of is the day it was read, 2026-11-24);
+      public, with a listing or offering reported in 2027.
   notes: 'Board workday:silabs.wd1.myworkdayjobs.com/SiliconlabsCareers seen 2026-11-27, linked from the company''s
-    own site: role count not read (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Founded:
-    https://stockanalysis.com/stocks/slab/company/. Stage: IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments agreed
-    2026-02-04 to buy it for $231/share (~$7.5B), close expected H1 2027 (TI/Silicon Labs press release). Flags:
-    over 1,000 employees; pending acquisition by Texas Instruments; silabs.com refused automated fetch (403); dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://stockanalysis.com/stocks/slab/company/
+    own site: role count not read (no public feed). Headcount note: Undated figure on profile; Dealroom maps 2,584.
+    Founded: https://stockanalysis.com/stocks/slab/company/. Stage: IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments
+    agreed 2026-02-04 to buy it for $231/share (~$7.5B), close expected H1 2027 (TI/Silicon Labs press release).
+    Flags: over 1,000 employees; pending acquisition by Texas Instruments; silabs.com refused automated fetch (403).
+    Evidence: https://stockanalysis.com/stocks/slab/company/ https://dealroom.co/companies/silicon-laboratories
     https://news.silabs.com/2026-02-04-Texas-Instruments-to-acquire-Silicon-Labs Region sources: opportunity-austin,
     tsif-listing. Confidence: high.'
   categories:
   - semis-electronics
-- id: sisu
+- id: sisu-texas-adjacent
   name: Sisu
   website: https://sisu.us
   careers_url: null
@@ -3481,7 +3498,7 @@ companies:
   categories:
   - advanced-manufacturing
   - autonomy-robotics
-- id: skyways
+- id: skyways-texas-adjacent
   name: Skyways
   website: https://www.skyways.com/
   careers_url: null
@@ -3513,7 +3530,7 @@ companies:
   - aerospace-space
   - autonomy-robotics
   - defense
-- id: slant-3d
+- id: slant-3d-texas-adjacent
   name: Slant 3D
   website: https://www.slant3d.com/
   careers_url: null
@@ -3543,7 +3560,7 @@ companies:
     Unresolved: HQ city not stated on site (input said Hutto, TX); founding, headcount, funding not found.'
   categories:
   - advanced-manufacturing
-- id: smackover-lithium
+- id: smackover-lithium-texas-adjacent
   name: Smackover Lithium
   website: https://smackoverlithium.com
   careers_url: null
@@ -3573,7 +3590,7 @@ companies:
     Confidence: medium. Unresolved: hq, headcount, Franklin Project status'
   categories:
   - mining
-- id: smoked
+- id: smoked-texas-adjacent
   name: SmokeD
   website: https://smokedsystem.com
   careers_url: null
@@ -3602,7 +3619,7 @@ companies:
     Confidence: low. Unresolved: HQ, Austin site, founded, headcount, funding.'
   categories:
   - semis-electronics
-- id: spacex
+- id: spacex-texas-adjacent
   name: SpaceX
   website: https://www.spacex.com/
   careers_url: null
@@ -3640,7 +3657,7 @@ companies:
   categories:
   - aerospace-space
   - semis-electronics
-- id: special-products-and-mfg
+- id: special-products-and-mfg-texas-adjacent
   name: Special Products & Mfg.
   website: https://spmfg.com
   careers_url: null
@@ -3674,7 +3691,7 @@ companies:
     opportunity-austin. Confidence: high. Unresolved: Founding year and ownership not found.'
   categories:
   - advanced-manufacturing
-- id: starlab-space
+- id: starlab-space-texas-adjacent
   name: Starlab Space
   website: https://starlab-space.com/
   careers_url: null
@@ -3707,7 +3724,7 @@ companies:
     Full shareholder list, founding year, headcount.'
   categories:
   - aerospace-space
-- id: strategic-thermal-labs
+- id: strategic-thermal-labs-texas-adjacent
   name: Strategic Thermal Labs
   website: null
   careers_url: null
@@ -3736,7 +3753,7 @@ companies:
     Own website not identified; deal closing date and terms not stated.'
   categories:
   - data-centers
-- id: tamos
+- id: tamos-texas-adjacent
   name: TAMOS
   website: https://www.tamosolutions.com/
   careers_url: null
@@ -3764,7 +3781,7 @@ companies:
     sources: rice-nexus. Confidence: medium. Unresolved: Founding year, headcount, funding stage.'
   categories:
   - semis-electronics
-- id: tau-systems
+- id: tau-systems-texas-adjacent
   name: TAU Systems
   website: https://www.tausystems.com/
   careers_url: null
@@ -3775,9 +3792,12 @@ companies:
   read: auto
   sectors:
   - components
-  stage: null
-  founded: null
-  headcount: null
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 22
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/tau-systems)
   climate:
     tier: out
     reason: Compact laser-driven particle accelerators and X-ray light sources for semiconductor lithography, plus
@@ -3786,16 +3806,15 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
+    reason: 22 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020, funding round
+      reported in 2025.
   notes: 'Board greenhouse:tau seen 2026-11-27, token matched by name; board page checked: 2 open roles. Headcount
-    note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal). Flags: dealroom-after-api-refusal:
-    facts read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are
-    quarantined (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://www.tausystems.com/
+    note: Dealroom 22, band <100; undated. Also a Tau Labs site in Carlsbad, CA. Founded: https://dealroom.co/companies/tau-systems.
+    Stage: $20M seed, April 2025, $80M valuation (Dealroom). Evidence: https://www.tausystems.com/ https://dealroom.co/companies/tau-systems
     Region sources: avadt50. Confidence: high.'
   categories:
   - semis-electronics
-- id: tdk-rf-solutions
+- id: tdk-rf-solutions-texas-adjacent
   name: TDK RF Solutions
   website: https://www.tdkrfsolutions.tdk.com
   careers_url: null
@@ -3824,7 +3843,7 @@ companies:
     sources: opportunity-austin. Confidence: low.'
   categories:
   - semis-electronics
-- id: terminus-industrials
+- id: terminus-industrials-texas-adjacent
   name: Terminus Industrials
   website: https://terminusindustrials.com
   careers_url: null
@@ -3853,7 +3872,7 @@ companies:
     sources: avadt50. Confidence: medium. Unresolved: HQ, founded, headcount, funding'
   categories:
   - advanced-manufacturing
-- id: terrafirma
+- id: terrafirma-texas-adjacent
   name: TerraFirma
   website: https://terrafirma.inc
   careers_url: null
@@ -3863,9 +3882,12 @@ companies:
     board: null
   read: none
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: series-a
+  founded: 2023
+  headcount:
+    value: 25
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/terrafirma)
   climate:
     tier: out
     reason: Retrofits existing heavy machinery for remote and autonomous operation, sells construction planning/control
@@ -3875,17 +3897,16 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
-  notes: 'No job board found on the company''s site. Headcount note: Quarantined (dealroom-after-api-refusal). Stage:
-    Quarantined (dealroom-after-api-refusal). Flags: mix of software, machine retrofits and earthworks services;
-    does not manufacture machines per its site; autonomous construction equipment; dealroom-after-api-refusal: facts
-    read from Dealroom profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined
-    (supervisor, 2026-11-27) and do not decide the tier or startup test. Evidence: https://terrafirma.inc/ Region
-    sources: avadt50, opportunity-austin. Confidence: high.'
+    reason: 25 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2023, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 25, band <100; undated. Founded:
+    https://dealroom.co/companies/terrafirma. Stage: Series A $115M, July 2026, $460M valuation, Kleiner Perkins
+    and Bain Capital Ventures (Dealroom). Flags: mix of software, machine retrofits and earthworks services; does
+    not manufacture machines per its site; autonomous construction equipment. Evidence: https://terrafirma.inc/
+    https://dealroom.co/companies/terrafirma Region sources: avadt50, opportunity-austin. Confidence: high.'
   categories:
   - autonomy-robotics
-- id: terravolta-resources
+- id: terravolta-resources-texas-adjacent
   name: TerraVolta Resources
   website: null
   careers_url: null
@@ -3919,7 +3940,7 @@ companies:
     texastribune-2025-mining. Confidence: medium. Unresolved: website, founded, headcount, round type'
   categories:
   - mining
-- id: texas-mineral-resources-corp
+- id: texas-mineral-resources-corp-texas-adjacent
   name: Texas Mineral Resources Corp.
   website: https://tmrcorp.com
   careers_url: null
@@ -3952,7 +3973,7 @@ companies:
     Confidence: medium. Unresolved: hq (Sierra Blanca unverified), founded, headcount, whether USAR merger closed'
   categories:
   - mining
-- id: the-boring-company
+- id: the-boring-company-texas-adjacent
   name: The Boring Company
   website: https://www.boringcompany.com/
   careers_url: null
@@ -3962,9 +3983,12 @@ companies:
     board: the-boring-company
   read: manual
   sectors: []
-  stage: null
-  founded: null
-  headcount: null
+  stage: late
+  founded: 2016
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/the-boring-company)
   climate:
     tier: out
     reason: Designs and builds Prufrock tunnel boring machines and builds and operates Loop transport and utility/freight
@@ -3973,17 +3997,15 @@ companies:
     approved: false
   startup:
     status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
+    reason: 500 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2016.
   notes: 'Board gem:the-boring-company seen 2026-11-27, linked from the company''s own site: role count not read
-    (no public feed). Headcount note: Quarantined (dealroom-after-api-refusal). Stage: Quarantined (dealroom-after-api-refusal).
-    Flags: builds and operates tunnels as well as making machines; dealroom-after-api-refusal: facts read from Dealroom
-    profile pages in this batch after the permission check refused dealroom.co/api/ are quarantined (supervisor,
-    2026-11-27) and do not decide the tier or startup test. Evidence: https://www.boringcompany.com/ Region sources:
-    avadt50, opportunity-austin. Confidence: high. Unresolved: date of Series D'
+    (no public feed). Headcount note: Dealroom band 500-1k (maps 717); undated. Founded: https://dealroom.co/companies/the-boring-company.
+    Stage: Company site announces a $3B Series D; Dealroom headline: raises $3B at $23B valuation (date not shown).
+    Flags: builds and operates tunnels as well as making machines. Evidence: https://www.boringcompany.com/ https://dealroom.co/companies/the-boring-company
+    Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved: date of Series D'
   categories:
   - advanced-manufacturing
-- id: the-sabine-mining-company
+- id: the-sabine-mining-company-texas-adjacent
   name: The Sabine Mining Company
   website: null
   careers_url: null
@@ -4012,7 +4034,7 @@ companies:
     Confidence: medium. Unresolved: parent, operating status, headcount'
   categories:
   - mining
-- id: thermon
+- id: thermon-texas-adjacent
   name: Thermon
   website: https://www.thermon.com/
   careers_url: null
@@ -4049,7 +4071,7 @@ companies:
   categories:
   - advanced-manufacturing
   - data-centers
-- id: traysar
+- id: traysar-texas-adjacent
   name: Traysar
   website: https://traysar.com
   careers_url: null
@@ -4078,7 +4100,7 @@ companies:
   categories:
   - autonomy-robotics
   - defense
-- id: tubular-network
+- id: tubular-network-texas-adjacent
   name: Tubular Network
   website: https://tubular.network
   careers_url: null
@@ -4105,7 +4127,7 @@ companies:
     Region sources: ati-ut. Confidence: medium. Unresolved: HQ, headcount, funding'
   categories:
   - autonomy-robotics
-- id: uhnder
+- id: uhnder-texas-adjacent
   name: Uhnder
   website: https://uhnder.com
   careers_url: null
@@ -4139,7 +4161,7 @@ companies:
     news after Feb 2024 checked; current operating status not confirmed beyond Dealroom.'
   categories:
   - semis-electronics
-- id: uranium-energy-corp
+- id: uranium-energy-corp-texas-adjacent
   name: Uranium Energy Corp.
   website: https://www.uraniumenergy.com
   careers_url: null
@@ -4171,7 +4193,7 @@ companies:
     medium. Unresolved: founded, headcount, listing year'
   categories:
   - mining
-- id: uri-inc
+- id: uri-inc-texas-adjacent
   name: URI, Inc.
   website: null
   careers_url: null
@@ -4204,7 +4226,7 @@ companies:
     from search snippets, pages not fetched)'
   categories:
   - mining
-- id: valex
+- id: valex-texas-adjacent
   name: Valex
   website: https://valex.com
   careers_url: null
@@ -4231,7 +4253,7 @@ companies:
     Region sources: opportunity-austin. Confidence: low. Unresolved: HQ, Texas site, headcount, ownership.'
   categories:
   - semis-electronics
-- id: valstad-shipworks
+- id: valstad-shipworks-texas-adjacent
   name: Valstad Shipworks
   website: https://valstad.com
   careers_url: null
@@ -4261,7 +4283,7 @@ companies:
     medium. Unresolved: Founded year, headcount, funding; whether defense is the main market.'
   categories:
   - advanced-manufacturing
-- id: venus-aerospace
+- id: venus-aerospace-texas-adjacent
   name: Venus Aerospace
   website: https://www.venusaero.com/
   careers_url: null
@@ -4295,7 +4317,7 @@ companies:
     does not state HQ city (Dealroom: Houston).'
   categories:
   - aerospace-space
-- id: voltagrid
+- id: voltagrid-texas-adjacent
   name: VoltaGrid
   website: https://voltagrid.com
   careers_url: null
@@ -4332,7 +4354,7 @@ companies:
   categories:
   - data-centers
   - oil-gas
-- id: vorago-technologies
+- id: vorago-technologies-texas-adjacent
   name: VORAGO Technologies
   website: https://voragotech.com
   careers_url: null
@@ -4368,7 +4390,7 @@ companies:
   categories:
   - aerospace-space
   - semis-electronics
-- id: walnut-creek-mining-company
+- id: walnut-creek-mining-company-texas-adjacent
   name: Walnut Creek Mining Company
   website: null
   careers_url: null
