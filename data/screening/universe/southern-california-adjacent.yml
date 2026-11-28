@@ -594,16 +594,6 @@ companies:
     type: greenhouse
     token: gitai
   open_roles: 13
-- name: GKN Aerospace
-  website: https://www.gknaerospace.com
-  hq: San Diego and Garden Grove, CA
-  sources:
-  - brighterfutures-oc
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
-  ats: null
-  open_roles: null
 - name: GRU Space
   website: https://gru.space
   hq: Los Angeles, CA
@@ -716,7 +706,7 @@ companies:
   - yc-sd-hardtech
   registry_id: null
   decision: null
-  reason: A one-person team; location (San Diego or San Francisco) and product not established.
+  reason: A one-person team showing a processor design on FPGA; whether it sells hardware is not established.
   ats: null
   open_roles: null
 - name: Intrepid Automation
@@ -759,8 +749,9 @@ companies:
   sources:
   - yc-la-aviation-space
   registry_id: null
-  decision: null
-  reason: Its site has an expired certificate and no 2026 news was found; status not established.
+  decision: duplicate
+  reason: Its VTOL program now runs as Mayman Aerospace (Long Beach), listed separately; JetPack Aviation's own
+    site has lapsed.
   ats: null
   open_roles: null
 - name: JetZero
@@ -893,9 +884,9 @@ companies:
   hq: Los Angeles, CA
   sources:
   - yc-la-robotics
-  registry_id: null
-  decision: null
-  reason: Sells robotic warehouse picking priced per pick; whether it builds its own robots is not established.
+  registry_id: manifold
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: MaxLinear
@@ -1230,16 +1221,6 @@ companies:
   reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
-- name: Polytenna
-  website: https://polytenna.com
-  hq: null
-  sources:
-  - evonexus
-  registry_id: null
-  decision: null
-  reason: No location found; whether it is in the region is not established.
-  ats: null
-  open_roles: null
 - name: Prime Lightworks
   website: null
   hq: Culver City, CA
@@ -1247,7 +1228,8 @@ companies:
   - yc-la-aviation-space
   registry_id: null
   decision: null
-  reason: Its domain now redirects to an unrelated site; status not established.
+  reason: Identity check found nothing conclusive. Likely dormant (lapsed domain, one-person team, no news since
+    the 2016 batch), but no closure record found, so not marked closed.
   ats: null
   open_roles: null
 - name: Qelzal
@@ -1257,7 +1239,9 @@ companies:
   - evonexus
   registry_id: null
   decision: null
-  reason: Identity not established (the only article found describes a differently named company).
+  reason: Identity check found nothing conclusive. Identity is settled (Kelzal, now spelled Qelzal, San Diego, founded
+    2014), but no news after about 2019-2020 was found and its site could not be read, so whether it is still active
+    is not established
   ats: null
   open_roles: null
 - name: Rainmaker
@@ -1511,7 +1495,8 @@ companies:
   - evonexus
   registry_id: null
   decision: null
-  reason: No location found; whether it is in the region is not established.
+  reason: Identity check found nothing conclusive. EvoNexus is a Southern California incubator (San Diego and Irvine),
+    which suggests but does not establish a regional location.
   ats: null
   open_roles: null
 - name: SpinLaunch
@@ -1553,7 +1538,8 @@ companies:
   - evonexus
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: Identity check found nothing conclusive. Probably a small San Diego MRAM chip developer, but there is
+    no first-party source and no website, so neither identity nor activity is established.
   ats: null
   open_roles: null
 - name: Syntiant
@@ -1604,8 +1590,8 @@ companies:
   sources:
   - yc-la-drones
   registry_id: null
-  decision: null
-  reason: Its site describes uncrewed flight services; whether it sells hardware is not established.
+  decision: not-in-scope
+  reason: Sells uncrewed flight services; no hardware sale shown.
   ats: null
   open_roles: null
 - name: Toofon
@@ -1615,7 +1601,7 @@ companies:
   - caltech-local-startups
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Could not be identified.
   ats: null
   open_roles: null
 - name: Totum Labs
@@ -1626,7 +1612,8 @@ companies:
   - sd-hardtech50-2025
   registry_id: null
   decision: null
-  reason: Its domain no longer resolves and sources disagree on an acquisition by Ceva; status not established.
+  reason: Identity check found nothing conclusive. Sources still disagree on the Ceva acquisition and the domain
+    is dead, so status (active, acquired or closed) is not established.
   ats: null
   open_roles: null
 - name: TransAstra
@@ -1716,8 +1703,8 @@ companies:
   sources:
   - evonexus
   registry_id: null
-  decision: null
-  reason: May sell silicon IP rather than chips; product not established.
+  decision: not-in-scope
+  reason: Licenses silicon IP and design flows rather than selling chips.
   ats: null
   open_roles: null
 - name: Viasat
@@ -1784,7 +1771,8 @@ companies:
   - evonexus
   registry_id: null
   decision: null
-  reason: Its domains do not resolve and no news after 2020 was found; status not established.
+  reason: Identity check found nothing conclusive. No news after 2020 and the domain no longer resolves; likely
+    dormant or closed, but no closure record found.
   ats: null
   open_roles: null
 - name: Yondu
@@ -1816,6 +1804,10 @@ excluded:
   - laedc-aerospace
   - longbeach-gov
   reason: Headquartered in Arlington, VA; El Segundo and Long Beach are sites.
+- name: GKN Aerospace
+  sources:
+  - brighterfutures-oc
+  reason: Part of GKN Aerospace (Melrose Industries, UK); San Diego and Garden Grove are plants.
 - name: Ixana
   sources:
   - evonexus
@@ -1836,6 +1828,10 @@ excluded:
   - rose-ieo-2025
   - laedc-aerospace
   reason: Headquartered in Falls Church, VA; its Southern California operations are sites.
+- name: Polytenna
+  sources:
+  - evonexus
+  reason: Headquartered in Saskatoon, SK, Canada (its own contact page).
 - name: Precision Castparts Corp. (PCC)
   sources:
   - brighterfutures-oc

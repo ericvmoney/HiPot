@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: adsys-controls
   name: Adsys Controls
@@ -1669,6 +1669,37 @@ companies:
     Region sources: lahardtech50-2025, labj. Confidence: high.'
   categories:
   - advanced-manufacturing
+  - autonomy-robotics
+- id: manifold
+  name: Manifold
+  website: https://manifoldindustries.ai
+  careers_url: null
+  hq: Los Angeles, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous mobile manipulation robots for warehouse case picking, trailer loading and unloading, and
+      palletizing, priced per pick. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists Y Combinator and Timeless under Our Partners
+    without saying how; no round found Flags: Business model: it does not sell robots outright; it sells robotic
+    picking capacity as a service, priced per pick, using robots it deploys and runs (its own robot system and autonomy
+    stack; the site does not say whether it makes the arm or base itself). HQ not found on its site; the source''s
+    Los Ang. Evidence: O w n   s i Region sources: yc-la-robotics. Confidence: low.'
+  categories:
   - autonomy-robotics
 - id: maxlinear
   name: MaxLinear
