@@ -1,0 +1,30 @@
+# Registry fixes 22: three companies move to the SuccessFactors reader (supervisor, 2026-11-27).
+#
+# The collector's SuccessFactors reader (pipeline/collect/successfactors.py) reads a career site's
+# robots.txt, /sitemap.xml and /job/ pages, never /services/, US postings only. The collector's live
+# trial on 2026-11-27 read the counts below with no blocks; robots.txt allows the sitemap and the
+# job pages on each site.
+
+fixes:
+- id: vestas
+  name: Vestas
+  ats: {type: successfactors, board: https://careers.vestas.com}
+  careers_url: https://careers.vestas.com
+  source: >-
+    Vestas's career site is SAP SuccessFactors at https://careers.vestas.com. The collector's trial on
+    2026-11-27 read 226 US postings, 48 of them in Colorado (Brighton, Windsor, Pueblo), in about 14 minutes.
+    vestas.com itself shows no careers page to the probe, which is why it had no board.
+- id: holtec-international
+  name: Holtec International
+  ats: {type: successfactors, board: https://holtec.jobs.hr.cloud.sap}
+  source: >-
+    Holtec's careers link goes to its SAP SuccessFactors site https://holtec.jobs.hr.cloud.sap
+    (registry-fixes-14). The careers-page reader read 0 postings there; the SuccessFactors reader's trial
+    on 2026-11-27 read 72.
+- id: quantumscape
+  name: QuantumScape
+  ats: {type: successfactors, board: https://careers.quantumscape.com}
+  source: >-
+    QuantumScape's career site is SAP SuccessFactors (registry-fixes-11 pointed the careers-page reader at
+    its /search/ page). The SuccessFactors reader's trial on 2026-11-27 read the same 19 postings, now with
+    dates, state and workplace.

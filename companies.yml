@@ -19201,8 +19201,8 @@ companies:
   careers_url: https://holtec.jobs.hr.cloud.sap/
   hq: Camden, NJ
   ats:
-    type: other
-    board: https://holtec.jobs.hr.cloud.sap/
+    type: successfactors
+    board: https://holtec.jobs.hr.cloud.sap
   read: auto
   sectors:
   - fission
@@ -27918,12 +27918,12 @@ companies:
 - id: nuscale-power
   name: NuScale Power
   website: https://www.nuscalepower.com
-  careers_url: null
+  careers_url: https://jobs.jobvite.com/nuscale-power/jobs
   hq: Portland, OR
   ats:
     type: jobvite
     board: nuscale-power
-  read: manual
+  read: auto
   sectors:
   - fission
   stage: public
@@ -32700,8 +32700,8 @@ companies:
   careers_url: https://careers.quantumscape.com/
   hq: San Jose, CA
   ats:
-    type: other
-    board: https://careers.quantumscape.com/search/
+    type: successfactors
+    board: https://careers.quantumscape.com
   read: auto
   sectors:
   - energy-storage
@@ -43463,12 +43463,12 @@ companies:
 - id: vestas
   name: Vestas
   website: https://www.vestas.com
-  careers_url: null
+  careers_url: https://careers.vestas.com
   hq: Aarhus, Denmark
   ats:
-    type: unknown
-    board: null
-  read: none
+    type: successfactors
+    board: https://careers.vestas.com
+  read: auto
   sectors:
   - wind
   stage: public
@@ -43558,9 +43558,9 @@ companies:
   careers_url: null
   hq: Milpitas, CA
   ats:
-    type: jobvite
-    board: view
-  read: manual
+    type: unknown
+    board: null
+  read: none
   sectors:
   - buildings
   stage: null
