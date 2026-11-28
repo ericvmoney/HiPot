@@ -125,7 +125,7 @@
           },
           "posted": {"type": "string", "format": "date"},
           "seen": {"type": "string", "format": "date", "description": "The day the role was first seen; only when it has no posted date (the page dates a role by posted, else seen)."},
-          "summary": {"type": "string", "minLength": 1, "maxLength": 200, "description": "The posting's summary, cut to 200 characters at a sentence end or a word (with an ellipsis)."},
+          "sm": {"type": "integer", "minimum": 0, "description": "Where the posting's summary is: an index into `texts` in summaries.json beside this file (same generated_at). Absent when the posting has none."},
           "new": {"const": true, "description": "Present when the role was first seen in the last 3 business days."},
           "grade": {
             "description": "This role's published midpoint against comparable published ranges: same role group and level (the role's own, or 'none') and pay period, in market m. Not a salary estimate.",

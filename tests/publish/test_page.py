@@ -51,7 +51,10 @@ def test_page_loads_nothing_from_another_origin_except_its_fonts_and_the_yaml_re
 def test_data_is_fetched_once_by_a_relative_address():
     assert "var DATA_URL = 'data/board.json';" in SCRIPT
     # Two fetches: the data, and the local server's API, which runs only on this machine (test_local_saving.py).
-    assert SCRIPT.count("fetch(") == 2 and "fetch(DATA_URL)" in SCRIPT and "fetch(LOCAL_API + name, options)" in SCRIPT
+    # Three fetches, all relative to the page: the data; the posting summaries, loaded when one is first opened;
+    # and the local server's API, which runs only on this machine (test_local_saving.py).
+    assert SCRIPT.count("fetch(") == 3 and "fetch(DATA_URL)" in SCRIPT and "fetch(LOCAL_API + name, options)" in SCRIPT
+    assert "summariesLoading = fetch(SUMMARIES_URL)" in SCRIPT and "var SUMMARIES_URL = 'data/summaries.json';" in SCRIPT
 
 
 def test_no_cookies_storage_tracking_or_other_network_calls():
