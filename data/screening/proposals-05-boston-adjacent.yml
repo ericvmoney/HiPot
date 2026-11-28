@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: accion-systems
   name: Accion Systems
@@ -71,6 +71,35 @@ companies:
     from search snippets, site shows only a 508 phone number; headcount not found.'
   categories:
   - advanced-manufacturing
+- id: airqtel
+  name: AirQtel
+  website: https://www.airqtel.com
+  careers_url: null
+  hq: Wellesley, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Looking Glass, AI-assisted aerial surveillance combining ruggedized imaging hardware and software with
+      analyst review. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Company site says it announced a $27M Series A on 2025-02-23;
+    not corroborated by any independent source checked. Flags: Physical marked yes because the site describes ruggedized
+    imaging hardware; it does not say it builds aircraft. The site itself warns its headline figures do not describe
+    current customers or coverage; treat the Series A as self-reported.. Evidence: h t t p s : Region sources: web-search-aerospace.
+    Confidence: low.'
+  categories:
+  - autonomy-robotics
 - id: amazon-robotics
   name: Amazon Robotics
   website: https://www.amazon.jobs/en/teams/amazon-robotics
@@ -348,6 +377,37 @@ companies:
     Confidence: medium. Unresolved: founded, headcount, funding; address is 12 Channel St Suite 202 (MassRobotics)'
   categories:
   - autonomy-robotics
+- id: ayo-electronics
+  name: Ayo Electronics
+  website: https://ayosemi.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Fabless AI processor; the 2026 release describes a customized photonic chip for faster, more energy-efficient
+      AI inference. Adjacent (Semiconductors and electronics, Data-center equipment), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NEMC Hub PROPEL grants of $61,767 (2025-04-23) and $100,000
+    (2026-04-14); no venture round found. Flags: ayosemi.com is live as ''Ayo Semiconductor'' (tagline ''A new way
+    to compute is coming'', careers page) but gives no location or product detail.. Evidence: h t t p s : Region
+    sources: nemc-members, nemc-propel-ops-2024. Confidence: low.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: black-i-robotics
   name: Black-I Robotics
   website: https://blackirobotics.com/
@@ -574,6 +634,33 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
+- id: bulma-solutions
+  name: BULMA Solutions
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: V'GER social robot that communicates in ASL and LSF and interacts with people with mild autism and ADHD.
+      Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: No website found (bulmasolutions.com does not resolve)..
+    Evidence: h t t p s : Region sources: massrobotics-residents. Confidence: low.'
+  categories:
+  - autonomy-robotics
 - id: busek-co
   name: Busek Co.
   website: https://www.busek.com/
@@ -723,6 +810,34 @@ companies:
     https://www.crunchbase.com/organization/cleo-robotics https://www.cbinsights.com/company/cleo-robotics Region
     sources: massrobotics-residents, massrobotics-success, web-search-aerospace. Confidence: medium. Unresolved:
     founded, headcount; funding figures likely incomplete'
+  categories:
+  - autonomy-robotics
+- id: compotics
+  name: Compotics
+  website: https://compotics.com/
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automated sterile drug compounding robot for hospital pharmacies that removes the need for a dedicated
+      cleanroom. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: compotics.com is still a bare ''React App'' placeholder;
+    current MassRobotics residency is the only sign of activity.. Evidence: h t t p s : Region sources: massrobotics-residents.
+    Confidence: low.'
   categories:
   - autonomy-robotics
 - id: copious-imaging
@@ -1083,6 +1198,36 @@ companies:
   categories:
   - aerospace-space
   - semis-electronics
+- id: eva-technology
+  name: Eva Technology
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Datacenter-scale AI training processors, plus AI-as-a-service. Data-center equipment and computing are
+      out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Only funding found is a $100,000 NEMC Hub PROPEL grant
+    (2025-04-23). Flags: No website found; evatech.ai belongs to an unrelated cannabis-compliance tool and evatechnology.com
+    refused connection. Identity rests on the NEMC award list.. Evidence: h t t p s : Region sources: nemc-members,
+    nemc-propel-ops-2024. Confidence: low.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: familiar-machines-and-magic
   name: Familiar Machines & Magic
   website: https://familiarmachines.com
@@ -1240,6 +1385,37 @@ companies:
     share'
   categories:
   - autonomy-robotics
+- id: guardion
+  name: Guardion
+  website: https://www.guardiontech.com
+  careers_url: null
+  hq: Burlington, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nanomaterial (2D-material) ion and charge sensors for analytical instruments, chemical detectors and
+      radiation detectors. Adjacent (Semiconductors and electronics, Defense), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Stage: Grant-funded (NASA SBIR I and II, NSF SBIR II, Air Force
+    SBIR I, MassVentures START 2024, MassChallenge Gold) per its site; directory profiles report about $120K seed
+    in 2018. No priced venture round confirmed. Flags: Input said Boston; current address is Burlington. One directory
+    claims an $80M raise in Nov 2025, which other sources do not support; likely a different company.. Evidence:
+    h t t p s : Region sources: nemc-members. Confidence: low.'
+  categories:
+  - defense
+  - semis-electronics
 - id: harmonic-drive-llc
   name: Harmonic Drive LLC
   website: https://www.harmonicdrive.net/
@@ -1299,6 +1475,34 @@ companies:
       B3).
   notes: 'No job board found on the company''s site. Stage: nothing found Evidence: https://hathaway.ai https://www.massrobotics.org/startups/massrobotics-resident-startups/
     Region sources: massrobotics-residents. Confidence: medium. Unresolved: HQ, founded, headcount, funding'
+  categories:
+  - autonomy-robotics
+- id: human-robotix
+  name: Human-Robotix
+  website: https://www.human-robotix.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Patent-pending robotic physical therapy and training system with computer vision and real-time analytics.
+      Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Website is a guessed domain matching the name; it shows
+    only ''Currently in Stealth Mode'' and copyright 2023, so the link to the company is likely but not confirmed..
+    Evidence: h t t p s : Region sources: massrobotics-residents. Confidence: low.'
   categories:
   - autonomy-robotics
 - id: hyperlight
@@ -1566,6 +1770,35 @@ companies:
     2025; earlier Series A (amount undisclosed); Harvard spinout November 2024. Flags: subsidiary of IonQ; own site
     still shows 2024 copyright. Evidence: https://www.lightsynq.com/ https://dealroom.co/companies/lightsynq Region
     sources: masstech-quantum-2026. Confidence: medium. Unresolved: Deal closing date not confirmed.'
+  categories:
+  - semis-electronics
+- id: lintrinsic-semiconductors
+  name: Lintrinsic Semiconductors
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Fabless high-power, ultrafast RF switches (FastSwitch SOI CMOS, into Ka-band, 5-50 W, ~1 ns switching).
+      Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Acquired by Marki Microwave (IGP Equity add-on), deal
+    dated 2026-04-17; Microwave Journal article 2026-04-23. Flags: Acquired, not closed; FastSwitch is being integrated
+    into Marki''s portfolio, and the article does not say whether the LintrinsIC brand continues. Also listed on
+    igpequity.com. No everythingrf.com text used.. Evidence: h t t p s : Region sources: nemc-members, nemc-propel-ops-2024,
+    nemc-propel-mfg-2024. Confidence: low.'
   categories:
   - semis-electronics
 - id: locus-robotics
@@ -1869,6 +2102,71 @@ companies:
     Region sources: massmep-stories. Confidence: high. Unresolved: Headcount and acquisition date not found.'
   categories:
   - semis-electronics
+- id: mithril-technologies
+  name: Mithril Technologies
+  website: https://www.mithril.space
+  careers_url: null
+  hq: Cambridge, MA
+  ats:
+    type: greenhouse
+    board: mithril
+  read: auto
+  sectors:
+  - components
+  stage: null
+  founded: null
+  headcount:
+    value: 4
+    as_of: '2026-11-27'
+    source: company team page (people listed) (https://www.mithril.space/team.html)
+  climate:
+    tier: out
+    reason: Electrostatically actuated reconfigurable reflector antennas for space-based radar, with no motors,
+      gimbals or deployment mechanisms. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 4 people (company team page (people listed), 2026-11-27); founding year and funding not found, so included
+      as a missing figure (owner rule B3).
+  notes: 'Board greenhouse:mithril seen 2026-11-27, token matched by name; board page checked: 3 open roles. Stage:
+    Site cites a DARPA ERIS contract and ISS on-orbit qualification selection; no equity funding stated. Flags:
+    Input said Somerville; site says Cambridge. Domain was guessed and matched name and product.. Evidence: h t
+    t p s : Region sources: nemc-members, nemc-propel-2026. Confidence: low.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: nano-ops
+  name: Nano OPS
+  website: https://nanoops.com
+  careers_url: null
+  hq: Burlington, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nanoscale offset printing (NanoOPS), a fast additive platform for printing nanoscale electronic devices
+      and layers. Adjacent (Semiconductors and electronics, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No company funding round found; the underlying technology
+    was developed at Northeastern with about $80M of NSF, DoD and corporate research funding. Flags: Identity established
+    through Northeastern pages (about 2017-2020). nanoops.com resolves but returned an empty page, so current activity
+    is not confirmed.. Evidence: h t t p s : Region sources: nemc-members, nemc-propel-2026. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: nextera-robotics-didge-ai
   name: Nextera Robotics (DIDGE.ai)
   website: https://nexterarobotics.com/
@@ -2029,6 +2327,34 @@ companies:
     and merger date not confirmed on a fetched page.'
   categories:
   - semis-electronics
+- id: oxcart
+  name: Oxcart
+  website: null
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotics-as-a-service for airlines to speed aircraft turnaround at airports. Adjacent (Autonomy and
+      robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Identity rests on the MassRobotics resident directory;
+    no website found (oxcart.ai does not resolve).. Evidence: h t t p s : Region sources: massrobotics-residents.
+    Confidence: low.'
+  categories:
+  - autonomy-robotics
 - id: pendar-technologies
   name: Pendar Technologies
   website: https://www.pendar.com
@@ -2180,6 +2506,36 @@ companies:
     gratings; defense not main business; not pure software; not a services firm. Evidence: https://www.plymouthgrating.com/
     https://www.plymouthgrating.com/about https://www.plymouthgrating.com/history Region sources: beststartup-lasers-2021.
     Confidence: high. Unresolved: Headcount not found (20,000 sq ft campus).'
+  categories:
+  - semis-electronics
+- id: quantum-essentials
+  name: Quantum Essentials
+  website: null
+  careers_url: null
+  hq: Watertown, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Cryogenic components for superconducting quantum computers, incl. a multi-stage traveling-wave parametric
+      amplifier with reverse isolation for qubit readout. Adjacent (Semiconductors and electronics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Only funding found is a $99,492 NEMC Hub PROPEL grant
+    (announced 2025-11-05). Flags: No website found; quantumessentials.com is a for-sale domain. Identity rests
+    on the NEMC award list.. Evidence: h t t p s : Region sources: nemc-members, nemc-propel-2025, masstech-quantum-2026.
+    Confidence: low.'
   categories:
   - semis-electronics
 - id: quantum-microwave-components
@@ -2368,6 +2724,37 @@ companies:
     low. Unresolved: product detail, founded, headcount, funding'
   categories:
   - autonomy-robotics
+- id: revolution-space
+  name: Revolution Space
+  website: https://revolutionspace.com
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: rippling
+    board: revolutionspace
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: End-to-end space missions and spacecraft, incl. modular electrospray thrusters. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board rippling:revolutionspace seen 2026-11-27, token matched by name; board page checked: 5 open roles.
+    Stage: Government awards only on its news page (DIU OTA and APFIT, Dec 2024; NASA Space Act Agreement, Sep 2024;
+    DARPA LASSO selection, Oct 2025); Ford spacecraft production partnership, Nov 2026. No equity round stated.
+    Flags: Guessed domain confirmed (Boston address, 617 phone). Its news page has items from 2021 (chairman appointed),
+    which contradicts the source''s 2023 founding year. The electrospray work and Charlestown address suggest it
+    may be the former Accion Systems, but this was not verified (accion-systems.com di. Evidence: h t t p s : Region
+    sources: web-search-aerospace. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: righthand-robotics
   name: RightHand Robotics
   website: https://righthandrobotics.com/
@@ -2399,6 +2786,65 @@ companies:
     Dealroom: Series C Feb 2022, $66M at $264M valuation; March 2025 undisclosed ''Late VC'' financing from Rockwell
     Automation. Evidence: https://righthandrobotics.com/ https://dealroom.co/companies/righthand-robotics Region
     sources: trr-7-lessons. Confidence: medium. Unresolved: Exact HQ town.'
+  categories:
+  - autonomy-robotics
+- id: sangtera
+  name: Sangtera
+  website: https://www.sangtera.com
+  careers_url: null
+  hq: Lexington, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Microhydraulic and electrostatic actuators; high-accuracy, high-throughput chiplet placement tool for
+      3D advanced packaging. Adjacent (Semiconductors and electronics, Advanced manufacturing), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NEMC Hub PROPEL grants of $73,559 (2024-10-08) and $73,125
+    (2025-04-23); no venture round found. Flags: sangtera.com returned HTTP 403 to our client and was not retried;
+    search results show it as the company''s site (''Making human-like action possible'').. Evidence: h t t p s
+    : Region sources: nemc-members, nemc-propel-ops-2024, nemc-propel-mfg-2024. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: scalable-robotics
+  name: Scalable Robotics
+  website: https://scalablerobotics.ai/
+  careers_url: null
+  hq: Boston, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: ScalableArc welding cobot cart with patented no-code, no-CAD point-and-click weld programming. Adjacent
+      (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: MassRobotics residency gives a Boston presence, but
+    the legal HQ may still be Connecticut; not settled.. Evidence: h t t p s : Region sources: massrobotics-residents.
+    Confidence: low.'
   categories:
   - autonomy-robotics
 - id: sea-machines-robotics
@@ -2571,6 +3017,36 @@ companies:
     Bedford, MA conflicts with Dealroom''s Beverly, MA; site shows only ''SIONYX LLC''; current ownership unknown.'
   categories:
   - semis-electronics
+- id: specter-aerospace
+  name: Specter Aerospace
+  website: https://specteraerospace.com
+  careers_url: null
+  hq: Boston area, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2013
+  headcount: null
+  climate:
+    tier: out
+    reason: Air-breathing hypersonic vehicles and propulsion (scramjets, Mach 5+). Adjacent (Aerospace and space,
+      Defense), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2013, funding round reported in 2023.
+  notes: 'No job board found on the company''s site. Stage: Announced over $9.5M of DoD contracts plus equity from
+    CS Ventures, Mandala Ventures and Kairos Ventures (AeroTime, 2023-07-03). No priced Series A found. Flags: Formerly
+    FGC Plasma Solutions. The guessed domain is confirmed as the company''s own. Exact HQ city varies by source
+    (Middleton, Cambridge, Peabody).. Evidence: h t t p s : Region sources: buildlist-aerospace-boston. Confidence:
+    low.'
+  categories:
+  - aerospace-space
+  - defense
 - id: square-robot
   name: Square Robot
   website: https://www.squarerobot.com/
@@ -3112,6 +3588,34 @@ companies:
     Region sources: massrobotics-residents. Confidence: medium. Unresolved: HQ, founded, headcount, funding'
   categories:
   - autonomy-robotics
+- id: wober-tech
+  name: Wober Tech
+  website: null
+  careers_url: null
+  hq: Topsfield, MA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Compact, low-cost, AI-enabled multispectral imaging sensors from UV to infrared. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Only funding found is an $80,576 NEMC Hub PROPEL grant
+    (announced 2025-11-05). Flags: No website found (wobertech.com and wober.tech do not resolve). Identity rests
+    on the NEMC award list.. Evidence: h t t p s : Region sources: nemc-members, nemc-propel-2025. Confidence: low.'
+  categories:
+  - semis-electronics
 - id: x-sight
   name: X-Sight
   website: null

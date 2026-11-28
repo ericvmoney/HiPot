@@ -229,13 +229,13 @@ companies:
   ats: null
   open_roles: null
 - name: AirQtel
-  website: null
+  website: https://www.airqtel.com
   hq: Wellesley, MA
   sources:
   - web-search-aerospace
-  registry_id: null
-  decision: null
-  reason: No company website found; identity not established.
+  registry_id: airqtel
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Alloy Enterprises
@@ -350,13 +350,13 @@ companies:
   open_roles: null
 - name: Ayo Electronics
   website: https://ayosemi.com
-  hq: Somerville, MA
+  hq: Boston, MA
   sources:
   - nemc-members
   - nemc-propel-ops-2024
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: ayo-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: BioSens8
@@ -387,7 +387,8 @@ companies:
   - beststartup-3dp-2021
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Likely the long-established Southborough instrument maker, but
+    no fetchable source confirmed its current status or ownership within the limits.
   ats: null
   open_roles: null
 - name: Boost Robotics
@@ -498,9 +499,9 @@ companies:
   hq: Boston, MA
   sources:
   - massrobotics-residents
-  registry_id: null
-  decision: null
-  reason: No company website found; identity not established.
+  registry_id: bulma-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Busek Co.
@@ -524,17 +525,6 @@ companies:
   registry_id: caladh
   decision: registry
   reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
-  ats: null
-  open_roles: null
-- name: Cambridge Terahertz
-  website: null
-  hq: Cambridge, MA
-  sources:
-  - nemc-members
-  - nemc-propel-ops-2024
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
   ats: null
   open_roles: null
 - name: Canvair
@@ -566,7 +556,7 @@ companies:
   - nemc-propel-2026
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Cleo Robotics
@@ -588,9 +578,9 @@ companies:
   hq: Boston, MA
   sources:
   - massrobotics-residents
-  registry_id: null
-  decision: null
-  reason: Its site is a placeholder; status not established.
+  registry_id: compotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Copious Imaging
@@ -737,9 +727,9 @@ companies:
   sources:
   - nemc-members
   - nemc-propel-ops-2024
-  registry_id: null
-  decision: null
-  reason: No company website found; identity not established.
+  registry_id: eva-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Familiar Machines & Magic
@@ -808,7 +798,8 @@ companies:
   - mit-news
   registry_id: null
   decision: null
-  reason: Its domain was guessed; identity not established.
+  reason: Identity check found nothing conclusive. The guessed domain may be a different company or a pivot; not
+    a MassRobotics resident. Not settled.
   ats: null
   open_roles: null
 - name: General Robotics
@@ -844,13 +835,13 @@ companies:
   ats: null
   open_roles: null
 - name: Guardion
-  website: null
-  hq: Boston, MA
+  website: https://www.guardiontech.com
+  hq: Burlington, MA
   sources:
   - nemc-members
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: guardion
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Harmonic Drive LLC
@@ -885,13 +876,13 @@ companies:
   ats: null
   open_roles: null
 - name: Human-Robotix
-  website: null
+  website: https://www.human-robotix.com
   hq: Boston, MA
   sources:
   - massrobotics-residents
-  registry_id: null
-  decision: null
-  reason: No company website found; identity not established.
+  registry_id: human-robotix
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: HyperLight
@@ -999,9 +990,9 @@ companies:
   - nemc-members
   - nemc-propel-ops-2024
   - nemc-propel-mfg-2024
-  registry_id: null
-  decision: null
-  reason: Its reported acquisition rests only on a snippet from a site that refused our client; status not established.
+  registry_id: lintrinsic-semiconductors
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Locus Robotics
@@ -1147,14 +1138,14 @@ companies:
   ats: null
   open_roles: null
 - name: Mithril Technologies
-  website: null
-  hq: Somerville, MA
+  website: https://www.mithril.space
+  hq: Cambridge, MA
   sources:
   - nemc-members
   - nemc-propel-2026
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: mithril-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats:
     type: greenhouse
     token: mithril
@@ -1173,14 +1164,14 @@ companies:
     token: linkedin
   open_roles: 23
 - name: Nano OPS
-  website: null
+  website: https://nanoops.com
   hq: Burlington, MA
   sources:
   - nemc-members
   - nemc-propel-2026
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: nano-ops
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Nantero
@@ -1189,8 +1180,9 @@ companies:
   sources:
   - nemc-members
   registry_id: null
-  decision: null
-  reason: Its domain now redirects to an unrelated site; status not established.
+  decision: closed
+  reason: Inferred from the identity pass; no shutdown notice unless stated. Dealroom profile (https://dealroom.co/companies/nantero)
+    still shows Woburn and open roles, which looks stale.
   ats: null
   open_roles: null
 - name: Nextera Robotics (DIDGE.ai)
@@ -1235,7 +1227,8 @@ companies:
   - massrobotics-accelerator
   registry_id: null
   decision: null
-  reason: Its domain does not resolve; status not established.
+  reason: Identity check found nothing conclusive. Identity confirmed by MassRobotics, but oligo.space does not
+    resolve (DNS not found), so whether it is still operating is unclear; the directory entry may be stale.
   ats:
     type: ashby
     token: oligo
@@ -1282,9 +1275,9 @@ companies:
   hq: Boston, MA
   sources:
   - massrobotics-residents
-  registry_id: null
-  decision: null
-  reason: No company website found; identity not established.
+  registry_id: oxcart
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Pendar Technologies
@@ -1384,9 +1377,9 @@ companies:
   - nemc-members
   - nemc-propel-2025
   - masstech-quantum-2026
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: quantum-essentials
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Quantum Microwave Components
@@ -1479,12 +1472,12 @@ companies:
   open_roles: null
 - name: Revolution Space
   website: https://revolutionspace.com
-  hq: Boston
+  hq: Boston, MA
   sources:
   - web-search-aerospace
-  registry_id: null
-  decision: null
-  reason: Its domain was guessed; identity not established.
+  registry_id: revolution-space
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats:
     type: rippling
     token: revolutionspace
@@ -1540,9 +1533,9 @@ companies:
   - nemc-members
   - nemc-propel-ops-2024
   - nemc-propel-mfg-2024
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: sangtera
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Scalable Robotics
@@ -1550,9 +1543,9 @@ companies:
   hq: Boston, MA
   sources:
   - massrobotics-residents
-  registry_id: null
-  decision: null
-  reason: Press calls it a Connecticut startup and its site gives no address; location not established.
+  registry_id: scalable-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Scientific Systems Company
@@ -1647,12 +1640,12 @@ companies:
   open_roles: null
 - name: Specter Aerospace
   website: https://specteraerospace.com
-  hq: Cambridge, MA
+  hq: Boston area, MA
   sources:
   - buildlist-aerospace-boston
-  registry_id: null
-  decision: null
-  reason: Its domain was guessed; identity not established.
+  registry_id: specter-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Square Robot
@@ -1717,7 +1710,7 @@ companies:
   - nemc-propel-2026
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. '
   ats: null
   open_roles: null
 - name: Transcend Mechanics
@@ -1900,9 +1893,9 @@ companies:
   sources:
   - nemc-members
   - nemc-propel-2025
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: wober-tech
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: X-Sight
@@ -1946,6 +1939,11 @@ excluded:
   - spacevoyage-boston
   - web-search-aerospace
   reason: Boeing subsidiary headquartered in Manassas, VA; Cambridge is one site.
+- name: Cambridge Terahertz
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  reason: Headquartered in Sunnyvale, CA; Cambridge is one office.
 - name: GE Aerospace
   sources:
   - spacevoyage-boston
