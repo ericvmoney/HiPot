@@ -110,6 +110,15 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 - A "Great matches only" toggle sits in the persona bar.
 - Nothing new is stored.
 
+## Keeping board.json small
+
+The artifact limit is 16 MB per file, and the target is about 12 MB.
+- **Summaries:** cut to 200 characters (`SUMMARY_CHARS`). The cut falls at a sentence end when one lies past 60% of that, otherwise at a word, with "…".
+- **`seen`:** written only when a role has no `posted` date; the page dates a role by `posted`, else `seen`.
+- **`emp`:** written only when it is not full-time.
+
+On 2026-11-28's data this took the shared build from 8.9 MB to 6.1 MB for 10,348 roles, about 590 B per role.
+
 ## Company categories (decision 23)
 
 **Publish step.**

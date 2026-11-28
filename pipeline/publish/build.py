@@ -148,17 +148,38 @@ def _role_record(job: dict) -> dict[str, Any]:
             record["lvb"] = "years"
     if job.get("experience_years") is not None:
         record["yrs"] = job["experience_years"]
-    if job["employment"] != "unknown":
-        record["emp"] = job["employment"]
+    if job["employment"] not in ("unknown", "full-time"):
+        record["emp"] = job["employment"]   # full-time is the usual case; the page tags only the others
     if job["pay"]:
         pay = job["pay"]
         record["pay"] = {"min": pay["min"], "max": pay["max"], "cur": pay["currency"], "per": pay["period"]}
+    # The page dates a role by `posted`, else `seen`: the first-seen day is kept only when there is no posted date.
     if job["posted_date"]:
         record["posted"] = job["posted_date"]
-    record["seen"] = job["first_seen"][:10]
+    else:
+        record["seen"] = job["first_seen"][:10]
     if job.get("summary"):
-        record["summary"] = job["summary"]
+        record["summary"] = shorten(job["summary"], SUMMARY_CHARS)
     return record
+
+
+SUMMARY_CHARS = 200   # summaries are half of board.json; the page shows them behind "From the posting"
+
+
+def shorten(text: str, limit: int) -> str:
+    """At most `limit` characters: whole sentences when one ends in the last 40%, else whole words and '…'."""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    head = text[:limit]
+    if head[-1] in ".!?" and text[limit] == " ":
+        return head
+    stop = max(head.rfind(". "), head.rfind("! "), head.rfind("? "))
+    if stop >= limit * 0.6:
+        return head[:stop + 1]
+    space = head[:limit - 1].rfind(" ")
+    cut = head[:space] if space > 0 else head[:limit - 1]
+    return cut.rstrip(" ,;:-–—") + "…"
 
 
 def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool) -> dict[str, Any]:
