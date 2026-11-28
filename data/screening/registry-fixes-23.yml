@@ -1,0 +1,19 @@
+# Registry fixes 23: Ford duplicate marked (2026-11-27).
+#
+# Written by workstream A2 at the supervisor's request. `ford` (from the old-hub seed) and `ford-motor-company`
+# (from the Midwest proposals) are the same company. Both ids stay: `ford` is kept only so the seven old seed jobs in
+# data/seed/jobs.json still resolve. Neither is listed. Any future category or ruling goes on ford-motor-company only.
+#
+#   kind: reason-only      corrects the public reason; the tier is unchanged (tools/apply_screening.py retier)
+
+fixes:
+- id: ford
+  name: Ford
+  kind: reason-only
+  was:
+    tier: out
+    reason: Mostly combustion vehicles.
+  climate:
+    tier: out
+    reason: Duplicate of ford-motor-company, kept only so old seed jobs resolve; never tag or list it.
+  checked: '2026-11-27'
