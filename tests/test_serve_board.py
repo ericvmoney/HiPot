@@ -50,8 +50,14 @@ def call(srv, method, path, body=None, host=None, origin="own", headers=None):
 
 def test_status(server):
     status, headers, body = call(server, "GET", "/api/local/status")
-    assert status == 200 and json.loads(body) == {"ok": True}
+    assert status == 200 and json.loads(body) == {"ok": True, "files": {"persona": False, "my-roles": False}}
     assert not any(key.lower().startswith("access-control") for key in headers)
+    # It says which files exist, so the page asks only for those.
+    call(server, "PUT", "/api/local/my-roles", b"my_roles_version: 0\nroles: []\n")
+    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True}
+    call(server, "PUT", "/api/local/persona", PERSONA)
+    call(server, "DELETE", "/api/local/persona")
+    assert json.loads(call(server, "GET", "/api/local/status")[2])["files"] == {"persona": False, "my-roles": True}
 
 
 @pytest.mark.parametrize("name,file", [("persona", "persona.yml"), ("my-roles", "my-roles.yml")])

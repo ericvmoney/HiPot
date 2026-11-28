@@ -34,7 +34,7 @@ def test_what_is_saved_and_when():
     assert "forgetLocalPersona();" in stop
     assert "if (localOn) localApi('persona', 'DELETE');" in SCRIPT
     # A persona handed over from the persona page is in the tab at load: it is saved unless the file says the same.
-    restore = section("function restoreLocalPersona()", "function saveLocalPersona()")
+    restore = section("function restoreLocalPersona(exists)", "function saveLocalPersona()")
     assert "if (!persona) {" in restore and "JSON.stringify(saved) !== JSON.stringify(persona)" in restore
     # My Roles: merged on load (latest change wins), saved after each change, debounced, as the export's YAML.
     assert "MyRoles.importData(window.jsyaml.load(results[0], { schema: window.jsyaml.JSON_SCHEMA }), mine)" in SCRIPT
@@ -57,3 +57,19 @@ def test_the_pure_blocks_stay_pure():
         code = script_block(block)
         for needle in ("fetch(", "localApi", "/api/local", "XMLHttpRequest", "document.", "location."):
             assert needle not in code, (block, needle)
+
+
+def test_only_files_the_status_lists_are_asked_for():
+    # A fresh local-data/ makes no 404s: the status names the files that exist.
+    start = section("function startLocal()", "function renderLocalNotes()")
+    assert "restoreLocalPersona(files.persona === true), restoreLocalMine(files['my-roles'] === true)" in start
+    for name in ("Persona", "Mine"):
+        body = section(f"function restoreLocal{name}(exists)", "function saveLocalPersona()" if name == "Persona" else "function scheduleLocalMine()")
+        assert body.index("if (!exists)") < body.index("localApi(")
+
+
+def test_a_removed_storage_key_never_empties_my_roles():
+    # Another tab clearing site data (or deleting the key) fires a storage event with no new value.
+    # Following it would empty this tab's list and then the copy in local-data/.
+    handler = section("window.addEventListener('storage'", "if (window.claude && window.claude.use)")
+    assert "if (event.key !== MINE_KEY || event.newValue === null) return;" in handler
