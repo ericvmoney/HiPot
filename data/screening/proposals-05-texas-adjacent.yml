@@ -1,0 +1,4135 @@
+# Proposals 02 (Texas (adjacent categories)): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+status: draft
+companies:
+- id: 9-mothers
+  name: 9 Mothers
+  website: https://9mothers.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: 9-mothers
+  read: auto
+  sectors:
+  - electric-aviation
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: AI counter-drone point-defense turret (Edda), with acoustic sensor, shotgun system and Counter-Shahed
+      systems planned for 2027. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:9-mothers seen 2026-11-27, token matched by name; board page checked: 10 open roles. Headcount
+    note: Site lists 10 open roles; test facility in Burnet, TX. Stage: Search snippet says Y Combinator 2026 batch;
+    YC profile not found (ycombinator.com/companies/9-mothers is an unrelated 2012 company). No round found. Flags:
+    defense is main business; customers are US Government and primes per site. Evidence: https://www.9mothers.com/
+    Region sources: avadt50. Confidence: medium. Unresolved: founded year, headcount, funding'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: accelsius
+  name: Accelsius
+  website: https://accelsius.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: adp
+    board: 22109fcc-6006-4b20-ad53-1da2c510248f
+  read: manual
+  sectors: []
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 88
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/accelsius)
+  climate:
+    tier: out
+    reason: NeuCool two-phase direct-to-chip liquid cooling systems for data centers. Data-center equipment and
+      computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 88 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
+  notes: 'Board adp:22109fcc-6006-4b20-ad53-1da2c510248f seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Dealroom 88, band <100; undated. Founded: https://dealroom.co/companies/accelsius.
+    Stage: Series B $65M, January 2026, led by Johnson Controls with Legrand (Dealroom). Created by Innventure on
+    Nokia Bell Labs IP. Flags: main customers are data centers; Innventure company. Evidence: https://accelsius.com/
+    https://dealroom.co/companies/accelsius Region sources: ocp-members, opportunity-austin. Confidence: high.'
+  categories:
+  - data-centers
+- id: acutronic-aerospace-components
+  name: Acutronic Aerospace Components
+  website: https://acutronic.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Acutronic group: simulation and test (motion) systems, aerospace components, stabilized platforms;
+      US units include Acutronic Turbines, Power Systems and Actuation. Adjacent (Aerospace and space), not clean
+      tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Acutronic Holding AG; not independent.
+  notes: 'No job board found on the company''s site. Stage: Site footer names Acutronic Holding AG; US entities
+    Acutronic USA, Acutronic Turbines, Acutronic Power Systems, Acutronic Actuation. Parent appears to be Acutronic
+    Holding AG. Flags: subsidiary of Acutronic Holding AG (likely HQ outside US); Texas site not confirmed; US entities
+    share a 737 (Austin-area) phone number; may serve defense. Evidence: https://www.acutronic.com/ Region sources:
+    opportunity-austin. Confidence: low. Unresolved: HQ city, Austin/Bastrop site, jet engine product, headcount'
+  categories:
+  - aerospace-space
+- id: additive-manufacturing-technologies-amt
+  name: Additive Manufacturing Technologies (AMT)
+  website: https://amtechnologies.com
+  careers_url: null
+  hq: Sheffield, UK
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Automated post-processing equipment for 3D-printed parts: PostPro vapor-smoothing systems, finishing
+      agents and the Digital Manufacturing System. Adjacent (Advanced manufacturing), not clean tech under the rubric
+      (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'No job board found on the company''s site. Founded: https://amtechnologies.com/about-us. Stage: Not stated
+    on own site. Flags: HQ outside region (UK); Texas site is Round Rock (3161 Eagles Nest St), not Cedar Park as
+    in input; not defense, not software. Evidence: https://amtechnologies.com https://amtechnologies.com/about-us
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Headcount and funding not found.'
+  categories:
+  - advanced-manufacturing
+- id: aegis-aerospace
+  name: Aegis Aerospace
+  website: https://aegisaero.com/
+  careers_url: null
+  hq: Webster, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Space hardware (ISS attached payload platforms, 100kg-class satellites, lunar surface systems, ground
+      stations) plus engineering and systems-integration services. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021.
+  notes: 'No job board found on the company''s site. Headcount note: Not stated; Dealroom slug aegis-aerospace 404.
+    Founded: https://aegisaero.com. Stage: Private, no venture rounds found; formed 2021 by merging Alpha Space
+    and MEI Technologies; describes itself as woman-owned; legacy work ''since 1992''. Flags: mix of hardware and
+    engineering services firm; customers NASA, US Space Force, US Air Force and other DoD; defense is a large share
+    but not shown as the main business. Evidence: https://aegisaero.com Region sources: houston-spaceport, tx-space-commission.
+    Confidence: medium. Unresolved: Headcount; split between hardware and services.'
+  categories:
+  - aerospace-space
+- id: aeon-industries
+  name: Aeon Industries
+  website: https://aeonindustrial.com
+  careers_url: null
+  hq: Cedar Park, TX
+  ats:
+    type: lever
+    board: aeon
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Zeus precision missile / tactical weapon system and ODIN autonomous targeting software. Defense is its
+      main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board lever:aeon seen 2026-11-27, token matched by name; board page checked: 10 open roles. Headcount
+    note: Cedar Park agreement (approved 2026-05-28) requires 135 jobs by end of 2029 at a 48,000 sq ft HQ and manufacturing
+    site. Stage: No round found; company cites a $13.8M SOCOM contract for Zeus missiles (company site). Flags:
+    defense is main business; company calls itself Aeon / Aeon Industrial, not Aeon Industries; aeonindustries.com
+    is a parked domain; HQ moving from Austin to Cedar Park (2026). Evidence: https://aeonindustrial.com/who-we-are
+    https://communityimpact.com/cedar-park/development/cedar-park-approves-15-million-economic-development-agreement-with-weapons-manufacturer/
+    Region sources: avadt50, opportunity-austin. Confidence: medium. Unresolved: founded year (one database snippet
+    says 2023, not opened), headcount, funding'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: agellus-tank-robotics
+  name: Agellus Tank Robotics
+  website: https://agellustankrobotics.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Submersible robots that assess, clean, inspect and maintain aboveground storage tanks while in service,
+      plus a Tank Intelligence software platform (site now agellustankrobotics.ai). Adjacent (Autonomy and robotics,
+      Combustion, oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site invites investment; no round stated. Flags: oil
+    and gas: robot developer that deploys its robots as a service; sale of robots not stated; customers are tank
+    operators (oil and gas storage implied, not stated on home page). Evidence: https://agellustankrobotics.com
+    https://agellustankrobotics.ai/ Region sources: rice-evd-2026. Confidence: medium. Unresolved: founded, headcount,
+    funding'
+  categories:
+  - autonomy-robotics
+  - oil-gas
+- id: akos-energy
+  name: AKOS Energy
+  website: https://www.akosenergy.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Intervention, drilling and fishing tools and intelligent coiled-tubing solutions (optical, electrical,
+      hybrid) for wellbore logging and mechanical work. Adjacent (Combustion, oil and gas), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated; AKOS Energy Corporation. Flags: oil and
+    gas: equipment developer that also offers services; site is a Wix frame, copyright 2020; may be stale; HQ not
+    stated; Austin, TX unverified. Evidence: https://akosenergy.com https://haysallen6.wixsite.com/akos Region sources:
+    rice-etvf-2023. Confidence: low. Unresolved: hq, founded, headcount, funding, current activity'
+  categories:
+  - oil-gas
+- id: allen-control-systems
+  name: Allen Control Systems
+  website: https://allencontrolsystems.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: allen-control-systems
+  read: auto
+  sectors:
+  - electric-aviation
+  - buildings
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 229
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/allen-control-systems)
+  climate:
+    tier: out
+    reason: Bullfrog, an AI-enabled robotic weapon station that makes existing weapons (M240, M2) autonomous to
+      detect, track and defeat drones. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 229 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
+  notes: 'Board ashby:allen-control-systems seen 2026-11-27, token matched by name; board page checked: 19 open
+    roles. Headcount note: Dealroom figure 229, band 100-500; undated. Company site cites a 191,000 sq ft manufacturing
+    facility in Austin. Founded: https://dealroom.co/companies/allen-control-systems. Stage: Series B $200M, June
+    2026, $2.2B post-money (Dealroom); Series A $30M March 2025. Flags: defense is main business; deployed with
+    US Army, Navy, Air Force per company site; offices also in Alexandria VA and Huntsville AL. Evidence: https://www.allencontrolsystems.com/
+    https://dealroom.co/companies/allen-control-systems Region sources: avadt50, opportunity-austin. Confidence:
+    high.'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: alpine-silica
+  name: Alpine Silica
+  website: https://alpinesilica.com
+  careers_url: null
+  hq: Willow Park, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Frac sand from in-basin mines; site says it operates the largest US frac sand reserve with eight facilities
+      near well sites serving Texas and Louisiana. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by ProFrac Holding Corp; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Not stated. Stage: Not stated on own site;
+    its HQ address (333 Shops Blvd, Willow Park, TX) is the same building as ProFrac Holding Corp (Nasdaq: ACDC,
+    IPO May 13, 2022), and the input says it is operated for ProFrac. https://stockanalysis.com/stocks/acdc/company/
+    Flags: subsidiary of ProFrac Holding Corp (inferred from shared address; not stated on own site); mining operator
+    (frac sand); oil and gas: supplies a material (frac sand), not equipment. Evidence: https://alpinesilica.com/about
+    https://stockanalysis.com/stocks/acdc/company/ Region sources: search-permian-sand. Confidence: medium. Unresolved:
+    Kermit and Monahans mine sites not confirmed on own site; founding year; headcount.'
+  categories:
+  - mining
+  - oil-gas
+- id: amazing-magnets
+  name: Amazing Magnets
+  website: https://amazingmagnets.com
+  careers_url: null
+  hq: Round Rock, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Neodymium rare-earth magnets and magnet assemblies, with custom magnet design, magnetizing and plastic
+      injection services. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated. Flags: unclear whether it manufactures magnets
+    or resells and finishes sourced magnets. Evidence: https://www.amazingmagnets.com https://www.amazingmagnets.com/contact-us
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Founding year, headcount, ownership not
+    found.'
+  categories:
+  - advanced-manufacturing
+- id: americase-international
+  name: Americase International
+  website: https://www.americaseinternational.com/
+  careers_url: null
+  hq: Waxahachie, TX
+  ats:
+    type: adp
+    board: defc0b8b-addd-4382-bcd6-0acd2b378ea9
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom protective cases and containment for high-value and dangerous goods, incl. lithium battery shipping
+      and storage and data-center hardware cases, plus testing and dangerous-goods consulting. Adjacent (Advanced
+      manufacturing, Data-center equipment), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board adp:defc0b8b-addd-4382-bcd6-0acd2b378ea9 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Not stated. Stage: No funding found; part of an ''Americase
+    family of companies'' (HazMat Safety Consulting, Fulcrum Testing). Flags: markets include data centers, aerospace
+    and defense, and lithium batteries; no single main customer group. Evidence: https://www.americaseinternational.com
+    Region sources: ocp-members. Confidence: medium. Unresolved: Founding year, headcount, ownership (history page
+    404).'
+  categories:
+  - advanced-manufacturing
+  - data-centers
+- id: applied-optoelectronics-aoi
+  name: Applied Optoelectronics (AOI)
+  website: https://ao-inc.com/
+  careers_url: null
+  hq: Sugar Land, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1997
+  headcount:
+    value: 4691
+    as_of: '2026-11-21'
+    source: StockAnalysis (https://stockanalysis.com/stocks/aaoi/company/)
+  climate:
+    tier: out
+    reason: Semiconductor lasers, optical components and transceivers, and cable broadband (HFC) network equipment.
+      Adjacent (Semiconductors and electronics, Data-center equipment), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 4,691 people (StockAnalysis, 2026-11-21); founded 1997 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Figure undated; profile updated 2026-11-21.
+    Dealroom maps 635 people (undated). Founded: https://stockanalysis.com/stocks/aaoi/company/. Stage: Nasdaq:
+    AAOI, IPO September 26, 2013. https://stockanalysis.com/stocks/aaoi/company/ Flags: over 1,000 employees; internet
+    data center operators are a main customer group, alongside cable TV and telecom (share not stated). Evidence:
+    https://ao-inc.com https://stockanalysis.com/stocks/aaoi/company/ https://dealroom.co/companies/applied-optoelectronics
+    Region sources: tsif-listing. Confidence: high. Unresolved: Share of revenue from data centers.'
+  categories:
+  - data-centers
+  - semis-electronics
+- id: apptronik
+  name: Apptronik
+  website: https://apptronik.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: greenhouse
+    board: apptronik
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2016
+  headcount: null
+  climate:
+    tier: out
+    reason: Apollo general-purpose humanoid robot (bipedal and wheeled) for manufacturing, logistics and retail
+      work. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2016, funding round reported in 2026.
+  notes: 'Board greenhouse:apptronik seen 2026-11-27, linked from the company''s own site: 87 open roles, 1 US-remote.
+    Headcount note: Not found. Founded: https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/.
+    Stage: Series A totalling over $935M: $350M (Feb 2025), expanded to $415M, plus $520M A-X extension on 2026-02-11;
+    post-money about $5.3B (TechCrunch). https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/
+    Flags: University of Texas spinout; series-a by name but nearly $1B raised. Evidence: https://apptronik.com
+    https://techcrunch.com/2026/02/11/humanoid-robot-startup-apptronik-has-now-raised-935m-at-a-5b-valuation/ https://pitchbook.com/news/articles/apptronik-raises-520m-as-vc-funding-for-humanoid-robotics-explodes-300
+    Region sources: avadt50, austin-founders-feed, opportunity-austin. Confidence: medium. Unresolved: HQ city not
+    stated on fetched pages (Austin from input, not confirmed); headcount.'
+  categories:
+  - autonomy-robotics
+- id: arix-technologies
+  name: ARIX Technologies
+  website: https://arix-tech.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: Pipe-climbing robots that inspect for corrosion under insulation (PEC, RTR and visual), sold as a managed
+      inspection service, plus Helios asset-data software. Adjacent (Autonomy and robotics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom says fewer than 100 (no band lower
+    bound). Founded: https://dealroom.co/companies/arix-technologies. Stage: Dealroom: Series A investors incl.
+    Stanley Ventures, Evok Innovations, Contour Venture Partners, NGIF Capital; seed from NSF; total $10-50M; amounts
+    and dates not shown. https://dealroom.co/companies/arix-technologies Flags: oil and gas: makes inspection robots
+    but sells inspection as a service; domain found by redirect from arixtech.com. Evidence: https://www.arix-tech.com/
+    https://dealroom.co/companies/arix-technologies Region sources: innovationmap-tempest. Confidence: medium. Unresolved:
+    HQ not stated on own site (Dealroom: Houston); round dates.'
+  categories:
+  - autonomy-robotics
+- id: atlas-energy-solutions
+  name: Atlas Energy Solutions
+  website: https://atlas.energy
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ukg
+    board: recruiting2.ultipro.com/ATL1007ATSC/JobBoard/6eb447b8-e4eb-4c77-8c5c-5c6dc1f7a616
+  read: manual
+  sectors:
+  - grid
+  stage: public
+  founded: 2017
+  headcount:
+    value: 1511
+    as_of: '2026-11-26'
+    source: StockAnalysis (https://stockanalysis.com/stocks/aesi/company/)
+  climate:
+    tier: out
+    reason: Supplies Permian Basin frac sand (proppant) from its own Kermit and Monahans, TX mines, with sand logistics
+      and wellsite services; also has a distributed power business (PrimePower, FlexPower, micro-grids). Mine operators
+      are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1,511 people (StockAnalysis, 2026-11-26); founded 2017, public, with a listing or offering reported
+      in 2023.
+  notes: 'Board ukg:recruiting2.ultipro.com/ATL1007ATSC/JobBoard/6eb447b8-e4eb-4c77-8c5c-5c6dc1f7a616 seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Figure undated; profile
+    updated 2026-11-26. Founded: https://ir.atlas.energy. Stage: NYSE: AESI, IPO March 9, 2023 at $18.00. https://stockanalysis.com/stocks/aesi/company/
+    Flags: oil and gas: supplies a material (frac sand, 14 proppant plants) plus logistics and completion services;
+    not an equipment maker; mining operator (frac sand mines incl. Kermit and Monahans, TX); Power segment supplies
+    natural gas-powered generators, mainly for oil and gas production; over 1,000 employees; acquired Hi-Crush in
+    March 2024. Evidence: https://atlas.energy https://ir.atlas.energy https://stockanalysis.com/stocks/aesi/company/
+    Region sources: search-permian-sand. Confidence: high.'
+  categories:
+  - mining
+  - oil-gas
+- id: avant-technology
+  name: Avant Technology
+  website: null
+  careers_url: null
+  hq: Pflugerville, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Design and manufacture of memory modules and solid-state drives (owns the Mushkin brand). Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Pharr expansion (>$20M) expected to create
+    250 jobs; $4.83M TSIF grant announced 2026-04-23 (search snippets). Stage: Private; no venture rounds found.
+    Acquired Mushkin in 2013; ''more than 30 years'' in memory modules (search snippets). Flags: HQ is Pflugerville,
+    not Pharr as in input; products for enterprise, automotive and industrial uses. Evidence: https://gov.texas.gov/news/post/governor-abbott-announces-texas-semiconductor-innovation-fund-grant-to-avant-technology
+    https://www.areadevelopment.com/newsitems/5-5-2026/avant-technology-pharr-texas.shtml Region sources: tsif-listing.
+    Confidence: medium. Unresolved: Own website not identified; founding year and headcount not found.'
+  categories:
+  - semis-electronics
+- id: axiom-space
+  name: Axiom Space
+  website: https://www.axiomspace.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: workday
+    board: axiomspace
+  read: manual
+  sectors:
+  - buildings
+  stage: late
+  founded: 2016
+  headcount:
+    value: 500
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/axiom-space)
+  climate:
+    tier: out
+    reason: Building a commercial space station (Axiom Station) and spacesuits (The Suit); flies private human spaceflight
+      missions. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 500 people (Dealroom, 2026-11-27); founded 2016, funding round reported in 2026.
+  notes: 'Board workday:axiomspace.wd5.myworkdayjobs.com/External_Career_Site seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Dealroom band 500-1,000, undated; Dealroom also
+    maps 789 people. Founded: https://www.axiomspace.com/about. Stage: Dealroom: 18 of 19 investors entered at Series
+    B or later (incl. Aljazira Capital, Qatar Investment Authority); valuation $1-2.5B last recorded Jun 2026. Exact
+    round letters not shown. https://dealroom.co/companies/axiom-space Flags: HQ city from Dealroom; own about page
+    does not state it; stage id approximate: Dealroom paywalls round details. Evidence: https://www.axiomspace.com/about
+    https://dealroom.co/companies/axiom-space Region sources: houston-spaceport, tx-space-commission, innovationmap-funding-2025.
+    Confidence: medium. Unresolved: Exact latest round and date.'
+  categories:
+  - aerospace-space
+- id: baker-hughes
+  name: Baker Hughes
+  website: https://www.bakerhughes.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: workday
+    board: bakerhughes
+  read: manual
+  sectors: []
+  stage: public
+  founded: null
+  headcount:
+    value: 56000
+    as_of: '2026-11-27'
+    source: Baker Hughes (https://www.bakerhughes.com/company/about-us)
+  climate:
+    tier: out
+    reason: 'Energy technology company with two segments: Oilfield Services and Equipment, and Industrial and Energy
+      Technology (gas technology, industrial products and solutions). Adjacent (Combustion, oil and gas), not clean
+      tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '56,000 people (Baker Hughes, 2026-11-27): over the 4,000 cap and its tolerance.'
+  notes: 'Board workday:bakerhughes.wd5.myworkdayjobs.com/BakerHughes seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: About 56,000; undated on the company page; as_of
+    is the date seen. Stage: Nasdaq: BKR (company page caption); listing year not found on pages fetched. Site says
+    more than a century of history. Flags: over 1,000 employees; oil and gas: equipment maker and service provider;
+    HQ Houston not confirmed on pages fetched (281 phone for IR). Evidence: https://www.bakerhughes.com/company/about-us
+    https://investors.bakerhughes.com Region sources: otc-spotlight-2026, otc-spotlight-2025. Confidence: medium.
+    Unresolved: founded year, listing year, HQ confirmation'
+  categories:
+  - oil-gas
+- id: blue-sky-measurements
+  name: Blue Sky Measurements
+  website: https://bluesky.eco
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: NIRview, a patented fixed-position near-infrared scanner for permanent installation that measures methane
+      emissions at well pads daily. Methane and emissions monitoring is out (owner decision 16).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: ARPA-E grant 2021 (site); no venture round stated. Flags:
+    oil and gas: equipment (sensor) maker. Evidence: https://bluesky.eco Region sources: rice-etvf-2024. Confidence:
+    medium. Unresolved: founded, headcount, funding'
+  categories:
+  - oil-gas
+- id: bot-auto
+  name: Bot Auto
+  website: https://bot.auto/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: greenhouse
+    board: botauto
+  read: auto
+  sectors:
+  - grid
+  stage: seed
+  founded: 2023
+  headcount:
+    value: 96
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/bot-auto)
+  climate:
+    tier: out
+    reason: Develops Level 4 autonomous ('humanless') trucks and hauls paid freight through its Capacity Grid. Purely
+      autonomous road vehicles are out (owner ruling A5).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 96 people (Dealroom, 2026-11-27); founded 2023, funding round reported in 2024.
+  notes: 'Board greenhouse:botauto seen 2026-11-27, linked from the company''s own site: 20 open roles. Headcount
+    note: Dealroom figure undated. Founded: https://dealroom.co/companies/bot-auto. Stage: Dealroom: $20M round
+    Sep 2024, labelled seed in the table but described as Pre-A in the text; $80M valuation. https://dealroom.co/companies/bot-auto
+    Flags: autonomous road vehicle (trucking); autonomy software plus freight operation; does not appear to build
+    its own trucks. Evidence: https://bot.auto https://dealroom.co/companies/bot-auto Region sources: innovationmap-tempest.
+    Confidence: medium. Unresolved: Whether physical trucks are its own product (likely retrofitted third-party
+    trucks).'
+  categories:
+  - autonomy-robotics
+- id: bovi
+  name: Bovi
+  website: https://bovi.tech
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Rugged connectivity and remote-control kits (case systems, bolt-on kits, command centers, ROS2 teleop)
+      for field robots and autonomous machines; earlier an orchard tractor autonomy retrofit kit. Adjacent (Advanced
+      manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: HQ from Austin Technology Incubator listing, not stated
+    on company site; bovi.ag redirects to bovi.tech; includes network management services. Evidence: https://bovi.tech/
+    https://ati.utexas.edu/company/bovi/ Region sources: ati-ut. Confidence: medium. Unresolved: founded, headcount,
+    funding'
+  categories:
+  - advanced-manufacturing
+- id: bravo-ordnance
+  name: Bravo Ordnance
+  website: https://warhead.co
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom warheads (fragmentation, thermobaric, missile, loitering munition) and explosives, with 3D-printed
+      components, for drones and other uncrewed systems. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: defense is main business; Deep Tech Week profile: HQ
+    Austin, manufacturing in Cedar Creek (Bastrop County); ITAR-compliant. Evidence: https://warhead.co/ https://www.deep-tech-week.com/organizations/bravo-ordnance
+    Region sources: avadt50, opportunity-austin. Confidence: medium. Unresolved: founded, headcount, funding'
+  categories:
+  - advanced-manufacturing
+  - defense
+- id: caddo-creek-resources-company
+  name: Caddo Creek Resources Company
+  website: null
+  careers_url: null
+  hq: Marshall, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Caddo Creek Resources Company, LLC, permittee of the Marshall lignite mine (permit 59A), Harrison and
+      Panola counties, TX. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Parent not confirmed on pages fetched (nacoal.com home
+    page names no mines). Flags: mining operator (lignite coal); on RRC permittees list Feb 2023; operating status
+    unknown. Evidence: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf https://www.nacoal.com Region
+    sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
+  categories:
+  - mining
+- id: capwell-services
+  name: Capwell Services
+  website: https://capwell.org
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Capwell units, designed and made in the USA, that capture methane from low-flow vents at oil and gas
+      sites and return the gas to operators. Adjacent (Combustion, oil and gas), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on site. Flags: oil and gas: equipment maker;
+    HQ not stated on site; Houston, TX unverified. Evidence: https://capwell.org Region sources: rice-etvf-2024,
+    rice-evd-2026. Confidence: medium. Unresolved: hq, founded, headcount, funding'
+  categories:
+  - oil-gas
+- id: cesiumastro
+  name: CesiumAstro
+  website: https://www.cesiumastro.com/
+  careers_url: null
+  hq: Bee Cave, TX
+  ats:
+    type: lever
+    board: CesiumAstro
+  read: auto
+  sectors: []
+  stage: late
+  founded: 2017
+  headcount:
+    value: 452
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/cesiumastro)
+  climate:
+    tier: out
+    reason: 'Space and defense communications hardware: Element spacecraft, Skylark SATCOM terminals, Ka-band phased-array
+      payloads, software-defined radios, onboard processors and power modules. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 452 people (Dealroom, 2026-11-27); founded 2017, funding round reported in 2026.
+  notes: 'Board lever:CesiumAstro seen 2026-11-27, linked from the company''s own site: 379 open roles. Headcount
+    note: Dealroom figure undated; same page also shows a 500-1,000 band. Founded: https://dealroom.co/companies/cesiumastro.
+    Stage: Own site headlines a ''$730 Million Series D'' (no date); Dealroom shows Series C $270M Feb 2026 at $1.1B
+    valuation plus $200M debt (EXIM, JP Morgan) Feb 2026. Sources disagree. https://www.cesiumastro.com ; https://dealroom.co/companies/cesiumastro
+    Flags: mission is space and defense communications; defense a major market, main share not stated; round letter
+    disputed: own site Series D vs Dealroom Series C. Evidence: https://www.cesiumastro.com https://dealroom.co/companies/cesiumastro
+    Region sources: tx-space-commission, avadt50, austin-founders-feed, opportunity-austin. Confidence: medium.
+    Unresolved: Whether defense is the main business; Series D date.'
+  categories:
+  - aerospace-space
+- id: chatsworth-products
+  name: Chatsworth Products
+  website: https://www.chatsworth.com/
+  careers_url: null
+  hq: Round Rock, TX
+  ats:
+    type: paycom
+    board: A0EC44FF0B0DFB12FBD46DE2D6CD7840
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1991
+  headcount: null
+  climate:
+    tier: out
+    reason: 'ICT physical infrastructure: cabinets, enclosures, racks, cable management, eConnect PDUs, environmental
+      monitoring, thermal and liquid cooling. Adjacent (Data-center equipment), not clean tech under the rubric
+      (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1991 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board paycom:A0EC44FF0B0DFB12FBD46DE2D6CD7840 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://www.chatsworth.com/en-us/about-cpi. Stage: Private, no venture
+    rounds: ''100% employee-owned'' through an ESOP (https://www.chatsworth.com/en-us/about-cpi). Flags: main customers
+    are data centers; employee-owned (ESOP); Texas site on own page is a Research, Development and Training Center
+    in Georgetown, TX, not Round Rock; HQ likely outside region (not stated on page). Evidence: https://www.chatsworth.com/en-us/about-cpi
+    Region sources: opportunity-austin, ocp-members. Confidence: medium. Unresolved: HQ city and headcount not stated
+    on fetched page; Round Rock site not confirmed.'
+  categories:
+  - data-centers
+- id: circul8-energy-and-environment
+  name: Circul8 Energy & Environment
+  website: https://circul8nrg.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Base oil recovery (site title 'Circul8 | base oil recovery'); input says Delta series systems that recover
+      base oil from spent oil-based drilling mud. Site body did not render. Adjacent (Combustion, oil and gas),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found; Dealroom slug circul8 is 404. Flags: oil
+    and gas: equipment vs service not confirmed; site content did not load (JavaScript). Evidence: https://circul8nrg.com
+    https://dealroom.co/companies/circul8 Region sources: rice-etvf-2025. Confidence: low. Unresolved: product detail,
+    hq, founded, headcount, funding, equipment vs service'
+  categories:
+  - oil-gas
+- id: ckd-usa
+  name: CKD USA
+  website: https://ckdusa.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Pneumatic, fluid-control and other automation components and automatic machinery (US arm of CKD Corporation
+      of Japan). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by CKD Corporation; not independent.
+  notes: 'No job board found on the company''s site. Stage: Site links to parent CKD Corporation (ckd.co.jp); relationship
+    not described on fetched pages; parent listing year not checked. Flags: subsidiary of CKD Corporation (Japan),
+    identity of parent from site link; HQ outside region (not confirmed); Austin, TX site not confirmed; not defense,
+    not software. Evidence: https://www.ckdusa.com https://www.ckdusa.com/company Region sources: opportunity-austin.
+    Confidence: low. Unresolved: US HQ, Austin site, founding year, headcount not found; input product (metal parts
+    for semiconductor machinery) not confirmed.'
+  categories:
+  - semis-electronics
+- id: control-panels-usa
+  name: Control Panels USA
+  website: https://controlpanelsusa.net
+  careers_url: null
+  hq: Georgetown, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom industrial control panels and relay rack assemblies, plus instrumentation and control (I&C) services.
+      Adjacent (Advanced manufacturing, Data-center equipment), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated. Flags: no data-center, oil and gas or defense
+    customer focus stated; panel fabrication plus I&C services. Evidence: http://controlpanelsusa.net/ Region sources:
+    opportunity-austin. Confidence: medium. Unresolved: Founding year, headcount, ownership not found. controlpanelsusa.com
+    redirects to controlpanelsusa.net.'
+  categories:
+  - advanced-manufacturing
+  - data-centers
+- id: cool-edge-bits
+  name: Cool Edge Bits
+  website: https://cooledgebits.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: out
+    reason: Patented PDC (polycrystalline diamond compact) fixed-cutter drill bits (Cool Edge Series) for oil and
+      gas, plus bit rental, repair and consulting. Adjacent (Combustion, oil and gas), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'No job board found on the company''s site. Founded: https://cooledgebits.com. Stage: Not stated on site.
+    Flags: oil and gas: equipment maker; site address is Houston (820 Gessner Rd), not Richmond as input said. Evidence:
+    https://cooledgebits.com Region sources: rice-etvf-2024. Confidence: medium. Unresolved: headcount, funding'
+  categories:
+  - oil-gas
+- id: corrolytics
+  name: Corrolytics
+  website: https://corrolytics.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Patented corrosion detection and monitoring products, including an on-site MIC test kit that distinguishes
+      microbial corrosion from other types in near real time. Adjacent (Combustion, oil and gas), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists NSF SBIR Phase I (2020), GLIDE Innovation
+    Fund investments (2022, 2023, 2024; labelled by the fund as Series A/B/B+, likely small fund tranches, not priced
+    rounds) and a DOT SBIR Phase I of $200,000 (2024). Legal entity MIC Monitor LLC. Flags: HQ not stated; news
+    datelines point to Houston but Cleveland State University and GLIDE (Ohio) ties suggest an Ohio origin; test
+    kit is a consumable product; physical status partly unclear. Evidence: https://corrolytics.com Region sources:
+    rice-etvf-2024, rice-evd-2026. Confidence: medium. Unresolved: hq, founded, headcount'
+  categories:
+  - oil-gas
+- id: creative-3d
+  name: Creative 3D
+  website: null
+  careers_url: null
+  hq: Cedar Park, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: 3D printing systems, including EVO, a single-cell 'factory-in-a-box' with more than ten industrial 3D
+      printers. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'No job board found on the company''s site. Headcount note: A trade report says the Cedar Park move adds
+    45 jobs (search snippet only). Founded: search snippet (cbinsights.com, startupsavant.com); not confirmed on
+    own site. Stage: Listed in the Capital Factory portfolio (https://capitalfactory.com/portfolio/creative-3d-tecnologies-inc,
+    search result); no round found. Flags: full name Creative 3D Technologies; input city ''Cedar Creek'' is wrong:
+    HQ moved from Austin to Cedar Park (1200 BMC Dr), reported about late 2025; not defense, not software. Evidence:
+    https://www.voxelmatters.com/creative-3d-technologies-relocates-hq-to-cedar-park/amp/ https://www.tradeandindustrydev.com/region/texas/news/tx-creative-3d-technologies-establishes-new-hq-35322.md
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Own domain not identified; headcount and
+    funding not found.'
+  categories:
+  - advanced-manufacturing
+- id: crewline
+  name: Crewline
+  website: https://crewline.ai
+  careers_url: null
+  hq: Buda, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Retrofit kit that makes compatible rollers and dozers self-driving; dump trucks planned for H2 2027.
+      Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Blog post announces a $7.1M seed round (date and investors
+    not read). https://www.crewline.ai/blog Flags: autonomous off-road construction equipment (retrofit kit). Evidence:
+    https://www.crewline.ai/ https://www.crewline.ai/blog Region sources: opportunity-austin. Confidence: medium.
+    Unresolved: Founded year, headcount, seed date and investors.'
+  categories:
+  - autonomy-robotics
+- id: critical-materials-group
+  name: Critical Materials Group
+  website: null
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: criticalmaterialsgroup
+  read: auto
+  sectors: []
+  stage: seed
+  founded: 2025
+  headcount: null
+  climate:
+    tier: out
+    reason: Modular, automation-ready production platforms for military-grade energetic materials; acquired Rocky
+      Mountain Scientific Laboratory (energetics research and testing). Defense is its main business (owner ruling
+      A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025, funding round reported in 2026.
+  notes: 'Board ashby:criticalmaterialsgroup seen 2026-11-27, token matched by name; board page checked: 10 open
+    roles. Headcount note: A search snippet cited about 9 employees from Built In, which is off-limits and was not
+    opened. Founded: https://pulse2.com/critical-materials-group-raises-10-3-million-seed-round-led-by-overmatch-ventures/amp/.
+    Stage: $10.3M seed led by Overmatch Ventures with Victory Six Advisors and Fulcrum Ventures, announced 2026-09-02
+    (Pulse 2.0; Janes). Flags: defense is main business; first production facility slated for 2027 (Defense Daily
+    snippet); ATF licence not confirmed. Evidence: https://pulse2.com/critical-materials-group-raises-10-3-million-seed-round-led-by-overmatch-ventures/amp/
+    https://www.janes.com/defence-intelligence-insights/defence-news/industry/critical-materials-group-announces-usd103-million-in-seed-funding-to-advance-energetics-production
+    Region sources: avadt50. Confidence: medium. Unresolved: company website not found; headcount'
+  categories:
+  - advanced-manufacturing
+  - defense
+- id: cumberland-additive
+  name: Cumberland Additive
+  website: null
+  careers_url: null
+  hq: Pflugerville, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2006
+  headcount: null
+  climate:
+    tier: out
+    reason: Contract metal and polymer additive manufacturing (titanium, aluminum, nickel, copper alloys) with machining;
+      ITAR and AS9100D certified. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2006 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: search snippet: began as Directed Manufacturing, Inc.
+    in 2006 (cbinsights.com). Stage: Acquired Stratasys Direct Manufacturing''s Austin metals operations, Nov 2023
+    (https://www.prweb.com/releases/cumberland-additive-doubles-metal-am-capacity-with-acquisition-of-stratasys-direct-manufacturing-metals-operations-301990582.html);
+    no venture rounds found. Flags: customers mainly aerospace, defense, space and energy (search snippet); defense
+    a major but not shown sole market; contract manufacturer; cumberlandadditive.com does not resolve. Evidence:
+    https://www.prweb.com/releases/cumberland-additive-doubles-metal-am-capacity-with-acquisition-of-stratasys-direct-manufacturing-metals-operations-301990582.html
+    https://www.cbinsights.com/company/cumberland-additive Region sources: opportunity-austin. Confidence: medium.
+    Unresolved: Current website not found; headcount and ownership not found.'
+  categories:
+  - advanced-manufacturing
+- id: diligent-robotics
+  name: Diligent Robotics
+  website: https://www.diligentrobotics.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: greenhouse
+    board: diligentrobotics
+  read: auto
+  sectors: []
+  stage: subsidiary
+  founded: 2017
+  headcount:
+    value: 167
+    as_of: '2026-11-01'
+    source: Dealroom (https://dealroom.co/companies/diligent-robotics)
+  climate:
+    tier: out
+    reason: Moxi, a mobile manipulation robot that delivers medications, labs and supplies in hospitals. Adjacent
+      (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 167 people (Dealroom, 2026-11-01). Owned by Serve Robotics; not independent.
+  notes: 'Board greenhouse:diligentrobotics seen 2026-11-27, token matched by name; board page checked: 9 open roles,
+    2 US-remote. Headcount note: Dealroom figure undated (read 2026-11-27); band 100-500. Founded: https://dealroom.co/companies/diligent-robotics.
+    Stage: Dealroom lists acquisition by Serve Robotics, January 2026, undisclosed amount. Earlier: $25M late-stage
+    VC, September 2023 (Next Coast, Canaan, True Ventures). https://dealroom.co/companies/diligent-robotics Flags:
+    subsidiary of Serve Robotics (per Dealroom); diligentrobotics.com now redirects to an unrelated Florida construction
+    firm (mydiligent.com); current site is diligentrobots.com; hospital logistics robot. Evidence: https://dealroom.co/companies/diligent-robotics
+    https://www.diligentrobots.com/ Region sources: opportunity-austin. Confidence: medium. Unresolved: Acquisition
+    not confirmed by a press release or the company''s own site.'
+  categories:
+  - autonomy-robotics
+- id: doodle-labs
+  name: Doodle Labs
+  website: https://doodlelabs.com/
+  careers_url: null
+  hq: Austin, TX or Singapore
+  ats:
+    type: breezy
+    board: doodle-labs-llc
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2008
+  headcount: null
+  climate:
+    tier: out
+    reason: Mesh Rider radios (Nano, Mini, OEM, wearable), amplifiers and software that form self-healing mesh networks
+      for drones, robots and other mobile platforms. Adjacent (Semiconductors and electronics, Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board breezy:doodle-labs-llc seen 2026-11-27, linked from the company''s own site: 25 open roles. Headcount
+    note: Site says only ''lean, world-wide team''. Founded: https://www.doodlelabs.com/about. Stage: No venture
+    rounds found; site mentions US Army and DIU development funding (2020). Dealroom page not found. Flags: defense
+    is a major sector (defense programs, Army/DIU funding) but not stated as the main business; also public safety
+    and commercial; spun out of smartBridges (1999). Evidence: https://www.doodlelabs.com/about Region sources:
+    opportunity-austin. Confidence: medium. Unresolved: Which office is HQ; headcount; ownership and funding.'
+  categories:
+  - autonomy-robotics
+  - semis-electronics
+- id: dos-republicas-coal-partnership
+  name: Dos Republicas Coal Partnership
+  website: null
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Permittee of the Eagle Pass coal mine (permit 42B), Maverick County, TX. Mine operators are out (owner
+      ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Partnership; owners not found. Flags: mining operator
+    (coal); on RRC permittees list Feb 2023; operating status unknown. Evidence: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf
+    Region sources: rrc-coal-permits. Confidence: medium. Unresolved: owners, operating status, headcount'
+  categories:
+  - mining
+- id: dsm-semichem
+  name: DSM Semichem
+  website: null
+  careers_url: null
+  hq: Plainview, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Electronic-grade sulfuric acid (ELSA) for cleaning semiconductor wafers, made in Plainview, TX. Adjacent
+      (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Project to create 40 new jobs (Texas Governor
+    release, 2025-03-28). Stage: DSM Semichem LLC is a joint venture of Dongjin USA, Samsung C&T America and Martin
+    ELSA Investment LLC; $7.87M TSIF grant announced 2025-03-28 (https://gov.texas.gov/news/post/governor-abbott-announces-texas-semiconductor-innovation-fund-grant-to-dsm).
+    Flags: joint venture of Dongjin USA, Samsung C&T America and Martin ELSA Investment. Evidence: https://gov.texas.gov/news/post/governor-abbott-announces-texas-semiconductor-innovation-fund-grant-to-dsm
+    Region sources: tsif-listing. Confidence: high. Unresolved: Website, founding year, headcount not found.'
+  categories:
+  - semis-electronics
+- id: emergent-matter
+  name: Emergent Matter
+  website: https://emergentmatter.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Hardware and software (Software Defined Matter) to build complete robots, focused on actuators, directly
+      from raw materials without assembly lines. Adjacent (Autonomy and robotics, Advanced manufacturing), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Evidence: https://www.emergentmatter.com/ Region sources: avadt50.
+    Confidence: medium. Unresolved: founded, headcount, funding'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: eos-north-america
+  name: EOS North America
+  website: https://www.eos.info/
+  careers_url: null
+  hq: Pflugerville, TX
+  ats:
+    type: workday
+    board: eosgroup
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1989
+  headcount: null
+  climate:
+    tier: out
+    reason: Industrial 3D printers (additive manufacturing systems) for metals and plastics. Adjacent (Advanced
+      manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by EOS GmbH; not independent.
+  notes: 'Board workday:eosgroup.wd3.myworkdayjobs.com/en-US/eos seen 2026-11-27, linked from the company''s own
+    site: role count not read (no public feed). Founded: https://www.eos.info/en-us/about-us/who-we-are. Stage:
+    EOS North America is part of EOS GmbH and its subsidiaries; EOS GmbH ownership not stated on pages read. https://www.eos.info/en-us/about-us/who-we-are
+    Flags: subsidiary of EOS GmbH (Germany); HQ outside region; Pflugerville is a regional technical center; another
+    Texas site: Advanced Laser Materials, Temple, TX. Evidence: https://www.eos.info/en-us/about-us/locations-worldwide
+    https://www.eos.info/en-us/about-us/who-we-are Region sources: opportunity-austin. Confidence: high. Unresolved:
+    Headcount; EOS GmbH ownership.'
+  categories:
+  - advanced-manufacturing
+- id: ets-lindgren
+  name: ETS-Lindgren
+  website: https://www.ets-lindgren.com/
+  careers_url: null
+  hq: Austin area, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1995
+  headcount: null
+  climate:
+    tier: out
+    reason: 'EMC and RF test equipment: anechoic and shielded test chambers, absorbers, antennas, amplifiers, filters,
+      positioners, shielding and test enclosures. Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by ESCO Technologies; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://www.ets-lindgren.com/about. Stage: Wholly
+    owned subsidiary of ESCO Technologies (NYSE: ESE), per https://www.ets-lindgren.com/about; ESCO listing year
+    not checked. Flags: subsidiary of ESCO Technologies (public); aerospace and defense and government among several
+    listed industries (also automotive, wireless, healthcare, IT/data centers); defense not shown to be main business;
+    not pure software or services. Evidence: https://www.ets-lindgren.com/about Region sources: opportunity-austin.
+    Confidence: high. Unresolved: Exact HQ city not stated on fetched page; headcount not found.'
+  categories:
+  - semis-electronics
+- id: even-platforms
+  name: Even Platforms
+  website: https://evenplatforms.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous factories making 5-axis CNC-machined aluminium and steel parts for aerospace and defense.
+      Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site describes a small team; first facility
+    in Austin, AS9100D certificate for a Buda, TX facility. Stage: Backed by Khosla Ventures, Quiet Capital, Link
+    Ventures, Alumni Ventures; no round disclosed (company site). Flags: contract parts manufacturer for aerospace
+    and defense. Evidence: https://www.evenplatforms.com/ Region sources: avadt50. Confidence: medium. Unresolved:
+    founded, headcount, round'
+  categories:
+  - advanced-manufacturing
+- id: fab2
+  name: fab2
+  website: https://fab2.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: fab2
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Builds chips, chip fabs, masks and fab tools and components (pumps, valves, sensors, heaters), plus
+      a browser-based chip design tool (Studio). Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:fab2 seen 2026-11-27, token matched by name; board page checked: 56 open roles. Headcount
+    note: Site lists a 120K sq ft chip fab in Austin, a 30K sq ft fab-tool shop in Lockhart TX and a 25K sq ft garage
+    fab in San Francisco. Stage: Site says funding led by Fundomo with Corner Capital, Paradigm and angels; no amount
+    or round. Evidence: https://www.fab2.com/ Region sources: avadt50, opportunity-austin. Confidence: medium. Unresolved:
+    founded year, headcount, round'
+  categories:
+  - semis-electronics
+- id: farsoon-technologies
+  name: Farsoon Technologies
+  website: https://farsoon.com
+  careers_url: null
+  hq: Round Rock, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Industrial metal and polymer powder-bed 3D printers ('open industrial-grade 3D printers') with solutions
+      and services. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on fetched pages; listing not checked. Flags:
+    HQ outside region (has North America, Europe, AMEA and China sites; HQ not stated); Round Rock, TX site not
+    confirmed. Evidence: https://www.farsoon.com https://www.farsoon-americas.com Region sources: opportunity-austin.
+    Confidence: low. Unresolved: HQ, US site, founding year, listing and headcount not found.'
+  categories:
+  - advanced-manufacturing
+- id: field-viewers-inc
+  name: Field Viewers Inc.
+  website: https://fieldviewers.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Radiation detector and readout hardware (multichannel readout ASICs, FPGA/DAQ) for isotope ID, dosimetry
+      and CBRNE, plus photon-counting CT components and AI imaging software. Adjacent (Semiconductors and electronics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: US Army SBIR Phase I and DOE Phase I awards per company
+    site; no equity round found. Flags: mix of hardware and AI software; HQ not stated on site (input says Austin).
+    Evidence: https://www.fieldviewers.com/ https://www.fieldviewers.com/about/ Region sources: ati-ut. Confidence:
+    medium. Unresolved: HQ, founded, headcount'
+  categories:
+  - semis-electronics
+- id: firefly-aerospace
+  name: Firefly Aerospace
+  website: https://fireflyspace.com/
+  careers_url: null
+  hq: Cedar Park, TX
+  ats:
+    type: workday
+    board: fireflyspace
+  read: manual
+  sectors:
+  - ev
+  stage: public
+  founded: 2017
+  headcount:
+    value: 1418
+    as_of: '2026-11-26'
+    source: StockAnalysis (https://stockanalysis.com/stocks/fly/company/)
+  climate:
+    tier: out
+    reason: Alpha and Eclipse launch vehicles, Blue Ghost lunar landers, Elytra orbital vehicles and Ocula lunar
+      imaging. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1,418 people (StockAnalysis, 2026-11-26); founded 2017, public, with a listing or offering reported
+      in 2025.
+  notes: 'Board workday:fireflyspace.wd115.myworkdayjobs.com/Firefly seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Figure undated; own site says more than 1,500;
+    Renaissance Capital gave 780 at IPO (2025). Founded: https://fireflyspace.com/company/. Stage: Nasdaq: FLY,
+    IPO August 7, 2025 (Renaissance gives Aug 6). AE Industrial is a major investor. https://stockanalysis.com/stocks/fly/company/
+    Flags: HQ address disputed: Leander, TX (own footer, StockAnalysis) vs Cedar Park, TX (own facilities section);
+    over 1,000 employees; serves national security, government and commercial customers; defense not shown as the
+    main business. Evidence: https://fireflyspace.com/company/ https://stockanalysis.com/stocks/fly/company/ https://www.renaissancecapital.com/Profile/FLY/Firefly-Aerospace/IPO
+    Region sources: tx-space-commission, opportunity-austin. Confidence: high.'
+  categories:
+  - aerospace-space
+- id: first-order-effects
+  name: First Order Effects
+  website: https://firstordereffects.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: firstordereffects
+  read: auto
+  sectors:
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Forward-deployed expeditionary equipment for autonomous systems (such as ground stations and charging
+      infrastructure), designed and built in Austin. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:firstordereffects seen 2026-11-27, token matched by name; board page checked: 14 open roles,
+    1 US-remote. Flags: defense is main business (serves the US and allies); product details are thin on the site.
+    Evidence: https://www.firstordereffects.com/ https://www.firstordereffects.com/about Region sources: avadt50.
+    Confidence: medium. Unresolved: founded, headcount, funding'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: galadyne
+  name: Galadyne
+  website: https://galadyne.io
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2025
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Liquid-propellant missiles and missile defense: Striker medium-range strike platform, Outpost containerized
+      launcher, Defender exoatmospheric interceptor. Defense is its main business (owner ruling A3).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2025.
+  notes: 'No job board found on the company''s site. Founded: https://www.deep-tech-week.com/organizations/galadyne.
+    Stage: Backed by Andreessen Horowitz, Pax Ventures and Contrary; no round amount or stage found (deep-tech-week.com
+    profile). Flags: defense is main business; address on profile is Del Valle, TX (Austin area). Evidence: https://www.galadyne.io/
+    https://www.deep-tech-week.com/organizations/galadyne Region sources: avadt50. Confidence: medium. Unresolved:
+    headcount, funding stage'
+  categories:
+  - aerospace-space
+  - defense
+- id: grc-green-revolution-cooling
+  name: GRC (Green Revolution Cooling)
+  website: https://www.grcooling.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: late
+  founded: 2009
+  headcount:
+    value: 38
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/green-revolution-cooling)
+  climate:
+    tier: out
+    reason: Single-phase immersion cooling systems (ICEraQ, ICETank) and dielectric fluids for data-center servers.
+      Data-center equipment and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 38 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); funding round reported in
+      2025.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 38, band <100; undated. Founded: https://www.grcooling.com/about/.
+    Stage: Series C $28M March 2022 led by SK Lubricants; later undisclosed late-stage round June 2025 (HTS Engineering,
+    Samsung Ventures, ENEOS, SK Enmove) per Dealroom. Series letter after C not stated. Flags: main customers are
+    data centers; founding year: company says 2009, Dealroom header 2008; stage may be series-c; Dealroom labels
+    the 2025 round only as late-stage. Evidence: https://www.grcooling.com/about/ https://dealroom.co/companies/green-revolution-cooling
+    Region sources: ocp-members. Confidence: medium. Unresolved: exact stage of June 2025 round'
+  categories:
+  - data-centers
+- id: gs-vortex-systems
+  name: GS Vortex Systems
+  website: https://gsvortex.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Vortex Flow passive no-moving-part devices that create fluid rotation to cut drag and improve flow in
+      irrigation pipes (pivots, driplines, wheel lines) and high-density slurry pipes. Adjacent (Combustion, oil
+      and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on site. Flags: HQ not stated on site; Houston,
+    TX unverified; oil and gas not mentioned on home page; markets shown are irrigation and slurry; oil and gas:
+    equipment maker if applicable. Evidence: https://gsvortex.com Region sources: rice-etvf-2025. Confidence: medium.
+    Unresolved: hq, founded, headcount, funding'
+  categories:
+  - oil-gas
+- id: halliburton
+  name: Halliburton
+  website: https://www.halliburton.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1919
+  headcount:
+    value: 40000
+    as_of: '2026-11-27'
+    source: Halliburton (https://www.halliburton.com/en/about-us)
+  climate:
+    tier: out
+    reason: Technologies, products and services for the oil and gas industry across the asset lifecycle (drilling,
+      completion, production). Adjacent (Combustion, oil and gas, Mining and exploration), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '40,000 people (Halliburton, 2026-11-27): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Site says 40K+; undated, as_of is the date
+    seen. Founded: https://www.halliburton.com/en/about-us. Stage: Public (investor relations site); exchange and
+    listing year not stated on page fetched. Flags: over 1,000 employees; oil and gas: mainly a services company
+    that also makes equipment (bits, completion tools); investor in VoltaGrid; East Texas lithium project with Chevron
+    not confirmed on page fetched; HQ Houston not confirmed on page fetched. Evidence: https://www.halliburton.com/en/about-us
+    Region sources: texastribune-2025-mining. Confidence: medium. Unresolved: listing year, lithium project, HQ
+    confirmation'
+  categories:
+  - mining
+  - oil-gas
+- id: hanyang-eng-usa
+  name: Hanyang Eng USA
+  website: null
+  careers_url: null
+  hq: Cedar Park, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'US arm of South Korean semiconductor-facility engineering firm Hanyang Eng (input: ultra-high-purity
+      piping equipment for fabs; not confirmed). Adjacent (Semiconductors and electronics, Advanced manufacturing),
+      not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Hanyang Eng; not independent.
+  notes: 'No job board found on the company''s site. Stage: Hanyang Eng USA Inc. described as US HQ of a South Korean
+    semiconductor company (search snippet of https://www.costar.com/article/1505892619); parent listing not checked.
+    Flags: subsidiary of Hanyang Eng (South Korea); HQ outside region; may be mainly installation/engineering services
+    for fabs (not confirmed). Evidence: https://www.costar.com/article/1505892619 Region sources: opportunity-austin.
+    Confidence: low. Unresolved: Own website, products, headcount not found.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: harmonic-bionics
+  name: Harmonic Bionics
+  website: https://www.harmonicbionics.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2016
+  headcount: null
+  climate:
+    tier: out
+    reason: Harmony SHR upper-body robotic rehabilitation exoskeleton (investigational device). Adjacent (Autonomy
+      and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Bioness Medical; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom gives only team size <100. Founded:
+    https://dealroom.co/companies/harmonic-bionics. Stage: Investors listed at seed and Series A; total equity $10-50M
+    (Dealroom). June 2025: Bioness Medical announced acquiring its assets and business, pending regulatory clearance.
+    Flags: acquired or being acquired by Bioness Medical (announced June 2025; completion not confirmed); medical
+    device. Evidence: https://harmonicbionics.com/about/ https://dealroom.co/companies/harmonic-bionics Region sources:
+    cockrell-funding. Confidence: medium. Unresolved: whether the Bioness deal closed; site still active in 2026'
+  categories:
+  - autonomy-robotics
+- id: hiller-measurements
+  name: Hiller Measurements
+  website: https://hillermeas.com
+  careers_url: null
+  hq: Dripping Springs, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2010
+  headcount:
+    value: 120
+    as_of: '2026-11-27'
+    source: Hiller Measurements website (https://hillermeas.com/)
+  climate:
+    tier: out
+    reason: 'Automated test systems for mission-critical hardware: custom test system design and build, test interfaces,
+      build-to-print manufacturing, RF assemblies up to 67 GHz and Proteus ATE products. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 120 people (Hiller Measurements website, 2026-11-27); founded 2010 and no equity raise in the last 5
+      years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Site says ''over 120'' employees; undated statement,
+    read 2026-11-27. Founded: https://hillermeas.com/. Stage: Ownership not stated on own site. Flags: aerospace
+    and defense listed first among focus areas (also medical device, test and measurement, 5G, power storage test);
+    defense not shown to be main business; not pure software or services. Evidence: https://hillermeas.com/ Region
+    sources: opportunity-austin. Confidence: medium. Unresolved: HQ city not stated on site (input said Dripping
+    Springs, TX); ownership not found. hillermeasurements.com redirects to hillermeas.com.'
+  categories:
+  - semis-electronics
+- id: icon
+  name: ICON
+  website: https://www.iconbuild.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: icon
+  read: auto
+  sectors: []
+  stage: late
+  founded: 2017
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/icon-build)
+  climate:
+    tier: out
+    reason: Titan 3D construction printers (robotic arm on mobile base, with pump, mixer and BuildOS software) and
+      printed wall systems for buildings. Adjacent (Advanced manufacturing, Aerospace and space), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 500 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2017.
+  notes: 'Board ashby:icon seen 2026-11-27, token matched by name; board page checked: 6 open roles, 6 US-remote.
+    Headcount note: Dealroom band 500-1k (talent data maps 622); undated. Founded: https://dealroom.co/companies/icon-build.
+    Stage: Dealroom news headline: Icon raises $200M Series D at $1.4B valuation (date not shown on page). Flags:
+    construction 3D printing; lunar/NASA work not confirmed on company pages read. Evidence: https://www.iconbuild.com/technology
+    https://dealroom.co/companies/icon-build Region sources: tx-space-commission, avadt50. Confidence: medium. Unresolved:
+    Series D date; lunar construction work not checked (iconbuild.com/about 404).'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+- id: infravision
+  name: Infravision
+  website: https://theinfravision.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - grid
+  stage: series-b
+  founded: 2018
+  headcount: null
+  climate:
+    tier: enabling
+    reason: Drone-based system that strings conductor on new and rebuilt transmission lines.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2018, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Founded: https://dronelife.com/2025/11/04/infravision-secures-91-million-to-scale-drone-powered-grid-infrastructure/.
+    Stage: Series B, $91M, announced 2025-11-03, led by GIC with Activate Capital, Hitachi Ventures, Energy Impact
+    Partners. https://dronelife.com/2025/11/04/infravision-secures-91-million-to-scale-drone-powered-grid-infrastructure/
+    Flags: founded year differs: 2018 (DroneLife) vs 2017 (CB Insights); partly a construction service (stringing
+    projects) delivered with its own hardware; HQ moved from Australia to Austin. Evidence: https://dronelife.com/2025/11/04/infravision-secures-91-million-to-scale-drone-powered-grid-infrastructure/
+    https://www.cbinsights.com/company/infravision Region sources: opportunity-austin. Confidence: medium. Unresolved:
+    Headcount; own site text did not load.'
+  categories:
+  - autonomy-robotics
+- id: innowave-rf
+  name: Innowave RF
+  website: https://innowaverf.com
+  careers_url: null
+  hq: Leander, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'RF and microwave components DC to 40 GHz: combiners/dividers, couplers, filters, duplexers, diplexers,
+      attenuators, terminations, antennas and custom assemblies. Adjacent (Semiconductors and electronics), not
+      clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Innowave RF LLC; ownership not stated. Flags: customer
+    logos include Lockheed Martin, Boeing, General Dynamics, the Navy alongside Verizon and T-Mobile; defense prominent
+    but not shown to be main business; HQ is Leander, not Austin; not software. Evidence: https://innowaverf.com
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Founding year, headcount, ownership not
+    found.'
+  categories:
+  - semis-electronics
+- id: intelliepi
+  name: IntelliEPI
+  website: https://www.intelliepi.com/
+  careers_url: null
+  hq: Allen, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: MBE-grown compound semiconductor (III-V) epitaxial wafers for wireless handsets, pHEMT, HBT, lasers
+      and IR detectors. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not stated; Dealroom slug intelliepi 404. Stage:
+    Legal name Intelligent Epitaxy Technology, Inc.; site has a ''10 largest shareholders'' section and Chinese-language
+    investor reports on a Taiwan site, suggesting a Taiwan listing (not confirmed). $4.12M Texas Semiconductor Innovation
+    Fund grant, Nov 2024. https://www.intelliepi.com Flags: HQ is Allen, TX per own site (input said Richardson);
+    possibly listed in Taiwan (unconfirmed). Evidence: https://www.intelliepi.com Region sources: dallas-innovates-intelliepi,
+    tsif-listing. Confidence: medium. Unresolved: Founding year, headcount, listing status.'
+  categories:
+  - semis-electronics
+- id: intuitive-machines
+  name: Intuitive Machines
+  website: https://www.intuitivemachines.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: public
+  founded: 2013
+  headcount:
+    value: 650
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/intuitive-machines)
+  climate:
+    tier: out
+    reason: Lunar landers, lunar data relay services and an orbital transfer vehicle (per input; own site could
+      not be loaded). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 650 people (Dealroom, 2026-11-27); founded 2013, public, with a listing or offering reported in 2023.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom ''650 employees mapped'', undated.
+    Founded: https://dealroom.co/companies/intuitive-machines. Stage: Dealroom: public via SPAC merger with Inflection
+    Point Acquisition Corp; trading on Nasdaq (LUNR) from February 2023. https://dealroom.co/companies/intuitive-machines
+    Flags: main customer NASA (not defense). Evidence: https://dealroom.co/companies/intuitive-machines Region sources:
+    houston-spaceport, tx-space-commission, innovationmap-funding-2025. Confidence: medium. Unresolved: Own site
+    failed to load (redirect loop), so product line not confirmed there.'
+  categories:
+  - aerospace-space
+- id: ironlattice
+  name: IronLattice
+  website: https://ironlattice.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Non-volatile memory with DRAM-like speed, made on standard chip-factory lines, aimed at AI and high-performance
+      computing. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not stated; no Dealroom profile (404). Stage:
+    No funding stated on own site; site lists Rice University, Rice Innovation, MoreThan Capital and Greater Houston
+    Partnership as partners. Dealroom slug ironlattice 404. Flags: early-stage, few public facts; Houston HQ from
+    input not confirmed on own site. Evidence: https://ironlattice.com Region sources: rice-nexus. Confidence: low.
+    Unresolved: HQ, founding year, headcount, funding stage.'
+  categories:
+  - semis-electronics
+- id: jewett-mining
+  name: Jewett Mining
+  website: null
+  careers_url: null
+  hq: Jewett, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Jewett Mining, LLC, permittee of the Jewett Mine (permit 32H; Freestone, Leon and Limestone counties)
+      and Jewett E/F Area Mine (permit 47B; Freestone and Leon counties). Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Parent not found; a 2008 RRC map listed the Jewett Mine
+    under Texas Westmoreland Coal Company. Flags: mining operator (lignite coal); on RRC permittees list Feb 2023;
+    operating status unknown. Evidence: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf https://webarchive.library.unt.edu/web/20091005154024/http://www.rrc.state.tx.us/programs/mining/TxCoaLst.pdf
+    Region sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
+  categories:
+  - mining
+- id: kane-robotics
+  name: Kane Robotics
+  website: https://kanerobotics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2019
+  headcount: null
+  climate:
+    tier: out
+    reason: Collaborative robot (cobot) systems for sanding, grinding and finishing, e.g. GRIT (per search snippets;
+      own site text did not load). Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/kane-robotics/alternatives-competitors
+    (search snippet). Stage: CB Insights snippet: total raised $1.04M, last round $860K; other aggregators give
+    different totals. No dated round confirmed. Flags: HQ sources disagree: Austin, TX vs Albuquerque, NM vs Chino,
+    CA. Evidence: https://www.kanerobotics.com/ https://www.cbinsights.com/company/kane-robotics/alternatives-competitors
+    Region sources: opportunity-austin. Confidence: low. Unresolved: HQ city; product and facts from own site (page
+    is script-rendered and gave no text); headcount; customers (defense/aerospace?).'
+  categories:
+  - autonomy-robotics
+- id: keydrill-technology
+  name: KeyDrill Technology
+  website: null
+  careers_url: null
+  hq: Missouri City, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2006
+  headcount: null
+  climate:
+    tier: out
+    reason: Gyro-while-drilling and measurement-while-drilling tools (GWD rated to 110 C; MWD tools to 175-200 C)
+      per directory listings. Adjacent (Combustion, oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2006 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.cbinsights.com/company/keydrill-technology.
+    Stage: Private; no venture rounds found. Flags: oil and gas: downhole tool maker; facts from CB Insights and
+    directory search snippets; own site not identified; named a 2026 OTC small-business honoree (search snippet).
+    Evidence: https://www.cbinsights.com/company/keydrill-technology https://sourcehere.com/company/2358 https://www.oilmonster.com/company/keydrill-technology-llc/78118
+    Region sources: otc-spotlight-2026. Confidence: medium. Unresolved: website, headcount'
+  categories:
+  - oil-gas
+- id: knight-aerospace
+  name: Knight Aerospace
+  website: https://knightaerospace.com/
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: paylocity
+    board: 2eb98d85-f191-46c2-bf2d-654275f316d1
+  read: manual
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: 1992
+  headcount: null
+  climate:
+    tier: out
+    reason: Roll-on/roll-off modular cabin systems for cargo aircraft (VIP, medical and other missions), palletized
+      cargo systems and ground support equipment. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1992 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board paylocity:2eb98d85-f191-46c2-bf2d-654275f316d1 seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Founded: https://www.knightaerospace.com. Stage: Not stated. Flags: defense
+    is main business (calls itself a provider of ''military and medical products''; modules for C-130 and C-17);
+    serves over 35 countries. Evidence: https://www.knightaerospace.com Region sources: port-sa-2025, port-sa-2021.
+    Confidence: high. Unresolved: Headcount and ownership not found.'
+  categories:
+  - aerospace-space
+  - defense
+- id: kulr-technology-group
+  name: KULR Technology Group
+  website: https://kulrtechnology.com/
+  careers_url: null
+  hq: Webster, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  stage: public
+  founded: 2013
+  headcount:
+    value: 47
+    as_of: '2026-11-27'
+    source: StockAnalysis (https://stockanalysis.com/stocks/kulr/company/)
+  climate:
+    tier: enabling
+    reason: Battery systems, battery thermal management and safety products for space, defense and data centers.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 47 people (StockAnalysis, 2026-11-27); founded 2013.
+  notes: 'No job board found on the company''s site. Headcount note: Figure undated; profile updated 2026-11-27.
+    Founded: https://stockanalysis.com/stocks/kulr/company/. Stage: NYSE American: KULR (own site and StockAnalysis);
+    listing year not found. https://stockanalysis.com/stocks/kulr/company/ Flags: kulrtechnology.com redirects to
+    kulr.ai; markets span space, defense, drones, data centers and telecom; no single main customer group. Evidence:
+    https://kulr.ai/ https://stockanalysis.com/stocks/kulr/company/ Region sources: tx-space-commission, ocp-members.
+    Confidence: high. Unresolved: Listing year.'
+  categories:
+  - aerospace-space
+  - data-centers
+  - semis-electronics
+- id: leviathan-air
+  name: Leviathan Air
+  website: https://leviathan-air.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Ground-effect seaplanes to carry cargo and equipment across oceans. Adjacent (Aerospace and space),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: A secondary aggregator snippet lists 1-2 people
+    and TRL 4 (not opened). Flags: Austin Technology Incubator company; company site has a certificate error and
+    was not read. Evidence: https://ati.utexas.edu/?p=23272 Region sources: ati-ut. Confidence: low. Unresolved:
+    HQ, founded, headcount, funding, whether active'
+  categories:
+  - aerospace-space
+- id: loombotic
+  name: Loombotic
+  website: https://loombotic.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2024
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom wire harnesses built to IPC/WHMA-A-620 with about 7-day delivery, using automated manufacturing.
+      Adjacent (Advanced manufacturing, Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2024.
+  notes: 'No job board found on the company''s site. Founded: https://www.loombotic.com. Stage: Site says ''Backed
+    by Y Combinator''; no amount stated. Legal entity Fabraicate, Inc. Flags: Y Combinator backed; early-stage startup.
+    Evidence: https://www.loombotic.com https://www.loombotic.com/about Region sources: opportunity-austin. Confidence:
+    medium. Unresolved: HQ city not stated (input Austin, TX); headcount and round not found.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: luminant-mining-company
+  name: Luminant Mining Company
+  website: https://www.luminant.com
+  careers_url: null
+  hq: Irving, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Surface lignite mining permits for Luminant power plants: Big Brown, Bremond, Kosse, Leesburg, Liberty,
+      Martin Lake, Martin Lake AIV South, Monticello (Thermo, Thermo A-1, Winfield), Oak Hill, Three Oaks and Turlington
+      mines (RRC permittees list, Feb 2023). Mine operators are out (owner ruling A6b).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Luminant permit list does not show which mines are active vs in reclamation
+      luminant.com does not mention mining; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: unable to get local issuer certificate (_ssl.c:1035)). Stage: Luminant Mining Company, LLC; environmental
+    contact is Luminant Environmental Services, Irving TX (RRC list). Luminant is a power generator (about 39,000
+    MW). Vistra parentage not stated on pages fetched. Flags: mining operator (lignite coal); subsidiary of Luminant;
+    permit list does not show which mines are active vs in reclamation; luminant.com does not mention mining. Evidence:
+    https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf https://www.luminant.com Region sources: rrc-coal-permits.
+    Confidence: medium. Unresolved: active vs reclamation status of each mine, headcount, parent chain'
+  categories:
+  - mining
+- id: maverick-power
+  name: Maverick Power
+  website: https://maverickpwr.com/
+  careers_url: null
+  hq: McKinney, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 900
+    as_of: '2026-08-01'
+    source: nVent deal announcement (via Foley / BNN Bloomberg coverage) (https://www.foley.com/news/2026/08/foley-represents-nvent-electric-in-1-75-billion-acquisition-of-maverick-power/)
+  climate:
+    tier: out
+    reason: Low-voltage distribution, automatic transfer switches, medium-voltage switchgear (1-36 kV), static switches,
+      UL508A control panels and UPS bypass systems for mission-critical and data-center power. Adjacent (Data-center
+      equipment), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 900 people (nVent deal announcement (via Foley / BNN Bloomberg coverage), 2026-08-01). Owned by nVent
+      Electric; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: About 900 employees in Texas and Arizona at
+    announcement (August 2026; month only, first day used). Stage: nVent agreed 2026-08-24 to buy Maverick Power
+    for $1.75B plus up to $550M earn-out; closed 2026-10-01; ~$700M est. 2026 revenue. https://www.foley.com/news/2026/08/foley-represents-nvent-electric-in-1-75-billion-acquisition-of-maverick-power/
+    ; https://finviz.com/news/397601/nvent-completes-acquisition-of-maverick-power Flags: acquired by nVent Electric
+    (Oct 2026); main customers are data centers (per acquisition coverage); site says ''born from the challenges
+    of 2020''. Evidence: https://www.maverickpwr.com https://www.foley.com/news/2026/08/foley-represents-nvent-electric-in-1-75-billion-acquisition-of-maverick-power/
+    https://finviz.com/news/397601/nvent-completes-acquisition-of-maverick-power https://www.bnnbloomberg.ca/business/company-news/2026/08/24/nvent-electric-to-buy-maverick-power-for-us175-billion-to-expand-data-center-offerings/
+    Region sources: ocp-members. Confidence: high. Unresolved: Founding year (2020 implied, not stated).'
+  categories:
+  - data-centers
+- id: mdc-precision
+  name: MDC Precision
+  website: https://mdcprecision.com
+  careers_url: null
+  hq: Pflugerville, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Vacuum components: UHV and HV hardware, ceramic-to-metal feedthroughs and chambers (per site title).
+      Adjacent (Semiconductors and electronics, Advanced manufacturing), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Pflugerville, TX site not confirmed; HQ not stated on
+    page read. Evidence: https://www.mdcprecision.com/ Region sources: opportunity-austin. Confidence: low. Unresolved:
+    HQ, Texas site, founded, headcount, ownership.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: microsilicon
+  name: MicroSilicon
+  website: https://www.microsiliconinc.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Quantum RF paramagnetic sensor with IoT cloud link that analyses crude flowing at the wellhead so operators
+      can tune asphaltene, corrosion and scale chemical treatment (per press and conference abstracts). Adjacent
+      (Combustion, oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred
+    in violation of protocol (_ssl.c:1035)). Stage: CB Insights (search snippet): about $1.38M raised, investors
+    StartEngine (equity crowdfunding) and NSF; last raise $210K on 2023-02-07. Rice University spin-off. Flags:
+    oil and gas: sensor equipment maker; own site did not load (socket closed twice); facts from search snippets
+    (prweb, AIChE 2024, CB Insights). Evidence: https://www.cbinsights.com/company/microsilicon https://proceedings.aiche.org/conferences/aiche-spring-meeting-and-global-congress-on-process-safety/2024/proceeding/paper/69a-online-sensing-real-time-paramagnetic-properties-flow-assurance-management
+    https://www.prweb.com/releases/microsilicon-extends-the-envelope-for-real-time-flowing-fluid-analysis-845297668.html
+    Region sources: rice-etvf-2022. Confidence: medium. Unresolved: founded, headcount, current activity (no recent
+    news found)'
+  categories:
+  - oil-gas
+- id: mission-critical-group
+  name: Mission Critical Group
+  website: https://www.missioncriticalgroup.com/
+  careers_url: null
+  hq: Frisco, TX
+  ats:
+    type: smartrecruiters
+    board: MissionCriticalGroup
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: out
+    reason: Switchgear, e-Houses, power skids, modular power systems, generator systems and transformers, with lifecycle
+      services; data centers listed first among markets. Adjacent (Data-center equipment), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2023.
+  notes: 'Board smartrecruiters:MissionCriticalGroup seen 2026-11-27, linked from the company''s own site: 103 open
+    roles. Headcount note: Sources disagree: company boilerplate in a search snippet says over 1,000 employees;
+    listings say 11-50 or 501-1,000. Own site cites 75+ field technicians, 20+ US manufacturing facilities, 1.7M+
+    sq ft. Founded: https://pulse2.com/mission-critical-group-secures-preferred-investment-led-by-liberty-mutual-investments-to-scale-data-center-power-infrastructure/.
+    Stage: Private-equity backed: portfolio company of Emerald Lake Capital Management; preferred investment led
+    by Liberty Mutual Investments announced 2026-09-19 (amount not disclosed). https://pulse2.com/mission-critical-group-secures-preferred-investment-led-by-liberty-mutual-investments-to-scale-data-center-power-infrastructure/
+    Flags: main customers are data centers; private-equity owned (Emerald Lake Capital); possibly over 1,000 employees
+    (company boilerplate, unverified); roll-up of many manufacturing sites incl. Baytown, TX. Evidence: https://www.missioncriticalgroup.com
+    https://www.missioncriticalgroup.com/about https://pulse2.com/mission-critical-group-secures-preferred-investment-led-by-liberty-mutual-investments-to-scale-data-center-power-infrastructure/
+    https://coverager.com/liberty-mutual-investments-leads-investment-in-mission-critical-group/ Region sources:
+    ocp-members. Confidence: medium. Unresolved: Headcount; other listings give McKinney or Spicewood, TX as HQ
+    (own site says Frisco).'
+  categories:
+  - data-centers
+- id: mithril-minerals
+  name: Mithril Minerals
+  website: https://mithrilminerals.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Low-cost, low-impact robotic systems (collector arms, tether, base unit, deployable collector nodes)
+      for collecting ocean critical-mineral nodules; at prototype stage. Adjacent (Mining and exploration, Autonomy
+      and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site lists Breakthrough Energy Fellows and ATP Fund
+    among funders/partners and an ARPA-E project; no round stated. Flags: HQ not stated on site; Austin, TX unverified;
+    early stage (prototype, field test); seabed mining. Evidence: https://mithrilminerals.com Region sources: rice-etvf-2025.
+    Confidence: medium. Unresolved: hq, founded, headcount, round'
+  categories:
+  - autonomy-robotics
+  - mining
+- id: modular-mopu
+  name: Modular MOPU
+  website: https://modularmopu.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Converts idle drilling rigs into mobile offshore production units with a patent-pending 4th Phase Processing
+      System and subsea gathering system; optional modules turn associated gas into hydrogen, carbon black or synthetic
+      fuels; also FEED and engineering services. Adjacent (Combustion, oil and gas), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site lists a founder/managing member and two
+    other members (LLC). Stage: Modular MOPU, LLC; no funding stated on site. Flags: oil and gas: equipment/production-unit
+    maker plus engineering services; very small (LLC with a few members). Evidence: https://modularmopu.com Region
+    sources: rice-etvf-2025. Confidence: medium. Unresolved: founded, headcount, funding'
+  categories:
+  - oil-gas
+- id: neurophos
+  name: Neurophos
+  website: https://neurophos.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: neurophos
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2020
+  headcount:
+    value: 53
+    as_of: '2026-11-01'
+    source: Dealroom (https://dealroom.co/companies/neurophos)
+  climate:
+    tier: out
+    reason: Tulkas T100 optical processing unit (OPU) and T100 rack for AI inference; shipping planned for 2028.
+      Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 53 people (Dealroom, 2026-11-01); founded 2020, funding round reported in 2026.
+  notes: 'Board ashby:neurophos seen 2026-11-27, token matched by name; board page checked: 33 open roles. Headcount
+    note: Dealroom figure undated, read 2026-11-27. Founded: https://dealroom.co/companies/neurophos. Stage: Series
+    A, January 2026, $110M at $440M valuation (M12, Carbon Direct, Bosch Ventures, Aramco Ventures); seed December
+    2023, $7.2M. https://dealroom.co/companies/neurophos Flags: main market is AI inference in data centers; pre-product
+    (ships 2028). Evidence: https://www.neurophos.com/ https://dealroom.co/companies/neurophos Region sources: opportunity-austin.
+    Confidence: high.'
+  categories:
+  - semis-electronics
+- id: noren-products
+  name: Noren Products
+  website: https://norenthermal.com
+  careers_url: null
+  hq: Troy, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1968
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Industrial thermal management: air-to-air and air-to-water enclosure heat exchangers, heat pipes, heat
+      sinks, cold plates and thermal pins (brand Noren Thermal Solutions). Adjacent (Data-center equipment, Advanced
+      manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1968 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: search snippet (directory listings say since 1968);
+    own site says ''55+ years of experience''. Stage: Private; ownership not stated. Flags: industries listed include
+    computers, control panels, military, oil and gas among many; none stated as main; norenproducts.com refuses
+    connections; current site is norenthermal.com. Evidence: https://www.norenthermal.com Region sources: opportunity-austin.
+    Confidence: medium. Unresolved: Taylor vs Troy, TX location conflict; headcount and ownership not found.'
+  categories:
+  - advanced-manufacturing
+  - data-centers
+- id: noveon-magnetics
+  name: Noveon Magnetics
+  website: https://noveon.co/
+  careers_url: null
+  hq: San Marcos, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  - recycling
+  stage: series-c
+  founded: 2014
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/noveon-magnetics)
+  climate:
+    tier: enabling
+    reason: Sintered rare-earth magnets made largely from recycled magnet material.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 95 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2014, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 95 but band 100-500; undated. Formerly
+    Urban Mining Company. Founded: https://dealroom.co/companies/noveon-magnetics. Stage: Series C $215M, January
+    2026, led by OneIM, ~$860M valuation (Dealroom); Series B $75M May 2023. Evidence: https://dealroom.co/companies/noveon-magnetics
+    Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved: noveon.co/about content not readable'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: oceaneering-space-systems
+  name: Oceaneering Space Systems
+  website: https://www.oceaneering.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1964
+  headcount:
+    value: 11100
+    as_of: '2026-11-24'
+    source: StockAnalysis (Oceaneering International, whole company) (https://stockanalysis.com/stocks/oii/company/)
+  climate:
+    tier: out
+    reason: 'Spaceflight hardware and engineering: thermal protection, flight manipulators and connectors, life
+      support and spacesuit (EVA) systems, inflatable structures such as Orion''s uprighting system. Adjacent (Aerospace
+      and space), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '11,100 people (StockAnalysis (Oceaneering International, whole company), 2026-11-24): over the 4,000
+      cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Whole-company figure for parent Oceaneering
+    International; profile updated 2026-11-24, figure itself undated. Space Systems division size not found. Founded:
+    https://stockanalysis.com/stocks/oii/company/. Stage: Division of Oceaneering International, Inc. (NYSE: OII),
+    Houston. Listing year not found. https://stockanalysis.com/stocks/oii/company/ Flags: division of Oceaneering
+    International (NYSE: OII); parent over 1,000 employees; parent''s main business is offshore oil and gas: equipment,
+    ROVs and engineered services; parent''s Aerospace and Defense Technologies segment covers defense and space;
+    defense not the main business. Evidence: https://www.oceaneering.com/space-systems/ https://stockanalysis.com/stocks/oii/company/
+    Region sources: houston-spaceport. Confidence: high. Unresolved: Division headcount; parent listing year.'
+  categories:
+  - aerospace-space
+- id: oil-states-international
+  name: Oil States International
+  website: https://www.oilstatesintl.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ukg
+    board: recruiting2.ultipro.com/OIL1000OIL/JobBoard/db65c907-0c03-4705-9894-b6385fdde36e
+  read: manual
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Equipment and services for the energy industry in three areas: offshore manufactured products, completion
+      and production services, and downhole technologies. Adjacent (Combustion, oil and gas), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ukg:recruiting2.ultipro.com/OIL1000OIL/JobBoard/db65c907-0c03-4705-9894-b6385fdde36e seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Stage: NYSE and NYSE Texas: OIS (investor
+    site); listing year not stated on pages fetched. Flags: oil and gas: equipment maker and service provider; no
+    defense segment mentioned. Evidence: https://oilstatesintl.com https://ir.oilstatesintl.com Region sources:
+    otc-spotlight-2026, otc-spotlight-2025. Confidence: medium. Unresolved: founded, listing year, headcount'
+  categories:
+  - oil-gas
+- id: oliden-technology
+  name: Oliden Technology
+  website: null
+  careers_url: null
+  hq: Houston area, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Develops, manufactures and maintains modular MWD and LWD tools (Fusion line, e.g. GeoFusion laterolog
+      resistivity and imaging LWD). Adjacent (Combustion, oil and gas), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Listed among TAQA Ventures affiliated companies (TAQA,
+    Saudi oilfield services group); stake not stated. Flags: oil and gas: downhole tool maker; TAQA-affiliated (investee);
+    ownership share unknown; own site olidentech.com failed TLS handshake; Houston area, TX unverified. Evidence:
+    https://www.tq.com/what-we-do/taqa-ventures/affiliated-companies/oliden-technology/ https://www.offshore-mag.com/equipment-engineering/article/16804088/otc-2018-oliden-produces-laterolog-resistivity-lwd-tool
+    Region sources: otc-spotlight-2026. Confidence: medium. Unresolved: hq, founded, headcount, TAQA stake; MaxFusion
+    product not confirmed'
+  categories:
+  - oil-gas
+- id: oxefit
+  name: OxeFit
+  website: https://oxefit.com/
+  careers_url: null
+  hq: Plano, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2019
+  headcount:
+    value: 122
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/oxefit)
+  climate:
+    tier: out
+    reason: AI-powered robotic home strength-training machine. Adjacent (Autonomy and robotics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 122 people (Dealroom, 2026-11-27); founded 2019, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure undated; band 100-500. Founded:
+    https://dealroom.co/companies/oxefit. Stage: Dealroom: Series A $20M June 2023 ($80M valuation); later $18M
+    round Sep 2024 labelled ''angel'' ($100M valuation); 6 funding events recorded. https://dealroom.co/companies/oxefit
+    Flags: consumer fitness equipment, not clean tech. Evidence: https://www.oxefit.com https://dealroom.co/companies/oxefit
+    Region sources: dallas-innovates-awards-2025. Confidence: medium. Unresolved: Own site does not state HQ or
+    whether still selling.'
+  categories:
+  - autonomy-robotics
+- id: paladin-drones
+  name: Paladin Drones
+  website: https://paladindrones.io
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Drone-as-first-responder systems: drones (Knighthawk 2.0, Paladin EXT, Watchtower), docks and dispatch-integrated
+      software for police and fire departments. Adjacent (Autonomy and robotics), not clean tech under the rubric
+      (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2018, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Founded: https://houston.innovationmap.com/paladin-drone-emergency-seed-funding-2669439689.html.
+    Stage: Seed $5.2M led by Gradient with Toyota Ventures, Khosla Ventures and 1517 (InnovationMap, 2024-10-18).
+    CB Insights snippet lists a Series A as latest and $21.43M total (not verified). https://houston.innovationmap.com/paladin-drone-emergency-seed-funding-2669439689.html
+    Flags: customers are public-safety agencies (police, fire); sources disagree on stage: seed (2024) vs Series
+    A (CB Insights snippet). Evidence: https://paladindrones.io https://houston.innovationmap.com/paladin-drone-emergency-seed-funding-2669439689.html
+    https://www.cbinsights.com/company/paladin-drones Region sources: innovationmap-tempest. Confidence: medium.
+    Unresolved: Headcount; whether a Series A closed.'
+  categories:
+  - autonomy-robotics
+- id: paradigm-manufacturing
+  name: Paradigm Manufacturing
+  website: null
+  careers_url: null
+  hq: Hutto, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1984
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Build-to-print contract manufacturing: CNC machining, precision sheet metal, laser cutting, powder
+      coating, painting, clean-room assembly and screen printing. Adjacent (Advanced manufacturing), not clean tech
+      under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1984 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Reported to expect about 400 employees within
+    10 years of the Hutto move (search snippet). Founded: search snippets (communityimpact.com, thefabricator.com);
+    not confirmed on own site. Stage: Formerly Paradigm Metals; private, no venture rounds found. Flags: contract
+    manufacturer; formerly Paradigm Metals. Evidence: https://communityimpact.com/round-rock-pflugerville-hutto/manufacturer-announced-as-first-innovation-business-park-tenant/
+    https://www.thefabricator.com/thefabricator/news/shopmanagement/paradigm-metals-to-relocate-texas-headquarters
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Own website not checked; current headcount
+    not found.'
+  categories:
+  - advanced-manufacturing
+- id: paradigm-robotics
+  name: Paradigm Robotics
+  website: https://paradigmrobotics.tech
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Tracked ground robots for dangerous work where people should not go (site redirects to paradigmrobotics.com).
+      Adjacent (Autonomy and robotics, Combustion, oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on site. Flags: defense not mentioned on
+    site; not shown to be main business; home page does not name oil and gas or refineries. Evidence: https://paradigmrobotics.tech
+    https://paradigmrobotics.com/ Region sources: rice-etvf-2024, avadt50. Confidence: medium. Unresolved: founded,
+    headcount, funding, customer focus'
+  categories:
+  - autonomy-robotics
+  - oil-gas
+- id: perseus-defense
+  name: Perseus Defense
+  website: https://perseusdefense.com
+  careers_url: null
+  hq: Buda, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Portable kinetic counter-drone interceptor system: the HARPE interceptor and the Perseus Launcher,
+      for Group 1 and 2 drone threats. Defense is its main business (owner ruling A3).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site lists nine team members; not a headcount.
+    Stage: No funding found. Flags: defense is main business (builds counter-UAS systems for the U.S. Department
+    of War and Homeland Security, per site). Evidence: https://www.perseusdefense.com/ Region sources: opportunity-austin.
+    Confidence: medium. Unresolved: Founded year, headcount, funding.'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: persona-ai
+  name: Persona AI
+  website: https://personainc.ai/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ashby
+    board: persona.ai
+  read: auto
+  sectors: []
+  stage: seed
+  founded: 2024
+  headcount:
+    value: 92
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/persona-ai)
+  climate:
+    tier: out
+    reason: Industrial humanoid robots for welding, grinding, inspection and maintenance in shipyards, construction
+      sites and energy infrastructure. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 92 people (Dealroom, 2026-11-27); founded 2024, funding round reported in 2025.
+  notes: 'Board ashby:persona.ai seen 2026-11-27, linked from the company''s own site: 23 open roles. Headcount
+    note: Dealroom figure undated; date is the fetch date. Founded: https://dealroom.co/companies/persona-ai. Stage:
+    Dealroom: seed round of $27M, May 2025 (investors incl. SGH Capital, Embedded Ventures); spun out of IHMC Jan
+    2024. Dealroom summary also mentions ''over $10 million in pre-seed'', and shows total funding $50-100M, so
+    a later round may be missing. https://dealroom.co/companies/persona-ai Flags: personainc.ai redirects to persona.ai;
+    target industries include defense and space among others; defense not the main business. Evidence: https://persona.ai/
+    https://dealroom.co/companies/persona-ai Region sources: ion-tenants, innovationmap-tempest. Confidence: medium.
+    Unresolved: HQ not stated on own site (Dealroom says Houston); whether a round after the May 2025 seed exists.'
+  categories:
+  - autonomy-robotics
+- id: phoenix-semiconductor
+  name: Phoenix Semiconductor
+  website: https://phoenixsemicorp.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  - components
+  stage: seed
+  founded: 2023
+  headcount:
+    value: 15
+    as_of: '2026-06-16'
+    source: IEEE Spectrum (https://spectrum.ieee.org/phoenix-semiconductors-legacy-chips-oems)
+  climate:
+    tier: out
+    reason: Drop-in replacement chips for discontinued legacy semiconductors (form, fit and function), prototyped
+      in Austin, production outsourced. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 15 people (IEEE Spectrum, 2026-06-16); founded 2023, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Headcount note: Article describes a 15-member team. Founded:
+    https://spectrum.ieee.org/phoenix-semiconductors-legacy-chips-oems. Stage: Seed $5.5M, June 2025, from J2 Ventures
+    and RTX Ventures (press release, via search snippet); CB Insights lists $6M total. Flags: defense is main business
+    (largest segment per IEEE Spectrum); other markets include oil and gas, industrial, healthcare; fabless; production
+    outsourced. Evidence: https://www.phoenixsemicorp.com/ https://spectrum.ieee.org/phoenix-semiconductors-legacy-chips-oems
+    Region sources: opportunity-austin. Confidence: high.'
+  categories:
+  - defense
+  - semis-electronics
+- id: pike-robotics
+  name: Pike Robotics
+  website: https://www.pikerobotics.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Wall-Eye, a patented wall-climbing robot that inspects hazardous industrial assets such as storage tanks
+      without people entering them. Adjacent (Autonomy and robotics, Combustion, oil and gas), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated; collaborators named are Phillips 66 and
+    the University of Texas. Flags: HQ not stated on site; Austin, TX unverified; hiring (careers page); sells robots
+    and/or inspection jobs; not explicit. Evidence: https://pikerobotics.com Region sources: rice-etvf-2026. Confidence:
+    medium. Unresolved: hq, founded, headcount, funding'
+  categories:
+  - autonomy-robotics
+  - oil-gas
+- id: pipedream
+  name: Pipedream
+  website: https://pipedreamlabs.co
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 28
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/pipedream-labs)
+  climate:
+    tier: out
+    reason: Underground pipe network with autonomous rail robots that deliver grocery-sized totes, plus an instant-pickup
+      system moving store orders to parking-lot kiosks. Adjacent (Autonomy and robotics), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 28 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020, funding round
+      reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Undated. Founded: https://dealroom.co/companies/pipedream-labs.
+    Stage: $13M seed, April 2024, led by Starship Ventures with Cortado Ventures and Myelin VC (Dealroom). Flags:
+    legal name Pipedream Labs. Evidence: https://www.pipedreamlabs.co/ https://dealroom.co/companies/pipedream-labs
+    Region sources: avadt50. Confidence: high.'
+  categories:
+  - autonomy-robotics
+- id: plus-one-robotics
+  name: Plus One Robotics
+  website: https://plusonerobotics.com/
+  careers_url: null
+  hq: San Antonio, TX
+  ats:
+    type: bamboohr
+    board: plusonerobotics
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2016
+  headcount:
+    value: 66
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/plus-one-robotics)
+  climate:
+    tier: out
+    reason: AI vision software for parcel-handling robots plus turnkey robotic systems (DepalOne depalletizer, InductOne
+      induction) and the Yonder supervised-autonomy platform. Adjacent (Autonomy and robotics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 66 people (Dealroom, 2026-11-27); founded 2016.
+  notes: 'Board bamboohr:plusonerobotics seen 2026-11-27, linked from the company''s own site: 2 open roles. Headcount
+    note: Dealroom maps 66 employees and shows team size under 100; undated. Founded: https://dealroom.co/companies/plus-one-robotics.
+    Stage: Dealroom: seed, Series A and ''Series B and later'' investors; $50-100M disclosed equity; round amounts
+    and dates paywalled (https://dealroom.co/companies/plus-one-robotics). Flags: core product is vision software,
+    also sells robot systems; logistics/parcel handling. Evidence: https://www.plusonerobotics.com https://dealroom.co/companies/plus-one-robotics
+    Region sources: port-sa-2025, port-sa-2021. Confidence: medium. Unresolved: Exact latest round not found.'
+  categories:
+  - autonomy-robotics
+- id: poseidon-minerals
+  name: Poseidon Minerals
+  website: https://www.poseidonminerals.com
+  careers_url: null
+  hq: Richmond, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Develops low-cost methods to extract lithium and other minerals from oil and gas wastewater (produced
+      water) for the battery market. Adjacent (Mining and exploration, Combustion, oil and gas), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on site. Flags: site copyright 2023, may
+    be stale; HQ not stated; Richmond, TX unverified; early-stage process developer. Evidence: http://www.poseidonminerals.com/
+    Region sources: rice-etvf-2023. Confidence: low. Unresolved: hq, founded, headcount, funding, current activity'
+  categories:
+  - mining
+  - oil-gas
+- id: pulseforge
+  name: Pulseforge
+  website: https://pulseforge.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: adp
+    board: 54e1b7f0-547d-444b-870d-ceed2867231e
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Flashlamp-based digital thermal processing tools (PD300 SA debonding, Embed, In-Line, Invent, PDS) for
+      electronics manufacturing. Adjacent (Semiconductors and electronics, Advanced manufacturing), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board adp:54e1b7f0-547d-444b-870d-ceed2867231e seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Stage: Ownership and funding not stated on site; Dealroom page not found. Evidence:
+    https://pulseforge.com/ Region sources: opportunity-austin. Confidence: medium. Unresolved: Founded year, headcount,
+    ownership/funding.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: redbird-flight-simulations
+  name: Redbird Flight Simulations
+  website: https://redbirdflight.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2006
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Flight training devices: full-motion simulators (FMX, MCX, MX2), desktop simulators and aircraft-specific
+      replicas, plus simulator-based training programs. Adjacent (Aerospace and space), not clean tech under the
+      rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2006 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.redbirdflight.com/about. Stage: Private
+    (Redbird Flight Simulations, Inc.); ownership and funding not stated on site. Flags: HQ not stated on pages
+    read (input says Austin). Evidence: https://www.redbirdflight.com/ https://www.redbirdflight.com/about Region
+    sources: opportunity-austin. Confidence: medium. Unresolved: HQ, headcount, ownership'
+  categories:
+  - aerospace-space
+- id: renesin
+  name: Renesin
+  website: https://renesin.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Resins and laminates for printed circuit boards and semiconductor substrates for AI electronics (thermally
+      stable, low dielectric loss). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: pre-commercial (bringing resins to market); HQ not stated
+    on site (input says Austin). Evidence: https://www.renesin.com/ Region sources: ati-ut. Confidence: medium.
+    Unresolved: HQ, founded, headcount, funding'
+  categories:
+  - semis-electronics
+- id: saronic
+  name: Saronic
+  website: https://www.saronic.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: saronic
+  read: auto
+  sectors:
+  - buildings
+  stage: late
+  founded: 2022
+  headcount:
+    value: 1000
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/saronic-technologies)
+  climate:
+    tier: out
+    reason: Autonomous surface vessels (Corsair, Mirage, Marauder) and Echelon fleet command-and-control software;
+      building the Port Alpha shipyard. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1,000 people (Dealroom, 2026-11-27); founded 2022, funding round reported in 2026.
+  notes: 'Board ashby:saronic seen 2026-11-27, linked from the company''s own site: 312 open roles, 8 US-remote.
+    Headcount note: Dealroom band 1,000-2,000, undated. Founded: https://dealroom.co/companies/saronic-technologies.
+    Stage: Series D $1.75B at $9.25B valuation, led by Kleiner Perkins, closed 2026-03-31 (Forge lists $1.5B); prior
+    Series C $600M at $4B in Feb 2025. https://siliconangle.com/2026/03/31/saronic-raises-1-75b-9-25b-valuation-ramp-autonomous-ship-production/
+    Flags: defense is main business (US Navy production contract; Dealroom sector defence); over 1,000 employees;
+    HQ Austin per Dealroom; own site says only ''Built in Texas''. Evidence: https://www.saronic.com https://dealroom.co/companies/saronic-technologies
+    https://siliconangle.com/2026/03/31/saronic-raises-1-75b-9-25b-valuation-ramp-autonomous-ship-production/ Region
+    sources: avadt50, austin-founders-feed, opportunity-austin. Confidence: high.'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: sensorera
+  name: SensorEra
+  website: https://www.sensorera.tech
+  careers_url: null
+  hq: Sugar Land, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous near-surface and downhole monitoring systems (seismometer stations, data logger, permanent
+      seismic source, cloud portal) for carbon storage, induced seismicity and disposal monitoring, sold as equipment
+      plus monitoring service. Adjacent (Combustion, oil and gas), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on site. Flags: oil and gas: makes its own
+    sensor hardware and also sells monitoring as a service; site address Sugar Land, not Houston as input said.
+    Evidence: https://sensorera.tech Region sources: rice-etvf-2022. Confidence: medium. Unresolved: founded, headcount,
+    funding'
+  categories:
+  - oil-gas
+- id: sigmasense
+  name: SigmaSense
+  website: https://www.sigmasense.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-b
+  founded: 2015
+  headcount:
+    value: 38
+    as_of: '2026-11-01'
+    source: Dealroom (https://dealroom.co/companies/sigmasense)
+  climate:
+    tier: out
+    reason: 'Sensing chips and systems: SigmaDrive touch and touchless controllers for displays and SigmaEIS onboard
+      impedance spectroscopy for battery health monitoring. Adjacent (Semiconductors and electronics), not clean
+      tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 38 people (Dealroom, 2026-11-01); founded 2015, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure undated, read 2026-11-27; band
+    under 100. Founded: https://dealroom.co/companies/sigmasense. Stage: Series A $22M Sept 2020 (Foxconn lead);
+    Series B $24M Oct 2021; unlabeled $38M March 2023; $9.3M debt April 2024. https://dealroom.co/companies/sigmasense
+    Flags: incorporated as 3AxisData, renamed 2018; battery-monitoring product line (SigmaEIS); Dealroom investor
+    lists inconsistent. Evidence: https://sigmasense.com/ https://dealroom.co/companies/sigmasense Region sources:
+    opportunity-austin. Confidence: medium. Unresolved: Label of the 2023 round.'
+  categories:
+  - semis-electronics
+- id: silicon-labs
+  name: Silicon Labs
+  website: https://www.silabs.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: workday
+    board: silabs
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1996
+  headcount:
+    value: 1930
+    as_of: '2026-11-24'
+    source: StockAnalysis company profile; undated, so as_of is the day it was read (https://stockanalysis.com/stocks/slab/company/)
+  climate:
+    tier: out
+    reason: Fabless mixed-signal wireless IoT chips (SoCs and modules) for industrial IoT, smart home, connected
+      health and buildings. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1,930 people (StockAnalysis company profile; undated, so as_of is the day it was read, 2026-11-24);
+      public, with a listing or offering reported in 2027.
+  notes: 'Board workday:silabs.wd1.myworkdayjobs.com/SiliconlabsCareers seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: Undated figure on profile; Dealroom maps 2,584.
+    Founded: https://stockanalysis.com/stocks/slab/company/. Stage: IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments
+    agreed 2026-02-04 to buy it for $231/share (~$7.5B), close expected H1 2027 (TI/Silicon Labs press release).
+    Flags: over 1,000 employees; pending acquisition by Texas Instruments; silabs.com refused automated fetch (403).
+    Evidence: https://stockanalysis.com/stocks/slab/company/ https://dealroom.co/companies/silicon-laboratories
+    https://news.silabs.com/2026-02-04-Texas-Instruments-to-acquire-Silicon-Labs Region sources: opportunity-austin,
+    tsif-listing. Confidence: high.'
+  categories:
+  - semis-electronics
+- id: sisu
+  name: Sisu
+  website: https://sisu.us
+  careers_url: null
+  hq: Round Rock, TX
+  ats:
+    type: ashby
+    board: sisu
+  read: auto
+  sectors: []
+  stage: null
+  founded: 2010
+  headcount:
+    value: 50
+    as_of: '2026-11-27'
+    source: HowToRobot (search snippet) (https://howtorobot.com/robot-suppliers/sisu)
+  climate:
+    tier: out
+    reason: Custom robots and automation, WeldGrind AI robotic weld grinding, Robot Power battery boxes for industrial
+      robots, and CNC machining/welding/assembly (sisumachining.com); also SISU Cinema Robotics. Adjacent (Autonomy
+      and robotics, Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 50 people (HowToRobot (search snippet), 2026-11-27); founded 2010 and no equity raise in the last 5
+      years found, so no growth sign.
+  notes: 'Board ashby:sisu seen 2026-11-27, token matched by name; board page checked: 2 open roles, 2 US-remote.
+    Headcount note: HowToRobot band 50-99; undated. Founded: search snippet (communityimpact.com); not on own site.
+    Stage: SISU LLC; no venture rounds found. Flags: mix of own robot products and engineering/contract manufacturing
+    services. Evidence: https://sisu.us https://www.pfdevelopment.com/news/p/item/33471/sisu-is-poised-to-disrupt-multiple-industries-using-the-latest-in-robotic-technology
+    Region sources: opportunity-austin. Confidence: medium. Unresolved: Funding and current headcount not confirmed.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: skyways
+  name: Skyways
+  website: https://www.skyways.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: lever
+    board: skyways
+  read: auto
+  sectors: []
+  stage: null
+  founded: 2017
+  headcount: null
+  climate:
+    tier: out
+    reason: Long-range hybrid-VTOL unmanned cargo aircraft (Skyreach) and Skyways Hubs for vertical launch and recovery;
+      flies defense and commercial cargo. Adjacent (Aerospace and space, Autonomy and robotics, Defense), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2017.
+  notes: 'Board lever:skyways seen 2026-11-27, linked from the company''s own site: 18 open roles. Founded: https://skyways.com/about.
+    Stage: ANA Holdings $1M investment (2025); $37M AFWERX STRATFI award May 2025 (government contract, not equity)
+    per company About page. Flags: main customers appear to be US Navy, Air Force, DIU (defense-heavy); unmanned
+    aircraft. Evidence: https://skyways.com/ https://skyways.com/about Region sources: avadt50, opportunity-austin.
+    Confidence: medium. Unresolved: headcount, equity stage (Dealroom slug not found)'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+- id: slant-3d
+  name: Slant 3D
+  website: https://www.slant3d.com/
+  careers_url: null
+  hq: Hutto, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Production-scale contract 3D printing from US print farms (batch production, print-on-demand API and
+      store integrations) and 3D printer filament. Adjacent (Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not stated on own site; Dealroom slug slant-3d returned
+    404. Flags: contract manufacturing service (print farm) rather than equipment maker; not defense. Evidence:
+    https://www.slant3d.com https://www.slant3d.com/about Region sources: opportunity-austin. Confidence: medium.
+    Unresolved: HQ city not stated on site (input said Hutto, TX); founding, headcount, funding not found.'
+  categories:
+  - advanced-manufacturing
+- id: smackover-lithium
+  name: Smackover Lithium
+  website: https://smackoverlithium.com
+  careers_url: null
+  hq: Franklin Project, East Texas
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2024
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Joint venture developing direct lithium extraction projects in the Smackover Formation: South West
+      Arkansas (Phase 1 got a $225M DOE award in 2025) and an East Texas project (status not given). Adjacent (Mining
+      and exploration), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://www.smackoverlithium.com. Stage: Joint venture
+    of Standard Lithium (public) and Equinor, formed 2024; stakes not stated on site. Flags: joint venture of Standard
+    Lithium and Equinor; HQ not stated; Arkansas phone number (870), so HQ likely outside region; site: East Texas
+    project; pre-production. Evidence: https://www.smackoverlithium.com Region sources: texastribune-2025-mining.
+    Confidence: medium. Unresolved: hq, headcount, Franklin Project status'
+  categories:
+  - mining
+- id: smoked
+  name: SmokeD
+  website: https://smokedsystem.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Automatic smoke and wildfire detection: AI optical detectors on roofs or masts, PTZ cameras and drones,
+      with dispatcher web software and alert app. Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Austin site not mentioned on site; HQ not stated on
+    page read (possibly outside the US). Evidence: https://www.smokedsystem.com/ Region sources: opportunity-austin.
+    Confidence: low. Unresolved: HQ, Austin site, founded, headcount, funding.'
+  categories:
+  - semis-electronics
+- id: spacex
+  name: SpaceX
+  website: https://www.spacex.com/
+  careers_url: null
+  hq: Starbase, TX
+  ats:
+    type: greenhouse
+    board: spacex
+  read: auto
+  sectors:
+  - ev
+  stage: public
+  founded: 2002
+  headcount:
+    value: 22000
+    as_of: '2026-11-24'
+    source: StockAnalysis company profile (https://stockanalysis.com/stocks/spcx/company/)
+  climate:
+    tier: out
+    reason: Reusable launch vehicles and spacecraft (Falcon, Starship, Dragon), the Starlink satellite broadband
+      network and its user hardware; since 2026 also an AI segment (Grok, X platform, AI compute). Data-center equipment
+      and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '22,000 people (StockAnalysis company profile, 2026-11-24): over the 4,000 cap and its tolerance.'
+  notes: 'Board greenhouse:spacex seen 2026-11-27, token matched by name; board page checked: 2890 open roles, 20
+    US-remote. Headcount note: Figure undated on the page; date is the page''s last-updated date. Founded: https://stockanalysis.com/stocks/spcx/company/.
+    Stage: IPO on Nasdaq (SPCX) on 2026-06-12 per StockAnalysis profile; S-1 filed publicly 2026-05-20 (TechCrunch).
+    Listing year 2026. Flags: over 1,000 employees; public company (Nasdaq SPCX, listed 2026); significant government/defense
+    launch customer base but not main business; includes AI/software segment (Grok, X). Evidence: https://stockanalysis.com/stocks/spcx/company/
+    https://techcrunch.com/2026/05/20/the-spacex-ipo-filing-has-arrived/ Region sources: tx-space-commission, opportunity-austin,
+    tsif-listing. Confidence: high. Unresolved: spacex.com returned no readable text; Bastrop PCB/packaging plant
+    not verified.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: special-products-and-mfg
+  name: Special Products & Mfg.
+  website: https://spmfg.com
+  careers_url: null
+  hq: Rockwall, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount:
+    value: 200
+    as_of: '2026-11-27'
+    source: SPM website (https://www.spmfg.com)
+  climate:
+    tier: out
+    reason: 'Precision sheet metal fabrication, CNC machining, welding, powder coating and electro-mechanical assembly:
+      enclosures, cabinets, server racks, frames, NEMA enclosures. Adjacent (Advanced manufacturing), not clean
+      tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 200 people (SPM website, 2026-11-27); founding year and funding not found, so included as a missing
+      figure (owner rule B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site says ''200+ skilled team members'' across
+    three Texas facilities; undated, read 2026-11-27. Site says ''62+ Years Experience''. Stage: Private, no venture
+    rounds found; ownership not stated. Flags: contract manufacturer; industries include power generation, oil and
+    gas, cloud and data storage among many; none stated as main. Evidence: https://www.spmfg.com Region sources:
+    opportunity-austin. Confidence: high. Unresolved: Founding year and ownership not found.'
+  categories:
+  - advanced-manufacturing
+- id: starlab-space
+  name: Starlab Space
+  website: https://starlab-space.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: greenhouse
+    board: voyagertechnologiesinc
+  read: auto
+  sectors:
+  - buildings
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Designing, building and planning to operate the Starlab commercial space station in low-Earth orbit.
+      Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'Board greenhouse:voyagertechnologiesinc seen 2026-11-27, linked from the company''s own site: 195 open
+    roles, 33 US-remote. Headcount note: Not stated; Dealroom slug starlab-space 404. Stage: Voyager Technologies
+    (NYSE: VOYG, IPO June 11, 2025, HQ Denver) reports ''Starlab Space Stations'' as one of its three segments.
+    Own site links a ''Shareholders & Partners'' section that did not load, so other joint-venture owners are not
+    confirmed. https://stockanalysis.com/stocks/voyg/company/ Flags: controlled by Voyager Technologies (reported
+    as a Voyager segment); other JV shareholders not confirmed; station still in development. Evidence: https://starlab-space.com
+    https://stockanalysis.com/stocks/voyg/company/ Region sources: tx-space-commission. Confidence: medium. Unresolved:
+    Full shareholder list, founding year, headcount.'
+  categories:
+  - aerospace-space
+- id: strategic-thermal-labs
+  name: Strategic Thermal Labs
+  website: null
+  careers_url: null
+  hq: Georgetown, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2014
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Liquid-cooling technology for IT and data centers: cold-plate designs, server-side liquid cooling,
+      and thermal design, testing and validation. Data-center equipment and computing are out (owner decision 13).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Vertiv; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://dallasinnovates.com/?p=289145. Stage: Seed
+    round April 2024 led by Carrier Ventures with Cowtown Angels; acquired by Vertiv, article dated 2026-05-12 (https://dallasinnovates.com/?p=289145).
+    Flags: acquired by Vertiv (2026); main customers are data centers; also thermal testing/consulting services.
+    Evidence: https://dallasinnovates.com/?p=289145 Region sources: opportunity-austin. Confidence: high. Unresolved:
+    Own website not identified; deal closing date and terms not stated.'
+  categories:
+  - data-centers
+- id: tamos
+  name: TAMOS
+  website: https://www.tamosolutions.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Plug-and-play hardware infrastructure for ion trapping, for atomic-based quantum research. Adjacent
+      (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not stated; Dealroom slug tamos 404. Stage:
+    No funding information found. Flags: early-stage, few public facts. Evidence: https://tamosolutions.com Region
+    sources: rice-nexus. Confidence: medium. Unresolved: Founding year, headcount, funding stage.'
+  categories:
+  - semis-electronics
+- id: tau-systems
+  name: TAU Systems
+  website: https://www.tausystems.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: greenhouse
+    board: tau
+  read: auto
+  sectors:
+  - components
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 22
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/tau-systems)
+  climate:
+    tier: out
+    reason: Compact laser-driven particle accelerators and X-ray light sources for semiconductor lithography, plus
+      radiation testing of space electronics. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 22 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2020, funding round
+      reported in 2025.
+  notes: 'Board greenhouse:tau seen 2026-11-27, token matched by name; board page checked: 2 open roles. Headcount
+    note: Dealroom 22, band <100; undated. Also a Tau Labs site in Carlsbad, CA. Founded: https://dealroom.co/companies/tau-systems.
+    Stage: $20M seed, April 2025, $80M valuation (Dealroom). Evidence: https://www.tausystems.com/ https://dealroom.co/companies/tau-systems
+    Region sources: avadt50. Confidence: high.'
+  categories:
+  - semis-electronics
+- id: terminus-industrials
+  name: Terminus Industrials
+  website: https://terminusindustrials.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automated US production of defense-grade large power transformers. Adjacent (Advanced manufacturing),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Building a pilot facility in the Greater Austin area
+    with the Texas Economic Development Office and New American Industrial Alliance; no funding disclosed. Flags:
+    HQ not stated; pilot facility in Greater Austin area. Evidence: https://www.terminusindustrials.com/ Region
+    sources: avadt50. Confidence: medium. Unresolved: HQ, founded, headcount, funding'
+  categories:
+  - advanced-manufacturing
+- id: terrafirma
+  name: TerraFirma
+  website: https://terrafirma.inc
+  careers_url: null
+  hq: Buda, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2023
+  headcount:
+    value: 25
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/terrafirma)
+  climate:
+    tier: out
+    reason: Retrofits existing heavy machinery for remote and autonomous operation, sells construction planning/control
+      software (Mission Planner, Mission Control) and performs earthworks on Texas job sites. Adjacent (Autonomy
+      and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 25 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2023, funding round
+      reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 25, band <100; undated. Founded:
+    https://dealroom.co/companies/terrafirma. Stage: Series A $115M, July 2026, $460M valuation, Kleiner Perkins
+    and Bain Capital Ventures (Dealroom). Flags: mix of software, machine retrofits and earthworks services; does
+    not manufacture machines per its site; autonomous construction equipment. Evidence: https://terrafirma.inc/
+    https://dealroom.co/companies/terrafirma Region sources: avadt50, opportunity-austin. Confidence: high.'
+  categories:
+  - autonomy-robotics
+- id: terravolta-resources
+  name: TerraVolta Resources
+  website: null
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Project Liberty Owl, a lithium production and conversion facility in the Texarkana region using direct
+      lithium extraction from Smackover brine; at least 25,000 t/yr lithium carbonate, construction from 2028, operations
+      2029. Adjacent (Mining and exploration), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Facility expected to create 125+ permanent
+    jobs (2024 release). Stage: Substantial equity investment from The Energy & Minerals Group (EMG); DOE selected
+    it for a $225M award negotiation (PR Newswire, 2024-09-20). Another source reports up to $450M; not checked.
+    Flags: mining / chemical refining project developer, pre-revenue; domain terravoltaresources.com does not resolve;
+    a federal permitting listing places the project near Marion, Louisiana; most coverage says Texarkana. Evidence:
+    https://prnewswire.com/news-releases/terravolta-resources-selected-by-us-department-of-energy-for-225-million-award-negotiation-for-lithium-production-facility-in-texarkana-region-302254244.html
+    https://www.permits.performance.gov/permitting-project/fast-41-transparency-projects/liberty-owl Region sources:
+    texastribune-2025-mining. Confidence: medium. Unresolved: website, founded, headcount, round type'
+  categories:
+  - mining
+- id: texas-mineral-resources-corp
+  name: Texas Mineral Resources Corp.
+  website: https://tmrcorp.com
+  careers_url: null
+  hq: Sierra Blanca, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Holds an about 18 percent interest in the Round Top heavy rare earth and critical minerals project in
+      Hudspeth County, TX, operated with USA Rare Earth. Adjacent (Mining and exploration), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: OTC (OTCQB per Yahoo, OTCPK per Simply Wall St): TMRC;
+    listing year not found. 2026-03-05 agreement to be acquired by USA Rare Earth for 3,823,328 USAR shares (about
+    $73M); pending as of a June 2026 analysis, December 2026 deadline. Flags: pending acquisition by USA Rare Earth
+    (not confirmed closed); mining project holder, pre-production (USAR targets 2028); own site says ''Website is
+    currently unavailable''; Round Top interest diluted to 18.265% as of 2026-06-30 (third-party analysis). Evidence:
+    https://tmrcorp.com https://www.barchart.com/story/news/580006/usa-rare-earth-to-acquire-texas-mineral-resources-corporation
+    https://www.panabee.com/news/texas-mineral-resources-earnings-q3-2026 Region sources: texastribune-2025-mining.
+    Confidence: medium. Unresolved: hq (Sierra Blanca unverified), founded, headcount, whether USAR merger closed'
+  categories:
+  - mining
+- id: the-boring-company
+  name: The Boring Company
+  website: https://www.boringcompany.com/
+  careers_url: null
+  hq: Bastrop, TX
+  ats:
+    type: gem
+    board: the-boring-company
+  read: manual
+  sectors: []
+  stage: late
+  founded: 2016
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/the-boring-company)
+  climate:
+    tier: out
+    reason: Designs and builds Prufrock tunnel boring machines and builds and operates Loop transport and utility/freight
+      tunnels. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 500 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2016.
+  notes: 'Board gem:the-boring-company seen 2026-11-27, linked from the company''s own site: role count not read
+    (no public feed). Headcount note: Dealroom band 500-1k (maps 717); undated. Founded: https://dealroom.co/companies/the-boring-company.
+    Stage: Company site announces a $3B Series D; Dealroom headline: raises $3B at $23B valuation (date not shown).
+    Flags: builds and operates tunnels as well as making machines. Evidence: https://www.boringcompany.com/ https://dealroom.co/companies/the-boring-company
+    Region sources: avadt50, opportunity-austin. Confidence: high. Unresolved: date of Series D'
+  categories:
+  - advanced-manufacturing
+- id: the-sabine-mining-company
+  name: The Sabine Mining Company
+  website: null
+  careers_url: null
+  hq: Hallsville, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Permittee of the Rusk Mine (permit 55A; Panola and Rusk counties) and South Hallsville No. 1 Mine (permit
+      33I; Harrison County) lignite mines. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Parent not confirmed on pages fetched (nacoal.com home
+    page names no mines). Flags: mining operator (lignite coal); on RRC permittees list Feb 2023; operating status
+    unknown. Evidence: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf Region sources: rrc-coal-permits.
+    Confidence: medium. Unresolved: parent, operating status, headcount'
+  categories:
+  - mining
+- id: thermon
+  name: Thermon
+  website: https://www.thermon.com/
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1954
+  headcount:
+    value: 1792
+    as_of: '2026-11-24'
+    source: StockAnalysis company profile; undated, so as_of is the day it was read (https://stockanalysis.com/stocks/thr/company/)
+  climate:
+    tier: out
+    reason: 'Industrial process heating: electric heat tracing, tubing bundles, temporary power, steam heating,
+      boilers and controls. Adjacent (Data-center equipment, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 1,792 people (StockAnalysis company profile; undated, so as_of is the day it was read, 2026-11-24).
+      Owned by CECO Environmental; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Undated figure on profile. Founded: https://stockanalysis.com/stocks/thr/company/.
+    Stage: IPO NYSE (THR) 2011-05-05; delisted 2026-06-01, reason acquired by CECO (CECO Environmental), Form 425
+    and 8-K dated 2026-05-19 (StockAnalysis). Flags: acquired by CECO Environmental (2026); over 1,000 employees;
+    oil and gas: makes equipment (heat tracing), not a producer; oil and gas is one of several end markets (also
+    chemical, power, rail); HQ Austin, not San Marcos as in input; thermon.com not used (off-limits). Evidence:
+    https://stockanalysis.com/stocks/thr/company/ Region sources: ocp-members. Confidence: medium. Unresolved: share
+    of revenue from oil and gas; data-center business not confirmed'
+  categories:
+  - advanced-manufacturing
+  - data-centers
+- id: traysar
+  name: Traysar
+  website: https://traysar.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: ashby
+    board: traysar
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous underground boring, drilling and confined-space excavation systems for military strike and
+      defense. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:traysar seen 2026-11-27, token matched by name; board page checked: 8 open roles. Flags: defense
+    is main business; HQ not stated on site (input says Austin). Evidence: https://www.traysar.com/ Region sources:
+    avadt50. Confidence: medium. Unresolved: HQ, founded, headcount, funding (no Dealroom profile)'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: tubular-network
+  name: Tubular Network
+  website: https://tubular.network
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2020
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic systems that move goods through tubes for automated delivery. Adjacent (Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2020.
+  notes: 'No job board found on the company''s site. Founded: https://www.tubular.network/about-us. Flags: HQ not
+    stated on site (input says Austin). Evidence: https://www.tubular.network/ https://www.tubular.network/about-us
+    Region sources: ati-ut. Confidence: medium. Unresolved: HQ, headcount, funding'
+  categories:
+  - autonomy-robotics
+- id: uhnder
+  name: Uhnder
+  website: https://uhnder.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: late
+  founded: 2015
+  headcount:
+    value: 35
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/uhnder)
+  climate:
+    tier: out
+    reason: Digital imaging radar-on-chip (software-defined digital radar chips) and sensor modules, mainly for
+      automotive. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 35 people (Dealroom, 2026-11-27); founded 2015, funding round reported in 2024.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure 35, undated; read 2026-11-27.
+    Founded: https://dealroom.co/companies/uhnder. Stage: Series D $50M, Feb 2024 (Magna, Qualcomm Ventures and
+    others); Series C $45M Dec 2020 (investors include Lockheed Martin). Sources: https://www.uhnder.com and https://dealroom.co/companies/uhnder
+    Flags: semiconductor (radar chips), automotive; Dealroom says operational, but own site footer reads 2021 and
+    its latest news item is Feb 2024; defense not main business (Lockheed Martin an investor). Evidence: https://www.uhnder.com
+    https://dealroom.co/companies/uhnder Region sources: opportunity-austin. Confidence: medium. Unresolved: No
+    news after Feb 2024 checked; current operating status not confirmed beyond Dealroom.'
+  categories:
+  - semis-electronics
+- id: uranium-energy-corp
+  name: Uranium Energy Corp.
+  website: https://www.uraniumenergy.com
+  careers_url: null
+  hq: Corpus Christi, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  - buildings
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: US uranium company building a vertically integrated supply chain from in-situ recovery mining through
+      refining and conversion; has Texas projects. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: NYSE American: UEC (company site); listing year not
+    found. Flags: mining operator (uranium ISR); corporate office Corpus Christi; other offices Casper WY and Vancouver
+    BC; specific Texas projects (Goliad, Bee counties) not named on pages fetched. Evidence: https://www.uraniumenergy.com
+    https://www.uraniumenergy.com/contact/ Region sources: rrc-uranium-permits, texastribune-2025-mining. Confidence:
+    medium. Unresolved: founded, headcount, listing year'
+  categories:
+  - mining
+- id: uri-inc
+  name: URI, Inc.
+  website: null
+  careers_url: null
+  hq: South Texas
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: subsidiary
+  founded: 1977
+  headcount: null
+  climate:
+    tier: out
+    reason: In-situ recovery uranium company in South Texas with Kingsville Dome (Kleberg County) and Rosita (Duval
+      County) processing plants and the Upper Spring Creek ISR project (George West). Mine operators are out (owner
+      ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by enCore Energy mining operator; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://sec.gov/Archives/edgar/data/839470/000104746911002897/0001047469-11-002897.txt.
+    Stage: Subsidiary of enCore Energy Corp. per a TCEQ filing (search snippet); organized 1977 (2011 SEC filing
+    of former parent Uranium Resources Inc.). Flags: subsidiary of enCore Energy; mining operator (uranium ISR);
+    sources disagree on whether Rosita is operating; Kingsville Dome on standby since 2009 (enCore). Evidence: https://www.tceq.texas.gov/downloads/permitting/radioactive-materials/uic/pending-permit-notices/ur03095paa1-uri-upper-spring-creek-admin-complete-application.pdf
+    https://encoreuranium.com/projects/south-texas-operations/ https://sec.gov/Archives/edgar/data/839470/000104746911002897/0001047469-11-002897.txt
+    Region sources: rrc-uranium-permits. Confidence: medium. Unresolved: hq, headcount, current plant status (facts
+    from search snippets, pages not fetched)'
+  categories:
+  - mining
+- id: valex
+  name: Valex
+  website: https://valex.com
+  careers_url: null
+  hq: Georgetown, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1976
+  headcount: null
+  climate:
+    tier: out
+    reason: Ultra-high-purity stainless steel tube, pipe, fittings, valves, manifolds and assemblies for semiconductor
+      fabs. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1976 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.valex.com/. Stage: Ownership not stated
+    on site. Flags: Georgetown, TX site not confirmed; HQ not stated on page read. Evidence: https://www.valex.com/
+    Region sources: opportunity-austin. Confidence: low. Unresolved: HQ, Texas site, headcount, ownership.'
+  categories:
+  - semis-electronics
+- id: valstad-shipworks
+  name: Valstad Shipworks
+  website: https://valstad.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'AI-enabled manufacturing systems for distributed ship production and repair: truck-deliverable structural
+      kits, deployable modular robotic systems, phased-array laser welding and AI production planning. Adjacent
+      (Advanced manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found on site. Flags: customers stated as
+    shipyards and industrial partners; defense/Navy not mentioned on site; mix of hardware (kits, robotic cells)
+    and production services. Evidence: https://www.valstad.com/ Region sources: opportunity-austin. Confidence:
+    medium. Unresolved: Founded year, headcount, funding; whether defense is the main market.'
+  categories:
+  - advanced-manufacturing
+- id: venus-aerospace
+  name: Venus Aerospace
+  website: https://www.venusaero.com/
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: lever
+    board: venusaero
+  read: auto
+  sectors: []
+  stage: series-b
+  founded: 2020
+  headcount:
+    value: 113
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/venus-aerospace)
+  climate:
+    tier: out
+    reason: Rotating detonation rocket engines (RDRE) and a detonation ramjet (VDR) for high-speed and hypersonic
+      flight. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 113 people (Dealroom, 2026-11-27); founded 2020, funding round reported in 2026.
+  notes: 'Board lever:venusaero seen 2026-11-27, linked from the company''s own site: 26 open roles, 4 US-remote.
+    Headcount note: Dealroom figure undated; band 100-500. Founded: https://dealroom.co/companies/venus-aerospace.
+    Stage: Dealroom: Series B $91M, June 2026, $364M valuation (Lockheed Martin Ventures, Mercury Fund). https://dealroom.co/companies/venus-aerospace
+    Flags: markets are space, defense and commercial high-speed flight; defense a stated market, not shown as the
+    main business. Evidence: https://www.venusaero.com https://dealroom.co/companies/venus-aerospace Region sources:
+    houston-spaceport, tx-space-commission, innovationmap-funding-2025. Confidence: medium. Unresolved: Own site
+    does not state HQ city (Dealroom: Houston).'
+  categories:
+  - aerospace-space
+- id: voltagrid
+  name: VoltaGrid
+  website: https://voltagrid.com
+  careers_url: null
+  hq: Houston, TX
+  ats:
+    type: ukg
+    board: recruiting2.ultipro.com/VOL1012VOLG/JobBoard/ecba8ead-7b8e-4b87-8c34-950a765fcbe4
+  read: manual
+  sectors: []
+  stage: late
+  founded: 2020
+  headcount:
+    value: 556
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/voltagrid)
+  climate:
+    tier: out
+    reason: Turnkey behind-the-meter and mobile natural-gas power generation and fuel (CNG) supply, sold mainly
+      as power agreements / energy as a service. Runs mainly on natural gas (owner ruling A2).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 556 people (Dealroom, 2026-11-27); founded 2020, funding round reported in 2026.
+  notes: 'Board ukg:recruiting2.ultipro.com/VOL1012VOLG/JobBoard/ecba8ead-7b8e-4b87-8c34-950a765fcbe4 seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: Dealroom 556 (band
+    500-1k); undated, as_of is the date seen. Founded: https://dealroom.co/companies/voltagrid. Stage: Dealroom:
+    growth equity $775M at $10B valuation plus $225M secondary, May 2026, Blackstone and Halliburton; site announces
+    $1B strategic equity from Blackstone and Halliburton and a $5.0B debt package ($2.0B second-lien notes, $3.0B
+    ABL). Flags: runs mainly on natural gas; main customers are data centers (also oil and gas, mining, utilities);
+    Oracle AI data-center collaboration; power-as-a-service provider; buys generation (e.g. 1.5 GW from INNIO) rather
+    than manufacturing it. Evidence: https://voltagrid.com https://dealroom.co/companies/voltagrid Region sources:
+    energycapitalhtx-2026-funding. Confidence: high.'
+  categories:
+  - data-centers
+  - oil-gas
+- id: vorago-technologies
+  name: VORAGO Technologies
+  website: https://voragotech.com
+  careers_url: null
+  hq: Austin, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: late
+  founded: 2004
+  headcount:
+    value: 40
+    as_of: '2026-11-01'
+    source: Dealroom (https://dealroom.co/companies/vorago-technologies)
+  climate:
+    tier: out
+    reason: Radiation-hardened and radiation-tolerant microcontrollers and microprocessors (VA4, VA5, VA7) made
+      with its HARDSIL process. Adjacent (Semiconductors and electronics, Aerospace and space), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 40 people (Dealroom, 2026-11-01); founded 2004 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure undated, read 2026-11-27. Founded:
+    https://dealroom.co/companies/vorago-technologies. Stage: Series D, September 2015, $10M (New Science Ventures);
+    Series C January 2014 $1.6M. https://dealroom.co/companies/vorago-technologies Flags: main markets are aerospace,
+    defense and space (Space Development Agency constellations, DLA); defense and space together are the main business;
+    also industrial. Evidence: https://www.voragotech.com/about https://dealroom.co/companies/vorago-technologies
+    Region sources: opportunity-austin. Confidence: high.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: walnut-creek-mining-company
+  name: Walnut Creek Mining Company
+  website: null
+  careers_url: null
+  hq: Bremond, TX
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Permittee of the Calvert lignite mine (permit 27I), Robertson County, TX. Mine operators are out (owner
+      ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Parent not found. Flags: mining operator (lignite coal);
+    on RRC permittees list Feb 2023; operating status unknown. Evidence: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf
+    Region sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
+  categories:
+  - mining

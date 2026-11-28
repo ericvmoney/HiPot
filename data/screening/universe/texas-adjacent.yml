@@ -1,0 +1,2441 @@
+# Reference list for Texas (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: texas-adjacent
+built: '2026-11-25'
+sources:
+- id: halliburton-labs
+  name: Halliburton Labs portfolio companies
+  url: https://www.halliburtonlabs.com/companies
+  note: 42 companies listed with HQ; 7 in Texas, 2 fit oil-gas/mining
+- id: rice-etvf-2024
+  name: Rice Alliance Energy Tech Venture Forum 2024 company directory (PDF)
+  url: https://alliance.rice.edu/sites/alliance/files/2024-09/EnergyTechVentureForum2024_CompanyDirectory.pdf
+  note: about 90 ventures; locations from directory PDF
+- id: rice-etvf-2023
+  name: Rice Alliance Energy Tech Venture Forum 2023 company directory (PDF)
+  url: https://alliance.rice.edu/sites/alliance/files/2023-09/2023ETVFProgram_Digital_CompanyDirectory.pdf
+  note: locations from directory PDF
+- id: rice-etvf-2022
+  name: Rice Alliance Energy Tech Venture Forum 2022 company directory (PDF)
+  url: https://alliance.rice.edu/sites/alliance/files/2022-09/Company_Directory_2022_ETVF.pdf
+  note: locations from directory PDF
+- id: rice-evd-2026
+  name: Rice Alliance / HETI Energy Venture Day at CERAWeek 2026 company directory (PDF)
+  url: https://alliance.rice.edu/sites/alliance/files/2026-03/260211%20HETI%20CERA%20Program%20-%20FINAL.pdf
+  note: about 58 ventures; 24 in Texas
+- id: rice-etvf-2025
+  name: Rice Alliance Energy Tech Venture Forum 2025 company directory (PDF)
+  url: https://alliance.rice.edu/sites/alliance/files/2025-09/ETVF25%20Company%20Directory.pdf
+  note: 99 ventures; locations from directory PDF
+- id: rice-etvf-2026
+  name: Rice Alliance Energy Tech Venture Forum 2026 participating ventures
+  url: https://alliance.rice.edu/etvf/ventures
+  note: names only, about 114 ventures, no directory PDF; kept only names checked elsewhere
+- id: otc-spotlight-2026
+  name: OTC 2026 Spotlight on New Technology Award winners
+  url: https://www.otcnet.org/press-releases/otc-recognizes-2026-spotlight-new-technology-award-winners
+  note: 17 technologies; HQs not stated on page, filled as best known
+- id: otc-spotlight-2025
+  name: OTC 2025 Spotlight on New Technology Award winners (JPT article)
+  url: https://jpt.spe.org/otc-recognizes-2025-spotlight-on-new-technology-award-winners
+  note: all 3 also in the 2026 list
+- id: energycapitalhtx-2026-funding
+  name: 'Energy Capital HTX: Houston energy startups Q1-Q2 2026 funding roundup'
+  url: https://energycapitalhtx.com/tag/2026-funding
+  note: 17 companies; 1 fits oil-gas
+- id: texastribune-2025-mining
+  name: 'Texas Tribune: Texas mining, lithium and rare minerals (2025-10-21)'
+  url: https://www.texastribune.org/2025/10/21/texas-mining-lithium-rare-minerals/
+- id: rrc-coal-permits
+  name: Railroad Commission of Texas permitted coal mines contacts (Feb 2023)
+  url: https://www.rrc.texas.gov/media/desai3t1/txcoalst-02-2023.pdf
+  note: utility co-ops and a state agency skipped
+- id: rrc-uranium-permits
+  name: Railroad Commission of Texas uranium exploration permits
+  url: https://www.rrc.texas.gov/surface-mining/programs/uranium-exploration/texas-uranium-exploration-permits/
+- id: search-permian-sand
+  name: Web search results on Permian frac sand mine operators
+  url: https://miningdataonline.com/property/2342/Kermit-Mine.aspx
+  note: search snippets plus the Mining Data Online Kermit Mine page
+- id: ion-tenants
+  name: Ion District tenant pages (tenants sitemap)
+  url: https://iondistrict.com/tenants-sitemap.xml
+  note: robots.txt allows /tenants/; 80 tenant slugs, nearly all offices, investors, software or services
+- id: rice-nexus
+  name: Rice Nexus at Ion companies page
+  url: https://nexus.rice.edu/companies
+  note: robots.txt lists anthropic-ai only in the generic group with standard Squarespace disallows
+- id: houston-spaceport
+  name: Houston Spaceport community page and 10-year article
+  url: https://www.fly2houston.com/spaceport/a-vibrant-community-of-research-innovation-and-exploration/
+  note: fly2houston.com has no robots.txt (404); also used fly2houston.com newsroom article 'houston-spaceport-at-10'
+- id: tx-space-commission
+  name: Texas Space Commission SEARF grant awards
+  url: https://space.texas.gov/grants/awards
+  note: 24 recipients; space.texas.gov has no robots.txt (404)
+- id: dallas-innovates-awards-2025
+  name: Dallas Innovates 2025 Innovation Awards winners and finalists
+  url: https://dallasinnovates.com/?p=270521
+  note: robots.txt only bars /wp-admin/ for all agents
+- id: dallas-innovates-intelliepi
+  name: 'Dallas Innovates: IntelliEPI receives TSIF grant'
+  url: https://dallasinnovates.com/north-texas-intelliepi-receives-4-1m-semiconductor-innovation-fund-grant/
+- id: ati-ut
+  name: Austin Technology Incubator (UT Austin) portfolio and microelectronics portfolio
+  url: https://ati.utexas.edu/companies/
+  note: robots.txt allows all (crawl-delay 20); also https://ati.utexas.edu/companies/microelectronics/; profile
+    pages give no company websites
+- id: cockrell-funding
+  name: 'UT Cockrell School: startups with Texas Engineering roots raise new funding'
+  url: https://cockrell.utexas.edu/news/startups-with-texas-engineering-roots-raise-new-funding/
+  note: robots.txt allows all
+- id: ocp-members
+  name: Open Compute Project membership directory
+  url: https://www.opencompute.org/membership/membership-directory
+  note: robots.txt allows all (crawl-delay 10); 714 members with no locations shown, so Texas members found by name
+    and checked on their own sites
+- id: avadt50
+  name: 'Austin Venture Association / Overmatch Ventures: Austin Deep Tech 50 (Oct 2026)'
+  url: https://austinventureassociation.com/american-dynamism
+  note: robots.txt explicitly allows Claude-User; list implies an Austin presence, HQ elsewhere noted where known
+- id: austin-founders-feed
+  name: 'Austin Founders Feed: Austin powered Texas past Boston in Q1 venture funding'
+  url: https://www.austinfoundersfeed.com/stories/austin-powered-texas-past-boston-q1-venture-funding
+  note: robots.txt allows /stories/
+- id: opportunity-austin
+  name: Opportunity Austin relocations and expansions (2016-2026)
+  url: https://opportunityaustin.com/economic-development/relocations-expansions/
+  note: robots.txt only bars /wp-admin/; read in two parts (offset 100000); many entries are sites of companies
+    headquartered elsewhere, marked 'site:'; 2016-2021 entries may be stale
+- id: innovationmap-space
+  name: 'InnovationMap Houston tag: space startup'
+  url: https://houston.innovationmap.com/tag/space-startup
+  note: robots.txt bars only /core/, /r/, /mnt/; its Houston names (Involve Space) mostly overlap other sources;
+    Italian cohort and Virginia firms skipped
+- id: innovationmap-funding-2025
+  name: 'InnovationMap: end of 2025 Houston startup funding'
+  url: https://houston.innovationmap.com/end-of-2025-houston-startup-funding-2674875306.html
+- id: innovationmap-tempest
+  name: 'InnovationMap tag: Tempest Droneworx (Houston robotics and drone coverage)'
+  url: https://houston.innovationmap.com/tag/tempest-droneworx
+- id: tsif-listing
+  name: 'Office of the Governor: Texas Semiconductor Innovation Fund public listing (as of 2026-08-25)'
+  url: https://gov.texas.gov/uploads/files/business/Announced_TSIF_Public_Listing.pdf
+  note: gov.texas.gov robots.txt blocks ClaudeBot only (not Claude-User); PDF text extracted locally; one Sherman
+    fab row has no company name
+- id: port-sa-2025
+  name: 'Port San Antonio: Local Talent, Global Impact (June 2025)'
+  url: https://portsanantonio.us/sites/default/files/Publications/Local%20Talent%20-%20Global%20Impact%20LAST%20UPDATED%20JUNE%202025.pdf
+  note: robots.txt does not bar /sites/default/files/; PDF text extracted locally
+- id: port-sa-2021
+  name: 'Port San Antonio: State of the Port 2021'
+  url: https://www.portsanantonio.us/state-of-the-port-2021
+  note: tenant status as of 2021
+companies:
+- name: 1AU Technologies
+  website: null
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats:
+    type: greenhouse
+    token: 1autechnologies
+  open_roles: 2
+- name: 240 Tech
+  website: https://240tech.com
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Its site shows only a title; identity not established.
+  ats: null
+  open_roles: null
+- name: 9 Mothers
+  website: https://9mothers.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: 9-mothers
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: 9-mothers
+  open_roles: 10
+- name: Accelsius
+  website: https://accelsius.com/
+  hq: Austin, TX
+  sources:
+  - ocp-members
+  - opportunity-austin
+  registry_id: accelsius
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: 22109fcc-6006-4b20-ad53-1da2c510248f
+  open_roles: null
+- name: Acutronic Aerospace Components
+  website: https://acutronic.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: acutronic-aerospace-components
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Additive Manufacturing Technologies (AMT)
+  website: https://amtechnologies.com
+  hq: Sheffield, UK
+  sources:
+  - opportunity-austin
+  registry_id: additive-manufacturing-technologies-amt
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aegis Aerospace
+  website: https://aegisaero.com/
+  hq: Webster, TX
+  sources:
+  - houston-spaceport
+  - tx-space-commission
+  registry_id: aegis-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Aeon Industries
+  website: https://aeonindustrial.com
+  hq: Cedar Park, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: aeon-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: aeon
+  open_roles: 10
+- name: Agellus Tank Robotics
+  website: https://agellustankrobotics.com
+  hq: Houston, TX
+  sources:
+  - rice-evd-2026
+  registry_id: agellus-tank-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: AI Prefab Solutions
+  website: null
+  hq: Hutto, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Its facts come only from a snippet of a site that refused our client; not used.
+  ats: null
+  open_roles: null
+- name: Airbus DS Space Systems
+  website: https://www.airbus.com/
+  hq: Webster, TX
+  sources:
+  - houston-spaceport
+  registry_id: null
+  decision: null
+  reason: Current status of the Webster, TX unit not established.
+  ats:
+    type: workday
+    token: ag.wd3.myworkdayjobs.com/Airbus
+  open_roles: null
+- name: AirSight
+  website: null
+  hq: Richardson, TX
+  sources:
+  - dallas-innovates-awards-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly software that integrates third-party sensors.
+  ats: null
+  open_roles: null
+- name: AKOS Energy
+  website: https://www.akosenergy.com
+  hq: Austin, TX
+  sources:
+  - rice-etvf-2023
+  registry_id: akos-energy
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Align Engineering
+  website: null
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Allen Control Systems
+  website: https://allencontrolsystems.com/
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: allen-control-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: allen-control-systems
+  open_roles: 19
+- name: Alpine Silica
+  website: https://alpinesilica.com
+  hq: Willow Park, TX
+  sources:
+  - search-permian-sand
+  registry_id: alpine-silica
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Amazing Magnets
+  website: https://amazingmagnets.com
+  hq: Round Rock, TX
+  sources:
+  - opportunity-austin
+  registry_id: amazing-magnets
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Americase International
+  website: https://www.americaseinternational.com/
+  hq: Waxahachie, TX
+  sources:
+  - ocp-members
+  registry_id: americase-international
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: defc0b8b-addd-4382-bcd6-0acd2b378ea9
+  open_roles: null
+- name: Anantak Robotics
+  website: null
+  hq: Dallas, TX
+  sources:
+  - dallas-innovates-awards-2025
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Applied Optoelectronics (AOI)
+  website: https://ao-inc.com/
+  hq: Sugar Land, TX
+  sources:
+  - tsif-listing
+  registry_id: applied-optoelectronics-aoi
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Apptronik
+  website: https://apptronik.com/
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - austin-founders-feed
+  - opportunity-austin
+  registry_id: apptronik
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: apptronik
+  open_roles: 87
+- name: ARIX Technologies
+  website: https://arix-tech.com
+  hq: Houston, TX
+  sources:
+  - innovationmap-tempest
+  registry_id: arix-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Artemis Production Solutions
+  website: https://artemispsi.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Sells natural-gas evacuation services using its own equipment.
+  ats: null
+  open_roles: null
+- name: Astroport Space Technologies
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2021
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Atlas Energy Solutions
+  website: https://atlas.energy
+  hq: Austin, TX
+  sources:
+  - search-permian-sand
+  registry_id: atlas-energy-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/ATL1007ATSC/JobBoard/6eb447b8-e4eb-4c77-8c5c-5c6dc1f7a616
+  open_roles: null
+- name: Avant Technology
+  website: null
+  hq: Pflugerville, TX
+  sources:
+  - tsif-listing
+  registry_id: avant-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Axiom Memory Solutions
+  website: https://axiommemory.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Axiom Space
+  website: https://www.axiomspace.com/
+  hq: Houston, TX
+  sources:
+  - houston-spaceport
+  - tx-space-commission
+  - innovationmap-funding-2025
+  registry_id: axiom-space
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: axiomspace.wd5.myworkdayjobs.com/External_Career_Site
+  open_roles: null
+- name: Baker Hughes
+  website: https://www.bakerhughes.com
+  hq: Houston, TX
+  sources:
+  - otc-spotlight-2026
+  - otc-spotlight-2025
+  registry_id: baker-hughes
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: bakerhughes.wd5.myworkdayjobs.com/BakerHughes
+  open_roles: null
+- name: Bedrock Robotics
+  website: https://bedrockrobotics.com/
+  hq: San Francisco, CA
+  sources:
+  - avadt50
+  registry_id: bedrock-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: bedrock-robotics
+  open_roles: null
+- name: Blue Sky Measurements
+  website: https://bluesky.eco
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  registry_id: blue-sky-measurements
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Bot Auto
+  website: https://bot.auto/
+  hq: Houston, TX
+  sources:
+  - innovationmap-tempest
+  registry_id: bot-auto
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: botauto
+  open_roles: 20
+- name: Bovi
+  website: https://bovi.tech
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: bovi
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Bravo Ordnance
+  website: https://warhead.co
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: bravo-ordnance
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: BVI Machining
+  website: null
+  hq: Houston area, TX
+  sources:
+  - houston-spaceport
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Caddo Creek Resources Company
+  website: null
+  hq: Marshall, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: caddo-creek-resources-company
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Capwell Services
+  website: https://capwell.org
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  - rice-evd-2026
+  registry_id: capwell-services
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: CelLink
+  website: https://www.cellinkcircuits.com
+  hq: San Carlos, CA
+  sources:
+  - opportunity-austin
+  - ocp-members
+  registry_id: cellink
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: cellink
+  open_roles: null
+- name: CesiumAstro
+  website: https://www.cesiumastro.com/
+  hq: Bee Cave, TX
+  sources:
+  - tx-space-commission
+  - avadt50
+  - austin-founders-feed
+  - opportunity-austin
+  registry_id: cesiumastro
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: CesiumAstro
+  open_roles: 379
+- name: Chatsworth Products
+  website: https://www.chatsworth.com/
+  hq: Round Rock, TX
+  sources:
+  - opportunity-austin
+  - ocp-members
+  registry_id: chatsworth-products
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: paycom
+    token: A0EC44FF0B0DFB12FBD46DE2D6CD7840
+  open_roles: null
+- name: Circul8 Energy & Environment
+  website: https://circul8nrg.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: circul8-energy-and-environment
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: CKD USA
+  website: https://ckdusa.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: ckd-usa
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CNPC USA Corporation
+  website: null
+  hq: Houston, TX
+  sources:
+  - otc-spotlight-2026
+  registry_id: null
+  decision: null
+  reason: Product and status not established.
+  ats: null
+  open_roles: null
+- name: Control Panels USA
+  website: https://controlpanelsusa.net
+  hq: Georgetown, TX
+  sources:
+  - opportunity-austin
+  registry_id: control-panels-usa
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cool Edge Bits
+  website: https://cooledgebits.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  registry_id: cool-edge-bits
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Corrolytics
+  website: https://corrolytics.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  - rice-evd-2026
+  registry_id: corrolytics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Creative 3D
+  website: null
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: creative-3d
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Crewline
+  website: https://crewline.ai
+  hq: Buda, TX
+  sources:
+  - opportunity-austin
+  registry_id: crewline
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Critical Materials Group
+  website: null
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: critical-materials-group
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: criticalmaterialsgroup
+  open_roles: 10
+- name: Cumberland Additive
+  website: null
+  hq: Pflugerville, TX
+  sources:
+  - opportunity-austin
+  registry_id: cumberland-additive
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Del Rey Sensors
+  website: https://www.delreypartners.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Diligent Robotics
+  website: https://www.diligentrobotics.com/
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: diligent-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: diligentrobotics
+  open_roles: 9
+- name: Doodle Labs
+  website: https://doodlelabs.com/
+  hq: Austin, TX or Singapore
+  sources:
+  - opportunity-austin
+  registry_id: doodle-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: breezy
+    token: doodle-labs-llc
+  open_roles: 25
+- name: Dos Republicas Coal Partnership
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: dos-republicas-coal-partnership
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: DSM Semichem
+  website: null
+  hq: Plainview, TX
+  sources:
+  - tsif-listing
+  registry_id: dsm-semichem
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Dynamic Manufacturing Solutions
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: closed
+  reason: Its assets went to Ultra Clean Holdings in 2019.
+  ats: null
+  open_roles: null
+- name: EcoMicron
+  website: null
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: EFR Alta Mesa
+  website: null
+  hq: South Texas
+  sources:
+  - rrc-uranium-permits
+  registry_id: null
+  decision: not-in-scope
+  reason: A project entity of enCore Energy (listed under URI, Inc.), not a company of its own.
+  ats: null
+  open_roles: null
+- name: Emergent Matter
+  website: https://emergentmatter.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: emergent-matter
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: EnergyX
+  website: https://energyx.com/
+  hq: San Juan, Puerto Rico
+  sources:
+  - texastribune-2025-mining
+  registry_id: energyx
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://energyx.com/careers/
+  open_roles: null
+- name: ENF Technology
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Enflite
+  website: https://enflite.com
+  hq: Georgetown, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: EOS North America
+  website: https://www.eos.info/
+  hq: Pflugerville, TX
+  sources:
+  - opportunity-austin
+  registry_id: eos-north-america
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: eosgroup.wd3.myworkdayjobs.com/en-US/eos
+  open_roles: null
+- name: ETS-Lindgren
+  website: https://www.ets-lindgren.com/
+  hq: Austin area, TX
+  sources:
+  - opportunity-austin
+  registry_id: ets-lindgren
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Even Platforms
+  website: https://evenplatforms.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: even-platforms
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Evolution Technologies Group
+  website: https://universalsubsea.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: ezNG Solutions
+  website: https://ezngsolutions.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  - rice-etvf-2023
+  registry_id: null
+  decision: not-in-scope
+  reason: Licenses a tank design rather than making equipment.
+  ats: null
+  open_roles: null
+- name: fab2
+  website: https://fab2.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: fab2
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: fab2
+  open_roles: 56
+- name: Farsoon Technologies
+  website: https://farsoon.com
+  hq: Round Rock, TX
+  sources:
+  - opportunity-austin
+  registry_id: farsoon-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Field Viewers Inc.
+  website: https://fieldviewers.com
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: field-viewers-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Fine Semitech
+  website: null
+  hq: Hutto, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Firefly Aerospace
+  website: https://fireflyspace.com/
+  hq: Cedar Park, TX
+  sources:
+  - tx-space-commission
+  - opportunity-austin
+  registry_id: firefly-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: fireflyspace.wd115.myworkdayjobs.com/Firefly
+  open_roles: null
+- name: First Order Effects
+  website: https://firstordereffects.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: first-order-effects
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: firstordereffects
+  open_roles: 14
+- name: FluxWorks
+  website: https://fluxworks.co
+  hq: Conroe, TX
+  sources:
+  - tx-space-commission
+  - innovationmap-funding-2025
+  registry_id: fluxworks
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.fluxworks.co/careers
+  open_roles: null
+- name: Futronic
+  website: null
+  hq: Buda, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Galadyne
+  website: https://galadyne.io
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: galadyne
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GenXComm
+  website: https://genxcomm.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: No site could be read; status not established.
+  ats: null
+  open_roles: null
+- name: Graze Robotics
+  website: null
+  hq: Plano, TX
+  sources:
+  - dallas-innovates-awards-2025
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: GRC (Green Revolution Cooling)
+  website: https://www.grcooling.com/
+  hq: Austin, TX
+  sources:
+  - ocp-members
+  registry_id: grc-green-revolution-cooling
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GS Vortex Systems
+  website: https://gsvortex.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: gs-vortex-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: H Robotics
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Halliburton
+  website: https://www.halliburton.com
+  hq: Houston, TX
+  sources:
+  - texastribune-2025-mining
+  registry_id: halliburton
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Halo Technologies
+  website: https://www.halo-industries.com/
+  hq: Santa Clara, CA
+  sources:
+  - opportunity-austin
+  registry_id: halo-industries
+  decision: registry
+  reason: null
+  ats:
+    type: workable
+    token: halo-industries
+  open_roles: null
+- name: Hanyang Eng USA
+  website: null
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: hanyang-eng-usa
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Harbor
+  website: null
+  hq: Dallas, TX
+  sources:
+  - dallas-innovates-awards-2025
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats:
+    type: ashby
+    token: harbor
+  open_roles: 5
+- name: Harmonic Bionics
+  website: https://www.harmonicbionics.com/
+  hq: Austin, TX
+  sources:
+  - cockrell-funding
+  registry_id: harmonic-bionics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hatchbed
+  website: https://hatchbed.com
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Custom robotics and autonomy software and R&D services (self-driving, robotics,
+    data analysis, AI).'
+  ats: null
+  open_roles: null
+- name: HEXAspec
+  website: https://hexaspec.com
+  hq: Houston, TX
+  sources:
+  - rice-nexus
+  registry_id: hexaspec
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Hi-Crush
+  website: null
+  hq: Houston, TX
+  sources:
+  - search-permian-sand
+  registry_id: null
+  decision: duplicate
+  reason: Acquired by Atlas Energy Solutions in 2024, which is listed separately.
+  ats: null
+  open_roles: null
+- name: Hiller Measurements
+  website: https://hillermeas.com
+  hq: Dripping Springs, TX
+  sources:
+  - opportunity-austin
+  registry_id: hiller-measurements
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: HUVRdata
+  website: https://huvrdata.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: HUVR: cloud inspection data management and digital workflow platform for asset
+    integrity.'
+  ats: null
+  open_roles: null
+- name: ICON
+  website: https://www.iconbuild.com/
+  hq: Austin, TX
+  sources:
+  - tx-space-commission
+  - avadt50
+  registry_id: icon
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: icon
+  open_roles: 6
+- name: ILC Astrospace
+  website: https://www.ilcdover.com/
+  hq: Houston, TX
+  sources:
+  - tx-space-commission
+  registry_id: null
+  decision: null
+  reason: Its parent's site answered 429 and was not retried; status not established.
+  ats: null
+  open_roles: null
+- name: Indo-MIM
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2021
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Inductive Robotics
+  website: https://inductiverobotics.com
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: inductive-robotics
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Infinitum
+  website: https://goinfinitum.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: infinitum
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: infinitumelectric
+  open_roles: null
+- name: Infleqtion
+  website: https://www.infleqtion.com
+  hq: Louisville, CO
+  sources:
+  - opportunity-austin
+  registry_id: infleqtion-formerly-coldquanta
+  decision: registry
+  reason: null
+  ats:
+    type: workable
+    token: coldquanta
+  open_roles: null
+- name: Infravision
+  website: https://theinfravision.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: infravision
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Innowave RF
+  website: https://innowaverf.com
+  hq: Leander, TX
+  sources:
+  - opportunity-austin
+  registry_id: innowave-rf
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: IntelliEPI
+  website: https://www.intelliepi.com/
+  hq: Allen, TX
+  sources:
+  - dallas-innovates-intelliepi
+  - tsif-listing
+  registry_id: intelliepi
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Intuitive Machines
+  website: https://www.intuitivemachines.com/
+  hq: Houston, TX
+  sources:
+  - houston-spaceport
+  - tx-space-commission
+  - innovationmap-funding-2025
+  registry_id: intuitive-machines
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Involve Space
+  website: null
+  hq: Houston, TX
+  sources:
+  - houston-spaceport
+  - innovationmap-space
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: IronLattice
+  website: https://ironlattice.com/
+  hq: Houston, TX
+  sources:
+  - rice-nexus
+  registry_id: ironlattice
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Jewett Mining
+  website: null
+  hq: Jewett, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: jewett-mining
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kane Robotics
+  website: https://kanerobotics.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: kane-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: KeyDrill Technology
+  website: null
+  hq: Missouri City, TX
+  sources:
+  - otc-spotlight-2026
+  registry_id: keydrill-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Knight Aerospace
+  website: https://knightaerospace.com/
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2025
+  - port-sa-2021
+  registry_id: knight-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: 2eb98d85-f191-46c2-bf2d-654275f316d1
+  open_roles: null
+- name: KoMiCo Technology
+  website: https://komico.com
+  hq: Anseong-si, Gyeonggi-do, South Korea
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Precision cleaning, special coating and analysis services for semiconductor equipment
+    parts.'
+  ats: null
+  open_roles: null
+- name: KULR Technology Group
+  website: https://kulrtechnology.com/
+  hq: Webster, TX
+  sources:
+  - tx-space-commission
+  - ocp-members
+  registry_id: kulr-technology-group
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Leviathan Air
+  website: https://leviathan-air.com
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: leviathan-air
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Loombotic
+  website: https://loombotic.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: loombotic
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LTD Material
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Luminant Mining Company
+  website: https://www.luminant.com
+  hq: Irving, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: luminant-mining-company
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Maverick Metals
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - texastribune-2025-mining
+  registry_id: null
+  decision: null
+  reason: The funded company of that name works on mining waste, not the input's product.
+  ats: null
+  open_roles: null
+- name: Maverick Power
+  website: https://maverickpwr.com/
+  hq: McKinney, TX
+  sources:
+  - ocp-members
+  registry_id: maverick-power
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: MDC Precision
+  website: https://mdcprecision.com
+  hq: Pflugerville, TX
+  sources:
+  - opportunity-austin
+  registry_id: mdc-precision
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: MicroSilicon
+  website: https://www.microsiliconinc.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: microsilicon
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mission Critical Group
+  website: https://www.missioncriticalgroup.com/
+  hq: Frisco, TX
+  sources:
+  - ocp-members
+  registry_id: mission-critical-group
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: smartrecruiters
+    token: MissionCriticalGroup
+  open_roles: 103
+- name: Mithril Minerals
+  website: https://mithrilminerals.com
+  hq: Austin, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: mithril-minerals
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Modular MOPU
+  website: https://modularmopu.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: modular-mopu
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Momentum Technologies
+  website: https://momentum.technology/
+  hq: Carrollton, TX
+  sources:
+  - halliburton-labs
+  registry_id: momentum-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: momentum
+  open_roles: null
+- name: MSS International
+  website: null
+  hq: Round Rock, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: NetForwards
+  website: https://netforwards.com
+  hq: Fulshear, TX
+  sources:
+  - rice-etvf-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Neurophos
+  website: https://neurophos.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: neurophos
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: neurophos
+  open_roles: 33
+- name: Noren Products
+  website: https://norenthermal.com
+  hq: Troy, TX
+  sources:
+  - opportunity-austin
+  registry_id: noren-products
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Novapont Technology
+  website: https://novaponttechnology.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2024
+  registry_id: null
+  decision: null
+  reason: Its site is a template; identity not established.
+  ats: null
+  open_roles: null
+- name: Noveon Magnetics
+  website: https://noveon.co/
+  hq: San Marcos, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: noveon-magnetics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Novium
+  website: null
+  hq: Houston area, TX
+  sources:
+  - houston-spaceport
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Oceaneering Space Systems
+  website: https://www.oceaneering.com/
+  hq: Houston, TX
+  sources:
+  - houston-spaceport
+  registry_id: oceaneering-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Oil States International
+  website: https://www.oilstatesintl.com
+  hq: Houston, TX
+  sources:
+  - otc-spotlight-2026
+  - otc-spotlight-2025
+  registry_id: oil-states-international
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/OIL1000OIL/JobBoard/db65c907-0c03-4705-9894-b6385fdde36e
+  open_roles: null
+- name: Oliden Technology
+  website: null
+  hq: Houston area, TX
+  sources:
+  - otc-spotlight-2026
+  registry_id: oliden-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: OxeFit
+  website: https://oxefit.com/
+  hq: Plano, TX
+  sources:
+  - dallas-innovates-awards-2025
+  registry_id: oxefit
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Paladin Drones
+  website: https://paladindrones.io
+  hq: Houston, TX
+  sources:
+  - innovationmap-tempest
+  registry_id: paladin-drones
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Paradigm Manufacturing
+  website: null
+  hq: Hutto, TX
+  sources:
+  - opportunity-austin
+  registry_id: paradigm-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Paradigm Robotics
+  website: https://paradigmrobotics.tech
+  hq: Austin, TX
+  sources:
+  - rice-etvf-2024
+  - avadt50
+  registry_id: paradigm-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Perseus Defense
+  website: https://perseusdefense.com
+  hq: Buda, TX
+  sources:
+  - opportunity-austin
+  registry_id: perseus-defense
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Persona AI
+  website: https://personainc.ai/
+  hq: Houston, TX
+  sources:
+  - ion-tenants
+  - innovationmap-tempest
+  registry_id: persona-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: persona.ai
+  open_roles: 23
+- name: Phoenix Semiconductor
+  website: https://phoenixsemicorp.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: phoenix-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pike Robotics
+  website: https://www.pikerobotics.com
+  hq: Austin, TX
+  sources:
+  - rice-etvf-2026
+  registry_id: pike-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pipedream
+  website: https://pipedreamlabs.co
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: pipedream
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Plus One Robotics
+  website: https://plusonerobotics.com/
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2025
+  - port-sa-2021
+  registry_id: plus-one-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: bamboohr
+    token: plusonerobotics
+  open_roles: 2
+- name: Poseidon Minerals
+  website: https://www.poseidonminerals.com
+  hq: Richmond, TX
+  sources:
+  - rice-etvf-2023
+  registry_id: poseidon-minerals
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: PTW Americas
+  website: null
+  hq: Buda, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Pulseforge
+  website: https://pulseforge.com/
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: pulseforge
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: adp
+    token: 54e1b7f0-547d-444b-870d-ceed2867231e
+  open_roles: null
+- name: Quantum Global Technologies
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Ultra-high-purity cleaning of semiconductor tool parts, process tool part recoating
+    and micro-contamination analysis (QuantumClean, ChemTrace).'
+  ats: null
+  open_roles: null
+- name: RAVN Aerospace
+  website: null
+  hq: Houston area, TX
+  sources:
+  - houston-spaceport
+  registry_id: null
+  decision: null
+  reason: No website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Reckon Point
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2021
+  registry_id: null
+  decision: null
+  reason: Its domain now redirects to a domain-for-sale page; status not established.
+  ats: null
+  open_roles: null
+- name: Red Shift Energy
+  website: https://www.rsenrg.com/
+  hq: Corpus Christi, TX
+  sources:
+  - halliburton-labs
+  - rice-etvf-2025
+  registry_id: red-shift-energy
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Redbird Flight Simulations
+  website: https://redbirdflight.com/
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: redbird-flight-simulations
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Refraction AI
+  website: https://refraction.ai
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Its site returns 404; status not established.
+  ats: null
+  open_roles: null
+- name: Renesin
+  website: https://renesin.com
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: renesin
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Renu Robotics
+  website: https://renurobotics.com
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2021
+  registry_id: renu-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://renurobotics.com/career/
+  open_roles: null
+- name: Resurgent Industries
+  website: null
+  hq: Leander, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats:
+    type: ashby
+    token: resurgent-industries
+  open_roles: 15
+- name: RSET (Rotating Sleeve Engine Technologies)
+  website: https://www.rotatingliner.com
+  hq: Austin, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: null
+  decision: null
+  reason: Its site names Tribo Dynamics Inc.; identity not established.
+  ats: null
+  open_roles: null
+- name: Safe Isolations
+  website: https://www.safeisolations.com
+  hq: Houston, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Saronic
+  website: https://www.saronic.com/
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - austin-founders-feed
+  - opportunity-austin
+  registry_id: saronic
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: saronic
+  open_roles: 312
+- name: SensorEra
+  website: https://www.sensorera.tech
+  hq: Sugar Land, TX
+  sources:
+  - rice-etvf-2022
+  registry_id: sensorera
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SigmaSense
+  website: https://www.sigmasense.com/
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: sigmasense
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Silicon Labs
+  website: https://www.silabs.com/
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  registry_id: silicon-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: silabs.wd1.myworkdayjobs.com/SiliconlabsCareers
+  open_roles: null
+- name: Sisu
+  website: https://sisu.us
+  hq: Round Rock, TX
+  sources:
+  - opportunity-austin
+  registry_id: sisu
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: ashby
+    token: sisu
+  open_roles: 2
+- name: Skyways
+  website: https://www.skyways.com/
+  hq: Austin, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: skyways
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: skyways
+  open_roles: 18
+- name: Slant 3D
+  website: https://www.slant3d.com/
+  hq: Hutto, TX
+  sources:
+  - opportunity-austin
+  registry_id: slant-3d
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SLB
+  website: https://www.slb.com/
+  hq: Houston, TX
+  sources:
+  - otc-spotlight-2026
+  - otc-spotlight-2025
+  registry_id: slb
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Smackover Lithium
+  website: https://smackoverlithium.com
+  hq: Franklin Project, East Texas
+  sources:
+  - texastribune-2025-mining
+  registry_id: smackover-lithium
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SmokeD
+  website: https://smokedsystem.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: smoked
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: South Texas Mining Venture
+  website: null
+  hq: Duval County, TX
+  sources:
+  - rrc-uranium-permits
+  registry_id: null
+  decision: duplicate
+  reason: A subsidiary of Uranium Energy Corp., which is listed separately.
+  ats: null
+  open_roles: null
+- name: SpaceX
+  website: https://www.spacex.com/
+  hq: Starbase, TX
+  sources:
+  - tx-space-commission
+  - opportunity-austin
+  - tsif-listing
+  registry_id: spacex
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: spacex
+  open_roles: 2890
+- name: Special Products & Mfg.
+  website: https://spmfg.com
+  hq: Rockwall, TX
+  sources:
+  - opportunity-austin
+  registry_id: special-products-and-mfg
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SPINNER
+  website: null
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Starlab Space
+  website: https://starlab-space.com/
+  hq: Houston, TX
+  sources:
+  - tx-space-commission
+  registry_id: starlab-space
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: voyagertechnologiesinc
+  open_roles: 195
+- name: Strategic Thermal Labs
+  website: null
+  hq: Georgetown, TX
+  sources:
+  - opportunity-austin
+  registry_id: strategic-thermal-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SunScout
+  website: null
+  hq: Buda, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: The SunScout found points to Massachusetts and New Zealand, not Buda, TX.
+  ats: null
+  open_roles: null
+- name: Sykes Industries
+  website: null
+  hq: Elgin, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Known only from a state project record; identity not established.
+  ats: null
+  open_roles: null
+- name: TAMOS
+  website: https://www.tamosolutions.com/
+  hq: Houston, TX
+  sources:
+  - rice-nexus
+  registry_id: tamos
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TAU Systems
+  website: https://www.tausystems.com/
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: tau-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: tau
+  open_roles: 2
+- name: TDK RF Solutions
+  website: https://tdkrfsolutions.com
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Its site had a certificate error; identity not established.
+  ats: null
+  open_roles: null
+- name: Terminus Industrials
+  website: https://terminusindustrials.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: terminus-industrials
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TerraFirma
+  website: https://terrafirma.inc
+  hq: Buda, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: terrafirma
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TerraVolta Resources
+  website: null
+  hq: Houston, TX
+  sources:
+  - texastribune-2025-mining
+  registry_id: terravolta-resources
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Texas Mineral Resources Corp.
+  website: https://tmrcorp.com
+  hq: Sierra Blanca, TX
+  sources:
+  - texastribune-2025-mining
+  registry_id: texas-mineral-resources-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: The Boring Company
+  website: https://www.boringcompany.com/
+  hq: Bastrop, TX
+  sources:
+  - avadt50
+  - opportunity-austin
+  registry_id: the-boring-company
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: the-boring-company
+  open_roles: null
+- name: The Sabine Mining Company
+  website: null
+  hq: Hallsville, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: the-sabine-mining-company
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Thermon
+  website: https://www.thermon.com/
+  hq: Austin, TX
+  sources:
+  - ocp-members
+  registry_id: thermon
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Traysar
+  website: https://traysar.com
+  hq: Austin, TX
+  sources:
+  - avadt50
+  registry_id: traysar
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: traysar
+  open_roles: 8
+- name: Tubular Network
+  website: https://tubular.network
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: tubular-network
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Turbo Power Semiconductor
+  website: https://turbopowersemi.com
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: turbo-power-semiconductor
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Uhnder
+  website: https://uhnder.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: uhnder
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Uranium Energy Corp.
+  website: https://www.uraniumenergy.com
+  hq: Corpus Christi, TX
+  sources:
+  - rrc-uranium-permits
+  - texastribune-2025-mining
+  registry_id: uranium-energy-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: URI, Inc.
+  website: null
+  hq: South Texas
+  sources:
+  - rrc-uranium-permits
+  registry_id: uri-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Valex
+  website: https://valex.com
+  hq: Georgetown, TX
+  sources:
+  - opportunity-austin
+  registry_id: valex
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Valstad Shipworks
+  website: https://valstad.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: valstad-shipworks
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Venus Aerospace
+  website: https://www.venusaero.com/
+  hq: Houston, TX
+  sources:
+  - houston-spaceport
+  - tx-space-commission
+  - innovationmap-funding-2025
+  registry_id: venus-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: venusaero
+  open_roles: 26
+- name: VoltaGrid
+  website: https://voltagrid.com
+  hq: Houston, TX
+  sources:
+  - energycapitalhtx-2026-funding
+  registry_id: voltagrid
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/VOL1012VOLG/JobBoard/ecba8ead-7b8e-4b87-8c34-950a765fcbe4
+  open_roles: null
+- name: VORAGO Technologies
+  website: https://voragotech.com
+  hq: Austin, TX
+  sources:
+  - opportunity-austin
+  registry_id: vorago-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Walnut Creek Mining Company
+  website: null
+  hq: Bremond, TX
+  sources:
+  - rrc-coal-permits
+  registry_id: walnut-creek-mining-company
+  decision: registry
+  reason: 'Proposed in proposals-05-texas-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Warm Audio
+  website: https://warmaudio.com
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: not-in-scope
+  reason: Recording-studio audio equipment; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Waterloo Solutions
+  website: https://waterloo.solutions
+  hq: Austin, TX
+  sources:
+  - ati-ut
+  registry_id: null
+  decision: null
+  reason: Its domain no longer resolves; status not established.
+  ats: null
+  open_roles: null
+- name: Wright One
+  website: null
+  hq: Cedar Park, TX
+  sources:
+  - opportunity-austin
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: XArc (Exploration Architecture Corporation)
+  website: null
+  hq: San Antonio, TX
+  sources:
+  - port-sa-2025
+  - port-sa-2021
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Yerico Manufacturing
+  website: null
+  hq: Elgin, TX
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly refurbishes and repairs semiconductor equipment (services).
+  ats: null
+  open_roles: null
+excluded:
+- name: Abaco Systems
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Huntsville, AL (AMETEK); no main Texas site confirmed.
+- name: Anywaves Federal
+  sources:
+  - opportunity-austin
+  reason: 'Headquartered outside the US (Toulouse, France (site: Austin, TX)); no main site in the region found.'
+- name: Aurora Innovation
+  sources:
+  - dallas-innovates-awards-2025
+  reason: Headquartered in Pittsburgh, PA; Dallas is one site.
+- name: Bright Machines
+  sources:
+  - opportunity-austin
+  reason: Headquartered in San Francisco, CA; no main Texas site confirmed.
+- name: Caracol
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Italy; Pflugerville is its North American site.
+- name: Carr Lane Manufacturing
+  sources:
+  - opportunity-austin
+  reason: Headquartered in St. Louis, MO, outside the region; no main site in the region found.
+- name: Coco Robotics
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Venice Beach, CA; no main Texas site confirmed.
+- name: Deterrence
+  sources:
+  - avadt50
+  reason: Headquartered in Denver, CO (Dealroom); Austin appears only as a job location.
+- name: DioQuest
+  sources:
+  - rice-etvf-2024
+  reason: Headquartered in Oviedo, FL (Semplastics); no main Texas site confirmed.
+- name: Dongjin Semichem
+  sources:
+  - tsif-listing
+  reason: Headquartered in South Korea; its Texas operation is one site.
+- name: East/West Manufacturing
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Atlanta, GA; Round Rock was not confirmed.
+- name: EVS Metal
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Riverdale, NJ.
+- name: FormFactor
+  sources:
+  - tsif-listing
+  reason: Headquartered in Livermore, CA; Farmers Branch is one site.
+- name: Gecko Robotics
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Pittsburgh, PA, outside the region; no main site in the region found.
+- name: INGU
+  sources:
+  - rice-etvf-2023
+  reason: Headquartered in Calgary, AB, Canada; Houston is an office.
+- name: Interlune
+  sources:
+  - tx-space-commission
+  reason: Headquartered in Seattle, WA; Texas is an R&D site.
+- name: Iron Ox
+  sources:
+  - opportunity-austin
+  reason: Headquartered in San Carlos, CA.
+- name: Kval
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Petaluma, CA, outside the region; no main site in the region found.
+- name: Loram Technologies
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Hamel, MN; Georgetown is one site.
+- name: Machine Sciences Corp.
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Tualatin, OR, outside the region; no main site in the region found.
+- name: MGC Pure Chemicals America
+  sources:
+  - tsif-listing
+  reason: Headquartered outside the US (Tokyo, Japan (parent Mitsubishi Gas Chem); no main site in the region found.
+- name: MP Materials (10X magnet plant)
+  sources:
+  - tsif-listing
+  reason: Headquartered in Las Vegas, NV (Mountain West); Northlake is a plant.
+- name: Mythic
+  sources:
+  - avadt50
+  - opportunity-austin
+  reason: Listed in the Bay Area adjacent list (headquarters disputed between Redwood City and Austin).
+- name: Nanoracks
+  sources:
+  - houston-spaceport
+  reason: Part of Voyager Technologies (Denver, CO; listed in the Colorado adjacent list).
+- name: Nissin Ion Equipment
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Japan; a Texas site was not confirmed.
+- name: Schunk Xycarb Technology
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  reason: Part of the Schunk group, headquartered outside the US.
+- name: Soulbrain RASA TX
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  reason: A planned plant of Soulbrain (South Korea), not yet built.
+- name: Square Robot
+  sources:
+  - innovationmap-funding-2025
+  - innovationmap-tempest
+  reason: Headquartered in Westborough, MA (listed in the Boston adjacent list).
+- name: Tekscend Photomask Round Rock
+  sources:
+  - opportunity-austin
+  - tsif-listing
+  reason: A plant of Tekscend Photomask (Japan).
+- name: Torc Robotics
+  sources:
+  - opportunity-austin
+  reason: Daimler Truck subsidiary headquartered in Blacksburg, VA; Texas is one site.
+- name: Umbra
+  sources:
+  - avadt50
+  reason: Headquartered in Santa Barbara, CA; no Texas site found.
+- name: Wallstreet Sand Co.
+  sources:
+  - search-permian-sand
+  reason: Named only by a search snippet of worldoil.com, whose robots.txt bars anthropic-ai; not used.
+- name: WonikQnc
+  sources:
+  - opportunity-austin
+  reason: Headquartered in South Korea; a Texas supply site is reported.
+- name: X-Bow Systems
+  sources:
+  - opportunity-austin
+  reason: Headquartered in Albuquerque, NM, outside the region; no main site in the region found.
+- name: XYREC
+  sources:
+  - port-sa-2021
+  reason: Headquartered in the Netherlands; San Antonio is a US site.
