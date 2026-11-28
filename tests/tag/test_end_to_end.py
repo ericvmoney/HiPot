@@ -33,7 +33,8 @@ def test_example_raw_file():
     assert job["pay"] == {"min": 160000, "max": 195000, "currency": "USD", "period": "year", "basis": "posting-text"}
     assert job["tagging"] == {"function_by": "rule", "disciplines_by": "rule", "level_by": "rule", "model": None}
     assert "description_text" not in job and "department" not in job
-    assert job["summary"].startswith("Synthetic example.")
+    # The summary starts at the sentence about the role, not the line before it.
+    assert job["summary"].startswith("You will own the plant controller")
     assert report["summary"]["by_function"] == {"engineering": 1}
 
 

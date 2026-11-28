@@ -63,7 +63,7 @@ def tag_job(raw: dict) -> tuple[dict, dict]:
         "first_seen": raw["first_seen"],
         "last_seen": raw["last_seen"],
     })
-    summary = summarise(text)
+    summary = summarise(text, raw["title"])
     if summary:
         job["summary"] = summary
     job["tagging"] = {"function_by": "rule", "disciplines_by": "rule", "level_by": level_by, "model": None}
