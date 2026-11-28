@@ -105,13 +105,13 @@ sources:
   note: one web search; websites from general knowledge
 companies:
 - name: Aadi Space
-  website: null
-  hq: San Francisco Bay Area
+  website: https://aadi.space
+  hq: San Jose, CA
   sources:
   - bacei-space-2025
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: aadi-space
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Aalyria
@@ -298,14 +298,14 @@ companies:
   open_roles: 26
 - name: Array Labs
   website: https://www.arraylabs.io/
-  hq: San Francisco, CA
+  hq: Palo Alto, CA
   sources:
   - yc-aviation-space-bay
   - yc-satellites
   - bacei-space-2025
-  registry_id: null
-  decision: null
-  reason: The merge had matched it to a different registry company (Array Technologies); its facts were not gathered.
+  registry_id: array-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Astera Labs
@@ -1291,9 +1291,9 @@ companies:
   hq: San Francisco, CA
   sources:
   - bacei-space-2025
-  registry_id: null
-  decision: null
-  reason: Its site shows only a placeholder; status not established.
+  registry_id: krtkl
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Kudo3D
@@ -1777,13 +1777,13 @@ companies:
   ats: null
   open_roles: null
 - name: Palo Alto Electron
-  website: null
+  website: https://www.paloaltoelectron.com
   hq: Palo Alto, CA
   sources:
   - ocp-members-us
-  registry_id: null
-  decision: null
-  reason: Named by a source, but the company could not be identified.
+  registry_id: palo-alto-electron
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Piris Labs
@@ -2164,13 +2164,13 @@ companies:
     token: sirenopt
   open_roles: null
 - name: Skycorp Inc.
-  website: null
-  hq: San Francisco Bay Area
+  website: https://www.spacebilt.com
+  hq: Santa Clara, CA
   sources:
   - bacei-space-2025
-  registry_id: null
-  decision: null
-  reason: Identity not established (a directory links it to Spacebilt; spacebilt.com does not mention it).
+  registry_id: skycorp-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Skydio
@@ -2222,7 +2222,7 @@ companies:
   - bacei-space-2025
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Do not map to Blue Skies Space's StarDrive data platform.
   ats: null
   open_roles: null
 - name: Streamline Systems
