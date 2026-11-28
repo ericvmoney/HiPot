@@ -1173,6 +1173,7 @@ var MyRoles = (function () {
   'use strict';
 
   var DATA_URL = 'data/board.json';
+  var SUMMARIES_URL = 'data/summaries.json';   // the posting summaries, loaded the first time one is opened
   var BOARD_VERSION = 0;
   var PAGE_SIZE = 50;
   var COMPANY_ORDER = new Intl.Collator('en', { sensitivity: 'base' });
@@ -2477,13 +2478,48 @@ var MyRoles = (function () {
         el('p', { class: 'where', text: whereText(role) }),
         role.match ? el('p', { class: 'why' }, [el('span', { class: 'why-label', text: 'Why it matches: ' }), role.match.why]) : null,
         tags,
-        role.summary ? el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), el('p', { text: role.summary })]) : null
+        typeof role.sm === 'number' ? summaryNode(role) : null
       ]),
       el('div', { class: 'role-side' }, [payNode, gradeNode, dateNode]),
       more
     ]);
     wireCard(card, role, title.querySelector('a'), more);
     return card;
+  }
+
+  // ---- Posting summaries: a separate file, loaded the first time a reader opens one ----------------
+  //
+  // board.json carries only `sm`, an index into summaries.json's `texts` (each distinct text once). The
+  // file must carry the same generated_at as the board, or its indexes would point at the wrong texts.
+  var summariesLoading = null;
+  function loadSummaries() {
+    if (!summariesLoading) {
+      summariesLoading = fetch(SUMMARIES_URL).then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      }).then(function (data) {
+        if (!data || data.summaries_version !== 0 || !Array.isArray(data.texts)) throw new Error('unexpected format');
+        if (data.generated_at !== board.generated_at) throw new Error('it is from another refresh; reload the page');
+        return data.texts;
+      });
+      summariesLoading.catch(function () { summariesLoading = null; });   // a later open may try again
+    }
+    return summariesLoading;
+  }
+
+  function summaryNode(role) {
+    var text = el('p', { text: 'Loading…' });
+    var box = el('details', { class: 'summary' }, [el('summary', { text: 'From the posting' }), text]);
+    box.addEventListener('toggle', function () {
+      if (!box.open || box.dataset.loaded) return;
+      loadSummaries().then(function (texts) {
+        box.dataset.loaded = '1';
+        text.textContent = typeof texts[role.sm] === 'string' ? texts[role.sm] : 'No text for this posting.';
+      }, function (error) {
+        text.textContent = 'The posting text did not load (' + (error && error.message || 'unknown error') + ').';
+      });
+    });
+    return box;
   }
 
   // A company heading for the company sort, as in the hub: name, open roles here, tier and reason.

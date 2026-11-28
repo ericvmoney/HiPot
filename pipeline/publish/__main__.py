@@ -13,7 +13,8 @@ import sys
 from pathlib import Path
 
 from pipeline.io import ROOT, load_json, load_yaml
-from pipeline.publish.build import PublishError, build_board, build_pay, write_board, write_pay, write_taxonomy_file
+from pipeline.publish.build import (PublishError, build_outputs, build_pay, write_board, write_pay, write_summaries,
+                                    write_taxonomy_file)
 
 MAX_SHOWN = 15
 
@@ -71,8 +72,8 @@ def main(argv: list[str] | None = None) -> int:
         seed_file = ROOT / "data" / "seed" / "jobs.json"
         seed_ids = {job["id"] for job in load_json(seed_file)["jobs"]} if seed_file.is_file() else set()
         runs = load_json(args.runs) if args.runs and args.runs.is_file() else None
-        board = build_board(*inputs, include_unlisted=args.include_unlisted, grades=args.grades, seed_ids=seed_ids,
-                            runs=runs)
+        board, summaries = build_outputs(*inputs, include_unlisted=args.include_unlisted, grades=args.grades,
+                                         seed_ids=seed_ids, runs=runs)
         wages = load_json(args.wages) if args.wages and args.wages.is_file() else None
         pay = build_pay(*inputs, include_unlisted=args.include_unlisted, wages=wages)
     except PublishError as error:
@@ -109,6 +110,14 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print("  pay grades: off (--no-grades)")
     print(f"  size: {size:,} bytes ({size / 1024:.1f} KB)")
+
+    # Beside the board, always: the page loads it when a reader first opens "From the posting".
+    summaries_out = args.out.with_name("summaries.json")
+    summaries_size = write_summaries(summaries, summaries_out)
+    with_text = sum(1 for role in board["roles"] if "sm" in role)
+    print(f"Wrote {summaries_out}")
+    print(f"  summaries: {len(summaries['texts'])} distinct texts for {with_text} roles; "
+          f"size: {summaries_size:,} bytes ({summaries_size / 1024:.1f} KB)")
 
     taxonomy_out = args.out.with_name("taxonomy.json")
     taxonomy_size = write_taxonomy_file(inputs[2], taxonomy_out)

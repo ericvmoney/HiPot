@@ -249,8 +249,8 @@ def test_company_and_role_fields_are_carried_over():
         "id": "a1", "co": "alpha", "title": "Staff Controls Engineer", "url": "https://example.com/jobs/a1",
         "fn": "engineering", "loc": ["Denver, CO", "US remote"], "metros": ["denver"], "st": ["co"], "wp": "remote", "disc": ["controls", "systems"],
         "level": "staff", "pay": {"min": 150000, "max": 190000, "cur": "USD", "per": "year"},
-        "posted": "2026-11-21", "summary": "Own the inverter control loop.",
-    }   # full-time and the first-seen day are left out: the page needs neither (see test_size_trims)
+        "posted": "2026-11-21", "sm": 0,
+    }   # full-time and the first-seen day are left out, and the summary is in summaries.json (test_size_trims)
     # Nothing stated stays nothing stated: no pay, level, workplace or discipline is invented.
     assert by_id["a2"] == {"id": "a2", "co": "alpha", "title": "Engineer a2",
                            "url": "https://example.com/jobs/a2", "fn": "product", "seen": "2026-11-20"}

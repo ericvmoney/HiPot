@@ -113,11 +113,18 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 ## Keeping board.json small
 
 The artifact limit is 16 MB per file, and the target is about 12 MB.
-- **Summaries:** cut to 200 characters (`SUMMARY_CHARS`). The cut falls at a sentence end when one lies past 60% of that, otherwise at a word, with "…".
 - **`seen`:** written only when a role has no `posted` date; the page dates a role by `posted`, else `seen`.
 - **`emp`:** written only when it is not full-time.
+- **Summaries in their own file**, `summaries.json`, written beside `board.json` (so `data/summaries.json` on the site):
+  - each distinct text is stored once, cut to 300 characters (`SUMMARY_CHARS`) at a sentence end when one lies past 60% of that, otherwise at a word with "…";
+  - a role carries `sm`, its text's index;
+  - both files carry the same `generated_at`, and the page refuses a mismatched pair;
+  - the page fetches the file the first time a reader opens "From the posting". Nothing else reads summaries.
+- **Publishing:** `summaries.json` must be published with `board.json`.
 
-On 2026-11-28's data this took the shared build from 8.9 MB to 6.1 MB for 10,348 roles, about 590 B per role.
+On 2026-11-28's data (10,348 roles, shared build):
+- `board.json` went from 8.9 MB to 4.2 MB, about 400 B per role;
+- `summaries.json` is 2.1 MB: 7,781 distinct texts for 10,332 roles.
 
 ## Company categories (decision 23)
 

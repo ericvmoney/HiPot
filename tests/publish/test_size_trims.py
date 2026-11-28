@@ -1,13 +1,17 @@
-"""Keeping board.json small (size report, 2026-11-28): summaries cut to 200 characters at a sentence or a
-word, `seen` only when a role has no posted date, and `emp` only when it is not full-time."""
+"""Keeping board.json small (size report, 2026-11-28): `seen` only when a role has no posted date, `emp`
+only when it is not full-time, and the posting summaries in their own file (summaries.json), each distinct
+text once, cut to 300 characters at a sentence or a word."""
 from __future__ import annotations
+
+import json
 
 import pytest
 
-from pipeline.io import ROOT, load_yaml
+from pipeline.io import ROOT, load_json, load_yaml
 from pipeline.publish import build_board
-from pipeline.publish.build import SUMMARY_CHARS, shorten
+from pipeline.publish.build import SUMMARY_CHARS, build_outputs, dumps_summaries, shorten
 from tests.publish.test_publish import board_errors, company, job, jobs_file, registry
+from tools.validate import schema_errors, schema_registry
 
 TAXONOMY = load_yaml(ROOT / "taxonomy.yml")
 SENTENCES = ("Build the battery pack test rig for our grid storage product. Work with firmware, controls and quality "
@@ -57,5 +61,50 @@ def test_the_board_drops_what_the_page_does_not_need():
     assert roles["posted"]["posted"] == "2026-11-21" and "seen" not in roles["posted"]   # dated by posted
     assert roles["unposted"]["seen"] == "2026-11-20" and "posted" not in roles["unposted"]
     assert "emp" not in roles["posted"] and roles["unposted"]["emp"] == "contract" and "emp" not in roles["unknown"]
-    assert len(roles["posted"]["summary"]) <= SUMMARY_CHARS and roles["posted"]["summary"].endswith(".")
+    assert "summary" not in roles["posted"] and roles["posted"]["sm"] == 0 and "sm" not in roles["unposted"]
     assert board_errors(board) == []
+
+
+# --- Summaries in their own file (summaries.json) -------------------------------------------------
+
+BLURB = "Acme makes heat pumps for apartment buildings. " * 10   # a company blurb many roles share
+
+
+def test_each_distinct_summary_is_stored_once_and_roles_point_to_it():
+    reg = registry([company("alpha", "core", "in"), company("beta", "core", "in")])
+    jobs = [job("a1", "alpha", summary=BLURB), job("a2", "alpha", summary=BLURB),
+            job("a3", "alpha", summary="Own the inverter control loop."), job("b1", "beta", summary=BLURB),
+            job("b2", "beta")]
+    board, summaries = build_outputs(jobs_file(jobs), reg, TAXONOMY)
+    assert summaries["generated_at"] == board["generated_at"] and summaries["summaries_version"] == 0
+    assert len(summaries["texts"]) == 2 and SUMMARY_CHARS == 300
+    assert all(len(text) <= 300 for text in summaries["texts"])
+    texts = {role["id"]: summaries["texts"][role["sm"]] for role in board["roles"] if "sm" in role}
+    assert texts["a1"] == texts["a2"] == texts["b1"] == shorten(BLURB, 300)
+    assert texts["a3"] == "Own the inverter control loop." and "b2" not in texts
+    schema = load_json(ROOT / "pipeline" / "publish" / "summaries.schema.json")
+    assert schema_errors(summaries, schema, schema_registry()[0]) == []
+    assert json.loads(dumps_summaries(summaries)) == summaries
+    assert board == build_board(jobs_file(jobs), reg, TAXONOMY)   # the same board, whichever way it is built
+
+
+def test_the_command_writes_summaries_beside_the_board(tmp_path, capsys):
+    from pipeline.publish.__main__ import main
+    out = tmp_path / "shared" / "board.json"
+    assert main(["--jobs", str(ROOT / "data" / "seed" / "jobs.json"), "--out", str(out), "--no-grades"]) == 0
+    board = json.loads(out.read_text(encoding="utf-8"))
+    summaries = json.loads((tmp_path / "shared" / "summaries.json").read_text(encoding="utf-8"))
+    assert summaries["generated_at"] == board["generated_at"]
+    assert all(0 <= role["sm"] < len(summaries["texts"]) for role in board["roles"] if "sm" in role)
+    assert "summaries:" in capsys.readouterr().out
+
+
+def test_the_page_loads_summaries_only_when_one_is_opened():
+    from tests.publish.test_page import SCRIPT
+    node = SCRIPT[SCRIPT.index("function summaryNode(role)"):SCRIPT.index("// A company heading")]
+    assert "box.addEventListener('toggle'" in node and "if (!box.open || box.dataset.loaded) return;" in node
+    assert "loadSummaries().then(" in node and "text.textContent =" in node   # text, never markup
+    load = SCRIPT[SCRIPT.index("function loadSummaries()"):SCRIPT.index("function summaryNode(role)")]
+    assert "if (data.generated_at !== board.generated_at)" in load   # never another refresh's indexes
+    assert "typeof role.sm === 'number' ? summaryNode(role) : null" in SCRIPT
+    assert "role.summary" not in SCRIPT
