@@ -1,0 +1,1849 @@
+# Reference list for Colorado (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: colorado-adjacent
+built: '2026-11-25'
+sources:
+- id: mdedc-aero-cluster
+  name: Metro Denver EDC aerospace industry cluster page
+  url: https://www.metrodenver.org/why-metro-denver/business-climate/industry-clusters/aerospace/
+  note: robots.txt allows all but /wp-admin/
+- id: mdedc-aero-report-2025
+  name: Metro Denver EDC 2025 Aerospace Industry Report (PDF)
+  url: https://www.metrodenver.org/wp-content/uploads/2026/05/Aerospace-One-Pager-2025.pdf
+  note: logos and award tables
+- id: mdedc-aero-scan-2026
+  name: Metro Denver EDC 2026 Aerospace Industry Report / cluster scan (PDF)
+  url: https://www.metrodenver.org/wp-content/uploads/2026/11/2026-Aerospace-Cluster-Scan-2.pdf
+  note: mostly overlaps the cluster page
+- id: mdedc-aero-study-2023
+  name: Metro Denver EDC 2023 Aerospace Industry Cluster Study (PDF)
+  url: https://www.metrodenver.org/wp-content/uploads/2026/06/202320Aerospace20Industry20Cluster20Study.pdf
+  note: text extracted locally from the fetched PDF
+- id: csc-metrodenver
+  name: Colorado Space Coalition page (Metro Denver EDC; spacecolorado.org redirects here)
+  url: https://www.metrodenver.org/get-involved/committees-coalitions/colorado-space-coalition/
+  note: board/member organization list; most entries are firms, governments or services
+- id: oedit-choosecolorado
+  name: OEDIT Choose Colorado aerospace, advanced manufacturing and electronics industry pages
+  url: https://choosecolorado.com/key-industries/aerospace/
+  note: also /key-industries/advanced-manufacturing/ and /key-industries/electronics/; the semiconductors & quantum
+    page named no companies; oedit.colorado.gov itself answered 403
+- id: cama-home
+  name: Colorado Advanced Manufacturing Association (CAMA) home page
+  url: https://co-cama.org/
+  note: member directory loader is disallowed in robots.txt, so only members named on the home page were taken
+- id: mfredge-cmn-awards
+  name: Manufacturer's Edge, Colorado Manufacturing Network Awards press release
+  url: https://manufacturersedge.com/press-release-colorado-manufacturing-network-awards-honor-top-manufacturing-innovators-champions-and-trailblazers-across-colorado/
+- id: mfredge-casestudies
+  name: Manufacturer's Edge case-study posts (via post sitemap)
+  url: https://manufacturersedge.com/post-sitemap.xml
+  note: about 25 case studies, mostly consumer/food makers; Deltech, vForge and Valor read
+- id: cu-vp-midyear
+  name: CU Boulder Venture Partners FY2026 mid-year update (startups launched)
+  url: https://www.colorado.edu/venturepartners/about/reports/venture-partners-mid-year-update
+  note: 29 startups listed, most biotech/software
+- id: cu-vp-annual
+  name: CU Boulder Venture Partners annual report
+  url: https://www.colorado.edu/venturepartners/about/reports/current-annual-report
+  note: startup-portfolio page loads dynamically and returned no names
+- id: cu-jila-spinoffs
+  name: CU Boulder Today, JILA spinoff companies (2012)
+  url: https://www.colorado.edu/today/2012/04/09/jila-spinoff-companies
+  note: dated 2012; some firms since acquired or renamed
+- id: cubit-partners
+  name: CU Boulder CUbit Quantum Initiative industry partners
+  url: https://www.colorado.edu/initiative/cubit/industry-partners
+  note: out-of-state partners skipped
+- id: cubit-seed-2026
+  name: CUbit / OEDIT quantum translational seed grants, third round (2026)
+  url: https://www.colorado.edu/initiative/cubit/2026/04/29/colorado-advances-quantum-innovation-third-round-translational-seed-grant-awards
+- id: mines-search
+  name: Web search results limited to mines.edu (Mines-affiliated startups)
+  url: null
+  note: names from search-result text of mines.edu pages, not a fetched list; ventures.mines.edu/startups names
+    no companies
+- id: cos-chamber-aero
+  name: Colorado Springs Chamber & EDC aerospace/defense pages
+  url: https://coloradospringschamberedc.com/aerospace-defense-companies-colorado-springs/
+  note: also /defense-military/defense-development/ (logo list)
+- id: inven-robotics-co
+  name: Inven, Top 23 Robotics Companies in Colorado
+  url: https://www.inven.ai/company-lists/top-23-robotics-companies-in-colorado
+  note: distributors and services firms skipped
+- id: beststartup-robotics-co
+  name: BestStartup.us, 101 Best Colorado Robotics Companies and Startups (Oct 2022)
+  url: https://beststartup.us/101-best-colorado-robotics-companies-and-startups/
+  note: 2022 list with no cities; many software/services entries skipped; several kept entries unverified
+- id: tid-semis-co
+  name: 'Trade & Industry Development, Semiconductor State of Mind: Colorado'
+  url: https://www.tradeandindustrydev.com/region/colorado/semiconductor-state-mind-colorado-lead-chips-race-32624
+  note: robots.txt allows Claude-User; large chip firms with only design centers skipped
+- id: cu-semis-forum
+  name: CU Boulder Colorado Semiconductor Workforce and Innovation Forum page
+  url: https://www.colorado.edu/researchinnovation/colorado-semiconductor-workforce-and-innovation-forum
+- id: ucd-aero-list
+  name: CU Denver Business School, Aerospace associations, organizations and company information (PDF)
+  url: https://business.ucdenver.edu/content/aerospace
+  note: 2021 PDF
+- id: ucd-mfg-list
+  name: CU Denver Business School, Manufacturing associations, organizations and company information (PDF)
+  url: https://business.ucdenver.edu/content/manufacturing-companies
+  note: mostly consumer and food makers
+- id: sens-site
+  name: Stored Energy Systems company site (found by a data-center equipment web search)
+  url: https://www.sens-usa.com/
+  note: the news article the search pointed to (citybiz.co) answered 403
+- id: cma-members
+  name: Colorado Mining Association, Current CMA Members (logo wall)
+  url: https://www.coloradomining.org/membership
+  note: Logo wall only, no member links; names read from logo alt text and file names, several misspelled or unreadable
+    (numeric file names). robots.txt allows the page.
+- id: cgs-is88
+  name: 'Colorado Geological Survey (at Colorado School of Mines), Information Series 88: Colorado Mineral and Energy
+    Industry Activities 2024-2025'
+  url: https://coloradogeologicalsurvey.org/wp-content/uploads/2026/03/IS-88.pdf
+  note: Active coal mines table, metal mines, exploration project list and industrial minerals sections. Added as
+    the Mines-hosted state survey source because Mines publishes no spinout list. robots.txt allows all.
+- id: e360-methane
+  name: Yale Environment 360, Methane Detectives feature
+  url: https://e360.yale.edu/features/methane-detectives-can-a-wave-of-new-technology-slash-natural-gas-leaks
+  note: Front Range methane-detection companies; Ball Aerospace also named but is aerospace, outside this pass.
+- id: cu-venture-partners
+  name: CU Boulder Venture Partners startup portfolio (LongPath profile)
+  url: https://www.colorado.edu/venturepartners/startup-portfolio/longpath-technologies-inc
+  note: Portfolio list page renders by script and showed no entries; only the LongPath profile was usable.
+- id: copolitics-canary
+  name: Colorado Politics, Denver-based startup Project Canary article (2021)
+  url: https://www.coloradopolitics.com/2021/08/13/denver-based-startup-looks-to-help-oil-and-gas-producers-get-real-on-methane-emissions-2543a591-8eee-5559-aa5b-cef9054d2a9b/
+companies:
+- name: Acroname
+  website: https://acroname.com
+  hq: Boulder, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: acroname
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Adaptive Innovations
+  website: https://www.a-i-corp.com
+  hq: Lakewood, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: adaptive-innovations
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Advanced Space
+  website: https://advancedspace.com
+  hq: Westminster, CO
+  sources:
+  - mdedc-aero-study-2023
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Spacecraft mission design, navigation, mission operations and autonomy software
+    and services (ran the CAPSTONE lunar mission); says it does not build '
+  ats:
+    type: greenhouse
+    token: advancedspace
+  open_roles: 5
+- name: Advanced Thin Films
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: advanced-thin-films
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Aion Robotics
+  website: https://www.aionrobotics.com
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: aion-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Albedo Space
+  website: https://albedo.com
+  hq: Broomfield, CO
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-study-2023
+  registry_id: albedo
+  decision: registry
+  reason: Registry entry 'albedo' is the same company under its current name.
+  ats:
+    type: greenhouse
+    token: albedo
+  open_roles: null
+- name: ALIO Industries
+  website: https://www.alioindustries.com
+  hq: Arvada, CO
+  sources:
+  - inven-robotics-co
+  registry_id: alio-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: e4f6ff38-1bcd-40e3-b778-ec98a30f2192
+  open_roles: null
+- name: Allied Technology
+  website: https://www.allied-technology.com
+  hq: Broomfield, CO
+  sources:
+  - inven-robotics-co
+  registry_id: allied-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: allied
+  open_roles: 2
+- name: Altius Space Machines
+  website: https://www.altius-space.com
+  hq: Broomfield, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: altius-space-machines
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: American Atomics
+  website: null
+  hq: not found
+  sources:
+  - cma-members
+  registry_id: null
+  decision: null
+  reason: Headquarters not found.
+  ats: null
+  open_roles: null
+- name: AMP Robotics
+  website: https://www.amprobotics.com
+  hq: Louisville, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: amp-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: core, startup in.'
+  ats:
+    type: greenhouse
+    token: ampsortation
+  open_roles: 5
+- name: Astro Digital
+  website: https://astrodigital.com
+  hq: Littleton, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: astro-digital
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Atomos Space
+  website: https://www.atomosspace.com
+  hq: Denver, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: atomos-space
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: BAE Systems Space & Mission Systems (formerly Ball Aerospace)
+  website: https://www.baesystems.com
+  hq: Broomfield, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - csc-metrodenver
+  - oedit-choosecolorado
+  - cos-chamber-aero
+  - cu-vp-annual
+  - ucd-aero-list
+  registry_id: bae-systems-space-and-mission-systems-formerly-ball-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Baseline Quantum
+  website: https://baselinequantum.com
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: baseline-quantum
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Basin Resources (New Elk mine)
+  website: null
+  hq: New Elk mine, Las Animas County, CO
+  sources:
+  - cgs-is88
+  registry_id: null
+  decision: null
+  reason: The New Elk mine's operator is New Elk Coal Company (Allegiance Coal); the input name does not match.
+  ats: null
+  open_roles: null
+- name: Beehive Industries
+  website: https://www.beehiveindustries.com
+  hq: Centennial, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: beehive-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: civicplus
+  open_roles: 10
+- name: Benevolent Robotics
+  website: https://benevolentrobotics.com
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: null
+  reason: Pre-launch site with a 2021 copyright; status not established.
+  ats: null
+  open_roles: null
+- name: Beyond Imagination
+  website: https://www.beomni.ai
+  hq: Colorado Springs, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: null
+  reason: Its domain is parked for sale; status not established.
+  ats: null
+  open_roles: null
+- name: Bifrost Electronics
+  website: null
+  hq: Arvada, CO
+  sources:
+  - mines-search
+  registry_id: bifrost-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Black Swift Technologies
+  website: https://bst.aero
+  hq: Boulder, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: black-swift-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Blue Canyon Technologies
+  website: https://www.bluecanyontech.com
+  hq: Lafayette, CO
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  registry_id: blue-canyon-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: bamboohr
+    token: bluecanyontech
+  open_roles: 16
+- name: Blue Mountain Energy
+  website: null
+  hq: Deserado mine, Rio Blanco County, CO
+  sources:
+  - cgs-is88
+  registry_id: blue-mountain-energy
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Boom Supersonic
+  website: https://boomsupersonic.com
+  hq: Centennial, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: boom-supersonic
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: boom-supersonic
+  open_roles: null
+- name: Burlywood
+  website: https://burlywoodtech.com
+  hq: Longmont, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: null
+  reason: Its site is a 'Launching Soon' placeholder; status not established.
+  ats: null
+  open_roles: null
+- name: CAES (formerly Cobham Advanced Electronic Solutions)
+  website: https://www.caes.com
+  hq: Colorado Springs, CO
+  sources:
+  - oedit-choosecolorado
+  registry_id: caes-formerly-cobham-advanced-electronic-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Chi-3 Optics
+  website: https://chi3optics.com
+  hq: Boulder, CO
+  sources:
+  - cubit-seed-2026
+  registry_id: chi-3-optics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Circuits West
+  website: https://www.circuitswest.com
+  hq: Longmont, CO
+  sources:
+  - oedit-choosecolorado
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: CisLunar Industries
+  website: https://www.cislunarindustries.com
+  hq: Loveland, CO
+  sources:
+  - csc-metrodenver
+  registry_id: cislunar-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: CleanRobotics
+  website: https://www.cleanrobotics.com
+  hq: Longmont, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: cleanrobotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: core, startup in.'
+  ats: null
+  open_roles: null
+- name: Climax Molybdenum (Freeport-McMoRan)
+  website: https://www.climaxmolybdenum.com
+  hq: Phoenix, AZ
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: climax-molybdenum-freeport-mcmoran
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Colorado Waterjet
+  website: https://www.coloradowaterjet.com
+  hq: Berthoud, CO
+  sources:
+  - cama-home
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract waterjet-cutting job shop; it sells no machines of its own.
+  ats: null
+  open_roles: null
+- name: Colowyo Coal Company
+  website: null
+  hq: Colowyo mine, Moffat County, CO
+  sources:
+  - cgs-is88
+  registry_id: colowyo-coal-company
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CoorsTek
+  website: https://www.coorstek.com
+  hq: Golden, CO
+  sources:
+  - oedit-choosecolorado
+  - tid-semis-co
+  registry_id: coorstek
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Deltech Furnaces
+  website: https://www.deltechfurnaces.com
+  hq: Denver, CO
+  sources:
+  - mfredge-casestudies
+  registry_id: deltech-furnaces
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Energy Fuels
+  website: https://www.energyfuels.com
+  hq: Lakewood, CO
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: energy-fuels
+  decision: registry
+  reason: null
+  ats:
+    type: adp
+    token: e715f1d4-503d-480f-8910-9c8d566a74ed
+  open_roles: null
+- name: ExoTerra Resource
+  website: https://exoterracorp.com
+  hq: Littleton, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: exoterra-resource
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Forge Nano
+  website: https://www.forgenano.com
+  hq: Thornton, CO
+  sources:
+  - csc-metrodenver
+  - cu-vp-annual
+  - tid-semis-co
+  registry_id: forge-nano
+  decision: registry
+  reason: null
+  ats:
+    type: breezy
+    token: forge-nano
+  open_roles: null
+- name: Fortius Metals
+  website: https://www.fortiusmetals.com
+  hq: Lafayette, CO
+  sources:
+  - inven-robotics-co
+  registry_id: fortius-metals
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GCC Energy
+  website: null
+  hq: King II mine, La Plata County, CO
+  sources:
+  - cgs-is88
+  registry_id: gcc-energy
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GCC of America
+  website: null
+  hq: Denver, CO
+  sources:
+  - cgs-is88
+  registry_id: null
+  decision: not-in-scope
+  reason: Cement producer; its quarries feed its own plants, so it is not a mining company.
+  ats: null
+  open_roles: null
+- name: Gualala Robotics
+  website: https://www.lightrail3.com
+  hq: Steamboat Springs, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: gualala-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: H3X Technologies
+  website: https://www.h3x.tech
+  hq: Louisville, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: h3x-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: h3x-technologies
+  open_roles: null
+- name: High Precision Devices
+  website: https://www.hpd-online.com
+  hq: Boulder, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: high-precision-devices
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Homeland Uranium
+  website: https://www.homeland-uranium.com
+  hq: not stated on site
+  sources:
+  - cgs-is88
+  registry_id: null
+  decision: null
+  reason: Headquarters not stated on its site.
+  ats: null
+  open_roles: null
+- name: Honeybee Robotics
+  website: https://www.honeybeerobotics.com
+  hq: Longmont, CO
+  sources:
+  - inven-robotics-co
+  - mdedc-aero-study-2023
+  registry_id: honeybee-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: HYSA Fillers
+  website: null
+  hq: Golden, CO
+  sources:
+  - mines-search
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Icarus Quantum
+  website: https://www.icarusquantum.com
+  hq: Boulder, CO
+  sources:
+  - cu-vp-annual
+  - cubit-partners
+  registry_id: icarus-quantum
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Infleqtion (formerly ColdQuanta)
+  website: https://www.infleqtion.com
+  hq: Louisville, CO
+  sources:
+  - cu-vp-annual
+  - cubit-partners
+  - cu-jila-spinoffs
+  registry_id: infleqtion-formerly-coldquanta
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: coldquanta
+  open_roles: 74
+- name: InnovaFlex Foundry
+  website: null
+  hq: Colorado Springs, CO
+  sources:
+  - tid-semis-co
+  - cu-semis-forum
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Inspectorbots
+  website: https://inspectorbots.com
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: inspectorbots
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Intrex Aerospace
+  website: https://www.intrexcorp.com
+  hq: Thornton, CO
+  sources:
+  - ucd-aero-list
+  registry_id: intrex-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: 85bfc0a9-91d5-407e-8998-80cfd3b4e8a3
+  open_roles: null
+- name: Karman+
+  website: https://www.karmanplus.com
+  hq: Denver, CO
+  sources:
+  - mdedc-aero-study-2023
+  registry_id: null
+  decision: null
+  reason: The merge had matched it to a different registry company (Karman Industries); its facts were not gathered.
+  ats: null
+  open_roles: null
+- name: KMLabs
+  website: https://www.kmlabs.com
+  hq: Boulder, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: kmlabs
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Left Hand Robotics
+  website: https://www.lefthandrobotics.com
+  hq: Longmont, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: left-hand-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Leitner-Poma of America
+  website: https://www.leitner-poma.com
+  hq: Grand Junction, CO
+  sources:
+  - ucd-mfg-list
+  registry_id: leitner-poma-of-america
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: 8b4ef164-55f7-4a95-a6ac-f9f1563f36c3
+  open_roles: null
+- name: Leptron Unmanned Aircraft Systems
+  website: https://www.leptron.com
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Lockheed Martin Space
+  website: https://www.lockheedmartin.com
+  hq: Littleton, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - csc-metrodenver
+  - oedit-choosecolorado
+  - cos-chamber-aero
+  - cubit-partners
+  - ucd-aero-list
+  - ucd-mfg-list
+  registry_id: lockheed-martin-space
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: LongPath Technologies
+  website: https://www.longpathtech.com
+  hq: Boulder, CO
+  sources:
+  - e360-methane
+  - cu-venture-partners
+  registry_id: longpath-technologies
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Lunar Outpost
+  website: https://lunaroutpost.com
+  hq: Golden, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - inven-robotics-co
+  - beststartup-robotics-co
+  registry_id: lunar-outpost
+  decision: registry
+  reason: null
+  ats:
+    type: bamboohr
+    token: lunaroutpost
+  open_roles: null
+- name: Luxonis
+  website: https://www.luxonis.com
+  hq: Denver, CO
+  sources:
+  - inven-robotics-co
+  registry_id: luxonis
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Magswitch Technologies
+  website: https://www.magswitch.com
+  hq: Superior, CO
+  sources:
+  - inven-robotics-co
+  registry_id: magswitch-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Maxar Technologies
+  website: https://www.maxar.com
+  hq: Westminster, CO
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - ucd-aero-list
+  registry_id: maxar-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: maxar.wd1.myworkdayjobs.com/Vantor
+  open_roles: null
+- name: Maybell Quantum
+  website: https://www.maybellquantum.com
+  hq: Denver, CO
+  sources:
+  - cubit-partners
+  registry_id: maybell-quantum
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: maybellquantum
+  open_roles: 26
+- name: Meadowlark Optics
+  website: https://www.meadowlark.com
+  hq: Frederick, CO
+  sources:
+  - cubit-partners
+  registry_id: meadowlark-optics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mesa Quantum Systems
+  website: https://mesaquantum.com
+  hq: null
+  sources:
+  - csc-metrodenver
+  - cubit-partners
+  registry_id: mesa-quantum-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Metallic Minerals
+  website: https://mmgsilver.com
+  hq: not stated on site
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: null
+  decision: null
+  reason: Headquarters not stated on its site.
+  ats: null
+  open_roles: null
+- name: Micro-g LaCoste
+  website: https://www.microglacoste.com
+  hq: Lafayette, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: micro-g-lacoste
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Misty Robotics
+  website: https://www.mistyrobotics.com
+  hq: Boulder, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: misty-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Modular Robotics
+  website: https://www.modrobotics.com
+  hq: Boulder, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: modular-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Natural Soda
+  website: null
+  hq: Rifle, CO
+  sources:
+  - cgs-is88
+  registry_id: natural-soda
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Navflex
+  website: https://navflex.com
+  hq: Broomfield, CO
+  sources:
+  - inven-robotics-co
+  registry_id: navflex
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: navflex
+  open_roles: 1
+- name: Newmont
+  website: https://www.newmont.com
+  hq: Denver, CO
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: newmont
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: NOVA Automation
+  website: https://novaautomation.com
+  hq: Denver, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: nova-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nuvemco
+  website: https://www.nuvemco.com
+  hq: Naturita, CO
+  sources:
+  - cgs-is88
+  registry_id: nuvemco
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Octave Photonics
+  website: https://www.octavephotonics.com
+  hq: Louisville, CO
+  sources:
+  - cubit-partners
+  - cubit-seed-2026
+  registry_id: octave-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: OperaSpace
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Pattern Labs
+  website: https://www.patternlabs.ai
+  hq: Erie, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: pattern-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: pattern
+  open_roles: 87
+- name: Peabody (Twentymile Coal Co.)
+  website: https://www.peabodyenergy.com
+  hq: Twentymile
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: peabody-twentymile-coal-co
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Precision Photonics
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: precision-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Prime Robotics
+  website: https://primerobotics.com
+  hq: Denver, CO
+  sources:
+  - inven-robotics-co
+  - beststartup-robotics-co
+  registry_id: prime-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: prime-robotics-1
+  open_roles: 3
+- name: Primus Aerospace
+  website: https://www.primusaerospace.com
+  hq: Lakewood, CO
+  sources:
+  - mdedc-aero-study-2023
+  registry_id: primus-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Project Canary
+  website: https://www.projectcanary.com
+  hq: Denver, CO
+  sources:
+  - copolitics-canary
+  registry_id: project-canary
+  decision: registry
+  reason: null
+  ats:
+    type: pinpoint
+    token: projectcanary
+  open_roles: null
+- name: Ptarmigan Clockworks
+  website: https://ptarmiganclockworks.com
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: ptarmigan-clockworks
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: QPICs
+  website: https://qpics.com
+  hq: Arvada, CO
+  sources:
+  - cubit-seed-2026
+  registry_id: qpics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Quanta3
+  website: https://quanta3.com
+  hq: not stated on site
+  sources:
+  - e360-methane
+  registry_id: quanta3
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Quantinuum
+  website: https://www.quantinuum.com
+  hq: Broomfield, CO
+  sources:
+  - cubit-partners
+  registry_id: quantinuum
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Raven Space Systems
+  website: https://www.ravenspacesystems.com
+  hq: Broomfield, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: raven-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Research Electro-Optics (REO)
+  website: https://www.reoinc.com
+  hq: Boulder, CO
+  sources:
+  - ucd-aero-list
+  registry_id: research-electro-optics-reo
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: ROBAUTO
+  website: https://robauto.ai
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Now an ''agentic commerce layer'' software (Agent Scan, Robauto Pixel, llms.txt
+    generator, AgentHub) connecting brands and AI agents.'
+  ats: null
+  open_roles: null
+- name: Robotic Construction Technologies
+  website: null
+  hq: Denver, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: null
+  decision: null
+  reason: Matched by name only with no domain; identity not established.
+  ats: null
+  open_roles: null
+- name: Rocky Mountain Instrument Co.
+  website: https://rmico.com
+  hq: Lafayette, CO
+  sources:
+  - ucd-aero-list
+  registry_id: rocky-mountain-instrument-co
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Sagittarius Logistics
+  website: https://sagittariuslogistics.com
+  hq: Golden, CO
+  sources:
+  - mines-search
+  registry_id: sagittarius-logistics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Scientific Aviation
+  website: https://www.scientificaviation.com
+  hq: Boulder, CO
+  sources:
+  - e360-methane
+  registry_id: scientific-aviation
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Scythe Robotics
+  website: https://www.scytherobotics.com
+  hq: Boulder, CO
+  sources:
+  - inven-robotics-co
+  - beststartup-robotics-co
+  registry_id: scythe-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SEAKR Engineering
+  website: https://www.seakr.com
+  hq: Centennial, CO
+  sources:
+  - ucd-aero-list
+  registry_id: seakr-engineering
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: smartrecruiters
+    token: SEAKREngineering
+  open_roles: 10
+- name: Sierra Space
+  website: https://www.sierraspace.com
+  hq: Louisville, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - oedit-choosecolorado
+  registry_id: sierra-space
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ska Fabricating
+  website: https://www.skafab.com
+  hq: Durango, CO
+  sources:
+  - mfredge-cmn-awards
+  registry_id: null
+  decision: null
+  reason: Its domain now redirects to an unrelated Swedish company; status not established.
+  ats: null
+  open_roles: null
+- name: Sodern America
+  website: https://www.sodern.com
+  hq: Limeil-Brevannes, France
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: sodern-america
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Space Dust Research & Technologies
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-annual
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Space River Labs
+  website: https://spaceriverlabs.com
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Space-ng
+  website: https://space-ng.com
+  hq: Littleton, CO
+  sources:
+  - csc-metrodenver
+  registry_id: space-ng
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SparkFun Electronics
+  website: https://www.sparkfun.com
+  hq: Niwot, CO
+  sources:
+  - inven-robotics-co
+  - beststartup-robotics-co
+  registry_id: sparkfun-electronics
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Special Aerospace Services
+  website: https://www.specialaerospaceservices.com
+  hq: Boulder, CO
+  sources:
+  - csc-metrodenver
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly spaceflight engineering services.
+  ats: null
+  open_roles: null
+- name: Spectrum Advanced Manufacturing Technologies
+  website: https://spectrumamt.com
+  hq: Colorado Springs, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: spectrum-advanced-manufacturing-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SSR Mining
+  website: https://www.ssrmining.com
+  hq: Denver, CO
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: ssr-mining
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: ssrmining.wd108.myworkdayjobs.com/SSR_Mining_Careers
+  open_roles: null
+- name: Stable Laser Systems
+  website: https://www.stablelasers.com
+  hq: Boulder, CO
+  sources:
+  - cu-jila-spinoffs
+  - cubit-seed-2026
+  registry_id: stable-laser-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Steelhead Composites
+  website: https://steelheadcomposites.com
+  hq: Golden, CO
+  sources:
+  - mdedc-aero-report-2025
+  registry_id: steelhead-composites
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://steelheadcomposites.com/careers
+  open_roles: null
+- name: Stored Energy Systems (SENS)
+  website: https://www.sens-usa.com
+  hq: Longmont, CO
+  sources:
+  - sens-site
+  registry_id: stored-energy-systems-sens
+  decision: registry
+  reason: null
+  ats:
+    type: adp
+    token: https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=4b01b1ef-1960-4219-8f3f-6c0652a81377&ccId=19000101_000001&source=CC2&lang=en_US&selectedMenuKey=CurrentOpenings
+  open_roles: null
+- name: Stratom
+  website: https://www.stratom.com
+  hq: Boulder area, CO
+  sources:
+  - inven-robotics-co
+  - beststartup-robotics-co
+  registry_id: stratom
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: StructureBot
+  website: https://structurebot.com
+  hq: Colorado Springs, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: structurebot
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Summit Brick Co.
+  website: null
+  hq: Pueblo, CO
+  sources:
+  - cgs-is88
+  registry_id: null
+  decision: not-in-scope
+  reason: Clay brick maker; its clay pit feeds its own plant, so it is not a mining company.
+  ats: null
+  open_roles: null
+- name: Synteric Robotics
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: null
+  decision: null
+  reason: Identity and Boulder location not established.
+  ats: null
+  open_roles: null
+- name: Tangy Consulting
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Tendeg
+  website: https://www.tendeg.com
+  hq: Louisville, CO
+  sources:
+  - csc-metrodenver
+  registry_id: tendeg
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ThinkOrbital
+  website: https://www.thinkorbital.com
+  hq: Lafayette, CO
+  sources:
+  - csc-metrodenver
+  - mdedc-aero-scan-2026
+  - beststartup-robotics-co
+  registry_id: thinkorbital
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Thorin Resources
+  website: null
+  hq: Ouray, CO
+  sources:
+  - cma-members
+  registry_id: thorin-resources
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Tortuga AgTech
+  website: https://www.tortugaagtech.com
+  hq: Denver, CO
+  sources:
+  - inven-robotics-co
+  registry_id: tortuga-agtech
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats:
+    type: paycom
+    token: 01E3817CC44C51365B67FADFEF148A24
+  open_roles: null
+- name: Trapper Mining Inc.
+  website: null
+  hq: Craig, CO
+  sources:
+  - cgs-is88
+  registry_id: trapper-mining-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Trident Photonics
+  website: null
+  hq: Boulder, CO
+  sources:
+  - cu-vp-midyear
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Trimble
+  website: https://www.trimble.com
+  hq: Westminster, CO
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - ucd-aero-list
+  registry_id: trimble
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: True Anomaly
+  website: https://www.trueanomaly.space
+  hq: Centennial, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  registry_id: true-anomaly
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: trueanomalyinc
+  open_roles: 215
+- name: United Launch Alliance
+  website: https://www.ulalaunch.com
+  hq: Centennial, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - csc-metrodenver
+  - oedit-choosecolorado
+  - ucd-aero-list
+  registry_id: united-launch-alliance
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: UP Aerospace
+  website: https://www.upaerospace.com
+  hq: Denver, CO
+  sources:
+  - ucd-aero-list
+  registry_id: up-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Urban Sky
+  website: https://www.urbansky.com
+  hq: Denver, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: urban-sky
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: urban-sky
+  open_roles: null
+- name: Ursa Major
+  website: https://www.ursamajor.com
+  hq: Berthoud, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  registry_id: ursa-major
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: Valor (formerly Capco)
+  website: https://capcoinc.com
+  hq: Grand Junction, CO
+  sources:
+  - mfredge-casestudies
+  - beststartup-robotics-co
+  registry_id: valor-formerly-capco
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: 54907fb2-0a07-4338-b0aa-64243060d01d
+  open_roles: null
+- name: Vectis Automation
+  website: https://www.vectisautomation.com
+  hq: Loveland, CO
+  sources:
+  - cama-home
+  - inven-robotics-co
+  registry_id: vectis-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Verge Defense
+  website: null
+  hq: Colorado
+  sources:
+  - csc-metrodenver
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Vescent
+  website: https://vescent.com
+  hq: Golden, CO
+  sources:
+  - cubit-partners
+  - cu-jila-spinoffs
+  registry_id: vescent
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: vForge
+  website: null
+  hq: Lakewood, CO
+  sources:
+  - mfredge-casestudies
+  registry_id: null
+  decision: closed
+  reason: 'Closed: site gone (DNS not found); closure not confirmed by news'
+  ats: null
+  open_roles: null
+- name: Vigilant Robots
+  website: https://www.vigilantrobots.com
+  hq: Denver, CO
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: closed
+  reason: 'Closed: site gone rebranded/continued as Gamma 2 Robotics by 2014'
+  ats: null
+  open_roles: null
+- name: Voyager Technologies
+  website: https://voyagertechnologies.com
+  hq: Denver, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  - oedit-choosecolorado
+  registry_id: voyager-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: voyagertechnologiesinc
+  open_roles: 195
+- name: Western Uranium & Vanadium
+  website: https://western-uranium.com
+  hq: Nucla, CO
+  sources:
+  - cma-members
+  - cgs-is88
+  registry_id: western-uranium-and-vanadium
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Winters Electro-Optics
+  website: null
+  hq: Longmont, CO
+  sources:
+  - cu-jila-spinoffs
+  registry_id: null
+  decision: null
+  reason: Current activity not established.
+  ats: null
+  open_roles: null
+- name: WinterWinds Robotics
+  website: https://www.winterwinds.io
+  hq: Colorado
+  sources:
+  - beststartup-robotics-co
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Wolf Robotics (Lincoln Electric Automation)
+  website: https://www.wolfrobotics.com
+  hq: Fort Collins, CO
+  sources:
+  - inven-robotics-co
+  registry_id: wolf-robotics-lincoln-electric-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Woodward
+  website: https://www.woodward.com
+  hq: Fort Collins, CO
+  sources:
+  - ucd-mfg-list
+  registry_id: woodward
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: woodward
+  open_roles: null
+- name: Xairo
+  website: https://xairos.com
+  hq: Arvada, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  registry_id: null
+  decision: null
+  reason: Best match is Xairos Systems (Arvada, CO), not confirmed.
+  ats: null
+  open_roles: null
+- name: York Space Systems
+  website: https://www.yorkspacesystems.com
+  hq: Denver, CO
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  registry_id: york-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-colorado-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+excluded:
+- name: American Rare Earths
+  sources:
+  - cma-members
+  reason: Its main project is in Wyoming and no Colorado headquarters is stated.
+- name: Anfield Energy
+  sources:
+  - cgs-is88
+  reason: Headquartered in Burnaby, BC, outside the region; no main site in the region found.
+- name: Astroscale U.S.
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  - csc-metrodenver
+  reason: Headquartered outside the US (Tokyo, Japan (parent); Astroscale U.S. i); no main site in the region found.
+- name: Atom Computing
+  sources:
+  - cubit-partners
+  reason: Headquartered in Berkeley, CA, outside the region; no main site in the region found.
+- name: Bal Seal Engineering
+  sources:
+  - cos-chamber-aero
+  reason: Headquartered in Foothill Ranch, CA; Colorado Springs is one plant.
+- name: Beyond Gravity
+  sources:
+  - mdedc-aero-study-2023
+  reason: Headquartered in Zurich, Switzerland (RUAG); headquartered elsewhere; its Colorado site is one of several.
+- name: Boeing
+  sources:
+  - csc-metrodenver
+  - oedit-choosecolorado
+  - cos-chamber-aero
+  - cubit-partners
+  - ucd-aero-list
+  reason: Headquartered in Arlington, VA; headquartered elsewhere; its Colorado site is one of several.
+- name: Broadcom
+  sources:
+  - tid-semis-co
+  - ucd-mfg-list
+  reason: Headquartered in Palo Alto, CA, outside the region; no main site in the region found.
+- name: Canamera Metals
+  sources:
+  - cgs-is88
+  reason: 'Headquartered outside the US (Edmonton, Alberta, Canada; site: Iron Hi); no main site in the region found.'
+- name: Collins Aerospace
+  sources:
+  - cos-chamber-aero
+  reason: Headquartered in Charlotte, NC; headquartered elsewhere; its Colorado site is one of several.
+- name: CORE Natural Resources (Mountain Coal Co., West Elk mine)
+  sources:
+  - cma-members
+  - cgs-is88
+  reason: Headquartered in Canonsburg, PA, outside the region; no main site in the region found.
+- name: Digantara
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-scan-2026
+  reason: Headquartered in Bengaluru, India; Colorado is a US office.
+- name: Entegris
+  sources:
+  - tid-semis-co
+  reason: Headquartered in Billerica, MA, outside the region; no main site in the region found.
+- name: Gravitics
+  sources:
+  - mdedc-aero-study-2023
+  reason: Headquartered in Seattle, WA, outside the region; no main site in the region found.
+- name: Hecla Mining
+  sources:
+  - cgs-is88
+  reason: Headquartered in Coeur d'Alene, ID, outside the region; no main site in the region found.
+- name: Intel
+  sources:
+  - oedit-choosecolorado
+  - tid-semis-co
+  reason: Headquartered in Santa Clara, CA, outside the region; no main site in the region found.
+- name: ispace U.S.
+  sources:
+  - csc-metrodenver
+  reason: Headquartered outside the US (Tokyo, Japan (parent ispace, inc.); site); no main site in the region found.
+- name: Keysight Technologies
+  sources:
+  - cubit-partners
+  reason: Headquartered in Santa Rosa, CA, outside the region; no main site in the region found.
+- name: Kratos Defense & Security Solutions
+  sources:
+  - cos-chamber-aero
+  reason: Headquartered in San Diego, CA; headquartered elsewhere; its Colorado site is one of several.
+- name: L3Harris Technologies
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - cos-chamber-aero
+  - ucd-aero-list
+  reason: Headquartered in Melbourne, FL; headquartered elsewhere; its Colorado site is one of several.
+- name: LKA Gold
+  sources:
+  - cgs-is88
+  reason: Headquartered in Gig Harbor, WA; its Colorado mine's status is unclear.
+- name: Magnum Mining and Exploration
+  sources:
+  - cgs-is88
+  reason: Headquartered outside the US (South Melbourne, Victoria, Australia; si); no main site in the region found.
+- name: Metals One
+  sources:
+  - cgs-is88
+  reason: Headquartered in England; an early-stage project investor.
+- name: Microchip Technology
+  sources:
+  - tid-semis-co
+  - cu-semis-forum
+  reason: Headquartered in Chandler, AZ, outside the region; no main site in the region found.
+- name: Moab Minerals
+  sources:
+  - cgs-is88
+  reason: 'Headquartered outside the US (North Perth, Western Australia; site: RE); no main site in the region found.'
+- name: Northrop Grumman
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - csc-metrodenver
+  - oedit-choosecolorado
+  - cos-chamber-aero
+  - ucd-aero-list
+  reason: Headquartered in Falls Church, VA; headquartered elsewhere; its Colorado site is one of several.
+- name: Polaris Electro-Optics
+  sources:
+  - cu-vp-annual
+  reason: Its own site gives Carlsbad, CA as headquarters.
+- name: Premier American Uranium
+  sources:
+  - cma-members
+  reason: 'Headquartered outside the US (Toronto, Ontario, Canada; site: Colorado); no main site in the region found.'
+- name: Raytheon (RTX)
+  sources:
+  - mdedc-aero-cluster
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  - mdedc-aero-study-2023
+  - oedit-choosecolorado
+  - cos-chamber-aero
+  - ucd-aero-list
+  reason: Headquartered in Arlington, VA; headquartered elsewhere; its Colorado site is one of several.
+- name: RND Automation
+  sources:
+  - beststartup-robotics-co
+  reason: Headquartered in Lakewood Ranch, FL; no Colorado site found.
+- name: Safran Defense & Space
+  sources:
+  - mdedc-aero-report-2025
+  - mdedc-aero-scan-2026
+  reason: Headquartered in France; headquartered elsewhere; its Colorado site is one of several.
+- name: Sierra Nevada Corporation
+  sources:
+  - csc-metrodenver
+  - mdedc-aero-report-2025
+  - cos-chamber-aero
+  - ucd-aero-list
+  reason: Headquartered in Sparks, NV (Mountain West); headquartered elsewhere; its Colorado site is one of several.
+- name: Sphero
+  sources:
+  - beststartup-robotics-co
+  reason: Headquartered in Greenville, US, outside the region; no main site in the region found.
+- name: Thor Energy
+  sources:
+  - cgs-is88
+  reason: Headquartered outside Colorado; an exploration company.
+- name: United Lithium
+  sources:
+  - cgs-is88
+  reason: Now NordX Metals, with Nordic projects and no Colorado project.
+- name: Viscount Mining
+  sources:
+  - cgs-is88
+  reason: Headquartered in Vancouver, BC, outside the region; no main site in the region found.
+- name: Zephyr Minerals
+  sources:
+  - cgs-is88
+  reason: 'Headquartered outside the US (Halifax, Nova Scotia, Canada; site: Daws); no main site in the region found.'
