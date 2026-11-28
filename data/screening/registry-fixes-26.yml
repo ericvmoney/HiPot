@@ -5,14 +5,17 @@
 # a core or enabling tier, which these entries leave unchanged. `tier` is shown for reading only.
 #
 # taxonomy.yml: automotive covers "Vehicle makers and their plants, and auto-parts suppliers, whatever the drivetrain."
-# Tagged here: road-vehicle makers (cars, trucks, buses, vans and low-speed vehicles) and their plants, electric-vehicle
-# makers already in clean tech, powertrain and conversion-kit makers for road vehicles, and parts suppliers whose
-# main market is road vehicles. Left untagged on purpose: battery cells, packs and battery materials, chargers,
-# two- and three-wheelers other than Aptera's car, e-bikes and scooters, lift trucks, rail, aircraft, autonomy
-# software and robotaxi operators, and sensor makers that sell to many markets.
+# The owner's ruling on the edges (decision 26, 2026-11-28): RVs, fire trucks and specialty vehicles, and powersports
+# and motorcycles are automotive; trailers are not.
+# Tagged here: road-vehicle makers (cars, trucks, buses, vans, specialty and low-speed vehicles) and their plants,
+# electric-vehicle makers already in clean tech, motorcycle and powersports makers, powertrain and conversion-kit
+# makers for road vehicles, and parts suppliers whose main market is road vehicles. No RV or fire-truck maker is in
+# the registry yet. Left untagged on purpose: trailers, battery cells, packs and battery materials, chargers, e-bikes
+# and scooters, lift trucks, rail, aircraft, autonomy software and robotaxi operators, and sensor makers that sell to
+# many markets.
 # Judged from each company's registry reason and notes; no new fetches.
-# Entries: 70; out-tier companies listed for the first time: 22.
-# Counts per category: automotive 70, autonomy-robotics 4, defense 1, oil-gas 1, semis-electronics 4.
+# Entries: 77; out-tier companies listed for the first time: 22.
+# Counts per category: automotive 77, autonomy-robotics 4, defense 2, oil-gas 1, semis-electronics 4.
 
 fixes:
 - id: ford-motor-company
@@ -341,6 +344,63 @@ fixes:
   reason: 'Automotive (autonomous-vehicle maker: builds its own road vehicles): Tensor Robocar, a Level 4 personally owned
     autonomous luxury crossover to be sold to consumers from 2026. Purely autonomous road vehicles are out (owner ruling A5).
     Decision 26. Keeps autonomy-robotics.'
+  tier: out
+- id: zero-motorcycles
+  name: Zero Motorcycles
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    motorcycles and Z-Force powertrains, including police models and powertrains for partners. Decision 26.'
+  tier: enabling
+- id: ryvid
+  name: Ryvid
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Battery-electric
+    motorcycles designed and built in Southern California. Decision 26.'
+  tier: enabling
+- id: pave-motors
+  name: Pave Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    motorbikes designed and assembled in Brooklyn. Decision 26.'
+  tier: enabling
+- id: infinite-machine
+  name: Infinite Machine
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electric
+    two-wheelers: the Olto two-seat bike-lane vehicle and the P1 electric scooter/motorcycle. Decision 26.'
+  tier: enabling
+- id: lit-motors
+  name: Lit Motors
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): AEV,
+    a gyro-stabilized enclosed two-wheeled electric vehicle seating two, open for pre-order. Decision 26.'
+  tier: enabling
+- id: rindev
+  name: RINDEV
+  kind: categories
+  categories:
+  - automotive
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Unity,
+    an electric side-by-side off-road vehicle (500+ peak hp, up to 350 miles range), taking preorders. Decision 26.'
+  tier: enabling
+- id: cobra-moto
+  name: Cobra MOTO
+  kind: categories
+  categories:
+  - automotive
+  - defense
+  reason: 'Automotive (motorcycle or powersports maker: motorcycles and off-road vehicles, owner ruling of 2026-11-28): Electrified
+    military motorcycle (prototype). Defense is its main business (owner ruling A3). Decision 26. Keeps defense.'
   tier: out
 - id: blue-dot-motorworks
   name: Blue Dot Motorworks
