@@ -13,7 +13,7 @@ Local data (decision 21). The page saves the persona and My Roles to
 `local-data/` in the repository folder (git-ignored), so they come back after a
 reload or a restart. The folder can be moved with --data or HIPOT_LOCAL_DATA.
 
-    GET    /api/local/status      {"ok": true}
+    GET    /api/local/status      {"ok": true, "files": {"persona": bool, "my-roles": bool}}
     GET    /api/local/persona     local-data/persona.yml, as the page last saved it (404 if none)
     PUT    /api/local/persona     replace it
     DELETE /api/local/persona     remove it
@@ -108,7 +108,9 @@ def make_handler(site: Path, data_dir: Path, port: int):
             if name is None:
                 super().do_GET()
             elif name == "status":
-                self.send_plain(200, "", "application/json", json.dumps({"ok": True}).encode("utf-8"))
+                # Which of the two files exist, so the page asks only for those (no 404s on a fresh folder).
+                files = {key: (data_dir / file).is_file() for key, file in FILES.items()}
+                self.send_plain(200, "", "application/json", json.dumps({"ok": True, "files": files}).encode("utf-8"))
             elif name in FILES:
                 path = data_dir / FILES[name]
                 if not path.is_file():

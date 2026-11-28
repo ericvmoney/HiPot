@@ -135,3 +135,14 @@ def test_the_filter_block_is_pure():
     code = script_block("board-filters")
     for needle in ("fetch(", "Storage", "document.", "window.", "location."):
         assert needle not in code, needle
+
+
+def test_the_header_figures_follow_the_category_choice():
+    header = SCRIPT[SCRIPT.index("function renderHeader()"):SCRIPT.index("  function update() {")]
+    assert "if (!BoardFilters.passes(role.facets.cat, state.cat)) return;" in header
+    for stat in ("s-roles", "s-cos", "s-new", "s-places"):
+        assert f"$('{stat}').textContent" in header, stat
+    assert "' in all categories'" in header and 'id="s-scope"' in PAGE
+    assert "renderHeader();" in SCRIPT[SCRIPT.index("  function update() {"):]
+    static = SCRIPT[SCRIPT.index("function renderStatic()"):SCRIPT.index("function wireControls()")]
+    assert "$('s-roles')" not in static and "$('s-cos')" not in static
