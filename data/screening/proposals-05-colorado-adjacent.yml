@@ -1,0 +1,3261 @@
+# Proposals 02 (Colorado (adjacent categories)): new companies for the registry, from workstream A2.
+# Same shape as companies.yml. Every entry is a proposal: climate.basis 'agent', approved false.
+# Startup test (agreed 2026-11-24): independent of any company at or over 4,000 people; under
+# 4,000 people (up to 5,000 with tolerance; included when no figure exists); and at least one
+# growth sign (founded within 15 years, an equity raise within 5 years, or public under 5 years).
+# read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
+
+registry_version: 0
+status: final
+companies:
+- id: acroname
+  name: Acroname
+  website: https://acroname.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1994
+  headcount: null
+  climate:
+    tier: out
+    reason: BrainStem-based USB hubs and switches, programmable USB products and manufacturing test modules. Adjacent
+      (Semiconductors and electronics, Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Valens Semiconductor; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://acroname.com/about. Stage: About page: ''a
+    wholly owned subsidiary of Valens Semiconductor'', acquired 2024 (https://acroname.com/about) Flags: subsidiary
+    of Valens Semiconductor. Evidence: https://acroname.com/about Region sources: beststartup-robotics-co. Confidence:
+    high. Unresolved: Headcount; About page says founded near Boulder but names no HQ city'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: adaptive-innovations
+  name: Adaptive Innovations
+  website: https://www.a-i-corp.com
+  careers_url: null
+  hq: Lakewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2002
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom automation equipment, robotics integration and custom test equipment (machine builder). Adjacent
+      (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2002 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://aic-automation.com/. Stage: Adaptive Innovations
+    Corp. (AIC Automation); a-i-corp.com redirects to aic-automation.com. No funding found. Dealroom adaptive-innovations
+    is a different company (NYC health startup, adaptive.co), not this one. Flags: defense is not main business;
+    custom machine builder / integrator. Evidence: https://aic-automation.com/ Region sources: beststartup-robotics-co.
+    Confidence: high. Unresolved: Headcount.'
+  categories:
+  - advanced-manufacturing
+- id: advanced-thin-films
+  name: Advanced Thin Films
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Precision optical thin-film coatings, filters and optical cavities (from directory). Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by IDEX Corporation; not independent.
+  notes: 'No job board found on the company''s site. Stage: IDEX acquired Advanced Thin Films LLC Jan 2011 for about
+    $32M; combined with Precision Photonics in 2012-2013; IDEX site lists it at 5733 Central Ave, Boulder (search
+    snippets: https://www.azonano.com/news.aspx?newsID=21307, https://idexcorp.com/?p=768) Flags: subsidiary of
+    IDEX Corporation. Evidence: https://www.azonano.com/news.aspx?newsID=21307 https://idexcorp.com/?p=768 https://laserfocusworld.com/optics/article/16565348/advanced-thin-films-blends-brands-management-in-boulder
+    Region sources: cu-jila-spinoffs. Confidence: medium. Unresolved: Founded year, headcount; current IDEX unit
+    page (cvilaseroptics.com ATF page now redirects to an IDEX MSS page that does not mention ATF or Boulder)'
+  categories:
+  - semis-electronics
+- id: aion-robotics
+  name: Aion Robotics
+  website: https://www.aionrobotics.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous site-management ground vehicles (M6 UGV, L4 robot) for data collection, security and inspection
+      on outdoor jobsites. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found Flags: site shows DARPA, Raytheon and Northrop
+    Grumman logos as customers/partners (relationship not stated); defense not shown to be main business. Evidence:
+    https://www.aionrobotics.com/ https://www.aionrobotics.com/about Region sources: beststartup-robotics-co. Confidence:
+    low. Unresolved: HQ city, founded, headcount, funding; Dealroom 404'
+  categories:
+  - autonomy-robotics
+- id: alio-industries
+  name: ALIO Industries
+  website: https://www.alioindustries.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: adp
+    board: e4f6ff38-1bcd-40e3-b778-ec98a30f2192
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'High-precision motion-control stages: linear, rotary, gantry, air-bearing and hybrid hexapod systems.
+      Adjacent (Advanced manufacturing, Semiconductors and electronics), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Allient; not independent.
+  notes: 'Board adp:e4f6ff38-1bcd-40e3-b778-ec98a30f2192 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Stage: Site: ''an Allient company'' (https://www.alioindustries.com/about)
+    Flags: subsidiary of Allient (formerly Allied Motion). Evidence: https://www.alioindustries.com/about Region
+    sources: inven-robotics-co. Confidence: high. Unresolved: Founded, headcount, acquisition date'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
+- id: allied-technology
+  name: Allied Technology
+  website: https://www.allied-technology.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: greenhouse
+    board: allied
+  read: auto
+  sectors: []
+  stage: null
+  founded: 1997
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Custom end-of-line packaging machinery: robotic palletizers, case packers and conveyors. Adjacent (Advanced
+      manufacturing, Autonomy and robotics), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1997 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'Board greenhouse:allied seen 2026-11-27, token matched by name; board page checked: 2 open roles. Founded:
+    https://www.allied-technology.com/. Stage: private, no venture rounds found; site links to PicPac products (relationship
+    not stated) Evidence: https://www.allied-technology.com/ Region sources: inven-robotics-co. Confidence: medium.
+    Unresolved: Founded is ''since 1997'' wording; ownership; headcount'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: altius-space-machines
+  name: Altius Space Machines
+  website: https://www.altius-space.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: 2010
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Space robotics and satellite-servicing interfaces: DogTag grapple fixtures, electropermanent-magnet
+      MagTag interfaces, cryogenic fluid couplers and propellant transfer valves. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Voyager; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls
+    alert handshake failure (_ssl.c:1035)). Founded: https://en.wikipedia.org/wiki/Altius_Space_Machines. Stage:
+    Subsidiary of Voyager Space Holdings (now Voyager Technologies) per Wikipedia; acquisition date given as Jan
+    2020 in body and 2019 in banner. Flags: subsidiary of Voyager (Voyager Space Holdings / Voyager Technologies);
+    may have been absorbed into Voyager in 2025 (unsourced banner). Evidence: https://en.wikipedia.org/wiki/Altius_Space_Machines
+    Region sources: beststartup-robotics-co. Confidence: medium. Unresolved: Own site failed with an SSL handshake
+    error; headcount unknown; whether it still exists as a separate unit. Wikipedia article content mostly dates
+    from 2015.'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- id: amp-robotics
+  name: AMP Robotics
+  website: https://www.amprobotics.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: greenhouse
+    board: ampsortation
+  read: auto
+  sectors:
+  - recycling
+  stage: late
+  founded: 2015
+  headcount:
+    value: 268
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/amp-robotics)
+  climate:
+    tier: core
+    reason: AI-driven robotic sortation systems for recycling facilities; it also runs sortation plants.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 268 people (Dealroom, 2026-11-27); founded 2015, funding round reported in 2024.
+  notes: 'Board greenhouse:ampsortation seen 2026-11-24, linked from the company''s own site: 5 open roles, 1 US-remote.
+    Headcount note: Dealroom figure, undated; band 100-500 Founded: https://dealroom.co/companies/amp-robotics.
+    Stage: Series D $91M, Dec 2024 (Blue Earth Capital, Range Ventures, XN, Liberty Mutual Investments); 10 funding
+    events (https://dealroom.co/companies/amp-robotics) Flags: also operates sortation facilities (Sortation-as-a-Service);
+    site now ampsortation.com. Evidence: https://ampsortation.com/about https://dealroom.co/companies/amp-robotics
+    Region sources: beststartup-robotics-co. Confidence: high.'
+  categories:
+  - autonomy-robotics
+- id: astro-digital
+  name: Astro Digital
+  website: https://astrodigital.com
+  careers_url: null
+  hq: Littleton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2015
+  headcount:
+    value: 95
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/astro-digital)
+  climate:
+    tier: out
+    reason: Small satellite platforms (Corvus line, 6U CubeSats to 400 kg+ microsats) and end-to-end mission services.
+      Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 95 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2015.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 95 (undated), band under 100. Founded:
+    https://dealroom.co/companies/astro-digital. Stage: Seed April 2015 (undisclosed); Series A $17M February 2017
+    (Dealroom). No later round found. Flags: partner logos include DARPA, SDA, NRO and NASA; main customers not
+    stated. Evidence: https://www.astrodigital.com/ https://dealroom.co/companies/astro-digital Region sources:
+    mdedc-aero-report-2025. Confidence: medium. Unresolved: Whether defense is the main customer base not stated;
+    no funding after 2017 found.'
+  categories:
+  - aerospace-space
+- id: atomos-space
+  name: Atomos Space
+  website: https://www.atomosspace.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: subsidiary
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: Orbital transfer vehicles (Quark OTV) for moving satellites in orbit; demonstrated rendezvous and docking
+      plans. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Katalyst Space Technologies; not independent.
+  notes: 'No board found: home page not readable (403). Headcount: Dealroom: band ''Dealroom ''at a glance'' shows
+    3 employees (band <100), undate'' (no count). Founded: https://dealroom.co/companies/atomos-space. Stage: Acquired
+    by Katalyst Space Technologies, April 2025 (Dealroom). Before that: $16.2M Series A January 2023 co-led by Cantos
+    Ventures and Yamauchi-No. 10 Family Office; $23.4M over four rounds (Dealroom). Flags: acquired by Katalyst
+    Space Technologies (2025). Evidence: https://dealroom.co/companies/atomos-space https://payloadspace.com/atomos-space-raises-funds-for-orbital-transfer-vehicles
+    Region sources: beststartup-robotics-co. Confidence: medium. Unresolved: Own site answered 403 to the automated
+    client (stopped there). Whether Atomos still operates as a unit of Katalyst.'
+  categories:
+  - aerospace-space
+- id: bae-systems-space-and-mission-systems-formerly-ball-aerospace
+  name: BAE Systems Space & Mission Systems (formerly Ball Aerospace)
+  website: https://www.baesystems.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - components
+  stage: subsidiary
+  founded: 1956
+  headcount:
+    value: 5200
+    as_of: '2023-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Ball_Aerospace)
+  climate:
+    tier: out
+    reason: Spacecraft, space and airborne science instruments and sensors, spacecraft components, satellite ground
+      systems and tactical ISR and communications systems. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '5,200 people (Wikipedia, 2023-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No board found: home page not readable (403). Headcount note: c. 5,200 in 2023 (year only; first day used).
+    Founded: https://en.wikipedia.org/wiki/Ball_Aerospace. Stage: Subsidiary of BAE Systems plc (via BAE Systems
+    Inc.) since 2024-02-16; previously a wholly owned subsidiary of Ball Corporation. BAE Systems plc is listed
+    on the London Stock Exchange (listing year not fetched). https://en.wikipedia.org/wiki/Ball_Aerospace Flags:
+    subsidiary of BAE Systems; over 1,000 employees; acquired 2024 by BAE Systems; Wikipedia says renamed Aerospace
+    & Mission Systems (AMS) in August 2026; defense is a large part of the business (ISR, tactical systems); not
+    verified as the majority. Evidence: https://www.baesystems.com/en-us/who-we-are/space-and-mission-systems https://en.wikipedia.org/wiki/Ball_Aerospace
+    Region sources: mdedc-aero-cluster, mdedc-aero-report-2025, mdedc-aero-scan-2026, mdedc-aero-study-2023, csc-metrodenver,
+    oedit-choosecolorado, cos-chamber-aero, cu-vp-annual, ucd-aero-list. Confidence: high. Unresolved: Share of
+    revenue from defense not found; August 2026 rename to AMS seen only on Wikipedia.'
+  categories:
+  - aerospace-space
+  - defense
+- id: baseline-quantum
+  name: Baseline Quantum
+  website: https://baselinequantum.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Low-cost radar network to detect and track small drones that emit no radio signal, for front-line military
+      units (radar node still an engineering model). Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Funding not stated. Flags: defense is main business
+    (counter-drone radar); product differs from input (input: mode-locked lasers for radar); pre-product. Evidence:
+    https://www.baselinequantum.com/ Region sources: cu-vp-midyear. Confidence: medium. Unresolved: Domain guessed
+    (baselinequantum.com); Boulder footer supports identity. Founded year, headcount, funding.'
+  categories:
+  - defense
+  - semis-electronics
+- id: beehive-industries
+  name: Beehive Industries
+  website: https://www.beehiveindustries.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: greenhouse
+    board: civicplus
+  read: auto
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount:
+    value: 261
+    as_of: '2026-01-01'
+    source: Caplight (search snippet) (https://www.caplight.com/company/beehive-industries)
+  climate:
+    tier: out
+    reason: Additively manufactured (3D-printed) small jet engines for defense, such as the Frenzy engine for uncrewed
+      systems and munitions, plus metal printing and investment casting. Defense is its main business (owner ruling
+      A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 261 people (Caplight (search snippet), 2026-01-01); founding year and funding not found, so included
+      as a missing figure (owner rule B3).
+  notes: 'Board greenhouse:civicplus seen 2026-11-27, linked from the company''s own site: 10 open roles, 9 US-remote.
+    Headcount note: Caplight says headcount grew from 224 to 261 in the latest quarter (2026, exact date not given;
+    year only). Stage: No confirmed venture round found; Caplight banner of a $16M Series A looks mismatched; CB
+    Insights figures look outdated. Funding seen: US Air Force contract $29.7M for Frenzy, Colorado job-growth tax
+    credit $4.2M, Ohio expansion $70M. Flags: defense is main business; domain in input (beehiveindustries.com)
+    redirects to an unrelated company (civicplus.com); real site is beehive-industries.com; HQ disagreement: site
+    footer Centennial, input Englewood; expanding in Southwest Ohio. Evidence: https://www.beehive-industries.com/
+    https://www.caplight.com/company/beehive-industries https://3dprintingindustry.com/news/beehive-industries-expands-ohio-operations-with-70m-investment-200-new-jobs-253395/
+    Region sources: mdedc-aero-report-2025. Confidence: medium. Unresolved: Founded year and venture funding not
+    found.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - defense
+- id: bifrost-electronics
+  name: Bifrost Electronics
+  website: null
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount:
+    value: 1
+    as_of: '2026-09-24'
+    source: The Quantum Insider (https://thequantuminsider.com/2026/09/24/bifrost-electronics-doug-campbell-ceo/)
+  climate:
+    tier: out
+    reason: Heimdall CMOS-compatible cryogenic quantum readout amplifier without Josephson junctions, for superconducting
+      and spin qubits (rollout planned for 2026). Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 1 people (The Quantum Insider, 2026-09-24); funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Company profile in article gives 1-10 FTEs
+    (lower bound used) Stage: $5.5M raised to date, led by Caruso Ventures with Range Ventures (Sep 2026, https://thequantuminsider.com/2026/09/24/bifrost-electronics-doug-campbell-ceo/);
+    Dealroom (search snippet) reports $2.5M seed Jul 2025 Flags: Colorado School of Mines spin-out; quantum computing
+    hardware. Evidence: https://thequantuminsider.com/2026/09/24/bifrost-electronics-doug-campbell-ceo/ https://www.hpcwire.com/off-the-wire/bifrost-electronics-names-doug-campbell-ceo-ahead-of-quantum-amplifier-launch/
+    Region sources: mines-search. Confidence: medium. Unresolved: Own domain not known; founded year; HQ conflict
+    (article says Arvada, Dealroom snippet says Boulder)'
+  categories:
+  - semis-electronics
+- id: black-swift-technologies
+  name: Black Swift Technologies
+  website: https://bst.aero
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2011
+  headcount: null
+  climate:
+    tier: out
+    reason: Small unmanned aircraft systems (S2, S0 VTOL, S0 Air Deployed, E2) and the SwiftCore flight management
+      system for scientific sensing in harsh atmospheric conditions. Adjacent (Aerospace and space, Autonomy and
+      robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2011.
+  notes: 'No job board found on the company''s site. Founded: https://bst.aero/. Stage: No ownership or funding
+    information found; Dealroom slug black_swift_technologies 404. Flags: has a NASA contract for a Venus atmosphere
+    aerial vehicle. Evidence: https://bst.aero/ Region sources: beststartup-robotics-co. Confidence: medium. Unresolved:
+    Headcount, funding/stage.'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- id: blue-canyon-technologies
+  name: Blue Canyon Technologies
+  website: https://www.bluecanyontech.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: bamboohr
+    board: bluecanyontech
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 400
+    as_of: '2026-06-01'
+    source: Trade press on the MDA deal (search snippet) (https://www.manufacturing.net/aerospace/news/22969232/mda-space-acquires-blue-canyon-to-boost-satellite-component-manufacturing)
+  climate:
+    tier: out
+    reason: Small satellite buses (Saturn, Mercury, Venus lines and CubeSats) and spacecraft components such as
+      star trackers, reaction wheels and control moment gyroscopes. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 400 people (Trade press on the MDA deal (search snippet), 2026-06-01). Owned by MDA Space; not independent.
+  notes: 'Board bamboohr:bluecanyontech seen 2026-11-27, linked from the company''s own site: 16 open roles. Headcount
+    note: More than 400 employees and two manufacturing facilities in the Denver area, per June 2026 deal reports
+    (month only). Stage: Owned by RTX (Raytheon) until the 2026 sale; now part of MDA Space (TSX: MDA) as MDA Space
+    USA; bluecanyontech.com redirects to mdaspaceusa.com. Deal price reported as $620M (one Canadian Press report
+    cites $874M). Flags: subsidiary of MDA Space (acquired 2026 from RTX); domain now redirects to mdaspaceusa.com.
+    Evidence: https://mdaspaceusa.com/ https://www.bnnbloomberg.ca/business/company-news/2026/06/19/mda-space-buying-us-company-blue-canyon-technologies/
+    https://www.manufacturing.net/aerospace/news/22969232/mda-space-acquires-blue-canyon-to-boost-satellite-component-manufacturing
+    Region sources: mdedc-aero-report-2025, mdedc-aero-scan-2026. Confidence: medium. Unresolved: Founded year not
+    fetched; closing date seen only on mdaspaceusa.com; defense share of customers not found.'
+  categories:
+  - aerospace-space
+  - defense
+- id: blue-mountain-energy
+  name: Blue Mountain Energy
+  website: null
+  careers_url: null
+  hq: Deserado mine, Rio Blanco County, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Owns and operates the Deserado underground coal mine in Rio Blanco County, CO. Mine operators are out
+      (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Blue Mountain Energy, Inc. named as owner and operator
+    in a July 2025 state inspection (permit C-1981-018). Parent not confirmed: Basin Electric''s subsidiaries page
+    does not list it. Flags: mining operator (runs the Deserado underground coal mine); coal; defense is not main
+    business. Evidence: https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1452714/2025-07-24_INSPECTION%20-%20C1981018.pdf
+    https://www.blm.gov/sites/default/files/docs/2026-02/20250528_DSRO_BME_COC051551_LMA.pdf https://www.basinelectric.com/About-Us/Organization/subsidiaries
+    Region sources: cgs-is88. Confidence: medium. Unresolved: Parent company, headcount, founded year.'
+  categories:
+  - mining
+- id: caes-formerly-cobham-advanced-electronic-solutions
+  name: CAES (formerly Cobham Advanced Electronic Solutions)
+  website: https://www.caes.com
+  careers_url: null
+  hq: Colorado Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: High-reliability RF, microwave and radiation-hardened microelectronics for defense and space platforms.
+      Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Honeywell defense is main business; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: Hostname mismatch, certificate is not valid for ''caes.com''. (_ssl.c:1035)). Stage: Honeywell
+    completed its acquisition of CAES on 2024-09-04 (Honeywell press release, via search); caes.com now serves a
+    Honeywell TLS certificate. Flags: subsidiary of Honeywell; defense is main business (platforms F-35, EA-18G,
+    AMRAAM, GMLRS per Honeywell). Evidence: https://www.honeywell.com/us/en/news/press-releases/2024/09/honeywell-completes-acquisition-of-caes
+    https://www.caes.com/ Region sources: oedit-choosecolorado. Confidence: medium. Unresolved: caes.com failed
+    with a certificate mismatch (Honeywell cert), so own site not read; Colorado Springs site and headcount not
+    confirmed; Wikipedia page not found.'
+  categories:
+  - aerospace-space
+  - defense
+  - semis-electronics
+- id: chi-3-optics
+  name: Chi-3 Optics
+  website: https://chi3optics.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Turnkey fiber frequency combs, dual-comb spectrometers, ultrafast lasers and amplifiers, plus on-chip
+      nonlinear photonics (thin-film lithium niobate). Adjacent (Semiconductors and electronics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Funding not stated on site. Flags: small team (three
+    people named on site). Evidence: https://www.chi3optics.com/ Region sources: cubit-seed-2026. Confidence: medium.
+    Unresolved: Domain guessed (chi3optics.com) and content matches frequency combs; founded year, headcount, funding.'
+  categories:
+  - semis-electronics
+- id: cislunar-industries
+  name: CisLunar Industries
+  website: https://www.cislunarindustries.com
+  careers_url: null
+  hq: Loveland, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Space power-processing hardware (EPIC line) that converts and conditions power between sources and spacecraft
+      systems. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not found; Dealroom slug cislunar-industries
+    returned 404. Stage: Oversubscribed $2.6M seed round and an investment from Stout Street Capital (cislunarindustries.com;
+    dates not given). Flags: product now power electronics rather than in-space metal processing (input description).
+    Evidence: https://www.cislunarindustries.com/ Region sources: csc-metrodenver. Confidence: medium. Unresolved:
+    Founded year, headcount and seed date not found.'
+  categories:
+  - aerospace-space
+- id: cleanrobotics
+  name: CleanRobotics
+  website: https://www.cleanrobotics.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - recycling
+  stage: series-a
+  founded: 2015
+  headcount: null
+  climate:
+    tier: core
+    reason: TrashBot automated waste-sorting bins that separate recyclables at the point of disposal.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2015.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls
+    alert handshake failure (_ssl.c:1035)). Headcount: Dealroom: band ''Dealroom band <100 only (lower bound of
+    1 used); 83% US, 17%'' (no count). Founded: https://dealroom.co/companies/cleanrobotics. Stage: Series A investors
+    SOSV, Melco International Development, Undivided Ventures; $10-50M disclosed (dates not shown) (https://dealroom.co/companies/cleanrobotics)
+    Evidence: https://dealroom.co/companies/cleanrobotics Region sources: beststartup-robotics-co. Confidence: medium.
+    Unresolved: Own site failed SSL handshake; status inferred from Dealroom open roles'
+  categories:
+  - autonomy-robotics
+- id: climax-molybdenum-freeport-mcmoran
+  name: Climax Molybdenum (Freeport-McMoRan)
+  website: https://www.climaxmolybdenum.com
+  careers_url: null
+  hq: Phoenix, AZ
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1916
+  headcount: null
+  climate:
+    tier: out
+    reason: Molybdenum producer; operates the Climax and Henderson mines in Colorado. Mine operators are out (owner
+      ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Freeport-McMoRan mining operator; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://www.climaxmolybdenum.com/. Stage: Subsidiary
+    of Freeport-McMoRan (NYSE: FCX). https://www.climaxmolybdenum.com/ Flags: subsidiary of Freeport-McMoRan; mining
+    operator (runs the Climax and Henderson mines in CO); HQ outside region (Phoenix, AZ); main sites in CO; defense
+    is not main business. Evidence: https://www.climaxmolybdenum.com/ Region sources: cma-members, cgs-is88. Confidence:
+    high. Unresolved: Headcount.'
+  categories:
+  - mining
+- id: colowyo-coal-company
+  name: Colowyo Coal Company
+  website: null
+  careers_url: null
+  hq: Colowyo mine, Moffat County, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Operates the Colowyo surface coal mine in Moffat County, CO. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Colowyo Coal Company, L.P.; Basin Coal Company is general
+    partner; a June 2025 permit filing shows Tri-State Generation and Transmission acting on behalf of Colowyo,
+    and a state page names Tri-State as operator. Ownership chain not fully confirmed. Colorado monthly coal reports
+    list it as Surface, Producing (Q1 2025 about 601,850 tons). Flags: mining operator (runs the Colowyo surface
+    coal mine); coal; linked to Tri-State Generation and Transmission (utility cooperative); defense is not main
+    business. Evidence: https://spl.cde.state.co.us/artemis/nrserials/nr1210internet/nr1210202503internet.pdf https://cdle.colorado.gov/offices/the-office-of-just-transition/coal-in-colorado
+    https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1450221/C1981019_MR264_MR-264%20Submittal%20Package_116187.pdf
+    Region sources: cgs-is88. Confidence: medium. Unresolved: Exact parent ownership, headcount, founded year.'
+  categories:
+  - mining
+- id: deltech-furnaces
+  name: Deltech Furnaces
+  website: https://www.deltechfurnaces.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1968
+  headcount: null
+  climate:
+    tier: out
+    reason: Custom industrial and laboratory furnaces (bottom-load, front-load, glass-melt, tube, rotary, ultra-high-temperature)
+      and small tunnel kilns. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1968 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.deltechfurnaces.com/. Stage: private,
+    no venture rounds; family owned (https://www.deltechfurnaces.com/) Flags: family owned. Evidence: https://www.deltechfurnaces.com/
+    Region sources: mfredge-casestudies. Confidence: high. Unresolved: Headcount'
+  categories:
+  - advanced-manufacturing
+- id: exoterra-resource
+  name: ExoTerra Resource
+  website: https://exoterracorp.com
+  careers_url: null
+  hq: Littleton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Electric propulsion for satellites: Halo Hall-effect thrusters, power processing units and the Iris
+      propulsion module. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Voyager Technologies acquired 2025; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Domain exoterracorp.com redirects
+    to exoterra.com. Stage: Acquired by Voyager Technologies (NYSE VOYG); acquisition announcement dated 2025-10-27
+    on exoterra.com; Wikipedia''s Voyager article also lists ExoTerra as a Voyager unit. Flags: subsidiary of Voyager
+    Technologies; acquired 2025. Evidence: https://www.exoterra.com/ https://en.wikipedia.org/wiki/Voyager_Technologies
+    Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026. Confidence: high. Unresolved: Founded year and headcount
+    not found; closing date of acquisition not given.'
+  categories:
+  - aerospace-space
+- id: fortius-metals
+  name: Fortius Metals
+  website: https://www.fortiusmetals.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Welding wire alloys (including hard-to-weld aluminum series) for large-format metal 3D printing and
+      robotic welding. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Spun out of Elementum 3D; no funding stated (https://www.fortiusmetals.com/)
+    Flags: spin-out of Elementum 3D; HQ Lafayette per own site (input said Boulder). Evidence: https://www.fortiusmetals.com/
+    Region sources: inven-robotics-co. Confidence: medium. Unresolved: Founded, headcount, funding; Dealroom 404'
+  categories:
+  - advanced-manufacturing
+- id: gcc-energy
+  name: GCC Energy
+  website: null
+  careers_url: null
+  hq: King II mine, La Plata County, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Operates the King II underground coal mine near Hesperus, La Plata County, CO. Mine operators are out
+      (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: GCC Energy listed as operator under permit C-1981-035
+    in 2025 state inspections; permit active; BLM approved expansion Oct 2019 with production expected through 2043.
+    Sources disagree on start: mining King II since 2007 vs King I and II since 2004. Possibly related to GCC (Grupo
+    Cementos de Chihuahua); not confirmed. Flags: mining operator (runs the King II underground coal mine); coal;
+    defense is not main business; parent not confirmed. Evidence: https://gem.wiki/King_II_Mine https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1446258/2025-04-16_INSPECTION%20-%20C1981035.pdf
+    https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1452055/C1981035_MR54_King%20II%20C-1981-035%20Minor%20Revision%2054_116929.pdf
+    Region sources: cgs-is88. Confidence: medium. Unresolved: Parent company, headcount, founded year.'
+  categories:
+  - mining
+- id: gualala-robotics
+  name: Gualala Robotics
+  website: https://www.lightrail3.com
+  careers_url: null
+  hq: Steamboat Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: LightRail motorized light movers for indoor grow lights (made in USA). Adjacent (Autonomy and robotics,
+      Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found Evidence: https://www.lightrail3.com/ https://mapquest.com/us/colorado/gualala-robotics-401210175
+    Region sources: beststartup-robotics-co. Confidence: medium. Unresolved: Founded, headcount; HQ from a MapQuest
+    listing only'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: high-precision-devices
+  name: High Precision Devices
+  website: https://www.hpd-online.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Ultralow-temperature cryostats (including ADR cryostats) and cryogenic probe systems for quantum computing
+      and sensor research. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by FormFactor own domain no longer resolves ADR product line sold to Danaher
+      Cryogenics; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Acquired by FormFactor (Nasdaq: FORM) on 2020-10-19 per FormFactor SEC filings and blog (via search). hpd-online.com
+    no longer resolves. Flags: subsidiary of FormFactor; own domain no longer resolves; ADR product line sold to
+    Danaher Cryogenics (2025, single source). Evidence: https://www.formfactor.com/blog/2020/formfactor-acquires-high-precision-devices-expands-cryogenic-test-capabilities/
+    https://bizwest.com/2020/10/29/formfactor-acquires-high-precision-devices https://www.sec.gov/Archives/edgar/data/1039399/000103939921000009/form-20201226.htm
+    Region sources: cu-jila-spinoffs. Confidence: medium. Unresolved: Founded year, headcount; whether the Boulder
+    operation still runs under FormFactor.'
+  categories:
+  - semis-electronics
+- id: homeland-uranium
+  name: Homeland Uranium
+  website: https://www.homeland-uranium.com
+  careers_url: null
+  hq: Coyote Basin project, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Uranium-vanadium explorer and developer; Coyote Basin and Cross Bones projects in Colorado (agreeing
+      to acquire Coyote Basin and Red Wash in the Maybell district). Adjacent (Mining and exploration), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Listed TSXV: HLU, FSE: D3U, OTC: HLUCF (own site). Flags:
+    Holds projects, does not run a mine. HQ not stated on site; no Dealroom profile.. Evidence: O w n   s i Region
+    sources: cgs-is88. Confidence: low.'
+  categories:
+  - mining
+- id: honeybee-robotics
+  name: Honeybee Robotics
+  website: https://www.honeybeerobotics.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1983
+  headcount:
+    value: 284
+    as_of: '2023-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Honeybee_Robotics)
+  climate:
+    tier: out
+    reason: Robotic systems, drills, sampling mechanisms and other spacecraft mechanisms for space exploration.
+      Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 284 people (Wikipedia, 2023-01-01). Owned by Blue Origin own domain redirects to blueorigin.com; not
+      independent.
+  notes: 'No board found: site refused automated client (HTTP 429 on robots.txt); site not read. Headcount note:
+    Year only (2023); first day of year used. Founded: https://en.wikipedia.org/wiki/Honeybee_Robotics. Stage: Subsidiary
+    of Blue Origin (bought January 2022 per Wikipedia). honeybeerobotics.com now redirects (307) to blueorigin.com,
+    so the brand may be folded into Blue Origin. Flags: subsidiary of Blue Origin; own domain redirects to blueorigin.com.
+    Evidence: https://www.honeybeerobotics.com/ https://en.wikipedia.org/wiki/Honeybee_Robotics Region sources:
+    inven-robotics-co, mdedc-aero-study-2023. Confidence: medium. Unresolved: Whether Honeybee still operates as
+    a separate unit in Longmont. Wikipedia also lists facilities in Altadena, CA and Greenbelt, MD.'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- id: hysa-fillers
+  name: HYSA Fillers
+  website: https://www.hysafillers.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'New filler alloys for brazing and joining: superalloy braze repair, dissimilar-metal and metal-to-ceramic
+      joining. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Colorado School of Mines spinout. Funding not stated..
+    Evidence: O w n   s i Region sources: mines-search. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+- id: icarus-quantum
+  name: Icarus Quantum
+  website: https://www.icarusquantum.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Photonic interconnects based on semiconductor quantum dots that link cryogenic quantum computers to
+      room-temperature fiber. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No rounds stated; site shows funder logos without amounts;
+    Activate fellowship (2024 cohort) and Duality accelerator (September 2023). Flags: NIST spin-out; early-stage.
+    Evidence: https://www.icarusquantum.com/ Region sources: cu-vp-annual, cubit-partners. Confidence: medium. Unresolved:
+    Founded year, headcount, funding stage. /about 404.'
+  categories:
+  - semis-electronics
+- id: infleqtion-formerly-coldquanta
+  name: Infleqtion (formerly ColdQuanta)
+  website: https://www.infleqtion.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: workable
+    board: coldquanta
+  read: manual
+  sectors: []
+  stage: public
+  founded: 2007
+  headcount:
+    value: 240
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/infleqtion)
+  climate:
+    tier: out
+    reason: Neutral-atom quantum computers, atomic clocks and quantum sensors. Adjacent (Semiconductors and electronics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 240 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); public, with a listing
+      or offering reported in 2025.
+  notes: 'Board workable:coldquanta seen 2026-11-27, linked from the company''s own site: 74 open roles. Headcount
+    note: Dealroom-mapped figure, undated; 91% of workforce in the US across 7 countries. Founded: https://dealroom.co/companies/infleqtion.
+    Stage: Dealroom: ''Public via SPAC 2025''; earlier venture rounds from seed to Series B and later. Flags: public
+    company (SPAC 2025). Evidence: https://dealroom.co/companies/infleqtion Region sources: cu-vp-annual, cubit-partners,
+    cu-jila-spinoffs. Confidence: medium. Unresolved: Own site not read; exchange and ticker not confirmed; Boulder
+    vs Louisville HQ.'
+  categories:
+  - semis-electronics
+- id: innovaflex-foundry
+  name: InnovaFlex Foundry
+  website: https://innovaflexusa.com
+  careers_url: null
+  hq: Colorado Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1999
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Large-panel (920 x 730 mm) flat-panel semiconductor foundry: electronics on glass and flexible polyimide
+      (sensors/MEMS, imaging arrays, flexible hybrid electronics, displays, advanced packaging). Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1999 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Flags: Formerly dpiX LLC (renamed before this list; input already
+    uses the new name). Parent and ownership not stated. semi.org returned 403, so not read.. Evidence: O w n   s
+    i Region sources: tid-semis-co, cu-semis-forum. Confidence: low.'
+  categories:
+  - semis-electronics
+- id: inspectorbots
+  name: Inspectorbots
+  website: https://inspectorbots.com
+  careers_url: null
+  hq: Colorado
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Rugged off-road tracked and wheeled inspection and tactical robots (Minibot, Trackbot, Super Mega Bot).
+      Adjacent (Autonomy and robotics, Defense), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found Flags: applications include military, law
+    enforcement, SWAT and bomb squad as well as building, pipe and mining inspection; defense not shown to be main
+    business. Evidence: https://www.inspectorbots.com/ Region sources: beststartup-robotics-co. Confidence: low.
+    Unresolved: HQ (site does not state; Colorado not confirmed), founded, headcount'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: intrex-aerospace
+  name: Intrex Aerospace
+  website: https://www.intrexcorp.com
+  careers_url: null
+  hq: Thornton, CO
+  ats:
+    type: paylocity
+    board: 85bfc0a9-91d5-407e-8998-80cfd3b4e8a3
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Precision CNC-machined components for aerospace, defense and space programs. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board paylocity:85bfc0a9-91d5-407e-8998-80cfd3b4e8a3 seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Stage: Ownership not stated; site navigation has a ''Demmer Affiliates''
+    link, suggesting it is affiliated with Demmer (not confirmed). Flags: defense-related work is a large share
+    (site); not clear it is the main business; possibly affiliated with Demmer Corporation (navigation link). Evidence:
+    https://www.intrexcorp.com/ Region sources: ucd-aero-list. Confidence: medium. Unresolved: Founded year (site
+    says 30+ years of experience), headcount, ownership. /about returned 404.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+- id: karman
+  name: Karman+
+  website: https://www.karmanplus.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 19
+    as_of: '2026-11-27'
+    source: dealroom (https://dealroom.co/companies/karman)
+  climate:
+    tier: out
+    reason: Asteroid-mining spacecraft; sells in-space fuel (water from asteroids); first mission targets asteroid
+      Apophis. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 19 people (dealroom, 2026-11-27); founded 2022, funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: Dealroom: $20M seed, Feb 2025 (investors incl. Plural,
+    Norrsken VC); earlier seed Mar 2023. Flags: Distinct from Karman Industries; own site does not state HQ. Holds
+    no mine; it is a spacecraft developer.. Evidence: O w n   s i Region sources: mdedc-aero-study-2023. Confidence:
+    low.'
+  categories:
+  - aerospace-space
+  - mining
+- id: kmlabs
+  name: KMLabs
+  website: https://www.kmlabs.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-b
+  founded: 1994
+  headcount:
+    value: 26
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/kmlabs)
+  climate:
+    tier: out
+    reason: Ultrafast laser sources for EUV, VUV and IR (XUUS and Pantheon EUV lasers, Hyperion VUV laser, Ti:Sapphire
+      amplifiers and oscillators). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 26 people (Dealroom, 2026-11-27); founded 1994 and no equity raise in the last 5 years found, so no
+      growth sign.
+  notes: 'No board found: home page not readable (error: ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate
+    verify failed: certificate has expired (_ssl.c:1035)). Headcount note: Dealroom ''at a glance'' figure, undated
+    (date is fetch date); band <100 Founded: https://dealroom.co/companies/kmlabs. Stage: Series B $12M, Apr 2018
+    (Intel Capital, Colorado Impact Fund); Series A $6.7M Jul 2016; 4 funding events recorded, 2 hidden behind paywall
+    (https://dealroom.co/companies/kmlabs) Evidence: https://www.kmlabs.com/ https://dealroom.co/companies/kmlabs
+    Region sources: cu-jila-spinoffs. Confidence: medium. Unresolved: Later funding rounds hidden on Dealroom; own
+    site gives no founding year or headcount'
+  categories:
+  - semis-electronics
+- id: left-hand-robotics
+  name: Left Hand Robotics
+  website: https://www.lefthandrobotics.com
+  careers_url: null
+  hq: Longmont, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2016
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous commercial snow-clearing and turf robots (SnowBot Pro, RT-1000). Adjacent (Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by The Toro Company own site returns an empty page; not independent.
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Founded: https://bizwest.com/2021/03/02/lawn-mower-giant-toro-buys-left-hand-robotics/.
+    Stage: Toro acquired Left Hand Robotics Mar 2021; team to stay in Longmont; had raised about $8.9M (https://bizwest.com/2021/03/02/lawn-mower-giant-toro-buys-left-hand-robotics/,
+    https://www.therobotreport.com/left-hand-robotics-acquired-by-toro/) Flags: subsidiary of The Toro Company;
+    own site returns an empty page. Evidence: https://bizwest.com/2021/03/02/lawn-mower-giant-toro-buys-left-hand-robotics/
+    https://www.therobotreport.com/left-hand-robotics-acquired-by-toro/ Region sources: beststartup-robotics-co.
+    Confidence: high. Unresolved: Whether the Longmont operation still exists under Toro'
+  categories:
+  - autonomy-robotics
+- id: leitner-poma-of-america
+  name: Leitner-Poma of America
+  website: https://www.leitner-poma.com
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: paylocity
+    board: 8b4ef164-55f7-4a95-a6ac-f9f1563f36c3
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1981
+  headcount:
+    value: 120
+    as_of: '2026-11-01'
+    source: Leitner-Poma (company site) (https://www.leitner-poma.com/about)
+  climate:
+    tier: out
+    reason: 'Ropeways: chairlifts, gondolas, aerial trams, funiculars, inclined elevators, surface lifts and MiniMetro
+      urban cable transit, plus operations and maintenance services. Adjacent (Advanced manufacturing), not clean
+      tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 120 people (Leitner-Poma (company site), 2026-11-01). Owned by Poma S.A. / HTI group defense is not
+      main business cable transport; not independent.
+  notes: 'Board paylocity:8b4ef164-55f7-4a95-a6ac-f9f1563f36c3 seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: Site says the labor force grows to more than 120 during
+    high production times; statement undated, as_of is the month read (first day of month). Founded: https://www.leitner-poma.com/about/timeline.
+    Stage: North American subsidiary of Poma S.A. (Voreppe, France); sister company of Leitner AG; both part of
+    the High Technology Industries (HTI) group. Poma of America set up in Grand Junction in 1981; Pomalift Inc.
+    in Colorado from 1953; 90,000 sq ft Grand Junction facility since 2009. https://www.leitner-poma.com/about Flags:
+    subsidiary of Poma S.A. / HTI group; defense is not main business; cable transport (ski lifts and urban ropeways).
+    Evidence: https://www.leitner-poma.com/ https://www.leitner-poma.com/about https://www.leitner-poma.com/about/timeline
+    Region sources: ucd-mfg-list. Confidence: high. Unresolved: Year-round headcount; Dealroom 404 (leitner-poma-of-america).'
+  categories:
+  - advanced-manufacturing
+- id: lockheed-martin-space
+  name: Lockheed Martin Space
+  website: https://www.lockheedmartin.com
+  careers_url: null
+  hq: Littleton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 20000
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Lockheed_Martin_Space)
+  climate:
+    tier: out
+    reason: Commercial and military satellites, space probes, missile-defense systems and NASA's Orion spacecraft
+      (Lockheed Martin's space business area). Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '20,000 people (Wikipedia; undated, so as_of is the day it was read, 2026-11-24): over the 4,000 cap
+      and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Wikipedia says about 20,000; undated. Division
+    of Lockheed Martin, not the whole company. Stage: One of Lockheed Martin''s four business areas (Wikipedia).
+    Parent Lockheed Martin is listed on the NYSE (LMT); listing year not fetched. Flags: subsidiary of Lockheed
+    Martin; over 1,000 employees; defense is main business (parent Lockheed Martin is mainly a defense contractor;
+    space unit serves both military and NASA). Evidence: https://en.wikipedia.org/wiki/Lockheed_Martin_Space Region
+    sources: mdedc-aero-cluster, mdedc-aero-report-2025, mdedc-aero-scan-2026, mdedc-aero-study-2023, csc-metrodenver,
+    oedit-choosecolorado, cos-chamber-aero, cubit-partners, ucd-aero-list, ucd-mfg-list. Confidence: medium. Unresolved:
+    lockheedmartin.com answered 403 to automated fetch; founding year of the division not given (earliest predecessor,
+    Lockheed Missile Systems Division, 1953); Wikipedia gives HQ as Littleton in one place and Denver in another;
+    parent listing year not fetched.'
+  categories:
+  - aerospace-space
+  - defense
+- id: luxonis
+  name: Luxonis
+  website: https://www.luxonis.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2018
+  headcount:
+    value: 88
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/luxonis)
+  climate:
+    tier: out
+    reason: OAK depth/spatial-AI cameras with on-device AI processing and the open-source DepthAI software. Adjacent
+      (Semiconductors and electronics, Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 88 people (Dealroom, 2026-11-27); founded 2018, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated (date is fetch date);
+    band <100. Dealroom header says founded 2018, its About text says 2019 Founded: https://dealroom.co/companies/luxonis.
+    Stage: Series A $14M, Jul 2026 (Taiwania Capital, Denali Growth Partners); debt $2.8M Jan 2026; 4 events recorded,
+    2 hidden (https://dealroom.co/companies/luxonis) Evidence: https://www.luxonis.com/ https://dealroom.co/companies/luxonis
+    Region sources: inven-robotics-co. Confidence: medium.'
+  categories:
+  - autonomy-robotics
+  - semis-electronics
+- id: magswitch-technologies
+  name: Magswitch Technologies
+  website: https://www.magswitch.com
+  careers_url: null
+  hq: Superior, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Switchable permanent-magnet tools: robotic end-of-arm grippers, lifting magnets, welding fixturing
+      and magnetic drills. Adjacent (Advanced manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Site claims 25+ years of experience, 65+ patents
+    Stage: Ownership not stated on site; Dealroom 404 Evidence: https://magswitch.com/ Region sources: inven-robotics-co.
+    Confidence: medium. Unresolved: HQ confirmation, founded, headcount, ownership'
+  categories:
+  - advanced-manufacturing
+- id: maxar-technologies
+  name: Maxar Technologies
+  website: https://www.maxar.com
+  careers_url: null
+  hq: Westminster, CO
+  ats:
+    type: workday
+    board: maxar
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2017
+  headcount:
+    value: 2600
+    as_of: '2024-12-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Maxar_Technologies)
+  climate:
+    tier: out
+    reason: Earth-observation satellite imagery and geospatial software (now Vantor) and satellite manufacturing
+      (now Lanteris Space Systems). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 2,600 people (Wikipedia, 2024-12-01). Owned by a larger company; not independent.
+  notes: 'Board workday:maxar.wd1.myworkdayjobs.com/Vantor seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: 2,600 in December 2024 (month only) for Maxar; Vantor
+    alone 1,909 (2025) per Wikipedia. Founded: https://en.wikipedia.org/wiki/Maxar_Technologies. Stage: Private-equity
+    owned: taken private by Advent International in May 2023 ($6.4B); previously listed on TSX and NYSE 2017-2023.
+    https://en.wikipedia.org/wiki/Maxar_Technologies Flags: private-equity owned (Advent International); over 1,000
+    employees; Maxar name retired October 2025: Westminster business is now Vantor (imagery, mainly data and software,
+    defense and intelligence customers); satellite manufacturing is Lanteris in Palo Alto, CA. Evidence: https://en.wikipedia.org/wiki/Maxar_Technologies
+    https://en.wikipedia.org/wiki/Vantor_(company) Region sources: mdedc-aero-report-2025, mdedc-aero-scan-2026,
+    mdedc-aero-study-2023, ucd-aero-list. Confidence: medium. Unresolved: physical unclear because the Colorado
+    business (Vantor) is mainly imagery data and software while the hardware arm (Lanteris) is in California; customer
+    split not found; maxar.com not fetched.'
+  categories:
+  - aerospace-space
+- id: maybell-quantum
+  name: Maybell Quantum
+  website: https://www.maybellquantum.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: greenhouse
+    board: maybellquantum
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2021
+  headcount: null
+  climate:
+    tier: out
+    reason: Dilution refrigerators for quantum computing (Fast Fridge, Fridge, Fridge+, Big Fridge, ColdCloud).
+      Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2021, funding round reported in 2024.
+  notes: 'Board greenhouse:maybellquantum seen 2026-11-27, token matched by name; board page checked: 26 open roles.
+    Founded: https://www.maybellquantum.com/about. Stage: $25M Series A led by Cerberus Ventures, 2024-03-04 (own
+    site). Evidence: https://www.maybellquantum.com/about Region sources: cubit-partners. Confidence: high. Unresolved:
+    Headcount; any later rounds. Dealroom slug maybell-quantum 404.'
+  categories:
+  - semis-electronics
+- id: meadowlark-optics
+  name: Meadowlark Optics
+  website: https://www.meadowlark.com
+  careers_url: null
+  hq: Frederick, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Liquid-crystal polarization optics: spatial light modulators, polarizers, polarization gratings, waveplates,
+      Pockels cells and polarimeters. Adjacent (Semiconductors and electronics), not clean tech under the rubric
+      (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Ownership not stated on About page. Evidence: https://www.meadowlark.com/about-us/
+    Region sources: cubit-partners. Confidence: medium. Unresolved: Founded year, headcount, ownership.'
+  categories:
+  - semis-electronics
+- id: mesa-quantum-systems
+  name: Mesa Quantum Systems
+  website: https://mesaquantum.com
+  careers_url: null
+  hq: null
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Chip-scale quantum sensors and atomic clocks (VCSELs available; atomic clocks, RF magnetometers and
+      gyroscopes in development). Adjacent (Semiconductors and electronics, Aerospace and space), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Stage: $3.7M seed round and an oversubscribed
+    $11.8M round (round name not given) per mesaquantum.com; dates not given. Flags: HQ not stated: site lists operations
+    in Boulder, CO, New Mexico and the UK; defense-relevant uses (magnetic ISR, GPS-free navigation) but no named
+    customers. Evidence: https://www.mesaquantum.com/ Region sources: csc-metrodenver, cubit-partners. Confidence:
+    medium. Unresolved: HQ city (Boulder vs Albuquerque) not settled; founded year and headcount not found; the
+    $11.8M round may be a Series A.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: micro-g-lacoste
+  name: Micro-g LaCoste
+  website: https://www.microglacoste.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Absolute and dynamic gravity meters (FG5-X and A10 absolute gravimeters, SEA III marine and TAGS-6 dynamic
+      gravity meters) for land, airborne and marine surveys. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Site: ''Micro-g LaCoste is a division of LRS'' (LRS
+    not identified further on the page). Flags: division of LRS; oil and gas exploration is one of three listed
+    application areas (with Earth studies and regional investigations); not stated as main customer; instrument
+    maker, not a mining operator. Evidence: https://microglacoste.com/ Region sources: cu-jila-spinoffs. Confidence:
+    medium. Unresolved: Founded year, headcount, identity of parent LRS. /about-us/ 404.'
+  categories:
+  - mining
+  - semis-electronics
+- id: misty-robotics
+  name: Misty Robotics
+  website: https://www.mistyrobotics.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2017
+  headcount:
+    value: 12
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/misty-robotics)
+  climate:
+    tier: out
+    reason: Misty II programmable robot for education and research. Adjacent (Autonomy and robotics), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 12 people (Dealroom, 2026-11-27). Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; 67% US, 33% Sweden
+    Founded: https://dealroom.co/companies/misty-robotics. Stage: Furhat Robotics acquired Misty''s business assets
+    Jan 2022; earlier Series A $11M Dec 2018 (Venrock, Foundry) (https://dealroom.co/companies/misty-robotics) Flags:
+    brand of Furhat Robotics (Sweden); spun off from Sphero 2017. Evidence: https://www.mistyrobotics.com/ https://dealroom.co/companies/misty-robotics
+    Region sources: beststartup-robotics-co. Confidence: high.'
+  categories:
+  - autonomy-robotics
+- id: modular-robotics
+  name: Modular Robotics
+  website: https://www.modrobotics.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2008
+  headcount: null
+  climate:
+    tier: out
+    reason: Cubelets magnetic modular robot blocks and related educational robots. Adjacent (Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 2008 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount: Dealroom: band ''Dealroom band <100 only (lower
+    bound of 1 used)'' (no count). Founded: https://dealroom.co/companies/modular-robotics. Stage: Dealroom lists
+    only a seed stage (Foundry); $10-50M disclosed equity; SBIR/NSF-funded R&D (https://dealroom.co/companies/modular-robotics)
+    Evidence: https://www.modrobotics.com/ https://dealroom.co/companies/modular-robotics Region sources: beststartup-robotics-co.
+    Confidence: medium. Unresolved: Round dates and amounts'
+  categories:
+  - autonomy-robotics
+- id: natural-soda
+  name: Natural Soda
+  website: null
+  careers_url: null
+  hq: Rifle, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Sodium bicarbonate produced by solution mining of nahcolite on federal sodium leases in the Piceance
+      Creek Basin, Rio Blanco County, CO. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Natural Soda LLC (formerly Natural Soda, Inc.), operator
+    of permit M-1983-194; 2025 state inspection on file. Ownership not found. Older BLM document gives about 125,000
+    tons of sodium bicarbonate a year. Flags: mining operator (runs a solution mine); defense is not main business.
+    Evidence: https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1441649/2025-03-20_INSPECTION%20-%20M1983194.pdf
+    https://www.forestsandrangelands.gov/success/documents/05_co_blm_cx_natural_soda_hfr.pdf Region sources: cgs-is88.
+    Confidence: medium. Unresolved: Owner/parent, headcount, founded year, website.'
+  categories:
+  - mining
+- id: navflex
+  name: Navflex
+  website: https://navflex.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: ashby
+    board: navflex
+  read: auto
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: AI-powered autonomous counterbalance mobile robots that load and unload trailers and containers. Adjacent
+      (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board ashby:navflex seen 2026-11-27, linked from the company''s own site: 1 open roles. Stage: No funding
+    found; About page says ''in just three years'' (founded roughly 2022-2023, unconfirmed) Flags: strategic partnership
+    with Jungheinrich; site shows Hangcha among cooperation partners. Evidence: https://www.navflex.com/ https://www.navflex.com/about
+    Region sources: inven-robotics-co. Confidence: medium. Unresolved: Founded year, headcount, funding, ownership;
+    Dealroom 404'
+  categories:
+  - autonomy-robotics
+- id: newmont
+  name: Newmont
+  website: https://www.newmont.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1921
+  headcount:
+    value: 45653
+    as_of: '2026-11-01'
+    source: Newmont (company site) (https://www.newmont.com/about-us/default.aspx)
+  climate:
+    tier: out
+    reason: Gold mining, with copper, zinc, lead, silver and molybdenum by-products; 14 operations across six regions.
+      Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '45,653 people (Newmont (company site), 2026-11-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: Figure undated on the page; as_of is the month
+    read (first day of month). Founded: https://www.newmont.com/about-us/default.aspx. Stage: NYSE: NEM; listed
+    on the NYSE since 1940 (site also says publicly traded since 1925); only gold producer in the S&P 500. https://www.newmont.com/about-us/default.aspx
+    Flags: over 1,000 employees; mining operator (runs mines; none in Colorado listed); defense is not main business;
+    founding year inconsistent on site: 1916 (Newmont Company) vs 1921 (Newmont Corporation). Evidence: https://www.newmont.com/about-us/default.aspx
+    Region sources: cma-members, cgs-is88. Confidence: high. Unresolved: HQ address not confirmed on a fetched page.'
+  categories:
+  - mining
+- id: nova-automation
+  name: NOVA Automation
+  website: https://novaautomation.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Packaging machinery: bulk material transfer, weighing and filling, bulk bag fillers, automatic bagging,
+      robotic palletizers, case loading and pallet wrapping. Adjacent (Advanced manufacturing), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site says over 25 years in business; no funding or owner
+    named. Dealroom 404 (nova-automation, nova_automation). Flags: defense is not main business. Evidence: https://novaautomation.com/
+    https://novaautomation.com/about-us/ Region sources: beststartup-robotics-co. Confidence: medium. Unresolved:
+    Founded year, headcount, ownership.'
+  categories:
+  - advanced-manufacturing
+- id: nuvemco
+  name: Nuvemco
+  website: https://www.nuvemco.com
+  careers_url: null
+  hq: Naturita, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Holds uranium-vanadium mining permit M-2008-050 in Mesa County, CO (about 4 miles southwest of Gateway),
+      with an ore stockpile from the adjacent October Mine. Adjacent (Mining and exploration), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: home page not readable (error: ConnectTimeout: [WinError 10060] A connection attempt failed
+    because the connected party did not properly respond after a period of time, or established connection failed
+    because connected host). Stage: Nuvemco, LLC; no funding or ownership information found. Flags: mine project
+    (permitted site idle in temporary cessation until Dec 27, 2026), not an active operator; website unreachable
+    (connection refused); defense is not main business. Evidence: https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1434457/2024-11-06_INSPECTION%20-%20M2008050.pdf
+    https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1458240/2025-10-27_INSPECTION%20-%20M2008050.pdf Region sources:
+    cgs-is88. Confidence: medium. Unresolved: Website content (connection refused), ownership, headcount, founded
+    year.'
+  categories:
+  - mining
+- id: octave-photonics
+  name: Octave Photonics
+  website: https://www.octavephotonics.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Packaged nonlinear photonic waveguides, nanophotonic design services and complete frequency-comb systems.
+      Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Funding/ownership not stated on home page. Evidence:
+    https://www.octavephotonics.com/ Region sources: cubit-partners, cubit-seed-2026. Confidence: medium. Unresolved:
+    Founded year, headcount, funding.'
+  categories:
+  - semis-electronics
+- id: pattern-labs
+  name: Pattern Labs
+  website: https://www.patternlabs.ai
+  careers_url: null
+  hq: Erie, CO
+  ats:
+    type: lever
+    board: pattern
+  read: auto
+  sectors: []
+  stage: null
+  founded: 2021
+  headcount:
+    value: 40
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/pattern-labs)
+  climate:
+    tier: out
+    reason: 'Airport ground-operations platform: Pulse OS fleet manager, Connect GSE driver dashboard, and Pathfinder
+      robotic automation for baggage and cargo movement. Adjacent (Autonomy and robotics), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 40 people (Dealroom, 2026-11-27); founded 2021.
+  notes: 'Board lever:pattern seen 2026-11-27, token matched by name; board page checked: 87 open roles. Headcount
+    note: Dealroom figure, undated; band <100; team grew 42.9% in past year Founded: https://dealroom.co/companies/pattern-labs.
+    Stage: Dealroom: early VC $8.5M Mar 2024 (round name not given; investors incl. Origin Ventures, Xplorer Capital);
+    $250K state grant Nov 2022 (https://dealroom.co/companies/pattern-labs) Flags: mix of software and autonomous
+    ground vehicles; autonomous airport-apron vehicles. Evidence: https://www.patternlabs.ai/ https://dealroom.co/companies/pattern-labs
+    Region sources: beststartup-robotics-co. Confidence: medium. Unresolved: Whether Pathfinder hardware is its
+    own vehicle or a retrofit kit; seed vs Series A'
+  categories:
+  - autonomy-robotics
+- id: peabody-twentymile-coal-co
+  name: Peabody (Twentymile Coal Co.)
+  website: https://www.peabodyenergy.com
+  careers_url: null
+  hq: Twentymile
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Coal producer; its Twentymile mine (Routt County, CO) is listed under Other U.S. operations in its Western
+      Mining group. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Public (NYSE, ticker BTU) per general knowledge; listing
+    year not confirmed from a fetched page. Flags: mining operator (Twentymile coal mine in CO); HQ outside region;
+    coal; defense is not main business; likely over 1,000 employees (not confirmed). Evidence: https://www.peabodyenergy.com/
+    Region sources: cma-members, cgs-is88. Confidence: medium. Unresolved: HQ, founded, headcount, listing year
+    and Twentymile status not on homepage; about and mine pages 404.'
+  categories:
+  - mining
+- id: precision-photonics
+  name: Precision Photonics
+  website: null
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2000
+  headcount: null
+  climate:
+    tier: out
+    reason: Precision optical components, coatings and assemblies (from directory). Adjacent (Semiconductors and
+      electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by IDEX Corporation brand merged into Advanced Thin Films; not independent.
+  notes: 'No job board found on the company''s site. Founded: https://laserfocusworld.com/test-measurement/research/article/16565627/idex-completes-purchase-of-precision-photonics.
+    Stage: IDEX completed $20M cash purchase Apr 2012; brands combined with ATFilms into Advanced Thin Films (2012
+    or 2013; sources differ) (https://optics.org/news/idex-buys-precision-photonics-in-20m-cash-deal, https://www.photonics.com/Article.aspx?AID=52561)
+    Flags: subsidiary of IDEX Corporation; brand merged into Advanced Thin Films (no longer a separate company).
+    Evidence: https://laserfocusworld.com/test-measurement/research/article/16565627/idex-completes-purchase-of-precision-photonics
+    https://optics.org/news/idex-buys-precision-photonics-in-20m-cash-deal https://www.photonics.com/Article.aspx?AID=52561
+    Region sources: cu-jila-spinoffs. Confidence: medium. Unresolved: Facts from search snippets only; whether the
+    Boulder operation still runs under IDEX'
+  categories:
+  - semis-electronics
+- id: prime-robotics
+  name: Prime Robotics
+  website: https://primerobotics.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: workable
+    board: prime-robotics-1
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Warehouse automation: MobilePallet and MobileShelf AMRs, RackBot pallet shuttle, cold-storage robots,
+      stations and PrimeOS software. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board workable:prime-robotics-1 seen 2026-11-27, linked from the company''s own site: 3 open roles. Stage:
+    About page says its parent company is American-owned with no foreign ownership or control; parent not named
+    (https://www.primerobotics.com/about) Flags: has an unnamed parent company; HQ Denver per own site (input said
+    Golden). Evidence: https://www.primerobotics.com/ https://www.primerobotics.com/about Region sources: inven-robotics-co,
+    beststartup-robotics-co. Confidence: medium. Unresolved: Parent company name, founded year, headcount; Dealroom
+    404'
+  categories:
+  - autonomy-robotics
+- id: primus-aerospace
+  name: Primus Aerospace
+  website: https://www.primusaerospace.com
+  careers_url: null
+  hq: Lakewood, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Complex machined components and assemblies from exotic materials for spacecraft, satellites, hypersonics
+      and military systems. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: A third-party listing in a search snippet gives
+    a 51-200 band (unnamed aggregator), not used. Stage: Private-equity owned: Angeles Equity Partners announced
+    its purchase on 2021-06-08 (LA Business Journal); Primus bought Raloid Corporation (June 2022) and Paradigm
+    CNC. Flags: private-equity owned (Angeles Equity Partners); customers named are defense primes: Boeing, General
+    Dynamics, L3Harris, Lockheed Martin, Northrop Grumman, Raytheon; defense appears to be main business; also a
+    machining plant in Golden, CO. Evidence: https://labusinessjournal.com/finance/angeles-equity-buys-primus-aerospace/
+    https://www.businesswire.com/news/home/20220628005036/en/Primus-Aerospace-Acquires-Raloid-Corporation/ Region
+    sources: mdedc-aero-study-2023. Confidence: medium. Unresolved: Founded year conflicting (1989 vs 1998 in search
+    results); primusaerospace.com returned empty content; headcount not found.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - defense
+- id: ptarmigan-clockworks
+  name: Ptarmigan Clockworks
+  website: https://ptarmiganclockworks.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous optical clocks and precision timing architectures for resilient mission systems (GPS-denied
+      timing and navigation, distributed sensing, space domain awareness). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Funding not stated. Flags: site framing suggests defense
+    / mission-systems customers; not stated as main business; identity uncertain (guessed domain; wording differs
+    from input ''6G''). Evidence: https://www.ptarmiganclockworks.com/ Region sources: cu-vp-midyear. Confidence:
+    low. Unresolved: Location, founded year, headcount, funding; domain guessed.'
+  categories:
+  - semis-electronics
+- id: qpics
+  name: QPICs
+  website: https://qpics.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Pure-play foundry fabricating quantum photonic integrated circuits; building its first PIC fab at the
+      Quantum Commons in Arvada, CO. Adjacent (Semiconductors and electronics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site: capital needs currently met through tech hub grants;
+    plans a seed round (no amount). Flags: grant-funded; seed round planned; fab not yet operating. Evidence: https://www.qpics.com/
+    Region sources: cubit-seed-2026. Confidence: medium. Unresolved: Domain guessed (qpics.com) and content matches;
+    founded year, headcount.'
+  categories:
+  - semis-electronics
+- id: quanta3
+  name: Quanta3
+  website: https://quanta3.com
+  careers_url: null
+  hq: not stated on site
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Stationary laser-spectroscopy sensors for continuous methane emission measurement, with real-time dashboard
+      and API, engineered for OOOOb compliance. Methane and emissions monitoring is out (owner decision 16).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding found (Crunchbase profile exists, no figures
+    in snippet). Site shows a Powered-by logo and a link path containing ABB; relationship unexplained. Dealroom
+    404 (quanta3). Flags: main customers are oil and gas (inferred from OOOOb compliance focus); possible ABB relationship
+    (unclear); defense is not main business. Evidence: https://quanta3.com/ https://www.crunchbase.com/organization/quanta3
+    Region sources: e360-methane. Confidence: medium. Unresolved: HQ city, founded year, headcount, ownership (ABB
+    link).'
+  categories:
+  - oil-gas
+- id: quantinuum
+  name: Quantinuum
+  website: https://www.quantinuum.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 2021
+  headcount:
+    value: 450
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Quantinuum)
+  climate:
+    tier: out
+    reason: Trapped-ion quantum computers and quantum software. Adjacent (Semiconductors and electronics), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 450 people (Wikipedia; undated, so as_of is the day it was read, 2026-11-24); founded 2021, public,
+      with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Infobox figure, undated. Founded: https://en.wikipedia.org/wiki/Quantinuum.
+    Stage: Listed on Nasdaq (QNT) on 2026-06-04 (Wikipedia); Honeywell retains 48.1% voting power. Earlier: $300M
+    round January 2024 led by JPMorgan Chase. Formed 2021 from Honeywell Quantum Solutions and Cambridge Quantum
+    Computing. Flags: public company (Nasdaq 2026); Honeywell holds 48.1% voting power; dual HQ (Broomfield, CO
+    and Cambridge, UK). Evidence: https://en.wikipedia.org/wiki/Quantinuum Region sources: cubit-partners. Confidence:
+    medium. Unresolved: Own site not read.'
+  categories:
+  - semis-electronics
+- id: raven-space-systems
+  name: Raven Space Systems
+  website: https://www.ravenspacesystems.com
+  careers_url: null
+  hq: Broomfield, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Automated composite manufacturing (its MAD platform deposits and cures in one step) producing rocket-motor
+      nozzles and insulation, hypersonic leading edges, interceptor structures, radomes, munition airframes and
+      heat shields. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not found; Dealroom slugs raven-space-systems
+    and raven-space returned 404. Stage: No funding information found. Flags: defense appears to be main business
+    (products are rocket motors, interceptors, munitions, hypersonics); customers not named. Evidence: https://www.ravenspacesystems.com/
+    Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026. Confidence: medium. Unresolved: Founded year, headcount,
+    funding and named customers not found.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - defense
+- id: research-electro-optics-reo
+  name: Research Electro-Optics (REO)
+  website: https://www.reoinc.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Precision thin-film optics, optomechanical assemblies and HeNe lasers (from directory; own domain now
+      redirects to Excelitas). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Excelitas Technologies own domain redirects to parent; not independent.
+  notes: 'No job board found on the company''s site. Stage: reoinc.com returns 301 to excelitas.com/?referer=reoinc
+    (fetched 2026-11-27); Excelitas site answered 403 so acquisition date not confirmed Flags: subsidiary of Excelitas
+    Technologies; own domain redirects to parent. Evidence: https://www.reoinc.com/ Region sources: ucd-aero-list.
+    Confidence: medium. Unresolved: Acquisition date, founded year, Boulder site headcount; excelitas.com refused
+    automated client (403); Dealroom 404'
+  categories:
+  - semis-electronics
+- id: robotic-construction-technologies
+  name: Robotic Construction Technologies
+  website: null
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic 3D concrete printing systems for large-scale additive construction; builds own projects and
+      sells or leases systems. Adjacent (Advanced manufacturing, Autonomy and robotics), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022.
+  notes: 'No job board found on the company''s site. Flags: Also called RoboCon. Own website not found. The $9.5M
+    aerospace award named by the source was not confirmed; the aerospace-space category looks doubtful for a construction-printing
+    company.. Evidence: F e d e r a Region sources: mdedc-aero-report-2025. Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: rocky-mountain-instrument-co
+  name: Rocky Mountain Instrument Co.
+  website: https://rmico.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1957
+  headcount:
+    value: 90
+    as_of: '2026-11-27'
+    source: company website (https://www.rmico.com/)
+  climate:
+    tier: out
+    reason: Custom laser and precision optics (lenses, windows, mirrors, prisms), thin-film coatings from deep UV
+      to long-wave IR, and opto-mechanical assemblies. Adjacent (Semiconductors and electronics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 90 people (company website, 2026-11-27); founded 1957 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Site says ''a dedicated team of over 90 experts'';
+    undated Founded: https://www.rmico.com/. Stage: private, no venture rounds; site says ''Family Owned'' (https://www.rmico.com/)
+    Flags: family owned. Evidence: https://www.rmico.com/ Region sources: ucd-aero-list. Confidence: high.'
+  categories:
+  - semis-electronics
+- id: sagittarius-logistics
+  name: Sagittarius Logistics
+  website: https://sagittariuslogistics.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Orbital launch vehicles meant to make access to space more predictable. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: early-stage; location not confirmed. Evidence: https://www.sagittariuslogistics.com/
+    Region sources: mines-search. Confidence: low. Unresolved: Domain guessed (sagittariuslogistics.com) and its
+    content matches the input product; location, founding year, team size and funding not stated; /about 404; Dealroom
+    slug 404.'
+  categories:
+  - aerospace-space
+- id: scientific-aviation
+  name: Scientific Aviation
+  website: https://www.scientificaviation.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - methane
+  stage: subsidiary
+  founded: 2010
+  headcount: null
+  climate:
+    tier: out
+    reason: Aircraft- and drone-based measurement of methane and air pollutants for oil and gas operators (now part
+      of ChampionX emissions technologies). Methane and emissions monitoring is out (owner decision 16).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by ChampionX; not independent.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Founded:
+    https://www.cbinsights.com/company/scientific-aviation. Stage: ChampionX announced completion of acquisition
+    of Scientific Aviation, Inc. on July 5, 2021, terms undisclosed; scientificaviation.com now redirects to championx.com
+    emissions-technologies page; slb.com lists ChampionX as a legacy company. https://energynow.com/2021/07/championx-announces-acquisition-of-scientific-aviation-inc/
+    Flags: acquired by ChampionX (2021), now within SLB; main customers are oil and gas; largely measurement services,
+    hardware role unclear; defense is not main business. Evidence: https://energynow.com/2021/07/championx-announces-acquisition-of-scientific-aviation-inc/
+    https://bizwest.com/?p=352778 https://www.cbinsights.com/company/scientific-aviation https://www.slb.com/legacy-companies/championx
+    Region sources: e360-methane. Confidence: high. Unresolved: Headcount; whether a Boulder site still operates
+    (ChampionX page fetch rate-limited).'
+  categories:
+  - aerospace-space
+  - oil-gas
+- id: scythe-robotics
+  name: Scythe Robotics
+  website: https://www.scytherobotics.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2018
+  headcount:
+    value: 35
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/scythe-robotics)
+  climate:
+    tier: out
+    reason: M.52 battery-powered autonomous commercial lawn mower. Adjacent (Autonomy and robotics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 35 people (Dealroom, 2026-11-27). Owned by Autonomous Solutions; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom figure, undated; band <100; Dealroom
+    says team down 46.2% over past year Founded: https://scytherobotics.com/about-scythe. Stage: Acquired by Autonomous
+    Solutions Mar 2026 (Dealroom, amount undisclosed); before that $42M late VC Dec 2022; 7 funding events (https://dealroom.co/companies/scythe-robotics)
+    Flags: acquired by Autonomous Solutions (Dealroom); autonomous off-road vehicle. Evidence: https://scytherobotics.com/
+    https://scytherobotics.com/about-scythe https://dealroom.co/companies/scythe-robotics Region sources: inven-robotics-co,
+    beststartup-robotics-co. Confidence: medium. Unresolved: Acquisition not confirmed on own site (site still up,
+    no notice)'
+  categories:
+  - autonomy-robotics
+- id: seakr-engineering
+  name: SEAKR Engineering
+  website: https://www.seakr.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: smartrecruiters
+    board: SEAKREngineering
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1981
+  headcount:
+    value: 540
+    as_of: '2021-09-14'
+    source: Raytheon press release (via search snippet) (https://raytheon.mediaroom.com/2021-09-14-Raytheon-Intelligence-Space-to-acquire-SEAKR-Engineering)
+  climate:
+    tier: out
+    reason: 'Space electronics: processing, networking, memory and avionics subsystems, single-board and reconfigurable
+      computers, RF processing modules, plus electronics contract manufacturing. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 540 people (Raytheon press release (via search snippet), 2021-09-14). Owned by RTX; not independent.
+  notes: 'Board smartrecruiters:SEAKREngineering seen 2026-11-27, linked from the company''s own site: 10 open roles.
+    Headcount note: ''More than 540 employees'' at the 2021 acquisition announcement; lower bound. Founded: https://raytheon.mediaroom.com/2021-09-14-Raytheon-Intelligence-Space-to-acquire-SEAKR-Engineering.
+    Stage: Subsidiary of RTX: Raytheon Intelligence & Space agreed to buy privately held SEAKR (founded 1981 by
+    the Anderson family) on 2021-09-14 and completed it 2021-11-29 (Raytheon press release; Defense News). Site
+    footer links to rtx.com. Flags: subsidiary of RTX (Raytheon); customers include DoD and NASA; defense likely
+    a major share but main-business share not stated. Evidence: https://www.seakr.com/ https://raytheon.mediaroom.com/2021-09-14-Raytheon-Intelligence-Space-to-acquire-SEAKR-Engineering
+    https://www.defensenews.com/space/2021/11/30/raytheon-acquires-seakr-engineering/ Region sources: ucd-aero-list.
+    Confidence: high. Unresolved: Current headcount. Founded year and headcount come from search snippets of the
+    press release, not a direct page read.'
+  categories:
+  - aerospace-space
+  - defense
+  - semis-electronics
+- id: sierra-space
+  name: Sierra Space
+  website: https://www.sierraspace.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: late
+  founded: 2021
+  headcount:
+    value: 2000
+    as_of: '2026-11-24'
+    source: Wikipedia; undated, so as_of is the day it was read (https://en.wikipedia.org/wiki/Sierra_Space)
+  climate:
+    tier: out
+    reason: Dream Chaser reusable spaceplane, satellite platforms and subsystems, propulsion, and space station
+      habitats (LIFE, Orbital Reef). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 2,000 people (Wikipedia; undated, so as_of is the day it was read, 2026-11-24); founded 2021, funding
+      round reported in 2026.
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Headcount note:
+    Approximately 2,000; undated. Founded: https://en.wikipedia.org/wiki/Sierra_Space. Stage: Spun out of Sierra
+    Nevada Corporation April 2021; $1.4B raise 2021 at $4.5B valuation (sierraspace.com/about; Wikipedia); March
+    2026 $550M Series C at $8B valuation (Wikipedia). Rounds total over $1.9B (growth-scale); SNC remains parent
+    per Wikipedia. Flags: over 1,000 employees; majority-owned by Sierra Nevada Corporation per Wikipedia (sierraspace.com
+    calls SNC its former parent); defense not the main business (has defense satellite work; split not found). Evidence:
+    https://www.sierraspace.com/about/ https://en.wikipedia.org/wiki/Sierra_Space Region sources: mdedc-aero-cluster,
+    mdedc-aero-report-2025, mdedc-aero-scan-2026, mdedc-aero-study-2023, oedit-choosecolorado. Confidence: medium.
+    Unresolved: Sources disagree on parent: Wikipedia lists SNC as parent, Sierra Space site says ''former'' parent.
+    Round naming beyond A and C not checked; stage given as late because of growth-scale rounds, but its latest
+    round is named Series C, so series-c is also arguable.'
+  categories:
+  - aerospace-space
+  - defense
+- id: sodern-america
+  name: Sodern America
+  website: https://www.sodern.com
+  careers_url: null
+  hq: Limeil-Brevannes, France
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1962
+  headcount:
+    value: 450
+    as_of: '2026-11-24'
+    source: Sodern America site; undated, so as_of is the day it was read (https://www.sodern-us.com/)
+  climate:
+    tier: out
+    reason: Star trackers (Auriga, Hydra, Horus) and space cameras; US subsidiary of the French optronics maker
+      Sodern. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 450 people (Sodern America site; undated, so as_of is the day it was read, 2026-11-24). Owned by Sodern;
+      not independent.
+  notes: 'No job board found on the company''s site. Headcount note: 450+ is the whole Sodern group (undated); Sodern
+    America alone not found. Founded 1962 is the parent''s year. Founded: https://en.wikipedia.org/wiki/Sodern.
+    Stage: Sodern is 90% owned by ArianeGroup and 10% by CEA (Wikipedia); Sodern America is its US subsidiary (sodern-us.com).
+    Flags: subsidiary of Sodern (ArianeGroup); HQ outside region (France); US site described only as opening in
+    Colorado (site: Douglas County, CO per input, not verified); parent also supplies defense (neutron tubes, GNSS-free
+    navigation); not shown as the main business. Evidence: https://sodern.com/ https://www.sodern-us.com/ https://en.wikipedia.org/wiki/Sodern
+    Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026. Confidence: medium. Unresolved: Colorado city or county
+    not confirmed; Sodern America founding date and headcount not found. www.sodern.com has a certificate error;
+    sodern.com used.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: space-dust-research-and-technologies
+  name: Space Dust Research & Technologies
+  website: https://www.spacedusttech.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - battery-materials
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Electron-beam dust mitigation for lunar surfaces, CubeSat Langmuir probe for LEO plasma, electron-beam
+      regolith separator. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2025.
+  notes: 'No job board found on the company''s site. Stage: CU Boulder Venture Partners startup page lists stage
+    Pre-Seed (updated Oct 13, 2025); NASA TechLeap Prize 2025, two NASA SBIR Phase I subcontracts. Flags: HQ inferred
+    from CU Boulder affiliation; neither page gives a street address.. Evidence: O w n   s i Region sources: cu-vp-annual.
+    Confidence: low.'
+  categories:
+  - aerospace-space
+- id: space-ng
+  name: Space-ng
+  website: https://space-ng.com
+  careers_url: null
+  hq: Littleton, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2024
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Vision-based autonomy for spacecraft: Solux cameras, floodlights and compute hardware with navigation,
+      docking and tracking software. Adjacent (Aerospace and space), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Firefly Aerospace hardware plus software; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Founded: https://www.govconwire.com/articles/firefly-aerospace-space-ng-ai-navigation-acquisition.
+    Stage: Acquired by Firefly Aerospace; products continue under the Firefly brand (GovConWire, via search snippet;
+    page itself answered 403). Founded 2024 as a spinoff of Farm-ng. Flags: subsidiary of Firefly Aerospace; hardware
+    plus software; split not found. Evidence: https://www.space-ng.com/ https://www.govconwire.com/articles/firefly-aerospace-space-ng-ai-navigation-acquisition
+    https://fireflyspace.com/spacecraft-autonomy/ Region sources: csc-metrodenver. Confidence: medium. Unresolved:
+    Acquisition date not found; domain not given in input, space-ng.com found (no address on it).'
+  categories:
+  - aerospace-space
+- id: sparkfun-electronics
+  name: SparkFun Electronics
+  website: https://www.sparkfun.com
+  careers_url: null
+  hq: Niwot, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2003
+  headcount:
+    value: 140
+    as_of: '2018-01-01'
+    source: company website (https://www.sparkfun.com/about_sparkfun)
+  climate:
+    tier: out
+    reason: Open-source electronics kits, boards, sensors and components; builds over 400 of its kits and boards
+      in-house. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 140 people (company website, 2018-01-01); founded 2003 and no equity raise in the last 5 years found,
+      so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: About 140 per a January 2018 anniversary note
+    on the About page (month only: first day used); likely stale Founded: https://www.sparkfun.com/about_sparkfun.
+    Stage: Ownership not stated on About page; Dealroom profile not found (404) Evidence: https://www.sparkfun.com/about_sparkfun
+    Region sources: inven-robotics-co, beststartup-robotics-co. Confidence: medium. Unresolved: Ownership/funding;
+    current headcount'
+  categories:
+  - semis-electronics
+- id: spectrum-advanced-manufacturing-technologies
+  name: Spectrum Advanced Manufacturing Technologies
+  website: https://spectrumamt.com
+  careers_url: null
+  hq: Colorado Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1997
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Electronics manufacturing services: circuit-card assembly, cables and harnesses, box builds, conformal
+      coating and advanced packaging for spaceflight, military, medical and industrial customers. Adjacent (Aerospace
+      and space, Semiconductors and electronics, Advanced manufacturing), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1997 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Headcount note: Not found. Founded: https://www.spectrumamt.com/.
+    Stage: No funding found; site menu links to Ocutrx Technologies, Inc., relationship (parent or affiliate) not
+    stated. Flags: contract electronics manufacturer (builds to customers'' designs); possible affiliation with
+    Ocutrx Technologies, not confirmed. Evidence: https://www.spectrumamt.com/ Region sources: mdedc-aero-report-2025.
+    Confidence: medium. Unresolved: Headcount, ownership and the Ocutrx relationship not found; domain not given
+    in input, spectrumamt.com found and matches Colorado Springs.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - semis-electronics
+- id: ssr-mining
+  name: SSR Mining
+  website: https://www.ssrmining.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: workday
+    board: ssrmining
+  read: manual
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Gold and silver mining (Marigold, Cripple Creek & Victor, Copler; third-largest US gold producer per
+      its site). Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board workday:ssrmining.wd108.myworkdayjobs.com/SSR_Mining_Careers seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Stage: TSX: SSRM and NASDAQ: SSRM; listing year not found. https://www.ssrmining.com/
+    Flags: mining operator (runs mines, including Cripple Creek & Victor in Teller County, CO, named on site in
+    a Sept 2026 site-tour event); defense is not main business; likely over 1,000 employees (not confirmed). Evidence:
+    https://www.ssrmining.com/ Region sources: cma-members, cgs-is88. Confidence: medium. Unresolved: HQ address,
+    founded year, headcount, listing year, CC&V acquisition date (about/contact pages 404).'
+  categories:
+  - mining
+- id: stable-laser-systems
+  name: Stable Laser Systems
+  website: https://www.stablelasers.com
+  careers_url: null
+  hq: Boulder, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Frequency-stabilized laser systems, Fabry-Perot cavities and housings, electronics and clocks. Adjacent
+      (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Ownership/funding not stated. Evidence: https://www.stablelasers.com/
+    Region sources: cu-jila-spinoffs, cubit-seed-2026. Confidence: medium. Unresolved: Founded year, headcount,
+    ownership.'
+  categories:
+  - semis-electronics
+- id: stratom
+  name: Stratom
+  website: https://www.stratom.com
+  careers_url: null
+  hq: Boulder area, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic and autonomous refueling, recharging and liquid-transfer systems (RAPID), autonomous cargo movement
+      and off-road autonomy kits for vehicles. Adjacent (Autonomy and robotics, Defense), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Stage: Veteran-owned
+    private company; no funding rounds found Flags: defense appears to be main business (US Army DEVCOM refueling
+    prototype 2021, Navy SBIR, USAF EWAAC IDIQ Apr 2025); autonomous off-road vehicles. Evidence: https://www.roboticstomorrow.com/news/2021/03/30/stratom-tapped-to-develop-us-army-robotic-refueling-system/16569
+    https://www.globenewswire.com/news-release/2025/04/15/3061651/0/en/US-Air-Force-selects-Stratom-as-part-of-46B-EWAAC-IDIQ-contract-to-enhance-weapons-capabilities.html
+    https://www.therobotreport.com/stratom-awarded-navy-contract-for-autonomous-refueling-system/ Region sources:
+    inven-robotics-co, beststartup-robotics-co. Confidence: medium. Unresolved: Own site answered 403 (not retried);
+    Dealroom 404; founded year, headcount, exact HQ city'
+  categories:
+  - autonomy-robotics
+  - defense
+- id: structurebot
+  name: StructureBot
+  website: https://structurebot.com
+  careers_url: null
+  hq: Colorado Springs, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Portable gantry 3D construction printers (Series 1) that print cementitious materials for homes, walls,
+      tanks and other structures, plus a parametric design suite. Adjacent (Advanced manufacturing, Autonomy and
+      robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information found; site has an Investors
+    section with no figures. Dealroom 404 (structurebot). Flags: defense is not main business. Evidence: https://structurebot.com/
+    https://structurebot.com/about Region sources: beststartup-robotics-co. Confidence: medium. Unresolved: Founded
+    year, headcount, funding stage.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: synteric-robotics
+  name: Synteric Robotics
+  website: https://www.syntericrobotics.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 30-cm autonomous legged robot that inspects crawl spaces, attics and fire scenes for restoration work,
+      logging moisture, air quality and imagery. Adjacent (Autonomy and robotics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Flags: Located in Denver, not Boulder. Company funding not
+    stated.. Evidence: O w n   s i Region sources: cu-vp-midyear. Confidence: low.'
+  categories:
+  - autonomy-robotics
+- id: tendeg
+  name: Tendeg
+  website: https://www.tendeg.com
+  careers_url: null
+  hq: Louisville, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Deployable mesh antennas, reflectors and structures for spacecraft. Adjacent (Aerospace and space),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Headcount note: Not found; Dealroom slug tendeg returned 404.
+    Stage: No funding or ownership information found; founder is CEO per site. Flags: customers named: Capella Space,
+    NASA, Lockheed Martin, Astranis. Evidence: https://www.tendeg.com/ Region sources: csc-metrodenver. Confidence:
+    medium. Unresolved: Founded year, headcount and funding not found.'
+  categories:
+  - aerospace-space
+- id: thinkorbital
+  name: ThinkOrbital
+  website: https://www.thinkorbital.com
+  careers_url: null
+  hq: Lafayette, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'In-space construction tools and platforms: ThinkX satellite system, in-space welding, X-ray inspection
+      and orbital station platforms. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: Not found; Dealroom slug thinkorbital returned
+    404. Stage: Site news headline says it raised seed funding (January 2026), amount not given; SpaceWERX and NASA
+    NIAC selections. Evidence: https://www.thinkorbital.com/ https://gazette.com/?p=1307156 Region sources: csc-metrodenver,
+    mdedc-aero-scan-2026, beststartup-robotics-co. Confidence: medium. Unresolved: Lafayette HQ from a Gazette headline
+    only; founded year, headcount and seed amount not found.'
+  categories:
+  - aerospace-space
+- id: thorin-resources
+  name: Thorin Resources
+  website: null
+  careers_url: null
+  hq: Ouray, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Hard-rock mining: owns the Revenue Mine and mill near Ouray, CO (lead, silver, gold) and filed for
+      the Camp Bird permit in Ouray County. Mine operators are out (owner ruling A6b).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by FAFO Holdings LLC; not independent.
+  notes: 'No job board found on the company''s site. Stage: State permit records (2023-2024) list parent company
+    as FAFO Holdings LLC. July 2024 inspection found Revenue Mine in full compliance; review of revision TR-17 suspended
+    mid-2024 pending corporate documentation. Flags: mining operator (permitted Revenue Mine and mill; production
+    level unknown); subsidiary of FAFO Holdings LLC (per state filings); defense is not main business; latest record
+    found is Oct 2024. Evidence: https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1428678/2024-08-27_INSPECTION%20-%20M2012032.pdf
+    https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1433954/2024-10-24_REVISION%20-%20M2012032.pdf https://dnrweblink.state.co.us/DRMSSearch/0/edoc/1432096/2024-10-03_REVISION%20-%20M1982090.pdf
+    Region sources: cma-members. Confidence: medium. Unresolved: Status in 2026, website, headcount, founded year.'
+  categories:
+  - mining
+- id: tortuga-agtech
+  name: Tortuga AgTech
+  website: https://www.tortugaagtech.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: paycom
+    board: 01E3817CC44C51365B67FADFEF148A24
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 2016
+  headcount:
+    value: 14
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/tortuga-agtech)
+  climate:
+    tier: out
+    reason: Robotic harvesting of greenhouse crops (strawberries, tomatoes). Adjacent (Autonomy and robotics), not
+      clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 14 people (Dealroom, 2026-11-27). Owned by Oishii; not independent.
+  notes: 'Board paycom:01E3817CC44C51365B67FADFEF148A24 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Headcount note: Dealroom figure, undated; Dealroom gives HQ as Lakewood Founded:
+    https://dealroom.co/companies/tortuga-agtech. Stage: Dealroom records acquisition by Oishii Mar 2025 (IP assets
+    and team); earlier Series A $20M Apr 2021 (Root Ventures, Colorado Impact Fund, Spero, Grit) (https://dealroom.co/companies/tortuga-agtech)
+    Flags: acquired by Oishii (indoor berry farm); own domain redirects to oishii.com. Evidence: https://www.tortugaagtech.com/
+    https://dealroom.co/companies/tortuga-agtech Region sources: inven-robotics-co. Confidence: medium. Unresolved:
+    HQ city: input says Denver, Dealroom says Lakewood'
+  categories:
+  - autonomy-robotics
+- id: trapper-mining-inc
+  name: Trapper Mining Inc.
+  website: null
+  careers_url: null
+  hq: Craig, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Operates the Trapper surface coal mine in Moffat County, CO. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Trapper Mining, Inc. listed as operator of the Trapper
+    Strip surface mine, Producing, in Colorado monthly coal reports through mid-2025. Ownership not confirmed. Flags:
+    mining operator (runs the Trapper surface coal mine); coal; defense is not main business. Evidence: https://spl.cde.state.co.us/artemis/nrserials/nr1210internet/nr1210202507internet.pdf
+    Region sources: cgs-is88. Confidence: medium. Unresolved: Ownership, headcount, founded year.'
+  categories:
+  - mining
+- id: trimble
+  name: Trimble
+  website: https://www.trimble.com
+  careers_url: null
+  hq: Westminster, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 1978
+  headcount:
+    value: 11500
+    as_of: '2025-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/Trimble_Inc.)
+  climate:
+    tier: out
+    reason: GNSS, laser and optical positioning hardware together with software for construction, agriculture, geospatial
+      and transportation. Adjacent (Semiconductors and electronics, Aerospace and space), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '11,500 people (Wikipedia, 2025-01-01): over the 4,000 cap and its tolerance.'
+  notes: 'No job board found on the company''s site. Headcount note: About 11,500 (2025, year only). Founded: https://en.wikipedia.org/wiki/Trimble_Inc..
+    Stage: Nasdaq: TRMB; IPO 1990 (Wikipedia). Flags: public (Nasdaq TRMB, listed 1990); over 1,000 employees; mixed
+    hardware and software; split not found. Evidence: https://en.wikipedia.org/wiki/Trimble_Inc. Region sources:
+    mdedc-aero-report-2025, mdedc-aero-scan-2026, ucd-aero-list. Confidence: medium. Unresolved: Hardware vs software
+    revenue share not found (trimble.com company page 404), so physical left unclear.'
+  categories:
+  - aerospace-space
+  - semis-electronics
+- id: true-anomaly
+  name: True Anomaly
+  website: https://www.trueanomaly.space
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: greenhouse
+    board: trueanomalyinc
+  read: auto
+  sectors:
+  - ev
+  stage: late
+  founded: 2022
+  headcount:
+    value: 500
+    as_of: '2026-11-24'
+    source: Dealroom; undated, so as_of is the day it was read (https://dealroom.co/companies/true-anomaly)
+  climate:
+    tier: out
+    reason: Jackal autonomous orbital vehicles (rendezvous and proximity spacecraft for space security) plus Mosaic
+      autonomy software. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 500 people (Dealroom; undated, so as_of is the day it was read, 2026-11-24); founded 2022, funding round
+      reported in 2026.
+  notes: 'Board greenhouse:trueanomalyinc seen 2026-11-27, linked from the company''s own site: 215 open roles,
+    1 US-remote. Headcount note: Dealroom band 500-1,000; undated. Dealroom gives HQ Denver; company site lists
+    Centennial, Long Beach, Colorado Springs and Washington DC without naming an HQ. Founded: https://dealroom.co/companies/true-anomaly.
+    Stage: Series D $650M announced 2026-04-28 on trueanomaly.space; Dealroom total equity $500M-$1B. Flags: defense
+    is main business (space superiority for the US and allies). Evidence: https://www.trueanomaly.space/ https://dealroom.co/companies/true-anomaly
+    Region sources: mdedc-aero-cluster, mdedc-aero-report-2025, mdedc-aero-scan-2026. Confidence: high. Unresolved:
+    Exact HQ city (Centennial vs Denver) not settled; named customers not given.'
+  categories:
+  - aerospace-space
+  - defense
+- id: united-launch-alliance
+  name: United Launch Alliance
+  website: https://www.ulalaunch.com
+  careers_url: null
+  hq: Centennial, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2006
+  headcount:
+    value: 2700
+    as_of: '2024-01-01'
+    source: Wikipedia; ULA site (https://www.ulalaunch.com/about)
+  climate:
+    tier: out
+    reason: Launch services with the Vulcan Centaur and Atlas V rockets. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: 2,700 people (Wikipedia; ULA site, 2024-01-01). Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: ULA site says about 2,700 (undated); Wikipedia
+    2,700 (2024, year only). ULA site says HQ Denver area, Wikipedia says Centennial. Founded: https://en.wikipedia.org/wiki/United_Launch_Alliance.
+    Stage: 50/50 joint venture of Lockheed Martin and Boeing, formed 2006-12-01; sale talks reported 2023-2024,
+    not sold as of 2025 (Wikipedia). Flags: joint venture of Lockheed Martin and Boeing; over 1,000 employees; main
+    customers are US government (national security launches and NASA); defense share not quantified. Evidence: https://www.ulalaunch.com/about
+    https://en.wikipedia.org/wiki/United_Launch_Alliance Region sources: mdedc-aero-cluster, mdedc-aero-report-2025,
+    mdedc-aero-scan-2026, mdedc-aero-study-2023, csc-metrodenver, oedit-choosecolorado, ucd-aero-list. Confidence:
+    high. Unresolved: Whether defense is the majority of launches not quantified; 2026 ownership status not checked
+    beyond Wikipedia.'
+  categories:
+  - aerospace-space
+  - defense
+- id: up-aerospace
+  name: UP Aerospace
+  website: https://www.upaerospace.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1998
+  headcount: null
+  climate:
+    tier: out
+    reason: Space launch and flight-test services with its SpaceLoft suborbital rockets and Spyder hypersonic rocket
+      (maiden flight June 2025). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1998 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Founded: https://www.upaerospace.com/about. Stage: Ownership
+    not stated. About page says created in 1998 and incorporated in 2004; no venture rounds found. Flags: launch
+    site at Spaceport America, New Mexico; named partners are NASA programs and Los Alamos National Laboratory;
+    defense not stated as main business. Evidence: https://www.upaerospace.com/ https://www.upaerospace.com/about
+    Region sources: ucd-aero-list. Confidence: medium. Unresolved: Headcount, ownership and funding. Dealroom page
+    404.'
+  categories:
+  - aerospace-space
+  - defense
+- id: valor-formerly-capco
+  name: Valor (formerly Capco)
+  website: https://capcoinc.com
+  careers_url: null
+  hq: Grand Junction, CO
+  ats:
+    type: paylocity
+    board: 54907fb2-0a07-4338-b0aa-64243060d01d
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Energetics (impulse cartridges, CAD/PAD, initiators and explosives), weapon mounts and precision assemblies
+      for the military. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'Board paylocity:54907fb2-0a07-4338-b0aa-64243060d01d seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Stage: Legal entity on site is Valor Tactical Innovation LLC; ownership
+    not stated. Flags: defense is main business; capcoinc.com redirects (301) to valortactical.us. Evidence: https://www.capcoinc.com/
+    https://www.valortactical.us/ Region sources: mfredge-casestudies, beststartup-robotics-co. Confidence: medium.
+    Unresolved: Founded year, headcount, ownership, date of the rename from Capco to Valor (site does not mention
+    Capco).'
+  categories:
+  - defense
+- id: vectis-automation
+  name: Vectis Automation
+  website: https://www.vectisautomation.com
+  careers_url: null
+  hq: Loveland, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Cobot welding and plasma-cutting systems built on Universal Robots arms with Vectis software. Adjacent
+      (Advanced manufacturing, Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Not found (Vectis Automation LLC) Evidence: https://www.vectisautomation.com/
+    Region sources: cama-home, inven-robotics-co. Confidence: medium. Unresolved: HQ confirmation, founded, headcount,
+    ownership; Dealroom 404'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: vescent
+  name: Vescent
+  website: https://vescent.com
+  careers_url: null
+  hq: Golden, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Frequency combs, lasers, laser controllers and accessories for laser stabilization, optical clocks and
+      cold-atom science. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding or ownership stated on home page. Flags:
+    lists defense as one of four application areas; not shown as main customer. Evidence: https://www.vescent.com/
+    Region sources: cubit-partners, cu-jila-spinoffs. Confidence: medium. Unresolved: Founded year, headcount, funding.
+    /about-us/ 404.'
+  categories:
+  - semis-electronics
+- id: voyager-technologies
+  name: Voyager Technologies
+  website: https://voyagertechnologies.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: greenhouse
+    board: voyagertechnologiesinc
+  read: auto
+  sectors: []
+  stage: public
+  founded: 2019
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Space and defense technology: solid-fuel missile propulsion and energetics, satellite electric propulsion,
+      radiation-hardened electronics, lunar landers, and the Starlab commercial space station. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2019, public, with a listing or offering reported in 2025.
+  notes: 'Board greenhouse:voyagertechnologiesinc seen 2026-11-27, linked from the company''s own site: 195 open
+    roles, 33 US-remote. Headcount note: Not found. Founded: https://en.wikipedia.org/wiki/Voyager_Technologies.
+    Stage: IPO on the NYSE (VOYG) on 2025-06-11 at an initial valuation of $3.8B (Wikipedia). Flags: public (NYSE
+    VOYG, listed 2025); defense is a large and growing share (IPO valuation driven mainly by missile-defense work
+    per Wikipedia); not verified as the majority; acquired ExoTerra Resource (October 2025). Evidence: https://www.voyagertechnologies.com/
+    https://en.wikipedia.org/wiki/Voyager_Technologies Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026,
+    oedit-choosecolorado. Confidence: medium. Unresolved: Headcount not found; defense share of revenue not quantified.'
+  categories:
+  - aerospace-space
+  - defense
+- id: western-uranium-and-vanadium
+  name: Western Uranium & Vanadium
+  website: https://western-uranium.com
+  careers_url: null
+  hq: Nucla, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - fission
+  stage: public
+  founded: 2014
+  headcount: null
+  climate:
+    tier: out
+    reason: Uranium and vanadium mining; Sunday Mine Complex in western Colorado (permitted and operational per
+      site), plus Mustang processing site (Montrose County, CO, permitting), Sage, Hansen/Taylor Ranch (CO) and
+      San Rafael (UT). Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2014.
+  notes: 'No job board found on the company''s site. Founded: https://www.western-uranium.com/. Stage: CSE: WUC
+    and OTCQX: WSTRF; listing year not stated on site. https://www.western-uranium.com/ Flags: mining operator (Sunday
+    Mine Complex labelled fully permitted and operational; ore stockpiled underground; production status unclear);
+    defense is not main business. Evidence: https://www.western-uranium.com/ https://www.western-uranium.com/about
+    Region sources: cma-members, cgs-is88. Confidence: medium. Unresolved: HQ address, headcount, listing year,
+    whether Sunday mines are currently producing.'
+  categories:
+  - mining
+- id: wolf-robotics-lincoln-electric-automation
+  name: Wolf Robotics (Lincoln Electric Automation)
+  website: https://www.wolfrobotics.com
+  careers_url: null
+  hq: Fort Collins, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic arc welding, cutting, cladding and material-handling systems, plus pre-engineered welding cells
+      and positioners. Adjacent (Advanced manufacturing, Autonomy and robotics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by Lincoln Electric; not independent.
+  notes: 'No job board found on the company''s site. Headcount note: Site says in business ''for over 75 years''
+    Stage: ''Wolf Robotics, A Lincoln Electric Automation Company'' (https://www.wolfrobotics.com/); acquisition
+    date not found Flags: subsidiary of Lincoln Electric. Evidence: https://www.wolfrobotics.com/ Region sources:
+    inven-robotics-co. Confidence: high. Unresolved: Founded year, Fort Collins headcount, acquisition date'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- id: xairo
+  name: Xairo
+  website: https://xairos.com
+  careers_url: null
+  hq: Arvada, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - buildings
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Quantum time transfer: enterprise timing over space and fiber links, building toward a global entanglement
+      network. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Non-dilutive only on site: SpaceWERX Direct-to-Phase
+    II SBIR (undated), Innovate UK and ESA contracts (Oct 2025, May 2026); no equity round stated. Flags: Input
+    ''Xairo'' read as a misspelling of Xairos Systems, Inc. The $1.9M award was not found on its site. Founded likely
+    2018 (copyright start), not confirmed.. Evidence: O w n   s i Region sources: mdedc-aero-cluster, mdedc-aero-scan-2026.
+    Confidence: low.'
+  categories:
+  - aerospace-space
+- id: york-space-systems
+  name: York Space Systems
+  website: https://www.yorkspacesystems.com
+  careers_url: null
+  hq: Denver, CO
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: 2012
+  headcount:
+    value: 670
+    as_of: '2025-09-30'
+    source: IPO filing, via Denver Gazette / Renaissance Capital search snippets (https://denvergazette.com/2025/11/18/york-space-systems-prepares-to-become-denvers-next-public-company)
+  climate:
+    tier: out
+    reason: Spacecraft platforms (satellite buses), components, laser and RF communications, launch logistics, ground
+      services and mission-control software. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 670 people (IPO filing, via Denver Gazette / Renaissance Capital search snippets, 2025-09-30); founded
+      2012, public, with a listing or offering reported in 2026.
+  notes: 'No job board found on the company''s site. Headcount note: 670 full-time employees as of 2025-09-30 per
+    its S-1; Dealroom maps 464 people (undated talent data). Founded: https://dealroom.co/companies/york-space-systems.
+    Stage: IPO on the NYSE (YSS) on 2026-01-29, raising $629M at $34/share, about $4.75B market cap (SatNews); AE
+    Industrial Partners keeps over 50% of voting power. Dealroom shows an IPO year of 2022, which conflicts. https://satnews.com/2026/01/29/york-space-systems-raises-629m-in-upsized-ipo-to-scale-defense-production/
+    Flags: public (NYSE YSS, listed 2026); majority-controlled by AE Industrial Partners; main customers are defense
+    (described as an aerospace and defense company; SatNews says IPO funds scale defense production); not quantified.
+    Evidence: https://www.yorkspacesystems.com/ https://dealroom.co/companies/york-space-systems https://satnews.com/2026/01/29/york-space-systems-raises-629m-in-upsized-ipo-to-scale-defense-production/
+    https://www.washingtontechnology.com/companies/2025/11/york-space-systems-files-public-offering/409568/ Region
+    sources: mdedc-aero-cluster, mdedc-aero-report-2025, mdedc-aero-scan-2026, mdedc-aero-study-2023. Confidence:
+    medium. Unresolved: Founded year only from Dealroom; defense share of revenue not quantified; IPO year conflict
+    (Dealroom 2022 vs news 2026; news is specific and dated).'
+  categories:
+  - aerospace-space
+  - defense

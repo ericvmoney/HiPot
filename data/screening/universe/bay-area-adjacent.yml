@@ -1,0 +1,2597 @@
+# Reference list for the San Francisco Bay Area (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: bay-area-adjacent
+built: '2026-11-25'
+sources:
+- id: svr-members
+  name: Silicon Valley Robotics partners and members (logo wall)
+  url: https://www.svrobo.org/membership/
+  note: names read from logo filenames only; full member directory is private
+- id: yc-robotics-bay
+  name: Y Combinator directory, Robotics, San Francisco Bay Area
+  url: https://www.ycombinator.com/companies/industry/robotics/san-francisco-bay-area
+  note: page shows 50 of 94; the rest load dynamically and query-string pages are disallowed by robots.txt
+- id: yc-hardware-bay
+  name: Y Combinator directory, Hardware, San Francisco Bay Area
+  url: https://www.ycombinator.com/companies/industry/hardware/san-francisco-bay-area
+  note: page shows 50 of 96
+- id: yc-aviation-space-bay
+  name: Y Combinator directory, Aviation and Space, San Francisco Bay Area
+  url: https://www.ycombinator.com/companies/industry/aviation-and-space/san-francisco-bay-area
+  note: all 24 shown
+- id: yc-defense
+  name: Y Combinator directory, Defense (all locations; Bay Area entries taken)
+  url: https://www.ycombinator.com/companies/industry/defense
+  note: all 32 shown
+- id: yc-drones
+  name: Y Combinator directory, Drones (all locations; Bay Area entries taken)
+  url: https://www.ycombinator.com/companies/industry/drones
+  note: all 21 shown
+- id: yc-hardtech
+  name: Y Combinator directory, Hard Tech (all locations; Bay Area entries taken)
+  url: https://www.ycombinator.com/companies/industry/hard-tech
+  note: page shows 50 of 145
+- id: yc-satellites
+  name: Y Combinator directory, Satellites and Space Exploration (Bay Area entries taken)
+  url: https://www.ycombinator.com/companies/industry/satellites
+  note: all 23 shown; space-exploration page (20) also read
+- id: bacei-space-2025
+  name: Bay Area Council Economic Institute, Space in the Bay Area (May 2025 report)
+  url: https://www.bayareaeconomy.org/files/pdf/SpaceInTheBayArea2025.pdf
+  note: text extracted from PDF; Industry Anchors and Entrepreneurs sections
+- id: a16z-ad50
+  name: a16z American Dynamism 50 (2025 and 2026 lists; Bay Area entries taken)
+  url: https://a16z.com/american-dynamism-50-2026/
+  note: 2025 list at https://a16z.com/american-dynamism-50-2025/
+- id: trr-rbr50
+  name: The Robot Report RBR50 innovation award winners 2024 and 2025 (Bay Area winners taken)
+  url: https://www.therobotreport.com/rbr50-2025/
+  note: 2024 list at https://www.therobotreport.com/rbr50-2024/; locations mostly not stated on page, set from company
+    sites and general knowledge
+- id: ca-dmv-av
+  name: California DMV autonomous vehicle testing and deployment permit holders (Bay Area holders taken)
+  url: https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-testing-permit-holders/
+  note: locations not on page; set from general knowledge
+- id: nbc-bay-evtol
+  name: NBC Bay Area, Flying taxis are on the horizon
+  url: https://www.nbcbayarea.com/news/tech/flying-taxis-horizon-aviation-soars-new-frontier/3753948/
+- id: fortune-drone-2026
+  name: Fortune, Silicon Valley just might save America from growing drone threat (2026-08-21)
+  url: https://www.fortune.com/2026/08/21/silicon-valley-just-might-save-america-growing-drone-threat/
+  note: only Muon Space was a Bay Area hardware maker in scope
+- id: yc-semis
+  name: Y Combinator company directory, Semiconductors industry page
+  url: https://www.ycombinator.com/companies/industry/semiconductors
+  note: robots.txt bars /companies?* (query strings) for all agents; industry and profile pages without query are
+    allowed. 21 listed; websites from YC profile pages.
+- id: yc-hardware
+  name: Y Combinator company directory, Hardware industry page
+  url: https://www.ycombinator.com/companies/industry/hardware
+  note: first 50 of 169 shown; the rest load by script and were not read
+- id: yc-mfg-robotics
+  name: Y Combinator company directory, Manufacturing and Robotics industry page
+  url: https://www.ycombinator.com/companies/industry/manufacturing-and-robotics
+  note: first 50 of 158 shown; robotics-only companies left to the robotics pass unless they sell to factories or
+    data centers
+- id: yc-industrials
+  name: Y Combinator company directory, Industrials industry page
+  url: https://www.ycombinator.com/companies/industry/industrials
+  note: first 50 of 467 shown
+- id: semieng-funding
+  name: Semiconductor Engineering quarterly chip startup funding reports, Q3 2024 to Q3 2026
+  url: https://semiengineering.com/startup-funding-q3-2026/
+  note: nine pages (startup-funding-q3-2024, q4-2024, q1-2025, q2-2025, q3-2025, q4-2025, q1-2026, q2-2026, q3-2026);
+    Bay Area city stated in article body except four rows listed only as USA whose Bay Area HQ is from general knowledge
+    (noted). robots.txt bars only GPTBot and MJ12bot.
+- id: ocp-members-us
+  name: Open Compute Project membership directory, US members
+  url: https://www.opencompute.org/membership/membership-directory/?country=US
+  note: 176 members; page gives no locations, so Bay Area HQ and websites are from general knowledge
+- id: wiki-bayarea-cos
+  name: Wikipedia, List of companies based in the San Francisco Bay Area
+  url: https://en.wikipedia.org/wiki/List_of_companies_based_in_the_San_Francisco_Bay_Area
+  note: electronics and networking sections; defunct, acquired, foreign subsidiaries, software and semiconductor
+    incumbents over about 5,000 people skipped; websites from general knowledge
+- id: wiki-3d-printers
+  name: Wikipedia, List of 3D printer manufacturers
+  url: https://en.wikipedia.org/wiki/List_of_3D_printer_manufacturers
+  note: US makers with Bay Area cities
+- id: search-lidar
+  name: Web search, Bay Area lidar makers (Wikipedia Ouster article, LiDAR Magazine, CB Insights snippets)
+  url: https://en.wikipedia.com/wiki/Ouster_(company)
+  note: one web search; websites from general knowledge
+companies:
+- name: Aadi Space
+  website: null
+  hq: San Francisco Bay Area
+  sources:
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Aalyria
+  website: https://www.aalyria.com
+  hq: Livermore, CA
+  sources:
+  - a16z-ad50
+  registry_id: aalyria
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: aalyria-careers
+  open_roles: 24
+- name: Aetherflux
+  website: https://aetherflux.com
+  hq: San Carlos, CA
+  sources:
+  - a16z-ad50
+  registry_id: aetherflux-cowboy-space-corporation
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: cowboyspace
+  open_roles: null
+- name: Aeva
+  website: https://www.aeva.com
+  hq: Mountain View, CA
+  sources:
+  - search-lidar
+  registry_id: aeva
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: aeva
+  open_roles: 50
+- name: AEye
+  website: https://www.aeye.ai
+  hq: Pleasanton, CA
+  sources:
+  - search-lidar
+  registry_id: aeye
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: aeyeinc
+  open_roles: 5
+- name: Akash Systems
+  website: https://akashsystems.com
+  hq: Emeryville, CA
+  sources:
+  - bacei-space-2025
+  registry_id: akash-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Akeana
+  website: https://akeana.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Licensable RISC-V processor core IP (100, 1000 and 5000 series).'
+  ats: null
+  open_roles: null
+- name: Altera
+  website: https://www.altera.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: altera
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: altera.wd1.myworkdayjobs.com/Altera
+  open_roles: null
+- name: Amber Semiconductor
+  website: https://www.ambersemi.com
+  hq: Dublin, CA
+  sources:
+  - semieng-funding
+  registry_id: amber-semiconductor
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Ambi Robotics
+  website: https://www.ambirobotics.com
+  hq: Berkeley, CA
+  sources:
+  - trr-rbr50
+  registry_id: ambi-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: ambirobotics
+  open_roles: 5
+- name: Antropi Robotics
+  website: https://www.antropi.world/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Apolink
+  website: https://apolink.space
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: ashby
+    token: apolink
+  open_roles: 4
+- name: Applied Electrodynamics
+  website: https://www.ae-dyn.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardtech
+  - yc-hardware
+  registry_id: applied-electrodynamics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Applied Kinetics
+  website: https://appliedkinetics.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-mfg-robotics
+  - yc-industrials
+  registry_id: applied-kinetics
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Archer Aviation
+  website: https://www.archer.com/
+  hq: San Jose, CA
+  sources:
+  - nbc-bay-evtol
+  registry_id: archer
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: archer56
+  open_roles: null
+- name: Arista Networks
+  website: https://www.arista.com
+  hq: Santa Clara, CA
+  sources:
+  - ocp-members-us
+  - wiki-bayarea-cos
+  registry_id: arista-networks
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Armada
+  website: https://www.armada.ai
+  hq: San Francisco, CA
+  sources:
+  - a16z-ad50
+  registry_id: armada
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: armada
+  open_roles: 26
+- name: Array Labs
+  website: https://www.arraylabs.io/
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: The merge had matched it to a different registry company (Array Technologies); its facts were not gathered.
+  ats: null
+  open_roles: null
+- name: Astera Labs
+  website: https://www.asteralabs.com
+  hq: San Jose, CA
+  sources:
+  - ocp-members-us
+  registry_id: astera-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: asteralabs
+  open_roles: 181
+- name: Astra
+  website: https://astra.com
+  hq: Alameda, CA
+  sources:
+  - bacei-space-2025
+  registry_id: astra
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: astra
+  open_roles: 35
+- name: Astranis
+  website: https://www.astranis.com
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  - bacei-space-2025
+  - a16z-ad50
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: greenhouse
+    token: astranis
+  open_roles: 163
+- name: Astro Mechanica
+  website: https://astromecha.co
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - a16z-ad50
+  registry_id: astro-mechanica
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: Astro-Mechanica
+  open_roles: null
+- name: Atmosic Technologies
+  website: https://atmosic.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: atmosic-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Atom Computing
+  website: https://atom-computing.com
+  hq: Berkeley, CA
+  sources:
+  - semieng-funding
+  registry_id: atom-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: atomcomputing
+  open_roles: 41
+- name: Atomic Machines
+  website: https://www.atomicmachines.com
+  hq: Emeryville, CA
+  sources:
+  - ocp-members-us
+  registry_id: atomic-machines
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: atomicmachines
+  open_roles: null
+- name: AttoTude
+  website: https://attotude.com
+  hq: Menlo Park, CA
+  sources:
+  - semieng-funding
+  registry_id: attotude
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: attotude
+  open_roles: 17
+- name: Atum Works
+  website: https://atum.works/
+  hq: San Francisco, CA
+  sources:
+  - yc-semis
+  registry_id: atum-works
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: atumworks
+  open_roles: 3
+- name: Auradine
+  website: https://auradine.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: auradine
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: velaura
+  open_roles: 47
+- name: Avicena
+  website: https://avicena.tech
+  hq: Sunnyvale, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: avicena
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Axiado
+  website: https://axiado.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: axiado
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: smartrecruiters
+    token: Axiado
+  open_roles: 0
+- name: Axonnic
+  website: https://www.axonnic.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Ayar Labs
+  website: https://ayarlabs.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: ayar-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Baud
+  website: https://baudlabs.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-semis
+  registry_id: baud
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Baya Systems
+  website: https://bayasystems.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Network-on-chip fabric IP (WeaveIP) and design software (WeaverPro) for SoCs
+    and chiplets.'
+  ats:
+    type: greenhouse
+    token: bayasystems
+  open_roles: 25
+- name: BayMachines
+  website: https://baymachines.com
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Bloom Energy
+  website: https://www.bloomenergy.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: bloom-energy
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: bloomenergy
+  open_roles: null
+- name: Blue River Technology
+  website: https://bluerivertechnology.com
+  hq: Santa Clara, CA
+  sources:
+  - svr-members
+  registry_id: blue-river-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Capella Space
+  website: https://www.capellaspace.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: capella-space
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: capellaspace
+  open_roles: 8
+- name: Carbon
+  website: https://www.carbon3d.com
+  hq: Redwood City, CA
+  sources:
+  - wiki-3d-printers
+  registry_id: carbon
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: carbon.wd504.myworkdayjobs.com/carboncareers
+  open_roles: null
+- name: Cascade Space
+  website: https://cascadespace.com
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Celera Semiconductor
+  website: https://celerasemi.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: celera-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Celestial AI
+  website: https://celestial.ai
+  hq: Sunnyvale, CA
+  sources:
+  - semieng-funding
+  registry_id: celestial-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: marvell.wd1.myworkdayjobs.com/MarvellCareers
+  open_roles: null
+- name: CelLink
+  website: https://www.cellinkcircuits.com
+  hq: San Carlos, CA
+  sources:
+  - ocp-members-us
+  registry_id: cellink
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: cellink
+  open_roles: null
+- name: Central Blue
+  website: https://www.centralblue.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Cepton
+  website: https://www.cepton.com
+  hq: San Jose, CA
+  sources:
+  - search-lidar
+  registry_id: cepton
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cerebras Systems
+  website: https://cerebras.ai
+  hq: Sunnyvale, CA
+  sources:
+  - semieng-funding
+  registry_id: cerebras-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: cerebras
+  open_roles: 134
+- name: Chariot Defense
+  website: https://chariotdefense.com
+  hq: San Bruno, CA
+  sources:
+  - a16z-ad50
+  registry_id: chariot-defense
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: chariotdefense
+  open_roles: null
+- name: Chef Robotics
+  website: https://www.chefrobotics.ai
+  hq: San Francisco, CA
+  sources:
+  - trr-rbr50
+  registry_id: chef-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: chef-robotics
+  open_roles: null
+- name: Cisco Systems
+  website: https://www.cisco.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: cisco-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Collaborative Robotics
+  website: https://www.co.bot
+  hq: Santa Clara, CA
+  sources:
+  - trr-rbr50
+  registry_id: collaborative-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Colossus Computing
+  website: null
+  hq: Oakland, CA
+  sources:
+  - bacei-space-2025
+  registry_id: colossus-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Corvus Robotics
+  website: https://www.corvus-robotics.com
+  hq: Mountain View, CA
+  sources:
+  - yc-drones
+  registry_id: corvus-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: corvusrobotics
+  open_roles: 9
+- name: Cosmic Robotics
+  website: https://cosmicrobotics.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardtech
+  - yc-aviation-space-bay
+  registry_id: cosmic-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: cosmic-robotics
+  open_roles: null
+- name: Credo Technology
+  website: https://credosemi.com
+  hq: San Jose, CA
+  sources:
+  - ocp-members-us
+  registry_id: credo-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cyngn
+  website: https://www.cyngn.com
+  hq: Mountain View, CA
+  sources:
+  - trr-rbr50
+  registry_id: cyngn
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: cyngn
+  open_roles: 18
+- name: d-Matrix
+  website: https://d-matrix.ai
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: d-matrix
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: d-Matrix
+  open_roles: 37
+- name: DAIVIN!
+  website: https://www.daivin.tech/
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: null
+  decision: not-in-scope
+  reason: Tankless diving equipment; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Dawn Industries
+  website: https://www.dawnxr.com
+  hq: San Francisco, CA
+  sources:
+  - yc-mfg-robotics
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: VIM software that automatically diagnoses and stages fixes for industrial automation
+    cells (PLCs, robots, CNCs).'
+  ats: null
+  open_roles: null
+- name: Deepnight
+  website: https://www.deepnight.com
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: deepnight
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Delos Data
+  website: https://delosdata.com
+  hq: Palo Alto, CA
+  sources:
+  - semieng-funding
+  registry_id: delos-data
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: delos-data
+  open_roles: 17
+- name: Dexterity
+  website: https://www.dexterity.ai
+  hq: Redwood City, CA
+  sources:
+  - trr-rbr50
+  registry_id: dexterity
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: dexterity
+  open_roles: 14
+- name: Dispatch
+  website: https://dispatch.space/
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: ashby
+    token: dispatch
+  open_roles: 7
+- name: DreamBig Semiconductor
+  website: https://dreambigsemi.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: dreambig-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: icims
+    token: arm
+  open_roles: null
+- name: Earendil Robotics
+  website: https://earendil.io
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Edgerun
+  website: https://edgerun.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-defense
+  - yc-hardware-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Electric Sheep Robotics
+  website: https://sheeprobotics.ai
+  hq: San Francisco, CA
+  sources:
+  - trr-rbr50
+  registry_id: electric-sheep-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Eliyan
+  website: https://eliyan.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: eliyan
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: eliyan
+  open_roles: 23
+- name: Empower Semiconductor
+  website: https://empowersemi.com
+  hq: Milpitas, CA
+  sources:
+  - semieng-funding
+  registry_id: empower-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: EnCharge AI
+  website: https://enchargeai.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: encharge-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: enchargeai36
+  open_roles: 25
+- name: Endiatx
+  website: https://endiatx.com
+  hq: Hayward, CA
+  sources:
+  - trr-rbr50
+  registry_id: null
+  decision: not-in-scope
+  reason: A swallowable camera pill (medical device in trials); it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Energy Recovery
+  website: https://energyrecovery.com
+  hq: San Leandro, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: energy-recovery
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: energyrecovery
+  open_roles: null
+- name: Enfabrica
+  website: https://enfabrica.net
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  registry_id: enfabrica
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Eridu
+  website: https://eridu.ai
+  hq: Saratoga, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: eridu
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: eridu-ai
+  open_roles: 30
+- name: Etched
+  website: https://etched.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: etched
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: Etched
+  open_roles: 117
+- name: Ethernovia
+  website: https://ethernovia.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: ethernovia
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: ethernovia
+  open_roles: 31
+- name: Exosat
+  website: https://www.exosat.com
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Fabric Cryptography
+  website: https://fabriccryptography.com
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: fabric-cryptography
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Farcast
+  website: https://www.farcast.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: lever
+    token: Farcast
+  open_roles: 3
+- name: Figure AI
+  website: https://www.figure.ai
+  hq: San Jose, CA
+  sources:
+  - trr-rbr50
+  registry_id: figure-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: figure
+  open_roles: 30
+- name: Foundry Robotics
+  website: https://foundryrobotics.ai
+  hq: Emeryville, CA
+  sources:
+  - a16z-ad50
+  registry_id: foundry-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: foundry-robotics
+  open_roles: 27
+- name: Frore Systems
+  website: https://froresystems.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: frore-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Gatik
+  website: https://gatik.ai
+  hq: Mountain View, CA
+  sources:
+  - ca-dmv-av
+  registry_id: gatik
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: General Astronautics
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: ashby
+    token: generalastronautics
+  open_roles: 3
+- name: Greypoint Industries
+  website: https://greypointindustries.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-defense
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Groq
+  website: https://groq.com
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  registry_id: groq
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: groq
+  open_roles: null
+- name: GS Microelectronics (GSME)
+  website: https://gsme.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly chip design and manufacturing services for other companies.
+  ats: null
+  open_roles: null
+- name: Halo Industries
+  website: https://www.halo-industries.com/
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: halo-industries
+  decision: registry
+  reason: null
+  ats:
+    type: workable
+    token: halo-industries
+  open_roles: null
+- name: Hello Robot
+  website: https://hello-robot.com
+  hq: Martinez, CA
+  sources:
+  - trr-rbr50
+  registry_id: hello-robot
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Hermes Robotics
+  website: https://hermes-robotics.com
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: hermes-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: HIRO Industries
+  website: https://hiroindustries.com
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: HP Inc.
+  website: https://www.hp.com
+  hq: Palo Alto, CA
+  sources:
+  - wiki-bayarea-cos
+  - wiki-3d-printers
+  registry_id: hp-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Hundred
+  website: https://hundred.systems/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardtech
+  - yc-hardware
+  - yc-mfg-robotics
+  - yc-industrials
+  registry_id: hundred
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: HYFIX Spatial Intelligence
+  website: https://hyfix.ai
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: hyfix-spatial-intelligence
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: InnoGrit
+  website: https://www.innogritcorp.com
+  hq: San Jose, CA
+  sources:
+  - ocp-members-us
+  registry_id: innogrit
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Intel
+  website: https://www.intel.com
+  hq: Santa Clara, CA
+  sources:
+  - svr-members
+  registry_id: intel
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: intel.wd1.myworkdayjobs.com/External
+  open_roles: null
+- name: Intuitive Surgical
+  website: https://www.intuitive.com
+  hq: Sunnyvale, CA
+  sources:
+  - svr-members
+  registry_id: intuitive-surgical
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Inversion Semiconductor
+  website: https://www.inversionsemi.com
+  hq: San Francisco, CA
+  sources:
+  - yc-semis
+  registry_id: inversion-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Isengard Industries
+  website: https://isengardindustries.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Itera
+  website: https://itera.co
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: itera
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Joby Aviation
+  website: https://www.jobyaviation.com/
+  hq: Santa Cruz, CA
+  sources:
+  - nbc-bay-evtol
+  registry_id: joby-aviation
+  decision: registry
+  reason: null
+  ats:
+    type: icims
+    token: jobyaviation
+  open_roles: null
+- name: Kairox Systems
+  website: https://www.kairoxsys.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Kara
+  website: https://karalabs.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardware
+  registry_id: kara
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Kepler Computing
+  website: https://keplercompute.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: kepler-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: keplercompute
+  open_roles: 9
+- name: Kodiak AI
+  website: https://kodiak.ai
+  hq: Mountain View, CA
+  sources:
+  - trr-rbr50
+  - ca-dmv-av
+  registry_id: kodiak-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: kodiak
+  open_roles: 51
+- name: krtkl
+  website: https://krtkl.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: Its site shows only a placeholder; status not established.
+  ats: null
+  open_roles: null
+- name: Kudo3D
+  website: https://www.kudo3d.com
+  hq: Dublin, CA
+  sources:
+  - wiki-3d-printers
+  registry_id: kudo3d
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Lamb Labs
+  website: https://lamb-labs.com
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-semis
+  - yc-hardware
+  registry_id: lamb-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LeoLabs
+  website: https://leolabs.space
+  hq: Menlo Park, CA
+  sources:
+  - bacei-space-2025
+  registry_id: leolabs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: leolabsinc
+  open_roles: 22
+- name: Levita Magnetics
+  website: https://www.levita.com
+  hq: Menlo Park, CA
+  sources:
+  - trr-rbr50
+  registry_id: null
+  decision: not-in-scope
+  reason: A magnetic surgical system (medical device); it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Libra Robotics
+  website: https://www.librabots.com/
+  hq: San Francisco Bay Area, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Lightmatter
+  website: https://lightmatter.co
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: lightmatter
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: lightmatter
+  open_roles: 89
+- name: Loft Orbital
+  website: https://www.loftorbital.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: loft-orbital
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: loftorbital
+  open_roles: 84
+- name: Logos Space
+  website: https://logos.space
+  hq: Mountain View, CA
+  sources:
+  - bacei-space-2025
+  registry_id: logos-space
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: logos-space
+  open_roles: 23
+- name: Lumilens
+  website: https://lumilens.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: lumilens
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: lumilens
+  open_roles: 161
+- name: Majestic Labs
+  website: https://majestic-labs.ai
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: majestic-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: MatX
+  website: https://matx.com
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  registry_id: matx
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: matx
+  open_roles: 39
+- name: Maxar Space Systems
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - bacei-space-2025
+  registry_id: maxar-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Meteoric
+  website: https://meteoric.earth/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardtech
+  registry_id: meteoric
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Micora
+  website: https://micora.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: micora
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Mind Robotics
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - svr-members
+  - a16z-ad50
+  registry_id: mind-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: mindrobotics
+  open_roles: 41
+- name: Mivium
+  website: https://mivium.com
+  hq: Fremont, CA
+  sources:
+  - semieng-funding
+  registry_id: mivium
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: mmTron
+  website: https://mmtron.com
+  hq: Redwood City, CA
+  sources:
+  - bacei-space-2025
+  registry_id: mmtron
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mojo Vision
+  website: https://mojo.vision
+  hq: Saratoga, CA
+  sources:
+  - semieng-funding
+  registry_id: mojo-vision
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Momentus
+  website: https://momentus.space
+  hq: San Jose, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: greenhouse
+    token: momentus
+  open_roles: 12
+- name: Multibeam
+  website: https://multibeamcorp.com
+  hq: Sunnyvale, CA
+  sources:
+  - semieng-funding
+  registry_id: multibeam
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Muon Space
+  website: https://www.muonspace.com
+  hq: Mountain View, CA
+  sources:
+  - bacei-space-2025
+  - fortune-drone-2026
+  registry_id: muon-space
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: muonspace
+  open_roles: 129
+- name: Mythic
+  website: https://mythic.ai
+  hq: Redwood City, CA
+  sources:
+  - semieng-funding
+  registry_id: mythic
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: mythic-ai.com
+  open_roles: 29
+- name: Mytra
+  website: https://mytra.ai
+  hq: South San Francisco, CA
+  sources:
+  - trr-rbr50
+  registry_id: mytra
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: mytra
+  open_roles: null
+- name: NetApp
+  website: https://www.netapp.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: netapp
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: NETGEAR
+  website: https://www.netgear.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: netgear
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: ashby
+    token: netgear
+  open_roles: 52
+- name: Neuromorphic
+  website: https://www.neuromorphic.vision/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: nEye Systems
+  website: https://neye.ai
+  hq: Berkeley, CA
+  sources:
+  - semieng-funding
+  registry_id: neye-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nine Fives
+  website: https://ninefives.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardtech
+  registry_id: nine-fives
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nines
+  website: https://ninesrobotics.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-mfg-robotics
+  - yc-industrials
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Nori Robotics
+  website: https://norirobotics.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardware-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Nuro
+  website: https://www.nuro.ai
+  hq: Mountain View, CA
+  sources:
+  - ca-dmv-av
+  registry_id: nuro
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: NVIDIA
+  website: https://www.nvidia.com
+  hq: Santa Clara, CA
+  sources:
+  - trr-rbr50
+  - ca-dmv-av
+  registry_id: nvidia
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Odin Robotics
+  website: https://odin-robotics.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-mfg-robotics
+  - yc-industrials
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Omni Design Technologies
+  website: https://omnidesigntech.com
+  hq: Milpitas, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Licensable wideband ADC/DAC and analog IP cores, SoC hard macros and interface
+    chiplets on advanced FinFET nodes.'
+  ats:
+    type: lever
+    token: omnidesigntech
+  open_roles: 56
+- name: Opticore
+  website: https://opticore.ai
+  hq: Berkeley, CA
+  sources:
+  - semieng-funding
+  registry_id: opticore
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Orbital Composites
+  website: https://orbitalcomposites.com
+  hq: San Jose, CA
+  sources:
+  - bacei-space-2025
+  registry_id: orbital-composites
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Orbital Sidekick
+  website: https://www.orbitalsidekick.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: orbital-sidekick
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: orbitalsidekick
+  open_roles: 2
+- name: OS3
+  website: https://os3robotics.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Oso Semiconductor
+  website: https://ososemi.com
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  registry_id: oso-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ouster
+  website: https://ouster.com
+  hq: San Francisco, CA
+  sources:
+  - search-lidar
+  registry_id: ouster
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: jazzhr
+    token: ouster
+  open_roles: null
+- name: OXMIQ Labs
+  website: https://oxmiq.ai
+  hq: Campbell, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Licensable GPU and compute IP (OxCore, OxQuilt chiplet integration, OxCapsule)
+    and AI infrastructure software (OxPython).'
+  ats: null
+  open_roles: null
+- name: Pacific
+  website: https://pacificmachines.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: pacific
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pakal Technologies
+  website: https://pakal-tech.com
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: pakal-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: enabling, startup in.'
+  ats: null
+  open_roles: null
+- name: Palo Alto Electron
+  website: null
+  hq: Palo Alto, CA
+  sources:
+  - ocp-members-us
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Piris Labs
+  website: https://pirislabs.io
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  registry_id: piris-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Planet Labs
+  website: https://www.planet.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: planet-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: planetlabs
+  open_roles: 103
+- name: PlusAI
+  website: https://plus.ai
+  hq: Santa Clara, CA
+  sources:
+  - ca-dmv-av
+  registry_id: plusai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: plus-2
+  open_roles: 43
+- name: Point One Navigation
+  website: https://pointonenav.com
+  hq: San Francisco, CA
+  sources:
+  - svr-members
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Centimeter-level positioning: an RTK/SSR corrections network, a sensor-fusion
+    positioning engine and API, plus some reference hardware devices.'
+  ats:
+    type: ashby
+    token: point-one-navigation
+  open_roles: 14
+- name: Point2 Technology
+  website: https://point2tech.com
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: point2-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Polemos Industries
+  website: https://polemosindustries.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Preload
+  website: https://preload.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: greenhouse
+    token: preload
+  open_roles: 5
+- name: Primemas
+  website: https://primemas.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: primemas
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Primordiant
+  website: https://primordiant.com
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Proprio Robotics
+  website: https://www.propriorobotics.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-mfg-robotics
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: ProvenMetal
+  website: https://provenmetal.com
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardware
+  - yc-mfg-robotics
+  registry_id: provenmetal
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: PsiQuantum
+  website: https://psiquantum.com
+  hq: Palo Alto, CA
+  sources:
+  - semieng-funding
+  registry_id: psiquantum
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: psiquantum
+  open_roles: 108
+- name: Pure Storage
+  website: https://www.purestorage.com
+  hq: Santa Clara, CA
+  sources:
+  - ocp-members-us
+  registry_id: pure-storage
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: purestorage
+  open_roles: 401
+- name: Pyka
+  website: https://flypyka.com
+  hq: Alameda, CA
+  sources:
+  - yc-aviation-space-bay
+  registry_id: pyka
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: pyka
+  open_roles: null
+- name: Quadric
+  website: https://quadric.ai
+  hq: Burlingame, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Licensable Chimera GPNPU AI processor IP and the Chimera SDK toolchain for chip
+    and SoC designers.'
+  ats:
+    type: ashby
+    token: quadric
+  open_roles: 18
+- name: Rambus
+  website: https://www.rambus.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: rambus
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: icims
+    token: rambus
+  open_roles: null
+- name: Remy AI
+  website: https://www.tryremy.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Resin Technologies
+  website: https://resintechnologies.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardtech
+  - yc-hardware
+  registry_id: null
+  decision: not-in-scope
+  reason: An electronics engineering design firm (services).
+  ats: null
+  open_roles: null
+- name: Retym
+  website: https://retym.com
+  hq: Cupertino, CA
+  sources:
+  - semieng-funding
+  registry_id: retym
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rhem Labs
+  website: https://rhem.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Robust AI
+  website: https://www.robust.ai
+  hq: San Carlos, CA
+  sources:
+  - trr-rbr50
+  registry_id: robust-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: robust-ai
+  open_roles: 5
+- name: Rodeo Robotics
+  website: https://www.rodeorobotics.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Rook Space
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  - yc-hardtech
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Saildrone
+  website: https://www.saildrone.com
+  hq: Alameda, CA
+  sources:
+  - trr-rbr50
+  registry_id: saildrone
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SambaNova
+  website: https://sambanova.ai
+  hq: Palo Alto, CA
+  sources:
+  - semieng-funding
+  registry_id: sambanova
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sanmina
+  website: https://www.sanmina.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: sanmina
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Shepherd Robotics
+  website: https://shepherdrobotics.ai/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardware-bay
+  - yc-hardware
+  - yc-mfg-robotics
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Shiraz AI
+  website: https://shiraz.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-mfg-robotics
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: SiFive
+  website: https://sifive.com
+  hq: San Mateo, CA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: RISC-V processor core IP and software for data-center, embedded and automotive
+    chips.'
+  ats:
+    type: workday
+    token: sifive.wd1.myworkdayjobs.com/en-US/sifivecareers
+  open_roles: null
+- name: Silica
+  website: https://silicamachines.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardware-bay
+  - yc-hardware
+  - yc-mfg-robotics
+  - yc-industrials
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: SiMa.ai
+  website: https://sima.ai
+  hq: San Jose, CA
+  sources:
+  - semieng-funding
+  registry_id: sima-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: jobvite
+    token: simaai
+  open_roles: null
+- name: Simbe Robotics
+  website: https://www.simberobotics.com
+  hq: South San Francisco, CA
+  sources:
+  - trr-rbr50
+  registry_id: simbe-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SirenOpt
+  website: https://www.sirenopt.com/
+  hq: San Leandro, CA
+  sources:
+  - semieng-funding
+  registry_id: sirenopt
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: sirenopt
+  open_roles: null
+- name: Skycorp Inc.
+  website: null
+  hq: San Francisco Bay Area
+  sources:
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: Identity not established (a directory links it to Spacebilt; spacebilt.com does not mention it).
+  ats: null
+  open_roles: null
+- name: Skydio
+  website: https://www.skydio.com
+  hq: San Mateo, CA
+  sources:
+  - a16z-ad50
+  registry_id: skydio
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: skydio
+  open_roles: null
+- name: Snowcap Compute
+  website: https://snowcapcompute.com
+  hq: Palo Alto, CA
+  sources:
+  - semieng-funding
+  registry_id: snowcap-compute
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Solideon
+  website: https://solideon.com
+  hq: Berkeley, CA
+  sources:
+  - bacei-space-2025
+  registry_id: solideon
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Spike Dynamics
+  website: https://spikedynamics.com
+  hq: San Francisco, CA
+  sources:
+  - bacei-space-2025
+  registry_id: spike-dynamics
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: StarDrive
+  website: null
+  hq: San Francisco Bay Area
+  sources:
+  - bacei-space-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Streamline Systems
+  website: https://streamlinesystems.ltd/
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  - yc-industrials
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Substrate
+  website: https://substrate.com
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: substrate
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: substrate
+  open_roles: 7
+- name: Supermicro
+  website: https://www.supermicro.com
+  hq: San Jose, CA
+  sources:
+  - ocp-members-us
+  - wiki-bayarea-cos
+  registry_id: supermicro
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Tensor Auto
+  website: https://www.tensor.auto
+  hq: San Jose, CA
+  sources:
+  - ca-dmv-av
+  registry_id: tensor-auto
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tensr
+  website: https://tensr.com/
+  hq: Emeryville, CA
+  sources:
+  - yc-hardware-bay
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: TeRAM
+  website: https://teram.com
+  hq: Los Altos, CA
+  sources:
+  - semieng-funding
+  registry_id: teram
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Terrasat Communications
+  website: https://www.terrasatinc.com
+  hq: Morgan Hill, CA
+  sources:
+  - bacei-space-2025
+  registry_id: terrasat-communications
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Tesla
+  website: https://www.tesla.com
+  hq: Austin, TX
+  sources:
+  - ca-dmv-av
+  registry_id: tesla
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Tesseract
+  website: https://tesseract.space
+  hq: Livermore, CA
+  sources:
+  - yc-aviation-space-bay
+  - yc-satellites
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats:
+    type: greenhouse
+    token: tesseract
+  open_roles: 1
+- name: The Subvocal Company
+  website: https://subvocal.company
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware
+  registry_id: the-subvocal-company
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: twentyfour26
+  website: https://twentyfour26.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-hardware-bay
+  - yc-hardtech
+  - yc-hardware
+  - yc-mfg-robotics
+  registry_id: twentyfour26
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ulysses
+  website: https://theoceancompany.com
+  hq: San Francisco, CA
+  sources:
+  - a16z-ad50
+  registry_id: ulysses
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Unconventional AI
+  website: https://unconv.ai
+  hq: Mountain View, CA
+  sources:
+  - semieng-funding
+  registry_id: unconventional-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: unconventionalinc
+  open_roles: 27
+- name: Upscale AI
+  website: https://upscaleai.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  - ocp-members-us
+  registry_id: upscale-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: upscale-ai
+  open_roles: 40
+- name: Velaura AI
+  website: https://velaura.ai
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: velaura-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: velaura
+  open_roles: 47
+- name: Vernius Systems
+  website: https://www.vernius.systems
+  hq: San Francisco, CA
+  sources:
+  - yc-defense
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Vibe Robotics
+  website: https://viberobotics.co
+  hq: San Francisco, CA
+  sources:
+  - yc-robotics-bay
+  - yc-hardtech
+  registry_id: null
+  decision: null
+  reason: 'Facts not gathered: this fact batch was stopped by the model''s safety system partway through.'
+  ats: null
+  open_roles: null
+- name: Visibl Semiconductors
+  website: https://visiblsemi.com
+  hq: San Francisco, CA
+  sources:
+  - yc-semis
+  registry_id: null
+  decision: not-in-scope
+  reason: A custom-silicon design service with software; it sells no chips of its own yet.
+  ats: null
+  open_roles: null
+- name: Volantis
+  website: https://volantissemi.ai
+  hq: San Francisco, CA
+  sources:
+  - semieng-funding
+  registry_id: volantis
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Voltair
+  website: https://voltairlabs.com/
+  hq: San Francisco, CA
+  sources:
+  - yc-drones
+  registry_id: voltair
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Waymo
+  website: https://waymo.com
+  hq: Mountain View, CA
+  sources:
+  - trr-rbr50
+  - ca-dmv-av
+  registry_id: waymo
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: waymo
+  open_roles: 354
+- name: Western Digital
+  website: https://www.westerndigital.com
+  hq: San Jose, CA
+  sources:
+  - wiki-bayarea-cos
+  registry_id: western-digital
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup out.'
+  ats:
+    type: smartrecruiters
+    token: WesternDigital
+  open_roles: 333
+- name: Westmag
+  website: https://westmag.com
+  hq: South San Francisco, CA
+  sources:
+  - a16z-ad50
+  registry_id: westmag
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: westmag
+  open_roles: 13
+- name: Wisk Aero
+  website: https://wisk.aero
+  hq: Mountain View, CA
+  sources:
+  - nbc-bay-evtol
+  registry_id: wisk-aero
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: wisk.wd108/Wisk_Careers
+  open_roles: null
+- name: xLight
+  website: https://xlight.com
+  hq: Palo Alto, CA
+  sources:
+  - semieng-funding
+  registry_id: xlight
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: xMEMS Labs
+  website: https://xmems.com
+  hq: Santa Clara, CA
+  sources:
+  - semieng-funding
+  registry_id: xmems-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Xona Space Systems
+  website: https://www.xonaspace.com
+  hq: Burlingame, CA
+  sources:
+  - bacei-space-2025
+  registry_id: xona-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: xona-space
+  open_roles: 58
+- name: Zenith Aerospace
+  website: null
+  hq: Belmont, CA
+  sources:
+  - bacei-space-2025
+  registry_id: zenith-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Zettascale Computing
+  website: https://zscc.ai
+  hq: San Francisco, CA
+  sources:
+  - yc-semis
+  registry_id: zettascale-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-bay-area-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Zoox
+  website: https://zoox.com
+  hq: Foster City, CA
+  sources:
+  - ca-dmv-av
+  registry_id: zoox
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: zoox
+  open_roles: null
+excluded:
+- name: Agility Robotics
+  sources:
+  - trr-rbr50
+  reason: Headquartered in Pittsburgh, PA; a Fremont site was not confirmed.
+- name: Antec
+  sources:
+  - wiki-bayarea-cos
+  reason: Headquartered in Taipei, Taiwan; Fremont is one office.
+- name: Aurora Innovation
+  sources:
+  - ca-dmv-av
+  reason: Headquartered in Pittsburgh, PA; its Bay Area office is one of several.
+- name: Coherent (Tinsley optics)
+  sources:
+  - bacei-space-2025
+  reason: Headquartered in Saxonburg, PA; the Richmond, CA plant was not confirmed as still in use.
+- name: Keysight Technologies
+  sources:
+  - ocp-members-us
+  - wiki-bayarea-cos
+  reason: Headquartered in Santa Rosa, CA, outside the region; no main site in the region found.
+- name: Lockheed Martin Space
+  sources:
+  - bacei-space-2025
+  reason: Headquartered in Littleton, CO (listed in the Colorado adjacent list); Sunnyvale is one site.
+- name: Lumafield
+  sources:
+  - semieng-funding
+  reason: Dealroom gives Cambridge, MA; a San Francisco headquarters was not confirmed.
+- name: Ramon.Space
+  sources:
+  - bacei-space-2025
+  reason: Headquartered in Yokneam Ilit, Israel; a Los Altos site was not confirmed.
+- name: Spire Global
+  sources:
+  - bacei-space-2025
+  reason: Headquartered in Tysons, VA, outside the region; no main site in the region found.

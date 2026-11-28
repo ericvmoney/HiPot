@@ -1,0 +1,623 @@
+# Reference list for remote, adjacent categories (decision 23): US companies in the categories one layer beyond clean
+# tech that hire remotely, meaning 3 or more US-remote roles on their own job board.
+# Written by workstream A2. Format: tools/coverage.py. Every entry is in the registry (categories from
+# registry-fixes-20) or in a proposals-05 adjacent file; most are also on a regional adjacent list.
+
+region: remote-adjacent
+built: '2026-11-27'
+sources:
+- id: board-remote-scan-adjacent
+  name: The scout's scan of each company's own job board for US-remote roles (2026-11-27)
+  url: null
+  note: Every Greenhouse, Lever, Ashby and Rippling board in companies.yml and in the Colorado and Bay Area adjacent proposals,
+    loaded once (data/screening/tools/remote_scan.py; 310 boards, none refused). A role counts when the feed marks it remote
+    or its location says remote or anywhere, and no non-US place is named. Adjacent companies (registry-fixes-20 or proposals-05
+    categories) with 3 or more such roles are listed. Built from the registry's and proposals' boards, so not independent
+    of them; adjacent regions not yet scouted are not covered.
+companies:
+- name: Skydio
+  website: null
+  hq: San Mateo, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: skydio
+  decision: registry
+  reason: 131 US-remote roles (79 engineering) of 186 on its ashby board, 2026-11-27; registry; categories aerospace-space,
+    autonomy-robotics, defense.
+  ats:
+    type: ashby
+    token: skydio
+  open_roles: 186
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+- name: Cerebras Systems
+  website: https://cerebras.ai
+  hq: Sunnyvale, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: cerebras-systems
+  decision: registry
+  reason: 94 US-remote roles (57 engineering) of 134 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories data-centers, semis-electronics.
+  ats:
+    type: ashby
+    token: cerebras
+  open_roles: 134
+  categories:
+  - data-centers
+  - semis-electronics
+- name: Bedrock Robotics
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: bedrock-robotics
+  decision: registry
+  reason: 48 US-remote roles (32 engineering) of 63 on its ashby board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: ashby
+    token: bedrock-robotics
+  open_roles: 63
+  categories:
+  - autonomy-robotics
+- name: Pure Storage
+  website: https://www.purestorage.com
+  hq: Santa Clara, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: pure-storage
+  decision: registry
+  reason: 46 US-remote roles (8 engineering) of 401 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories data-centers.
+  ats:
+    type: greenhouse
+    token: purestorage
+  open_roles: 401
+  categories:
+  - data-centers
+- name: MatX
+  website: https://matx.com
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: matx
+  decision: registry
+  reason: 37 US-remote roles (31 engineering) of 39 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: ashby
+    token: matx
+  open_roles: 39
+  categories:
+  - semis-electronics
+- name: Giga Energy
+  website: https://www.gigaenergy.com/
+  hq: Houston, TX
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: giga-energy
+  decision: registry
+  reason: 36 US-remote roles (19 engineering) of 61 on its ashby board, 2026-11-27; registry; categories data-centers.
+  ats:
+    type: ashby
+    token: giga-energy
+  open_roles: 61
+  categories:
+  - data-centers
+- name: d-Matrix
+  website: https://d-matrix.ai
+  hq: Santa Clara, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: d-matrix
+  decision: registry
+  reason: 35 US-remote roles (24 engineering) of 37 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories data-centers, semis-electronics.
+  ats:
+    type: ashby
+    token: d-Matrix
+  open_roles: 37
+  categories:
+  - data-centers
+  - semis-electronics
+- name: Voyager Technologies
+  website: https://voyagertechnologies.com
+  hq: Denver, CO
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: voyager-technologies
+  decision: registry
+  reason: 33 US-remote roles (23 engineering) of 195 on its greenhouse board, 2026-11-27; proposed in proposals-05-colorado-adjacent.yml;
+    categories aerospace-space, defense.
+  ats:
+    type: greenhouse
+    token: voyagertechnologiesinc
+  open_roles: 195
+  categories:
+  - aerospace-space
+  - defense
+- name: AeroVect
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: aerovect
+  decision: registry
+  reason: 23 US-remote roles (14 engineering) of 44 on its ashby board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: ashby
+    token: AeroVect
+  open_roles: 44
+  categories:
+  - autonomy-robotics
+- name: KoBold Metals
+  website: https://koboldmetals.com
+  hq: Berkeley, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: kobold-metals
+  decision: registry
+  reason: 21 US-remote roles (10 engineering) of 28 on its greenhouse board, 2026-11-27; registry; categories mining.
+  ats:
+    type: greenhouse
+    token: koboldmetals
+  open_roles: 28
+  categories:
+  - mining
+- name: Figure AI
+  website: https://www.figure.ai
+  hq: San Jose, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: figure-ai
+  decision: registry
+  reason: 19 US-remote roles (4 engineering) of 30 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories autonomy-robotics.
+  ats:
+    type: greenhouse
+    token: figure
+  open_roles: 30
+  categories:
+  - autonomy-robotics
+- name: Armada
+  website: https://www.armada.ai
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: armada
+  decision: registry
+  reason: 17 US-remote roles (7 engineering) of 26 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories data-centers.
+  ats:
+    type: greenhouse
+    token: armada
+  open_roles: 26
+  categories:
+  - data-centers
+- name: Delos Data
+  website: https://delosdata.com
+  hq: Palo Alto, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: delos-data
+  decision: registry
+  reason: 17 US-remote roles (14 engineering) of 17 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories data-centers, semis-electronics.
+  ats:
+    type: ashby
+    token: delos-data
+  open_roles: 17
+  categories:
+  - data-centers
+  - semis-electronics
+- name: Aalyria
+  website: https://www.aalyria.com
+  hq: Livermore, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: aalyria
+  decision: registry
+  reason: 16 US-remote roles (12 engineering) of 24 on its rippling board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories aerospace-space, defense.
+  ats:
+    type: rippling
+    token: aalyria-careers
+  open_roles: 24
+  categories:
+  - aerospace-space
+  - defense
+- name: Muon Space
+  website: https://www.muonspace.com
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: muon-space
+  decision: registry
+  reason: 14 US-remote roles (7 engineering) of 129 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories aerospace-space.
+  ats:
+    type: greenhouse
+    token: muonspace
+  open_roles: 129
+  categories:
+  - aerospace-space
+- name: Mainspring Energy
+  website: null
+  hq: Menlo Park, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: mainspring-energy
+  decision: registry
+  reason: 13 US-remote roles (9 engineering) of 93 on its lever board, 2026-11-27; registry; categories oil-gas.
+  ats:
+    type: lever
+    token: mainspringenergy
+  open_roles: 93
+  categories:
+  - oil-gas
+- name: Wing
+  website: https://wing.com
+  hq: Palo Alto, CA (not stated on wing.com/about)
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: wing
+  decision: registry
+  reason: 13 US-remote roles (1 engineering) of 40 on its greenhouse board, 2026-11-27; registry; categories aerospace-space,
+    autonomy-robotics.
+  ats:
+    type: greenhouse
+    token: wing
+  open_roles: 40
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- name: Unconventional AI
+  website: https://unconv.ai
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: unconventional-ai
+  decision: registry
+  reason: 12 US-remote roles (3 engineering) of 27 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: greenhouse
+    token: unconventionalinc
+  open_roles: 27
+  categories:
+  - semis-electronics
+- name: NETGEAR
+  website: https://www.netgear.com
+  hq: San Jose, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: netgear
+  decision: registry
+  reason: 11 US-remote roles (8 engineering) of 52 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: ashby
+    token: netgear
+  open_roles: 52
+  categories:
+  - semis-electronics
+- name: Merlin Labs
+  website: null
+  hq: Boston, MA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: merlin-labs
+  decision: registry
+  reason: 10 US-remote roles (10 engineering) of 23 on its lever board, 2026-11-27; registry; categories aerospace-space,
+    autonomy-robotics, defense.
+  ats:
+    type: lever
+    token: merlinlabs
+  open_roles: 23
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+  - defense
+- name: Serve Robotics
+  website: null
+  hq: San Carlos, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: serve-robotics
+  decision: registry
+  reason: 10 US-remote roles (3 engineering) of 13 on its ashby board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: ashby
+    token: serverobotics
+  open_roles: 13
+  categories:
+  - autonomy-robotics
+- name: Beehive Industries
+  website: https://www.beehiveindustries.com
+  hq: Centennial, CO
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: beehive-industries
+  decision: registry
+  reason: 9 US-remote roles (2 engineering) of 10 on its greenhouse board, 2026-11-27; proposed in proposals-05-colorado-adjacent.yml;
+    categories advanced-manufacturing, aerospace-space, defense.
+  ats:
+    type: greenhouse
+    token: civicplus
+  open_roles: 10
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - defense
+- name: LeoLabs
+  website: https://leolabs.space
+  hq: Menlo Park, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: leolabs
+  decision: registry
+  reason: 8 US-remote roles (3 engineering) of 22 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories aerospace-space, defense.
+  ats:
+    type: greenhouse
+    token: leolabsinc
+  open_roles: 22
+  categories:
+  - aerospace-space
+  - defense
+- name: Planet Labs
+  website: https://www.planet.com
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: planet-labs
+  decision: registry
+  reason: 8 US-remote roles (2 engineering) of 103 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories aerospace-space.
+  ats:
+    type: greenhouse
+    token: planetlabs
+  open_roles: 103
+  categories:
+  - aerospace-space
+- name: Proper Voltage
+  website: null
+  hq: Carlsbad, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: proper-voltage
+  decision: registry
+  reason: 7 US-remote roles (5 engineering) of 19 on its rippling board, 2026-11-27; registry; categories semis-electronics.
+  ats:
+    type: rippling
+    token: proper-voltage
+  open_roles: 19
+  categories:
+  - semis-electronics
+- name: Reliable Robotics
+  website: null
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: reliable-robotics
+  decision: registry
+  reason: 7 US-remote roles (6 engineering) of 75 on its ashby board, 2026-11-27; registry; categories aerospace-space, autonomy-robotics.
+  ats:
+    type: ashby
+    token: reliable-robotics
+  open_roles: 75
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- name: Glydways
+  website: https://www.glydways.com
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: glydways
+  decision: registry
+  reason: 6 US-remote roles (5 engineering) of 13 on its greenhouse board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: greenhouse
+    token: glydways
+  open_roles: 13
+  categories:
+  - autonomy-robotics
+- name: Waymo
+  website: https://waymo.com
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: waymo
+  decision: registry
+  reason: 6 US-remote roles (1 engineering) of 354 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories autonomy-robotics.
+  ats:
+    type: greenhouse
+    token: waymo
+  open_roles: 354
+  categories:
+  - autonomy-robotics
+- name: Built Robotics
+  website: https://builtrobotics.com
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: built-robotics
+  decision: registry
+  reason: 4 US-remote roles (4 engineering) of 7 on its ashby board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: ashby
+    token: built-robotics
+  open_roles: 7
+  categories:
+  - autonomy-robotics
+- name: Humble Robotics
+  website: null
+  hq: San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: humble-robotics
+  decision: registry
+  reason: 4 US-remote roles (4 engineering) of 21 on its lever board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: lever
+    token: humble-robotics
+  open_roles: 21
+  categories:
+  - autonomy-robotics
+- name: Mytra
+  website: null
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: mytra
+  decision: registry
+  reason: 4 US-remote roles (4 engineering) of 40 on its rippling board, 2026-11-27; registry; categories autonomy-robotics.
+  ats:
+    type: rippling
+    token: mytra
+  open_roles: 40
+  categories:
+  - autonomy-robotics
+- name: Reframe Systems
+  website: https://reframe.systems
+  hq: Andover, MA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: reframe-systems
+  decision: registry
+  reason: 4 US-remote roles (0 engineering) of 30 on its ashby board, 2026-11-27; registry; categories advanced-manufacturing,
+    autonomy-robotics.
+  ats:
+    type: ashby
+    token: reframesystems
+  open_roles: 30
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+- name: EnCharge AI
+  website: https://enchargeai.com
+  hq: Santa Clara, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: encharge-ai
+  decision: registry
+  reason: 4 US-remote roles (1 engineering) of 25 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: greenhouse
+    token: enchargeai36
+  open_roles: 25
+  categories:
+  - semis-electronics
+- name: Mythic
+  website: https://mythic.ai
+  hq: Redwood City, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: mythic
+  decision: registry
+  reason: 4 US-remote roles (4 engineering) of 29 on its lever board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: lever
+    token: mythic-ai.com
+  open_roles: 29
+  categories:
+  - semis-electronics
+- name: Parker Hannifin
+  website: https://www.parker.com/
+  hq: Cleveland, OH
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: parker-hannifin
+  decision: registry
+  reason: 3 US-remote roles (0 engineering) of 13 on its ashby board, 2026-11-27; registry; categories advanced-manufacturing,
+    aerospace-space.
+  ats:
+    type: ashby
+    token: parker
+  open_roles: 13
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+- name: Pyka
+  website: https://flypyka.com
+  hq: Alameda, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: pyka
+  decision: registry
+  reason: 3 US-remote roles (0 engineering) of 16 on its lever board, 2026-11-27; registry; categories aerospace-space, autonomy-robotics.
+  ats:
+    type: lever
+    token: pyka
+  open_roles: 16
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- name: Zipline
+  website: https://www.zipline.com
+  hq: South San Francisco, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: zipline
+  decision: registry
+  reason: 3 US-remote roles (1 engineering) of 316 on its greenhouse board, 2026-11-27; registry; categories aerospace-space,
+    autonomy-robotics.
+  ats:
+    type: greenhouse
+    token: flyzipline
+  open_roles: 316
+  categories:
+  - aerospace-space
+  - autonomy-robotics
+- name: Aeva
+  website: https://www.aeva.com
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: aeva
+  decision: registry
+  reason: 3 US-remote roles (0 engineering) of 50 on its lever board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories autonomy-robotics, semis-electronics.
+  ats:
+    type: lever
+    token: aeva
+  open_roles: 50
+  categories:
+  - autonomy-robotics
+  - semis-electronics
+- name: Logos Space
+  website: https://logos.space
+  hq: Mountain View, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: logos-space
+  decision: registry
+  reason: 3 US-remote roles (3 engineering) of 23 on its ashby board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories aerospace-space.
+  ats:
+    type: ashby
+    token: logos-space
+  open_roles: 23
+  categories:
+  - aerospace-space
+- name: PsiQuantum
+  website: https://psiquantum.com
+  hq: Palo Alto, CA
+  sources:
+  - board-remote-scan-adjacent
+  registry_id: psiquantum
+  decision: registry
+  reason: 3 US-remote roles (1 engineering) of 108 on its greenhouse board, 2026-11-27; proposed in proposals-05-bay-area-adjacent.yml;
+    categories semis-electronics.
+  ats:
+    type: greenhouse
+    token: psiquantum
+  open_roles: 108
+  categories:
+  - semis-electronics
