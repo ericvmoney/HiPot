@@ -1,0 +1,172 @@
+# Registry fixes 25: the Texas Dealroom facts released by the owner (PLAN.md decision 25, 2026-11-27).
+#
+# Written by workstream A2. Texas adjacent fact batch 3 read Dealroom profile pages after the permission check refused
+# dealroom.co/api/; those facts were quarantined in proposals-05-texas-adjacent.yml (e0f6fd4) and the owner released
+# them ("Release them"). The 11 companies still proposed are already in the registry from e0f6fd4 with these fields
+# empty, so they are filled here (tools/apply_screening.py fill_missing fills only empty fields). The other three of
+# the 14 (Mythic, Deterrence, Umbra) were excluded from Texas and need nothing.
+#
+# Not covered by any fix kind: the quarantine wording in these 11 companies' registry notes ('dealroom-after-api-
+# refusal'); it needs a direct edit or a tool hook.
+
+fixes:
+- id: icon
+  name: ICON
+  founded:
+    value: 2017
+    source: https://dealroom.co/companies/icon-build
+  stage:
+    value: late
+    source: 'Dealroom news headline: Icon raises $200M Series D at $1.4B valuation (date not shown on page).'
+  headcount:
+    value: 500
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/icon-build
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: allen-control-systems
+  name: Allen Control Systems
+  founded:
+    value: 2022
+    source: https://dealroom.co/companies/allen-control-systems
+  stage:
+    value: series-b
+    source: Series B $200M, June 2026, $2.2B post-money (Dealroom); Series A $30M March 2025.
+  headcount:
+    value: 229
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/allen-control-systems
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: terrafirma
+  name: TerraFirma
+  founded:
+    value: 2023
+    source: https://dealroom.co/companies/terrafirma
+  stage:
+    value: series-a
+    source: Series A $115M, July 2026, $460M valuation, Kleiner Perkins and Bain Capital Ventures (Dealroom).
+  headcount:
+    value: 25
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/terrafirma
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: tau-systems
+  name: TAU Systems
+  founded:
+    value: 2020
+    source: https://dealroom.co/companies/tau-systems
+  stage:
+    value: seed
+    source: $20M seed, April 2025, $80M valuation (Dealroom).
+  headcount:
+    value: 22
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/tau-systems
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: pipedream
+  name: Pipedream
+  founded:
+    value: 2020
+    source: https://dealroom.co/companies/pipedream-labs
+  stage:
+    value: seed
+    source: $13M seed, April 2024, led by Starship Ventures with Cortado Ventures and Myelin VC (Dealroom).
+  headcount:
+    value: 28
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/pipedream-labs
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: noveon-magnetics
+  name: Noveon Magnetics
+  founded:
+    value: 2014
+    source: https://dealroom.co/companies/noveon-magnetics
+  stage:
+    value: series-c
+    source: Series C $215M, January 2026, led by OneIM, ~$860M valuation (Dealroom); Series B $75M May 2023.
+  headcount:
+    value: 95
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/noveon-magnetics
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: the-boring-company
+  name: The Boring Company
+  founded:
+    value: 2016
+    source: https://dealroom.co/companies/the-boring-company
+  stage:
+    value: late
+    source: 'Company site announces a $3B Series D; Dealroom headline: raises $3B at $23B valuation (date not shown).'
+  headcount:
+    value: 500
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/the-boring-company
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: harmonic-bionics
+  name: Harmonic Bionics
+  founded:
+    value: 2016
+    source: https://dealroom.co/companies/harmonic-bionics
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: accelsius
+  name: Accelsius
+  founded:
+    value: 2022
+    source: https://dealroom.co/companies/accelsius
+  stage:
+    value: series-b
+    source: Series B $65M, January 2026, led by Johnson Controls with Legrand (Dealroom). Created by Innventure on Nokia Bell
+      Labs IP.
+  headcount:
+    value: 88
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/accelsius
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: grc-green-revolution-cooling
+  name: GRC (Green Revolution Cooling)
+  founded:
+    value: 2009
+    source: https://www.grcooling.com/about/
+  stage:
+    value: late
+    source: Series C $28M March 2022 led by SK Lubricants; later undisclosed late-stage round June 2025 (HTS Engineering,
+      Samsung Ventures, ENEOS, SK Enmove) per Dealroom. Series letter after C not stated.
+  headcount:
+    value: 38
+    as_of: null
+    source: Dealroom
+    url: https://dealroom.co/companies/green-revolution-cooling
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
+- id: silicon-labs
+  name: Silicon Labs
+  founded:
+    value: 1996
+    source: https://stockanalysis.com/stocks/slab/company/
+  stage:
+    value: public
+    source: IPO Nasdaq (SLAB) 2000-03-23. Texas Instruments agreed 2026-02-04 to buy it for $231/share (~$7.5B), close expected
+      H1 2027 (TI/Silicon Labs press release).
+  headcount:
+    value: 1930
+    as_of: null
+    source: StockAnalysis company profile
+    url: https://stockanalysis.com/stocks/slab/company/
+  note: 'Released by the owner (PLAN.md decision 25): Dealroom profile facts read after the API refusal.'
+  checked: '2026-11-27'
