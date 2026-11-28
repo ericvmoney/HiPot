@@ -115,6 +115,10 @@ _CITY_SHAPE = re.compile(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'\-]{1,39}")
 _REGION_WORD = re.compile(r"\b(?:area|region|county|metro)\b|^greater\b", re.I)
 _STREET_ADDRESS = re.compile(r"(?:^|,)\s*([A-Za-z][A-Za-z .\'\-]{1,39}?),?\s+([A-Z]{2})\s+\d{5}(?:-\d{4})?$")
 _REQ_CODE = re.compile(r"^US-([A-Z]{2})-([A-Za-z .'\-]+?)(?:-\d+)?$")
+_SPACED_STATE = re.compile(r"(.+?)\s+(" + "|".join(
+    sorted((re.escape(" ".join(w if w == "of" else w.capitalize() for w in name.split())) for name in US_STATES),
+           key=len, reverse=True)) + ")")
+_SITE_CODE = re.compile(r"(.+?)\s+(?:([A-Z]{2})\s+)?([A-Z]{2})\s+\d{1,3}")
 
 
 def split_locations(text: str | None) -> list[str]:
@@ -193,11 +197,77 @@ def _undecorated(text: str) -> str:
     text = re.sub(r"\(([^)]*)\)", _bracketed_place, text)
     text = re.sub(r"\[[^\]]*\]", " ", text)
     text = re.sub(r"\s+[-–—]\s+(US|USA|United States)\b", r", \1", text, flags=re.I)
+    text = re.sub(r"(?<=[A-Za-z.])\s+(USA)\s*$", r", \1", text)           # "Charleroi USA", "Salem VA USA"
     text = _DECORATION.sub(" ", text)
     text = re.sub(r"\s*[-–—:]\s*(?=,|$)|^\s*[-–—:]\s*", " ", text)
     text = re.sub(r"\s+", " ", text)
     text = re.sub(r"\s*,(\s*,)+", ",", text)
     return text.strip(" ,-–—:")
+
+
+_ZIP = re.compile(r"\d{5}(?:-\d{4})?")
+# Words that are never the place on their own, though the lookup may hold a town of
+# that name somewhere.
+_NOT_A_PLACE = {"center", "plant", "office", "campus", "site", "facility", "lab", "east", "west", "north",
+                "south", "central", "lake", "park", "city", "valley", "beach", "springs", "group", "service"}
+# Words that are part of place names ("Big Spring", "Garden City", "West Chester"):
+# a name is never cut there, so "Big Spring, TX" is not read as Spring.
+_PLACE_WORDS = {
+    "big", "little", "new", "old", "upper", "lower", "grand", "great", "fort", "ft", "mount", "mt", "port", "saint",
+    "st", "st.", "ste", "san", "santa", "los", "las", "el", "la", "le", "de", "del", "glen", "green", "spring",
+    "springs", "rock", "red", "white", "black", "cedar", "oak", "oaks", "pine", "palm", "long", "high", "royal",
+    "river", "city", "falls", "garden", "gardens", "park", "lake", "lakes", "beach", "bay", "valley", "hills", "hill",
+    "heights", "creek", "grove", "point", "harbor", "island", "isle", "village", "junction", "station", "center",
+    "plains", "ridge", "rapids", "bluff", "bluffs", "forest", "woods", "meadows", "mills", "mill", "haven", "view",
+    "vista", "town", "township", "crossing", "landing", "ferry", "bridge", "gap", "pass", "summit", "shores",
+    "shore", "prairie", "cove", "canyon", "mesa", "wells", "north", "south", "east", "west", "northeast",
+    "northwest", "southeast", "southwest", "central", "lake", "estates", "acres", "manor", "terrace", "corner",
+    "corners", "cross", "roads", "head", "hollow", "notch", "rapids", "glade", "grange"}
+_DIRECTIONS = {"north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "central"}
+
+
+def _place_within(name: str, state: str) -> str | None:
+    """The place in a name that carries more than a place, as the place lookup knows
+    it: "Dynapower South Burlington" -> "South Burlington", "Santa Fe Springs - Clark
+    St." -> "Santa Fe Springs", "Uptown Charlotte" -> "Charlotte". The name itself
+    when the lookup knows it; None when no part of it is known, or when two parts of
+    the same length name different places."""
+    if geo.metro_for(name, state):
+        return name
+    best: dict[str, str] = {}
+    size = 0
+    for piece in re.split(r"\s+[-–—]\s+|\s*/\s*", name):
+        words = piece.split()
+        # Runs of words at the start or the end of each piece, longest first. The
+        # words cut off must not be part of a place name: a site name after the
+        # place ("Milpitas Ames", "Los Angeles East") or a company or district
+        # before it ("Dynapower South Burlington", "Uptown Charlotte").
+        for length in range(len(words), 0, -1):
+            if length < size:
+                break
+            runs = []
+            if length == len(words) or words[length].lower() not in _PLACE_WORDS - _DIRECTIONS:
+                runs.append(" ".join(words[:length]))
+            if length == len(words) or words[-length - 1].lower() not in _PLACE_WORDS:
+                runs.append(" ".join(words[-length:]))
+            for run in set(runs):
+                if run.lower() in _NOT_A_PLACE or len(run) < 4:
+                    continue
+                metro = geo.metro_for(run, state)
+                if metro:
+                    size = length
+                    best[run] = metro
+    longest = {run: metro for run, metro in best.items() if len(run.split()) == size}
+    return next(iter(longest)) if len(set(longest.values())) == 1 and len(longest) == 1 else None
+
+
+def _bracketed_city(text: str) -> dict | None:
+    """A "City, ST" in brackets is the place: "Greater Boston (Woburn, MA) – On-site"."""
+    for inner in re.findall(r"\(([^()]*,[^()]*)\)", text):
+        found = parse_location(inner)
+        if found.get("city") and found.get("state") and found.get("country") == "US":
+            return {key: found[key] for key in ("city", "state", "country")}
+    return None
 
 
 _DASHED = re.compile(r"^(.+?)\s+[-–—]\s+(.+)$")
@@ -235,6 +305,9 @@ def parse_location(text: str) -> dict:
     BARE_CITIES. Anything else keeps only its text.
     """
     location = {"text": text.strip()}
+    inner = _bracketed_city(text)
+    if inner:
+        return {**location, **inner}
     core = _undecorated(text)
     if not core:
         return location
@@ -247,6 +320,17 @@ def parse_location(text: str) -> dict:
     if dashed:
         return {**location, **dashed}
 
+    coded = _SITE_CODE.fullmatch(core)                  # Workday: "Roanoke US VA 3", "Hyderabad TS IN 26"
+    if coded and _city(coded.group(1)):
+        # A region code and a country code, in either order, then a site number.
+        first, second = coded.group(2), coded.group(3)
+        if {first, second} & {"US"} and ({first, second} - {"US"}) <= US_STATE_CODES and first != second:
+            state = first if second == "US" else second
+            return {**location, "city": _place_within(coded.group(1), state) or coded.group(1), "state": state,
+                    "country": "US"}
+        if second in _ALPHA2 and second != "US" and first != "US":
+            return {**location, "city": coded.group(1), "country": second}
+
     code = _REQ_CODE.match(core)
     if code and code.group(1) in US_STATE_CODES and _city(code.group(2)):
         return {**location, "city": code.group(2).strip(), "state": code.group(1), "country": "US"}
@@ -256,6 +340,7 @@ def parse_location(text: str) -> dict:
         return {**location, "city": street.group(1).strip(), "state": street.group(2), "country": "US"}
 
     parts = [part.strip() for part in core.split(",") if part.strip()]
+    parts = [re.sub(r"\s+\d{5}(?:-\d{4})?$", "", part) for part in parts if not _ZIP.fullmatch(part)]  # "CA, US, 95131"
     country = None
     if len(parts) > 1 or (parts and parts[0].lower() in COUNTRIES):
         country = COUNTRIES.get(parts[-1].lower())
@@ -263,9 +348,17 @@ def parse_location(text: str) -> dict:
             parts = parts[:-1]
     if not parts:
         return {**location, "country": country}
+    if len(parts) == 3 and parts[1].upper() == parts[2].upper():          # "Riverside, ca, CA"
+        parts = [parts[0], parts[2]]
 
     last = parts[-1]
     state = _state_code(last) if country in (None, "US") else None
+    if not state and country in (None, "US") and len(parts) == 2:
+        # "Lafayette, IN Manufacturing Facility": a state code and a site name, kept
+        # only when the place lookup knows the city in that state.
+        tagged = re.fullmatch(r"([A-Z]{2})\s+[A-Z][A-Za-z .&'\-]+", last)
+        if tagged and tagged.group(1) in US_STATE_CODES and geo.metro_for(parts[0], tagged.group(1)):
+            state = tagged.group(1)
     province = None if state else (_province_code(last) if country in (None, "CA") else None)
     if province and country is None and last.isupper() and len(parts) == 1:
         province = None  # a bare two-letter code is not enough to say Canada
@@ -274,9 +367,17 @@ def parse_location(text: str) -> dict:
         if len(parts) == 1:
             return {**location, "state": state, "country": "US"}
         if len(parts) == 2 and _city(parts[0]) and parts[0].lower() not in REGION_STATES:
-            return {**location, "city": parts[0], "state": state, "country": "US"}
+            return {**location, "city": _place_within(parts[0], state) or parts[0], "state": state, "country": "US"}
         if len(parts) == 2 and COUNTRIES.get(parts[0].lower()) == "US":     # "US remote (Michigan)"
             return {**location, "state": state, "country": "US"}
+        if len(parts) in (2, 3):
+            # "Hydrogen Plant, St. Gabriel, LA", "...role located in Detroit, MI": the
+            # part the place lookup knows.
+            # A region the lookup knows by name ("San Francisco Bay Area") stays a region.
+            named = next((name for name in map(lambda part: _place_within(part, state), parts[:-1])
+                          if name and not _REGION_WORD.search(name)), None)
+            if named:
+                return {**location, "city": named, "state": state, "country": "US"}
         return {**location, "state": state, "country": "US"} if country == "US" else location
     if province:
         if len(parts) == 2 and _city(parts[0]):
@@ -287,6 +388,20 @@ def parse_location(text: str) -> dict:
         spaced = re.fullmatch(r"(.+?)\s+([A-Z]{2})", parts[0])  # "San Jose CA"
         if spaced and spaced.group(2) in US_STATE_CODES and country in (None, "US") and _city(spaced.group(1)):
             return {**location, "city": spaced.group(1), "state": spaced.group(2), "country": "US"}
+        if country in (None, "US"):
+            # "San Diego CA Renewable Group" (a site name after the state), "NJ Edison",
+            # "OH - Pataskala" (the state first): kept only when the place lookup knows
+            # the city in that state, since "CA - Toronto" is Canada.
+            tagged = re.fullmatch(r"(.+?)\s+([A-Z]{2})\s+([A-Z][A-Za-z .&'\-]+)", parts[0])
+            if tagged and tagged.group(2) in US_STATE_CODES and geo.metro_for(tagged.group(1), tagged.group(2)):
+                return {**location, "city": tagged.group(1), "state": tagged.group(2), "country": "US"}
+            named = _SPACED_STATE.fullmatch(parts[0])          # "Brighton Colorado", "Uptown Charlotte North Carolina"
+            if named and _place_within(named.group(1), US_STATES[named.group(2).lower()]):
+                state = US_STATES[named.group(2).lower()]
+                return {**location, "city": _place_within(named.group(1), state), "state": state, "country": "US"}
+            first = re.fullmatch(r"([A-Z]{2})(?:\s*[-–—]\s*|\s+)(.+)", parts[0])
+            if first and first.group(1) in US_STATE_CODES and geo.metro_for(first.group(2), first.group(1)):
+                return {**location, "city": first.group(2), "state": first.group(1), "country": "US"}
         name = parts[0].lower()
         if name in REGION_STATES:
             return {**location, "state": REGION_STATES[name], "country": "US"}
@@ -338,6 +453,90 @@ def structured_location(text: str, city: str | None, region: str | None, country
         if "country" in parsed:
             location.setdefault("country", parsed["country"])
     return {key: location[key] for key in ("text", "city", "state", "country") if key in location}
+
+
+_STATE_WORDS = "|".join(sorted([code for code in US_STATE_CODES] + [
+    " ".join(word if word == "of" else word.capitalize() for word in name.split()) for name in US_STATES], key=len, reverse=True))
+_PLACE_IN_TEXT = re.compile(
+    r"([A-Z][A-Za-z.'\-]*(?:\s+[A-Z][A-Za-z.'\-]*){0,4})\s*,\s*(" + _STATE_WORDS + r")\b(?![a-z])")
+HEAD = 300
+
+
+def place_at_start(text: str | None) -> dict | None:
+    """A "City, ST" near the start of a posting's text, where careers pages put it
+    under the title ("< Back Account Director Apply Now San Francisco, CA, USA").
+    Kept only when the place lookup knows the city in that state; the city is the
+    longest run of words before the comma that it knows."""
+    for match in _PLACE_IN_TEXT.finditer((text or "")[:HEAD]):
+        state = _state_code(match.group(2))
+        words = match.group(1).split()
+        for length in range(len(words), 0, -1):
+            city = " ".join(words[-length:])
+            if city.lower() not in _NOT_A_PLACE and geo.metro_for(city, state):
+                return {"text": f"{city}, {match.group(2)}", "city": city, "state": state, "country": "US"}
+    return None
+
+
+def _bare_name(location: dict) -> str | None:
+    """The place name of an entry written as a name alone, perhaps with its
+    country: "Greenville", "Charleroi USA", "Barcelona"."""
+    if location.get("state"):
+        return None
+    parts = [part.strip() for part in _undecorated(location["text"]).split(",") if part.strip()]
+    if len(parts) == 2 and COUNTRIES.get(parts[1].lower()):
+        parts = parts[:1]
+    return parts[0] if len(parts) == 1 and _city(parts[0]) and parts[0].lower() not in REGION_STATES else None
+
+
+def _site_name(location: dict) -> str | None:
+    """The bare name of an entry that may still be in the US: no state, no other country."""
+    return _bare_name(location) if location.get("country") in (None, "US") else None
+
+
+def fill_from_board(drafts: list[dict]) -> list[dict]:
+    """Workday boards name a site the same way on every posting ("Greenville") and
+    give only its country, never its state. Where the board's own postings settle
+    a site, its other postings get the same answer:
+
+      state    every posting that lists the site and names it with a state in its
+               description ("Greenville, SC") names the same state, and no posting
+               on the board gives the site another country
+      country  the postings that give the site a country all give the same one
+
+    Anything else is left as it was: a bare name the board does not settle stays
+    without a state.
+    """
+    countries: dict[str, set] = {}
+    states: dict[str, set] = {}
+    for draft in drafts:
+        for location in draft["locations"]:
+            name = location.get("city") if location.get("state") else (_bare_name(location) or location.get("city"))
+            if not name:
+                continue
+            key = name.lower()
+            if location.get("country"):
+                countries.setdefault(key, set()).add(location["country"])
+            if location.get("state") and location.get("country") == "US":
+                states.setdefault(key, set()).add(location["state"])
+            elif _site_name(location):
+                written = re.finditer(rf"(?<![A-Za-z]){re.escape(name)},?\s+({_STATE_WORDS})\b(?![a-z])",
+                                      draft.get("description_text") or "")
+                for match in written:
+                    states.setdefault(key, set()).add(_state_code(match.group(1)))
+    for draft in drafts:
+        filled = []
+        for location in draft["locations"]:
+            name = _site_name(location)
+            key = (name or "").lower()
+            found_countries, found_states = countries.get(key, set()), states.get(key, set()) - {None}
+            if name and found_countries <= {"US"} and len(found_states) == 1:
+                location = {"text": location["text"], "city": name, "state": next(iter(found_states)), "country": "US"}
+            elif name and "country" not in location and len(found_countries) == 1:
+                country = next(iter(found_countries))
+                location = {"text": location["text"], "country": country, **({"city": name} if country != "US" else {})}
+            filled.append(location)
+        draft["locations"] = filled
+    return drafts
 
 
 def metro_for(location: dict) -> str | None:
@@ -405,7 +604,14 @@ def workplace_from_title(title: str) -> str:
 
 
 def decide_workplace(feed_value: str | None, location_texts: list[str], title: str) -> str:
-    """A feed field wins; then the location text; then a tag in the title."""
+    """A feed field wins; then the location text; then a tag in the title.
+
+    One exception: a list of places that are all remote ("Remote - CO | Remote - CA |
+    ...") is remote whatever the feed's field says.
+    """
+    if len(location_texts) > 1 and all(
+            _REMOTE.search(text) and not _HYBRID.search(text) and not _NOT_REMOTE.search(text) for text in location_texts):
+        return "remote"
     if feed_value in ("onsite", "hybrid", "remote"):
         return feed_value
     from_location = workplace_from_text(*location_texts)

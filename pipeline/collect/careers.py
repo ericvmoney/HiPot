@@ -50,7 +50,7 @@ from urllib.robotparser import RobotFileParser
 
 from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError, is_timeout
-from pipeline.collect.locations import parse_location, structured_location
+from pipeline.collect.locations import parse_location, place_at_start, structured_location
 from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_TITLE, _JOB_WORDS, ats_links, links,
                                             empty_listing, live_systems,
                                             on_site, posting_links, refusal, registrable, visible_text)
@@ -688,11 +688,16 @@ GENERAL_APPLICATION = re.compile(r"\b(?:any position|general application|open ap
 
 
 def _unique(drafts: list[dict]) -> list[dict]:
+    """The postings once each, without general applications. A posting that names
+    no place gets the "City, ST" written near the start of its text, if any."""
     seen, kept = set(), []
     for made in drafts:
         if GENERAL_APPLICATION.search(made["title"]):
             continue
         if made["posting_id"] not in seen:
             seen.add(made["posting_id"])
+            if not made["locations"]:
+                found = place_at_start(made["description_text"])
+                made["locations"] = [found] if found else []
             kept.append(made)
     return kept
