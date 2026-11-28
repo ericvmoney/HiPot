@@ -280,6 +280,8 @@ def test_successfactors_microdata_and_reading_on_past_an_unread_system():
     "<h2>Current Openings</h2><p>We don’t have any current openings, but please reach out.</p>" + LONG,
     "<p>Job openings will be posted on this page. Sign up below.</p>" + LONG,
     "<h2>Open Positions</h2><div>No items found.</div>" + LONG,
+    "<h2>Open Positions</h2><p>Currently, our team is complete, but the future holds endless possibilities!</p>" + LONG,  # Iontra
+    "<p>If job openings are listed below, click on the position. If no postings are listed, we are still interested.</p>" + LONG,  # Ampt
 ])
 def test_more_no_openings_notices(page):
     assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "none-open"
