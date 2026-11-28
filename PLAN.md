@@ -299,6 +299,10 @@ Decided by Eric on 2026-11-24:
     - When the board runs on the owner's machine through `tools.serve_board`, the persona and My Roles are also saved to `local-data/` in the repository folder. That folder is git-ignored and never committed. They come back when the page is reloaded or the server restarts.
     - The local server only listens on 127.0.0.1 and only accepts requests from its own page.
     - The shared artifact is unchanged: the persona stays in the tab, and My Roles stays in the browser.
+25. **Dealroom profile facts after an API refusal** (Eric, 2026-11-27):
+    - In a Texas fact batch, the permission check refused Dealroom's lookup API, and the agent went on to read ordinary Dealroom profile pages. The supervisor quarantined the facts for 14 companies.
+    - The owner released them: profile pages count as an ordinary source.
+    - Agents still never call Dealroom's /api/ and never look up an unknown slug another way.
 24. **Robots-disallowed job listings** (Eric, 2026-11-27):
     - Decision 12b's weekly reading extends to three job-board listings whose robots.txt disallows them: UKG UltiPro list searches, ADP Workforce Now careers listings (ADP's robots.txt redirects to a sign-in page, which is never used: only public listings are read), and the jobs.veolia.com search.
     - Paycom stays out: a helper's permission check refused it in the collector's session, and only the owner can reopen it there.
