@@ -14,7 +14,7 @@
     "counts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["roles", "companies", "roles_left_out", "left_out_company", "left_out_function", "companies_provisional", "new", "new_since", "companies_by_type", "roles_by_type", "functions"],
+      "required": ["roles", "companies", "roles_left_out", "left_out_company", "left_out_function", "companies_provisional", "new", "new_since", "companies_by_type", "roles_by_type", "functions", "categories"],
       "properties": {
         "roles": {"type": "integer", "minimum": 0},
         "companies": {"type": "integer", "minimum": 0},
@@ -33,13 +33,19 @@
           "type": "object",
           "propertyNames": {"$ref": "#/$defs/slug"},
           "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "categories": {
+          "description": "Roles per company category (decision 23), for every category in the taxonomy. A role counts once in each category its company is in.",
+          "type": "object",
+          "propertyNames": {"$ref": "#/$defs/slug"},
+          "additionalProperties": {"type": "integer", "minimum": 0}
         }
       }
     },
     "taxonomy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "states", "climate_tiers"],
+      "required": ["functions", "disciplines", "levels", "sectors", "stages", "workplace", "metros", "states", "climate_tiers", "categories"],
       "patternProperties": {
         "^[a-z_]+$": {
           "type": "array",
@@ -50,7 +56,8 @@
             "properties": {
               "id": {"$ref": "#/$defs/slug"},
               "label": {"type": "string", "minLength": 1},
-              "listed": {"const": false, "description": "Functions only: present on a function whose roles are kept off the public board."}
+              "listed": {"const": false, "description": "Functions only: present on a function whose roles are kept off the public board."},
+              "default": {"const": true, "description": "Categories only: a category the board opens on (clean tech, decision 23)."}
             }
           }
         }
@@ -75,6 +82,8 @@
           "hq": {"type": "string", "minLength": 1},
           "website": {"type": "string", "pattern": "^https://"},
           "careers": {"type": "string", "pattern": "^https://"},
+          "cats": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/slug"},
+                   "description": "The company's categories (tools.validate.company_categories): clean-tech first when its tier is core or enabling, then adjacent ones. Absent only for an unlisted company in a development build."},
           "unlisted": {"const": true, "description": "Present only in a development build."}
         }
       }

@@ -97,6 +97,9 @@ def main(argv: list[str] | None = None) -> int:
           f"({counts['roles_by_type']['startup']} / {counts['roles_by_type']['established']} / {counts['roles_by_type']['unchecked']} roles)")
     by_function = ", ".join(f"{fid} {n}" for fid, n in counts["functions"].items() if n)
     print(f"  by function: {by_function or 'none'}")
+    # Every category, zeros included, so a category that reaches the board shows up here (decision 23).
+    by_category = ", ".join(f"{cid} {n}" for cid, n in counts["categories"].items())
+    print(f"  by category: {by_category} (the board opens on clean-tech; a role counts in each category its company is in)")
     if board["grades"]:
         graded = [role["grade"]["v"] for role in board["roles"] if "grade" in role]
         with_pay = sum(1 for role in board["roles"] if role.get("pay"))
@@ -116,7 +119,8 @@ def main(argv: list[str] | None = None) -> int:
     shown = sum(1 for band in pay["bands"] if "mid" in band)
     print(f"Wrote {pay_out}")
     print(f"  pay bands: {len(pay['bands'])} ({shown} with 3+ postings) from {pay['counts']['postings']} postings "
-          f"with published US-dollar pay ({pay['counts']['year']} yearly, {pay['counts']['hour']} hourly)")
+          f"with published US-dollar pay ({pay['counts']['year']} yearly, {pay['counts']['hour']} hourly)"
+          + (f"; categories: {', '.join(pay['categories'])} (the board's default view)" if pay["categories"] else ""))
     if "gov" in pay:
         gov = pay["gov"]
         print(f"  gov. wages: {len(gov['occupations'])} occupations in {len(gov['figures'])} metro regions "

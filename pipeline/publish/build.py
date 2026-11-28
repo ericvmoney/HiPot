@@ -32,7 +32,8 @@ from pipeline.publish import grades as paygrades
 from pipeline.publish import pay as paybands
 from pipeline.publish import wages as paywages
 from pipeline.publish.states import US_STATES, states_for
-from tools.validate import check_companies, check_jobs, company_type, is_listed, listed_functions, schema_errors, schema_registry
+from tools.validate import (check_companies, check_jobs, company_categories, company_type, is_listed, listed_functions,
+                            schema_errors, schema_registry)
 
 BOARD_VERSION = 0
 COMPANY_TYPES = ("startup", "established", "unchecked")
@@ -97,9 +98,23 @@ def _company_record(company: dict) -> dict[str, Any]:
     for key, source in (("website", "website"), ("careers", "careers_url")):
         if company.get(source):
             record[key] = company[source]
+    categories = company_categories(company)
+    if categories:
+        record["cats"] = categories   # clean tech first when the tier makes it so (decision 23)
     if not is_listed(company):
         record["unlisted"] = True
     return record
+
+
+def category_labels(taxonomy: dict) -> list[dict[str, Any]]:
+    """The company categories for the board's filter, in taxonomy order. `default` marks the ones the board
+    opens on (clean tech)."""
+    return [{"id": entry["id"], "label": entry["label"], **({"default": True} if entry.get("default") else {})}
+            for entry in taxonomy.get("categories", [])]
+
+
+def default_categories(taxonomy: dict) -> set[str]:
+    return {entry["id"] for entry in taxonomy.get("categories", []) if entry.get("default")}
 
 
 def _role_date(job: dict) -> str:
@@ -187,6 +202,7 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
     labels = _labels(taxonomy, kept)
     present = {record["type"] for record in company_records.values()}
     labels["company_types"] = [{"id": kind, "label": COMPANY_TYPE_LABELS[kind]} for kind in COMPANY_TYPES if kind in present]
+    labels["categories"] = category_labels(taxonomy)
     records = [_role_record(job) for job in kept]
     # New roles: first seen in the last 3 business days, not counting a company's first collection.
     read_ends = fresh.first_read_ends(jobs_file["jobs"], seed_ids, runs)
@@ -223,6 +239,9 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
                               for kind in COMPANY_TYPES},
             "functions": {entry["id"]: sum(1 for job in kept if job["function"] == entry["id"])
                           for entry in taxonomy["functions"]},
+            # A role counts once in each category its company is in.
+            "categories": {entry["id"]: sum(1 for job in kept if entry["id"] in company_categories(companies[job["company_id"]]))
+                           for entry in taxonomy.get("categories", [])},
         },
         "taxonomy": labels,
         "companies": company_records,
@@ -232,17 +251,26 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
 
 def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
               wages: dict | None = None) -> dict:
-    """Pay bands for the candidate pay page, from the same roles the board shows.
+    """Pay bands for the candidate pay page, from the roles the board opens on.
+
+    The page has no category filter, so its bands follow the board's default view: roles at companies in
+    a default category (clean tech, decision 23). Adjacent categories would otherwise move the clean-tech
+    figures. A development build (`include_unlisted`) keeps every role.
 
     `wages` is the government wage reference (data/pay/bls-oews-2025.json); when given, the
     slice the page needs goes into `gov`.
     """
-    kept = _select(jobs_file, registry_file, taxonomy, include_unlisted)["kept"]
+    selected = _select(jobs_file, registry_file, taxonomy, include_unlisted)
+    kept, companies = selected["kept"], selected["companies"]
+    shown = default_categories(taxonomy)
+    if not include_unlisted and shown:
+        kept = [job for job in kept if shown & set(company_categories(companies[job["company_id"]]))]
     found = paybands.bands(kept)
     out = {
         "pay_version": PAY_VERSION,
         "generated_at": jobs_file["generated_at"],
         "scope": "all" if include_unlisted else "listed",
+        "categories": [] if include_unlisted else [entry["id"] for entry in taxonomy.get("categories", []) if entry.get("default")],
         "min_postings": paybands.MIN_BAND,
         "counts": {
             "postings": sum(1 for job in kept if paybands.usable_pay(job) and paybands.markets(job)),
