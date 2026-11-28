@@ -14,7 +14,7 @@ Written 2026-11-27 so the owner and any AI assistant can restart without the old
 |---|---|
 | Registry | 1,404 companies screened; 1,176 listed (1,056 startups, 120 established) |
 | Board | 9,175 roles at 299 companies (full run of 2026-11-26), 15 job-board readers plus a careers-page reader |
-| Shared board | https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ, version 15, "anyone with the link"; pay grades left out of the shared build |
+| Shared board | https://claude.ai/artifact/Qcm1YcmXWV8yuyf3L1VDdJ, republished daily at about 11:08, "anyone with the link"; pay grades public since decision 27 |
 | Tests | 1,036 pass (`uv run pytest -q`, about 1 minute) |
 | Pages | Board (`site/index.html`), with My Roles, persona ranking and great matches; pay ranges (`site/pay.html`); persona builder draft (`site/persona.html`) |
 
@@ -151,10 +151,10 @@ Windows and PowerShell; the same steps work elsewhere.
 
 ## 4. Publish the shared board
 
-The shared copy leaves out pay grades until the owner reviews them.
+The shared copy is built like the local one, pay grades included (decision 27), into a folder outside `site/`. `tools.refresh` does this into `data/state/shared-build/`.
 
 ```powershell
-uv run python -m pipeline.publish --no-grades --out <folder>\board.json
+uv run python -m pipeline.publish --out <folder>\board.json
 ```
 
 Publish `site/index.html` as an artifact, with these supporting files:

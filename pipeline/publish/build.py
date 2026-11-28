@@ -29,6 +29,7 @@ from typing import Any
 
 from pipeline.publish import fresh
 from pipeline.publish import grades as paygrades
+from pipeline.publish.companies import build_companies
 from pipeline.publish import pay as paybands
 from pipeline.publish import wages as paywages
 from pipeline.publish.states import US_STATES, states_for
@@ -210,7 +211,17 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
 
 def build_outputs(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
                   grades: bool = True, seed_ids: set[str] = frozenset(), runs: dict | None = None) -> tuple[dict, dict]:
-    """Return (board, summaries) as dicts. Raises PublishError on input that fails the contracts.
+    """(board, summaries); see build_all()."""
+    built = build_all(jobs_file, registry_file, taxonomy, include_unlisted, grades, seed_ids, runs)
+    return built["board"], built["summaries"]
+
+
+def build_all(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
+              grades: bool = True, seed_ids: set[str] = frozenset(), runs: dict | None = None,
+              careers_sites: dict | None = None) -> dict[str, dict]:
+    """The board, the posting summaries and the Companies page's data (companies.py), from one selection of
+    roles, so all three carry the same generated_at. Raises PublishError on input that fails the contracts.
+    `careers_sites` is the collector's careers state (`sites`), which tells which careers pages are read weekly.
 
     The posting summaries are half of what a role would weigh, and the page shows them only behind
     "From the posting", so they are a separate file (summaries.json) that the page loads on demand.
@@ -290,7 +301,9 @@ def build_outputs(jobs_file: dict, registry_file: dict, taxonomy: dict, include_
         "companies": company_records,
         "roles": records,
     }
-    return board, summaries
+    companies_file = build_companies(companies, kept, taxonomy, jobs_file["generated_at"], new_ids,
+                                     include_unlisted=include_unlisted, careers_sites=careers_sites)
+    return {"board": board, "summaries": summaries, "companies": companies_file}
 
 
 def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
@@ -413,6 +426,23 @@ def write_summaries(summaries: dict, path: Path | str) -> int:
     data = dumps_summaries(summaries).encode("utf-8")
     path.write_bytes(data)
     return len(data)
+
+
+def dumps_companies(data: dict) -> str:
+    """One company per line."""
+    lines = ["{"] + [f"{_compact(key)}:{_compact(value)}," for key, value in data.items() if key != "companies"]
+    lines.append('"companies":[')
+    lines.append(",\n".join(_compact(record) for record in data["companies"]))
+    lines += ["]", "}"]
+    return "\n".join(lines) + "\n"
+
+
+def write_companies(data: dict, path: Path | str) -> int:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    encoded = dumps_companies(data).encode("utf-8")
+    path.write_bytes(encoded)
+    return len(encoded)
 
 
 def write_board(board: dict, path: Path | str) -> int:

@@ -196,8 +196,10 @@ def strip_comments(code):
 def test_my_roles_uses_one_storage_key_and_every_access_is_wrapped():
     code = strip_comments(SCRIPT)
     assert "var KEY = 'hipot-my-roles';" in script_block("my-roles")
-    assert set(re.findall(r"localStorage\.(\w+)\((\w+)", code)) == {("getItem", "MINE_KEY"), ("setItem", "MINE_KEY")}
-    assert code.count("localStorage") == 2
+    # Two keys in all: My Roles, and favorite companies (decision 27).
+    assert set(re.findall(r"localStorage\.(\w+)\((\w+)", code)) == {("getItem", "MINE_KEY"), ("setItem", "MINE_KEY"),
+                                                                    ("getItem", "FAV_KEY"), ("setItem", "FAV_KEY")}
+    assert code.count("localStorage") == 4 and "var FAV_KEY = Favorites.KEY;" in SCRIPT
     for line in code.splitlines():
         if "localStorage." in line:
             assert line.strip().startswith("try {") or "try {" in code[code.rindex("try {", 0, code.index(line)):code.index(line)], line

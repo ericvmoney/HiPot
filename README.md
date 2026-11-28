@@ -53,7 +53,7 @@ uv run python -m tools.build_wages               # rebuild data/pay/bls-oews-202
 uv run python -m tools.apply_screening           # apply data/screening/ proposals, fixes and probes to companies.yml (idempotent)
 uv run python -m tools.coverage                  # screened, listed and readable share of each region's reference list
 uv run python -m pipeline.collect --check-boards # list registry boards in a form no reader accepts (no network)
-uv run python -m pipeline.publish --no-grades --out <folder>\board.json   # the shared build (see HANDOVER.md section 4)
+uv run python -m tools.refresh --skip-collect   # tag, validate and build both copies, the shared one in data/state/shared-build/ (HANDOVER.md section 4)
 ```
 
 Next steps and the manual checks that help most right now: [reports/M1-status.md](reports/M1-status.md).

@@ -24,7 +24,7 @@ def test_local_saving_runs_only_on_this_machines_own_server():
     assert SCRIPT.count("localOn = true;") == 1
     # Every call to the server goes through localApi(), which checks the host before fetching.
     assert len(re.findall(r"fetch\(", SCRIPT)) == 3   # the data, the summaries, and localApi()
-    assert all(call.startswith(("'status'", "'persona'", "'my-roles'")) for call in re.findall(r"localApi\(([^)]*)\)", SCRIPT) if call != "name, method, body, waitMs, keepalive")
+    assert all(call.startswith(("'status'", "'persona'", "'my-roles'", "'favorite-companies'")) for call in re.findall(r"localApi\(([^)]*)\)", SCRIPT) if call != "name, method, body, waitMs, keepalive")
 
 
 def test_what_is_saved_and_when():
@@ -41,7 +41,11 @@ def test_what_is_saved_and_when():
     assert "if (!options || options.save !== false) { saveMine(); scheduleLocalMine(); }" in SCRIPT
     assert "localMineTimer = setTimeout(saveLocalMine, LOCAL_SAVE_DELAY_MS);" in SCRIPT
     assert "localApi('my-roles', 'PUT', mineYaml(), 10000, keepalive)" in SCRIPT
-    assert "var text = mineYaml();" in SCRIPT   # the same YAML as Export
+    assert "var text = mineYaml(true);" in SCRIPT   # the same YAML as Export, which also carries the favorites
+    assert "localApi('my-roles', 'PUT', mineYaml(), 10000, keepalive)" in SCRIPT   # the local copy leaves them to their own file
+    # Favorite companies: their own file, merged on load, saved after each change.
+    assert "localApi('favorite-companies', 'PUT', favsYaml(), 10000, keepalive)" in SCRIPT
+    assert "restoreLocalFavs(files['favorite-companies'] === true)" in SCRIPT
 
 
 def test_the_note_and_the_address():
@@ -72,4 +76,5 @@ def test_a_removed_storage_key_never_empties_my_roles():
     # Another tab clearing site data (or deleting the key) fires a storage event with no new value.
     # Following it would empty this tab's list and then the copy in local-data/.
     handler = section("window.addEventListener('storage'", "if (window.claude && window.claude.use)")
-    assert "if (event.key !== MINE_KEY || event.newValue === null) return;" in handler
+    assert handler.index("if (event.newValue === null) return;") < handler.index("event.key === MINE_KEY")
+    assert "event.key === FAV_KEY" in handler
