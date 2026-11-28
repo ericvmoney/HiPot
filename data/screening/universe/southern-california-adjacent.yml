@@ -1,0 +1,1859 @@
+# Reference list for Southern California (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: southern-california-adjacent
+built: '2026-11-25'
+sources:
+- id: yc-la-aviation-space
+  name: Y Combinator industry page, Aviation and Space, Los Angeles
+  url: https://www.ycombinator.com/companies/industry/aviation-and-space/los-angeles
+  note: robots.txt checked (bars only query strings and /verify)
+- id: yc-la-aerospace
+  name: Y Combinator industry page, Aerospace, Los Angeles
+  url: https://www.ycombinator.com/companies/industry/aerospace/los-angeles
+- id: yc-la-robotics
+  name: Y Combinator industry page, Robotics, Los Angeles
+  url: https://www.ycombinator.com/companies/industry/robotics/los-angeles
+  note: General Trajectory skipped as software
+- id: yc-la-drones
+  name: Y Combinator industry page, Drones, Los Angeles
+  url: https://www.ycombinator.com/companies/industry/drones/los-angeles
+  note: Zeitview skipped as software and services
+- id: yc-sd-robotics
+  name: Y Combinator industry page, Robotics, San Diego
+  url: https://www.ycombinator.com/companies/industry/robotics/san-diego
+  note: aviation-and-space/san-diego and autonomous-vehicles/los-angeles pages list 0 companies
+- id: labj-creating-space-beach
+  name: Los Angeles Business Journal, Creating Space Beach (2025-08-11)
+  url: https://labusinessjournal.com/special-reports/creating-space-beach/
+  note: robots.txt allows all
+- id: labj-voyaging-space-beach
+  name: Los Angeles Business Journal, Voyaging to Space Beach (2026-04-06)
+  url: https://labusinessjournal.com/featured/voyaging-to-space-beach/
+- id: longbeach-gov
+  name: City of Long Beach pages (mayor's Grow Long Beach page, Orbital Operations release 2025-08-22, Economic
+    Development 2025 annual report memo of 2026-05-12)
+  url: https://longbeach.gov/mayor/mayor-priorities/grow-long-beach/
+  note: robots.txt allows these paths. Annual-report PDF text extracted locally. The economic-development Grow Long
+    Beach page answered 404; Ampaire, NovaWurks and Mayman Aerospace come only from the web-search summary of that
+    page.
+- id: echai-la-aerospace
+  name: eChai Ventures, Los Angeles aerospace and space startups
+  url: https://echai.ventures/la/aerospace
+  note: robots.txt allows this path for Claude-User. Slingshot Aerospace skipped as software. /la/robotics has no
+    company listings
+- id: echai-sd-deeptech
+  name: eChai Ventures, San Diego deeptech and robotics startups
+  url: https://echai.ventures/sandiego/deeptech
+  note: 29 names; most others are telecom, chips, batteries or software
+- id: lahardtech50-2025
+  name: 2025 LA Hard Tech 50 (Jacques Sisteron and Nick Kim, Substack)
+  url: https://jacquestalk.substack.com/p/2025-la-hard-tech-50
+  note: robots.txt allows /p/. Software, nuclear, EV and other-category entries skipped
+- id: failory-el-segundo
+  name: Failory, Top El Segundo startups 2026
+  url: https://www.failory.com/startups/el-segundo
+  note: robots.txt allows this path
+- id: ssbcrack-moon-2026
+  name: SSBCrack News, Southern California Startups Fuel a New Race to the Moon (updated 2026-11-20)
+  url: https://news.ssbcrack.com/southern-california-startups-fuel-a-new-race-to-the-moon/
+- id: aerodefenseoutlook-2026
+  name: Aero Defense Outlook, The Southern California Space Tech Cluster (2026-08-25)
+  url: https://aerodefenseoutlook.com/the-southern-california-space-tech-cluster-growth-prospects-and-challenges
+- id: rose-ieo-2025
+  name: Rose Institute, Inland Empire Outlook Spring 2025, SoCal in the Age of Commercial Space
+  url: https://roseinstitute.org/wp-content/uploads/2025/04/IEO-Spring-2025_SoCal-in-the-Age-of-Commercial-Space_FINAL.pdf
+  note: robots.txt allows; PDF text extracted locally
+- id: laedc-aerospace
+  name: LAEDC aerospace news pages (LABJ space commercialization repost 2018; Future Forum aerospace 5G 2021)
+  url: https://laedc.org/la-business-journal-space-aerospace/
+  note: robots.txt bars only meta-externalagent. Second page https://laedc.org/future-forum-aerospace-5g/. Dated
+    pages; no current company list
+- id: caltech-local-startups
+  name: Caltech local startups page (AI and robotics, Space exploration sections)
+  url: https://local.caltech.edu/economic-impact/local-startups
+  note: names only; software and chip/photonics entries skipped
+- id: ucsd-today-2019
+  name: UC San Diego Today, alumni power San Diego robotics ecosystem (2019-11-14)
+  url: https://today.ucsd.edu/story/uc-san-diego-alumni-power-san-diego-robotics-ecosystem
+  note: dated 2019
+- id: brighterfutures-oc
+  name: Brighter Futures Orange County, Aerospace, Defense and Precision Engineering companies
+  url: https://brighterfuturesoc.org/companies/category/aerospace-defense/
+  note: robots.txt allows all
+- id: aerospace-coffee-irvine
+  name: aerospace.coffee, 35 top aerospace startups and companies (Irvine)
+  url: https://www.aerospace.coffee/post/35-top-aerospace-startups-companies-irvine
+  note: robots.txt has no rules. Most of the 35 are parts distributors, services or software and were skipped; undated
+- id: dotla-apex-2024
+  name: dot.LA, Apex Space and LA's Role in the Current Space Tech Boom (2024-05-24) and related stories on the
+    page (2026)
+  url: https://dot.la/satellite-bus-manufacturers-2668472939.html
+  note: robots.txt allows
+- id: web-search-summaries
+  name: Web search result summaries (no page fetched)
+  url: null
+  note: Sophia Space (Caltech/JPL spinout search), Zephyr Fusion (San Diego space search), DZYNE Technologies and
+    Terran Orbital (Orange County search), FlightWave Aerospace (UCLA/USC search), plus Ampaire, NovaWurks and Mayman
+    Aerospace already counted under longbeach-gov. Verify before relying on them
+- id: sd-hardtech50-2026
+  name: Rising Tide Partners, 2026 San Diego Hardtech 50
+  url: https://risingtidepartners.substack.com/p/the-2026-san-diego-hardtech-50
+  note: no cities given; list is San Diego-only by design
+- id: sd-hardtech50-2025
+  name: Rising Tide Partners, 2025 SD Hardtech 50
+  url: https://risingtidepartners.substack.com/p/2025-sd-hard-tech-50
+  note: 64 names on page
+- id: sd-hardtech-nextwave-2026
+  name: Rising Tide Partners, 2026 SD Hardtech Next Wave (30 to watch)
+  url: https://risingtidepartners.substack.com/p/the-next-wave-30-san-diego-hardtech
+- id: semieng-funding
+  name: Semiconductor Engineering quarterly startup funding roundups (Q2 2025 to Q3 2026)
+  url: https://semiengineering.com/startup-funding-q4-2025/
+  note: also /startup-funding-q1-2026/, -q2-2026/, -q3-2026/, -q3-2025/, -q2-2025/; many table rows give only 'USA'
+- id: dotla
+  name: dot.la funding articles (Hadrian and Valar; Menlo Micro)
+  url: https://dot.la/hadrian-valar-ai-infrastructure-funding-2677671747.html
+  note: also https://dot.la/menlo-micro-raise-2656897069
+- id: pinc-news
+  name: The Quantum Insider, PINC Technologies emerges from stealth
+  url: https://thequantuminsider.com/2025/10/02/pinc-technologies-emerges-from-stealth-with-6-8m-in-funding-to-unlock-scalable-nonlinear-photonics/
+  note: Pasadena location from search snippet of the same news
+- id: evonexus
+  name: EvoNexus portfolio (Irvine and San Diego incubator)
+  url: https://evonexus.org/portfolio/
+  note: logos only, no descriptions or per-company locations; 'Load More' not followable; locations and products
+    partly from general knowledge
+- id: ucsd-dualuse-incubator
+  name: UC San Diego Today, joint dual-use incubator cohort
+  url: https://today.ucsd.edu/story/new-joint-dual-use-incubator
+- id: ocp-members
+  name: Open Compute Project membership directory
+  url: https://www.opencompute.org/membership/membership-directory
+  note: 714 names, no locations; Southern California HQs from general knowledge
+- id: labj
+  name: Los Angeles Business Journal technology and manufacturing articles
+  url: https://labusinessjournal.com/technology/cant-stand-the-heat-send-it-to-the-kitchen/
+  note: Karman article fetched; Machina Labs, Neuron, SiLC and Source Photonics from LABJ search results
+- id: b20-3dprinting-2026
+  name: Business 2.0 News, top 10 3D printing startups to watch in 2026
+  url: https://business20channel.tv/top-10-3d-printing-startups-to-watch-in-2026-15-05-2026
+- id: uci-startups
+  name: UC Irvine Beall Applied Innovation startups (sitemap)
+  url: https://innovation.uci.edu/wp-sitemap-posts-startups-1.xml
+  note: 128 startup slugs, nearly all biotech, software or consumer
+- id: yc-la-hardware
+  name: Y Combinator hardware startups in Los Angeles
+  url: https://www.ycombinator.com/companies/industry/hardware/los-angeles
+- id: yc-la-hardtech
+  name: Y Combinator hard tech startups in Los Angeles
+  url: https://www.ycombinator.com/companies/industry/hard-tech/los-angeles
+- id: yc-sd-hardtech
+  name: Y Combinator hard tech and hardware startups in San Diego
+  url: https://www.ycombinator.com/companies/industry/hard-tech/san-diego
+  note: also /hardware/san-diego (same company)
+- id: yc-la-mfg-robotics
+  name: Y Combinator manufacturing and robotics startups in Los Angeles
+  url: https://www.ycombinator.com/companies/industry/manufacturing-and-robotics/los-angeles
+- id: yc-la-industrials
+  name: Y Combinator industrials startups in Los Angeles
+  url: https://www.ycombinator.com/companies/industry/industrials/los-angeles
+  note: 43 names; most are aerospace, defense or autonomy (other passes)
+companies:
+- name: Adsys Controls
+  website: https://adsyscontrols.com
+  hq: Irvine, CA
+  sources:
+  - aerospace-coffee-irvine
+  registry_id: adsys-controls
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Advanced Metal Research
+  website: https://advancedmetalresearch.com
+  hq: Hawthorne, CA
+  sources:
+  - yc-la-robotics
+  - yc-la-hardware
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  registry_id: advanced-metal-research
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Airhart Aeronautics
+  website: https://airhartaero.com
+  hq: Long Beach, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: airhart-aeronautics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Amca
+  website: https://amca.com
+  hq: El Segundo, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: amca
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: amca
+  open_roles: 51
+- name: Ampaire
+  website: https://www.ampaire.com/
+  hq: Long Beach, CA
+  sources:
+  - longbeach-gov
+  - web-search-summaries
+  registry_id: ampaire
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: AMRADTECH
+  website: https://amradtech.com
+  hq: San Diego, CA
+  sources:
+  - ucsd-dualuse-incubator
+  registry_id: amradtech
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Anduril Industries
+  website: https://www.anduril.com
+  hq: Costa Mesa, CA
+  sources:
+  - labj-voyaging-space-beach
+  - lahardtech50-2025
+  - aerodefenseoutlook-2026
+  - brighterfutures-oc
+  - aerospace-coffee-irvine
+  - dotla-apex-2024
+  - longbeach-gov
+  registry_id: anduril-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: andurilindustries
+  open_roles: 2598
+- name: AnySignal
+  website: https://www.anysignal.com
+  hq: Los Angeles, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: anysignal
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: anysignal
+  open_roles: 27
+- name: Apex
+  website: https://www.apexspace.com
+  hq: Los Angeles, CA
+  sources:
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - dotla-apex-2024
+  registry_id: apex
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: apex-technology-inc
+  open_roles: 141
+- name: Ares Industries
+  website: https://aresindustries.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: ares-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: AstroForge
+  website: https://www.astroforge.com
+  hq: Seal Beach, CA
+  sources:
+  - yc-la-robotics
+  - yc-la-hardtech
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  registry_id: astroforge
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: astroforge-io
+  open_roles: null
+- name: Astrolab
+  website: https://www.astrolab.space
+  hq: Hawthorne, CA
+  sources:
+  - ssbcrack-moon-2026
+  registry_id: astrolab
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: pinpoint
+    token: astrolab
+  open_roles: 51
+- name: Atlazo
+  website: https://www.atlazo.com
+  hq: San Diego, CA
+  sources:
+  - evonexus
+  registry_id: null
+  decision: closed
+  reason: Its business was absorbed into Nordic Semiconductor in an asset deal.
+  ats: null
+  open_roles: null
+- name: Aviern
+  website: https://aviern.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aerospace
+  - yc-la-drones
+  registry_id: aviern
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Camtech
+  website: https://camtechcorp.com
+  hq: Irvine, CA
+  sources:
+  - aerospace-coffee-irvine
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract CNC machining job shop.
+  ats: null
+  open_roles: null
+- name: Castelion
+  website: https://www.castelion.com
+  hq: Torrance, CA
+  sources:
+  - lahardtech50-2025
+  - failory-el-segundo
+  - dotla-apex-2024
+  registry_id: castelion
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: castelioncorporation
+  open_roles: 271
+- name: Celero Communications
+  website: https://celero.inc
+  hq: Irvine, CA
+  sources:
+  - semieng-funding
+  registry_id: celero-communications
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Chatsworth Products
+  website: https://www.chatsworth.com/
+  hq: Round Rock, TX
+  sources:
+  - ocp-members
+  registry_id: chatsworth-products
+  decision: registry
+  reason: null
+  ats:
+    type: paycom
+    token: A0EC44FF0B0DFB12FBD46DE2D6CD7840
+  open_roles: null
+- name: Chilldyne
+  website: https://chilldyne.com
+  hq: Carlsbad, CA
+  sources:
+  - sd-hardtech50-2025
+  - sd-hardtech-nextwave-2026
+  registry_id: chilldyne
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Cislune
+  website: https://cislune.com
+  hq: Southern California
+  sources:
+  - ssbcrack-moon-2026
+  registry_id: cislune
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Claros
+  website: https://claros.tech
+  hq: McLean, VA
+  sources:
+  - semieng-funding
+  registry_id: claros
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Craitor
+  website: https://www.craitor.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2025
+  - sd-hardtech-nextwave-2026
+  registry_id: craitor
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Divergent Technologies
+  website: https://www.divergent3d.com
+  hq: Torrance, CA
+  sources:
+  - b20-3dprinting-2026
+  registry_id: divergent-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: DZYNE Technologies
+  website: https://dzyne.com
+  hq: Irvine, CA
+  sources:
+  - web-search-summaries
+  registry_id: dzyne-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Elite Aerospace Group
+  website: null
+  hq: Irvine, CA
+  sources:
+  - aerospace-coffee-irvine
+  registry_id: null
+  decision: closed
+  reason: 'Closed: likely closed: Dealroom snippet says an April 2021 fire at the Irvine facility led to cessation
+    of operations in May 2021 (mentions Chapter 7 bankruptcy); Crunchbase snippet marks it permanently close'
+  ats: null
+  open_roles: null
+- name: EPC Power
+  website: https://epcpower.com
+  hq: Poway, CA
+  sources:
+  - ocp-members
+  registry_id: epc-power
+  decision: registry
+  reason: null
+  ats:
+    type: paylocity
+    token: c1f3b7e2-3b9f-4552-ae5e-972d37009918
+  open_roles: null
+- name: Ethos Space Resources
+  website: https://ethos-space.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: ethos-space-resources
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Evaporion
+  website: https://evaporion.com
+  hq: San Diego, CA
+  sources:
+  - ucsd-dualuse-incubator
+  registry_id: evaporion
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Exploration Laboratories
+  website: null
+  hq: Long Beach, CA
+  sources:
+  - labj-voyaging-space-beach
+  registry_id: exploration-laboratories
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Fabric8Labs
+  website: https://www.fabric8labs.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  - semieng-funding
+  - ocp-members
+  registry_id: fabric8labs
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Firestorm Labs
+  website: null
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: firestorm-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: FlightWave Aerospace
+  website: https://flightwave.aero
+  hq: Torrance, CA
+  sources:
+  - web-search-summaries
+  registry_id: flightwave-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Forerunner
+  website: https://tryforerunner.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aerospace
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  registry_id: forerunner
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: forerunner
+  open_roles: 7
+- name: Foreshadow Industries
+  website: https://foreshadow-industries.ai
+  hq: Coronado, CA
+  sources:
+  - yc-sd-robotics
+  registry_id: foreshadow-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Fortastra
+  website: https://fortastra.com
+  hq: Torrance, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: fortastra
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: General Atomics
+  website: https://www.ga.com/
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: general-atomics
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: GigaIO
+  website: https://gigaio.com
+  hq: Carlsbad, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: gigaio
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: GITAI USA
+  website: https://gitai.tech
+  hq: Torrance, CA
+  sources:
+  - ssbcrack-moon-2026
+  registry_id: gitai-usa
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: gitai
+  open_roles: 13
+- name: GRU Space
+  website: https://gru.space
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - ssbcrack-moon-2026
+  registry_id: gru-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Hadrian
+  website: https://www.hadrian.co
+  hq: Torrance, CA
+  sources:
+  - lahardtech50-2025
+  - dotla
+  registry_id: hadrian
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: hadrian-automation
+  open_roles: 187
+- name: Heart Aerospace
+  website: https://heartaerospace.com
+  hq: El Segundo (Los Angeles), CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: heart-aerospace
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: heartaerospace
+  open_roles: null
+- name: Helicity Space
+  website: https://helicityspace.com
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: helicity-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: HyperKelp
+  website: https://hyperkelp.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech-nextwave-2026
+  registry_id: hyperkelp
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Icarus
+  website: https://icarus.one
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aerospace
+  registry_id: icarus
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: icarus
+  open_roles: 30
+- name: Impossible Metals
+  website: https://impossiblemetals.com
+  hq: San Jose, CA
+  sources:
+  - yc-la-robotics
+  - yc-la-hardtech
+  - yc-la-industrials
+  registry_id: impossible-metals
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Impulse Space
+  website: https://www.impulsespace.com
+  hq: Redondo Beach, CA
+  sources:
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - aerodefenseoutlook-2026
+  registry_id: impulse-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: pinpoint
+    token: impulsespace
+  open_roles: 212
+- name: Inflection Space Systems
+  website: https://inflection-space.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: inflection-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Integrated Reasoning
+  website: https://integrated-reasoning.com
+  hq: San Diego, CA
+  sources:
+  - yc-sd-hardtech
+  registry_id: null
+  decision: null
+  reason: A one-person team showing a processor design on FPGA; whether it sells hardware is not established.
+  ats: null
+  open_roles: null
+- name: Intrepid Automation
+  website: https://www.intrepidautomation.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: intrepid-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Inversion Space
+  website: https://www.inversionspace.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: inversion-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: inversionspace
+  open_roles: 53
+- name: Iridia
+  website: https://iridia.com
+  hq: Carlsbad, CA
+  sources:
+  - sd-hardtech50-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Molecular markers for product authentication; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: JetPack Aviation
+  website: https://www.jetpackaviation.com
+  hq: Van Nuys, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: null
+  decision: duplicate
+  reason: Its VTOL program now runs as Mayman Aerospace (Long Beach), listed separately; JetPack Aviation's own
+    site has lapsed.
+  ats: null
+  open_roles: null
+- name: JetZero
+  website: https://www.jetzero.aero
+  hq: Long Beach, CA
+  sources:
+  - longbeach-gov
+  registry_id: jetzero
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: jetzero
+  open_roles: null
+- name: K2 Space
+  website: https://www.k2space.com
+  hq: Torrance, CA
+  sources:
+  - echai-la-aerospace
+  - lahardtech50-2025
+  registry_id: k2-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kaiser Aerospace & Electronics
+  website: null
+  hq: Irvine, CA
+  sources:
+  - aerospace-coffee-irvine
+  registry_id: null
+  decision: closed
+  reason: Acquired by Rockwell Collins in 2000; now part of Collins Aerospace, not a company of its own.
+  ats: null
+  open_roles: null
+- name: Karman Industries
+  website: https://karmanindustries.com
+  hq: Signal Hill / Los Angeles area, CA
+  sources:
+  - labj
+  registry_id: karman-industries
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: Karman Industries
+  open_roles: null
+- name: Kneron
+  website: https://www.kneron.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: kneron
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kratos Defense & Security Solutions
+  website: https://www.kratosdefense.com
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: kratos-defense-and-security-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LeFiell Manufacturing
+  website: https://lefiell.com
+  hq: Santa Fe Springs, CA
+  sources:
+  - ssbcrack-moon-2026
+  registry_id: lefiell-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Lockheed Martin
+  website: https://www.lockheedmartin.com
+  hq: Littleton, CO
+  sources:
+  - labj-voyaging-space-beach
+  - ssbcrack-moon-2026
+  - rose-ieo-2025
+  registry_id: lockheed-martin-space
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Long Wall (formerly ABL Space Systems)
+  website: https://lwall.com
+  hq: Long Beach, CA
+  sources:
+  - rose-ieo-2025
+  - laedc-aerospace
+  registry_id: long-wall-formerly-abl-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mach Industries
+  website: https://www.machindustries.com
+  hq: Huntington Beach, CA
+  sources:
+  - lahardtech50-2025
+  - dotla-apex-2024
+  registry_id: mach-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: machindustries
+  open_roles: 189
+- name: Machina Labs
+  website: https://www.machinalabs.ai
+  hq: Chatsworth
+  sources:
+  - lahardtech50-2025
+  - labj
+  registry_id: machina-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: MachinaLabs
+  open_roles: 30
+- name: Manifold
+  website: https://manifoldindustries.ai
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-robotics
+  registry_id: manifold
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: MaxLinear
+  website: https://www.maxlinear.com
+  hq: Carlsbad, CA
+  sources:
+  - ocp-members
+  registry_id: maxlinear
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: icims
+    token: careersus-maxlinear
+  open_roles: null
+- name: Mayman Aerospace
+  website: https://maymanaerospace.com
+  hq: Long Beach, CA
+  sources:
+  - longbeach-gov
+  - web-search-summaries
+  registry_id: mayman-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Menlo Microsystems
+  website: https://menlomicro.com
+  hq: Irvine, CA
+  sources:
+  - dotla
+  registry_id: menlo-microsystems
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mesh Optical Technologies
+  website: https://meshoptical.com
+  hq: Los Angeles, CA
+  sources:
+  - semieng-funding
+  registry_id: mesh-optical-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: meshopticaltechnologies
+  open_roles: 29
+- name: Millennium Space Systems
+  website: https://www.millennium-space.com
+  hq: El Segundo, CA
+  sources:
+  - aerodefenseoutlook-2026
+  - rose-ieo-2025
+  registry_id: millennium-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS
+  open_roles: null
+- name: Miso Robotics
+  website: https://www.misorobotics.com
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: miso-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: miso-careers
+  open_roles: 6
+- name: Monarch Quantum
+  website: https://monarchquantum.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  registry_id: monarch-quantum
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Movandi
+  website: https://movandi.com
+  hq: Irvine, CA
+  sources:
+  - semieng-funding
+  registry_id: movandi
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: breezy
+    token: movandi
+  open_roles: 9
+- name: Natilus
+  website: https://www.natilus.co
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: natilus
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Neros
+  website: https://www.neros.tech
+  hq: El Segundo, CA
+  sources:
+  - lahardtech50-2025
+  - dotla-apex-2024
+  registry_id: neros
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: nerostechnologies
+  open_roles: 114
+- name: Neuron Industries
+  website: https://neuronindustries.com
+  hq: El Segundo, CA
+  sources:
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  - labj
+  registry_id: neuron-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Northwood Space
+  website: https://www.northwoodspace.io
+  hq: Torrance, CA
+  sources:
+  - lahardtech50-2025
+  - dotla-apex-2024
+  registry_id: northwood-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: NorthwoodSpace
+  open_roles: 64
+- name: NovaWurks
+  website: https://novawurks.com
+  hq: Long Beach, CA
+  sources:
+  - longbeach-gov
+  - web-search-summaries
+  registry_id: novawurks
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: NXT Robotics
+  website: https://nxtrobotics.com
+  hq: San Diego, CA
+  sources:
+  - ucsd-today-2019
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly security software and AI-as-a-service, with some sensor hardware.
+  ats: null
+  open_roles: null
+- name: Observable Space
+  website: https://observable.space
+  hq: Los Angeles, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: observable-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: observable-space
+  open_roles: 29
+- name: Obsidian Sensors
+  website: https://www.obsidiansensors.com
+  hq: San Diego, CA
+  sources:
+  - evonexus
+  registry_id: obsidian-sensors
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Occuspace
+  website: https://occuspace.io
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2025
+  - sd-hardtech-nextwave-2026
+  registry_id: occuspace
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: occuspace-inc
+  open_roles: 0
+- name: Odin Dynamics
+  website: null
+  hq: Los Angeles, CA
+  sources:
+  - dotla-apex-2024
+  registry_id: odin-dynamics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: odin-dynamics
+  open_roles: 19
+- name: Odys Aviation
+  website: https://odysaviation.com
+  hq: Long Beach, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: odys-aviation
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: odys-aviation
+  open_roles: null
+- name: Open Actuation
+  website: https://openactuation.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-robotics
+  - yc-la-hardtech
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  registry_id: open-actuation
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Orbital Operations
+  website: https://orbitalops.tech
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - longbeach-gov
+  registry_id: orbital-operations
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: orbitaloperations
+  open_roles: 5
+- name: Ornadyne
+  website: https://ornadyne.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aerospace
+  - yc-la-robotics
+  - yc-la-drones
+  registry_id: ornadyne
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Panasonic Avionics
+  website: https://www.panasonic.aero
+  hq: Irvine / Lake Forest, CA
+  sources:
+  - brighterfutures-oc
+  registry_id: panasonic-avionics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Parallel Systems
+  website: https://moveparallel.com
+  hq: Los Angeles, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: parallel-systems
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: parallel
+  open_roles: null
+- name: Parker Aerospace
+  website: https://www.parker.com/
+  hq: Cleveland, OH
+  sources:
+  - brighterfutures-oc
+  registry_id: parker-hannifin
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: parker
+  open_roles: null
+- name: Phase Four (Quantum Space)
+  website: https://phasefour.io
+  hq: Hawthorne, CA
+  sources:
+  - aerodefenseoutlook-2026
+  registry_id: phase-four-quantum-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: PINC Technologies
+  website: https://www.pinctech.com
+  hq: Pasadena, CA
+  sources:
+  - pinc-news
+  registry_id: pinc-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Planck Aerosystems
+  website: null
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: null
+  decision: closed
+  reason: Acquired by AeroVironment in 2022; not a company of its own.
+  ats: null
+  open_roles: null
+- name: Polaris Electro-Optics
+  website: https://polariseo.com
+  hq: Carlsbad, CA
+  sources:
+  - semieng-funding
+  registry_id: polaris-electro-optics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Prime Lightworks
+  website: null
+  hq: Culver City, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Likely dormant (lapsed domain, one-person team, no news since
+    the 2016 batch), but no closure record found, so not marked closed.
+  ats: null
+  open_roles: null
+- name: Qelzal
+  website: https://qelzal.com
+  hq: San Diego, CA
+  sources:
+  - evonexus
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Identity is settled (Kelzal, now spelled Qelzal, San Diego, founded
+    2014), but no news after about 2019-2020 was found and its site could not be read, so whether it is still active
+    is not established
+  ats: null
+  open_roles: null
+- name: Rainmaker
+  website: https://rainmaker.com
+  hq: El Segundo, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Sells cloud seeding as an operating service using its own drones.
+  ats:
+    type: ashby
+    token: rainmaker
+  open_roles: 25
+- name: Reflect Orbital
+  website: https://www.reflectorbital.com
+  hq: Hawthorne, CA
+  sources:
+  - lahardtech50-2025
+  - dotla-apex-2024
+  registry_id: reflect-orbital
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: reflect-orbital
+  open_roles: 16
+- name: Relativity Space
+  website: https://www.relativityspace.com
+  hq: Long Beach, CA
+  sources:
+  - yc-la-aviation-space
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - aerodefenseoutlook-2026
+  - rose-ieo-2025
+  - longbeach-gov
+  registry_id: relativity-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Robolink
+  website: https://robolink.com
+  hq: San Diego, CA
+  sources:
+  - ucsd-today-2019
+  registry_id: robolink
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rocket Lab
+  website: https://www.rocketlabcorp.com
+  hq: Long Beach, CA
+  sources:
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - aerodefenseoutlook-2026
+  - rose-ieo-2025
+  - dotla-apex-2024
+  - longbeach-gov
+  registry_id: rocket-lab
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: rocketlab
+  open_roles: 556
+- name: Rogerson Aircraft Corporation
+  website: https://rogerson.com
+  hq: Irvine, CA
+  sources:
+  - aerospace-coffee-irvine
+  registry_id: rogerson-aircraft-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Salient Motion
+  website: https://salientmotion.com
+  hq: Torrance, CA
+  sources:
+  - lahardtech50-2025
+  registry_id: salient-motion
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: salientmotion
+  open_roles: 17
+- name: Saphlux
+  website: https://www.saphlux.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: saphlux
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Seasats
+  website: https://seasats.com
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: seasats
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Semtech
+  website: https://www.semtech.com
+  hq: Camarillo, CA
+  sources:
+  - ocp-members
+  registry_id: semtech
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: semtech.wd1.myworkdayjobs.com/SemtechCareers
+  open_roles: null
+- name: Shield AI
+  website: https://www.shield.ai
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: shield-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: shield
+  open_roles: 686
+- name: Shinkei Systems
+  website: https://shinkei.systems
+  hq: El Segundo, CA
+  sources:
+  - yc-la-robotics
+  - lahardtech50-2025
+  registry_id: shinkei-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SiLC Technologies
+  website: https://www.silc.com
+  hq: Monrovia, CA
+  sources:
+  - labj
+  registry_id: silc-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Singularity
+  website: https://singularityus.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: singularity
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sinter
+  website: https://sinter.systems
+  hq: El Segundo, CA
+  sources:
+  - yc-la-mfg-robotics
+  - yc-la-industrials
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract plastics manufacturing service bureau (makes parts to customers' designs).
+  ats: null
+  open_roles: null
+- name: Skyryse
+  website: https://www.skyryse.com
+  hq: El Segundo, CA
+  sources:
+  - failory-el-segundo
+  registry_id: skyryse
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: skyryse
+  open_roles: 21
+- name: Sophia Space
+  website: https://sophia.space
+  hq: Pasadena, CA
+  sources:
+  - web-search-summaries
+  registry_id: sophia-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sorting Robotics
+  website: https://sortingrobotics.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-robotics
+  registry_id: sorting-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Source Photonics
+  website: https://www.sourcephotonics.com
+  hq: West Hills, CA
+  sources:
+  - labj
+  registry_id: source-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SpaceX
+  website: https://www.spacex.com/
+  hq: Starbase, TX
+  sources:
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - ssbcrack-moon-2026
+  - aerodefenseoutlook-2026
+  - rose-ieo-2025
+  - laedc-aerospace
+  - dotla-apex-2024
+  - longbeach-gov
+  registry_id: spacex
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: spacex
+  open_roles: null
+- name: Spectrove
+  website: https://spectrove.com
+  hq: null
+  sources:
+  - evonexus
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. EvoNexus is a Southern California incubator (San Diego and Irvine),
+    which suggests but does not establish a regional location.
+  ats: null
+  open_roles: null
+- name: SpinLaunch
+  website: https://www.spinlaunch.com
+  hq: Long Beach, CA
+  sources:
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - longbeach-gov
+  registry_id: spinlaunch
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Splash Inc.
+  website: https://splash9.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-drones
+  registry_id: splash-inc
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SubSeaSail
+  website: https://subseasail.com
+  hq: San Diego, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: subseasail
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SuperMem
+  website: null
+  hq: San Diego, CA
+  sources:
+  - evonexus
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Probably a small San Diego MRAM chip developer, but there is
+    no first-party source and no website, so neither identity nor activity is established.
+  ats: null
+  open_roles: null
+- name: Syntiant
+  website: https://www.syntiant.com
+  hq: Irvine, CA
+  sources:
+  - evonexus
+  registry_id: syntiant
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: syntiant
+  open_roles: 9
+- name: Tag-N-Trac
+  website: https://tagntrac.ai
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  registry_id: tag-n-trac
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Talyn Air
+  website: https://talyn.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: null
+  decision: duplicate
+  reason: Acquired by Ampaire in 2023, which is already in the registry.
+  ats: null
+  open_roles: null
+- name: TetraVue
+  website: https://tetravue.com
+  hq: Vista, CA
+  sources:
+  - evonexus
+  registry_id: null
+  decision: closed
+  reason: Dealroom's profile text calls it deadpooled and its site fails; no closure notice found.
+  ats: null
+  open_roles: null
+- name: ThereCraft
+  website: https://therecraft.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-drones
+  registry_id: null
+  decision: not-in-scope
+  reason: Sells uncrewed flight services; no hardware sale shown.
+  ats: null
+  open_roles: null
+- name: Toofon
+  website: null
+  hq: Pasadena, CA
+  sources:
+  - caltech-local-startups
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Could not be identified.
+  ats: null
+  open_roles: null
+- name: Totum Labs
+  website: https://totumlabs.com
+  hq: San Diego, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. Sources still disagree on the Ceva acquisition and the domain
+    is dead, so status (active, acquired or closed) is not established.
+  ats: null
+  open_roles: null
+- name: TransAstra
+  website: https://www.transastra.com
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  registry_id: transastra
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Trident IoT
+  website: https://tridentiot.com
+  hq: Carlsbad, CA
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  registry_id: trident-iot
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: True Anomaly
+  website: https://www.trueanomaly.space
+  hq: Centennial, CO
+  sources:
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - rose-ieo-2025
+  - longbeach-gov
+  registry_id: true-anomaly
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: trueanomalyinc
+  open_roles: null
+- name: Turion Space
+  website: https://www.turionspace.com
+  hq: Irvine, CA
+  sources:
+  - yc-la-aviation-space
+  - echai-la-aerospace
+  - aerospace-coffee-irvine
+  registry_id: turion-space
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: turion-space
+  open_roles: 18
+- name: Varda Space Industries
+  website: https://www.varda.com
+  hq: El Segundo, CA
+  sources:
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - failory-el-segundo
+  registry_id: varda-space-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Vast
+  website: https://www.vastspace.com
+  hq: Long Beach, CA
+  sources:
+  - labj-creating-space-beach
+  - labj-voyaging-space-beach
+  - echai-la-aerospace
+  - lahardtech50-2025
+  - ssbcrack-moon-2026
+  - aerodefenseoutlook-2026
+  - rose-ieo-2025
+  - longbeach-gov
+  registry_id: vast
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: vast
+  open_roles: 205
+- name: VegaSemi
+  website: https://vegasemi.com
+  hq: San Diego, CA
+  sources:
+  - evonexus
+  registry_id: null
+  decision: not-in-scope
+  reason: Licenses silicon IP and design flows rather than selling chips.
+  ats: null
+  open_roles: null
+- name: Viasat
+  website: https://www.viasat.com
+  hq: Carlsbad, CA
+  sources:
+  - echai-sd-deeptech
+  registry_id: viasat
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats:
+    type: icims
+    token: viasat
+  open_roles: null
+- name: Virgin Galactic
+  website: https://www.virgingalactic.com
+  hq: Tustin, CA
+  sources:
+  - brighterfutures-oc
+  registry_id: virgin-galactic
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Virtium
+  website: https://www.virtium.com
+  hq: Rancho Santa Margarita, CA
+  sources:
+  - ocp-members
+  registry_id: virtium
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Voyager Technologies
+  website: https://voyagertechnologies.com
+  hq: Denver, CO
+  sources:
+  - labj-voyaging-space-beach
+  - ssbcrack-moon-2026
+  registry_id: voyager-technologies
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: voyagertechnologiesinc
+  open_roles: null
+- name: Wardstone
+  website: https://wardstone.space
+  hq: Los Angeles, CA
+  sources:
+  - yc-la-aviation-space
+  - yc-la-aerospace
+  registry_id: wardstone
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Xidas
+  website: https://www.xidas.com
+  hq: Irvine, CA
+  sources:
+  - uci-startups
+  - evonexus
+  registry_id: null
+  decision: null
+  reason: Identity check found nothing conclusive. No news after 2020 and the domain no longer resolves; likely
+    dormant or closed, but no closure record found.
+  ats: null
+  open_roles: null
+- name: Yondu
+  website: https://yondu.ai
+  hq: Gardena, CA
+  sources:
+  - yc-la-robotics
+  registry_id: yondu
+  decision: registry
+  reason: 'Proposed in proposals-05-southern-california-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Zephyr Fusion
+  website: https://zephyrfusion.com
+  hq: San Diego, CA
+  sources:
+  - web-search-summaries
+  registry_id: zephyr-fusion
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+excluded:
+- name: Boeing
+  sources:
+  - labj-voyaging-space-beach
+  - ssbcrack-moon-2026
+  - rose-ieo-2025
+  - laedc-aerospace
+  - longbeach-gov
+  reason: Headquartered in Arlington, VA; El Segundo and Long Beach are sites.
+- name: GKN Aerospace
+  sources:
+  - brighterfutures-oc
+  reason: Part of GKN Aerospace (Melrose Industries, UK); San Diego and Garden Grove are plants.
+- name: Ixana
+  sources:
+  - evonexus
+  reason: Headquartered in West Lafayette, IN (its own contact page).
+- name: L3Harris (Aerojet Rocketdyne)
+  sources:
+  - ssbcrack-moon-2026
+  - rose-ieo-2025
+  - laedc-aerospace
+  reason: Headquartered in Melbourne, FL; its Southern California propulsion operation is one site.
+- name: Meggitt Defense Systems
+  sources:
+  - aerospace-coffee-irvine
+  reason: A division of Parker Hannifin (Cleveland, OH; in the registry); Irvine is one site.
+- name: Northrop Grumman
+  sources:
+  - ssbcrack-moon-2026
+  - rose-ieo-2025
+  - laedc-aerospace
+  reason: Headquartered in Falls Church, VA; its Southern California operations are sites.
+- name: Polytenna
+  sources:
+  - evonexus
+  reason: Headquartered in Saskatoon, SK, Canada (its own contact page).
+- name: Precision Castparts Corp. (PCC)
+  sources:
+  - brighterfutures-oc
+  reason: Headquartered in Lake Oswego, OR (listed in the Pacific Northwest adjacent list); Garden Grove is one
+    site.
+- name: QuantalRF
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  reason: Headquartered in Zurich, Switzerland; Newport Beach is its US office.
+- name: Shur-Lok Company
+  sources:
+  - aerospace-coffee-irvine
+  reason: Part of Precision Castparts (Lake Oswego, OR; listed in the Pacific Northwest adjacent list); Irvine is
+    one site.
+- name: Terran Orbital (incl. Tyvak)
+  sources:
+  - aerospace-coffee-irvine
+  - web-search-summaries
+  reason: Headquartered in Boca Raton, FL, outside the region; no main site in the region found.
+- name: Wiliot
+  sources:
+  - sd-hardtech50-2026
+  - sd-hardtech50-2025
+  reason: Headquartered in Israel; a San Diego site was not confirmed.

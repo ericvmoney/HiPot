@@ -1,0 +1,1830 @@
+# Reference list for the Pacific Northwest (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: pacific-northwest-adjacent
+built: '2026-11-25'
+sources:
+- id: wa-space-summit-2023
+  name: Washington State Space Summit trade show participants (Sen. Cantwell office PDF, 2023)
+  url: https://www.cantwell.senate.gov/imo/media/doc/trade_show_participants3.pdf
+  note: robots.txt returned 410 (none); 20 names, PDF text extracted locally
+- id: choosewa-farnborough-2026
+  name: 'Choose Washington (WA Commerce): 2026 Farnborough International Airshow delegation'
+  url: https://choosewashingtonstate.com/?p=33378
+- id: choosewa-paris-2025
+  name: 'Choose Washington (WA Commerce): Paris Air Show 2025 delegation'
+  url: https://choosewashingtonstate.com/paris-airshow-2025/
+- id: choosewa-paris-2023
+  name: 'Choose Washington (WA Commerce): Paris Air Show 2023 delegation'
+  url: https://choosewashingtonstate.com/?p=28802
+  note: includes Toray, GKN, Boeing named as Pierce County suppliers in the text
+- id: choosewa-iaif-2022
+  name: 'Choose Washington (WA Commerce): International Aerospace Innovation Forum 2022 delegation'
+  url: https://choosewashingtonstate.com/?p=26952
+- id: space-city-wa
+  name: Alliance Velocity 'Space City' list of Washington space companies (Google Sites, 2026)
+  url: https://sites.google.com/alliancevelocity.com/alliancevelocity/space-city
+  note: 61 companies listed; services, software, investors, research skipped
+- id: yc-seattle
+  name: 'Y Combinator directory: Seattle location page and aerospace/seattle industry page'
+  url: https://www.ycombinator.com/companies/location/seattle
+  note: also /companies/industry/aerospace/seattle; location page showed 50 of 67 (rest load by script); robotics/seattle
+    had 0, hardware/seattle had no in-scope firms; /companies/location/portland had none in scope
+- id: fundraiseinsider-seattle
+  name: 'Fundraise Insider: recently funded Seattle startups (2026)'
+  url: https://fundraiseinsider.com/blog/recently-funded-startups-seattle/
+  note: 166 unique rows; filtered to in-scope hardware
+- id: growthlist-seattle
+  name: 'Growth List: funded Seattle startups 2026'
+  url: https://growthlist.co/seattle-startups/
+  note: 100 rows; no cities shown, Seattle per page title
+- id: comotion-hardware
+  name: UW CoMotion Labs hardware incubator startup listing (pages 1-4) and profiles
+  url: https://comotion.uw.edu/startup_categories/startup-incubator-hardware/
+  note: 31 names; profiles read for 7; medical and consumer names skipped
+- id: sf-ouas-2024
+  name: 'Silicon Florist: Oregon UAS Accelerator first class (2024-05-14)'
+  url: https://siliconflorist.com/2024/05/14/oregon-uas-accelerator-thats-drones-to-you-and-me-announces-first-class/
+  note: names and cities only, no product lines
+- id: sf-ouas-2025-12
+  name: 'Silicon Florist: Oregon UAS Accelerator December 2025 cohort (34 startups)'
+  url: https://siliconflorist.com/?p=72516
+  note: state only, no city
+- id: sf-ouas-2026-fall
+  name: 'Silicon Florist: Oregon UAS Accelerator fall 2026 cohort (17 startups)'
+  url: https://siliconflorist.com/2026/08/20/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort/
+- id: opb-pendleton-2026
+  name: 'OPB: Pendleton drone testing and manufacturing (2026-05-12)'
+  url: https://www.opb.org/article/2026/05/12/pendleton-oregon-drone-testing-manufacturing/
+- id: nwaero-oregon
+  name: 'Northwest Aerospace News: Oregon''s Aerospace Industry (c. Jan 2024)'
+  url: https://northwestaerospacenews.com/oregons-aerospace-industry/
+  note: names major employers only; no cities
+- id: idaho-commerce-mfg
+  name: 'Idaho Commerce key industries: manufacturing'
+  url: https://commerce.idaho.gov/key-industries/manufacturing/
+  note: the aerospace page https://commerce.idaho.gov/key-industries/aerospace/ names no companies
+- id: idaho-web-search
+  name: Web search for Idaho aerospace makers, confirmed on company home pages
+  url: https://atcmanufacturing.com/
+  note: Tamarack named by directory snippets (D&B, Manta); confirmed at https://www.tamarackaero.com/
+- id: oregon-chips-awards
+  name: Oregon CHIPS Program awardees FY2024-2025 (data.oregon.gov dataset rpej-c5gw)
+  url: https://data.oregon.gov/api/v3/views/rpej-c5gw/export.csv?accessType=DOWNLOAD
+  note: 11 awardees; Intel, HP, Lam, Analog Devices, Microchip, ATI and Stratacache skipped (incumbents headquartered
+    outside the region)
+- id: wa-commerce-mfg-awards-2026
+  name: 'Washington Commerce: $1 million for innovative business and manufacturing expansion (2026-08-21)'
+  url: https://www.commerce.wa.gov/commerce-awards-1-million-to-encourage-innovative-business-and-manufacturing-expansion/
+  note: WA Commerce has no semiconductor or advanced-manufacturing sector page that names companies (key-sectors
+    page links out to choosewashingtonstate.com, which lists no companies); a CREDC release named only Analog Devices
+- id: idaho-commerce-semis
+  name: 'Idaho Commerce key industries: semiconductor, manufacturing and technology pages'
+  url: https://commerce.idaho.gov/key-industries/semiconductor/
+  note: also /key-industries/manufacturing/ and /technology/; Micron (Boise HQ but far over 5,000 people), onsemi
+    and Plexus skipped
+- id: fast-engine-partners
+  name: FAST Regional Innovation Engine (Oregon semiconductor coalition) partner list
+  url: https://fast-engine.org/fast-partners/
+  note: 32 industry and startup partners; several small names could not be identified (GLX Power, Quantum Metrology,
+    Microflow CVO, nexTC, Phosio, Tvavium)
+- id: cormic-tech-hub
+  name: Corvallis Microfluidics Tech Hub (CorMic) partner logos
+  url: https://cormictechhub.org/
+  note: both also on other sources; most startup partners are out of region, biotech or unidentified
+- id: osu-silicon-forest-story
+  name: 'Oregon State Engineering: Standing tall in the Silicon Forest'
+  url: https://engineering.oregonstate.edu/standing-tall-silicon-forest
+- id: wikipedia-silicon-forest
+  name: 'Wikipedia: Silicon Forest (current companies list)'
+  url: https://en.wikipedia.org/wiki/Silicon_Forest
+  note: most listed names are software firms or incumbents headquartered elsewhere
+- id: semieng-startup-funding
+  name: Semiconductor Engineering quarterly startup funding roundups, 2024 Q2 to 2026 Q3
+  url: https://semiengineering.com/startup-funding-q1-2026/
+  note: read Q2-Q4 2024, Q1-Q4 2025, Q1-Q3 2026 (Q1 2024 URL 404); many table rows give only 'USA', so other PNW
+    companies may be missed
+- id: unite-ai-mueon
+  name: 'Unite.AI: Mueon raises $65M Series A (2026-10)'
+  url: https://unite.ai/mueon-raises-65m-series-a-to-move-cubelets-toward-production-readiness
+- id: uw-comotion-june-2025
+  name: UW CoMotion spinoff news roundup, June 2025
+  url: https://comotion.uw.edu/blog/spinoff-news-roundup-june-2025
+  note: CoMotion startup directory loads by script and could not be read
+- id: search-pnw-semis
+  name: 'Web search: Pacific Northwest semiconductor and photonics startups (company site checked)'
+  url: https://www.nlmphotonics.com/
+  note: NLM Photonics found in search results; HQ and product taken from its own site
+- id: spokesman-critical-minerals-2025
+  name: 'Spokesman-Review: US government''s critical-mineral push (2025-10-12)'
+  url: https://www.spokesman.com/stories/2025/oct/12/mine-baby-mine-us-governments-critical-mineral-cru
+  note: Kilgore and CuMo projects named without owners; CuMo owner taken from search below
+- id: spokane-journal-2014
+  name: 'Spokane Journal of Business: public company landscape changes (2014-01-16)'
+  url: https://www.spokanejournal.com/local-news/public-company-landscape-changes/
+  note: old article; Itron (grid, clean tech) and Potlatch (wood) skipped
+- id: search-idaho-mining
+  name: Web search result summaries on Idaho mines and projects (Idaho Geological Survey 2025 mining review slides,
+    Stoel Rives presentation, SEC filings)
+  url: https://idahogeology.org/pub/Staff_Reports/S-26-01_suppl.pdf
+  note: the underlying PDFs could not be read (13.5 MB over the fetch limit; others returned as unreadable binary),
+    so these rest on search summaries only; check before use
+- id: scout-consistency-addition
+  name: Scout addition for consistency with other regions (large incumbents with a regional headquarters are kept)
+  url: null
+  note: Added by the scout; the fact pass checks it on the company's own site.
+companies:
+- name: AeroBond Secure Systems
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: AeroMECH Incorporated
+  website: https://aeromechinc.com
+  hq: Mukilteo, WA
+  sources:
+  - choosewa-paris-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly engineering, certification and installation services.
+  ats: null
+  open_roles: null
+- name: AeroTEC
+  website: https://www.aerotec.com
+  hq: Seattle, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Aircraft development, certification, engineering, flight test, modification and
+    MRO services, plus AS9100D manufacturing and wind-tunnel models.'
+  ats:
+    type: paycom
+    token: A299825284FB2CE8AE4F5A9ABA4B21DE
+  open_roles: null
+- name: AGC Electronics America
+  website: https://www.agc.com
+  hq: Hillsboro, OR
+  sources:
+  - oregon-chips-awards
+  registry_id: agc-electronics-america
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Aghawk Dynamics
+  website: null
+  hq: Wenatchee, WA
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: Known only from a chamber listing; identity not established.
+  ats: null
+  open_roles: null
+- name: AheadComputing
+  website: https://www.aheadcomputing.com
+  hq: Beaverton, OR
+  sources:
+  - semieng-startup-funding
+  registry_id: null
+  decision: null
+  reason: Designs CPU cores; whether it sells chips or licenses designs is not established.
+  ats: null
+  open_roles: null
+- name: AIRA USA
+  website: https://aira.site
+  hq: Portland, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: null
+  decision: null
+  reason: Sells robots as a service; whether it builds its own robots, and its tie to a Sheffield company, not established.
+  ats: null
+  open_roles: null
+- name: AIRSHIP Technologies Group
+  website: https://airshiptg.com
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: airship-technologies-group
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Amazon Project Kuiper (Amazon Leo)
+  website: https://www.aboutamazon.com/what-we-do/devices-services/project-kuiper
+  hq: Seattle, WA
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  registry_id: amazon-project-kuiper-amazon-leo
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: American Semiconductor
+  website: https://www.americansemi.com
+  hq: Boise, ID
+  sources:
+  - idaho-commerce-semis
+  registry_id: american-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Amorphyx
+  website: https://www.amorphyx.com
+  hq: Corvallis, OR
+  sources:
+  - fast-engine-partners
+  registry_id: null
+  decision: null
+  reason: May license its thin-film technology rather than make devices; product not established.
+  ats: null
+  open_roles: null
+- name: Applied Dexterity
+  website: https://www.applieddexterity.com
+  hq: Seattle, WA
+  sources:
+  - comotion-hardware
+  registry_id: null
+  decision: closed
+  reason: 'Closed: site gone: applieddexterity.com 301-redirects to an unrelated video production firm; closure
+    inferred from site, no news read'
+  ats: null
+  open_roles: null
+- name: AstroSweep
+  website: https://astro-sweep.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Early stage; whether it builds hardware is not established.
+  ats: null
+  open_roles: null
+- name: ATC Manufacturing
+  website: https://atcmanufacturing.com
+  hq: Post Falls, ID
+  sources:
+  - idaho-web-search
+  registry_id: atc-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Atlas AI
+  website: https://fly-atlas.com
+  hq: Tigard, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Optical (camera and machine-learning) aircraft-detection system for general-aviation
+    pilots that runs on an iPhone mounted in the cockpit; no certifie'
+  ats: null
+  open_roles: null
+- name: Atlas Technologies
+  website: https://www.atlasuhv.com
+  hq: Port Townsend, WA
+  sources:
+  - wa-commerce-mfg-awards-2026
+  registry_id: atlas-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Aurora Air
+  website: null
+  hq: WA
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Autev
+  website: https://www.autev.com
+  hq: Seattle, WA
+  sources:
+  - comotion-hardware
+  registry_id: null
+  decision: null
+  reason: Its site is template text; identity and status not established.
+  ats: null
+  open_roles: null
+- name: AvtechTyee
+  website: https://avtechtyee.com
+  hq: Everett, WA
+  sources:
+  - choosewa-paris-2023
+  registry_id: avtechtyee
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Bantam Aero
+  website: https://bantam.aero
+  hq: Bingen, WA
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: bantam-aero
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Blue Origin
+  website: https://www.blueorigin.com
+  hq: Kent, WA
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  registry_id: blue-origin
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Bridgeways
+  website: https://bridgeways.org
+  hq: Everett, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract manufacturing services (die-cutting, bonding) run as a social enterprise.
+  ats: null
+  open_roles: null
+- name: BRINC Drones
+  website: https://www.brincdrones.com
+  hq: Seattle, WA
+  sources:
+  - fundraiseinsider-seattle
+  - growthlist-seattle
+  registry_id: brinc-drones
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: brinc
+  open_roles: 27
+- name: Bunker Hill Mining
+  website: https://bunkerhillmining.com
+  hq: Kellogg, ID
+  sources:
+  - search-idaho-mining
+  registry_id: bunker-hill-mining
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Carbon Robotics
+  website: https://www.carbonrobotics.com
+  hq: Seattle, WA
+  sources:
+  - fundraiseinsider-seattle
+  - growthlist-seattle
+  registry_id: carbon-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: carbon-robotics
+  open_roles: 4
+- name: Cascade Systems Technology
+  website: null
+  hq: Portland, OR
+  sources:
+  - opb-pendleton-2026
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: ChEmpower
+  website: null
+  hq: Portland, OR
+  sources:
+  - semieng-startup-funding
+  registry_id: chempower
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Chinook Enterprises
+  website: null
+  hq: Mount Vernon, WA
+  sources:
+  - choosewa-iaif-2022
+  registry_id: null
+  decision: not-in-scope
+  reason: Build-to-print aerospace parts and assembly from a nonprofit social enterprise.
+  ats: null
+  open_roles: null
+- name: Cowboy Space
+  website: https://cowboyspace.com
+  hq: San Carlos, CA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Aetherflux (Cowboy Space Corporation), already in the registry (Bay Area adjacent list).
+  ats:
+    type: ashby
+    token: cowboyspace
+  open_roles: 66
+- name: Data Blanket
+  website: https://www.datablanket.com
+  hq: Bellevue, WA
+  sources:
+  - fundraiseinsider-seattle
+  registry_id: data-blanket
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Davis Consulting LLC
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found and the name suggests a consulting firm; identity not established.
+  ats: null
+  open_roles: null
+- name: Deako
+  website: https://www.deako.com
+  hq: Seattle, WA
+  sources:
+  - yc-seattle
+  registry_id: deako
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: breezy
+    token: deako
+  open_roles: 2
+- name: DIFly
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Droning On
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found and it may be a services firm; identity not established.
+  ats: null
+  open_roles: null
+- name: Dylan Aerospace
+  website: https://dylanaerospace.com
+  hq: Auburn, WA
+  sources:
+  - choosewa-farnborough-2026
+  registry_id: null
+  decision: not-in-scope
+  reason: A build-to-print machining supplier.
+  ats: null
+  open_roles: null
+- name: Eclipse Space
+  website: https://eclipse.space
+  hq: Redmond, WA
+  sources:
+  - space-city-wa
+  registry_id: eclipse-space
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: eclipsespace
+  open_roles: 15
+- name: EIVIE Corp.
+  website: https://eivie.us
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: eivie-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Erickson
+  website: https://www.ericksoninc.com
+  hq: Central Point, OR
+  sources:
+  - nwaero-oregon
+  registry_id: erickson
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Ether Form
+  website: https://etherform.com
+  hq: McMinnville, OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: ether-form
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Evolved Robotics
+  website: https://www.evolvedrobotics.ai
+  hq: Seattle, WA
+  sources:
+  - comotion-hardware
+  registry_id: evolved-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Firefly Aerospace
+  website: https://fireflyspace.com/
+  hq: Cedar Park, TX
+  sources:
+  - space-city-wa
+  registry_id: firefly-aerospace
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: fireflyspace
+  open_roles: null
+- name: General Plastics
+  website: https://www.generalplastics.com
+  hq: Tacoma, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: general-plastics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: paylocity
+    token: 9d4c691e-63df-44c4-97b2-6a465dd66437
+  open_roles: null
+- name: General Robotics
+  website: https://www.general-robotics.com/
+  hq: Boston, MA
+  sources:
+  - fundraiseinsider-seattle
+  registry_id: general-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: ashby
+    token: generalrobotics
+  open_roles: null
+- name: GHKN Engineering
+  website: https://ghknllc.com
+  hq: Kirkland, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: May be an engineering R&D services firm; product not established.
+  ats: null
+  open_roles: null
+- name: GKN Aerospace (Tacoma)
+  website: https://www.gknaerospace.com
+  hq: Pierce County
+  sources:
+  - choosewa-paris-2023
+  registry_id: gkn-aerospace-tacoma
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Gravitics
+  website: https://www.gravitics.com
+  hq: Seattle, WA
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  - fundraiseinsider-seattle
+  registry_id: gravitics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: graviticsinc
+  open_roles: 19
+- name: gravityLab
+  website: https://gravitylabspace.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: gravitylab
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Half Rock Avionics
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Hecla Mining
+  website: https://www.hecla.com
+  hq: Coeur d'Alene, ID
+  sources:
+  - spokane-journal-2014
+  - search-idaho-mining
+  registry_id: hecla-mining
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 504a8d7d-d303-417f-b3a8-c052ad910668
+  open_roles: null
+- name: Hobart Machined Products
+  website: https://hobartmachined.com
+  hq: Hobart, WA
+  sources:
+  - choosewa-farnborough-2026
+  registry_id: null
+  decision: not-in-scope
+  reason: A build-to-print CNC machine shop.
+  ats: null
+  open_roles: null
+- name: Hover, Inc.
+  website: null
+  hq: Seattle, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats:
+    type: greenhouse
+    token: hover
+  open_roles: 13
+- name: Hubble Network
+  website: https://hubble.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  - growthlist-seattle
+  registry_id: hubble-network
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: hubblenetwork
+  open_roles: 17
+- name: HumanKind Homes
+  website: https://humankindhomes.com
+  hq: Scappoose, OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly building materials and construction; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Idaho Copper Corp
+  website: null
+  hq: Boise, ID
+  sources:
+  - search-idaho-mining
+  registry_id: idaho-copper-corp
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Idaho Strategic Resources
+  website: https://idahostrategic.com
+  hq: Coeur d'Alene, ID
+  sources:
+  - spokesman-critical-minerals-2025
+  - search-idaho-mining
+  registry_id: idaho-strategic-resources
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Inpria
+  website: https://www.inpria.com
+  hq: Corvallis, OR
+  sources:
+  - fast-engine-partners
+  - cormic-tech-hub
+  - osu-silicon-forest-story
+  registry_id: inpria
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Insitu
+  website: https://www.insitu.com
+  hq: Bingen, WA
+  sources:
+  - nwaero-oregon
+  registry_id: insitu
+  decision: registry
+  reason: null
+  ats:
+    type: workday
+    token: insitu
+  open_roles: null
+- name: Integrated Technologies (INTEC)
+  website: null
+  hq: Everett, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Composite materials testing (ISO/IEC 17025 accredited) and composite test specimen
+    and panel manufacturing.'
+  ats: null
+  open_roles: null
+- name: Interlune
+  website: https://www.interlune.space
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: interlune
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Janicki Industries
+  website: https://www.janicki.com
+  hq: Sedro-Woolley, WA
+  sources:
+  - space-city-wa
+  registry_id: janicki-industries
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting2.ultipro.com/JAN1000JANI/JobBoard/693b35f4-c147-4487-97c3-600a31f4816b
+  open_roles: null
+- name: Jetoptera
+  website: https://jetoptera.com
+  hq: Edmonds, WA
+  sources:
+  - choosewa-paris-2025
+  registry_id: jetoptera
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Jireh Semiconductor
+  website: https://aosmd.com/jireh-semiconductor
+  hq: Hillsboro, OR
+  sources:
+  - fast-engine-partners
+  registry_id: jireh-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: JST Manufacturing
+  website: https://www.jstmfg.com
+  hq: Meridian, ID
+  sources:
+  - idaho-commerce-semis
+  registry_id: jst-manufacturing
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Juno Propulsion
+  website: https://junopropulsion.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: juno-propulsion
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: JX Crystals
+  website: https://jxcrystals.com
+  hq: Issaquah, WA
+  sources:
+  - space-city-wa
+  registry_id: jx-crystals
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kairos Sensors
+  website: https://www.kairossensors.com
+  hq: Adair Village, OR
+  sources:
+  - fast-engine-partners
+  registry_id: kairos-sensors
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kapta Space
+  website: https://kaptaspace.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: kapta-space
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: kapta-space
+  open_roles: 9
+- name: Key Tronic
+  website: https://www.keytronic.com
+  hq: Spokane Valley, WA
+  sources:
+  - spokane-journal-2014
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract electronics manufacturing services for others' products.
+  ats:
+    type: paycom
+    token: E743E40FDD9D861C31A7801CBB5685EE
+  open_roles: null
+- name: Krishibotics
+  website: https://krishibotics.com
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: krishibotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Kymeta
+  website: https://www.kymetacorp.com
+  hq: Redmond, WA
+  sources:
+  - space-city-wa
+  registry_id: kymeta
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: jobvite
+    token: kymetacorp
+  open_roles: null
+- name: Lattice Semiconductor
+  website: https://www.latticesemi.com
+  hq: Hillsboro, OR
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: lattice-semiconductor
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: workday
+    token: latticesemi.wd5.myworkdayjobs.com/latticesemiconductorscareers
+  open_roles: null
+- name: LEAP Photonics
+  website: https://www.leaphotonics.com/
+  hq: Seattle, WA
+  sources:
+  - uw-comotion-june-2025
+  registry_id: leap-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: LiftPort
+  website: https://liftport.com
+  hq: Tacoma, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Concept stage; no hardware product established.
+  ats: null
+  open_roles: null
+- name: Lorica Technologies
+  website: https://loricatechnologies.com
+  hq: Ashland, OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: lorica-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Lumotive
+  website: https://www.lumotive.com
+  hq: Redmond, WA
+  sources:
+  - semieng-startup-funding
+  registry_id: lumotive
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: lumotive
+  open_roles: 9
+- name: magniX
+  website: https://www.magnix.aero
+  hq: Everett, WA
+  sources:
+  - wa-space-summit-2023
+  - choosewa-paris-2023
+  registry_id: magnix
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Maren-go Solutions Corporation
+  website: https://maren-go.com
+  hq: Vancouver, WA
+  sources:
+  - choosewa-paris-2025
+  registry_id: maren-go-solutions-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: MAV Unlimited
+  website: https://mav-unlimited.com
+  hq: OR per cohort listing
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: Location (Oregon or Cambridge, MA) and business model not established.
+  ats: null
+  open_roles: null
+- name: Micron Technology
+  website: https://www.micron.com
+  hq: Boise, ID
+  sources:
+  - scout-consistency-addition
+  registry_id: micron-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: micron.wd1.myworkdayjobs.com/en-US/External
+  open_roles: null
+- name: Mid-Mountain Materials
+  website: https://mid-mountain.com
+  hq: Seattle, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  registry_id: mid-mountain-materials
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Mueon
+  website: https://www.mueon.com
+  hq: Portland, OR
+  sources:
+  - unite-ai-mueon
+  registry_id: mueon
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nanomand
+  website: https://www.nanomand.com
+  hq: Corvallis, OR
+  sources:
+  - fast-engine-partners
+  registry_id: nanomand
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Needltail
+  website: https://needltail.com
+  hq: Portland, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: null
+  decision: null
+  reason: Location not established (Portland per a cohort article; engineering and production in Ohio per its site).
+  ats: null
+  open_roles: null
+- name: New Frontier Aerospace
+  website: https://nfaero.com
+  hq: 'unclear: offices in Seattle, WA, San Francisco, CA, Shreveport, LA and Dayton, OH'
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Headquarters not established (offices in Seattle, San Francisco, Shreveport and Dayton).
+  ats: null
+  open_roles: null
+- name: Nimbus Aerospace
+  website: https://nimbusaerospace.com
+  hq: Seattle, WA
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: Its site gives a Singapore address; location not established.
+  ats: null
+  open_roles: null
+- name: NLM Photonics
+  website: https://www.nlmphotonics.com
+  hq: Seattle, WA
+  sources:
+  - search-pnw-semis
+  registry_id: nlm-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Off Planet Research
+  website: https://offplanetresearch.com
+  hq: Everett, WA
+  sources:
+  - wa-space-summit-2023
+  - choosewa-iaif-2022
+  - space-city-wa
+  registry_id: off-planet-research
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Orbital Robotics
+  website: https://orbital-robots.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Its site shows only a title; product not established.
+  ats:
+    type: ashby
+    token: orbital-robotics
+  open_roles: 4
+- name: Orchard Robotics
+  website: https://www.orchard.ai
+  hq: Seattle, WA
+  sources:
+  - fundraiseinsider-seattle
+  - growthlist-seattle
+  registry_id: orchard-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: orchard
+  open_roles: 27
+- name: Oregon UAV
+  website: null
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: Its domain was guessed and is not linked from any source; identity not established.
+  ats: null
+  open_roles: null
+- name: Osprey cUAS
+  website: https://ospreycuas.com
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: osprey-cuas
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Overland AI
+  website: https://www.overland.ai
+  hq: Seattle, WA
+  sources:
+  - fundraiseinsider-seattle
+  - growthlist-seattle
+  registry_id: overland-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: overland-ai
+  open_roles: 56
+- name: Pachyderm Industries
+  website: https://pachydermindustries.com
+  hq: WA
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: The linked site shows tree-care tools and an Iowa phone number; identity not established.
+  ats: null
+  open_roles: null
+- name: Panthalassa
+  website: https://panthalassa.com
+  hq: Portland, OR
+  sources:
+  - wa-commerce-mfg-awards-2026
+  registry_id: panthalassa
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: panthalassa
+  open_roles: null
+- name: ParaUAS
+  website: https://parauas.com
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: parauas
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Pathfinder Manufacturing
+  website: https://pathfinder-mfg.org
+  hq: Everett, WA
+  sources:
+  - choosewa-iaif-2022
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract CNC machining and fabrication shop.
+  ats: null
+  open_roles: null
+- name: Perpetua Resources
+  website: https://perpetuaresources.com
+  hq: Boise, ID
+  sources:
+  - spokesman-critical-minerals-2025
+  - search-idaho-mining
+  registry_id: perpetua-resources
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: paylocity
+    token: 500ecd97-3dfb-42c8-b995-8af3be95fcc1
+  open_roles: null
+- name: Phenix Solutions
+  website: https://phenixuas.com
+  hq: McMinnville, OR
+  sources:
+  - sf-ouas-2024
+  registry_id: phenix-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Phoseon Technology
+  website: https://www.phoseon.com
+  hq: Hillsboro, OR
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: phoseon-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Pioneer Industries
+  website: https://pioneerhumanservices.org
+  hq: Seattle, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2023
+  registry_id: null
+  decision: not-in-scope
+  reason: Build-to-print aerospace parts from a nonprofit social enterprise (Pioneer Human Services).
+  ats: null
+  open_roles: null
+- name: Planar Systems
+  website: https://www.planar.com
+  hq: Hillsboro, OR
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: planar-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workable
+    token: planar-systems
+  open_roles: 26
+- name: Planet Enterprises
+  website: https://planet.enterprises
+  hq: Gig Harbor, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Portal Space Systems
+  website: https://www.portalsystems.space
+  hq: Bothell, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - space-city-wa
+  - fundraiseinsider-seattle
+  registry_id: portal-space-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: portalspacesystems
+  open_roles: 25
+- name: PowerLattice
+  website: null
+  hq: Vancouver, WA
+  sources:
+  - semieng-startup-funding
+  registry_id: powerlattice
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: powerlattice
+  open_roles: 7
+- name: PowerLight Technologies
+  website: https://powerlighttech.com
+  hq: Kent, WA
+  sources:
+  - space-city-wa
+  registry_id: powerlight-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Precision Castparts
+  website: https://www.precast.com
+  hq: Lake Oswego, OR
+  sources:
+  - nwaero-oregon
+  registry_id: precision-castparts
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Pulse Space
+  website: https://pulsespace.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: null
+  reason: Its site shows only a title; product not established.
+  ats: null
+  open_roles: null
+- name: Radian Aerospace
+  website: https://www.radianaerospace.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: radian-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Radical
+  website: https://radicalaero.com
+  hq: Seattle, WA
+  sources:
+  - yc-seattle
+  registry_id: radical
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rangair
+  website: https://rangair.com
+  hq: Beaverton, OR
+  sources:
+  - sf-ouas-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Reach Space Technologies
+  website: https://reachspace.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: reach-space-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Red Barn Robotics
+  website: https://redbarnrobotics.com
+  hq: Tukwila, WA
+  sources:
+  - yc-seattle
+  registry_id: red-barn-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ReliaSystems
+  website: https://relia-systems.com
+  hq: Portland, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: reliasystems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Renton Coil Spring Company
+  website: https://rentoncoilspring.com
+  hq: Renton, WA
+  sources:
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: renton-coil-spring-company
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Rocket Propulsion Systems
+  website: https://rocketpropulsion.systems
+  hq: Kent, WA
+  sources:
+  - space-city-wa
+  registry_id: rocket-propulsion-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Rogue Reconnaissance
+  website: https://roguerecon.net
+  hq: Medford, OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Aerial remote-sensing and geospatial services: drone LiDAR, multispectral and
+    thermal mapping for wildland fire, forestry, property and farm planning.'
+  ats: null
+  open_roles: null
+- name: SeaCast
+  website: https://seacast.com
+  hq: Marysville, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: seacast
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SeaStereo
+  website: https://seastereo.com
+  hq: OR
+  sources:
+  - sf-ouas-2025-12
+  registry_id: null
+  decision: null
+  reason: May be mainly software and data; product not established.
+  ats: null
+  open_roles: null
+- name: SEH America
+  website: https://www.sehamerica.com
+  hq: Vancouver, WA
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: seh-america
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 263d7f2a-913f-4a18-85d4-7ed1ff540596
+  open_roles: null
+- name: SEKISUI Aerospace
+  website: https://www.sekisuiaerospace.com
+  hq: Renton, WA
+  sources:
+  - wa-space-summit-2023
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: sekisui-aerospace
+  decision: registry
+  reason: null
+  ats:
+    type: adp
+    token: 54a4e977-5ddb-4e59-a5e5-1fdd0b57dc57
+  open_roles: null
+- name: Sienna Technologies
+  website: https://siennatech.com
+  hq: Woodinville, WA
+  sources:
+  - space-city-wa
+  registry_id: sienna-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sigma Design
+  website: https://sigmadzn.com
+  hq: Camas, WA
+  sources:
+  - opb-pendleton-2026
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Product design and engineering services firm (electrical, software/firmware,
+    systems, product development) with manufacturing, a test lab and build su'
+  ats: null
+  open_roles: null
+- name: Siltronic Corporation
+  website: https://www.siltronic.com
+  hq: Portland, OR
+  sources:
+  - oregon-chips-awards
+  - wikipedia-silicon-forest
+  registry_id: siltronic-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/SIL1005SILT/JobBoard/2208932d-db7e-4321-bf3d-9cc7f45634e3
+  open_roles: null
+- name: Space Valves
+  website: https://space-valves.com
+  hq: Puyallup, WA
+  sources:
+  - space-city-wa
+  registry_id: space-valves
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SpaceRig
+  website: https://spacerig.io
+  hq: 'unclear: offices in NYC, Seattle, Texas Corridor and Ontario'
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Flight-readiness services for spacecraft: mobile thermal vacuum testing, material
+    exposure testing, automated fueling and PCB rework.'
+  ats: null
+  open_roles: null
+- name: Speculo Robotics
+  website: https://speculorobotics.com
+  hq: Seattle, WA
+  sources:
+  - comotion-hardware
+  registry_id: speculo-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Starcloud (formerly Lumen Orbit)
+  website: https://www.starcloud.com
+  hq: Redmond, WA
+  sources:
+  - yc-seattle
+  - space-city-wa
+  - fundraiseinsider-seattle
+  registry_id: starcloud-formerly-lumen-orbit
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Starfish Space
+  website: https://www.starfishspace.com
+  hq: Tukwila, WA
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  - fundraiseinsider-seattle
+  - growthlist-seattle
+  registry_id: starfish-space
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: starfish-space-inc
+  open_roles: 7
+- name: Stoke Space
+  website: https://www.stokespace.com
+  hq: Kent, WA
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  - yc-seattle
+  - fundraiseinsider-seattle
+  registry_id: stoke-space
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tactical Laser Defense Systems
+  website: https://laserdefensesystems.online
+  hq: Seal Rock, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: tactical-laser-defense-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tamarack Aerospace Group
+  website: https://www.tamarackaero.com
+  hq: Sandpoint, ID
+  sources:
+  - idaho-web-search
+  registry_id: tamarack-aerospace-group
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tektronix
+  website: https://www.tek.com
+  hq: Beaverton, OR
+  sources:
+  - wikipedia-silicon-forest
+  - fast-engine-partners
+  registry_id: tektronix
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Teledyne FLIR
+  website: https://www.flir.com
+  hq: Wilsonville, OR
+  sources:
+  - nwaero-oregon
+  registry_id: teledyne-flir
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: flir.wd1.myworkdayjobs.com/flircareers
+  open_roles: null
+- name: Tokyo Ohka Kogyo America (TOK America)
+  website: https://www.tok.co.jp
+  hq: Hillsboro, OR
+  sources:
+  - oregon-chips-awards
+  registry_id: tokyo-ohka-kogyo-america-tok-america
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Toray Composite Materials America
+  website: https://www.toraycma.com
+  hq: Tacoma, WA
+  sources:
+  - wa-space-summit-2023
+  - choosewa-paris-2023
+  registry_id: toray-composite-materials-america
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: ukg
+    token: recruiting.ultipro.com/TOR1003TCAI2/JobBoard/1a3761a6-d04c-48fb-abb5-beac6bd39773
+  open_roles: null
+- name: US Aluminum Castings (USAC)
+  website: null
+  hq: Entiat, WA
+  sources:
+  - choosewa-farnborough-2026
+  - choosewa-paris-2025
+  - choosewa-paris-2023
+  registry_id: us-aluminum-castings-usac
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Valliscor
+  website: https://www.valliscor.com
+  hq: Corvallis, OR
+  sources:
+  - oregon-chips-awards
+  - fast-engine-partners
+  - cormic-tech-hub
+  registry_id: valliscor
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Vaupell
+  website: https://vaupell.com
+  hq: Everett, WA
+  sources:
+  - choosewa-paris-2025
+  registry_id: vaupell
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Vernier Science Education
+  website: https://www.vernier.com
+  hq: Beaverton, OR
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: vernier-science-education
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats:
+    type: bamboohr
+    token: vernier
+  open_roles: 3
+- name: Vexil Systems
+  website: https://vexilsystems.com
+  hq: Corvallis, OR
+  sources:
+  - sf-ouas-2026-fall
+  registry_id: vexil-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: WaferTech
+  website: https://www.tsmc.com
+  hq: Camas, WA
+  sources:
+  - wikipedia-silicon-forest
+  registry_id: wafertech
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Warm Industrial Nonwovens
+  website: null
+  hq: WA
+  sources:
+  - choosewa-paris-2025
+  registry_id: null
+  decision: null
+  reason: No company website found; identity and headquarters not established.
+  ats: null
+  open_roles: null
+- name: Wave Motion Launch
+  website: https://wmlaunch.space
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: wave-motion-launch
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: WiBotic
+  website: https://www.wibotic.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  registry_id: wibotic
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Xanfab
+  website: https://xanfab.com
+  hq: SeaTac, WA
+  sources:
+  - space-city-wa
+  registry_id: null
+  decision: not-in-scope
+  reason: Contract electronics manufacturing services (build-to-print).
+  ats: null
+  open_roles: null
+- name: Xplore
+  website: https://www.xplore.com
+  hq: Bellevue, WA
+  sources:
+  - space-city-wa
+  registry_id: xplore
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Zeno Power
+  website: https://www.zenopower.com
+  hq: Seattle, WA
+  sources:
+  - space-city-wa
+  - comotion-hardware
+  registry_id: zeno-power
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  ats:
+    type: breezy
+    token: zeno-power
+  open_roles: 22
+- name: Zepher Flight Labs
+  website: null
+  hq: Bingen, WA
+  sources:
+  - sf-ouas-2024
+  registry_id: zepher-flight-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+excluded:
+- name: Agile Space Industries
+  sources:
+  - space-city-wa
+  reason: Headquartered in Durango, CO; Bellevue is an office.
+- name: Americas Gold and Silver (Galena Complex)
+  sources:
+  - search-idaho-mining
+  reason: Head office not found in the region; the Galena Complex in Idaho is one of its mines.
+- name: ARKA
+  sources:
+  - space-city-wa
+  reason: A CACI International unit headquartered outside the region; a Bothell site was not confirmed.
+- name: BlackSky
+  sources:
+  - space-city-wa
+  reason: Headquartered in Herndon, VA; its Seattle operation is one site.
+- name: Boeing
+  sources:
+  - wa-space-summit-2023
+  - choosewa-paris-2023
+  - space-city-wa
+  - nwaero-oregon
+  reason: Headquartered in Arlington, VA, outside the region; no main site in the region found.
+- name: Daher (Kodiak Aircraft)
+  sources:
+  - idaho-commerce-mfg
+  reason: Part of Daher (France); Sandpoint, ID is its Kodiak aircraft plant.
+- name: Garmin (Salem aviation site)
+  sources:
+  - nwaero-oregon
+  reason: Headquartered in Olathe, KS; Salem is one site.
+- name: Hercules Metals
+  sources:
+  - search-idaho-mining
+  reason: Headquartered in Toronto, ON, outside the region; no main site in the region found.
+- name: Integra Resources
+  sources:
+  - spokesman-critical-minerals-2025
+  - search-idaho-mining
+  reason: Head office not found in the region; it operates in Nevada and holds the DeLamar project in Idaho.
+- name: Itafos (Conda)
+  sources:
+  - search-idaho-mining
+  reason: Headquartered in Houston, TX, outside the region; no main site in the region found.
+- name: Jervois Global (Idaho Cobalt Operations)
+  sources:
+  - spokesman-critical-minerals-2025
+  - search-idaho-mining
+  reason: Head office outside the region; its Idaho cobalt mine is idle.
+- name: Karman Space & Defense (Systima)
+  sources:
+  - space-city-wa
+  reason: Headquartered in Huntington Beach, CA, outside the region; no main site in the region found.
+- name: L3Harris Rocketdyne (formerly Aerojet Rocketdyne), Redmond
+  sources:
+  - wa-space-summit-2023
+  - space-city-wa
+  reason: Headquartered in Melbourne, FL, outside the region; no main site in the region found.
+- name: Liberty Gold
+  sources:
+  - search-idaho-mining
+  reason: Headquartered in Vancouver, BC, outside the region; no main site in the region found.
+- name: Sophia Space
+  sources:
+  - space-city-wa
+  reason: Headquartered in Pasadena, CA, outside the region; no main site in the region found.
+- name: SpaceX Starlink (Redmond)
+  sources:
+  - space-city-wa
+  reason: Headquartered in Starbase, TX, outside the region; no main site in the region found.
+- name: Thrive Agritech
+  sources:
+  - yc-seattle
+  reason: Headquartered in New York, NY; no Seattle site confirmed.
+- name: Vaire Computing
+  sources:
+  - semieng-startup-funding
+  reason: Headquartered in London, UK; a Bellevue site was not confirmed.
