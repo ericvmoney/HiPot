@@ -1,0 +1,2013 @@
+# Reference list for Boston (adjacent categories): companies that plausibly build physical clean-technology or
+# electrification products here, drawn from the named sources below (not from companies.yml).
+# Written by workstream A2. Format: tools/coverage.py. 'excluded' lists companies a source named
+# that turned out not to be in the region; they are not part of the list.
+
+region: boston-adjacent
+built: '2026-11-25'
+sources:
+- id: massrobotics-residents
+  name: MassRobotics resident startups
+  url: https://www.massrobotics.org/startups/massrobotics-resident-startups/
+  note: 96 residents listed, no locations on page; kept robot/drone hardware makers that are in region or have no
+    known HQ elsewhere (resident desk at 12 Channel St, Boston); several home pages checked for HQ
+- id: massrobotics-accelerator
+  name: MassRobotics Accelerator directory (cohorts 2024 and 2025)
+  url: https://www.massrobotics.org/massrobotics-accelerator-directory/
+  note: 20 companies; 7 of the 11 also residents
+- id: massrobotics-sponsors
+  name: MassRobotics sponsor directory
+  url: https://www.massrobotics.org/sponsor-directory/
+  note: 30 sponsors; most are out of region, software, services or other categories
+- id: massrobotics-success
+  name: MassRobotics startup success stories
+  url: https://www.massrobotics.org/startups/success-stories/
+  note: both also residents
+- id: masstech-robotics
+  name: MassTech Collaborative robotics cluster page (steering committee affiliations)
+  url: https://masstech.org/robotics
+- id: yc-robotics-boston
+  name: Y Combinator robotics startups in Boston
+  url: https://www.ycombinator.com/companies/industry/robotics/boston
+  note: 7 listed
+- id: yc-hardtech-boston
+  name: Y Combinator hard tech startups in Boston
+  url: https://www.ycombinator.com/companies/industry/hard-tech/boston
+  note: 8 listed
+- id: trr-ma-2019
+  name: 'The Robot Report: Massachusetts robotics companies get over $1B investment (2019)'
+  url: https://www.therobotreport.com/massachusetts-robotics-companies-get-over-1b-investment-2019/
+  note: dated; acquired/defunct names skipped
+- id: trr-massrobotics-1b
+  name: 'The Robot Report: MassRobotics resident startups have raised over $1B'
+  url: https://www.therobotreport.com/massrobotics-resident-startups-have-raised-over-1b-in-seven-years/
+- id: trr-cluster
+  name: 'The Robot Report: MassRobotics expansion reflects local cluster''s strength'
+  url: https://www.therobotreport.com/massrobotics-expands-strength-robotics-cluster/
+- id: trr-7-lessons
+  name: 'The Robot Report: 7 startup lessons from Boston robotics veterans'
+  url: https://www.therobotreport.com/7-startup-lessons-from-boston-robotics-veterans/
+- id: mit-news
+  name: MIT News robotics and startups topic pages and search results
+  url: https://news.mit.edu/topic/robotics
+  note: also https://news.mit.edu/topic/startups; Robust AI (CA) and REGENT (RI) skipped as out of region
+- id: northeastern-news
+  name: Northeastern Global News spinout coverage
+  url: https://news.northeastern.edu/2022/05/31/northeastern-spin-out-startup/
+  note: from search results; Tatum Robotics also named
+- id: wyss-startups
+  name: Wyss Institute (Harvard) startups list
+  url: https://wyss.harvard.edu/startups
+  note: 57 startups, mostly biotech
+- id: damalion-boston-space
+  name: 'Damalion: Boston space technology and aerospace startup ecosystem'
+  url: https://www.damalion.com/boston-space-technology-aerospace-startup-ecosystem/
+  note: Inversion Space skipped (Torrance, CA)
+- id: spacevoyage-boston
+  name: 'Space Voyage Ventures: Boston space tech'
+  url: https://spacevoyageventures.com/boston-space-tech/
+- id: buildlist-aerospace-boston
+  name: BuildList aerospace companies in Boston
+  url: https://buildlist.xyz/companies/aerospace/boston
+  note: 5 listed; other buildlist city pages 404; buildlist defense page refused by session permission check, line
+    of work stopped
+- id: web-search-aerospace
+  name: Web search summary of Boston aerospace/drone aggregator listings (Tracxn, fliarbi, bostonstartups.net results)
+  url: https://tracxn.com/d/explore/drones-startups-in-boston-united-states/__1uZirVdA5C9GBrrWZsaJPepwzLxf6ZQNVclfRylVUxk
+  note: names taken from search result summaries only, pages not fetched; weaker evidence
+- id: masstech-quantum-2026
+  name: MassTech Massachusetts Quantum Ecosystem Update (January 2026, PDF)
+  url: https://innovation.masstech.org/sites/default/files/2026-06/MassTech_Quantum_Ecosystem_Update%20-%20vF.pdf
+  note: text layer only; company logos are images and could not be read
+- id: nemc-members
+  name: Northeast Microelectronics Coalition (NEMC) Hub member list
+  url: https://nemicroelectronics.org/our-members
+  note: about 343 names with no locations; locations from the other NEMC award pages, company sites or best knowledge
+    (flagged in note)
+- id: nemc-propel-ops-2024
+  name: NEMC PROPEL operations grants, 19 awardees (2024-25)
+  url: https://semiconductor-digest.com/?p=30780
+  note: same list at startupsmagazine.co.uk and semiconductor-today.com
+- id: nemc-propel-mfg-2024
+  name: NEMC PROPEL manufacturing grants, 13 awardees (MassTech news)
+  url: https://masstech.org/news/northeast-microelectronics-coalition-hub-awards-more-1-million-advance-microelectronic
+- id: nemc-propel-2025
+  name: NEMC PROPEL awards to 10 semiconductor companies (MassTech news)
+  url: https://masstech.org/news/northeast-microelectronics-coalition-awards-137-million-10-semiconductor-companies
+- id: nemc-propel-2026
+  name: NEMC PROPEL program page, 2026 awardees
+  url: https://nemicroelectronics.org/propel-program
+- id: yc-boston
+  name: Y Combinator directory, Boston industry path pages (hardware, industrials, manufacturing-and-robotics, semiconductors)
+  url: https://www.ycombinator.com/companies/industry/industrials/boston
+  note: path pages only; no query strings
+- id: engine-ventures
+  name: Engine Ventures portfolio (MIT-founded tough-tech fund)
+  url: https://engineventures.com/companies
+  note: 58 companies, no locations on the list; most picks are known Boston-area MIT spinouts
+- id: semieng-funding
+  name: Semiconductor Engineering quarterly startup funding reports, Q1 2025 to Q3 2026
+  url: https://semiengineering.com/startup-funding-q4-2025/
+  note: MA companies only; tables give country only for many entries, so some may be missed
+- id: bostonglobe-quantum-2026
+  name: Boston Globe, Massachusetts quantum startups conference (2026-06-24)
+  url: https://www.bostonglobe.com/2026/06/24/business/quantum-computing-massachusetts-startups-conference/
+- id: news-lightmatter
+  name: optics.org and TechCrunch coverage of Lightmatter funding
+  url: https://optics.org/news/lightmatter-raises-another-155m-in-google-backed-round
+- id: news-dc-cooling
+  name: DatacenterDynamics, FinSMEs and Worcester Business Journal on Massachusetts data-center cooling startups
+  url: https://www.datacenterdynamics.com/en/news/data-center-liquid-cooling-startup-jetcool-raises-17m/
+  note: search-result coverage; Ferveret checked and found to be in San Jose, CA
+- id: massmep-stories
+  name: Massachusetts Manufacturing Extension Partnership success stories
+  url: https://massmep.org/success-stories/
+  note: 12 stories visible (load-more not followed); towns from each story page
+- id: tct-boston-2017
+  name: TCT Magazine, 3D printing en masse Boston tour (2017)
+  url: https://www.tctmagazine.com/additive-manufacturing-3d-printing-news/3d-printing-en-mass-boston-tour/
+  note: old article; only live companies kept
+- id: 3dprint-vulcanforms
+  name: '3DPrint.com, Boston''s additive edge: inside VulcanForms (about 2024)'
+  url: https://3dprint.com/312294/bostons-additive-edge-inside-vulcanforms-quiet-revolution-in-industrial-3d-printing/amp/
+- id: beststartup-3dp-2021
+  name: BestStartup.us, 50 best Massachusetts 3D printing companies and startups (2021)
+  url: https://beststartup.us/50-best-massachusetts-3d-printing-companies-and-startups/
+  note: list from 2021 with no towns; many entries defunct or off-category; only known live Boston-area makers kept
+- id: beststartup-lasers-2021
+  name: BestStartup.us, 13 best Massachusetts laser companies and startups (2021)
+  url: https://beststartup.us/13-best-massachusetts-laser-companies-and-startups/
+  note: no towns on page
+- id: bu-cellmet
+  name: Boston University CELL-MET industry members
+  url: https://www.bu.edu/cell-met/industry/members/
+- id: ma-semi-coalition-2021
+  name: Massachusetts Semiconductor Coalition RFI response (MassTech, 2021, PDF)
+  url: https://cam.masstech.org/sites/default/files/2023-03/MA Semi Coalition DOC-2021-0010 RFI Response Submitted.pdf
+  note: names only large incumbents and institutions
+- id: news-lightelligence
+  name: Global Venturing, Lightelligence seed round
+  url: https://globalventuring.com/university/lightelligence-highlights-10m-seed-round/
+  note: seen in search results; old round
+companies:
+- name: 6K
+  website: https://www.6kinc.com
+  hq: North Andover, MA
+  sources:
+  - massmep-stories
+  registry_id: 6k
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.6kinc.com/about-6k-inc/careers/
+  open_roles: null
+- name: Accion Systems
+  website: https://accion-systems.com/
+  hq: Boston, MA
+  sources:
+  - web-search-aerospace
+  registry_id: accion-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Activ Surgical
+  website: https://www.activsurgical.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - trr-ma-2019
+  - trr-massrobotics-1b
+  registry_id: null
+  decision: not-in-scope
+  reason: Surgical imaging (medical device); it fits no adjacent category.
+  ats:
+    type: workable
+    token: activ-2
+  open_roles: 0
+- name: ACUMINO
+  website: https://acumino.ai/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly robot-teaching software and robot-as-a-service on others' hardware.
+  ats: null
+  open_roles: null
+- name: Advanced Silicon Group
+  website: https://advancedsilicongroup.com
+  hq: Lowell, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  registry_id: null
+  decision: not-in-scope
+  reason: A protein biosensor for life sciences; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Aimtek
+  website: null
+  hq: Auburn, MA
+  sources:
+  - massmep-stories
+  registry_id: aimtek
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Airmada
+  website: https://airmada.com
+  hq: Boston, MA
+  sources:
+  - web-search-aerospace
+  registry_id: null
+  decision: closed
+  reason: 'Closed: YC profile status ''Inactive''; CB Insights says ceased operations'
+  ats: null
+  open_roles: null
+- name: AirQtel
+  website: null
+  hq: Wellesley, MA
+  sources:
+  - web-search-aerospace
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Alloy Enterprises
+  website: https://www.alloyenterprises.co
+  hq: Burlington, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: alloy-enterprises
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Amazon Robotics
+  website: https://www.amazon.jobs/en/teams/amazon-robotics
+  hq: North Reading, MA
+  sources:
+  - massrobotics-sponsors
+  - masstech-robotics
+  - trr-cluster
+  registry_id: amazon-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Analog Photonics
+  website: https://www.analogphotonics.com
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: analog-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Anka Space
+  website: https://ankaspace.com
+  hq: Boston / Cambridge area
+  sources:
+  - web-search-aerospace
+  registry_id: anka-space
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Apparel Robotics Corporation
+  website: https://apparelrobotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  registry_id: apparel-robotics-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ascend Robotics
+  website: https://ascendrobotics.com/
+  hq: Cambridge, MA
+  sources:
+  - massrobotics-residents
+  registry_id: ascend-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ATDev (Assistive Technology Development)
+  website: https://assistivetech.dev/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: atdev-assistive-technology-development
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Atlantic Quantum
+  website: https://atlanticquantum.com
+  hq: Cambridge, MA
+  sources:
+  - masstech-quantum-2026
+  - nemc-members
+  - engine-ventures
+  - bostonglobe-quantum-2026
+  registry_id: atlantic-quantum
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Aura Intelligent Systems
+  website: null
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: aura-intelligent-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ava Robotics
+  website: https://avarobotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - trr-cluster
+  registry_id: ava-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ayo Electronics
+  website: https://ayosemi.com
+  hq: Somerville, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: BioSens8
+  website: https://biosens8.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  registry_id: null
+  decision: not-in-scope
+  reason: A health wearable; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Black-I Robotics
+  website: https://blackirobotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: black-i-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Block Engineering
+  website: https://www.blockeng.com
+  hq: Southborough, MA
+  sources:
+  - beststartup-3dp-2021
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Boost Robotics
+  website: https://www.boostrobotics.ai
+  hq: Boston, MA
+  sources:
+  - yc-robotics-boston
+  - yc-hardtech-boston
+  - yc-boston
+  registry_id: boost-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: boost-robotics
+  open_roles: null
+- name: Boston Dynamics
+  website: https://bostondynamics.com/
+  hq: Waltham, MA
+  sources:
+  - masstech-robotics
+  registry_id: boston-dynamics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics
+  open_roles: null
+- name: Boston Materials
+  website: https://bomaterials.com
+  hq: Billerica, MA
+  sources:
+  - nemc-members
+  registry_id: boston-materials
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: boston-materials
+  open_roles: null
+- name: Boston Micromachines
+  website: https://bostonmicromachines.com
+  hq: Cambridge, MA
+  sources:
+  - bu-cellmet
+  registry_id: boston-micromachines
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Brecourt Solutions
+  website: https://brecourtsolutions.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-success
+  registry_id: brecourt-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Bridge Appliances
+  website: https://www.bridgeappliances.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: not-in-scope
+  reason: An automated commercial kitchen appliance; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Brightlight Photonics
+  website: https://brightlightphotonics.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  - masstech-quantum-2026
+  registry_id: brightlight-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Bristol Precision
+  website: null
+  hq: Marlborough, MA
+  sources:
+  - massmep-stories
+  registry_id: null
+  decision: not-in-scope
+  reason: A contract CNC machining job shop.
+  ats: null
+  open_roles: null
+- name: Brooks Automation
+  website: https://www.brooks.com
+  hq: Chelmsford, MA
+  sources:
+  - nemc-members
+  registry_id: brooks-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: brooksauto.wd1.myworkdayjobs.com/en-US/Brooks_External_Site
+  open_roles: null
+- name: BULMA Solutions
+  website: null
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Busek Co.
+  website: https://www.busek.com/
+  hq: Natick, MA
+  sources:
+  - damalion-boston-space
+  - web-search-aerospace
+  registry_id: busek-co
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: jazzhr
+    token: busek
+  open_roles: null
+- name: Caladh
+  website: https://caladh.com
+  hq: Boston, MA
+  sources:
+  - yc-hardtech-boston
+  registry_id: caladh
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cambridge Terahertz
+  website: null
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Canvair
+  website: https://www.canvair.co/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: canvair
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: CavilinQ
+  website: https://cavilinq.com
+  hq: Cambridge, MA
+  sources:
+  - masstech-quantum-2026
+  - nemc-members
+  registry_id: cavilinq
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Cellsius
+  website: null
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Cleo Robotics
+  website: https://cleorobotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-success
+  - web-search-aerospace
+  registry_id: cleo-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: rippling
+    token: cleo-robotics
+  open_roles: 3
+- name: Compotics
+  website: https://compotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: null
+  reason: Its site is a placeholder; status not established.
+  ats: null
+  open_roles: null
+- name: Copious Imaging
+  website: https://www.copiousimaging.com
+  hq: Lexington, MA
+  sources:
+  - nemc-members
+  registry_id: copious-imaging
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: CRABI Robotics
+  website: https://www.crabi-robotics.com/
+  hq: Medford, MA
+  sources:
+  - massrobotics-residents
+  registry_id: crabi-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: gem
+    token: crabi-robotics-com
+  open_roles: null
+- name: DeepCharge
+  website: https://deepcharge.io
+  hq: Needham, MA
+  sources:
+  - nemc-members
+  - nemc-propel-mfg-2024
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly device-intelligence software.
+  ats: null
+  open_roles: null
+- name: Dephy
+  website: https://www.dephy.com/
+  hq: Maynard, MA
+  sources:
+  - massrobotics-residents
+  registry_id: dephy
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: dephy
+  open_roles: 1
+- name: Desktop Metal
+  website: https://www.desktopmetal.com
+  hq: Burlington, MA
+  sources:
+  - tct-boston-2017
+  - beststartup-3dp-2021
+  registry_id: null
+  decision: closed
+  reason: Bankrupt in July 2025 after its purchase by Nano Dimension; its core US assets went to Arc Impact.
+  ats: null
+  open_roles: null
+- name: Diffraqtion
+  website: null
+  hq: Somerville, MA
+  sources:
+  - nemc-members
+  registry_id: diffraqtion
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Dipole Labs
+  website: https://dipolelabs.com
+  hq: Boston, MA
+  sources:
+  - yc-boston
+  registry_id: dipole-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Distron Corporation
+  website: null
+  hq: North Attleborough, MA
+  sources:
+  - massmep-stories
+  registry_id: distron-corporation
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Diversified Technologies
+  website: https://www.divtecs.com
+  hq: Bedford, MA
+  sources:
+  - nemc-members
+  registry_id: diversified-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: bamboohr
+    token: divtecs
+  open_roles: 10
+- name: Dust Identity
+  website: https://www.dustidentity.com
+  hq: Newton, MA
+  sources:
+  - nemc-members
+  registry_id: dust-identity
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Energetiq Technology
+  website: https://www.energetiq.com
+  hq: Wilmington, MA
+  sources:
+  - nemc-members
+  registry_id: energetiq-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Enigma Aerospace
+  website: null
+  hq: Massachusetts
+  sources:
+  - masstech-robotics
+  registry_id: enigma-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: EPC Space
+  website: https://epc.space
+  hq: Haverhill, MA
+  sources:
+  - nemc-members
+  registry_id: epc-space
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Eva Technology
+  website: null
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Familiar Machines & Magic
+  website: https://familiarmachines.com
+  hq: Woburn, MA
+  sources:
+  - masstech-robotics
+  registry_id: familiar-machines-and-magic
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: FastCAP Systems
+  website: https://www.fastcapsystems.com
+  hq: Woburn, MA
+  sources:
+  - nemc-members
+  registry_id: fastcap-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Finwave Semiconductor
+  website: https://finwavesemi.com
+  hq: Waltham, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  - engine-ventures
+  - semieng-funding
+  registry_id: finwave-semiconductor
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Formlabs
+  website: https://formlabs.com
+  hq: Somerville, MA
+  sources:
+  - tct-boston-2017
+  - beststartup-3dp-2021
+  registry_id: formlabs
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: null
+  open_roles: null
+- name: Foundation Alloy
+  website: https://foundationalloy.com
+  hq: Cambridge, MA
+  sources:
+  - engine-ventures
+  registry_id: foundation-alloy
+  decision: registry
+  reason: null
+  ats:
+    type: rippling
+    token: foundation-alloy
+  open_roles: null
+- name: Gander Robotics
+  website: https://ganderrobotics.com
+  hq: Massachusetts
+  sources:
+  - mit-news
+  registry_id: null
+  decision: null
+  reason: Its domain was guessed; identity not established.
+  ats: null
+  open_roles: null
+- name: General Robotics
+  website: https://www.general-robotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: general-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: generalrobotics
+  open_roles: 11
+- name: GPD Optoelectronics
+  website: https://www.gpd-ir.com
+  hq: Salem, NH
+  sources:
+  - nemc-members
+  registry_id: gpd-optoelectronics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: GreenSight
+  website: https://greensightag.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: greensight
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Guardion
+  website: null
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Harmonic Drive LLC
+  website: https://www.harmonicdrive.net/
+  hq: Beverly, MA
+  sources:
+  - massrobotics-sponsors
+  - trr-massrobotics-1b
+  registry_id: harmonic-drive-llc
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Hathaway Robotics
+  website: https://hathaway.ai/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: hathaway-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Hedron
+  website: https://hedron.space
+  hq: Mountain View, CA
+  sources:
+  - web-search-aerospace
+  registry_id: null
+  decision: closed
+  reason: 'Closed: Dealroom says it ''reportedly went out of business in late 2023'' HQ outside region per Dealroom'
+  ats: null
+  open_roles: null
+- name: Human-Robotix
+  website: null
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: HyperLight
+  website: https://hyperlightcorp.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - engine-ventures
+  - semieng-funding
+  registry_id: hyperlight
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: workable
+    token: hyperlight
+  open_roles: 17
+- name: Inkbit
+  website: https://inkbit3d.com
+  hq: Medford, MA
+  sources:
+  - beststartup-3dp-2021
+  registry_id: inkbit
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: IPG Photonics
+  website: https://www.ipgphotonics.com
+  hq: Marlborough, MA
+  sources:
+  - beststartup-lasers-2021
+  registry_id: ipg-photonics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: iRobot
+  website: https://www.irobot.com/
+  hq: Bedford, MA
+  sources:
+  - trr-massrobotics-1b
+  - trr-cluster
+  registry_id: irobot
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Irradiant Technologies
+  website: https://irradiant.tech
+  hq: Waltham, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: irradiant-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: JetCool Technologies
+  website: https://jetcool.com
+  hq: Littleton, MA
+  sources:
+  - news-dc-cooling
+  registry_id: jetcool-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: workday
+    token: flextronics.wd1.myworkdayjobs.com/JetCool_Careers
+  open_roles: null
+- name: Lifeward (ReWalk Robotics)
+  website: https://rewalk.com/
+  hq: Hudson, MA
+  sources:
+  - wyss-startups
+  registry_id: lifeward-rewalk-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: LiftLabs
+  website: https://www.liftlabs.org/
+  hq: Lowell, MA
+  sources:
+  - massrobotics-accelerator
+  registry_id: null
+  decision: not-in-scope
+  reason: Ropeless lobster-fishing gear; it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Lightsynq
+  website: https://www.lightsynq.com
+  hq: Boston
+  sources:
+  - masstech-quantum-2026
+  registry_id: lightsynq
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Lintrinsic Semiconductors
+  website: null
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  registry_id: null
+  decision: null
+  reason: Its reported acquisition rests only on a snippet from a site that refused our client; status not established.
+  ats: null
+  open_roles: null
+- name: Locus Robotics
+  website: https://locusrobotics.com/
+  hq: Wilmington, MA
+  sources:
+  - masstech-robotics
+  - trr-ma-2019
+  registry_id: locus-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: locusrobotics
+  open_roles: 9
+- name: Luminous Robotics
+  website: https://www.luminousrobotics.com
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: luminous-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: other
+    token: https://www.luminousrobotics.com/career
+  open_roles: null
+- name: MACOM Technology Solutions
+  website: https://www.macom.com
+  hq: Lowell, MA
+  sources:
+  - nemc-members
+  registry_id: macom-technology-solutions
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Maglev Aero
+  website: https://maglevaero.com
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - spacevoyage-boston
+  - web-search-aerospace
+  registry_id: maglev-aero
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Markforged
+  website: https://markforged.com
+  hq: Waltham, MA
+  sources:
+  - beststartup-3dp-2021
+  registry_id: markforged
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: greenhouse
+    token: markforged
+  open_roles: 1
+- name: Mass Magnetics
+  website: https://massmagnetics.com
+  hq: Somerville, MA
+  sources:
+  - yc-boston
+  registry_id: mass-magnetics
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Massachusetts Bay Technologies
+  website: https://massbaytech.com
+  hq: Stoughton, MA
+  sources:
+  - nemc-members
+  registry_id: massachusetts-bay-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: MatrixSpace
+  website: https://matrixspace.com/
+  hq: Burlington, MA
+  sources:
+  - northeastern-news
+  registry_id: matrixspace
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mercury Systems
+  website: https://www.mrcy.com
+  hq: Andover, MA
+  sources:
+  - nemc-members
+  registry_id: mercury-systems
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Merlin Labs
+  website: https://merlinlabs.com/
+  hq: Boston, MA
+  sources:
+  - buildlist-aerospace-boston
+  - web-search-aerospace
+  registry_id: merlin-labs
+  decision: registry
+  reason: null
+  ats:
+    type: lever
+    token: merlinlabs
+  open_roles: null
+- name: Micro-Precision Technologies
+  website: https://micropt.com
+  hq: Salem, NH
+  sources:
+  - nemc-members
+  registry_id: micro-precision-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: MicroPower Direct
+  website: https://www.micropowerdirect.com
+  hq: South Easton, MA
+  sources:
+  - nemc-members
+  registry_id: micropower-direct
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Mide Technology
+  website: https://www.mide.com
+  hq: Woburn, MA
+  sources:
+  - massmep-stories
+  registry_id: mide-technology
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Mithril Technologies
+  website: null
+  hq: Somerville, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats:
+    type: greenhouse
+    token: mithril
+  open_roles: 3
+- name: Mito Robotics
+  website: null
+  hq: Boston, MA
+  sources:
+  - massrobotics-accelerator
+  - wyss-startups
+  registry_id: null
+  decision: duplicate
+  reason: Same company as Whelix (MitoAI, Inc. d/b/a Whelix).
+  ats:
+    type: lever
+    token: linkedin
+  open_roles: 23
+- name: Nano OPS
+  website: null
+  hq: Burlington, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Nantero
+  website: https://www.nantero.com
+  hq: Woburn, MA
+  sources:
+  - nemc-members
+  registry_id: null
+  decision: null
+  reason: Its domain now redirects to an unrelated site; status not established.
+  ats: null
+  open_roles: null
+- name: Nextera Robotics (DIDGE.ai)
+  website: https://nexterarobotics.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - yc-robotics-boston
+  - yc-boston
+  registry_id: nextera-robotics-didge-ai
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Nexterity
+  website: https://www.nexterity.tech/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  registry_id: nexterity
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: nOhm Devices
+  website: https://nohm-devices.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  registry_id: nohm-devices
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Oligo
+  website: https://oligo.space/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  registry_id: null
+  decision: null
+  reason: Its domain does not resolve; status not established.
+  ats:
+    type: ashby
+    token: oligo
+  open_roles: 4
+- name: Ondas Autonomous Systems (American Robotics)
+  website: https://www.ondas.com/
+  hq: Marlborough, MA
+  sources:
+  - trr-massrobotics-1b
+  - trr-cluster
+  - spacevoyage-boston
+  - web-search-aerospace
+  registry_id: ondas-autonomous-systems-american-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: breezy
+    token: ondas
+  open_roles: 2
+- name: Onto Innovation
+  website: https://ontoinnovation.com
+  hq: Wilmington, MA
+  sources:
+  - nemc-members
+  registry_id: onto-innovation
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ori
+  website: https://www.oriliving.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - trr-ma-2019
+  - trr-massrobotics-1b
+  registry_id: null
+  decision: not-in-scope
+  reason: Now presents itself as a real estate company.
+  ats: null
+  open_roles: null
+- name: Oxcart
+  website: null
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: null
+  reason: No company website found; identity not established.
+  ats: null
+  open_roles: null
+- name: Pendar Technologies
+  website: https://www.pendar.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  registry_id: pendar-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: pendartechnologies
+  open_roles: 3
+- name: Perceptive Technologies
+  website: https://perceptive.io
+  hq: Boston, MA
+  sources:
+  - yc-robotics-boston
+  registry_id: null
+  decision: not-in-scope
+  reason: A dental imaging system (medical device); it fits no adjacent category.
+  ats: null
+  open_roles: null
+- name: Photonwares
+  website: https://www.photonwares.com
+  hq: Woburn, MA
+  sources:
+  - nemc-members
+  registry_id: photonwares
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Physical Sciences Inc.
+  website: https://www.psicorp.com
+  hq: Andover, MA
+  sources:
+  - nemc-members
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly contract research and development.
+  ats: null
+  open_roles: null
+- name: Piaggio Fast Forward
+  website: https://piaggiofastforward.com/
+  hq: Boston, MA
+  sources:
+  - masstech-robotics
+  registry_id: piaggio-fast-forward
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: piaggiofastforward
+  open_roles: null
+- name: Pickle Robot Company
+  website: https://picklerobot.com/
+  hq: Charlestown
+  sources:
+  - trr-ma-2019
+  - mit-news
+  registry_id: pickle-robot-company
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: picklerobot
+  open_roles: 11
+- name: Pison
+  website: https://pison.com
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-mfg-2024
+  registry_id: pison
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: lever
+    token: pison
+  open_roles: 1
+- name: Plymouth Grating Laboratory
+  website: https://www.plymouthgrating.com
+  hq: Carver, MA
+  sources:
+  - beststartup-lasers-2021
+  registry_id: plymouth-grating-laboratory
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Quantum Essentials
+  website: null
+  hq: Watertown, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  - masstech-quantum-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Quantum Microwave Components
+  website: https://quantummicrowave.com
+  hq: Hingham, MA
+  sources:
+  - nemc-members
+  - nemc-propel-mfg-2024
+  - masstech-quantum-2026
+  registry_id: quantum-microwave-components
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: QuEra Computing
+  website: https://www.quera.com
+  hq: Boston, MA
+  sources:
+  - masstech-quantum-2026
+  - nemc-members
+  - semieng-funding
+  - bostonglobe-quantum-2026
+  registry_id: quera-computing
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: queracomputinginc
+  open_roles: 82
+- name: Qunett (Quantum Network Technologies)
+  website: https://www.qunett.com
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  - masstech-quantum-2026
+  registry_id: qunett-quantum-network-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: breezy
+    token: qunett
+  open_roles: 2
+- name: Ras Labs
+  website: https://raslabs.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: ras-labs
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Realtime Robotics
+  website: https://rtr.ai/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - trr-massrobotics-1b
+  - trr-cluster
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Motion-planning software (RapidPlan, cloud-based Resolver) for collision-free
+    multi-robot workcells; first product was a dedicated motion-planning pro'
+  ats: null
+  open_roles: null
+- name: Remtec
+  website: https://www.remtec.com
+  hq: Canton, MA
+  sources:
+  - nemc-members
+  registry_id: remtec
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats:
+    type: adp
+    token: 0ab6bf2f-ef73-482a-b15b-cdd4927e0508
+  open_roles: null
+- name: ReviMo
+  website: https://www.revimo.care/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  registry_id: revimo
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Revolution Space
+  website: https://revolutionspace.com
+  hq: Boston
+  sources:
+  - web-search-aerospace
+  registry_id: null
+  decision: null
+  reason: Its domain was guessed; identity not established.
+  ats:
+    type: rippling
+    token: revolutionspace
+  open_roles: 5
+- name: RightHand Robotics
+  website: https://righthandrobotics.com/
+  hq: Boston, MA
+  sources:
+  - trr-7-lessons
+  registry_id: righthand-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: breezy
+    token: righthand-robotics
+  open_roles: 3
+- name: RISE Robotics
+  website: https://riserobotics.com
+  hq: Somerville, MA
+  sources:
+  - engine-ventures
+  registry_id: rise-robotics
+  decision: registry
+  reason: null
+  ats:
+    type: workable
+    token: rise-robotics
+  open_roles: null
+- name: Robotics 88
+  website: https://robotics88.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-accelerator
+  registry_id: null
+  decision: closed
+  reason: 'Closed: closed in 2025 per DroneXL (Oct 25 2025), single source; robotics88.com home page returns 404'
+  ats: null
+  open_roles: null
+- name: rStream
+  website: https://rstreamrecycling.com
+  hq: Somerville, MA
+  sources:
+  - massrobotics-accelerator
+  registry_id: rstream-recycling
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Sangtera
+  website: https://www.sangtera.com
+  hq: Lexington, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Scalable Robotics
+  website: https://scalablerobotics.ai/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: null
+  decision: null
+  reason: Press calls it a Connecticut startup and its site gives no address; location not established.
+  ats: null
+  open_roles: null
+- name: Scientific Systems Company
+  website: https://www.ssci.com/
+  hq: Burlington, MA
+  sources:
+  - spacevoyage-boston
+  - web-search-aerospace
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Autonomy and AI software for crewed and uncrewed systems (Collaborative Mission
+    Autonomy, RAPTOR UAS autonomy) plus the VENOM small unmanned surface v'
+  ats: null
+  open_roles: null
+- name: Sea Machines Robotics
+  website: https://sea-machines.com/
+  hq: Boston, MA
+  sources:
+  - web-search-aerospace
+  registry_id: sea-machines-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Sensei
+  website: https://senseirobotics.com
+  hq: Boston, MA
+  sources:
+  - yc-robotics-boston
+  - yc-hardtech-boston
+  registry_id: sensei
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: sensei
+  open_roles: 8
+- name: Seurat Technologies
+  website: https://www.seurat.com
+  hq: Wilmington, MA
+  sources:
+  - nemc-members
+  - beststartup-lasers-2021
+  registry_id: seurat-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: greenhouse
+    token: seurat
+  open_roles: 6
+- name: SIMPL Automation
+  website: https://simplautomation.com/
+  hq: Waltham, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  registry_id: simpl-automation
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: SIONYX
+  website: https://www.sionyx.com
+  hq: Beverly, MA
+  sources:
+  - nemc-members
+  registry_id: sionyx
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: SiPhox Health
+  website: https://siphoxhealth.com
+  hq: Burlington, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: null
+  decision: not-in-scope
+  reason: An at-home blood-testing service; its chip device is investigational.
+  ats: null
+  open_roles: null
+- name: Soft Robotics, Inc.
+  website: https://www.softroboticsinc.com/
+  hq: Bedford, MA
+  sources:
+  - wyss-startups
+  registry_id: null
+  decision: closed
+  reason: Its gripper business was sold to the Schmalz Group in 2024; the rest continues as Oxipital AI.
+  ats: null
+  open_roles: null
+- name: Specter Aerospace
+  website: https://specteraerospace.com
+  hq: Cambridge, MA
+  sources:
+  - buildlist-aerospace-boston
+  registry_id: null
+  decision: null
+  reason: Its domain was guessed; identity not established.
+  ats: null
+  open_roles: null
+- name: Square Robot
+  website: https://www.squarerobot.com/
+  hq: Westborough, MA
+  sources:
+  - trr-cluster
+  registry_id: square-robot
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Tatum Robotics
+  website: https://tatumrobotics.com/
+  hq: Watertown, MA
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  - northeastern-news
+  registry_id: tatum-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: TelAztec
+  website: https://www.telaztec.com
+  hq: Burlington, MA
+  sources:
+  - beststartup-3dp-2021
+  registry_id: telaztec
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Teradar
+  website: https://teradar.com
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  - engine-ventures
+  - semieng-funding
+  registry_id: teradar
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Teradyne
+  website: https://www.teradyne.com
+  hq: North Reading, MA
+  sources:
+  - nemc-members
+  registry_id: teradyne
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Torchlight Solutions
+  website: null
+  hq: Arlington, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2026
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: Transcend Mechanics
+  website: https://transcendmechanics.com
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: transcend-mechanics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Transene Company
+  website: https://transene.com
+  hq: Danvers, MA
+  sources:
+  - nemc-members
+  registry_id: transene-company
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Triton Space Technologies
+  website: https://triton-space.squarespace.com
+  hq: Woburn, MA
+  sources:
+  - damalion-boston-space
+  - spacevoyage-boston
+  registry_id: triton-space-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Triton Systems
+  website: https://www.tritonsys.com
+  hq: Chelmsford, MA
+  sources:
+  - nemc-members
+  registry_id: null
+  decision: not-in-scope
+  reason: Mainly contract research and development for defense.
+  ats: null
+  open_roles: null
+- name: Tutor Intelligence
+  website: https://tutorintelligence.com/
+  hq: Watertown, MA
+  sources:
+  - massrobotics-residents
+  - trr-massrobotics-1b
+  registry_id: tutor-intelligence
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: ashby
+    token: tutor-intelligence
+  open_roles: 80
+- name: Ubicept
+  website: https://www.ubicept.com
+  hq: Boston, MA
+  sources:
+  - nemc-members
+  registry_id: ubicept
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Ultrasonium
+  website: https://ultrasonium.com
+  hq: Boston, MA
+  sources:
+  - yc-boston
+  registry_id: ultrasonium
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: ULVAC Technologies
+  website: https://www.ulvac.com
+  hq: Methuen, MA
+  sources:
+  - masstech-quantum-2026
+  registry_id: ulvac-technologies
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup out.'
+  ats: null
+  open_roles: null
+- name: Vecna Robotics
+  website: https://www.vecnarobotics.com/
+  hq: Waltham, MA
+  sources:
+  - masstech-robotics
+  - trr-cluster
+  - trr-7-lessons
+  registry_id: vecna-robotics
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: VectorWave
+  website: null
+  hq: Boston, MA
+  sources:
+  - semieng-funding
+  - nemc-members
+  registry_id: vectorwave
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: VEIR
+  website: https://www.veir.com
+  hq: Woburn, MA
+  sources:
+  - engine-ventures
+  registry_id: veir
+  decision: registry
+  reason: null
+  ats:
+    type: greenhouse
+    token: veir
+  open_roles: null
+- name: Vertical Horizons Power Innovations
+  website: null
+  hq: Somerville, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  registry_id: null
+  decision: duplicate
+  reason: Matched to Vertical Semiconductor, already in the registry.
+  ats: null
+  open_roles: null
+- name: Vertical Semiconductor
+  website: https://verticalsemi.com
+  hq: Somerville, MA
+  sources:
+  - semieng-funding
+  registry_id: vertical-semiconductor
+  decision: registry
+  reason: null
+  ats: null
+  open_roles: null
+- name: Verve Motion
+  website: https://vervemotion.com/
+  hq: Cambridge, MA
+  sources:
+  - wyss-startups
+  registry_id: verve-motion
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: jazzhr
+    token: vervemotion
+  open_roles: null
+- name: VulcanForms
+  website: https://vulcanforms.com
+  hq: Devens, MA
+  sources:
+  - 3dprint-vulcanforms
+  registry_id: vulcanforms
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats:
+    type: bamboohr
+    token: vulcanforms
+  open_roles: 0
+- name: Whelix
+  website: https://whelix.com/
+  hq: Boston, MA
+  sources:
+  - massrobotics-residents
+  registry_id: whelix
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Wober Tech
+  website: null
+  hq: Topsfield, MA
+  sources:
+  - nemc-members
+  - nemc-propel-2025
+  registry_id: null
+  decision: null
+  reason: Named by a source, but the company could not be identified.
+  ats: null
+  open_roles: null
+- name: X-Sight
+  website: null
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  registry_id: x-sight
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: Zero ASIC
+  website: https://www.zeroasic.com
+  hq: Cambridge, MA
+  sources:
+  - nemc-members
+  - nemc-propel-mfg-2024
+  registry_id: zero-asic
+  decision: registry
+  reason: 'Proposed in proposals-05-boston-adjacent.yml: out, startup in.'
+  ats: null
+  open_roles: null
+- name: zeroRISC
+  website: https://www.zerorisc.com
+  hq: Boston, MA
+  sources:
+  - semieng-funding
+  registry_id: null
+  decision: not-in-scope
+  reason: 'Not a physical product: Open-source silicon security platform built on OpenTitan: root-of-trust chip
+    IP and tooling, a post-quantum crypto coprocessor design, manufacturing p'
+  ats:
+    type: lever
+    token: zerorisc
+  open_roles: 5
+excluded:
+- name: Aurora Flight Sciences
+  sources:
+  - spacevoyage-boston
+  - web-search-aerospace
+  reason: Boeing subsidiary headquartered in Manassas, VA; Cambridge is one site.
+- name: GE Aerospace
+  sources:
+  - spacevoyage-boston
+  reason: Headquartered in Evendale, OH; Lynn is one site.
+- name: Gitinama
+  sources:
+  - massrobotics-residents
+  reason: Headquartered in Pittsfield, MA, outside the region; no main site in the region found.
+- name: Graphenea
+  sources:
+  - nemc-members
+  reason: Headquartered in San Sebastian, Spain; Cambridge is a US site.
+- name: Impact Nano
+  sources:
+  - nemc-members
+  - nemc-propel-ops-2024
+  - nemc-propel-mfg-2024
+  reason: Headquartered in Orange, MA, outside the region; no main site in the region found.
+- name: IQE
+  sources:
+  - nemc-members
+  - ma-semi-coalition-2021
+  reason: Headquartered in Cardiff, UK; a Taunton site was not confirmed.
+- name: Lightelligence
+  sources:
+  - news-lightelligence
+  reason: Headquartered outside the US (Shanghai (Pudong), China); no main site in the region found.
+- name: Lightmatter
+  sources:
+  - news-lightmatter
+  reason: Headquartered in Mountain View, CA (listed in the Bay Area adjacent list).
+- name: LiquidStack
+  sources:
+  - news-dc-cooling
+  reason: Headquartered in Carrollton, TX (Trane Technologies); no Massachusetts site found.
+- name: MRSI Systems (Mycronic)
+  sources:
+  - nemc-members
+  reason: 'Headquartered outside the US (Sweden (parent Mycronic); site: North Bi); no main site in the region found.'
+- name: Parker Chomerics
+  sources:
+  - beststartup-3dp-2021
+  reason: Division of Parker Hannifin (Cleveland, OH; in the registry); Woburn is one site.
+- name: Qblox
+  sources:
+  - bostonglobe-quantum-2026
+  reason: Headquartered in Delft, Netherlands; Boston is an office.
+- name: Quantum Machines
+  sources:
+  - masstech-quantum-2026
+  reason: Headquartered in Tel Aviv, Israel; a Boston site was not confirmed.
+- name: Raytheon (RTX)
+  sources:
+  - masstech-robotics
+  - spacevoyage-boston
+  reason: Headquartered in Arlington, VA; Andover is one site.
+- name: Revolute Robotics
+  sources:
+  - massrobotics-residents
+  - massrobotics-accelerator
+  reason: Headquartered in Scottsdale, AZ, outside the region; no main site in the region found.
+- name: Super Robotics
+  sources:
+  - massrobotics-residents
+  reason: Headquartered in Leganés (Madrid), Spain.
