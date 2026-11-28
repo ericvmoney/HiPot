@@ -23,7 +23,7 @@ def test_local_saving_runs_only_on_this_machines_own_server():
     assert "localOn = true;" in start and start.index("data.ok === true") < start.index("localOn = true;")
     assert SCRIPT.count("localOn = true;") == 1
     # Every call to the server goes through localApi(), which checks the host before fetching.
-    assert len(re.findall(r"fetch\(", SCRIPT)) == 2
+    assert len(re.findall(r"fetch\(", SCRIPT)) == 3   # the data, the summaries, and localApi()
     assert all(call.startswith(("'status'", "'persona'", "'my-roles'")) for call in re.findall(r"localApi\(([^)]*)\)", SCRIPT) if call != "name, method, body, waitMs, keepalive")
 
 

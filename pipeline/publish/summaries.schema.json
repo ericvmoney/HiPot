@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Posting summaries file",
+  "description": "The shape of site/data/summaries.json, written by pipeline.publish beside board.json and loaded by site/index.html the first time a reader opens \"From the posting\". Owned by workstream A4. Each distinct text is stored once; a role in board.json points to its text with `sm`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["summaries_version", "generated_at", "texts"],
+  "properties": {
+    "summaries_version": {"const": 0},
+    "generated_at": {"type": "string", "format": "date-time", "description": "The same as board.json's: the page uses the file only when they match."},
+    "texts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 300,
+                "description": "A posting's summary, cut to 300 characters at a sentence end or a word (with an ellipsis)."}
+    }
+  }
+}

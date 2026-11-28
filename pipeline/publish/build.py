@@ -158,12 +158,12 @@ def _role_record(job: dict) -> dict[str, Any]:
         record["posted"] = job["posted_date"]
     else:
         record["seen"] = job["first_seen"][:10]
-    if job.get("summary"):
-        record["summary"] = shorten(job["summary"], SUMMARY_CHARS)
+    # The summary goes to summaries.json, not here: see build_outputs().
     return record
 
 
-SUMMARY_CHARS = 200   # summaries are half of board.json; the page shows them behind "From the posting"
+SUMMARY_CHARS = 300   # in summaries.json, which the page loads only when "From the posting" is first opened
+SUMMARIES_VERSION = 0
 
 
 def shorten(text: str, limit: int) -> str:
@@ -204,7 +204,19 @@ def _select(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlist
 
 def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
                 grades: bool = True, seed_ids: set[str] = frozenset(), runs: dict | None = None) -> dict:
-    """Return the board data as a dict. Raises PublishError on input that fails the contracts.
+    """The board data alone; see build_outputs()."""
+    return build_outputs(jobs_file, registry_file, taxonomy, include_unlisted, grades, seed_ids, runs)[0]
+
+
+def build_outputs(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
+                  grades: bool = True, seed_ids: set[str] = frozenset(), runs: dict | None = None) -> tuple[dict, dict]:
+    """Return (board, summaries) as dicts. Raises PublishError on input that fails the contracts.
+
+    The posting summaries are half of what a role would weigh, and the page shows them only behind
+    "From the posting", so they are a separate file (summaries.json) that the page loads on demand.
+    Each distinct text, cut to SUMMARY_CHARS, is stored once (many roles at a company share its blurb);
+    a role carries its text's index as `sm`. Both files carry the same generated_at, so the page can
+    tell a mismatched pair.
 
     `grades` adds a pay-vs-market grade to each role with a published range (see grades.py).
     `seed_ids` are the ids the collector primed from the old hub's seed; they are never new (see fresh.py).
@@ -238,8 +250,18 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
             if record["id"] in found:
                 record["grade"] = found[record["id"]]
         labels["grades"] = [{"id": key, "label": label} for key, label in paygrades.GRADES]
+    texts: list[str] = []
+    text_index: dict[str, int] = {}
+    for job, record in zip(kept, records):
+        if job.get("summary"):
+            text = shorten(job["summary"], SUMMARY_CHARS)
+            if text not in text_index:
+                text_index[text] = len(texts)
+                texts.append(text)
+            record["sm"] = text_index[text]
+    summaries = {"summaries_version": SUMMARIES_VERSION, "generated_at": jobs_file["generated_at"], "texts": texts}
 
-    return {
+    board = {
         "board_version": BOARD_VERSION,
         "generated_at": jobs_file["generated_at"],
         "source": jobs_file["source"],
@@ -268,6 +290,7 @@ def build_board(jobs_file: dict, registry_file: dict, taxonomy: dict, include_un
         "companies": company_records,
         "roles": records,
     }
+    return board, summaries
 
 
 def build_pay(jobs_file: dict, registry_file: dict, taxonomy: dict, include_unlisted: bool = False,
@@ -373,6 +396,23 @@ def dumps_board(board: dict) -> str:
     lines.append("]")
     lines.append("}")
     return "\n".join(lines) + "\n"
+
+
+def dumps_summaries(summaries: dict) -> str:
+    """One text per line."""
+    lines = ["{"] + [f"{_compact(key)}:{_compact(value)}," for key, value in summaries.items() if key != "texts"]
+    lines.append('"texts":[')
+    lines.append(",\n".join(_compact(text) for text in summaries["texts"]))
+    lines += ["]", "}"]
+    return "\n".join(lines) + "\n"
+
+
+def write_summaries(summaries: dict, path: Path | str) -> int:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    data = dumps_summaries(summaries).encode("utf-8")
+    path.write_bytes(data)
+    return len(data)
 
 
 def write_board(board: dict, path: Path | str) -> int:
