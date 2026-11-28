@@ -6,8 +6,38 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
+- id: aadi-space
+  name: Aadi Space
+  website: https://aadi.space
+  careers_url: null
+  hq: San Jose, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'AI-powered infrastructure for autonomous spacecraft: Space Mobility Vehicles, Falcon ARPOD subsystem,
+      debris mitigation and de-orbit services, Orchestrator mission-ops platform. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding round stated on aadi.space; site links an
+    Investors section with no figures. Flags: Contact page does not say which office is HQ; US entity is in San
+    Jose. Not found by web search; dealroom and YC slugs 404.. Evidence: a a d i . s Region sources: bacei-space-2025.
+    Confidence: low.'
+  categories:
+  - aerospace-space
 - id: aalyria
   name: Aalyria
   website: https://www.aalyria.com
@@ -319,6 +349,39 @@ companies:
     for this company; not confirmed on own site. HQ not on own site.'
   categories:
   - data-centers
+- id: array-labs
+  name: Array Labs
+  website: https://www.arraylabs.io/
+  careers_url: null
+  hq: Palo Alto, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: null
+  headcount:
+    value: 30
+    as_of: '2026-11-27'
+    source: Y Combinator company page (https://www.ycombinator.com/companies/array-labs)
+  climate:
+    tier: out
+    reason: Radar satellites flown in multistatic clusters for real-time 3D imaging and high-resolution digital
+      elevation models of Earth. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 30 people (Y Combinator company page, 2026-11-27); funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: Series A of $20M led by Catapult Ventures announced
+    2026-01-05 (arraylabs.io update); additional $21M anchored by strategic investor Mitsubishi Electric announced
+    2026-07-27, round name not stated; $5M seed in Oct 2022. Flags: YC page lists location San Francisco and job
+    listings in Redwood City; the company''s own Series A post says Palo Alto. Founding year not stated on pages
+    fetched.. Evidence: Y C   p a g Region sources: yc-aviation-space-bay, yc-satellites, bacei-space-2025. Confidence:
+    low.'
+  categories:
+  - aerospace-space
 - id: astera-labs
   name: Astera Labs
   website: https://www.asteralabs.com
@@ -2247,6 +2310,37 @@ companies:
     on own site.'
   categories:
   - autonomy-robotics
+- id: krtkl
+  name: krtkl
+  website: https://krtkl.com
+  careers_url: null
+  hq: San Francisco, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Embedded edge-compute hardware (snickerdoodle and piSmasher boards) and software for autonomy and space
+      systems, sold to US defense customers. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Only government contracts seen (SBIR/STTR with Air Force,
+    Navy, Army, Space Force ISAM, SDA contract 2024, Army xTech autonomy phase 2 2025); no equity round found. Flags:
+    Site pages render client-side so the fetch saw only titles; HQ city and founding year not confirmed from pages
+    (input said San Francisco, CA). ''Satellite communications'' in the source is not confirmed; space work appears
+    to be SBIR/SDA contracts.. Evidence: k r t k l . Region sources: bacei-space-2025. Confidence: low.'
+  categories:
+  - aerospace-space
+  - semis-electronics
 - id: kudo3d
   name: Kudo3D
   website: https://www.kudo3d.com
@@ -3230,6 +3324,37 @@ companies:
     state it.'
   categories:
   - semis-electronics
+- id: palo-alto-electron
+  name: Palo Alto Electron
+  website: https://www.paloaltoelectron.com
+  careers_url: null
+  hq: Palo Alto, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Silicon, chiplets, packaging and deployment-ready systems for data center and edge AI (chiplet/package
+      design, board and platform engineering, silicon-to-rack deployment). Data-center equipment and computing are
+      out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: No funding information on the company site. Flags: Site
+    describes chiplets and AI hardware systems rather than rack power electronics as the source said. Active status
+    rests on the live site only; no dated news on the page. Web search found nothing; /about 404.. Evidence: p a
+    l o a l Region sources: ocp-members-us. Confidence: low.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: piris-labs
   name: Piris Labs
   website: https://pirislabs.io
@@ -3791,6 +3916,38 @@ companies:
     own site gives no address.'
   categories:
   - autonomy-robotics
+- id: skycorp-inc
+  name: Skycorp Inc.
+  website: https://www.spacebilt.com
+  careers_url: null
+  hq: Santa Clara, CA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  - buildings
+  stage: null
+  founded: 1998
+  headcount: null
+  climate:
+    tier: out
+    reason: On-orbit assembled, multi-tenant satellites (Orbital Logistics Vehicle / m-OLV) hosting payloads, plus
+      orbital data center node and edge AI server hardware. Data-center equipment and computing are out (owner decision
+      13).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found; founded 1998 and no equity raise in the last 5 years found, so no growth sign.
+  notes: 'No job board found on the company''s site. Stage: No equity round found; awards include NASA Watts on
+    the Moon prizes and a DIU Orbital Logistics prototype contract (2024-03-21). Flags: Rename comes from a third-party
+    directory that calls it unconfirmed; spacebilt.com itself does not mention Skycorp, but the DIU OLV news matches
+    Skycorp''s OLV. HQ from the directory; spacebilt.com gives no address.. Evidence: f a c t o r Region sources:
+    bacei-space-2025. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: snowcap-compute
   name: Snowcap Compute
   website: https://snowcapcompute.com
