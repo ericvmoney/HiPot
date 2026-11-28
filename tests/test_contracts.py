@@ -123,7 +123,7 @@ def test_categories_clean_tech_is_the_default_and_never_written():
     categories = {c["id"]: c for c in TAXONOMY["categories"]}
     assert [cid for cid, c in categories.items() if c.get("default")] == ["clean-tech"]
     for cid in ("autonomy-robotics", "aerospace-space", "semis-electronics", "advanced-manufacturing",
-                "data-centers", "defense", "mining", "oil-gas"):
+                "data-centers", "defense", "mining", "oil-gas", "automotive"):
         assert categories[cid]["label"] and categories[cid]["covers"]
     company = copy.deepcopy(COMPANIES["companies"][0])
     company["categories"] = ["clean-tech"]

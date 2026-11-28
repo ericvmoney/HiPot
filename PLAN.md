@@ -299,6 +299,10 @@ Decided by Eric on 2026-11-24:
     - When the board runs on the owner's machine through `tools.serve_board`, the persona and My Roles are also saved to `local-data/` in the repository folder. That folder is git-ignored and never committed. They come back when the page is reloaded or the server restarts.
     - The local server only listens on 127.0.0.1 and only accepts requests from its own page.
     - The shared artifact is unchanged: the persona stays in the tab, and My Roles stays in the browser.
+26. **Automotive category** (Eric, 2026-11-27):
+    - A ninth adjacent category, `automotive`, covers vehicle makers and their plants (Ford, GM, PACCAR, Daimler Truck, the Kia, Hyundai and BMW plants and others) and auto-parts suppliers (Lear, Hanon, Hitachi Astemo and others), whatever the drivetrain.
+    - EV makers that are clean tech carry it as well.
+    - The seed's `ford` entry stays untagged; tag `ford-motor-company` only.
 25. **Dealroom profile facts after an API refusal** (Eric, 2026-11-27):
     - In a Texas fact batch, the permission check refused Dealroom's lookup API, and the agent went on to read ordinary Dealroom profile pages. The supervisor quarantined the facts for 14 companies.
     - The owner released them: profile pages count as an ordinary source.
