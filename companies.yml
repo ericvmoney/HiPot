@@ -1966,6 +1966,40 @@ companies:
     Seed round; TRL-2 current state Flags: Site does not give HQ; Chicago from polsky-resurgence. Methane feedstock
     (biogas vs natural gas) still not stated on the site.. Evidence: O w n   s i Region sources: polsky-resurgence.
     Confidence: low.'
+- id: agc-electronics-america
+  name: AGC Electronics America
+  website: https://www.agc.com
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Materials for the semiconductor industry, mainly silicon carbide ceramics and CMP slurries for wafer
+      polishing, made in Hillsboro; also distributes other AGC electronics materials (search summary of directory
+      listings; not confirmed on agc.com). Adjacent (Semiconductors and electronics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Search summary of directory listings describes it as
+    a division of AGC Flat Glass North America, Inc. (AGC group, Japan). Not confirmed on agc.com. Flags: subsidiary
+    of AGC group (via AGC Flat Glass North America, per directory listings). Evidence: https://www.photonics.com/Buyers-Guide/AGC-Electronics-America/c24422
+    https://ensun.io/company/agc-electronics-america-649df67ac55108d939e12f6f https://www.jobtarget.com/jobs/jt-tm62hdviy3/forming-operator-1-hillsboro-oregon
+    Region sources: oregon-chips-awards. Confidence: medium. Unresolved: agc.com network pages (/en/company/network/
+    and /en/company/network/america.html) returned 404, so nothing was confirmed on AGC''s own site. Street address
+    differs between listings (4375 NE 59th Ave vs 4375 NW 235th Ave, Hillsboro 97124). Founding year and headcount
+    not found. Facts come from one web search.'
+  categories:
+  - semis-electronics
 - id: agellus-tank-robotics
   name: Agellus Tank Robotics
   website: https://agellustankrobotics.com
@@ -2286,6 +2320,37 @@ companies:
     Confidence: low.'
   categories:
   - autonomy-robotics
+- id: airship-technologies-group
+  name: AIRSHIP Technologies Group
+  website: https://airshiptg.com
+  careers_url: null
+  hq: OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: VTOL and long-endurance UAVs from the micro StingerMAV to the 30-foot VX Heavy Lift, a 3D-printing process
+      for UAVs and AlphaDrive propulsion; cohort listing adds counter-UAS. Defense is its main business (owner ruling
+      A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding or listing information found; Oregon UAS
+    Accelerator cohort 3 (Dec 2025). Flags: defense is main business (site: V1, V2 and V5 developed for the military,
+    with a secondary civilian market). Evidence: https://www.airshiptg.com/ https://siliconflorist.com/?p=72516
+    Region sources: sf-ouas-2025-12. Confidence: medium. Unresolved: City, founding year, headcount, funding, whether
+    publicly traded.'
+  categories:
+  - autonomy-robotics
+  - defense
 - id: akash-systems
   name: Akash Systems
   website: https://akashsystems.com
@@ -3332,6 +3397,36 @@ companies:
     found.'
   categories:
   - advanced-manufacturing
+- id: amazon-project-kuiper-amazon-leo
+  name: Amazon Project Kuiper (Amazon Leo)
+  website: https://www.aboutamazon.com/what-we-do/devices-services/project-kuiper
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Amazon Leo (renamed from Project Kuiper on Nov 13 2025), a low Earth orbit satellite broadband network;
+      satellites built in Kirkland, WA. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: No program headcount found Stage: A business
+    unit of Amazon.com, Inc. (public); listing year not checked this pass. https://www.aboutamazon.com/news/innovation-at-amazon/what-is-amazon-project-kuiper
+    Flags: subsidiary (division) of Amazon; over 1,000 employees (parent); Kirkland factory can build up to five
+    satellites per day (Amazon). Evidence: https://www.aboutamazon.com/news/innovation-at-amazon/what-is-amazon-project-kuiper
+    Region sources: wa-space-summit-2023, space-city-wa. Confidence: high. Unresolved: Program headcount; program
+    start year.'
+  categories:
+  - aerospace-space
 - id: amazon-robotics
   name: Amazon Robotics
   website: https://www.amazon.jobs/en/teams/amazon-robotics
@@ -3706,6 +3801,35 @@ companies:
   categories:
   - aerospace-space
   - defense
+- id: american-semiconductor
+  name: American Semiconductor
+  website: https://www.americansemi.com
+  careers_url: null
+  hq: Boise, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Advanced substrates and chip packaging, including Semiconductor-on-Polymer chip-scale packaging and
+      flexible ICs, plus assembly, test and prototyping. Adjacent (Semiconductors and electronics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding or ownership stated on its own site. Flags:
+    ITAR-registered (defense share not stated). Evidence: https://www.americansemi.com/ https://americansemi.com/about/
+    Region sources: idaho-commerce-semis. Confidence: medium. Unresolved: Founding year, headcount, ownership and
+    whether defense is the main business not found. Address 6987 W Targee St, Boise.'
+  categories:
+  - semis-electronics
 - id: american-superconductor-amsc
   name: American Superconductor (AMSC)
   website: https://amsc.com
@@ -6376,6 +6500,39 @@ companies:
     tests, 2019), a $6.1M testing campaign in Canada (~2024) and a May 2024 state grant; no equity rounds found.
     Flags: latest site news is from 2024. Evidence: https://atargis.com https://atargis.com/about Region sources:
     ccia-members, oedit-ai. Confidence: medium. Unresolved: Headcount, equity funding'
+- id: atc-manufacturing
+  name: ATC Manufacturing
+  website: https://atcmanufacturing.com
+  careers_url: null
+  hq: Post Falls, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2004
+  headcount: null
+  climate:
+    tier: out
+    reason: Thermoplastic composite parts and structures (control surfaces, fuselage sections, wings, tail assemblies,
+      UAV airframes, propeller blades) for commercial aerospace and defense; over 2,000,000 parts produced for commercial
+      aircraft. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 2004, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Headcount note: Site news says it is hiring dozens of engineers
+    and technicians. Founded: https://www.atcmanufacturing.com/about. Stage: Ownership and funding not stated on
+    site. Flags: significant defense work (US Air Force contract), but commercial aerospace prominent; defense not
+    shown to be main business. Evidence: https://www.atcmanufacturing.com/ https://www.atcmanufacturing.com/about
+    Region sources: idaho-web-search. Confidence: medium. Unresolved: Headcount, ownership.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: atdev-assistive-technology-development
   name: ATDev (Assistive Technology Development)
   website: https://assistivetech.dev/
@@ -6574,6 +6731,36 @@ companies:
     says Mount Prospect, IL but its About text says London-based; press releases datelined Delaware. Evidence: https://atlasmaterials.com
     https://dealroom.co/companies/atlas-materials Region sources: voyager. Confidence: medium. Unresolved: Real
     operating HQ; whether a US site exists in Illinois.'
+- id: atlas-technologies
+  name: Atlas Technologies
+  website: https://www.atlasuhv.com
+  careers_url: null
+  hq: Port Townsend, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1994
+  headcount: null
+  climate:
+    tier: out
+    reason: Bonded bimetal vacuum flanges and fittings, aluminum and titanium UHV chambers, titanium sublimation
+      pumps and related machining and welding. Adjacent (Semiconductors and electronics, Advanced manufacturing),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1994, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://www.atlasuhv.com/our-history. Stage: Private,
+    no venture rounds found; no owner or parent named on its own site. Evidence: https://www.atlasuhv.com/ https://www.atlasuhv.com/our-history
+    Region sources: wa-commerce-mfg-awards-2026. Confidence: high. Unresolved: Headcount not found.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: atmosic-technologies
   name: Atmosic Technologies
   website: https://atmosic.com
@@ -7318,6 +7505,38 @@ companies:
     https://businesswire.com/news/home/20240206271792/en/Avnos-Inc.-Secures-36-Million-in-Series-A-Funding-Led-by-NextEra-Energy
     https://www.businesswire.com/news/home/20251106363047/en/Avnos-Secures-Up-to-$17-Million-in-Funding-to-Build-Flagship-DAC-Facility
     Confidence: medium. Unresolved: Headcount; HQ (Los Angeles vs New Jersey). Missing facts filled from data/screening/registry-fixes.'
+- id: avtechtyee
+  name: AvtechTyee
+  website: https://avtechtyee.com
+  careers_url: null
+  hq: Everett, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1963
+  headcount: null
+  climate:
+    tier: out
+    reason: Aircraft audio systems, avionics controls, panels, lighting and ballasts, and structural rods and struts.
+      Adjacent (Aerospace and space, Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1963, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.avtechtyee.com/about-us. Stage: acquired
+    by TransDigm Group in 2014 (own site history); Avtech (inc. 1963) and Tyee merged 2010 Flags: subsidiary of
+    TransDigm Group (NYSE-listed); 1963 is Avtech''s incorporation; Tyee history from 1958; domain was blank in
+    input. Evidence: https://www.avtechtyee.com/ https://www.avtechtyee.com/about-us Region sources: choosewa-paris-2023.
+    Confidence: high. Unresolved: headcount'
+  categories:
+  - aerospace-space
+  - semis-electronics
 - id: axiado
   name: Axiado
   website: https://axiado.com
@@ -7619,6 +7838,38 @@ companies:
     GaN power electronics, including inverters, converters and solid-state transformers.'
   categories:
   - semis-electronics
+- id: bantam-aero
+  name: Bantam Aero
+  website: https://bantam.aero
+  careers_url: null
+  hq: Bingen, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Expendable fixed-wing drone airframes made by a low-cost plastic thermoforming process for mass production.
+      Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding disclosed; Oregon UAS Accelerator fall 2026
+    cohort. Flags: defense is main business (cohort listing: airframes for military drones; own site names no customer
+    sector). Evidence: https://www.bantam.aero/ https://siliconflorist.com/2026/08/20/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort/
+    Region sources: sf-ouas-2026-fall. Confidence: medium. Unresolved: Founding year, headcount, funding. Bingen
+    comes from the cohort article, not the company site.'
+  categories:
+  - advanced-manufacturing
+  - autonomy-robotics
+  - defense
 - id: banyu-carbon
   name: Banyu Carbon
   website: https://banyucarbon.com
@@ -8884,6 +9135,42 @@ companies:
     (decision 23): Combustion, oil and gas: its customers are oil and gas operators.'
   categories:
   - oil-gas
+- id: blue-origin
+  name: Blue Origin
+  website: https://www.blueorigin.com
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: 2000
+  headcount:
+    value: 12398
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/blue-origin)
+  climate:
+    tier: out
+    reason: Launch vehicles, rocket engines and space vehicles (input description; own site refused, Dealroom profile
+      does not restate product). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '12,398 people (Dealroom (https://dealroom.co/companies/blue-origin), 2026-11-27): over the 4,000-person
+      line.'
+  notes: 'No board found: site refused automated client (HTTP 429 on robots.txt); site not read. Headcount note:
+    Dealroom 12,398, undated (as_of is retrieval date); band 10k-25k Founded: https://dealroom.co/companies/blue-origin.
+    Stage: Private, founder-funded; Dealroom lists ''other financing'' of $10B at a $130B valuation in Jul 2026
+    and a $35M NASA grant in Jul 2023. No venture series letters; stage left null. Flags: over 1,000 employees;
+    blueorigin.com answered 429; not retried, own site not read. Evidence: https://dealroom.co/companies/blue-origin
+    Region sources: wa-space-summit-2023, space-city-wa. Confidence: medium. Unresolved: Own site refused (429);
+    product not confirmed from own site.'
+  categories:
+  - aerospace-space
 - id: blue-planet-systems
   name: Blue Planet Systems
   website: https://www.blueplanetsystems.com/
@@ -9662,6 +9949,42 @@ companies:
     Evidence: https://dealroom.co/companies/brimstone-energy https://www.bisnow.com/news/national/construction-development/pre-revenue-clean-cement-startup-raises-55m-in-series-a-round-112846
     https://www.cbinsights.com/company/brimstone-energy/financials Confidence: medium. Unresolved: Current status
     of the $189M DOE award not checked; the open role is in Reno, NV (not checked).'
+- id: brinc-drones
+  name: BRINC Drones
+  website: https://www.brincdrones.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: ashby
+    board: brinc
+  read: auto
+  sectors: []
+  stage: series-c
+  founded: 2017
+  headcount:
+    value: 187
+    as_of: '2026-07-16'
+    source: Tech Funding News (https://techfundingnews.com/motorola-and-index-ventures-back-brinc-with-125m-to-put-a-911-drone-on-every-us-police-and-fire-station-roof/)
+  climate:
+    tier: out
+    reason: Drones (Guardian, Responder, Lemur 2) and LiveOps software for police, fire and emergency response.
+      Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 187 people (Tech Funding News (https://techfundingnews.com/motorola-and-index-ventures-back-brinc-with-125m-to-put-a-911-drone-on-every-us-police-and-fire-station-roof/),
+      2026-07-16); growth sign: founded 2017.'
+  notes: 'Board ashby:brinc seen 2026-11-27, linked from the company''s own site: 27 open roles, 16 US-remote. Headcount
+    note: 187 in July 2026 (up from 108 a year earlier); Dealroom shows 212, undated Founded: https://brincdrones.com/about/.
+    Stage: Series C $75M, Apr 2025 (Dealroom labels late VC); $125M round led by Motorola Solutions, 2026-07-16,
+    series not stated, total over $280M (Tech Funding News); Series B $60M Jun 2022 (Dealroom) Flags: founding year
+    disagrees: site implies 2017 (founded after Oct 2017 shooting), Dealroom says 2019; customers are public safety
+    agencies, not defense; later 2026 round may make it late stage. Evidence: https://brincdrones.com/about/ https://dealroom.co/companies/brinc-2
+    https://techfundingnews.com/motorola-and-index-ventures-back-brinc-with-125m-to-put-a-911-drone-on-every-us-police-and-fire-station-roof/
+    Region sources: fundraiseinsider-seattle, growthlist-seattle. Confidence: high.'
+  categories:
+  - autonomy-robotics
 - id: brint-tech
   name: Brint Tech
   website: https://brint.tech
@@ -9881,6 +10204,35 @@ companies:
     Evidence: h t t p s : Region sources: massrobotics-residents. Confidence: low.'
   categories:
   - autonomy-robotics
+- id: bunker-hill-mining
+  name: Bunker Hill Mining
+  website: https://bunkerhillmining.com
+  careers_url: null
+  hq: Kellogg, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Restarting the Bunker Hill lead-zinc-silver mine in Kellogg, Idaho; ramping up, with commercial production
+      not yet reached. Mine operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: TSX BNKR and OTCQB BHLL, pursuing an NYSE American listing
+    (own site); listing year not found. Flags: mining operator (mine in restart and ramp-up); name change to Bunker
+    Hill Silver Corp. proposed November 2026; domain now redirects to bunkerhillsilver.com. Evidence: https://bunkerhillsilver.com/
+    https://bunkerhillsilver.com/contact/ Region sources: search-idaho-mining. Confidence: high. Unresolved: Incorporation
+    year and headcount not found. Corporate HQ 1009 McKinley Ave, Kellogg.'
+  categories:
+  - mining
 - id: buoyant-aero
   name: Buoyant Aero
   website: https://buoyant.aero
@@ -10957,6 +11309,36 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding found; Dealroom slug carbon-infuse 404. Evidence:
     https://carboninfuse.com Region sources: activate. Confidence: medium. Unresolved: HQ not stated on own site
     (input says New York, NY); founding year, headcount, funding not found.'
+- id: carbon-robotics
+  name: Carbon Robotics
+  website: https://www.carbonrobotics.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: ashby
+    board: carbon-robotics
+  read: auto
+  sectors: []
+  stage: late
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: LaserWeeder AI laser weeding implements and Carbon Autonomy tractor autonomy. Adjacent (Autonomy and
+      robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2018.'
+  notes: 'Board ashby:carbon-robotics seen 2026-11-27, token matched by name; board page checked: 4 open roles.
+    Headcount note: only headcount found was in an excluded source Founded: https://carbonrobotics.com/about. Stage:
+    Series D $70M, 2024-10-21, led by BOND, total $157M (The Robot Report); later $20M Series D-2 led by Giant Ventures
+    (search snippet) Flags: manufacturing expansion in Eastern Washington. Evidence: https://carbonrobotics.com/about
+    https://www.therobotreport.com/carbon-robotics-brings-in-70m-to-scale-laserweeder/ Region sources: fundraiseinsider-seattle,
+    growthlist-seattle. Confidence: high. Unresolved: headcount'
+  categories:
+  - autonomy-robotics
 - id: carbon-utility
   name: Carbon Utility
   website: https://carbonutility.com/
@@ -12060,6 +12442,38 @@ companies:
     total disclosed equity $0-10M, latest entry a $100K Empire State Development grant, July 2026. Likely seed-stage
     but round not confirmed. Evidence: https://chemfinitytech.com https://dealroom.co/companies/chemfinity-technologies
     Region sources: third-derivative. Confidence: medium. Unresolved: Round type not found.'
+- id: chempower
+  name: ChEmpower
+  website: null
+  careers_url: null
+  hq: Portland, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Chakra functional polishing pads for abrasive-free chemical mechanical planarization (CMP) in chipmaking,
+      launched February 2026 starting with copper. Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Series A $18.7M, 24 April 2025, co-led by M Ventures
+    and Rhapsody Venture Partners with Intel Capital, Pangaea, Foothill, In-Q-Tel and TEL Venture Capital. https://www.intelcapital.com/chempower-secures-18-7m-to-advance-abrasive-free-planarization-in-chip-manufacturing/
+    Flags: domain not in input; investor page names chempower-corp.com (not fetched). Evidence: https://www.intelcapital.com/chempower-secures-18-7m-to-advance-abrasive-free-planarization-in-chip-manufacturing/
+    https://www.businesswire.com/news/home/20260211733975/en/ChEmpower-Introduces-Chakra-the-Industrys-First-Functional-Pad-for-Abrasive-Free-Planarization
+    Region sources: semieng-startup-funding. Confidence: medium. Unresolved: HQ: company materials say Portland,
+    OR; CB Insights (in a search summary) lists 15220 NW Greenbrier Pkwy, Beaverton. Founding year and headcount
+    not found.'
+  categories:
+  - semis-electronics
 - id: chemtronergy
   name: Chemtronergy
   website: https://www.chemtronergy.com
@@ -14746,6 +15160,36 @@ companies:
     a California Energy Commission grant; no round found. Flags: pre-commercial. Evidence: https://darmoktech.com
     Region sources: cec-eif-showcase, cec-nopa, calseed-awardees. Confidence: medium. Unresolved: founded, headcount,
     stage'
+- id: data-blanket
+  name: Data Blanket
+  website: https://www.datablanket.com
+  careers_url: null
+  hq: Bellevue, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: AI-driven drone fleet system ('Air Force in a Box') for wildfire and first-responder aerial oversight.
+      Adjacent (Autonomy and robotics, Aerospace and space), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: site has an investors section but no names or amounts
+    shown; Dealroom slug data-blanket 404 Flags: integrated drone hardware and AI software; split not stated; customers
+    fire departments, police and cities; not defense. Evidence: https://www.datablanket.com/ https://www.datablanket.com/about
+    Region sources: fundraiseinsider-seattle. Confidence: medium. Unresolved: HQ (input says Bellevue, WA; not on
+    site), founding year, headcount, funding'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
 - id: de-ice
   name: De-Ice
   website: https://deice.com
@@ -14776,6 +15220,42 @@ companies:
     and space: Electric, chemical-free ice protection for aircraft.'
   categories:
   - aerospace-space
+- id: deako
+  name: Deako
+  website: https://www.deako.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: breezy
+    board: deako
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 2014
+  headcount:
+    value: 59
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/deako)
+  climate:
+    tier: out
+    reason: Modular smart light switches, dimmers, smart plugs, outlets and faceplates for homes, sold largely through
+      homebuilders. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Owner not yet checked; 59 people (Dealroom (https://dealroom.co/companies/deako), 2026-11-27); growth
+      sign: founded 2014.'
+  notes: 'Board breezy:deako seen 2026-11-27, linked from the company''s own site: 2 open roles. Headcount note:
+    Dealroom 59, band under 100; undated, read 2026-11-27 (may predate the merger). Founded: https://www.deako.com/about.
+    Stage: SKYX Platforms (Nasdaq SKYX) 10-Q: acquired Deako, Inc. for $4M plus up to 25M SKYX shares; now a wholly
+    owned subsidiary. Before that, Dealroom shows late-stage VC $13M, October 2022 (YC W16). https://www.sec.gov/Archives/edgar/data/0001598981/000149315226051404/form10-q.htm
+    Flags: subsidiary of SKYX Platforms (since October 2026). Evidence: https://www.deako.com/about https://dealroom.co/companies/deako
+    https://www.sec.gov/Archives/edgar/data/0001598981/000149315226051404/form10-q.htm https://finviz.com/news/402511/skyx-announces-closing-of-merger-with-leading-ai-smart-home-technology-company-deako-positioning-the-combined-company-to-become-a-leader-in-the-ai-smart-home-market
+    Region sources: yc-seattle. Confidence: high. Unresolved: Founding year: own site says 2014, Dealroom header
+    says 2016. Merger terms taken from a search summary of the 10-Q, not read directly.'
+  categories:
+  - semis-electronics
 - id: deep-anchor-solutions
   name: Deep Anchor Solutions
   website: https://www.deepanchorsolutions.com/
@@ -16397,6 +16877,41 @@ companies:
     https://www.downtownakron.com/go/echogen Region sources: arpa-e, doe-oced. Confidence: medium. Unresolved: Founding
     year (site: ''almost two decades'' of sCO2 work); HQ Akron from input and an Akron directory listing, not stated
     on own site. Site quotes a strategic partnership with Westinghouse (2025 press release).'
+- id: eclipse-space
+  name: Eclipse Space
+  website: https://eclipse.space
+  careers_url: null
+  hq: Redmond, WA
+  ats:
+    type: greenhouse
+    board: eclipsespace
+  read: auto
+  sectors: []
+  stage: seed
+  founded: null
+  headcount:
+    value: 30
+    as_of: '2026-06-29'
+    source: Via Satellite / TechTimes (search summary) (https://www.satellitetoday.com/connectivity/2026/06/29/new-megaconstellation-startup-eclipse-space-targets-sovereign-market/)
+  climate:
+    tier: out
+    reason: Turnkey satellite constellations that customers own and operate (CitraSat direct-to-device, SliceSat
+      broadband, SurgeSat space datacenter). Data-center equipment and computing are out (owner decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 30 people (Via Satellite / TechTimes (search summary) (https://www.satellitetoday.com/connectivity/2026/06/29/new-megaconstellation-startup-eclipse-space-targets-sovereign-market/),
+      2026-06-29); founding year not found, so included.
+  notes: 'Board greenhouse:eclipsespace seen 2026-11-27, token matched by name; board page checked: 15 open roles.
+    Headcount note: About 30 employees at launch, June 2026 Stage: Seed round Jun 1 2026 led by Space Capital with
+    Tectonic and Ubiquity; amount undisclosed (PitchBook lists $5M, unconfirmed). Company debuted Jun 26 2026. Flags:
+    customers include sovereign governments; defense not shown to be the main business; businesswire.com answered
+    403; not retried. Evidence: https://www.eclipse.space/ https://www.satellitetoday.com/connectivity/2026/06/29/new-megaconstellation-startup-eclipse-space-targets-sovereign-market/
+    https://www.techtimes.com/articles/319184/20260627/starlink-veterans-launch-eclipse-space-fabless-model-nations-own-constellations.htm
+    Region sources: space-city-wa. Confidence: medium. Unresolved: Founding year; seed amount; HQ on own site.'
+  categories:
+  - aerospace-space
 - id: ecosphere-organics
   name: Ecosphere Organics
   website: https://ecosphereorganics.com/
@@ -16695,6 +17210,37 @@ companies:
     than product sales. Evidence: https://dealroom.co/companies/eion Region sources: njeda-csit-seed-r1, njeda-csit-rd-vouchers.
     Confidence: medium. Unresolved: eion.team did not resolve; Dealroom gives eioncarbon.com, which could not be
     fetched (safety check rate-limited twice). Whether the main revenue is the mineral product or carbon credits.'
+- id: eivie-corp
+  name: EIVIE Corp.
+  website: https://eivie.us
+  careers_url: null
+  hq: OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: pre-seed
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Uncrewed annular (circular)-wing aircraft from compact cargo drones (3-6 kg payload) to the full-size
+      EIFAST cargo drone (150 kg payload), for heavy lift and rescue. Adjacent (Aerospace and space, Autonomy and
+      robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Two founders named; prototypes flying since
+    2022. Stage: NASA SBIR Phase I completed June 2026, Business Oregon grants, Oregon UAS Accelerator cohort 3;
+    no equity round disclosed (investor room by invitation). Stage inferred from grants only. Evidence: https://eivie.us/
+    https://siliconflorist.com/?p=72516 Region sources: sf-ouas-2025-12. Confidence: medium. Unresolved: City, founding
+    year, headcount, equity funding.'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
 - id: eldorado-national-california
   name: ElDorado National-California
   website: null
@@ -18742,6 +19288,44 @@ companies:
     Stage: $6.5M seed Nov 2025 (Azolla Ventures, Chevron Technology Ventures, Freeflow, Plug and Play); Berkeley
     Lab JBEI spinout Jan 2025 (Dealroom). Evidence: https://ergbio.com/ https://dealroom.co/companies/erg-bio Region
     sources: lbnl-ipo-startups. Confidence: high. Tier set under owner decision 13.'
+- id: erickson
+  name: Erickson
+  website: https://www.ericksoninc.com
+  careers_url: null
+  hq: Central Point, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1971
+  headcount:
+    value: 501
+    as_of: '2026-11-24'
+    source: ZoomInfo (search snippet); undated, so as_of is the day it was read (https://www.zoominfo.com/c/erickson-inc/36866909)
+  climate:
+    tier: out
+    reason: 'Type-certificate holder and OEM of the S-64 Air Crane heavy-lift helicopter: manufacturing, aircraft
+      sales, composite main rotor blades and MRO, serving civilian and military markets. Adjacent (Aerospace and
+      space), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 501 people (ZoomInfo (search snippet); undated, so as_of is the day it was read (https://www.zoominfo.com/c/erickson-inc/36866909),
+      2026-11-24); founded 1971, with no equity raise in 5 years or recent listing found.
+  notes: 'No job board found on the company''s site. Headcount note: ZoomInfo band 501-1,000, undated; SOREDI 2018
+    profile said about 800; HigherGov lists under 500. All from search snippets, not fetched. Founded: https://ericksoninc.com/about/history/.
+    Stage: private, no venture rounds; private again since emerging from Chapter 11 in May 2017 (search summary
+    of Wikipedia; not fetched). Ownership not stated on own site. Flags: HQ uncertain: Central Point, OR on own
+    site; Portland per older sources; civil and military markets; defense not shown to be the main business; emerged
+    from Chapter 11 in 2017 (search snippet). Evidence: https://ericksoninc.com/about/ https://ericksoninc.com/about/history/
+    https://www.ericksoninc.com/ https://en.wikipedia.com/wiki/Erickson_Inc. https://soredi.org/erickson/ Region
+    sources: nwaero-oregon. Confidence: medium. Unresolved: Current headcount and owner from a primary source (dealroom.co/companies/erickson
+    404).'
+  categories:
+  - aerospace-space
 - id: eridu
   name: Eridu
   website: https://eridu.ai
@@ -18930,6 +19514,37 @@ companies:
   categories:
   - data-centers
   - semis-electronics
+- id: ether-form
+  name: Ether Form
+  website: https://etherform.com
+  careers_url: null
+  hq: McMinnville, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Real-time RF simulation and sensing systems (Channel Reactor), a UAS long-range communications suite,
+      a Group 2 eVTOL ISR UAS, modular UAS electronics and engineering services; also pitched software-guided drone
+      interceptors. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Ether Form Inc; no funding disclosed; Oregon UAS Accelerator
+    cohort 3 and 2026 Innovation Showcase finalist. Flags: defense not stated as main business on own site (says
+    commercial and advanced R&D customers), though ISR and interceptor products suggest defense work; partly engineering
+    services. Evidence: https://www.etherform.com/ https://siliconflorist.com/?p=72516 https://siliconflorist.com/2026/04/20/12-startups-to-pitch-at-the-oregon-uas-accelerator-innovation-showcase/
+    Region sources: sf-ouas-2025-12. Confidence: medium. Unresolved: Founding year, headcount, funding, customer
+    mix.'
+  categories:
+  - autonomy-robotics
 - id: ethernovia
   name: Ethernovia
   website: https://ethernovia.com
@@ -19453,6 +20068,33 @@ companies:
   notes: 'No job board found on the company''s site. Stage: No funding stated; site notes DOE H-Prize Phase One
     winner. Dealroom slug 404. Evidence: https://evolvehydrogen.com Region sources: aertc-incubator. Confidence:
     medium. Unresolved: Founded year, headcount, funding.'
+- id: evolved-robotics
+  name: Evolved Robotics
+  website: https://www.evolvedrobotics.ai
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Autonomous two-armed service robot on a power-chair base for assisted and senior living. Adjacent (Autonomy
+      and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: no funding found; Dealroom slug evolved-robotics 404
+    Evidence: https://www.evolvedrobotics.ai/ Region sources: comotion-hardware. Confidence: medium. Unresolved:
+    founding year, headcount, funding'
+  categories:
+  - autonomy-robotics
 - id: evonatura
   name: EvoNatura
   website: https://evonatura.com
@@ -22368,6 +23010,42 @@ companies:
     content. Flags: over 1,000 employees. Evidence: https://en.wikipedia.org/wiki/General_Motors Region sources:
     medc-clean-energy-race, e2-announcements, arpa-e. Confidence: high. Unresolved: Listing year of the present
     company not confirmed from a fetched source.'
+- id: general-plastics
+  name: General Plastics
+  website: https://www.generalplastics.com
+  careers_url: null
+  hq: Tacoma, WA
+  ats:
+    type: paylocity
+    board: 9d4c691e-63df-44c4-97b2-6a465dd66437
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1941
+  headcount:
+    value: 170
+    as_of: '2026-11-27'
+    source: General Plastics (https://www.generalplastics.com/about-us/)
+  climate:
+    tier: out
+    reason: LAST-A-FOAM rigid and flexible polyurethane foams and molded, machined and fabricated foam parts for
+      aerospace, defense, nuclear containers, marine and other markets. Adjacent (Aerospace and space, Advanced
+      manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 170 people (General Plastics (https://www.generalplastics.com/about-us/), 2026-11-27);
+      founded 1941, with no equity raise in 5 years or recent listing found.
+  notes: 'Board paylocity:9d4c691e-63df-44c4-97b2-6a465dd66437 seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Headcount note: company says ''more than 170'' employees; undated, date
+    is when read Founded: https://www.generalplastics.com/about-us/. Stage: private, no venture rounds (''still
+    privately held'', founded 1941) Flags: also serves nuclear transport packaging. Evidence: https://www.generalplastics.com/about-us/
+    https://www.generalplastics.com/ Region sources: choosewa-farnborough-2026, choosewa-paris-2025, choosewa-paris-2023.
+    Confidence: high.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: general-robotics
   name: General Robotics
   website: https://www.general-robotics.com/
@@ -23274,6 +23952,47 @@ companies:
     https://www.gravertech.com/about/our-history https://www.watertechonline.com/home/article/14172202/condensate-polishing-graver-technologies
     Region sources: inven-nj-water. Confidence: medium. Unresolved: graver.com returned an empty script-only page;
     HQ (input guess Warren, NJ), founding year, headcount not confirmed.'
+- id: gravitics
+  name: Gravitics
+  website: https://www.gravitics.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: greenhouse
+    board: graviticsinc
+  read: auto
+  sectors:
+  - ev
+  stage: null
+  founded: 2021
+  headcount:
+    value: 51
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/gravitics)
+  climate:
+    tier: out
+    reason: Orbital Carriers, cargo and logistics vehicles and commercial space station modules. Space is out by
+      decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 51 people (Dealroom (https://dealroom.co/companies/gravitics), 2026-11-27); growth sign:
+      founded 2021.'
+  notes: 'Board greenhouse:graviticsinc seen 2026-11-27, linked from the company''s own site: 19 open roles. Headcount
+    note: Dealroom 51, undated (as_of is retrieval date); band <100 Founded: https://dealroom.co/companies/gravitics.
+    Stage: Dealroom: ''Early VC'' round $13M (source text may say $13.2M), Feb 2026, plus seed investors; series
+    letter not stated. Pending reverse merger into Non-Invasive Monitoring Systems (OTC: NIMU), to be renamed Gravitics
+    Holdings, Inc.; Gravitics holders >=96.5%; outside date extended to Dec 31 2026 (sixth amendment Nov 23 2026,
+    per search summary of SEC filings). https://dealroom.co/companies/gravitics Flags: defense prominent (Lockheed
+    Martin selected Gravitics for a Department of War contract, Aug 2026; Orbital Carriers pitched for space superiority
+    and missile defense); not shown to be the main business; pending reverse merger to become public; HQ city: Dealroom
+    Seattle, input Redmond; own site does not say. Evidence: https://www.gravitics.com/ https://dealroom.co/companies/gravitics
+    https://www.sec.gov/Archives/edgar/data/720762/000149315226046655/forms-4a.htm Region sources: wa-space-summit-2023,
+    space-city-wa, fundraiseinsider-seattle. Confidence: medium. Unresolved: HQ city (Seattle vs Redmond); series
+    letter of Feb 2026 round.'
+  categories:
+  - aerospace-space
 - id: gravity
   name: Gravity
   website: https://gravitytechnologies.com
@@ -23339,6 +24058,34 @@ companies:
     Region sources: bs-co-cleanenergy. Confidence: low. Unresolved: Company site refused connections (ECONNREFUSED).
     Founding year conflicts (Dealroom header 2010, About text 2013). Acquisition by Relevate Power in Dec 2024 seen
     only in search summaries. No current website found (registry-fixes); the company may have closed or renamed.'
+- id: gravitylab
+  name: gravityLab
+  website: https://gravitylabspace.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: A free-flying satellite hosting a variable partial-gravity research environment for payloads. Space
+      is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information found. Flags: pre-flight concept
+    stage. Evidence: https://www.gravitylabspace.com https://www.gravitylabspace.com/faq Region sources: space-city-wa.
+    Confidence: low. Unresolved: Founding year; funding; headcount.'
+  categories:
+  - aerospace-space
 - id: grc-green-revolution-cooling
   name: GRC (Green Revolution Cooling)
   website: https://www.grcooling.com/
@@ -24637,6 +25384,37 @@ companies:
     airliner (ES-36), with an X1 demonstrator.'
   categories:
   - aerospace-space
+- id: hecla-mining
+  name: Hecla Mining
+  website: https://www.hecla.com
+  careers_url: null
+  hq: Coeur d'Alene, ID
+  ats:
+    type: adp
+    board: 504a8d7d-d303-417f-b3a8-c052ad910668
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1891
+  headcount: null
+  climate:
+    tier: out
+    reason: Silver and gold miner operating Greens Creek (Alaska), Lucky Friday (Idaho) and Keno Hill (Yukon). Mine
+      operators are out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1891, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'Board adp:504a8d7d-d303-417f-b3a8-c052ad910668 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Founded: https://www.hecla.com/about-us/. Stage: NYSE HL; trading on the NYSE
+    since 21 December 1964 after 49 years on the American Stock Exchange (Wikipedia). Flags: mining operator (Lucky
+    Friday mine in Idaho). Evidence: https://www.hecla.com/about-us/ https://en.wikipedia.org/wiki/Hecla_Mining
+    Region sources: spokane-journal-2014, search-idaho-mining. Confidence: high. Unresolved: Headcount not found
+    (Dealroom slug hecla-mining 404; Wikipedia gives none).'
+  categories:
+  - mining
 - id: heirloom
   name: Heirloom
   website: https://heirloomcarbon.com
@@ -25915,6 +26693,40 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
+- id: hubble-network
+  name: Hubble Network
+  website: https://hubble.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: greenhouse
+    board: hubblenetwork
+  read: auto
+  sectors: []
+  stage: series-b
+  founded: 2021
+  headcount:
+    value: 73
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/hubble-network)
+  climate:
+    tier: out
+    reason: Satellite and terrestrial network that carries data from ordinary Bluetooth chips directly to space
+      for IoT tracking. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 73 people (Dealroom (https://dealroom.co/companies/hubble-network), 2026-11-27); growth
+      sign: founded 2021.'
+  notes: 'Board greenhouse:hubblenetwork seen 2026-11-27, linked from the company''s own site: 17 open roles, 3
+    US-remote. Headcount note: Dealroom 73, undated (as_of is retrieval date); band <100 Founded: https://dealroom.co/companies/hubble-network.
+    Stage: Series B $70M, Sep 2025, $280M valuation (Dealroom; linked press title mentions a ''$100M funding milestone'').
+    https://dealroom.co/companies/hubble-network Flags: builds and operates satellites but sells connectivity/data;
+    may count as a service. Evidence: https://www.hubble.com/ https://dealroom.co/companies/hubble-network Region
+    sources: space-city-wa, growthlist-seattle. Confidence: medium. Unresolved: HQ on own site.'
+  categories:
+  - aerospace-space
 - id: human-robotix
   name: Human-Robotix
   website: https://www.human-robotix.com
@@ -26689,6 +27501,69 @@ companies:
   categories:
   - advanced-manufacturing
   - aerospace-space
+- id: idaho-copper-corp
+  name: Idaho Copper Corp
+  website: null
+  careers_url: null
+  hq: Boise, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Exploration company advancing the CuMo copper-molybdenum-silver project in Boise County, Idaho, about
+      14 miles north of Idaho City. Adjacent (Mining and exploration), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Listed on NYSE American as COPR (search summary); listing
+    year not found. Updated preliminary economic assessment announced 14 October 2026. Flags: mining: holds a project
+    (exploration, no mine); domain not in input; idahocopper.com is an unrelated coin retailer. Evidence: https://www.fs.usda.gov/r04/boise/projects/64920
+    https://idahocapitalsun.com/2024/09/13/cumo-exploration-project-could-become-an-idaho-mine-environmental-groups-are-worried/
+    https://finviz.com/news/387430/idaho-copper-provides-second-quarter-2026-corporate-update Region sources: search-idaho-mining.
+    Confidence: medium. Unresolved: Own website not identified, so HQ (input Boise) not confirmed. Forest Service
+    approved exploration drilling in March 2025 and an updated plan in September 2026 (search summary). Headcount
+    not found.'
+  categories:
+  - mining
+- id: idaho-strategic-resources
+  name: Idaho Strategic Resources
+  website: https://idahostrategic.com
+  careers_url: null
+  hq: Coeur d'Alene, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: public
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Runs the Golden Chest underground gold mine (producing since 2016) and holds rare-earth (Lemhi Pass,
+      Mineral Hill, Diamond Creek) and copper-silver exploration projects in Idaho and Montana. Mine operators are
+      out (owner ruling A6b).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Uplisted to the New York Stock Exchange (ticker IDR
+    shown in logo) in March 2022, per its own site; earlier listing year not found. Flags: mining operator (runs
+    Golden Chest mine); also holds rare-earth exploration projects. Evidence: https://idahostrategic.com/ Region
+    sources: spokesman-critical-minerals-2025, search-idaho-mining. Confidence: high. Unresolved: Founding year
+    not stated (site says gold focus ''since 1996''). Headcount not found. Mill office in Kellogg, ID.'
+  categories:
+  - mining
 - id: ideal-electric-company
   name: Ideal Electric Company
   website: null
@@ -27800,6 +28675,36 @@ companies:
     VC Fuel, RGA Ventures, Paulos Holdings) with no round amounts or dates. Dealroom slug returned 404. Evidence:
     https://www.inovues.com/about https://builtin.com/company/inovues Region sources: ati-alumni, greentown. Confidence:
     medium. Unresolved: Founding year and round stage unknown.'
+- id: inpria
+  name: Inpria
+  website: https://www.inpria.com
+  careers_url: null
+  hq: Corvallis, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 2007
+  headcount: null
+  climate:
+    tier: out
+    reason: Metal-oxide photoresists for EUV lithography, made at its plant in Corvallis. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 2007, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'No job board found on the company''s site. Founded: https://www.inpria.com/. Stage: Acquired by JSR in
+    2021 and now ''a JSR Company'' (own site). Spun out of Oregon State University chemistry in 2007. Flags: subsidiary
+    of JSR (Japan). Evidence: https://www.inpria.com/ Region sources: fast-engine-partners, cormic-tech-hub, osu-silicon-forest-story.
+    Confidence: high. Unresolved: Headcount not found (Dealroom slug inpria returned 404). Own site gives the address
+    1100 NE Circle Blvd, Suite 360, Corvallis but does not call it HQ.'
+  categories:
+  - semis-electronics
 - id: insitu
   name: Insitu
   website: https://www.insitu.com
@@ -27964,6 +28869,43 @@ companies:
     boilers, mostly gas-fired; runs mainly on natural gas (owner ruling A2).'
   categories:
   - oil-gas
+- id: interlune
+  name: Interlune
+  website: https://www.interlune.space
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - industrial-heat
+  stage: seed
+  founded: 2020
+  headcount:
+    value: 34
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/interlune)
+  climate:
+    tier: out
+    reason: Infrastructure and hardware for harvesting lunar resources, chiefly helium-3, plus regolith simulants
+      and extreme-environment products. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 34 people (Dealroom (https://dealroom.co/companies/interlune), 2026-11-27); growth sign:
+      founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 34, undated (as_of is retrieval date);
+    band <100 Founded: https://dealroom.co/companies/interlune. Stage: Dealroom groups 7 investors under Seed (inferred);
+    grants $4.8M Texas Space Commission Sep 2025 and $1.3M AFWERX Nov 2025; total equity $10-50M. Own site claims
+    over $500M of binding helium-3 purchase orders. https://dealroom.co/companies/interlune Flags: mining: neither
+    runs a mine nor holds a terrestrial mining project; pre-operational lunar helium-3 harvesting; US Air Force
+    and DOE among logos; defense not shown to be the main business. Evidence: https://www.interlune.space/ https://dealroom.co/companies/interlune
+    Region sources: space-city-wa. Confidence: medium. Unresolved: Exact funding rounds.'
+  categories:
+  - aerospace-space
+  - mining
 - id: intertie
   name: Intertie
   website: https://www.intertie.com/
@@ -28628,6 +29570,42 @@ companies:
     No company website found; HQ is from the input. Active by virtue of a grant running to 2027.. Evidence: https://www.energy.ca.gov/filebrowser/download/6912?fid=6912
     Region sources: cec-eif-showcase. Confidence: low. No current website found (registry-fixes); the company may
     have closed or renamed.'
+- id: janicki-industries
+  name: Janicki Industries
+  website: https://www.janicki.com
+  careers_url: null
+  hq: Sedro-Woolley, WA
+  ats:
+    type: ukg
+    board: recruiting2.ultipro.com/JAN1000JANI/JobBoard/693b35f4-c147-4487-97c3-600a31f4816b
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1993
+  headcount:
+    value: 2500
+    as_of: '2026-11-27'
+    source: Janicki Industries (https://www.janicki.com/about/)
+  climate:
+    tier: out
+    reason: Composite aerostructures, aerospace tooling, munitions and marine structures. Adjacent (Advanced manufacturing,
+      Aerospace and space, Defense), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 2,500 people (Janicki Industries (https://www.janicki.com/about/), 2026-11-27); founded
+      1993, with no equity raise in 5 years or recent listing found.
+  notes: 'Board ukg:recruiting2.ultipro.com/JAN1000JANI/JobBoard/693b35f4-c147-4487-97c3-600a31f4816b seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: company says about
+    2,500; undated, date is when read Founded: https://www.janicki.com/about/. Stage: private, no venture rounds
+    (family and employee owned, ESOP) Flags: over 1,000 employees; defense appears to be main business (''built
+    ... for the American warfighter and its Allies''; bombers, fighters, missiles, submarines). Evidence: https://www.janicki.com/about/
+    Region sources: space-city-wa. Confidence: high.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
+  - defense
 - id: jarofleet
   name: JaroFleet
   website: https://www.jarofleet.com
@@ -28693,6 +29671,35 @@ companies:
     Confidence: high.'
   categories:
   - data-centers
+- id: jetoptera
+  name: Jetoptera
+  website: https://jetoptera.com
+  careers_url: null
+  hq: Edmonds, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Fluidic Propulsive System integrated with airframes for V/STOL drones and aircraft for cargo and people.
+      Adjacent (Aerospace and space), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: raising through Wefunder equity crowdfunding (site banner);
+    no rounds or amounts stated Flags: military applications listed (supplies, medevac, surveillance) but no defense
+    customers named; domain was blank in input. Evidence: https://www.jetoptera.com/ https://www.jetoptera.com/about
+    https://www.jetoptera.com/contact Region sources: choosewa-paris-2025. Confidence: medium. Unresolved: founding
+    year, headcount, funding amounts'
+  categories:
+  - aerospace-space
 - id: jetzero
   name: JetZero
   website: https://www.jetzero.aero
@@ -28757,6 +29764,35 @@ companies:
     Region sources: rrc-coal-permits. Confidence: medium. Unresolved: parent, operating status, headcount'
   categories:
   - mining
+- id: jireh-semiconductor
+  name: Jireh Semiconductor
+  website: https://aosmd.com/jireh-semiconductor
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: In-house wafer fab for Alpha and Omega Semiconductor's power semiconductors. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: AOS''s own site says Jireh is ''a wholly owned subsidiary
+    of Alpha and Omega Semiconductor Ltd.'' and its in-house wafer fab in Hillsboro, Oregon. AOS appears to be based
+    in Sunnyvale, CA (image label on its About page); AOS listing year not confirmed. Flags: subsidiary of Alpha
+    and Omega Semiconductor. Evidence: https://www.aosmd.com/about Region sources: fast-engine-partners. Confidence:
+    medium. Unresolved: Acquisition/founding date, wafer size (input says 8-inch) and headcount not stated on aosmd.com.'
+  categories:
+  - semis-electronics
 - id: joby-aviation
   name: Joby Aviation
   website: https://www.jobyaviation.com/
@@ -28851,6 +29887,37 @@ companies:
   notes: 'No job board found on the company''s site. Flags: Enterprise line lists defense among several markets.
     Evidence: https://joulecase.com Region sources: third-derivative. Confidence: low. Unresolved: HQ (input says
     Seattle, WA); founded; headcount; funding.'
+- id: jst-manufacturing
+  name: JST Manufacturing
+  website: https://www.jstmfg.com
+  careers_url: null
+  hq: Meridian, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1982
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Wafer-fab wet process equipment: wet benches, single-wafer wet systems, chemical management systems,
+      parts-cleaning tools, IPA dryers and cleanroom furniture. Adjacent (Semiconductors and electronics, Advanced
+      manufacturing), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1982, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://jstmfg.com/semiconductor-equipment-manufacturers/.
+    Stage: Private, no venture rounds found; ownership not stated on its own site. Evidence: https://www.jstmfg.com/
+    https://jstmfg.com/semiconductor-equipment-manufacturers/ Region sources: idaho-commerce-semis. Confidence:
+    high. Unresolved: Headcount not found. Founded 1982 in Garden City, ID; 60,000 sq ft facility in Meridian.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: jua-technologies-international
   name: JUA Technologies International
   website: null
@@ -28880,6 +29947,35 @@ companies:
     Region sources: search-purdue. Confidence: medium. Unresolved: Latest news found is 2022, so current status
     unknown; juatechnologies.com is a domain for sale. A USDA NIFA record lists a Carmel, IN address while Purdue
     places HQ in West Lafayette. No current website found (registry-fixes); the company may have closed or renamed.'
+- id: juno-propulsion
+  name: Juno Propulsion
+  website: https://junopropulsion.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2023
+  headcount: null
+  climate:
+    tier: out
+    reason: Rocket engines based on rotating detonation (RDE). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2023.'
+  notes: 'No job board found on the company''s site. Founded: https://payloadspace.com/rotating-detonation-engine-startup-wins-nasa-techleap-prize/.
+    Stage: NASA TechLeap prize (flight test, award up to $500K per search summary); Activate fellowship alumnus;
+    no equity rounds found. Flags: defense listed as an application on own site; not shown to be the main business;
+    founding year from a search summary. Evidence: https://www.junopropulsion.com/ https://activate.org/news/moments-that-matter-juno-propulsions-technology-is-headed-to-space
+    https://payloadspace.com/rotating-detonation-engine-startup-wins-nasa-techleap-prize/ Region sources: space-city-wa.
+    Confidence: medium. Unresolved: Funding; headcount.'
+  categories:
+  - aerospace-space
 - id: jupiter-volta
   name: Jupiter Volta
   website: https://jupitervolta.com
@@ -28907,6 +30003,38 @@ companies:
     It has pivoted or broadened from the ARPA-E diamond-metal composite work to plasma chemistry and fusion. HQ
     is from the input; the site does not state it.. Evidence: https://jupitervolta.com https://jupitervolta.com/company
     Region sources: arpae-projects. Confidence: low.'
+- id: jx-crystals
+  name: JX Crystals
+  website: https://jxcrystals.com
+  careers_url: null
+  hq: Issaquah, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  - components
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Gallium antimonide thermophotovoltaic (TPV) cells that turn heat (e.g. burning propane) into electricity;
+      announced products (portable power pack, space power-beaming concept) marked 'Coming Soon'. Space is out by
+      decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Not stated; site calls the team ''A Boeing Spinoff Team''.
+    Flags: site looks stale: newest dated media Dec 2021; product is TPV cells, not specifically space PV receivers
+    as in input; propane-fuelled portable power product. Evidence: https://www.jxcrystals.com/ Region sources: space-city-wa.
+    Confidence: low. Unresolved: Whether still operating; founding year; headcount.'
+  categories:
+  - aerospace-space
+  - semis-electronics
 - id: k2-space
   name: K2 Space
   website: https://www.k2space.com
@@ -28979,6 +30107,34 @@ companies:
     [datacenter]. Evidence: https://builtin.com/company/kairos-power https://techcrunch.com/2024/10/14/google-signed-a-deal-to-power-data-centers-with-nuclear-micro-reactors-from-kairos-but-the-2030-timeline-is-very-optimistic
     https://dealroom.co/news/163058-kairos-power-raises-643m-to-build-nuclear-reactors-for-google/ Confidence: medium.
     Unresolved: Stage label; dated headcount from company or press. Missing facts filled from data/screening/registry-fixes.'
+- id: kairos-sensors
+  name: Kairos Sensors
+  website: https://www.kairossensors.com
+  careers_url: null
+  hq: Adair Village, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Perovskite-based high-sensitivity X-ray sensor (APeX) designed to upgrade existing mammography equipment;
+      in development. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Only funding found is an NIH Phase I SBIR (award 1R43EB032694-01)
+    named on its own site; no rounds found. Flags: medical imaging product; pre-commercial. Evidence: https://kairossensors.com/
+    https://kairossensors.com/about Region sources: fast-engine-partners. Confidence: medium. Unresolved: Founding
+    year, headcount, equity funding not found (Dealroom slugs kairos_sensors and kairos-sensors returned 404).'
+  categories:
+  - semis-electronics
 - id: kane-robotics
   name: Kane Robotics
   website: https://kanerobotics.com
@@ -29036,6 +30192,38 @@ companies:
     developer); industries served include natural gas and refineries. Evidence: https://kaninenergy.com https://www.kaninenergy.com/about
     Region sources: rice-cea-1, heti-members, greentown. Confidence: medium. Unresolved: Founded, headcount, stage;
     HQ not designated (Houston listed first).'
+- id: kapta-space
+  name: Kapta Space
+  website: https://kaptaspace.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: lever
+    board: kapta-space
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: Electronically steered spaceborne radar payloads (SAR, InSAR, moving-target indication). Adjacent (Aerospace
+      and space, Defense), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2022.'
+  notes: 'Board lever:kapta-space seen 2026-11-27, token matched by name; board page checked: 9 open roles. Founded:
+    https://payloadspace.com/exclusive-kapta-space-raises-24m-series-a-to-build-moving-target-radar-payload/. Stage:
+    Series A $24M, Oct 9 2026, led by Washington Harbour Partners; ~$30M total; $5M seed Feb 2025. https://payloadspace.com/exclusive-kapta-space-raises-24m-series-a-to-build-moving-target-radar-payload/
+    Flags: defense/intelligence appears to be the main business (classified MTI missions; ''U.S. Defense needs''),
+    not confirmed by a customer breakdown; founding year 2022 (Payload) vs 2023 (other sources). Evidence: https://www.kaptaspace.com/
+    https://payloadspace.com/exclusive-kapta-space-raises-24m-series-a-to-build-moving-target-radar-payload/ https://www.satellitetoday.com/technology/2025/02/21/new-startup-kapta-space-targets-spaceborne-radar-technology/
+    Region sources: space-city-wa. Confidence: medium. Unresolved: Headcount.'
+  categories:
+  - aerospace-space
+  - defense
 - id: kara
   name: Kara
   website: https://karalabs.ai/
@@ -29864,6 +31052,33 @@ companies:
     and medium-voltage switchboards and switchgear, much of it for data centers; a Legrand brand since 2026.'
   categories:
   - data-centers
+- id: krishibotics
+  name: Krishibotics
+  website: https://krishibotics.com
+  careers_url: null
+  hq: OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Compact robot for repetitive jobs on specialty-crop farms (in beta; field trials planned Q4 2026 to
+      Q1 2027). Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Krishibotics LLC; no funding disclosed beyond Oregon
+    UAS Accelerator 2026 cohort. Flags: pre-commercial. Evidence: https://www.krishibotics.com/ https://siliconflorist.com/?p=72516
+    Region sources: sf-ouas-2025-12. Confidence: medium. Unresolved: City, founding year, headcount, funding.'
+  categories:
+  - autonomy-robotics
 - id: krtkl
   name: krtkl
   website: https://krtkl.com
@@ -30050,6 +31265,43 @@ companies:
     the input unverified. Categories (decision 23): Semiconductors and electronics: GaN substrates/materials and
     related power electronics (per input).'
   categories:
+  - semis-electronics
+- id: kymeta
+  name: Kymeta
+  website: https://www.kymetacorp.com
+  careers_url: null
+  hq: Redmond, WA
+  ats:
+    type: jobvite
+    board: kymetacorp
+  read: manual
+  sectors: []
+  stage: null
+  founded: 2012
+  headcount:
+    value: 217
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/kymeta)
+  climate:
+    tier: out
+    reason: Electronically steerable flat-panel satellite antenna terminals (Kestrel, Osprey, Goshawk, Peregrine,
+      Hawk) and connectivity. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 217 people (Dealroom (https://dealroom.co/companies/kymeta), 2026-11-27); growth sign:
+      founded 2012.'
+  notes: 'Board jobvite:kymetacorp seen 2026-11-27, linked from the company''s own site: role count not read (no
+    public feed). Headcount note: Dealroom 217, undated (as_of is retrieval date), band 100-500; Wikipedia 275 (2022)
+    Founded: https://en.wikipedia.org/wiki/Kymeta. Stage: Private, venture-backed (Intellectual Ventures spin-out
+    2012); Dealroom: $20M growth/VC from Trinity Capital Sep 2024, $84M debt Mar 2022 (Hanwha Systems among investors);
+    total equity $100-500M; series letters not found. Flags: Military & Government listed first of three markets;
+    DoD contract; defense not shown to be the main business; offices also in Woodinville, WA and McLean, VA. Evidence:
+    https://www.kymetacorp.com/about/ https://dealroom.co/companies/kymeta https://en.wikipedia.org/wiki/Kymeta
+    Region sources: space-city-wa. Confidence: high. Unresolved: Latest series letter.'
+  categories:
+  - aerospace-space
   - semis-electronics
 - id: l-charge
   name: L-Charge
@@ -30328,6 +31580,74 @@ companies:
     https://patents.google.com/patent/US11411262 Region sources: builtin-co-energy. Confidence: low. Unresolved:
     HQ (Golden, CO not confirmed), domain, founded, headcount, funding. Mentions aerospace and military applications.
     No current website found (registry-fixes); the company may have closed or renamed.'
+- id: lattice-semiconductor
+  name: Lattice Semiconductor
+  website: https://www.latticesemi.com
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: workday
+    board: latticesemi
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1983
+  headcount:
+    value: 1110
+    as_of: '2024-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Lattice_Semiconductor)
+  climate:
+    tier: out
+    reason: Low-power programmable logic chips (FPGAs) plus programmable power and clock management devices, IP
+      cores and design software; also platform firmware after buying AMI. Adjacent (Semiconductors and electronics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; 1,110 people (Wikipedia infobox (https://en.wikipedia.org/wiki/Lattice_Semiconductor),
+      2024-01-01); founded 1983, with no equity raise in 5 years or recent listing found.
+  notes: 'Board workday:latticesemi.wd5.myworkdayjobs.com/latticesemiconductorscareers seen 2026-11-27, linked from
+    the company''s own site: role count not read (no public feed). Headcount note: Wikipedia gives 1,110 for 2024
+    (year only, so as_of is the first day of 2024). Dealroom shows 1,679 (undated, read 2026-11-27). Founded: https://www.latticesemi.com/About.
+    Stage: Nasdaq LSCC; IPO 9 November 1989 (Wikipedia; Dealroom also gives IPO 1989). Dealroom records a $1.1B
+    post-IPO debt deal in June 2026. Flags: over 1,000 employees; fabless chip designer. Evidence: https://www.latticesemi.com/About
+    https://dealroom.co/companies/lattice-semiconductor https://en.wikipedia.org/wiki/Lattice_Semiconductor Region
+    sources: wikipedia-silicon-forest. Confidence: high.'
+  categories:
+  - semis-electronics
+- id: leap-photonics
+  name: LEAP Photonics
+  website: https://www.leaphotonics.com/
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Chip-based lidar that steers laser beams with on-chip acoustic waves (integrated acousto-optic beam
+      steering), for autonomous vehicles, robotics, medical imaging and infrastructure. Adjacent (Semiconductors
+      and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No board found: home page not readable (error: ConnectError: [Errno 11001] getaddrinfo failed). Stage:
+    Only grants found: 2025 Activate Fellowship, plus seed grants from UW CoMotion and the Washington Research Foundation
+    (search summary). No equity rounds found. Flags: University of Washington spinout; pre-commercial (prototype
+    stage); website domain does not resolve. Evidence: https://activate.org/leap-photonics https://www.ee.washington.edu/spotlight/bingzhao-li-2025-activate-fellowship
+    Region sources: uw-comotion-june-2025. Confidence: low. Unresolved: leaphotonics.com did not resolve (DNS not
+    found). Seattle location implied by UW ties but not confirmed; a CB Insights listing (seen in a search summary)
+    for ''LEAPhotonics'', Seattle, founded 2024 may be the same company. Headcount not found.'
+  categories:
+  - semis-electronics
 - id: lear-corporation
   name: Lear Corporation
   website: https://www.lear.com/
@@ -31842,6 +33162,42 @@ companies:
     MassCEC/MassVentures grants 2023 and 2025, SBIR/STTR Phase I 2022; no equity rounds found. https://loopco2.com
     Evidence: https://loopco2.com Region sources: greentown. Confidence: medium. Unresolved: Founding, headcount,
     equity funding.'
+- id: lorica-technologies
+  name: Lorica Technologies
+  website: https://loricatechnologies.com
+  careers_url: null
+  hq: Ashland, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount:
+    value: 17
+    as_of: '2026-01-01'
+    source: Oregon UAS Accelerator news (https://oregonuas.org/blogs/news/oregon-uas-accelerator-lorica-technologies-drone-explosive-demonstration)
+  climate:
+    tier: out
+    reason: Heavy-lift drones (Mule 28, about 200 lb lift) and SeaSafe, a drone-augmented autonomous maritime defense
+      and deterrence system for commercial vessels. Adjacent (Autonomy and robotics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 17 people (Oregon UAS Accelerator news (https://oregonuas.org/blogs/news/oregon-uas-accelerator-lorica-technologies-drone-explosive-demonstration),
+      2026-01-01); founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Grew from 9 to 17 full-time employees during
+    the spring 2026 cohort; article dated only to 2026 (year only, first day used). Stage: Led the spring 2026 cohort
+    in capital raised; amount not given. Flags: defense-related: Oregon Army National Guard used a Mule 28 in a
+    live demolition demonstration in June 2026; stated market is commercial maritime security, so defense not confirmed
+    as main business. Evidence: https://oregonuas.org/blogs/news/oregon-uas-accelerator-lorica-technologies-drone-explosive-demonstration
+    https://loricatechnologies.com/ https://siliconflorist.com/?p=72516 Region sources: sf-ouas-2025-12. Confidence:
+    medium. Unresolved: Founding year, round size.'
+  categories:
+  - autonomy-robotics
 - id: lotte-aluminum-materials-usa
   name: LOTTE Aluminum Materials USA
   website: null
@@ -32139,6 +33495,40 @@ companies:
     mainly to refining, petrochemical and gas-processing customers.'
   categories:
   - oil-gas
+- id: lumotive
+  name: Lumotive
+  website: https://www.lumotive.com
+  careers_url: null
+  hq: Redmond, WA
+  ats:
+    type: lever
+    board: lumotive
+  read: auto
+  sectors: []
+  stage: series-b
+  founded: 2018
+  headcount:
+    value: 81
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/lumotive)
+  climate:
+    tier: out
+    reason: Light Control Metasurface (LCM) chips that steer light on-chip, for 3D sensing and lidar in robotics
+      and automotive, and optical circuit switching. Adjacent (Semiconductors and electronics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 81 people (Dealroom (https://dealroom.co/companies/lumotive), 2026-11-27); growth sign:
+      founded 2018.'
+  notes: 'Board lever:lumotive seen 2026-11-27, linked from the company''s own site: 9 open roles. Headcount note:
+    Dealroom 81, band under 100; undated, read 2026-11-27. Founded: https://dealroom.co/companies/lumotive. Stage:
+    Series B $14M, July 2025 (ITHCA Group, Amazon Industrial Innovation Fund); Dealroom total disclosed funding
+    $50-100M. https://dealroom.co/companies/lumotive Evidence: https://www.lumotive.com/about https://dealroom.co/companies/lumotive
+    Region sources: semieng-startup-funding. Confidence: high.'
+  categories:
+  - semis-electronics
 - id: lunar-energy
   name: Lunar Energy
   website: https://www.lunarenergy.com
@@ -33181,6 +34571,39 @@ companies:
     https://www.citybiz.co/?p=906004 https://www.cbinsights.com/company/marel-power-solutions Region sources: evergreen-portfolio,
     halliburton-labs, evergreen. Confidence: medium. Unresolved: HQ and founded year come from search snippets (CB
     Insights), not opened pages; headcount not found; dealroom slug returned 404.'
+- id: maren-go-solutions-corporation
+  name: Maren-go Solutions Corporation
+  website: https://maren-go.com
+  careers_url: null
+  hq: Vancouver, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Airfield operating system and autonomous ground vehicles (retrofitted Polaris, Humvee and others) for
+      FOD detection, perimeter security, logistics and mowing at airfields. Defense is its main business (owner
+      ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: multiple DoD SBIR Phase I and II contracts (own site);
+    no equity rounds found Flags: defense is main business (two USAF bases, US Army selection; DoD funded FAA-observed
+    demo Dec 2024); autonomy software plus vehicle retrofits; Vancouver, WA is a ''Lab/Office'' address, not labelled
+    HQ; marengosolutions.com is an unrelated or placeholder ''Launching Soon'' page. Evidence: https://www.maren-go.com/
+    https://www.airporttech.tc.faa.gov/News/In-the-Spotlight/autonomous-vehicle-demo Region sources: choosewa-paris-2025.
+    Confidence: medium. Unresolved: founding year, headcount, funding'
+  categories:
+  - autonomy-robotics
+  - defense
 - id: mariana-minerals
   name: Mariana Minerals
   website: https://marianaminerals.com
@@ -34515,6 +35938,41 @@ companies:
   categories:
   - aerospace-space
   - semis-electronics
+- id: micron-technology
+  name: Micron Technology
+  website: https://www.micron.com
+  careers_url: null
+  hq: Boise, ID
+  ats:
+    type: workday
+    board: micron
+  read: manual
+  sectors: []
+  stage: public
+  founded: 1978
+  headcount:
+    value: 53000
+    as_of: '2025-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Micron_Technology)
+  climate:
+    tier: out
+    reason: 'Memory and storage chips: DRAM, high-bandwidth memory, NAND and NOR flash, SSDs. Adjacent (Semiconductors
+      and electronics, Data-center equipment), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: '53,000 people (Wikipedia infobox (https://en.wikipedia.org/wiki/Micron_Technology), 2025-01-01): over
+      the 4,000-person line.'
+  notes: 'Board workday:micron.wd1.myworkdayjobs.com/en-US/External seen 2026-11-27, linked from the company''s
+    own site: role count not read (no public feed). Headcount note: 53,000 for 2025 (year only). Dealroom shows
+    44,175 (undated, read 2026-11-27). Founded: https://www.micron.com/about. Stage: Nasdaq MU; IPO 1984 (Wikipedia
+    and Dealroom). Flags: over 1,000 employees; data center and AI memory (HBM) is a major market. Evidence: https://www.micron.com/about
+    https://dealroom.co/companies/micron-technology https://en.wikipedia.org/wiki/Micron_Technology Region sources:
+    scout-consistency-addition. Confidence: high.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: microporous
   name: Microporous
   website: https://microporous.com
@@ -34640,6 +36098,36 @@ companies:
     https://microvi.com/ https://www.watertechonline.com/skion-acquires-minority-stake-in-microvi/ https://www.cbinsights.com/company/microvi-biotech
     Region sources: cec-nopa, elemental-portfolio. Confidence: medium. Unresolved: Founding year conflicts (2004
     vs 2008); latest labelled round unclear. Tier set under owner decision 13.'
+- id: mid-mountain-materials
+  name: Mid-Mountain Materials
+  website: https://mid-mountain.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 1976
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Engineered thermal barriers, insulation and seals: coated and silica fabrics, fabricated seals and
+      covers, refractory cements and insulation blankets. Adjacent (Aerospace and space), not clean tech under the
+      rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1976, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://www.mid-mountain.com/. Stage: private, no
+    venture rounds found Flags: markets: aerospace, welding, emissions control, aluminum smelting, automotive, industrial
+    insulation; founding year from ''since 1976'' on site; domain was blank in input. Evidence: https://www.mid-mountain.com/
+    Region sources: choosewa-farnborough-2026, choosewa-paris-2025. Confidence: medium. Unresolved: headcount, ownership'
+  categories:
+  - aerospace-space
 - id: mide-technology
   name: Mide Technology
   website: https://www.mide.com
@@ -35874,6 +37362,42 @@ companies:
     e2-tn, cp-tn-2024. Confidence: medium. Unresolved: Search snippets only. HQ given as the Memphis plant (US entity);
     parents are in Portugal and Brazil. Domain not found. Founded year = plant opening year. No current website
     found (registry-fixes); the company may have closed or renamed.'
+- id: mueon
+  name: Mueon
+  website: https://www.mueon.com
+  careers_url: null
+  hq: Portland, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2025
+  headcount:
+    value: 19
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/mueon)
+  climate:
+    tier: out
+    reason: Data-center-scale infrastructure for AI workloads; trademark 'Cubelets' (input describes modular 3D
+      compute-and-memory blocks; not explained on its site). Data-center equipment and computing are out (owner
+      decision 13).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 19 people (Dealroom (https://dealroom.co/companies/mueon), 2026-11-27); growth sign: founded
+      2025.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 19, band under 100; undated, read
+    2026-11-27. Founded: https://dealroom.co/companies/mueon. Stage: Seed $15.5M, September 2025, led by Intel Capital
+    with Geodesic Capital and Oregon Venture Fund (Dealroom table shows $16M at a $62M valuation). https://dealroom.co/companies/mueon
+    Flags: main customers are data centers. Evidence: https://mueon.com/ https://dealroom.co/companies/mueon Region
+    sources: unite-ai-mueon. Confidence: medium. Unresolved: Dealroom header says Hillsboro while its About text
+    says Portland, OR. Product details not on its own site.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: mujielectric
   name: MujiElectric
   website: null
@@ -36195,6 +37719,37 @@ companies:
     planned factory in Flint, MI. Evidence: https://www.nanograf.com Region sources: evergreen-portfolio, e2-announcements,
     evergreen. Confidence: low. Unresolved: HQ from input only (own home page does not state it); founded year,
     headcount and equity rounds not found; Dealroom and Built In slugs returned 404.'
+- id: nanomand
+  name: Nanomand
+  website: https://www.nanomand.com
+  careers_url: null
+  hq: Corvallis, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Functional nanomaterials made on demand with microreactor-assisted nanomaterial deposition and a microreactor-assisted
+      printhead. Adjacent (Semiconductors and electronics, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Own site names support from the OSU Advantage Accelerator
+    Iterate program and an NSF PFI-RP grant; no equity rounds found. Flags: early-stage university spinout (OSU
+    programs). Evidence: https://nanomand.com/ Region sources: fast-engine-partners. Confidence: low. Unresolved:
+    HQ (input Corvallis, OR) not stated on site; founding year, headcount, status not found. Latest date on the
+    site is 30 July 2024. Unclear whether it sells equipment, materials or services.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: nanoramic
   name: Nanoramic
   website: https://www.nanoramic.com
@@ -36906,6 +38461,37 @@ companies:
     Region sources: ati-energy. Confidence: medium. Unresolved: Own domain not found; founding year, headcount and
     equity funding unknown. ATI and battery-tech.net say San Antonio; CB Insights and an SBIR record use the Austin
     Technology Incubator address.'
+- id: new-frontier-aerospace
+  name: New Frontier Aerospace
+  website: https://nfaero.com
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Mjölnir 3D-printed LNG rocket engine, Bifröst orbital transfer spacecraft and Pathfinder hypersonic
+      VTOL drone. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Site calls it an ''equity-funded startup'' with no rounds
+    listed; known funding is government (NSIC $1.5M contract extension, Feb 2023; NASA SBIR grants 2023-2024) Flags:
+    GeekWire (2025-06-23) calls it ''Kent, Wash.-based''; older coverage said Tukwila, WA. Its site lists offices
+    in Seattle, San Francisco, Shreveport and Dayton without naming an HQ, so the headquarters is in the Seattle
+    area. It plans to sell the engine to other companies. Dealroom slug guess returned . Evidence: h t t p s : Region
+    sources: space-city-wa. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: new-iridium
   name: New Iridium
   website: null
@@ -37379,6 +38965,40 @@ companies:
     https://dealroom.co/companies/nitricity Customers: Farmers / organic agriculture. Flags: one open role in Madrid,
     Spain. Evidence: https://www.nitricity.co/ https://dealroom.co/companies/nitricity Confidence: medium. Unresolved:
     Reason for a Madrid role (possible European project) not checked.'
+- id: nlm-photonics
+  name: NLM Photonics
+  website: https://www.nlmphotonics.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: series-a
+  founded: 2018
+  headcount: null
+  climate:
+    tier: out
+    reason: Silicon-organic hybrid electro-optic modulators and photonic integrated circuits for datacom, AI/ML
+      processing, mmWave and quantum links. Adjacent (Semiconductors and electronics, Data-center equipment), not
+      clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2018.'
+  notes: 'No job board found on the company''s site. Founded: https://nlmphotonics.com/about/. Stage: Own site:
+    pre-seed 2019; strategic investments from Hamamatsu (2022), TOK (2023), Pack VC (2024); Series A in 2025 led
+    by Emerald Technology Ventures with Oregon Venture Fund and Idemitsu (amount not stated); Pangaea Ventures and
+    Diamond Edge Ventures joined September 2026. https://nlmphotonics.com/about/ Flags: datacom and AI among several
+    stated markets; has AFWERX/NASA SBIR contracts. Evidence: https://nlmphotonics.com/ https://nlmphotonics.com/about/
+    Region sources: search-pnw-semis. Confidence: high. Unresolved: Headcount not found (Dealroom slug nlm-photonics
+    returned 404). Founded as Nonlinear Materials Corporation, renamed 2021; based on University of Washington research,
+    at UW CoMotion Labs.'
+  categories:
+  - data-centers
+  - semis-electronics
 - id: noble-geofurnace
   name: Noble Geofurnace
   website: null
@@ -38766,6 +40386,34 @@ companies:
   categories:
   - aerospace-space
   - defense
+- id: off-planet-research
+  name: Off Planet Research
+  website: https://offplanetresearch.com
+  careers_url: null
+  hq: Everett, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Lunar, Martian and other planetary regolith and ice simulants, feedstocks and additives, plus design
+      and testing of components for off-world missions. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: NSF SBIR (''America''s Seed Fund'') support and NASA
+    SBIR contracts; no equity rounds found. Evidence: https://www.offplanetresearch.com/ https://www.alliancevelocity.com/space-city
+    Region sources: wa-space-summit-2023, choosewa-iaif-2022, space-city-wa. Confidence: medium. Unresolved: HQ
+    on own site; founding year; headcount.'
+  categories:
+  - aerospace-space
 - id: offgridbox
   name: OffGridBox
   website: https://www.offgridbox.com
@@ -39721,6 +41369,40 @@ companies:
   categories:
   - aerospace-space
   - oil-gas
+- id: orchard-robotics
+  name: Orchard Robotics
+  website: https://www.orchard.ai
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: ashby
+    board: orchard
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2022
+  headcount:
+    value: 42
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/orchard-robotics)
+  climate:
+    tier: out
+    reason: FruitScope Vision cameras mounted on farm vehicles plus FruitScope OS per-tree mapping and harvest-planning
+      software. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 42 people (Dealroom (https://dealroom.co/companies/orchard-robotics), 2026-11-27); growth
+      sign: founded 2022.'
+  notes: 'Board ashby:orchard seen 2026-11-27, token matched by name; board page checked: 27 open roles, 12 US-remote.
+    Headcount note: Dealroom, undated, date is when read Founded: https://dealroom.co/companies/orchard-robotics.
+    Stage: Series A $22M, Sep 2025 (Dealroom; Insight Partners among investors); seed $3.8M, Mar 2024 (Dealroom)
+    Flags: camera hardware plus data/software; value mainly in software and analytics. Evidence: https://www.orchard.ai/
+    https://dealroom.co/companies/orchard-robotics Region sources: fundraiseinsider-seattle, growthlist-seattle.
+    Confidence: medium.'
+  categories:
+  - autonomy-robotics
 - id: orien-energy
   name: Orien Energy
   website: https://orien.energy
@@ -40047,6 +41729,37 @@ companies:
     Unresolved: Founded year, headcount. Dealroom slugs oso-semiconductor and oso_semiconductor returned 404.'
   categories:
   - semis-electronics
+- id: osprey-cuas
+  name: Osprey cUAS
+  website: https://ospreycuas.com
+  careers_url: null
+  hq: OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  - industrial-heat
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Man-portable, fully passive RF drone-detection system for contested environments, integrating with ATAK
+      and C2 systems. Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Three co-founders named. Stage: No funding
+    disclosed; SBIR Phase I application under review Q3 2025 (per own site). Flags: defense is main business (built
+    to protect warfighters). Evidence: https://ospreycuas.com/ https://siliconflorist.com/?p=72516 Region sources:
+    sf-ouas-2025-12. Confidence: medium. Unresolved: City, founding year, headcount, funding.'
+  categories:
+  - defense
+  - semis-electronics
 - id: otoro-energy
   name: OTORO Energy
   website: https://www.otoroenergy.com
@@ -40202,6 +41915,44 @@ companies:
     and lunar use; space is out by decision.'
   categories:
   - aerospace-space
+- id: overland-ai
+  name: Overland AI
+  website: https://www.overland.ai
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: rippling
+    board: overland-ai
+  read: auto
+  sectors:
+  - ev
+  stage: series-b
+  founded: 2022
+  headcount:
+    value: 126
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/overland-ai)
+  climate:
+    tier: out
+    reason: Autonomous off-road ground vehicles (ULTRA, IBEX), SPARK autonomy kit, and OverDrive autonomy software.
+      Defense is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 126 people (Dealroom (https://dealroom.co/companies/overland-ai), 2026-11-27); growth
+      sign: founded 2022.'
+  notes: 'Board rippling:overland-ai seen 2026-11-27, linked from the company''s own site: 56 open roles. Headcount
+    note: Dealroom band 100-500; undated, date is when read Founded: https://www.overland.ai/. Stage: Dealroom lists
+    Seed, Series A and Series B investors (no amounts), then $80M late-stage VC round Feb 2026 at $320M valuation
+    (Valor, StepStone, Point72) and $20M debt from TriplePoint, Feb 2026; series letter of 2026 round not stated,
+    so at least Series B Flags: defense is main business (US Army contracts; ''fielded by warfighters''); autonomous
+    off-road vehicle; founding year: site 2022, Dealroom header 2023 (Dealroom text says 2022 UW spinout). Evidence:
+    https://www.overland.ai/ https://dealroom.co/companies/overland-ai Region sources: fundraiseinsider-seattle,
+    growthlist-seattle. Confidence: high. Unresolved: series label of Feb 2026 round'
+  categories:
+  - autonomy-robotics
+  - defense
 - id: overview-energy
   name: Overview Energy
   website: https://overviewenergy.com
@@ -40884,6 +42635,34 @@ companies:
     containers on existing track instead of diesel trucks.'
   categories:
   - autonomy-robotics
+- id: parauas
+  name: ParaUAS
+  website: https://parauas.com
+  careers_url: null
+  hq: OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: VTOL drone platforms for construction, survey and industrial inspection (cohort listing; own site says
+      only that it develops accessible drone technologies). Adjacent (Autonomy and robotics), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: ParaUAS LLC; Oregon UAS Accelerator cohort 3; no funding
+    information. Evidence: http://parauas.com/home https://siliconflorist.com/?p=72516 Region sources: sf-ouas-2025-12.
+    Confidence: low. Unresolved: City, product details, founding year, headcount, funding.'
+  categories:
+  - autonomy-robotics
 - id: parker-hannifin
   name: Parker Hannifin
   website: https://www.parker.com/
@@ -41358,6 +43137,37 @@ companies:
     energy harvesting power sources (''Power Pucks'') for industrial and commercial wireless sensors.'
   categories:
   - semis-electronics
+- id: perpetua-resources
+  name: Perpetua Resources
+  website: https://perpetuaresources.com
+  careers_url: null
+  hq: Boise, ID
+  ats:
+    type: paylocity
+    board: 500ecd97-3dfb-42c8-b995-8af3be95fcc1
+  read: manual
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Stibnite Gold Project, a gold and antimony mine under development in Valley County, Idaho (per input;
+      not confirmed). Adjacent (Mining and exploration), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'Board paylocity:500ecd97-3dfb-42c8-b995-8af3be95fcc1 seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Stage: Listing not confirmed (no readable source). Flags: mining: holds
+    a project (mine under development, per input); perpetuaresources.com answered 403; identity facts unverified.
+    Region sources: spokesman-critical-minerals-2025, search-idaho-mining. Confidence: low. Unresolved: perpetuaresources.com
+    answered 403 (and a second page on it was mistakenly requested once more and also answered 403). Dealroom slug
+    perpetua-resources and the Wikipedia pages tried returned 404. HQ, listing, project stage and headcount all
+    unverified; HQ is from the input only.'
+  categories:
+  - mining
 - id: perseus-defense
   name: Perseus Defense
   website: https://perseusdefense.com
@@ -41569,6 +43379,34 @@ companies:
     not shown; total disclosed $10-50M. https://dealroom.co/companies/phase-two-chemicals Flags: facilities in Hangzhou
     and Shaoxing, China. Evidence: https://phasetwochemicals.com https://dealroom.co/companies/phase-two-chemicals
     Region sources: greentown. Confidence: medium. Unresolved: Series A amount and date; headcount.'
+- id: phenix-solutions
+  name: Phenix Solutions
+  website: https://phenixuas.com
+  careers_url: null
+  hq: McMinnville, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Heavy-lift unmanned aircraft systems (e.g. Ultra 2XL). Adjacent (Autonomy and robotics), not clean tech
+      under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: private, no venture rounds found; site says 100% employee
+    owned. Flags: some defense work (news item about selection by a Ministry of Defence); defense not confirmed
+    as main business. Evidence: https://www.phenixuas.com/ https://oregonuas.org/pages/alumni Region sources: sf-ouas-2024.
+    Confidence: medium. Unresolved: Founding year, headcount, customer mix.'
+  categories:
+  - autonomy-robotics
 - id: phenolvation
   name: Phenolvation
   website: https://www.phenolvation.com
@@ -41788,6 +43626,40 @@ companies:
     Evidence: https://phoenixtailings.com/ https://phoenixtailings.com/about https://builtin.com/company/phoenix-tailings
     Confidence: low. Unresolved: Funding stage, headcount and exact HQ (Woburn per Built In, Burlington per job
     listings). Missing facts filled from data/screening/registry-fixes.'
+- id: phoseon-technology
+  name: Phoseon Technology
+  website: https://www.phoseon.com
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2002
+  headcount: null
+  climate:
+    tier: out
+    reason: UV LED light sources and systems for industrial curing (printing, coatings, adhesives) and life sciences
+      (UVC disinfection, chromatography and microscopy light sources). Adjacent (Semiconductors and electronics,
+      Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 2002, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://phoseon.com/company/. Stage: Ownership not
+    stated on its own site, but its contact, careers and social links all point to excelitas.com domains, which
+    suggests it belongs to Excelitas Technologies; not confirmed. Flags: probably part of Excelitas Technologies
+    (unconfirmed). Evidence: https://phoseon.com/ https://phoseon.com/company/ Region sources: wikipedia-silicon-forest.
+    Confidence: medium. Unresolved: Own site says it started in Portland, OR but does not give a current HQ; the
+    input''s Hillsboro, OR not confirmed. Parent and acquisition date not confirmed (Dealroom slugs phoseon_technology
+    and phoseon-technology returned 404). Headcount not found.'
+  categories:
+  - advanced-manufacturing
+  - semis-electronics
 - id: photara
   name: Photara
   website: https://photara.com
@@ -42233,6 +44105,42 @@ companies:
     https://impactclimate.mit.edu/2025/05/09/pixelframe-at-architecture-biennale/ Region sources: masscec-pr-4m.
     Confidence: low. Unresolved: company domain, HQ (input Cambridge), founded, headcount, funding No current website
     found (registry-fixes); the company may have closed or renamed.'
+- id: planar-systems
+  name: Planar Systems
+  website: https://www.planar.com
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: workable
+    board: planar-systems
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1983
+  headcount:
+    value: 456
+    as_of: '2018-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Planar_Systems)
+  climate:
+    tier: out
+    reason: 'Electronic displays: LED and LCD video walls, large-format LCD displays, desktop and touch monitors,
+      and display control systems. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).'
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 456 people (Wikipedia infobox (https://en.wikipedia.org/wiki/Planar_Systems),
+      2018-01-01); founded 1983, with no equity raise in 5 years or recent listing found.
+  notes: 'Board workable:planar-systems seen 2026-11-27, linked from the company''s own site: 26 open roles. Headcount
+    note: 456 for 2018 (year only); old figure. Founded: https://en.wikipedia.org/wiki/Planar_Systems. Stage: Acquired
+    by Leyard Optoelectronic Co. (China) for $157M, closed 27 November 2015; previously Nasdaq PLNR from a 1993
+    IPO (Wikipedia). Flags: subsidiary of Leyard Optoelectronic (China). Evidence: https://www.planar.com/about/
+    https://en.wikipedia.org/wiki/Planar_Systems Region sources: wikipedia-silicon-forest. Confidence: high. Unresolved:
+    Own site gives HQ as 6799 NE Bennett Street, Hillsboro and says ''since 1983''; it does not name Leyard. Wikipedia
+    is inconsistent on HQ (Hillsboro vs Beaverton). Founded 23 May 1983 as a Tektronix spin-off. No current headcount.'
+  categories:
+  - semis-electronics
 - id: planck-energies
   name: Planck Energies
   website: https://planckenergies.com
@@ -42835,6 +44743,42 @@ companies:
     to food and beverage concentration. Evidence: https://porifera.com Region sources: cec-eif-showcase, cec-nopa,
     arpae-projects. Confidence: low. Unresolved: Site returned only a title; HQ, founded, headcount, stage Tier
     set under owner decision 13.'
+- id: portal-space-systems
+  name: Portal Space Systems
+  website: https://www.portalsystems.space
+  careers_url: null
+  hq: Bothell, WA
+  ats:
+    type: greenhouse
+    board: portalspacesystems
+  read: auto
+  sectors:
+  - solar
+  stage: series-a
+  founded: null
+  headcount:
+    value: 80
+    as_of: '2026-01-01'
+    source: Company website (https://www.portalsystems.space/)
+  climate:
+    tier: out
+    reason: Supernova solar-thermal trans-orbital spacecraft and Starburst ESPA-class rapid-maneuver spacecraft
+      for orbital logistics. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; 80 people (Company website (https://www.portalsystems.space/), 2026-01-01); founding year
+      not found, so included.
+  notes: 'Board greenhouse:portalspacesystems seen 2026-11-27, token matched by name; board page checked: 25 open
+    roles. Headcount note: Own site says ''80 in 2026'' (year only); careers section says scaling from 40 to 100
+    this year Stage: Series A $50M, Apr 9 2026, led by Geodesic Capital and Mach33; seed $17.5M 2025; $45M STRATFI
+    (DoD) award 2024 (own site). https://www.portalsystems.space/ Flags: national security is a stated market and
+    DoD STRATFI funding; defense not shown to be the main business. Evidence: https://www.portalsystems.space/ Region
+    sources: choosewa-farnborough-2026, choosewa-paris-2025, space-city-wa, fundraiseinsider-seattle. Confidence:
+    high. Unresolved: Founding year (emerged from stealth 2024); Dealroom slug not found.'
+  categories:
+  - aerospace-space
 - id: poseidon-minerals
   name: Poseidon Minerals
   website: https://www.poseidonminerals.com
@@ -43032,6 +44976,75 @@ companies:
     stores and other....'
   categories:
   - semis-electronics
+- id: powerlattice
+  name: PowerLattice
+  website: null
+  careers_url: null
+  hq: Vancouver, WA
+  ats:
+    type: ashby
+    board: powerlattice
+  read: auto
+  sectors: []
+  stage: series-a
+  founded: 2023
+  headcount:
+    value: 13
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/powerlattice)
+  climate:
+    tier: out
+    reason: Power-delivery chiplet that puts voltage regulation inside the processor package to cut power loss in
+      AI accelerators and high-performance processors. Adjacent (Semiconductors and electronics, Data-center equipment),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 13 people (Dealroom (https://dealroom.co/companies/powerlattice), 2026-11-27); growth
+      sign: founded 2023.'
+  notes: 'Board ashby:powerlattice seen 2026-11-27, token matched by name; board page checked: 7 open roles, 4 US-remote.
+    Headcount note: Dealroom 13, band under 100; undated, read 2026-11-27. Open roles listed mostly in Arizona and
+    California. Founded: https://dealroom.co/companies/powerlattice. Stage: Series A $25M, November 2025, led by
+    Playground Global and Celesta Capital. https://www.businesswire.com/news/home/20251117032701/en/PowerLattice-Raises-%2425-Million-to-Break-the-AI-Power-Wall
+    . A larger 2026 raise (~$86M per an SEC filing) appeared only in search results from an off-limits site and
+    a Dealroom news item; not verified. Flags: main customers are AI accelerators / data centers; domain not in
+    input. Evidence: https://dealroom.co/companies/powerlattice https://www.businesswire.com/news/home/20251117032701/en/PowerLattice-Raises-%2425-Million-to-Break-the-AI-Power-Wall
+    Region sources: semieng-startup-funding. Confidence: medium. Unresolved: Own website not identified. 2026 follow-on
+    round not verified.'
+  categories:
+  - data-centers
+  - semis-electronics
+- id: powerlight-technologies
+  name: PowerLight Technologies
+  website: https://powerlighttech.com
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Laser-based wireless power beaming systems for UxVs, remote sensors and power nodes, plus power-over-fiber.
+      Adjacent (Aerospace and space, Defense), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Own site: ''expanded investment'' from the Department
+    of War (press release Oct 8 2026); no amounts or rounds. Flags: defense heavily featured (Department of War
+    funding, UAV overwatch, operational energy); may be the main business but not stated; powerlighttechnologies.com
+    returned an empty page; real domain powerlighttech.com. Evidence: https://powerlighttech.com/ Region sources:
+    space-city-wa. Confidence: medium. Unresolved: Founding year; funding; headcount; defense share.'
+  categories:
+  - aerospace-space
+  - defense
 - id: powernap-energy
   name: PowerNaP Energy
   website: https://powernapenergy.com
@@ -43114,6 +45127,38 @@ companies:
     2024 cohort; Bay Area location not stated on own site; early-stage enabling technology. Evidence: https://praio.co/
     https://activate.org/praio Region sources: activate-2024. Confidence: medium. Unresolved: HQ, founded, headcount,
     stage Tier set under owner decision 13.'
+- id: precision-castparts
+  name: Precision Castparts
+  website: https://www.precast.com
+  careers_url: null
+  hq: Lake Oswego, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Large, complex structural investment castings, airfoil castings, forgings, aerostructures and aerospace
+      fasteners, plus metals products (e.g. TIMET, Special Metals) including pipe for power generation and oil and
+      gas. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Listed as a Berkshire Hathaway subsidiary on berkshirehathaway.com;
+    acquisition date not confirmed from a fetched source. Flags: subsidiary of Berkshire Hathaway; over 1,000 employees
+    (not sourced; very large manufacturer); HQ is Lake Oswego, OR, not Portland. Evidence: https://www.precast.com/
+    https://www.precast.com/faq.html https://www.berkshirehathaway.com/subs/sublinks.html Region sources: nwaero-oregon.
+    Confidence: medium. Unresolved: Founding year, headcount, acquisition date (Dealroom slugs precision_castparts
+    and precision-castparts 404).'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: precision-photonics
   name: Precision Photonics
   website: null
@@ -43792,6 +45837,37 @@ companies:
     low. Unresolved: Location, founded year, headcount, funding; domain guessed.'
   categories:
   - semis-electronics
+- id: pulse-space
+  name: Pulse Space
+  website: https://pulsespace.com
+  careers_url: null
+  hq: Bellevue, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: seed
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Laser power beaming in orbit: satellites that collect solar power and beam it by laser to other spacecraft,
+      plus laser-based orbital tracking and debris mitigation. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2022.'
+  notes: 'No job board found on the company''s site. Stage: GeekWire 2026-07-09: $5.72M seed round completed February
+    2026; also a $40M U.S. Space Force contract (2026-07-09) and a $1.9M Air Force contract, which are not equity
+    Flags: Its site shows only the title ''Pulse - Space Power Solutions''. Customers named include Starlab Space,
+    which will rely on power beamed from Pulse satellites, so it builds space hardware. HQ is Bellevue, not Seattle
+    proper. Dealroom slug guess returned 404.. Evidence: h t t p s : Region sources: space-city-wa. Confidence:
+    low.'
+  categories:
+  - aerospace-space
 - id: pulseforge
   name: Pulseforge
   website: https://pulseforge.com/
@@ -44906,6 +46982,41 @@ companies:
     or emissions case.'
   categories:
   - aerospace-space
+- id: radian-aerospace
+  name: Radian Aerospace
+  website: https://www.radianaerospace.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2016
+  headcount:
+    value: 23
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/radian-aerospace)
+  climate:
+    tier: out
+    reason: Ceramic matrix composite parts and reusable thermal protection systems (Dur-E-Therm) for aerospace,
+      defense and industry, while developing the Radian One spaceplane. Adjacent (Aerospace and space), not clean
+      tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 23 people (Dealroom (https://dealroom.co/companies/radian-aerospace), 2026-11-27); growth
+      sign: founded 2016.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom 23, undated (as_of is retrieval date);
+    band <100 Founded: https://dealroom.co/companies/radian-aerospace. Stage: Seed $28M, Jan 2022, $110M valuation,
+    led by Fine Structure Ventures (Dealroom); 7 events recorded, 2 shown. https://dealroom.co/companies/radian-aerospace
+    Flags: hypersonic and advanced defense systems listed as a target market; not shown to be the main business;
+    own site now leads with CMC materials, not the spaceplane. Evidence: https://www.radianaerospace.com/ https://dealroom.co/companies/radian-aerospace
+    Region sources: space-city-wa. Confidence: medium. Unresolved: HQ city; later rounds.'
+  categories:
+  - aerospace-space
 - id: radiant-nuclear
   name: Radiant Nuclear
   website: https://www.radiantnuclear.com/
@@ -44943,6 +47054,43 @@ companies:
     https://builtin.com/company/radiant-industries Region sources: builtinla-greentech, dcvc. Confidence: medium.
     Unresolved: Own site radiantnuclear.com returned 403 to the fetcher (stopped on that site). Founding year not
     sourced. Whether main customers are defense or data centers not established.'
+- id: radical
+  name: Radical
+  website: https://radicalaero.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: seed
+  founded: 2022
+  headcount:
+    value: 6
+    as_of: '2026-11-27'
+    source: Y Combinator profile (https://www.ycombinator.com/companies/radical)
+  climate:
+    tier: out
+    reason: Autonomous solar-powered high-altitude aircraft (StratoSats, Evenstar prototype) for connectivity, earth
+      observation and atmospheric sensing from the stratosphere. Adjacent (Aerospace and space, Autonomy and robotics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 6 people (Y Combinator profile (https://www.ycombinator.com/companies/radical), 2026-11-27);
+      growth sign: founded 2022.'
+  notes: 'No job board found on the company''s site. Headcount note: YC team size, undated; date is when read Founded:
+    https://www.ycombinator.com/companies/radical. Stage: Y Combinator W23; $4.5M seed led by Scout Ventures (web
+    search summary, original article not read) Flags: autonomous aircraft (stratospheric drone); domain was blank
+    in input; radicalaero.com from YC profile; no defense customers named. Evidence: https://www.ycombinator.com/companies/radical
+    https://www.radicalaero.com/ https://techcrunch.com/2024/04/24/radical-thinks-the-time-has-come-for-solar-powered-high-altitude-autonomous-aircraft/
+    Region sources: yc-seattle. Confidence: medium. Unresolved: seed amount and date not confirmed from a primary
+    source'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
 - id: radify-metals
   name: Radify Metals
   website: https://radifymetals.com
@@ -45400,6 +47548,32 @@ companies:
     Defense: Long-range wireless power beaming whose main customers are defense agencies (owner ruling A3).'
   categories:
   - defense
+- id: reach-space-technologies
+  name: Reach Space Technologies
+  website: https://reachspace.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Commercial rocket propulsion. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No information found. Flags: site has a tagline only.
+    Evidence: https://reachspace.com/ https://www.alliancevelocity.com/space-city Region sources: space-city-wa.
+    Confidence: low. Unresolved: HQ; founding year; funding; headcount.'
+  categories:
+  - aerospace-space
 - id: realta-fusion
   name: Realta Fusion
   website: https://realtafusion.com/
@@ -45490,6 +47664,34 @@ companies:
   notes: 'No job board found on the company''s site. Stage: Nothing found. Region sources: uci-startups. Confidence:
     low. Unresolved: No site found (recreateenergy.com 404); everything unverified. No current website found (registry-fixes);
     the company may have closed or renamed.'
+- id: red-barn-robotics
+  name: Red Barn Robotics
+  website: https://redbarnrobotics.com
+  careers_url: null
+  hq: Tukwila, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Field Hand autonomous weeding robot, offered as an intra-row weeding service to farms. Adjacent (Autonomy
+      and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: no funding found Flags: robot sold as a service; site
+    also shows produce for sale and testimonials naming another firm (Agrius); identity of site content uncertain;
+    domain was blank in input. Evidence: https://www.redbarnrobotics.com/ Region sources: yc-seattle. Confidence:
+    low. Unresolved: founding year, headcount, funding; HQ differs from input (Seattle)'
+  categories:
+  - autonomy-robotics
 - id: red-shift-energy
   name: Red Shift Energy
   website: https://www.rsenrg.com/
@@ -45893,6 +48095,34 @@ companies:
   categories:
   - aerospace-space
   - autonomy-robotics
+- id: reliasystems
+  name: ReliaSystems
+  website: https://relia-systems.com
+  careers_url: null
+  hq: Portland, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Unmanned underwater vehicles; developing WIEVLE, a low-cost spherical underwater vehicle for inspection
+      and reconnaissance in confined, GPS-denied water. Adjacent (Autonomy and robotics), not clean tech under the
+      rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding information found; Oregon UAS Accelerator
+    fall 2026 cohort. Evidence: https://relia-systems.com/ https://siliconflorist.com/2026/08/20/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort/
+    Region sources: sf-ouas-2026-fall. Confidence: medium. Unresolved: Founding year, headcount, funding, customers.'
+  categories:
+  - autonomy-robotics
 - id: relyion-energy
   name: Relyion Energy
   website: https://www.relyionenergy.com/
@@ -46104,6 +48334,37 @@ companies:
     stated on site; Dealroom slug renewco2 404. Evidence: https://renewco2.com Region sources: njeda-csit-seed-r1,
     njeda-csit-seed-r3. Confidence: medium. Unresolved: HQ not stated (input says Cranford, NJ); founded year; headcount;
     funding; Rutgers origin not confirmed.'
+- id: renton-coil-spring-company
+  name: Renton Coil Spring Company
+  website: https://rentoncoilspring.com
+  careers_url: null
+  hq: Renton, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: 1949
+  headcount: null
+  climate:
+    tier: out
+    reason: Springs and wire forms for aviation, space, defense and industrial markets, with testing, heat treat
+      and finishing. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1949, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'No job board found on the company''s site. Founded: https://www.rentoncoilspring.com/. Stage: private,
+    no venture rounds found Flags: titanium springs not specifically confirmed on home page; domain was blank in
+    input. Evidence: https://www.rentoncoilspring.com/ Region sources: choosewa-paris-2025, choosewa-paris-2023.
+    Confidence: medium. Unresolved: headcount, ownership'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: renu-robotics
   name: Renu Robotics
   website: https://renurobotics.com
@@ -47240,6 +49501,34 @@ companies:
     labj-creating-space-beach, labj-voyaging-space-beach, echai-la-aerospace, lahardtech50-2025, aerodefenseoutlook-2026,
     rose-ieo-2025, dotla-apex-2024, longbeach-gov. Confidence: high. Unresolved: rocketlabcorp.com answered 403
     to the fetch; not retried.'
+  categories:
+  - aerospace-space
+- id: rocket-propulsion-systems
+  name: Rocket Propulsion Systems
+  website: https://rocketpropulsion.systems
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Centurion rocket engine and orbital transfer, launch and reentry vehicles for an in-space manufacturing
+      service. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No information found. Flags: rocketpropulsionsystems.com
+    redirects to rocketpropulsion.systems. Evidence: https://rocketpropulsion.systems/ https://www.alliancevelocity.com/space-city
+    Region sources: space-city-wa. Confidence: low. Unresolved: HQ; founding year; funding; headcount.'
   categories:
   - aerospace-space
 - id: rocky-mountain-instrument-co
@@ -48421,6 +50710,35 @@ companies:
     and 2015.'
   categories:
   - autonomy-robotics
+- id: seacast
+  name: SeaCast
+  website: https://seacast.com
+  careers_url: null
+  hq: Marysville, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Precision investment castings for aerospace and defense. Adjacent (Aerospace and space, Advanced manufacturing),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: ''Privately owned'' (own site); no venture rounds Flags:
+    Marysville, WA is the footer address, not labelled HQ; domain was blank in input. Evidence: https://www.seacast.com/
+    Region sources: choosewa-farnborough-2026, choosewa-paris-2025, choosewa-paris-2023. Confidence: medium. Unresolved:
+    founding year, headcount'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: seakr-engineering
   name: SEAKR Engineering
   website: https://www.seakr.com
@@ -48639,6 +50957,35 @@ companies:
     funding not stated on site. Flags: manufacturing in USA and Indonesia. Evidence: https://www.segsolar.com/about
     Region sources: web-tx-solar-mfg, e2-texas. Confidence: medium. Unresolved: Parent company, Tomball plant details
     and headcount not on site.'
+- id: seh-america
+  name: SEH America
+  website: https://www.sehamerica.com
+  careers_url: null
+  hq: Vancouver, WA
+  ats:
+    type: adp
+    board: 263d7f2a-913f-4a18-85d4-7ed1ff540596
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Silicon wafers: 300 mm and polished CZ, epitaxial and annealed, SOI and high-resistivity, and specialty
+      wafers. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board adp:263d7f2a-913f-4a18-85d4-7ed1ff540596 seen 2026-11-27, linked from the company''s own site: role
+    count not read (no public feed). Stage: Part of the Shin-Etsu Handotai (SEH) Group, backed by Shin-Etsu Chemical
+    (Japan), per its own About page. Flags: subsidiary of Shin-Etsu Handotai (Shin-Etsu Chemical group). Evidence:
+    https://www.sehamerica.com/ https://sehamerica.com/about-us/ Region sources: wikipedia-silicon-forest. Confidence:
+    high. Unresolved: Founding year and headcount not stated on its own site.'
+  categories:
+  - semis-electronics
 - id: sekisui-aerospace
   name: Sekisui Aerospace
   website: https://www.sekisuiaerospace.com
@@ -49320,6 +51667,34 @@ companies:
     HQ outside region; main sites in TX (Carrollton, Grand Prairie). Evidence: https://www.siemens.com/global/en/company/about.html
     Region sources: e2-texas, web-tx-transformers. Confidence: medium. Unresolved: Global headcount, listing year
     and the Texas plants not verified from a fetched source.'
+- id: sienna-technologies
+  name: Sienna Technologies
+  website: https://siennatech.com
+  careers_url: null
+  hq: Woodinville, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Advanced ceramic materials: aluminum nitride ceramics for power electronics, microwave absorbers, ceramic
+      packages, high-temperature catalysts and an FGM thruster. Adjacent (Aerospace and space), not clean tech under
+      the rubric (decision 23).'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Not stated. Flags: mainly industrial ceramics; space
+    materials are one line. Evidence: http://siennatech.com/ https://www.alliancevelocity.com/space-city Region
+    sources: space-city-wa. Confidence: medium. Unresolved: HQ on own site; founding year; ownership; headcount.'
+  categories:
+  - aerospace-space
 - id: sierra-space
   name: Sierra Space
   website: https://www.sierraspace.com
@@ -49707,6 +52082,44 @@ companies:
     silabs.com refused automated fetch (403). Evidence: https://stockanalysis.com/stocks/slab/company/ https://news.silabs.com/2026-02-04-Texas-Instruments-to-acquire-Silicon-Labs
     Region sources: opportunity-austin, tsif-listing. Confidence: high. Missing facts filled from data/screening/registry-fixes.
     Dealroom facts released by the owner (decision 25, 2026-11-27).'
+  categories:
+  - semis-electronics
+- id: siltronic-corporation
+  name: Siltronic Corporation
+  website: https://www.siltronic.com
+  careers_url: null
+  hq: Portland, OR
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/SIL1005SILT/JobBoard/2208932d-db7e-4321-bf3d-9cc7f45634e3
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount:
+    value: 360
+    as_of: '2026-11-27'
+    source: Siltronic sites page (Portland site) (https://www.siltronic.com/en/our-company/sites.html)
+  climate:
+    tier: out
+    reason: Hyperpure polished and epitaxial silicon wafers for chipmakers; the Portland plant makes 200 mm wafers
+      from crystals grown in Germany. Adjacent (Semiconductors and electronics), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; 360 people (Siltronic sites page (Portland site) (https://www.siltronic.com/en/our-company/sites.html),
+      2026-11-27); founding year not found, so included.
+  notes: 'Board ukg:recruiting.ultipro.com/SIL1005SILT/JobBoard/2208932d-db7e-4321-bf3d-9cc7f45634e3 seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Headcount note: About 360 at Portland
+    (undated on page, fetch date used); group about 4,300 worldwide (siltronic.com home). Stage: US subsidiary of
+    Siltronic AG, listed on the Frankfurt Prime Standard since 2015 (MDAX, TecDAX). Portland site established 1979
+    (Siltronic''s first international site), expanded 1996; group history back to 1953. Flags: subsidiary of Siltronic
+    AG (Germany, public since 2015); HQ outside region (Munich); regional site Portland, OR; over 1,000 employees
+    (group); Oregon CHIPS award (from input; not verified). Evidence: https://www.siltronic.com/en/ https://www.siltronic.com/en/our-company/sites.html
+    Region sources: oregon-chips-awards, wikipedia-silicon-forest. Confidence: high. Unresolved: Founding year of
+    the US entity (site opened 1979); CHIPS award not verified.'
   categories:
   - semis-electronics
 - id: silvis-materials
@@ -51820,6 +54233,32 @@ companies:
     Acquisition date not found; domain not given in input, space-ng.com found (no address on it).'
   categories:
   - aerospace-space
+- id: space-valves
+  name: Space Valves
+  website: https://space-valves.com
+  careers_url: null
+  hq: Puyallup, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Performance valves for launch vehicles and spacecraft. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Not stated. Evidence: https://space-valves.com/ https://www.alliancevelocity.com/space-city
+    Region sources: space-city-wa. Confidence: low. Unresolved: HQ on own site; founding year; ownership; headcount.'
+  categories:
+  - aerospace-space
 - id: spacex
   name: SpaceX
   website: https://www.spacex.com/
@@ -52161,6 +54600,33 @@ companies:
   - advanced-manufacturing
   - aerospace-space
   - semis-electronics
+- id: speculo-robotics
+  name: Speculo Robotics
+  website: https://speculorobotics.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Robotic hands, arms and electromechanical systems with control software and data-collection systems
+      for dexterous manipulation. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: no funding found; Dealroom slug speculo-robotics 404
+    Evidence: https://www.speculorobotics.com/ Region sources: comotion-hardware. Confidence: medium. Unresolved:
+    founding year, headcount, funding, customers'
+  categories:
+  - autonomy-robotics
 - id: sperra
   name: Sperra
   website: https://sperra.com
@@ -52607,6 +55073,38 @@ companies:
     investor Chevron Technology Ventures. Evidence: https://dealroom.co/companies/standard-nuclear https://www.renaissancecapital.com/Profile/STDN/Standard-Nuclear/IPO
     https://www.orrick.com/en/News/2026/07/Standard-Nuclear-Announces-IPO https://www.ans.org/news/2026-07-24/article-8241/standard-nuclear-plans-triso-production-at-two-new-facilities-in-2026/
     Confidence: medium. Unresolved: Headcount from S-1 or 10-Q not read.'
+- id: starcloud-formerly-lumen-orbit
+  name: Starcloud (formerly Lumen Orbit)
+  website: https://www.starcloud.com
+  careers_url: null
+  hq: Redmond, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: series-a
+  founded: 2024
+  headcount: null
+  climate:
+    tier: out
+    reason: Data centers in space (orbital GPU compute) using continuous solar power and radiative cooling. Space
+      is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2024.'
+  notes: 'No job board found on the company''s site. Headcount note: Dealroom band <100 only Founded: https://dealroom.co/companies/starcloud.
+    Stage: Dealroom groups investors under Seed and Series A, no amounts or dates; total disclosed equity $100-500M.
+    Own site names NFX, Nvidia, IQT and Benchmark as backers. https://dealroom.co/companies/starcloud Flags: orbital
+    data center: the company is itself AI compute capacity; formerly Lumen Orbit (Dealroom). Evidence: https://www.starcloud.com/
+    https://dealroom.co/companies/starcloud Region sources: yc-seattle, space-city-wa, fundraiseinsider-seattle.
+    Confidence: medium. Unresolved: Series A amount and date; headcount.'
+  categories:
+  - aerospace-space
+  - data-centers
 - id: starfire-energy
   name: Starfire Energy
   website: https://www.starfireenergy.com
@@ -52643,6 +55141,41 @@ companies:
     Region sources: oedit-ai, siteselection-clean, search-snippets. Confidence: medium. Unresolved: Current status:
     site is an empty ''Index of /'' page and no 2026 news found. Founded 2007 as solar company, pivoted to ammonia
     2016.'
+- id: starfish-space
+  name: Starfish Space
+  website: https://www.starfishspace.com
+  careers_url: null
+  hq: Tukwila, WA
+  ats:
+    type: ashby
+    board: starfish-space-inc
+  read: auto
+  sectors:
+  - ev
+  stage: series-b
+  founded: 2019
+  headcount: null
+  climate:
+    tier: out
+    reason: Otter, an autonomous satellite servicing vehicle that docks with satellites for life extension and disposal.
+      Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2019.'
+  notes: 'Board ashby:starfish-space-inc seen 2026-11-27, linked from the company''s own site: 7 open roles, 6 US-remote.
+    Founded: https://www.starfishspace.com/press-release/starfish-space-raises-over-100-million-series-b/. Stage:
+    Series B of over $100M, Apr 7 2026, led by Point72 Ventures (own press release); earlier $29M Nov 2024 and $14M
+    Mar 2023; over $150M total. https://www.starfishspace.com/press-release/starfish-space-raises-over-100-million-series-b/
+    Flags: named customers include US Space Force, Space Development Agency, NASA and SES; defense not shown to
+    be the main business; HQ sources disagree: press boilerplate Tukwila, dateline and home footer Seattle, input
+    Kent. Evidence: https://www.starfishspace.com/ https://www.starfishspace.com/press-release/starfish-space-raises-over-100-million-series-b/
+    Region sources: wa-space-summit-2023, space-city-wa, fundraiseinsider-seattle, growthlist-seattle. Confidence:
+    high. Unresolved: Headcount; Dealroom slug not found.'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
 - id: starlab-space
   name: Starlab Space
   website: https://starlab-space.com/
@@ -52888,6 +55421,42 @@ companies:
     Customers: Mining companies (feedstock testing and project evaluation). Flags: main customers are mining companies.
     Evidence: https://stillbright.co https://stillbright.co/about https://techcrunch.com/2025/07/30/how-a-new-jersey-startup-found-an-electrifying-way-to-slash-copper-costs/
     https://dealroom.co/companies/still-bright/ Confidence: medium.'
+- id: stoke-space
+  name: Stoke Space
+  website: https://www.stokespace.com
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - ev
+  stage: late
+  founded: 2020
+  headcount:
+    value: 125
+    as_of: '2024-06-11'
+    source: Wikipedia (citing Ars Technica) (https://en.wikipedia.org/wiki/Stoke_Space)
+  climate:
+    tier: out
+    reason: Nova, a launch vehicle designed for full reuse of both stages. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 125 people (Wikipedia (citing Ars Technica) (https://en.wikipedia.org/wiki/Stoke_Space),
+      2024-06-11); growth sign: founded 2020.'
+  notes: 'No job board found on the company''s site. Headcount note: Wikipedia infobox 125+ (citation dated 2024-06-11);
+    aggregators in a search summary give 200-500, 265, 280, 370 and 425, all unverified Founded: https://en.wikipedia.org/wiki/Stoke_Space.
+    Stage: Series D $510M plus $100M debt, Oct 8 2025 (Kent Reporter); extended to $860M Feb 2026; Wikipedia lists
+    a $1B Series E in Sep 2026. https://www.kentreporter.com/2025/10/08/kent-based-stoke-space-raises-510-million-in-funding/
+    Flags: US Space Force NSSL contract; defense is a customer segment, not shown to be the main business; sites
+    also in Moses Lake, WA and Cape Canaveral, FL. Evidence: https://www.stokespace.com/ https://www.kentreporter.com/2025/10/08/kent-based-stoke-space-raises-510-million-in-funding/
+    https://en.wikipedia.org/wiki/Stoke_Space Region sources: wa-space-summit-2023, space-city-wa, yc-seattle, fundraiseinsider-seattle.
+    Confidence: high. Unresolved: Current headcount.'
+  categories:
+  - aerospace-space
 - id: stone-mountain-technologies
   name: Stone Mountain Technologies
   website: https://anesicomfort.com
@@ -54231,6 +56800,35 @@ companies:
     laedc-ev-report. Confidence: low. Unresolved: tabc.com failed (certificate error). Fuel-cell module assembly
     at TABC Long Beach not found; search results place Toyota fuel-cell module assembly in Georgetown, KY. Founded
     year and headcount not found.'
+- id: tactical-laser-defense-systems
+  name: Tactical Laser Defense Systems
+  website: https://laserdefensesystems.online
+  careers_url: null
+  hq: Seal Rock, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: DEW-002-HP, a man-portable directed-energy dazzler for counter-drone use, carried like a sidearm. Defense
+      is its main business (owner ruling A3).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: No funding disclosed; site copyright 2024-2026; Oregon
+    UAS Accelerator fall 2026 cohort. Flags: defense is main business (messaging centres on soldiers and drone warfare;
+    also marketed to civilians and law enforcement). Evidence: https://laserdefensesystems.online/ https://siliconflorist.com/2026/08/20/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort/
+    Region sources: sf-ouas-2026-fall. Confidence: medium. Unresolved: Founding year, headcount, funding.'
+  categories:
+  - defense
 - id: tae-technologies
   name: TAE Technologies
   website: https://tae.com/
@@ -54357,6 +56955,35 @@ companies:
     CA via Activate 2018; operations reported in India). Evidence: https://takachar.com/ https://www.takachar.com/about
     Region sources: activate-companies, cyclotron-road-fellows, caltestbed-directory, calseed-awardees. Confidence:
     low. Unresolved: HQ, founded, headcount and stage not found; Dealroom 404.'
+- id: tamarack-aerospace-group
+  name: Tamarack Aerospace Group
+  website: https://www.tamarackaero.com
+  careers_url: null
+  hq: Sandpoint, ID
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Active Winglets and ATLAS load-alleviation technology, designed, built and installed at its own Transformation
+      Centers, plus engineering and certification services. Adjacent (Aerospace and space), not clean tech under
+      the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Ownership and funding not stated on site; concept 2009,
+    first Active Winglets installed on a Citation CJ1 in 2015. Evidence: https://www.tamarackaero.com/about https://www.tamarackaero.com/contact
+    Region sources: idaho-web-search. Confidence: medium. Unresolved: Founding year, headcount, funding (Dealroom
+    slugs tamarack_aerospace_group and tamarack_aerospace 404).'
+  categories:
+  - aerospace-space
 - id: tamos
   name: TAMOS
   website: https://www.tamosolutions.com/
@@ -54585,6 +57212,43 @@ companies:
     sources: opportunity-austin. Confidence: low.'
   categories:
   - semis-electronics
+- id: tektronix
+  name: Tektronix
+  website: https://www.tek.com
+  careers_url: null
+  hq: Beaverton, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1946
+  headcount:
+    value: 3000
+    as_of: '2023-01-01'
+    source: Wikipedia infobox (https://en.wikipedia.org/wiki/Tektronix)
+  climate:
+    tier: out
+    reason: Test and measurement instruments such as oscilloscopes (per input and Wikipedia; tek.com refused the
+      fetch). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 3,000 people (Wikipedia infobox (https://en.wikipedia.org/wiki/Tektronix), 2023-01-01);
+      founded 1946, with no equity raise in 5 years or recent listing found.
+  notes: 'No board found: home page not readable (403). Headcount note: About 3,000 as of 2023 (year only, so as_of
+    is the first day of 2023). Founded: https://en.wikipedia.org/wiki/Tektronix. Stage: Subsidiary of Ralliant Corporation,
+    a spinoff from Fortive (Wikipedia; a job listing seen in a search summary also says wholly owned subsidiary
+    of Ralliant). Danaher bought it for $2.85B in November 2007; it went to Fortive in the 2016 Danaher spinoff.
+    Flags: subsidiary of Ralliant Corporation; over 1,000 employees; tek.com answered 403; not retried. Evidence:
+    https://en.wikipedia.org/wiki/Tektronix https://www.ralliant.com Region sources: wikipedia-silicon-forest, fast-engine-partners.
+    Confidence: medium. Unresolved: tek.com/en/about-us answered 403, so nothing was read from the company''s own
+    site. Wikipedia says the company began in December 1945 as Tekrad and was renamed Tektronix in 1946. Date of
+    the move from Fortive to Ralliant not confirmed.'
+  categories:
+  - semis-electronics
 - id: telaztec
   name: TelAztec
   website: https://www.telaztec.com
@@ -54613,6 +57277,39 @@ companies:
     sources: beststartup-3dp-2021. Confidence: medium. Unresolved: Founding year, headcount, ownership and defense
     share not found (/about-us 404).'
   categories:
+  - semis-electronics
+- id: teledyne-flir
+  name: Teledyne FLIR
+  website: https://www.flir.com
+  careers_url: null
+  hq: Wilsonville, OR
+  ats:
+    type: workday
+    board: flir
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Thermal, acoustic and visible-light imaging cameras and sensors, gas-detection cameras, security cameras
+      and radars, test and measurement tools, for industrial, government and commercial markets. Adjacent (Autonomy
+      and robotics, Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'Board workday:flir.wd1.myworkdayjobs.com/flircareers seen 2026-11-27, linked from the company''s own site:
+    role count not read (no public feed). Stage: FLIR Systems acquired by Teledyne Technologies, completed May 2021,
+    about $8.2B including net debt; now operates as Teledyne FLIR in Teledyne''s Digital Imaging segment (businesswire.com/news/home/20210514005348/en,
+    search result). Flags: subsidiary of Teledyne Technologies (acquired May 2021); has a separate Teledyne FLIR
+    Defense unit; site describes a diversified industrial, government and commercial portfolio, so defense not shown
+    to be main business. Evidence: https://www.flir.com/about/about-flir/ https://www.businesswire.com/news/home/20210514005348/en/Teledyne-Completes-Acquisition-of-FLIR
+    Region sources: nwaero-oregon. Confidence: medium. Unresolved: Founding year, headcount, Wilsonville HQ confirmation.'
+  categories:
+  - autonomy-robotics
   - semis-electronics
 - id: tellus-power-green
   name: Tellus Power Green
@@ -56176,6 +58873,70 @@ companies:
     US HQ and US manufacturing not confirmed (contact page returned 403). Stage: Americas arm of the TMEIC group
     (Japan site tmeic.co.jp; Europe careers on toshiba.eu); parent not named on the pages read. Evidence: https://www.tmeic.com/
     https://www.tmeic.com/careers/ Confidence: low.'
+- id: tokyo-ohka-kogyo-america-tok-america
+  name: Tokyo Ohka Kogyo America (TOK America)
+  website: https://www.tok.co.jp
+  careers_url: null
+  hq: Hillsboro, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Photoresists and process chemicals for chipmaking (per input; TOK's site lists the US unit but does
+      not describe its products). Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Listed among the overseas sites of Tokyo Ohka Kogyo
+    Co., Ltd. (Japan); headquarters and Oregon plant at 4600 NE Brookwood Parkway, Hillsboro; corporate sales office
+    in Milpitas, CA. Flags: subsidiary of Tokyo Ohka Kogyo Co., Ltd. (Japan). Evidence: https://www.tok.co.jp/eng/company/overseas
+    Region sources: oregon-chips-awards. Confidence: medium. Unresolved: Founding year, headcount and the US unit''s
+    product list not stated on tok.co.jp.'
+  categories:
+  - semis-electronics
+- id: toray-composite-materials-america
+  name: Toray Composite Materials America
+  website: https://www.toraycma.com
+  careers_url: null
+  hq: Tacoma, WA
+  ats:
+    type: ukg
+    board: recruiting.ultipro.com/TOR1003TCAI2/JobBoard/1a3761a6-d04c-48fb-abb5-beac6bd39773
+  read: manual
+  sectors: []
+  stage: subsidiary
+  founded: 1992
+  headcount: null
+  climate:
+    tier: out
+    reason: Carbon fiber composite materials and thermoset prepreg for aerospace, rocket, industrial and sporting
+      goods markets. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; no headcount figure found; founded 1992, with no equity raise in 5 years or recent
+      listing found.
+  notes: 'Board ukg:recruiting.ultipro.com/TOR1003TCAI2/JobBoard/1a3761a6-d04c-48fb-abb5-beac6bd39773 seen 2026-11-27,
+    linked from the company''s own site: role count not read (no public feed). Founded: https://www.toraycma.com/about-us/.
+    Stage: part of the Toray Group (site links Toray Group USA); parent entity not named explicitly on pages read
+    Flags: subsidiary of Toray Group (Japan); plants in Tacoma, WA, Decatur, AL and Spartanburg, SC; HQ not stated
+    on site (Tacoma from input, plant confirmed); began producing composites in 1992 as Toray Composites (America),
+    next to Boeing''s composite center. Evidence: https://www.toraycma.com/ https://www.toraycma.com/about-us/ Region
+    sources: wa-space-summit-2023, choosewa-paris-2023. Confidence: medium. Unresolved: HQ city not stated on site;
+    headcount'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: tortuga-agtech
   name: Tortuga AgTech
   website: https://www.tortugaagtech.com
@@ -58144,6 +60905,44 @@ companies:
   categories:
   - aerospace-space
   - defense
+- id: us-aluminum-castings-usac
+  name: US Aluminum Castings (USAC)
+  website: null
+  careers_url: null
+  hq: Entiat, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1909
+  headcount:
+    value: 100
+    as_of: '2026-11-27'
+    source: Thomasnet (https://www.thomasnet.com/company/us-aluminum-castings-10026841/profile)
+  climate:
+    tier: out
+    reason: AS9100 aerospace aluminum castings (sand, permanent mold, no-bake, lost foam) with heat treat, NDT and
+      machining. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 100 people (Thomasnet (https://www.thomasnet.com/company/us-aluminum-castings-10026841/profile),
+      2026-11-27); founded 1909, with no equity raise in 5 years or recent listing found.
+  notes: 'No job board found on the company''s site. Headcount note: Thomasnet band 100-199; Clutch lists 10-49;
+    both undated, from search snippets Founded: https://sourcehere.com/company/2980. Stage: business unit of Advanced
+    Metals Group, Philadelphia (search snippet, not confirmed on own site) Flags: subsidiary of Advanced Metals
+    Group (unconfirmed); founded in Seattle 1909, moved to Entiat 1994 (directory snippet); own site usaluminumcastings.com
+    refused connection; facts from directories; markets aerospace, defense, heavy truck, marine. Evidence: https://sourcehere.com/company/2980
+    https://www.thomasnet.com/company/us-aluminum-castings-10026841/profile https://www.foundrymag.com/testing-qc/article/21926210/us-aluminum-castings-gets-boeing-quality-endorsement
+    Region sources: choosewa-farnborough-2026, choosewa-paris-2025, choosewa-paris-2023. Confidence: low. Unresolved:
+    own website, parent confirmation, headcount (sources disagree)'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: usa-rare-earth
   name: USA Rare Earth
   website: https://usare.com
@@ -58302,6 +61101,37 @@ companies:
   notes: 'No job board found on the company''s site. Founded: https://www.valex.com/. Stage: Ownership not stated
     on site. Flags: Georgetown, TX site not confirmed; HQ not stated on page read. Evidence: https://www.valex.com/
     Region sources: opportunity-austin. Confidence: low. Unresolved: HQ, Texas site, headcount, ownership.'
+  categories:
+  - semis-electronics
+- id: valliscor
+  name: Valliscor
+  website: https://www.valliscor.com
+  careers_url: null
+  hq: Corvallis, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: 2012
+  headcount: null
+  climate:
+    tier: out
+    reason: Fluorine-containing specialty chemicals such as bromofluoromethane, hexafluoro-1,3-butadiene (C4F6)
+      and pentafluoro-1-pentanol, for pharmaceutical and semiconductor makers. Adjacent (Semiconductors and electronics),
+      not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; no headcount figure found; growth sign: founded 2012.'
+  notes: 'No job board found on the company''s site. Founded: https://valliscor.com/about. Stage: No funding or
+    ownership stated on its own site; Dealroom slug ''valliscor'' returned 404. Evidence: https://valliscor.com
+    https://valliscor.com/about Region sources: oregon-chips-awards, fast-engine-partners, cormic-tech-hub. Confidence:
+    medium. Unresolved: Funding and headcount not found. Notes: HQ and first plant are at Oregon State University''s
+    ATAMI facility in Corvallis; it bought a 12+ acre site in Albany, OR in 2025 and broke ground on a second manufacturing
+    campus (16,000+ sq ft first phase) in August 2025.'
   categories:
   - semis-electronics
 - id: valor-formerly-capco
@@ -58618,6 +61448,36 @@ companies:
     Waste Management Services in 2023; product is a waste-injection / carbon removal service, not hardware sold.
     Evidence: https://www.vaulteddeep.com/ https://dealroom.co/companies/vaulted-deep https://builtin.com/company/vaulted-deep
     Confidence: medium.'
+- id: vaupell
+  name: Vaupell
+  website: https://vaupell.com
+  careers_url: null
+  hq: Everett, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Injection-molded, composite and machined components and assemblies for aerospace (incl. aircraft interiors),
+      defense and medical. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: ''a Sumitomo Bakelite Co., Ltd. company'' (own site)
+    Flags: subsidiary of Sumitomo Bakelite Co., Ltd. (Japan); facilities in US, Germany and China; domain was blank
+    in input. Evidence: https://www.vaupell.com/ Region sources: choosewa-paris-2025. Confidence: medium. Unresolved:
+    founding year (''over 75 years''), headcount'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: vecna-robotics
   name: Vecna Robotics
   website: https://www.vecnarobotics.com/
@@ -58982,6 +61842,38 @@ companies:
     https://www.verne-power.com/about https://www.energytech.com/hydrogen/article/55339250/verne-and-vema-hydrogen-partner-to-deliver-carbon-free-power-for-data-centers-by-2028
     Region sources: cec-nopa, arpae-projects. Confidence: medium. Unresolved: HQ, founding year, headcount, funding.
     Builtin SF ''verne'' slug is a different company (Verne Global, data-center colocation).'
+- id: vernier-science-education
+  name: Vernier Science Education
+  website: https://www.vernier.com
+  careers_url: null
+  hq: Beaverton, OR
+  ats:
+    type: bamboohr
+    board: vernier
+  read: manual
+  sectors: []
+  stage: null
+  founded: 1981
+  headcount: null
+  climate:
+    tier: out
+    reason: Data-collection sensors, interfaces, software and lab equipment for science teaching, plus teacher training
+      and classroom resources. Adjacent (Semiconductors and electronics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Independent; no headcount figure found; founded 1981, with no equity raise in 5 years or recent listing
+      found.
+  notes: 'Board bamboohr:vernier seen 2026-11-27, linked from the company''s own site: 3 open roles. Headcount note:
+    Wikipedia infobox gives 118 employees with no year, so not recorded. Founded: https://en.wikipedia.org/wiki/Vernier_Software_%26_Technology.
+    Stage: Private, no venture rounds found; its own site says it became a Perpetual Purpose Trust in 2023. Flags:
+    education products, not energy. Evidence: https://www.vernier.com/about/ https://en.wikipedia.org/wiki/Vernier_Software_%26_Technology
+    Region sources: wikipedia-silicon-forest. Confidence: high. Unresolved: Own site says only ''more than 45 years'';
+    1981 founding (in Portland) is from Wikipedia.'
+  categories:
+  - semis-electronics
 - id: vertical-semiconductor
   name: Vertical Semiconductor
   website: https://verticalsemi.com
@@ -59139,6 +62031,36 @@ companies:
     VWS. Flags: over 1,000 employees; HQ outside region (Denmark); main sites in Colorado. Evidence: https://en.wikipedia.org/wiki/Vestas
     Region sources: siteselection-clean, climatepower-co, coloradobiz-trends. Confidence: high. Unresolved: Current
     operating status of Windsor and Brighton plants not confirmed in sources read.'
+- id: vexil-systems
+  name: Vexil Systems
+  website: https://vexilsystems.com
+  careers_url: null
+  hq: Corvallis, OR
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Radio-repeater drone that carries a relay to high ground and lands, plus mission-planning software,
+      for fire and rescue crews (search and rescue planned 2027, wildland fire 2028). Adjacent (Autonomy and robotics,
+      Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Site names five leaders. Stage: No funding
+    disclosed; grew out of an Oregon State University engineering capstone; Oregon UAS Accelerator fall 2026 cohort.
+    Flags: public-safety market, not defense. Evidence: https://vexilsystems.com/ https://siliconflorist.com/2026/08/20/oregon-uas-accelerator-welcomes-17-startups-to-its-fall-2026-cohort/
+    Region sources: sf-ouas-2026-fall. Confidence: medium. Unresolved: Founding year, headcount, funding.'
+  categories:
+  - autonomy-robotics
+  - semis-electronics
 - id: via-separations
   name: Via Separations
   website: https://viaseparations.com
@@ -60088,6 +63010,40 @@ companies:
     https://en.wikipedia.org/wiki/Taylor-Dunn https://electrek.co/2022/01/04/polaris-spins-off-gem-taylor-dunn-brands-into-waev-inc/
     Region sources: cec-zev-mfg-table. Confidence: medium. Unresolved: waevinc.com returned an empty page; founded
     year taken as the buyout year (Wikipedia gives 2022). Headcount not found.'
+- id: wafertech
+  name: WaferTech
+  website: https://www.tsmc.com
+  careers_url: null
+  hq: Camas, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: 1996
+  headcount:
+    value: 1100
+    as_of: '2024-01-01'
+    source: Wikipedia (https://en.wikipedia.org/wiki/WaferTech)
+  climate:
+    tier: out
+    reason: Contract wafer fab (TSMC Fab 11) making 200 mm (8-inch) wafers; now named TSMC Washington, LLC. Adjacent
+      (Semiconductors and electronics), not clean tech under the rubric (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: Owner not yet checked; 1,100 people (Wikipedia (https://en.wikipedia.org/wiki/WaferTech), 2024-01-01);
+      founded 1996, with no equity raise in 5 years or recent listing found.
+  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Headcount note:
+    About 1,100 as of 2024 (year only). Founded: https://en.wikipedia.org/wiki/WaferTech. Stage: Founded June 1996
+    as a joint venture of TSMC, Altera, Analog Devices and ISSI; TSMC bought out the partners in 2000 and it is
+    wholly owned (Wikipedia). TSMC lists it as ''TSMC Washington, LLC & Fab 11'' at 5509 NW Parker St, Camas. Flags:
+    subsidiary of TSMC; over 1,000 employees; renamed TSMC Washington. Evidence: https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs
+    https://en.wikipedia.org/wiki/WaferTech Region sources: wikipedia-silicon-forest. Confidence: high.'
+  categories:
+  - semis-electronics
 - id: walnut-creek-mining-company
   name: Walnut Creek Mining Company
   website: null
@@ -60152,6 +63108,37 @@ companies:
   categories:
   - aerospace-space
   - defense
+- id: warm-industrial-nonwovens
+  name: Warm Industrial Nonwovens
+  website: https://warmindustrial.com
+  careers_url: null
+  hq: Lynnwood, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nonwoven materials, including breather and bleeder cloth for composites, plus furniture, mattress, automotive
+      and acoustic nonwovens. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Industry directory listings describe it as a division
+    of Warm Products Inc. (The Warm Company) Flags: Corporate office 5529 186th Pl SW, Lynnwood WA (site spells
+    it ''Lynwood''); manufacturing and distribution in Elma WA and Hendersonville NC. Not a startup: an established
+    nonwovens maker and division of The Warm Company.. Evidence: h t t p s : Region sources: choosewa-paris-2025.
+    Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: water-illumination
   name: Water Illumination
   website: https://waterillumination.com
@@ -60208,6 +63195,36 @@ companies:
     https://houston.innovationmap.com/greentown-labs-new-startups-2674856687.html Region sources: gtx-2025h2, gtx-6tx,
     greentown. Confidence: low. Unresolved: Domain unknown; no Dealroom page (404). Founded, headcount and stage
     not found. No current website found (registry-fixes); the company may have closed or renamed.'
+- id: wave-motion-launch
+  name: Wave Motion Launch
+  website: https://wmlaunch.space
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Barrel-less 'Jet Gun' launcher that uses a supersonic gas jet to propel payloads, for space launch and
+      tactical munitions (per search summary). Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: Search summary: $1.3M via Naval Surface Technology and
+    Innovation Consortium (2022) and ~$1.6M Army contract; no equity rounds found. Flags: defense may be a main
+    market (Navy and Army contracts, tactical munitions); not confirmed; founding year 2019 vs 2020 in sources;
+    wavemotionlaunch.space redirects to wmlaunch.space; own site returned navigation only. Evidence: https://www.wavemotionlaunch.space/
+    https://usfrontier.tech/wave-motion-launch Region sources: space-city-wa. Confidence: low. Unresolved: Founding
+    year; funding; headcount; defense share.'
+  categories:
+  - aerospace-space
 - id: wavr-technologies
   name: WAVR Technologies
   website: https://wavrtechnologies.com/
@@ -60641,6 +63658,37 @@ companies:
     find energy waste in buildings, with the fixes funded through shared savings.'
   categories:
   - semis-electronics
+- id: wibotic
+  name: WiBotic
+  website: https://www.wibotic.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - energy-storage
+  - charging
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Wireless charging hardware (transmitters, receivers, onboard chargers) and fleet battery software for
+      drones, mobile robots and space robots. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: investors listed (W Fund, Washington Research Foundation,
+    Wisemont Capital and others) but no rounds or amounts; Dealroom slug wibotic 404 Flags: no defense customers
+    named. Evidence: https://www.wibotic.com/ https://www.wibotic.com/about/ Region sources: space-city-wa. Confidence:
+    medium. Unresolved: founding year (site copyright from 2017), headcount, funding stage'
+  categories:
+  - aerospace-space
+  - autonomy-robotics
 - id: wiggins-lift-co
   name: Wiggins Lift Co.
   website: https://wigginslift.com/
@@ -61457,6 +64505,35 @@ companies:
   notes: 'No job board found on the company''s site. Headcount note: No headcount found. Stage: No funding found.
     Evidence: https://xotoinc.com Region sources: laci-portfolio. Confidence: medium. Unresolved: Burbank is a mailing
     address (not labelled HQ); founding year; headcount; funding.'
+- id: xplore
+  name: Xplore
+  website: https://www.xplore.com
+  careers_url: null
+  hq: Bellevue, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Operates a low Earth orbit satellite constellation (Xcraft) and sells hyperspectral imaging data, on-orbit
+      edge computing, and Major Tom satellite operations software. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Independent; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Stage: no funding found on own site; /about, /company, /press,
+    /contact all 404; Dealroom slugs xplore and xplore-inc 404 Flags: builds and flies its own spacecraft but sells
+    data, compute and software services; not defense as stated on home page. Evidence: https://www.xplore.com/ Region
+    sources: space-city-wa. Confidence: low. Unresolved: HQ (input says Bellevue, WA; not confirmed on site), founding
+    year, headcount, funding'
+  categories:
+  - aerospace-space
 - id: xponent-power
   name: Xponent Power
   website: https://xponentpower.com/
@@ -61891,6 +64968,44 @@ companies:
     Unresolved: Own website; headcount; round dates'
   categories:
   - aerospace-space
+- id: zeno-power
+  name: Zeno Power
+  website: https://www.zenopower.com
+  careers_url: null
+  hq: Seattle, WA
+  ats:
+    type: breezy
+    board: zeno-power
+  read: manual
+  sectors:
+  - fission
+  - energy-storage
+  stage: series-b
+  founded: 2018
+  headcount:
+    value: 106
+    as_of: '2026-11-27'
+    source: Dealroom (https://dealroom.co/companies/zeno-power)
+  climate:
+    tier: out
+    reason: Radioisotope power systems (nuclear batteries, americium-241 and strontium-90 generators) for lunar
+      missions, seabed and remote infrastructure. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: 'Independent; 106 people (Dealroom (https://dealroom.co/companies/zeno-power), 2026-11-27); growth sign:
+      founded 2018.'
+  notes: 'Board breezy:zeno-power seen 2026-11-27, linked from the company''s own site: 22 open roles. Headcount
+    note: Dealroom band 100-500; undated, date is when read Founded: https://dealroom.co/companies/zeno-power. Stage:
+    Series B $50M, May 2025, led by Hanaco Ventures (own site and Dealroom); $12M revolving credit line from Leonid,
+    Aug 2024 (Dealroom); total funding over $70M per Dealroom description Flags: offices in Washington, D.C., Seattle,
+    WA and Sunol, CA (own site footer); Dealroom gives Seattle HQ; customers are NASA plus Pentagon, US Navy (DEPTHS
+    $7.5M) and US Space Force: defense is a main customer alongside NASA, not clearly the main business; nuclear
+    (radioisotope) power. Evidence: https://www.zenopower.com/ https://dealroom.co/companies/zeno-power Region sources:
+    space-city-wa, comotion-hardware. Confidence: high.'
+  categories:
+  - aerospace-space
 - id: zenthos-energy
   name: Zenthos Energy
   website: https://www.zenthosenergy.com/
@@ -61949,6 +65064,40 @@ companies:
     so far are data centers, but grid equipment stays in....'
   categories:
   - data-centers
+- id: zepher-flight-labs
+  name: Zepher Flight Labs
+  website: null
+  careers_url: null
+  hq: Bingen, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Hydrogen fuel-cell VTOL drones (Z1 Group 2 VTOL UAV, 10+ hour endurance), flown in demonstrations with
+      the US Army Research Laboratory. Adjacent (Autonomy and robotics), not clean tech under the rubric (decision
+      23).
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: Owner not yet checked; no headcount figure found; founding year not found, so included.
+  notes: 'No job board found on the company''s site. Headcount note: Aug 2025: Bingen facility expected to add 20
+    jobs by year end; no total given. Stage: Acquired by Heven Drones (Miami) announced 25 April 2025; opened facility
+    at 317 W. Steuben St, Bingen, WA in Aug 2025 as ''a subsidiary of hydrogen drone developer Heven Drones'' (DroneLife).
+    Spun off from Zepher, which won an Army Research Laboratory contract in June 2020 (search result). Flags: subsidiary
+    of Heven Drones (HQ Miami, FL); acquired April 2025 by Heven Drones; defense-leaning: parent serves defense,
+    security and commercial customers; defense not confirmed as main business; no own website found (oregonuas.org
+    links only a LinkedIn page, not fetched). Evidence: https://dronelife.com/2025/04/25/heven-acquires-zepher-flight-labs-expanding-hydrogen-drone-capabilities/
+    https://dronelife.com/2025/08/12/zepher-flight-labs-announces-grand-opening-of-new-washington-facility/ https://oregonuas.org/pages/alumni
+    Region sources: sf-ouas-2024. Confidence: medium. Unresolved: Founding year, headcount.'
+  categories:
+  - autonomy-robotics
 - id: zephyr-fusion
   name: Zephyr Fusion
   website: https://zephyrfusion.com
