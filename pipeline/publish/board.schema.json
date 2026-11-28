@@ -94,7 +94,8 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "co", "title", "url", "fn", "seen"],
+        "required": ["id", "co", "title", "url", "fn"],
+        "oneOf": [{"required": ["posted"], "not": {"required": ["seen"]}}, {"required": ["seen"], "not": {"required": ["posted"]}}],
         "properties": {
           "id": {"type": "string", "minLength": 1},
           "co": {"$ref": "#/$defs/slug", "description": "A key of 'companies'."},
@@ -109,7 +110,7 @@
           "level": {"$ref": "#/$defs/slug"},
           "lvb": {"const": "years", "description": "Present when the level was inferred from the years of experience the posting asks for, because the title states none. Absent when the title states the level."},
           "yrs": {"type": "integer", "minimum": 0, "maximum": 30, "description": "Years of experience the posting asks for (the largest required minimum). Present whenever the posting states it, with or without lvb."},
-          "emp": {"enum": ["full-time", "part-time", "contract", "intern"]},
+          "emp": {"enum": ["part-time", "contract", "intern"], "description": "Left out for full-time, the usual case, and for unknown."},
           "pay": {
             "description": "As the employer published it. Never an estimate.",
             "type": "object",
@@ -123,8 +124,8 @@
             }
           },
           "posted": {"type": "string", "format": "date"},
-          "seen": {"type": "string", "format": "date", "description": "The day the role was first seen."},
-          "summary": {"type": "string", "minLength": 1, "maxLength": 500},
+          "seen": {"type": "string", "format": "date", "description": "The day the role was first seen; only when it has no posted date (the page dates a role by posted, else seen)."},
+          "summary": {"type": "string", "minLength": 1, "maxLength": 200, "description": "The posting's summary, cut to 200 characters at a sentence end or a word (with an ellipsis)."},
           "new": {"const": true, "description": "Present when the role was first seen in the last 3 business days."},
           "grade": {
             "description": "This role's published midpoint against comparable published ranges: same role group and level (the role's own, or 'none') and pay period, in market m. Not a salary estimate.",
