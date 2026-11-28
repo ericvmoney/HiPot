@@ -20,12 +20,12 @@ LOCK_STALE_HOURS is taken to be left over from a run that died.
 Exit status: 0 when every step passed, 1 when a step failed, 2 when another refresh
 holds the lock.
 
-Scheduling it daily at 08:00 on Windows (PowerShell, as the signed-in user, no admin;
-set up 2026-11-27, see HANDOVER.md section 4):
+Scheduling it daily at 05:00 on Windows (PowerShell, as the signed-in user, no admin;
+set up 2026-11-27 at 08:00, moved to 05:00 on 2026-11-28; see HANDOVER.md section 4):
 
     $uv = (Get-Command uv).Source
     $action = New-ScheduledTaskAction -Execute $uv -Argument "run python -m tools.refresh" -WorkingDirectory "C:\\HiPot"
-    $trigger = New-ScheduledTaskTrigger -Daily -At 8:00AM
+    $trigger = New-ScheduledTaskTrigger -Daily -At 5:00AM
     $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
         -ExecutionTimeLimit (New-TimeSpan -Hours 8) -MultipleInstances IgnoreNew
     Register-ScheduledTask -TaskName "HiPot daily refresh" -Action $action -Trigger $trigger -Settings $settings

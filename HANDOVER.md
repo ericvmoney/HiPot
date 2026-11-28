@@ -176,7 +176,7 @@ Declare the `downloads` capability, which the persona page and My Roles export n
 
 There are two parts, both on the owner's PC:
 
-1. **08:00, Windows Task Scheduler.** A task named "HiPot daily refresh" runs `uv run python -m tools.refresh` in `C:\HiPot`.
+1. **05:00, Windows Task Scheduler.** A task named "HiPot daily refresh" runs `uv run python -m tools.refresh` in `C:\HiPot`. It started at 08:00 until 2026-11-28; with about 2,000 listed companies a run takes more than three hours, so it moved earlier to finish before 11:00.
    - It collects, tags, validates, publishes the local board, and makes the shared build in `data/state/shared-build/`.
    - Its result goes to `data/state/refresh-latest.json` and its log to `data/state/logs/`. A lock (`data/state/refresh.lock`) stops two runs overlapping.
    - The PC must be on and signed in. A missed start runs when the PC is next available.
