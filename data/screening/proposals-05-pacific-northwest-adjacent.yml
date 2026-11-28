@@ -6,7 +6,7 @@
 # read is 'auto' only for Greenhouse, Lever, Ashby and Rippling boards.
 
 registry_version: 0
-status: draft
+status: final
 companies:
 - id: agc-electronics-america
   name: AGC Electronics America
@@ -683,37 +683,6 @@ companies:
     privately held'', founded 1941) Flags: also serves nuclear transport packaging. Evidence: https://www.generalplastics.com/about-us/
     https://www.generalplastics.com/ Region sources: choosewa-farnborough-2026, choosewa-paris-2025, choosewa-paris-2023.
     Confidence: high.'
-  categories:
-  - advanced-manufacturing
-  - aerospace-space
-- id: gkn-aerospace-tacoma
-  name: GKN Aerospace (Tacoma)
-  website: https://www.gknaerospace.com
-  careers_url: null
-  hq: Pierce County
-  ats:
-    type: unknown
-    board: null
-  read: none
-  sectors: []
-  stage: null
-  founded: null
-  headcount: null
-  climate:
-    tier: out
-    reason: Aerostructures and composite aircraft parts (per input; own site not readable). Adjacent (Aerospace
-      and space, Advanced manufacturing), not clean tech under the rubric (decision 23).
-    basis: agent
-    approved: false
-  startup:
-    status: in
-    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
-      B3).
-  notes: 'No board found: site refused automated client (HTTP 403 on robots.txt); site not read. Stage: own site
-    answered 403 (stopped); Dealroom slug gkn-aerospace 404; ownership not verified this session Flags: own site
-    refused automated client (403); regional site Pierce County (Tacoma), WA per input, not verified; parent company
-    not verified. Evidence: https://www.gknaerospace.com/ (403) Region sources: choosewa-paris-2023. Confidence:
-    low. Unresolved: HQ, parent, Tacoma site, headcount: site refused automated client'
   categories:
   - advanced-manufacturing
   - aerospace-space
@@ -1590,6 +1559,38 @@ companies:
   categories:
   - advanced-manufacturing
   - semis-electronics
+- id: new-frontier-aerospace
+  name: New Frontier Aerospace
+  website: https://nfaero.com
+  careers_url: null
+  hq: Kent, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - electric-aviation
+  stage: null
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Mjölnir 3D-printed LNG rocket engine, Bifröst orbital transfer spacecraft and Pathfinder hypersonic
+      VTOL drone. Space is out by decision.
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founding year and funding not found, so included as a missing figure (owner rule
+      B3).
+  notes: 'No job board found on the company''s site. Stage: Site calls it an ''equity-funded startup'' with no rounds
+    listed; known funding is government (NSIC $1.5M contract extension, Feb 2023; NASA SBIR grants 2023-2024) Flags:
+    GeekWire (2025-06-23) calls it ''Kent, Wash.-based''; older coverage said Tukwila, WA. Its site lists offices
+    in Seattle, San Francisco, Shreveport and Dayton without naming an HQ, so the headquarters is in the Seattle
+    area. It plans to sell the engine to other companies. Dealroom slug guess returned . Evidence: h t t p s : Region
+    sources: space-city-wa. Confidence: low.'
+  categories:
+  - aerospace-space
 - id: nlm-photonics
   name: NLM Photonics
   website: https://www.nlmphotonics.com
@@ -2048,6 +2049,37 @@ companies:
     and precision-castparts 404).'
   categories:
   - advanced-manufacturing
+  - aerospace-space
+- id: pulse-space
+  name: Pulse Space
+  website: https://pulsespace.com
+  careers_url: null
+  hq: Bellevue, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors:
+  - solar
+  stage: seed
+  founded: 2022
+  headcount: null
+  climate:
+    tier: out
+    reason: 'Laser power beaming in orbit: satellites that collect solar power and beam it by laser to other spacecraft,
+      plus laser-based orbital tracking and debris mitigation. Space is out by decision.'
+    basis: agent
+    approved: false
+  startup:
+    status: in
+    reason: no headcount found; founded 2022, funding round reported in 2026.
+  notes: 'No job board found on the company''s site. Stage: GeekWire 2026-07-09: $5.72M seed round completed February
+    2026; also a $40M U.S. Space Force contract (2026-07-09) and a $1.9M Air Force contract, which are not equity
+    Flags: Its site shows only the title ''Pulse - Space Power Solutions''. Customers named include Starlab Space,
+    which will rely on power beamed from Pulse satellites, so it builds space hardware. HQ is Bellevue, not Seattle
+    proper. Dealroom slug guess returned 404.. Evidence: h t t p s : Region sources: space-city-wa. Confidence:
+    low.'
+  categories:
   - aerospace-space
 - id: radian-aerospace
   name: Radian Aerospace
@@ -2930,6 +2962,37 @@ companies:
     https://en.wikipedia.org/wiki/WaferTech Region sources: wikipedia-silicon-forest. Confidence: high.'
   categories:
   - semis-electronics
+- id: warm-industrial-nonwovens
+  name: Warm Industrial Nonwovens
+  website: https://warmindustrial.com
+  careers_url: null
+  hq: Lynnwood, WA
+  ats:
+    type: unknown
+    board: null
+  read: none
+  sectors: []
+  stage: subsidiary
+  founded: null
+  headcount: null
+  climate:
+    tier: out
+    reason: Nonwoven materials, including breather and bleeder cloth for composites, plus furniture, mattress, automotive
+      and acoustic nonwovens. Adjacent (Aerospace and space, Advanced manufacturing), not clean tech under the rubric
+      (decision 23).
+    basis: agent
+    approved: false
+  startup:
+    status: out
+    reason: no headcount found. Owned by a larger company; not independent.
+  notes: 'No job board found on the company''s site. Stage: Industry directory listings describe it as a division
+    of Warm Products Inc. (The Warm Company) Flags: Corporate office 5529 186th Pl SW, Lynnwood WA (site spells
+    it ''Lynwood''); manufacturing and distribution in Elma WA and Hendersonville NC. Not a startup: an established
+    nonwovens maker and division of The Warm Company.. Evidence: h t t p s : Region sources: choosewa-paris-2025.
+    Confidence: low.'
+  categories:
+  - advanced-manufacturing
+  - aerospace-space
 - id: wave-motion-launch
   name: Wave Motion Launch
   website: https://wmlaunch.space
