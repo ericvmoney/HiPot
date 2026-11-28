@@ -143,7 +143,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: 'Identity check found nothing conclusive. Exists as a member of the Oregon UAS Innovation Challenge cohort
+    announced 2025-12-23 (listed as ''AEROBOND'' on the alumni page, no link). No company website found; one web
+    search found nothing more. '
   ats: null
   open_roles: null
 - name: AeroMECH Incorporated
@@ -188,7 +190,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: Known only from a chamber listing; identity not established.
+  reason: Identity check found nothing conclusive. Oregon UAS alumni page links aghawkdynamics.com and the 2025-12-23
+    cohort article lists it as Washington, USA. The site returned HTTP 401, so it was not read or retried; whether
+    it builds its own dro
   ats: null
   open_roles: null
 - name: AheadComputing
@@ -198,7 +202,7 @@ companies:
   - semieng-startup-funding
   registry_id: null
   decision: null
-  reason: Designs CPU cores; whether it sells chips or licenses designs is not established.
+  reason: Designs CPU cores; whether it sells chips or licenses designs is still not established.
   ats: null
   open_roles: null
 - name: AIRA USA
@@ -207,8 +211,8 @@ companies:
   sources:
   - sf-ouas-2026-fall
   registry_id: null
-  decision: null
-  reason: Sells robots as a service; whether it builds its own robots, and its tie to a Sheffield company, not established.
+  decision: not-in-scope
+  reason: Sells robot work as a service; no hardware sale shown.
   ats: null
   open_roles: null
 - name: AIRSHIP Technologies Group
@@ -248,8 +252,8 @@ companies:
   sources:
   - fast-engine-partners
   registry_id: null
-  decision: null
-  reason: May license its thin-film technology rather than make devices; product not established.
+  decision: not-in-scope
+  reason: Transfers its thin-film process into customers' fabs rather than selling devices.
   ats: null
   open_roles: null
 - name: Applied Dexterity
@@ -270,7 +274,7 @@ companies:
   - space-city-wa
   registry_id: null
   decision: null
-  reason: Early stage; whether it builds hardware is not established.
+  reason: Its team includes hardware engineers, but no hardware product is stated; product and location not established.
   ats: null
   open_roles: null
 - name: ATC Manufacturing
@@ -311,7 +315,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: 'Identity check found nothing conclusive. Exists as a member of the Oregon UAS Innovation Challenge cohort
+    (2025-12-23), Washington, USA. Not on the alumni page. A web search found only Aurora Flight Sciences (Boeing),
+    an unrelated company. '
   ats: null
   open_roles: null
 - name: Autev
@@ -321,7 +327,9 @@ companies:
   - comotion-hardware
   registry_id: null
   decision: null
-  reason: Its site is template text; identity and status not established.
+  reason: Identity check found nothing conclusive. The site describes a mobile charger robot but carries template
+    leftovers (placeholder image alt text, a subscribe box naming 'Autono news') and only a 2023 copyright. No team,
+    location, funding or ne
   ats: null
   open_roles: null
 - name: AvtechTyee
@@ -409,7 +417,8 @@ companies:
   - opb-pendleton-2026
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: Identity check found nothing conclusive. A web search for the name with Ocko Navigation found nothing;
+    Oregon business registry blocked the request. Not on any Oregon UAS page read.
   ats: null
   open_roles: null
 - name: ChEmpower
@@ -461,7 +470,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found and the name suggests a consulting firm; identity not established.
+  reason: Identity check found nothing conclusive. Exists as a member of the Oregon UAS Innovation Challenge cohort
+    (2025-12-23) and on the alumni page, with no link. Whether it builds and sells its own hardware or consults
+    is not established. No web
   ats: null
   open_roles: null
 - name: Deako
@@ -483,7 +494,8 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: Identity check found nothing conclusive. Exists as a member of the Oregon UAS Innovation Challenge cohort
+    (2025-12-23); listed as 'DI Fly' on the alumni page with no link. No website found.
   ats: null
   open_roles: null
 - name: Droning On
@@ -493,7 +505,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found and it may be a services firm; identity not established.
+  reason: Identity check found nothing conclusive. Listed as 'Droning On LLC', Oregon, in the 2025-12-23 cohort.
+    The wording ('enables rapid coverage of difficult terrain') reads as a seeding service using its own custom
+    drones; whether it sells dron
   ats: null
   open_roles: null
 - name: Dylan Aerospace
@@ -602,18 +616,8 @@ companies:
   sources:
   - space-city-wa
   registry_id: null
-  decision: null
-  reason: May be an engineering R&D services firm; product not established.
-  ats: null
-  open_roles: null
-- name: GKN Aerospace (Tacoma)
-  website: https://www.gknaerospace.com
-  hq: Pierce County
-  sources:
-  - choosewa-paris-2023
-  registry_id: gkn-aerospace-tacoma
-  decision: registry
-  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
+  decision: not-in-scope
+  reason: Shows rocket-engine research and development only; no product for sale.
   ats: null
   open_roles: null
 - name: Gravitics
@@ -647,7 +651,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: Identity check found nothing conclusive. Exists in the 2025-12-23 cohort and on the alumni page, with
+    no link. The listing describes services (helping agencies bring new platforms into compliant operation); no
+    evidence it sells its own hard
   ats: null
   open_roles: null
 - name: Hecla Mining
@@ -682,7 +688,8 @@ companies:
   - choosewa-paris-2023
   registry_id: null
   decision: null
-  reason: No company website found; identity not established.
+  reason: Known only from search snippets of a directory site that refused our client; not used. No company website
+    found.
   ats:
     type: greenhouse
     token: hover
@@ -919,12 +926,12 @@ companies:
   open_roles: null
 - name: LiftPort
   website: https://liftport.com
-  hq: Tacoma, WA
+  hq: Federal Way, WA
   sources:
   - space-city-wa
   registry_id: null
-  decision: null
-  reason: Concept stage; no hardware product established.
+  decision: not-in-scope
+  reason: Its hardware is a test spacecraft for a space-elevator concept; no product for sale.
   ats: null
   open_roles: null
 - name: Lorica Technologies
@@ -972,12 +979,12 @@ companies:
   open_roles: null
 - name: MAV Unlimited
   website: https://mav-unlimited.com
-  hq: OR per cohort listing
+  hq: 'Not established: Oregon per the Oregon UAS cohort listing'
   sources:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: Location (Oregon or Cambridge, MA) and business model not established.
+  reason: Location not established (Oregon per a cohort listing; its site points to Massachusetts).
   ats: null
   open_roles: null
 - name: Micron Technology
@@ -1025,22 +1032,22 @@ companies:
   open_roles: null
 - name: Needltail
   website: https://needltail.com
-  hq: Portland, OR
+  hq: 'Not established: Portland, OR per the Oregon UAS Fall 2026 cohort'
   sources:
   - sf-ouas-2026-fall
   registry_id: null
   decision: null
-  reason: Location not established (Portland per a cohort article; engineering and production in Ohio per its site).
+  reason: Location not established (Portland per a cohort listing; engineered and produced in Ohio per its site).
   ats: null
   open_roles: null
 - name: New Frontier Aerospace
   website: https://nfaero.com
-  hq: 'unclear: offices in Seattle, WA, San Francisco, CA, Shreveport, LA and Dayton, OH'
+  hq: Kent, WA
   sources:
   - space-city-wa
-  registry_id: null
-  decision: null
-  reason: Headquarters not established (offices in Seattle, San Francisco, Shreveport and Dayton).
+  registry_id: new-frontier-aerospace
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Nimbus Aerospace
@@ -1050,7 +1057,7 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: Its site gives a Singapore address; location not established.
+  reason: Says it is based in Seattle, but its only street address is in Singapore; location not established.
   ats: null
   open_roles: null
 - name: NLM Photonics
@@ -1082,7 +1089,8 @@ companies:
   - space-city-wa
   registry_id: null
   decision: null
-  reason: Its site shows only a title; product not established.
+  reason: Identity check found nothing conclusive. The domain redirects via orbitalrobotics.github.io back to www.orbital-robots.com,
+    a GitHub Pages site showing only the title and tagline. No product, team, location or dates.
   ats:
     type: ashby
     token: orbital-robotics
@@ -1107,7 +1115,8 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: Its domain was guessed and is not linked from any source; identity not established.
+  reason: Identity check found nothing conclusive. Exists as 'Oregon UAV, LLC' in the 2025-12-23 cohort and on the
+    alumni page, with no link. A web search found no website; the guessed domain in the input was not used.
   ats: null
   open_roles: null
 - name: Osprey cUAS
@@ -1140,7 +1149,9 @@ companies:
   - sf-ouas-2025-12
   registry_id: null
   decision: null
-  reason: The linked site shows tree-care tools and an Iowa phone number; identity not established.
+  reason: 'Identity check found nothing conclusive. Identity link is now established: the Oregon UAS alumni page
+    itself links pachydermindustries.com, so the tree-care site is the same company. Its heavy-lift drone work is
+    not shown on the site, and i'
   ats: null
   open_roles: null
 - name: Panthalassa
@@ -1238,7 +1249,9 @@ companies:
   - space-city-wa
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: Identity check found nothing conclusive. Site shows only 'Unleashing Soon', navigation and a footer 'Gig
+    Harbor, Washington' with copyright 2000-2023. No product, team or activity, so it cannot be identified as an
+    operating company.
   ats: null
   open_roles: null
 - name: Portal Space Systems
@@ -1290,12 +1303,12 @@ companies:
   open_roles: null
 - name: Pulse Space
   website: https://pulsespace.com
-  hq: Seattle, WA
+  hq: Bellevue, WA
   sources:
   - space-city-wa
-  registry_id: null
-  decision: null
-  reason: Its site shows only a title; product not established.
+  registry_id: pulse-space
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup in.'
   ats: null
   open_roles: null
 - name: Radian Aerospace
@@ -1325,7 +1338,9 @@ companies:
   - sf-ouas-2024
   registry_id: null
   decision: null
-  reason: Named by a source, but the company could not be identified.
+  reason: 'Identity check found nothing conclusive. Identified as Rangair LLC, Beaverton OR, an Oregon UAS alumnus;
+    East Oregonian (2024-06-14) describes its product. But rangair.com and www.rangair.com no longer resolve (DNS
+    not found), and no later '
   ats: null
   open_roles: null
 - name: Reach Space Technologies
@@ -1404,12 +1419,12 @@ companies:
   open_roles: null
 - name: SeaStereo
   website: https://seastereo.com
-  hq: OR
+  hq: Oregon
   sources:
   - sf-ouas-2025-12
   registry_id: null
-  decision: null
-  reason: May be mainly software and data; product not established.
+  decision: not-in-scope
+  reason: Mainly an AI and data service for fish counting.
   ats: null
   open_roles: null
 - name: SEH America
@@ -1677,13 +1692,13 @@ companies:
   ats: null
   open_roles: null
 - name: Warm Industrial Nonwovens
-  website: null
-  hq: WA
+  website: https://warmindustrial.com
+  hq: Lynnwood, WA
   sources:
   - choosewa-paris-2025
-  registry_id: null
-  decision: null
-  reason: No company website found; identity and headquarters not established.
+  registry_id: warm-industrial-nonwovens
+  decision: registry
+  reason: 'Proposed in proposals-05-pacific-northwest-adjacent.yml: out, startup out.'
   ats: null
   open_roles: null
 - name: Wave Motion Launch
@@ -1781,6 +1796,10 @@ excluded:
   sources:
   - nwaero-oregon
   reason: Headquartered in Olathe, KS; Salem is one site.
+- name: GKN Aerospace (Tacoma)
+  sources:
+  - choosewa-paris-2023
+  reason: Part of GKN Aerospace (Melrose Industries, UK); Tacoma is a plant.
 - name: Hercules Metals
   sources:
   - search-idaho-mining
