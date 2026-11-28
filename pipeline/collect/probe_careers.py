@@ -111,7 +111,7 @@ def live_systems(systems: list[dict]) -> list[dict]:
 
 
 READABLE = {"greenhouse", "lever", "ashby", "rippling", "workable", "bamboohr", "smartrecruiters", "recruitee",
-            "jazzhr", "breezy", "teamtailor", "gem", "paylocity"}
+            "jazzhr", "breezy", "teamtailor", "gem", "paylocity", "jobvite"}
 NOT_TOKENS = {"embed", "v1", "boards", "api", "jobs", "job_board", "js", "www", "careers", "apply", "en-us", "app"}
 
 AGGREGATORS = re.compile(r"indeed\.|linkedin\.com|ziprecruiter\.|glassdoor\.|builtin|wellfound\.|angel\.co|"
@@ -138,6 +138,18 @@ _NONE_OPEN = re.compile(r"no (?:current |open )?(?:openings|open positions|posit
                         # Iontra: "Currently, our team is complete"; Ampt: "If no postings are listed, ..."
                         # (read only once the page has shown no postings).
                         r"our team is (?:currently )?complete|if no (?:postings|positions|openings|jobs) are listed", re.I)
+# An empty jobs list with no words to say so: a jobs heading followed, before
+# any other heading, by Elementor's empty loop grid (Prometheus Materials,
+# "Available positions" over <div class="e-loop-nothing-found-message">).
+_EMPTY_LISTING = re.compile(r"<h[1-6][^>]*>\s*((?:available|open|current) (?:positions|openings|roles|jobs)|"
+                            r"(?:job )?openings|open roles)\s*</h[1-6]>(?:(?!<h[1-6]\b).){0,3000}?"
+                            r"class=\"e-loop-nothing-found-message\"", re.I | re.S)
+
+
+def empty_listing(page: str) -> str | None:
+    """A note when the page's jobs list is there but empty (see _EMPTY_LISTING)."""
+    match = _EMPTY_LISTING.search(page or "")
+    return f"the '{' '.join(match.group(1).split())}' list is empty" if match else None
 # A bot check or block page. "captcha" alone is not one: ordinary pages load
 # reCAPTCHA for their contact forms, and site builders name it in their config.
 _CHALLENGE_TITLE = re.compile(r"<title>\s*(?:just a moment|attention required|access denied|"
@@ -347,6 +359,8 @@ def classify_careers_page(page: str, url: str, domain: str) -> dict:
     if _NONE_OPEN.search(text):
         return {"outcome": "none-open", "method": "notice", "postings": 0,
                 "note": _NONE_OPEN.search(text).group(0)[:80]}
+    if empty_listing(page):
+        return {"outcome": "none-open", "method": "empty-list", "postings": 0, "note": empty_listing(page)}
     if len(text) < 600:
         # Almost no text and nothing to read: built by JavaScript, or empty.
         return {"outcome": "unreadable", "method": "javascript", "postings": 0,

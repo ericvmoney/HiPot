@@ -49,7 +49,7 @@ def run(companies=COMPANIES, fetcher=None, state=None, **kwargs) -> dict:
     (company("a", "ashby", "a", status="out"), None),
     (company("a", "ashby", "a", status="unscreened"), None),
     (company("a", "adp", None), "no reader for adp"),
-    (company("a", "jobvite", "a"), "no reader for jobvite"),
+    (company("a", "paycom", "a"), "no reader for paycom"),
     (company("a", "unknown", None), "no reader for unknown"),
     (company("a", "greenhouse", None), "no board token for greenhouse"),
 ])

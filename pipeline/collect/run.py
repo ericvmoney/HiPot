@@ -21,7 +21,8 @@ from urllib.parse import urlsplit
 from typing import Callable
 
 from pipeline.collect import normalize
-from pipeline.collect import ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, lever, paylocity, recruitee, rippling, smartrecruiters, teamtailor, workable, workday
+from pipeline.collect import (ashby, bamboohr, breezy, careers, gem, greenhouse, icims, jazzhr, jobvite, lever, paylocity,
+                              recruitee, rippling, smartrecruiters, successfactors, teamtailor, workable, workday)
 from pipeline.collect.fetch import Blocked, Fetcher, RecordingFetcher, ReplayFetcher
 from pipeline.collect.locations import decide_workplace, metros_for
 from pipeline.collect.probe_careers import AGGREGATORS
@@ -43,6 +44,9 @@ READERS: dict[str, Callable] = {
     "paylocity": paylocity.read,
     "workday": workday.read,
     "icims": icims.read,                       # Terms of Use, Prohibited Uses (robots)
+    # SAP SuccessFactors career sites, on the company's own domain: the sitemap
+    # and US posting pages only, never the robots-disallowed /services/ search.
+    "successfactors": successfactors.read,
     # These vendors' terms restrict automated reading. They run by the owner's
     # decision of 2026-11-24 (PLAN.md decision 6, recorded as a risk there);
     # each can be turned off for a run with --disable-reader TYPE.
@@ -50,6 +54,7 @@ READERS: dict[str, Callable] = {
     "bamboohr": bamboohr.read,                 # Terms of Service section 4.2
     "smartrecruiters": smartrecruiters.read,   # SAP API Policy 2.2.2(b); robots.txt
     "breezy": breezy.read,                     # Terms of Service section 5(ix)
+    "jobvite": jobvite.read,                   # Terms of Use, Intellectual Property and Restrictions
     # Companies' own careers pages; the board is the careers page address.
     # Follows a company's LinkedIn jobs where its page sends candidates there
     # (LinkedIn User Agreement 8.2 restricts automated access; decision 12).
@@ -67,7 +72,9 @@ HOSTS = {"greenhouse": "boards-api.greenhouse.io", "lever": "api.lever.co", "ash
          "teamtailor": "teamtailor.com", "gem": "api.gem.com",
          "paylocity": "recruiting.paylocity.com",
          # Each Workday tenant has its own host; a 429 from one stops them all.
-         "workday": "myworkdayjobs.com", "icims": "icims.com"}
+         "workday": "myworkdayjobs.com", "icims": "icims.com", "jobvite": "jobs.jobvite.com"}
+# Readers whose board is a site's own address: a 429 there says nothing about other sites.
+OWN_SITE = {"other", "successfactors"}
 COLLECT_TIERS = ("core", "enabling")
 
 
@@ -82,6 +89,8 @@ BOARD_SHAPES = {
     "paylocity": (re.compile(r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}(/[A-Za-z0-9-]+)?$"),
                   "the company GUID from recruiting.paylocity.com/recruiting/jobs/All/{GUID}"),
     "other": (re.compile(r"^https://[^/\s]+\.[^/\s]+"), "the careers page's https address"),
+    "successfactors": (re.compile(r"^https://[^/\s]+\.[^/\s]+/?$"), "the career site's https address, e.g. 'https://careers.vestas.com'"),
+    "jobvite": (re.compile(r"^[A-Za-z0-9_-]+$"), "the career site's company name from jobs.jobvite.com/{company}/jobs"),
     "teamtailor": (re.compile(r"^(?!(?:na|www|app|career|careers|jobs)$)[A-Za-z0-9.-]+$"),
                    "the careers site's host, or its subdomain on teamtailor.com (not a region prefix like 'na')"),
 }
@@ -93,7 +102,7 @@ def board_problem(company: dict) -> str | None:
     shape = BOARD_SHAPES.get(ats)
     if board and shape and not shape[0].match(board):
         return f"{ats} board {board!r} is not in the form the reader needs: {shape[1]}"
-    if ats == "other" and board and AGGREGATORS.search(urlsplit(board).netloc):
+    if ats in OWN_SITE and board and AGGREGATORS.search(urlsplit(board).netloc):
         return f"careers board {board!r} is an aggregator's page; roles come only from the company's own pages"
     return None
 
@@ -233,7 +242,7 @@ def collect(
         ats, board = company["ats"]["type"], company["ats"]["board"]
         # A careers page is on the company's own host; one site's 429 says
         # nothing about the others.
-        host = urlsplit(board).netloc.lower() if ats == "other" else HOSTS.get(ats, ats)
+        host = urlsplit(board).netloc.lower() if ats in OWN_SITE else HOSTS.get(ats, ats)
         if host in limited_hosts:
             entries.append(_entry(company, "blocked", error=f"not requested: {host} answered HTTP 429 earlier in this run"))
             log(f"blocked  {company['id']}: {host} is rate limiting")

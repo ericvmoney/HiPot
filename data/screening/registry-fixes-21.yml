@@ -1,0 +1,41 @@
+# Registry fixes 21: Jobvite and Paycom boards found while assessing readers (A1 collector, 2026-11-27).
+# (Written as 20 on the collector's branch; renumbered at merge because the scout's categories file took 20.)
+#
+# Written by workstream A1 at the supervisor's request, 2026-11-27. The facts come from a research pass that
+# obeyed robots.txt and used a generic client name: no sign-in, bot check or CAPTCHA was involved.
+# SENS (stored-energy-systems-sens) was on the list too, but registry-fixes-19 already set its website
+# (www.sens-usa.com) and its ADP board, so it is not repeated here.
+
+fixes:
+- id: nuscale-power
+  name: NuScale Power
+  ats: {type: jobvite, board: nuscale-power}
+  careers_url: https://jobs.jobvite.com/nuscale-power/jobs
+  source: >-
+    https://jobs.jobvite.com/nuscale-power/jobs answered HTTP 200 on 2026-11-27 with 29 postings in eight
+    categories (plain HTML), and each posting page carries a schema.org JobPosting block. jobs.jobvite.com has no
+    robots.txt (HTTP 404). The collector's Jobvite reader (pipeline/collect/jobvite.py) reads the list and each
+    posting page.
+  note: >-
+    Jobvite company id qMt9Vfw3 (from the list page's script). It is the id of the undocumented XML feed
+    https://app.jobvite.com/CompanyJobs/Xml.aspx?c=qMt9Vfw3 (31 entries on 2026-11-27, the 29 postings plus
+    2 child entries); the reader does not use that feed.
+- id: view
+  name: View
+  ats: {type: unknown, board: null}
+  read: none
+  source: >-
+    The registry's Jobvite board 'view' is retired: https://jobs.jobvite.com/view/jobs answered HTTP 302 to
+    http://search.jobvite.com/?invalid=1 on 2026-11-27.
+  note: No other job board or careers page was looked for.
+- id: quaise-energy
+  name: Quaise Energy
+  source: >-
+    The quaise.com home page links a Paycom careers portal on 2026-11-27:
+    https://phx.us-west.paycomonline.net/v4/ats/web.php/portal/16229254415152FFBCEBA10B4F627240/career-page
+    (client key 16229254415152FFBCEBA10B4F627240, on the phx.us-west host). That portal was not fetched.
+    https://quaise.com/careers answered HTTP 404.
+  note: >-
+    Recorded only; the registry is unchanged. Quaise's Greenhouse board 'quaise' still answered with 6 postings
+    in the 2026-11-27 run, so it stays the board. Paycom is not read: its list request is disallowed by
+    robots.txt, and reading it was refused in the A1 session.
