@@ -8,7 +8,7 @@ Steps, each a separate process, stopping at the first that fails:
   2. tag       pipeline.tag
   3. validate  tools.validate on the raw and tagged files
   4. publish   pipeline.publish, the local board with pay grades
-  5. shared    pipeline.publish --no-grades into data/state/shared-build/, the copy for the shared artifact
+  5. shared    pipeline.publish into data/state/shared-build/, the copy for the shared artifact (grades included, decision 27)
 
 Every step's output goes to data/state/logs/refresh-<date>.log, unbuffered, so the
 log shows progress as it happens. The result, with the board's counts, is written to
@@ -54,7 +54,9 @@ STEPS = [
     ("tag", ["-m", "pipeline.tag"]),
     ("validate", ["-m", "tools.validate", "--raw", "data/jobs.raw.json", "--jobs", "data/jobs.json"]),
     ("publish", ["-m", "pipeline.publish"]),
-    ("shared", ["-m", "pipeline.publish", "--no-grades", "--out", str(SHARED / "board.json")]),
+    # Pay grades are public since 2026-11-27 (decision 27); the shared build is the same as the local one,
+    # written outside site/ so the published files come from one finished run.
+    ("shared", ["-m", "pipeline.publish", "--out", str(SHARED / "board.json")]),
 ]
 
 

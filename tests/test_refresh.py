@@ -27,9 +27,9 @@ def test_all_steps_pass(tmp_path, monkeypatch):
     monkeypatch.setattr(refresh, "ROOT", tmp_path)
     result = refresh.run(refresh.STEPS, tmp_path / "r.log", runner=lambda *a, **k: SimpleNamespace(returncode=0))
     assert result["status"] == "ok" and [s["step"] for s in result["steps"]] == ["collect", "tag", "validate", "publish", "shared"]
-    # The shared build leaves pay grades out and writes outside site/, which the local board serves.
+    # The shared build carries pay grades (decision 27) and writes outside site/, which the local board serves.
     shared = dict(refresh.STEPS)["shared"]
-    assert "--no-grades" in shared and str(refresh.SHARED / "board.json") in shared
+    assert "--no-grades" not in shared and str(refresh.SHARED / "board.json") in shared
 
 
 def test_the_lock_keeps_a_second_refresh_out_until_it_goes_stale(tmp_path):
