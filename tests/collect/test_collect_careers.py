@@ -287,6 +287,25 @@ def test_more_no_openings_notices(page):
     assert careers.read(CAREERS, FakeSite({CAREERS: page}), context()).status == "none-open"
 
 
+# Prometheus Materials' careers page (2026-11-27), trimmed: an empty Elementor loop grid under its jobs heading.
+EMPTY_LOOP = ('<h2 class="elementor-heading-title elementor-size-default">Available positions</h2>\t\t\t\t</div>\n'
+              '<div class="elementor-element elementor-widget elementor-widget-loop-grid" data-widget_type="loop-grid.post">\n'
+              '<div class="elementor-widget-container">\n<div class="e-loop-nothing-found-message">\n</div>\n</div>\n</div>\n'
+              '<h2 class="elementor-heading-title elementor-size-default">Why Join Us?</h2>')
+
+
+def test_an_empty_jobs_list_is_none_open():
+    result = careers.read(CAREERS, FakeSite({CAREERS: EMPTY_LOOP + LONG}), context())
+    assert result.status == "none-open" and result.note == "the 'Available positions' list is empty"
+    # An empty loop grid under another heading (news, projects) says nothing about jobs.
+    other = EMPTY_LOOP.replace("Available positions", "Recent projects")
+    assert careers.read(CAREERS, FakeSite({CAREERS: other + LONG}), context()).status == "unreadable"
+    # Nor does one that follows a later heading.
+    later = EMPTY_LOOP.replace("</h2>\t\t\t\t</div>", "</h2><h3>Our projects</h3></div>", 1)
+    assert later != EMPTY_LOOP
+    assert careers.read(CAREERS, FakeSite({CAREERS: later + LONG}), context()).status == "unreadable"
+
+
 def test_boards_the_probe_missed():
     from pipeline.collect.probe_careers import ats_links
     found = lambda page: [(s["type"], s["board"]) for s in ats_links(page)]

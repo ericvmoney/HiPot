@@ -52,7 +52,7 @@ from pipeline.collect import normalize
 from pipeline.collect.fetch import Blocked, FetchError, is_timeout
 from pipeline.collect.locations import parse_location, structured_location
 from pipeline.collect.probe_careers import (_JS_APP, _LD, _NONE_OPEN, AGGREGATORS, _JOB_TITLE, _JOB_WORDS, ats_links, links,
-                                            live_systems,
+                                            empty_listing, live_systems,
                                             on_site, posting_links, refusal, registrable, visible_text)
 from pipeline.collect.text import html_to_text
 from pipeline.io import ROOT
@@ -494,6 +494,8 @@ def _read_page(careers_url: str, get, stay, domain: str, context: Context) -> no
         return normalize.ReadResult(status="unreadable", note=f"postings given only as PDFs ({len(pdfs)})")
     if _NONE_OPEN.search(text):
         return normalize.ReadResult(status="none-open", note=_NONE_OPEN.search(text).group(0)[:80])
+    if empty_listing(page):
+        return normalize.ReadResult(status="none-open", note=empty_listing(page))
     if len(text) < 600 and _JS_APP.search(page):
         return normalize.ReadResult(status="unreadable", note="the list is built by JavaScript")
     note = "neither postings nor a no-openings notice found on the page"
