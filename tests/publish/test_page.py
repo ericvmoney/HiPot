@@ -28,7 +28,8 @@ YAML_LIB = "https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"
 def test_page_loads_nothing_from_another_origin_except_its_fonts_and_the_yaml_reader():
     # No external scripts, images or frames: the page's scripts and styles are inline. The one exception
     # is js-yaml, pinned on cdnjs and loaded only when a visitor opens a persona file.
-    assert PAGE.count("<script") == 3 and '<script id="hipot-rank">' in PAGE and '<script id="my-roles">' in PAGE
+    assert PAGE.count("<script") == 4 and '<script id="hipot-rank">' in PAGE and '<script id="my-roles">' in PAGE
+    assert '<script id="board-filters">' in PAGE
     assert "<script src" not in PAGE
     assert f"var YAML_LIB = '{YAML_LIB}';" in SCRIPT and "tag.src = YAML_LIB;" in SCRIPT
     for needle in ("<img", "<iframe", "<object", "<embed", "@import", "url("):

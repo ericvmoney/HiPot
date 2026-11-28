@@ -197,6 +197,8 @@ def test_every_role_has_a_company_record_and_every_company_has_a_role(include_un
         "roles_by_type": {kind: sum(1 for role in board["roles"] if board["companies"][role["co"]]["type"] == kind)
                           for kind in ("startup", "established", "unchecked")},
         "functions": {f["id"]: sum(1 for role in board["roles"] if role["fn"] == f["id"]) for f in TAXONOMY["functions"]},
+        "categories": {c["id"]: sum(1 for role in board["roles"] if c["id"] in board["companies"][role["co"]].get("cats", []))
+                       for c in TAXONOMY["categories"]},
     }
     assert list(board["counts"]["functions"]) == [f["id"] for f in TAXONOMY["functions"]]
     for record in board["companies"].values():
@@ -239,7 +241,7 @@ def test_company_and_role_fields_are_carried_over():
     assert board["companies"]["alpha"] == {
         "name": "Alpha Motors", "tier": "enabling", "type": "startup", "reason": "alpha reason.", "sectors": ["ev", "charging"],
         "stage": "series-b", "hq": "Denver, CO", "website": "https://alpha.example",
-        "careers": "https://alpha.example/careers",
+        "careers": "https://alpha.example/careers", "cats": ["clean-tech"],
     }
     assert board["counts"]["companies_provisional"] == 0
     by_id = {role["id"]: role for role in board["roles"]}

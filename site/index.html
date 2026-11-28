@@ -272,6 +272,7 @@ body::before {
 .tier-enabling, .tier-other { color: var(--muted); }
 .tier-other { border-style: dashed; }
 .tier-type { color: var(--soft); border-color: var(--rule); }
+.tier-cat { color: var(--blue); }
 
 .role-side { display: flex; flex-direction: column; align-items: flex-end; text-align: right; gap: 2px; font-size: 13.5px; color: var(--soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .pay { font-weight: 600; color: var(--ink); }
@@ -562,6 +563,7 @@ body::before {
       <div>
         <p><strong>Every role comes from the company's own job board.</strong> The board reads each company's public job feed and links each role to the posting there. Nothing comes from an aggregator or a search result. A role that leaves the company's board leaves this one at the next refresh. <strong>New</strong> marks a role first seen in the last three business days (Monday to Friday, Mountain time); the roles found the first time a company's board is read are not marked new.</p>
         <p><strong>Companies are screened for climate fit before their roles appear,</strong> under a written rubric. <span id="unlisted-functions"></span></p>
+        <p><strong>The board opens on clean tech.</strong> Companies one step outside it, such as robotics, aerospace, semiconductors, defense, mining or oil and gas, are listed too, each under its category; tick them in the Category filter to see their roles. Their cards name the category instead of a climate tier. Clean tech itself is decided by the climate screen below.</p>
         <p><strong>Startups and established companies are both listed, and labelled.</strong> A startup here is independent, has fewer than 4,000 people, and still shows a sign of growth: founded in the last 15 years, a funding round in the last 5, or listed on a stock exchange for less than 5. Established climate companies are listed too; use the Company type filter to see only one kind.</p>
         <p id="grade-note" hidden><strong>Pay vs market</strong> tags compare a role's published pay range with the published ranges of comparable roles on this board: the same role group, level and pay period, in the role's metro area, or across the US when its metro area has fewer than five. "Above" and "below" mean the midpoint is more than 10 percent from their median midpoint. It compares employers' published ranges; it is not a salary estimate and says nothing about any candidate. The <a href="pay.html">pay ranges page</a> shows the same groups.</p>
         <p><strong>Ranking for your persona uses plain rules, not an AI model.</strong> It ranks roles for you, never people. A role scores up to 100 points: kind of work 25, discipline 25 (your first discipline counts most), level 20, place 15, a sector you prefer 8, a company stage you prefer 7. A role in a discipline next to one of yours, such as test next to controls, earns part of the discipline points; a technical role in a discipline far from all of yours, such as cloud software for a controls engineer, earns none and only half the points for kind of work. If you said you will not relocate, an on-site role elsewhere loses 10 points instead of gaining any for place. Remote means remote in the US: a role whose only places are in other countries gains nothing for place. A persona for non-technical work, such as supply chain, needs no discipline; then discipline counts the same for every role. Pay counts only when the employer published it: a role with no published pay loses 3 points, no more. Companies you left out are hidden, and so are companies whose only sectors are ones you left out; a company that also works in other sectors stays, 6 points down. A role whose published pay tops out a little under your minimum (within 10%) stays, 5 points down; further under, it is hidden. Each role says in one line why it matches. Your persona stays in the tab and is never sent anywhere.</p>
@@ -921,6 +923,66 @@ var HiPotRank = (function () {
 })();
 </script>
 
+<script id="board-filters">
+/* The filter rules that decide what the board shows, as pure functions the tests run as they are.
+   A filter group passes a role when nothing is ticked in it or one of the role's values is ticked.
+   Company categories (decision 23): the board opens on the default ones (clean tech); the address says
+   nothing when the choice is the default, 'cat-all' for every category, and 'cat-<id>' per ticked one. */
+var BoardFilters = (function () {
+  'use strict';
+
+  var NONE = '*none';          // the page's id for "no value" in a filter group
+  var CAT = 'cat-', CAT_ALL = 'cat-all', CAT_NONE = 'cat-none';
+
+  function asSet(chosen) { return chosen instanceof Set ? chosen : new Set(chosen); }
+
+  function passes(values, chosen) {
+    chosen = asSet(chosen);
+    if (!chosen.size) return true;
+    for (var i = 0; i < values.length; i++) if (chosen.has(values[i])) return true;
+    return false;
+  }
+
+  // A company's categories as filter values: clean tech first when it is clean tech; none at all is NONE.
+  function companyCategories(company) {
+    return company && Array.isArray(company.cats) && company.cats.length ? company.cats.slice() : [NONE];
+  }
+
+  // The categories the board opens on: those marked default in the data's taxonomy (clean tech).
+  function defaults(entries) {
+    return (entries || []).filter(function (entry) { return entry && entry.default === true; }).map(function (entry) { return entry.id; });
+  }
+
+  function within(ids, known) { return ids.filter(function (id) { return known.indexOf(id) !== -1; }); }
+
+  // `known` is every category option the board has, in order (NONE included when present).
+  function isDefault(chosen, defaultIds, known) {
+    var want = within(defaultIds, known), set = asSet(chosen);
+    return set.size === want.length && want.every(function (id) { return set.has(id); });
+  }
+
+  function tokens(chosen, defaultIds, known) {
+    var set = asSet(chosen);
+    if (isDefault(set, defaultIds, known)) return [];
+    if (!set.size) return [CAT_ALL];
+    return known.filter(function (id) { return set.has(id); }).map(function (id) { return id === NONE ? CAT_NONE : CAT + id; });
+  }
+
+  // From the address's tokens (all of them; only cat- ones count) back to the ticked categories.
+  function fromTokens(all, defaultIds, known) {
+    var said = all.filter(function (token) { return token.indexOf(CAT) === 0; });
+    if (!said.length) return within(defaultIds, known);
+    if (said.indexOf(CAT_ALL) !== -1) return [];
+    var ids = said.map(function (token) { return token === CAT_NONE ? NONE : token.slice(CAT.length); });
+    var picked = known.filter(function (id) { return ids.indexOf(id) !== -1; });
+    return picked.length ? picked : within(defaultIds, known);   // only unknown ids: back to the default
+  }
+
+  return { NONE: NONE, CAT_ALL: CAT_ALL, passes: passes, companyCategories: companyCategories, defaults: defaults,
+           isDefault: isDefault, tokens: tokens, fromTokens: fromTokens };
+})();
+</script>
+
 <script id="my-roles">
 /* My Roles (decision 18): the roles a candidate marks, with statuses set by hand, in the candidate's own
    order. Pure functions over plain data, so the tests run them as they are; the page keeps the list in
@@ -1125,10 +1187,12 @@ var MyRoles = (function () {
 
   // Filter values that are not taxonomy ids. A leading '*' cannot occur in an id.
   var NONE = '*none', REMOTE = '*remote', ELSEWHERE = '*elsewhere';
+  var defaultCats = [];      // category ids the board opens on (from the data: clean tech)
 
   // One entry per checkbox group. `key` is also the key in the URL fragment.
   var FACETS = [
     { key: 'f', title: 'Role type', tax: 'functions', open: true },
+    { key: 'cat', title: 'Category', tax: 'categories', none: 'No category', open: true },
     { key: 'n', title: 'New', tax: 'fresh', open: true },
     { key: 'ct', title: 'Company type', tax: 'company_types', open: true },
     { key: 'd', title: 'Discipline', tax: 'disciplines', open: true },
@@ -1962,6 +2026,7 @@ var MyRoles = (function () {
       role.facets = {
         f: [role.fn],
         ct: [company.type || 'unchecked'],
+        cat: BoardFilters.companyCategories(company),
         n: role.new ? ['new'] : [],
         d: role.disc || [],
         l: [role.level || NONE],
@@ -2001,6 +2066,8 @@ var MyRoles = (function () {
       });
     });
     prepareLocations(FACETS.filter(function (facet) { return facet.key === 'm'; })[0]);
+    // The categories the board opens on (decision 23: clean tech), among those this file knows.
+    defaultCats = BoardFilters.defaults(data.taxonomy.categories);
   }
 
   // The location list can hold hundreds of metro areas, so it is ordered by how many roles each has,
@@ -2076,6 +2143,8 @@ var MyRoles = (function () {
     var q = encodeQuery(state.q);
     if (q) tokens.push('q-' + q);
     FACETS.forEach(function (facet) {
+      // Category: nothing when it is the default (clean tech), 'cat-all' for every category (BoardFilters).
+      if (facet.key === 'cat') { tokens.push.apply(tokens, BoardFilters.tokens(state.cat, defaultCats, catIds())); return; }
       facet.options.forEach(function (option) {
         if (state[facet.key].has(option.id)) tokens.push(tokenFor(facet, option.id));
       });
@@ -2091,7 +2160,9 @@ var MyRoles = (function () {
     var next = emptyState();
     var facetByKey = {};
     FACETS.forEach(function (facet) { facetByKey[facet.key] = facet; });
-    String(hash || '').replace(/^#/, '').split('--').forEach(function (token) {
+    var all = String(hash || '').replace(/^#/, '').split('--');
+    all.forEach(function (token) {
+      if (token.indexOf('cat-') === 0) return;   // categories are read below, all together
       if (token === 'remote') { next.m.add(REMOTE); return; }
       if (token === 'elsewhere') { next.m.add(ELSEWHERE); return; }
       if (token === 'paid') { next.paid = true; return; }
@@ -2106,11 +2177,21 @@ var MyRoles = (function () {
       else if (facetByKey[key]) {
         var facet = facetByKey[key];
         var id = value === 'none' && facet.none ? NONE : value;
-        if (facet.byId[id] && id.charAt(0) !== '*') next[key].add(id);   // unknown ids are dropped
+        if (facet.byId[id] && (id === NONE || id.charAt(0) !== '*')) next[key].add(id);   // unknown ids are dropped
       }
     });
+    // No category in the address: the board opens on the default categories (clean tech).
+    if (next.cat) next.cat = new Set(BoardFilters.fromTokens(all, defaultCats, catIds()));
     return next;
   }
+
+  // Every category option the board has, in order ('*none' included in a development build).
+  function catIds() {
+    var facet = FACETS.filter(function (f) { return f.key === 'cat'; })[0];
+    return facet ? facet.options.map(function (option) { return option.id; }) : [];
+  }
+
+  function isDefaultCats(chosen) { return BoardFilters.isDefault(chosen, defaultCats, catIds()); }
 
   function writeHash() {
     var hash = encodeState();
@@ -2151,9 +2232,7 @@ var MyRoles = (function () {
       for (var f = 0; f < FACETS.length && failures < 2; f++) {
         var chosen = state[FACETS[f].key];
         if (!chosen.size) continue;
-        var values = role.facets[FACETS[f].key], hit = false;
-        for (var v = 0; v < values.length; v++) { if (chosen.has(values[v])) { hit = true; break; } }
-        if (!hit) { failed = f; failures += 1; }
+        if (!BoardFilters.passes(role.facets[FACETS[f].key], chosen)) { failed = f; failures += 1; }
       }
       if (failures === 0) {
         matched.push(role);
@@ -2183,7 +2262,10 @@ var MyRoles = (function () {
   }
 
   function activeCount() {
-    var n = FACETS.reduce(function (sum, facet) { return sum + state[facet.key].size; }, 0);
+    // The default category (clean tech) is where the board opens, not a filter the visitor set.
+    var n = FACETS.reduce(function (sum, facet) {
+      return sum + (facet.key === 'cat' && isDefaultCats(state.cat) ? 0 : state[facet.key].size);
+    }, 0);
     return n + (state.pay > 0 ? 1 : 0) + (state.paid ? 1 : 0) + (state.hideMine ? 1 : 0);
   }
 
@@ -2296,10 +2378,19 @@ var MyRoles = (function () {
   // ---- Rendering --------------------------------------------------------------------------------
 
   // The climate tier tag, followed by the company-type tag (Startup or Established) when the type is known.
+  // A company outside clean tech shows its categories instead of a tier ("Autonomy and robotics").
   function tierBadge(company) {
     var known = company.tier === 'core' || company.tier === 'enabling';
     var tags = document.createDocumentFragment();
-    tags.appendChild(el('span', { class: 'tier ' + (known ? 'tier-' + company.tier : 'tier-other'), text: labels.climate_tiers[company.tier] || company.tier }));
+    var adjacent = !known && company.cats && company.cats.length && labels.categories;
+    if (adjacent) {
+      company.cats.forEach(function (id, i) {
+        if (i) tags.appendChild(document.createTextNode(' '));
+        tags.appendChild(el('span', { class: 'tier tier-cat', text: labels.categories[id] || id }));
+      });
+    } else {
+      tags.appendChild(el('span', { class: 'tier ' + (known ? 'tier-' + company.tier : 'tier-other'), text: labels.climate_tiers[company.tier] || company.tier }));
+    }
     if (company.type && company.type !== 'unchecked' && labels.company_types) {
       tags.appendChild(document.createTextNode(' '));
       tags.appendChild(el('span', { class: 'tier tier-type', text: labels.company_types[company.type] || company.type }));
@@ -2529,6 +2620,8 @@ var MyRoles = (function () {
     }
     if (state.c && board.companies[state.c]) chip('Company', board.companies[state.c].name, function () { state.c = ''; });
     FACETS.forEach(function (facet) {
+      if (facet.key === 'cat' && isDefaultCats(state.cat)) return;   // the board's own starting point, not a filter
+      if (facet.key === 'cat' && !state.cat.size) { chip(facet.title, 'All categories', function () { state.cat = decodeState('').cat; }); return; }
       facet.options.forEach(function (option) {
         if (state[facet.key].has(option.id)) {
           var text = option.id === NONE ? facet.title + ': ' + option.label.toLowerCase()

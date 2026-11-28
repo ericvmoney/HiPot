@@ -110,6 +110,22 @@ The board ranks roles for a candidate's persona with plain rules, no model; it r
 - A "Great matches only" toggle sits in the persona bar.
 - Nothing new is stored.
 
+## Company categories (decision 23)
+
+**Publish step.**
+- Each company in `board.json` carries `cats`, from `tools.validate.company_categories`: `clean-tech` first when its tier is core or enabling, then its adjacent categories.
+- `taxonomy.categories` holds the labels, with `default: true` on clean tech.
+- `counts.categories` counts roles per category; a role counts once in each of its company's categories. The command prints the counts.
+
+**Board.**
+- A Category filter opens on the default categories (clean tech only); the others are one click away.
+- The address says nothing for the default. It writes `cat-all` for every category, and `cat-<id>` for each ticked one.
+- A company outside clean tech shows its category in place of a climate tier.
+- The rules are pure functions in `<script id="board-filters">` (`BoardFilters.passes`, `tokens`, `fromTokens`, `isDefault`), run in V8 by `tests/publish/test_categories.py`.
+- Ranking and great matches work over whatever is shown.
+
+**Pay page.** It has no category filter, so `pay.json` is built from the default categories only (`categories: ["clean-tech"]`), and the page says so. A development build keeps every role.
+
 ## Saving on this computer (decision 21)
 
 When `uv run python -m tools.serve_board` serves the board, the page also keeps the persona and My Roles in `local-data/` at the repository root.

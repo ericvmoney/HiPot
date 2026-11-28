@@ -186,6 +186,7 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
       <div>
         <p><strong>Posted</strong> is what the companies on this board advertise right now: the median low end to the median high end of the pay they published, with the number of postings behind it. The smaller figure is the median midpoint. A dash means fewer than three postings, too few to show a figure.</p>
         <p><strong>Only published pay counts.</strong> A role enters only when its posting states a range in US dollars. Nothing is estimated, and a missing range is never filled in. Yearly salaries and hourly pay are kept apart and never converted into each other.</p>
+        <p id="cat-note" hidden></p>
         <p id="left-out"></p>
       </div>
       <div>
@@ -483,6 +484,14 @@ a { color: var(--ink); text-underline-offset: 0.15em; }
     if (pay.counts.left_out) {
       $('left-out').textContent = plural(pay.counts.left_out, 'posting', 'postings') +
         ' with published pay are not counted: their pay is in another currency, has no low end, or the role is outside the US.';
+    }
+    // Decision 23: the bands follow the board's default view (clean tech), since this page has no category filter.
+    if (pay.categories && pay.categories.length) {
+      $('cat-note').replaceChildren(
+        el('strong', { text: 'Clean-tech companies only.' }),
+        ' The board opens on clean tech, and these ranges come from the same roles. Companies in the categories next to it (robotics, aerospace, defense and the rest) have their own pay levels and are left out, so they do not move the clean-tech figures.'
+      );
+      $('cat-note').hidden = false;
     }
     if (pay.gov) $('gov-year').textContent = 'May ' + pay.gov.year;
     else $('gov-about').hidden = true;

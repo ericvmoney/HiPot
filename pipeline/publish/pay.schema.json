@@ -4,11 +4,13 @@
   "description": "The shape of site/data/pay.json, written by pipeline.publish and read by site/pay.html. Owned by workstream A4. Bands summarise pay that employers published; nothing is estimated.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["pay_version", "generated_at", "scope", "min_postings", "counts", "labels", "bands"],
+  "required": ["pay_version", "generated_at", "scope", "categories", "min_postings", "counts", "labels", "bands"],
   "properties": {
     "pay_version": {"const": 0},
     "generated_at": {"type": "string", "format": "date-time"},
     "scope": {"enum": ["listed", "all"]},
+    "categories": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+                   "description": "The company categories the bands are drawn from: the board's default (clean tech, decision 23). Empty in a development build, which keeps every role."},
     "min_postings": {"type": "integer", "minimum": 1, "description": "Postings a band needs before it shows figures."},
     "counts": {
       "type": "object",
