@@ -12,11 +12,12 @@ REGISTRY = {c["id"]: c for c in load_yaml(ROOT / "companies.yml")["companies"]}
 def test_region_figures_count_each_stage():
     listed_id = next(cid for cid, c in REGISTRY.items()
                      if c["climate"]["tier"] == "core" and c["startup"]["status"] == "in" and c["read"] == "auto")
-    out_id = next(cid for cid, c in REGISTRY.items() if c["climate"]["tier"] == "out")
+    # Out and in no adjacent category (decision 23), so not listed.
+    out_id = next(cid for cid, c in REGISTRY.items() if c["climate"]["tier"] == "out" and not c.get("categories"))
     universe = {"companies": [
         {"name": "Listed", "registry_id": listed_id, "decision": "registry", "ats": {"type": "greenhouse"}},
         {"name": "Screened out", "registry_id": out_id, "decision": "registry", "ats": None},
-        {"name": "Not yet checked", "registry_id": None, "decision": None, "ats": {"type": "jobvite", "token": "x"}},
+        {"name": "Not yet checked", "registry_id": None, "decision": None, "ats": {"type": "paycom", "token": "x"}},
         {"name": "Software only", "registry_id": None, "decision": "not-in-scope", "reason": "no hardware"},
         {"name": "Typo", "registry_id": "no-such-company", "decision": "registry"},
     ]}
@@ -27,7 +28,7 @@ def test_region_figures_count_each_stage():
     assert figures["readable"] == (1, "100%")            # of listed
     assert figures["board_roles"] == 7
     assert figures["unchecked"] == 1
-    assert figures["boards_not_read"]["jobvite"] == 1
+    assert figures["boards_not_read"]["paycom"] == 1     # a system with no reader (Jobvite has one since 2026-11-27)
     assert figures["unknown_registry_ids"] == ["no-such-company"]
 
 

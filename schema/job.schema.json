@@ -27,7 +27,7 @@
       "additionalProperties": false,
       "required": ["ats", "board", "posting_id", "read"],
       "properties": {
-        "ats": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workable", "bamboohr", "smartrecruiters", "recruitee", "breezy", "jazzhr", "teamtailor", "gem", "dover", "pinpoint", "jobvite", "paylocity", "paycom", "ukg", "workday", "icims", "adp", "eightfold", "other", "unknown"]},
+        "ats": {"enum": ["greenhouse", "lever", "ashby", "rippling", "workable", "bamboohr", "smartrecruiters", "recruitee", "breezy", "jazzhr", "teamtailor", "gem", "dover", "pinpoint", "jobvite", "paylocity", "paycom", "ukg", "workday", "icims", "adp", "eightfold", "successfactors", "other", "unknown"]},
         "board": {"type": ["string", "null"], "description": "The company's board token on that ATS."},
         "posting_id": {"type": ["string", "null"]},
         "read": {"enum": ["auto", "manual", "hosted"], "description": "auto: read from a feed. manual: read by a person. hosted: posted on HiPot by the employer."}
